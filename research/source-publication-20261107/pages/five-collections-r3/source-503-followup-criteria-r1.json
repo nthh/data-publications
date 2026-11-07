@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-11-07T23:04:22.333052+00:00",
+  "failed_report_sha256": "801f38ead9631ceea4103f82acc7d60d82e4cb15e4c493ff261cb045391db36e",
+  "failure": {
+    "url": "https://data.source.coop/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+    "dataset_id": "lakeatlas",
+    "method": "GET",
+    "status": 503,
+    "request_range": "bytes=1894464-1900488",
+    "planned_size_bytes": 1143992867,
+    "planned_sha256": "bbef606fd8522b230efc90e2952a67c1e4265e7bf733208fa4cc31395a7277b7",
+    "response_body_bytes": 0,
+    "status_check": "failed_validation",
+    "response_content_type": "application/xml",
+    "response_content_length": 279,
+    "accept_ranges": null,
+    "content_range": null,
+    "access_control_allow_origin": "*",
+    "access_control_expose_headers": "*",
+    "validation_error": "Ranged Source GET returned 503; body was not read: https://data.source.coop/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet"
+  },
+  "cause_scope": "Observed server HTTP 503. No application root cause inferred; browser navigation was correct and the response body was not consumed.",
+  "diagnostic": "One anonymous GET of the same exact 6025-byte range after the failed run, no automatic retry, compare Content-Range, total object size, content type, CORS and exact local pinned-release bytes.",
+  "followup_if_diagnostic_passes": "One complete live Browser rerun with unchanged acceptance criteria, final Pages plan, Source plan, footer policy and all five collections/six layers. No in-run HTTP failure suppression or retry. Preserve the failure regardless of the follow-up outcome."
+}
