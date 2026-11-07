@@ -1,0 +1,276 @@
+{
+  "schema_version": 1,
+  "study_id": "global-candidates-20261031-literature-supplement",
+  "created_at": "2026-11-01T00:46:11Z",
+  "identity_review_completed_before_count_lookup": true,
+  "provider": "Primary producer and publisher documentation; citation counts not yet queried",
+  "selection_note": "Ten influential global dataset families outside the frozen top-50 GEE/community shared-paper selection. This is a bounded supplementary literature sample, not an exhaustive or universal ranking.",
+  "identity_method": "Select a named producer dataset edition first, establish a dataset-specific primary paper DOI and coverage from producer/publisher sources, inspect canonical record overlap, then resolve the DOI to an OpenAlex work for a separate observed count. Keep data-release DOI separate from associated paper DOI and do not substitute broad algorithm/platform citations.",
+  "papers": [
+    {
+      "suggested_id": "worldclim_v2",
+      "dataset_family": "WorldClim v2 global land climate surfaces",
+      "product_edition": "WorldClim v2.1 historical climate data, released 2020; 1970-2000 normals. v1 is a separate edition and has its own 2005 associated paper.",
+      "geographic_scope": "global",
+      "spatial_coverage": "Global land surfaces; resolutions from 30 arc-seconds to 10 arc-minutes. Land cells only; no claimed ocean coverage.",
+      "paper": {
+        "doi": "10.1002/joc.5086",
+        "title": "WorldClim 2: new 1-km spatial resolution climate surfaces for global land areas",
+        "citation_scope": "associated_dataset_publication_base_family",
+        "edition_note": "Paper describes WorldClim v2; producer's current v2.1 is a later data release within that product family."
+      },
+      "data_doi": null,
+      "primary_urls": [
+        "https://doi.org/10.1002/joc.5086",
+        "https://www.worldclim.org/data/worldclim21.html",
+        "https://www.worldclim.org/data/index.html"
+      ],
+      "existing_record_review": {
+        "record_id": "worldclim_v1",
+        "relationship": "related_release",
+        "note": "Existing WorldClim v1 canonical record is a distinct version/edition; do not merge v2.1 bytes into v1."
+      },
+      "paper_identity_status": "verified_primary_source_before_count_lookup"
+    },
+    {
+      "suggested_id": "cru_ts_v4",
+      "dataset_family": "CRU TS monthly high-resolution gridded multivariate climate dataset",
+      "product_edition": "CRU TS v4.10, current producer release observed 2026-10-31; global land time series 1901-2025. Paper describes the v4 family and initial v4.03 release; CRU TS v3.26 paper DOI 10.1002/joc.3711 is a distinct earlier edition and is not used for this count.",
+      "geographic_scope": "global",
+      "spatial_coverage": "Global land gridded monthly climate variables; station support varies spatially and some cells may use inserted climatology. Producer grids are 0.5 degree.",
+      "paper": {
+        "doi": "10.1038/s41597-020-0453-3",
+        "title": "Version 4 of the CRU TS monthly high-resolution gridded multivariate climate dataset",
+        "citation_scope": "associated_dataset_publication_base_family",
+        "edition_note": "The 2020 paper documents CRU TS v4.03; v4.10 is a later continuation of the v4 family."
+      },
+      "related_edition_papers": [
+        {
+          "doi": "10.1002/joc.3711",
+          "note": "CRU TS v3 paper, a separate discontinued edition; not counted for the v4.10 candidate."
+        }
+      ],
+      "data_doi": null,
+      "primary_urls": [
+        "https://doi.org/10.1038/s41597-020-0453-3",
+        "https://www.nature.com/articles/s41597-020-0453-3",
+        "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.10/"
+      ],
+      "existing_record_review": {
+        "record_id": null,
+        "relationship": "new_family",
+        "note": "No CRU TS canonical record identified in datasets/."
+      },
+      "paper_identity_status": "verified_primary_source_before_count_lookup"
+    },
+    {
+      "suggested_id": "chelsa_climatologies",
+      "dataset_family": "CHELSA global high-resolution climate climatologies",
+      "product_edition": "Current producer family page identifies CHELSA v2.1; the dataset paper is the 2017 foundational CHELSA climatology paper and describes the earlier 1979-2013 release. Keep edition distinction explicit.",
+      "geographic_scope": "near_global",
+      "spatial_coverage": "Land grid extent approximately 180W-180E and 90S-84N; 30 arc-seconds / about 1 km. Current family has multiple historical, present and projection products; no single time span implied for the family.",
+      "paper": {
+        "doi": "10.1038/sdata.2017.122",
+        "title": "Climatologies at high resolution for the earth’s land surface areas",
+        "citation_scope": "associated_dataset_publication_base_family",
+        "edition_note": "Paper documents initial CHELSA climatologies v1; current v2.1 uses later inputs and should not be treated as identical data."
+      },
+      "data_doi": null,
+      "primary_urls": [
+        "https://doi.org/10.1038/sdata.2017.122",
+        "https://www.nature.com/articles/sdata2017122",
+        "https://www.chelsa-climate.org/datasets/chelsa_climatologies"
+      ],
+      "existing_record_review": {
+        "record_id": null,
+        "relationship": "new_family",
+        "note": "No CHELSA canonical record identified in datasets/. WorldClim v1/v2 are distinct climate surfaces and are not identity matches."
+      },
+      "paper_identity_status": "verified_primary_source_before_count_lookup"
+    },
+    {
+      "suggested_id": "gpcc_full_data_monthly_v2022",
+      "dataset_family": "Global Precipitation Climatology Centre Full Data Monthly precipitation product",
+      "product_edition": "GPCC Full Data Monthly Product Version 2022, covering 1891-2020; product-specific DOI at 0.25-degree resolution. Other GPCC analysis products (Monitoring, First Guess, climatology and daily) are separate products.",
+      "geographic_scope": "global",
+      "spatial_coverage": "Gauge-based gridded precipitation over global land; Antarctica is not represented as a complete surface product. Resolutions are product variants; cited GPCC paper describes the broader GPCC family.",
+      "paper": {
+        "doi": "10.5194/essd-5-71-2013",
+        "title": "A description of the global land-surface precipitation data products of the Global Precipitation Climatology Centre with sample applications including centennial (trend) analysis from 1901-present",
+        "citation_scope": "associated_dataset_publication_base_family",
+        "edition_note": "Paper describes GPCC product family; it predates Full Data Monthly v2022."
+      },
+      "data_doi": "10.5676/DWD_GPCC/FD_M_V2022_250",
+      "primary_urls": [
+        "https://doi.org/10.5194/essd-5-71-2013",
+        "https://doi.org/10.5676/DWD_GPCC/FD_M_V2022_250",
+        "https://opendata.dwd.de/climate_environment/GPCC/html/download_gate.html"
+      ],
+      "existing_record_review": {
+        "record_id": null,
+        "relationship": "new_family",
+        "note": "No GPCC canonical record identified in datasets/. CPC precipitation and CHIRPS records are different producers and products."
+      },
+      "paper_identity_status": "verified_primary_source_before_count_lookup"
+    },
+    {
+      "suggested_id": "earthstat_monfreda_crop_maps_2000",
+      "dataset_family": "EarthStat harvested area and yield maps for 175 crops circa 2000",
+      "product_edition": "Monfreda, Ramankutty and Foley 2008 crop-area, crop-yield, physiological-type and NPP maps; circa 2000 at 5 arc-minute resolution.",
+      "geographic_scope": "global",
+      "spatial_coverage": "Crop-specific gridded agricultural area and yield distributed over global croplands; thematic agricultural cells, not wall-to-wall land cover.",
+      "paper": {
+        "doi": "10.1029/2007GB002947",
+        "title": "Farming the planet: 2. Geographic distribution of crop areas, yields, physiological types, and net primary production in the year 2000",
+        "citation_scope": "associated_dataset_publication",
+        "edition_note": "The paper describes the circa-2000 maps; later EarthStat crop products are separate releases."
+      },
+      "data_doi": null,
+      "primary_urls": [
+        "https://doi.org/10.1029/2007GB002947",
+        "https://www.earthstat.org/"
+      ],
+      "existing_record_review": {
+        "record_id": null,
+        "relationship": "new_family",
+        "note": "No EarthStat Monfreda crop-map canonical record identified in datasets/. Existing global cropland/irrigation records are not the same crop-area/yield layers."
+      },
+      "paper_identity_status": "verified_primary_source_before_count_lookup"
+    },
+    {
+      "suggested_id": "glim_global_lithological_map_v1",
+      "dataset_family": "Global Lithological Map Database (GLiM) v1.0",
+      "product_edition": "GLiM v1.0; gridded derivative at 0.5-degree resolution with a companion harmonized global vector map.",
+      "geographic_scope": "global",
+      "spatial_coverage": "Global lithological classification of exposed continental surface geology; thematic mapping and source-map detail are heterogeneous, not a uniform geology survey.",
+      "paper": {
+        "doi": "10.1029/2012GC004370",
+        "title": "The new global lithological map database GLiM: A representation of rock properties at the Earth surface",
+        "citation_scope": "associated_dataset_publication",
+        "edition_note": "Paper describes the GLiM v1 map database."
+      },
+      "data_doi": "10.1594/PANGAEA.788537",
+      "primary_urls": [
+        "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2012GC004370",
+        "https://doi.pangaea.de/10.1594/PANGAEA.788537",
+        "https://projekte.cen.uni-hamburg.de/lithomap/"
+      ],
+      "existing_record_review": {
+        "record_id": null,
+        "relationship": "new_family",
+        "note": "No GLiM canonical record identified in datasets/."
+      },
+      "paper_identity_status": "verified_primary_source_before_count_lookup"
+    },
+    {
+      "suggested_id": "era_interim",
+      "dataset_family": "ECMWF ERA-Interim global atmospheric reanalysis",
+      "product_edition": "ERA-Interim, 1979-August 2019; discontinued and superseded by ERA5. Keep separate from ERA5 (selected citation top-50 group 1).",
+      "geographic_scope": "global",
+      "spatial_coverage": "Global atmospheric reanalysis with related land, wave and surface products; ERA-Interim ended 2019-08-31. Candidate scope is the atmospheric reanalysis family, not each variable/level.",
+      "paper": {
+        "doi": "10.1002/qj.828",
+        "title": "The ERA-Interim reanalysis: configuration and performance of the data assimilation system",
+        "citation_scope": "associated_dataset_publication_base_family",
+        "edition_note": "Exact paper is ERA-Interim-specific; do not substitute the ERA5 paper or counts."
+      },
+      "data_doi": null,
+      "primary_urls": [
+        "https://rmets.onlinelibrary.wiley.com/doi/10.1002/qj.828",
+        "https://www.ecmwf.int/en/forecasts/datasets/browse-reanalysis-datasets",
+        "https://www.ecmwf.int/en/forecasts/dataset/ecmwf-reanalysis-v5"
+      ],
+      "existing_record_review": {
+        "record_id": "era5",
+        "relationship": "superseded_related_product",
+        "note": "Existing ERA5 record is successor, not equivalent to ERA-Interim; keep separate and mark the legacy dataset archived."
+      },
+      "paper_identity_status": "verified_primary_source_before_count_lookup"
+    },
+    {
+      "suggested_id": "modis_mcd12q1_land_cover_c061",
+      "dataset_family": "MODIS Terra/Aqua annual global land cover type MCD12Q1",
+      "product_edition": "Current producer product MCD12Q1 Collection 6.1 at 500 m annual resolution; primary associated paper describes Collection 5, so count is a base product-family proxy, not a v6.1 exact-release usage count.",
+      "geographic_scope": "global",
+      "spatial_coverage": "Annual thematic land-cover classifications for global land at 500 m, with multiple legends/classes; no ocean coverage claim.",
+      "paper": {
+        "doi": "10.1016/j.rse.2009.08.016",
+        "title": "MODIS Collection 5 global land cover: Algorithm refinements and characterization of new datasets",
+        "citation_scope": "associated_dataset_publication_base_family",
+        "edition_note": "Paper documents Collection 5; candidate product edition is Collection 6.1 and remains version-distinct."
+      },
+      "data_doi": null,
+      "primary_urls": [
+        "https://www.sciencedirect.com/science/article/pii/S0034425709002673",
+        "https://modis-land.gsfc.nasa.gov/pdf/MCD12Q1_C6_Userguide04042018.pdf",
+        "https://modis.gsfc.nasa.gov/data/dataprod/mod12.php"
+      ],
+      "existing_record_review": {
+        "record_id": null,
+        "relationship": "new_family",
+        "note": "No MCD12Q1 canonical record identified in datasets/. Existing MODIS vegetation index, snow, and LST records are distinct products."
+      },
+      "paper_identity_status": "verified_primary_source_before_count_lookup"
+    },
+    {
+      "suggested_id": "hyde_32",
+      "dataset_family": "History Database of the Global Environment (HYDE) 3.2",
+      "product_edition": "HYDE 3.2 historical population and land-use allocation maps, 10,000 BCE-2015 CE; version 3.2 paper is product-specific.",
+      "geographic_scope": "global",
+      "spatial_coverage": "Global historical population and land-use categories on approximately 5 arc-minute grids; modeled allocations, not observations at every cell.",
+      "paper": {
+        "doi": "10.5194/essd-9-927-2017",
+        "title": "Anthropogenic land use estimates for the Holocene – HYDE 3.2",
+        "citation_scope": "associated_dataset_publication",
+        "edition_note": "Paper and producer portal explicitly identify HYDE 3.2."
+      },
+      "data_doi": "10.17026/dans-25g-gez3",
+      "primary_urls": [
+        "https://essd.copernicus.org/articles/9/927/2017/",
+        "https://hyde-portal.geo.uu.nl/",
+        "https://doi.org/10.17026/dans-25g-gez3"
+      ],
+      "existing_record_review": {
+        "record_id": null,
+        "relationship": "new_family",
+        "note": "No HYDE canonical record identified in datasets/. Related global urban/population records represent different models and epochs."
+      },
+      "paper_identity_status": "verified_primary_source_before_count_lookup"
+    },
+    {
+      "suggested_id": "gmia_v5",
+      "dataset_family": "FAO/University of Bonn Global Map of Irrigation Areas (GMIA) v5",
+      "product_edition": "GMIA v5, circa 2005 static map at 5 arc-minutes; v5 technical report is DOI 10.13140/2.1.2660.6728. The older peer-reviewed 2005 development paper describes the original GMIA family and is retained as a separate related paper, not silently substituted for the v5 report count.",
+      "geographic_scope": "near_global",
+      "spatial_coverage": "Area equipped for irrigation globally over land; reported grid extent -180,-60 to 180,90. Does not mean actual irrigated area for every cell; v5 also includes actual-irrigation and water-source percentage layers.",
+      "paper": {
+        "doi": "10.13140/2.1.2660.6728",
+        "title": "Update of the Digital Global Map of Irrigation Areas to Version 5",
+        "citation_scope": "producer_dataset_update_report",
+        "edition_note": "FAO/Bonn report directly describes v5; it is a technical report DOI and may not resolve as a Crossref/OpenAlex work."
+      },
+      "related_papers": [
+        {
+          "doi": "10.5194/hess-9-535-2005",
+          "title": "Development and validation of the global map of irrigation areas",
+          "citation_scope": "foundational_base_dataset_publication",
+          "note": "Peer-reviewed paper for original map development; kept distinct from the direct v5 report identity."
+        }
+      ],
+      "data_doi": null,
+      "primary_urls": [
+        "https://www.fao.org/aquastat/en/resources/publications/reports/",
+        "https://www.fao.org/aquastat/en/geospatial-information/global-maps-irrigated-areas/latest-version/",
+        "https://doi.org/10.5194/hess-9-535-2005",
+        "https://doi.org/10.13140/2.1.2660.6728"
+      ],
+      "existing_record_review": {
+        "record_id": "global_irrigation",
+        "relationship": "related_release_different_product",
+        "note": "Existing record is a community global irrigation areas 2001-2015 product with a 2021 paper; GMIA v5 is circa-2005 area-equipped-for-irrigation and actual-use/water-source layers. Do not auto-merge."
+      },
+      "paper_identity_status": "verified_primary_source_before_count_lookup"
+    }
+  ],
+  "count_lookup_status": "not_started"
+}

@@ -1,0 +1,92 @@
+{
+  "analytic_release": "figshare-v1-local-r2",
+  "assets": [
+    {
+      "attribute_fields": [
+        "OBJECTID",
+        "REACH_ID",
+        "GOID",
+        "DIS_AV_CMS",
+        "LENGTH_KM",
+        "CSI",
+        "CSI_FF1",
+        "CSI_D",
+        "_src_xmin",
+        "_src_ymin",
+        "_src_xmax",
+        "_src_ymax"
+      ],
+      "geometry_type": "line",
+      "id": "free-flowing-rivers-1",
+      "id_encoding": "mvt_feature_id_and_property",
+      "id_field": "OBJECTID",
+      "max_zoom": 12,
+      "maxzoom_id_accounting": {
+        "accounted_ids": 8477883,
+        "missing_ids": 0,
+        "missing_ids_path": "ffr-reaches.maxzoom-missing-ids.txt",
+        "source_ids": 8477883
+      },
+      "min_zoom": 0,
+      "path": "assets/ffr-reaches.pmtiles",
+      "sha256": "6e248eba5ecdf58ee28705a8f567be9497836f0a1c6c078b50327a1599ecdce3",
+      "size_bytes": 3570445458,
+      "source_asset": {
+        "path": "assets/ffr-reach-network-v1.parquet",
+        "sha256": "62130e4999ba449bd2768bcdd9346bc2ba8fa4c4f06d39597e5227cd496a1a63",
+        "size_bytes": 887132886
+      },
+      "source_layer": "ffr-reaches",
+      "source_rows": 8477883,
+      "style_path": "styles/ffr-reaches.json",
+      "title": "Ffr Reaches"
+    }
+  ],
+  "attribution": "Source data by Günther Grill and Bernhard Lehner; CC BY 4.0; Tippecanoe v2.79.0",
+  "dataset_id": "free-flowing-rivers",
+  "display_release": "display-v1",
+  "files": {
+    "README.md": {
+      "sha256": "52906787444dbdc5c67b60a2f7a0c5116bbdda2514d6848c90fcd14e18324e4d",
+      "size_bytes": 2310
+    },
+    "assets/ffr-reaches.pmtiles": {
+      "sha256": "6e248eba5ecdf58ee28705a8f567be9497836f0a1c6c078b50327a1599ecdce3",
+      "size_bytes": 3570445458
+    },
+    "ffr-reaches.maxzoom-missing-ids.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "reports/build-provenance.json": {
+      "sha256": "e1df34e7fb5ab27125d6dc026ed7b720c570337014c12f925f9f39a36340947a",
+      "size_bytes": 1273
+    },
+    "reports/ffr-reaches.build-report.json": {
+      "sha256": "a4fe0e815f2f4cbd985418bdbd291ef8706ccf9450ae5a713a662f39eddb2498",
+      "size_bytes": 3653
+    },
+    "reports/finalization/browser-validation.json": {
+      "sha256": "1ab8b20ed219e2b48c3845f43c4f36953884aeecd013fb79c9e33e2e4df19396",
+      "size_bytes": 22242
+    },
+    "reports/finalization/geometry/free-flowing-rivers-1.json": {
+      "sha256": "754a164186219b1fab5416e4780ca510aa99790ae3f5f006209dccc9d6abc49a",
+      "size_bytes": 22273
+    },
+    "reports/finalization/pmtiles-verify/free-flowing-rivers-1.json": {
+      "sha256": "e2c4e8473652c4788f999f69774c017134634c8546c0fb59cb027c5cd1d7b2a5",
+      "size_bytes": 564
+    },
+    "reports/post-launch-validation-changes.json": {
+      "sha256": "fc322a6d4f49b65e74e89da0cb9fd6f3f4ece20d051884cd98a55eab17d51ef0",
+      "size_bytes": 1441
+    },
+    "styles/ffr-reaches.json": {
+      "sha256": "7dd8ffd7dcce6b78adc9dea8dc2b238e6fd8978cd48d1efd76e05aeceb3bc1bd",
+      "size_bytes": 408
+    }
+  },
+  "schema_version": 1,
+  "status": "prepared"
+}

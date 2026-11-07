@@ -1,0 +1,29 @@
+source: 65,536 rows
+source: 1,376,256 rows
+source: 2,686,976 rows
+source: 3,997,696 rows
+source: 5,308,416 rows
+source: 6,619,136 rows
+source: 7,929,856 rows
+source: 9,240,576 rows
+source: 10,551,296 rows
+source: 11,862,016 rows
+source: 13,172,736 rows
+source: 14,483,456 rows
+source: 15,794,176 rows
+source: 17,104,896 rows
+source: 18,415,616 rows
+source: 19,726,336 rows
+source: 21,037,056 rows
+source: 22,347,776 rows
+Traceback (most recent call last):
+  File "/Users/nathan/.folia-fleets/data-publications-build-two-20261030/tree/datasets/grip/build.py", line 219, in <module>
+    if __name__=='__main__': main()
+                             ^^^^^^
+  File "/Users/nathan/.folia-fleets/data-publications-build-two-20261030/tree/datasets/grip/build.py", line 136, in main
+    table,geom,bounds=analytic_batch(batch,meta['geometry_name'] or 'wkb_geometry')
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nathan/.folia-fleets/data-publications-build-two-20261030/tree/datasets/grip/build.py", line 61, in analytic_batch
+    def analytic_batch(batch,geom_name):
+    
+KeyboardInterrupt

@@ -1,0 +1,124 @@
+{
+  "reviewed_at": "2026-10-30T23:22:56.106790+00:00",
+  "source_repository": "folia",
+  "source_commit": "100d1d061b00b4a427db6bd891d7c05ff20f4056",
+  "reviewed_paths_dirty": [],
+  "file_identities": [
+    {
+      "path": "benchmarks/suites/cbgb/frc11-review-20261029/README.md",
+      "bytes": 22529,
+      "sha256": "49b28f638ffff80b5c6f74e776dd53f17b6b2c48b0b77317f232c9b7392f84ad"
+    },
+    {
+      "path": "benchmarks/suites/cbgb/frc11-review-20261029/bulk_acquire.py",
+      "bytes": 5735,
+      "sha256": "8891562058afff8cf4420f1ad3fbdd43fe7b3718c69f8c7858552422ac727239"
+    },
+    {
+      "path": "benchmarks/suites/cbgb/frc11-review-20261029/convert_hydrolakes.py",
+      "bytes": 29484,
+      "sha256": "4227f2484a3dd3454fe1f97b78b155e5dcfd6c33410b77dfbaa253afecb26f14"
+    },
+    {
+      "path": "benchmarks/suites/cbgb/frc11-review-20261029/stage_source.py",
+      "bytes": 8972,
+      "sha256": "fa64fbbd71e253d17ebf1c8856786eaef74f874bd93e2f3fa2aff19bdbaa6e19"
+    },
+    {
+      "path": "benchmarks/suites/cbgb/frc11-review-20261029/official_oracles.py",
+      "bytes": 13819,
+      "sha256": "7516a42c933191112f5741739758cf69ee49e03daa44ecc20c818ffbf230e6c8"
+    },
+    {
+      "path": "benchmarks/suites/cbgb/frc11-review-20261029/evidence/global-release.json",
+      "bytes": 1307,
+      "sha256": "207a2ac5893d4b4ba629367f255d68a0a1de3c708236240572ff020a53a694ad"
+    },
+    {
+      "path": "benchmarks/suites/cbgb/frc11-review-20261029/evidence/source-staging.json",
+      "bytes": 757,
+      "sha256": "46667b508e9a9f795b395cc2637d187e23818b1279be048ce066b136a9f60068"
+    },
+    {
+      "path": "benchmarks/suites/cbgb/frc11-review-20261029/SOURCE_POLICY_RESULTS_05.md",
+      "bytes": 5732,
+      "sha256": "c6777f876bc25d3a31d1a5f0da0e57d26e1f178a472ea5310770f8b06bf77809"
+    },
+    {
+      "path": "benchmarks/suites/cbgb/request-path-20261027/mirror_sources.py",
+      "bytes": 49080,
+      "sha256": "7e21f82af3334a8782102a1d4cc3e71111cd79013c0165b3d1720807aabb7e45"
+    },
+    {
+      "path": "benchmarks/suites/cbgb/request-path-20261027/relocate_native_sources.py",
+      "bytes": 27192,
+      "sha256": "e9a62965d078a43ee9c6faa9bb30eec80ad5ad3999b7f360f65ed7b526ffe18a"
+    },
+    {
+      "path": "benchmarks/suites/cbgb/request-path-20261027/controls.py",
+      "bytes": 6870,
+      "sha256": "518ed8314b8f13168c2e3a5f613241c0956c098bd9664672dba3ac4d4fd222c0"
+    },
+    {
+      "path": "benchmarks/suites/cbgb/request-path-20261027/RESULTS.md",
+      "bytes": 9625,
+      "sha256": "0d779e0c7ed7bfa21cc5c58a92328b28a635c09b81dd07163cf2217c4b521c8c"
+    },
+    {
+      "path": "benchmarks/suites/cbgb/regional-comparison-20261028/RESULTS.md",
+      "bytes": 12135,
+      "sha256": "70a2448b2abeabc26c89c7f86137b20a7e8f96fdcf7269b2f09a59d7f2d991f5"
+    }
+  ],
+  "hydrolakes": {
+    "producer_url": "https://data.hydrosheds.org/file/hydrolakes/HydroLAKES_polys_v10_shp.zip",
+    "source_bytes": 820295132,
+    "source_sha256": "9ef63498569dd7ccd0b8d8852da026e009a75f42d293f00e483f3b9fcfe8e1f9",
+    "output_sha256": "4c7c83b0a91e4cbd1e31583ab89eee9721ba22250272640591f4795d186a6a76",
+    "output_bytes": 945383282,
+    "feature_count": 1427688,
+    "hylak_id": {
+      "contiguous": true,
+      "maximum": 1427688,
+      "minimum": 1,
+      "unique": true
+    },
+    "geometry_column": "wkb_geometry",
+    "row_group_count": 1162,
+    "footer_bytes": 4351105,
+    "stage_status": "qualified_source_staged",
+    "staged_data_identity": {
+      "sha256": "4c7c83b0a91e4cbd1e31583ab89eee9721ba22250272640591f4795d186a6a76",
+      "bytes": 945383282
+    },
+    "public_sourcecoop_release": false,
+    "layout": "Hylak_id sorted; no bbox-only spatial pruning",
+    "conversion_validation": "Every decoded source feature, typed attribute and null retained without repair/simplification; output reopened and identity-checked.",
+    "gee_validation": "Matching FRC11 GEE science remains pending; local/native controls do not establish GEE parity."
+  },
+  "chirps": {
+    "identity": "CHIRPS v2.0 global pentad, August 2020",
+    "origin": "https://data.chc.ucsb.edu/products/CHIRPS-2.0/global_pentad/cogs/",
+    "files": [
+      "chirps-v2.0.2020.08.1.cog",
+      "chirps-v2.0.2020.08.2.cog",
+      "chirps-v2.0.2020.08.3.cog",
+      "chirps-v2.0.2020.08.4.cog",
+      "chirps-v2.0.2020.08.5.cog",
+      "chirps-v2.0.2020.08.6.cog"
+    ],
+    "scope": "Six complete global pentad objects; not the daily product or complete archive.",
+    "validated_control": {
+      "operation": "Sum six August pentads; Bengaluru 2x2 cells",
+      "point_mm": 158.897216796875,
+      "native_float32_exact_cells": 4,
+      "gee_float32_exact_cells": 4,
+      "raw_gee_float64_max_difference_mm": 4.76837158203125e-06
+    },
+    "source_range_read_bytes_per_regional_request": 2799347,
+    "source_range_read_bytes_are_download_archive_size": false,
+    "cohort_note": "Original request-path results use public CHC origin; later regional comparison uses whole-object private mirrors. Do not mix origins or performance claims.",
+    "wfp_v3_validation_transferable": false
+  },
+  "new_execution": "Read-only evidence review. No source data, private buckets, GEE, cloud or conversion jobs accessed."
+}

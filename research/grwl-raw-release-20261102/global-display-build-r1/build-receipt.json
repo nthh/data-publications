@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "status": "build_passed_global_oracle_pending",
+  "native_exit_code": 0,
+  "source_rows": 64572998,
+  "source_tiles": 829,
+  "asset": {
+    "attribute_fields": [
+      "width_m",
+      "width_valid",
+      "_src_xmin",
+      "_src_ymin",
+      "_src_xmax",
+      "_src_ymax"
+    ],
+    "geometry_type": "line",
+    "id": "grwl-raw-display",
+    "id_encoding": "mvt_feature_id",
+    "id_field": "feature_id",
+    "max_zoom": 12,
+    "min_zoom": 8,
+    "path": "assets/grwl-raw.pmtiles",
+    "sha256": "a1a7787c7ba28ffc271819bddc54339f9bc741aa9ed44ca619d93e809cbad4f5",
+    "size_bytes": 11498067077,
+    "source_asset": {
+      "path": "grwl-raw.parquet",
+      "sha256": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+      "size_bytes": 5529859809
+    },
+    "source_layer": "grwl_raw",
+    "style_path": "styles/width.json",
+    "title": "GRWL raw width observations"
+  },
+  "builder_elapsed_monotonic_seconds": 5297.237,
+  "elapsed_clock_note": "Builder monotonic elapsed time is separate from the overnight wall-clock duration. No performance benchmark claim.",
+  "display_builder_git_revision": "9cf7e3f0c7652976520a043cd1d06b0a27b1ba6d",
+  "files": {
+    "manifest.json": {
+      "size_bytes": 1127,
+      "sha256": "c9c21e1a6137d3f2cfa60e5a54c69fd44a7ab22a91278b5857d2a99f6ef27ec8"
+    },
+    "reports/input-provenance.json": {
+      "size_bytes": 2406,
+      "sha256": "60a1398be000f2efbfcac4947b5bbb5f5eb267729439bf9a719949819ecee17c"
+    },
+    "reports/pmtiles-verify.json": {
+      "size_bytes": 85,
+      "sha256": "6a8b36d3cf385c3d27aeddb6fcb34f0bdb26e729a64bcb8787cbff3296213d22"
+    },
+    "reports/tippecanoe.stderr.txt": {
+      "size_bytes": 54,
+      "sha256": "9578d547f9e3028349e6e958d21cf14e0fa9118131643a5da25687f4677969b4"
+    }
+  },
+  "limits": [
+    "Global display ID/attribute/geometry oracle and browser checks are separate gates.",
+    "Global analytical bytes were rebuilt identically; global PMTiles has one build. PMTiles byte reproducibility was checked on the pilot and native fixtures.",
+    "No public upload or hosting has occurred."
+  ]
+}

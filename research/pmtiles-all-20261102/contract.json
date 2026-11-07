@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "canonical_display_reference": {
+    "release": "display-v1",
+    "manifest_path": "datasets/DATASET_ID/display/display-v1/manifest.json",
+    "manifest_sha256": "SHA256"
+  },
+  "display_manifest": {
+    "schema_version": 1,
+    "dataset_id": "DATASET_ID",
+    "display_release": "display-v1",
+    "analytic_release": "EXISTING_RELEASE",
+    "status": "prepared",
+    "assets": [
+      {
+        "id": "EXISTING_VIEWER_LAYER_ID",
+        "title": "TITLE",
+        "path": "assets/NAME.pmtiles",
+        "size_bytes": 0,
+        "sha256": "SHA256",
+        "source_layer": "LAYER",
+        "geometry_type": "polygon|line|point",
+        "min_zoom": 0,
+        "max_zoom": 12,
+        "id_field": "SOURCE_ID_FIELD",
+        "source_rows": 0,
+        "attribute_fields": [
+          "SOURCE_ID_FIELD"
+        ],
+        "source_asset": {
+          "path": "assets/NAME.parquet",
+          "size_bytes": 0,
+          "sha256": "SHA256"
+        },
+        "style_path": "styles/NAME.json"
+      }
+    ],
+    "files": {
+      "RELATIVE_PATH": {
+        "size_bytes": 0,
+        "sha256": "SHA256"
+      }
+    }
+  },
+  "package_location": "DATA_ROOT/DATASET_ID/display/display-v1",
+  "object_prefix": "OWNER/PRODUCT/display/display-v1/",
+  "viewer_layer_extension": "PMTiles layer may have analytic object with original GeoParquet layer metadata for stable-ID attribute queries; IDs stay hydrolakes-1/free-flowing-rivers-1/lakeatlas-1/lakeatlas-2.",
+  "owner_scopes": {
+    "tile_builder": [
+      "scripts/display_tools/**",
+      "tests/test_display_tools.py",
+      ".local build outputs only"
+    ],
+    "viewer": [
+      "scripts/cloud_viewer/src/**",
+      "scripts/cloud_viewer/tests/**",
+      "scripts/cloud_viewer/browser-check.mjs"
+    ],
+    "integration": [
+      "scripts/source_products.py",
+      "scripts/cloud_viewer/prepare.py",
+      "scripts/cloud_viewer/run.py",
+      "tests/test_source_products.py",
+      "tests/test_cloud_viewer_prepare.py",
+      "tests/test_cloud_viewer_run.py"
+    ],
+    "parent": [
+      "Canonical records",
+      "schemas",
+      "generated indexes/drafts",
+      "research",
+      "docs",
+      "integration and commits"
+    ]
+  }
+}

@@ -1,0 +1,60 @@
+schema_version: 1
+id: glim_global_lithological_map_v1
+title: Global Lithological Map Database (GLiM) v1.0
+intake:
+  kind: producer
+  reference_url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2012GC004370
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'literature: Global lithological classification of exposed continental surface geology;
+    thematic mapping and source-map detail are heterogeneous, not a uniform geology survey. GLiM v1.0;
+    gridded derivative at 0.5-degree resolution with a companion harmonized global vector map. Paper describes
+    the GLiM v1 map database.'
+  sources:
+  - provider: producer
+    entry_id: Global Lithological Map Database (GLiM) v1.0
+    url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2012GC004370
+    relationship: same_family
+  access:
+  - provider: literature
+    status: download_available
+    formats:
+    - raster
+    - vector
+    summary: PANGAEA dataset record provides the gridded release; companion map and rasterized grid are
+      distinct representations. GLiM v1.0; gridded derivative at 0.5-degree resolution with a companion
+      harmonized global vector map. Paper describes the GLiM v1 map database.
+    license_summary: Exact release terms need product-specific review; no redistribution permission is
+      inferred from literature or access pages.
+    proposed_outputs:
+    - COG
+    - GeoParquet
+    rationale: Supplementary literature discovery only. A high associated-paper count is evidence of a
+      documented product family, not exact-edition usage, conversion priority, or native-format readiness.
+      Review producer bytes, terms and existing record component coverage before promotion.
+    evidence_urls:
+    - https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2012GC004370
+    - https://doi.pangaea.de/10.1594/PANGAEA.788537
+    - https://projekte.cen.uni-hamburg.de/lithomap/
+    - https://doi.org/10.1594/PANGAEA.788537
+  citations:
+  - provider: OpenAlex
+    paper_doi: 10.1029/2012GC004370
+    work_id: https://openalex.org/W2133505387
+    cited_by_count: 1168
+    observed_on: '2026-11-01'
+    scope: associated_dataset_publication
+  evidence:
+  - path: research/global-candidates-20261031/literature/reviewed.json
+    sha256: eef4edb7f4a59e399d3670b9f2aace33bd24083f46d260a7859163c673fabbb6
+    key: glim_global_lithological_map_v1

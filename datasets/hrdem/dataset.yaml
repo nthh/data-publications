@@ -1,0 +1,35 @@
+schema_version: 1
+id: hrdem
+title: Open Canada Elevation HRDEM Footprints
+community_url: https://gee-community-catalog.org/projects/hrdem
+audit:
+  snapshot: gee-community-audit-20261029
+  family_key: hrdem
+  unique_gee_asset_count: 3
+  initial_queue: review_external_native_counterpart
+  folia_registry_status: direct_or_component
+  folia_registry_ids:
+  - '@nrcan/hrdem/mosaic-1m'
+  source_coop_urls: []
+  source_coop_scope: null
+  external_native_urls:
+  - https://datacube.services.geo.ca/stac/api/collections/hrdem-mosaic-1m
+  external_native_scope: NRCan 1m DTM/DSM mosaics, partial lidar footprint. Native
+    COG evidence recorded in registry/datasets/nrcan/hrdem/mosaic-1m/distributions/nrcan-datacube.yaml;
+    July 2026 probe, not repeated for all assets.
+triage:
+  decision: pending
+  priority: normal
+review:
+  citation_assessment:
+    as_of: '2026-10-29'
+    provider: OpenAlex
+    evidence_path: research/citations/rankings.json
+    evidence_key: hrdem
+    geographic_scope: regional
+    paper_count_status: unknown
+    max_paper_citations: null
+    max_data_doi_citations: null
+    top_paper_doi: null
+    top_paper_openalex_id: null
+    citation_scope: associated_dataset_publication

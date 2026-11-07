@@ -1,0 +1,103 @@
+{
+  "passed": false,
+  "files_checked": 2,
+  "error_count": 4,
+  "warning_count": 0,
+  "info_count": 1,
+  "summary": {
+    "by_severity": {
+      "error": 4,
+      "warning": 0,
+      "info": 1
+    },
+    "by_rule": [
+      {
+        "rule_id": "PTL-FIL-002",
+        "severity": "error",
+        "count": 1,
+        "file_count": 1,
+        "description": "AGENTS.md must be linked with rel:'agents' and type text/markdown"
+      },
+      {
+        "rule_id": "PTL-FIL-003",
+        "severity": "error",
+        "count": 1,
+        "file_count": 1,
+        "description": "README.md must be linked with rel:'describedby' and type text/markdown"
+      },
+      {
+        "rule_id": "PTL-SCH-001",
+        "severity": "error",
+        "count": 1,
+        "file_count": 1,
+        "description": "every object matches the Portolan profile schema it declares"
+      },
+      {
+        "rule_id": "PTL-VIZ-001",
+        "severity": "error",
+        "count": 1,
+        "file_count": 1,
+        "description": "geospatial collections must include a thumbnail asset (png or jpeg)"
+      },
+      {
+        "rule_id": "PTL-PRO-002",
+        "severity": "info",
+        "count": 1,
+        "file_count": 1,
+        "description": "a mirror should link the upstream STAC with rel:'canonical' when one exists"
+      }
+    ]
+  },
+  "findings": [
+    {
+      "rule_id": "PTL-FIL-002",
+      "severity": "error",
+      "message": "missing rel:'agents' link to AGENTS.md",
+      "path": "catalog.json",
+      "object_id": "folia-grip4-global",
+      "json_pointer": "/links",
+      "fix_hint": "add {\"rel\": \"agents\", \"href\": \"./AGENTS.md\", \"type\": \"text/markdown\"}"
+    },
+    {
+      "rule_id": "PTL-FIL-003",
+      "severity": "error",
+      "message": "missing rel:'describedby' link to README.md",
+      "path": "catalog.json",
+      "object_id": "folia-grip4-global",
+      "json_pointer": "/links",
+      "fix_hint": "add {\"rel\": \"describedby\", \"href\": \"./README.md\", \"type\": \"text/markdown\"}"
+    },
+    {
+      "rule_id": "PTL-SCH-001",
+      "severity": "error",
+      "message": "Portolan profile schema validation failed: None of [{'rel': 'root', 'href': 'catalog.json', 'type': 'application/json'}, {'rel': 'child', 'href': 'grip/collection.json', 'type': 'application/json', 'title': 'GRIP4 global roads \u2014 2018'}, {'rel': 'license', 'href': 'https://creativecommons.org/licenses/by/4.0/', 'type': 'text/html'}, {'rel'...",
+      "path": "catalog.json",
+      "object_id": "folia-grip4-global",
+      "json_pointer": "/links"
+    },
+    {
+      "rule_id": "PTL-PRO-002",
+      "severity": "info",
+      "message": "mirror collection has no rel:'canonical' link; add one if the upstream publishes its own STAC catalog",
+      "path": "grip/collection.json",
+      "object_id": "grip",
+      "json_pointer": "/links",
+      "fix_hint": "add {\"rel\": \"canonical\", \"href\": <the upstream collection.json>, \"type\": \"application/json\"} to links when the upstream publishes STAC"
+    },
+    {
+      "rule_id": "PTL-VIZ-001",
+      "severity": "error",
+      "message": "thumbnail asset 'thumbnail' has type 'image/svg+xml', expected image/png, image/jpeg or image/webp",
+      "path": "grip/collection.json",
+      "object_id": "grip",
+      "json_pointer": "/assets/thumbnail/type",
+      "fix_hint": "set the thumbnail's type to the media type of the file it points at, 'image/png', 'image/jpeg' or 'image/webp'",
+      "expected": [
+        "image/png",
+        "image/jpeg",
+        "image/webp"
+      ],
+      "actual": "image/svg+xml"
+    }
+  ]
+}

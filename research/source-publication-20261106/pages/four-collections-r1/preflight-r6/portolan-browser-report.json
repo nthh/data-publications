@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "status": "not_ready",
+  "checked_at": "2026-11-07T04:10:22.534Z",
+  "mode": "preflight",
+  "scope": "Official remote Browser + local staged Pages metadata + live Source objects",
+  "preflight_metadata_interception_is_hosting_evidence": false,
+  "pages_plan_sha256": "e146b5c9426733156aad099a110db906252ca19f15dab4207349481a3cdcac7b",
+  "source_plan_sha256": "754c02dde3cf258263619599f893558d3348c7fb51c07f8fa700efa1900ac610",
+  "head_render_followup_criteria": {
+    "path": "research/source-publication-20261106/pages/three-collections-r1/head-and-render-followup-criteria-r1.json",
+    "sha256": "0714e3a818bc107ce74c2f6cf936a6c8928ccf1bf4108a89dfef4ffc377e6ed8"
+  },
+  "render_diagnostic": null,
+  "renderer_diagnostic": null,
+  "browser": null,
+  "aggregate": {
+    "expected_ids": [
+      "river-plastic-inputs",
+      "hydrolakes",
+      "lakeatlas",
+      "free-flowing-rivers",
+      "grwl-raw"
+    ],
+    "staged_ids": [
+      "free-flowing-rivers",
+      "hydrolakes",
+      "lakeatlas",
+      "river-plastic-inputs"
+    ],
+    "missing_ids": [
+      "grwl-raw"
+    ],
+    "selected_ids": [
+      "free-flowing-rivers",
+      "hydrolakes",
+      "lakeatlas",
+      "river-plastic-inputs"
+    ],
+    "expected_pmtiles_count": 6,
+    "observed_pmtiles_count": 5
+  },
+  "pages_metadata": {
+    "source": "locally fulfilled from exact publish-plan files",
+    "expected_urls": [],
+    "observed": [],
+    "intercepted": []
+  },
+  "source_requests": [],
+  "collections": [],
+  "limits": {
+    "max_range_bytes": 16777216,
+    "max_bytes_per_collection": 134217728,
+    "max_bytes_full_run": 671088640
+  },
+  "manual_visual_review_required": true,
+  "notes": [
+    "Preflight synthetic metadata is not GitHub Pages reachability, deployment, or real Pages CORS evidence.",
+    "Source range-body SHA-256 values identify only those bounded response bytes, not a full-object checksum.",
+    "A map canvas and screenshot require manual visual review before claiming rendered layer acceptance."
+  ],
+  "errors": [
+    "Staged catalog is missing required collections: grwl-raw"
+  ]
+}

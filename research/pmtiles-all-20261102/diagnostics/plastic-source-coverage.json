@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "diagnostic_criteria_commit": "bcaf5f2",
+  "source_object_path": "/nthh/river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/river-plastic-inputs.parquet",
+  "source_sha256": "de35bd69b144565af1fcd33f915e8521a1af502e3ac50235560990f6c441e8c9",
+  "source_size_bytes": 6360991,
+  "source_rows": 40760,
+  "geometry_column": "geometry",
+  "source_geometry_types": [
+    0
+  ],
+  "source_bounds": [
+    -137.9375,
+    -55.62083333,
+    179.8791667,
+    60.4125
+  ],
+  "cases": [
+    {
+      "control": "original_inland",
+      "bbox": [
+        -93,
+        47,
+        -87,
+        50
+      ],
+      "contained_source_features": 0
+    },
+    {
+      "control": "proposed_atlantic",
+      "bbox": [
+        -82,
+        25,
+        -66,
+        45
+      ],
+      "contained_source_features": 792
+    }
+  ],
+  "scope": "Counts of unchanged authoritative source points within declared bboxes; actual rendered viewport can be larger than the requested fitBounds rectangle."
+}

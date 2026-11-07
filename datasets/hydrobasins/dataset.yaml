@@ -1,0 +1,107 @@
+schema_version: 1
+id: hydrobasins
+title: HydroBASINS global watershed boundary polygons
+intake:
+  kind: official_catalog
+  reference_url: https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_v1_Basins_hybas_1
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'citations: Global coverage; Global land drainage basins DEM, flow direction, accumulation
+    and HydroBASINS polygons are distinct components.'
+  sources:
+  - provider: gee_official
+    entry_id: WWF/HydroSHEDS/v1/Basins/hybas_1
+    url: https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_v1_Basins_hybas_1
+    relationship: component
+  - provider: gee_official
+    entry_id: WWF/HydroSHEDS/v1/Basins/hybas_10
+    url: https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_v1_Basins_hybas_10
+    relationship: component
+  - provider: gee_official
+    entry_id: WWF/HydroSHEDS/v1/Basins/hybas_11
+    url: https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_v1_Basins_hybas_11
+    relationship: component
+  - provider: gee_official
+    entry_id: WWF/HydroSHEDS/v1/Basins/hybas_12
+    url: https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_v1_Basins_hybas_12
+    relationship: component
+  - provider: gee_official
+    entry_id: WWF/HydroSHEDS/v1/Basins/hybas_2
+    url: https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_v1_Basins_hybas_2
+    relationship: component
+  - provider: gee_official
+    entry_id: WWF/HydroSHEDS/v1/Basins/hybas_3
+    url: https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_v1_Basins_hybas_3
+    relationship: component
+  - provider: gee_official
+    entry_id: WWF/HydroSHEDS/v1/Basins/hybas_4
+    url: https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_v1_Basins_hybas_4
+    relationship: component
+  - provider: gee_official
+    entry_id: WWF/HydroSHEDS/v1/Basins/hybas_5
+    url: https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_v1_Basins_hybas_5
+    relationship: component
+  - provider: gee_official
+    entry_id: WWF/HydroSHEDS/v1/Basins/hybas_6
+    url: https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_v1_Basins_hybas_6
+    relationship: component
+  - provider: gee_official
+    entry_id: WWF/HydroSHEDS/v1/Basins/hybas_7
+    url: https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_v1_Basins_hybas_7
+    relationship: component
+  - provider: gee_official
+    entry_id: WWF/HydroSHEDS/v1/Basins/hybas_8
+    url: https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_v1_Basins_hybas_8
+    relationship: component
+  - provider: gee_official
+    entry_id: WWF/HydroSHEDS/v1/Basins/hybas_9
+    url: https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_v1_Basins_hybas_9
+    relationship: component
+  access:
+  - provider: literature
+    status: unknown
+    formats: []
+    summary: GEE catalog entries are available through Earth Engine; frozen metadata does not establish
+      an independently downloadable native bulk copy or its format. DEM, flow direction, accumulation
+      and HydroBASINS polygons are distinct components.
+    license_summary: Not inferred from citation records. Verify producer terms for the exact edition before
+      conversion or redistribution.
+    proposed_outputs: []
+    rationale: 'Candidate discovery only: global/near-global scope and associated-paper citation signal
+      justify source-format and licensing review. Citation rank does not establish conversion priority
+      or exact-release use.'
+    evidence_urls:
+    - https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_v1_Basins_hybas_1
+    - https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_v1_Basins_hybas_10
+    - https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_v1_Basins_hybas_11
+    - https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_v1_Basins_hybas_12
+    - https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_v1_Basins_hybas_2
+    - https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_v1_Basins_hybas_3
+    - https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_v1_Basins_hybas_4
+    - https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_v1_Basins_hybas_5
+    - https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_v1_Basins_hybas_6
+    - https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_v1_Basins_hybas_7
+    - https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_v1_Basins_hybas_8
+    - https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_v1_Basins_hybas_9
+    - https://doi.org/10.1029/2008eo100001
+  citations:
+  - provider: OpenAlex
+    paper_doi: 10.1029/2008eo100001
+    work_id: https://openalex.org/W2171675471
+    cited_by_count: 2411
+    observed_on: '2026-10-30'
+    scope: associated_dataset_publication
+  evidence:
+  - path: research/global-candidates-20261031/citations/reviewed.json
+    sha256: 572140255cd3b41a1ec8ecca0139e64d38899cda7fdd55756f399a0dca57a467
+    key: hydrosheds

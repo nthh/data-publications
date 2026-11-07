@@ -1,0 +1,1414 @@
+{
+  "request_url": "https://api.openalex.org/works?filter=doi%3A10.7289%2Fv59k4885%7C10.7289%2Fv59p2zkr%7C10.7289%2Fv5bz642p%7C10.7289%2Fv5c8276m%7C10.7289%2Fv5fb510w%7C10.7289%2Fv5m043bx%7C10.7289%2Fv5pz56r6%7C10.7289%2Fv5sq8xb5%7C10.7289%2Fv5sx6b56%7C10.7289%2Fv5tm782m%7C10.7717%2Fpeerj.19774%7C10.7717%2Fpeerj.21494%7C10.7910%2Fdvn%2F3ctmkp%7C10.7910%2Fdvn%2F86m4po%7C10.7910%2Fdvn%2Fdtfkcm%7C10.7910%2Fdvn%2Fohhukh%7C10.7910%2Fdvn%2Fqqhcik%7C10.7917%2Fofsg3345%7C10.7927%2Fh42z13kg%7C10.7927%2Fh46m34xx%7C10.7927%2Fh49c6vhw%7C10.7927%2Fh4f47m2c%7C10.7927%2Fh4f47m65%7C10.7927%2Fh4h41pck%7C10.7927%2Fh4hx19nj%7C10.7927%2Fh4j67dw8%7C10.7927%2Fh4jw8bx5%7C10.7927%2Fh4np22dq%7C10.7927%2Fh4pn93pb%7C10.7927%2Fh4sf2t42%7C10.7927%2Fh4td9vdp%7C10.7927%2Fh4x63jvc%7C10.7927%2Fh4z60m4z%7C10.7927%2Fweq9-pv30%7C10.7927%2Fzz3b-8y61%7C10.82924%2F7vmb-zv66&corpus=all&per_page=100&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date%2Ccited_by_count%2Ccounts_by_year",
+  "retrieved_at": "2026-10-30T22:27:45.503489+00:00",
+  "response_path": "responses/528b03e793a7b09ebd72d8bb4a5daf7378241ddbdf20185c15144f060145158f.json",
+  "status": 200,
+  "response_sha256": "858eb73876d62e068bb7037cc602f8786bcffa01d9ab04851e4ae77426f33991",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 36,
+      "db_response_time_ms": 20,
+      "page": 1,
+      "per_page": 100,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where DOI is (\n    10.7289/v59k4885 or 10.7289/v59p2zkr or 10.7289/v5bz642p or 10.7289/v5c8276m\n    or 10.7289/v5fb510w or 10.7289/v5m043bx or 10.7289/v5pz56r6\n    or 10.7289/v5sq8xb5 or 10.7289/v5sx6b56 or 10.7289/v5tm782m\n    or 10.7717/peerj.19774 or 10.7717/peerj.21494 or 10.7910/dvn/3ctmkp\n    or 10.7910/dvn/86m4po or 10.7910/dvn/dtfkcm or 10.7910/dvn/ohhukh\n    or 10.7910/dvn/qqhcik or 10.7917/ofsg3345 or 10.7927/h42z13kg\n    or 10.7927/h46m34xx or 10.7927/h49c6vhw or 10.7927/h4f47m2c\n    or 10.7927/h4f47m65 or 10.7927/h4h41pck or 10.7927/h4hx19nj\n    or 10.7927/h4j67dw8 or 10.7927/h4jw8bx5 or 10.7927/h4np22dq\n    or 10.7927/h4pn93pb or 10.7927/h4sf2t42 or 10.7927/h4td9vdp\n    or 10.7927/h4x63jvc or 10.7927/h4z60m4z or 10.7927/weq9-pv30\n    or 10.7927/zz3b-8y61 or 10.82924/7vmb-zv66\n  )",
+        "x_new_oql": "get works (all corpora) where DOI is (\n    10.7289/v59k4885 or 10.7289/v59p2zkr or 10.7289/v5bz642p or 10.7289/v5c8276m\n    or 10.7289/v5fb510w or 10.7289/v5m043bx or 10.7289/v5pz56r6\n    or 10.7289/v5sq8xb5 or 10.7289/v5sx6b56 or 10.7289/v5tm782m\n    or 10.7717/peerj.19774 or 10.7717/peerj.21494 or 10.7910/dvn/3ctmkp\n    or 10.7910/dvn/86m4po or 10.7910/dvn/dtfkcm or 10.7910/dvn/ohhukh\n    or 10.7910/dvn/qqhcik or 10.7917/ofsg3345 or 10.7927/h42z13kg\n    or 10.7927/h46m34xx or 10.7927/h49c6vhw or 10.7927/h4f47m2c\n    or 10.7927/h4f47m65 or 10.7927/h4h41pck or 10.7927/h4hx19nj\n    or 10.7927/h4j67dw8 or 10.7927/h4jw8bx5 or 10.7927/h4np22dq\n    or 10.7927/h4pn93pb or 10.7927/h4sf2t42 or 10.7927/h4td9vdp\n    or 10.7927/h4x63jvc or 10.7927/h4z60m4z or 10.7927/weq9-pv30\n    or 10.7927/zz3b-8y61 or 10.82924/7vmb-zv66\n  )",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "join": "or",
+              "filters": [
+                {
+                  "column_id": "doi",
+                  "value": "10.7289/v59k4885"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.7289/v59p2zkr"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.7289/v5bz642p"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.7289/v5c8276m"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.7289/v5fb510w"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.7289/v5m043bx"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.7289/v5pz56r6"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.7289/v5sq8xb5"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.7289/v5sx6b56"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.7289/v5tm782m"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.7717/peerj.19774"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.7717/peerj.21494"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.7910/dvn/3ctmkp"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.7910/dvn/86m4po"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.7910/dvn/dtfkcm"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.7910/dvn/ohhukh"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.7910/dvn/qqhcik"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.7917/ofsg3345"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.7927/h42z13kg"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.7927/h46m34xx"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.7927/h49c6vhw"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.7927/h4f47m2c"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.7927/h4f47m65"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.7927/h4h41pck"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.7927/h4hx19nj"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.7927/h4j67dw8"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.7927/h4jw8bx5"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.7927/h4np22dq"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.7927/h4pn93pb"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.7927/h4sf2t42"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.7927/h4td9vdp"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.7927/h4x63jvc"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.7927/h4z60m4z"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.7927/weq9-pv30"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.7927/zz3b-8y61"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.82924/7vmb-zv66"
+                }
+              ]
+            }
+          ]
+        },
+        "url": "/works?filter=doi:10.7289%2Fv59k4885|10.7289%2Fv59p2zkr|10.7289%2Fv5bz642p|10.7289%2Fv5c8276m|10.7289%2Fv5fb510w|10.7289%2Fv5m043bx|10.7289%2Fv5pz56r6|10.7289%2Fv5sq8xb5|10.7289%2Fv5sx6b56|10.7289%2Fv5tm782m|10.7717%2Fpeerj.19774|10.7717%2Fpeerj.21494|10.7910%2Fdvn%2F3ctmkp|10.7910%2Fdvn%2F86m4po|10.7910%2Fdvn%2Fdtfkcm|10.7910%2Fdvn%2Fohhukh|10.7910%2Fdvn%2Fqqhcik|10.7917%2Fofsg3345|10.7927%2Fh42z13kg|10.7927%2Fh46m34xx|10.7927%2Fh49c6vhw|10.7927%2Fh4f47m2c|10.7927%2Fh4f47m65|10.7927%2Fh4h41pck|10.7927%2Fh4hx19nj|10.7927%2Fh4j67dw8|10.7927%2Fh4jw8bx5|10.7927%2Fh4np22dq|10.7927%2Fh4pn93pb|10.7927%2Fh4sf2t42|10.7927%2Fh4td9vdp|10.7927%2Fh4x63jvc|10.7927%2Fh4z60m4z|10.7927%2Fweq9-pv30|10.7927%2Fzz3b-8y61|10.82924%2F7vmb-zv66&corpus=all&per_page=100",
+        "order": "most cited (age-adjusted) first",
+        "order_default": true
+      },
+      "cost_usd": 0.0001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W4413200306",
+        "doi": "https://doi.org/10.7717/peerj.19774",
+        "title": "Light use efficiency (LUE) based bimonthly gross primary productivity (GPP) for global grasslands at 30 m spatial resolution (2000–2022)",
+        "type": "article",
+        "publication_year": 2025,
+        "publication_date": "2025-08-12",
+        "cited_by_count": 6,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W7169566083",
+        "doi": "https://doi.org/10.7717/peerj.21494",
+        "title": "Global distribution of cattle, horses, goats, sheep and buffaloes at 1 km resolution for 2000–2022 based on subnational census data and spatiotemporal machine learning",
+        "type": "article",
+        "publication_year": 2026,
+        "publication_date": "2026-07-17",
+        "cited_by_count": 2,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6958857181",
+        "doi": "https://doi.org/10.7289/v5c8276m",
+        "title": "ETOPO1 1 Arc-Minute Global Relief Model",
+        "type": "dataset",
+        "publication_year": 2009,
+        "publication_date": "2009-01-01",
+        "cited_by_count": 1121,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 46
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 55
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 110
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 97
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 146
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 114
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 121
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 92
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 105
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 84
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 89
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 47
+          },
+          {
+            "year": 2014,
+            "cited_by_count": 15
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4398549858",
+        "doi": "https://doi.org/10.7910/dvn/ohhukh",
+        "title": "ArcticDEM, Version 3",
+        "type": "dataset",
+        "publication_year": 2018,
+        "publication_date": "2018-09-26",
+        "cited_by_count": 688,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 37
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 97
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 152
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 149
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 149
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 66
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 27
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6959217055",
+        "doi": "https://doi.org/10.7927/h49c6vhw",
+        "title": "Gridded Population of the World, Version 4 (GPWv4): Population Density, Revision 11",
+        "type": "dataset",
+        "publication_year": 2017,
+        "publication_date": "2017-01-01",
+        "cited_by_count": 247,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 31
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 44
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 44
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 41
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 44
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 31
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6978106141",
+        "doi": "https://doi.org/10.7927/h4jw8bx5",
+        "title": "Gridded Population of the World, Version 4 (GPWv4): Population Count, Revision 11",
+        "type": "dataset",
+        "publication_year": 2018,
+        "publication_date": "2018-01-01",
+        "cited_by_count": 161,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 27
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 35
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 32
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 21
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 21
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 5
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6959410679",
+        "doi": "https://doi.org/10.7927/h4f47m65",
+        "title": "Gridded Population of the World, Version 4 (GPWv4): Population Density Adjusted to Match 2015 Revision UN WPP Country Totals, Revision 11",
+        "type": "dataset",
+        "publication_year": 2018,
+        "publication_date": "2018-01-01",
+        "cited_by_count": 79,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 12
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 17
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 19
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6977617450",
+        "doi": "https://doi.org/10.7927/h4np22dq",
+        "title": "Gridded Population of the World, Version 4 (GPWv4): Population Density",
+        "type": "dataset",
+        "publication_year": 2016,
+        "publication_date": "2016-01-01",
+        "cited_by_count": 77,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 16
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6902903531",
+        "doi": "https://doi.org/10.7927/h4x63jvc",
+        "title": "Gridded Population of the World, Version 4 (GPWv4): Population Count",
+        "type": "dataset",
+        "publication_year": 2016,
+        "publication_date": "2016-01-01",
+        "cited_by_count": 62,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 12
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6921758475",
+        "doi": "https://doi.org/10.7927/h4pn93pb",
+        "title": "Gridded Population of the World, Version 4 (GPWv4): Population Count Adjusted to Match 2015 Revision of UN WPP Country Totals, Revision 11",
+        "type": "dataset",
+        "publication_year": 2018,
+        "publication_date": "2018-01-01",
+        "cited_by_count": 46,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6902682886",
+        "doi": "https://doi.org/10.7289/v5sq8xb5",
+        "title": "NOAA Optimum Interpolation 1/4 Degree Daily Sea Surface Temperature (OISST) Analysis, Version 2",
+        "type": "dataset",
+        "publication_year": 2008,
+        "publication_date": "2008-01-01",
+        "cited_by_count": 38,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6959377290",
+        "doi": "https://doi.org/10.7289/v5sx6b56",
+        "title": "NOAA Monthly U.S. Climate Gridded Dataset (NClimGrid)",
+        "type": "dataset",
+        "publication_year": 2015,
+        "publication_date": "2015-01-01",
+        "cited_by_count": 34,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6978412005",
+        "doi": "https://doi.org/10.7917/ofsg3345",
+        "title": "NASA Earth Exchange Global Daily Downscaled Projections - CMIP6",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 31,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6939952655",
+        "doi": "https://doi.org/10.7289/v5pz56r6",
+        "title": "NOAA Climate Data Record (CDR) of Normalized Difference Vegetation Index (NDVI), Version 4 (Version Superseded)",
+        "type": "dataset",
+        "publication_year": 2014,
+        "publication_date": "2014-01-01",
+        "cited_by_count": 25,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6959215342",
+        "doi": "https://doi.org/10.7927/h4hx19nj",
+        "title": "Gridded Population of the World, Version 4 (GPWv4): Population Density Adjusted to Match 2015 Revision of UN WPP Country Totals",
+        "type": "dataset",
+        "publication_year": 2016,
+        "publication_date": "2016-01-01",
+        "cited_by_count": 24,
+        "counts_by_year": [
+          {
+            "year": 2024,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6978126444",
+        "doi": "https://doi.org/10.7927/h4f47m2c",
+        "title": "Gridded Population of the World, Version 4 (GPWv4): Administrative Unit Center Points with Population Estimates",
+        "type": "dataset",
+        "publication_year": 2016,
+        "publication_date": "2016-01-01",
+        "cited_by_count": 20,
+        "counts_by_year": [
+          {
+            "year": 2024,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 3
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6959410993",
+        "doi": "https://doi.org/10.7927/h4sf2t42",
+        "title": "Gridded Population of the World, Version 4 (GPWv4): Population Count Adjusted to Match 2015 Revision of UN WPP Country Totals",
+        "type": "dataset",
+        "publication_year": 2016,
+        "publication_date": "2016-01-01",
+        "cited_by_count": 18,
+        "counts_by_year": [
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4398642597",
+        "doi": "https://doi.org/10.7910/dvn/86m4po",
+        "title": "GCI30: Global Cropping Intensity at 30m resolution",
+        "type": "dataset",
+        "publication_year": 2020,
+        "publication_date": "2020-11-19",
+        "cited_by_count": 17,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 10
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6902816776",
+        "doi": "https://doi.org/10.7927/h46m34xx",
+        "title": "Gridded Population of the World, Version 4 (GPWv4): Basic Demographic Characteristics, Revision 11",
+        "type": "dataset",
+        "publication_year": 2018,
+        "publication_date": "2018-01-01",
+        "cited_by_count": 16,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2012,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6977890311",
+        "doi": "https://doi.org/10.7289/v59p2zkr",
+        "title": "NOAA Climate Data Record (CDR) of Gridded Satellite Data from ISCCP B1 (GridSat-B1) Infrared Channel Brightness Temperature, Version 2",
+        "type": "dataset",
+        "publication_year": 2014,
+        "publication_date": "2014-01-01",
+        "cited_by_count": 16,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6902470916",
+        "doi": "https://doi.org/10.7289/v5m043bx",
+        "title": "NOAA Climate Data Record (CDR) of Leaf Area Index (LAI) and Fraction of Absorbed Photosynthetically Active Radiation (FAPAR), Version 4 (Version Superseded)",
+        "type": "dataset",
+        "publication_year": 2014,
+        "publication_date": "2014-01-01",
+        "cited_by_count": 13,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6959503830",
+        "doi": "https://doi.org/10.7927/h4z60m4z",
+        "title": "Gridded Population of the World, Version 4 (GPWv4): Land and Water Area, Revision 11",
+        "type": "dataset",
+        "publication_year": 2018,
+        "publication_date": "2018-01-01",
+        "cited_by_count": 10,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6940326701",
+        "doi": "https://doi.org/10.7927/h4td9vdp",
+        "title": "Gridded Population of the World, Version 4 (GPWv4): National Identifier Grid, Revision 11",
+        "type": "dataset",
+        "publication_year": 2018,
+        "publication_date": "2018-01-01",
+        "cited_by_count": 9,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 3
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6921872834",
+        "doi": "https://doi.org/10.7927/h4j67dw8",
+        "title": "Global Mangrove Forests Distribution, 2000",
+        "type": "dataset",
+        "publication_year": 2014,
+        "publication_date": "2014-08-07",
+        "cited_by_count": 7,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6940312899",
+        "doi": "https://doi.org/10.7289/v5bz642p",
+        "title": "NOAA Climate Data Record (CDR) of AVHRR Daily and Monthly Aerosol Optical Thickness (AOT) over Global Oceans, Version 3.0 (Version Superseded)",
+        "type": "dataset",
+        "publication_year": 2016,
+        "publication_date": "2016-01-01",
+        "cited_by_count": 7,
+        "counts_by_year": [
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6959103786",
+        "doi": "https://doi.org/10.7289/v59k4885",
+        "title": "NOAA Climate Data Record (CDR) of Ocean Heat Fluxes, Version 2",
+        "type": "dataset",
+        "publication_year": 2016,
+        "publication_date": "2016-01-01",
+        "cited_by_count": 7,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 3
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6921728293",
+        "doi": "https://doi.org/10.7927/zz3b-8y61",
+        "title": "Geocoded Disasters (GDIS) Dataset",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 6,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6959059584",
+        "doi": "https://doi.org/10.7289/v5fb510w",
+        "title": "NOAA Climate Data Record (CDR) of Sea Surface Temperature - WHOI, Version 2",
+        "type": "dataset",
+        "publication_year": 2016,
+        "publication_date": "2016-01-01",
+        "cited_by_count": 4,
+        "counts_by_year": [
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4398526830",
+        "doi": "https://doi.org/10.7910/dvn/3ctmkp",
+        "title": "30 m Resolution Global Annual Burned Area Product",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-04-16",
+        "cited_by_count": 3,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4398907573",
+        "doi": "https://doi.org/10.7910/dvn/qqhcik",
+        "title": "Global Maps of Potential Natural Vegetation at 1 km resolution",
+        "type": "dataset",
+        "publication_year": 2018,
+        "publication_date": "2018-03-27",
+        "cited_by_count": 3,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6921780358",
+        "doi": "https://doi.org/10.7927/weq9-pv30",
+        "title": "Global Pesticide Grids (PEST-CHEMGRIDS), Version 1.01",
+        "type": "dataset",
+        "publication_year": 2020,
+        "publication_date": "2020-01-01",
+        "cited_by_count": 3,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6940153413",
+        "doi": "https://doi.org/10.7289/v5tm782m",
+        "title": "NOAA Climate Data Record (CDR) of AVHRR Surface Reflectance, Version 4 (Version Superseded)",
+        "type": "dataset",
+        "publication_year": 2014,
+        "publication_date": "2014-01-01",
+        "cited_by_count": 3,
+        "counts_by_year": [
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6959228110",
+        "doi": "https://doi.org/10.7927/h42z13kg",
+        "title": "Gridded Population of the World, Version 4 (GPWv4): Data Quality Indicators, Revision 11",
+        "type": "dataset",
+        "publication_year": 2018,
+        "publication_date": "2018-01-01",
+        "cited_by_count": 2,
+        "counts_by_year": [
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6903288412",
+        "doi": "https://doi.org/10.7927/h4h41pck",
+        "title": "West Africa Coastal Vulnerability Mapping: Social Vulnerability Indices",
+        "type": "dataset",
+        "publication_year": 2018,
+        "publication_date": "2018-12-07",
+        "cited_by_count": 1,
+        "counts_by_year": [
+          {
+            "year": 2020,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W7115737487",
+        "doi": "https://doi.org/10.7910/dvn/dtfkcm",
+        "title": "Forest Community Maps at 10 m resolution for Region 9 (FCM10R9)",
+        "type": "dataset",
+        "publication_year": 2025,
+        "publication_date": "2025-12-15",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W7155488357",
+        "doi": "https://doi.org/10.82924/7vmb-zv66",
+        "title": "CTrees Global Aboveground Biomass",
+        "type": "dataset",
+        "publication_year": 2026,
+        "publication_date": "2026-04-24",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "17a223f383cf294f1a83e835803232963865beb3854f9c79e9d011f7667e6ccd"
+}

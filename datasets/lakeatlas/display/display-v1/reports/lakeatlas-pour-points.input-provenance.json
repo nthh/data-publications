@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "capture_status": "pre-launch",
+  "builder": "scripts/display_tools/build_display.py",
+  "builder_sha256": "a53ce63ddd5a420a69a406090dd4faa195c792dcb45e5487e3236daabfef9d8d",
+  "builder_snapshot": "workflow/build_display-a53ce63ddd5a.py.txt",
+  "environment_lock": "scripts/display_tools/uv.lock",
+  "environment_lock_sha256": "edc334d3dddf7c50b08f5b8db0ad4e1cafaa8964de487940a7e8e4924a9bc385",
+  "environment_lock_snapshot": "workflow/environment-lock-edc334d3dddf.uv.lock.txt",
+  "environment_lock_source_label": "scripts/display_tools/uv.lock",
+  "python_environment": "scripts/display_tools/.venv",
+  "python_version": "3.12.12 (main, Jan 14 2026, 23:36:32) [Clang 21.1.4 ]",
+  "platform": {
+    "system": "Darwin",
+    "release": "24.1.0",
+    "machine": "arm64"
+  },
+  "python_packages": {
+    "pyarrow": "23.0.1",
+    "shapely": "2.1.2",
+    "numpy": "2.5.4",
+    "pmtiles": "3.8.1"
+  },
+  "tippecanoe": {
+    "version": "tippecanoe v2.79.0",
+    "binary_sha256": "c504719334e5335d60c66a01491707bdbfb773ebbfe3efc7c1c8239eb18d58d1",
+    "lock_file": "datasets/grwl/tippecanoe.lock.json",
+    "lock_sha256": "28d3bedda9835f808c3c8303b64ad660654b17a48af529d0b32e0c1b496bbd0d",
+    "lock_snapshot": "workflow/tippecanoe-lock-28d3bedda983.json.txt"
+  },
+  "pmtiles_cli": {
+    "version": "pmtiles dev, commit none, built at unknown",
+    "binary_sha256": "82b16b50ed0c171a10420e840456b8b0c55d79aed2e5c7e40b333587ba7d5553"
+  },
+  "tippecanoe_max_threads": 2,
+  "builder_argv": [
+    "python",
+    "scripts/display_tools/build_display.py",
+    "lakeatlas-pour-points",
+    "--data-root",
+    "<DATA_ROOT>",
+    "--output",
+    "<DATA_ROOT>/lakeatlas/display/display-v1"
+  ],
+  "tippecanoe_argv": [
+    "tippecanoe",
+    "--quiet",
+    "--output",
+    "<OUTPUT>/.lakeatlas-pour-points.work.mbtiles",
+    "--layer",
+    "lakeatlas-pour-points",
+    "--name",
+    "lakeatlas-pour-points",
+    "--description",
+    "Display derivative; GeoParquet is the analytic source.",
+    "--attribution",
+    "HydroSHEDS / HydroATLAS authors; Lehner et al. (2022), DOI 10.1038/s41597-022-01425-z; CC BY 4.0, with some field-level ODbL 1.0 notices; Tippecanoe v2.79.0",
+    "--minimum-zoom",
+    "0",
+    "--maximum-zoom",
+    "12",
+    "--base-zoom",
+    "12",
+    "--full-detail",
+    "12",
+    "--low-detail",
+    "12",
+    "--minimum-detail",
+    "12",
+    "--simplification",
+    "1",
+    "--no-feature-limit",
+    "--no-tile-size-limit",
+    "--no-tiny-polygon-reduction",
+    "--no-tiny-polygon-reduction-at-maximum-zoom",
+    "--temporary-directory",
+    "<OUTPUT>/.scratch",
+    "/dev/stdin"
+  ],
+  "pmtiles_convert_argv": [
+    "pmtiles",
+    "convert",
+    "<OUTPUT>/.lakeatlas-pour-points.work.mbtiles",
+    "<OUTPUT>/assets/lakeatlas-pour-points.pmtiles"
+  ],
+  "pmtiles_verify_argv": [
+    "pmtiles",
+    "verify",
+    "<OUTPUT>/assets/lakeatlas-pour-points.pmtiles"
+  ],
+  "tippecanoe_thread_environment": {
+    "TIPPECANOE_MAX_THREADS": "2"
+  },
+  "source_asset": "lakeatlas/releases/lakeatlas-v1.0-r2-prepared/assets/lakeatlas-pour-points.parquet",
+  "source_sha256": "ff621c1db763551cdb6ced8958eefcc9da76a73c16e7f7259c238bec3aae5720",
+  "source_size_bytes": 283780050,
+  "geometry_input": "GeoParquet WKB streamed as GeoJSON Text Sequence to /dev/stdin; no bulk intermediate GeoJSON",
+  "minzoom_metric": "Lake_area",
+  "attribute_fields": [
+    "OBJECTID",
+    "Hylak_id",
+    "Lake_area",
+    "Lake_name",
+    "Country",
+    "Continent",
+    "_src_xmin",
+    "_src_ymin",
+    "_src_xmax",
+    "_src_ymax"
+  ],
+  "id_field": "OBJECTID",
+  "id_encoding": "mvt_feature_id_and_property"
+}

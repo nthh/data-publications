@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "kind": "official_browser_protocol_followup",
+  "prior_attempt_report": "research/source-publication-20261106/pages/three-collections-r1/preflight-r2/portolan-browser-report.json",
+  "prior_attempt_sha256": "7e57db7b1126f104ef10b7263fb3436bb515c3df9d352aec656075e8ac5373fa",
+  "observed_issue": "The Source Parquet HEAD response arrived with HTTP200 metadata, then Chromium emitted net::ERR_ABORTED. Subsequent bounded Parquet GETs succeeded. The exact cancellation cause is unknown.",
+  "primary_semantics": {
+    "url": "https://www.rfc-editor.org/rfc/rfc9110.html#name-head",
+    "interpretation": "HEAD responses carry representation metadata and have no response content. They do not provide any dataset byte-read proof."
+  },
+  "narrow_head_rule": [
+    "Validate actual successful HEAD status, exact planned Content-Length, media type and usable origin CORS before recording verified metadata.",
+    "Preserve a later ERR_ABORTED as an explicit cancellation observation when those exact metadata checks already passed. Do not relabel it as a completed body transfer or ranged GET.",
+    "Missing/wrong metadata, non-success status, cancellation before verified headers, and all failed GET requests remain failures."
+  ],
+  "render_completion": [
+    "Wait for in-flight Source requests and response verification to settle within a bounded timeout before each screenshot.",
+    "Require actual tile-data access, not just a PMTiles header response, before treating its style as exercised.",
+    "Inspect the saved images manually; a canvas and successful data requests alone do not establish visible dataset rendering."
+  ],
+  "unchanged": [
+    "Same frozen staged catalog plan and immutable Source plan.",
+    "Same selected datasets/styles and range, byte-budget, CORS and integrity requirements.",
+    "The three-collection run remains partial and cannot satisfy the final five-collection gate or deployed-Pages gate."
+  ]
+}

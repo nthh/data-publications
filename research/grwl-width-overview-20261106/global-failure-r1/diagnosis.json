@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "status": "failed_retained",
+  "stage": "winner_selection_after_complete_source_scan",
+  "source_rows_scanned": 64572998,
+  "producer_sha256": "6c147469c173e2957dda98e2db9a0e9b1890564e73fcc87cb9ff8b472b0f380b",
+  "failure_receipt_sha256": "98a0f439900c501b00fbcd50209310497555d32496034eafde14ff39c4880f34",
+  "cause": "DuckDB arg_min with a wide struct retained one hash-aggregate state per selected cell and exhausted the frozen 1GB memory limit.",
+  "correction": "External priority sort with bounded streaming first-row-per-cell selection. The independent verifier also replaces DISTINCT ON aggregation with its own external sort and streaming reducer.",
+  "criteria_changed": false,
+  "memory_limit_changed": false,
+  "source_data_changed": false,
+  "retry_requires": [
+    "New regional source and tile checks",
+    "New clean regional byte replay",
+    "New global build and full independent oracle",
+    "New combined archive and browser gates"
+  ],
+  "temporary_files": "Automatically removed by the failed run temporary-directory context. Failure, partial marker and workflow snapshots retained."
+}

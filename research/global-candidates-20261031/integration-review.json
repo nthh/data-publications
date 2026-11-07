@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "study_id": "global-candidates-20261031",
+  "review_kind": "independent_first_import_audit",
+  "reviewed_inputs": [
+    "research/global-candidates-20261031/integration-plan.json",
+    "research/global-candidates-20261031/integrate.py",
+    "scripts/candidate_discovery.py",
+    "research/global-candidates-20261031/planetary/inventory.json",
+    "risk-based canonical discovery blocks under datasets/*/dataset.yaml"
+  ],
+  "checks": [
+    {
+      "name": "original_canonical_bytes",
+      "result": "pass",
+      "details": "All 366 baseline record prefix SHA-256 values match baseline-records.json. All 26 appended originals also match git show at plan base commit byte-for-byte before the discovery marker. YAML triage/source/build/publication/review/audit fields unchanged."
+    },
+    {
+      "name": "plan_observation_and_source_partition",
+      "result": "pass",
+      "details": "All 53 citation, 38 Planetary Computer, 15 Esri, and 7 supplemental observations are mapped or explicitly withheld. No source entry is omitted or assigned twice across partition mappings. Citation GFCC v3 component, two PC ALOS observations and Natural Earth umbrella are withheld as planned."
+    },
+    {
+      "name": "component_identity",
+      "result": "pass",
+      "details": "MOD17 8-day GPP and annual NPP, Climate Engine MERRA-2 and NASA source reanalysis, HydroSHEDS core rasters and HydroBASINS polygons, and ALOS FNF classes and SAR mosaics have separate canonical targets. PC ALOS observations with inverted bbox remain research-only; NASA GFCC v3 is not in global_tcc."
+    },
+    {
+      "name": "scope_and_existing_record_separation",
+      "result": "pass",
+      "details": "TerraClimate baseline remains separate from terraclim scenarios; worldwide PC Microsoft footprints separate from msbuildings Australia; GPW density separate from GPWv4 administrative-unit points; UCDB separate from ghsl built-up; JRC GSW mapping family separate from existing occurrence v1.5."
+    },
+    {
+      "name": "access_claims",
+      "result": "pass",
+      "details": "No Esri service is labeled native_available. NetCDF-only PC observations are download_available; mixed COG/NetCDF and Zarr/NetCDF observations are native_available because COG/Zarr are listed. Generator labels native_available as native format listed and explicitly disclaims byte-level validation."
+    },
+    {
+      "name": "integrator_read_only_check",
+      "result": "pass",
+      "command": "python3 research/global-candidates-20261031/integrate.py --check",
+      "details": "102 reviewed records: 76 new, 26 augmented, zero files written."
+    }
+  ],
+  "findings": [
+    {
+      "id": "deltares_scope_and_bbox",
+      "severity": "fix_before_landing",
+      "paths": [
+        "datasets/deltares_global_flood_maps/dataset.yaml",
+        "datasets/deltares_global_water_availability/dataset.yaml",
+        "research/global-candidates-20261031/planetary/reviewed.json",
+        "research/global-candidates-20261031/planetary/inventory.json"
+      ],
+      "evidence": "Both promoted records quote inverted STAC bbox [-180,90,180,-90]. The PC producer description says flood maps cover hydrodynamically connected coastal areas and include global DEM-derived maps plus historical storms, not general inland flooding. The water-availability collection models 3,236 reservoirs; ERA5 forcing is global, CHIRPS is ±50° latitude and EOBS/NLDAS/BOM are regional. Current canonical spatial_coverage only says global flood-depth / water-availability product and repeats the invalid bbox.",
+      "fix": "Keep the products if desired as global thematic families, but explicitly state coastal flood-only and selected-reservoir coverage, list the regional/latitude-limited forcing components, and label the bbox invalid provider metadata rather than treating it as spatial proof. Use the already captured producer descriptions; no asset validation is needed."
+    },
+    {
+      "id": "pc_relationship_context",
+      "severity": "quality_fix",
+      "paths": [
+        "datasets/terraclimate_baseline/dataset.yaml",
+        "datasets/microsoft_building_footprints/dataset.yaml",
+        "research/global-candidates-20261031/integration-plan.json"
+      ],
+      "evidence": "The PC terraclimate source is marked related_product after remapping it from the existing terraclim scenario record to the baseline target. The PC ms-buildings source is marked component after remapping from the Australia-only existing record to the worldwide target. These relationships were meaningful relative to the old counterpart, not the new canonical target.",
+      "fix": "Set explicit mapping.relationship for PC terraclimate to related_release or same_family (preserving 1958–2021 edition limits) and PC ms-buildings to exact_dataset or same_family. Keep related_record_ids for terraclim and msbuildings as distinct-scope links."
+    },
+    {
+      "id": "pc_inverted_bbox_followup",
+      "severity": "scope_note",
+      "paths": [
+        "datasets/microsoft_building_footprints/dataset.yaml",
+        "research/global-candidates-20261031/planetary/reviewed.json"
+      ],
+      "evidence": "PC ms-buildings also carries inverted STAC bbox [-180,90,180,-90], but the captured collection description independently states worldwide releases and the canonical record qualifies country/imagery gaps.",
+      "fix": "Mark the bbox as invalid provider metadata in the record; retain the documented worldwide thematic scope and coverage caveat."
+    }
+  ],
+  "not_checked": [
+    "No data assets, feature services, producer downloads, paid calls or live GEE requests were made.",
+    "No literature/** additions were included in this first-import review.",
+    "No broad schema/generator test suite was rerun; the parent owns integration verification."
+  ],
+  "counts": {
+    "baseline_records_verified": 366,
+    "augmented_originals_compared_to_git": 26,
+    "reviewed_records": 102,
+    "new_records": 76,
+    "augmented_records": 26,
+    "mapped_or_withheld_observations": 113,
+    "network_queries": 0,
+    "asset_requests": 0
+  }
+}

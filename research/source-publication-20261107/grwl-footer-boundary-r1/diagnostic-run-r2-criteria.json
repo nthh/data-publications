@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-11-07T21:11:59.744482+00:00",
+  "purpose": "Capture exact blocked request with original browser acceptance thresholds unchanged. This diagnostic cannot authorize larger reads.",
+  "run_output": ".local/browser-grwl-raw-r2",
+  "dataset": "grwl-raw",
+  "expected_cases": 20,
+  "single_request_ceiling_bytes": 16777216,
+  "case_ceiling_bytes": 134217728,
+  "total_ceiling_bytes": 1073741824,
+  "required_source_attributes": 14,
+  "require_exact_lookup_id": true,
+  "harness_sha256": "02d8df9cf94d1295a6e9441729644484e6a29e718770a83031d5ad07ea0ef15b",
+  "changes": "Only logging safe rejected public object requests; no acceptance or network behavior changes.",
+  "previous_failed_report": "research/source-publication-20261107/browser-grwl-raw-r1-failed/hosted-browser-evidence.json",
+  "original_controls": "research/source-publication-20261106/browser-controls-r1.json",
+  "original_controls_sha256": "6ff14a9c438cdee14af4ea21876ca32876883f7b676c16596b4ddfc924b6aa10"
+}

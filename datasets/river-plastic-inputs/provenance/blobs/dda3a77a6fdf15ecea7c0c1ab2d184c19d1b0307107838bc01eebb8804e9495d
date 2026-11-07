@@ -1,0 +1,54 @@
+# Validation of published dataset conversions
+
+A release needs separate evidence for source preservation, agreement with published results, agreement with other distributions, and delivery. Passing those checks establishes a faithful and usable edition of a specified source. It does not establish independent scientific accuracy of the model.
+
+For each dataset, Git should contain a versioned validation contract (reference source/version, units, checks, tolerances and coverage), an executable checker, and small reports bound to source/output hashes and checker code. Keep pass, fail, not-run and not-applicable distinct. Freeze tolerances before evaluation, explain any later revision, and retain discrepancy reports. Large input/output files stay outside Git. This can be done now without making the registry a workflow engine.
+
+| Check | Release expectation | River-plastic status |
+| --- | --- | --- |
+| Original source | Verify source checksum/version/license; preserve count, geometry, attributes, units and nulls. Use an independent reader where possible. | Passed: all 40,760 geometries and 2,160,280 attribute cells compared with the pinned shapefile. |
+| Published results | Reproduce suitable totals, distributions or regional/temporal summaries at the paper's stated precision. Preserve model uncertainty and documented limitations. | Five local checks passed; results below. |
+| GEE distribution | Identify the same version and compare schema, values, missingness, geometry/grid and summaries with a captured GEE response. | Not run. Protocol below. |
+| Formats and access | Validate GeoParquet/COG/Zarr and catalog metadata; exercise selective reads and map assets. | GeoParquet, PMTiles, STAC/Portolan and loopback HTTP passed. Actual Source Cooperative hosting remains untested. |
+| Scientific accuracy | If claimed, use appropriate independent observations and a declared evaluation design. | Not established by this publishing project. |
+
+For future raster products, preserve CRS, grid origin, dimensions, pixel alignment, units, scale/offset and nodata masks; compare values on the original grid before any intentional resampling. For Zarr, also verify dimension order, coordinate arrays, time/calendar semantics, fill values and chunk boundaries. A sample must state its coverage and include seams, extrema and nodata; do not label sampled coverage exhaustive. Lossy display products need an explicit error allowance. PMTiles at thinned zoom levels must never be used for scientific totals.
+
+## River-plastic research checks
+
+The precommitted [contract](publication-benchmarks.json) references [Lebreton et al. (2017)](https://www.nature.com/articles/ncomms15611) and [Figshare v6](https://doi.org/10.6084/m9.figshare.4725541.v6). Annual totals were already visible in the conversion manifest; this is disclosed in the contract. New checks were registered before evaluating the seasonal and physical-domain results. These are full-dataset consistency checks, with no model fitting or train/test split.
+
+The [supplementary report](evidence/publication-validation.json) is bound to the existing release manifest, GeoParquet, checker and contract hashes:
+
+- Lower annual total: 1,149,724.175239 tonnes; upper: 2,407,866.149084 tonnes. These round to the paper's 1.15–2.41 million tonnes/year. The midpoint total is 1,412,158.416612 tonnes/year.
+- May–October monthly midpoint emissions total 1,052,524.821202 tonnes out of 1,412,158.409863 tonnes across all twelve months: 74.5330562%, consistent with the abstract's greater-than-74% claim. Use monthly fields for both numerator and denominator; rounded monthly and annual source fields need not sum identically.
+- All 53 numeric fields are nonnegative where present. All 529,880 annual/monthly uncertainty triplets satisfy lower <= midpoint <= upper or are entirely null. Four original points have null emission/runoff estimates; the sums exclude them and the report counts them explicitly.
+
+Run these checks against the existing release without rebuilding it:
+
+```sh
+commons/publish/gee-community/products/river-plastic-inputs/.venv/bin/python commons/publish/gee-community/products/river-plastic-inputs/check_publication.py .local/gee-publication/river-plastic-inputs/figshare-v6-r1 --report commons/publish/gee-community/products/river-plastic-inputs/evidence/publication-validation.json
+commons/publish/gee-community/products/river-plastic-inputs/.venv/bin/python commons/publish/gee-community/products/river-plastic-inputs/test_publication.py .local/gee-publication/river-plastic-inputs/figshare-v6-r1 --report .local/gee-publication/river-plastic-inputs/publication-fault-checks.json
+```
+
+The fault checks modify in-memory copies to test detection of a 1,000-fold annual-unit error, a six-month shift of monthly labels, inverted uncertainty bounds, negative runoff, and partial replacement of nulls with zero. They do not change release bytes.
+
+The paper's Figure 2 describes fitting to 30 records from 13 rivers. Reproducing a calibration fit or the published global totals is not a held-out accuracy assessment. A separate scientific study would need compatible independent observations, dates, particle-size/sampling conventions and units, with calibration observations excluded from evaluation. Later model editions should be treated as distinct research products, not exact-match oracles for this 2017 edition.
+
+The published top-20 named-river share and regional summaries remain unchecked. These source points have no named-river or watershed identifiers. Establish and review the spatial/catchment crosswalk before aggregating by river or region; sorting the largest 20 point rows alone is not a validated substitute.
+
+## GEE comparison protocol — prepared, not executed
+
+The [GEE catalog](https://gee-community-catalog.org/projects/plastic/) identifies `projects/sat-io/open-datasets/open-ocean/river_plastic_emissions`. It describes annual inputs as kilograms/year, while the original Figshare field definitions specify tonnes/year for `i_*`; only `mpw` is kg/year. Record this as a documentation discrepancy. The GEE asset's actual values and transformations have not been inspected, so do not assume that the asset is scaled or relabel its values from the catalog prose alone.
+
+1. Capture asset metadata, retrieval time, field schema, row count, script commit, request and response hashes. Determine which source version was ingested. An unresolved version is an unresolved comparison, not an automatic pass.
+2. Use a bounded, read-only table comparison for all 40,760 expected points where practical. This small vector collection does not require an export or rerunning the model. Freeze the exact request and numeric/coordinate tolerances before inspecting parity results.
+3. Match by a verified producer identifier if available. Otherwise construct a geometry-based match, check uniqueness and enumerate unmatched/ambiguous points. Never equate GEE system:index, FID or row order with this release's one-based source_row.
+4. Compare all 53 scientific fields, null versus zero, coordinates, extent, count and duplicates. Accommodate only declared representation precision; do not silently rescale discrepancies. Also compare global annual/monthly sums and the four points with missing estimates. If sampling is unavoidable, predeclare regions and include largest emitters, zeros, small values and all missing-estimate points, and report the reduced scope.
+5. Save the raw response outside Git and commit its hash, query, tolerances, coverage and mismatch report. Classify differences as source-version, ingestion, rounding or conversion discrepancies with evidence. Keep the authoritative source unchanged while resolving them.
+
+This is a protocol, not an implemented or passed GEE parity gate. The existing local-only instruction remains in effect. [The repository playbook](../../../../../docs/AGENT_PLAYBOOK.md#cost-guardrails-defaults-unless-the-task-says-otherwise) requires explicit per-task permission for GEE jobs. No live GEE computation was performed.
+
+Before eventual publication, close the GEE comparison or document a reviewed limitation, then test anonymous range requests, CORS, a real remote subset query and a PMTiles viewport against Source Cooperative itself. Keep each result in the dataset record; do not collapse pending checks into a single unqualified validated badge.
+
+These supplementary checks are stored in Git beside the product. The already packaged release and its original receipts remain unchanged; they do not contain this later report.

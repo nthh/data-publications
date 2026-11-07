@@ -1,0 +1,99 @@
+schema_version: 1
+id: jrc_global_surface_water
+title: JRC Global Surface Water mapping and history products
+intake:
+  kind: official_catalog
+  reference_url: https://developers.google.com/earth-engine/datasets/catalog/JRC_GSW1_4_GlobalSurfaceWater
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: near_global
+  spatial_coverage: 'citations: Global Distinct named producer product; retain exact source edition and
+    footprint. planetary: review_note: Global surface-water mapping; STAC extent is 56°S–78°N.; stac_bbox:
+    [-180, -56, 180, 78]; temporal_interval: [["1984-03-01T00:00:00Z", "2020-12-31T11:59:59Z"]] Join GEE
+    v1.4 mapping family with exact PC version caveat; jrc-gsw-occurrence is occurrence-only v1.5. Related
+    canonical records, with distinct scope: jrc-gsw-occurrence.'
+  sources:
+  - provider: gee_official
+    entry_id: JRC/GSW1_4/GlobalSurfaceWater
+    url: https://developers.google.com/earth-engine/datasets/catalog/JRC_GSW1_4_GlobalSurfaceWater
+    relationship: same_family
+  - provider: gee_official
+    entry_id: JRC/GSW1_4/Metadata
+    url: https://developers.google.com/earth-engine/datasets/catalog/JRC_GSW1_4_Metadata
+    relationship: same_family
+  - provider: gee_official
+    entry_id: JRC/GSW1_4/MonthlyHistory
+    url: https://developers.google.com/earth-engine/datasets/catalog/JRC_GSW1_4_MonthlyHistory
+    relationship: same_family
+  - provider: gee_official
+    entry_id: JRC/GSW1_4/MonthlyRecurrence
+    url: https://developers.google.com/earth-engine/datasets/catalog/JRC_GSW1_4_MonthlyRecurrence
+    relationship: same_family
+  - provider: gee_official
+    entry_id: JRC/GSW1_4/YearlyHistory
+    url: https://developers.google.com/earth-engine/datasets/catalog/JRC_GSW1_4_YearlyHistory
+    relationship: same_family
+  - provider: planetary_computer
+    entry_id: jrc-gsw
+    url: https://planetarycomputer.microsoft.com/api/stac/v1/collections/jrc-gsw
+    relationship: related_release
+  access:
+  - provider: literature
+    status: unknown
+    formats: []
+    summary: GEE catalog entries are available through Earth Engine; frozen metadata does not establish
+      an independently downloadable native bulk copy or its format. Distinct named producer product; retain
+      exact source edition and footprint.
+    license_summary: Not inferred from citation records. Verify producer terms for the exact edition before
+      conversion or redistribution.
+    proposed_outputs: []
+    rationale: 'Candidate discovery only: global/near-global scope and associated-paper citation signal
+      justify source-format and licensing review. Citation rank does not establish conversion priority
+      or exact-release use.'
+    evidence_urls:
+    - https://developers.google.com/earth-engine/datasets/catalog/JRC_GSW1_4_GlobalSurfaceWater
+    - https://developers.google.com/earth-engine/datasets/catalog/JRC_GSW1_4_Metadata
+    - https://developers.google.com/earth-engine/datasets/catalog/JRC_GSW1_4_MonthlyHistory
+    - https://developers.google.com/earth-engine/datasets/catalog/JRC_GSW1_4_MonthlyRecurrence
+    - https://developers.google.com/earth-engine/datasets/catalog/JRC_GSW1_4_YearlyHistory
+    - https://doi.org/10.1038/nature20584
+  - provider: planetary_computer
+    status: native_available
+    formats:
+    - COG
+    summary: 'Collection metadata declares per-item data assets / provider storage roots in the listed
+      native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain
+      unvalidated. Join GEE v1.4 mapping family with exact PC version caveat; jrc-gsw-occurrence is occurrence-only
+      v1.5.'
+    license_summary: 'note: Do not treat this metadata label as legal clearance.; review_status: provider
+      declaration captured; terms and redistribution permission not independently reviewed; stac_license:
+      other'
+    proposed_outputs:
+    - COG
+    rationale: Reuse declared COG layers; preserve occurrence/change/seasonality layer distinctions.
+    evidence_urls:
+    - https://planetarycomputer.microsoft.com/api/stac/v1/collections/jrc-gsw
+    - https://planetarycomputer.microsoft.com/dataset/jrc-gsw
+  citations:
+  - provider: OpenAlex
+    paper_doi: 10.1038/nature20584
+    work_id: https://openalex.org/W2560167313
+    cited_by_count: 5374
+    observed_on: '2026-10-30'
+    scope: base_dataset_family
+  evidence:
+  - path: research/global-candidates-20261031/citations/reviewed.json
+    sha256: 572140255cd3b41a1ec8ecca0139e64d38899cda7fdd55756f399a0dca57a467
+    key: jrc_global_surface_water
+  - path: research/global-candidates-20261031/planetary/reviewed.json
+    sha256: 07da016851a07f3e3e0937e120ce46442785f4e9096e563d92c1a3c0ce9e616a
+    key: jrc_global_surface_water

@@ -1,0 +1,88 @@
+{
+  "acceptance_before_raw_resume": "Still unmet: need one completed scoped abort receipt with one aborted object before raw resume.",
+  "backend_observation": {
+    "canonical_header_names": [
+      "content-length",
+      "host",
+      "user-agent",
+      "x-amz-content-sha256",
+      "x-amz-date",
+      "x-amz-security-token"
+    ],
+    "canonical_payload_category": "UNSIGNED-PAYLOAD",
+    "content_length_value_category": "absent_or_empty",
+    "error_field_names": [
+      "AWSAccessKeyId",
+      "CanonicalRequest",
+      "CanonicalRequestBytes",
+      "Code",
+      "Message",
+      "SignatureProvided",
+      "StringToSign",
+      "StringToSignBytes"
+    ],
+    "header_payload_category": "UNSIGNED-PAYLOAD",
+    "method": "DELETE",
+    "path_suffix_matches_planned_key": true,
+    "query_parameter_names": [
+      "uploadId"
+    ],
+    "signed_header_names": [
+      "content-length",
+      "host",
+      "user-agent",
+      "x-amz-content-sha256",
+      "x-amz-date",
+      "x-amz-security-token"
+    ],
+    "upload_id_matches_original_receipt": true
+  },
+  "cause": "Backend canonical request includes signed content-length with empty value; Source signs forwarded content-length, likely nonempty. Exact signer value was not retained. Botocore omission did not resolve the mismatch, consistent with ingress or backend transport adding/changing this header.",
+  "code_disposition": "Client-side Content-Length omission was tested against exact owned abort, failed, and was reverted. Uploader remains at committed baseline.",
+  "focused_test": "Current baseline tests/test_source_upload.py: 34 passed offline. Temporary diagnostic-hook branch: 37 passed offline, then reverted after failed r6 live check.",
+  "offline_wire_capture": {
+    "after_removal_wire_has_content_length": false,
+    "after_removal_wire_has_transfer_encoding": false,
+    "baseline_wire_has_content_length": true,
+    "client_content_length_unsigned": true,
+    "prepared_body_type": "NoneType",
+    "scope": "localhost only with dummy credentials; no Source request"
+  },
+  "plan_sha256": "754c02dde3cf258263619599f893558d3348c7fb51c07f8fa700efa1900ac610",
+  "primary_source_urls": [
+    "https://github.com/source-cooperative/data.source.coop/blob/v2.5.1/src/lib.rs",
+    "https://github.com/developmentseed/multistore/blob/v0.8.0/crates/core/src/proxy.rs",
+    "https://github.com/developmentseed/multistore/blob/v0.8.0/crates/core/src/backend/request_signer.rs",
+    "https://github.com/developmentseed/multistore/blob/v0.8.0/crates/cf-workers/src/backend.rs"
+  ],
+  "receipt_bindings": {
+    "source-upload-grwl-recovery-diagnostic-r4": {
+      "abort_attempted": true,
+      "error_code": "SignatureDoesNotMatch",
+      "error_http_status": 403,
+      "object_record_sha256": "f381dec6d5e489cf22dbc88d025f98e231ecf2018c764d773b18386b5aeca300",
+      "status": "abort_failed",
+      "summary_sha256": "219d2be15d002fb704478e1e18a5cbc441b2c24beccc744c17b2169c14aed7a3"
+    },
+    "source-upload-grwl-recovery-diagnostic-r5": {
+      "abort_attempted": true,
+      "error_code": "SignatureDoesNotMatch",
+      "error_http_status": 403,
+      "object_record_sha256": "f381dec6d5e489cf22dbc88d025f98e231ecf2018c764d773b18386b5aeca300",
+      "status": "abort_failed",
+      "summary_sha256": "219d2be15d002fb704478e1e18a5cbc441b2c24beccc744c17b2169c14aed7a3"
+    },
+    "source-upload-grwl-recovery-r6": {
+      "abort_attempted": true,
+      "error_code": "SignatureDoesNotMatch",
+      "error_http_status": 403,
+      "object_record_sha256": "f381dec6d5e489cf22dbc88d025f98e231ecf2018c764d773b18386b5aeca300",
+      "status": "abort_failed",
+      "summary_sha256": "219d2be15d002fb704478e1e18a5cbc441b2c24beccc744c17b2169c14aed7a3"
+    }
+  },
+  "schema_version": 1,
+  "scope": "exact original GRWL raw incomplete multipart abort; no object writes",
+  "workaround_result": "Scoped botocore before-send removal left inbound SigV4 unchanged offline but live r6 exact-ID abort still failed 403 SignatureDoesNotMatch. No raw resume is authorized by a completed recovery receipt.",
+  "workaround_scope": "Historical diagnostic only: botocore before-send removal of unsigned zero Content-Length on exact AbortMultipartUpload. It did not resolve backend 403 and is not retained in code."
+}

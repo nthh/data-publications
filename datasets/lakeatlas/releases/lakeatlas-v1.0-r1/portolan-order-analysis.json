@@ -1,0 +1,86 @@
+{
+  "validator": {
+    "name": "Rashid",
+    "version": "0.1.8",
+    "rule_id": "PTL-DAT-006",
+    "implementation": "rashid/data/checks.py::_row_ordering_defects and _is_spatially_ordered",
+    "implementation_sha256": "c15c54ca9281b7cbe88c6d4c68b05ec84e3a1a2463b9249f1f936cd8fa29f4ef"
+  },
+  "check": {
+    "covering_values": "The checker reads the four per-row GeoParquet bbox leaves and omits null geometries.",
+    "chunks": 10,
+    "rows_per_chunk_ceiling": 142769,
+    "criterion": "Union each of 10 contiguous equal-count row chunks into one bbox. Pass if the fraction of overlapping adjacent chunk pairs is less than 0.30 OR the mean chunk bbox area divided by the global extent area is less than 0.30.",
+    "overlap_test": "Strict interior overlap in both axes; boxes touching only at an edge or corner do not overlap.",
+    "row_group_note": "The current failure message reports 349 Parquet row groups, but the installed rule computes its ordering verdict from 10 synthetic equal-count row chunks; it does not use the 349 row-group boundaries for PTL-DAT-006."
+  },
+  "source_order_identity": {
+    "field": "OBJECTID",
+    "observation": "Both source-order output assets contain OBJECTID values 1 through 1,427,688, strictly increasing and contiguous in output row order.",
+    "relationship": "The full source-fidelity pass compares each output batch to the same producer source-order batch, so OBJECTID is the exact one-based producer row ordinal.",
+    "reverse_order_key": "Sort a spatial companion by OBJECTID ascending to recover producer row order exactly; no additional source ordinal column is necessary.",
+    "polygon_rows": 1427688,
+    "pour_point_rows": 1427688
+  },
+  "source_order_asset_metrics": {
+    "lakeatlas-polygons": {
+      "row_groups": 349,
+      "adjacent_chunk_pairs": 9,
+      "overlapping_pairs": 9,
+      "overlap_fraction": 1.0,
+      "mean_chunk_area_over_global_extent_area": 0.34438261235966955,
+      "overlap_limit_exclusive": 0.3,
+      "area_ratio_limit_exclusive": 0.3,
+      "result": "failed"
+    },
+    "lakeatlas-pour-points": {
+      "row_groups": 349,
+      "adjacent_chunk_pairs": 9,
+      "overlapping_pairs": 9,
+      "overlap_fraction": 1.0,
+      "mean_chunk_area_over_global_extent_area": 0.344309741519502,
+      "overlap_limit_exclusive": 0.3,
+      "area_ratio_limit_exclusive": 0.3,
+      "result": "failed"
+    }
+  },
+  "deterministic_sort_candidate": {
+    "key": "Hilbert distance over each bbox center, quantized to a 16-bit integer grid per axis after clamping WGS84 longitude to [-180, 180] and latitude to [-90, 90].",
+    "grid": "x=floor((center_x+180)/360*65535), y=floor((center_y+90)/180*65535), clamped to [0, 65535].",
+    "tie_breaker": "OBJECTID ascending",
+    "cell_values_and_wkb": "Reorder whole existing rows; preserve every source cell, type, null, and WKB byte. Keep the two validated source-order assets unchanged and publish any reordered pair as distinct companion assets.",
+    "source_order_recovery": "OBJECTID ascending, verified to equal the original one-based row ordinal.",
+    "bbox_only_simulation": {
+      "materialized_sorted_parquet": false,
+      "rashid_predicate_applied_to_sorted_row_bbox_chunks": true,
+      "lakeatlas-polygons": {
+        "chunk_count": 10,
+        "overlap_fraction": 1.0,
+        "mean_chunk_area_over_global_extent_area": 0.1310052704485944,
+        "result": "passed"
+      },
+      "lakeatlas-pour-points": {
+        "chunk_count": 10,
+        "overlap_fraction": 1.0,
+        "mean_chunk_area_over_global_extent_area": 0.13051183375468936,
+        "result": "passed"
+      }
+    },
+    "limitation": "This simulation applies the installed Rashid predicate to bbox arrays reordered by the proposed Hilbert key. It is not a built-file Rashid result, does not establish actual row-group pruning, and does not replace a full companion source-value/WKB/bbox validation."
+  },
+  "candidate_acceptance_checks": [
+    "Preserve current source-order Parquets and their reports byte-for-byte.",
+    "Rebuild deterministic Hilbert-sorted companion assets with bounded memory and disk.",
+    "Prove OBJECTID is unique and equals the one-based source row ordinal; otherwise add and validate an explicit source_row column.",
+    "Restore companion rows to OBJECTID order and compare every native source field, decoded type, null, multiplicity, and WKB byte against source-order assets.",
+    "Independently recompute every bbox child from companion WKB and compare global bbox and geometry-type tallies.",
+    "Run Rashid PTL-DAT-006 against both actual companion Parquets and measure local/remote spatial pruning.",
+    "Rebuild companions from a clean checkout and require byte-identical companion hashes."
+  ],
+  "resource_estimate": {
+    "diagnostic": "The bbox-only Hilbert sort simulation was an in-memory diagnostic; no large assets or helper files were written.",
+    "full_build_runtime_estimate": "About 4 to 8 minutes for a bucketed write/merge and exact reread; this is a planning estimate, not a timed implementation.",
+    "disk": "A one-copy temporary bucket set plus final spatial companions would add about 3.2 GB. Combined with the retained source archive, producer PDFs, and original plus clean-rebuild Parquets, the total is about 8.0 GB before filesystem and metadata overhead; this leaves inadequate safety margin under the 8 GB task cap.",
+    "lower_disk_alternative": "A multi-pass full-row scan can avoid a wide temporary bucket copy, but its 10-pass Hilbert bin runtime and per-bin decoded memory have not been measured. Select the implementation only after the committed acceptance addendum fixes the disk and memory gates."
+  }
+}

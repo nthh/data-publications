@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "dataset_id": "free-flowing-rivers",
+  "sample_sha256": "172e9d76acbf7e5a8dd38163bb350800501c72dcd08a0057f8cedd630e2d775d",
+  "sample_filename": "free-flowing-rivers-sample.json",
+  "criteria_sha256": "46d82a976f5099e89b52cf3be76924903b7ab0e21640268e4fd5d4e8cb8f2977",
+  "quota_project": "mtnmap-f75ec",
+  "limits": {
+    "maximum_requests": 256,
+    "maximum_total_bytes": 512000000,
+    "maximum_response_bytes": 64000000,
+    "timeout_seconds": 45,
+    "maximum_elapsed_seconds": 7200
+  },
+  "requests": [
+    {
+      "id": "free-flowing-rivers-before",
+      "resource": "projects/earthengine-public/assets/WWF/HydroSHEDS/v1/FreeFlowingRivers"
+    },
+    {
+      "id": "free-flowing-rivers-count",
+      "operation": "count",
+      "resource": "projects/earthengine-public/assets/WWF/HydroSHEDS/v1/FreeFlowingRivers"
+    },
+    {
+      "id": "free-flowing-rivers-features-000",
+      "resource": "projects/earthengine-public/assets/WWF/HydroSHEDS/v1/FreeFlowingRivers:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "GOID = 1 OR GOID = 2 OR GOID = 3 OR GOID = 4 OR GOID = 5 OR GOID = 6 OR GOID = 7 OR GOID = 8 OR GOID = 9 OR GOID = 10 OR GOID = 1366 OR GOID = 2731 OR GOID = 4096 OR GOID = 65537 OR GOID = 66902 OR GOID = 68267 OR GOID = 69632 OR GOID = 131073 OR GOID = 132438 OR GOID = 133803 OR GOID = 135168 OR GOID = 196609 OR GOID = 197974 OR GOID = 199339 OR GOID = 200704 OR GOID = 266241 OR GOID = 267606 OR GOID = 268971 OR GOID = 270336 OR GOID = 331777 OR GOID = 333142 OR GOID = 334507"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "free-flowing-rivers-features-001",
+      "resource": "projects/earthengine-public/assets/WWF/HydroSHEDS/v1/FreeFlowingRivers:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "GOID = 335872 OR GOID = 397313 OR GOID = 398678 OR GOID = 400043 OR GOID = 401408 OR GOID = 466945 OR GOID = 468310 OR GOID = 469675 OR GOID = 471040 OR GOID = 532481 OR GOID = 533846 OR GOID = 535211 OR GOID = 536576 OR GOID = 598017 OR GOID = 599382 OR GOID = 600747 OR GOID = 602112 OR GOID = 663553 OR GOID = 664918 OR GOID = 666283 OR GOID = 667648 OR GOID = 733185 OR GOID = 734550 OR GOID = 735915 OR GOID = 737280 OR GOID = 798721 OR GOID = 800086 OR GOID = 801451 OR GOID = 802816 OR GOID = 864257 OR GOID = 865622 OR GOID = 866987"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "free-flowing-rivers-features-002",
+      "resource": "projects/earthengine-public/assets/WWF/HydroSHEDS/v1/FreeFlowingRivers:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "GOID = 868352 OR GOID = 933889 OR GOID = 935254 OR GOID = 936619 OR GOID = 937984 OR GOID = 999425 OR GOID = 1000790 OR GOID = 1002155 OR GOID = 1003520 OR GOID = 1064961 OR GOID = 1066326 OR GOID = 1067691 OR GOID = 1069056 OR GOID = 1130497 OR GOID = 1131862 OR GOID = 1133227 OR GOID = 1134592 OR GOID = 1200129 OR GOID = 1201494 OR GOID = 1202859 OR GOID = 1204224 OR GOID = 1265665 OR GOID = 1267030 OR GOID = 1268395 OR GOID = 1269760 OR GOID = 1331201 OR GOID = 1332566 OR GOID = 1333931 OR GOID = 1335296 OR GOID = 1400833 OR GOID = 1402198 OR GOID = 1403563"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "free-flowing-rivers-features-003",
+      "resource": "projects/earthengine-public/assets/WWF/HydroSHEDS/v1/FreeFlowingRivers:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "GOID = 1404928 OR GOID = 1466369 OR GOID = 1467734 OR GOID = 1469099 OR GOID = 1470464 OR GOID = 1531905 OR GOID = 1533270 OR GOID = 1534635 OR GOID = 1536000 OR GOID = 1597441 OR GOID = 1598806 OR GOID = 1600171 OR GOID = 1601536 OR GOID = 1667073 OR GOID = 1668438 OR GOID = 1669803 OR GOID = 1671168 OR GOID = 1732609 OR GOID = 1733974 OR GOID = 1735339 OR GOID = 1736704 OR GOID = 1798145 OR GOID = 1799510 OR GOID = 1800875 OR GOID = 1802240 OR GOID = 1867777 OR GOID = 1869142 OR GOID = 1870507 OR GOID = 1871872 OR GOID = 1933313 OR GOID = 1934678 OR GOID = 1936043"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "free-flowing-rivers-features-004",
+      "resource": "projects/earthengine-public/assets/WWF/HydroSHEDS/v1/FreeFlowingRivers:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "GOID = 1937408 OR GOID = 1998849 OR GOID = 2000214 OR GOID = 2001579 OR GOID = 2002944 OR GOID = 2068481 OR GOID = 2069846 OR GOID = 2071211 OR GOID = 2072576 OR GOID = 2134017 OR GOID = 2135382 OR GOID = 2136747 OR GOID = 2138112 OR GOID = 2199553 OR GOID = 2200918 OR GOID = 2202283 OR GOID = 2203648 OR GOID = 2265089 OR GOID = 2266454 OR GOID = 2267819 OR GOID = 2269184 OR GOID = 2334721 OR GOID = 2336086 OR GOID = 2337451 OR GOID = 2338816 OR GOID = 2400257 OR GOID = 2401622 OR GOID = 2402987 OR GOID = 2404352 OR GOID = 2465793 OR GOID = 2467158 OR GOID = 2468523"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "free-flowing-rivers-features-005",
+      "resource": "projects/earthengine-public/assets/WWF/HydroSHEDS/v1/FreeFlowingRivers:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "GOID = 2469888 OR GOID = 2535425 OR GOID = 2536790 OR GOID = 2538155 OR GOID = 2539520 OR GOID = 2600961 OR GOID = 2602326 OR GOID = 2603691 OR GOID = 2605056 OR GOID = 2666497 OR GOID = 2667862 OR GOID = 2669227 OR GOID = 2670592 OR GOID = 2732033 OR GOID = 2733398 OR GOID = 2734763 OR GOID = 2736128 OR GOID = 2801665 OR GOID = 2803030 OR GOID = 2804395 OR GOID = 2805760 OR GOID = 2867201 OR GOID = 2868566 OR GOID = 2869931 OR GOID = 2871296 OR GOID = 2932737 OR GOID = 2934102 OR GOID = 2935467 OR GOID = 2936832 OR GOID = 3002369 OR GOID = 3003734 OR GOID = 3005099"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "free-flowing-rivers-features-006",
+      "resource": "projects/earthengine-public/assets/WWF/HydroSHEDS/v1/FreeFlowingRivers:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "GOID = 3006464 OR GOID = 3067905 OR GOID = 3069270 OR GOID = 3070635 OR GOID = 3072000 OR GOID = 3133441 OR GOID = 3134806 OR GOID = 3136171 OR GOID = 3137536 OR GOID = 3198977 OR GOID = 3200342 OR GOID = 3201707 OR GOID = 3203072 OR GOID = 3268609 OR GOID = 3269974 OR GOID = 3271339 OR GOID = 3272704 OR GOID = 3334145 OR GOID = 3335510 OR GOID = 3336875 OR GOID = 3338240 OR GOID = 3399681 OR GOID = 3401046 OR GOID = 3402411 OR GOID = 3403776 OR GOID = 3469313 OR GOID = 3470678 OR GOID = 3472043 OR GOID = 3473408 OR GOID = 3534849 OR GOID = 3536214 OR GOID = 3537579"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "free-flowing-rivers-features-007",
+      "resource": "projects/earthengine-public/assets/WWF/HydroSHEDS/v1/FreeFlowingRivers:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "GOID = 3538944 OR GOID = 3600385 OR GOID = 3601750 OR GOID = 3603115 OR GOID = 3604480 OR GOID = 3670017 OR GOID = 3671382 OR GOID = 3672747 OR GOID = 3674112 OR GOID = 3735553 OR GOID = 3736918 OR GOID = 3738283 OR GOID = 3739648 OR GOID = 3801089 OR GOID = 3802454 OR GOID = 3803819 OR GOID = 3805184 OR GOID = 3866625 OR GOID = 3867990 OR GOID = 3869355 OR GOID = 3870720 OR GOID = 3936257 OR GOID = 3937622 OR GOID = 3938987 OR GOID = 3940352 OR GOID = 4001793 OR GOID = 4003158 OR GOID = 4004523 OR GOID = 4005888 OR GOID = 4067329 OR GOID = 4068694 OR GOID = 4070059"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "free-flowing-rivers-features-008",
+      "resource": "projects/earthengine-public/assets/WWF/HydroSHEDS/v1/FreeFlowingRivers:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "GOID = 4071424 OR GOID = 4136961 OR GOID = 4138326 OR GOID = 4139691 OR GOID = 4141056 OR GOID = 4202497 OR GOID = 4203862 OR GOID = 4205227 OR GOID = 4206592 OR GOID = 4268033 OR GOID = 4269398 OR GOID = 4270763 OR GOID = 4272128 OR GOID = 4333569 OR GOID = 4334934 OR GOID = 4336299 OR GOID = 4337664 OR GOID = 4403201 OR GOID = 4404566 OR GOID = 4405931 OR GOID = 4407296 OR GOID = 4468737 OR GOID = 4470102 OR GOID = 4471467 OR GOID = 4472832 OR GOID = 4534273 OR GOID = 4535638 OR GOID = 4537003 OR GOID = 4538368 OR GOID = 4603905 OR GOID = 4605270 OR GOID = 4606635"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "free-flowing-rivers-features-009",
+      "resource": "projects/earthengine-public/assets/WWF/HydroSHEDS/v1/FreeFlowingRivers:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "GOID = 4608000 OR GOID = 4669441 OR GOID = 4670806 OR GOID = 4672171 OR GOID = 4673536 OR GOID = 4734977 OR GOID = 4736342 OR GOID = 4737707 OR GOID = 4739072 OR GOID = 4800513 OR GOID = 4801878 OR GOID = 4803243 OR GOID = 4804608 OR GOID = 4870145 OR GOID = 4871510 OR GOID = 4872875 OR GOID = 4874240 OR GOID = 4935681 OR GOID = 4937046 OR GOID = 4938411 OR GOID = 4939776 OR GOID = 5001217 OR GOID = 5002582 OR GOID = 5003947 OR GOID = 5005312 OR GOID = 5070849 OR GOID = 5072214 OR GOID = 5073579 OR GOID = 5074944 OR GOID = 5136385 OR GOID = 5137750 OR GOID = 5139115"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "free-flowing-rivers-features-010",
+      "resource": "projects/earthengine-public/assets/WWF/HydroSHEDS/v1/FreeFlowingRivers:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "GOID = 5140480 OR GOID = 5201921 OR GOID = 5203286 OR GOID = 5204651 OR GOID = 5206016 OR GOID = 5271553 OR GOID = 5272918 OR GOID = 5274283 OR GOID = 5275648 OR GOID = 5337089 OR GOID = 5338454 OR GOID = 5339819 OR GOID = 5341184 OR GOID = 5402625 OR GOID = 5403990 OR GOID = 5405355 OR GOID = 5406720 OR GOID = 5468161 OR GOID = 5469526 OR GOID = 5470891 OR GOID = 5472256 OR GOID = 5537793 OR GOID = 5539158 OR GOID = 5540523 OR GOID = 5541888 OR GOID = 5603329 OR GOID = 5604694 OR GOID = 5606059 OR GOID = 5607424 OR GOID = 5668865 OR GOID = 5670230 OR GOID = 5671595"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "free-flowing-rivers-features-011",
+      "resource": "projects/earthengine-public/assets/WWF/HydroSHEDS/v1/FreeFlowingRivers:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "GOID = 5672960 OR GOID = 5738497 OR GOID = 5739862 OR GOID = 5741227 OR GOID = 5742592 OR GOID = 5804033 OR GOID = 5805398 OR GOID = 5806763 OR GOID = 5808128 OR GOID = 5869569 OR GOID = 5870934 OR GOID = 5872299 OR GOID = 5873664 OR GOID = 5935105 OR GOID = 5936470 OR GOID = 5937835 OR GOID = 5939200 OR GOID = 6004737 OR GOID = 6006102 OR GOID = 6007467 OR GOID = 6008832 OR GOID = 6070273 OR GOID = 6071638 OR GOID = 6073003 OR GOID = 6074368 OR GOID = 6135809 OR GOID = 6137174 OR GOID = 6138539 OR GOID = 6139904 OR GOID = 6205441 OR GOID = 6206806 OR GOID = 6208171"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "free-flowing-rivers-features-012",
+      "resource": "projects/earthengine-public/assets/WWF/HydroSHEDS/v1/FreeFlowingRivers:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "GOID = 6209536 OR GOID = 6270977 OR GOID = 6272342 OR GOID = 6273707 OR GOID = 6275072 OR GOID = 6336513 OR GOID = 6337878 OR GOID = 6339243 OR GOID = 6340608 OR GOID = 6402049 OR GOID = 6403414 OR GOID = 6404779 OR GOID = 6406144 OR GOID = 6471681 OR GOID = 6473046 OR GOID = 6474411 OR GOID = 6475776 OR GOID = 6537217 OR GOID = 6538582 OR GOID = 6539947 OR GOID = 6541312 OR GOID = 6602753 OR GOID = 6604118 OR GOID = 6605483 OR GOID = 6606848 OR GOID = 6672385 OR GOID = 6673750 OR GOID = 6675115 OR GOID = 6676480 OR GOID = 6737921 OR GOID = 6739286 OR GOID = 6740651"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "free-flowing-rivers-features-013",
+      "resource": "projects/earthengine-public/assets/WWF/HydroSHEDS/v1/FreeFlowingRivers:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "GOID = 6742016 OR GOID = 6803457 OR GOID = 6804822 OR GOID = 6806187 OR GOID = 6807552 OR GOID = 6873089 OR GOID = 6874454 OR GOID = 6875819 OR GOID = 6877184 OR GOID = 6938625 OR GOID = 6939990 OR GOID = 6941355 OR GOID = 6942720 OR GOID = 7004161 OR GOID = 7005526 OR GOID = 7006891 OR GOID = 7008256 OR GOID = 7069697 OR GOID = 7071062 OR GOID = 7072427 OR GOID = 7073792 OR GOID = 7139329 OR GOID = 7140694 OR GOID = 7142059 OR GOID = 7143424 OR GOID = 7204865 OR GOID = 7206230 OR GOID = 7207595 OR GOID = 7208960 OR GOID = 7270401 OR GOID = 7271766 OR GOID = 7273131"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "free-flowing-rivers-features-014",
+      "resource": "projects/earthengine-public/assets/WWF/HydroSHEDS/v1/FreeFlowingRivers:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "GOID = 7274496 OR GOID = 7340033 OR GOID = 7341398 OR GOID = 7342763 OR GOID = 7344128 OR GOID = 7405569 OR GOID = 7406934 OR GOID = 7408299 OR GOID = 7409664 OR GOID = 7471105 OR GOID = 7472470 OR GOID = 7473835 OR GOID = 7475200 OR GOID = 7536641 OR GOID = 7538006 OR GOID = 7539371 OR GOID = 7540736 OR GOID = 7606273 OR GOID = 7607638 OR GOID = 7609003 OR GOID = 7610368 OR GOID = 7671809 OR GOID = 7673174 OR GOID = 7674539 OR GOID = 7675904 OR GOID = 7737345 OR GOID = 7738710 OR GOID = 7740075 OR GOID = 7741440 OR GOID = 7806977 OR GOID = 7808342 OR GOID = 7809707"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "free-flowing-rivers-features-015",
+      "resource": "projects/earthengine-public/assets/WWF/HydroSHEDS/v1/FreeFlowingRivers:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "GOID = 7811072 OR GOID = 7872513 OR GOID = 7873878 OR GOID = 7875243 OR GOID = 7876608 OR GOID = 7938049 OR GOID = 7939414 OR GOID = 7940779 OR GOID = 7942144 OR GOID = 8003585 OR GOID = 8004950 OR GOID = 8006315 OR GOID = 8007680 OR GOID = 8073217 OR GOID = 8074582 OR GOID = 8075947 OR GOID = 8077312 OR GOID = 8138753 OR GOID = 8140118 OR GOID = 8141483 OR GOID = 8142848 OR GOID = 8204289 OR GOID = 8205654 OR GOID = 8207019 OR GOID = 8208384 OR GOID = 8273921 OR GOID = 8275286 OR GOID = 8276651 OR GOID = 8278016 OR GOID = 8339457 OR GOID = 8340822 OR GOID = 8342187"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "free-flowing-rivers-features-016",
+      "resource": "projects/earthengine-public/assets/WWF/HydroSHEDS/v1/FreeFlowingRivers:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "GOID = 8343552 OR GOID = 8404993 OR GOID = 8406358 OR GOID = 8407723 OR GOID = 8409088 OR GOID = 8474625 OR GOID = 8475711 OR GOID = 8476797 OR GOID = 8477883"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "free-flowing-rivers-after",
+      "resource": "projects/earthengine-public/assets/WWF/HydroSHEDS/v1/FreeFlowingRivers"
+    }
+  ]
+}

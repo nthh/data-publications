@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dataset viewer · nthh</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='none' stroke='%23216d85' stroke-width='4' d='M20 2C3 9 28 14 11 21S13 28 8 31'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/app.css">
+</head>
+<body>
+<header class="app-header">
+  <div class="brand"><span class="river-mark" aria-hidden="true">≈</span><div><h1>Dataset viewer</h1><p>nthh / dataset previews</p></div></div>
+  <div class="session"><span class="status-dot"></span><span id="connection-label">Object storage</span><span class="header-separator"></span><span id="transfer-bytes">Waiting for data</span></div>
+</header>
+<div class="workspace">
+  <aside class="rail" aria-label="Dataset selection and details">
+    <div class="section-heading"><h2>Datasets</h2><span id="ready-count" class="muted"></span></div>
+    <nav id="dataset-list" aria-label="Datasets"></nav>
+    <section class="dataset-info">
+      <div id="layer-switch" class="layer-switch" role="group" aria-label="Dataset layers"></div>
+      <p id="dataset-summary" class="summary">Loading release metadata…</p>
+      <dl class="facts"><dt>Release</dt><dd id="release-code" class="mono"></dd><dt>Source file</dt><dd id="file-size"></dd><dt>Format</dt><dd id="format-tag"></dd></dl>
+      <div class="validation"><strong id="gee-label"></strong><p id="gee-note"></p></div>
+      <details class="source-details"><summary>Source &amp; file details</summary><p id="credit"></p><p id="license"></p><label class="tiny-label" for="file-url">Object URL</label><textarea id="file-url" readonly rows="3"></textarea><button id="copy-url" class="quiet-button">Copy URL</button><p class="tiny-label">SHA-256</p><p id="file-hash" class="hash"></p></details>
+    </section>
+    <details class="connection-details"><summary>Storage connection</summary><p>The page reads the files directly. Change this origin to use the same object paths on a host with range and CORS support.</p><label class="tiny-label" for="object-origin">Object origin</label><input id="object-origin" type="url" spellcheck="false"><button id="apply-origin" class="quiet-button">Use origin</button><p id="connection-error" role="alert"></p></details>
+  </aside>
+  <main class="map-workspace">
+    <div class="map-toolbar"><div><h2 id="active-title">Loading datasets</h2><p id="map-status" role="status">Preparing map…</p></div><button id="load-view" class="primary-button" disabled>Load this view</button></div>
+    <div class="region-bar"><span class="tiny-label">Go to</span><div id="region-list" role="group" aria-label="Geographic views"></div></div>
+    <div class="map-wrap"><div id="map" aria-label="Interactive dataset map"></div>
+      <section id="grwl-width-legend" class="width-legend" aria-label="GRWL mean width legend" hidden><strong id="grwl-width-title">Mean channel width</strong><div class="width-legend-items"></div><p id="grwl-width-note">Widths above 1,000 m use the capped symbol. Strokes are exaggerated for legibility; they do not show literal riverbanks. Unknown widths use a thin muted stroke.</p></section>
+      <section id="feature-panel" class="feature-panel" aria-label="Feature details" hidden><div class="feature-heading"><h3 id="feature-title">Feature</h3><button id="close-feature" aria-label="Close feature details">×</button></div><p id="feature-note"></p><p id="width-summary" class="width-summary" hidden><span id="width-label">Mean channel width</span> · <strong id="width-value"></strong></p><dl id="properties"></dl><button id="load-attributes" class="quiet-button" hidden>Load all attributes</button></section>
+      <div id="map-message" class="map-message" hidden></div>
+    </div>
+    <footer class="map-footer"><p id="display-note">Files are read over HTTP; data remains unchanged.</p><div><span id="range-reads">0 partial reads</span><span id="map-coordinates" class="mono"></span></div></footer>
+  </main>
+</div>
+<script type="module" src="/app.js"></script>
+</body>
+</html>

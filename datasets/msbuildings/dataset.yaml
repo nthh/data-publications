@@ -1,0 +1,34 @@
+schema_version: 1
+id: msbuildings
+title: 'Global ML Building Footprints: Australia'
+community_url: https://gee-community-catalog.org/projects/msbuildings
+audit:
+  snapshot: gee-community-audit-20261029
+  family_key: msbuildings
+  unique_gee_asset_count: 2
+  initial_queue: review_external_native_counterpart
+  folia_registry_status: not_identified
+  folia_registry_ids: []
+  source_coop_urls: []
+  source_coop_scope: null
+  external_native_urls:
+  - https://planetarycomputer.microsoft.com/api/stac/v1/collections/ms-buildings
+  external_native_scope: Global Microsoft footprints, region partitions include Australia/Uganda;
+    exact snapshot parity not established. Collection explicitly declares GeoParquet;
+    sample uses abfs directory, HEAD not supported by this probe.
+triage:
+  decision: pending
+  priority: normal
+review:
+  citation_assessment:
+    as_of: '2026-10-29'
+    provider: OpenAlex
+    evidence_path: research/citations/rankings.json
+    evidence_key: msbuildings
+    geographic_scope: mixed
+    paper_count_status: unknown
+    max_paper_citations: null
+    max_data_doi_citations: null
+    top_paper_doi: null
+    top_paper_openalex_id: null
+    citation_scope: associated_dataset_publication

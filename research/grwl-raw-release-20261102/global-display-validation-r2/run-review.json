@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "status": "passed_complete_global_display_oracle",
+  "runtime_revision": "b6bb43013756b6ac0e45b4c82dd6138a19ec7370",
+  "observed_clean_checkout_after_run": true,
+  "exit_code": 0,
+  "elapsed_wall_seconds": 2836.42,
+  "user_cpu_seconds": 2092.06,
+  "system_cpu_seconds": 37.68,
+  "source_rows": 64572998,
+  "z12_tiles": 333538,
+  "z12_occurrences": 70155474,
+  "all_selected_attribute_occurrences_matched": true,
+  "unchanged_data_assets": {
+    "source_sha256": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+    "pmtiles_sha256": "a1a7787c7ba28ffc271819bddc54339f9bc741aa9ed44ca619d93e809cbad4f5"
+  },
+  "original_failed_report_sha256": "cbeb4935cbae379a9bb3d3cf86016c1b2c974097fdc5e2d7e51b0b90ee2ff227",
+  "passed_report_sha256": "14ea16e6d493847a8d813166f09214f323564b568e0e1f8021d895389136a7f9",
+  "missing_ids_sha256": "580d716dad9d2a310f24bbd7efe75e1162bd246a4d991d557307100d393a3324",
+  "missing_ids": {
+    "count": 304,
+    "all_source_geometry_hashes_unchanged": true,
+    "classification": "quantization_collapse",
+    "changed_classification_ids": [
+      151320287794045
+    ],
+    "min_source_geodesic_length_m": 0.0013170923174967216,
+    "max_source_geodesic_length_m": 2.927822298429917
+  },
+  "geometry_controls": {
+    "original_sample_ids_preserved": 13006,
+    "frozen_source_seam_ids_preserved": 56,
+    "new_unique_sample_ids": 55,
+    "combined_samples": 13061,
+    "passed": 13053,
+    "explicit_quantization_exceptions": 8,
+    "seam_geometry_passed": 55,
+    "seam_quantization_exceptions": 1,
+    "max_observed_passed_hausdorff_metres": 2.037189275986706,
+    "nr01_row_1": {
+      "hausdorff_metres": 1.1051039844751358,
+      "id": 152475633975297,
+      "missing_geometry_exception": null,
+      "passed": true,
+      "tiles": 2
+    }
+  },
+  "limits": [
+    "Full z12 IDs and selected attributes were compared; geometry controls are the frozen samples plus the declared source-only seam supplement.",
+    "This is conversion/display validation, not GEE parity, global independent scientific accuracy, or a full global PMTiles byte rebuild.",
+    "Elapsed time is an observed run duration, not a performance benchmark. Browser and final package checks remain separate."
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "request_url": "https://api.openalex.org/works?search=Continental-scale+building+detection+from+high+resolution+satellite+imagery&corpus=all&per_page=5&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date",
+  "retrieved_at": "2026-10-30T22:07:43.038319+00:00",
+  "response_path": "responses/baa90a469a260b37fd7c19692ac393190871e6030886ee422e2faa5f9dcbf60f.json",
+  "status": 200,
+  "response_sha256": "7ea6017e829b655e7881678540dac187df36371e7172842307b8ea4ff79f35d9",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 12472,
+      "db_response_time_ms": 187,
+      "page": 1,
+      "per_page": 5,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where full text has (Continental-scale building detection from high resolution satellite imagery)",
+        "x_new_oql": "get works (all corpora) where full text has (Continental-scale building detection from high resolution satellite imagery)",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "Continental-scale building detection from high resolution satellite imagery",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:Continental-scale building detection from high resolution satellite imagery&corpus=all&per_page=5",
+        "order": "best matches first",
+        "order_default": true
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W3186770666",
+        "doi": "https://doi.org/10.48550/arxiv.2107.12283",
+        "title": "Continental-Scale Building Detection from High Resolution Satellite Imagery",
+        "type": "preprint",
+        "publication_year": 2021,
+        "publication_date": "2021-07-26"
+      },
+      {
+        "id": "https://openalex.org/W4292787463",
+        "doi": "https://doi.org/10.1109/cvprw56347.2022.00152",
+        "title": "Fast building segmentation from satellite imagery and few local labels",
+        "type": "conference-paper",
+        "publication_year": 2022,
+        "publication_date": "2022-06-01"
+      },
+      {
+        "id": "https://openalex.org/W4407283754",
+        "doi": "https://doi.org/10.1071/am24017",
+        "title": "Detection of rabbit and wombat warrens in broad-scale satellite imagery",
+        "type": "article",
+        "publication_year": 2025,
+        "publication_date": "2025-02-09"
+      },
+      {
+        "id": "https://openalex.org/W1994780096",
+        "doi": "https://doi.org/10.3390/rs61212187",
+        "title": "Improved Wetland Classification Using Eight-Band High Resolution Satellite Imagery and a Hybrid Approach",
+        "type": "article",
+        "publication_year": 2014,
+        "publication_date": "2014-12-08"
+      },
+      {
+        "id": "https://openalex.org/W4382193098",
+        "doi": "https://doi.org/10.1609/aaai.v37i12.26675",
+        "title": "Point-to-Region Co-learning for Poverty Mapping at High Resolution Using Satellite Imagery",
+        "type": "conference-paper",
+        "publication_year": 2023,
+        "publication_date": "2023-06-26"
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "921cbe3b6edeb42c3d0af891bf1c95a4b13b52170b181696a7c971f255fe7ee7"
+}

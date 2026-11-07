@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-11-02T21:38:30.331421+00:00",
+  "question": "Are the straight segments reported for GRWL viewer features 13164 and 28938 present in the producer source, introduced in GeoParquet conversion, or introduced in PMTiles/rendering?",
+  "feature_ids": [
+    13164,
+    28938
+  ],
+  "source_archive": {
+    "name": "GRWL_summaryStats_V01.02.zip",
+    "size_bytes": 43282861,
+    "sha256": "78aa43a7104d24b1696e9b1547347eec13ba5d660aa990c1e7cea98e7ae70e4a"
+  },
+  "pmtiles_sha256": "382b0da7d0a879f3b74c0f32a92427b51a58600aa22f703098a0d08c819eaafe",
+  "method": [
+    "Resolve viewer feature identity to source_row, producer OBJECTID and repeated producer ID without assuming these are interchangeable.",
+    "Verify original archive and prepared asset hashes before comparison.",
+    "Compare every original SHP part and float64 vertex for the two records with GeoParquet; separately preserve multipart boundaries.",
+    "List the longest consecutive source segments and all near-horizontal segments >=1000 geodesic metres (absolute latitude delta <=1e-6 degrees), preserving endpoints and part/vertex indexes. These are diagnostics, not validity criteria.",
+    "Decode actual PMTiles at the affected locations across zooms 0 through 10; compare segments to original geometry and distinguish clipping, simplification, multipart joins and antimeridian behavior.",
+    "If artifacts originate in our conversion or renderer, preserve the failing evidence and add a regression before fixing. If present upstream, document exact source evidence without silently altering authoritative geometry."
+  ],
+  "limits": [
+    "Offline retained data only; no GEE jobs, uploads or replacement scientific data.",
+    "Do not alter the existing immutable releases or historical passing checks.",
+    "The user-provided IDs define the sample; no inference that other geometries are problem-free."
+  ],
+  "ownership": {
+    "parent": "Original-source/GeoParquet trace, script/evidence/docs, conclusions and commits",
+    "independent_reader": "Read-only PMTiles and rendering review for the two named IDs; report exact archive hashes, tile coordinates, assumptions and evidence; no writes or builds"
+  }
+}

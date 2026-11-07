@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-11-02T23:01:33.155864+00:00",
+  "user_selected_source_rows": [
+    15450,
+    11839
+  ],
+  "prior_controls": [
+    13164,
+    15394,
+    15397
+  ],
+  "selection_note": "User-selected examples and earlier reported controls; not a representative/random scientific accuracy sample.",
+  "producer_record": "https://zenodo.org/records/18624542",
+  "pins": {
+    "summary_zip_sha256": "78aa43a7104d24b1696e9b1547347eec13ba5d660aa990c1e7cea98e7ae70e4a",
+    "analytical_parquet_sha256": "82ac4eeac2168b1aad6e5c9ae53c0c228ffcc7c8cd3f8d795493d939e626fa9c"
+  },
+  "methods": [
+    "Compare selected summary SHP part boundaries, float64 XY bits and all ten DBF numeric fields with analytical GeoParquet.",
+    "List the ten longest WGS84 geodesic edges per selected feature. Investigate all edges >= 5000 metres; if none qualify, investigate the longest edge. Selection is independent of alignment.",
+    "Select raw vector and water-mask tiles intersecting each chosen edge bbox expanded by 0.02 degrees, including both sides of grid seams. Obtain tile footprints from official headers/index; do not assume a tile origin from filename alone.",
+    "Verify each acquired ZIP member CRC against the producer central directory, record SHA-256 and HTTP byte ranges. Whole-archive MD5 is not claimed when only members are acquired.",
+    "For each chosen edge, measure nearest raw centerline support at 101 equally spaced interior samples (fractions 0.01..0.99). Report distances, fraction within 90 ground metres and raw component/segment multiplicity. Use a local metric CRS and report it. A source-summary ID is not assumed to match a raw segment ID.",
+    "Sample official GRWL water mask values along the same samples and a 90 metre neighborhood; document classification, NoData and missing coverage separately. Land values in this connected-water product are evidence only, not independent optical ground truth.",
+    "Report whether a long summary edge is present in raw geometry, absent while the raw river follows a different path, or unresolved. Do not infer the exact producer processing operation without evidence.",
+    "Create inspection plots with original summary in a contrasting color, raw centerlines and mask around each reported location. Use standard plotting tools; no invented imagery.",
+    "Preserve failed retrievals and diagnostic attempts. No source repair or release overwrite, no GEE, publication or push."
+  ],
+  "acquisition_limits": {
+    "max_http_body_bytes": 268435456,
+    "max_range_request_bytes": 2097152,
+    "max_member_uncompressed_bytes": 134217728,
+    "max_total_extracted_bytes": 2147483648,
+    "minimum_free_disk_bytes": 37580963840,
+    "no_whole_archive_fallback": true
+  },
+  "interpretation": "90 metres is a diagnostic proximity threshold (three nominal 30m source pixels), not a published scientific acceptance standard. Raw/mask share provenance and are not independent validation."
+}

@@ -1,0 +1,112 @@
+{
+  "baseline": {
+    "archive_tiles": 592774,
+    "detail_tiles": 588355,
+    "discarded_old_overview_tiles": 4419,
+    "release": "raw-v01.01-display-r2",
+    "sha256": "79389270fef94a8a6359f0b7a98b3505a82ee090a7827bd13280bf1f1c178830",
+    "sha256_pin": "79389270fef94a8a6359f0b7a98b3505a82ee090a7827bd13280bf1f1c178830",
+    "size_bytes": 3005034172
+  },
+  "code": {
+    "path": "datasets/grwl-raw/combine_width_display.py",
+    "sha256": "e4887a8a505bb1f02e14bc319a7dfce7f25e47617c7ebd405429be7c51759272"
+  },
+  "combine_status": "passed",
+  "combined": {
+    "detail_payload_bytes": 2984815645,
+    "overview_payload_bytes": 204310851,
+    "path": "assets/grwl-raw.pmtiles",
+    "sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+    "size_bytes": 3190539066,
+    "tiles": 592794
+  },
+  "criteria": {
+    "path": "research/grwl-width-overview-20261106/criteria.json",
+    "sha256": "6ecf011b55a72ec2219f3f7991fcb292360b29a42cd9a925a69f95106a856791"
+  },
+  "dataset_id": "grwl-raw",
+  "display_release_candidate": "raw-v01.01-display-r3",
+  "elapsed_seconds": 47.60553765296936,
+  "layers": [
+    {
+      "fields": {
+        "width_m": "Number",
+        "width_valid": "Boolean"
+      },
+      "id": "grwl_raw",
+      "maxzoom": 12,
+      "minzoom": 8
+    },
+    {
+      "fields": {
+        "width_m": "Number",
+        "width_valid": "Boolean"
+      },
+      "id": "grwl_width_overview",
+      "maxzoom": 7,
+      "minzoom": 0
+    }
+  ],
+  "limitations": [
+    "Source-wide winner-priority and selected-ID checks are delegated to the independent overview oracle.",
+    "Browser, clean regional replay, package finalization, public hosting and scientific validation remain pending."
+  ],
+  "overview": {
+    "expected_point_occurrences": 26060623,
+    "maximum_compressed_tile_bytes": 823771,
+    "point_occurrences": 26060623,
+    "receipt_path": "/Users/nathan/projects/data-publications/.local/grwl-width-overview/global-oracle-r2.json",
+    "receipt_sha256": "6736e7f063d348c4d3acf60f34c884444cd9418533f39dac841d4a1f9d81bfa0",
+    "receipt_status": "passed",
+    "scope": "global",
+    "selected_by_zoom": {
+      "0": 64787,
+      "1": 147247,
+      "2": 322111,
+      "3": 695071,
+      "4": 1485157,
+      "5": 3130522,
+      "6": 6456388,
+      "7": 12929465
+    },
+    "sha256": "4a2252c98aaa210d1e5d1f2d94840788862bcc22692e3e76284db2fdd0834ed6",
+    "size_bytes": 204323277,
+    "source_manifest_sha256": "160dfaf91ede202da57172ff16492601ca349d43e0b629819a7e4eb82222acda",
+    "source_records": 64572998,
+    "source_sha256": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+    "tile_counts_by_zoom": {
+      "0": 1,
+      "1": 4,
+      "2": 11,
+      "3": 37,
+      "4": 110,
+      "5": 315,
+      "6": 961,
+      "7": 3000
+    },
+    "tiles": 4439,
+    "verifier_sha256": "cad7e20d4d9853762fe9f5aa4642b0776c937710abb19c1c53e05af6fa0be7ba"
+  },
+  "resources_end": {
+    "free_bytes": 60768796672,
+    "task_bytes": 4739767114
+  },
+  "resources_start": {
+    "free_bytes": 64230739968,
+    "task_bytes": 1549228048
+  },
+  "schema_version": 1,
+  "scope": "global",
+  "started_unix_seconds": 1794000061.7609532,
+  "status": "built_unvalidated",
+  "verification": {
+    "detail": 588355,
+    "detail_raw_payloads_byte_identical": true,
+    "no_extra_or_overlapping_coordinates": true,
+    "overview": 4439,
+    "overview_raw_payloads_byte_identical": true,
+    "payload_bytes": 3189126496,
+    "status": "passed"
+  }
+}

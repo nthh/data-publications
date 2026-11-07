@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "dataset_id": "lakeatlas-points",
+  "sample_sha256": "940e2bf3d6d7e701007786e182fd7851194c54a6b5e9fb453bd06319add8ae39",
+  "sample_filename": "lakeatlas-points-sample.json",
+  "criteria_sha256": "46d82a976f5099e89b52cf3be76924903b7ab0e21640268e4fd5d4e8cb8f2977",
+  "quota_project": "mtnmap-f75ec",
+  "limits": {
+    "maximum_requests": 256,
+    "maximum_total_bytes": 512000000,
+    "maximum_response_bytes": 64000000,
+    "timeout_seconds": 45,
+    "maximum_elapsed_seconds": 7200
+  },
+  "requests": [
+    {
+      "id": "lakeatlas-points-before",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroAtlas/LakeAtlas/LakeAtlas_v10_point"
+    },
+    {
+      "id": "lakeatlas-points-count",
+      "operation": "count",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroAtlas/LakeAtlas/LakeAtlas_v10_point"
+    },
+    {
+      "id": "lakeatlas-points-features-000",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroAtlas/LakeAtlas/LakeAtlas_v10_point:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 1 OR Hylak_id = 2 OR Hylak_id = 3 OR Hylak_id = 4 OR Hylak_id = 5 OR Hylak_id = 6 OR Hylak_id = 7 OR Hylak_id = 8 OR Hylak_id = 9 OR Hylak_id = 10 OR Hylak_id = 497 OR Hylak_id = 5969 OR Hylak_id = 9974 OR Hylak_id = 10745 OR Hylak_id = 13038 OR Hylak_id = 13114 OR Hylak_id = 14324 OR Hylak_id = 17075 OR Hylak_id = 17704 OR Hylak_id = 25036 OR Hylak_id = 25784 OR Hylak_id = 31108 OR Hylak_id = 31921 OR Hylak_id = 33954 OR Hylak_id = 45826 OR Hylak_id = 46705 OR Hylak_id = 47696 OR Hylak_id = 49113 OR Hylak_id = 49463 OR Hylak_id = 51153 OR Hylak_id = 51555 OR Hylak_id = 51916"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "lakeatlas-points-features-001",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroAtlas/LakeAtlas/LakeAtlas_v10_point:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 52866 OR Hylak_id = 58381 OR Hylak_id = 62219 OR Hylak_id = 63759 OR Hylak_id = 65728 OR Hylak_id = 67318 OR Hylak_id = 69492 OR Hylak_id = 69826 OR Hylak_id = 70754 OR Hylak_id = 72766 OR Hylak_id = 75841 OR Hylak_id = 75922 OR Hylak_id = 79898 OR Hylak_id = 81141 OR Hylak_id = 81172 OR Hylak_id = 85808 OR Hylak_id = 90260 OR Hylak_id = 91451 OR Hylak_id = 94450 OR Hylak_id = 95264 OR Hylak_id = 98325 OR Hylak_id = 99996 OR Hylak_id = 100304 OR Hylak_id = 101058 OR Hylak_id = 103269 OR Hylak_id = 104129 OR Hylak_id = 106829 OR Hylak_id = 111771 OR Hylak_id = 111872 OR Hylak_id = 113720 OR Hylak_id = 118870 OR Hylak_id = 119930"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "lakeatlas-points-features-002",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroAtlas/LakeAtlas/LakeAtlas_v10_point:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 120585 OR Hylak_id = 127693 OR Hylak_id = 128672 OR Hylak_id = 133219 OR Hylak_id = 135513 OR Hylak_id = 138102 OR Hylak_id = 138612 OR Hylak_id = 139370 OR Hylak_id = 142986 OR Hylak_id = 143986 OR Hylak_id = 144097 OR Hylak_id = 145472 OR Hylak_id = 146424 OR Hylak_id = 147415 OR Hylak_id = 148445 OR Hylak_id = 150164 OR Hylak_id = 155561 OR Hylak_id = 157469 OR Hylak_id = 158169 OR Hylak_id = 161122 OR Hylak_id = 162010 OR Hylak_id = 166447 OR Hylak_id = 177296 OR Hylak_id = 178072 OR Hylak_id = 179832 OR Hylak_id = 188262 OR Hylak_id = 201980 OR Hylak_id = 203035 OR Hylak_id = 203182 OR Hylak_id = 205043 OR Hylak_id = 206415 OR Hylak_id = 206440"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "lakeatlas-points-features-003",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroAtlas/LakeAtlas/LakeAtlas_v10_point:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 211955 OR Hylak_id = 213195 OR Hylak_id = 217451 OR Hylak_id = 217705 OR Hylak_id = 218271 OR Hylak_id = 219506 OR Hylak_id = 220000 OR Hylak_id = 220196 OR Hylak_id = 228364 OR Hylak_id = 229136 OR Hylak_id = 234315 OR Hylak_id = 234912 OR Hylak_id = 235500 OR Hylak_id = 235524 OR Hylak_id = 236068 OR Hylak_id = 241837 OR Hylak_id = 242423 OR Hylak_id = 242456 OR Hylak_id = 245415 OR Hylak_id = 252779 OR Hylak_id = 255396 OR Hylak_id = 255585 OR Hylak_id = 257125 OR Hylak_id = 272700 OR Hylak_id = 274347 OR Hylak_id = 275334 OR Hylak_id = 282409 OR Hylak_id = 282640 OR Hylak_id = 288509 OR Hylak_id = 296406 OR Hylak_id = 296553 OR Hylak_id = 306509"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "lakeatlas-points-features-004",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroAtlas/LakeAtlas/LakeAtlas_v10_point:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 306588 OR Hylak_id = 309974 OR Hylak_id = 310190 OR Hylak_id = 310569 OR Hylak_id = 313115 OR Hylak_id = 313844 OR Hylak_id = 313909 OR Hylak_id = 314764 OR Hylak_id = 314847 OR Hylak_id = 320158 OR Hylak_id = 320253 OR Hylak_id = 328569 OR Hylak_id = 330349 OR Hylak_id = 330516 OR Hylak_id = 331634 OR Hylak_id = 333215 OR Hylak_id = 334453 OR Hylak_id = 337115 OR Hylak_id = 349332 OR Hylak_id = 350265 OR Hylak_id = 352275 OR Hylak_id = 357702 OR Hylak_id = 357762 OR Hylak_id = 357822 OR Hylak_id = 358408 OR Hylak_id = 361052 OR Hylak_id = 363888 OR Hylak_id = 364716 OR Hylak_id = 371904 OR Hylak_id = 375463 OR Hylak_id = 375464 OR Hylak_id = 375724"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "lakeatlas-points-features-005",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroAtlas/LakeAtlas/LakeAtlas_v10_point:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 376351 OR Hylak_id = 388728 OR Hylak_id = 399513 OR Hylak_id = 400322 OR Hylak_id = 404651 OR Hylak_id = 405267 OR Hylak_id = 407743 OR Hylak_id = 408173 OR Hylak_id = 409457 OR Hylak_id = 409892 OR Hylak_id = 412934 OR Hylak_id = 413149 OR Hylak_id = 413441 OR Hylak_id = 414248 OR Hylak_id = 417179 OR Hylak_id = 417377 OR Hylak_id = 419434 OR Hylak_id = 419645 OR Hylak_id = 425589 OR Hylak_id = 425775 OR Hylak_id = 428372 OR Hylak_id = 431513 OR Hylak_id = 441400 OR Hylak_id = 449466 OR Hylak_id = 449810 OR Hylak_id = 453670 OR Hylak_id = 456425 OR Hylak_id = 458240 OR Hylak_id = 458367 OR Hylak_id = 461380 OR Hylak_id = 464887 OR Hylak_id = 466137"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "lakeatlas-points-features-006",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroAtlas/LakeAtlas/LakeAtlas_v10_point:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 467453 OR Hylak_id = 470217 OR Hylak_id = 471234 OR Hylak_id = 479396 OR Hylak_id = 481671 OR Hylak_id = 482029 OR Hylak_id = 483202 OR Hylak_id = 483949 OR Hylak_id = 484244 OR Hylak_id = 485393 OR Hylak_id = 486092 OR Hylak_id = 490853 OR Hylak_id = 491165 OR Hylak_id = 491730 OR Hylak_id = 498767 OR Hylak_id = 499755 OR Hylak_id = 507468 OR Hylak_id = 507659 OR Hylak_id = 508349 OR Hylak_id = 526055 OR Hylak_id = 529469 OR Hylak_id = 530175 OR Hylak_id = 531898 OR Hylak_id = 548466 OR Hylak_id = 548664 OR Hylak_id = 552500 OR Hylak_id = 553498 OR Hylak_id = 559075 OR Hylak_id = 566398 OR Hylak_id = 567127 OR Hylak_id = 567813 OR Hylak_id = 568014"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "lakeatlas-points-features-007",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroAtlas/LakeAtlas/LakeAtlas_v10_point:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 570282 OR Hylak_id = 581022 OR Hylak_id = 587131 OR Hylak_id = 589964 OR Hylak_id = 590164 OR Hylak_id = 593055 OR Hylak_id = 593130 OR Hylak_id = 598134 OR Hylak_id = 600418 OR Hylak_id = 600982 OR Hylak_id = 601731 OR Hylak_id = 604509 OR Hylak_id = 610938 OR Hylak_id = 615279 OR Hylak_id = 615496 OR Hylak_id = 621233 OR Hylak_id = 622172 OR Hylak_id = 622396 OR Hylak_id = 623356 OR Hylak_id = 623871 OR Hylak_id = 623979 OR Hylak_id = 624219 OR Hylak_id = 629061 OR Hylak_id = 629559 OR Hylak_id = 637080 OR Hylak_id = 639320 OR Hylak_id = 639628 OR Hylak_id = 641288 OR Hylak_id = 646202 OR Hylak_id = 646532 OR Hylak_id = 652696 OR Hylak_id = 656756"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "lakeatlas-points-features-008",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroAtlas/LakeAtlas/LakeAtlas_v10_point:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 663518 OR Hylak_id = 663575 OR Hylak_id = 664365 OR Hylak_id = 665913 OR Hylak_id = 666767 OR Hylak_id = 667605 OR Hylak_id = 668011 OR Hylak_id = 671021 OR Hylak_id = 673382 OR Hylak_id = 673785 OR Hylak_id = 681772 OR Hylak_id = 685674 OR Hylak_id = 688435 OR Hylak_id = 691174 OR Hylak_id = 698065 OR Hylak_id = 699726 OR Hylak_id = 703500 OR Hylak_id = 712584 OR Hylak_id = 717159 OR Hylak_id = 717516 OR Hylak_id = 719877 OR Hylak_id = 723249 OR Hylak_id = 723700 OR Hylak_id = 725243 OR Hylak_id = 726916 OR Hylak_id = 727184 OR Hylak_id = 727482 OR Hylak_id = 732173 OR Hylak_id = 733771 OR Hylak_id = 738456 OR Hylak_id = 746625 OR Hylak_id = 747561"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "lakeatlas-points-features-009",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroAtlas/LakeAtlas/LakeAtlas_v10_point:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 747917 OR Hylak_id = 753510 OR Hylak_id = 759290 OR Hylak_id = 759324 OR Hylak_id = 763125 OR Hylak_id = 767202 OR Hylak_id = 767588 OR Hylak_id = 774983 OR Hylak_id = 775001 OR Hylak_id = 780488 OR Hylak_id = 780516 OR Hylak_id = 781847 OR Hylak_id = 787244 OR Hylak_id = 787484 OR Hylak_id = 790337 OR Hylak_id = 790548 OR Hylak_id = 791073 OR Hylak_id = 793638 OR Hylak_id = 796359 OR Hylak_id = 798659 OR Hylak_id = 807284 OR Hylak_id = 810692 OR Hylak_id = 812758 OR Hylak_id = 819272 OR Hylak_id = 819542 OR Hylak_id = 819702 OR Hylak_id = 830107 OR Hylak_id = 832582 OR Hylak_id = 836451 OR Hylak_id = 847312 OR Hylak_id = 847626 OR Hylak_id = 848752"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "lakeatlas-points-features-010",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroAtlas/LakeAtlas/LakeAtlas_v10_point:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 849215 OR Hylak_id = 849936 OR Hylak_id = 850931 OR Hylak_id = 851031 OR Hylak_id = 851575 OR Hylak_id = 854691 OR Hylak_id = 862480 OR Hylak_id = 865610 OR Hylak_id = 870154 OR Hylak_id = 870723 OR Hylak_id = 871255 OR Hylak_id = 871416 OR Hylak_id = 875017 OR Hylak_id = 876182 OR Hylak_id = 883216 OR Hylak_id = 883762 OR Hylak_id = 884242 OR Hylak_id = 884511 OR Hylak_id = 892006 OR Hylak_id = 892627 OR Hylak_id = 893322 OR Hylak_id = 894032 OR Hylak_id = 903003 OR Hylak_id = 904227 OR Hylak_id = 904522 OR Hylak_id = 906693 OR Hylak_id = 911806 OR Hylak_id = 914855 OR Hylak_id = 920410 OR Hylak_id = 921253 OR Hylak_id = 921348 OR Hylak_id = 931701"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "lakeatlas-points-features-011",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroAtlas/LakeAtlas/LakeAtlas_v10_point:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 932066 OR Hylak_id = 933506 OR Hylak_id = 933666 OR Hylak_id = 936857 OR Hylak_id = 938873 OR Hylak_id = 944464 OR Hylak_id = 948265 OR Hylak_id = 952223 OR Hylak_id = 957223 OR Hylak_id = 957511 OR Hylak_id = 958248 OR Hylak_id = 966456 OR Hylak_id = 972190 OR Hylak_id = 972987 OR Hylak_id = 974489 OR Hylak_id = 974713 OR Hylak_id = 978175 OR Hylak_id = 978515 OR Hylak_id = 985393 OR Hylak_id = 997333 OR Hylak_id = 997374 OR Hylak_id = 1000644 OR Hylak_id = 1006744 OR Hylak_id = 1007178 OR Hylak_id = 1008131 OR Hylak_id = 1008189 OR Hylak_id = 1015921 OR Hylak_id = 1016910 OR Hylak_id = 1017151 OR Hylak_id = 1021442 OR Hylak_id = 1021531 OR Hylak_id = 1023931"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "lakeatlas-points-features-012",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroAtlas/LakeAtlas/LakeAtlas_v10_point:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 1028219 OR Hylak_id = 1033027 OR Hylak_id = 1033584 OR Hylak_id = 1038532 OR Hylak_id = 1038548 OR Hylak_id = 1042385 OR Hylak_id = 1042390 OR Hylak_id = 1047191 OR Hylak_id = 1056130 OR Hylak_id = 1056733 OR Hylak_id = 1063725 OR Hylak_id = 1064626 OR Hylak_id = 1069324 OR Hylak_id = 1070553 OR Hylak_id = 1070559 OR Hylak_id = 1073940 OR Hylak_id = 1076716 OR Hylak_id = 1076733 OR Hylak_id = 1086633 OR Hylak_id = 1087096 OR Hylak_id = 1097239 OR Hylak_id = 1099005 OR Hylak_id = 1100167 OR Hylak_id = 1102250 OR Hylak_id = 1102260 OR Hylak_id = 1109032 OR Hylak_id = 1109039 OR Hylak_id = 1112869 OR Hylak_id = 1112894 OR Hylak_id = 1116594 OR Hylak_id = 1118865 OR Hylak_id = 1121048"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "lakeatlas-points-features-013",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroAtlas/LakeAtlas/LakeAtlas_v10_point:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 1123998 OR Hylak_id = 1125785 OR Hylak_id = 1125798 OR Hylak_id = 1126971 OR Hylak_id = 1133687 OR Hylak_id = 1133876 OR Hylak_id = 1137784 OR Hylak_id = 1143627 OR Hylak_id = 1144601 OR Hylak_id = 1144732 OR Hylak_id = 1148222 OR Hylak_id = 1148820 OR Hylak_id = 1149900 OR Hylak_id = 1159047 OR Hylak_id = 1159269 OR Hylak_id = 1160879 OR Hylak_id = 1168961 OR Hylak_id = 1183871 OR Hylak_id = 1186688 OR Hylak_id = 1189207 OR Hylak_id = 1189456 OR Hylak_id = 1189638 OR Hylak_id = 1189788 OR Hylak_id = 1189983 OR Hylak_id = 1192918 OR Hylak_id = 1199346 OR Hylak_id = 1200571 OR Hylak_id = 1201194 OR Hylak_id = 1203826 OR Hylak_id = 1210669 OR Hylak_id = 1224214 OR Hylak_id = 1224978"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "lakeatlas-points-features-014",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroAtlas/LakeAtlas/LakeAtlas_v10_point:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 1225405 OR Hylak_id = 1226037 OR Hylak_id = 1226824 OR Hylak_id = 1226826 OR Hylak_id = 1234445 OR Hylak_id = 1234517 OR Hylak_id = 1234591 OR Hylak_id = 1234746 OR Hylak_id = 1245038 OR Hylak_id = 1245621 OR Hylak_id = 1252429 OR Hylak_id = 1260837 OR Hylak_id = 1261336 OR Hylak_id = 1267204 OR Hylak_id = 1270040 OR Hylak_id = 1278779 OR Hylak_id = 1278941 OR Hylak_id = 1281527 OR Hylak_id = 1282350 OR Hylak_id = 1290645 OR Hylak_id = 1290725 OR Hylak_id = 1293389 OR Hylak_id = 1296761 OR Hylak_id = 1299952 OR Hylak_id = 1307410 OR Hylak_id = 1307507 OR Hylak_id = 1308025 OR Hylak_id = 1311463 OR Hylak_id = 1316646 OR Hylak_id = 1316930 OR Hylak_id = 1319464 OR Hylak_id = 1319660"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "lakeatlas-points-features-015",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroAtlas/LakeAtlas/LakeAtlas_v10_point:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 1319720 OR Hylak_id = 1323800 OR Hylak_id = 1323868 OR Hylak_id = 1325770 OR Hylak_id = 1326606 OR Hylak_id = 1326838 OR Hylak_id = 1336859 OR Hylak_id = 1341498 OR Hylak_id = 1341535 OR Hylak_id = 1341551 OR Hylak_id = 1347323 OR Hylak_id = 1349396 OR Hylak_id = 1353004 OR Hylak_id = 1353021 OR Hylak_id = 1357800 OR Hylak_id = 1357857 OR Hylak_id = 1360166 OR Hylak_id = 1360568 OR Hylak_id = 1362418 OR Hylak_id = 1369691 OR Hylak_id = 1370762 OR Hylak_id = 1373429 OR Hylak_id = 1373496 OR Hylak_id = 1374866 OR Hylak_id = 1375766 OR Hylak_id = 1378392 OR Hylak_id = 1386733 OR Hylak_id = 1390950 OR Hylak_id = 1394035 OR Hylak_id = 1399030 OR Hylak_id = 1402656 OR Hylak_id = 1403261"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "lakeatlas-points-features-016",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroAtlas/LakeAtlas/LakeAtlas_v10_point:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 1407258 OR Hylak_id = 1407491 OR Hylak_id = 1409630 OR Hylak_id = 1411187 OR Hylak_id = 1417030 OR Hylak_id = 1420694 OR Hylak_id = 1423625 OR Hylak_id = 1426540 OR Hylak_id = 1426542 OR Hylak_id = 1427684"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "lakeatlas-points-after",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroAtlas/LakeAtlas/LakeAtlas_v10_point"
+    }
+  ]
+}

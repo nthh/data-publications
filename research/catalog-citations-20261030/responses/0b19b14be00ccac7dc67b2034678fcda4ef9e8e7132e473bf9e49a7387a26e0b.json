@@ -1,0 +1,80 @@
+{
+  "request_url": "https://api.openalex.org/works?search=A+New+Generation+of+the+United+States+National+Land+Cover+Database%3A+Requirements%2C+Research+Priorities%2C+Design%2C+and+Implementation+Strategies&corpus=all&per_page=5&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date",
+  "retrieved_at": "2026-10-30T22:07:38.077817+00:00",
+  "response_path": "responses/0b19b14be00ccac7dc67b2034678fcda4ef9e8e7132e473bf9e49a7387a26e0b.json",
+  "status": 200,
+  "response_sha256": "927df1f533b7509ab566d19c97d322e5e4c80cb85d3cd337b611a4488a91eb82",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 66079,
+      "db_response_time_ms": 323,
+      "page": 1,
+      "per_page": 5,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where full text has (A New Generation of the United States National Land Cover Database: Requirements Research Priorities Design \"and\" Implementation Strategies)",
+        "x_new_oql": "get works (all corpora) where full text has (A New Generation of the United States National Land Cover Database: Requirements Research Priorities Design \"and\" Implementation Strategies)",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "A New Generation of the United States National Land Cover Database: Requirements Research Priorities Design and Implementation Strategies",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:A New Generation of the United States National Land Cover Database: Requirements Research Priorities Design and Implementation Strategies&corpus=all&per_page=5",
+        "order": "best matches first",
+        "order_default": true
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W2891721681",
+        "doi": "https://doi.org/10.1016/j.isprsjprs.2018.09.006",
+        "title": "A new generation of the United States National Land Cover Database: Requirements, research priorities, design, and implementation strategies",
+        "type": "article",
+        "publication_year": 2018,
+        "publication_date": "2018-09-12"
+      },
+      {
+        "id": "https://openalex.org/W3003421670",
+        "doi": "https://doi.org/10.3390/rs11242971",
+        "title": "Overall Methodology Design for the United States National Land Cover Database 2016 Products",
+        "type": "article",
+        "publication_year": 2019,
+        "publication_date": "2019-12-11"
+      },
+      {
+        "id": "https://openalex.org/W6929763781",
+        "doi": "https://doi.org/10.5066/p9qkhktq",
+        "title": "The Landsat Burned Area products for the conterminous United States (ver. 3.0, March 2022)",
+        "type": "dataset",
+        "publication_year": 2020,
+        "publication_date": "2020-01-01"
+      },
+      {
+        "id": "https://openalex.org/W4322754442",
+        "doi": "https://doi.org/10.1080/15481603.2023.2181143",
+        "title": "Thematic accuracy assessment of the NLCD 2019 land cover for the conterminous United States",
+        "type": "article",
+        "publication_year": 2023,
+        "publication_date": "2023-03-01"
+      },
+      {
+        "id": "https://openalex.org/W7155068644",
+        "doi": "https://doi.org/10.1080/15481603.2026.2659490",
+        "title": "Thematic accuracy assessment of the National Land Cover Database (NLCD2021) for the conterminous United States",
+        "type": "article",
+        "publication_year": 2026,
+        "publication_date": "2026-04-20"
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "2b565c3653afa535a48c2dd036cf1303b9777f615eeea6953658060e6ccb09b9"
+}

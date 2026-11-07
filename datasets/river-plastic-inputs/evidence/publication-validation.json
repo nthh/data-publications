@@ -1,0 +1,164 @@
+{
+  "status": "passed",
+  "scope": "Consistency of the pinned Figshare v6 model output with published summaries; not independent validation of environmental accuracy.",
+  "rows": 40760,
+  "null_counts": {
+    "i_low": 4,
+    "i_mid": 4,
+    "i_high": 4,
+    "i_low_jan": 4,
+    "i_mid_jan": 4,
+    "i_high_jan": 4,
+    "i_low_feb": 4,
+    "i_mid_feb": 4,
+    "i_high_feb": 4,
+    "i_low_mar": 4,
+    "i_mid_mar": 4,
+    "i_high_mar": 4,
+    "i_low_apr": 4,
+    "i_mid_apr": 4,
+    "i_high_apr": 4,
+    "i_low_may": 4,
+    "i_mid_may": 4,
+    "i_high_may": 4,
+    "i_low_jun": 4,
+    "i_mid_jun": 4,
+    "i_high_jun": 4,
+    "i_low_jul": 4,
+    "i_mid_jul": 4,
+    "i_high_jul": 4,
+    "i_low_aug": 4,
+    "i_mid_aug": 4,
+    "i_high_aug": 4,
+    "i_low_sep": 4,
+    "i_mid_sep": 4,
+    "i_high_sep": 4,
+    "i_low_oct": 4,
+    "i_mid_oct": 4,
+    "i_high_oct": 4,
+    "i_low_nov": 4,
+    "i_mid_nov": 4,
+    "i_high_nov": 4,
+    "i_low_dec": 4,
+    "i_mid_dec": 4,
+    "i_high_dec": 4,
+    "runoff_jan": 4,
+    "runoff_feb": 4,
+    "runoff_mar": 4,
+    "runoff_apr": 4,
+    "runoff_may": 4,
+    "runoff_jun": 4,
+    "runoff_jul": 4,
+    "runoff_aug": 4,
+    "runoff_sep": 4,
+    "runoff_oct": 4,
+    "runoff_nov": 4,
+    "runoff_dec": 4,
+    "mpw": 0,
+    "area": 0
+  },
+  "checks": [
+    {
+      "id": "global_lower_annual",
+      "basis": "Published 1.15 million tonnes/year rounded to two decimal places in millions.",
+      "observed": "1149724.175239",
+      "unit": "tonnes/year",
+      "accepted_interval": {
+        "minimum_inclusive": "1145000",
+        "maximum_exclusive": "1155000"
+      },
+      "status": "passed"
+    },
+    {
+      "id": "global_upper_annual",
+      "basis": "Published 2.41 million tonnes/year rounded to two decimal places in millions.",
+      "observed": "2407866.149084",
+      "unit": "tonnes/year",
+      "accepted_interval": {
+        "minimum_inclusive": "2405000",
+        "maximum_exclusive": "2415000"
+      },
+      "status": "passed"
+    },
+    {
+      "id": "may_october_midpoint_share",
+      "basis": "Published abstract: over 74% of emissions between May and October. Use midpoint monthly values for both numerator and denominator.",
+      "numerator_tonnes": "1052524.821202",
+      "denominator_tonnes": "1412158.409863",
+      "observed_share": "0.7453305619616076124127889044",
+      "minimum_exclusive": "0.74",
+      "maximum_inclusive": "1",
+      "status": "passed"
+    },
+    {
+      "id": "nonnegative_estimates",
+      "basis": "Physical-domain consistency of non-null annual and monthly emissions, runoff, catchment waste and area; failures must be reported without altering source values.",
+      "invalid_cells": 0,
+      "invalid_by_field": {},
+      "cells_checked": 2160280,
+      "status": "passed"
+    },
+    {
+      "id": "ordered_uncertainty",
+      "basis": "For every non-null annual and monthly triplet, lower <= midpoint <= upper. Null triplets must stay entirely null.",
+      "triplets_checked": 529880,
+      "inverted_triplets": 0,
+      "partially_null_triplets": 0,
+      "status": "passed"
+    }
+  ],
+  "annual_totals_tonnes": {
+    "i_low": "1149724.175239",
+    "i_mid": "1412158.416612",
+    "i_high": "2407866.149084"
+  },
+  "monthly_midpoint_totals_tonnes": {
+    "jan": "46251.825935",
+    "feb": "55700.297107",
+    "mar": "69154.968292",
+    "apr": "75644.101449",
+    "may": "118552.342432",
+    "jun": "200074.959369",
+    "jul": "214591.417558",
+    "aug": "228820.671571",
+    "sep": "190109.005227",
+    "oct": "100376.425045",
+    "nov": "61449.378008",
+    "dec": "51433.017870"
+  },
+  "pending": [
+    {
+      "check": "GEE parity",
+      "status": "not_run",
+      "asset": "projects/sat-io/open-datasets/open-ocean/river_plastic_emissions",
+      "reason": "Local-only preparation. Live GEE execution requires explicit per-task authorization under docs/AGENT_PLAYBOOK.md."
+    },
+    {
+      "check": "Top 20 named rivers and regional shares",
+      "status": "not_run",
+      "reason": "The source points lack river names and watershed identifiers. A verified spatial/catchment crosswalk is needed; do not equate the top 20 point rows with the top 20 named rivers."
+    },
+    {
+      "check": "Independent observational validation",
+      "status": "not_run",
+      "reason": "Requires harmonized independent measurements, collection dates, units, sampling protocols and a declared holdout excluding calibration observations."
+    },
+    {
+      "check": "Source Cooperative delivery",
+      "status": "not_run",
+      "reason": "Local-only release; remote publication is deferred."
+    }
+  ],
+  "provenance": {
+    "source_doi": "10.6084/m9.figshare.4725541.v6",
+    "paper_doi": "10.1038/ncomms15611",
+    "release_manifest_sha256": "78ddda062d812eebe6861cc6db86cd5fc23d15400f0e29bce63046c70c6ee4f9",
+    "geoparquet_sha256": "de35bd69b144565af1fcd33f915e8521a1af502e3ac50235560990f6c441e8c9",
+    "benchmark_contract_sha256": "a54fc8a96346df48640204a42a9c337f551df2e39c8ce047222f9aa3ffd29a1d",
+    "validator_sha256": "f0ae40eb090358481ba3461a3bb4d8ed13bd11176743b732fd9666451010d587",
+    "reference_urls": [
+      "https://www.nature.com/articles/ncomms15611",
+      "https://doi.org/10.6084/m9.figshare.4725541.v6"
+    ]
+  }
+}

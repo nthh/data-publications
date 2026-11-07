@@ -1,0 +1,646 @@
+{
+  "schema_version": 1,
+  "provider": "Esri ArcGIS Online / Living Atlas search plus linked authoritative producers",
+  "observed_at": "2026-11-01T00:30:04.434754+00:00",
+  "candidates": [
+    {
+      "suggested_id": "natural-earth-admin0-countries-10m",
+      "existing_record_id": null,
+      "title": "Natural Earth Admin 0 Countries, 1:10m",
+      "geographic_scope": "global",
+      "spatial_coverage": "Global country and territory polygons at 1:10m cartographic scale. The producer describes 258 countries; boundaries are generally de facto, and dependent map units are represented according to the selected Natural Earth theme. This is a cartographic boundary product, not authoritative legal demarcation.",
+      "sources": [
+        {
+          "provider": "Esri_SDI ArcGIS item",
+          "entry_id": "078c2c6ba4d2441d8c821826edadc87c",
+          "url": "https://www.arcgis.com/home/item.html?id=078c2c6ba4d2441d8c821826edadc87c",
+          "relationship": "related_release"
+        },
+        {
+          "provider": "Natural Earth",
+          "entry_id": "10m Cultural Vectors / Admin 0 - Countries",
+          "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/",
+          "relationship": "exact_dataset"
+        }
+      ],
+      "observed_formats": [
+        "ArcGIS FeatureServer item",
+        "Shapefile",
+        "SQLite",
+        "GeoPackage (Natural Earth bulk themes)"
+      ],
+      "hosting_status": "download_available",
+      "access_summary": "The Esri item is a FeatureServer mirror. Natural Earth directly offers bulk vector themes and lists Shapefile, SQLite, and GeoPackage packages. No service export was queried or needed for the native-source route.",
+      "conversion_rationale": "Strong reuse candidate: stable global polygon geometry, clear scale and public-domain terms, and a native bulk source. GeoParquet is a reasonable analytical output after pinning the exact Natural Earth release and preserving boundary interpretation and source attributes.",
+      "license_summary": "Natural Earth states that its raster and vector data are public domain and free for any type of project. The Esri item also declares Natural Earth public-domain terms. Check that any separately included thematic fields retain their own attribution and terms.",
+      "evidence_urls": [
+        "https://www.naturalearthdata.com/downloads/",
+        "https://www.arcgis.com/home/item.html?id=078c2c6ba4d2441d8c821826edadc87c"
+      ],
+      "proposed_outputs": [
+        "GeoParquet"
+      ],
+      "format_labels": [
+        "vector"
+      ],
+      "recommended_formats": [
+        "GeoParquet"
+      ]
+    },
+    {
+      "suggested_id": "natural-earth-populated-places-small",
+      "existing_record_id": null,
+      "title": "Natural Earth Populated Places, small-scale variant",
+      "geographic_scope": "global",
+      "spatial_coverage": "Global mapped populated-place points for small-scale world reference. It is a generalized, selected places layer and does not claim to contain every settlement or a complete current gazetteer.",
+      "sources": [
+        {
+          "provider": "Esri_SDI ArcGIS item",
+          "entry_id": "b7931fbcff1a4b3ca83d6e84828c15d6",
+          "url": "https://www.arcgis.com/home/item.html?id=b7931fbcff1a4b3ca83d6e84828c15d6",
+          "relationship": "related_release"
+        },
+        {
+          "provider": "Natural Earth",
+          "entry_id": "Populated Places small-scale vector theme",
+          "url": "https://www.naturalearthdata.com/downloads/",
+          "relationship": "exact_dataset"
+        }
+      ],
+      "observed_formats": [
+        "ArcGIS FeatureServer item",
+        "Shapefile",
+        "SQLite",
+        "GeoPackage (Natural Earth bulk themes)"
+      ],
+      "hosting_status": "download_available",
+      "access_summary": "The Esri item points to an ArcGIS FeatureServer. Natural Earth offers its vector themes as bulk files; the service was not queried for feature export.",
+      "conversion_rationale": "Useful small-scale global place reference with a documented native source and permissive terms. Consider GeoParquet only as a clearly labeled cartographic place subset; do not treat it as a complete settlement inventory.",
+      "license_summary": "Natural Earth states its vector data are public domain. Preserve the exact theme and release, and review field-level attribution where source contributions are named.",
+      "evidence_urls": [
+        "https://www.naturalearthdata.com/downloads/",
+        "https://www.arcgis.com/home/item.html?id=b7931fbcff1a4b3ca83d6e84828c15d6"
+      ],
+      "proposed_outputs": [
+        "GeoParquet"
+      ],
+      "format_labels": [
+        "vector"
+      ],
+      "recommended_formats": [
+        "GeoParquet"
+      ]
+    },
+    {
+      "suggested_id": "esri-world-country-boundaries",
+      "existing_record_id": null,
+      "title": "Esri World Countries and World Country Boundaries releases",
+      "geographic_scope": "global",
+      "spatial_coverage": "World country polygons. The detailed, generalized, and 2024 boundary items are related Esri releases with different scale and content; each is designed for world mapping and the Esri description names mixed Esri, Garmin, CIA, ISO, and National Geographic inputs across releases.",
+      "sources": [
+        {
+          "provider": "Esri Data & Maps",
+          "entry_id": "ac80670eb213440ea5899bbf92a04998",
+          "url": "https://www.arcgis.com/home/item.html?id=ac80670eb213440ea5899bbf92a04998",
+          "relationship": "same_family"
+        },
+        {
+          "provider": "Esri Data & Maps",
+          "entry_id": "2b93b06dc0dc4e809d3c8db5cb96ba69",
+          "url": "https://www.arcgis.com/home/item.html?id=2b93b06dc0dc4e809d3c8db5cb96ba69",
+          "relationship": "related_release"
+        },
+        {
+          "provider": "Esri Data & Maps",
+          "entry_id": "acc8fccf06d74364bffe6a9bd0dfded7",
+          "url": "https://www.arcgis.com/home/item.html?id=acc8fccf06d74364bffe6a9bd0dfded7",
+          "relationship": "related_release"
+        }
+      ],
+      "observed_formats": [
+        "ArcGIS FeatureServer"
+      ],
+      "hosting_status": "service_only",
+      "access_summary": "Public item pages and FeatureServer URLs were observed. Export permission and a native bulk file were not established. Esri's general export documentation says export depends on the specific hosted-layer settings; service availability is not evidence that this layer can be exported or mirrored.",
+      "conversion_rationale": "Keep for further review only if a needed Esri-specific boundary definition or attribute schema is required. Natural Earth provides a separate public-domain alternative. Do not derive an offline mirror from these services until Esri and each data supplier's terms permit it.",
+      "license_summary": "The inspected items declare the Esri Master License Agreement and identify third-party source data. Their descriptions refer to varying supplier redistribution rights; the service license declaration is not blanket permission to redistribute source data.",
+      "evidence_urls": [
+        "https://doc.arcgis.com/en/arcgis-online/manage-data/use-hosted-layers.htm",
+        "https://www.arcgis.com/home/item.html?id=ac80670eb213440ea5899bbf92a04998",
+        "https://www.arcgis.com/home/item.html?id=acc8fccf06d74364bffe6a9bd0dfded7"
+      ],
+      "proposed_outputs": [],
+      "format_labels": [
+        "vector"
+      ],
+      "recommended_formats": []
+    },
+    {
+      "suggested_id": "esri-world-admin1-divisions",
+      "existing_record_id": null,
+      "title": "Esri World Administrative Divisions (first-level / Admin 1)",
+      "geographic_scope": "global",
+      "spatial_coverage": "First-level administrative boundaries worldwide, described as states, provinces, and regions; the Esri item specifies a December 2022 source vintage and October 2023 publication. Coverage of every territory and boundary status should be assessed from the source layer, not inferred from its world extent.",
+      "sources": [
+        {
+          "provider": "Esri Data & Maps",
+          "entry_id": "56633b40c1744109a265af1dba673535",
+          "url": "https://www.arcgis.com/home/item.html?id=56633b40c1744109a265af1dba673535",
+          "relationship": "exact_dataset"
+        },
+        {
+          "provider": "Garmin International",
+          "entry_id": "source named by Esri item",
+          "url": "https://www.garmin.com/",
+          "relationship": "related_release"
+        }
+      ],
+      "observed_formats": [
+        "ArcGIS FeatureServer"
+      ],
+      "hosting_status": "service_only",
+      "access_summary": "ArcGIS FeatureServer item and public description observed. No service export setting, offline right, or native Garmin bulk download was verified.",
+      "conversion_rationale": "Potentially useful global administrative reference, but further review is required for coverage gaps, disputed borders, version pinning, and Garmin/Esri redistribution terms. Keep service-only until authoritative native access is established.",
+      "license_summary": "The Esri item declares the Esri Master License Agreement and attributes the source to Garmin. No independent redistribution license for the source geometry was established in this inventory.",
+      "evidence_urls": [
+        "https://www.arcgis.com/home/item.html?id=56633b40c1744109a265af1dba673535"
+      ],
+      "proposed_outputs": [],
+      "format_labels": [
+        "vector"
+      ],
+      "recommended_formats": []
+    },
+    {
+      "suggested_id": "esri-world-cities",
+      "existing_record_id": null,
+      "title": "Esri World Cities reference points",
+      "geographic_scope": "global",
+      "spatial_coverage": "Selected national capitals, provincial capitals, major population centers, and landmark cities worldwide. Esri states that population estimates are supplied only for places present in cited open sources; the layer is not an exhaustive populated-place census.",
+      "sources": [
+        {
+          "provider": "Esri Data & Maps",
+          "entry_id": "6996f03a1b364dbab4008d99380370ed",
+          "url": "https://www.arcgis.com/home/item.html?id=6996f03a1b364dbab4008d99380370ed",
+          "relationship": "exact_dataset"
+        },
+        {
+          "provider": "Named contributors (GeoNames, NGA/US BGN, UN Statistics Division, UN-Habitat, U.S. Census Bureau, and others)",
+          "entry_id": "sources listed in Esri item metadata",
+          "url": "https://www.arcgis.com/home/item.html?id=6996f03a1b364dbab4008d99380370ed",
+          "relationship": "related_release"
+        }
+      ],
+      "observed_formats": [
+        "ArcGIS FeatureServer"
+      ],
+      "hosting_status": "service_only",
+      "access_summary": "FeatureServer item observed. No native bulk source, export setting, or source-by-source redistribution rights established.",
+      "conversion_rationale": "Further review only if Esri's place selections and joined attributes meet a distinct need. The mixed source lineage and Esri Master License terms mean this item is not a default bulk-conversion candidate.",
+      "license_summary": "The item declares the Esri Master License Agreement and lists multiple third-party contributors. Those separate supplier rights require review before any offline copy or derivative distribution.",
+      "evidence_urls": [
+        "https://www.arcgis.com/home/item.html?id=6996f03a1b364dbab4008d99380370ed"
+      ],
+      "proposed_outputs": [],
+      "format_labels": [
+        "vector"
+      ],
+      "recommended_formats": []
+    },
+    {
+      "suggested_id": "esri-world-urban-areas",
+      "existing_record_id": null,
+      "title": "Esri World Urban Areas cartographic polygons",
+      "geographic_scope": "near_global",
+      "spatial_coverage": "Many major urban areas across the world, but the item explicitly says not all major cities are represented. The item is intended for cartographic display, not analysis.",
+      "sources": [
+        {
+          "provider": "Esri Data & Maps",
+          "entry_id": "2853306e11b2467ba0458bf667e1c584",
+          "url": "https://www.arcgis.com/home/item.html?id=2853306e11b2467ba0458bf667e1c584",
+          "relationship": "exact_dataset"
+        },
+        {
+          "provider": "Esri and Garmin (as credited in Esri item)",
+          "entry_id": "source attribution in item",
+          "url": "https://www.arcgis.com/home/item.html?id=2853306e11b2467ba0458bf667e1c584",
+          "relationship": "related_release"
+        }
+      ],
+      "observed_formats": [
+        "ArcGIS FeatureServer"
+      ],
+      "hosting_status": "service_only",
+      "access_summary": "FeatureServer service observed. No native bulk file or export permission established.",
+      "conversion_rationale": "Keep as a reference-layer lead only; the source description disclaims complete city coverage and analytic intent. Prefer a purpose-built settlement product for analysis.",
+      "license_summary": "Esri Master License Agreement declared; data source credits include Esri and Garmin. No offline redistribution right was verified.",
+      "evidence_urls": [
+        "https://www.arcgis.com/home/item.html?id=2853306e11b2467ba0458bf667e1c584"
+      ],
+      "proposed_outputs": [],
+      "format_labels": [
+        "vector"
+      ],
+      "recommended_formats": []
+    },
+    {
+      "suggested_id": "ghsl-ucdb-global-urban-centres",
+      "existing_record_id": null,
+      "title": "GHSL Urban Centre Database (UCDB; current R2024A family, with R2019A Esri service observation)",
+      "geographic_scope": "global",
+      "spatial_coverage": "The JRC producer describes the current UCDB R2024A as global coverage of about 11,000 urban centres, with multiple thematic domains and time epochs. The Esri FeatureServer item is an older R2019A representation describing 2015 centres; do not treat the two vintages as identical.",
+      "sources": [
+        {
+          "provider": "Esri Germany ArcGIS item",
+          "entry_id": "2344906dc4a04c748b690b9a92c8446c",
+          "url": "https://www.arcgis.com/home/item.html?id=2344906dc4a04c748b690b9a92c8446c",
+          "relationship": "related_release"
+        },
+        {
+          "provider": "European Commission Joint Research Centre GHSL",
+          "entry_id": "GHS-UCDB R2024A",
+          "url": "https://human-settlement.emergency.copernicus.eu/datasets.php",
+          "relationship": "same_family"
+        },
+        {
+          "provider": "European Commission Joint Research Centre",
+          "entry_id": "GHS-UCDB R2019A dataset landing page",
+          "url": "https://human-settlement.emergency.copernicus.eu/ghs_stat_ucdb2015mt_r2019a.php",
+          "relationship": "exact_dataset"
+        }
+      ],
+      "observed_formats": [
+        "ArcGIS FeatureServer (R2019A mirror)",
+        "CSV",
+        "XLS",
+        "GeoPackage (JRC R2024A producer downloads)"
+      ],
+      "hosting_status": "download_available",
+      "access_summary": "The Esri service is a hosted/linked view of an older release. The JRC producer catalog directly lists downloadable current UCDB files in CSV, XLS, and GeoPackage. No Esri feature export was performed.",
+      "conversion_rationale": "Reuse the existing GHSL family record and review UCDB as a distinct family component rather than creating a duplicate GHSL family. Current producer-native GeoPackage offers a suitable route to assess a GeoParquet output after release, geometry, and schema are pinned.",
+      "license_summary": "The Esri R2019A item states CC BY 4.0 for the dataset. The JRC catalog states reuse is authorized with proper acknowledgement. Apply the license for the exact producer release selected and preserve attribution and change notices.",
+      "evidence_urls": [
+        "https://human-settlement.emergency.copernicus.eu/datasets.php",
+        "https://www.arcgis.com/home/item.html?id=2344906dc4a04c748b690b9a92c8446c"
+      ],
+      "proposed_outputs": [
+        "GeoParquet"
+      ],
+      "related_record_id": "ghsl",
+      "format_labels": [
+        "vector"
+      ],
+      "recommended_formats": [
+        "GeoParquet"
+      ]
+    },
+    {
+      "suggested_id": "gpwv4-population-density",
+      "existing_record_id": null,
+      "title": "GPWv4 Population Density grid (Esri 2015 map-service representation)",
+      "geographic_scope": "global",
+      "spatial_coverage": "Global population-density estimates for 2000, 2005, 2010, 2015, and 2020 at 30-arc-second resolution, with coarser grids also published by SEDAC. The Esri map-service item represents the 2015 cartographic layer; source pixels reflect census/register inputs and proportional allocation, not population observations in every cell.",
+      "sources": [
+        {
+          "provider": "Esri / StoryMaps ArcGIS item",
+          "entry_id": "d314746e11834a04968e64b25c49882c",
+          "url": "https://www.arcgis.com/home/item.html?id=d314746e11834a04968e64b25c49882c",
+          "relationship": "related_release"
+        },
+        {
+          "provider": "NASA SEDAC / CIESIN",
+          "entry_id": "GPWv4 Population Density Revision 10/11",
+          "url": "https://sedac.ciesin.columbia.edu/data/collection/gpw-v4",
+          "relationship": "component"
+        }
+      ],
+      "observed_formats": [
+        "ArcGIS MapServer",
+        "GeoTIFF",
+        "ASCII grids, documentation and tabular support files (SEDAC producer downloads)"
+      ],
+      "hosting_status": "download_available",
+      "access_summary": "Esri map service is a cartographic service mirror; SEDAC supplies downloadable global raster files. The service was not queried for an export. Native producer resolution and revision should be chosen from SEDAC, not inferred from the Esri display layer.",
+      "conversion_rationale": "Extend the existing GPWv4 family record with the distinct density-grid component. COG is a reasonable derivative to consider from the producer's GeoTIFF after preserving cell values, units, masks, epoch, revision, and source documentation.",
+      "license_summary": "The ArcGIS item does not establish a redistribution license for the service contents. Review SEDAC's terms and attribution requirements for the exact revision before processing or redistributing the native files.",
+      "evidence_urls": [
+        "https://sedac.ciesin.columbia.edu/data/collection/gpw-v4",
+        "https://catalog.data.gov/dataset/gridded-population-of-the-world-version-4-gpwv4-population-density-revision-10",
+        "https://www.arcgis.com/home/item.html?id=d314746e11834a04968e64b25c49882c"
+      ],
+      "proposed_outputs": [
+        "COG"
+      ],
+      "related_record_id": "GPWv4",
+      "format_labels": [
+        "raster"
+      ],
+      "recommended_formats": [
+        "COG"
+      ]
+    },
+    {
+      "suggested_id": "wri-global-power-plant-database-esri-service",
+      "existing_record_id": "pwplants",
+      "title": "WRI Global Power Plant Database (Esri 2018 FeatureServer mirror; canonical family is WRI v1.3.0)",
+      "geographic_scope": "global",
+      "spatial_coverage": "Plant locations assembled for 164 countries in the Esri item description. The WRI v1.3.0 producer archive is a historical global database with country-level variation and no planned WRI updates since early 2022; this is not a complete current plant census.",
+      "sources": [
+        {
+          "provider": "Esri Media ArcGIS item",
+          "entry_id": "eb54b44c65b846cca12914b87b315169",
+          "url": "https://www.arcgis.com/home/item.html?id=eb54b44c65b846cca12914b87b315169",
+          "relationship": "related_release"
+        },
+        {
+          "provider": "World Resources Institute",
+          "entry_id": "Global Power Plant Database v1.3.0",
+          "url": "https://github.com/wri/global-power-plant-database",
+          "relationship": "same_family"
+        },
+        {
+          "provider": "WRI Data Explorer",
+          "entry_id": "Global Power Plant Database v1.3.0",
+          "url": "https://datasets.wri.org/datasets/global-power-plant-database",
+          "relationship": "exact_dataset"
+        }
+      ],
+      "observed_formats": [
+        "ArcGIS FeatureServer (older mirror)",
+        "CSV (WRI v1.3.0 producer release)"
+      ],
+      "hosting_status": "download_available",
+      "access_summary": "Use the pinned WRI producer CSV already reviewed in canonical record `pwplants`; the Esri service is a 2018 mirror. The service's Esri description warns that supplier redistribution rights vary. No service export was performed.",
+      "conversion_rationale": "Reuse existing `pwplants`; do not create a second candidate family from the Esri mirror. The service is a useful provenance cross-check but has older coverage and terms that differ from WRI's direct v1.3.0 download.",
+      "license_summary": "WRI states v1.3.0 CSV is CC BY 4.0 and code is MIT. The ArcGIS mirror separately declares Esri Master License terms and warns that supplier rights differ; do not use the mirror as the source for an offline copy.",
+      "evidence_urls": [
+        "https://github.com/wri/global-power-plant-database",
+        "https://datasets.wri.org/datasets/global-power-plant-database",
+        "https://www.arcgis.com/home/item.html?id=eb54b44c65b846cca12914b87b315169"
+      ],
+      "proposed_outputs": [],
+      "format_labels": [
+        "vector"
+      ],
+      "recommended_formats": []
+    },
+    {
+      "suggested_id": "ci-cepf-terrestrial-biodiversity-hotspots-2016",
+      "existing_record_id": null,
+      "title": "Conservation International / CEPF Terrestrial Biodiversity Hotspots 2016",
+      "geographic_scope": "near_global",
+      "spatial_coverage": "A global selection of 36 terrestrial regions meeting biodiversity endemism and habitat-loss criteria, not continuous global land coverage and not marine hotspots. The Esri item says these regions are exceptionally species-rich and threatened.",
+      "sources": [
+        {
+          "provider": "ArcGIS Living Atlas StoryMaps item",
+          "entry_id": "ba55aa1bff5447e7b72559b8dc1a0e83",
+          "url": "https://www.arcgis.com/home/item.html?id=ba55aa1bff5447e7b72559b8dc1a0e83",
+          "relationship": "related_release"
+        },
+        {
+          "provider": "Critical Ecosystem Partnership Fund / Conservation International",
+          "entry_id": "Biodiversity Hotspots",
+          "url": "https://www.cepf.net/our-work/biodiversity-hotspots",
+          "relationship": "same_family"
+        }
+      ],
+      "observed_formats": [
+        "ArcGIS FeatureServer"
+      ],
+      "hosting_status": "service_only",
+      "access_summary": "Public feature-service item observed. A producer-native bulk link and service export setting were not verified. Do not assume the ArcGIS feature service can be mirrored or redistributed.",
+      "conversion_rationale": "Keep for further review because the producer-derived global priority polygons are useful but the Esri record is a service copy. Locate and pin the exact producer file and confirm allowed derivatives before proposing an analytic package.",
+      "license_summary": "The inspected ArcGIS item declares CC BY-SA 4.0 and names CEPF and Conservation International as contributors. Confirm that the declaration covers the source geometry and follow share-alike terms; an Esri item declaration alone is not a complete producer rights check.",
+      "evidence_urls": [
+        "https://www.arcgis.com/home/item.html?id=ba55aa1bff5447e7b72559b8dc1a0e83",
+        "https://www.cepf.net/our-work/biodiversity-hotspots"
+      ],
+      "proposed_outputs": [],
+      "format_labels": [
+        "vector"
+      ],
+      "recommended_formats": []
+    },
+    {
+      "suggested_id": "resolve-terrestrial-ecoregions-2017",
+      "existing_record_id": null,
+      "title": "RESOLVE Ecoregions 2017 (846 terrestrial ecoregions)",
+      "geographic_scope": "near_global",
+      "spatial_coverage": "Global terrestrial ecoregions grouped into 14 biomes and 8 realms. This is a land classification, not ocean coverage; the 2017 producer release maps 846 terrestrial ecoregions.",
+      "sources": [
+        {
+          "provider": "Esri Living Atlas landscape item",
+          "entry_id": "37ea320eebb647c6838c23f72abae5ef",
+          "url": "https://www.arcgis.com/home/item.html?id=37ea320eebb647c6838c23f72abae5ef",
+          "relationship": "related_release"
+        },
+        {
+          "provider": "RESOLVE Biodiversity and Wildlife Solutions",
+          "entry_id": "Ecoregions 2017",
+          "url": "https://ecoregions.world/",
+          "relationship": "exact_dataset"
+        },
+        {
+          "provider": "RESOLVE Ecoregions 2017 producer record",
+          "entry_id": "RESOLVE/ECOREGIONS/2017",
+          "url": "https://developers.google.com/earth-engine/datasets/catalog/RESOLVE_ECOREGIONS_2017",
+          "relationship": "same_family"
+        }
+      ],
+      "observed_formats": [
+        "ArcGIS FeatureServer",
+        "Shapefile (producer download)"
+      ],
+      "hosting_status": "download_available",
+      "access_summary": "The producer site offers a Shapefile zip; the Esri item is a feature service. The Esri service was not queried for export.",
+      "conversion_rationale": "Good global terrestrial vector candidate with a producer-linked bulk format and stated CC BY 4.0 terms. GeoParquet is appropriate to assess after pinning the exact shapefile release and preserving ecoregion IDs, biome, realm, and source geometry.",
+      "license_summary": "The RESOLVE producer page states CC BY 4.0. The selected Esri service copy also declares CC BY 4.0. Retain attribution and identify the 2017 vintage; do not treat this historical ecological classification as current land cover.",
+      "evidence_urls": [
+        "https://ecoregions.world/",
+        "https://developers.google.com/earth-engine/datasets/catalog/RESOLVE_ECOREGIONS_2017",
+        "https://www.arcgis.com/home/item.html?id=37ea320eebb647c6838c23f72abae5ef"
+      ],
+      "proposed_outputs": [
+        "GeoParquet"
+      ],
+      "format_labels": [
+        "vector"
+      ],
+      "recommended_formats": [
+        "GeoParquet"
+      ]
+    },
+    {
+      "suggested_id": "wfp-global-ports",
+      "existing_record_id": null,
+      "title": "World Food Programme Global Ports locations",
+      "geographic_scope": "near_global",
+      "spatial_coverage": "WFP describes a global-scale, country-by-country port locations dataset maintained by its Emergency and Preparedness Geospatial Information Unit, with regular updates and partner inputs. Completeness and update date vary by country.",
+      "sources": [
+        {
+          "provider": "World Food Programme ArcGIS FeatureServer",
+          "entry_id": "21ae599c26944c068e828eeaf1cbf7ff",
+          "url": "https://gis.wfp.org/arcgis/rest/services/GLOBAL/GlobalPorts/MapServer/layers",
+          "relationship": "exact_dataset"
+        },
+        {
+          "provider": "World Food Programme ArcGIS item",
+          "entry_id": "0e23294067994b1dacbabaa541536e36",
+          "url": "https://www.arcgis.com/home/item.html?id=0e23294067994b1dacbabaa541536e36",
+          "relationship": "same_family"
+        },
+        {
+          "provider": "WFP Logistics Cluster",
+          "entry_id": "Logistics Capacity Assessments",
+          "url": "https://dlca.logcluster.org/",
+          "relationship": "component"
+        }
+      ],
+      "observed_formats": [
+        "ArcGIS FeatureServer / MapServer"
+      ],
+      "hosting_status": "service_only",
+      "access_summary": "The WFP REST service documents point features and source lineage. No producer bulk package, item license, export configuration, or redistribution permission was established.",
+      "conversion_rationale": "Useful operational global port locations with a named humanitarian data steward and update pathway. Further review is needed to resolve per-source provenance, country completeness, and rights before any offline product; service access alone is insufficient.",
+      "license_summary": "No license declaration was present in the inspected item or service description. The dataset combines public sources, OSM, World Port Source, WFP, and partner inputs; review the rights for each source before redistribution.",
+      "evidence_urls": [
+        "https://gis.wfp.org/arcgis/rest/services/GLOBAL/GlobalPorts/MapServer/layers",
+        "https://www.wfp.org/logistics-cluster"
+      ],
+      "proposed_outputs": [],
+      "format_labels": [
+        "vector"
+      ],
+      "recommended_formats": []
+    },
+    {
+      "suggested_id": "esri-global-hexbins-100km",
+      "existing_record_id": null,
+      "title": "Esri Global Hexbins 100 km (DGGS-derived reference grid)",
+      "geographic_scope": "global",
+      "spatial_coverage": "A global mesh whose hexagon center spacing is 100 km, created by Esri in 2015 in an authalic WGS84 sphere projection. It is an aggregation grid, not a thematic observation dataset.",
+      "sources": [
+        {
+          "provider": "Esri Data & Maps ArcGIS item",
+          "entry_id": "5d1dde8444da4c869b48499dae2eb527",
+          "url": "https://www.arcgis.com/home/item.html?id=5d1dde8444da4c869b48499dae2eb527",
+          "relationship": "exact_dataset"
+        },
+        {
+          "provider": "DGGRID / discreteglobalgrids.org",
+          "entry_id": "DGGRID v6.1 generator named in item description",
+          "url": "https://discreteglobalgrids.org/software/",
+          "relationship": "related_release"
+        }
+      ],
+      "observed_formats": [
+        "ArcGIS FeatureServer"
+      ],
+      "hosting_status": "service_only",
+      "access_summary": "ArcGIS feature service observed. The item credits DGGRID v6.1 as its generator but no native grid file or Esri service export permission was established.",
+      "conversion_rationale": "A low-priority candidate for repeatable global aggregation workflows. Prefer regenerating an explicitly versioned grid from DGGRID if its output exactly matches the needed projection and indexing; do not mirror the Esri service without permission.",
+      "license_summary": "The hosted item declares the Esri Master License Agreement. The item cites an open grid-generation method, but that does not establish redistribution rights for the published Esri geometry.",
+      "evidence_urls": [
+        "https://www.arcgis.com/home/item.html?id=5d1dde8444da4c869b48499dae2eb527"
+      ],
+      "proposed_outputs": [],
+      "format_labels": [
+        "vector",
+        "grid"
+      ],
+      "recommended_formats": []
+    },
+    {
+      "suggested_id": "noaa-global-temperature-anomaly-esri",
+      "existing_record_id": null,
+      "title": "NOAA Global Temperature Anomaly archive represented by Esri feature service",
+      "geographic_scope": "global",
+      "spatial_coverage": "The Esri layer describes global land and ocean temperature anomalies relative to a 1971-2000 climatology, with archive values beginning in 1880 and ending in 2025. NOAA's current NOAAGlobalTemp producer product offers global 5-degree monthly grids and time series from 1850 to present; these are related but not identical vintages or temporal extents.",
+      "sources": [
+        {
+          "provider": "Esri Live Feeds ArcGIS item",
+          "entry_id": "1cfb0f94bcb042178b262d5ec1714d3c",
+          "url": "https://www.arcgis.com/home/item.html?id=1cfb0f94bcb042178b262d5ec1714d3c",
+          "relationship": "related_release"
+        },
+        {
+          "provider": "NOAA NCEI",
+          "entry_id": "NOAAGlobalTemp",
+          "url": "https://www.ncei.noaa.gov/products/land-based-station/noaa-global-temp",
+          "relationship": "same_family"
+        }
+      ],
+      "observed_formats": [
+        "ArcGIS FeatureServer (Esri archive)",
+        "NetCDF (NOAA global gridded product)",
+        "ASCII time series (NOAA)"
+      ],
+      "hosting_status": "download_available",
+      "access_summary": "Use NOAA NCEI producer downloads for native data. The Esri item is a mature-support service as of April 2026, says no future values after 2025, and is not a substitute for current NCEI files.",
+      "conversion_rationale": "Further review as a climate grid/time-series family, but source selection must distinguish NOAA releases, baselines, land/ocean inputs, and uncertainty. No output format is recommended until the exact native files and intended use are reviewed.",
+      "license_summary": "The Esri item declares the Esri Master License Agreement. NOAA's NCEI page provides data access and citation guidance; confirm the applicable producer reuse terms and attribution before redistribution.",
+      "evidence_urls": [
+        "https://www.ncei.noaa.gov/products/land-based-station/noaa-global-temp",
+        "https://www.arcgis.com/home/item.html?id=1cfb0f94bcb042178b262d5ec1714d3c"
+      ],
+      "proposed_outputs": [],
+      "format_labels": [
+        "raster",
+        "time-series"
+      ],
+      "recommended_formats": []
+    },
+    {
+      "suggested_id": "usgs-world-ecological-land-units-2015",
+      "existing_record_id": null,
+      "title": "USGS World Ecological Land Units (ELUs) 2015",
+      "geographic_scope": "near_global",
+      "spatial_coverage": "Global terrestrial ecosystem classification at 250 m base resolution, with 3,923 ELU classes. Data.gov reports spatial bounds of -180,-56.0001 to 180,83.6249, so it excludes Antarctica and the far southern/high northern latitude regions outside those bounds.",
+      "sources": [
+        {
+          "provider": "Esri Landscape ArcGIS Map Service",
+          "entry_id": "77bbcb86d5eb48a8adb084d499c1f7ef",
+          "url": "https://www.arcgis.com/home/item.html?id=77bbcb86d5eb48a8adb084d499c1f7ef",
+          "relationship": "related_release"
+        },
+        {
+          "provider": "U.S. Geological Survey",
+          "entry_id": "World Ecological Land Units ELUs 2015 / USGS:63c9d475d34e06fef14f3b22",
+          "url": "https://catalog.data.gov/dataset/world-ecological-land-units-elus-2015",
+          "relationship": "exact_dataset"
+        },
+        {
+          "provider": "USGS digital data landing page",
+          "entry_id": "P9WRNPTN",
+          "url": "https://doi.org/10.5066/P9WRNPTN",
+          "relationship": "same_family"
+        }
+      ],
+      "observed_formats": [
+        "ArcGIS MapServer (raster/image service)",
+        "USGS source download format not verified from catalog metadata"
+      ],
+      "hosting_status": "unknown",
+      "access_summary": "Data.gov lists public access to a USGS digital-data landing page and original XML metadata; the Esri item is a MapServer. This inventory did not access data bytes or establish the source file format or Esri export permission.",
+      "conversion_rationale": "Worth reviewing as a global 250 m derived ecological raster because USGS is the named producer and public data catalog lists the source. Before conversion, confirm exact downloadable files, value definitions, projection, licensing, and source-component lineage.",
+      "license_summary": "The USGS/Data.gov catalog marks access public but the inspected catalog record does not state a reuse license. The Esri item declares Esri Master License terms and requires an ArcGIS organizational subscription or developer account. Public catalog access is not itself a redistribution license.",
+      "evidence_urls": [
+        "https://catalog.data.gov/dataset/world-ecological-land-units-elus-2015",
+        "https://www.usgs.gov/centers/geosciences-and-environmental-change-science-center/science/global-ecosystems-global-data",
+        "https://www.arcgis.com/home/item.html?id=77bbcb86d5eb48a8adb084d499c1f7ef"
+      ],
+      "proposed_outputs": [],
+      "format_labels": [
+        "raster"
+      ],
+      "recommended_formats": []
+    }
+  ],
+  "review_notes": [
+    "ArcGIS item searches are a bounded discovery sample, not an exhaustive ArcGIS Online census. The normalized search inventory preserves every query/page response reference, total, nextStart, byte count, and response hash.",
+    "The Esri World Boundaries Global Coverage service was not promoted as a candidate: its item terms explicitly prohibit exporting data for offline use.",
+    "Unattributed Global Rivers Atlas uploads and many copied/student service items were excluded even when their titles implied global coverage.",
+    "An ArcGIS FeatureServer, MapServer, image service, or public item page is not evidence of an enabled download, unlimited extraction, cloud-native storage, or redistribution rights.",
+    "No feature queries, raster downloads, service exports, authenticated calls, paid requests, or data publication were performed."
+  ]
+}

@@ -1,0 +1,48 @@
+schema_version: 1
+id: openstreetmap_planet
+title: OpenStreetMap global geodatabase snapshots
+intake:
+  kind: producer
+  reference_url: https://planet.openstreetmap.org/
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'supplemental: Worldwide contributor-maintained map database; feature completeness
+    varies geographically and by theme. Supplemental producer discovery; no citation count inferred.'
+  sources:
+  - provider: producer
+    entry_id: Planet dumps
+    url: https://planet.openstreetmap.org/
+    relationship: exact_dataset
+  access:
+  - provider: producer
+    status: download_available
+    formats:
+    - OSM XML
+    - PBF
+    summary: Regular full-planet snapshots and extracts are available; public tile service is not a bulk-data
+      endpoint. Supplemental producer discovery; no citation count inferred.
+    license_summary: Open Database License 1.0; attribution and share-alike/database obligations require
+      product-specific review.
+    proposed_outputs: []
+    rationale: Review exact source, existing native hosts and redistribution terms before selecting a
+      conversion.
+    evidence_urls:
+    - https://osmfoundation.org/wiki/FAQ
+    - https://osmfoundation.org/wiki/Licence_and_Legal_FAQ
+    - https://osmfoundation.org/wiki/How_To_Get_OpenStreetMap_Data
+    - https://planet.openstreetmap.org/
+  citations: []
+  evidence:
+  - path: research/global-candidates-20261031/citations/supplemental-global.json
+    sha256: 8eecd1b6859f60c355df02ed5f4f4bea5bcdfe69f156abafa95e9c622b975202
+    key: openstreetmap_planet

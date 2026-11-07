@@ -1,0 +1,80 @@
+{
+  "request_url": "https://api.openalex.org/works?search=Annual+maps+of+global+artificial+impervious+area+%28GAIA%29+between+1985+and+2018&corpus=all&per_page=5&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date",
+  "retrieved_at": "2026-10-30T22:07:41.409705+00:00",
+  "response_path": "responses/fe1662788786acb8ff537a9ff4be3df4659b18f244fca66fddc54d4920637b3b.json",
+  "status": 200,
+  "response_sha256": "0efc7b85fd11adb8e81c189a07b9b9049c0c457b6610bbfdf27ed571968da987",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 515,
+      "db_response_time_ms": 231,
+      "page": 1,
+      "per_page": 5,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where full text has (Annual maps of global artificial impervious area GAIA between 1985 \"and\" 2018)",
+        "x_new_oql": "get works (all corpora) where full text has (Annual maps of global artificial impervious area GAIA between 1985 \"and\" 2018)",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "Annual maps of global artificial impervious area (GAIA) between 1985 and 2018",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:Annual maps of global artificial impervious area %28GAIA%29 between 1985 and 2018&corpus=all&per_page=5",
+        "order": "best matches first",
+        "order_default": true
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W2990323597",
+        "doi": "https://doi.org/10.1016/j.rse.2019.111510",
+        "title": "Annual maps of global artificial impervious area (GAIA) between 1985 and 2018",
+        "type": "article",
+        "publication_year": 2019,
+        "publication_date": "2019-11-19"
+      },
+      {
+        "id": "https://openalex.org/W6976785191",
+        "doi": "https://doi.org/10.6084/m9.figshare.27245775",
+        "title": "Global Artificial Impervious Area (GAIA)",
+        "type": "dataset",
+        "publication_year": 2024,
+        "publication_date": "2024-01-01"
+      },
+      {
+        "id": "https://openalex.org/W3034880358",
+        "doi": "https://doi.org/10.1088/1748-9326/ab9be3",
+        "title": "Mapping global urban boundaries from the global artificial impervious area (GAIA) data",
+        "type": "article",
+        "publication_year": 2020,
+        "publication_date": "2020-06-11"
+      },
+      {
+        "id": "https://openalex.org/W4285232199",
+        "doi": "https://doi.org/10.1007/978-3-030-90998-7_21",
+        "title": "Global Thematic Land Use Cover Datasets Characterizing Artificial Covers",
+        "type": "dataset",
+        "publication_year": 2022,
+        "publication_date": "2022-01-01"
+      },
+      {
+        "id": "https://openalex.org/W4291237206",
+        "doi": "https://doi.org/10.1016/j.ecolind.2022.109307",
+        "title": "Global occupation of wetland by artificial impervious surface area expansion and its impact on ecosystem service value for 2001–2018",
+        "type": "article",
+        "publication_year": 2022,
+        "publication_date": "2022-08-13"
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "8abd5365dc8d809bb042116949d7d1242a511150d46628eb84e19ddf9d1f6703"
+}

@@ -1,0 +1,560 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "started_at": "2026-11-06T22:12:06.950569+00:00",
+  "git_commit": "4032d8a3e68fa2a95c870e6a421528ea800089a7",
+  "script_sha256": "a255f19a5e41b4cc0cc21c3a40a279f6a130a2f6cfa14694fff6de082f689711",
+  "plan_sha256": "05c9610f92cf64b30079a49f15a31403ebe7029fa9bf81f41f0ceadb6e87fd4e",
+  "lock_sha256": "2cf752aac36445732b59e0db89088aa3f421238fecf4693b27da4dacf89c7335",
+  "quota_project": "mtnmap-f75ec",
+  "scope": "Existing metadata/feature GET and bounded synchronous Collection.size only; no exports, batch tasks, writes or publication.",
+  "environment": {
+    "python": "3.12.12",
+    "google-auth": "2.53.0",
+    "requests": "2.32.5"
+  },
+  "requests": [
+    {
+      "query": "lakeatlas-polygons-before",
+      "method": "GET",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroAtlas/LakeAtlas/LakeAtlas_v10_polygon",
+      "params": {},
+      "started_at": "2026-11-06T22:12:08.388238+00:00",
+      "response_path": "lakeatlas-polygons-before-001.json",
+      "http_status": 200,
+      "finished_at": "2026-11-06T22:12:09.249018+00:00",
+      "response_bytes": 302,
+      "response_sha256": "9a6488b22831799e7c0b1ec88f69ca60a008c9c945d2c0845d8a3dc620c8a4b0",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 22:12:09 GMT",
+        "Content-Type": "application/json; charset=UTF-8"
+      }
+    },
+    {
+      "query": "lakeatlas-polygons-count",
+      "method": "POST",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroAtlas/LakeAtlas/LakeAtlas_v10_polygon",
+      "params": {},
+      "started_at": "2026-11-06T22:12:09.257264+00:00",
+      "response_path": "lakeatlas-polygons-count-001.json",
+      "body": {
+        "expression": {
+          "result": "0",
+          "values": {
+            "0": {
+              "functionInvocationValue": {
+                "functionName": "Collection.size",
+                "arguments": {
+                  "collection": {
+                    "functionInvocationValue": {
+                      "functionName": "Collection.loadTable",
+                      "arguments": {
+                        "tableId": {
+                          "constantValue": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroAtlas/LakeAtlas/LakeAtlas_v10_polygon"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "endpoint_resource": "projects/mtnmap-f75ec/value:compute",
+      "http_status": 200,
+      "finished_at": "2026-11-06T22:12:30.267054+00:00",
+      "response_bytes": 24,
+      "response_sha256": "f307744fe138278cbfe4fb347c5571e26e9a75b5acea5808c9e5aa72b3f8b811",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 22:12:30 GMT",
+        "Content-Type": "application/json; charset=UTF-8"
+      }
+    },
+    {
+      "query": "lakeatlas-polygons-features-000",
+      "method": "GET",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroAtlas/LakeAtlas/LakeAtlas_v10_polygon:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 1 OR Hylak_id = 2 OR Hylak_id = 3 OR Hylak_id = 4 OR Hylak_id = 5 OR Hylak_id = 6 OR Hylak_id = 7 OR Hylak_id = 8 OR Hylak_id = 9 OR Hylak_id = 10 OR Hylak_id = 1867 OR Hylak_id = 2200 OR Hylak_id = 2394 OR Hylak_id = 5383 OR Hylak_id = 7975 OR Hylak_id = 9810 OR Hylak_id = 12834 OR Hylak_id = 14056 OR Hylak_id = 14846 OR Hylak_id = 20123 OR Hylak_id = 21889 OR Hylak_id = 25091 OR Hylak_id = 31812 OR Hylak_id = 37944 OR Hylak_id = 45222 OR Hylak_id = 49418 OR Hylak_id = 53194 OR Hylak_id = 55623 OR Hylak_id = 56486 OR Hylak_id = 59050 OR Hylak_id = 63971 OR Hylak_id = 65238"
+      },
+      "started_at": "2026-11-06T22:12:30.267156+00:00",
+      "response_path": "lakeatlas-polygons-features-000-001.json",
+      "http_status": 200,
+      "finished_at": "2026-11-06T22:12:41.390853+00:00",
+      "response_bytes": 39699328,
+      "response_sha256": "0ce962336ab2f0a925acfe33c5faee76b52688286e8cd41aec38bbf857baee11",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 22:12:40 GMT",
+        "Content-Type": "application/json; charset=UTF-8"
+      }
+    },
+    {
+      "query": "lakeatlas-polygons-features-001",
+      "method": "GET",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroAtlas/LakeAtlas/LakeAtlas_v10_polygon:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 70268 OR Hylak_id = 75382 OR Hylak_id = 79440 OR Hylak_id = 79700 OR Hylak_id = 83543 OR Hylak_id = 84117 OR Hylak_id = 85221 OR Hylak_id = 85281 OR Hylak_id = 91046 OR Hylak_id = 92900 OR Hylak_id = 93022 OR Hylak_id = 96581 OR Hylak_id = 104966 OR Hylak_id = 106826 OR Hylak_id = 107022 OR Hylak_id = 109222 OR Hylak_id = 109688 OR Hylak_id = 111869 OR Hylak_id = 113557 OR Hylak_id = 113720 OR Hylak_id = 114915 OR Hylak_id = 118767 OR Hylak_id = 120899 OR Hylak_id = 124154 OR Hylak_id = 127392 OR Hylak_id = 128812 OR Hylak_id = 135437 OR Hylak_id = 138102 OR Hylak_id = 139327 OR Hylak_id = 142854 OR Hylak_id = 143688 OR Hylak_id = 147282"
+      },
+      "started_at": "2026-11-06T22:12:41.619198+00:00",
+      "response_path": "lakeatlas-polygons-features-001-001.json",
+      "http_status": 200,
+      "finished_at": "2026-11-06T22:12:50.361659+00:00",
+      "response_bytes": 554363,
+      "response_sha256": "7548546f0d9305c21cbd9cc1007fbab5832bf05cd04a038d8f5a63ba1cac0c19",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 22:12:50 GMT",
+        "Content-Type": "application/json; charset=UTF-8"
+      }
+    },
+    {
+      "query": "lakeatlas-polygons-features-002",
+      "method": "GET",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroAtlas/LakeAtlas/LakeAtlas_v10_polygon:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 147339 OR Hylak_id = 150166 OR Hylak_id = 151843 OR Hylak_id = 154645 OR Hylak_id = 158100 OR Hylak_id = 159931 OR Hylak_id = 162467 OR Hylak_id = 167560 OR Hylak_id = 171129 OR Hylak_id = 174925 OR Hylak_id = 174940 OR Hylak_id = 178141 OR Hylak_id = 178147 OR Hylak_id = 179304 OR Hylak_id = 186634 OR Hylak_id = 188272 OR Hylak_id = 190832 OR Hylak_id = 202380 OR Hylak_id = 203556 OR Hylak_id = 203723 OR Hylak_id = 205680 OR Hylak_id = 205780 OR Hylak_id = 212220 OR Hylak_id = 212479 OR Hylak_id = 214822 OR Hylak_id = 215708 OR Hylak_id = 217159 OR Hylak_id = 219412 OR Hylak_id = 219838 OR Hylak_id = 220063 OR Hylak_id = 230003 OR Hylak_id = 231982"
+      },
+      "started_at": "2026-11-06T22:12:50.381550+00:00",
+      "response_path": "lakeatlas-polygons-features-002-001.json",
+      "http_status": 200,
+      "finished_at": "2026-11-06T22:12:52.400762+00:00",
+      "response_bytes": 437192,
+      "response_sha256": "5477a48c5827e551b3e9ad0fa7bea5467060d209ff4a7924847de313c08c1f7c",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 22:12:52 GMT",
+        "Content-Type": "application/json; charset=UTF-8"
+      }
+    },
+    {
+      "query": "lakeatlas-polygons-features-003",
+      "method": "GET",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroAtlas/LakeAtlas/LakeAtlas_v10_polygon:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 236759 OR Hylak_id = 236971 OR Hylak_id = 239360 OR Hylak_id = 239428 OR Hylak_id = 240146 OR Hylak_id = 240748 OR Hylak_id = 240798 OR Hylak_id = 245968 OR Hylak_id = 254165 OR Hylak_id = 258662 OR Hylak_id = 258900 OR Hylak_id = 259134 OR Hylak_id = 269669 OR Hylak_id = 274253 OR Hylak_id = 276558 OR Hylak_id = 283491 OR Hylak_id = 286725 OR Hylak_id = 288633 OR Hylak_id = 297022 OR Hylak_id = 297191 OR Hylak_id = 306586 OR Hylak_id = 308046 OR Hylak_id = 309401 OR Hylak_id = 309692 OR Hylak_id = 312257 OR Hylak_id = 315432 OR Hylak_id = 315650 OR Hylak_id = 316444 OR Hylak_id = 317160 OR Hylak_id = 317906 OR Hylak_id = 318963 OR Hylak_id = 326427"
+      },
+      "started_at": "2026-11-06T22:12:52.403901+00:00",
+      "response_path": "lakeatlas-polygons-features-003-001.json",
+      "http_status": 200,
+      "finished_at": "2026-11-06T22:12:57.851888+00:00",
+      "response_bytes": 346622,
+      "response_sha256": "c9eeff8bc71414361fe9c7fffd752aabdeb92c387ec4db7044bc4ba19ff2bff6",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 22:12:57 GMT",
+        "Content-Type": "application/json; charset=UTF-8"
+      }
+    },
+    {
+      "query": "lakeatlas-polygons-features-004",
+      "method": "GET",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroAtlas/LakeAtlas/LakeAtlas_v10_polygon:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 326683 OR Hylak_id = 333202 OR Hylak_id = 333509 OR Hylak_id = 334277 OR Hylak_id = 336329 OR Hylak_id = 342063 OR Hylak_id = 344922 OR Hylak_id = 345398 OR Hylak_id = 352425 OR Hylak_id = 354638 OR Hylak_id = 359824 OR Hylak_id = 360461 OR Hylak_id = 360480 OR Hylak_id = 360618 OR Hylak_id = 361609 OR Hylak_id = 362958 OR Hylak_id = 364989 OR Hylak_id = 373570 OR Hylak_id = 374948 OR Hylak_id = 375271 OR Hylak_id = 375465 OR Hylak_id = 376027 OR Hylak_id = 390424 OR Hylak_id = 401669 OR Hylak_id = 403056 OR Hylak_id = 405365 OR Hylak_id = 406102 OR Hylak_id = 406844 OR Hylak_id = 406883 OR Hylak_id = 406922 OR Hylak_id = 411851 OR Hylak_id = 413091"
+      },
+      "started_at": "2026-11-06T22:12:57.855020+00:00",
+      "response_path": "lakeatlas-polygons-features-004-001.json",
+      "http_status": 200,
+      "finished_at": "2026-11-06T22:12:59.925053+00:00",
+      "response_bytes": 378030,
+      "response_sha256": "bdac64919006b0abc78db52f4410ecc00c2263f8b7ef7d7d45a8fac0ca3856de",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 22:12:59 GMT",
+        "Content-Type": "application/json; charset=UTF-8"
+      }
+    },
+    {
+      "query": "lakeatlas-polygons-features-005",
+      "method": "GET",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroAtlas/LakeAtlas/LakeAtlas_v10_polygon:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 413149 OR Hylak_id = 413441 OR Hylak_id = 417179 OR Hylak_id = 417377 OR Hylak_id = 419352 OR Hylak_id = 419376 OR Hylak_id = 423337 OR Hylak_id = 423359 OR Hylak_id = 429351 OR Hylak_id = 430979 OR Hylak_id = 442018 OR Hylak_id = 449724 OR Hylak_id = 449760 OR Hylak_id = 452056 OR Hylak_id = 456425 OR Hylak_id = 459463 OR Hylak_id = 462068 OR Hylak_id = 462769 OR Hylak_id = 463277 OR Hylak_id = 464966 OR Hylak_id = 467734 OR Hylak_id = 471233 OR Hylak_id = 471874 OR Hylak_id = 478722 OR Hylak_id = 482387 OR Hylak_id = 482591 OR Hylak_id = 484237 OR Hylak_id = 484819 OR Hylak_id = 486026 OR Hylak_id = 486092 OR Hylak_id = 488067 OR Hylak_id = 492229"
+      },
+      "started_at": "2026-11-06T22:12:59.929329+00:00",
+      "response_path": "lakeatlas-polygons-features-005-001.json",
+      "http_status": 200,
+      "finished_at": "2026-11-06T22:13:02.955184+00:00",
+      "response_bytes": 345907,
+      "response_sha256": "f5d56a43b16a4ecb5534f5525e402215fcddd79add21b8d57c7a9ea81240a6fd",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 22:13:03 GMT",
+        "Content-Type": "application/json; charset=UTF-8"
+      }
+    },
+    {
+      "query": "lakeatlas-polygons-features-006",
+      "method": "GET",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroAtlas/LakeAtlas/LakeAtlas_v10_polygon:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 493337 OR Hylak_id = 494110 OR Hylak_id = 498515 OR Hylak_id = 498979 OR Hylak_id = 500475 OR Hylak_id = 504442 OR Hylak_id = 504838 OR Hylak_id = 508944 OR Hylak_id = 509344 OR Hylak_id = 523032 OR Hylak_id = 525855 OR Hylak_id = 530220 OR Hylak_id = 530784 OR Hylak_id = 531502 OR Hylak_id = 542604 OR Hylak_id = 548704 OR Hylak_id = 548755 OR Hylak_id = 548917 OR Hylak_id = 552099 OR Hylak_id = 552435 OR Hylak_id = 558985 OR Hylak_id = 561170 OR Hylak_id = 562680 OR Hylak_id = 565690 OR Hylak_id = 566398 OR Hylak_id = 566543 OR Hylak_id = 569015 OR Hylak_id = 579714 OR Hylak_id = 587348 OR Hylak_id = 588335 OR Hylak_id = 588388 OR Hylak_id = 591329"
+      },
+      "started_at": "2026-11-06T22:13:02.957210+00:00",
+      "response_path": "lakeatlas-polygons-features-006-001.json",
+      "http_status": 200,
+      "finished_at": "2026-11-06T22:13:04.859166+00:00",
+      "response_bytes": 389917,
+      "response_sha256": "08e61d41c446c387d706953958996702ded82ed1557643e1d7397ac363711ded",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 22:13:04 GMT",
+        "Content-Type": "application/json; charset=UTF-8"
+      }
+    },
+    {
+      "query": "lakeatlas-polygons-features-007",
+      "method": "GET",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroAtlas/LakeAtlas/LakeAtlas_v10_polygon:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 598064 OR Hylak_id = 601579 OR Hylak_id = 601674 OR Hylak_id = 602305 OR Hylak_id = 610938 OR Hylak_id = 615715 OR Hylak_id = 616149 OR Hylak_id = 618066 OR Hylak_id = 619050 OR Hylak_id = 620165 OR Hylak_id = 622033 OR Hylak_id = 623331 OR Hylak_id = 625038 OR Hylak_id = 628214 OR Hylak_id = 628895 OR Hylak_id = 629396 OR Hylak_id = 638649 OR Hylak_id = 639090 OR Hylak_id = 644070 OR Hylak_id = 644321 OR Hylak_id = 644771 OR Hylak_id = 647400 OR Hylak_id = 647514 OR Hylak_id = 652561 OR Hylak_id = 658780 OR Hylak_id = 660350 OR Hylak_id = 660795 OR Hylak_id = 667112 OR Hylak_id = 667729 OR Hylak_id = 667748 OR Hylak_id = 668011 OR Hylak_id = 668012"
+      },
+      "started_at": "2026-11-06T22:13:04.861397+00:00",
+      "response_path": "lakeatlas-polygons-features-007-001.json",
+      "http_status": 200,
+      "finished_at": "2026-11-06T22:13:06.166940+00:00",
+      "response_bytes": 355341,
+      "response_sha256": "ab574a110a688fb596a0645a59bd0779d37067065e5ef2aac1d5d512504fea8d",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 22:13:06 GMT",
+        "Content-Type": "application/json; charset=UTF-8"
+      }
+    },
+    {
+      "query": "lakeatlas-polygons-features-008",
+      "method": "GET",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroAtlas/LakeAtlas/LakeAtlas_v10_polygon:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 671483 OR Hylak_id = 671528 OR Hylak_id = 671595 OR Hylak_id = 682152 OR Hylak_id = 686743 OR Hylak_id = 689004 OR Hylak_id = 689327 OR Hylak_id = 698392 OR Hylak_id = 700494 OR Hylak_id = 705847 OR Hylak_id = 705910 OR Hylak_id = 713395 OR Hylak_id = 713407 OR Hylak_id = 715610 OR Hylak_id = 716420 OR Hylak_id = 722659 OR Hylak_id = 722706 OR Hylak_id = 722861 OR Hylak_id = 723711 OR Hylak_id = 725505 OR Hylak_id = 726872 OR Hylak_id = 729810 OR Hylak_id = 734669 OR Hylak_id = 735063 OR Hylak_id = 741677 OR Hylak_id = 746314 OR Hylak_id = 746524 OR Hylak_id = 747292 OR Hylak_id = 749306 OR Hylak_id = 752851 OR Hylak_id = 759290 OR Hylak_id = 759324"
+      },
+      "started_at": "2026-11-06T22:13:06.169033+00:00",
+      "response_path": "lakeatlas-polygons-features-008-001.json",
+      "http_status": 200,
+      "finished_at": "2026-11-06T22:13:08.497572+00:00",
+      "response_bytes": 369079,
+      "response_sha256": "9749512c645198a6e2079569689494bee8bd484f0326adcb11386428e1970277",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 22:13:08 GMT",
+        "Content-Type": "application/json; charset=UTF-8"
+      }
+    },
+    {
+      "query": "lakeatlas-polygons-features-009",
+      "method": "GET",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroAtlas/LakeAtlas/LakeAtlas_v10_polygon:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 761926 OR Hylak_id = 767563 OR Hylak_id = 768256 OR Hylak_id = 772488 OR Hylak_id = 778203 OR Hylak_id = 778251 OR Hylak_id = 780118 OR Hylak_id = 780197 OR Hylak_id = 780291 OR Hylak_id = 785697 OR Hylak_id = 786604 OR Hylak_id = 787585 OR Hylak_id = 789598 OR Hylak_id = 790422 OR Hylak_id = 791683 OR Hylak_id = 791712 OR Hylak_id = 793638 OR Hylak_id = 794158 OR Hylak_id = 796571 OR Hylak_id = 809744 OR Hylak_id = 814710 OR Hylak_id = 818179 OR Hylak_id = 818372 OR Hylak_id = 819776 OR Hylak_id = 819821 OR Hylak_id = 824847 OR Hylak_id = 835170 OR Hylak_id = 846273 OR Hylak_id = 846812 OR Hylak_id = 847345 OR Hylak_id = 847358 OR Hylak_id = 848216"
+      },
+      "started_at": "2026-11-06T22:13:08.500382+00:00",
+      "response_path": "lakeatlas-polygons-features-009-001.json",
+      "http_status": 200,
+      "finished_at": "2026-11-06T22:13:09.868220+00:00",
+      "response_bytes": 353305,
+      "response_sha256": "e309972a7478ee893d0e261a3101a6e0f14b440867dc5fc3c11055539ca2be03",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 22:13:09 GMT",
+        "Content-Type": "application/json; charset=UTF-8"
+      }
+    },
+    {
+      "query": "lakeatlas-polygons-features-010",
+      "method": "GET",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroAtlas/LakeAtlas/LakeAtlas_v10_polygon:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 848376 OR Hylak_id = 851819 OR Hylak_id = 858265 OR Hylak_id = 860325 OR Hylak_id = 863752 OR Hylak_id = 867227 OR Hylak_id = 867489 OR Hylak_id = 868299 OR Hylak_id = 868526 OR Hylak_id = 871795 OR Hylak_id = 872012 OR Hylak_id = 872973 OR Hylak_id = 874022 OR Hylak_id = 886352 OR Hylak_id = 886399 OR Hylak_id = 886895 OR Hylak_id = 889678 OR Hylak_id = 890859 OR Hylak_id = 894170 OR Hylak_id = 895333 OR Hylak_id = 904657 OR Hylak_id = 905237 OR Hylak_id = 914301 OR Hylak_id = 914562 OR Hylak_id = 916007 OR Hylak_id = 920958 OR Hylak_id = 920994 OR Hylak_id = 923047 OR Hylak_id = 923511 OR Hylak_id = 929184 OR Hylak_id = 929535 OR Hylak_id = 935728"
+      },
+      "started_at": "2026-11-06T22:13:09.870363+00:00",
+      "response_path": "lakeatlas-polygons-features-010-001.json",
+      "http_status": 200,
+      "finished_at": "2026-11-06T22:13:11.351282+00:00",
+      "response_bytes": 362140,
+      "response_sha256": "aa4da14458e24ab6db0939d0c2084962a3ee106af8d709e19176c4cb5dac79e8",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 22:13:11 GMT",
+        "Content-Type": "application/json; charset=UTF-8"
+      }
+    },
+    {
+      "query": "lakeatlas-polygons-features-011",
+      "method": "GET",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroAtlas/LakeAtlas/LakeAtlas_v10_polygon:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 935843 OR Hylak_id = 938065 OR Hylak_id = 940913 OR Hylak_id = 941484 OR Hylak_id = 951002 OR Hylak_id = 954196 OR Hylak_id = 955498 OR Hylak_id = 956561 OR Hylak_id = 957214 OR Hylak_id = 964371 OR Hylak_id = 965517 OR Hylak_id = 972468 OR Hylak_id = 973395 OR Hylak_id = 973807 OR Hylak_id = 974121 OR Hylak_id = 975828 OR Hylak_id = 978372 OR Hylak_id = 978786 OR Hylak_id = 985429 OR Hylak_id = 990563 OR Hylak_id = 991889 OR Hylak_id = 995093 OR Hylak_id = 999113 OR Hylak_id = 999285 OR Hylak_id = 1006325 OR Hylak_id = 1007250 OR Hylak_id = 1007491 OR Hylak_id = 1016066 OR Hylak_id = 1016208 OR Hylak_id = 1016384 OR Hylak_id = 1020172 OR Hylak_id = 1020978"
+      },
+      "started_at": "2026-11-06T22:13:11.356413+00:00",
+      "response_path": "lakeatlas-polygons-features-011-001.json",
+      "http_status": 200,
+      "finished_at": "2026-11-06T22:13:12.945261+00:00",
+      "response_bytes": 340352,
+      "response_sha256": "f642c4811760ae570d07e4b00117b299b2a4530a676fff91cb2a806bfe722c21",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 22:13:13 GMT",
+        "Content-Type": "application/json; charset=UTF-8"
+      }
+    },
+    {
+      "query": "lakeatlas-polygons-features-012",
+      "method": "GET",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroAtlas/LakeAtlas/LakeAtlas_v10_polygon:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 1027930 OR Hylak_id = 1033027 OR Hylak_id = 1033495 OR Hylak_id = 1038548 OR Hylak_id = 1042252 OR Hylak_id = 1047180 OR Hylak_id = 1055102 OR Hylak_id = 1056158 OR Hylak_id = 1056635 OR Hylak_id = 1064626 OR Hylak_id = 1069208 OR Hylak_id = 1070514 OR Hylak_id = 1076716 OR Hylak_id = 1076804 OR Hylak_id = 1079941 OR Hylak_id = 1087025 OR Hylak_id = 1087038 OR Hylak_id = 1093796 OR Hylak_id = 1097232 OR Hylak_id = 1097238 OR Hylak_id = 1099026 OR Hylak_id = 1102299 OR Hylak_id = 1102368 OR Hylak_id = 1108956 OR Hylak_id = 1109078 OR Hylak_id = 1112894 OR Hylak_id = 1112922 OR Hylak_id = 1116558 OR Hylak_id = 1118865 OR Hylak_id = 1124147 OR Hylak_id = 1125735 OR Hylak_id = 1125770"
+      },
+      "started_at": "2026-11-06T22:13:12.947293+00:00",
+      "response_path": "lakeatlas-polygons-features-012-001.json",
+      "http_status": 200,
+      "finished_at": "2026-11-06T22:13:14.990634+00:00",
+      "response_bytes": 322616,
+      "response_sha256": "cabb520e2337cb74b6ef0d1f79d68fa958ddda02f735fd0c1adb06bc0483410b",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 22:13:15 GMT",
+        "Content-Type": "application/json; charset=UTF-8"
+      }
+    },
+    {
+      "query": "lakeatlas-polygons-features-013",
+      "method": "GET",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroAtlas/LakeAtlas/LakeAtlas_v10_polygon:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 1126753 OR Hylak_id = 1126833 OR Hylak_id = 1134538 OR Hylak_id = 1135254 OR Hylak_id = 1138084 OR Hylak_id = 1140949 OR Hylak_id = 1143990 OR Hylak_id = 1144163 OR Hylak_id = 1148222 OR Hylak_id = 1148459 OR Hylak_id = 1150273 OR Hylak_id = 1153648 OR Hylak_id = 1160326 OR Hylak_id = 1160618 OR Hylak_id = 1161031 OR Hylak_id = 1169026 OR Hylak_id = 1170133 OR Hylak_id = 1186688 OR Hylak_id = 1188396 OR Hylak_id = 1189124 OR Hylak_id = 1190889 OR Hylak_id = 1194080 OR Hylak_id = 1194262 OR Hylak_id = 1196034 OR Hylak_id = 1197351 OR Hylak_id = 1200867 OR Hylak_id = 1201087 OR Hylak_id = 1204358 OR Hylak_id = 1206458 OR Hylak_id = 1210272 OR Hylak_id = 1223565 OR Hylak_id = 1224142"
+      },
+      "started_at": "2026-11-06T22:13:14.992471+00:00",
+      "response_path": "lakeatlas-polygons-features-013-001.json",
+      "http_status": 200,
+      "finished_at": "2026-11-06T22:13:16.325857+00:00",
+      "response_bytes": 298462,
+      "response_sha256": "44e6827a5ae51a5a8398bf9f7b2377c1ca01d56b4322c091cdff69617304c8b3",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 22:13:16 GMT",
+        "Content-Type": "application/json; charset=UTF-8"
+      }
+    },
+    {
+      "query": "lakeatlas-polygons-features-014",
+      "method": "GET",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroAtlas/LakeAtlas/LakeAtlas_v10_polygon:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 1224454 OR Hylak_id = 1224848 OR Hylak_id = 1225989 OR Hylak_id = 1226242 OR Hylak_id = 1226508 OR Hylak_id = 1235483 OR Hylak_id = 1235690 OR Hylak_id = 1235788 OR Hylak_id = 1235868 OR Hylak_id = 1236099 OR Hylak_id = 1239213 OR Hylak_id = 1245438 OR Hylak_id = 1251666 OR Hylak_id = 1252053 OR Hylak_id = 1260702 OR Hylak_id = 1262084 OR Hylak_id = 1270040 OR Hylak_id = 1278542 OR Hylak_id = 1281555 OR Hylak_id = 1282323 OR Hylak_id = 1282588 OR Hylak_id = 1290725 OR Hylak_id = 1290820 OR Hylak_id = 1293186 OR Hylak_id = 1296504 OR Hylak_id = 1299773 OR Hylak_id = 1306383 OR Hylak_id = 1307478 OR Hylak_id = 1307847 OR Hylak_id = 1307971 OR Hylak_id = 1310728 OR Hylak_id = 1312022"
+      },
+      "started_at": "2026-11-06T22:13:16.327560+00:00",
+      "response_path": "lakeatlas-polygons-features-014-001.json",
+      "http_status": 200,
+      "finished_at": "2026-11-06T22:13:17.489417+00:00",
+      "response_bytes": 316999,
+      "response_sha256": "d109b6eddba64175b9946829dd27d64db963d213dac54ab4be128e480842a876",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 22:13:17 GMT",
+        "Content-Type": "application/json; charset=UTF-8"
+      }
+    },
+    {
+      "query": "lakeatlas-polygons-features-015",
+      "method": "GET",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroAtlas/LakeAtlas/LakeAtlas_v10_polygon:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 1316015 OR Hylak_id = 1316691 OR Hylak_id = 1319656 OR Hylak_id = 1319660 OR Hylak_id = 1320012 OR Hylak_id = 1322804 OR Hylak_id = 1323422 OR Hylak_id = 1325844 OR Hylak_id = 1326523 OR Hylak_id = 1326533 OR Hylak_id = 1336059 OR Hylak_id = 1336355 OR Hylak_id = 1341386 OR Hylak_id = 1341392 OR Hylak_id = 1346005 OR Hylak_id = 1349781 OR Hylak_id = 1353745 OR Hylak_id = 1357753 OR Hylak_id = 1357800 OR Hylak_id = 1360568 OR Hylak_id = 1362514 OR Hylak_id = 1362520 OR Hylak_id = 1369231 OR Hylak_id = 1375934 OR Hylak_id = 1375984 OR Hylak_id = 1378389 OR Hylak_id = 1386222 OR Hylak_id = 1386699 OR Hylak_id = 1394175 OR Hylak_id = 1402154 OR Hylak_id = 1402868 OR Hylak_id = 1403248"
+      },
+      "started_at": "2026-11-06T22:13:17.491260+00:00",
+      "response_path": "lakeatlas-polygons-features-015-001.json",
+      "http_status": 200,
+      "finished_at": "2026-11-06T22:13:18.349169+00:00",
+      "response_bytes": 308479,
+      "response_sha256": "2ed457147186899a993b33cd6fcb8db39a61fe461ef140db0de44c5c66d8967a",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 22:13:18 GMT",
+        "Content-Type": "application/json; charset=UTF-8"
+      }
+    },
+    {
+      "query": "lakeatlas-polygons-features-016",
+      "method": "GET",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroAtlas/LakeAtlas/LakeAtlas_v10_polygon:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 1407258 OR Hylak_id = 1407491 OR Hylak_id = 1409623 OR Hylak_id = 1411187 OR Hylak_id = 1417030 OR Hylak_id = 1420723 OR Hylak_id = 1423615 OR Hylak_id = 1426598 OR Hylak_id = 1426601 OR Hylak_id = 1427684"
+      },
+      "started_at": "2026-11-06T22:13:18.351851+00:00",
+      "response_path": "lakeatlas-polygons-features-016-001.json",
+      "http_status": 200,
+      "finished_at": "2026-11-06T22:13:18.748753+00:00",
+      "response_bytes": 94157,
+      "response_sha256": "a2920e6998a77fa800ae10180a3c46f0286ac3f77cb651510957fc71dbb8954c",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 22:13:18 GMT",
+        "Content-Type": "application/json; charset=UTF-8"
+      }
+    },
+    {
+      "query": "lakeatlas-polygons-after",
+      "method": "GET",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroAtlas/LakeAtlas/LakeAtlas_v10_polygon",
+      "params": {},
+      "started_at": "2026-11-06T22:13:18.749403+00:00",
+      "response_path": "lakeatlas-polygons-after-001.json",
+      "http_status": 200,
+      "finished_at": "2026-11-06T22:13:18.955173+00:00",
+      "response_bytes": 302,
+      "response_sha256": "9a6488b22831799e7c0b1ec88f69ca60a008c9c945d2c0845d8a3dc620c8a4b0",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 22:13:19 GMT",
+        "Content-Type": "application/json; charset=UTF-8"
+      }
+    }
+  ],
+  "total_bytes": 45272917,
+  "queries": [
+    {
+      "id": "lakeatlas-polygons-before",
+      "rows": 0,
+      "pages": 1,
+      "pagination_terminated": true,
+      "complete_enumeration": false
+    },
+    {
+      "id": "lakeatlas-polygons-count",
+      "rows": 0,
+      "pages": 1,
+      "pagination_terminated": true,
+      "complete_enumeration": false
+    },
+    {
+      "id": "lakeatlas-polygons-features-000",
+      "rows": 32,
+      "pages": 1,
+      "pagination_terminated": true,
+      "complete_enumeration": true
+    },
+    {
+      "id": "lakeatlas-polygons-features-001",
+      "rows": 32,
+      "pages": 1,
+      "pagination_terminated": true,
+      "complete_enumeration": true
+    },
+    {
+      "id": "lakeatlas-polygons-features-002",
+      "rows": 32,
+      "pages": 1,
+      "pagination_terminated": true,
+      "complete_enumeration": true
+    },
+    {
+      "id": "lakeatlas-polygons-features-003",
+      "rows": 32,
+      "pages": 1,
+      "pagination_terminated": true,
+      "complete_enumeration": true
+    },
+    {
+      "id": "lakeatlas-polygons-features-004",
+      "rows": 32,
+      "pages": 1,
+      "pagination_terminated": true,
+      "complete_enumeration": true
+    },
+    {
+      "id": "lakeatlas-polygons-features-005",
+      "rows": 32,
+      "pages": 1,
+      "pagination_terminated": true,
+      "complete_enumeration": true
+    },
+    {
+      "id": "lakeatlas-polygons-features-006",
+      "rows": 32,
+      "pages": 1,
+      "pagination_terminated": true,
+      "complete_enumeration": true
+    },
+    {
+      "id": "lakeatlas-polygons-features-007",
+      "rows": 32,
+      "pages": 1,
+      "pagination_terminated": true,
+      "complete_enumeration": true
+    },
+    {
+      "id": "lakeatlas-polygons-features-008",
+      "rows": 32,
+      "pages": 1,
+      "pagination_terminated": true,
+      "complete_enumeration": true
+    },
+    {
+      "id": "lakeatlas-polygons-features-009",
+      "rows": 32,
+      "pages": 1,
+      "pagination_terminated": true,
+      "complete_enumeration": true
+    },
+    {
+      "id": "lakeatlas-polygons-features-010",
+      "rows": 32,
+      "pages": 1,
+      "pagination_terminated": true,
+      "complete_enumeration": true
+    },
+    {
+      "id": "lakeatlas-polygons-features-011",
+      "rows": 32,
+      "pages": 1,
+      "pagination_terminated": true,
+      "complete_enumeration": true
+    },
+    {
+      "id": "lakeatlas-polygons-features-012",
+      "rows": 32,
+      "pages": 1,
+      "pagination_terminated": true,
+      "complete_enumeration": true
+    },
+    {
+      "id": "lakeatlas-polygons-features-013",
+      "rows": 32,
+      "pages": 1,
+      "pagination_terminated": true,
+      "complete_enumeration": true
+    },
+    {
+      "id": "lakeatlas-polygons-features-014",
+      "rows": 32,
+      "pages": 1,
+      "pagination_terminated": true,
+      "complete_enumeration": true
+    },
+    {
+      "id": "lakeatlas-polygons-features-015",
+      "rows": 32,
+      "pages": 1,
+      "pagination_terminated": true,
+      "complete_enumeration": true
+    },
+    {
+      "id": "lakeatlas-polygons-features-016",
+      "rows": 10,
+      "pages": 1,
+      "pagination_terminated": true,
+      "complete_enumeration": true
+    },
+    {
+      "id": "lakeatlas-polygons-after",
+      "rows": 0,
+      "pages": 1,
+      "pagination_terminated": true,
+      "complete_enumeration": false
+    }
+  ],
+  "errors": [],
+  "finished_at": "2026-11-06T22:13:18.955264+00:00",
+  "elapsed_seconds": 71.968
+}

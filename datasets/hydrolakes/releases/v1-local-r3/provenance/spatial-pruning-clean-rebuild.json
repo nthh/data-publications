@@ -1,0 +1,63 @@
+{
+  "asset": "hydrolakes.parquet",
+  "sha256": "6f588d97c14651eb23bea2d74fdf2a85f218a00ff11519c81efa5512b916b7f8",
+  "size_bytes": 949598607,
+  "status": "passed",
+  "minimum_prunable_fraction": 0.5,
+  "measurement": "row groups ruled out by bbox min/max; engine I/O checked separately",
+  "queries": [
+    {
+      "name": "Europe",
+      "bbox": [
+        5,
+        45,
+        15,
+        55
+      ],
+      "matching_rows": 5262,
+      "row_groups_prunable": 126,
+      "prunable_fraction": 0.984375,
+      "status": "passed"
+    },
+    {
+      "name": "North America",
+      "bbox": [
+        -100,
+        40,
+        -90,
+        50
+      ],
+      "matching_rows": 19700,
+      "row_groups_prunable": 122,
+      "prunable_fraction": 0.953125,
+      "status": "passed"
+    },
+    {
+      "name": "East Africa",
+      "bbox": [
+        20,
+        -5,
+        35,
+        5
+      ],
+      "matching_rows": 586,
+      "row_groups_prunable": 125,
+      "prunable_fraction": 0.9765625,
+      "status": "passed"
+    },
+    {
+      "name": "Australia",
+      "bbox": [
+        135,
+        -35,
+        150,
+        -20
+      ],
+      "matching_rows": 3689,
+      "row_groups_prunable": 125,
+      "prunable_fraction": 0.9765625,
+      "status": "passed"
+    }
+  ],
+  "row_groups": 128
+}

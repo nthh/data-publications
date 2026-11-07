@@ -1,0 +1,34 @@
+schema_version: 1
+id: gnatsgo
+title: gNATSGO AWS 0-100
+community_url: https://gee-community-catalog.org/projects/gnatsgo
+audit:
+  snapshot: gee-community-audit-20261029
+  family_key: gnatsgo
+  unique_gee_asset_count: 50
+  initial_queue: review_external_native_counterpart
+  folia_registry_status: direct_or_component
+  folia_registry_ids:
+  - '@usda-nrcs/gnatsgo'
+  source_coop_urls: []
+  source_coop_scope: null
+  external_native_urls:
+  - https://planetarycomputer.microsoft.com/api/stac/v1/collections/gnatsgo-rasters
+  external_native_scope: Raster properties; not corresponding soil attribute tables.
+    Collection and sample asset declare cloud-optimized TIFF.
+triage:
+  decision: pending
+  priority: normal
+review:
+  citation_assessment:
+    as_of: '2026-10-29'
+    provider: OpenAlex
+    evidence_path: research/citations/rankings.json
+    evidence_key: gnatsgo
+    geographic_scope: regional
+    paper_count_status: unknown
+    max_paper_citations: null
+    max_data_doi_citations: null
+    top_paper_doi: null
+    top_paper_openalex_id: null
+    citation_scope: associated_dataset_publication

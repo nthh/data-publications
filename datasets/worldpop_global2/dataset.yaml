@@ -1,0 +1,47 @@
+schema_version: 1
+id: worldpop_global2
+title: WorldPop Global2 gridded population estimates
+intake:
+  kind: producer
+  reference_url: https://hub.worldpop.org/project/categories?id=3
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'supplemental: Global 1 km annual grids for 2015–2030; separate country-level 100
+    m products exist and are not equivalent to the global mosaics. Global2 model/epoch/resolution is distinct
+    from the existing country/individual-year WorldPop entry; preserve separate product scope. Related
+    canonical records, with distinct scope: worldpop.'
+  sources:
+  - provider: producer
+    entry_id: Global2 population counts
+    url: https://hub.worldpop.org/project/categories?id=3
+    relationship: related_release
+  access:
+  - provider: producer
+    status: download_available
+    formats:
+    - GeoTIFF
+    summary: Producer pages provide yearly global mosaics and country-specific grids; dataset-specific
+      DOI/citation accompanies downloads. Global2 model/epoch/resolution is distinct from the existing
+      country/individual-year WorldPop entry; preserve separate product scope.
+    license_summary: Verify exact product license and citation on the selected download record.
+    proposed_outputs: []
+    rationale: Review exact source, existing native hosts and redistribution terms before selecting a
+      conversion.
+    evidence_urls:
+    - https://hub.worldpop.org/project/categories?id=3
+    - https://www.worldpop.org/faq/
+  citations: []
+  evidence:
+  - path: research/global-candidates-20261031/citations/supplemental-global.json
+    sha256: 8eecd1b6859f60c355df02ed5f4f4bea5bcdfe69f156abafa95e9c622b975202
+    key: worldpop_global2

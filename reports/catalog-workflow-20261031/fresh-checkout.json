@@ -1,0 +1,193 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "checked_at": "2026-10-31T23:42:46.851460+00:00",
+  "implementation_commit": "abd585e247cca8e375bce61505d9f324843e9127",
+  "platform": "macOS-15.1.1-arm64-arm-64bit-Mach-O",
+  "initial_local_data_absent": true,
+  "dataset_downloads": 0,
+  "git_worktree_clean_after_regeneration": true,
+  "checks": [
+    {
+      "name": "root-environment",
+      "command": [
+        "uv",
+        "sync",
+        "--locked",
+        "--no-build",
+        "--python",
+        "3.12.12"
+      ],
+      "exit_code": 0,
+      "seconds": 0.058,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "3c1b570e05182fc495c2151ea1ac433b7f8ed9f258243858ff22b0542f8dd53c"
+    },
+    {
+      "name": "validator-environment",
+      "command": [
+        "uv",
+        "sync",
+        "--locked",
+        "--project",
+        "tools/portolan",
+        "--no-build",
+        "--python",
+        "3.12.12"
+      ],
+      "exit_code": 0,
+      "seconds": 0.161,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "cfb5013c0e429c29faf91fb6d09fdc59b930674181e718c61288149c62a7155d"
+    },
+    {
+      "name": "canonical-records",
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "python",
+        "scripts/catalog.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "seconds": 2.709,
+      "stdout_sha256": "5b25514ac6a1aa6d519e13a914e58354f109c05b408c8f6ed1cc11e7fceb322c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "retained-provenance",
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "python",
+        "scripts/check_provenance.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.054,
+      "stdout_sha256": "882b0737878264dbfef825284088181a428f7c5aee3a802334119c71e768bc37",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "record-tests",
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "python",
+        "scripts/test_catalog.py"
+      ],
+      "exit_code": 0,
+      "seconds": 9.063,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "92c332c64cc8944fd8258bc12942cbbaf194a98fac68dc42dea26e203c05fdbc"
+    },
+    {
+      "name": "generator-tests",
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_publication_catalog.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "seconds": 0.632,
+      "stdout_sha256": "ed8f3bd5d0fbb76b4d8d6c70874fdc05cfb6b4639823549407b0686ea2eeebe0",
+      "stderr_sha256": "a58e5018011dfff29dcd0827a0f558040b65b9e5651dca312705f4eff64a3b6c"
+    },
+    {
+      "name": "generated-tree-check",
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "python",
+        "scripts/publication_catalog.py",
+        "check"
+      ],
+      "exit_code": 0,
+      "seconds": 1.509,
+      "stdout_sha256": "725ee33e1c419c93ffaaf3da04d9ea73e9d05c525a5b935905b11d969888e9f9",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "regenerate",
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "python",
+        "scripts/publication_catalog.py",
+        "write"
+      ],
+      "exit_code": 0,
+      "seconds": 1.484,
+      "stdout_sha256": "e3256f8008987bd8a90511d1574fbe3fca0927064ca6396f75134ddb2ddb8c98",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "unchanged-generated-tree",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code"
+      ],
+      "exit_code": 0,
+      "seconds": 0.027,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "actual-validator-tests",
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "--project",
+        "tools/portolan",
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_portolan_gate.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "seconds": 15.121,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "7011f62a44b46255483f55a30d18782e380b7369ff1ca6fdd74bf3d84fd396ff"
+    },
+    {
+      "name": "root-conformance",
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "--project",
+        "tools/portolan",
+        "python",
+        "scripts/check_portolan.py",
+        "--catalog",
+        "catalog",
+        "--report",
+        ".local/rehearsal/root-validation.json"
+      ],
+      "exit_code": 0,
+      "seconds": 0.323,
+      "stdout_sha256": "c6f61bc1b60a6462156dbc62ed457ac2048b68e8049b122ab133d840cac6ccb1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

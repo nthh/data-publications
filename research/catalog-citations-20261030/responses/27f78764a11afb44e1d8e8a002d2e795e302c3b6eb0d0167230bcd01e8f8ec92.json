@@ -1,0 +1,80 @@
+{
+  "request_url": "https://api.openalex.org/works?search=The+TRMM+Multi-satellite+Precipitation+Analysis%3A+Quasi-Global%2C+Multi-Year%2C+Combined-Sensor+Precipitation+Estimates+at+Fine+Scale&corpus=all&per_page=5&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date",
+  "retrieved_at": "2026-10-30T22:08:00.103399+00:00",
+  "response_path": "responses/27f78764a11afb44e1d8e8a002d2e795e302c3b6eb0d0167230bcd01e8f8ec92.json",
+  "status": 200,
+  "response_sha256": "36c3617de192e68c5616dbdac608526f72c3d497bc615eee2f80f010cd498895",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 2342,
+      "db_response_time_ms": 176,
+      "page": 1,
+      "per_page": 5,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where full text has (The TRMM Multi-satellite Precipitation Analysis: Quasi-Global Multi-Year Combined-Sensor Precipitation Estimates at Fine Scale)",
+        "x_new_oql": "get works (all corpora) where full text has (The TRMM Multi-satellite Precipitation Analysis: Quasi-Global Multi-Year Combined-Sensor Precipitation Estimates at Fine Scale)",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "The TRMM Multi-satellite Precipitation Analysis: Quasi-Global Multi-Year Combined-Sensor Precipitation Estimates at Fine Scale",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:The TRMM Multi-satellite Precipitation Analysis: Quasi-Global Multi-Year Combined-Sensor Precipitation Estimates at Fine Scale&corpus=all&per_page=5",
+        "order": "best matches first",
+        "order_default": true
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W7095547156",
+        "doi": null,
+        "title": "The TRMM Multi-satellite Precipitation Analysis: Quasi-Global, Multi-Year, Combined-Sensor Precipitation Estimates at Fine Scale",
+        "type": "article",
+        "publication_year": 2007,
+        "publication_date": "2007-01-01"
+      },
+      {
+        "id": "https://openalex.org/W6987793083",
+        "doi": null,
+        "title": "The TRMM Multi-satellite Precipitation Analysis (TMPA): Quasi-Global Precipitation Estimates at Fine Scales",
+        "type": "article",
+        "publication_year": 2006,
+        "publication_date": "2006-01-01"
+      },
+      {
+        "id": "https://openalex.org/W2083811565",
+        "doi": "https://doi.org/10.1029/2006gl028010",
+        "title": "Evaluation of the potential of NASA multi‐satellite precipitation analysis in global landslide hazard assessment",
+        "type": "article",
+        "publication_year": 2006,
+        "publication_date": "2006-11-01"
+      },
+      {
+        "id": "https://openalex.org/W2052398552",
+        "doi": "https://doi.org/10.1016/j.atmosres.2014.07.032",
+        "title": "Comparison of precipitation estimates between Version 7 3-hourly TRMM Multi-Satellite Precipitation Analysis (TMPA) near-real-time and research products",
+        "type": "article",
+        "publication_year": 2014,
+        "publication_date": "2014-08-15"
+      },
+      {
+        "id": "https://openalex.org/W2408303232",
+        "doi": "https://doi.org/10.3390/rs8050440",
+        "title": "Error-Component Analysis of TRMM-Based Multi-Satellite Precipitation Estimates over Mainland China",
+        "type": "article",
+        "publication_year": 2016,
+        "publication_date": "2016-05-23"
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "1f934c92a8757510025c6b90fc5fb6413d7e14eeab30865fcc3aeeb741b41cb3"
+}

@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "capture_status": "retrospective",
+  "note": "Initial production command details were reconstructed from the retained PMTiles metadata and terminal logs. The initial builder source file hash and PMTiles CLI version were not recorded contemporaneously.",
+  "dataset_id": "hydrolakes",
+  "analytic_release": "v1-local-r3",
+  "source_asset": {
+    "path": "hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+    "size_bytes": 949598607,
+    "sha256": "6f588d97c14651eb23bea2d74fdf2a85f218a00ff11519c81efa5512b916b7f8"
+  },
+  "original_tile_build": {
+    "tippecanoe_version": "2.79.0",
+    "tippecanoe_binary_sha256": "c504719334e5335d60c66a01491707bdbfb773ebbfe3efc7c1c8239eb18d58d1",
+    "tippecanoe_lock": "datasets/grwl/tippecanoe.lock.json",
+    "tippecanoe_lock_sha256": "28d3bedda9835f808c3c8303b64ad660654b17a48af529d0b32e0c1b496bbd0d",
+    "max_threads": 2,
+    "command_recipe": [
+      "tippecanoe", "--quiet", "--output", "<attempt>/.hydrolakes-polygons.work.mbtiles",
+      "--layer", "hydrolakes-polygons", "--name", "hydrolakes-polygons",
+      "--description", "Display derivative; GeoParquet is the analytic source.",
+      "--minimum-zoom", "0", "--maximum-zoom", "12", "--base-zoom", "12",
+      "--full-detail", "12", "--low-detail", "12", "--minimum-detail", "12",
+      "--simplification", "1", "--no-feature-limit", "--no-tile-size-limit",
+      "--no-tiny-polygon-reduction", "--no-tiny-polygon-reduction-at-maximum-zoom",
+      "--use-attribute-for-id", "Hylak_id", "/dev/stdin"
+    ],
+    "generator_options_source": "PMTiles metadata copied from Tippecanoe MBTiles metadata",
+    "builder_source_sha256": null,
+    "maxzoom_id_representation": "mvt_feature_id",
+    "id_property_behavior": "Tippecanoe consumed Hylak_id as Feature.id and omitted the duplicate Hylak_id property. The committed id-encoding diagnostic authorizes this exact representation for HydroLAKES only."
+  },
+  "initial_archive_validation": {
+    "pmtiles_cli_version": "not recorded at initial conversion",
+    "conversion_recipe": ["pmtiles", "convert", "<attempt>/.hydrolakes-polygons.work.mbtiles", "<attempt>/assets/hydrolakes-polygons.pmtiles"],
+    "structural_verification": ["pmtiles", "verify", "<attempt>/assets/hydrolakes-polygons.pmtiles"],
+    "result": "Tippecanoe conversion and pmtiles verify passed; a subsequent header check was rejected because pmtiles show --header-json uses minzoom/maxzoom keys. The retained archive bytes were adopted after independent validation."
+  },
+  "adoption_and_full_archive_audit": {
+    "adoption_builder_sha256": "ec0b190384de5bfba2c0398bbc0bd0d9faf2f3f3ec995550cf6bf6a123fa4c15",
+    "python_packages": {
+      "pyarrow": "23.0.1",
+      "shapely": "2.1.2",
+      "numpy": "2.5.4",
+      "pmtiles": "3.8.1"
+    },
+    "command": "python scripts/display_tools/build_display.py hydrolakes --data-root <DATA_ROOT> --output <DATA_ROOT>/hydrolakes/display/display-v1 --reuse-archive <DATA_ROOT>/hydrolakes/display/display-v1-failed-003/assets/hydrolakes-polygons.pmtiles",
+    "pmtiles_cli_version_at_adoption": "pmtiles dev, commit none, built at unknown",
+    "pmtiles_sha256": "2fc61a8257322bed3c71f86e3be92ed4835023bbb23f80bc9b2bb5167cb19d46",
+    "pmtiles_size_bytes": 1122881121,
+    "source_ids": 1427688,
+    "maxzoom_ids_accounted": 1427688,
+    "selected_property_fingerprints_checked": 1427688,
+    "maxzoom_tiles_scanned": 747127,
+    "missing_maxzoom_ids": 0,
+    "pmtiles_verify": "passed",
+    "header_layer_bounds_validation": "passed"
+  },
+  "independent_geometry_validation": {
+    "report_path": ".local/oracle-reports/hydrolakes-oracle-r2.json",
+    "report_sha256": "b985267f220efceec5cfe4f79235ba4df9e237b9c877cd55945286fc10b5f849",
+    "status": "pass",
+    "sampled_ids": 72,
+    "maxzoom_fragments": 1444,
+    "max_hausdorff_m": 3.647025,
+    "tolerance_m": 30
+  }
+}

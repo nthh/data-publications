@@ -1,0 +1,438 @@
+#!/usr/bin/env python3
+"""Exhaustive offline parity against hash-pinned, paginated GEE responses."""
+from __future__ import annotations
+
+import argparse
+from collections import Counter, defaultdict
+from decimal import Decimal
+import hashlib
+import json
+import math
+from pathlib import Path
+import struct
+
+import pyarrow as pa
+import pyarrow.parquet as pq
+
+HERE = Path(__file__).resolve().parent
+PRODUCT = HERE.parent
+ROOT = PRODUCT.parents[1]
+CONTRACT = PRODUCT / 'gee-parity-contract.json'
+PROVENANCE_DIR = PRODUCT / 'provenance'
+PROVENANCE_INDEX = PROVENANCE_DIR / 'index.json'
+HISTORICAL_SOURCES = {
+    'capture_script_sha256': {
+        'path': 'commons/publish/gee-community/products/river-plastic-inputs/gee/fetch.py',
+        'role': 'python',
+        'current': HERE / 'fetch.py',
+    },
+    'environment_lock_sha256': {
+        'path': 'commons/publish/gee-community/products/river-plastic-inputs/gee/uv.lock',
+        'role': 'environment',
+        'current': HERE / 'uv.lock',
+    },
+}
+ZERO = Decimal(0)
+
+
+def digest(path):
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+def require(ok, message):
+    if not ok:
+        raise ValueError(message)
+
+
+def read_json(path):
+    def reject(value):
+        raise ValueError(f'Non-finite JSON constant: {value}')
+    return json.loads(Path(path).read_bytes(), parse_float=Decimal, parse_constant=reject)
+
+
+def verify_capture_source(expected_hash, current_path, historical_path, role, index_path=None):
+    """Resolve a capture's code/lock hash to current bytes or an indexed old blob."""
+    require(isinstance(expected_hash, str) and len(expected_hash) == 64
+            and all(char in '0123456789abcdef' for char in expected_hash),
+            'Invalid capture source SHA-256')
+    current_hash = digest(current_path)
+    if expected_hash == current_hash:
+        return {'sha256': expected_hash, 'source': 'current', 'path': str(Path(current_path).relative_to(ROOT))}
+
+    inventory_path = Path(index_path) if index_path is not None else PROVENANCE_INDEX
+    require(inventory_path.is_file(), f'Historical provenance inventory is missing: {inventory_path}')
+    inventory = json.loads(inventory_path.read_bytes())
+    require(inventory.get('schema_version') == 1 and isinstance(inventory.get('files'), list),
+            'Invalid historical provenance inventory')
+    matches = [entry for entry in inventory['files']
+               if entry.get('path') == historical_path and entry.get('sha256') == expected_hash
+               and entry.get('role') == role]
+    require(bool(matches), f'Capture source is neither current nor in provenance inventory: {historical_path}')
+    expected_blob = f'blobs/{expected_hash}'
+    verified = []
+    provenance_root = inventory_path.parent.resolve()
+    for entry in matches:
+        require(entry.get('blob') == expected_blob, 'Historical source blob path does not match its SHA-256')
+        require(isinstance(entry.get('bytes'), int) and entry['bytes'] >= 0,
+                'Invalid historical source byte count')
+        blob_path = (provenance_root / expected_blob).resolve()
+        require(blob_path.is_relative_to(provenance_root), 'Historical source blob escapes provenance directory')
+        require(blob_path.is_file(), f'Historical source blob is missing: {expected_blob}')
+        require(blob_path.stat().st_size == entry['bytes'], 'Historical source blob byte count mismatch')
+        require(digest(blob_path) == expected_hash, 'Historical source blob SHA-256 mismatch')
+        verified.append({'snapshot': entry.get('snapshot'), 'git_revision': entry.get('git_revision')})
+    return {'sha256': expected_hash, 'source': 'historical-provenance-blob',
+            'path': historical_path, 'blob': expected_blob,
+            'inventory_sha256': digest(inventory_path), 'inventory_entries': verified}
+
+
+def verify_capture_sources(receipt):
+    results = {}
+    for field, source in HISTORICAL_SOURCES.items():
+        results[field] = verify_capture_source(receipt[field], source['current'], source['path'], source['role'])
+    return results
+
+
+def read_capture(folder, contract, contract_hash):
+    receipt = read_json(folder / 'capture.json')
+    require(receipt['status'] == 'complete', 'Capture is incomplete')
+    require(receipt['contract_sha256'] == contract_hash, 'Capture contract changed')
+    require(receipt['asset_id'] == contract['asset_id'], 'Asset ID mismatch')
+    require(receipt['rest_asset_name'] == contract['rest_asset_name'], 'REST asset mismatch')
+    require(receipt['quota_project'] == contract['quota_project'], 'Quota project mismatch')
+    requests = receipt['requests']
+    limits = contract['request_limits']
+    require(3 <= len(requests) <= limits['maximum_feature_pages'] + 2, 'Unexpected request count')
+    url = contract['api'] + contract['rest_asset_name']
+    bodies = []
+    size = 0
+    for index, request in enumerate(requests):
+        metadata = index in (0, len(requests) - 1)
+        name = ('metadata-before.json' if index == 0 else 'metadata-after.json') if metadata else f'features-{index:03d}.json'
+        require(request['response_path'] == name, 'Response path/order mismatch')
+        require(request['method'] == 'GET' and request['http_status'] == 200, 'Unexpected request method/status')
+        require(request['url'] == url + ('' if metadata else ':listFeatures'), 'Unexpected request URL')
+        path = folder / name
+        require(digest(path) == request['response_sha256'], f'Response bytes changed: {name}')
+        require(path.stat().st_size == request['response_bytes'], 'Response size mismatch')
+        size += path.stat().st_size
+        # Keep paths for pages, not their 2 million numeric values in memory.
+        bodies.append(read_json(path) if metadata else path)
+        if metadata:
+            require(request['params'] == {}, 'Filtered metadata request')
+    require(size == receipt['total_response_bytes'] <= limits['maximum_total_response_bytes'], 'Byte count/limit mismatch')
+    before, after = bodies[0], bodies[-1]
+    require(before == after and receipt['metadata_stable'] is True, 'Asset changed during retrieval')
+    require(before.get('type') == 'TABLE' and before.get('name') == contract['rest_asset_name'], 'Unexpected asset metadata')
+    token = None
+    seen = set()
+    count = 0
+    for index, path in enumerate(bodies[1:-1], 1):
+        params = {'pageSize': limits['page_size']}
+        if token:
+            params['pageToken'] = token
+        require(requests[index]['params'] == params, 'Pagination skipped, filtered, or reordered')
+        body = read_json(path)
+        require(body.get('type') == 'FeatureCollection' and isinstance(body.get('features'), list), 'Invalid feature response')
+        count += len(body['features'])
+        token = body.get('nextPageToken')
+        if index < len(bodies) - 2:
+            require(bool(token), 'Pagination terminated before last captured page')
+        else:
+            require(not token, 'Last page still has a continuation token')
+        if token:
+            require(token not in seen, 'Repeated page token')
+            seen.add(token)
+    require(count == receipt['total_rows'] <= limits['maximum_rows'], 'Row count/limit mismatch')
+    require(len(bodies) - 2 == receipt['feature_pages'], 'Page count mismatch')
+
+    def features():
+        for path in bodies[1:-1]:
+            yield from read_json(path)['features']
+    return receipt, before, features()
+
+
+def numeric(value):
+    return not isinstance(value, bool) and isinstance(value, (int, float, Decimal)) and Decimal(str(value)).is_finite()
+
+
+def allowance(value, scale):
+    binary = float(value)
+    require(math.isfinite(binary), 'Source numeric value exceeds binary64 range')
+    return max(Decimal('0.5').scaleb(-scale), Decimal(str(2 * math.ulp(binary))))
+
+
+def coordinates(geometry):
+    if not isinstance(geometry, dict) or geometry.get('type') != 'Point':
+        return None
+    xy = geometry.get('coordinates')
+    if not isinstance(xy, list) or len(xy) != 2 or not all(numeric(x) for x in xy):
+        return None
+    x, y = map(float, xy)
+    return (x, y) if -180 <= x <= 180 and -90 <= y <= 90 else None
+
+
+def compare(table, features, contract, detail=None, geometry_diagnostic=None, coincident_groups=False):
+    names = [name for name in table.column_names if name not in ('geometry', 'bbox', 'source_row')]
+    require(len(names) == contract['expected_fields'], 'Unexpected source scientific schema')
+    require(table.num_rows == contract['expected_rows'], 'Unexpected source row count')
+    require(all(pa.types.is_decimal(table.schema.field(name).type) for name in names), 'Expected fixed-point source attributes')
+    values = {name: table[name].to_pylist() for name in names}
+    scales = {name: table.schema.field(name).type.scale for name in names}
+    ids = table['source_row'].to_pylist()
+    require(len(set(ids)) == len(ids), 'Duplicate local source identifiers')
+    xy = []
+    for wkb in table['geometry'].to_pylist():
+        require(len(wkb) == 21 and wkb[:5] == b'\x01\x01\x00\x00\x00', 'Expected little-endian 2D Point WKB')
+        point = struct.unpack('<dd', wkb[5:])
+        require(all(math.isfinite(x) for x in point) and -180 <= point[0] <= 180 and -90 <= point[1] <= 90, 'Invalid local coordinate')
+        xy.append(point)
+    strict_tolerance = float(contract['matching']['coordinate_absolute_tolerance_degrees'])
+    tolerance = strict_tolerance
+    geod = None
+    displacements = []
+    strict_violations = 0
+    if geometry_diagnostic:
+        from pyproj import Geod
+        geod = Geod(ellps='WGS84')
+        tolerance = float(geometry_diagnostic['candidate_lookup']['bin_width_degrees'])
+        latitude_limit = geometry_diagnostic['candidate_lookup']['maximum_absolute_latitude']
+        require(all(abs(y) <= latitude_limit for _, y in xy), 'Source outside diagnostic lookup extent')
+    bins = defaultdict(list)
+    for index, (x, y) in enumerate(xy):
+        bins[math.floor(x / tolerance), math.floor(y / tolerance)].append(index)
+    stats = {name: {
+        'source_nulls': sum(x is None for x in values[name]), 'gee_null_or_absent': 0,
+        'gee_absent_properties': 0, 'null_matches': 0, 'exact_numeric_matches': 0,
+        'within_tolerance_matches': 0, 'mismatches': 0, 'invalid_types': 0,
+        'maximum_absolute_difference': ZERO, 'possible_1000_fold_scaling': 0,
+    } for name in names}
+    emission_fields = [name for name in names if name.startswith('i_')]
+    source_totals = {name: sum((x for x in values[name] if x is not None), ZERO) for name in emission_fields}
+    sum_allowances = {name: sum((allowance(x, scales[name]) for x in values[name] if x is not None), ZERO) for name in emission_fields}
+    gee_totals = {name: ZERO for name in emission_fields}
+    categories = Counter()
+    deferred_groups = defaultdict(list)
+    verified_groups = []
+    examples = []
+    seen_properties = set()
+    assigned = set()
+    max_coordinate_error = 0.0
+    remote_bounds = [math.inf, math.inf, -math.inf, -math.inf]
+    total_features = 0
+    attribute_cells_compared = 0
+
+    def mismatch(kind, **context):
+        categories[kind] += 1
+        event = {'kind': kind, **context}
+        if len(examples) < 20:
+            examples.append(event)
+        if detail:
+            detail.write(json.dumps(event, default=str) + '\n')
+
+    for ordinal, feature in enumerate(features, 1):
+        total_features += 1
+        if not isinstance(feature, dict) or feature.get('type') != 'Feature' or not isinstance(feature.get('properties'), dict):
+            mismatch('invalid_feature', gee_ordinal=ordinal)
+            continue
+        properties = feature['properties']
+        seen_properties.update(properties)
+        for name in names:
+            value = properties.get(name)
+            stats[name]['gee_null_or_absent'] += value is None
+            stats[name]['gee_absent_properties'] += name not in properties
+            if value is not None and not numeric(value):
+                stats[name]['invalid_types'] += 1
+            elif name in gee_totals and value is not None:
+                gee_totals[name] += Decimal(str(value))
+        point = coordinates(feature.get('geometry'))
+        if point is None:
+            mismatch('invalid_geometry', gee_ordinal=ordinal)
+            continue
+        x, y = point
+        if geometry_diagnostic and abs(y) > latitude_limit:
+            mismatch('outside_diagnostic_lookup_extent', gee_ordinal=ordinal, coordinates=point)
+            continue
+        remote_bounds = [min(remote_bounds[0], x), min(remote_bounds[1], y), max(remote_bounds[2], x), max(remote_bounds[3], y)]
+        bx, by = math.floor(x / tolerance), math.floor(y / tolerance)
+        matches = [index for dx in (-1, 0, 1) for dy in (-1, 0, 1)
+                   for index in bins.get((bx + dx, by + dy), ())
+                   if abs(xy[index][0] - x) <= tolerance and abs(xy[index][1] - y) <= tolerance]
+        distances = {}
+        if geod:
+            distances = {index: geod.inv(xy[index][0], xy[index][1], x, y)[2] for index in matches}
+            matches = [index for index in matches if distances[index] <= geometry_diagnostic['matching_radius_meters']]
+        if coincident_groups and len(matches) > 1 and len({xy[index] for index in matches}) == 1:
+            deferred_groups[tuple(matches)].append((ordinal, point, properties))
+            continue
+        if len(matches) != 1:
+            mismatch('unmatched_geometry' if not matches else 'ambiguous_geometry', gee_ordinal=ordinal,
+                     coordinates=point, candidate_source_rows=[ids[i] for i in matches])
+            continue
+        index = matches[0]
+        if index in assigned:
+            mismatch('duplicate_geometry_assignment', gee_ordinal=ordinal, source_row=ids[index])
+            continue
+        assigned.add(index)
+        coordinate_error = max(abs(xy[index][0] - x), abs(xy[index][1] - y))
+        strict_violations += coordinate_error > strict_tolerance
+        if geod:
+            displacements.append(distances[index])
+        max_coordinate_error = max(max_coordinate_error, abs(xy[index][0] - x), abs(xy[index][1] - y))
+        for name in names:
+            attribute_cells_compared += 1
+            source, observed = values[name][index], properties.get(name)
+            field = stats[name]
+            if source is None and observed is None:
+                field['null_matches'] += 1
+                continue
+            reason = None
+            difference = None
+            bound = None
+            if source is None or observed is None:
+                reason = 'null_mismatch'
+            elif not numeric(observed):
+                reason = 'numeric_type_mismatch'
+            else:
+                observed = Decimal(str(observed))
+                difference = abs(observed - source)
+                field['maximum_absolute_difference'] = max(field['maximum_absolute_difference'], difference)
+                bound = allowance(source, scales[name])
+                if difference == 0:
+                    field['exact_numeric_matches'] += 1
+                elif difference <= bound:
+                    field['within_tolerance_matches'] += 1
+                else:
+                    reason = 'value_mismatch'
+                    if source and any(math.isclose(float(observed), float(source * factor), rel_tol=1e-10, abs_tol=5e-7)
+                                      for factor in (Decimal(1000), Decimal('0.001'))):
+                        field['possible_1000_fold_scaling'] += 1
+            if reason:
+                field['mismatches'] += 1
+                mismatch(reason, source_row=ids[index], field=name, source_value=source, gee_value=observed,
+                         absolute_difference=difference, allowed_difference=bound)
+    for indices, records in deferred_groups.items():
+        expected = Counter(tuple(values[name][index] for name in names) for index in indices)
+        observed = Counter()
+        valid_types = True
+        for _, _, properties in records:
+            row = []
+            for name in names:
+                value = properties.get(name)
+                if value is not None and not numeric(value):
+                    valid_types = False
+                    break
+                row.append(Decimal(str(value)) if value is not None else None)
+            if len(row) == len(names):
+                observed[tuple(row)] += 1
+        if not valid_types or expected != observed or any(index in assigned for index in indices):
+            mismatch('coincident_group_multiset_mismatch', source_rows=[ids[i] for i in indices],
+                     coordinates=xy[indices[0]], source_records=len(indices), gee_records=len(records),
+                     missing_record_tuples=sum((expected - observed).values()),
+                     extra_record_tuples=sum((observed - expected).values()), invalid_types=not valid_types)
+            continue
+        assigned.update(indices)
+        attribute_cells_compared += len(indices) * len(names)
+        for index in indices:
+            for name in names:
+                stats[name]['null_matches' if values[name][index] is None else 'exact_numeric_matches'] += 1
+        reference = xy[indices[0]]
+        for _, point, _ in records:
+            error = max(abs(reference[0] - point[0]), abs(reference[1] - point[1]))
+            max_coordinate_error = max(max_coordinate_error, error)
+            strict_violations += error > strict_tolerance
+            if geod:
+                displacements.append(geod.inv(reference[0], reference[1], point[0], point[1])[2])
+        verified_groups.append({'source_rows': [ids[i] for i in indices], 'source_coordinates': reference,
+                                'records': len(indices), 'distinct_attribute_tuples': len(expected),
+                                'status': 'exact_multiset_match'})
+    missing_fields = sorted(set(names) - seen_properties)
+    missing_source_rows = [ids[i] for i in range(table.num_rows) if i not in assigned]
+    source_bounds = [min(p[0] for p in xy), min(p[1] for p in xy), max(p[0] for p in xy), max(p[1] for p in xy)]
+    bounds_match = all(abs(a - b) <= tolerance for a, b in zip(source_bounds, remote_bounds))
+    totals = {name: {
+        'source': str(source_totals[name]), 'gee': str(gee_totals[name]),
+        'absolute_difference': str(abs(source_totals[name] - gee_totals[name])),
+        'allowed_difference': str(sum_allowances[name]),
+        'status': 'passed' if abs(source_totals[name] - gee_totals[name]) <= sum_allowances[name] else 'failed',
+    } for name in emission_fields}
+    null_counts_match = all(s['source_nulls'] == s['gee_null_or_absent'] for s in stats.values())
+    passed = (not categories and not missing_fields and not missing_source_rows and null_counts_match and bounds_match
+              and total_features == contract['expected_rows'] and all(t['status'] == 'passed' for t in totals.values()))
+    displacement_summary = None
+    if displacements:
+        ordered = sorted(displacements)
+        def quantile(fraction):
+            position = fraction * (len(ordered) - 1)
+            low, high = math.floor(position), math.ceil(position)
+            return ordered[low] + (ordered[high] - ordered[low]) * (position - low)
+        displacement_summary = {
+            'method': 'pyproj.Geod.inv, WGS84 ellipsoid; linearly interpolated quantiles',
+            'minimum': ordered[0], 'median': quantile(0.5), 'p95': quantile(0.95),
+            'p99': quantile(0.99), 'maximum': ordered[-1],
+        }
+    return {
+        'status': 'passed' if passed else 'failed', 'scope': contract['coverage'],
+        'geometry_profile': 'one_metre_geodesic_diagnostic' if geod else 'original_strict_coordinates',
+        'matched_points_outside_original_strict_tolerance': strict_violations,
+        'geodesic_displacement_meters': displacement_summary,
+        'source_rows': table.num_rows, 'gee_features': total_features,
+        'uniquely_matched_points': len(assigned) - sum(group['records'] for group in verified_groups),
+        'coincident_groups_verified': len(verified_groups),
+        'coincident_records_verified': sum(group['records'] for group in verified_groups),
+        'coincident_group_results': verified_groups, 'source_records_verified': len(assigned),
+        'scientific_fields': len(names), 'attribute_cells_compared': attribute_cells_compared,
+        'exact_numeric_matches': sum(s['exact_numeric_matches'] for s in stats.values()),
+        'within_tolerance_numeric_matches': sum(s['within_tolerance_matches'] for s in stats.values()),
+        'null_matches': sum(s['null_matches'] for s in stats.values()),
+        'null_counts_match': null_counts_match, 'maximum_coordinate_difference_degrees': max_coordinate_error,
+        'source_bounds': source_bounds, 'gee_bounds': remote_bounds if total_features and math.isfinite(remote_bounds[0]) else None,
+        'bounds_match': bounds_match, 'missing_fields': missing_fields,
+        'additional_gee_properties': sorted(seen_properties - set(names)),
+        'unmatched_source_rows': missing_source_rows, 'mismatch_counts': dict(categories), 'mismatch_examples': examples,
+        'fields': stats, 'emission_totals': totals,
+    }
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('release', type=Path)
+    parser.add_argument('capture', type=Path)
+    parser.add_argument('--report', required=True, type=Path)
+    parser.add_argument('--details', required=True, type=Path)
+    args = parser.parse_args()
+    contract = read_json(CONTRACT)
+    receipt, metadata, features = read_capture(args.capture, contract, digest(CONTRACT))
+    capture_sources = verify_capture_sources(receipt)
+    parquet = args.release / 'river-plastic-inputs/river-plastic-inputs.parquet'
+    require(digest(parquet) == contract['geoparquet_sha256'], 'Local data differs from pinned release')
+    args.details.parent.mkdir(parents=True, exist_ok=True)
+    with args.details.open('w') as detail:
+        report = compare(pq.read_table(parquet), features, contract, detail)
+    report['provenance'] = {
+        'asset_metadata': metadata,
+        'upstream_version_status': 'undocumented_in_gee_metadata',
+        'upstream_version_note': 'The captured asset metadata has no DOI, source-release or ingestion manifest. Measured content agreement is separate from producer/version provenance.',
+        'capture_receipt_sha256': digest(args.capture / 'capture.json'),
+        'capture_source_verification': capture_sources,
+        'geoparquet_sha256': digest(parquet), 'contract_sha256': digest(CONTRACT),
+        'comparator_sha256': digest(Path(__file__)), 'capture_script_sha256': receipt['capture_script_sha256'],
+        'environment_lock_sha256': receipt['environment_lock_sha256'],
+        'capture_git_commit': receipt['git_commit'],
+        'capture_started_at': receipt['started_at'], 'capture_finished_at': receipt['finished_at'],
+        'feature_pages': receipt['feature_pages'], 'raw_response_bytes': receipt['total_response_bytes'],
+        'metadata_stable': receipt['metadata_stable'],
+        'mismatch_details_sha256': digest(args.details), 'mismatch_details_bytes': args.details.stat().st_size,
+    }
+    args.report.parent.mkdir(parents=True, exist_ok=True)
+    args.report.write_text(json.dumps(report, indent=2, default=str) + '\n')
+    print(json.dumps({key: report[key] for key in (
+        'status', 'source_rows', 'gee_features', 'uniquely_matched_points', 'scientific_fields',
+        'attribute_cells_compared', 'exact_numeric_matches', 'within_tolerance_numeric_matches',
+        'null_matches', 'null_counts_match', 'maximum_coordinate_difference_degrees',
+        'missing_fields', 'additional_gee_properties', 'mismatch_counts')}, indent=2))
+    return 0 if report['status'] == 'passed' else 1
+
+
+if __name__ == '__main__':
+    raise SystemExit(main())

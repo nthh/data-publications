@@ -1,0 +1,80 @@
+{
+  "request_url": "https://api.openalex.org/works?search=Tracking+the+global+footprint+of+fisheries&corpus=all&per_page=5&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date",
+  "retrieved_at": "2026-10-30T22:08:01.172078+00:00",
+  "response_path": "responses/3d0f3ea0ba329ec6e271530376456d727896b2c7d678d0a0271e9e6d537695d4.json",
+  "status": 200,
+  "response_sha256": "0663ba1312a9100a5e3e95b23df07cabc4e41eaaed598af548e866939c925efd",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 20398,
+      "db_response_time_ms": 127,
+      "page": 1,
+      "per_page": 5,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where full text has (Tracking the global footprint of fisheries)",
+        "x_new_oql": "get works (all corpora) where full text has (Tracking the global footprint of fisheries)",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "Tracking the global footprint of fisheries",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:Tracking the global footprint of fisheries&corpus=all&per_page=5",
+        "order": "best matches first",
+        "order_default": true
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W2788078249",
+        "doi": "https://doi.org/10.1126/science.aao5646",
+        "title": "Tracking the global footprint of fisheries",
+        "type": "article",
+        "publication_year": 2018,
+        "publication_date": "2018-02-22"
+      },
+      {
+        "id": "https://openalex.org/W2888671381",
+        "doi": "https://doi.org/10.1126/science.aat6713",
+        "title": "Comment on “Tracking the global footprint of fisheries”",
+        "type": "article",
+        "publication_year": 2018,
+        "publication_date": "2018-08-23"
+      },
+      {
+        "id": "https://openalex.org/W2888477944",
+        "doi": "https://doi.org/10.1126/science.aat7789",
+        "title": "Response to Comment on “Tracking the global footprint of fisheries”",
+        "type": "article",
+        "publication_year": 2018,
+        "publication_date": "2018-08-23"
+      },
+      {
+        "id": "https://openalex.org/W4251124168",
+        "doi": "https://doi.org/10.3410/f.733855290.793550028",
+        "title": "Faculty Opinions recommendation of Comment on \"Tracking the global footprint of fisheries\".",
+        "type": "peer-review",
+        "publication_year": 2018,
+        "publication_date": "2018-08-24"
+      },
+      {
+        "id": "https://openalex.org/W2962981403",
+        "doi": "https://doi.org/10.1038/s41586-019-1444-4",
+        "title": "Global spatial risk assessment of sharks under the footprint of fisheries",
+        "type": "article",
+        "publication_year": 2019,
+        "publication_date": "2019-07-24"
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "7981cc2661ed450fd9b5ab5040f5b1195b90d1dbfb9b95877101e315c7f98784"
+}

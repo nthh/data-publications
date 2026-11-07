@@ -1,0 +1,97 @@
+{
+  "arrow_batches_written": 2070,
+  "batch_rows_max": 4096,
+  "bbox_column": "bbox",
+  "created": "2026-10-31T19:42:17Z",
+  "crs_argument": "EPSG:4326",
+  "derived_bbox_values_recomputed_and_compared": true,
+  "estimated_output_bytes": 1583763779,
+  "geometry_column": "Shape",
+  "geometry_types": {
+    "MultiLineString": 8477883
+  },
+  "geoparquet_version": "1.1.0",
+  "global_bbox": [
+    -179.99791666699997,
+    -55.87708333299997,
+    179.99791666700003,
+    83.58958333300006
+  ],
+  "input": {
+    "path": "./.local/free-flowing-rivers/figshare-v1-local-r1/free-flowing-rivers/free-flowing-rivers-figshare-v1.parquet",
+    "sha256": "17b7c3da77c9e149b4c8fd9117e4ac82fe583c08b8ca0a39f7d1142790acd431",
+    "size_bytes": 811725336
+  },
+  "limitations": "Spatial bbox is derived from unchanged raw WKB coordinates in the source CRS; no reprojection, repair, sort, or geometry rewrite was performed.",
+  "minimum_remaining_free_bytes": 10000000000,
+  "minimum_start_free_bytes": 40000000000,
+  "output": {
+    "path": "./.local/free-flowing-rivers/spatial-r1/free-flowing-rivers.parquet",
+    "sha256": "62130e4999ba449bd2768bcdd9346bc2ba8fa4c4f06d39597e5227cd496a1a63",
+    "size_bytes": 887132886
+  },
+  "peak_rss_bytes": 592838656,
+  "peak_rss_limit_bytes": 1073741824,
+  "row_groups": 2070,
+  "source_columns_exactly_compared": [
+    "OBJECTID",
+    "REACH_ID",
+    "GOID",
+    "NOID",
+    "NUOID",
+    "NDOID",
+    "CON_ID",
+    "CONTINENT",
+    "COUNTRY",
+    "BAS_ID",
+    "BAS_NAME",
+    "LENGTH_KM",
+    "VOLUME_TCM",
+    "UPLAND_SKM",
+    "DIS_AV_CMS",
+    "RIV_ORD",
+    "ERO_YLD_TON",
+    "HYFALL",
+    "BB_ID",
+    "BB_NAME",
+    "BB_LEN_KM",
+    "BB_DIS_ORD",
+    "BB_VOL_TCM",
+    "BB_OCEAN",
+    "INC",
+    "DOF",
+    "DOR",
+    "SED",
+    "USE",
+    "URB",
+    "RDD",
+    "FLD",
+    "CSI",
+    "CSI_D",
+    "CSI_FF",
+    "CSI_FF1",
+    "CSI_FF2",
+    "CSI_FFID",
+    "Shape_Length",
+    "Shape",
+    "source_row"
+  ],
+  "source_rows": 8477883,
+  "source_values_nulls_and_raw_wkb_compared": true,
+  "status": "passed",
+  "validation": {
+    "bbox_values_recomputed_and_compared": 33911532,
+    "geometry_type_counts": {
+      "MultiLineString": 8477883
+    },
+    "global_bbox": [
+      -179.99791666699997,
+      -55.87708333299997,
+      179.99791666700003,
+      83.58958333300006
+    ],
+    "source_fields_compared": 41,
+    "source_rows": 8477883,
+    "source_values_nulls_wkb_compared": 347593203
+  }
+}

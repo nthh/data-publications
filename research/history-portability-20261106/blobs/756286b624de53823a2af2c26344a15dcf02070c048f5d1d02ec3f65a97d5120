@@ -1,0 +1,302 @@
+{
+  "assets": [
+    {
+      "asset_id": "ffr-reach-network-v1",
+      "description": "Global river reach network and source attributes from the pinned figshare v1 File Geodatabase, converted to GeoParquet and augmented with derived per-feature spatial bounds.",
+      "field_dictionary": "metadata/ffr-reach-network-v1-field-dictionary.json",
+      "field_dictionary_sha256": "fba7dd8d801f22b659b384f11b630ef703365f0a15e54830552d608cf64580ff",
+      "geo_metadata_version": "1.1.0",
+      "geometry_column": "Shape",
+      "geometry_types": [
+        "MultiLineString"
+      ],
+      "href": "assets/ffr-reach-network-v1.parquet",
+      "identifier_column": "OBJECTID",
+      "media_type": "application/vnd.apache.parquet",
+      "row_count": 8477883,
+      "sha256": "62130e4999ba449bd2768bcdd9346bc2ba8fa4c4f06d39597e5227cd496a1a63",
+      "size_bytes": 887132886,
+      "source_path": "free-flowing-rivers.parquet",
+      "title": "Free flowing river reaches, figshare v1"
+    }
+  ],
+  "clean_rebuild_report": {
+    "path": "evidence/clean-rebuild.json",
+    "sha256": "82d447b125734a97255b1700b53f0edfa2047b7cb1077db3ea4ff6ab268bb703"
+  },
+  "code_revision": "7cc922857065883d1803a6892a5a160ce5a4f722",
+  "copied_data_modes": {
+    "ffr-reach-network-v1": "apfs_clone"
+  },
+  "created": "2026-10-31T00:00:00Z",
+  "data_license": {
+    "path": "licenses/data-license.json",
+    "sha256": "12bfb407ad24c68abcfb788c9816bc91e9a294a4b099bbb69247131c68adbbfb"
+  },
+  "dataset_id": "free-flowing-rivers",
+  "dataset_record": {
+    "path": "dataset.yaml",
+    "sha256": "5724f9cec12738bb6d8d050aff023bb51f57b6a92f00372fbdf321aa348fb965"
+  },
+  "display_derivatives": [
+    {
+      "display_only": true,
+      "format": "PNG",
+      "path": "display/thumbnail.png",
+      "role": "thumbnail",
+      "sampled_features": 50000,
+      "sampled_vertices": 357989,
+      "sampling_limit": {
+        "max_features": 50000,
+        "max_vertices": 500000
+      },
+      "sha256": "c2d265154f06ccb02dced33bfa1c2f9a1ed708dc39e0caef315a96472f23532f",
+      "size_bytes": 2842
+    }
+  ],
+  "manifest_version": "1.0",
+  "publicly_published": false,
+  "release_id": "figshare-v1-local-r2",
+  "release_version": "1.0.1",
+  "scope_note": "Local package only; not uploaded, publicly hosted, or submitted to a registry.",
+  "source_attribution": {
+    "path": "source/attribution.json",
+    "sha256": "b18b7d7fd5cf6d312ea0b62be6a8b2fd76c8251ffe6b19478aef7de6976f71ee"
+  },
+  "source_fidelity_report": {
+    "path": "evidence/source-fidelity.json",
+    "sha256": "c45a5252cf3ca1022e7cecf58f18ae8931aa3c7f10a41853384c6630c4b5278d"
+  },
+  "source_license": {
+    "path": "licenses/source-license.json",
+    "sha256": "ff9c4da03ceafae294b7279e28626498dbd9bffa1526765207443e0b82a27cd2"
+  },
+  "spatial_bbox": [
+    -179.99791666699997,
+    -55.87708333299997,
+    179.99791666700003,
+    83.58958333300006
+  ],
+  "status": "local-candidate",
+  "supporting_files": [
+    {
+      "copy_mode": "apfs_clone",
+      "description": "Producer API metadata snapshot used to verify the exact article version and source archive pin.",
+      "media_type": "application/json",
+      "path": "source/source-metadata.json",
+      "sha256": "125a2fc527145cb90cd1ae1d946df9c3a85a60dbfe5da041ececec3a1d0cc146",
+      "size_bytes": 5162,
+      "source_basename": "source-metadata.json",
+      "title": "Pinned figshare article metadata"
+    },
+    {
+      "copy_mode": "apfs_clone",
+      "description": "Checksum-bound inspection of archive members, layer schema, feature count, geometry, CRS, and source extent.",
+      "media_type": "application/json",
+      "path": "source/source-inspection.json",
+      "sha256": "cbe200b7ced3d627e2adc5b2ff043ebb97b68a75dd54ba3b33516127bd4635bb",
+      "size_bytes": 16323,
+      "source_basename": "source-inspection.json",
+      "title": "Source archive and layer inspection"
+    },
+    {
+      "copy_mode": "apfs_clone",
+      "description": "Original field dictionary generated from the producer File Geodatabase schema, before adding derived output fields.",
+      "media_type": "application/json",
+      "path": "source/source-field-dictionary.json",
+      "sha256": "399562161c85a577bdf495e2343dabbae3e6540adad1815b952d463808bd7133",
+      "size_bytes": 11616,
+      "source_basename": "source-field-dictionary.json",
+      "title": "Producer field dictionary"
+    }
+  ],
+  "temporal_interval": [
+    null,
+    null
+  ],
+  "title": "Mapping the world's free-flowing rivers — global river reach connectivity assessment",
+  "workflow_files": {
+    "datasets/free-flowing-rivers/README.md": {
+      "bytes": 3290,
+      "package_path": "verification/workflow/datasets/free-flowing-rivers/README.md",
+      "sha256": "18e9169bfe9eb4c149493c0eb9a59f3a88e9e36c372322b46f7765a2af63f083"
+    },
+    "datasets/free-flowing-rivers/VALIDATION.md": {
+      "bytes": 2325,
+      "package_path": "verification/workflow/datasets/free-flowing-rivers/VALIDATION.md",
+      "sha256": "3a25e763b97a0599d70d5ca32a0a4c54b7fffae0e3ad1cd52fb572765e8fe882"
+    },
+    "datasets/free-flowing-rivers/acquire.py": {
+      "bytes": 4199,
+      "package_path": "verification/workflow/datasets/free-flowing-rivers/acquire.py",
+      "sha256": "c931823e569355f29cab4dff482ec8bafe749aaa29ca84858660de4819f07b2e"
+    },
+    "datasets/free-flowing-rivers/build.py": {
+      "bytes": 11070,
+      "package_path": "verification/workflow/datasets/free-flowing-rivers/build.py",
+      "sha256": "13319840be97220e553d5bc046b5cb175e5def1b18cf4e196dcb8b5a4448db89"
+    },
+    "datasets/free-flowing-rivers/dataset.yaml": {
+      "bytes": 2351,
+      "package_path": "verification/workflow/datasets/free-flowing-rivers/dataset.yaml",
+      "sha256": "5724f9cec12738bb6d8d050aff023bb51f57b6a92f00372fbdf321aa348fb965"
+    },
+    "datasets/free-flowing-rivers/fault_tests.py": {
+      "bytes": 2684,
+      "package_path": "verification/workflow/datasets/free-flowing-rivers/fault_tests.py",
+      "sha256": "0042029c0d52e0fa03e1f4bf474fac0198cbb058d93960e3c11bf8f60a38bd01"
+    },
+    "datasets/free-flowing-rivers/inspect_source.py": {
+      "bytes": 7479,
+      "package_path": "verification/workflow/datasets/free-flowing-rivers/inspect_source.py",
+      "sha256": "2fc534551b9089638a9bcf9fc64cc8a31afb3df26cbc612e2b10a0f0074ae842"
+    },
+    "datasets/free-flowing-rivers/pyproject.toml": {
+      "bytes": 250,
+      "package_path": "verification/workflow/datasets/free-flowing-rivers/pyproject.toml",
+      "sha256": "aaa6e3d5582b3a001773d4ccf9998c74a399ad00d3e1db85c7760c4dcee89a96"
+    },
+    "datasets/free-flowing-rivers/releases/figshare-v1-local-r2/README.md": {
+      "bytes": 7578,
+      "package_path": "verification/workflow/datasets/free-flowing-rivers/releases/figshare-v1-local-r2/README.md",
+      "sha256": "c8b985b746aefe9f1621cdc0674132c958705df02c5e44157e1bc70586aa1286"
+    },
+    "datasets/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/fidelity-normalizer-template.json": {
+      "bytes": 1950,
+      "package_path": "verification/workflow/datasets/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/fidelity-normalizer-template.json",
+      "sha256": "0d883c2dda8221a215e4ef5b08918dd1e1f400de54ce3feac1cb76a317a16fdd"
+    },
+    "datasets/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/materialize_release_inputs.py": {
+      "bytes": 3819,
+      "package_path": "verification/workflow/datasets/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/materialize_release_inputs.py",
+      "sha256": "88ab721ddf3a64a6ff8b04bb34fba62d7903afb0214b903b0d5673389544831c"
+    },
+    "datasets/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/package-spec-template.json": {
+      "bytes": 6877,
+      "package_path": "verification/workflow/datasets/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/package-spec-template.json",
+      "sha256": "2d72004a3481f3aacb5235eb126a74739f2bc8961dfb37db48a0db673143c002"
+    },
+    "datasets/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/spatial-helper-c18/add_spatial_bounds.py": {
+      "bytes": 20723,
+      "package_path": "verification/workflow/datasets/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/spatial-helper-c18/add_spatial_bounds.py",
+      "sha256": "b305e14a177bcd3438739f659699bbe5f62af3fade6431eaf7a41450950b2bca"
+    },
+    "datasets/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/spatial-helper-c18/pyproject.toml": {
+      "bytes": 259,
+      "package_path": "verification/workflow/datasets/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/spatial-helper-c18/pyproject.toml",
+      "sha256": "a6d5a4c17612a98645ce60b3b581caf316707f2b92265e5a3c1ca9a319f6da3c"
+    },
+    "datasets/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/spatial-helper-c18/sidecar-manifest.json": {
+      "bytes": 635,
+      "package_path": "verification/workflow/datasets/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/spatial-helper-c18/sidecar-manifest.json",
+      "sha256": "e6175698465ea193cec6a0383cade171845b8c9470cce1a6618565b2b5e00fa0"
+    },
+    "datasets/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/spatial-helper-c18/sidecar-sha256.txt": {
+      "bytes": 332,
+      "package_path": "verification/workflow/datasets/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/spatial-helper-c18/sidecar-sha256.txt",
+      "sha256": "d067016a4bd1682e611e3ab04d0f222c925f2610f79327e8b4ec85410f8eed86"
+    },
+    "datasets/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/spatial-helper-c18/test_spatial_bounds.py": {
+      "bytes": 7028,
+      "package_path": "verification/workflow/datasets/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/spatial-helper-c18/test_spatial_bounds.py",
+      "sha256": "006a5c84a8b46e78a4f4aecc2a303672e07e43971116994633f032771df446c7"
+    },
+    "datasets/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/spatial-helper-c18/uv.lock": {
+      "bytes": 134378,
+      "package_path": "verification/workflow/datasets/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/spatial-helper-c18/uv.lock",
+      "sha256": "fe1b9d58a17429f2649a24fbd8299b5d616ca4ab68806e768cd2caac31b8ec1b"
+    },
+    "datasets/free-flowing-rivers/source-inspection.json": {
+      "bytes": 16323,
+      "package_path": "verification/workflow/datasets/free-flowing-rivers/source-inspection.json",
+      "sha256": "cbe200b7ced3d627e2adc5b2ff043ebb97b68a75dd54ba3b33516127bd4635bb"
+    },
+    "datasets/free-flowing-rivers/source-metadata.json": {
+      "bytes": 5162,
+      "package_path": "verification/workflow/datasets/free-flowing-rivers/source-metadata.json",
+      "sha256": "125a2fc527145cb90cd1ae1d946df9c3a85a60dbfe5da041ececec3a1d0cc146"
+    },
+    "datasets/free-flowing-rivers/source_schema.py": {
+      "bytes": 1193,
+      "package_path": "verification/workflow/datasets/free-flowing-rivers/source_schema.py",
+      "sha256": "787f7fea4585173226ed21df3f4b82c0c0b71fe2217227a15ce6b97b1b260e2a"
+    },
+    "datasets/free-flowing-rivers/uv.lock": {
+      "bytes": 69097,
+      "package_path": "verification/workflow/datasets/free-flowing-rivers/uv.lock",
+      "sha256": "a162622f953a6ebcfa630d114122b556024c51cd9674426d7b356ee996bbe78f"
+    },
+    "datasets/free-flowing-rivers/validate.py": {
+      "bytes": 9037,
+      "package_path": "verification/workflow/datasets/free-flowing-rivers/validate.py",
+      "sha256": "103285aa5610af8d71ac0dbd19a99beec7dfa2cb4068962f605a295c2de27054"
+    },
+    "research/hydro-releases-20261031/bind_fidelity.py": {
+      "bytes": 21835,
+      "package_path": "verification/workflow/research/hydro-releases-20261031/bind_fidelity.py",
+      "sha256": "e0fad0ff331e726abffe724a47ac9c611a2e7b9dec768b5ed6bffa8121da1fc2"
+    },
+    "research/hydro-releases-20261031/test_bind_fidelity.py": {
+      "bytes": 9312,
+      "package_path": "verification/workflow/research/hydro-releases-20261031/test_bind_fidelity.py",
+      "sha256": "a3349b9e827813044afd2aab6aecc8da3a56efa7c155a160df45baadcd673d98"
+    },
+    "scripts/release_tools/AGENTS.md": {
+      "bytes": 857,
+      "package_path": "verification/workflow/scripts/release_tools/AGENTS.md",
+      "sha256": "4aa3ee027c7ad8f56209e5c948ab30ad126cd0dfd8e80408590df060db03dc3b"
+    },
+    "scripts/release_tools/README.md": {
+      "bytes": 10462,
+      "package_path": "verification/workflow/scripts/release_tools/README.md",
+      "sha256": "e011e2353dd27d78159321fd63ab4d032fc84c2101f5f8882ef83416d4e4f3c3"
+    },
+    "scripts/release_tools/add_spatial_bounds.py": {
+      "bytes": 20723,
+      "git_revision": "c18b96e2f3d631089453459d158c91fc0fa31d87",
+      "package_path": "verification/workflow/scripts/release_tools/add_spatial_bounds.py",
+      "sha256": "b305e14a177bcd3438739f659699bbe5f62af3fade6431eaf7a41450950b2bca"
+    },
+    "scripts/release_tools/package-lock.json": {
+      "bytes": 54306,
+      "package_path": "verification/workflow/scripts/release_tools/package-lock.json",
+      "sha256": "8f19898156a139859a49d15238a92a5204a7d61b909ee5ac54080e8110a2cc3c"
+    },
+    "scripts/release_tools/package.json": {
+      "bytes": 142,
+      "package_path": "verification/workflow/scripts/release_tools/package.json",
+      "sha256": "8eebc2fd826cf22f6008ee889293d7880952ea19ddac557ae905821489108470"
+    },
+    "scripts/release_tools/package_release.py": {
+      "bytes": 62862,
+      "package_path": "verification/workflow/scripts/release_tools/package_release.py",
+      "sha256": "7985c0ae0b06e028f2f9466a88dde592bfbb6095cb2ab1a4e2892269629c676b"
+    },
+    "scripts/release_tools/pyproject.toml": {
+      "bytes": 259,
+      "package_path": "verification/workflow/scripts/release_tools/pyproject.toml",
+      "sha256": "a6d5a4c17612a98645ce60b3b581caf316707f2b92265e5a3c1ca9a319f6da3c"
+    },
+    "scripts/release_tools/serve.py": {
+      "bytes": 2789,
+      "package_path": "verification/workflow/scripts/release_tools/serve.py",
+      "sha256": "dab2eef0199f839aac9a14d9802cb7b339e9732573bd659d5837867f1f5da175"
+    },
+    "scripts/release_tools/test_package_release.py": {
+      "bytes": 9275,
+      "package_path": "verification/workflow/scripts/release_tools/test_package_release.py",
+      "sha256": "f1245988e4c45e26bce2b3e07766949d9054c9ba1774a0e84e457062571c89cb"
+    },
+    "scripts/release_tools/test_spatial_bounds.py": {
+      "bytes": 7028,
+      "git_revision": "c18b96e2f3d631089453459d158c91fc0fa31d87",
+      "package_path": "verification/workflow/scripts/release_tools/test_spatial_bounds.py",
+      "sha256": "006a5c84a8b46e78a4f4aecc2a303672e07e43971116994633f032771df446c7"
+    },
+    "scripts/release_tools/uv.lock": {
+      "bytes": 134378,
+      "package_path": "verification/workflow/scripts/release_tools/uv.lock",
+      "sha256": "fe1b9d58a17429f2649a24fbd8299b5d616ca4ab68806e768cd2caac31b8ec1b"
+    }
+  }
+}

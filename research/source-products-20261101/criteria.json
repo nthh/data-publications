@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "task": "Finish local dataset readiness and prepare Source Cooperative products",
+  "recorded_on": "2026-11-01",
+  "scope": [
+    "grwl",
+    "river-plastic-inputs",
+    "hydrolakes",
+    "free-flowing-rivers",
+    "lakeatlas",
+    "gdw",
+    "swot_prior_lake_database"
+  ],
+  "source_access": {
+    "gdw": "Retain prior HTTP 403 evidence; retry official routes with bounded metadata/range requests. Only acquire and checksum a complete source if available and storage preflight passes.",
+    "swot": "Use recorded v2.03 inventory and checksum-verified AU_55 sample gate. No full global conversion before a bounded streaming/retention plan is qualified."
+  },
+  "storage": {
+    "bulk_start_free_bytes": 42949672960,
+    "bulk_stop_free_bytes": 10737418240,
+    "additional_retained_bulk_budget_bytes": 8589934592,
+    "rule": "No deletions of existing files, threshold reductions, or killing unrelated work. Prefer existing analytic assets and metadata-only enhancements. New report paths must be unused."
+  },
+  "render_validation": {
+    "assets": [
+      "hydrolakes-polygons",
+      "free-flowing-rivers",
+      "lakeatlas-polygons",
+      "lakeatlas-pour-points"
+    ],
+    "geographic_controls": [
+      {
+        "id": "north_america",
+        "bbox": [
+          -93,
+          47,
+          -87,
+          50
+        ]
+      },
+      {
+        "id": "south_america",
+        "bbox": [
+          -65,
+          -5,
+          -60,
+          0
+        ]
+      },
+      {
+        "id": "europe",
+        "bbox": [
+          5,
+          45,
+          15,
+          55
+        ]
+      },
+      {
+        "id": "asia",
+        "bbox": [
+          100,
+          25,
+          110,
+          35
+        ]
+      },
+      {
+        "id": "oceania",
+        "bbox": [
+          140,
+          -40,
+          150,
+          -30
+        ]
+      }
+    ],
+    "gates": [
+      "Demonstrate an actual browser view of queried analytic data, not a pre-rendered thumbnail.",
+      "Record exact local asset hashes and bounded query/HTTP evidence. Preserve analytic files; label simplified display geometry and any sampling.",
+      "A local render demonstration does not satisfy public-host browser validation. Preserve failures and incomplete coverage."
+    ]
+  },
+  "lakeatlas_semantics": {
+    "gates": [
+      "Use the retained producer documentation as authority for field meanings, units, aggregations and upstream data attribution.",
+      "Map every producer field or explicitly mark unresolved meaning; never infer a source license.",
+      "Do not rewrite immutable releases. Version metadata enhancements separately and bind them to unchanged analytic hashes.",
+      "Check polygon and pour-point field coverage and preserve all earlier scientific/rebuild evidence."
+    ]
+  },
+  "source_products": {
+    "owner_preference": "nthh, subject to verified Source Cooperative account access",
+    "one_product_per_dataset": true,
+    "gates": [
+      "Keep canonical product intent in datasets/<id>/dataset.yaml; generated descriptions and plans are views.",
+      "Bind every planned uploaded asset to its exact existing package path, byte size and SHA-256; reject traversal, credentials, missing files, mutable overrides and duplicate keys.",
+      "Distinguish proposed destinations from confirmed account/product routes. Do not set public URLs or published status before actual verification.",
+      "Product descriptions include producer credit, license, edition, geographic and temporal scope, formats, validation limits and related datasets.",
+      "Product creation may proceed only if authorized account and scope are established. Preparing products does not imply bulk upload, Git push or registry submission."
+    ]
+  },
+  "verification": [
+    "Focused tests for new preparation tools and failure controls.",
+    "Regenerate and check canonical inventory and publication catalog.",
+    "Clean-checkout rehearsal of generated product drafts and offline tests.",
+    "Commit locally; preserve unrelated changes and all prior release evidence."
+  ]
+}

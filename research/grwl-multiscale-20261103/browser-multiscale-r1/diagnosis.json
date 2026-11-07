@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "status": "diagnosed_viewer_camera_constraint",
+  "failed_case": "global-z0",
+  "requested_zoom": 0,
+  "observed_zoom_in_screenshot": 1.2,
+  "all_other_multiscale_cases": "passed",
+  "detail_cases": "11 passed with all154 analytical values checked",
+  "cause": "The installed MapLibre default single-world constraint raises zoom so the viewport cannot extend beyond world bounds. On the1500x1050 test viewport it clamps the requested zoom0 to about1.2.",
+  "evidence_screenshot": "global-z0-failure.png",
+  "fix": "Use the public setTransformConstrain callback for overview datasets to clamp center and zoom to world limits while allowing margins around the single world; restore default constraints for other datasets. Keep the frozen location, zoom, viewport and byte ceilings. Record actual measured browser camera centers.",
+  "criteria_changed": false
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "findings": [
+    {
+      "boundary": "Initial static bundle",
+      "outcome": "failed",
+      "reason": "MapLibre GL 6 exposes named ESM exports; default import was unavailable.",
+      "resolution": "Use namespace import; no data or criteria changed."
+    },
+    {
+      "boundary": "Initial browser map startup",
+      "outcome": "failed",
+      "reason": "MapLibre GL 6 ESM bundle expects an explicit external worker module; it was absent from the initial static output. No object data was requested.",
+      "resolution": "Bundle the pinned map worker and set its URL explicitly; retain browser-r1 evidence."
+    },
+    {
+      "boundary": "Initial GeoParquet browser reads",
+      "outcome": "failed",
+      "evidence": [
+        "browser-r2/browser-validation.json",
+        "browser-r3/browser-validation.json"
+      ],
+      "reason": "DuckDB attempted to fetch its Parquet extension from a remote service; the browser test correctly blocked external requests. A direct default-client download also returned 403.",
+      "resolution": "Pin released DuckDB-Wasm 1.32.0 and its engine v1.4.3 extension, acquired from the official endpoint with the explicit application User-Agent; bundle the SHA-256-pinned 3,045,039-byte extension locally and explicitly load it from the UI origin.",
+      "dependency_downloads": [
+        "Natural Earth context 138160 bytes",
+        "Parquet extension 3045039 bytes"
+      ],
+      "data_changes": false
+    },
+    {
+      "boundary": "HTTP Parquet registration",
+      "outcome": "failed_then_resolved",
+      "evidence": [
+        "browser-r4/browser-validation.json",
+        "browser-r5/browser-validation.json",
+        "browser-r6/browser-validation.json",
+        "browser-r7/browser-validation.json"
+      ],
+      "reason": "Reader file registry still forced full HTTP reads while the viewer prohibited them. Changing the alias and direct-I/O flag alone did not fix that configuration.",
+      "resolution": "Explicitly set filesystem.forceFullHTTPReads=false and allowFullHTTPReads=false, with direct URL registration. Assert the registry is not in forced-full mode before querying. HydroLAKES then rendered 606 features with 5,020,112 bytes of partial data reads.",
+      "criteria_changed": false
+    }
+  ],
+  "review_fixes": [
+    "Guard stale attribute-query errors by selection generation.",
+    "Increase Resource Timing buffers and clear full buffers in both window and Parquet worker.",
+    "Validate browser-observed Content-Range start/end/total and Content-Length against each requested range."
+  ]
+}

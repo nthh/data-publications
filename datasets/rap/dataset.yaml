@@ -1,0 +1,38 @@
+schema_version: 1
+id: rap
+title: 'Rangeland Analysis Platform: Vegetation Cover 30m v3'
+community_url: https://gee-community-catalog.org/projects/rap
+audit:
+  snapshot: gee-community-audit-20261029
+  family_key: rap
+  unique_gee_asset_count: 9
+  initial_queue: review_source_coop_counterpart
+  folia_registry_status: not_identified
+  folia_registry_ids: []
+  source_coop_urls:
+  - https://source.coop/cboettig/rap
+  source_coop_scope: Partial components/newer 10m Rangeland-S2 products; GEE family
+    also includes RAP v3 30m fractional cover 1986-present. Layer/time parity unverified.
+  external_native_urls:
+  - https://dev.rangelands.app/support/20-analyzing-rap-data
+  - https://source.coop/cboettig/rap
+  external_native_scope: RAP cover/production; years, coverage and resolutions vary
+    by product. Official support documents external COG endpoints. | Partial components/newer
+    10m Rangeland-S2 products; GEE family also includes RAP v3 30m fractional cover
+    1986-present. Layer/time parity unverified.
+triage:
+  decision: pending
+  priority: normal
+review:
+  citation_assessment:
+    as_of: '2026-10-29'
+    provider: OpenAlex
+    evidence_path: research/citations/rankings.json
+    evidence_key: rap
+    geographic_scope: mixed
+    paper_count_status: partial
+    max_paper_citations: 276
+    max_data_doi_citations: null
+    top_paper_doi: https://doi.org/10.1111/2041-210x.13564
+    top_paper_openalex_id: https://openalex.org/W3124046728
+    citation_scope: associated_dataset_publication

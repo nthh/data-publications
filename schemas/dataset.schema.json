@@ -1,0 +1,1184 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Standalone dataset record",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "title",
+    "triage"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]*$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "community_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "audit": {
+      "type": "object",
+      "required": [
+        "snapshot",
+        "family_key",
+        "unique_gee_asset_count",
+        "initial_queue",
+        "folia_registry_status",
+        "folia_registry_ids",
+        "source_coop_urls",
+        "source_coop_scope",
+        "external_native_urls",
+        "external_native_scope"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "snapshot": {
+          "const": "gee-community-audit-20261029"
+        },
+        "family_key": {
+          "type": "string"
+        },
+        "unique_gee_asset_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "initial_queue": {
+          "enum": [
+            "review_source_coop_counterpart",
+            "review_external_native_counterpart",
+            "research_original_source"
+          ]
+        },
+        "folia_registry_status": {
+          "type": "string"
+        },
+        "folia_registry_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "source_coop_urls": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "source_coop_scope": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "external_native_urls": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "external_native_scope": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "triage": {
+      "type": "object",
+      "required": [
+        "decision",
+        "priority"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "decision": {
+          "enum": [
+            "pending",
+            "reuse_existing",
+            "publish_conversion",
+            "publish_mirror",
+            "defer"
+          ]
+        },
+        "priority": {
+          "enum": [
+            "normal",
+            "pilot_review"
+          ]
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "review": {
+      "type": "object",
+      "properties": {
+        "availability": {
+          "$ref": "#/$defs/availability"
+        }
+      }
+    },
+    "publication": {
+      "type": "object",
+      "description": "Populate only after choosing the product scope. Store source/version/license, outputs, release manifest, public URLs and validation evidence; this is metadata, not an execution language.",
+      "properties": {
+        "catalog": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "snapshot_path",
+            "snapshot_sha256"
+          ],
+          "properties": {
+            "snapshot_path": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\)[^\\s]+$"
+            },
+            "snapshot_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "package_base_url": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uri",
+                  "pattern": "^https://[^\\s]+/$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "hosting_report_path": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\)[^\\s]+$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "hosting_report_sha256": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          }
+        },
+        "source_coop": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "owner",
+            "owner_status",
+            "product_id",
+            "account_verification",
+            "tags",
+            "limitations",
+            "supplements",
+            "title",
+            "summary",
+            "license_note",
+            "attribution",
+            "temporal_note"
+          ],
+          "properties": {
+            "owner": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "^(?=.{3,40}$)(?!.*--)[a-z0-9][a-z0-9-]*[a-z0-9]$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "owner_status": {
+              "enum": [
+                "proposed",
+                "confirmed"
+              ]
+            },
+            "product_id": {
+              "type": "string",
+              "pattern": "^(?=.{3,40}$)(?!.*--)[a-z0-9][a-z0-9-]*[a-z0-9]$"
+            },
+            "account_verification": {
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "status",
+                    "owner",
+                    "evidence_path",
+                    "evidence_sha256"
+                  ],
+                  "properties": {
+                    "status": {
+                      "const": "confirmed"
+                    },
+                    "owner": {
+                      "type": "string",
+                      "pattern": "^(?=.{3,40}$)(?!.*--)[a-z0-9][a-z0-9-]*[a-z0-9]$"
+                    },
+                    "evidence_path": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\)[^\\s]+$"
+                    },
+                    "evidence_sha256": {
+                      "type": "string",
+                      "pattern": "^[0-9a-f]{64}$"
+                    }
+                  }
+                }
+              ]
+            },
+            "tags": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "uniqueItems": true
+            },
+            "limitations": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "supplements": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "path",
+                  "sha256",
+                  "destination"
+                ],
+                "properties": {
+                  "path": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\)[^\\s]+$"
+                  },
+                  "sha256": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  },
+                  "destination": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\)[^\\s]+$"
+                  }
+                }
+              }
+            },
+            "title": {
+              "type": "string",
+              "minLength": 1
+            },
+            "summary": {
+              "type": "string",
+              "minLength": 1
+            },
+            "license_note": {
+              "type": "string",
+              "minLength": 1
+            },
+            "attribution": {
+              "type": "string",
+              "minLength": 1
+            },
+            "temporal_note": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "description": "Canonical Source Cooperative product intent. Draft metadata and exact upload plans are generated; proposed routes never imply hosted data or account access."
+        },
+        "display": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "A separate immutable display package derived from the selected analytical release. Bulk assets stay outside Git.",
+          "required": [
+            "release",
+            "manifest_path",
+            "manifest_sha256"
+          ],
+          "properties": {
+            "release": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9._-]+$"
+            },
+            "manifest_path": {
+              "type": "string",
+              "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\)[^\\s]+$"
+            },
+            "manifest_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "package_base_url": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uri",
+                  "pattern": "^https://[^\\s]+/$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "hosting_report_path": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\)[^\\s]+$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "hosting_report_sha256": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "required": [
+              "catalog"
+            ]
+          },
+          "then": {
+            "required": [
+              "release",
+              "manifest_path",
+              "manifest_sha256"
+            ],
+            "properties": {
+              "release": {
+                "type": "string",
+                "minLength": 1
+              },
+              "manifest_path": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\)[^\\s]+$"
+              },
+              "manifest_sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "published"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "required": [
+              "release",
+              "manifest_sha256",
+              "catalog",
+              "manifest_path"
+            ],
+            "properties": {
+              "release": {
+                "type": "string",
+                "minLength": 1
+              },
+              "manifest_sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "catalog": {
+                "required": [
+                  "package_base_url",
+                  "hosting_report_path",
+                  "hosting_report_sha256"
+                ],
+                "properties": {
+                  "package_base_url": {
+                    "type": "string",
+                    "format": "uri",
+                    "pattern": "^https://[^\\s]+/$"
+                  },
+                  "hosting_report_path": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\)[^\\s]+$"
+                  },
+                  "hosting_report_sha256": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  }
+                }
+              },
+              "manifest_path": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\)[^\\s]+$"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "published"
+              }
+            },
+            "required": [
+              "status",
+              "display"
+            ]
+          },
+          "then": {
+            "properties": {
+              "display": {
+                "required": [
+                  "package_base_url",
+                  "hosting_report_path",
+                  "hosting_report_sha256"
+                ],
+                "properties": {
+                  "package_base_url": {
+                    "type": "string",
+                    "format": "uri",
+                    "pattern": "^https://[^\\s]+/$"
+                  },
+                  "hosting_report_path": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\)[^\\s]+$"
+                  },
+                  "hosting_report_sha256": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "source": {
+      "type": "object",
+      "description": "Optional pinned source metadata."
+    },
+    "build": {
+      "type": "object",
+      "description": "Optional build and validation metadata."
+    },
+    "intake": {
+      "type": "object",
+      "required": [
+        "kind",
+        "reference_url",
+        "added_on"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "producer",
+            "official_catalog"
+          ]
+        },
+        "reference_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "added_on": {
+          "type": "string",
+          "format": "date"
+        },
+        "related_family": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "related_datasets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "title",
+          "relationship",
+          "url",
+          "use_case",
+          "comparison",
+          "reviewed_on",
+          "evidence"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]*$"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "relationship": {
+            "enum": [
+              "alternative",
+              "complement",
+              "source",
+              "derived_product"
+            ]
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "pattern": "^https?://[^\\s]+$"
+          },
+          "record_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]*$"
+          },
+          "use_case": {
+            "type": "string",
+            "minLength": 1
+          },
+          "comparison": {
+            "type": "string",
+            "minLength": 1
+          },
+          "spatial_coverage": {
+            "type": "string",
+            "minLength": 1
+          },
+          "temporal_coverage": {
+            "type": "string",
+            "minLength": 1
+          },
+          "resolution": {
+            "type": "string",
+            "minLength": 1
+          },
+          "formats": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "access": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reviewed_on": {
+            "type": "string",
+            "format": "date"
+          },
+          "evidence": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "title",
+                "url"
+              ],
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri",
+                  "pattern": "^https?://[^\\s]+$"
+                }
+              }
+            }
+          }
+        }
+      },
+      "description": "Dated comparisons and complementary references. These do not create dataset records or change selection/publication status. Optional record_id links an existing canonical record."
+    },
+    "discovery": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "batch",
+        "reviewed_on",
+        "geographic_scope",
+        "spatial_coverage",
+        "sources",
+        "access",
+        "citations",
+        "evidence"
+      ],
+      "properties": {
+        "batch": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reviewed_on": {
+          "type": "string",
+          "format": "date"
+        },
+        "geographic_scope": {
+          "enum": [
+            "global",
+            "near_global",
+            "regional",
+            "mixed",
+            "unknown"
+          ]
+        },
+        "spatial_coverage": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sources": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "provider",
+              "entry_id",
+              "url",
+              "relationship"
+            ],
+            "properties": {
+              "provider": {
+                "enum": [
+                  "gee_official",
+                  "gee_community",
+                  "planetary_computer",
+                  "esri_public",
+                  "producer",
+                  "source_coop",
+                  "literature"
+                ]
+              },
+              "entry_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "url": {
+                "type": "string",
+                "format": "uri",
+                "pattern": "^https://[^\\s]+$"
+              },
+              "relationship": {
+                "enum": [
+                  "exact_dataset",
+                  "same_family",
+                  "component",
+                  "related_release",
+                  "related_product"
+                ]
+              }
+            }
+          }
+        },
+        "access": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "provider",
+              "status",
+              "formats",
+              "summary",
+              "license_summary",
+              "proposed_outputs",
+              "rationale",
+              "evidence_urls"
+            ],
+            "properties": {
+              "provider": {
+                "enum": [
+                  "gee_official",
+                  "gee_community",
+                  "planetary_computer",
+                  "esri_public",
+                  "producer",
+                  "source_coop",
+                  "literature"
+                ]
+              },
+              "status": {
+                "enum": [
+                  "native_available",
+                  "service_only",
+                  "download_available",
+                  "unknown"
+                ]
+              },
+              "formats": {
+                "type": "array",
+                "minItems": 0,
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "summary": {
+                "type": "string",
+                "minLength": 1
+              },
+              "license_summary": {
+                "type": "string",
+                "minLength": 1
+              },
+              "proposed_outputs": {
+                "type": "array",
+                "minItems": 0,
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "rationale": {
+                "type": "string",
+                "minLength": 1
+              },
+              "evidence_urls": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string",
+                  "format": "uri",
+                  "pattern": "^https://[^\\s]+$"
+                }
+              },
+              "observed_on": {
+                "type": "string",
+                "format": "date"
+              }
+            }
+          }
+        },
+        "citations": {
+          "type": "array",
+          "minItems": 0,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "provider",
+              "paper_doi",
+              "work_id",
+              "cited_by_count",
+              "observed_on",
+              "scope"
+            ],
+            "properties": {
+              "provider": {
+                "const": "OpenAlex"
+              },
+              "paper_doi": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "work_id": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "cited_by_count": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "observed_on": {
+                "type": "string",
+                "format": "date"
+              },
+              "scope": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "path",
+              "sha256",
+              "key"
+            ],
+            "properties": {
+              "path": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\)[^\\s]+$"
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "key": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      },
+      "description": "Current cross-catalog candidate review with pinned discovery observations. Provider editions/components are explicit; metadata declarations are not release or hosting verification."
+    }
+  },
+  "oneOf": [
+    {
+      "required": [
+        "audit",
+        "community_url"
+      ],
+      "not": {
+        "required": [
+          "intake"
+        ]
+      }
+    },
+    {
+      "required": [
+        "intake"
+      ],
+      "not": {
+        "required": [
+          "audit"
+        ]
+      }
+    }
+  ],
+  "$defs": {
+    "availability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "shortlist_id",
+        "rank",
+        "reviewed_on",
+        "label",
+        "scope",
+        "geographic_scope",
+        "download",
+        "locations",
+        "output_manifest",
+        "evidence"
+      ],
+      "properties": {
+        "shortlist_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "rank": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "reviewed_on": {
+          "type": "string",
+          "format": "date"
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "scope": {
+          "type": "string",
+          "minLength": 1
+        },
+        "geographic_scope": {
+          "enum": [
+            "global",
+            "near_global"
+          ]
+        },
+        "download": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "bytes",
+            "precision",
+            "reported_size",
+            "format",
+            "file_count",
+            "basis",
+            "note",
+            "evidence_urls"
+          ],
+          "properties": {
+            "bytes": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 1
+            },
+            "precision": {
+              "enum": [
+                "exact",
+                "rounded",
+                "unknown"
+              ]
+            },
+            "reported_size": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "minLength": 1
+            },
+            "format": {
+              "type": "string",
+              "minLength": 1
+            },
+            "file_count": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 1
+            },
+            "basis": {
+              "enum": [
+                "validated_download",
+                "http_head",
+                "producer_listing",
+                "not_established"
+              ]
+            },
+            "note": {
+              "type": "string",
+              "minLength": 1
+            },
+            "evidence_urls": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "format": "uri",
+                "pattern": "^https://[^\\s]+$"
+              }
+            }
+          }
+        },
+        "locations": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "service_id",
+              "label",
+              "platform",
+              "relationship",
+              "access",
+              "formats",
+              "urls",
+              "asset_ids",
+              "note"
+            ],
+            "properties": {
+              "service_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "label": {
+                "type": "string",
+                "minLength": 1
+              },
+              "platform": {
+                "enum": [
+                  "external",
+                  "gee"
+                ]
+              },
+              "relationship": {
+                "enum": [
+                  "matching_scope",
+                  "other_version_or_subset",
+                  "edition_unverified"
+                ]
+              },
+              "access": {
+                "enum": [
+                  "download",
+                  "api",
+                  "cloud_native",
+                  "gee_collection",
+                  "announced_download"
+                ]
+              },
+              "formats": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "uniqueItems": true
+              },
+              "urls": {
+                "type": "array",
+                "minItems": 1,
+                "uniqueItems": true,
+                "items": {
+                  "type": "string",
+                  "format": "uri",
+                  "pattern": "^https://[^\\s]+$"
+                }
+              },
+              "asset_ids": {
+                "type": "array",
+                "uniqueItems": true,
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "note": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "output_manifest": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "path",
+                "sha256"
+              ],
+              "properties": {
+                "path": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\)[^\\s]+$"
+                },
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                }
+              }
+            }
+          ]
+        },
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "path",
+              "sha256",
+              "key"
+            ],
+            "properties": {
+              "path": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\)[^\\s]+$"
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "key": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "source_size_key": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "description": "Edition-scoped source size and distribution observations. Location counts and prepared output sizes are generated; older editions are never exact-scope availability."
+    }
+  }
+}

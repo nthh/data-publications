@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-11-07T21:26:13.341645+00:00",
+  "cause": "_metadata_check treats every MIME containing json as one JSON document, including declared application/x-ndjson.",
+  "failure_report": "research/source-publication-20261106/hosted-results/grwl-raw/failed-hosted-r1.json",
+  "failure_report_sha256": "dc8769da86521af995d531c458fdc60a05a70d32284ec7cf5d973aa8b4c86741",
+  "required_behavior": [
+    "Parse application/x-ndjson as independent JSON records separated by newlines, allowing empty files and blank lines.",
+    "Reject malformed nonblank records or invalid UTF-8.",
+    "Keep ordinary application/json as exactly one valid JSON document.",
+    "Preserve status, length, SHA-256, exact MIME, bounded-GET and catalog-link checks.",
+    "Retain every original audit log; never rewrite or remove published objects."
+  ],
+  "checks_required_before_retry": [
+    "Multi-record and empty NDJSON pass; malformed second record and invalid UTF-8 fail.",
+    "Ordinary JSON still passes; concatenated documents declared as JSON fail.",
+    "MIME mismatch and mutated bytes still fail."
+  ],
+  "next_output": ".local/hosted-validation-grwl-raw-r2.json"
+}

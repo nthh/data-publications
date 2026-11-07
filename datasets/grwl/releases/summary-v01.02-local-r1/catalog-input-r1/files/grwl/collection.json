@@ -1,0 +1,270 @@
+{
+  "type": "Collection",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/scientific/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/version/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
+  ],
+  "id": "grwl",
+  "title": "Global River Width from Landsat — simplified global river network V01.02",
+  "description": "Global River Width from Landsat (GRWL) simplified global river network summary. This is the complete V01.02 summary polyline archive, converted from the producer ZIP. It is a static derived global river network; widths and lengths are producer attributes.",
+  "created": "2026-10-30T00:00:00Z",
+  "updated": "2026-10-30T00:00:00Z",
+  "license": "CC-BY-4.0",
+  "version": "summary-v01.02-local-r1",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -180.0,
+          -54.31026000029875,
+          180.0,
+          82.31061999981318
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  "providers": [
+    {
+      "name": "Allen and Pavelsky",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://doi.org/10.1126/science.aat0636"
+    },
+    {
+      "name": "Folia",
+      "roles": [
+        "processor",
+        "host"
+      ],
+      "url": "https://folia.sh",
+      "description": "Designated host provider for this prepared catalog. Public hosting and Portolan submission are pending."
+    }
+  ],
+  "sci:doi": "10.5281/zenodo.18624542",
+  "sci:citation": "Allen, G. H. & Pavelsky, T. M. (2018). Global extent of rivers and streams. Science, 361(6402), 585–588. https://doi.org/10.1126/science.aat0636",
+  "keywords": [
+    "river",
+    "width",
+    "global",
+    "Landsat",
+    "hydrology",
+    "GRWL"
+  ],
+  "table:columns": [
+    {
+      "name": "source_row",
+      "type": "int32",
+      "description": "One-based original SHP/DBF ordinal",
+      "unit": "1"
+    },
+    {
+      "name": "OBJECTID",
+      "type": "decimal128(10, 0)",
+      "description": "Esri-generated source feature number"
+    },
+    {
+      "name": "ID",
+      "type": "decimal128(10, 0)",
+      "description": "Producer feature identifier"
+    },
+    {
+      "name": "width_min_",
+      "type": "decimal128(10, 0)",
+      "description": "Minimum river width",
+      "unit": "m"
+    },
+    {
+      "name": "width_med_",
+      "type": "decimal128(19, 11)",
+      "description": "Median river width",
+      "unit": "m"
+    },
+    {
+      "name": "width_mean",
+      "type": "decimal128(19, 11)",
+      "description": "Mean river width",
+      "unit": "m"
+    },
+    {
+      "name": "width_max_",
+      "type": "decimal128(10, 0)",
+      "description": "Maximum river width",
+      "unit": "m"
+    },
+    {
+      "name": "width_sd_m",
+      "type": "decimal128(19, 12)",
+      "description": "Standard deviation of river width",
+      "unit": "m"
+    },
+    {
+      "name": "lakeFlag",
+      "type": "decimal128(19, 12)",
+      "description": "Lake flag as stored by producer"
+    },
+    {
+      "name": "nSegPx",
+      "type": "decimal128(10, 0)",
+      "description": "Segment pixel count"
+    },
+    {
+      "name": "Shape_Leng",
+      "type": "decimal128(19, 13)",
+      "description": "Geodesic feature length; source metadata lineage records kilometers",
+      "unit": "km"
+    },
+    {
+      "name": "geometry",
+      "type": "binary",
+      "description": "WGS84 polyline geometry with source multipart structure, in source vertex order",
+      "unit": "degrees"
+    },
+    {
+      "name": "bbox",
+      "type": "struct<xmin: double, ymin: double, xmax: double, ymax: double>",
+      "description": "Per-feature xmin/ymin/xmax/ymax envelope in WGS84",
+      "unit": "degrees"
+    }
+  ],
+  "links": [
+    {
+      "rel": "root",
+      "href": "../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "describedby",
+      "href": "README.md",
+      "type": "text/markdown"
+    },
+    {
+      "rel": "agents",
+      "href": "AGENTS.md",
+      "type": "text/markdown"
+    },
+    {
+      "rel": "thumbnail",
+      "href": "thumbnail.png",
+      "type": "image/png"
+    },
+    {
+      "rel": "license",
+      "href": "https://creativecommons.org/licenses/by/4.0/",
+      "type": "text/html"
+    },
+    {
+      "rel": "via",
+      "href": "https://doi.org/10.5281/zenodo.18624542",
+      "type": "text/html"
+    },
+    {
+      "rel": "cite-as",
+      "href": "https://doi.org/10.1126/science.aat0636",
+      "type": "text/html"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "grwl-display.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "pmtiles:layers": [
+        "grwl"
+      ]
+    }
+  ],
+  "assets": {
+    "data": {
+      "href": "grwl-summary-v0102.parquet",
+      "type": "application/vnd.apache.parquet",
+      "roles": [
+        "data"
+      ],
+      "title": "Complete analytic GeoParquet",
+      "file:size": 46297145,
+      "file:checksum": "122082ac4eeac2168b1aad6e5c9ae53c0c228ffcc7c8cd3f8d795493d939e626fa9c"
+    },
+    "tiles": {
+      "href": "grwl-display.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "roles": [
+        "visual"
+      ],
+      "title": "Simplified display vector tiles",
+      "file:size": 86545489,
+      "file:checksum": "1220382b0da7d0a879f3b74c0f32a92427b51a58600aa22f703098a0d08c819eaafe"
+    },
+    "thumbnail": {
+      "href": "thumbnail.png",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ],
+      "title": "Global river network overview",
+      "file:size": 22212,
+      "file:checksum": "122015f9e47cc2949ad7fc76b2f2f25300416ae44262c6dc875cc8f8868f8a93c4db"
+    },
+    "style": {
+      "href": "styles/grwl.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "style",
+        "default"
+      ],
+      "title": "MapLibre style for the PMTiles display derivative",
+      "file:size": 901,
+      "file:checksum": "1220363b9181e5b5ca099d2388cce6e756eea73b0d5ed4a15faab4655b3826134778"
+    },
+    "schema": {
+      "href": "schema.json",
+      "type": "application/json",
+      "roles": [
+        "metadata"
+      ],
+      "title": "Field dictionary",
+      "file:size": 2891,
+      "file:checksum": "1220b30b106035cce463beae82492df5b9bca7ce5bb8e88a3ecdb37a792dceb0a134"
+    },
+    "quality": {
+      "href": "quality.json",
+      "type": "application/json",
+      "roles": [
+        "metadata"
+      ],
+      "title": "Source structure and null diagnostics",
+      "file:size": 1665,
+      "file:checksum": "1220c4d61032abd667ad3c2858de08124de39e6f12a37aff71d5debdc442c67446c0"
+    },
+    "source": {
+      "href": "https://zenodo.org/api/records/18624542/files/GRWL_summaryStats_V01.02.zip/content",
+      "type": "application/zip",
+      "roles": [
+        "source"
+      ],
+      "title": "Pinned GRWL summary V01.02 ZIP",
+      "file:size": 43282861,
+      "file:checksum": "122078aa43a7104d24b1696e9b1547347eec13ba5d660aa990c1e7cea98e7ae70e4a"
+    }
+  },
+  "portolan:version": "0.2.0",
+  "portolan:status": "prepared-local",
+  "portolan:revision": "9e2239d517d8d79fea701953e2697588b5d446ff"
+}

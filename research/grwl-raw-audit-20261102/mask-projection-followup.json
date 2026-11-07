@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-11-02T23:15:48.516250+00:00",
+  "reason": "Official masks are native UTM (observed NI16 EPSG:32616), not EPSG:4326 as described by the landing page. First plotting attempt stopped at its CRS guard.",
+  "correction": "Honor each raster native CRS and transform. Existing metric sampling already transforms coordinates into native CRS. For plots only, wrap each native mask in a nearest-neighbor EPSG:4326 WarpedVRT before sampling plot pixels.",
+  "unchanged": [
+    "selected features and edges",
+    "101 samples at fractions0.01..0.99",
+    "90 metre support threshold",
+    "raw vector evidence",
+    "source bytes"
+  ],
+  "interpretation": "TIFF nodata is None; code0 means no connected-water class and can include unclassified margins. Mask support is not independent optical truth. Record coverage as raster coverage only."
+}

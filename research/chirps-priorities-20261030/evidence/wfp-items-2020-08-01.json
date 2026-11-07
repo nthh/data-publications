@@ -1,0 +1,141 @@
+{
+  "url": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily/items?limit=1&datetime=2020-08-01T00:00:00Z/2020-08-01T23:59:59Z",
+  "method": "GET",
+  "retrieved_at": "2026-10-30T23:17:07.802077+00:00",
+  "status": 200,
+  "final_url": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily/items?limit=1&datetime=2020-08-01T00:00:00Z/2020-08-01T23:59:59Z",
+  "headers": {
+    "Content-Type": "application/geo+json",
+    "Content-Length": "2001"
+  },
+  "response_bytes": 2001,
+  "response_sha256": "f81bb1a4774d551d3ef059b01c9dc52e51b22bd1e7887dc4b7e759464661f6da",
+  "body": {
+    "type": "FeatureCollection",
+    "links": [
+      {
+        "rel": "collection",
+        "type": "application/json",
+        "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+      },
+      {
+        "rel": "parent",
+        "type": "application/json",
+        "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+      },
+      {
+        "rel": "root",
+        "type": "application/json",
+        "href": "https://api.earthobservation.vam.wfp.org/stac/"
+      },
+      {
+        "rel": "self",
+        "type": "application/geo+json",
+        "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily/items"
+      }
+    ],
+    "features": [
+      {
+        "id": "chirps_rnl_daily-20200801",
+        "bbox": [
+          -180,
+          -60,
+          180,
+          60
+        ],
+        "type": "Feature",
+        "links": [
+          {
+            "rel": "collection",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "parent",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "root",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/"
+          },
+          {
+            "rel": "self",
+            "type": "application/geo+json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily/items/chirps_rnl_daily-20200801"
+          }
+        ],
+        "assets": {
+          "band": {
+            "href": "s3://eu-central-1.opendata.source.coop/wfp/chirps-rnl-daily/v3.0/2020/08/01/chirps-v3.0.rnl.2020.08.01.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+              "data"
+            ],
+            "raster:bands": [
+              {
+                "unit": "1",
+                "nodata": -9999,
+                "data_type": "float32"
+              }
+            ]
+          }
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -180,
+                60
+              ],
+              [
+                -180,
+                -60
+              ],
+              [
+                180,
+                -60
+              ],
+              [
+                180,
+                60
+              ],
+              [
+                -180,
+                60
+              ]
+            ]
+          ]
+        },
+        "collection": "chirps_rnl_daily",
+        "properties": {
+          "datetime": "2020-08-01T00:00:00Z",
+          "proj:code": "EPSG:4326",
+          "proj:shape": [
+            2400,
+            7200
+          ],
+          "end_datetime": "2020-08-01T23:59:59.999999Z",
+          "proj:transform": [
+            0.05,
+            0.0,
+            -180.0,
+            0.0,
+            -0.05,
+            60.0
+          ],
+          "start_datetime": "2020-08-01T00:00:00Z"
+        },
+        "stac_version": "1.1.0",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+          "https://stac-extensions.github.io/raster/v1.1.0/schema.json"
+        ]
+      }
+    ],
+    "numberMatched": 1,
+    "numberReturned": 1
+  }
+}

@@ -1,0 +1,50 @@
+schema_version: 1
+id: modis_thermal_anomalies_daily_v061
+title: MODIS Thermal Anomalies/Fire Daily
+intake:
+  kind: official_catalog
+  reference_url: https://planetarycomputer.microsoft.com/api/stac/v1/collections/modis-14A1-061
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'planetary: review_note: Global daily thermal-anomaly/fire product; STAC bbox all-world.;
+    stac_bbox: [-180, -90, 180, 90]; temporal_interval: [["2000-02-18T00:00:00Z", null]] Distinct named
+    producer product; retain exact source edition and footprint.'
+  sources:
+  - provider: planetary_computer
+    entry_id: modis-14A1-061
+    url: https://planetarycomputer.microsoft.com/api/stac/v1/collections/modis-14A1-061
+    relationship: exact_dataset
+  access:
+  - provider: planetary_computer
+    status: native_available
+    formats:
+    - COG
+    - HDF
+    summary: 'Collection metadata declares per-item data assets / provider storage roots in the listed
+      native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain
+      unvalidated. Distinct named producer product; retain exact source edition and footprint.'
+    license_summary: 'note: Do not treat this metadata label as legal clearance.; review_status: provider
+      declaration captured; terms and redistribution permission not independently reviewed; stac_license:
+      other'
+    proposed_outputs:
+    - COG
+    - HDF
+    rationale: Reuse declared COG; preserve daily timing and confidence/quality fields.
+    evidence_urls:
+    - https://planetarycomputer.microsoft.com/api/stac/v1/collections/modis-14A1-061
+    - https://planetarycomputer.microsoft.com/dataset/modis-14A1-061
+  citations: []
+  evidence:
+  - path: research/global-candidates-20261031/planetary/reviewed.json
+    sha256: 07da016851a07f3e3e0937e120ce46442785f4e9096e563d92c1a3c0ce9e616a
+    key: modis_thermal_anomalies_daily_v061

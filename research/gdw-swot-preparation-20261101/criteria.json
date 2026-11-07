@@ -1,0 +1,33 @@
+{
+  "reviewed_on": "2026-11-01",
+  "base_commit": "86fde5437ae6e7316d72136effdb0fe04c474a76",
+  "scope": "Qualify Overture/other native overlap for GDW v1.0, prepare a complete local GDW conversion if source access and qualification pass, qualify SWOT scientific PLD v2.03, and report exact publication readiness for all prepared releases. TerraClimate remains deferred; retain the completed Lebreton pilot without additional conversion work.",
+  "exploratory_evidence": "Initial web search and existing reports were inspected before these criteria. A newly found AquaScope GDW barriers Parquet lead must be qualified before declaring a publication gap.",
+  "reuse_gate": [
+    "Compare exact edition, both layers, all attributes, IDs, geometry, public access and license. Similar mapped objects do not establish interchangeable scientific data.",
+    "Record Overture schema/provenance evidence and actual native-file metadata when feasible. Absence is bounded, not universal."
+  ],
+  "source_gate": [
+    "Pin version, producer URL, byte size, SHA-256 and provider checksum where supplied. Verify original license and document title/edition mismatches.",
+    "GDW expects 41145 barriers and 35295 reservoirs from the data paper; preserve shared identifiers and legitimate barriers without reservoir polygons. Any discrepancy requires recorded diagnosis before promotion.",
+    "SWOT v2.03 requires actual file inventory, schema and layer/table relationships; a release announcement or v2.02 metadata is insufficient."
+  ],
+  "conversion_gate": [
+    "Record source schema and acceptance criteria before evaluating converted output. Preserve every original attribute, null, identifier, geometry and row multiplicity. Display outputs are optional and distinct.",
+    "Full source-to-output comparison, independently recomputed bounds, missing/duplicate/value/geometry fault rejection, and a second build from committed code with identical hashes are required before prepared status.",
+    "Package source/license/schema documentation, locked workflow, exact assets and immutable evidence. Run existing real STAC/Portolan and local range/CORS/subset gates; report incomplete advisory/display gates explicitly."
+  ],
+  "readiness_gate": [
+    "Distinguish data prepared, package ready, publication blockers, public-host verification and registry submission. Existing prepared status alone is not ready-to-publish proof.",
+    "Check all selected manifests/snapshots and local assets without changing immutable releases. Source Cooperative destinations and public tests remain separate from local preparation."
+  ],
+  "resource_limits": [
+    "No uploads, pushes, visibility changes, live GEE jobs or paid services.",
+    "Before bulk work require at least 40 GiB free, cap new task-owned source/build/package storage at 8 GiB, and stop below 10 GiB free. Unknown or larger SWOT scope stays qualification-only.",
+    "Metadata requests capped at 10 MB per response; native-overlap probes use HEAD/range or small manifests. No global Overture downloads."
+  ],
+  "verification": [
+    "Focused workflow and negative-control tests, catalog/index consistency, provenance and publication catalog checks, clean-checkout rehearsal for new runtime/build paths.",
+    "Commit locally and integrate verified task work while preserving unrelated changes."
+  ]
+}

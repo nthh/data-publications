@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "started_at": "2026-11-02T02:17:37.015Z",
+  "status": "failed",
+  "scope": "Installed Chrome, fresh browser context for every layer, direct cross-origin object reads; local hosting only.",
+  "transfer_ceiling_bytes": 134217728,
+  "cases": [
+    {
+      "dataset_id": "hydrolakes",
+      "layer_id": "hydrolakes-1",
+      "format": "geoparquet",
+      "source_sha256": "6f588d97c14651eb23bea2d74fdf2a85f218a00ff11519c81efa5512b916b7f8",
+      "source_size_bytes": 949598607,
+      "region": "southwest_europe",
+      "status": "failed",
+      "viewer": {
+        "dataset": "hydrolakes",
+        "layer": "hydrolakes-1",
+        "phase": "error",
+        "error": "Invalid Error: Opening file 'release-hydrolakes-1.parquet' failed with error: Failed to open file: release-hydrolakes-1.parquet\n\nLINE 1: ...\", \"Vol_res\", \"Vol_src\", \"Depth_avg\", \"wkb_geometry\" FROM read_parquet('release-hydrolakes-1.parquet') WHERE \"bbox...\n                                                                     ^",
+        "feature_count": 0,
+        "capped": false,
+        "query": "SELECT \"Hylak_id\", \"Lake_name\", \"Lake_area\", \"Country\", \"Continent\", \"Poly_src\", \"Lake_type\", \"Grand_id\", \"Shore_len\", \"Shore_dev\", \"Vol_total\", \"Vol_res\", \"Vol_src\", \"Depth_avg\", \"wkb_geometry\" FROM read_parquet('release-hydrolakes-1.parquet') WHERE \"bbox\".\"xmax\" >= 3.236521779839194 AND \"bbox\".\"xmin\" <= 9.263478220157452 AND \"bbox\".\"ymax\" >= 44.87200630235611 AND \"bbox\".\"ymin\" <= 47.622010498450464 ORDER BY \"Hylak_id\" LIMIT 1501",
+        "bbox": [
+          3.236521779839194,
+          44.87200630235611,
+          9.263478220157452,
+          47.622010498450464
+        ],
+        "bytes": 0,
+        "ranges": 0,
+        "requests": 0,
+        "generation": 1,
+        "selected": null,
+        "engine_step": "query",
+        "traffic": []
+      },
+      "failure": "Invalid Error: Opening file 'release-hydrolakes-1.parquet' failed with error: Failed to open file: release-hydrolakes-1.parquet\n\nLINE 1: ...\", \"Vol_res\", \"Vol_src\", \"Depth_avg\", \"wkb_geometry\" FROM read_parquet('release-hydrolakes-1.parquet') WHERE \"bbox...\n                                                                     ^",
+      "requests": [],
+      "response_body_bytes": 0,
+      "page_errors": [],
+      "external_requests": []
+    }
+  ],
+  "finished_at": "2026-11-02T02:17:41.916Z",
+  "browser_version": "156.0.8078.79"
+}

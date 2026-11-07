@@ -1,0 +1,4397 @@
+{
+  "schema_version": 1,
+  "status": "partial",
+  "checked_at": "2026-11-07T21:22:35.931Z",
+  "scope": "Single-dataset hosted pilot: grwl-raw; local UI only",
+  "selected_dataset_id": "grwl-raw",
+  "expected_case_count": 20,
+  "plan_sha256": "754c02dde3cf258263619599f893558d3348c7fb51c07f8fa700efa1900ac610",
+  "browser_cases_sha256": "6ff14a9c438cdee14af4ea21876ca32876883f7b676c16596b4ddfc924b6aa10",
+  "viewer_config_sha256": "87e1d532d23d65ec45b88aac318d13b83c273f140644ba7ec3dd3edd36e198fe",
+  "viewer_build_sha256": "9fb4f4aa6b641363160db0f54610750884ff91bfe02669cb7394f148726b62f6",
+  "origin": "https://data.source.coop",
+  "ui_origin": "http://127.0.0.1:8918",
+  "metadata_range_policy_sha256": "42ae5ed4939bc4658a3de31233767111a33a765e00e56cce376c3876d3f462e2",
+  "transfer_ceiling_bytes_per_case": 134217728,
+  "transfer_ceiling_bytes_total": 1073741824,
+  "cases": [
+    {
+      "id": "grwl-raw-mississippi-z0",
+      "dataset_id": "grwl-raw",
+      "product_id": "grwl-raw",
+      "layer_id": "grwl-raw-display",
+      "region": null,
+      "view": {
+        "center": [
+          -90,
+          35.51628964037926
+        ],
+        "name": "mississippi",
+        "zoom": 0
+      },
+      "display_object_url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+      "display_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+      "analytic_object_url": "https://data.source.coop/nthh/grwl-raw/releases/raw-v01.01-local-r1/assets/grwl-raw-observations.parquet",
+      "analytic_sha256": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+      "status": "passed",
+      "feature_count": 64787,
+      "rendered_source_layers": [
+        "grwl_width_overview"
+      ],
+      "active_style_layers": [
+        "release-width-samples"
+      ],
+      "width_sample": {
+        "feature_id": 148395415099087,
+        "width_m": 51899,
+        "width_valid": true
+      },
+      "expected_diameter_px": 4.03,
+      "tile_property_count": 3,
+      "viewer_traffic": {
+        "bytes": 0,
+        "bytes_unavailable": true,
+        "ranges": 3,
+        "requests": 3,
+        "remote_resource_timing": [
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          }
+        ]
+      },
+      "screenshot": "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/browser-grwl-raw-r3/grwl-raw-mississippi-z0.png",
+      "transferred_bytes": 638785,
+      "requests": [
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/3190539066",
+          "content_length": 16384,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 16384,
+          "body_sha256": "ec8486fe850e9f7331113a2567d11959a9e890704e607333a6fe8df16ba7958c",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=1903-12975",
+          "content_range": "bytes 1903-12975/3190539066",
+          "content_length": 11073,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 11073,
+          "body_sha256": "99934d6499014bd18f614c7af1b31ccde32d757424901acfe7c194c83a02c125",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=1412570-2023897",
+          "content_range": "bytes 1412570-2023897/3190539066",
+          "content_length": 611328,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 611328,
+          "body_sha256": "65d9e161f75c7519f8fa038d9705d4099b41d3f0dd7c219da792971db9b4fa14",
+          "status_check": "passed"
+        }
+      ],
+      "heads": [],
+      "options": [],
+      "blocked_requests": []
+    },
+    {
+      "id": "grwl-raw-mississippi-z1",
+      "dataset_id": "grwl-raw",
+      "product_id": "grwl-raw",
+      "layer_id": "grwl-raw-display",
+      "region": null,
+      "view": {
+        "center": [
+          -90,
+          35.51628964037926
+        ],
+        "name": "mississippi",
+        "zoom": 1
+      },
+      "display_object_url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+      "display_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+      "analytic_object_url": "https://data.source.coop/nthh/grwl-raw/releases/raw-v01.01-local-r1/assets/grwl-raw-observations.parquet",
+      "analytic_sha256": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+      "status": "passed",
+      "feature_count": 113519,
+      "rendered_source_layers": [
+        "grwl_width_overview"
+      ],
+      "active_style_layers": [
+        "release-width-samples"
+      ],
+      "width_sample": {
+        "feature_id": 150388279920443,
+        "width_m": 40459,
+        "width_valid": true
+      },
+      "expected_diameter_px": 4.30125,
+      "tile_property_count": 3,
+      "viewer_traffic": {
+        "bytes": 0,
+        "bytes_unavailable": true,
+        "ranges": 6,
+        "requests": 6,
+        "remote_resource_timing": [
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          }
+        ]
+      },
+      "screenshot": "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/browser-grwl-raw-r3/grwl-raw-mississippi-z1.png",
+      "transferred_bytes": 1432988,
+      "requests": [
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/3190539066",
+          "content_length": 16384,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 16384,
+          "body_sha256": "ec8486fe850e9f7331113a2567d11959a9e890704e607333a6fe8df16ba7958c",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=1903-12975",
+          "content_range": "bytes 1903-12975/3190539066",
+          "content_length": 11073,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 11073,
+          "body_sha256": "99934d6499014bd18f614c7af1b31ccde32d757424901acfe7c194c83a02c125",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=2023898-2372820",
+          "content_range": "bytes 2023898-2372820/3190539066",
+          "content_length": 348923,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 348923,
+          "body_sha256": "a3702bf59388af4e69e6d7b378e362a36c8649f26d7c5d651935da3ff3e3fc5a",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=2605658-3429428",
+          "content_range": "bytes 2605658-3429428/3190539066",
+          "content_length": 823771,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 823771,
+          "body_sha256": "cbbebacb5b683773d038c75e54df2b191f2bf1f23b9fde71c2fdbe2d64ca1de4",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=2372821-2508332",
+          "content_range": "bytes 2372821-2508332/3190539066",
+          "content_length": 135512,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 135512,
+          "body_sha256": "3e14954d5915b29746cabca4cf77c87834e3462180949618a19dec1cb26e2548",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=2508333-2605657",
+          "content_range": "bytes 2508333-2605657/3190539066",
+          "content_length": 97325,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 97325,
+          "body_sha256": "8d6e2fd6f59d4541247318ec96f2fbca2b0ba713b924a2d1f6b09e883e0cbb50",
+          "status_check": "passed"
+        }
+      ],
+      "heads": [],
+      "options": [],
+      "blocked_requests": []
+    },
+    {
+      "id": "grwl-raw-mississippi-z2",
+      "dataset_id": "grwl-raw",
+      "product_id": "grwl-raw",
+      "layer_id": "grwl-raw-display",
+      "region": null,
+      "view": {
+        "center": [
+          -90,
+          35.51628964037926
+        ],
+        "name": "mississippi",
+        "zoom": 2
+      },
+      "display_object_url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+      "display_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+      "analytic_object_url": "https://data.source.coop/nthh/grwl-raw/releases/raw-v01.01-local-r1/assets/grwl-raw-observations.parquet",
+      "analytic_sha256": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+      "status": "passed",
+      "feature_count": 104628,
+      "rendered_source_layers": [
+        "grwl_width_overview"
+      ],
+      "active_style_layers": [
+        "release-width-samples"
+      ],
+      "width_sample": {
+        "feature_id": 152527173616523,
+        "width_m": 16432,
+        "width_valid": true
+      },
+      "expected_diameter_px": 4.572500000000001,
+      "tile_property_count": 3,
+      "viewer_traffic": {
+        "bytes": 0,
+        "bytes_unavailable": true,
+        "ranges": 10,
+        "requests": 10,
+        "remote_resource_timing": [
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          }
+        ]
+      },
+      "screenshot": "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/browser-grwl-raw-r3/grwl-raw-mississippi-z2.png",
+      "transferred_bytes": 1983287,
+      "requests": [
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/3190539066",
+          "content_length": 16384,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 16384,
+          "body_sha256": "ec8486fe850e9f7331113a2567d11959a9e890704e607333a6fe8df16ba7958c",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=1903-12975",
+          "content_range": "bytes 1903-12975/3190539066",
+          "content_length": 11073,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 11073,
+          "body_sha256": "99934d6499014bd18f614c7af1b31ccde32d757424901acfe7c194c83a02c125",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=6023379-6181324",
+          "content_range": "bytes 6023379-6181324/3190539066",
+          "content_length": 157946,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 157946,
+          "body_sha256": "448872e9999a077fa51fbc56a28bd6ce81082a86b87448a7aa0d6b0057b8cbe9",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=4182288-4469281",
+          "content_range": "bytes 4182288-4469281/3190539066",
+          "content_length": 286994,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 286994,
+          "body_sha256": "66721db851cbced00e03c1964db7739ed9ee3afca691de3870a24f095c97b713",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=3429429-3530588",
+          "content_range": "bytes 3429429-3530588/3190539066",
+          "content_length": 101160,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 101160,
+          "body_sha256": "8a81ace8bf9e284a54397f7eb18ae5fc63453f9cdb1a2b1dd403dd565902e1d6",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=3530589-3560528",
+          "content_range": "bytes 3530589-3560528/3190539066",
+          "content_length": 29940,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 29940,
+          "body_sha256": "f1d6a0ad4f4e241846581b6fd7d53f860f617fb2f2a13eebf137964830a4ceee",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=5367573-6023378",
+          "content_range": "bytes 5367573-6023378/3190539066",
+          "content_length": 655806,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 655806,
+          "body_sha256": "297d23c0d67b57c4ec1bfd79dcec99d254f503f60ff0d13967567586efc6db62",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=3872381-4182287",
+          "content_range": "bytes 3872381-4182287/3190539066",
+          "content_length": 309907,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 309907,
+          "body_sha256": "aabb6e5f98a3993abe24d6b341a5ef194d8fbf86528c1767a4c647c13fe2882d",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=4469282-4571506",
+          "content_range": "bytes 4469282-4571506/3190539066",
+          "content_length": 102225,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 102225,
+          "body_sha256": "e8c73bed4b6a11a702ecafcea7b09704996bfac1b021e0a3549d8de481b159b2",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=3560529-3872380",
+          "content_range": "bytes 3560529-3872380/3190539066",
+          "content_length": 311852,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 311852,
+          "body_sha256": "3cdb085b32f018813482af65b2bd94ed5b196f651122ca64fce888f6cea673c8",
+          "status_check": "passed"
+        }
+      ],
+      "heads": [],
+      "options": [],
+      "blocked_requests": []
+    },
+    {
+      "id": "grwl-raw-mississippi-z3",
+      "dataset_id": "grwl-raw",
+      "product_id": "grwl-raw",
+      "layer_id": "grwl-raw-display",
+      "region": null,
+      "view": {
+        "center": [
+          -90,
+          35.51628964037926
+        ],
+        "name": "mississippi",
+        "zoom": 3
+      },
+      "display_object_url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+      "display_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+      "analytic_object_url": "https://data.source.coop/nthh/grwl-raw/releases/raw-v01.01-local-r1/assets/grwl-raw-observations.parquet",
+      "analytic_sha256": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+      "status": "passed",
+      "feature_count": 73470,
+      "rendered_source_layers": [
+        "grwl_width_overview"
+      ],
+      "active_style_layers": [
+        "release-width-samples"
+      ],
+      "width_sample": {
+        "feature_id": 150388279920443,
+        "width_m": 40459,
+        "width_valid": true
+      },
+      "expected_diameter_px": 4.84375,
+      "tile_property_count": 3,
+      "viewer_traffic": {
+        "bytes": 0,
+        "bytes_unavailable": true,
+        "ranges": 9,
+        "requests": 9,
+        "remote_resource_timing": [
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          }
+        ]
+      },
+      "screenshot": "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/browser-grwl-raw-r3/grwl-raw-mississippi-z3.png",
+      "transferred_bytes": 1295339,
+      "requests": [
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/3190539066",
+          "content_length": 16384,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 16384,
+          "body_sha256": "ec8486fe850e9f7331113a2567d11959a9e890704e607333a6fe8df16ba7958c",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=1903-12975",
+          "content_range": "bytes 1903-12975/3190539066",
+          "content_length": 11073,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 11073,
+          "body_sha256": "99934d6499014bd18f614c7af1b31ccde32d757424901acfe7c194c83a02c125",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=7131779-7402856",
+          "content_range": "bytes 7131779-7402856/3190539066",
+          "content_length": 271078,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 271078,
+          "body_sha256": "c4cc7572af9bdf21ba8978132541e4b9df01c647e772b8c84bc99eec67dc5567",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=7056759-7131778",
+          "content_range": "bytes 7056759-7131778/3190539066",
+          "content_length": 75020,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 75020,
+          "body_sha256": "7a05b3550599c9655238609e3c2e2d293fce515045ee68887bafb95f6a345732",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=6767427-7009766",
+          "content_range": "bytes 6767427-7009766/3190539066",
+          "content_length": 242340,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 242340,
+          "body_sha256": "7aa5276557858de929757956b089a06860b62bdaaf3cc4e48576a06ca1c8e63d",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=7891456-8035308",
+          "content_range": "bytes 7891456-8035308/3190539066",
+          "content_length": 143853,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 143853,
+          "body_sha256": "30c58c0c57547602a17677bd798f072546255fe833a50a3c2b9d684ba60fb692",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=7533596-7891455",
+          "content_range": "bytes 7533596-7891455/3190539066",
+          "content_length": 357860,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 357860,
+          "body_sha256": "f5df811017ce5e2a3b44c00547398030b4193f7624664ff16e29bb06db02c7f9",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=7009767-7056758",
+          "content_range": "bytes 7009767-7056758/3190539066",
+          "content_length": 46992,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 46992,
+          "body_sha256": "ea8c2f44b6b98d077bfb835c5fd7fb663f92760e634e988644f36dc4fe315fd7",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=7402857-7533595",
+          "content_range": "bytes 7402857-7533595/3190539066",
+          "content_length": 130739,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 130739,
+          "body_sha256": "bc3c24c3c5d83154f4aa04284175443ef842a73fa616772d06b911d9793e14da",
+          "status_check": "passed"
+        }
+      ],
+      "heads": [],
+      "options": [],
+      "blocked_requests": []
+    },
+    {
+      "id": "grwl-raw-mississippi-z4",
+      "dataset_id": "grwl-raw",
+      "product_id": "grwl-raw",
+      "layer_id": "grwl-raw-display",
+      "region": null,
+      "view": {
+        "center": [
+          -90,
+          35.51628964037926
+        ],
+        "name": "mississippi",
+        "zoom": 4
+      },
+      "display_object_url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+      "display_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+      "analytic_object_url": "https://data.source.coop/nthh/grwl-raw/releases/raw-v01.01-local-r1/assets/grwl-raw-observations.parquet",
+      "analytic_sha256": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+      "status": "passed",
+      "feature_count": 67689,
+      "rendered_source_layers": [
+        "grwl_width_overview"
+      ],
+      "active_style_layers": [
+        "release-width-samples"
+      ],
+      "width_sample": {
+        "feature_id": 149516401570370,
+        "width_m": 15484,
+        "width_valid": true
+      },
+      "expected_diameter_px": 5.115,
+      "tile_property_count": 3,
+      "viewer_traffic": {
+        "bytes": 0,
+        "bytes_unavailable": true,
+        "ranges": 12,
+        "requests": 12,
+        "remote_resource_timing": [
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          }
+        ]
+      },
+      "screenshot": "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/browser-grwl-raw-r3/grwl-raw-mississippi-z4.png",
+      "transferred_bytes": 1538112,
+      "requests": [
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/3190539066",
+          "content_length": 16384,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 16384,
+          "body_sha256": "ec8486fe850e9f7331113a2567d11959a9e890704e607333a6fe8df16ba7958c",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=1903-12975",
+          "content_range": "bytes 1903-12975/3190539066",
+          "content_length": 11073,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 11073,
+          "body_sha256": "99934d6499014bd18f614c7af1b31ccde32d757424901acfe7c194c83a02c125",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=14898159-15101952",
+          "content_range": "bytes 14898159-15101952/3190539066",
+          "content_length": 203794,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 203794,
+          "body_sha256": "ff140bcde3550275e6df295d3cb08f5c2c5848bc9736e72da83441333d44d969",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=14688418-14704188",
+          "content_range": "bytes 14688418-14704188/3190539066",
+          "content_length": 15771,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 15771,
+          "body_sha256": "56769797490bbda08cd715416531aad40ec36862d28c1c26b5d8e662e7ddabcb",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=14632622-14688417",
+          "content_range": "bytes 14632622-14688417/3190539066",
+          "content_length": 55796,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 55796,
+          "body_sha256": "3cab6a22de789b4234f37d6dadccd173a5ead51ea9ae24def7e0c83e20fc68a8",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=13707669-13784262",
+          "content_range": "bytes 13707669-13784262/3190539066",
+          "content_length": 76594,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 76594,
+          "body_sha256": "41c95542d45424a2a905b4cf80f38a6608602fb715e94653dad13b0b2d23fdd6",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=15487389-15620561",
+          "content_range": "bytes 15487389-15620561/3190539066",
+          "content_length": 133173,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 133173,
+          "body_sha256": "f31e95d87a9622e9184a70f05fe9d87197c593b77d5aa5e3fc145c66e3dd1765",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=14080607-14264133",
+          "content_range": "bytes 14080607-14264133/3190539066",
+          "content_length": 183527,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 183527,
+          "body_sha256": "4758b53f68ffc0dfccdeb74f2749677ffcd1d0583e81dbe510894b7e160ff1ef",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=14419703-14632621",
+          "content_range": "bytes 14419703-14632621/3190539066",
+          "content_length": 212919,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 212919,
+          "body_sha256": "19c136df0421a770bc754b2049c0a1bff8ff0e7bc217665c52782d4f8267a0b1",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=14704189-14898158",
+          "content_range": "bytes 14704189-14898158/3190539066",
+          "content_length": 193970,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 193970,
+          "body_sha256": "e66efb03e2e0e126dc92e6c33a489e7bee9bd16f6ad4c8a31526515a8914517e",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=13428127-13707668",
+          "content_range": "bytes 13428127-13707668/3190539066",
+          "content_length": 279542,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 279542,
+          "body_sha256": "de44b84b9ff57fb489ef185ac4bafe8f4eea1f7c76c6f22ea4b403ab46a9b088",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=14264134-14419702",
+          "content_range": "bytes 14264134-14419702/3190539066",
+          "content_length": 155569,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 155569,
+          "body_sha256": "703b1272c1956f6270fd096937add13a457480ccef29c76fde880603bb775292",
+          "status_check": "passed"
+        }
+      ],
+      "heads": [],
+      "options": [],
+      "blocked_requests": []
+    },
+    {
+      "id": "grwl-raw-mississippi-z5",
+      "dataset_id": "grwl-raw",
+      "product_id": "grwl-raw",
+      "layer_id": "grwl-raw-display",
+      "region": null,
+      "view": {
+        "center": [
+          -90,
+          35.51628964037926
+        ],
+        "name": "mississippi",
+        "zoom": 5
+      },
+      "display_object_url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+      "display_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+      "analytic_object_url": "https://data.source.coop/nthh/grwl-raw/releases/raw-v01.01-local-r1/assets/grwl-raw-observations.parquet",
+      "analytic_sha256": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+      "status": "passed",
+      "feature_count": 71534,
+      "rendered_source_layers": [
+        "grwl_width_overview"
+      ],
+      "active_style_layers": [
+        "release-width-samples"
+      ],
+      "width_sample": {
+        "feature_id": 149524991533782,
+        "width_m": 4900,
+        "width_valid": true
+      },
+      "expected_diameter_px": 5.38625,
+      "tile_property_count": 3,
+      "viewer_traffic": {
+        "bytes": 0,
+        "bytes_unavailable": true,
+        "ranges": 13,
+        "requests": 13,
+        "remote_resource_timing": [
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          }
+        ]
+      },
+      "screenshot": "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/browser-grwl-raw-r3/grwl-raw-mississippi-z5.png",
+      "transferred_bytes": 1251096,
+      "requests": [
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/3190539066",
+          "content_length": 16384,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 16384,
+          "body_sha256": "ec8486fe850e9f7331113a2567d11959a9e890704e607333a6fe8df16ba7958c",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=1903-12975",
+          "content_range": "bytes 1903-12975/3190539066",
+          "content_length": 11073,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 11073,
+          "body_sha256": "99934d6499014bd18f614c7af1b31ccde32d757424901acfe7c194c83a02c125",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=28797629-28846987",
+          "content_range": "bytes 28797629-28846987/3190539066",
+          "content_length": 49359,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 49359,
+          "body_sha256": "747260b30c37796b079d5f578368ced35e3ef31072d3109ff992eeff59de6cd7",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=29497500-29540082",
+          "content_range": "bytes 29497500-29540082/3190539066",
+          "content_length": 42583,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 42583,
+          "body_sha256": "73c12e7c6a24ede84e248cdd430eb2e39eae134439d3d3021e1eb9c43fb8d294",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=29540083-29611378",
+          "content_range": "bytes 29540083-29611378/3190539066",
+          "content_length": 71296,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 71296,
+          "body_sha256": "890b5c5f181790ae92a20c1f61fbfadca4b8ddc50adb1a3c06209538c1ee6ef4",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=26985833-27089037",
+          "content_range": "bytes 26985833-27089037/3190539066",
+          "content_length": 103205,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 103205,
+          "body_sha256": "83531fb36502243b151cf4e805ad193aa63cb9c8005776edffcf0a6a35dccfc1",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=29817591-29933916",
+          "content_range": "bytes 29817591-29933916/3190539066",
+          "content_length": 116326,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 116326,
+          "body_sha256": "85d96212386a3828b30f2d6c6021bc2aba9475ca31d8d0fca36798ad21c7f92c",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=29424838-29497499",
+          "content_range": "bytes 29424838-29497499/3190539066",
+          "content_length": 72662,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 72662,
+          "body_sha256": "b93c760a9b345a3ac81feda5f12041e330ea82151a5f57b95488fa03c094bb1d",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=28581850-28797628",
+          "content_range": "bytes 28581850-28797628/3190539066",
+          "content_length": 215779,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 215779,
+          "body_sha256": "223bb1bb9b51d0e62cae24a7849acaafdc349714bfa6e54add65fac180cc3673",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=27089038-27277866",
+          "content_range": "bytes 27089038-27277866/3190539066",
+          "content_length": 188829,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 188829,
+          "body_sha256": "764336481d6947926b8f00463f4298175dc856dfd0630d3a423257f94c77ed69",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=28533263-28581849",
+          "content_range": "bytes 28533263-28581849/3190539066",
+          "content_length": 48587,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 48587,
+          "body_sha256": "13335f4762afb2eda7198e0327d07ede458b23b3269b035f17e0b196155aca2e",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=29611379-29817590",
+          "content_range": "bytes 29611379-29817590/3190539066",
+          "content_length": 206212,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 206212,
+          "body_sha256": "ce1bf7cf3718a309169737d3e9d47d315ef82b4a6183cc75489929655c61eb58",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=29933917-30042717",
+          "content_range": "bytes 29933917-30042717/3190539066",
+          "content_length": 108801,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 108801,
+          "body_sha256": "379f90db859d8cd93b8b26cd3f5a9a67b03911c65e6707d7c1a41eefb02a9718",
+          "status_check": "passed"
+        }
+      ],
+      "heads": [],
+      "options": [],
+      "blocked_requests": []
+    },
+    {
+      "id": "grwl-raw-mississippi-z6",
+      "dataset_id": "grwl-raw",
+      "product_id": "grwl-raw",
+      "layer_id": "grwl-raw-display",
+      "region": null,
+      "view": {
+        "center": [
+          -90,
+          35.51628964037926
+        ],
+        "name": "mississippi",
+        "zoom": 6
+      },
+      "display_object_url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+      "display_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+      "analytic_object_url": "https://data.source.coop/nthh/grwl-raw/releases/raw-v01.01-local-r1/assets/grwl-raw-observations.parquet",
+      "analytic_sha256": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+      "status": "passed",
+      "feature_count": 50317,
+      "rendered_source_layers": [
+        "grwl_width_overview"
+      ],
+      "active_style_layers": [
+        "release-width-samples"
+      ],
+      "width_sample": {
+        "feature_id": 149099789780078,
+        "width_m": 3308,
+        "width_valid": true
+      },
+      "expected_diameter_px": 5.6575,
+      "tile_property_count": 3,
+      "viewer_traffic": {
+        "bytes": 0,
+        "bytes_unavailable": true,
+        "ranges": 10,
+        "requests": 10,
+        "remote_resource_timing": [
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          }
+        ]
+      },
+      "screenshot": "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/browser-grwl-raw-r3/grwl-raw-mississippi-z6.png",
+      "transferred_bytes": 881976,
+      "requests": [
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/3190539066",
+          "content_length": 16384,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 16384,
+          "body_sha256": "ec8486fe850e9f7331113a2567d11959a9e890704e607333a6fe8df16ba7958c",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=1903-12975",
+          "content_range": "bytes 1903-12975/3190539066",
+          "content_length": 11073,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 11073,
+          "body_sha256": "99934d6499014bd18f614c7af1b31ccde32d757424901acfe7c194c83a02c125",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=57684359-57812986",
+          "content_range": "bytes 57684359-57812986/3190539066",
+          "content_length": 128628,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 128628,
+          "body_sha256": "57b8b163121ec369b5139d80896d7971d8848a776344fbe7cffe8cff6d57e734",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=57585761-57684358",
+          "content_range": "bytes 57585761-57684358/3190539066",
+          "content_length": 98598,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 98598,
+          "body_sha256": "d337756ddc92af54b567d263f86562e5ffba02fd3d4527d811e31fe2c3a689a9",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=57380970-57503765",
+          "content_range": "bytes 57380970-57503765/3190539066",
+          "content_length": 122796,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 122796,
+          "body_sha256": "be9a9daa7004c11169c1d32bf7e985c22cfc5720ddbf058197192b735aa20eea",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=59617926-59734232",
+          "content_range": "bytes 59617926-59734232/3190539066",
+          "content_length": 116307,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 116307,
+          "body_sha256": "cf6d554dbea5c46c0cec5a747eabe69037b7385ef13c746781ba38d1e5877b9e",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=59734233-59807213",
+          "content_range": "bytes 59734233-59807213/3190539066",
+          "content_length": 72981,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 72981,
+          "body_sha256": "b631182d0907a315da451c722d274fbbcb2337f0be9ef9c889012cbfd7836a06",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=57503766-57585760",
+          "content_range": "bytes 57503766-57585760/3190539066",
+          "content_length": 81995,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 81995,
+          "body_sha256": "8bdc53eae9194d8472b05d8d15f77d1a94ca21fcaae2e35a3da73ce697734932",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=59807214-59900053",
+          "content_range": "bytes 59807214-59900053/3190539066",
+          "content_length": 92840,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 92840,
+          "body_sha256": "8b1d5b5b29ac0175bd8c7c906ce9c0c1b1b551d7145f6e9a2cef7776a297995e",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=59477552-59617925",
+          "content_range": "bytes 59477552-59617925/3190539066",
+          "content_length": 140374,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 140374,
+          "body_sha256": "a67da0883daf1f5c5ab761d46259d5062a56d8703437c56ae2eb01d54e4fcdf5",
+          "status_check": "passed"
+        }
+      ],
+      "heads": [],
+      "options": [],
+      "blocked_requests": []
+    },
+    {
+      "id": "grwl-raw-mississippi-z7",
+      "dataset_id": "grwl-raw",
+      "product_id": "grwl-raw",
+      "layer_id": "grwl-raw-display",
+      "region": null,
+      "view": {
+        "center": [
+          -90,
+          35.51628964037926
+        ],
+        "name": "mississippi",
+        "zoom": 7
+      },
+      "display_object_url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+      "display_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+      "analytic_object_url": "https://data.source.coop/nthh/grwl-raw/releases/raw-v01.01-local-r1/assets/grwl-raw-observations.parquet",
+      "analytic_sha256": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+      "status": "passed",
+      "feature_count": 25476,
+      "rendered_source_layers": [
+        "grwl_width_overview"
+      ],
+      "active_style_layers": [
+        "release-width-samples"
+      ],
+      "width_sample": {
+        "feature_id": 149099789754976,
+        "width_m": 848,
+        "width_valid": true
+      },
+      "expected_diameter_px": 5.29284375,
+      "tile_property_count": 3,
+      "viewer_traffic": {
+        "bytes": 0,
+        "bytes_unavailable": true,
+        "ranges": 14,
+        "requests": 14,
+        "remote_resource_timing": [
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          }
+        ]
+      },
+      "attribute_note": "All source attributes for this ID.",
+      "source_attribute_count": 14,
+      "analytic_feature_id": 149099789754976,
+      "screenshot": "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/browser-grwl-raw-r3/grwl-raw-mississippi-z7.png",
+      "transferred_bytes": 20941975,
+      "requests": [
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/3190539066",
+          "content_length": 16384,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 16384,
+          "body_sha256": "ec8486fe850e9f7331113a2567d11959a9e890704e607333a6fe8df16ba7958c",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=1903-12975",
+          "content_range": "bytes 1903-12975/3190539066",
+          "content_length": 11073,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 11073,
+          "body_sha256": "99934d6499014bd18f614c7af1b31ccde32d757424901acfe7c194c83a02c125",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=115359061-115416276",
+          "content_range": "bytes 115359061-115416276/3190539066",
+          "content_length": 57216,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 57216,
+          "body_sha256": "eb61471cb213724bd1e28cf4050fc48ff0847ce08bd768c4e2022d59fffdba68",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=118940980-119020930",
+          "content_range": "bytes 118940980-119020930/3190539066",
+          "content_length": 79951,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 79951,
+          "body_sha256": "33e7591f953f02b7cf8a15c5355e4f8c7ce4f1bc4f9e8d06a9b87a0644353b38",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=115297374-115359060",
+          "content_range": "bytes 115297374-115359060/3190539066",
+          "content_length": 61687,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 61687,
+          "body_sha256": "8363c7d00f41e0086768ba4ae2d1abb9e8858b91f4542a9e9f872ed8b809f367",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=119670926-119726406",
+          "content_range": "bytes 119670926-119726406/3190539066",
+          "content_length": 55481,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 55481,
+          "body_sha256": "e2a8846bc495893e1f59d1a04d2a013b8901b043d0c6289fb8bec27cd0407a71",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=115570155-115613025",
+          "content_range": "bytes 115570155-115613025/3190539066",
+          "content_length": 42871,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 42871,
+          "body_sha256": "52dfa56bfb5fbeb0e0479576f612c7a1170cf16178aca42cc6f7fcc5292aa1d2",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=115416277-115491757",
+          "content_range": "bytes 115416277-115491757/3190539066",
+          "content_length": 75481,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 75481,
+          "body_sha256": "0a41ac5240bed39bdea2f9804570c4b9f0a082ab4c2c66c89fe930edee1246e3",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=119020931-119098393",
+          "content_range": "bytes 119020931-119098393/3190539066",
+          "content_length": 77463,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 77463,
+          "body_sha256": "0fa0b4d7f32271682329da35b2bbc4eb22e7f13376f53d575767d6363d3bd96a",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=119098394-119166270",
+          "content_range": "bytes 119098394-119166270/3190539066",
+          "content_length": 67877,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 67877,
+          "body_sha256": "3877ccbd6259f5e740d39a213a4533b6b264a5130f9e8f7e7be2aa8b2b210739",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=115491758-115570154",
+          "content_range": "bytes 115491758-115570154/3190539066",
+          "content_length": 78397,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 78397,
+          "body_sha256": "dec94b81ef1c238406852ef9d564d79916b7e9d0b2139ce52c881a62537907c2",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=119166271-119214471",
+          "content_range": "bytes 119166271-119214471/3190539066",
+          "content_length": 48201,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 48201,
+          "body_sha256": "1cfe678ed006ea72e1d4743b9def5592adf44cd7958bbd31e2e24288b8cb86f8",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=115166044-115228011",
+          "content_range": "bytes 115166044-115228011/3190539066",
+          "content_length": 61968,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 61968,
+          "body_sha256": "015478c87ba5dd4751c20e4e7eb61f58ccd62c01b541055626e05898087b371a",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=119626826-119670925",
+          "content_range": "bytes 119626826-119670925/3190539066",
+          "content_length": 44100,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 44100,
+          "body_sha256": "d8106482b5374bc299e2f1eb80840dbb738ea07e86cadf336d7a0bfdd10f5c5b",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/releases/raw-v01.01-local-r1/assets/grwl-raw-observations.parquet",
+          "status": 206,
+          "range": "bytes=5529859801-5529859808",
+          "content_range": "bytes 5529859801-5529859808/5529859809",
+          "content_length": 8,
+          "content_type": "application/vnd.apache.parquet",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+          "body_bytes": 8,
+          "body_sha256": "4a7342d95d209c2e6d4c5ceb1795d7cd361e2304af17ac7f526fd603c2a92e64",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/releases/raw-v01.01-local-r1/assets/grwl-raw-observations.parquet",
+          "status": 206,
+          "range": "bytes=5510076146-5529859800",
+          "content_range": "bytes 5510076146-5529859800/5529859809",
+          "content_length": 19783655,
+          "content_type": "application/vnd.apache.parquet",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+          "body_bytes": 19783655,
+          "body_sha256": "d74b674f3b3757775689be810c061a063211ceb46e9845f1441b4663a2a9081e",
+          "metadata_range_exception": {
+            "kind": "parquet_footer",
+            "range_sha256": "d74b674f3b3757775689be810c061a063211ceb46e9845f1441b4663a2a9081e"
+          },
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/releases/raw-v01.01-local-r1/assets/grwl-raw-observations.parquet",
+          "status": 206,
+          "range": "bytes=1662543068-1662543323",
+          "content_range": "bytes 1662543068-1662543323/5529859809",
+          "content_length": 256,
+          "content_type": "application/vnd.apache.parquet",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+          "body_bytes": 256,
+          "body_sha256": "f457e72648157aa1cfb79ad549b1b09463aaa218158fa5136546de85cf8c147f",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/releases/raw-v01.01-local-r1/assets/grwl-raw-observations.parquet",
+          "status": 206,
+          "range": "bytes=1662543088-1662551439",
+          "content_range": "bytes 1662543088-1662551439/5529859809",
+          "content_length": 8352,
+          "content_type": "application/vnd.apache.parquet",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+          "body_bytes": 8352,
+          "body_sha256": "dacd259a02d28aebe613cd1fde3960b481052eaf3372685e723bd901b179b06d",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/releases/raw-v01.01-local-r1/assets/grwl-raw-observations.parquet",
+          "status": 206,
+          "range": "bytes=1662551440-1662584847",
+          "content_range": "bytes 1662551440-1662584847/5529859809",
+          "content_length": 33408,
+          "content_type": "application/vnd.apache.parquet",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+          "body_bytes": 33408,
+          "body_sha256": "cc4c831e120a22bd2c867bc4f6ffa196cd0ef8d4f1d65ff800c96cf049bd1c37",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/releases/raw-v01.01-local-r1/assets/grwl-raw-observations.parquet",
+          "status": 206,
+          "range": "bytes=1662260867-1662261122",
+          "content_range": "bytes 1662260867-1662261122/5529859809",
+          "content_length": 256,
+          "content_type": "application/vnd.apache.parquet",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+          "body_bytes": 256,
+          "body_sha256": "4456ffa37b1b57e70dc3e34734fb9ed82dabd599310229cd8bd712b9a2167251",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/releases/raw-v01.01-local-r1/assets/grwl-raw-observations.parquet",
+          "status": 206,
+          "range": "bytes=1662260886-1662276975",
+          "content_range": "bytes 1662260886-1662276975/5529859809",
+          "content_length": 16090,
+          "content_type": "application/vnd.apache.parquet",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+          "body_bytes": 16090,
+          "body_sha256": "c8d86dbb01204422dd88445c38e4797386be2b919704a7abf4eb1ca562fa82d6",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/releases/raw-v01.01-local-r1/assets/grwl-raw-observations.parquet",
+          "status": 206,
+          "range": "bytes=1662276976-1662341335",
+          "content_range": "bytes 1662276976-1662341335/5529859809",
+          "content_length": 64360,
+          "content_type": "application/vnd.apache.parquet",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+          "body_bytes": 64360,
+          "body_sha256": "8f46c22bc24cf4ec6d6afc39af2de769bc17d89c94660def92024ae8068247cf",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/releases/raw-v01.01-local-r1/assets/grwl-raw-observations.parquet",
+          "status": 206,
+          "range": "bytes=1662341336-1662598775",
+          "content_range": "bytes 1662341336-1662598775/5529859809",
+          "content_length": 257440,
+          "content_type": "application/vnd.apache.parquet",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+          "body_bytes": 257440,
+          "body_sha256": "e7ba6d2ed4a383c00fbcc010423d1f62a36f599d1e577be7d616f2f329826253",
+          "status_check": "passed"
+        }
+      ],
+      "heads": [
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/releases/raw-v01.01-local-r1/assets/grwl-raw-observations.parquet",
+          "method": "HEAD",
+          "request_range": null,
+          "planned_sha256": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+          "status": 200,
+          "content_length": 5529859809,
+          "content_type": "application/vnd.apache.parquet",
+          "content_range": null,
+          "cors": "*",
+          "expose_headers": "*",
+          "accept_ranges": "bytes",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/releases/raw-v01.01-local-r1/assets/grwl-raw-observations.parquet",
+          "method": "HEAD",
+          "request_range": "bytes=0-",
+          "planned_sha256": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+          "status": 206,
+          "content_length": 5529859809,
+          "content_type": "application/vnd.apache.parquet",
+          "content_range": "bytes 0-5529859808/5529859809",
+          "cors": "*",
+          "expose_headers": "*",
+          "accept_ranges": "bytes",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/releases/raw-v01.01-local-r1/assets/grwl-raw-observations.parquet",
+          "method": "HEAD",
+          "request_range": "bytes=0-",
+          "planned_sha256": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+          "status": 206,
+          "content_length": 5529859809,
+          "content_type": "application/vnd.apache.parquet",
+          "content_range": "bytes 0-5529859808/5529859809",
+          "cors": "*",
+          "expose_headers": "*",
+          "accept_ranges": "bytes",
+          "status_check": "passed"
+        }
+      ],
+      "options": [],
+      "blocked_requests": []
+    },
+    {
+      "id": "grwl-raw-mississippi-z8",
+      "dataset_id": "grwl-raw",
+      "product_id": "grwl-raw",
+      "layer_id": "grwl-raw-display",
+      "region": null,
+      "view": {
+        "center": [
+          -90,
+          35.51628964037926
+        ],
+        "name": "mississippi",
+        "zoom": 8
+      },
+      "display_object_url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+      "display_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+      "analytic_object_url": "https://data.source.coop/nthh/grwl-raw/releases/raw-v01.01-local-r1/assets/grwl-raw-observations.parquet",
+      "analytic_sha256": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+      "status": "passed",
+      "feature_count": 37738,
+      "rendered_source_layers": [
+        "grwl_raw"
+      ],
+      "active_style_layers": [
+        "release-lines"
+      ],
+      "tile_property_count": 3,
+      "viewer_traffic": {
+        "bytes": 0,
+        "bytes_unavailable": true,
+        "ranges": 10,
+        "requests": 10,
+        "remote_resource_timing": [
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          }
+        ]
+      },
+      "screenshot": "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/browser-grwl-raw-r3/grwl-raw-mississippi-z8.png",
+      "transferred_bytes": 841639,
+      "requests": [
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/3190539066",
+          "content_length": 16384,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 16384,
+          "body_sha256": "ec8486fe850e9f7331113a2567d11959a9e890704e607333a6fe8df16ba7958c",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=12976-24343",
+          "content_range": "bytes 12976-24343/3190539066",
+          "content_length": 11368,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 11368,
+          "body_sha256": "30809e2499c1d41032b9345c48862b5d9e19aa5dec677c8423cacedbb9ad5acd",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=259793203-259893117",
+          "content_range": "bytes 259793203-259893117/3190539066",
+          "content_length": 99915,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 99915,
+          "body_sha256": "2c07480f18735d3d926dbc65855aab90dc4fd834edf2293e22d204b309c72e86",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=259775631-259793202",
+          "content_range": "bytes 259775631-259793202/3190539066",
+          "content_length": 17572,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 17572,
+          "body_sha256": "1df8c1600bef1887069f61c08cdc5dacf4cac163611457bc7777e77b4fe3067c",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=282253650-282424405",
+          "content_range": "bytes 282253650-282424405/3190539066",
+          "content_length": 170756,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 170756,
+          "body_sha256": "026f8c1b701fe1d84154e850877836fca782778c49769b544265d36150bcf1a0",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=282424406-282500583",
+          "content_range": "bytes 282424406-282500583/3190539066",
+          "content_length": 76178,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 76178,
+          "body_sha256": "50a155106cd9dc586c7e4e3d8b8c342714219a1d9ae174972a47e2ddd8d5f054",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=259691427-259775630",
+          "content_range": "bytes 259691427-259775630/3190539066",
+          "content_length": 84204,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 84204,
+          "body_sha256": "16035c5d25f765d99394cb0347f34bc031945890c3bfd3599a760e595111b8da",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=259893118-260023718",
+          "content_range": "bytes 259893118-260023718/3190539066",
+          "content_length": 130601,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 130601,
+          "body_sha256": "8f2f42d873cbca760f16fda82574099d92b2261708ad874c979d0d576ed941a3",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=282635642-282735244",
+          "content_range": "bytes 282635642-282735244/3190539066",
+          "content_length": 99603,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 99603,
+          "body_sha256": "669db091f9eddfd706ba8bd6c1db66efeefe2492e9646dd2bddccd1d818a23c9",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=282500584-282635641",
+          "content_range": "bytes 282500584-282635641/3190539066",
+          "content_length": 135058,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 135058,
+          "body_sha256": "ca386bf9512c9e14bf50681ea46943960f13025825e6e1bc5df1ef6ef12ebca4",
+          "status_check": "passed"
+        }
+      ],
+      "heads": [],
+      "options": [],
+      "blocked_requests": []
+    },
+    {
+      "id": "grwl-raw-mississippi-z9",
+      "dataset_id": "grwl-raw",
+      "product_id": "grwl-raw",
+      "layer_id": "grwl-raw-display",
+      "region": null,
+      "view": {
+        "center": [
+          -90,
+          35.51628964037926
+        ],
+        "name": "mississippi",
+        "zoom": 9
+      },
+      "display_object_url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+      "display_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+      "analytic_object_url": "https://data.source.coop/nthh/grwl-raw/releases/raw-v01.01-local-r1/assets/grwl-raw-observations.parquet",
+      "analytic_sha256": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+      "status": "passed",
+      "feature_count": 10350,
+      "rendered_source_layers": [
+        "grwl_raw"
+      ],
+      "active_style_layers": [
+        "release-lines"
+      ],
+      "tile_property_count": 3,
+      "viewer_traffic": {
+        "bytes": 0,
+        "bytes_unavailable": true,
+        "ranges": 8,
+        "requests": 8,
+        "remote_resource_timing": [
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          }
+        ]
+      },
+      "screenshot": "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/browser-grwl-raw-r3/grwl-raw-mississippi-z9.png",
+      "transferred_bytes": 210150,
+      "requests": [
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/3190539066",
+          "content_length": 16384,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 16384,
+          "body_sha256": "ec8486fe850e9f7331113a2567d11959a9e890704e607333a6fe8df16ba7958c",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=46253-57128",
+          "content_range": "bytes 46253-57128/3190539066",
+          "content_length": 10876,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 10876,
+          "body_sha256": "ca696803696579169f562d968d165437e62f554f2aaf5f57e74fa71f4ec16152",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=762610283-762611933",
+          "content_range": "bytes 762610283-762611933/3190539066",
+          "content_length": 1651,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 1651,
+          "body_sha256": "157084f865f5c78a782010cb46f4d322190b98542cb4dc4ee0559643c45def48",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=762577589-762610282",
+          "content_range": "bytes 762577589-762610282/3190539066",
+          "content_length": 32694,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 32694,
+          "body_sha256": "b1bb70914c899367f24224df6f79e0badbc53a652b496af2666dba0cf4aed686",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=790055222-790076712",
+          "content_range": "bytes 790055222-790076712/3190539066",
+          "content_length": 21491,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 21491,
+          "body_sha256": "07f021386b24005caf676230ddb68497caf8e04ec1c2a19ed9e3a62c64f3b37a",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=790153823-790168343",
+          "content_range": "bytes 790153823-790168343/3190539066",
+          "content_length": 14521,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 14521,
+          "body_sha256": "c2ec41038cc18558cbf38b9b0429ffd54345d0e078c303fbf8b00cc64103a3b5",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=790197864-790233286",
+          "content_range": "bytes 790197864-790233286/3190539066",
+          "content_length": 35423,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 35423,
+          "body_sha256": "32369e2eff79892878dee78ec9afc96678bbc80d8aa3408f0da87ede172a6487",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=790076713-790153822",
+          "content_range": "bytes 790076713-790153822/3190539066",
+          "content_length": 77110,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 77110,
+          "body_sha256": "3efbac7a1d397f55e70090ad6af7344cea503ddc73e5943912d587b5e9b2557f",
+          "status_check": "passed"
+        }
+      ],
+      "heads": [],
+      "options": [],
+      "blocked_requests": []
+    },
+    {
+      "id": "grwl-raw-mississippi-z10",
+      "dataset_id": "grwl-raw",
+      "product_id": "grwl-raw",
+      "layer_id": "grwl-raw-display",
+      "region": null,
+      "view": {
+        "center": [
+          -90,
+          35.51628964037926
+        ],
+        "name": "mississippi",
+        "zoom": 10
+      },
+      "display_object_url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+      "display_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+      "analytic_object_url": "https://data.source.coop/nthh/grwl-raw/releases/raw-v01.01-local-r1/assets/grwl-raw-observations.parquet",
+      "analytic_sha256": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+      "status": "passed",
+      "feature_count": 1979,
+      "rendered_source_layers": [
+        "grwl_raw"
+      ],
+      "active_style_layers": [
+        "release-lines"
+      ],
+      "tile_property_count": 3,
+      "viewer_traffic": {
+        "bytes": 0,
+        "bytes_unavailable": true,
+        "ranges": 9,
+        "requests": 9,
+        "remote_resource_timing": [
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          }
+        ]
+      },
+      "screenshot": "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/browser-grwl-raw-r3/grwl-raw-mississippi-z10.png",
+      "transferred_bytes": 108816,
+      "requests": [
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/3190539066",
+          "content_length": 16384,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 16384,
+          "body_sha256": "ec8486fe850e9f7331113a2567d11959a9e890704e607333a6fe8df16ba7958c",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=130884-141448",
+          "content_range": "bytes 130884-141448/3190539066",
+          "content_length": 10565,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 10565,
+          "body_sha256": "34ae004054163d816d41219496f3d512640102085de623e563af6c1b52ae7d14",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=120412-130883",
+          "content_range": "bytes 120412-130883/3190539066",
+          "content_length": 10472,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 10472,
+          "body_sha256": "e6c5e8b1d3f37d56081231d79ad5902039d1063a23900a4c3eea4034c7e1549b",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=1359652427-1359663648",
+          "content_range": "bytes 1359652427-1359663648/3190539066",
+          "content_length": 11222,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 11222,
+          "body_sha256": "3a374496e195b53def1d60e75b38209c16f5fdad178f816911cf2c31c2b438a1",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=1359638539-1359649631",
+          "content_range": "bytes 1359638539-1359649631/3190539066",
+          "content_length": 11093,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 11093,
+          "body_sha256": "80aeabc23ba1d14405e2dd909d0859a7fd20236055a41a4d1853f6465cb67103",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=1359649632-1359652426",
+          "content_range": "bytes 1359649632-1359652426/3190539066",
+          "content_length": 2795,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 2795,
+          "body_sha256": "50a12782fde006a4d6b272c46671398148594dbceb235085dab615cacdac0c3f",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=1331311345-1331326884",
+          "content_range": "bytes 1331311345-1331326884/3190539066",
+          "content_length": 15540,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 15540,
+          "body_sha256": "fe953b8a124616c8b2021914a4c6b1fc111a4b937b9d5ae6ef8246da206fd2ef",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=1331326885-1331327906",
+          "content_range": "bytes 1331326885-1331327906/3190539066",
+          "content_length": 1022,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 1022,
+          "body_sha256": "2055ed8bab2802e7144739b6c8325fbd6bbb6af9e866d3a8972b5730fb4e7b8d",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=1359568374-1359598096",
+          "content_range": "bytes 1359568374-1359598096/3190539066",
+          "content_length": 29723,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 29723,
+          "body_sha256": "6b94b76b4e99860a89a58644aaf9d2f0eba7dcdaa6b33a5407e22d6771cb7323",
+          "status_check": "passed"
+        }
+      ],
+      "heads": [],
+      "options": [],
+      "blocked_requests": []
+    },
+    {
+      "id": "grwl-raw-mississippi-z11",
+      "dataset_id": "grwl-raw",
+      "product_id": "grwl-raw",
+      "layer_id": "grwl-raw-display",
+      "region": null,
+      "view": {
+        "center": [
+          -90,
+          35.51628964037926
+        ],
+        "name": "mississippi",
+        "zoom": 11
+      },
+      "display_object_url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+      "display_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+      "analytic_object_url": "https://data.source.coop/nthh/grwl-raw/releases/raw-v01.01-local-r1/assets/grwl-raw-observations.parquet",
+      "analytic_sha256": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+      "status": "passed",
+      "feature_count": 1113,
+      "rendered_source_layers": [
+        "grwl_raw"
+      ],
+      "active_style_layers": [
+        "release-lines"
+      ],
+      "tile_property_count": 3,
+      "viewer_traffic": {
+        "bytes": 0,
+        "bytes_unavailable": true,
+        "ranges": 9,
+        "requests": 9,
+        "remote_resource_timing": [
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          }
+        ]
+      },
+      "screenshot": "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/browser-grwl-raw-r3/grwl-raw-mississippi-z11.png",
+      "transferred_bytes": 63706,
+      "requests": [
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/3190539066",
+          "content_length": 16384,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 16384,
+          "body_sha256": "ec8486fe850e9f7331113a2567d11959a9e890704e607333a6fe8df16ba7958c",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=323579-333747",
+          "content_range": "bytes 323579-333747/3190539066",
+          "content_length": 10169,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 10169,
+          "body_sha256": "793e5e8da71701066a678592fa7377328f16c216843f94d2c86c5491f7ba45e5",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=313474-323578",
+          "content_range": "bytes 313474-323578/3190539066",
+          "content_length": 10105,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 10105,
+          "body_sha256": "775429080f9f7e11a849b951871e19b9d4de2264ebf7fd95460584f1d3f14ac6",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=1959250285-1959256949",
+          "content_range": "bytes 1959250285-1959256949/3190539066",
+          "content_length": 6665,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 6665,
+          "body_sha256": "e465c693f4d29fc4f3e568f715a2be89ffcfde516266bb46d623278f8999d5fd",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=1959256950-1959259641",
+          "content_range": "bytes 1959256950-1959259641/3190539066",
+          "content_length": 2692,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 2692,
+          "body_sha256": "b4730aac6ecdafc21f68f1ffc73223a0f6779325fa076adbf93bd4f77ebb7a73",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=1929047780-1929055196",
+          "content_range": "bytes 1929047780-1929055196/3190539066",
+          "content_length": 7417,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 7417,
+          "body_sha256": "af1af2150f605d42d90f69fedb1a0ee16a35856d2e09fd199ac136ddd6fe2cab",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=1929047233-1929047779",
+          "content_range": "bytes 1929047233-1929047779/3190539066",
+          "content_length": 547,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 547,
+          "body_sha256": "f79546fac6993a4a730eac78aa3a558e1f1459e38eca1ea1237187191a3d01eb",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=1929055197-1929055817",
+          "content_range": "bytes 1929055197-1929055817/3190539066",
+          "content_length": 621,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 621,
+          "body_sha256": "c460ac9c008eb8bd6632c44de379a42455bfc69400509b326819d843178255e3",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=1929038127-1929047232",
+          "content_range": "bytes 1929038127-1929047232/3190539066",
+          "content_length": 9106,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 9106,
+          "body_sha256": "68a50f55649694e1f3a2e09370bd248f1bc3a8f22ea9b22225f1a72f95bd180b",
+          "status_check": "passed"
+        }
+      ],
+      "heads": [],
+      "options": [],
+      "blocked_requests": []
+    },
+    {
+      "id": "grwl-raw-mississippi-z12",
+      "dataset_id": "grwl-raw",
+      "product_id": "grwl-raw",
+      "layer_id": "grwl-raw-display",
+      "region": null,
+      "view": {
+        "center": [
+          -90,
+          35.51628964037926
+        ],
+        "name": "mississippi",
+        "zoom": 12
+      },
+      "display_object_url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+      "display_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+      "analytic_object_url": "https://data.source.coop/nthh/grwl-raw/releases/raw-v01.01-local-r1/assets/grwl-raw-observations.parquet",
+      "analytic_sha256": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+      "status": "passed",
+      "feature_count": 592,
+      "rendered_source_layers": [
+        "grwl_raw"
+      ],
+      "active_style_layers": [
+        "release-lines"
+      ],
+      "tile_property_count": 3,
+      "viewer_traffic": {
+        "bytes": 0,
+        "bytes_unavailable": true,
+        "ranges": 7,
+        "requests": 7,
+        "remote_resource_timing": [
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          }
+        ]
+      },
+      "screenshot": "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/browser-grwl-raw-r3/grwl-raw-mississippi-z12.png",
+      "transferred_bytes": 46572,
+      "requests": [
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/3190539066",
+          "content_length": 16384,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 16384,
+          "body_sha256": "ec8486fe850e9f7331113a2567d11959a9e890704e607333a6fe8df16ba7958c",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=733743-743487",
+          "content_range": "bytes 733743-743487/3190539066",
+          "content_length": 9745,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 9745,
+          "body_sha256": "8693617404dad33f6e0a55a1f3e4a52d14e3e439c364708ef7733d808e8dc254",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=753220-762977",
+          "content_range": "bytes 753220-762977/3190539066",
+          "content_length": 9758,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 9758,
+          "body_sha256": "69405355b51f8438ecd219834fec97f3ca88d9c3afff995794bb261aace54d4a",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=2570741500-2570742516",
+          "content_range": "bytes 2570741500-2570742516/3190539066",
+          "content_length": 1017,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 1017,
+          "body_sha256": "4bfa6fc7ab971ed9bf41021c0f22ee271659969500e0baedda224fc37c875a46",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=2570742517-2570745536",
+          "content_range": "bytes 2570742517-2570745536/3190539066",
+          "content_length": 3020,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 3020,
+          "body_sha256": "28855d10a99264235436194e0ce2262e235285857c191f1f230844dedf3dcc08",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=2570745537-2570749487",
+          "content_range": "bytes 2570745537-2570749487/3190539066",
+          "content_length": 3951,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 3951,
+          "body_sha256": "a21f157a68394a5e9bf3d08b521731495fd67319bc0e908b03b9581667ee031b",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=2603215208-2603217904",
+          "content_range": "bytes 2603215208-2603217904/3190539066",
+          "content_length": 2697,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 2697,
+          "body_sha256": "d10b90fb206e3bc06a7778091a451cac3825812e383dc36f72d51943d777b260",
+          "status_check": "passed"
+        }
+      ],
+      "heads": [],
+      "options": [],
+      "blocked_requests": []
+    },
+    {
+      "id": "grwl-raw-amazon-z0",
+      "dataset_id": "grwl-raw",
+      "product_id": "grwl-raw",
+      "layer_id": "grwl-raw-display",
+      "region": null,
+      "view": {
+        "center": [
+          -60,
+          -3
+        ],
+        "name": "amazon",
+        "zoom": 0
+      },
+      "display_object_url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+      "display_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+      "analytic_object_url": "https://data.source.coop/nthh/grwl-raw/releases/raw-v01.01-local-r1/assets/grwl-raw-observations.parquet",
+      "analytic_sha256": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+      "status": "passed",
+      "feature_count": 64787,
+      "rendered_source_layers": [
+        "grwl_width_overview"
+      ],
+      "active_style_layers": [
+        "release-width-samples"
+      ],
+      "width_sample": {
+        "feature_id": 148395415099087,
+        "width_m": 51899,
+        "width_valid": true
+      },
+      "expected_diameter_px": 4.03,
+      "tile_property_count": 3,
+      "viewer_traffic": {
+        "bytes": 0,
+        "bytes_unavailable": true,
+        "ranges": 3,
+        "requests": 3,
+        "remote_resource_timing": [
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          }
+        ]
+      },
+      "screenshot": "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/browser-grwl-raw-r3/grwl-raw-amazon-z0.png",
+      "transferred_bytes": 638785,
+      "requests": [
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/3190539066",
+          "content_length": 16384,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 16384,
+          "body_sha256": "ec8486fe850e9f7331113a2567d11959a9e890704e607333a6fe8df16ba7958c",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=1903-12975",
+          "content_range": "bytes 1903-12975/3190539066",
+          "content_length": 11073,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 11073,
+          "body_sha256": "99934d6499014bd18f614c7af1b31ccde32d757424901acfe7c194c83a02c125",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=1412570-2023897",
+          "content_range": "bytes 1412570-2023897/3190539066",
+          "content_length": 611328,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 611328,
+          "body_sha256": "65d9e161f75c7519f8fa038d9705d4099b41d3f0dd7c219da792971db9b4fa14",
+          "status_check": "passed"
+        }
+      ],
+      "heads": [],
+      "options": [],
+      "blocked_requests": []
+    },
+    {
+      "id": "grwl-raw-amazon-z3",
+      "dataset_id": "grwl-raw",
+      "product_id": "grwl-raw",
+      "layer_id": "grwl-raw-display",
+      "region": null,
+      "view": {
+        "center": [
+          -60,
+          -3
+        ],
+        "name": "amazon",
+        "zoom": 3
+      },
+      "display_object_url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+      "display_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+      "analytic_object_url": "https://data.source.coop/nthh/grwl-raw/releases/raw-v01.01-local-r1/assets/grwl-raw-observations.parquet",
+      "analytic_sha256": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+      "status": "passed",
+      "feature_count": 85851,
+      "rendered_source_layers": [
+        "grwl_width_overview"
+      ],
+      "active_style_layers": [
+        "release-width-samples"
+      ],
+      "width_sample": {
+        "feature_id": 146948011157077,
+        "width_m": 16717,
+        "width_valid": true
+      },
+      "expected_diameter_px": 4.84375,
+      "tile_property_count": 3,
+      "viewer_traffic": {
+        "bytes": 0,
+        "bytes_unavailable": true,
+        "ranges": 7,
+        "requests": 7,
+        "remote_resource_timing": [
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          }
+        ]
+      },
+      "screenshot": "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/browser-grwl-raw-r3/grwl-raw-amazon-z3.png",
+      "transferred_bytes": 1087569,
+      "requests": [
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/3190539066",
+          "content_length": 16384,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 16384,
+          "body_sha256": "ec8486fe850e9f7331113a2567d11959a9e890704e607333a6fe8df16ba7958c",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=1903-12975",
+          "content_range": "bytes 1903-12975/3190539066",
+          "content_length": 11073,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 11073,
+          "body_sha256": "99934d6499014bd18f614c7af1b31ccde32d757424901acfe7c194c83a02c125",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=8062521-8604011",
+          "content_range": "bytes 8062521-8604011/3190539066",
+          "content_length": 541491,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 541491,
+          "body_sha256": "d9c8b1bb55af551cc0ed7f590d3298da4b7326fdcc5d3227e22e1898e4859ab3",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=8604012-8645795",
+          "content_range": "bytes 8604012-8645795/3190539066",
+          "content_length": 41784,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 41784,
+          "body_sha256": "0584287fc4b37f213b9ee5837e5dd02bc52f34aab7fc4e47687b31e5a1ce9b94",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=7131779-7402856",
+          "content_range": "bytes 7131779-7402856/3190539066",
+          "content_length": 271078,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 271078,
+          "body_sha256": "c4cc7572af9bdf21ba8978132541e4b9df01c647e772b8c84bc99eec67dc5567",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=7056759-7131778",
+          "content_range": "bytes 7056759-7131778/3190539066",
+          "content_length": 75020,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 75020,
+          "body_sha256": "7a05b3550599c9655238609e3c2e2d293fce515045ee68887bafb95f6a345732",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=7402857-7533595",
+          "content_range": "bytes 7402857-7533595/3190539066",
+          "content_length": 130739,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 130739,
+          "body_sha256": "bc3c24c3c5d83154f4aa04284175443ef842a73fa616772d06b911d9793e14da",
+          "status_check": "passed"
+        }
+      ],
+      "heads": [],
+      "options": [],
+      "blocked_requests": []
+    },
+    {
+      "id": "grwl-raw-amazon-z7",
+      "dataset_id": "grwl-raw",
+      "product_id": "grwl-raw",
+      "layer_id": "grwl-raw-display",
+      "region": null,
+      "view": {
+        "center": [
+          -60,
+          -3
+        ],
+        "name": "amazon",
+        "zoom": 7
+      },
+      "display_object_url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+      "display_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+      "analytic_object_url": "https://data.source.coop/nthh/grwl-raw/releases/raw-v01.01-local-r1/assets/grwl-raw-observations.parquet",
+      "analytic_sha256": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+      "status": "passed",
+      "feature_count": 53889,
+      "rendered_source_layers": [
+        "grwl_width_overview"
+      ],
+      "active_style_layers": [
+        "release-width-samples"
+      ],
+      "width_sample": {
+        "feature_id": 201090368886248,
+        "width_m": 14775,
+        "width_valid": true
+      },
+      "expected_diameter_px": 5.928750000000001,
+      "tile_property_count": 3,
+      "viewer_traffic": {
+        "bytes": 0,
+        "bytes_unavailable": true,
+        "ranges": 8,
+        "requests": 8,
+        "remote_resource_timing": [
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          }
+        ]
+      },
+      "screenshot": "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/browser-grwl-raw-r3/grwl-raw-amazon-z7.png",
+      "transferred_bytes": 824063,
+      "requests": [
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/3190539066",
+          "content_length": 16384,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 16384,
+          "body_sha256": "ec8486fe850e9f7331113a2567d11959a9e890704e607333a6fe8df16ba7958c",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=1903-12975",
+          "content_range": "bytes 1903-12975/3190539066",
+          "content_length": 11073,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 11073,
+          "body_sha256": "99934d6499014bd18f614c7af1b31ccde32d757424901acfe7c194c83a02c125",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=133418722-133530019",
+          "content_range": "bytes 133418722-133530019/3190539066",
+          "content_length": 111298,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 111298,
+          "body_sha256": "3e28b697105fa16fc5de83835646bb4258588261b9029dfb66761f3b495c3829",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=133019073-133190601",
+          "content_range": "bytes 133019073-133190601/3190539066",
+          "content_length": 171529,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 171529,
+          "body_sha256": "4ae1c6c84eea0c5385accd0433263cc9c61926e4473b9b69e0d4070f946331e7",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=133190602-133323520",
+          "content_range": "bytes 133190602-133323520/3190539066",
+          "content_length": 132919,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 132919,
+          "body_sha256": "19bd78418f87bb0ccd4df2dc05ad33b686991728d534d6bd9080c3542142a5ba",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=133530020-133654736",
+          "content_range": "bytes 133530020-133654736/3190539066",
+          "content_length": 124717,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 124717,
+          "body_sha256": "5dc32d9330fa23421705067703d348fd22be1dad81b4cabe8ac74ab6f7c76992",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=133654737-133815678",
+          "content_range": "bytes 133654737-133815678/3190539066",
+          "content_length": 160942,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 160942,
+          "body_sha256": "c4ae8575ff5533293d9128788709917618b1860e770795c1e9b11ed5662857c3",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=133323521-133418721",
+          "content_range": "bytes 133323521-133418721/3190539066",
+          "content_length": 95201,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 95201,
+          "body_sha256": "d6f24acdd842da9c1cb68a634d71ae10f827945d63643e36cf84946168552f8f",
+          "status_check": "passed"
+        }
+      ],
+      "heads": [],
+      "options": [],
+      "blocked_requests": []
+    },
+    {
+      "id": "grwl-raw-amazon-z8",
+      "dataset_id": "grwl-raw",
+      "product_id": "grwl-raw",
+      "layer_id": "grwl-raw-display",
+      "region": null,
+      "view": {
+        "center": [
+          -60,
+          -3
+        ],
+        "name": "amazon",
+        "zoom": 8
+      },
+      "display_object_url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+      "display_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+      "analytic_object_url": "https://data.source.coop/nthh/grwl-raw/releases/raw-v01.01-local-r1/assets/grwl-raw-observations.parquet",
+      "analytic_sha256": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+      "status": "passed",
+      "feature_count": 84443,
+      "rendered_source_layers": [
+        "grwl_raw"
+      ],
+      "active_style_layers": [
+        "release-lines"
+      ],
+      "tile_property_count": 3,
+      "viewer_traffic": {
+        "bytes": 0,
+        "bytes_unavailable": true,
+        "ranges": 8,
+        "requests": 8,
+        "remote_resource_timing": [
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          }
+        ]
+      },
+      "screenshot": "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/browser-grwl-raw-r3/grwl-raw-amazon-z8.png",
+      "transferred_bytes": 1391366,
+      "requests": [
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/3190539066",
+          "content_length": 16384,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 16384,
+          "body_sha256": "ec8486fe850e9f7331113a2567d11959a9e890704e607333a6fe8df16ba7958c",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=12976-24343",
+          "content_range": "bytes 12976-24343/3190539066",
+          "content_length": 11368,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 11368,
+          "body_sha256": "30809e2499c1d41032b9345c48862b5d9e19aa5dec677c8423cacedbb9ad5acd",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=356125877-356332052",
+          "content_range": "bytes 356125877-356332052/3190539066",
+          "content_length": 206176,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 206176,
+          "body_sha256": "a8ad0dccafc15b553ff73495388f4ff447fc37c4e48c84991a7611ec150e3ec9",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=356332053-356393370",
+          "content_range": "bytes 356332053-356393370/3190539066",
+          "content_length": 61318,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 61318,
+          "body_sha256": "eb97e5b829bf52d2e27864a7bc7fd1520ace6c4528a8037c4012bdaffb206141",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=358605873-358843098",
+          "content_range": "bytes 358605873-358843098/3190539066",
+          "content_length": 237226,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 237226,
+          "body_sha256": "a36f790f007b311c391a5d8477032f86a139535da9c5594b4a36b997fd0da3c5",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=358289253-358605872",
+          "content_range": "bytes 358289253-358605872/3190539066",
+          "content_length": 316620,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 316620,
+          "body_sha256": "2bf62c54fac1f068f8a75e42e0d5434e3231e48801bc4753717d196421e16a2d",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=357049950-357244512",
+          "content_range": "bytes 357049950-357244512/3190539066",
+          "content_length": 194563,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 194563,
+          "body_sha256": "caafa176dbbb2d049f96b17ec08a27ee2b242d22d0fb1ab5b028a4863b19b405",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=357244513-357592223",
+          "content_range": "bytes 357244513-357592223/3190539066",
+          "content_length": 347711,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 347711,
+          "body_sha256": "ec857a863328989545ce0982ac24b2c58486a080dfb5055ee656c407d7c29fc6",
+          "status_check": "passed"
+        }
+      ],
+      "heads": [],
+      "options": [],
+      "blocked_requests": []
+    },
+    {
+      "id": "grwl-raw-dateline-z3",
+      "dataset_id": "grwl-raw",
+      "product_id": "grwl-raw",
+      "layer_id": "grwl-raw-display",
+      "region": null,
+      "view": {
+        "center": [
+          -179.99965,
+          71.197295
+        ],
+        "name": "dateline",
+        "zoom": 3
+      },
+      "display_object_url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+      "display_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+      "analytic_object_url": "https://data.source.coop/nthh/grwl-raw/releases/raw-v01.01-local-r1/assets/grwl-raw-observations.parquet",
+      "analytic_sha256": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+      "status": "passed",
+      "feature_count": 29881,
+      "rendered_source_layers": [
+        "grwl_width_overview"
+      ],
+      "active_style_layers": [
+        "release-width-samples"
+      ],
+      "width_sample": {
+        "feature_id": 152475633998371,
+        "width_m": 13130,
+        "width_valid": true
+      },
+      "expected_diameter_px": 4.84375,
+      "tile_property_count": 3,
+      "viewer_traffic": {
+        "bytes": 0,
+        "bytes_unavailable": true,
+        "ranges": 7,
+        "requests": 7,
+        "remote_resource_timing": [
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          }
+        ]
+      },
+      "screenshot": "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/browser-grwl-raw-r3/grwl-raw-dateline-z3.png",
+      "transferred_bytes": 737165,
+      "requests": [
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/3190539066",
+          "content_length": 16384,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 16384,
+          "body_sha256": "ec8486fe850e9f7331113a2567d11959a9e890704e607333a6fe8df16ba7958c",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=1903-12975",
+          "content_range": "bytes 1903-12975/3190539066",
+          "content_length": 11073,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 11073,
+          "body_sha256": "99934d6499014bd18f614c7af1b31ccde32d757424901acfe7c194c83a02c125",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=7891456-8035308",
+          "content_range": "bytes 7891456-8035308/3190539066",
+          "content_length": 143853,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 143853,
+          "body_sha256": "30c58c0c57547602a17677bd798f072546255fe833a50a3c2b9d684ba60fb692",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=6707574-6710317",
+          "content_range": "bytes 6707574-6710317/3190539066",
+          "content_length": 2744,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 2744,
+          "body_sha256": "7ae4e41b7a3d3211b600792afe928cd4238a1813bbde1a78f568201fc8d797ed",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=6601337-6707573",
+          "content_range": "bytes 6601337-6707573/3190539066",
+          "content_length": 106237,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 106237,
+          "body_sha256": "9644a3fa32efe02d9fbab2928cdd0aa45ad72ec8e6f639de3670cbc65af5edc2",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=6502323-6601336",
+          "content_range": "bytes 6502323-6601336/3190539066",
+          "content_length": 99014,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 99014,
+          "body_sha256": "48d2e8dacf0a39836d24f9174d55f64d2591e268e33499db2c61105ec59a048b",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=7533596-7891455",
+          "content_range": "bytes 7533596-7891455/3190539066",
+          "content_length": 357860,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 357860,
+          "body_sha256": "f5df811017ce5e2a3b44c00547398030b4193f7624664ff16e29bb06db02c7f9",
+          "status_check": "passed"
+        }
+      ],
+      "heads": [],
+      "options": [],
+      "blocked_requests": []
+    },
+    {
+      "id": "grwl-raw-dateline-z7",
+      "dataset_id": "grwl-raw",
+      "product_id": "grwl-raw",
+      "layer_id": "grwl-raw-display",
+      "region": null,
+      "view": {
+        "center": [
+          -179.99965,
+          71.197295
+        ],
+        "name": "dateline",
+        "zoom": 7
+      },
+      "display_object_url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+      "display_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+      "analytic_object_url": "https://data.source.coop/nthh/grwl-raw/releases/raw-v01.01-local-r1/assets/grwl-raw-observations.parquet",
+      "analytic_sha256": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+      "status": "passed",
+      "feature_count": 3220,
+      "rendered_source_layers": [
+        "grwl_width_overview"
+      ],
+      "active_style_layers": [
+        "release-width-samples"
+      ],
+      "width_sample": {
+        "feature_id": 152475633979502,
+        "width_m": 555,
+        "width_valid": true
+      },
+      "expected_diameter_px": 4.067050781250001,
+      "tile_property_count": 3,
+      "viewer_traffic": {
+        "bytes": 0,
+        "bytes_unavailable": true,
+        "ranges": 4,
+        "requests": 4,
+        "remote_resource_timing": [
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          }
+        ]
+      },
+      "screenshot": "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/browser-grwl-raw-r3/grwl-raw-dateline-z7.png",
+      "transferred_bytes": 51903,
+      "requests": [
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/3190539066",
+          "content_length": 16384,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 16384,
+          "body_sha256": "ec8486fe850e9f7331113a2567d11959a9e890704e607333a6fe8df16ba7958c",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=1903-12975",
+          "content_range": "bytes 1903-12975/3190539066",
+          "content_length": 11073,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 11073,
+          "body_sha256": "99934d6499014bd18f614c7af1b31ccde32d757424901acfe7c194c83a02c125",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=103648549-103650429",
+          "content_range": "bytes 103648549-103650429/3190539066",
+          "content_length": 1881,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 1881,
+          "body_sha256": "8978a66ff27adea58a0ce3b15549d0c15eb65a40e0ee0acafadab273dae3eada",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=103650430-103672994",
+          "content_range": "bytes 103650430-103672994/3190539066",
+          "content_length": 22565,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 22565,
+          "body_sha256": "a06b66d0fd3c442ec53c80a4d24c5d1bf2622a27eb8523ea41f6d488c628bf82",
+          "status_check": "passed"
+        }
+      ],
+      "heads": [],
+      "options": [],
+      "blocked_requests": []
+    },
+    {
+      "id": "grwl-raw-dateline-z8",
+      "dataset_id": "grwl-raw",
+      "product_id": "grwl-raw",
+      "layer_id": "grwl-raw-display",
+      "region": null,
+      "view": {
+        "center": [
+          -179.99965,
+          71.197295
+        ],
+        "name": "dateline",
+        "zoom": 8
+      },
+      "display_object_url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+      "display_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+      "analytic_object_url": "https://data.source.coop/nthh/grwl-raw/releases/raw-v01.01-local-r1/assets/grwl-raw-observations.parquet",
+      "analytic_sha256": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+      "status": "passed",
+      "feature_count": 4789,
+      "rendered_source_layers": [
+        "grwl_raw"
+      ],
+      "active_style_layers": [
+        "release-lines"
+      ],
+      "tile_property_count": 3,
+      "viewer_traffic": {
+        "bytes": 0,
+        "bytes_unavailable": true,
+        "ranges": 6,
+        "requests": 6,
+        "remote_resource_timing": [
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          }
+        ]
+      },
+      "screenshot": "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/browser-grwl-raw-r3/grwl-raw-dateline-z8.png",
+      "transferred_bytes": 90043,
+      "requests": [
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/3190539066",
+          "content_length": 16384,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 16384,
+          "body_sha256": "ec8486fe850e9f7331113a2567d11959a9e890704e607333a6fe8df16ba7958c",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=12976-24343",
+          "content_range": "bytes 12976-24343/3190539066",
+          "content_length": 11368,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 11368,
+          "body_sha256": "30809e2499c1d41032b9345c48862b5d9e19aa5dec677c8423cacedbb9ad5acd",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=205787826-205790490",
+          "content_range": "bytes 205787826-205790490/3190539066",
+          "content_length": 2665,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 2665,
+          "body_sha256": "d1f6b0af494f6ec4c9e46a89beee8b2569af5d20aafc1bd863976da1fd537cec",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=205785608-205787825",
+          "content_range": "bytes 205785608-205787825/3190539066",
+          "content_length": 2218,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 2218,
+          "body_sha256": "588848f365f2d9da3338ea0a5585cbe94b1ae7f6baea8e15273316b01d99c193",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=205763411-205785607",
+          "content_range": "bytes 205763411-205785607/3190539066",
+          "content_length": 22197,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 22197,
+          "body_sha256": "683af7d94f8a84f767603de20f10a815ac1e7f3e73b958efd361ea0f65ddd900",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+          "status": 206,
+          "range": "bytes=205728200-205763410",
+          "content_range": "bytes 205728200-205763410/3190539066",
+          "content_length": 35211,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+          "body_bytes": 35211,
+          "body_sha256": "f9b6404328b51054f57b9adcfa3b8a132ca776285f970ede450c899ba04c7060",
+          "status_check": "passed"
+        }
+      ],
+      "heads": [],
+      "options": [],
+      "blocked_requests": []
+    }
+  ],
+  "datasets": [
+    {
+      "catalog_url": "https://source.coop/nthh/river-plastic-inputs",
+      "dataset_id": "river-plastic-inputs",
+      "display_release": null,
+      "planned_object_prefixes": [
+        "river-plastic-inputs/releases/figshare-v6-r2/"
+      ],
+      "planned_object_url_prefixes": [
+        "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/"
+      ],
+      "product_id": "river-plastic-inputs",
+      "release": "figshare-v6-r2",
+      "status": "not_run",
+      "checked_at": "2026-11-07T21:22:35.931Z",
+      "screenshots": [],
+      "case_ids": [],
+      "plan_sha256": "754c02dde3cf258263619599f893558d3348c7fb51c07f8fa700efa1900ac610",
+      "browser_cases_sha256": "6ff14a9c438cdee14af4ea21876ca32876883f7b676c16596b4ddfc924b6aa10",
+      "viewer_config_sha256": "87e1d532d23d65ec45b88aac318d13b83c273f140644ba7ec3dd3edd36e198fe",
+      "viewer_build_sha256": "9fb4f4aa6b641363160db0f54610750884ff91bfe02669cb7394f148726b62f6",
+      "tested_object_urls": []
+    },
+    {
+      "catalog_url": "https://source.coop/nthh/hydrolakes",
+      "dataset_id": "hydrolakes",
+      "display_release": "display-v1",
+      "planned_object_prefixes": [
+        "hydrolakes/releases/v1-local-r3/",
+        "hydrolakes/display/display-v1/"
+      ],
+      "planned_object_url_prefixes": [
+        "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/",
+        "https://data.source.coop/nthh/hydrolakes/display/display-v1/"
+      ],
+      "product_id": "hydrolakes",
+      "release": "v1-local-r3",
+      "status": "not_run",
+      "checked_at": "2026-11-07T21:22:35.931Z",
+      "screenshots": [],
+      "case_ids": [],
+      "plan_sha256": "754c02dde3cf258263619599f893558d3348c7fb51c07f8fa700efa1900ac610",
+      "browser_cases_sha256": "6ff14a9c438cdee14af4ea21876ca32876883f7b676c16596b4ddfc924b6aa10",
+      "viewer_config_sha256": "87e1d532d23d65ec45b88aac318d13b83c273f140644ba7ec3dd3edd36e198fe",
+      "viewer_build_sha256": "9fb4f4aa6b641363160db0f54610750884ff91bfe02669cb7394f148726b62f6",
+      "tested_object_urls": []
+    },
+    {
+      "catalog_url": "https://source.coop/nthh/lakeatlas",
+      "dataset_id": "lakeatlas",
+      "display_release": "display-v1",
+      "planned_object_prefixes": [
+        "lakeatlas/releases/lakeatlas-v1.0-r2/",
+        "lakeatlas/display/display-v1/"
+      ],
+      "planned_object_url_prefixes": [
+        "https://data.source.coop/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/",
+        "https://data.source.coop/nthh/lakeatlas/display/display-v1/"
+      ],
+      "product_id": "lakeatlas",
+      "release": "lakeatlas-v1.0-r2",
+      "status": "not_run",
+      "checked_at": "2026-11-07T21:22:35.931Z",
+      "screenshots": [],
+      "case_ids": [],
+      "plan_sha256": "754c02dde3cf258263619599f893558d3348c7fb51c07f8fa700efa1900ac610",
+      "browser_cases_sha256": "6ff14a9c438cdee14af4ea21876ca32876883f7b676c16596b4ddfc924b6aa10",
+      "viewer_config_sha256": "87e1d532d23d65ec45b88aac318d13b83c273f140644ba7ec3dd3edd36e198fe",
+      "viewer_build_sha256": "9fb4f4aa6b641363160db0f54610750884ff91bfe02669cb7394f148726b62f6",
+      "tested_object_urls": []
+    },
+    {
+      "catalog_url": "https://source.coop/nthh/free-flowing-rivers",
+      "dataset_id": "free-flowing-rivers",
+      "display_release": "display-v1",
+      "planned_object_prefixes": [
+        "free-flowing-rivers/releases/figshare-v1-local-r2/",
+        "free-flowing-rivers/display/display-v1/"
+      ],
+      "planned_object_url_prefixes": [
+        "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/",
+        "https://data.source.coop/nthh/free-flowing-rivers/display/display-v1/"
+      ],
+      "product_id": "free-flowing-rivers",
+      "release": "figshare-v1-local-r2",
+      "status": "not_run",
+      "checked_at": "2026-11-07T21:22:35.931Z",
+      "screenshots": [],
+      "case_ids": [],
+      "plan_sha256": "754c02dde3cf258263619599f893558d3348c7fb51c07f8fa700efa1900ac610",
+      "browser_cases_sha256": "6ff14a9c438cdee14af4ea21876ca32876883f7b676c16596b4ddfc924b6aa10",
+      "viewer_config_sha256": "87e1d532d23d65ec45b88aac318d13b83c273f140644ba7ec3dd3edd36e198fe",
+      "viewer_build_sha256": "9fb4f4aa6b641363160db0f54610750884ff91bfe02669cb7394f148726b62f6",
+      "tested_object_urls": []
+    },
+    {
+      "catalog_url": "https://source.coop/nthh/grwl-raw",
+      "dataset_id": "grwl-raw",
+      "display_release": "raw-v01.01-display-r3",
+      "planned_object_prefixes": [
+        "grwl-raw/releases/raw-v01.01-local-r1/",
+        "grwl-raw/display/raw-v01.01-display-r3/"
+      ],
+      "planned_object_url_prefixes": [
+        "https://data.source.coop/nthh/grwl-raw/releases/raw-v01.01-local-r1/",
+        "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/"
+      ],
+      "product_id": "grwl-raw",
+      "release": "raw-v01.01-local-r1",
+      "status": "passed",
+      "checked_at": "2026-11-07T21:22:35.931Z",
+      "screenshots": [
+        "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/browser-grwl-raw-r3/grwl-raw-mississippi-z0.png",
+        "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/browser-grwl-raw-r3/grwl-raw-mississippi-z1.png",
+        "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/browser-grwl-raw-r3/grwl-raw-mississippi-z2.png",
+        "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/browser-grwl-raw-r3/grwl-raw-mississippi-z3.png",
+        "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/browser-grwl-raw-r3/grwl-raw-mississippi-z4.png",
+        "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/browser-grwl-raw-r3/grwl-raw-mississippi-z5.png",
+        "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/browser-grwl-raw-r3/grwl-raw-mississippi-z6.png",
+        "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/browser-grwl-raw-r3/grwl-raw-mississippi-z7.png",
+        "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/browser-grwl-raw-r3/grwl-raw-mississippi-z8.png",
+        "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/browser-grwl-raw-r3/grwl-raw-mississippi-z9.png",
+        "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/browser-grwl-raw-r3/grwl-raw-mississippi-z10.png",
+        "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/browser-grwl-raw-r3/grwl-raw-mississippi-z11.png",
+        "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/browser-grwl-raw-r3/grwl-raw-mississippi-z12.png",
+        "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/browser-grwl-raw-r3/grwl-raw-amazon-z0.png",
+        "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/browser-grwl-raw-r3/grwl-raw-amazon-z3.png",
+        "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/browser-grwl-raw-r3/grwl-raw-amazon-z7.png",
+        "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/browser-grwl-raw-r3/grwl-raw-amazon-z8.png",
+        "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/browser-grwl-raw-r3/grwl-raw-dateline-z3.png",
+        "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/browser-grwl-raw-r3/grwl-raw-dateline-z7.png",
+        "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/browser-grwl-raw-r3/grwl-raw-dateline-z8.png"
+      ],
+      "case_ids": [
+        "grwl-raw-mississippi-z0",
+        "grwl-raw-mississippi-z1",
+        "grwl-raw-mississippi-z2",
+        "grwl-raw-mississippi-z3",
+        "grwl-raw-mississippi-z4",
+        "grwl-raw-mississippi-z5",
+        "grwl-raw-mississippi-z6",
+        "grwl-raw-mississippi-z7",
+        "grwl-raw-mississippi-z8",
+        "grwl-raw-mississippi-z9",
+        "grwl-raw-mississippi-z10",
+        "grwl-raw-mississippi-z11",
+        "grwl-raw-mississippi-z12",
+        "grwl-raw-amazon-z0",
+        "grwl-raw-amazon-z3",
+        "grwl-raw-amazon-z7",
+        "grwl-raw-amazon-z8",
+        "grwl-raw-dateline-z3",
+        "grwl-raw-dateline-z7",
+        "grwl-raw-dateline-z8"
+      ],
+      "plan_sha256": "754c02dde3cf258263619599f893558d3348c7fb51c07f8fa700efa1900ac610",
+      "browser_cases_sha256": "6ff14a9c438cdee14af4ea21876ca32876883f7b676c16596b4ddfc924b6aa10",
+      "viewer_config_sha256": "87e1d532d23d65ec45b88aac318d13b83c273f140644ba7ec3dd3edd36e198fe",
+      "viewer_build_sha256": "9fb4f4aa6b641363160db0f54610750884ff91bfe02669cb7394f148726b62f6",
+      "tested_object_urls": [
+        "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+        "https://data.source.coop/nthh/grwl-raw/releases/raw-v01.01-local-r1/assets/grwl-raw-observations.parquet"
+      ]
+    }
+  ],
+  "browser_version": "156.0.8078.80",
+  "total_transferred_bytes": 36055335
+}

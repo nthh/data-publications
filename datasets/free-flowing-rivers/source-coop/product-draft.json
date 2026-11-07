@@ -1,0 +1,358 @@
+{
+  "assets": [
+    {
+      "asset_id": "ffr-reach-network-v1",
+      "checksum": "122062130e4999ba449bd2768bcdd9346bc2ba8fa4c4f06d39597e5227cd496a1a63",
+      "href": "assets/ffr-reach-network-v1.parquet",
+      "media_type": "application/vnd.apache.parquet",
+      "roles": [
+        "data"
+      ],
+      "size_bytes": 887132886,
+      "title": "Free flowing river reaches, figshare v1"
+    },
+    {
+      "asset_id": "ffr-reach-network-v1_fields",
+      "checksum": "1220fba7dd8d801f22b659b384f11b630ef703365f0a15e54830552d608cf64580ff",
+      "href": "metadata/ffr-reach-network-v1-field-dictionary.json",
+      "media_type": "application/json",
+      "roles": [
+        "metadata"
+      ],
+      "size_bytes": 12273,
+      "title": "ffr-reach-network-v1 field dictionary"
+    },
+    {
+      "asset_id": "support-1",
+      "checksum": "1220125a2fc527145cb90cd1ae1d946df9c3a85a60dbfe5da041ececec3a1d0cc146",
+      "href": "source/source-metadata.json",
+      "media_type": "application/json",
+      "roles": [
+        "metadata"
+      ],
+      "size_bytes": 5162,
+      "title": "Pinned figshare article metadata"
+    },
+    {
+      "asset_id": "support-2",
+      "checksum": "1220cbe200b7ced3d627e2adc5b2ff043ebb97b68a75dd54ba3b33516127bd4635bb",
+      "href": "source/source-inspection.json",
+      "media_type": "application/json",
+      "roles": [
+        "metadata"
+      ],
+      "size_bytes": 16323,
+      "title": "Source archive and layer inspection"
+    },
+    {
+      "asset_id": "support-3",
+      "checksum": "1220399562161c85a577bdf495e2343dabbae3e6540adad1815b952d463808bd7133",
+      "href": "source/source-field-dictionary.json",
+      "media_type": "application/json",
+      "roles": [
+        "metadata"
+      ],
+      "size_bytes": 11616,
+      "title": "Producer field dictionary"
+    },
+    {
+      "asset_id": "thumbnail",
+      "checksum": "1220c2d265154f06ccb02dced33bfa1c2f9a1ed708dc39e0caef315a96472f23532f",
+      "href": "display/thumbnail.png",
+      "media_type": "image/png",
+      "roles": [
+        "thumbnail"
+      ],
+      "size_bytes": 2842,
+      "title": "Sampled display-only overview; not an analytic asset"
+    }
+  ],
+  "attribution": "Grill, G., Lehner, B., Thieme, M. et al. (2019), Mapping the world’s free-flowing rivers, DOI 10.1038/s41586-019-1111-9. Original conversion evidence retains Folia attribution.",
+  "blockers": [],
+  "created": true,
+  "creation_ready": true,
+  "dataset_id": "free-flowing-rivers",
+  "dataset_title": "Mapping the world's free-flowing rivers — global river reach connectivity assessment",
+  "display_publication": {
+    "assets": [
+      {
+        "href": "display/display-v1/assets/ffr-reaches.pmtiles",
+        "id": "free-flowing-rivers-1",
+        "path": "assets/ffr-reaches.pmtiles",
+        "sha256": "6e248eba5ecdf58ee28705a8f567be9497836f0a1c6c078b50327a1599ecdce3",
+        "size_bytes": 3570445458,
+        "style_href": "display/display-v1/styles/ffr-reaches.json",
+        "style_path": "styles/ffr-reaches.json",
+        "title": "Ffr Reaches"
+      }
+    ],
+    "manifest_href": "display/display-v1/manifest.json",
+    "manifest_path": "datasets/free-flowing-rivers/display/display-v1/manifest.json",
+    "manifest_sha256": "2f7046f914ff49749dffd20df9c6c5010706710b881af915633766da4d91fb6d",
+    "release": "display-v1"
+  },
+  "draft_type": "source_coop_product_draft",
+  "hosted": true,
+  "independent_maintainer_proposal": {
+    "owner": "nthh",
+    "relationship": "new Source Cooperative product proposal; immutable package metadata is unchanged",
+    "status": "confirmed"
+  },
+  "license_note": "CC BY 4.0. Retain Grill, Lehner and coauthors’ attribution, source release identity and original field definitions.",
+  "limitations": [
+    "Reach connectivity indicators are model-derived research attributes, not a current observation of every barrier or river condition.",
+    "Retained validation establishes conversion fidelity and reproducibility; it does not independently revalidate the scientific model.",
+    "Live GEE count and all 521 sampled IDs match. A documented erosion-field alias, numeric precision and null/empty differences remain; five selected geometry diagnostics exceed 1 m, up to 2.877 m. Strict parity fails; original source values and geometry are retained."
+  ],
+  "local_readiness": "hosted_verified_pending_catalog_deployment",
+  "owner": "nthh",
+  "owner_status": "confirmed",
+  "product_id": "free-flowing-rivers",
+  "proposed_source_proxy": {
+    "status": "hosted",
+    "uri": "s3://nthh/free-flowing-rivers"
+  },
+  "publication_status": "published",
+  "ready_for_creation": true,
+  "ready_for_review": true,
+  "related_dataset_links": [],
+  "release": "figshare-v1-local-r2",
+  "release_files": [
+    {
+      "kind": "asset",
+      "path": "assets/ffr-reach-network-v1.parquet",
+      "size_bytes": 887132886
+    },
+    {
+      "kind": "display_derivatives",
+      "path": "display/thumbnail.png",
+      "size_bytes": 2842
+    },
+    {
+      "kind": "data_license",
+      "path": "licenses/data-license.json",
+      "size_bytes": null
+    },
+    {
+      "kind": "source_license",
+      "path": "licenses/source-license.json",
+      "size_bytes": null
+    },
+    {
+      "kind": "field_dictionary",
+      "path": "metadata/ffr-reach-network-v1-field-dictionary.json",
+      "size_bytes": null
+    },
+    {
+      "kind": "source_attribution",
+      "path": "source/attribution.json",
+      "size_bytes": null
+    },
+    {
+      "kind": "supporting_files",
+      "path": "source/source-field-dictionary.json",
+      "size_bytes": 11616
+    },
+    {
+      "kind": "supporting_files",
+      "path": "source/source-inspection.json",
+      "size_bytes": 16323
+    },
+    {
+      "kind": "supporting_files",
+      "path": "source/source-metadata.json",
+      "size_bytes": 5162
+    }
+  ],
+  "review_context": {
+    "asset_integrity": "passed_fresh_sha256_audit",
+    "local_followup": [],
+    "public_followup": [
+      "Deploy and verify the aggregate catalog in Portolan Browser.",
+      "Submit to the main Portolan registry only after a separate decision."
+    ],
+    "stage": "hosted_verified_pending_catalog_deployment",
+    "status_basis": "canonical publication status plus local manifest/snapshot hashes; this tool does not rerun scientific or public-host validation"
+  },
+  "schema_version": 1,
+  "snapshot_binding": {
+    "bound_file_count": 9,
+    "hosted_package_base_url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/",
+    "local_metadata_integrity": "passed",
+    "manifest_path": "datasets/free-flowing-rivers/releases/figshare-v1-local-r2/manifest.json",
+    "manifest_sha256": "756286b624de53823a2af2c26344a15dcf02070c048f5d1d02ec3f65a97d5120",
+    "package_binding_sha256": "f825c268c80ebafaafc37cda26557c4ad0513211d1e231f2e73c5dc282be23ad",
+    "package_binding_status": "verified",
+    "release": "figshare-v1-local-r2",
+    "snapshot_file_count": 4,
+    "snapshot_path": "datasets/free-flowing-rivers/releases/figshare-v1-local-r2/catalog-input-r1/snapshot.json",
+    "snapshot_sha256": "e00a14670ec104c2f866cff660ccf67058566a5a9cbb4d15c69d328dae4903ff"
+  },
+  "snapshot_collection": {
+    "assets": [
+      {
+        "asset_id": "ffr-reach-network-v1",
+        "checksum": "122062130e4999ba449bd2768bcdd9346bc2ba8fa4c4f06d39597e5227cd496a1a63",
+        "href": "assets/ffr-reach-network-v1.parquet",
+        "media_type": "application/vnd.apache.parquet",
+        "roles": [
+          "data"
+        ],
+        "size_bytes": 887132886,
+        "title": "Free flowing river reaches, figshare v1"
+      },
+      {
+        "asset_id": "ffr-reach-network-v1_fields",
+        "checksum": "1220fba7dd8d801f22b659b384f11b630ef703365f0a15e54830552d608cf64580ff",
+        "href": "metadata/ffr-reach-network-v1-field-dictionary.json",
+        "media_type": "application/json",
+        "roles": [
+          "metadata"
+        ],
+        "size_bytes": 12273,
+        "title": "ffr-reach-network-v1 field dictionary"
+      },
+      {
+        "asset_id": "support-1",
+        "checksum": "1220125a2fc527145cb90cd1ae1d946df9c3a85a60dbfe5da041ececec3a1d0cc146",
+        "href": "source/source-metadata.json",
+        "media_type": "application/json",
+        "roles": [
+          "metadata"
+        ],
+        "size_bytes": 5162,
+        "title": "Pinned figshare article metadata"
+      },
+      {
+        "asset_id": "support-2",
+        "checksum": "1220cbe200b7ced3d627e2adc5b2ff043ebb97b68a75dd54ba3b33516127bd4635bb",
+        "href": "source/source-inspection.json",
+        "media_type": "application/json",
+        "roles": [
+          "metadata"
+        ],
+        "size_bytes": 16323,
+        "title": "Source archive and layer inspection"
+      },
+      {
+        "asset_id": "support-3",
+        "checksum": "1220399562161c85a577bdf495e2343dabbae3e6540adad1815b952d463808bd7133",
+        "href": "source/source-field-dictionary.json",
+        "media_type": "application/json",
+        "roles": [
+          "metadata"
+        ],
+        "size_bytes": 11616,
+        "title": "Producer field dictionary"
+      },
+      {
+        "asset_id": "thumbnail",
+        "checksum": "1220c2d265154f06ccb02dced33bfa1c2f9a1ed708dc39e0caef315a96472f23532f",
+        "href": "display/thumbnail.png",
+        "media_type": "image/png",
+        "roles": [
+          "thumbnail"
+        ],
+        "size_bytes": 2842,
+        "title": "Sampled display-only overview; not an analytic asset"
+      }
+    ],
+    "description": "Analytic GeoParquet conversion of the full global free-flowing river reach network from the pinned 2019 figshare v1 source. Original source fields and WKB geometries, nulls, row order, and record multiplicity are preserved. Added columns expose the producer-stream row ordinal and per-feature EPSG:4326 bounds. This release does not assess scientific validity or update the source assessment.",
+    "extent": {
+      "spatial": {
+        "bbox": [
+          [
+            -179.99791666699997,
+            -55.87708333299997,
+            179.99791666700003,
+            83.58958333300006
+          ]
+        ]
+      },
+      "temporal": {
+        "interval": [
+          [
+            null,
+            null
+          ]
+        ]
+      }
+    },
+    "id": "free-flowing-rivers",
+    "license": "CC-BY-4.0",
+    "providers": [
+      {
+        "name": "Günther Grill",
+        "roles": [
+          "producer",
+          "licensor"
+        ],
+        "url": "https://orcid.org/0000-0003-4860-3575"
+      },
+      {
+        "name": "Bernhard Lehner",
+        "roles": [
+          "producer",
+          "licensor"
+        ],
+        "url": "https://orcid.org/0000-0003-3712-2581"
+      },
+      {
+        "description": "Local candidate package only; public hosting has not occurred.",
+        "name": "Folia",
+        "roles": [
+          "host",
+          "processor"
+        ],
+        "url": "https://folia.sh"
+      }
+    ],
+    "title": "Mapping the world's free-flowing rivers — global river reach connectivity assessment"
+  },
+  "source_links": [
+    {
+      "title": "License terms",
+      "url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "title": "Producer source",
+      "url": "https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_v1_FreeFlowingRivers"
+    },
+    {
+      "title": "Dataset release",
+      "url": "https://doi.org/10.6084/m9.figshare.7688801.v1"
+    },
+    {
+      "title": "Dataset release",
+      "url": "https://figshare.com/articles/dataset/Mapping_the_world_s_free-flowing_rivers_data_set_and_technical_documentation/7688801"
+    },
+    {
+      "title": "Folia converter/host",
+      "url": "https://folia.sh"
+    },
+    {
+      "title": "Original download",
+      "url": "https://ndownloader.figshare.com/files/15090536"
+    },
+    {
+      "title": "Producer: Bernhard Lehner",
+      "url": "https://orcid.org/0000-0003-3712-2581"
+    },
+    {
+      "title": "Producer: Günther Grill",
+      "url": "https://orcid.org/0000-0003-4860-3575"
+    }
+  ],
+  "summary": "The complete river-reach network from Mapping the world’s free-flowing rivers, preserved in GeoParquet with all producer fields and source geometry. A separately versioned PMTiles layer provides zoom-dependent map display and source-ID attribute lookup.",
+  "supplements": [],
+  "tags": [
+    "hydrology",
+    "rivers",
+    "connectivity",
+    "global",
+    "geoparquet",
+    "pmtiles"
+  ],
+  "temporal_note": "Static assessment using source information assembled circa 2017; paper published in 2019.",
+  "title": "Global free-flowing rivers — connectivity assessment"
+}

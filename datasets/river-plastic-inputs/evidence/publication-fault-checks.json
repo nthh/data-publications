@@ -1,0 +1,51 @@
+{
+  "status": "passed",
+  "scope": "Five deliberate in-memory faults in a copy of the real local table; release bytes unchanged.",
+  "checks": [
+    {
+      "fault": "Annual tonnes misinterpreted as kilograms",
+      "status": "detected",
+      "failed_checks": [
+        "global_lower_annual",
+        "global_upper_annual"
+      ]
+    },
+    {
+      "fault": "Monthly midpoint labels shifted by six months",
+      "status": "detected",
+      "failed_checks": [
+        "may_october_midpoint_share",
+        "ordered_uncertainty"
+      ]
+    },
+    {
+      "fault": "Lower uncertainty bound replaced by upper bound",
+      "status": "detected",
+      "failed_checks": [
+        "global_lower_annual",
+        "ordered_uncertainty"
+      ]
+    },
+    {
+      "fault": "Negative runoff introduced",
+      "status": "detected",
+      "failed_checks": [
+        "nonnegative_estimates"
+      ]
+    },
+    {
+      "fault": "Only midpoint nulls changed to zeros",
+      "status": "detected",
+      "failed_checks": [
+        "ordered_uncertainty"
+      ]
+    }
+  ],
+  "provenance": {
+    "test_publication.py_sha256": "205f88bddfdb62c910c1982dd6f883255b9574b1c1b51538c5553eafaffb3915",
+    "check_publication.py_sha256": "f0ae40eb090358481ba3461a3bb4d8ed13bd11176743b732fd9666451010d587",
+    "publication-benchmarks.json_sha256": "a54fc8a96346df48640204a42a9c337f551df2e39c8ce047222f9aa3ffd29a1d",
+    "uv.lock_sha256": "8ad5895cdb74eb45ed203aa5cb34dee4ddcae1fa4a76b4ee66f7e8ba3da45d70",
+    "geoparquet_sha256": "de35bd69b144565af1fcd33f915e8521a1af502e3ac50235560990f6c441e8c9"
+  }
+}

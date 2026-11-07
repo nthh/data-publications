@@ -1,0 +1,96 @@
+schema_version: 1
+id: riveratlas
+title: RiverATLAS v1.0
+intake:
+  kind: producer
+  reference_url: https://www.hydrosheds.org/hydroatlas
+  added_on: '2026-11-01'
+  related_family: hydroatlas
+triage:
+  decision: pending
+  priority: normal
+  rationale: Ranked metadata-review candidate; qualification does not authorize conversion or publication.
+publication:
+  status: candidate
+review:
+  availability:
+    shortlist_id: native-publication-gaps-20261031
+    rank: 5
+    reviewed_on: '2026-11-01'
+    label: RiverATLAS v1.0
+    scope: Complete global enriched river-reach layer, original FileGDB ZIP; excludes BasinATLAS and LakeATLAS.
+    geographic_scope: global
+    download:
+      bytes: null
+      precision: rounded
+      reported_size: 2.33 GB (producer label; exact bytes unverified)
+      format: FileGDB ZIP
+      file_count: 1
+      basis: producer_listing
+      note: Producer labels the GDB ZIP 2.33 GB. Both download HEAD endpoints returned 403. Exact bytes
+        and the producer display-unit convention remain unverified; do not silently interpret the label
+        as measured decimal bytes. Shapefile alternative excluded.
+      evidence_urls: &id002
+      - https://www.hydrosheds.org/hydroatlas
+      - https://figshare.com/ndownloader/files/20087321
+    locations:
+    - service_id: figshare
+      label: Figshare
+      platform: external
+      relationship: matching_scope
+      access: download
+      formats: &id001
+      - FileGDB ZIP
+      - Shapefile ZIP
+      urls:
+      - https://www.hydrosheds.org/hydroatlas
+      - https://figshare.com/ndownloader/files/20087321
+      asset_ids: []
+      note: HydroSHEDS links to Figshare; those pages and the CDN are one distribution service.
+    - service_id: earth_engine
+      label: GEE community
+      platform: gee
+      relationship: matching_scope
+      access: gee_collection
+      formats:
+      - Earth Engine FeatureCollection
+      urls:
+      - https://gee-community-catalog.org/projects/hydroatlas/
+      asset_ids:
+      - projects/sat-io/open-datasets/HydroAtlas/RiverAtlas_v10
+      note: One RiverATLAS feature collection. The family catalog also has basin/lake layers, which are
+        not counted here.
+    output_manifest: null
+    evidence:
+    - path: research/availability-sizes-20261101/observations.json
+      sha256: a7c4fd21000b497faf92810420cde5cc4ee80ae533721dd13c69cb7e692fcd7b
+      key: riveratlas
+discovery:
+  batch: availability-sizes-20261101
+  reviewed_on: '2026-11-01'
+  geographic_scope: global
+  spatial_coverage: Complete global enriched river-reach layer, original FileGDB ZIP; excludes BasinATLAS
+    and LakeATLAS.
+  sources:
+  - provider: producer
+    entry_id: RiverATLAS v1.0
+    url: https://www.hydrosheds.org/hydroatlas
+    relationship: component
+  access:
+  - provider: producer
+    status: download_available
+    formats: *id001
+    summary: HydroSHEDS links to Figshare; those pages and the CDN are one distribution service.
+    license_summary: Qualify exact release and attribution/attribute terms before building. No new redistribution
+      conclusion in this size review.
+    proposed_outputs:
+    - GeoParquet
+    rationale: Global candidate with no matching native copy established in preceding bounded review;
+      this record preserves scope and unresolved acquisition gates.
+    evidence_urls: *id002
+    observed_on: '2026-11-01'
+  citations: []
+  evidence:
+  - path: research/availability-sizes-20261101/observations.json
+    sha256: a7c4fd21000b497faf92810420cde5cc4ee80ae533721dd13c69cb7e692fcd7b
+    key: riveratlas

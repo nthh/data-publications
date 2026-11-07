@@ -1,0 +1,72 @@
+#!/usr/bin/env python3
+"""Separate geodesic diagnostic; preserves the original strict-coordinate failure."""
+import argparse
+import json
+from pathlib import Path
+
+import pyarrow.parquet as pq
+import pyproj
+
+from compare import CONTRACT, HERE, PRODUCT, compare, digest, read_capture, read_json, require
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('release', type=Path)
+    parser.add_argument('capture', type=Path)
+    parser.add_argument('--report', required=True, type=Path)
+    parser.add_argument('--details', required=True, type=Path)
+    args = parser.parse_args()
+    diagnostic_path = PRODUCT / 'gee-geometry-diagnostic.json'
+    diagnostic = read_json(diagnostic_path)
+    contract = read_json(CONTRACT)
+    require(diagnostic['parent_contract_sha256'] == digest(CONTRACT), 'Parent contract changed')
+    strict_path = PRODUCT / 'evidence/gee-strict-validation.json'
+    require(diagnostic['strict_report_sha256'] == digest(strict_path), 'Original strict report changed')
+    require(diagnostic['capture_receipt_sha256'] == digest(args.capture / 'capture.json'), 'Diagnostic capture changed')
+    receipt, metadata, features = read_capture(args.capture, contract, digest(CONTRACT))
+    require(receipt['capture_script_sha256'] == digest(HERE / 'fetch.py'), 'Capture code changed')
+    require(receipt['environment_lock_sha256'] == digest(HERE / 'uv.lock'), 'Capture environment changed')
+    parquet = args.release / 'river-plastic-inputs/river-plastic-inputs.parquet'
+    require(digest(parquet) == contract['geoparquet_sha256'], 'Local source changed')
+    strict = read_json(strict_path)
+    require(strict['status'] == 'failed', 'Expected preserved strict failure')
+    args.details.parent.mkdir(parents=True, exist_ok=True)
+    with args.details.open('w') as details:
+        report = compare(pq.read_table(parquet), features, contract, details, diagnostic)
+    if report['status'] == 'passed':
+        report['status'] = 'passed_with_documented_geometry_difference'
+    report['strict_coordinate_parity'] = 'failed'
+    report['source_data_modified'] = False
+    report['interpretation'] = (
+        'This follow-up associates points within one metre and checks their attributes. '
+        'It does not replace the strict failure or prove why GEE coordinates differ. '
+        'The default GEE table-ingestion transformation allowance is a plausible explanation; '
+        'this asset has no available ingestion manifest or source-version metadata.')
+    report['provenance'] = {
+        'asset_metadata': metadata, 'upstream_version_status': 'undocumented_in_gee_metadata',
+        'capture_receipt_sha256': digest(args.capture / 'capture.json'),
+        'strict_report_sha256': digest(strict_path), 'diagnostic_contract_sha256': digest(diagnostic_path),
+        'geoparquet_sha256': digest(parquet), 'parent_contract_sha256': digest(CONTRACT),
+        'comparator_sha256': digest(HERE / 'compare.py'), 'diagnostic_script_sha256': digest(Path(__file__)),
+        'capture_script_sha256': receipt['capture_script_sha256'],
+        'capture_environment_lock_sha256': receipt['environment_lock_sha256'],
+        'diagnostic_environment_lock_sha256': digest(PRODUCT / 'uv.lock'),
+        'pyproj_version': pyproj.__version__, 'proj_version': pyproj.proj_version_str,
+        'capture_git_commit': receipt['git_commit'], 'capture_started_at': receipt['started_at'],
+        'capture_finished_at': receipt['finished_at'], 'feature_pages': receipt['feature_pages'],
+        'raw_response_bytes': receipt['total_response_bytes'], 'metadata_stable': receipt['metadata_stable'],
+        'mismatch_details_sha256': digest(args.details), 'mismatch_details_bytes': args.details.stat().st_size,
+    }
+    args.report.parent.mkdir(parents=True, exist_ok=True)
+    args.report.write_text(json.dumps(report, indent=2, default=str) + '\n')
+    print(json.dumps({key: report[key] for key in (
+        'status', 'strict_coordinate_parity', 'source_rows', 'gee_features', 'uniquely_matched_points',
+        'attribute_cells_compared', 'exact_numeric_matches', 'within_tolerance_numeric_matches',
+        'null_matches', 'maximum_coordinate_difference_degrees', 'geodesic_displacement_meters',
+        'matched_points_outside_original_strict_tolerance', 'mismatch_counts')}, indent=2))
+    return 0 if report['status'] == 'passed_with_documented_geometry_difference' else 1
+
+
+if __name__ == '__main__':
+    raise SystemExit(main())

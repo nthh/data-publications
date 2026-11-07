@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "code_commit": "86975064eb3155be52f450eb882b4f07e46181dd",
+  "release_environment_lock_sha256": "fe1b9d58a17429f2649a24fbd8299b5d616ca4ab68806e768cd2caac31b8ec1b",
+  "status": "passed",
+  "checks": [
+    {
+      "command": [
+        "<LOCKED_RELEASE_ENV_PYTHON>",
+        "scripts/catalog.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"records_checked\": 452,\n  \"supplemental_records_checked\": 89,\n  \"family_keys_checked\": 363,\n  \"citations_checked\": 363,\n  \"decisions\": {\n    \"defer\": 2,\n    \"pending\": 443,\n    \"publish_conversion\": 6,\n    \"reuse_existing\": 1\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "<LOCKED_RELEASE_ENV_PYTHON>",
+        "scripts/publication_catalog.py",
+        "check"
+      ],
+      "exit_code": 0,
+      "stdout": "Catalog check passed; 0 published collections.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "<LOCKED_RELEASE_ENV_PYTHON>",
+        "scripts/source_products.py",
+        "check"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "<LOCKED_RELEASE_ENV_PYTHON>",
+        "scripts/check_provenance.py"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"passed\",\n  \"historical_entries\": 114,\n  \"unique_blobs\": 44\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "scripts/cloud_viewer/export-grwl-style.mjs",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "GRWL width-v1 style verified\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ]
+}

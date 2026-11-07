@@ -1,0 +1,24 @@
+{
+  "reviewed_on": "2026-11-01",
+  "shortlist": "native-publication-gaps-20261031",
+  "scope": "Ten ranked publication scopes from the preceding review; source download size, prepared asset size, external distribution locations and GEE presence.",
+  "counting": [
+    "Count distinct data distribution services, not bibliography, paper, DOI, homepage or CDN aliases. Multiple GEE assets are one GEE service, with asset IDs retained separately.",
+    "A producer page or request form linking to a repository is a discovery route, not a second verified data host until independent delivery is established.",
+    "Store exact-scope, related-version/partial and unverified-edition locations separately. Count older hosts in total locations only, never as exact-scope availability.",
+    "Missing GEE evidence means not identified in bounded sources. Google Earth is not Google Earth Engine."
+  ],
+  "sizes": [
+    "Report decimal MB/GB. Preserve exact bytes where measured or provided by object metadata, rounded estimates as estimates, and unresolved sizes as null.",
+    "Source download measures one chosen original representation of the declared scope, not every duplicate format, decadal split, documentation file or full family.",
+    "CRU-TS v4.10 selects exactly ten full-period 1901-2025 .dat.nc.gz files, one per variable. Any failed/missing HEAD prevents an exact total from that capture.",
+    "TerraClimate baseline selects 1064 annual files for 14 variables and 76 years. Use the frozen listing; check a file header to assess catalog-unit interpretation before converting its rounded Mbytes sum.",
+    "Prepared output totals come from checksum-bound release manifests and include analytical Parquet assets plus separately reported PMTiles. Exclude docs/package ZIP/source-order duplicate copies."
+  ],
+  "acceptance": [
+    "One canonical availability block per ranked dataset; JSON/CSV/Markdown views generated from canonical YAML only.",
+    "Schema and semantic validation reject inconsistent unknown sizes, duplicate service IDs, rank collisions, GEE IDs counted as external, and mismatched evidence/manifest hashes.",
+    "Derived counts distinguish all identified services from matching full-scope services. Preserve version caveats in generated views.",
+    "Run focused availability tests, existing discovery/catalog checks and a clean-checkout generator rehearsal. No bulk datasets, live GEE calls, builds, uploads or registry submissions."
+  ]
+}

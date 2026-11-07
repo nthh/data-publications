@@ -1,0 +1,37 @@
+{
+  "status": "primary_producer_metadata_consistent",
+  "records": [
+    {
+      "record_id": 1297434,
+      "url": "https://zenodo.org/api/records/1297434",
+      "path": "research/gee-release-validation-20261106/zenodo-metadata/1297434.json",
+      "sha256": "08a4437333cc3d9223fbb97276df126b826d948ac0e80234c834f55ddfe8f325",
+      "size_bytes": 9557,
+      "capture_file_mtime_utc": "2026-11-06T22:10:26.858352+00:00",
+      "version": "V01.01",
+      "license": {
+        "id": "cc-by-4.0"
+      },
+      "raw_vector_md5": "md5:40171f15c0fccd470db32446dda0480e"
+    },
+    {
+      "record_id": 18624542,
+      "url": "https://zenodo.org/api/records/18624542",
+      "path": "research/gee-release-validation-20261106/zenodo-metadata/18624542.json",
+      "sha256": "d640b2ad046194fd80cf77c670ec355853c46e4bbc80ce98182991f50f302ef5",
+      "size_bytes": 9585,
+      "capture_file_mtime_utc": "2026-11-06T22:10:27.721071+00:00",
+      "version": "V01.01",
+      "license": {
+        "id": "cc-by-4.0"
+      },
+      "raw_vector_md5": "md5:40171f15c0fccd470db32446dda0480e"
+    }
+  ],
+  "conclusions": [
+    "Both producer records assign CC BY4.0 and V01.01 to the raw vector release.",
+    "Both raw ZIP checksums match md5:40171f15c0fccd470db32446dda0480e; the newer record does not change raw archive bytes.",
+    "GEE asset description says CC-BY-SA4.0, inconsistent with producer metadata and current Community Catalog page. Retain producer attribution/license; do not propagate the GEE label into publication metadata."
+  ],
+  "capture_note": "Bounded unauthenticated public GET bodies were retained locally. The initial reader attempted response.json after consuming the stream and failed; parsing the unchanged saved bodies succeeded. HTTP headers/status were not retained, so no such receipt is claimed."
+}

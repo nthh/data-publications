@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "dataset_id": "grwl",
+  "display_release": "display-v1",
+  "analytic_release": "summary-v01.02-local-r1",
+  "status": "prepared",
+  "attribution": "Allen and Pavelsky (2018), GRWL summary V01.02; CC BY 4.0",
+  "assets": [
+    {
+      "id": "grwl-display",
+      "title": "GRWL river network",
+      "path": "assets/grwl.pmtiles",
+      "size_bytes": 115384572,
+      "sha256": "7b56696bc08daa4ed512a02fd35017f913827d60f9dc1d8fba94b1f726ba5343",
+      "source_layer": "grwl",
+      "geometry_type": "line",
+      "min_zoom": 0,
+      "max_zoom": 10,
+      "id_field": "source_row",
+      "id_encoding": "mvt_feature_id",
+      "source_rows": 42077,
+      "attribute_fields": [
+        "OBJECTID",
+        "ID",
+        "width_min_",
+        "width_med_",
+        "width_mean",
+        "width_max_",
+        "width_sd_m",
+        "lakeFlag",
+        "nSegPx",
+        "Shape_Leng",
+        "_src_xmin",
+        "_src_ymin",
+        "_src_xmax",
+        "_src_ymax"
+      ],
+      "source_asset": {
+        "path": "grwl/grwl-summary-v0102.parquet",
+        "size_bytes": 46297145,
+        "sha256": "82ac4eeac2168b1aad6e5c9ae53c0c228ffcc7c8cd3f8d795493d939e626fa9c"
+      },
+      "style_path": "styles/grwl-width.json"
+    }
+  ],
+  "files": {
+    "README.md": {
+      "size_bytes": 701,
+      "sha256": "d8c60605e13abc9c0e6105eac57fd107f7693d080aad697b91a9447ad91c39ef"
+    },
+    "assets/grwl.pmtiles": {
+      "size_bytes": 115384572,
+      "sha256": "7b56696bc08daa4ed512a02fd35017f913827d60f9dc1d8fba94b1f726ba5343"
+    },
+    "reports/browser-validation.json": {
+      "size_bytes": 38323,
+      "sha256": "520df4bd7132f68a2a6ef727de441aba950da7b1c855cd6f17080438d6153150"
+    },
+    "reports/independent-validation.json": {
+      "size_bytes": 25985,
+      "sha256": "87454e22265d601a87b9746c01db8e8d02084099c6b79ce5672f0c7eea55e703"
+    },
+    "reports/input-provenance.json": {
+      "size_bytes": 1987,
+      "sha256": "0add34494fcfe8d8d534b13e905cb87f3c1cf70f4e0e62c2e54e50aeacd36214"
+    },
+    "reports/pmtiles-verify.json": {
+      "size_bytes": 340,
+      "sha256": "6b8ad272ccdaf5e97ef4878634b0be6e63bf5e337f6b3223def5f250f5eaac82"
+    },
+    "reports/tippecanoe.stderr.txt": {
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "styles/grwl-width.json": {
+      "size_bytes": 4084,
+      "sha256": "44ef4ef37c5030400658f21e54c48f5276f453fe42bcd5f15d47234043430c44"
+    },
+    "workflow/browser-controls.json": {
+      "size_bytes": 622,
+      "sha256": "5309294f0ba8185689648c7c4b718d8ba3a9ebc7bb133f75a678a6f1fd3fab43"
+    },
+    "workflow/build_display.py.txt": {
+      "size_bytes": 17428,
+      "sha256": "6d0ae7e817df7bfb42c49a2b036f776a5e12b23767391a3960ee4cab940059ad"
+    },
+    "workflow/correction-criteria.json": {
+      "size_bytes": 4366,
+      "sha256": "ba64cd4e0af6433f5bccfa8cf9eddae3e7a61b42498e42bf94ace135fff8932c"
+    },
+    "workflow/crossing-source-ids.json": {
+      "size_bytes": 760,
+      "sha256": "64ba6a824f182b147bec42471127b3b43876e54f61d4d00e58e3b6bfd6702893"
+    },
+    "workflow/finalize_display.py.txt": {
+      "size_bytes": 18259,
+      "sha256": "1bc82c0f480ae7b60334ba913c5da7e9de2b3e55358438526daec90b3990576b"
+    },
+    "workflow/geometry-controls.json": {
+      "size_bytes": 5648,
+      "sha256": "680756f3fc44d01364c788d99ab3e14fb44039ea00b22927842eaadd68640785"
+    },
+    "workflow/tippecanoe.lock.json": {
+      "size_bytes": 390,
+      "sha256": "28d3bedda9835f808c3c8303b64ad660654b17a48af529d0b32e0c1b496bbd0d"
+    },
+    "workflow/uv.lock": {
+      "size_bytes": 70097,
+      "sha256": "edc334d3dddf7c50b08f5b8db0ad4e1cafaa8964de487940a7e8e4924a9bc385"
+    },
+    "workflow/validate_display_wrap.py.txt": {
+      "size_bytes": 18462,
+      "sha256": "6818ad35b96d343150d4a94a78f0d98507f3eb491c7b7c0107780056d98c3286"
+    }
+  }
+}

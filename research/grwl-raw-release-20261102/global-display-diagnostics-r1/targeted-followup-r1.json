@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "status": "targeted_followup_passed_not_global_validation",
+  "prior_missing_inventory_sha256": "a448af766de0ea5fd067af9b2d31962ef55db8ce69b85e87ed14feaf08243699",
+  "source_parquet_sha256_from_prior_full_oracle": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+  "source_geometry_hashes_rechecked": 304,
+  "classifications": {
+    "quantization_collapse": 304
+  },
+  "changed_classifications": [
+    {
+      "id": 151320287794045,
+      "before": "unexpected_loss",
+      "after": "quantization_collapse"
+    }
+  ],
+  "native_fixtures": [
+    {
+      "name": "native-quantization-controls",
+      "input_sha256": "ccf7048d4e72ea41f79a27775f91179f8134c37f5c74c571b74ef5b144eef1e4",
+      "native_archive_sha256": "f1b2ffbc133c4c0a60db3fb23648308d302cd8eef6eb732bb9d93a4108dbff85",
+      "input_ids": 7,
+      "surviving_ids": [
+        90003,
+        90004,
+        90005
+      ],
+      "all_output_ids_and_coordinates_match_native_quantizer": true
+    },
+    {
+      "name": "native-threshold-controls",
+      "input_sha256": "4ae5c10a9ea925c17fda7f9c4738d6def9686bed9063fae9561f8e4d83172af6",
+      "native_archive_sha256": "db6b0bad190dab4585ccab6fcd54ad9eb26e477d5a5e9d8c3e926af68860289a",
+      "input_ids": 18,
+      "surviving_ids": [
+        91007,
+        91008,
+        91009,
+        91010,
+        91011,
+        91012,
+        92002
+      ],
+      "all_output_ids_and_coordinates_match_native_quantizer": true
+    }
+  ],
+  "source_seam_selection": {
+    "policy_sha256": "6c12ad5328cb84f7aa00373041ecfbdc26e688fde0c997a0984b9ca427c47b2a",
+    "crossing_ids": [],
+    "near_seam_ids": [
+      152046137273688,
+      152046137284270,
+      152046137284271,
+      152046137296734,
+      152046137320451,
+      152046137320452,
+      152046137337687,
+      152046137340663,
+      152046137340664,
+      152046137359268,
+      152299540334909,
+      152299540334910,
+      152299540380407,
+      152299540380408,
+      152299540382087,
+      152299540407798,
+      152299540407799,
+      152299540424785,
+      152299540425857,
+      152299540425858,
+      152299540425859,
+      152299540425860,
+      152299540476755,
+      152299540478757,
+      152299540478758,
+      152475633975297,
+      152475633976291,
+      152475633988267,
+      152475633988268,
+      152475633993691,
+      152475633993692,
+      152475633993753,
+      152475633993754,
+      152475633993755,
+      152475633993756,
+      152475633993757,
+      152475633996269,
+      152475633996270,
+      152475633998272,
+      152475633998273,
+      152475633998897,
+      152475633998898,
+      152729037061217,
+      152729037061218,
+      152729037061219,
+      152729037061220,
+      152729037061221,
+      152729037061222,
+      152729037061223,
+      152729037061224,
+      152729037061228,
+      152729037061229,
+      152729037073910,
+      152729037074502,
+      152729037074503,
+      152729037074504
+    ],
+    "candidate_count": 56,
+    "selection_used_source_only": true
+  },
+  "limits": [
+    "Bounded checks of prior missing records and tiny native fixtures; the complete global oracle must run again.",
+    "Supplemental seam IDs are selected from source bounds before evaluating their display geometry."
+  ]
+}

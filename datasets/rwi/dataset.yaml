@@ -1,0 +1,34 @@
+schema_version: 1
+id: rwi
+title: Relative Wealth Index (RWI)
+community_url: https://gee-community-catalog.org/projects/rwi
+audit:
+  snapshot: gee-community-audit-20261029
+  family_key: rwi
+  unique_gee_asset_count: 1
+  initial_queue: research_original_source
+  folia_registry_status: not_identified
+  folia_registry_ids: []
+  source_coop_urls: []
+  source_coop_scope: null
+  external_native_urls: []
+  external_native_scope: null
+triage:
+  decision: pending
+  priority: normal
+review:
+  citation_assessment:
+    as_of: '2026-10-29'
+    provider: OpenAlex
+    evidence_path: research/citations/rankings.json
+    evidence_key: rwi
+    geographic_scope: global
+    paper_count_status: matched
+    max_paper_citations: 259
+    max_data_doi_citations: null
+    top_paper_doi: https://doi.org/10.1073/pnas.2113658119
+    top_paper_openalex_id: https://openalex.org/W3165855014
+    citation_scope: base_dataset_family
+    citation_scope_note: PNAS paper describes the 2.4 km RWI model across 135 LMICs;
+      the GEE distribution contains 92 countries, so this is not an exact-coverage
+      usage count.

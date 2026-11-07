@@ -1,0 +1,59 @@
+{
+  "layers": [
+    {
+      "id": "raw-width",
+      "minzoom": 8,
+      "paint": {
+        "line-color": "#216d85",
+        "line-width": [
+          "case",
+          [
+            "get",
+            "width_valid"
+          ],
+          [
+            "interpolate",
+            [
+              "linear"
+            ],
+            [
+              "get",
+              "width_m"
+            ],
+            1,
+            1.1,
+            50,
+            1.6,
+            200,
+            2.7,
+            1000,
+            6.2
+          ],
+          0.9
+        ]
+      },
+      "source": "data",
+      "source-layer": "grwl_raw",
+      "type": "line"
+    },
+    {
+      "id": "raw-observation-coverage",
+      "maxzoom": 8,
+      "paint": {
+        "fill-antialias": false,
+        "fill-color": "#216d85",
+        "fill-opacity": 0.76
+      },
+      "source": "data",
+      "source-layer": "grwl_overview",
+      "type": "fill"
+    }
+  ],
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "../assets/grwl-raw.pmtiles"
+    }
+  },
+  "version": 8
+}

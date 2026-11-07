@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "source_rows": 64572998,
+  "source_sha256_from_completed_full_oracle": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+  "query": "SELECT count(*), max(bbox.xmax-bbox.xmin), max(bbox.ymax-bbox.ymin), count(*) FILTER (WHERE bbox.xmax-bbox.xmin>=180) FROM read_parquet(?)",
+  "maximum_longitude_span_degrees": 0.002061390531579832,
+  "maximum_latitude_span_degrees": 0.0002822618282181111,
+  "half_world_or_wider_records": 0,
+  "scope": "Complete source-bbox scan, using the same already checksum-bound analytical file; the preceding full source comparison establishes the bbox/source relationship. This query did not independently recompute WKB envelopes or rehash the file."
+}

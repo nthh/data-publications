@@ -1,0 +1,1144 @@
+{
+  "request_url": "https://api.openalex.org/works?filter=doi%3A10.5194%2Fnhess-15-1407-2015%7C10.5194%2Fos-8-859-2012%7C10.5194%2Fsoil-7-217-2021%7C10.5194%2Ftc-13-665-2019%7C10.5194%2Ftc-2017-223%7C10.5194%2Ftc-8-1509-2014%7C10.5258%2Fsoton%2Fwp00646%7C10.5258%2Fsoton%2Fwp00732%7C10.5258%2Fsoton%2Fwp00803%7C10.5258%2Fsoton%2Fwp00839%7C10.5258%2Fsoton%2Fwp00841%7C10.5281%2Fzenodo.10013982%7C10.5281%2Fzenodo.10068479%7C10.5281%2Fzenodo.10694225%7C10.5281%2Fzenodo.10701417%7C10.5281%2Fzenodo.10795662%7C10.5281%2Fzenodo.11034131%7C10.5281%2Fzenodo.11062894%7C10.5281%2Fzenodo.11110206%7C10.5281%2Fzenodo.11156602%7C10.5281%2Fzenodo.11179644%7C10.5281%2Fzenodo.11459391%7C10.5281%2Fzenodo.1297434%7C10.5281%2Fzenodo.13739812%7C10.5281%2Fzenodo.13759567%7C10.5281%2Fzenodo.13824640%7C10.5281%2Fzenodo.13890401%7C10.5281%2Fzenodo.1420114%7C10.5281%2Fzenodo.1420115%7C10.5281%2Fzenodo.1420116%7C10.5281%2Fzenodo.1435912%7C10.5281%2Fzenodo.14449495%7C10.5281%2Fzenodo.14502573%7C10.5281%2Fzenodo.14514729%7C10.5281%2Fzenodo.14646322%7C10.5281%2Fzenodo.1475451%7C10.5281%2Fzenodo.1475457%7C10.5281%2Fzenodo.1475459%7C10.5281%2Fzenodo.1475970%7C10.5281%2Fzenodo.1476844&corpus=all&per_page=100&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date%2Ccited_by_count%2Ccounts_by_year",
+  "retrieved_at": "2026-10-30T22:19:53.462805+00:00",
+  "response_path": "responses/dcedba57d1b0a7e54b64bf5b207c23671dee47a03d39b732eec23df91708c227.json",
+  "status": 200,
+  "response_sha256": "1f05c2300fdde58b52a187b459773d8b211d137836d8f17a49a2c321a298094c",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 37,
+      "db_response_time_ms": 24,
+      "page": 1,
+      "per_page": 100,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where DOI is (\n    10.5194/nhess-15-1407-2015 or 10.5194/os-8-859-2012\n    or 10.5194/soil-7-217-2021 or 10.5194/tc-13-665-2019 or 10.5194/tc-2017-223\n    or 10.5194/tc-8-1509-2014 or 10.5258/soton/wp00646 or 10.5258/soton/wp00732\n    or 10.5258/soton/wp00803 or 10.5258/soton/wp00839 or 10.5258/soton/wp00841\n    or 10.5281/zenodo.10013982 or 10.5281/zenodo.10068479\n    or 10.5281/zenodo.10694225 or 10.5281/zenodo.10701417\n    or 10.5281/zenodo.10795662 or 10.5281/zenodo.11034131\n    or 10.5281/zenodo.11062894 or 10.5281/zenodo.11110206\n    or 10.5281/zenodo.11156602 or 10.5281/zenodo.11179644\n    or 10.5281/zenodo.11459391 or 10.5281/zenodo.1297434\n    or 10.5281/zenodo.13739812 or 10.5281/zenodo.13759567\n    or 10.5281/zenodo.13824640 or 10.5281/zenodo.13890401\n    or 10.5281/zenodo.1420114 or 10.5281/zenodo.1420115\n    or 10.5281/zenodo.1420116 or 10.5281/zenodo.1435912\n    or 10.5281/zenodo.14449495 or 10.5281/zenodo.14502573\n    or 10.5281/zenodo.14514729 or 10.5281/zenodo.14646322\n    or 10.5281/zenodo.1475451 or 10.5281/zenodo.1475457\n    or 10.5281/zenodo.1475459 or 10.5281/zenodo.1475970\n    or 10.5281/zenodo.1476844\n  )",
+        "x_new_oql": "get works (all corpora) where DOI is (\n    10.5194/nhess-15-1407-2015 or 10.5194/os-8-859-2012\n    or 10.5194/soil-7-217-2021 or 10.5194/tc-13-665-2019 or 10.5194/tc-2017-223\n    or 10.5194/tc-8-1509-2014 or 10.5258/soton/wp00646 or 10.5258/soton/wp00732\n    or 10.5258/soton/wp00803 or 10.5258/soton/wp00839 or 10.5258/soton/wp00841\n    or 10.5281/zenodo.10013982 or 10.5281/zenodo.10068479\n    or 10.5281/zenodo.10694225 or 10.5281/zenodo.10701417\n    or 10.5281/zenodo.10795662 or 10.5281/zenodo.11034131\n    or 10.5281/zenodo.11062894 or 10.5281/zenodo.11110206\n    or 10.5281/zenodo.11156602 or 10.5281/zenodo.11179644\n    or 10.5281/zenodo.11459391 or 10.5281/zenodo.1297434\n    or 10.5281/zenodo.13739812 or 10.5281/zenodo.13759567\n    or 10.5281/zenodo.13824640 or 10.5281/zenodo.13890401\n    or 10.5281/zenodo.1420114 or 10.5281/zenodo.1420115\n    or 10.5281/zenodo.1420116 or 10.5281/zenodo.1435912\n    or 10.5281/zenodo.14449495 or 10.5281/zenodo.14502573\n    or 10.5281/zenodo.14514729 or 10.5281/zenodo.14646322\n    or 10.5281/zenodo.1475451 or 10.5281/zenodo.1475457\n    or 10.5281/zenodo.1475459 or 10.5281/zenodo.1475970\n    or 10.5281/zenodo.1476844\n  )",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "join": "or",
+              "filters": [
+                {
+                  "column_id": "doi",
+                  "value": "10.5194/nhess-15-1407-2015"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5194/os-8-859-2012"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5194/soil-7-217-2021"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5194/tc-13-665-2019"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5194/tc-2017-223"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5194/tc-8-1509-2014"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5258/soton/wp00646"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5258/soton/wp00732"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5258/soton/wp00803"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5258/soton/wp00839"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5258/soton/wp00841"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.10013982"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.10068479"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.10694225"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.10701417"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.10795662"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.11034131"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.11062894"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.11110206"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.11156602"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.11179644"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.11459391"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.1297434"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.13739812"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.13759567"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.13824640"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.13890401"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.1420114"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.1420115"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.1420116"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.1435912"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.14449495"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.14502573"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.14514729"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.14646322"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.1475451"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.1475457"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.1475459"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.1475970"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.1476844"
+                }
+              ]
+            }
+          ]
+        },
+        "url": "/works?filter=doi:10.5194%2Fnhess-15-1407-2015|10.5194%2Fos-8-859-2012|10.5194%2Fsoil-7-217-2021|10.5194%2Ftc-13-665-2019|10.5194%2Ftc-2017-223|10.5194%2Ftc-8-1509-2014|10.5258%2Fsoton%2Fwp00646|10.5258%2Fsoton%2Fwp00732|10.5258%2Fsoton%2Fwp00803|10.5258%2Fsoton%2Fwp00839|10.5258%2Fsoton%2Fwp00841|10.5281%2Fzenodo.10013982|10.5281%2Fzenodo.10068479|10.5281%2Fzenodo.10694225|10.5281%2Fzenodo.10701417|10.5281%2Fzenodo.10795662|10.5281%2Fzenodo.11034131|10.5281%2Fzenodo.11062894|10.5281%2Fzenodo.11110206|10.5281%2Fzenodo.11156602|10.5281%2Fzenodo.11179644|10.5281%2Fzenodo.11459391|10.5281%2Fzenodo.1297434|10.5281%2Fzenodo.13739812|10.5281%2Fzenodo.13759567|10.5281%2Fzenodo.13824640|10.5281%2Fzenodo.13890401|10.5281%2Fzenodo.1420114|10.5281%2Fzenodo.1420115|10.5281%2Fzenodo.1420116|10.5281%2Fzenodo.1435912|10.5281%2Fzenodo.14449495|10.5281%2Fzenodo.14502573|10.5281%2Fzenodo.14514729|10.5281%2Fzenodo.14646322|10.5281%2Fzenodo.1475451|10.5281%2Fzenodo.1475457|10.5281%2Fzenodo.1475459|10.5281%2Fzenodo.1475970|10.5281%2Fzenodo.1476844&corpus=all&per_page=100",
+        "order": "most cited (age-adjusted) first",
+        "order_default": true
+      },
+      "cost_usd": 0.0001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W3166420679",
+        "doi": "https://doi.org/10.5194/soil-7-217-2021",
+        "title": "SoilGrids 2.0: producing soil information for the globe with quantified spatial uncertainty",
+        "type": "article",
+        "publication_year": 2021,
+        "publication_date": "2021-06-14",
+        "cited_by_count": 2383,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 658
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 579
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 483
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 334
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 264
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 63
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W2900689731",
+        "doi": "https://doi.org/10.5194/tc-13-665-2019",
+        "title": "The Reference Elevation Model of Antarctica",
+        "type": "article",
+        "publication_year": 2019,
+        "publication_date": "2019-02-26",
+        "cited_by_count": 761,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 54
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 83
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 91
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 113
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 148
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 184
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 65
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 23
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W2158803142",
+        "doi": "https://doi.org/10.5194/tc-8-1509-2014",
+        "title": "The Greenland Ice Mapping Project (GIMP) land classification and surface elevation data sets",
+        "type": "article",
+        "publication_year": 2014,
+        "publication_date": "2014-08-19",
+        "cited_by_count": 590,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 14
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 25
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 28
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 34
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 92
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 95
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 45
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 44
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 65
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 49
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 47
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 31
+          },
+          {
+            "year": 2014,
+            "cited_by_count": 21
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W2084353717",
+        "doi": "https://doi.org/10.5194/os-8-859-2012",
+        "title": "Evaluation of Release-05 GRACE time-variable gravity coefficients over the ocean",
+        "type": "article",
+        "publication_year": 2012,
+        "publication_date": "2012-10-12",
+        "cited_by_count": 184,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 13
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 14
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 12
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 16
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 14
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 24
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 22
+          },
+          {
+            "year": 2014,
+            "cited_by_count": 22
+          },
+          {
+            "year": 2013,
+            "cited_by_count": 9
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W2166229287",
+        "doi": "https://doi.org/10.5194/nhess-15-1407-2015",
+        "title": "Development of a Global Fire Weather Database",
+        "type": "article",
+        "publication_year": 2015,
+        "publication_date": "2015-06-30",
+        "cited_by_count": 154,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 12
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 22
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 28
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 16
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 13
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 17
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W2767004298",
+        "doi": "https://doi.org/10.5194/tc-12-1551-2018",
+        "title": "A new digital elevation model of Antarctica derived from CryoSat-2 altimetry",
+        "type": "article",
+        "publication_year": 2018,
+        "publication_date": "2018-05-02",
+        "cited_by_count": 93,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 12
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 13
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 20
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 13
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4393843315",
+        "doi": "https://doi.org/10.5281/zenodo.1475457",
+        "title": "Soil Organic Carbon Content In X 5 G / Kg At 6 Standard Depths (0, 10, 30, 60, 100 And 200 Cm) At 250 M Resolution",
+        "type": "dataset",
+        "publication_year": 2018,
+        "publication_date": "2018-10-30",
+        "cited_by_count": 43,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 17
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 4
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4393416924",
+        "doi": "https://doi.org/10.5281/zenodo.1475451",
+        "title": "Soil Texture Classes (Usda System) For 6 Soil Depths (0, 10, 30, 60, 100 And 200 Cm) At 250 M",
+        "type": "dataset",
+        "publication_year": 2018,
+        "publication_date": "2018-10-30",
+        "cited_by_count": 40,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 15
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4393483870",
+        "doi": "https://doi.org/10.5281/zenodo.1475970",
+        "title": "Soil Bulk Density (Fine Earth) 10 X Kg / M-Cubic At 6 Standard Depths (0, 10, 30, 60, 100 And 200 Cm) At 250 M Resolution",
+        "type": "dataset",
+        "publication_year": 2018,
+        "publication_date": "2018-10-31",
+        "cited_by_count": 27,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 3
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4393757517",
+        "doi": "https://doi.org/10.5281/zenodo.3898569",
+        "title": "SWOT River Database (SWORD)",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-03-09",
+        "cited_by_count": 23,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 3
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4393822998",
+        "doi": "https://doi.org/10.5281/zenodo.1269594",
+        "title": "Global River Widths From Landsat (Grwl) Database",
+        "type": "dataset",
+        "publication_year": 2018,
+        "publication_date": "2018-06-04",
+        "cited_by_count": 23,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4393509588",
+        "doi": "https://doi.org/10.5281/zenodo.1435912",
+        "title": "Monthly Precipitation In Mm At 1 Km Resolution Based On Imerge 2014-2018",
+        "type": "dataset",
+        "publication_year": 2018,
+        "publication_date": "2018-09-26",
+        "cited_by_count": 22,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 3
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W7125771307",
+        "doi": "https://doi.org/10.5258/soton/wp00839",
+        "title": "Constrained estimates of 2015-2030 total number of people per grid square at a resolution of 3 arc (approximately 100m at the equator) R2025A version v1.",
+        "type": "dataset",
+        "publication_year": 2025,
+        "publication_date": "2025-01-01",
+        "cited_by_count": 21,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 21
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4393637434",
+        "doi": "https://doi.org/10.5281/zenodo.1475459",
+        "title": "Soil Ph In H2O At 6 Standard Depths (0, 10, 30, 60, 100 And 200 Cm) At 250 M Resolution",
+        "type": "dataset",
+        "publication_year": 2018,
+        "publication_date": "2018-10-31",
+        "cited_by_count": 20,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 6
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6892492543",
+        "doi": "https://doi.org/10.5258/soton/wp00646",
+        "title": "Global 100m Age/Sex Structures",
+        "type": "dataset",
+        "publication_year": 2018,
+        "publication_date": "2018-01-01",
+        "cited_by_count": 14,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 3
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4393540898",
+        "doi": "https://doi.org/10.5281/zenodo.1476844",
+        "title": "Predicted USDA soil great groups at 250 m (probabilities)",
+        "type": "dataset",
+        "publication_year": 2018,
+        "publication_date": "2018-11-02",
+        "cited_by_count": 13,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4394055694",
+        "doi": "https://doi.org/10.5281/zenodo.1420114",
+        "title": "Long-Term Modis Lst Day-Time And Night-Time Temperatures, Sd And Differences At 1 Km Based On The 2000–2017 Time Series",
+        "type": "dataset",
+        "publication_year": 2018,
+        "publication_date": "2018-09-17",
+        "cited_by_count": 10,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4393601818",
+        "doi": "https://doi.org/10.5281/zenodo.7813301",
+        "title": "GlobPOP: A 31-year (1990-2020) global gridded population dataset (Version 1.0-test-alpha)",
+        "type": "dataset",
+        "publication_year": 2023,
+        "publication_date": "2023-04-01",
+        "cited_by_count": 7,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4393415587",
+        "doi": "https://doi.org/10.5281/zenodo.10068478",
+        "title": "Time-series global 30 m wetland maps from 2000 to 2022",
+        "type": "dataset",
+        "publication_year": 2023,
+        "publication_date": "2023-11-03",
+        "cited_by_count": 3,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6912065163",
+        "doi": "https://doi.org/10.5281/zenodo.14449494",
+        "title": "Global human modification datasets of terrestrial ecosystems from 1990 to 2020",
+        "type": "dataset",
+        "publication_year": 2024,
+        "publication_date": "2024-12-13",
+        "cited_by_count": 3,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6893048997",
+        "doi": "https://doi.org/10.5281/zenodo.14646321",
+        "title": "Global plant trait maps based on crowdsourced biodiversity monitoring and Earth observation - 1 km - All PFTs",
+        "type": "dataset",
+        "publication_year": 2025,
+        "publication_date": "2025-03-10",
+        "cited_by_count": 2,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6911225043",
+        "doi": "https://doi.org/10.5281/zenodo.11034130",
+        "title": "Global oil palm extent and planting year from 1990 to 2021",
+        "type": "dataset",
+        "publication_year": 2024,
+        "publication_date": "2024-04-28",
+        "cited_by_count": 2,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W7125848378",
+        "doi": "https://doi.org/10.5258/soton/wp00841",
+        "title": "Estimates of 2015-2030 total number of people per grid square broken down by gender and age groupings at a resolution of 3 arc (approximately 100m at the equator) R2025A version v1.",
+        "type": "dataset",
+        "publication_year": 2025,
+        "publication_date": "2025-01-01",
+        "cited_by_count": 2,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6893099462",
+        "doi": "https://doi.org/10.5281/zenodo.14502572",
+        "title": "Global human modification datasets of terrestrial ecosystems for 2022",
+        "type": "dataset",
+        "publication_year": 2024,
+        "publication_date": "2024-12-16",
+        "cited_by_count": 1,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6911270284",
+        "doi": "https://doi.org/10.5281/zenodo.11110205",
+        "title": "UKFields",
+        "type": "dataset",
+        "publication_year": 2024,
+        "publication_date": "2024-05-03",
+        "cited_by_count": 1,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6911441336",
+        "doi": "https://doi.org/10.5281/zenodo.11062893",
+        "title": "Data, code, and outputs for: groundwater-dependent ecosystem map exposes global dryland protection needs",
+        "type": "dataset",
+        "publication_year": 2024,
+        "publication_date": "2024-07-17",
+        "cited_by_count": 1,
+        "counts_by_year": [
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6911660145",
+        "doi": "https://doi.org/10.5281/zenodo.11459390",
+        "title": "A global database of nature-based carbon offset project boundaries",
+        "type": "dataset",
+        "publication_year": 2024,
+        "publication_date": "2024-06-05",
+        "cited_by_count": 1,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6949425155",
+        "doi": "https://doi.org/10.5281/zenodo.13285541",
+        "title": "CropSuite – Crop suitability assessment for 48 crops under rainfed and irrigated conditions for Africa",
+        "type": "dataset",
+        "publication_year": 2024,
+        "publication_date": "2024-08-09",
+        "cited_by_count": 1,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6967545566",
+        "doi": "https://doi.org/10.5281/zenodo.11156601",
+        "title": "GLObal Building heights for Urban Studies (UT-GLOBUS)",
+        "type": "dataset",
+        "publication_year": 2024,
+        "publication_date": "2024-05-09",
+        "cited_by_count": 1,
+        "counts_by_year": [
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6967691957",
+        "doi": "https://doi.org/10.5281/zenodo.13890400",
+        "title": "Global Pasture Watch - Annual grassland class and extent maps at 30-m spatial resolution (2000—2022)",
+        "type": "dataset",
+        "publication_year": 2024,
+        "publication_date": "2024-10-10",
+        "cited_by_count": 1,
+        "counts_by_year": [
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6892993267",
+        "doi": "https://doi.org/10.5281/zenodo.13759566",
+        "title": "Global natural and planted forests dataset (added tiles 300-400)",
+        "type": "dataset",
+        "publication_year": 2024,
+        "publication_date": "2024-09-13",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W6911108664",
+        "doi": "https://doi.org/10.5281/zenodo.10694224",
+        "title": "National-Scale Soil Erosion Dataset of Pakistan (2005 and 2015) at 1km Spatial Resolution",
+        "type": "dataset",
+        "publication_year": 2024,
+        "publication_date": "2024-02-22",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W6929947568",
+        "doi": "https://doi.org/10.5281/zenodo.10795661",
+        "title": "GlobalHighPM₂.₅ (2022)",
+        "type": "dataset",
+        "publication_year": 2022,
+        "publication_date": "2022-04-11",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W6930226893",
+        "doi": "https://doi.org/10.5281/zenodo.10701416",
+        "title": "Global Natural and Planted Forests Mapping at Fine Spatial Resolution of 30 m",
+        "type": "dataset",
+        "publication_year": 2024,
+        "publication_date": "2024-02-24",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W6930682011",
+        "doi": "https://doi.org/10.5281/zenodo.13824639",
+        "title": "Mapping Soil Organic Carbon in the World's Largest Arid Mangrove Forest (Indus Delta, Pakistan): A Multi-Sensor Remote Sensing and Machine Learning Approach",
+        "type": "dataset",
+        "publication_year": 2024,
+        "publication_date": "2024-09-22",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W6948892663",
+        "doi": "https://doi.org/10.5258/soton/wp00732",
+        "title": "Gridded Sex-Disaggregated School-Age Population Datasets for Countries and Dependent Territories in Africa in 2020",
+        "type": "dataset",
+        "publication_year": 2022,
+        "publication_date": "2022-02-17",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W6967938854",
+        "doi": "https://doi.org/10.5281/zenodo.13269839",
+        "title": "Forest roads (Congo Basin)",
+        "type": "dataset",
+        "publication_year": 2024,
+        "publication_date": "2024-09-10",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "6683234e7b5db26e289cfd8e2bbbb9f063bd7e371fb87ad62d201e76270f3b49"
+}

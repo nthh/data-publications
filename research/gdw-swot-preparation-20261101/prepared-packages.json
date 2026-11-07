@@ -1,0 +1,715 @@
+{
+  "schema_version": 1,
+  "audit_type": "local_integrity_only",
+  "created_by": "scripts/audit_prepared.py",
+  "root": "/Users/nathan/.folia-fleets/gdw-swot-preparation-20261101/tree",
+  "hash_algorithm": "SHA-256",
+  "stream_buffer_bytes": 8388608,
+  "scientific_checks_rerun": false,
+  "publication_checks_rerun": false,
+  "packages": [
+    {
+      "dataset_id": "lakeatlas",
+      "release": "lakeatlas-v1.0-r2",
+      "integrity_status": "passed",
+      "local_integrity": {
+        "package_path_observed": "/Users/nathan/projects/data-publications/.local/lakeatlas/releases/lakeatlas-v1.0-r2-prepared",
+        "tracked_manifest_path": "datasets/lakeatlas/releases/lakeatlas-v1.0-r2/evidence/prepared-local/manifest.json",
+        "tracked_manifest_expected_sha256": "32b4877b8809cabd3e2caca8da175115e8ff8317402058846ed0db06a54d52e9",
+        "tracked_manifest_observed_sha256": "32b4877b8809cabd3e2caca8da175115e8ff8317402058846ed0db06a54d52e9",
+        "local_manifest_observed_sha256": "32b4877b8809cabd3e2caca8da175115e8ff8317402058846ed0db06a54d52e9",
+        "manifest_hash_match": true,
+        "manifest_identity": {
+          "dataset_id": "lakeatlas",
+          "release": "lakeatlas-v1.0-r2",
+          "matches_record": true
+        },
+        "snapshot": {
+          "path": "datasets/lakeatlas/releases/lakeatlas-v1.0-r2/catalog-input-r1/snapshot.json",
+          "expected_sha256": "3fa5701ff342a55daa1a0eda0e38070cd945bc902ff12bf0488c5d4ce302078b",
+          "observed_sha256": "3fa5701ff342a55daa1a0eda0e38070cd945bc902ff12bf0488c5d4ce302078b",
+          "status": "passed"
+        },
+        "declared_assets": {
+          "status": "passed",
+          "declared_asset_count": 3,
+          "verified_bytes": 1427777055,
+          "assets": [
+            {
+              "path": "assets/lakeatlas-polygons.parquet",
+              "sha256": "bbef606fd8522b230efc90e2952a67c1e4265e7bf733208fa4cc31395a7277b7",
+              "size_bytes": 1143992867,
+              "kind": "data_asset",
+              "observed_size_bytes": 1143992867,
+              "observed_sha256": "bbef606fd8522b230efc90e2952a67c1e4265e7bf733208fa4cc31395a7277b7",
+              "size_match": true,
+              "sha256_match": true,
+              "status": "passed"
+            },
+            {
+              "path": "assets/lakeatlas-pour-points.parquet",
+              "sha256": "ff621c1db763551cdb6ced8958eefcc9da76a73c16e7f7259c238bec3aae5720",
+              "size_bytes": 283780050,
+              "kind": "data_asset",
+              "observed_size_bytes": 283780050,
+              "observed_sha256": "ff621c1db763551cdb6ced8958eefcc9da76a73c16e7f7259c238bec3aae5720",
+              "size_match": true,
+              "sha256_match": true,
+              "status": "passed"
+            },
+            {
+              "path": "display/thumbnail.png",
+              "sha256": "1545b01af18207d60a182fdcc0e4117d83c73eea1db93f48a673138a1cebf15e",
+              "size_bytes": 4138,
+              "kind": "display_derivative",
+              "observed_size_bytes": 4138,
+              "observed_sha256": "1545b01af18207d60a182fdcc0e4117d83c73eea1db93f48a673138a1cebf15e",
+              "size_match": true,
+              "sha256_match": true,
+              "status": "passed"
+            }
+          ]
+        }
+      },
+      "retained_local_gates": {
+        "classification": "retained_canonical_record_values_not_rerun",
+        "validation_summary": {
+          "source_rows_per_layer": 1427688,
+          "raw_clean_rebuild": "byte_identical",
+          "spatial_clean_rebuild": "byte_identical",
+          "source_values_nulls_wkb": "passed_complete_source_reread_and_per_ID_spatial_comparison",
+          "final_columns": {
+            "lakeatlas-polygons": 310,
+            "lakeatlas-pour-points": 308
+          },
+          "final_row_groups_per_asset": 128,
+          "fixed_geographic_pruning": "passed_all_four_windows_for_both_assets",
+          "stac": "passed",
+          "portolan": "passed",
+          "http": "passed_loopback",
+          "gee": "not_run",
+          "remote_host": "not_tested"
+        },
+        "validation_paths": [
+          "datasets/lakeatlas/releases/lakeatlas-v1.0-r1/source-fidelity.json",
+          "datasets/lakeatlas/releases/lakeatlas-v1.0-r1/clean-rebuild.json",
+          "datasets/lakeatlas/releases/lakeatlas-v1.0-r2/evidence/prepared-local/evidence/source-fidelity.json",
+          "datasets/lakeatlas/releases/lakeatlas-v1.0-r2/evidence/prepared-local/evidence/clean-rebuild.json",
+          "datasets/lakeatlas/releases/lakeatlas-v1.0-r2/evidence/prepared-local/evidence/portolan-validation.json",
+          "datasets/lakeatlas/releases/lakeatlas-v1.0-r2/evidence/prepared-local/evidence/local-http-duckdb-validation.json",
+          "datasets/lakeatlas/releases/lakeatlas-v1.0-r2/evidence/prepared-local/evidence/final-package-verification.json",
+          "research/hydro-releases-20261031/lakeatlas-parent-rebuild-verification.json",
+          "research/hydro-releases-20261031/lakeatlas-parent-verification.json"
+        ],
+        "source_fidelity_report": null,
+        "release_receipt_path": "datasets/lakeatlas/releases/lakeatlas-v1.0-r2/evidence/prepared-local/package-receipt.json"
+      },
+      "public_hosting": {
+        "package_base_url": null,
+        "hosting_report_path": null,
+        "hosting_report_sha256": null,
+        "missing_fields": [
+          "package_base_url",
+          "hosting_report_path",
+          "hosting_report_sha256"
+        ],
+        "registry_status": "not_submitted"
+      }
+    },
+    {
+      "dataset_id": "free-flowing-rivers",
+      "release": "figshare-v1-local-r2",
+      "integrity_status": "passed",
+      "local_integrity": {
+        "package_path_observed": "/Users/nathan/projects/data-publications/.local/free-flowing-rivers/releases/figshare-v1-local-r2",
+        "tracked_manifest_path": "datasets/free-flowing-rivers/releases/figshare-v1-local-r2/manifest.json",
+        "tracked_manifest_expected_sha256": "756286b624de53823a2af2c26344a15dcf02070c048f5d1d02ec3f65a97d5120",
+        "tracked_manifest_observed_sha256": "756286b624de53823a2af2c26344a15dcf02070c048f5d1d02ec3f65a97d5120",
+        "local_manifest_observed_sha256": "756286b624de53823a2af2c26344a15dcf02070c048f5d1d02ec3f65a97d5120",
+        "manifest_hash_match": true,
+        "manifest_identity": {
+          "dataset_id": "free-flowing-rivers",
+          "release": "figshare-v1-local-r2",
+          "matches_record": true
+        },
+        "snapshot": {
+          "path": "datasets/free-flowing-rivers/releases/figshare-v1-local-r2/catalog-input-r1/snapshot.json",
+          "expected_sha256": "e00a14670ec104c2f866cff660ccf67058566a5a9cbb4d15c69d328dae4903ff",
+          "observed_sha256": "e00a14670ec104c2f866cff660ccf67058566a5a9cbb4d15c69d328dae4903ff",
+          "status": "passed"
+        },
+        "declared_assets": {
+          "status": "passed",
+          "declared_asset_count": 2,
+          "verified_bytes": 887135728,
+          "assets": [
+            {
+              "path": "assets/ffr-reach-network-v1.parquet",
+              "sha256": "62130e4999ba449bd2768bcdd9346bc2ba8fa4c4f06d39597e5227cd496a1a63",
+              "size_bytes": 887132886,
+              "kind": "data_asset",
+              "observed_size_bytes": 887132886,
+              "observed_sha256": "62130e4999ba449bd2768bcdd9346bc2ba8fa4c4f06d39597e5227cd496a1a63",
+              "size_match": true,
+              "sha256_match": true,
+              "status": "passed"
+            },
+            {
+              "path": "display/thumbnail.png",
+              "sha256": "c2d265154f06ccb02dced33bfa1c2f9a1ed708dc39e0caef315a96472f23532f",
+              "size_bytes": 2842,
+              "kind": "display_derivative",
+              "observed_size_bytes": 2842,
+              "observed_sha256": "c2d265154f06ccb02dced33bfa1c2f9a1ed708dc39e0caef315a96472f23532f",
+              "size_match": true,
+              "sha256_match": true,
+              "status": "passed"
+            }
+          ]
+        }
+      },
+      "retained_local_gates": {
+        "classification": "retained_canonical_record_values_not_rerun",
+        "validation_summary": {
+          "source_rows": 8477883,
+          "source_attribute_fields": 38,
+          "source_fid": "OBJECTID",
+          "final_columns": 42,
+          "source_values_nulls_wkb": "passed_complete_source_reread",
+          "raw_and_final_rebuilds": "byte_identical_clean_checkout",
+          "fault_cases_detected": 5,
+          "stac": "passed",
+          "portolan": "passed",
+          "http": "passed_loopback",
+          "gee": "not_run",
+          "remote_host": "not_tested"
+        },
+        "validation_paths": "datasets/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/package-final-package-verification.json",
+        "source_fidelity_report": null,
+        "release_receipt_path": "datasets/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/package-receipt.json"
+      },
+      "public_hosting": {
+        "package_base_url": null,
+        "hosting_report_path": null,
+        "hosting_report_sha256": null,
+        "missing_fields": [
+          "package_base_url",
+          "hosting_report_path",
+          "hosting_report_sha256"
+        ],
+        "registry_status": "not_submitted"
+      }
+    },
+    {
+      "dataset_id": "hydrolakes",
+      "release": "v1-local-r3",
+      "integrity_status": "passed",
+      "local_integrity": {
+        "package_path_observed": "/Users/nathan/projects/data-publications/.local/hydrolakes/releases/v1-local-r3",
+        "tracked_manifest_path": "datasets/hydrolakes/releases/v1-local-r3/evidence/package-manifest.json",
+        "tracked_manifest_expected_sha256": "48d1d1061f0785255f14c3d5bb7ce8a1c0b47963c45c0e3b02a70441c0b86fcc",
+        "tracked_manifest_observed_sha256": "48d1d1061f0785255f14c3d5bb7ce8a1c0b47963c45c0e3b02a70441c0b86fcc",
+        "local_manifest_observed_sha256": "48d1d1061f0785255f14c3d5bb7ce8a1c0b47963c45c0e3b02a70441c0b86fcc",
+        "manifest_hash_match": true,
+        "manifest_identity": {
+          "dataset_id": "hydrolakes",
+          "release": "v1-local-r3",
+          "matches_record": true
+        },
+        "snapshot": {
+          "path": "datasets/hydrolakes/releases/v1-local-r3/catalog-input-r1/snapshot.json",
+          "expected_sha256": "f3f5dc58cbae1e18000815c4ca183b0e444ef21642e410a57a03596de6506ab6",
+          "observed_sha256": "f3f5dc58cbae1e18000815c4ca183b0e444ef21642e410a57a03596de6506ab6",
+          "status": "passed"
+        },
+        "declared_assets": {
+          "status": "passed",
+          "declared_asset_count": 2,
+          "verified_bytes": 949602745,
+          "assets": [
+            {
+              "path": "assets/hydrolakes-polygons.parquet",
+              "sha256": "6f588d97c14651eb23bea2d74fdf2a85f218a00ff11519c81efa5512b916b7f8",
+              "size_bytes": 949598607,
+              "kind": "data_asset",
+              "observed_size_bytes": 949598607,
+              "observed_sha256": "6f588d97c14651eb23bea2d74fdf2a85f218a00ff11519c81efa5512b916b7f8",
+              "size_match": true,
+              "sha256_match": true,
+              "status": "passed"
+            },
+            {
+              "path": "display/thumbnail.png",
+              "sha256": "1545b01af18207d60a182fdcc0e4117d83c73eea1db93f48a673138a1cebf15e",
+              "size_bytes": 4138,
+              "kind": "display_derivative",
+              "observed_size_bytes": 4138,
+              "observed_sha256": "1545b01af18207d60a182fdcc0e4117d83c73eea1db93f48a673138a1cebf15e",
+              "size_match": true,
+              "sha256_match": true,
+              "status": "passed"
+            }
+          ]
+        }
+      },
+      "retained_local_gates": {
+        "classification": "retained_canonical_record_values_not_rerun",
+        "validation_summary": {
+          "source_rows": 1427688,
+          "source_cells_compared": 31409136,
+          "raw_clean_rebuild": "byte_identical",
+          "spatial_clean_rebuild": "byte_identical",
+          "source_values_nulls_wkb": "passed_complete_source_reread_and_per_ID_spatial_comparison",
+          "final_columns": 23,
+          "final_row_groups": 128,
+          "fixed_geographic_pruning": "passed_all_four_windows",
+          "stac": "passed",
+          "portolan": "passed",
+          "http": "passed_loopback",
+          "gee": "not_run",
+          "remote_host": "not_tested"
+        },
+        "validation_paths": "datasets/hydrolakes/releases/v1-local-r3/evidence/package-final-package-verification.json",
+        "source_fidelity_report": null,
+        "release_receipt_path": "datasets/hydrolakes/releases/v1-local-r3/evidence/package-receipt.json"
+      },
+      "public_hosting": {
+        "package_base_url": null,
+        "hosting_report_path": null,
+        "hosting_report_sha256": null,
+        "missing_fields": [
+          "package_base_url",
+          "hosting_report_path",
+          "hosting_report_sha256"
+        ],
+        "registry_status": "not_submitted"
+      }
+    },
+    {
+      "dataset_id": "grwl",
+      "release": "summary-v01.02-local-r1",
+      "integrity_status": "passed",
+      "local_integrity": {
+        "package_path_observed": "/Users/nathan/projects/data-publications/.local/grwl/summary-v01.02-local-r1",
+        "tracked_manifest_path": "datasets/grwl/releases/summary-v01.02-local-r1/manifest.json",
+        "tracked_manifest_expected_sha256": "a6eb5095a56461e45c57069886e9a04f0b85a5e8edc1bc9f971ac6560f1b4f4b",
+        "tracked_manifest_observed_sha256": "a6eb5095a56461e45c57069886e9a04f0b85a5e8edc1bc9f971ac6560f1b4f4b",
+        "local_manifest_observed_sha256": "a6eb5095a56461e45c57069886e9a04f0b85a5e8edc1bc9f971ac6560f1b4f4b",
+        "manifest_hash_match": true,
+        "manifest_identity": {
+          "dataset_id": "grwl",
+          "release": "summary-v01.02-local-r1",
+          "matches_record": true
+        },
+        "snapshot": {
+          "path": "datasets/grwl/releases/summary-v01.02-local-r1/catalog-input-r1/snapshot.json",
+          "expected_sha256": "bab3e13d8f4ad9315400ddd57bf7f2f721d328118965402a7e81bf3c1d4b6c7e",
+          "observed_sha256": "bab3e13d8f4ad9315400ddd57bf7f2f721d328118965402a7e81bf3c1d4b6c7e",
+          "status": "passed"
+        },
+        "declared_assets": {
+          "status": "passed",
+          "declared_asset_count": 13,
+          "verified_bytes": 132888560,
+          "assets": [
+            {
+              "path": "AGENTS.md",
+              "sha256": "3a631daec679eb8a0fc10f68589352414067086c6e72defc85b6e0f4c0d101b3",
+              "size_bytes": 380,
+              "kind": "manifest_asset",
+              "observed_size_bytes": 380,
+              "observed_sha256": "3a631daec679eb8a0fc10f68589352414067086c6e72defc85b6e0f4c0d101b3",
+              "size_match": true,
+              "sha256_match": true,
+              "status": "passed"
+            },
+            {
+              "path": "README.md",
+              "sha256": "ed92f290afe03883799efe76550d96e6f9f50f0a3902029919ed0cde6e4a7c46",
+              "size_bytes": 1155,
+              "kind": "manifest_asset",
+              "observed_size_bytes": 1155,
+              "observed_sha256": "ed92f290afe03883799efe76550d96e6f9f50f0a3902029919ed0cde6e4a7c46",
+              "size_match": true,
+              "sha256_match": true,
+              "status": "passed"
+            },
+            {
+              "path": "catalog.json",
+              "sha256": "9ada615ee211995fec21fa4312671e9bc1e41bd9d7423c936381c859f6ff8342",
+              "size_bytes": 1590,
+              "kind": "manifest_asset",
+              "observed_size_bytes": 1590,
+              "observed_sha256": "9ada615ee211995fec21fa4312671e9bc1e41bd9d7423c936381c859f6ff8342",
+              "size_match": true,
+              "sha256_match": true,
+              "status": "passed"
+            },
+            {
+              "path": "dataset.yaml",
+              "sha256": "e3e4d34e3d8e6ec10a69048ca55feb8b7f223092659f6c7da93004ed487ca31b",
+              "size_bytes": 4161,
+              "kind": "manifest_asset",
+              "observed_size_bytes": 4161,
+              "observed_sha256": "e3e4d34e3d8e6ec10a69048ca55feb8b7f223092659f6c7da93004ed487ca31b",
+              "size_match": true,
+              "sha256_match": true,
+              "status": "passed"
+            },
+            {
+              "path": "grwl/AGENTS.md",
+              "sha256": "3a631daec679eb8a0fc10f68589352414067086c6e72defc85b6e0f4c0d101b3",
+              "size_bytes": 380,
+              "kind": "manifest_asset",
+              "observed_size_bytes": 380,
+              "observed_sha256": "3a631daec679eb8a0fc10f68589352414067086c6e72defc85b6e0f4c0d101b3",
+              "size_match": true,
+              "sha256_match": true,
+              "status": "passed"
+            },
+            {
+              "path": "grwl/README.md",
+              "sha256": "3d14170d2b05d2e1af3281c9614b4a67c169df3406444662896d46a6088dc214",
+              "size_bytes": 3131,
+              "kind": "manifest_asset",
+              "observed_size_bytes": 3131,
+              "observed_sha256": "3d14170d2b05d2e1af3281c9614b4a67c169df3406444662896d46a6088dc214",
+              "size_match": true,
+              "sha256_match": true,
+              "status": "passed"
+            },
+            {
+              "path": "grwl/collection.json",
+              "sha256": "9167280dfa2737854bd2e9d5c043a672ac25417b06ecb230d1858009b9e8e78f",
+              "size_bytes": 7460,
+              "kind": "manifest_asset",
+              "observed_size_bytes": 7460,
+              "observed_sha256": "9167280dfa2737854bd2e9d5c043a672ac25417b06ecb230d1858009b9e8e78f",
+              "size_match": true,
+              "sha256_match": true,
+              "status": "passed"
+            },
+            {
+              "path": "grwl/grwl-display.pmtiles",
+              "sha256": "382b0da7d0a879f3b74c0f32a92427b51a58600aa22f703098a0d08c819eaafe",
+              "size_bytes": 86545489,
+              "kind": "manifest_asset",
+              "observed_size_bytes": 86545489,
+              "observed_sha256": "382b0da7d0a879f3b74c0f32a92427b51a58600aa22f703098a0d08c819eaafe",
+              "size_match": true,
+              "sha256_match": true,
+              "status": "passed"
+            },
+            {
+              "path": "grwl/grwl-summary-v0102.parquet",
+              "sha256": "82ac4eeac2168b1aad6e5c9ae53c0c228ffcc7c8cd3f8d795493d939e626fa9c",
+              "size_bytes": 46297145,
+              "kind": "manifest_asset",
+              "observed_size_bytes": 46297145,
+              "observed_sha256": "82ac4eeac2168b1aad6e5c9ae53c0c228ffcc7c8cd3f8d795493d939e626fa9c",
+              "size_match": true,
+              "sha256_match": true,
+              "status": "passed"
+            },
+            {
+              "path": "grwl/quality.json",
+              "sha256": "c4d61032abd667ad3c2858de08124de39e6f12a37aff71d5debdc442c67446c0",
+              "size_bytes": 1665,
+              "kind": "manifest_asset",
+              "observed_size_bytes": 1665,
+              "observed_sha256": "c4d61032abd667ad3c2858de08124de39e6f12a37aff71d5debdc442c67446c0",
+              "size_match": true,
+              "sha256_match": true,
+              "status": "passed"
+            },
+            {
+              "path": "grwl/schema.json",
+              "sha256": "b30b106035cce463beae82492df5b9bca7ce5bb8e88a3ecdb37a792dceb0a134",
+              "size_bytes": 2891,
+              "kind": "manifest_asset",
+              "observed_size_bytes": 2891,
+              "observed_sha256": "b30b106035cce463beae82492df5b9bca7ce5bb8e88a3ecdb37a792dceb0a134",
+              "size_match": true,
+              "sha256_match": true,
+              "status": "passed"
+            },
+            {
+              "path": "grwl/styles/grwl.json",
+              "sha256": "363b9181e5b5ca099d2388cce6e756eea73b0d5ed4a15faab4655b3826134778",
+              "size_bytes": 901,
+              "kind": "manifest_asset",
+              "observed_size_bytes": 901,
+              "observed_sha256": "363b9181e5b5ca099d2388cce6e756eea73b0d5ed4a15faab4655b3826134778",
+              "size_match": true,
+              "sha256_match": true,
+              "status": "passed"
+            },
+            {
+              "path": "grwl/thumbnail.png",
+              "sha256": "15f9e47cc2949ad7fc76b2f2f25300416ae44262c6dc875cc8f8868f8a93c4db",
+              "size_bytes": 22212,
+              "kind": "manifest_asset",
+              "observed_size_bytes": 22212,
+              "observed_sha256": "15f9e47cc2949ad7fc76b2f2f25300416ae44262c6dc875cc8f8868f8a93c4db",
+              "size_match": true,
+              "sha256_match": true,
+              "status": "passed"
+            }
+          ]
+        }
+      },
+      "retained_local_gates": {
+        "classification": "retained_canonical_record_values_not_rerun",
+        "validation_summary": {
+          "source_rows": 42077,
+          "numeric_cells": 420770,
+          "parts": 42117,
+          "vertices": 3129821,
+          "assets_rebuilt_identically": 13,
+          "fault_cases_detected": 8,
+          "pmtiles_maxzoom_unique_ids": 42077,
+          "stac": "passed",
+          "portolan": "passed",
+          "http": "passed_loopback",
+          "gee": "not_run_version_mismatch",
+          "remote_host": "not_tested"
+        },
+        "validation_paths": "datasets/grwl/releases/summary-v01.02-local-r1/validation.json",
+        "source_fidelity_report": null,
+        "release_receipt_path": "datasets/grwl/releases/summary-v01.02-local-r1/package-receipt.json"
+      },
+      "public_hosting": {
+        "package_base_url": null,
+        "hosting_report_path": null,
+        "hosting_report_sha256": null,
+        "missing_fields": [
+          "package_base_url",
+          "hosting_report_path",
+          "hosting_report_sha256"
+        ],
+        "registry_status": "not_submitted"
+      }
+    },
+    {
+      "dataset_id": "river-plastic-inputs",
+      "release": "figshare-v6-r2",
+      "integrity_status": "passed",
+      "local_integrity": {
+        "package_path_observed": "/Users/nathan/projects/data-publications/.local/river-plastic-inputs/figshare-v6-r2",
+        "tracked_manifest_path": "datasets/river-plastic-inputs/releases/figshare-v6-r2/manifest.json",
+        "tracked_manifest_expected_sha256": "ad86186ea962c3c0dfc62feb28aac7a68145ac3c7451f2602812c5b5278c2300",
+        "tracked_manifest_observed_sha256": "ad86186ea962c3c0dfc62feb28aac7a68145ac3c7451f2602812c5b5278c2300",
+        "local_manifest_observed_sha256": "ad86186ea962c3c0dfc62feb28aac7a68145ac3c7451f2602812c5b5278c2300",
+        "manifest_hash_match": true,
+        "manifest_identity": {
+          "dataset_id": "river-plastic-inputs",
+          "release": "figshare-v6-r2",
+          "matches_record": true
+        },
+        "snapshot": {
+          "path": "datasets/river-plastic-inputs/releases/figshare-v6-r2/catalog-input-r1/snapshot.json",
+          "expected_sha256": "e00804f782c3f97fed59f2ab5cc90f9dbf916d5265adfb8f6b025c00ede6f64a",
+          "observed_sha256": "e00804f782c3f97fed59f2ab5cc90f9dbf916d5265adfb8f6b025c00ede6f64a",
+          "status": "passed"
+        },
+        "declared_assets": {
+          "status": "passed",
+          "declared_asset_count": 14,
+          "verified_bytes": 10315399,
+          "assets": [
+            {
+              "path": "AGENTS.md",
+              "sha256": "7bbf3ad0c6010d61f434981cb5a6a02d9fbae8685aaf22a33c706fe45b7aae6c",
+              "size_bytes": 1586,
+              "kind": "manifest_asset",
+              "observed_size_bytes": 1586,
+              "observed_sha256": "7bbf3ad0c6010d61f434981cb5a6a02d9fbae8685aaf22a33c706fe45b7aae6c",
+              "size_match": true,
+              "sha256_match": true,
+              "status": "passed"
+            },
+            {
+              "path": "LICENSE.txt",
+              "sha256": "7cad97bff02dbe7dc7f3449d29bf320dc6b5a4d525791f0415167fdb4327e38b",
+              "size_bytes": 517,
+              "kind": "manifest_asset",
+              "observed_size_bytes": 517,
+              "observed_sha256": "7cad97bff02dbe7dc7f3449d29bf320dc6b5a4d525791f0415167fdb4327e38b",
+              "size_match": true,
+              "sha256_match": true,
+              "status": "passed"
+            },
+            {
+              "path": "README.md",
+              "sha256": "6438aaf8b630f09c95a41056f7a0e89eeffef4f1fc513946403683156cc41c0c",
+              "size_bytes": 1679,
+              "kind": "manifest_asset",
+              "observed_size_bytes": 1679,
+              "observed_sha256": "6438aaf8b630f09c95a41056f7a0e89eeffef4f1fc513946403683156cc41c0c",
+              "size_match": true,
+              "sha256_match": true,
+              "status": "passed"
+            },
+            {
+              "path": "catalog.json",
+              "sha256": "00ef7a3ffc6c1eb9f58799d87fdcb1743e45d12f64318f327eb7f1d03565da4f",
+              "size_bytes": 1464,
+              "kind": "manifest_asset",
+              "observed_size_bytes": 1464,
+              "observed_sha256": "00ef7a3ffc6c1eb9f58799d87fdcb1743e45d12f64318f327eb7f1d03565da4f",
+              "size_match": true,
+              "sha256_match": true,
+              "status": "passed"
+            },
+            {
+              "path": "dataset.yaml",
+              "sha256": "168063a15fb69da8b4c110f56121029195c7f58793cbd1e5f34e89ae50d1f442",
+              "size_bytes": 5492,
+              "kind": "manifest_asset",
+              "observed_size_bytes": 5492,
+              "observed_sha256": "168063a15fb69da8b4c110f56121029195c7f58793cbd1e5f34e89ae50d1f442",
+              "size_match": true,
+              "sha256_match": true,
+              "status": "passed"
+            },
+            {
+              "path": "river-plastic-inputs/AGENTS.md",
+              "sha256": "7bbf3ad0c6010d61f434981cb5a6a02d9fbae8685aaf22a33c706fe45b7aae6c",
+              "size_bytes": 1586,
+              "kind": "manifest_asset",
+              "observed_size_bytes": 1586,
+              "observed_sha256": "7bbf3ad0c6010d61f434981cb5a6a02d9fbae8685aaf22a33c706fe45b7aae6c",
+              "size_match": true,
+              "sha256_match": true,
+              "status": "passed"
+            },
+            {
+              "path": "river-plastic-inputs/README.md",
+              "sha256": "ac0011966396424991fcdf6c29f985722c0b163e0b8d51c3fdda0aaa97748569",
+              "size_bytes": 9710,
+              "kind": "manifest_asset",
+              "observed_size_bytes": 9710,
+              "observed_sha256": "ac0011966396424991fcdf6c29f985722c0b163e0b8d51c3fdda0aaa97748569",
+              "size_match": true,
+              "sha256_match": true,
+              "status": "passed"
+            },
+            {
+              "path": "river-plastic-inputs/collection.json",
+              "sha256": "5d20fde7a74d725f4d2c7f9f01ab305272abca47445a634995cd177c1aff2d9d",
+              "size_bytes": 14030,
+              "kind": "manifest_asset",
+              "observed_size_bytes": 14030,
+              "observed_sha256": "5d20fde7a74d725f4d2c7f9f01ab305272abca47445a634995cd177c1aff2d9d",
+              "size_match": true,
+              "sha256_match": true,
+              "status": "passed"
+            },
+            {
+              "path": "river-plastic-inputs/quality.json",
+              "sha256": "938199ee9cb0f9ef8522b2dbd1d6d32eb70c562ff816fc3d3849b11d74dcb643",
+              "size_bytes": 2420,
+              "kind": "manifest_asset",
+              "observed_size_bytes": 2420,
+              "observed_sha256": "938199ee9cb0f9ef8522b2dbd1d6d32eb70c562ff816fc3d3849b11d74dcb643",
+              "size_match": true,
+              "sha256_match": true,
+              "status": "passed"
+            },
+            {
+              "path": "river-plastic-inputs/river-plastic-inputs.parquet",
+              "sha256": "de35bd69b144565af1fcd33f915e8521a1af502e3ac50235560990f6c441e8c9",
+              "size_bytes": 6360991,
+              "kind": "manifest_asset",
+              "observed_size_bytes": 6360991,
+              "observed_sha256": "de35bd69b144565af1fcd33f915e8521a1af502e3ac50235560990f6c441e8c9",
+              "size_match": true,
+              "sha256_match": true,
+              "status": "passed"
+            },
+            {
+              "path": "river-plastic-inputs/river-plastic-inputs.pmtiles",
+              "sha256": "ca412601ea905a43bf55d5251f27e2c2d9b1403b2eb93adea1525c4fa7bc05fe",
+              "size_bytes": 3705340,
+              "kind": "manifest_asset",
+              "observed_size_bytes": 3705340,
+              "observed_sha256": "ca412601ea905a43bf55d5251f27e2c2d9b1403b2eb93adea1525c4fa7bc05fe",
+              "size_match": true,
+              "sha256_match": true,
+              "status": "passed"
+            },
+            {
+              "path": "river-plastic-inputs/schema.json",
+              "sha256": "7858a6c3b596e9d9b322f5aa9896209e7cc2c0750de267293cef4f6befb1f828",
+              "size_bytes": 9542,
+              "kind": "manifest_asset",
+              "observed_size_bytes": 9542,
+              "observed_sha256": "7858a6c3b596e9d9b322f5aa9896209e7cc2c0750de267293cef4f6befb1f828",
+              "size_match": true,
+              "sha256_match": true,
+              "status": "passed"
+            },
+            {
+              "path": "river-plastic-inputs/styles/annual-input.json",
+              "sha256": "ae46644a56751e87743cb5f3e6fdb4fd32074919678158bcb858f95722431c22",
+              "size_bytes": 2118,
+              "kind": "manifest_asset",
+              "observed_size_bytes": 2118,
+              "observed_sha256": "ae46644a56751e87743cb5f3e6fdb4fd32074919678158bcb858f95722431c22",
+              "size_match": true,
+              "sha256_match": true,
+              "status": "passed"
+            },
+            {
+              "path": "river-plastic-inputs/thumbnail.png",
+              "sha256": "ff0e30b5c3768605f41b75c0bce515d82eeffa9d2422a4d408b8efbad46034c1",
+              "size_bytes": 198924,
+              "kind": "manifest_asset",
+              "observed_size_bytes": 198924,
+              "observed_sha256": "ff0e30b5c3768605f41b75c0bce515d82eeffa9d2422a4d408b8efbad46034c1",
+              "size_match": true,
+              "sha256_match": true,
+              "status": "passed"
+            }
+          ]
+        }
+      },
+      "retained_local_gates": {
+        "classification": "retained_canonical_record_values_not_rerun",
+        "validation_summary": {
+          "source_rows": 40760,
+          "numeric_cells": 2160280,
+          "assets_rebuilt_identically": 14,
+          "fault_tests_passed": 39,
+          "source_data_hashes_unchanged": true,
+          "gee": "passed_with_documented_geometry_difference",
+          "strict_coordinate_parity": "failed",
+          "maximum_gee_displacement_meters": 0.34945638926427325,
+          "remote_host": "not_tested"
+        },
+        "validation_paths": "datasets/river-plastic-inputs/releases/figshare-v6-r2/rehearsal.json",
+        "source_fidelity_report": null,
+        "release_receipt_path": "datasets/river-plastic-inputs/releases/figshare-v6-r2/release-receipt.json"
+      },
+      "public_hosting": {
+        "package_base_url": null,
+        "hosting_report_path": null,
+        "hosting_report_sha256": null,
+        "missing_fields": [
+          "package_base_url",
+          "hosting_report_path",
+          "hosting_report_sha256"
+        ],
+        "registry_status": "not_submitted"
+      }
+    }
+  ],
+  "catalog_publish_config": {
+    "hosting_url": null,
+    "browser_url_template": null,
+    "destination": null,
+    "public_base": null,
+    "region": null
+  },
+  "status": "passed"
+}

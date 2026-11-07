@@ -1,0 +1,80 @@
+{
+  "request_url": "https://api.openalex.org/works?search=Evaluation+of+Release+05+time-variable+gravity+coefficients+over+the+ocean&corpus=all&per_page=5&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date",
+  "retrieved_at": "2026-10-30T22:07:45.082755+00:00",
+  "response_path": "responses/f9a84c2f6e1c31e6a61fd98251de8fe0cba1806d06d5b36f6eeedc4c324a2c23.json",
+  "status": 200,
+  "response_sha256": "61dad14407e20f29946a168308a1f850fb5fbdd628c48b887ff5112bbc02b33f",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 6185,
+      "db_response_time_ms": 255,
+      "page": 1,
+      "per_page": 5,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where full text has (Evaluation of Release 05 time-variable gravity coefficients over the ocean)",
+        "x_new_oql": "get works (all corpora) where full text has (Evaluation of Release 05 time-variable gravity coefficients over the ocean)",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "Evaluation of Release 05 time-variable gravity coefficients over the ocean",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:Evaluation of Release 05 time-variable gravity coefficients over the ocean&corpus=all&per_page=5",
+        "order": "best matches first",
+        "order_default": true
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W2084353717",
+        "doi": "https://doi.org/10.5194/os-8-859-2012",
+        "title": "Evaluation of Release-05 GRACE time-variable gravity coefficients over the ocean",
+        "type": "article",
+        "publication_year": 2012,
+        "publication_date": "2012-10-12"
+      },
+      {
+        "id": "https://openalex.org/W2972965616",
+        "doi": "https://doi.org/10.3390/rs11182108",
+        "title": "Improved Estimates of Geocenter Variability from Time-Variable Gravity and Ocean Model Outputs",
+        "type": "article",
+        "publication_year": 2019,
+        "publication_date": "2019-09-10"
+      },
+      {
+        "id": "https://openalex.org/W2770809312",
+        "doi": "https://doi.org/10.5194/se-9-323-2018",
+        "title": "Time-variable gravity fields and ocean mass change from 37 months of kinematic Swarm orbits",
+        "type": "article",
+        "publication_year": 2018,
+        "publication_date": "2018-03-23"
+      },
+      {
+        "id": "https://openalex.org/W2155418964",
+        "doi": "https://doi.org/10.1002/grl.50527",
+        "title": "Time‐variable gravity observations of ice sheet mass balance: Precision and limitations of the GRACE satellite data",
+        "type": "article",
+        "publication_year": 2013,
+        "publication_date": "2013-05-02"
+      },
+      {
+        "id": "https://openalex.org/W1976525272",
+        "doi": "https://doi.org/10.1002/2013gl058632",
+        "title": "Ensemble prediction and intercomparison analysis of GRACE time‐variable gravity field models",
+        "type": "article",
+        "publication_year": 2014,
+        "publication_date": "2014-03-03"
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "c0c8a428f2f44c44cf37865f64818d4c9f458408f6034f5ee187ceff5dacf738"
+}

@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "status": "predeclared_follow_up",
+  "reason": "The first HydroLAKES PMTiles stores the exact Hylak_id in MVT Feature.id; Tippecanoe --use-attribute-for-id removes the redundant property. The original property-presence expectation therefore fails. Preserve that failed attempt and evaluate the native feature-ID representation explicitly.",
+  "candidate": "hydrolakes/display-v1-failed-003/assets/hydrolakes-polygons.pmtiles",
+  "asset_contract": {
+    "id_encoding": "mvt_feature_id",
+    "id_field": "Hylak_id",
+    "meaning": "MVT Feature.id is the authoritative encoded value of the named source ID column. No inferred spatial join or reassigned identifier is permitted."
+  },
+  "acceptance": [
+    "Every encoded MVT ID must be a safe exact integer and equal the source Hylak_id. Complete source-ID coverage/accounting remains required.",
+    "For this encoding only, normalize the named source ID property from the already checked MVT Feature.id before exact attribute comparison and UI display. An existing contradictory property fails.",
+    "Every other selected source attribute and bbox scalar must still compare exactly, with the same documented null-omission behavior.",
+    "The 30m geometry tolerance, fixed geographic samples, immutable source pins and partial-read browser requirements remain unchanged.",
+    "The viewer must expose Hylak_id from Feature.id and successfully fetch all source attributes with that exact ID and original bbox.",
+    "Other new datasets retain their ID both in Feature.id and properties; no global skipping of ID checks."
+  ],
+  "reproducibility": "The adopted recipe explicitly records --use-attribute-for-id Hylak_id. Retain original structural/header-check failure and do not call it a passing property-presence check. New candidate metadata binds original archive bytes and all subsequent validation reports."
+}

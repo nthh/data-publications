@@ -1,0 +1,73 @@
+schema_version: 1
+id: modis_8day_snow
+title: MOD10A2061 Snow Cover 8-Day L3 Global 500m
+community_url: https://gee-community-catalog.org/projects/modis_8day_snow
+audit:
+  snapshot: gee-community-audit-20261029
+  family_key: modis_8day_snow
+  unique_gee_asset_count: 1
+  initial_queue: review_external_native_counterpart
+  folia_registry_status: direct_or_component
+  folia_registry_ids:
+  - '@nasa/modis/mod10a2'
+  source_coop_urls: []
+  source_coop_scope: null
+  external_native_urls:
+  - https://planetarycomputer.microsoft.com/api/stac/v1/collections/modis-10A2-061
+  external_native_scope: Same MOD10A2 Collection 6.1 snow observations; PC native
+    sinusoidal grid, GEE ingested UTM-converted variant.
+triage:
+  decision: pending
+  priority: normal
+review:
+  citation_assessment:
+    as_of: '2026-10-29'
+    provider: OpenAlex
+    evidence_path: research/citations/rankings.json
+    evidence_key: modis_8day_snow
+    geographic_scope: global
+    paper_count_status: unknown
+    max_paper_citations: null
+    max_data_doi_citations: 15
+    top_paper_doi: null
+    top_paper_openalex_id: null
+    citation_scope: associated_dataset_publication
+
+# Cross-catalog discovery: global-candidates-20261031
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'planetary: review_note: Global MODIS snow-cover 8-day product; all-world STAC bbox.
+    Existing canonical record cites this exact collection.; stac_bbox: [-180, -90, 180, 90]; temporal_interval:
+    [["2000-02-18T00:00:00Z", null]] Existing catalog identity.'
+  sources:
+  - provider: planetary_computer
+    entry_id: modis-10A2-061
+    url: https://planetarycomputer.microsoft.com/api/stac/v1/collections/modis-10A2-061
+    relationship: same_family
+  access:
+  - provider: planetary_computer
+    status: native_available
+    formats:
+    - COG
+    - HDF
+    summary: 'Collection metadata declares per-item data assets / provider storage roots in the listed
+      native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain
+      unvalidated. Existing catalog identity.'
+    license_summary: 'note: Do not treat this metadata label as legal clearance.; review_status: provider
+      declaration captured; terms and redistribution permission not independently reviewed; stac_license:
+      other'
+    proposed_outputs:
+    - COG
+    - HDF
+    rationale: Reuse existing canonical record; native COG item assets are declared; verify bytes before
+      any publication.
+    evidence_urls:
+    - https://planetarycomputer.microsoft.com/api/stac/v1/collections/modis-10A2-061
+    - https://planetarycomputer.microsoft.com/dataset/modis-10A2-061
+  citations: []
+  evidence:
+  - path: research/global-candidates-20261031/planetary/reviewed.json
+    sha256: 07da016851a07f3e3e0937e120ce46442785f4e9096e563d92c1a3c0ce9e616a
+    key: modis_snow_8day_v061

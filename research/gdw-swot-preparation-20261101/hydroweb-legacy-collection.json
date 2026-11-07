@@ -1,0 +1,191 @@
+{
+  "type": "Collection",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://github.com/cnes/stac-extensions/dcs/1.O.O/noschema.json",
+    "https://github.com/cnes/stac-extensions/version/1.O.O/noschema.json",
+    "https://github.com/cnes/stac-extensions/online_capabilities/1.O.O/noschema.json",
+    "https://github.com/cnes/stac-extensions/resolution/1.O.O/noschema.json",
+    "https://github.com/cnes/stac-extensions/version/atial/1.O.O/noschema.json",
+    "https://github.com/cnes/stac-extensions/hydro/1.O.O/noschema.json"
+  ],
+  "id": "SWOT_PRIOR_LAKE_DATABASE",
+  "title": "SWOT Prior Lake Database - Scientific",
+  "description": "This collection provides a global inventory of lakes and reservoirs, organized by continents and basins and the full set of ancillary parameters for SWOT Lake processing.",
+  "keywords": [
+    "swot",
+    "water",
+    "lake",
+    "reservoir",
+    "prior",
+    "PLD"
+  ],
+  "license": "ETALAB 2.0",
+  "providers": [
+    {
+      "url": "https://cnes.fr",
+      "name": "CNES",
+      "roles": [
+        "processor",
+        "licensor"
+      ],
+      "description": "Centre National des Etudes Spatiales (French Space Agency)"
+    },
+    {
+      "url": "https://www.theia-land.fr/",
+      "name": "Theia",
+      "roles": [
+        "host"
+      ],
+      "description": "Theia Data and Services centre for continental surfaces"
+    },
+    {
+      "url": "https://www.ucla.edu/",
+      "name": "UCLA",
+      "roles": [
+        "producer"
+      ],
+      "description": "University of California, Los Angeles"
+    }
+  ],
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -180.0,
+          -90.0,
+          180.0,
+          90.0
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2000-01-01T00:00:00Z",
+          "2099-12-31T23:59:59.9Z"
+        ]
+      ]
+    }
+  },
+  "summaries": {
+    "dcs:item_type": "tile",
+    "dcs:sensor": "",
+    "platforms": [],
+    "collection_families": [
+      "swot-references"
+    ],
+    "online_capabilities:map": true,
+    "hydro:data_type": "SWOT_PLD",
+    "total_items": 122,
+    "online_capabilities:chart": false,
+    "dcs:data_format": "Polygon",
+    "release": "2.03 Sci",
+    "missions": [
+      "SWOT"
+    ],
+    "latest": true,
+    "online_capabilities:where_filter": true,
+    "product_type": "REFERENCE",
+    "dcs:data_file_format": "SQLite",
+    "instruments": [],
+    "hydro:variables": [
+      {
+        "uri": "https://w3id.org/hysope2/hydrography",
+        "name": "Hydrography",
+        "layers": [
+          {
+            "name": "lakes",
+            "unit": "1",
+            "asset_key": "pld"
+          }
+        ],
+        "categories": [
+          "https://w3id.org/hysope2/toBeDefined"
+        ]
+      }
+    ],
+    "dcs:acquisition_type": "composite",
+    "short_title": "SWOT Prior Lake Database - Scientific",
+    "resolution:spatial": 0,
+    "collection_type": "internal",
+    "reference_layer": true
+  },
+  "links": [
+    {
+      "href": "https://hydroweb.next.theia-land.fr/api/v1/rs-catalog/stac",
+      "rel": "root",
+      "type": "application/json",
+      "title": "STAC hysope2 landing page",
+      "method": "GET",
+      "headers": {}
+    },
+    {
+      "href": "https://hydroweb.next.theia-land.fr/api/v1/rs-catalog/stac/collections/SWOT_PRIOR_LAKE_DATABASE",
+      "rel": "self",
+      "type": "application/json",
+      "title": "SWOT_PRIOR_LAKE_DATABASE",
+      "method": "GET",
+      "headers": {}
+    },
+    {
+      "href": "https://hydroweb.next.theia-land.fr/api/v1/rs-catalog/stac/collections/SWOT_PRIOR_LAKE_DATABASE/items",
+      "rel": "items",
+      "type": "application/geo+json",
+      "title": "Collections items",
+      "method": "GET",
+      "headers": {}
+    },
+    {
+      "href": "https://www.etalab.gouv.fr/wp-content/uploads/2018/11/open-licence.pdf",
+      "rel": "license",
+      "type": "application/pdf",
+      "title": "ETALAB 2.0"
+    },
+    {
+      "href": "https://doi.org/10.1029/2023WR036896",
+      "rel": "doi",
+      "type": "application/html"
+    }
+  ],
+  "assets": {
+    "pld": {
+      "file:size": 0,
+      "href": "https://hydroweb.next.theia-land.fr/geoserver/REF_DATA/wms?service=WMS&version=1.1.0&request=GetMap&layers=swot_prior_lake_db&bbox=-180.0%2C-90.0%2C180.0%2C90.0&width=768&height=384&srs=EPSG%3A4326&styles=&format=application/openlayers",
+      "title": "pld",
+      "description": "WMS layer for Swot lakes",
+      "type": "image/png+wms_view_parameters",
+      "roles": [
+        "wms"
+      ]
+    },
+    "thumbnail": {
+      "file:size": 0,
+      "href": "https://hydroweb.next.theia-land.fr/docs/collections/SWOT_PLD.webp",
+      "type": "image/webp",
+      "roles": [
+        "thumbnail"
+      ]
+    },
+    "wms_capabilities": {
+      "file:size": 0,
+      "href": "https://hydroweb.next.theia-land.fr/geoserver/REF_DATA/ows?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities",
+      "title": "Get Capabilites",
+      "description": "WMS Get Capabilites",
+      "type": "application/vnd.ogc.wms_xml",
+      "roles": [
+        "capabilities",
+        "wms"
+      ]
+    },
+    "description": {
+      "file:size": 0,
+      "href": "https://hydroweb.next.theia-land.fr/docs/collections/SWOT_PLD.md",
+      "type": "text/markdown"
+    }
+  },
+  "context": {
+    "matched": 122
+  },
+  "numberMatched": 122
+}

@@ -1,0 +1,49 @@
+schema_version: 1
+id: esa_worldcover
+title: ESA WorldCover
+intake:
+  kind: official_catalog
+  reference_url: https://planetarycomputer.microsoft.com/api/stac/v1/collections/esa-worldcover
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: near_global
+  spatial_coverage: 'planetary: review_note: Explicitly described by producer as global land-cover maps;
+    STAC latitude extent is 60°S–82.75°N.; stac_bbox: [-180, -60, 180, 82.75]; temporal_interval: [["2020-01-01T00:00:00Z",
+    "2021-12-31T23:59:59Z"]] Existing esa_iq is a 2020 input-quality layer, not the land-cover map. Related
+    canonical records, with distinct scope: esa_iq.'
+  sources:
+  - provider: planetary_computer
+    entry_id: esa-worldcover
+    url: https://planetarycomputer.microsoft.com/api/stac/v1/collections/esa-worldcover
+    relationship: exact_dataset
+  access:
+  - provider: planetary_computer
+    status: native_available
+    formats:
+    - COG
+    summary: 'Collection metadata declares per-item data assets / provider storage roots in the listed
+      native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain
+      unvalidated. Existing esa_iq is a 2020 input-quality layer, not the land-cover map.'
+    license_summary: 'note: Do not treat this metadata label as legal clearance.; review_status: provider
+      declaration captured; terms and redistribution permission not independently reviewed; stac_license:
+      CC-BY-4.0'
+    proposed_outputs:
+    - COG
+    rationale: Reuse declared COG item assets; preserve distinct 2020/2021 product years and class semantics.
+    evidence_urls:
+    - https://planetarycomputer.microsoft.com/api/stac/v1/collections/esa-worldcover
+    - https://planetarycomputer.microsoft.com/dataset/esa-worldcover
+  citations: []
+  evidence:
+  - path: research/global-candidates-20261031/planetary/reviewed.json
+    sha256: 07da016851a07f3e3e0937e120ce46442785f4e9096e563d92c1a3c0ce9e616a
+    key: esa_worldcover

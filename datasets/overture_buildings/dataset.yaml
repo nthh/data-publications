@@ -1,0 +1,78 @@
+schema_version: 1
+id: overture_buildings
+title: 'Overture Map Foundation Buildings Layer: CONUS Extract'
+community_url: https://gee-community-catalog.org/projects/overture_buildings
+audit:
+  snapshot: gee-community-audit-20261029
+  family_key: overture_buildings
+  unique_gee_asset_count: 1
+  initial_queue: review_source_coop_counterpart
+  folia_registry_status: direct_or_component
+  folia_registry_ids:
+  - '@overture/maps/buildings'
+  source_coop_urls:
+  - https://source.coop/cholmes/overture
+  source_coop_scope: Same Overture Buildings theme; GEE item is CONUS extract from
+    release 2024-07-22 while Source repo describes older experiments/release; version
+    parity unverified.
+  external_native_urls:
+  - https://source.coop/cholmes/overture
+  external_native_scope: Same Overture Buildings theme; GEE item is CONUS extract
+    from release 2024-07-22 while Source repo describes older experiments/release;
+    version parity unverified.
+triage:
+  decision: pending
+  priority: normal
+review:
+  citation_assessment:
+    as_of: '2026-10-29'
+    provider: OpenAlex
+    evidence_path: research/citations/rankings.json
+    evidence_key: overture_buildings
+    geographic_scope: regional
+    paper_count_status: unknown
+    max_paper_citations: null
+    max_data_doi_citations: null
+    top_paper_doi: null
+    top_paper_openalex_id: null
+    citation_scope: associated_dataset_publication
+
+# Cross-catalog discovery: global-candidates-20261031
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: regional
+  spatial_coverage: 'reuse: The GEE item under this canonical family is a CONUS extract from the 2024-07-22.0
+    release; the Source Cooperative reference describes an older same-theme experiment/release with parity
+    unverified. This row is regional and does not imply global coverage. Prior observation dated 2026-10-29;
+    no new remote access check. The reviewed source item is regional CONUS. Source Cooperative reference
+    is an older same-theme publication with release parity unverified; no global scope inferred.'
+  sources:
+  - provider: source_coop
+    entry_id: cholmes/overture
+    url: https://source.coop/cholmes/overture
+    relationship: same_family
+  access:
+  - provider: source_coop
+    status: unknown
+    formats: []
+    summary: The frozen 2026-10-29 community-audit crosswalk records a Source Cooperative repository reference
+      for the Overture Buildings theme, but says it contains an older experiment/release; version parity
+      is unverified against the GEE CONUS extract from release 2024-07-22. No asset inspection was performed
+      here; no format is claimed. Prior observation dated 2026-10-29; no new remote access check. The
+      reviewed source item is regional CONUS. Source Cooperative reference is an older same-theme publication
+      with release parity unverified; no global scope inferred.
+    observed_on: '2026-10-29'
+    license_summary: No exact release-level license/redistribution check was retained for this host; review
+      theme and release terms.
+    proposed_outputs: []
+    rationale: Preserve the prior counterpart lead and release mismatch. Do not assume a global, current
+      or exact CONUS copy based on repository URL alone.
+    evidence_urls:
+    - https://source.coop/cholmes/overture
+    - https://gee-community-catalog.org/projects/overture_buildings
+  citations: []
+  evidence:
+  - path: research/global-candidates-20261031/reuse/reviewed.json
+    sha256: 936d932d9ec3305e1499934f4cdc530b00e5e518b08e647671356646dbd85de8
+    key: overture_buildings_sourcecoop_older_experiment_host

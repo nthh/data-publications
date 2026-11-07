@@ -1,0 +1,255 @@
+{
+  "reviewed_on": "2026-10-30",
+  "recommendation": "Retain SoilGrids as a global baseline; qualify and register the existing mean-only Icechunk store. Consider uncertainty layers as a distinct useful publication scope. Evaluate alternatives per property/depth/region, without claiming universal scientific supersession.",
+  "existing_publication": {
+    "producer": "ISRIC",
+    "publisher": "Colin Hill (chill)",
+    "url": "https://source.coop/chill/soilgrids",
+    "version_path": "v0.1.0.icechunk",
+    "documented_tag": "soilgrids-2.0.0",
+    "format": "Icechunk repository containing sharded Zarr v3 arrays",
+    "resolution_m": 250,
+    "native_crs": "Interrupted Goode Homolosine, no EPSG code",
+    "depth_intervals_cm": [
+      [
+        0,
+        5
+      ],
+      [
+        5,
+        15
+      ],
+      [
+        15,
+        30
+      ],
+      [
+        30,
+        60
+      ],
+      [
+        60,
+        100
+      ],
+      [
+        100,
+        200
+      ]
+    ],
+    "depth_properties": [
+      "bdod",
+      "cec",
+      "cfvo",
+      "clay",
+      "nitrogen",
+      "ocd",
+      "phh2o",
+      "sand",
+      "silt",
+      "soc"
+    ],
+    "other_properties": {
+      "ocs": "0\u201330 cm organic carbon stocks"
+    },
+    "statistics": [
+      "mean"
+    ],
+    "documented_missing": [
+      "Q0.05",
+      "Q0.50 (median)",
+      "Q0.95",
+      "relative uncertainty layer",
+      "WRB soil-class probability products",
+      "landmask",
+      "original ISRIC 1 km/5 km aggregates"
+    ],
+    "size": "Publisher reports ~177 GB native plus ~90 GB overviews, not newly measured transfer bytes.",
+    "quality_status": "Publisher documents reversible scaling/source-tile checks. No independent raster comparison or reader test executed in this review.",
+    "access_status": "Product page and metadata documentation readable through web tool. Direct GET of data.source.coop README returned HTTP403; retained receipt. Full store accessibility remains unqualified.",
+    "reader_note": "Icechunk-aware reader required; not a generic xr.open_zarr(URL) root. Verify Folia/Portolan access and pin immutable tag or snapshot.",
+    "overview_note": "Publisher describes chained means for display. Overviews are not uncertainty maps or exact substitutes for independently aggregated source products."
+  },
+  "new_publication_candidates": [
+    {
+      "scope": "Original SoilGrids Q0.05/Q0.50/Q0.95 at native depths, starting with one property such as SOC",
+      "basis": "Explicitly omitted by this Source Cooperative publication; producer documents these statistics.",
+      "priority": "Higher incremental value than another copy of existing means.",
+      "limits": "No claim that these are absent from every other host. Pin source runs/grid/units and check existing distribution before building."
+    },
+    {
+      "scope": "Volumetric water retention at 10/33/1500 kPa",
+      "basis": "Documented by current ISRIC layer page; not among the published store's ten depth properties.",
+      "priority": "Potential additional gap requiring source qualification.",
+      "limits": "Actual source files/versions were not located or inventoried here; do not treat as ready to build."
+    },
+    {
+      "scope": "WRB class probabilities",
+      "basis": "Explicitly excluded from the Source Cooperative publication.",
+      "priority": "Separate classification product if needed.",
+      "limits": "ISRIC says these reuse/aggregate 2017 predictions; they are not newly trained v2 class maps. Different grid and identity from v2 numeric properties."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "OpenLandMap-soildb (2026 paper)",
+      "extent": "Global prediction domain excluding deserts/permanent ice per producer README",
+      "resolution": "30 m means; numeric-property uncertainty products at 120 m",
+      "depth_intervals_cm": [
+        [
+          0,
+          30
+        ],
+        [
+          30,
+          60
+        ],
+        [
+          60,
+          100
+        ]
+      ],
+      "time_scope": "Carbon/pH use period-specific predictions around 2000\u20132022; other variables need asset-level checking. Not every property has a dynamic series.",
+      "properties": "SOC content/density, bulk density, pH, sand/silt/clay, plus separate soil-type products. Not the full SoilGrids variable set.",
+      "uncertainty": "P16/P84 nominal 68% intervals, different from SoilGrids P05/P95 nominal 90%. Calibration and accuracy need independent matched validation.",
+      "format": "Producer-built COGs listed on OpenGeoHub S3; GEE and limited Zenodo distributions also exist.",
+      "metadata_review": {
+        "listed_asset_rows": 1082,
+        "numeric_30m_means": 57,
+        "numeric_120m_rows": 207,
+        "soil_type_rows": 818
+      },
+      "caveats": [
+        "New release differs from legacy 250 m OpenLandMap GEE products.",
+        "Index lists URLs; no object existence, COG compliance or pixel values verified.",
+        "Zenodo scope is a 120 m first/last-period subset; do not infer it contains the entire 30 m release.",
+        "Finer grid or author-reported internal metrics do not establish superiority to SoilGrids."
+      ],
+      "sources": [
+        "openlandmap_paper",
+        "openlandmap_index",
+        "openlandmap_repo"
+      ]
+    },
+    {
+      "name": "Harmonized World Soil Database v2.01",
+      "extent": "Global",
+      "resolution": "About 1 km (30 arc-seconds)",
+      "depth_intervals_cm": [
+        [
+          0,
+          20
+        ],
+        [
+          20,
+          40
+        ],
+        [
+          40,
+          60
+        ],
+        [
+          60,
+          80
+        ],
+        [
+          80,
+          100
+        ],
+        [
+          100,
+          150
+        ],
+        [
+          150,
+          200
+        ]
+      ],
+      "purpose": "Harmonized soil mapping units/classification and attributes assembled from national/regional inventories.",
+      "format": "Raster linked to attribute database (.mdb); a useful potential COG plus Parquet mapping representation.",
+      "caveats": [
+        "Coarser and different mapping-unit semantics; not automatically a more accurate pixel prediction.",
+        "Retain component proportions and one-to-many attributes when converting.",
+        "Redistribution terms/current exact artifacts not qualified here."
+      ],
+      "sources": [
+        "hwsd"
+      ]
+    },
+    {
+      "name": "iSDAsoil",
+      "extent": "Africa only",
+      "resolution": "30 m",
+      "depth_intervals_cm": [
+        [
+          0,
+          20
+        ],
+        [
+          20,
+          50
+        ]
+      ],
+      "purpose": "20+ soil properties, including agricultural nutrient variables, plus model-error products.",
+      "format": "Already COG on public AWS with STAC; no account required for listed open bucket.",
+      "uncertainty": "Most products include mean and model error expressed as one standard deviation; transformations are property-specific.",
+      "license": "CC-BY-4.0 per AWS producer listing",
+      "caveats": [
+        "Regional alternative, not a global replacement.",
+        "Finer nominal resolution does not establish better accuracy at every site."
+      ],
+      "sources": [
+        "isdasoil",
+        "isdasoil_coverage",
+        "isdasoil_aws"
+      ]
+    }
+  ],
+  "validation_plan": "Compare matching property, units, depth support, masks, dates and grid support. Use independent samples not used to train either model; separate regions before evaluation and assess both prediction error and interval coverage. No such experiment ran here.",
+  "sources": {
+    "soilgrids": {
+      "url": "https://isric.org/explore/soilgrids",
+      "checked_on": "2026-10-30"
+    },
+    "soilgrids_layers": {
+      "url": "https://docs.isric.org/globaldata/soilgrids/SoilGrids_faqs_01.html",
+      "checked_on": "2026-10-30"
+    },
+    "soilgrids_classes": {
+      "url": "https://docs.isric.org/globaldata/soilgrids/SoilGrids_faqs_03.html",
+      "checked_on": "2026-10-30"
+    },
+    "sourcecoop": {
+      "url": "https://source.coop/chill/soilgrids",
+      "checked_on": "2026-10-30"
+    },
+    "openlandmap_paper": {
+      "url": "https://essd.copernicus.org/articles/18/989/2026/",
+      "checked_on": "2026-10-30"
+    },
+    "openlandmap_index": {
+      "url": "https://raw.githubusercontent.com/openlandmap/soildb/main/tables/OpenLandMap_soildb_COGS.csv",
+      "checked_on": "2026-10-30"
+    },
+    "openlandmap_repo": {
+      "url": "https://github.com/openlandmap/soildb",
+      "checked_on": "2026-10-30"
+    },
+    "hwsd": {
+      "url": "https://www.fao.org/land-water/resources/tools/databases/hwsd/en",
+      "checked_on": "2026-10-30"
+    },
+    "isdasoil": {
+      "url": "https://www.isda-africa.com/isdasoil/isdasoil-on-aws/",
+      "checked_on": "2026-10-30"
+    },
+    "isdasoil_coverage": {
+      "url": "https://www.isda-africa.com/isdasoil/",
+      "checked_on": "2026-10-30"
+    },
+    "isdasoil_aws": {
+      "url": "https://registry.opendata.aws/isdasoil/",
+      "checked_on": "2026-10-30"
+    }
+  },
+  "scope_limits": "Documentation and small metadata indexes only; no data bodies, GEE/cloud jobs, private storage, publication or registry changes."
+}

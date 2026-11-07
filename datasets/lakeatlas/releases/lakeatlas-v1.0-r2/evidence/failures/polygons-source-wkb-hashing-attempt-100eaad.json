@@ -1,0 +1,44 @@
+{
+  "asset": "lakeatlas-polygons-spatial",
+  "error": "peak RSS 1173078016 bytes reached configured cap 1000000000 in phase source_wkb_hashing",
+  "error_type": "SpatialOrderError",
+  "failed_report_path": "local:lakes/releases/lakeatlas-v1.0-r2-spatial-primary-attempt4/reports/lakeatlas-polygons-spatial.json",
+  "failed_report_sha256": "cc334b0d8bf14ebc0dc502e3917a2d503f407742e24d22b699dfb2232ef7cd4f",
+  "failure_phase": "source_wkb_hashing",
+  "observed_peak_rss_bytes": 1173078016,
+  "raw_source_changed": false,
+  "requested_parameters": {
+    "batch_rows": 128,
+    "buckets": 128,
+    "buffer_rows": 32,
+    "geometry_column": "geometry",
+    "identifier_column": "OBJECTID",
+    "memory_cap_bytes": 1000000000,
+    "minimum_remaining_free_bytes": 10000000000,
+    "minimum_start_free_bytes": 40000000000,
+    "row_group_size": 16384,
+    "task_disk_limit_bytes": 8000000000,
+    "task_owned_baseline_bytes": 1965481673
+  },
+  "retained_partial_artifacts": [
+    {
+      "allocated_bytes": 1157685248,
+      "path": "data/lakeatlas-polygons-spatial.parquet.partial-34389",
+      "sha256": "bbef606fd8522b230efc90e2952a67c1e4265e7bf733208fa4cc31395a7277b7",
+      "size_bytes": 1143992867
+    }
+  ],
+  "retained_partial_totals": {
+    "allocated_bytes": 1157685248,
+    "files": 1,
+    "size_bytes": 1143992867
+  },
+  "source": {
+    "asset": "lakeatlas-polygons",
+    "sha256": "f1e69b9db782314151bb496d0d7b613e015e59bf628c9100f998c2b67eda77e2",
+    "size_bytes": 1238572245
+  },
+  "stage_output_created": true,
+  "status": "failed",
+  "workflow_revision": "100eaadad0e42a6f12d61c08de7d061eb5bac499"
+}

@@ -1,0 +1,49 @@
+schema_version: 1
+id: sentinel_1_rtc
+title: Sentinel 1 Radiometrically Terrain Corrected (RTC)
+intake:
+  kind: official_catalog
+  reference_url: https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: near_global
+  spatial_coverage: 'planetary: review_note: Globally distributed Sentinel-1 RTC archive, but coverage
+    is per acquisition/swath; the world STAC bbox is only an envelope, not wall-to-wall coverage.; stac_bbox:
+    [-180, -90, 180, 90]; temporal_interval: [["2014-10-10T00:28:21Z", null]] Distinct named producer
+    product; retain exact source edition and footprint.'
+  sources:
+  - provider: planetary_computer
+    entry_id: sentinel-1-rtc
+    url: https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc
+    relationship: exact_dataset
+  access:
+  - provider: planetary_computer
+    status: native_available
+    formats:
+    - COG
+    summary: 'Collection metadata declares per-item data assets / provider storage roots in the listed
+      native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain
+      unvalidated. Distinct named producer product; retain exact source edition and footprint.'
+    license_summary: 'note: Do not treat this metadata label as legal clearance.; review_status: provider
+      declaration captured; terms and redistribution permission not independently reviewed; stac_license:
+      CC-BY-4.0'
+    proposed_outputs:
+    - COG
+    rationale: Reuse declared COG assets; retain polarization, orbit and RTC processing metadata.
+    evidence_urls:
+    - https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc
+    - https://planetarycomputer.microsoft.com/dataset/sentinel-1-rtc
+  citations: []
+  evidence:
+  - path: research/global-candidates-20261031/planetary/reviewed.json
+    sha256: 07da016851a07f3e3e0937e120ce46442785f4e9096e563d92c1a3c0ce9e616a
+    key: sentinel_1_rtc

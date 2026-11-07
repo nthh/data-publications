@@ -1,0 +1,77 @@
+schema_version: 1
+id: grod
+title: Global River Obstruction Database (GROD)
+community_url: https://gee-community-catalog.org/projects/grod
+audit:
+  snapshot: gee-community-audit-20261029
+  family_key: grod
+  unique_gee_asset_count: 1
+  initial_queue: research_original_source
+  folia_registry_status: not_identified
+  folia_registry_ids: []
+  source_coop_urls: []
+  source_coop_scope: null
+  external_native_urls: []
+  external_native_scope: null
+triage:
+  decision: pending
+  priority: normal
+review:
+  as_of: '2026-10-29'
+  original_source: https://zenodo.org/records/5793918
+  version: v1.1
+  source_files:
+  - name: grod_v1.0.csv
+    size_bytes: 2534554
+    provider_checksum: md5:a1fdd5ba0e709858b4c02beb3c0fdb50
+    url: https://zenodo.org/api/records/5793918/files/grod_v1.0.csv/content
+  - name: GROD_v1.1.csv
+    size_bytes: 2536955
+    provider_checksum: md5:3187c2b260f2ab03b1367a3152de6021
+    url: https://zenodo.org/api/records/5793918/files/GROD_v1.1.csv/content
+  license:
+    id: CC-BY-4.0
+    evidence_url: https://zenodo.org/api/records/5793918
+    evidence_path: research/availability/zenodo-records.json
+    scope: Zenodo record metadata.license.id is cc-by-4.0; this is data-record metadata,
+      not an inference from the paper or catalog documentation.
+  proposed_outputs:
+  - geoparquet
+  - pmtiles
+  remaining:
+  - Check existing native mirrors and exact GEE release correspondence.
+  - Verify downloaded bytes against provider MD5 and compute SHA-256.
+  - Inspect coordinate validity, identifiers and schema before conversion.
+  source_record_id: '5793918'
+  proposed_scope: GROD_v1.1.csv only; v1.0 is also present in the record and must
+    not be silently combined.
+  geographic_scope: global
+  priority_reason: Retained as a global candidate; citation-prioritized review now
+    starts with the most cited global families.
+  coverage:
+    description: 'Global large-river network: the study surveyed 2.1 million km of
+      rivers at least 30 m wide and identified 30,549 obstructions. Coverage is limited
+      to the surveyed GRWL river network; small streams and all possible barriers
+      are not exhaustively represented.'
+    evidence_url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2021WR030386
+    dataset_url: https://zenodo.org/records/5793918
+    release_date: '2021-12-20'
+    types:
+    - dam
+    - lock
+    - low head dam
+    - channel dam
+    - partial dam 1
+    - partial dam 2
+  citation_assessment:
+    as_of: '2026-10-29'
+    provider: OpenAlex
+    evidence_path: research/citations/rankings.json
+    evidence_key: grod
+    geographic_scope: global
+    paper_count_status: matched
+    max_paper_citations: 57
+    max_data_doi_citations: null
+    top_paper_doi: https://doi.org/10.1029/2021wr030386
+    top_paper_openalex_id: https://openalex.org/W4206102773
+    citation_scope: associated_dataset_publication

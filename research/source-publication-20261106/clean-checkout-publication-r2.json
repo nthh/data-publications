@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "source_commit": "b1208b6c86df65b502f58cc16c5122bca14e364d",
+  "source_tree_sha1": "f4a1fd793c14170591454a65946a938a69ee9d2c",
+  "checkout": "/Users/nathan/.folia-fleets/source-publication-clean-20261107-r2/tree",
+  "clean_snapshot_commit": "276fa461ef6d3b48a8a8e57418cfec79edec46fe",
+  "clean_snapshot_tree_sha1": "f4a1fd793c14170591454a65946a938a69ee9d2c",
+  "history_commit_count": 1,
+  "old_source_commit_available": false,
+  "tracked_tree_matches_source": true,
+  "local_bulk_data_present": false,
+  "checkout_git_status_clean": true,
+  "archive_note": "git archive of b1208b6 was extracted, then two tiny tracked PMTiles ignored by the fresh repository's generic *.pmtiles rule were force-staged before the sole synthetic commit; the final tree SHA matches the source tree exactly.",
+  "environment": {
+    "catalog_python": "/Users/nathan/projects/data-publications/.venv/bin/python",
+    "publication_test_python": "/Users/nathan/.folia-fleets/source-publication-20261106/tree/scripts/source_publish/.venv/bin/python",
+    "python_version": "3.12.12",
+    "duckdb_version": "1.5.2",
+    "node_version": "v24.21.0",
+    "source_publish_uv_lock_sha256": "123042892fe9a9d53d4af65961e2ce509cb491530aa3c466bb2f830792dee415",
+    "borrowed_locked_environments": true,
+    "fresh_dependency_install": false
+  },
+  "pinned_files": {
+    "upload_py_sha256": "f6fbc7d6acb47136fc33d77784b4318879b8f81cd07ebea6a63e2f23d798ce8a",
+    "test_source_upload_py_sha256": "3ae7754e2830b1162452ec3c5503833e7a4508d6de041de4544f6252a1581db4",
+    "multipart_resume_criteria_sha256": "b729d60914d31f9605dc6569647d2a73efdc135a09f647874c1d0828fea5a330",
+    "portolan_browser_harness_sha256": "1aceee0dcec781afd2d9d44f35f55efc4b50c6620d42728b2fb9b51e97c8e26c"
+  },
+  "results": [
+    {
+      "name": "catalog",
+      "command": "/Users/nathan/projects/data-publications/.venv/bin/python scripts/catalog.py --check",
+      "exit_code": 0,
+      "output": "{\n  \"records_checked\": 453,\n  \"supplemental_records_checked\": 90,\n  \"family_keys_checked\": 363,\n  \"citations_checked\": 363,\n  \"decisions\": {\n    \"defer\": 3,\n    \"pending\": 443,\n    \"publish_conversion\": 6,\n    \"reuse_existing\": 1\n  }\n}\n",
+      "wall_time_seconds": 6.774445541
+    },
+    {
+      "name": "source_products",
+      "command": "/Users/nathan/projects/data-publications/.venv/bin/python scripts/source_products.py check",
+      "exit_code": 0,
+      "output": "",
+      "wall_time_seconds": 2.253371375
+    },
+    {
+      "name": "publication_catalog",
+      "command": "/Users/nathan/projects/data-publications/.venv/bin/python scripts/publication_catalog.py check",
+      "exit_code": 0,
+      "output": "Catalog check passed; 4 published collections.\n",
+      "wall_time_seconds": 4.004081958
+    },
+    {
+      "name": "provenance",
+      "command": "/Users/nathan/projects/data-publications/.venv/bin/python scripts/check_provenance.py",
+      "exit_code": 0,
+      "output": "{\n  \"status\": \"passed\",\n  \"historical_entries\": 186,\n  \"unique_blobs\": 104\n}\n",
+      "wall_time_seconds": 1.4375605839999999
+    },
+    {
+      "name": "pytest",
+      "command": "/Users/nathan/.folia-fleets/source-publication-20261106/tree/scripts/source_publish/.venv/bin/python -m pytest -q -p no:cacheprovider tests/test_source_upload.py tests/test_source_api.py tests/test_hosted_validation.py tests/test_bounded_http.py tests/test_query_hints.py tests/test_hosted_viewer.py",
+      "exit_code": 0,
+      "output": "........................................................................ [ 69%]\n......s........................                                          [100%]\n102 passed, 1 skipped in 1.10s\n",
+      "wall_time_seconds": 2.761019417
+    },
+    {
+      "name": "portolan_self_test",
+      "command": "node scripts/cloud_viewer/portolan-browser-check.mjs --self-test",
+      "exit_code": 0,
+      "output": "offline predicates passed: bounded ranges, Source product binding, verified HEAD classification, PMTiles tile-data proof, exact Browser common-prefix style-label binding with duplicate rejection, and external route construction\n",
+      "wall_time_seconds": 1.42046575
+    }
+  ],
+  "summary": {
+    "status": "passed_with_one_environment_skip",
+    "publication_pytest_passed": 102,
+    "publication_pytest_skipped": 1,
+    "required_command_failures": 0
+  },
+  "gaps": [
+    "The loopback HTTP test skips because this sandbox refuses binding 127.0.0.1. Direct fake-opener bounded HTTP boundary tests passed; a real Source DuckDB-to-proxy run was previously checked separately.",
+    "Reused locked Python environments from the existing checkout; this rehearsal does not establish a clean dependency install.",
+    "No conversion rebuild, live Source upload, or live Portolan browser check was part of this clean-checkout rehearsal.",
+    "This snapshot is pinned to b1208b6; later uncommitted multipart criteria wording changes are outside this snapshot."
+  ],
+  "sandbox_skip_follow_up": {
+    "name": "loopback_fixture_only",
+    "command": "/Users/nathan/.folia-fleets/source-publication-20261106/tree/scripts/source_publish/.venv/bin/python -m pytest -q -p no:cacheprovider tests/test_bounded_http.py::test_loopback_serves_only_exact_bounded_routes",
+    "cwd": "/Users/nathan/.folia-fleets/source-publication-clean-20261107-r2/tree",
+    "execution": "require_escalated for local 127.0.0.1 fixture binding only; no external network",
+    "exit_code": 0,
+    "output": ".                                                                        [100%]\n1 passed in 0.54s\n",
+    "wall_time_seconds": 1.373512875,
+    "closes_original_sandbox_only_skip": true,
+    "original_suite_result_retained": "102 passed, 1 skipped in 1.10s"
+  }
+}

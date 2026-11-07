@@ -1,0 +1,74 @@
+{
+  "checks": [
+    "GeoParquet metadata",
+    "asset checksums",
+    "HTTP 206/CORS and range cap",
+    "DuckDB local/HTTP subset match"
+  ],
+  "http_and_subset": {
+    "base_url": "http://127.0.0.1:65013",
+    "cors_preflight": "OPTIONS 204; wildcard origin; GET/HEAD/OPTIONS and Range permitted",
+    "duckdb_subsets": [
+      {
+        "asset_id": "hydrolakes-polygons",
+        "bbox": [
+          50.035560742186576,
+          41.711529945759224,
+          50.755560742186574,
+          41.990412124782125
+        ],
+        "duckdb_http_bytes_served": 71499958,
+        "http_probe_bytes": 8388656,
+        "identifier_wkb_sha256_multiset_sum": "241926043883ddf91fb8d8e7a951923f652185d81d3f7f5cde3def2aeb7cef77",
+        "local_remote_equal": true,
+        "nonempty_geometry_rows": 1,
+        "query_engine": "DuckDB 1.5.2",
+        "rows": 1
+      }
+    ],
+    "max_probe_response_bytes": 8388608,
+    "ranges": [
+      {
+        "asset_id": "hydrolakes-polygons",
+        "cors": "*",
+        "range": "bytes=0-31",
+        "response_bytes": 32,
+        "status": 206
+      },
+      {
+        "asset_id": "hydrolakes-polygons",
+        "cors": "*",
+        "range": "bytes=-16",
+        "response_bytes": 16,
+        "status": 206
+      },
+      {
+        "asset_id": "hydrolakes-polygons",
+        "cors": "*",
+        "range": "bytes=1001702073-1001702136",
+        "response_bytes": 0,
+        "status": 416
+      },
+      {
+        "asset_id": "hydrolakes-polygons",
+        "cors": "*",
+        "range": "bytes=0-8388607",
+        "response_bytes": 8388608,
+        "status": 206
+      },
+      {
+        "asset_id": "hydrolakes-polygons",
+        "cors": "*",
+        "range": "bytes=0-134217728",
+        "response_bytes": 0,
+        "status": 416
+      }
+    ],
+    "status": "passed"
+  },
+  "release_manifest_sha256": "afbb0abfd166dfe9e30d167faee67993a1f86f1337b41a74b26a1f29e0cbc89d",
+  "status": "passed",
+  "validated_asset_ids": [
+    "hydrolakes-polygons"
+  ]
+}

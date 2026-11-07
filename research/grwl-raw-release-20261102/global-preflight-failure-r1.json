@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "status": "failed_preflight",
+  "builder_git_revision": "d0e3cc2",
+  "source_archive_sha256": "78072f67991b0cf9eb3373c7a9c314c0da826857c698dd03d20421b2d0d3bbec",
+  "error_type": "ValueError",
+  "error": "Unsupported noninteger scale for utm_east in NN29: 10",
+  "output_directory_created": false,
+  "source_data_modified": false,
+  "retained_context": "Global preflight stopped before writing analytical output. DBF header inspection found NN29 UTM fields declared as decimal; common schema must accept this without coercion or rounding.",
+  "diagnostic_paths": [
+    "global-dbf-schema-inspection.json",
+    "nn29-utm-decimal-inspection.json"
+  ]
+}

@@ -1,0 +1,1470 @@
+{
+  "audit_version": 1,
+  "reviewed_on": "2026-10-31",
+  "recorded_at": "2026-10-31T22:52:38.840129+00:00",
+  "repository_commit_reviewed": "51431339824c0d51e5f558bf02c9be8b2d221282",
+  "scope": "Read-only comparison of the five prepared local dataset packages and publication repository with pinned upstream guidance. No catalog migration, data rebuild, upload, registry submission or remote repository creation.",
+  "conclusion": {
+    "git_backed_guidance": "partially_aligned",
+    "prior_portolan_skills_consulted": false,
+    "skills_consulted_for_this_audit": [
+      "git-backed-catalog",
+      "portolan-bootstrap",
+      "portolan-cli",
+      "portolan-migrate"
+    ],
+    "prior_official_validator_use": "Rashid CLI 0.1.8 ran on all five packages; no prior portolan check execution was found in the build scripts or saved evidence. STAC Node validation is distinct from stac-check advisory linting.",
+    "fresh_checks": "All five packages pass both Portolan CLI 0.8.0 (its compatible Rashid 0.1.8 dependency) and standalone Rashid 0.3.0, with zero errors and warnings. Each has informational upstream-STAC-link advice; LakeATLAS also has two visual-derivative advisories.",
+    "readiness": "Five validated analytic packages are prepared locally. Passing local validators does not establish complete Git-backed workflow adoption, browser usability, public hosting, or registry acceptance."
+  },
+  "source_interpretation": {
+    "git_backed_best_practices": "Non-normative guidance: its directory layout, central publish config, and navigation links are recommendations, not independent Core conformance requirements.",
+    "custom_pipeline": "Custom Python converters and dataset.yaml as the canonical metadata source remain valid. Neither portolan init/add nor CLI-specific versions.json is required by the specification.",
+    "tool_versions": "Versions are those pinned by the consulted skills, not a claim that every package is the newest on PyPI. CLI 0.8.0 requires rashid>=0.1.5,<0.2.0, so Rashid 0.3.0 was tested in a separate environment; no dependency overrides were used.",
+    "manual_quality": "Rendering viability and scientific/field semantics need review beyond automated schema and local-byte checks."
+  },
+  "aligned": [
+    {
+      "topic": "Git and data separation",
+      "evidence": [
+        ".gitignore",
+        "datasets/",
+        "scripts/",
+        "uv.lock"
+      ],
+      "finding": "Canonical metadata, build code and evidence are tracked. Bulk GeoParquet, PMTiles and environments remain in ignored local storage."
+    },
+    {
+      "topic": "Reproducibility and provenance",
+      "evidence": [
+        "docs/publishing.md",
+        "scripts/release_tools/README.md"
+      ],
+      "finding": "Source pins, licensing, checksums, fidelity tests and same-code clean rebuild evidence are retained with immutable packages."
+    },
+    {
+      "topic": "Real local validation",
+      "evidence": [
+        "scripts/release_tools/package_release.py",
+        "datasets/grwl/reproduce.py",
+        "datasets/river-plastic-inputs/validate.py"
+      ],
+      "finding": "The pipelines invoke Rashid, rather than treating custom JSON checks as Portolan conformance. Local HTTP range/CORS and DuckDB checks are distinct from future public-host checks."
+    },
+    {
+      "topic": "Relative structural links and companion docs",
+      "finding": "All five local catalogs carry navigable relative structural links plus linked README and AGENTS documents."
+    }
+  ],
+  "gaps": [
+    {
+      "id": "GIT-01",
+      "kind": "best_practice",
+      "status": "open",
+      "topic": "Tracked publishable catalog tree",
+      "finding": "The repository has canonical records and release evidence snapshots, but no single tracked, directly navigable publication catalog tree. There is no catalog/ tree at the reviewed commit.",
+      "next_step": "Generate a separate catalog/catalog.json tree from the existing canonical records and approved release metadata. Keep generated publication metadata distinct from build tools and historical evidence.",
+      "source": "https://github.com/portolan-sdi/portolan-spec/blob/a2f3380fe238aec91e016eed9429463fe2791da3/specs/best-practices/git-backed-catalogs.md"
+    },
+    {
+      "id": "GIT-02",
+      "kind": "best_practice",
+      "status": "open",
+      "topic": "CI validation and publish configuration",
+      "finding": "There are no tracked .github workflows or centralized catalog.publish.yaml, and no selected publication mechanism. Existing local validation is not a CI gate.",
+      "next_step": "Pin the validator and upstream spec/skill revisions, add metadata-only PR checks, full local data checks before packaging, stac-check advisory linting, and a single configured publisher. Keep publication actions explicitly authorized.",
+      "source": "https://github.com/portolan-sdi/portolan-skills/blob/1714d9ab672e6a1bbc56ca12458e41b14484d426/skills/git-backed-catalog/SKILL.md"
+    },
+    {
+      "id": "NAV-01",
+      "kind": "skill_guidance",
+      "status": "pending_real_destinations",
+      "topic": "Repository, issues, browser and hosting navigation",
+      "finding": "The five catalog/collection trees lack vcs, issues, browser alternate and hosting about links. The Git repository has no remote, and the packages have no public destination yet.",
+      "next_step": "Generate these links from confirmed repository and hosting configuration when those destinations exist; do not invent URLs.",
+      "source": "https://github.com/portolan-sdi/portolan-skills/blob/1714d9ab672e6a1bbc56ca12458e41b14484d426/skills/portolan-bootstrap/reference/catalog-navigation.md"
+    },
+    {
+      "id": "VIZ-01",
+      "kind": "normative_outcome_not_established",
+      "status": "open",
+      "topic": "Browser rendering for three hydro packages",
+      "datasets": [
+        "free-flowing-rivers",
+        "hydrolakes",
+        "lakeatlas"
+      ],
+      "finding": "These packages have analytic GeoParquet plus PNG previews but no visual derivative or style asset. A workable browser render path has not been demonstrated. Their large source files should not be assumed to satisfy the rendering requirement merely because the validator passes. River-plastic inputs and GRWL do include PMTiles and styles.",
+      "next_step": "Produce and visually inspect appropriately styled PMTiles, or demonstrate another viable zero-infrastructure render path, in a new immutable release when this work is authorized.",
+      "source": "https://github.com/portolan-sdi/portolan-spec/blob/a2f3380fe238aec91e016eed9429463fe2791da3/specs/portolan/core.md#visualization"
+    },
+    {
+      "id": "DOC-01",
+      "kind": "recommended_semantics_and_skill_quality",
+      "status": "open",
+      "topic": "LakeATLAS field descriptions and dataset-specific usage guidance",
+      "datasets": [
+        "lakeatlas",
+        "free-flowing-rivers",
+        "hydrolakes"
+      ],
+      "finding": "LakeATLAS has 618 asset-scoped table:columns entries (310 distinct names) with zero descriptions. Its field dictionaries are schema-derived. The three generic hydro package AGENTS documents lack worked queries and dataset-specific joining/interpretation guidance.",
+      "next_step": "Populate cited field meanings, units, sentinel values and join guidance from the producer documentation, and run the examples as written in the generated docs. Preserve original source columns and values.",
+      "source": "https://github.com/portolan-sdi/portolan-spec/blob/a2f3380fe238aec91e016eed9429463fe2791da3/specs/portolan/core.md#metadata"
+    },
+    {
+      "id": "PUB-01",
+      "kind": "publication_verification",
+      "status": "pending_publication",
+      "topic": "Real hosted access and consumer examples",
+      "finding": "Public anonymous access, real hosting CORS/ranges, published catalog reachability and documentation examples against public URLs have not been checked because the packages remain local. Loopback checks do not establish these properties.",
+      "next_step": "After an authorized upload, verify public byte ranges, CORS, catalog links, checksums, browser rendering and representative subset queries before registry submission.",
+      "source": "https://github.com/portolan-sdi/portolan-spec/blob/a2f3380fe238aec91e016eed9429463fe2791da3/specs/portolan/core.md#data-storage"
+    },
+    {
+      "id": "META-01",
+      "kind": "cli_advisory",
+      "status": "open",
+      "topic": "Undefined legacy portolan fields",
+      "finding": "CLI 0.8.0 emits a legacy-note advisory on GRWL, Free-Flowing Rivers, HydroLAKES and LakeATLAS for portolan: fields that the specification does not define. These do not fail either validator.",
+      "next_step": "Review and stop generating unused legacy fields in the next metadata release; preserve existing immutable packages and reports.",
+      "source": "https://github.com/portolan-sdi/portolan-skills/blob/1714d9ab672e6a1bbc56ca12458e41b14484d426/skills/portolan-cli/SKILL.md"
+    }
+  ],
+  "recommended_direction": "Keep one shared repository and one canonical dataset.yaml per dataset. Add a generated publication tree, a pinned validation gate and a single publisher before publication. The template-style publishing approach fits the existing custom converters; avoid mixing it with portolan push for the same tree. Address render and semantic-documentation gaps in new immutable metadata/package releases without rebuilding scientifically equivalent analytic bytes unnecessarily.",
+  "source_snapshots": [
+    {
+      "url": "https://github.com/portolan-sdi/portolan-skills/blob/1714d9ab672e6a1bbc56ca12458e41b14484d426/pins.toml",
+      "repository": "portolan-skills",
+      "commit": "1714d9ab672e6a1bbc56ca12458e41b14484d426",
+      "path": "pins.toml",
+      "sha256": "4db6f82cfa051ebcc6b78cf8071465c88c76da45d7ae40dcc797d2eee97c90b3",
+      "bytes": 552
+    },
+    {
+      "url": "https://github.com/portolan-sdi/portolan-skills/blob/1714d9ab672e6a1bbc56ca12458e41b14484d426/skills/git-backed-catalog/SKILL.md",
+      "repository": "portolan-skills",
+      "commit": "1714d9ab672e6a1bbc56ca12458e41b14484d426",
+      "path": "skills/git-backed-catalog/SKILL.md",
+      "sha256": "3e4c31e9b89406d1623405129935ba93464426bf8a857200609eb8f687adf032",
+      "bytes": 11776
+    },
+    {
+      "url": "https://github.com/portolan-sdi/portolan-skills/blob/1714d9ab672e6a1bbc56ca12458e41b14484d426/skills/portolan-bootstrap/SKILL.md",
+      "repository": "portolan-skills",
+      "commit": "1714d9ab672e6a1bbc56ca12458e41b14484d426",
+      "path": "skills/portolan-bootstrap/SKILL.md",
+      "sha256": "b6507693aef479cf148f460a8de2c9cecf8d28b448a4dc6215989eab8f9355bd",
+      "bytes": 28346
+    },
+    {
+      "url": "https://github.com/portolan-sdi/portolan-skills/blob/1714d9ab672e6a1bbc56ca12458e41b14484d426/skills/portolan-bootstrap/reference/catalog-navigation.md",
+      "repository": "portolan-skills",
+      "commit": "1714d9ab672e6a1bbc56ca12458e41b14484d426",
+      "path": "skills/portolan-bootstrap/reference/catalog-navigation.md",
+      "sha256": "10d82f37c80fb1e87e53af6554c0e197c22a72f93134531ece86e7882fa2d81a",
+      "bytes": 3552
+    },
+    {
+      "url": "https://github.com/portolan-sdi/portolan-skills/blob/1714d9ab672e6a1bbc56ca12458e41b14484d426/skills/portolan-cli/SKILL.md",
+      "repository": "portolan-skills",
+      "commit": "1714d9ab672e6a1bbc56ca12458e41b14484d426",
+      "path": "skills/portolan-cli/SKILL.md",
+      "sha256": "11d8254ac041e50c20d0511b6cbc78b2d85160a6e04bc5d6817f14d1b28b3ab4",
+      "bytes": 6167
+    },
+    {
+      "url": "https://github.com/portolan-sdi/portolan-spec/blob/a2f3380fe238aec91e016eed9429463fe2791da3/specs/best-practices/git-backed-catalogs.md",
+      "repository": "portolan-spec",
+      "commit": "a2f3380fe238aec91e016eed9429463fe2791da3",
+      "path": "specs/best-practices/git-backed-catalogs.md",
+      "sha256": "32cad3cea95262a0632d7ac80ebae4ab889a498de0d4ae4fe859d942babccc54",
+      "bytes": 11084
+    },
+    {
+      "url": "https://github.com/portolan-sdi/portolan-spec/blob/a2f3380fe238aec91e016eed9429463fe2791da3/specs/portolan/core.md",
+      "repository": "portolan-spec",
+      "commit": "a2f3380fe238aec91e016eed9429463fe2791da3",
+      "path": "specs/portolan/core.md",
+      "sha256": "3347ad069dc67f05adba889ad8a53925b12d3aa71ded8c3325207c45984daf66",
+      "bytes": 33013
+    },
+    {
+      "url": "https://github.com/portolan-sdi/portolan-spec/blob/a2f3380fe238aec91e016eed9429463fe2791da3/specs/portolan/formats.md",
+      "repository": "portolan-spec",
+      "commit": "a2f3380fe238aec91e016eed9429463fe2791da3",
+      "path": "specs/portolan/formats.md",
+      "sha256": "bcef4ac7b46be52111be141222bbe451d76b91b8b07eb2bdc274015421747084",
+      "bytes": 18131
+    }
+  ],
+  "additional_skill_read": {
+    "url": "https://github.com/portolan-sdi/portolan-skills/blob/1714d9ab672e6a1bbc56ca12458e41b14484d426/skills/portolan-migrate/SKILL.md",
+    "content_read": true,
+    "snapshot_saved": false
+  },
+  "tool_environments": {
+    "cli-env": {
+      "python": "3.12.12 (main, Jan 14 2026, 23:36:32) [Clang 21.1.4 ]",
+      "platform": "macOS-15.1.1-arm64-arm-64bit",
+      "packages": {
+        "PyYAML": "6.0.3",
+        "Pygments": "2.21.0",
+        "affine": "3.0.1",
+        "aiobotocore": "3.10.0",
+        "aiohappyeyeballs": "2.7.1",
+        "aiohttp": "3.14.5",
+        "aioitertools": "0.13.0",
+        "aiosignal": "1.4.0",
+        "annotated-types": "0.8.0",
+        "antimeridian": "0.4.9",
+        "anyio": "4.15.1",
+        "attrs": "26.1.0",
+        "botocore": "1.43.117",
+        "certifi": "2026.10.23",
+        "cffi": "2.1.1",
+        "charset-normalizer": "3.5.2",
+        "ciso8601": "2.3.3",
+        "click": "8.4.2",
+        "click-plugins": "1.1.1.2",
+        "contourpy": "1.4.0",
+        "cryptography": "50.0.2",
+        "cycler": "0.12.1",
+        "defusedxml": "0.7.1",
+        "duckdb": "1.5.2",
+        "fonttools": "4.68.0",
+        "frozenlist": "1.8.0",
+        "fsspec": "2026.9.0",
+        "geoarrow-c": "0.4.0",
+        "geoarrow-pyarrow": "0.3.0",
+        "geoarrow-types": "0.4.1",
+        "geopandas": "1.2.0",
+        "geoparquet-io": "1.4.0",
+        "h11": "0.16.0",
+        "httpcore": "1.0.9",
+        "httpx": "0.28.1",
+        "idna": "3.20",
+        "jmespath": "1.1.0",
+        "jsonschema": "4.26.0",
+        "jsonschema-specifications": "2025.9.1",
+        "kiwisolver": "1.5.1",
+        "lxml": "6.1.3",
+        "markdown-it-py": "4.2.0",
+        "matplotlib": "3.11.2",
+        "mdurl": "0.1.2",
+        "mercantile": "1.2.1",
+        "morecantile": "7.1.0",
+        "msgpack": "1.2.4",
+        "multidict": "7.2.1",
+        "numpy": "2.5.4",
+        "obstore": "0.12.1",
+        "orjson": "3.13.0",
+        "owslib": "0.36.0",
+        "packaging": "26.3",
+        "pandas": "3.1.0",
+        "pillow": "13.0.0",
+        "pmtiles": "3.8.1",
+        "portolan-cli": "0.8.0",
+        "propcache": "0.5.4",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "pycparser": "3.12",
+        "pydantic": "2.14.2",
+        "pydantic_core": "2.50.2",
+        "pyogrio": "0.13.0",
+        "pyparsing": "3.3.3",
+        "pyproj": "3.8.0",
+        "pystac": "1.15.2",
+        "pystac-core": "1.15.2",
+        "pystac-ext-classification": "2.0.1",
+        "pystac-ext-datacube": "2.2.1",
+        "pystac-ext-eo": "1.1.1",
+        "pystac-ext-file": "2.1.1",
+        "pystac-ext-grid": "1.1.1",
+        "pystac-ext-item-assets": "1.0.1",
+        "pystac-ext-label": "1.0.2",
+        "pystac-ext-mgrs": "1.0.1",
+        "pystac-ext-mlm": "1.4.1",
+        "pystac-ext-pointcloud": "1.0.1",
+        "pystac-ext-projection": "2.0.1",
+        "pystac-ext-raster": "1.1.1",
+        "pystac-ext-render": "2.0.0",
+        "pystac-ext-sar": "1.0.1",
+        "pystac-ext-sat": "1.0.1",
+        "pystac-ext-scientific": "1.0.1",
+        "pystac-ext-storage": "2.0.1",
+        "pystac-ext-table": "1.2.1",
+        "pystac-ext-timestamps": "1.1.1",
+        "pystac-ext-version": "1.2.1",
+        "pystac-ext-view": "1.0.1",
+        "pystac-ext-xarray-assets": "1.0.1",
+        "python-dateutil": "2.9.0.post0",
+        "python-dotenv": "1.2.4",
+        "rashid": "0.1.8",
+        "rasterio": "1.5.2",
+        "referencing": "0.37.0",
+        "requests": "2.34.2",
+        "rich": "15.0.0",
+        "rio-cogeo": "7.0.4",
+        "rpds-py": "2026.9.1",
+        "s3fs": "2026.9.0",
+        "shapely": "2.2.0",
+        "six": "1.17.0",
+        "stac-geoparquet": "0.8.3",
+        "types-psutil": "7.2.2.20260906",
+        "typing-inspection": "0.4.4",
+        "typing_extensions": "4.16.0",
+        "urllib3": "2.8.0",
+        "wrapt": "2.5.2",
+        "yarl": "1.25.1"
+      },
+      "portolan_rashid_requirement": [
+        "rashid<0.2.0,>=0.1.5"
+      ]
+    },
+    "rashid-env": {
+      "python": "3.12.12 (main, Jan 14 2026, 23:36:32) [Clang 21.1.4 ]",
+      "platform": "macOS-15.1.1-arm64-arm-64bit",
+      "packages": {
+        "affine": "3.0.1",
+        "annotated-types": "0.8.0",
+        "attrs": "26.1.0",
+        "certifi": "2026.10.23",
+        "click": "8.5.0",
+        "jsonschema": "4.26.0",
+        "jsonschema-specifications": "2025.9.1",
+        "jsonschema_rs": "0.60.3",
+        "morecantile": "7.1.0",
+        "numpy": "2.5.4",
+        "pyarrow": "23.0.1",
+        "pydantic": "2.14.2",
+        "pydantic_core": "2.50.2",
+        "pyparsing": "3.3.3",
+        "pyproj": "3.8.0",
+        "rashid": "0.3.0",
+        "rasterio": "1.5.2",
+        "referencing": "0.37.0",
+        "rio-cogeo": "7.0.4",
+        "rpds-py": "2026.9.1",
+        "shapely": "2.2.0",
+        "typing-inspection": "0.4.4",
+        "typing_extensions": "4.16.0"
+      },
+      "portolan_rashid_requirement": []
+    }
+  },
+  "validation_scope": {
+    "profile": "Portolan v0.2.0",
+    "schema": true,
+    "stac_structure": true,
+    "data_scope": "local",
+    "local_asset_bytes": true,
+    "live_hosting": false,
+    "fix": false,
+    "cli_mode": "--metadata still runs the catalog data pass; source-file classification is not requested.",
+    "standalone_rashid_extensions": "Default extension validation enabled; a previously unbundled/older schema may be fetched over HTTPS. No remote dataset assets were requested.",
+    "negative_control": "Both validators pass an intact isolated clone, then fail with PTL-LIC-001 and PTL-STR-001 after removing its collection license. The original package is unchanged.",
+    "not_rerun": [
+      "source conversions",
+      "source-to-output fidelity",
+      "clean rebuilds",
+      "GEE comparison",
+      "scientific validation",
+      "live hosting probes",
+      "browser rendering",
+      "stac-check advisory linting"
+    ]
+  },
+  "command_convention": {
+    "cwd": "repository root",
+    "path_normalization": "Actual absolute repository paths in command argument vectors are represented relative to the repository root; raw validator stdout/stderr files are unmodified.",
+    "environment_location": ".local/portolan-review-20261031",
+    "installation_commands": [
+      [
+        "uv",
+        "venv",
+        ".local/portolan-review-20261031/cli-env",
+        "--python",
+        "3.12"
+      ],
+      [
+        "uv",
+        "pip",
+        "install",
+        "--python",
+        ".local/portolan-review-20261031/cli-env/bin/python",
+        "--only-binary",
+        ":all:",
+        "portolan-cli==0.8.0",
+        "rashid==0.1.8",
+        "pyarrow==23.0.1",
+        "duckdb==1.5.2"
+      ],
+      [
+        "uv",
+        "venv",
+        ".local/portolan-review-20261031/rashid-env",
+        "--python",
+        "3.12"
+      ],
+      [
+        "uv",
+        "pip",
+        "install",
+        "--python",
+        ".local/portolan-review-20261031/rashid-env/bin/python",
+        "--only-binary",
+        ":all:",
+        "rashid==0.3.0",
+        "pyarrow==23.0.1"
+      ]
+    ]
+  },
+  "packages": [
+    {
+      "dataset": "river-plastic-inputs",
+      "local_package": ".local/river-plastic-inputs/figshare-v6-r2",
+      "manifest_sha256": "ad86186ea962c3c0dfc62feb28aac7a68145ac3c7451f2602812c5b5278c2300",
+      "nodes": [
+        {
+          "path": "catalog.json",
+          "sha256": "00ef7a3ffc6c1eb9f58799d87fdcb1743e45d12f64318f327eb7f1d03565da4f",
+          "type": "Catalog",
+          "id": "folia-river-plastic-inputs",
+          "link_relations": [
+            "agents",
+            "child",
+            "describedby",
+            "license",
+            "root",
+            "via"
+          ],
+          "table_column_entries": 0,
+          "described_table_column_entries": 0,
+          "table_column_entries_by_asset": {},
+          "data_assets": [],
+          "visual_assets": [],
+          "style_assets": []
+        },
+        {
+          "path": "river-plastic-inputs/collection.json",
+          "sha256": "5d20fde7a74d725f4d2c7f9f01ab305272abca47445a634995cd177c1aff2d9d",
+          "type": "Collection",
+          "id": "river-plastic-inputs",
+          "link_relations": [
+            "agents",
+            "describedby",
+            "license",
+            "parent",
+            "pmtiles",
+            "root",
+            "via"
+          ],
+          "table_column_entries": 56,
+          "described_table_column_entries": 56,
+          "table_column_entries_by_asset": {
+            "collection": 56
+          },
+          "data_assets": [
+            "data"
+          ],
+          "visual_assets": [
+            "tiles"
+          ],
+          "style_assets": [
+            "style-annual-input"
+          ]
+        }
+      ],
+      "prior_rashid_0_1_8_report": {
+        "path": "datasets/river-plastic-inputs/releases/figshare-v6-r2/validation.json",
+        "sha256": "688205637e9990291bcea8ede1b2c00deaa04fb5801a782fb029a1c332f8f782",
+        "passed": true,
+        "errors": 0,
+        "warnings": 0,
+        "info": 1
+      }
+    },
+    {
+      "dataset": "grwl",
+      "local_package": ".local/grwl/summary-v01.02-local-r1",
+      "manifest_sha256": "a6eb5095a56461e45c57069886e9a04f0b85a5e8edc1bc9f971ac6560f1b4f4b",
+      "nodes": [
+        {
+          "path": "catalog.json",
+          "sha256": "9ada615ee211995fec21fa4312671e9bc1e41bd9d7423c936381c859f6ff8342",
+          "type": "Catalog",
+          "id": "folia-grwl",
+          "link_relations": [
+            "agents",
+            "child",
+            "describedby",
+            "license",
+            "root",
+            "thumbnail",
+            "via"
+          ],
+          "table_column_entries": 0,
+          "described_table_column_entries": 0,
+          "table_column_entries_by_asset": {},
+          "data_assets": [],
+          "visual_assets": [],
+          "style_assets": []
+        },
+        {
+          "path": "grwl/collection.json",
+          "sha256": "9167280dfa2737854bd2e9d5c043a672ac25417b06ecb230d1858009b9e8e78f",
+          "type": "Collection",
+          "id": "grwl",
+          "link_relations": [
+            "agents",
+            "cite-as",
+            "describedby",
+            "license",
+            "parent",
+            "pmtiles",
+            "root",
+            "thumbnail",
+            "via"
+          ],
+          "table_column_entries": 13,
+          "described_table_column_entries": 13,
+          "table_column_entries_by_asset": {
+            "collection": 13
+          },
+          "data_assets": [
+            "data"
+          ],
+          "visual_assets": [
+            "tiles"
+          ],
+          "style_assets": [
+            "style"
+          ]
+        }
+      ],
+      "prior_rashid_0_1_8_report": {
+        "path": "datasets/grwl/releases/summary-v01.02-local-r1/portolan-validation.json",
+        "sha256": "700ab08754770f9436b6ecfe77148446fe9af6421d034f36774acb6cca88d766",
+        "passed": true,
+        "errors": 0,
+        "warnings": 0,
+        "info": 1
+      }
+    },
+    {
+      "dataset": "free-flowing-rivers",
+      "local_package": ".local/free-flowing-rivers/releases/figshare-v1-local-r2",
+      "manifest_sha256": "756286b624de53823a2af2c26344a15dcf02070c048f5d1d02ec3f65a97d5120",
+      "nodes": [
+        {
+          "path": "catalog.json",
+          "sha256": "9a17c0d879f21b52e301d1a4e9bfb342103019bc228121defc1bc3e8f86d1ad6",
+          "type": "Catalog",
+          "id": "folia-free-flowing-rivers",
+          "link_relations": [
+            "agents",
+            "child",
+            "describedby",
+            "license",
+            "root",
+            "thumbnail",
+            "via"
+          ],
+          "table_column_entries": 0,
+          "described_table_column_entries": 0,
+          "table_column_entries_by_asset": {},
+          "data_assets": [],
+          "visual_assets": [],
+          "style_assets": []
+        },
+        {
+          "path": "collection.json",
+          "sha256": "280265311514e74df26f5e331783f70a2b34dc8e5019d016c517e01f1687f282",
+          "type": "Collection",
+          "id": "free-flowing-rivers",
+          "link_relations": [
+            "agents",
+            "describedby",
+            "license",
+            "parent",
+            "root",
+            "thumbnail",
+            "via"
+          ],
+          "table_column_entries": 42,
+          "described_table_column_entries": 42,
+          "table_column_entries_by_asset": {
+            "ffr-reach-network-v1": 42
+          },
+          "data_assets": [
+            "ffr-reach-network-v1"
+          ],
+          "visual_assets": [],
+          "style_assets": []
+        }
+      ],
+      "prior_rashid_0_1_8_report": {
+        "path": "datasets/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/package-portolan-validation.json",
+        "sha256": "f2a6605995d320b95465ff569d5a3a241c5142c1b9152c2131bacb78b2ecad94",
+        "passed": true,
+        "errors": 0,
+        "warnings": 0,
+        "info": 1
+      }
+    },
+    {
+      "dataset": "hydrolakes",
+      "local_package": ".local/hydrolakes/releases/v1-local-r3",
+      "manifest_sha256": "48d1d1061f0785255f14c3d5bb7ce8a1c0b47963c45c0e3b02a70441c0b86fcc",
+      "nodes": [
+        {
+          "path": "catalog.json",
+          "sha256": "0caee01dd341a7185be0992de177d74867b7af1246fafa79bb32260229aff576",
+          "type": "Catalog",
+          "id": "folia-hydrolakes",
+          "link_relations": [
+            "agents",
+            "child",
+            "describedby",
+            "license",
+            "root",
+            "thumbnail",
+            "via"
+          ],
+          "table_column_entries": 0,
+          "described_table_column_entries": 0,
+          "table_column_entries_by_asset": {},
+          "data_assets": [],
+          "visual_assets": [],
+          "style_assets": []
+        },
+        {
+          "path": "collection.json",
+          "sha256": "0e36e929535734bb60e5346ce21296e12e301dc1f7081a744a29552bac802d32",
+          "type": "Collection",
+          "id": "hydrolakes",
+          "link_relations": [
+            "agents",
+            "describedby",
+            "license",
+            "parent",
+            "root",
+            "thumbnail",
+            "via"
+          ],
+          "table_column_entries": 23,
+          "described_table_column_entries": 23,
+          "table_column_entries_by_asset": {
+            "hydrolakes-polygons": 23
+          },
+          "data_assets": [
+            "hydrolakes-polygons"
+          ],
+          "visual_assets": [],
+          "style_assets": []
+        }
+      ],
+      "prior_rashid_0_1_8_report": {
+        "path": "datasets/hydrolakes/releases/v1-local-r3/evidence/package-portolan-validation.json",
+        "sha256": "2c1bd193a740e343572ed93e2581b17ff73572590cb7438160df7ae70024c824",
+        "passed": true,
+        "errors": 0,
+        "warnings": 0,
+        "info": 1
+      }
+    },
+    {
+      "dataset": "lakeatlas",
+      "local_package": ".local/lakeatlas/releases/lakeatlas-v1.0-r2-prepared",
+      "manifest_sha256": "32b4877b8809cabd3e2caca8da175115e8ff8317402058846ed0db06a54d52e9",
+      "nodes": [
+        {
+          "path": "catalog.json",
+          "sha256": "22d1c659c90602b96d13836a8a6f58adedab33d8f1fa9e3f6431eac3b4f2e0bb",
+          "type": "Catalog",
+          "id": "folia-lakeatlas",
+          "link_relations": [
+            "agents",
+            "child",
+            "describedby",
+            "license",
+            "root",
+            "thumbnail",
+            "via"
+          ],
+          "table_column_entries": 0,
+          "described_table_column_entries": 0,
+          "table_column_entries_by_asset": {},
+          "data_assets": [],
+          "visual_assets": [],
+          "style_assets": []
+        },
+        {
+          "path": "collection.json",
+          "sha256": "979008432124f214daa1dcfa148c13c9fd73375d891a231cb679331498531200",
+          "type": "Collection",
+          "id": "lakeatlas",
+          "link_relations": [
+            "agents",
+            "describedby",
+            "license",
+            "parent",
+            "root",
+            "thumbnail",
+            "via"
+          ],
+          "table_column_entries": 618,
+          "described_table_column_entries": 0,
+          "table_column_entries_by_asset": {
+            "lakeatlas-polygons": 310,
+            "lakeatlas-pour-points": 308
+          },
+          "data_assets": [
+            "lakeatlas-polygons",
+            "lakeatlas-pour-points"
+          ],
+          "visual_assets": [],
+          "style_assets": []
+        }
+      ],
+      "prior_rashid_0_1_8_report": {
+        "path": "datasets/lakeatlas/releases/lakeatlas-v1.0-r2/evidence/prepared-local/evidence/portolan-validation.json",
+        "sha256": "d3dab3e249ed10e0a216d346d2c128bca708685130334848aafce4ecbbf72b34",
+        "passed": true,
+        "errors": 0,
+        "warnings": 0,
+        "info": 3
+      }
+    }
+  ],
+  "fresh_results": [
+    {
+      "dataset": "river-plastic-inputs",
+      "validator": "portolan-0.8.0",
+      "passed": true,
+      "exit_code": 0,
+      "errors": 0,
+      "warnings": 0,
+      "info": 1,
+      "findings": [
+        {
+          "rule_id": "PTL-PRO-002",
+          "severity": "info",
+          "message": "mirror collection has no rel:'canonical' link; add one if the upstream publishes its own STAC catalog",
+          "path": "river-plastic-inputs/collection.json",
+          "object_id": "river-plastic-inputs",
+          "json_pointer": "/links",
+          "fix_hint": "add {\"rel\": \"canonical\", \"href\": <the upstream collection.json>, \"type\": \"application/json\"} to links when the upstream publishes STAC",
+          "remediation": "instruct",
+          "auto_fixable": false,
+          "requirement": "Add a rel='canonical' link to the upstream STAC object, when the source publishes one."
+        }
+      ],
+      "legacy_note": null,
+      "report": "reports/river-plastic-inputs--portolan-0.8.0.stdout.json"
+    },
+    {
+      "dataset": "river-plastic-inputs",
+      "validator": "rashid-0.3.0",
+      "passed": true,
+      "exit_code": 0,
+      "errors": 0,
+      "warnings": 0,
+      "info": 1,
+      "findings": [
+        {
+          "rule_id": "PTL-PRO-002",
+          "severity": "info",
+          "message": "mirror collection has no rel:'canonical' link; add one if the upstream publishes its own STAC catalog",
+          "path": "river-plastic-inputs/collection.json",
+          "object_id": "river-plastic-inputs",
+          "json_pointer": "/links",
+          "fix_hint": "add {\"rel\": \"canonical\", \"href\": <the upstream collection.json>, \"type\": \"application/json\"} to links when the upstream publishes STAC"
+        }
+      ],
+      "legacy_note": null,
+      "report": "reports/river-plastic-inputs--rashid-0.3.0.stdout.json"
+    },
+    {
+      "dataset": "grwl",
+      "validator": "portolan-0.8.0",
+      "passed": true,
+      "exit_code": 0,
+      "errors": 0,
+      "warnings": 0,
+      "info": 1,
+      "findings": [
+        {
+          "rule_id": "PTL-PRO-002",
+          "severity": "info",
+          "message": "mirror collection has no rel:'canonical' link; add one if the upstream publishes its own STAC catalog",
+          "path": "grwl/collection.json",
+          "object_id": "grwl",
+          "json_pointer": "/links",
+          "fix_hint": "add {\"rel\": \"canonical\", \"href\": <the upstream collection.json>, \"type\": \"application/json\"} to links when the upstream publishes STAC",
+          "remediation": "instruct",
+          "auto_fixable": false,
+          "requirement": "Add a rel='canonical' link to the upstream STAC object, when the source publishes one."
+        }
+      ],
+      "legacy_note": "This catalog carries portolan: fields the spec does not define. The prefix is reserved and empty: the profile schema URI dates the catalog, asset roles name what an asset is, and a consumer sums file:size itself, so nothing reads them. Run `portolan check --fix` to strip them.",
+      "report": "reports/grwl--portolan-0.8.0.stdout.json"
+    },
+    {
+      "dataset": "grwl",
+      "validator": "rashid-0.3.0",
+      "passed": true,
+      "exit_code": 0,
+      "errors": 0,
+      "warnings": 0,
+      "info": 1,
+      "findings": [
+        {
+          "rule_id": "PTL-PRO-002",
+          "severity": "info",
+          "message": "mirror collection has no rel:'canonical' link; add one if the upstream publishes its own STAC catalog",
+          "path": "grwl/collection.json",
+          "object_id": "grwl",
+          "json_pointer": "/links",
+          "fix_hint": "add {\"rel\": \"canonical\", \"href\": <the upstream collection.json>, \"type\": \"application/json\"} to links when the upstream publishes STAC"
+        }
+      ],
+      "legacy_note": null,
+      "report": "reports/grwl--rashid-0.3.0.stdout.json"
+    },
+    {
+      "dataset": "free-flowing-rivers",
+      "validator": "portolan-0.8.0",
+      "passed": true,
+      "exit_code": 0,
+      "errors": 0,
+      "warnings": 0,
+      "info": 1,
+      "findings": [
+        {
+          "rule_id": "PTL-PRO-002",
+          "severity": "info",
+          "message": "mirror collection has no rel:'canonical' link; add one if the upstream publishes its own STAC catalog",
+          "path": "collection.json",
+          "object_id": "free-flowing-rivers",
+          "json_pointer": "/links",
+          "fix_hint": "add {\"rel\": \"canonical\", \"href\": <the upstream collection.json>, \"type\": \"application/json\"} to links when the upstream publishes STAC",
+          "remediation": "instruct",
+          "auto_fixable": false,
+          "requirement": "Add a rel='canonical' link to the upstream STAC object, when the source publishes one."
+        }
+      ],
+      "legacy_note": "This catalog carries portolan: fields the spec does not define. The prefix is reserved and empty: the profile schema URI dates the catalog, asset roles name what an asset is, and a consumer sums file:size itself, so nothing reads them. Run `portolan check --fix` to strip them.",
+      "report": "reports/free-flowing-rivers--portolan-0.8.0.stdout.json"
+    },
+    {
+      "dataset": "free-flowing-rivers",
+      "validator": "rashid-0.3.0",
+      "passed": true,
+      "exit_code": 0,
+      "errors": 0,
+      "warnings": 0,
+      "info": 1,
+      "findings": [
+        {
+          "rule_id": "PTL-PRO-002",
+          "severity": "info",
+          "message": "mirror collection has no rel:'canonical' link; add one if the upstream publishes its own STAC catalog",
+          "path": "collection.json",
+          "object_id": "free-flowing-rivers",
+          "json_pointer": "/links",
+          "fix_hint": "add {\"rel\": \"canonical\", \"href\": <the upstream collection.json>, \"type\": \"application/json\"} to links when the upstream publishes STAC"
+        }
+      ],
+      "legacy_note": null,
+      "report": "reports/free-flowing-rivers--rashid-0.3.0.stdout.json"
+    },
+    {
+      "dataset": "hydrolakes",
+      "validator": "portolan-0.8.0",
+      "passed": true,
+      "exit_code": 0,
+      "errors": 0,
+      "warnings": 0,
+      "info": 1,
+      "findings": [
+        {
+          "rule_id": "PTL-PRO-002",
+          "severity": "info",
+          "message": "mirror collection has no rel:'canonical' link; add one if the upstream publishes its own STAC catalog",
+          "path": "collection.json",
+          "object_id": "hydrolakes",
+          "json_pointer": "/links",
+          "fix_hint": "add {\"rel\": \"canonical\", \"href\": <the upstream collection.json>, \"type\": \"application/json\"} to links when the upstream publishes STAC",
+          "remediation": "instruct",
+          "auto_fixable": false,
+          "requirement": "Add a rel='canonical' link to the upstream STAC object, when the source publishes one."
+        }
+      ],
+      "legacy_note": "This catalog carries portolan: fields the spec does not define. The prefix is reserved and empty: the profile schema URI dates the catalog, asset roles name what an asset is, and a consumer sums file:size itself, so nothing reads them. Run `portolan check --fix` to strip them.",
+      "report": "reports/hydrolakes--portolan-0.8.0.stdout.json"
+    },
+    {
+      "dataset": "hydrolakes",
+      "validator": "rashid-0.3.0",
+      "passed": true,
+      "exit_code": 0,
+      "errors": 0,
+      "warnings": 0,
+      "info": 1,
+      "findings": [
+        {
+          "rule_id": "PTL-PRO-002",
+          "severity": "info",
+          "message": "mirror collection has no rel:'canonical' link; add one if the upstream publishes its own STAC catalog",
+          "path": "collection.json",
+          "object_id": "hydrolakes",
+          "json_pointer": "/links",
+          "fix_hint": "add {\"rel\": \"canonical\", \"href\": <the upstream collection.json>, \"type\": \"application/json\"} to links when the upstream publishes STAC"
+        }
+      ],
+      "legacy_note": null,
+      "report": "reports/hydrolakes--rashid-0.3.0.stdout.json"
+    },
+    {
+      "dataset": "lakeatlas",
+      "validator": "portolan-0.8.0",
+      "passed": true,
+      "exit_code": 0,
+      "errors": 0,
+      "warnings": 0,
+      "info": 3,
+      "findings": [
+        {
+          "rule_id": "PTL-PRO-002",
+          "severity": "info",
+          "message": "mirror collection has no rel:'canonical' link; add one if the upstream publishes its own STAC catalog",
+          "path": "collection.json",
+          "object_id": "lakeatlas",
+          "json_pointer": "/links",
+          "fix_hint": "add {\"rel\": \"canonical\", \"href\": <the upstream collection.json>, \"type\": \"application/json\"} to links when the upstream publishes STAC",
+          "remediation": "instruct",
+          "auto_fixable": false,
+          "requirement": "Add a rel='canonical' link to the upstream STAC object, when the source publishes one."
+        },
+        {
+          "rule_id": "PTL-VIZ-004",
+          "severity": "info",
+          "message": "vector data asset 'lakeatlas-polygons' is 1143992867 bytes with no visual derivative; rendering from source is unlikely to be viable",
+          "path": "collection.json",
+          "object_id": "lakeatlas",
+          "json_pointer": "/assets",
+          "fix_hint": "publish a PMTiles derivative with a MapLibre style",
+          "remediation": "instruct",
+          "auto_fixable": false,
+          "requirement": "Generate a PMTiles derivative for this large vector collection so browsers can render it ; run `portolan add --pmtiles` with tippecanoe on PATH."
+        },
+        {
+          "rule_id": "PTL-VIZ-004",
+          "severity": "info",
+          "message": "vector data asset 'lakeatlas-pour-points' is 283780050 bytes with no visual derivative; rendering from source is unlikely to be viable",
+          "path": "collection.json",
+          "object_id": "lakeatlas",
+          "json_pointer": "/assets",
+          "fix_hint": "publish a PMTiles derivative with a MapLibre style",
+          "remediation": "instruct",
+          "auto_fixable": false,
+          "requirement": "Generate a PMTiles derivative for this large vector collection so browsers can render it ; run `portolan add --pmtiles` with tippecanoe on PATH."
+        }
+      ],
+      "legacy_note": "This catalog carries portolan: fields the spec does not define. The prefix is reserved and empty: the profile schema URI dates the catalog, asset roles name what an asset is, and a consumer sums file:size itself, so nothing reads them. Run `portolan check --fix` to strip them.",
+      "report": "reports/lakeatlas--portolan-0.8.0.stdout.json"
+    },
+    {
+      "dataset": "lakeatlas",
+      "validator": "rashid-0.3.0",
+      "passed": true,
+      "exit_code": 0,
+      "errors": 0,
+      "warnings": 0,
+      "info": 3,
+      "findings": [
+        {
+          "rule_id": "PTL-PRO-002",
+          "severity": "info",
+          "message": "mirror collection has no rel:'canonical' link; add one if the upstream publishes its own STAC catalog",
+          "path": "collection.json",
+          "object_id": "lakeatlas",
+          "json_pointer": "/links",
+          "fix_hint": "add {\"rel\": \"canonical\", \"href\": <the upstream collection.json>, \"type\": \"application/json\"} to links when the upstream publishes STAC"
+        },
+        {
+          "rule_id": "PTL-VIZ-004",
+          "severity": "info",
+          "message": "vector data asset 'lakeatlas-polygons' is 1143992867 bytes with no visual derivative; rendering from source is unlikely to be viable",
+          "path": "collection.json",
+          "object_id": "lakeatlas",
+          "json_pointer": "/assets",
+          "fix_hint": "publish a PMTiles derivative with a MapLibre style"
+        },
+        {
+          "rule_id": "PTL-VIZ-004",
+          "severity": "info",
+          "message": "vector data asset 'lakeatlas-pour-points' is 283780050 bytes with no visual derivative; rendering from source is unlikely to be viable",
+          "path": "collection.json",
+          "object_id": "lakeatlas",
+          "json_pointer": "/assets",
+          "fix_hint": "publish a PMTiles derivative with a MapLibre style"
+        }
+      ],
+      "legacy_note": null,
+      "report": "reports/lakeatlas--rashid-0.3.0.stdout.json"
+    }
+  ],
+  "runs": [
+    {
+      "dataset": "river-plastic-inputs",
+      "validator": "portolan-0.8.0",
+      "command": [
+        ".local/portolan-review-20261031/cli-env/bin/portolan",
+        "check",
+        ".local/river-plastic-inputs/figshare-v6-r2",
+        "--metadata",
+        "--schema",
+        "--data-scope",
+        "local",
+        "--json"
+      ],
+      "returncode": 0,
+      "seconds": 2.661,
+      "recorded_at": "2026-10-31T22:49:03.988215+00:00",
+      "stdout": "reports/river-plastic-inputs--portolan-0.8.0.stdout.json",
+      "stderr": "reports/river-plastic-inputs--portolan-0.8.0.stderr.txt",
+      "stdout_sha256": "e6719c98915dfdfbf5272ca96116d83693e3823e03372c3750a042196e8de5a2"
+    },
+    {
+      "dataset": "river-plastic-inputs",
+      "validator": "rashid-0.3.0",
+      "command": [
+        ".local/portolan-review-20261031/rashid-env/bin/rashid",
+        "check",
+        ".local/river-plastic-inputs/figshare-v6-r2",
+        "--schema",
+        "--data-scope",
+        "local",
+        "--no-live",
+        "--json"
+      ],
+      "returncode": 0,
+      "seconds": 18.48,
+      "recorded_at": "2026-10-31T22:49:22.474196+00:00",
+      "stdout": "reports/river-plastic-inputs--rashid-0.3.0.stdout.json",
+      "stderr": "reports/river-plastic-inputs--rashid-0.3.0.stderr.txt",
+      "stdout_sha256": "546fa5773b418bd18f15aa3e0f9c9ed04b19dea5e3e1654538bd28a31913bb89"
+    },
+    {
+      "dataset": "grwl",
+      "validator": "portolan-0.8.0",
+      "command": [
+        ".local/portolan-review-20261031/cli-env/bin/portolan",
+        "check",
+        ".local/grwl/summary-v01.02-local-r1",
+        "--metadata",
+        "--schema",
+        "--data-scope",
+        "local",
+        "--json"
+      ],
+      "returncode": 0,
+      "seconds": 1.493,
+      "recorded_at": "2026-10-31T22:49:23.968027+00:00",
+      "stdout": "reports/grwl--portolan-0.8.0.stdout.json",
+      "stderr": "reports/grwl--portolan-0.8.0.stderr.txt",
+      "stdout_sha256": "f8e2fb27e8c0f3523f9cc9d52165d6793be7f1b60253ad3e91452287fd91facb"
+    },
+    {
+      "dataset": "grwl",
+      "validator": "rashid-0.3.0",
+      "command": [
+        ".local/portolan-review-20261031/rashid-env/bin/rashid",
+        "check",
+        ".local/grwl/summary-v01.02-local-r1",
+        "--schema",
+        "--data-scope",
+        "local",
+        "--no-live",
+        "--json"
+      ],
+      "returncode": 0,
+      "seconds": 1.153,
+      "recorded_at": "2026-10-31T22:49:25.121551+00:00",
+      "stdout": "reports/grwl--rashid-0.3.0.stdout.json",
+      "stderr": "reports/grwl--rashid-0.3.0.stderr.txt",
+      "stdout_sha256": "734d720ab2def9f7e771ceee36b9c84bd6a84a59f337895fe116c4dbd4c41e50"
+    },
+    {
+      "dataset": "free-flowing-rivers",
+      "validator": "portolan-0.8.0",
+      "command": [
+        ".local/portolan-review-20261031/cli-env/bin/portolan",
+        "check",
+        ".local/free-flowing-rivers/releases/figshare-v1-local-r2",
+        "--metadata",
+        "--schema",
+        "--data-scope",
+        "local",
+        "--json"
+      ],
+      "returncode": 0,
+      "seconds": 2.068,
+      "recorded_at": "2026-10-31T22:49:27.189417+00:00",
+      "stdout": "reports/free-flowing-rivers--portolan-0.8.0.stdout.json",
+      "stderr": "reports/free-flowing-rivers--portolan-0.8.0.stderr.txt",
+      "stdout_sha256": "861ca74799839fe7df5464f1638f3d596fe9a37241e70f4185c3d04e14d7035a"
+    },
+    {
+      "dataset": "free-flowing-rivers",
+      "validator": "rashid-0.3.0",
+      "command": [
+        ".local/portolan-review-20261031/rashid-env/bin/rashid",
+        "check",
+        ".local/free-flowing-rivers/releases/figshare-v1-local-r2",
+        "--schema",
+        "--data-scope",
+        "local",
+        "--no-live",
+        "--json"
+      ],
+      "returncode": 0,
+      "seconds": 1.623,
+      "recorded_at": "2026-10-31T22:49:28.812563+00:00",
+      "stdout": "reports/free-flowing-rivers--rashid-0.3.0.stdout.json",
+      "stderr": "reports/free-flowing-rivers--rashid-0.3.0.stderr.txt",
+      "stdout_sha256": "31993f9d26652a748c510ea8549cb68affca35f986503cbab83c2b8b8bef1b3f"
+    },
+    {
+      "dataset": "hydrolakes",
+      "validator": "portolan-0.8.0",
+      "command": [
+        ".local/portolan-review-20261031/cli-env/bin/portolan",
+        "check",
+        ".local/hydrolakes/releases/v1-local-r3",
+        "--metadata",
+        "--schema",
+        "--data-scope",
+        "local",
+        "--json"
+      ],
+      "returncode": 0,
+      "seconds": 2.115,
+      "recorded_at": "2026-10-31T22:49:30.931543+00:00",
+      "stdout": "reports/hydrolakes--portolan-0.8.0.stdout.json",
+      "stderr": "reports/hydrolakes--portolan-0.8.0.stderr.txt",
+      "stdout_sha256": "a24d0f83a61e40ee289cf554f65b9287e5c3c23b58c9edf3fa8e84023dca4b4d"
+    },
+    {
+      "dataset": "hydrolakes",
+      "validator": "rashid-0.3.0",
+      "command": [
+        ".local/portolan-review-20261031/rashid-env/bin/rashid",
+        "check",
+        ".local/hydrolakes/releases/v1-local-r3",
+        "--schema",
+        "--data-scope",
+        "local",
+        "--no-live",
+        "--json"
+      ],
+      "returncode": 0,
+      "seconds": 1.17,
+      "recorded_at": "2026-10-31T22:49:32.101923+00:00",
+      "stdout": "reports/hydrolakes--rashid-0.3.0.stdout.json",
+      "stderr": "reports/hydrolakes--rashid-0.3.0.stderr.txt",
+      "stdout_sha256": "f1007d3ecf2fb4986560b71f7e8bd4ae325af5231abd96c6ad5624ae2926cb30"
+    },
+    {
+      "dataset": "lakeatlas",
+      "validator": "portolan-0.8.0",
+      "command": [
+        ".local/portolan-review-20261031/cli-env/bin/portolan",
+        "check",
+        ".local/lakeatlas/releases/lakeatlas-v1.0-r2-prepared",
+        "--metadata",
+        "--schema",
+        "--data-scope",
+        "local",
+        "--json"
+      ],
+      "returncode": 0,
+      "seconds": 2.45,
+      "recorded_at": "2026-10-31T22:49:34.553022+00:00",
+      "stdout": "reports/lakeatlas--portolan-0.8.0.stdout.json",
+      "stderr": "reports/lakeatlas--portolan-0.8.0.stderr.txt",
+      "stdout_sha256": "495bed77cd16f337dd8c704cdffe19c41869d38535cce73285a1fceacad86ed9"
+    },
+    {
+      "dataset": "lakeatlas",
+      "validator": "rashid-0.3.0",
+      "command": [
+        ".local/portolan-review-20261031/rashid-env/bin/rashid",
+        "check",
+        ".local/lakeatlas/releases/lakeatlas-v1.0-r2-prepared",
+        "--schema",
+        "--data-scope",
+        "local",
+        "--no-live",
+        "--json"
+      ],
+      "returncode": 0,
+      "seconds": 1.605,
+      "recorded_at": "2026-10-31T22:49:36.158801+00:00",
+      "stdout": "reports/lakeatlas--rashid-0.3.0.stdout.json",
+      "stderr": "reports/lakeatlas--rashid-0.3.0.stderr.txt",
+      "stdout_sha256": "0d9fe7fc35bfd788295962a88fb4d41792b25305428bda9ef81805a9bb8e37ea"
+    }
+  ],
+  "negative_control": {
+    "status": "passed",
+    "mutation": {
+      "scope": "isolated APFS copy-on-write clone of the river-plastic package",
+      "path": "river-plastic-inputs/collection.json",
+      "mutation": "remove required collection license",
+      "removed_value": "CC-BY-4.0",
+      "original_sha256": "5d20fde7a74d725f4d2c7f9f01ab305272abca47445a634995cd177c1aff2d9d",
+      "mutated_sha256": "f79027c2c4b4ae6efc4e887364ccb7cc77108a31eda36ae2e55a889a4ed87852",
+      "original_package_unchanged": true
+    },
+    "runs": [
+      {
+        "label": "control-baseline--portolan-0.8.0",
+        "command": [
+          ".local/portolan-review-20261031/cli-env/bin/portolan",
+          "check",
+          ".local/portolan-review-20261031/negative-control-missing-license",
+          "--metadata",
+          "--schema",
+          "--no-data",
+          "--json"
+        ],
+        "returncode": 0,
+        "seconds": 0.789,
+        "stdout": "reports/control-baseline--portolan-0.8.0.stdout.json",
+        "stderr": "reports/control-baseline--portolan-0.8.0.stderr.txt",
+        "stdout_sha256": "e6719c98915dfdfbf5272ca96116d83693e3823e03372c3750a042196e8de5a2",
+        "passed": true,
+        "error_count": 0,
+        "rule_ids": [
+          "PTL-PRO-002"
+        ]
+      },
+      {
+        "label": "control-baseline--rashid-0.3.0",
+        "command": [
+          ".local/portolan-review-20261031/rashid-env/bin/rashid",
+          "check",
+          ".local/portolan-review-20261031/negative-control-missing-license",
+          "--schema",
+          "--no-data",
+          "--no-live",
+          "--json"
+        ],
+        "returncode": 0,
+        "seconds": 0.182,
+        "stdout": "reports/control-baseline--rashid-0.3.0.stdout.json",
+        "stderr": "reports/control-baseline--rashid-0.3.0.stderr.txt",
+        "stdout_sha256": "546fa5773b418bd18f15aa3e0f9c9ed04b19dea5e3e1654538bd28a31913bb89",
+        "passed": true,
+        "error_count": 0,
+        "rule_ids": [
+          "PTL-PRO-002"
+        ]
+      },
+      {
+        "label": "control-missing-license--portolan-0.8.0",
+        "command": [
+          ".local/portolan-review-20261031/cli-env/bin/portolan",
+          "check",
+          ".local/portolan-review-20261031/negative-control-missing-license",
+          "--metadata",
+          "--schema",
+          "--no-data",
+          "--json"
+        ],
+        "returncode": 1,
+        "seconds": 0.608,
+        "stdout": "reports/control-missing-license--portolan-0.8.0.stdout.json",
+        "stderr": "reports/control-missing-license--portolan-0.8.0.stderr.txt",
+        "stdout_sha256": "6f09568831826b174f805da7ed92f596ab33f044175514f965f388db9e05061c",
+        "passed": false,
+        "error_count": 2,
+        "rule_ids": [
+          "PTL-LIC-001",
+          "PTL-PRO-002",
+          "PTL-STR-001"
+        ]
+      },
+      {
+        "label": "control-missing-license--rashid-0.3.0",
+        "command": [
+          ".local/portolan-review-20261031/rashid-env/bin/rashid",
+          "check",
+          ".local/portolan-review-20261031/negative-control-missing-license",
+          "--schema",
+          "--no-data",
+          "--no-live",
+          "--json"
+        ],
+        "returncode": 1,
+        "seconds": 0.153,
+        "stdout": "reports/control-missing-license--rashid-0.3.0.stdout.json",
+        "stderr": "reports/control-missing-license--rashid-0.3.0.stderr.txt",
+        "stdout_sha256": "5326c846dac96e125b7bd6e1d3a846355b9472aa800994780a9ae77e384cd4bd",
+        "passed": false,
+        "error_count": 2,
+        "rule_ids": [
+          "PTL-LIC-001",
+          "PTL-PRO-002",
+          "PTL-STR-001"
+        ]
+      }
+    ]
+  },
+  "report_files": [
+    {
+      "path": "reports/control-baseline--portolan-0.8.0.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "reports/control-baseline--portolan-0.8.0.stdout.json",
+      "bytes": 1103,
+      "sha256": "e6719c98915dfdfbf5272ca96116d83693e3823e03372c3750a042196e8de5a2"
+    },
+    {
+      "path": "reports/control-baseline--rashid-0.3.0.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "reports/control-baseline--rashid-0.3.0.stdout.json",
+      "bytes": 960,
+      "sha256": "546fa5773b418bd18f15aa3e0f9c9ed04b19dea5e3e1654538bd28a31913bb89"
+    },
+    {
+      "path": "reports/control-missing-license--portolan-0.8.0.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "reports/control-missing-license--portolan-0.8.0.stdout.json",
+      "bytes": 2410,
+      "sha256": "6f09568831826b174f805da7ed92f596ab33f044175514f965f388db9e05061c"
+    },
+    {
+      "path": "reports/control-missing-license--rashid-0.3.0.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "reports/control-missing-license--rashid-0.3.0.stdout.json",
+      "bytes": 2036,
+      "sha256": "5326c846dac96e125b7bd6e1d3a846355b9472aa800994780a9ae77e384cd4bd"
+    },
+    {
+      "path": "reports/free-flowing-rivers--portolan-0.8.0.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "reports/free-flowing-rivers--portolan-0.8.0.stdout.json",
+      "bytes": 1381,
+      "sha256": "861ca74799839fe7df5464f1638f3d596fe9a37241e70f4185c3d04e14d7035a"
+    },
+    {
+      "path": "reports/free-flowing-rivers--rashid-0.3.0.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "reports/free-flowing-rivers--rashid-0.3.0.stdout.json",
+      "bytes": 938,
+      "sha256": "31993f9d26652a748c510ea8549cb68affca35f986503cbab83c2b8b8bef1b3f"
+    },
+    {
+      "path": "reports/grwl--portolan-0.8.0.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "reports/grwl--portolan-0.8.0.stdout.json",
+      "bytes": 1371,
+      "sha256": "f8e2fb27e8c0f3523f9cc9d52165d6793be7f1b60253ad3e91452287fd91facb"
+    },
+    {
+      "path": "reports/grwl--rashid-0.3.0.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "reports/grwl--rashid-0.3.0.stdout.json",
+      "bytes": 928,
+      "sha256": "734d720ab2def9f7e771ceee36b9c84bd6a84a59f337895fe116c4dbd4c41e50"
+    },
+    {
+      "path": "reports/hydrolakes--portolan-0.8.0.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "reports/hydrolakes--portolan-0.8.0.stdout.json",
+      "bytes": 1372,
+      "sha256": "a24d0f83a61e40ee289cf554f65b9287e5c3c23b58c9edf3fa8e84023dca4b4d"
+    },
+    {
+      "path": "reports/hydrolakes--rashid-0.3.0.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "reports/hydrolakes--rashid-0.3.0.stdout.json",
+      "bytes": 929,
+      "sha256": "f1007d3ecf2fb4986560b71f7e8bd4ae325af5231abd96c6ad5624ae2926cb30"
+    },
+    {
+      "path": "reports/lakeatlas--portolan-0.8.0.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "reports/lakeatlas--portolan-0.8.0.stdout.json",
+      "bytes": 2669,
+      "sha256": "495bed77cd16f337dd8c704cdffe19c41869d38535cce73285a1fceacad86ed9"
+    },
+    {
+      "path": "reports/lakeatlas--rashid-0.3.0.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "reports/lakeatlas--rashid-0.3.0.stdout.json",
+      "bytes": 1932,
+      "sha256": "0d9fe7fc35bfd788295962a88fb4d41792b25305428bda9ef81805a9bb8e37ea"
+    },
+    {
+      "path": "reports/river-plastic-inputs--portolan-0.8.0.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "reports/river-plastic-inputs--portolan-0.8.0.stdout.json",
+      "bytes": 1103,
+      "sha256": "e6719c98915dfdfbf5272ca96116d83693e3823e03372c3750a042196e8de5a2"
+    },
+    {
+      "path": "reports/river-plastic-inputs--rashid-0.3.0.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "reports/river-plastic-inputs--rashid-0.3.0.stdout.json",
+      "bytes": 960,
+      "sha256": "546fa5773b418bd18f15aa3e0f9c9ed04b19dea5e3e1654538bd28a31913bb89"
+    }
+  ]
+}

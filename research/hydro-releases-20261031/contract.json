@@ -1,0 +1,25 @@
+{
+  "authorized_scope": "Prepare HydroLAKES, Free-Flowing Rivers and LakeATLAS releases locally; consider JRC Occurrence v1.5 by qualifying original tiles first. Review current versions and further HydroSHEDS opportunities. No uploads, remote repo creation, registry submission, GEE or paid cloud jobs.",
+  "acceptance_before_results": [
+    "Pin the current exact producer release, archive identities, metadata and attribution before conversion; distinguish latest release from observation vintage.",
+    "Preserve all released records, IDs, decoded attribute types/values/nulls and WKB geometry, with a complete independent source reread comparison; no repair, simplification or deduplication in analytic output.",
+    "GeoParquet CRS/geometry metadata must validate; deliberate row/value/geometry/null corruption must be rejected. Bound conversion memory and staging disk.",
+    "Use an isolated output directory, committed code and locked environment; repeat the build from a clean checkout and compare analytic asset hashes.",
+    "Keep display output optional and independently labeled; an analytic-only release is allowed. Do not consume disk making unnecessary copies of existing validated data.",
+    "Produce checksum-bound source manifest, field dictionary, license/attribution, limitations and STAC/Portolan metadata; run actual schema checks and local HTTP-range/subset verification.",
+    "Mark prepared only after the applicable source-fidelity, schema, integrity and rebuild checks pass. Retain failed reports and label deferred checks.",
+    "For JRC, inventory the complete exact-version Occurrence scope and inspect representative source tile layout/range access. A sampled check cannot certify all 504 objects; convert only if a documented need remains."
+  ],
+  "resource_limits": {
+    "disk": "Approximately 40 GiB free at start. Reuse retained artifacts, use streaming/chunked processing; no unbounded copies or large parallel source extraction. Check free space before bulk writes.",
+    "cloud": "No remote compute/upload/GEE.",
+    "jrc": "Start with metadata and bounded header/range probes, not a full 14.45 GB mirror."
+  },
+  "ownership": {
+    "parent": "shared schema/catalog/scripts, HydroLAKES build integration and release execution",
+    "lakeatlas": "datasets/lakeatlas only; scripts/metadata and own ignored local directories",
+    "ffr": "datasets/free-flowing-rivers only; scripts/metadata and own ignored local directories",
+    "hydro_review": "research/hydro-releases-20261031/version-review and jrc qualification scripts/evidence only"
+  },
+  "status": "criteria_committed_before_new_build_results"
+}

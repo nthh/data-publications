@@ -1,0 +1,20 @@
+{
+  "earlier_failures": [
+    {
+      "check": "staged populated fixture",
+      "finding": "TemporaryDirectory supplied the macOS /var alias; the stage symlink guard correctly refused it.",
+      "resolution": "Canonicalize the test fixture root with Path.resolve; do not weaken the path guard."
+    },
+    {
+      "check": "canonical state preservation",
+      "finding": "The two older records already had manifest_path; the first edit duplicated it, and the comparison wrongly removed that existing field.",
+      "resolution": "Keep the original manifest_path, remove the redundant duplicate, compare only newly added fields, and reject duplicate YAML keys in generator inputs."
+    }
+  ],
+  "status": "followup_checks_passed",
+  "followup_evidence": [
+    "preservation-and-reexports.json",
+    "publication-integration.json",
+    "generator-tests.txt"
+  ]
+}

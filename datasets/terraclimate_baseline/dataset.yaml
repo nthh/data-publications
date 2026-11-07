@@ -1,0 +1,219 @@
+schema_version: 1
+id: terraclimate_baseline
+title: TerraClimate historical climate and water-balance grids
+intake:
+  kind: official_catalog
+  reference_url: https://developers.google.com/earth-engine/datasets/catalog/IDAHO_EPSCOR_TERRACLIMATE
+  added_on: '2026-10-31'
+triage:
+  decision: defer
+  priority: normal
+  rationale: Deferred from the current vector publication batch by the user on 2026-11-01. Scientifically
+    useful v1.1 remains a later climate-array candidate; qualify one complete variable and chunked-access
+    benefit before the 115.5 GB full build.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'citations: Global; Global land Distinct named producer product; retain exact source
+    edition and footprint. planetary: review_note: Global terrestrial climate/water-balance grids; terrestrial
+    land domain despite all-world STAC bbox.; stac_bbox: [-180, -90, 180, 90]; temporal_interval: [["1958-01-01T00:00:00Z",
+    "2021-12-01T00:00:00Z"]] Historical baseline joins official TerraClimate; distinct from terraclim
+    +2C/+4C scenarios. Related canonical records, with distinct scope: terraclim. reuse: The saved STAC
+    collection response (HTTP 200) declares monthly global-terrestrial TerraClimate at ~4 km (1/24°),
+    1958-01 through 2021-12, with public-looking HTTPS and Azure Zarr roots. It declares CC0-1.0. Collection
+    metadata only: no Zarr root/asset GET, content/checksum, v1.1 parity, or reader test. Producer v1.1
+    archive elsewhere is documented as 1950–2025, so dates/releases differ. Prior observation dated 2026-10-31;
+    no new remote access check. Historical baseline product; distinct from legacy TerraClimate +2C/+4C
+    scenarios and from the longer producer v1.1 archive. reuse: Prior THREDDS catalog metadata returned
+    HTTP 200 and declares NetCDF files with OpenDAP, HTTPServer and subset services; the inventory covers
+    v1.1 annual files, 1950–2025, with 1,064 files across 14 variables. Prior reports estimate ~116–121
+    GB from publisher-rounded Mbytes, not a measured transfer. One inspected vapour-pressure 1958 .das
+    response declares V1.1, WorldClim v2.1/ERA5, CC0 1.0 and modified date 2026-06-02; this single-file
+    attribute result is not an archive-wide license audit. No NetCDF body downloaded. Prior observation
+    dated 2026-10-30; no new remote access check. Producer v1.1 archive (1950–2025) is related to, but
+    not the same version/coverage as, PC STAC baseline (1958–2021) or warming-scenario data.'
+  sources:
+  - provider: gee_official
+    entry_id: IDAHO_EPSCOR/TERRACLIMATE
+    url: https://developers.google.com/earth-engine/datasets/catalog/IDAHO_EPSCOR_TERRACLIMATE
+    relationship: exact_dataset
+  - provider: planetary_computer
+    entry_id: terraclimate
+    url: https://planetarycomputer.microsoft.com/api/stac/v1/collections/terraclimate
+    relationship: same_family
+  - provider: producer
+    entry_id: TERRACLIMATE_ALL/data
+    url: https://tds-proxy.nkn.uidaho.edu/thredds/catalog/TERRACLIMATE_ALL/data/catalog.xml
+    relationship: related_release
+  - provider: producer
+    entry_id: TerraClimate_vap_1958.nc attributes
+    url: https://www.reacchpna.org/thredds/dodsC/TERRACLIMATE_ALL/data/TerraClimate_vap_1958.nc.das
+    relationship: related_release
+  access:
+  - provider: literature
+    status: unknown
+    formats: []
+    summary: GEE catalog entries are available through Earth Engine; frozen metadata does not establish
+      an independently downloadable native bulk copy or its format. Distinct named producer product; retain
+      exact source edition and footprint.
+    license_summary: Not inferred from citation records. Verify producer terms for the exact edition before
+      conversion or redistribution.
+    proposed_outputs: []
+    rationale: 'Candidate discovery only: global/near-global scope and associated-paper citation signal
+      justify source-format and licensing review. Citation rank does not establish conversion priority
+      or exact-release use.'
+    evidence_urls:
+    - https://developers.google.com/earth-engine/datasets/catalog/IDAHO_EPSCOR_TERRACLIMATE
+    - https://doi.org/10.1038/sdata.2017.191
+  - provider: planetary_computer
+    status: native_available
+    formats:
+    - Zarr
+    summary: 'Collection metadata declares per-item data assets / provider storage roots in the listed
+      native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain
+      unvalidated. Historical baseline joins official TerraClimate; distinct from terraclim +2C/+4C scenarios.'
+    license_summary: 'note: Do not treat this metadata label as legal clearance.; review_status: provider
+      declaration captured; terms and redistribution permission not independently reviewed; stac_license:
+      CC0-1.0'
+    proposed_outputs:
+    - Zarr
+    rationale: Reuse existing canonical family; STAC declares HTTPS Zarr root and monthly global product.
+      Byte-level Zarr/layout validation remains outstanding.
+    evidence_urls:
+    - https://planetarycomputer.microsoft.com/api/stac/v1/collections/terraclimate
+    - https://planetarycomputer.microsoft.com/dataset/terraclimate
+  - provider: planetary_computer
+    status: native_available
+    formats:
+    - Zarr
+    summary: 'The saved STAC collection response (HTTP 200) declares monthly global-terrestrial TerraClimate
+      at ~4 km (1/24°), 1958-01 through 2021-12, with public-looking HTTPS and Azure Zarr roots. It declares
+      CC0-1.0. Collection metadata only: no Zarr root/asset GET, content/checksum, v1.1 parity, or reader
+      test. Producer v1.1 archive elsewhere is documented as 1950–2025, so dates/releases differ. Prior
+      observation dated 2026-10-31; no new remote access check. Historical baseline product; distinct
+      from legacy TerraClimate +2C/+4C scenarios and from the longer producer v1.1 archive.'
+    observed_on: '2026-10-31'
+    license_summary: PC collection metadata declares CC0-1.0; this is a provider metadata declaration,
+      not an independent legal review or proof covering other versions/producer archive.
+    proposed_outputs: []
+    rationale: Existing native Zarr access is a reuse signal for historical baseline coverage 1958–2021.
+      Do not treat it as the full TerraClimate v1.1 1950–2025 archive or the separate CMIP scenario product.
+    evidence_urls:
+    - https://planetarycomputer.microsoft.com/api/stac/v1/collections/terraclimate
+    - https://planetarycomputer.microsoft.com/dataset/terraclimate
+  - provider: producer
+    status: download_available
+    formats:
+    - NetCDF
+    summary: Prior THREDDS catalog metadata returned HTTP 200 and declares NetCDF files with OpenDAP,
+      HTTPServer and subset services; the inventory covers v1.1 annual files, 1950–2025, with 1,064 files
+      across 14 variables. Prior reports estimate ~116–121 GB from publisher-rounded Mbytes, not a measured
+      transfer. One inspected vapour-pressure 1958 .das response declares V1.1, WorldClim v2.1/ERA5, CC0
+      1.0 and modified date 2026-06-02; this single-file attribute result is not an archive-wide license
+      audit. No NetCDF body downloaded. Prior observation dated 2026-10-30; no new remote access check.
+      Producer v1.1 archive (1950–2025) is related to, but not the same version/coverage as, PC STAC baseline
+      (1958–2021) or warming-scenario data.
+    observed_on: '2026-10-30'
+    license_summary: CC0 1.0 declaration observed in one inspected producer NetCDF attributes response;
+      verify consistency across exact pinned archive/version.
+    proposed_outputs: []
+    rationale: This is a producer-native NetCDF access path and longer time span than the PC collection.
+      Treat as related version/coverage evidence; do not infer that a Zarr conversion is needed without
+      qualifying the existing host against the use case.
+    evidence_urls:
+    - https://tds-proxy.nkn.uidaho.edu/thredds/catalog/TERRACLIMATE_ALL/data/catalog.xml
+    - https://www.reacchpna.org/thredds/dodsC/TERRACLIMATE_ALL/data/TerraClimate_vap_1958.nc.das
+  citations:
+  - provider: OpenAlex
+    paper_doi: 10.1038/sdata.2017.191
+    work_id: https://openalex.org/W2784327149
+    cited_by_count: 3477
+    observed_on: '2026-10-30'
+    scope: associated_dataset_publication,base_dataset_family
+  evidence:
+  - path: research/global-candidates-20261031/citations/reviewed.json
+    sha256: 572140255cd3b41a1ec8ecca0139e64d38899cda7fdd55756f399a0dca57a467
+    key: terraclimate_baseline
+  - path: research/global-candidates-20261031/planetary/reviewed.json
+    sha256: 07da016851a07f3e3e0937e120ce46442785f4e9096e563d92c1a3c0ce9e616a
+    key: terraclimate
+  - path: research/global-candidates-20261031/reuse/reviewed.json
+    sha256: 936d932d9ec3305e1499934f4cdc530b00e5e518b08e647671356646dbd85de8
+    key: terraclimate_planetary_computer_baseline_zarr
+  - path: research/global-candidates-20261031/reuse/reviewed.json
+    sha256: 936d932d9ec3305e1499934f4cdc530b00e5e518b08e647671356646dbd85de8
+    key: terraclimate_v11_producer_netcdf_archive
+
+review:
+  availability:
+    shortlist_id: native-publication-gaps-20261031
+    rank: 3
+    reviewed_on: '2026-11-01'
+    label: TerraClimate v1.1 baseline
+    scope: Monthly historical baseline 1950–2025, 14 variables × 76 annual files; excludes climate-change
+      scenarios and climatologies.
+    geographic_scope: global
+    download:
+      bytes: 115507400000
+      precision: rounded
+      reported_size: 115507.4 Mbytes (rounded catalog sum)
+      format: NetCDF
+      file_count: 1064
+      basis: producer_listing
+      note: Sum of rounded producer THREDDS Mbytes values. One ws_2025 HEAD is 43,220,665 bytes against
+        43.22 Mbytes, supporting decimal MB interpretation. Total remains an estimate, not a full 1064-object
+        HEAD inventory.
+      evidence_urls:
+      - https://tds-proxy.nkn.uidaho.edu/thredds/catalog/TERRACLIMATE_ALL/data/catalog.xml
+      - https://www.climatologylab.org/terraclimate.html
+    locations:
+    - service_id: nkn_thredds
+      label: Producer / NKN THREDDS
+      platform: external
+      relationship: matching_scope
+      access: download
+      formats:
+      - NetCDF
+      urls:
+      - https://tds-proxy.nkn.uidaho.edu/thredds/catalog/TERRACLIMATE_ALL/data/catalog.xml
+      - https://tds-proxy.nkn.uidaho.edu/thredds/terraclimate_catalog.html
+      asset_ids: []
+      note: HTTP files, OPeNDAP and NCSS are protocols of the same producer distribution; counted once.
+    - service_id: planetary_computer
+      label: Microsoft Planetary Computer
+      platform: external
+      relationship: other_version_or_subset
+      access: cloud_native
+      formats:
+      - Zarr
+      urls:
+      - https://planetarycomputer.microsoft.com/api/stac/v1/collections/terraclimate
+      asset_ids: []
+      note: Collection metadata covers 1958–2021, not the full reprocessed 1950–2025 v1.1 scope. Arrays
+        not read; do not infer exact source version from collection name.
+    - service_id: earth_engine
+      label: GEE official
+      platform: gee
+      relationship: other_version_or_subset
+      access: gee_collection
+      formats:
+      - Earth Engine ImageCollection
+      urls:
+      - https://developers.google.com/earth-engine/datasets/catalog/IDAHO_EPSCOR_TERRACLIMATE
+      asset_ids:
+      - IDAHO_EPSCOR/TERRACLIMATE
+      note: Catalog describes 1958 onward with CRU/JRA-55 lineage; it does not establish the new ERA5-based
+        v1.1 baseline. Community 2C/4C scenarios are different products and excluded.
+    output_manifest: null
+    evidence:
+    - path: research/availability-sizes-20261101/observations.json
+      sha256: a7c4fd21000b497faf92810420cde5cc4ee80ae533721dd13c69cb7e692fcd7b
+      key: terraclimate_baseline
+  execution_note:
+    reviewed_on: '2026-11-01'
+    stage: deferred_from_current_batch
+    reason: Retain as a later climate-array candidate; focus current work on hydrology vectors and source
+      qualification.

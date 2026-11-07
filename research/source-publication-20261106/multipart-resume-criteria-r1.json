@@ -1,0 +1,65 @@
+{
+  "acceptance": {
+    "completed": 343,
+    "failed": 0,
+    "fresh_verified": 44,
+    "object_count": 343,
+    "prior_failed_receipt_unchanged": true,
+    "resume_mode": "existing_multipart",
+    "resumed_multipart": 1,
+    "reused_prior_verified": 299,
+    "status": "complete",
+    "summary_mode": "execute",
+    "target_head_size_and_content_type_match_plan": true,
+    "target_multipart_state": "completed",
+    "target_remote_sha256": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+    "target_remote_sha256_scope": "fresh full remote ranged readback by current attempt",
+    "target_status": "uploaded_verified"
+  },
+  "execution_contract": {
+    "all_parts_replayed_from_1": 83,
+    "complete_condition": "IfNoneMatch=*",
+    "create_multipart_upload_calls": 0,
+    "current_parts_journaled_after_each_success": true,
+    "flags": [
+      "--resume-from",
+      "--resume-multipart",
+      "--expected-resume-summary-sha256",
+      "--expected-resume-record-sha256",
+      "--expected-plan-sha256",
+      "--include-readme",
+      "--execute"
+    ],
+    "on_part_or_complete_error": "failed receipt; no replacement upload ID or automatic abort",
+    "part_bytes": 67108864,
+    "prior_verified_objects_reused_with_original_full_byte_proof": 299,
+    "target_full_fresh_local_sha_preflight": true,
+    "target_head_must_be_absent_before_parts": true
+  },
+  "frozen_inputs": {
+    "bucket": "nthh",
+    "content_type": "application/vnd.apache.parquet",
+    "endpoint": "https://data.source.coop",
+    "object_key": "grwl-raw/releases/raw-v01.01-local-r1/assets/grwl-raw-observations.parquet",
+    "owner": "nthh",
+    "plan_sha256": "754c02dde3cf258263619599f893558d3348c7fb51c07f8fa700efa1900ac610",
+    "prior_completed": 299,
+    "prior_failed": 1,
+    "prior_failed_record_sha256": "6a35e9594016ad9f99ef62f8ed7331b951a4f749f020528046af2c054f663c7f",
+    "prior_multipart_state": "abort_failed",
+    "prior_object_count": 343,
+    "prior_status": "failed",
+    "prior_summary_sha256": "de78ceff5522dc8646b0fb6c793776f82f29b153c9a726ab9728278ff5adae6c",
+    "product_id": "grwl-raw",
+    "sha256": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+    "size_bytes": 5529859809,
+    "upload_id_source": "prior failed object record only; value omitted from this document"
+  },
+  "primary_sources": [
+    "https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html",
+    "https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html"
+  ],
+  "purpose": "Complete the same journaled incomplete GRWL multipart upload by replaying every part; no new upload ID or abort",
+  "retry_limitations": "If replay fails before completion, the original frozen receipt and same upload ID can be retried after inspection. If a later object fails after target completion, this original multipart mode refuses the now-existing target; a new ordinary exact-plan execution can verify existing objects by full remote readback.",
+  "schema_version": 1
+}

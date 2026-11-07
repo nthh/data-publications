@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "criteria_changed": false,
+  "memory_cap_changed": false,
+  "regional": {
+    "pilot": {
+      "overview_archive_byte_identical": true,
+      "counts_identical": true,
+      "sample_encoding_changed": true,
+      "reason": "Arrow streams sorted winners into bounded Parquet batches; scientific selection and encoded display payloads are unchanged."
+    },
+    "heldout": {
+      "overview_archive_byte_identical": true,
+      "counts_identical": true,
+      "sample_encoding_changed": true,
+      "reason": "Arrow streams sorted winners into bounded Parquet batches; scientific selection and encoded display payloads are unchanged."
+    }
+  },
+  "replay": "clean-replay-r2/report.json",
+  "production_commit": "79e9b1e1fbb04520740218432955a59dab44b76b",
+  "unit_tests": {
+    "grwl": 24,
+    "viewer": 20,
+    "source_products": 40
+  },
+  "global_status": "running_not_yet_validated"
+}

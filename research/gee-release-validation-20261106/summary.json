@@ -1,0 +1,1329 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-11-06",
+  "datasets_reviewed": 5,
+  "analytical_layers": 6,
+  "status": "comparisons_complete_with_documented_differences",
+  "all_strict_gee_parity_passed": false,
+  "source_data_modified": false,
+  "products_published": false,
+  "scope": "Global counts, 512–522 systematic source-selected observations in each large layer, and historical exhaustive river-plastic replay. Neither counts nor samples establish exhaustive present-day GEE parity or independent scientific accuracy.",
+  "layers": [
+    {
+      "layer_id": "river-plastic-inputs",
+      "dataset_id": "river-plastic-inputs",
+      "status": "completed_historical_exhaustive_replay_with_fresh_metadata_and_count",
+      "strict_status": "failed_geometry_parity",
+      "count": {
+        "local_row_count": 40760,
+        "gee_synchronous_count": 40760,
+        "pass": true
+      },
+      "features_refetched_in_this_review": false,
+      "metadata_unchanged_since_original_capture": true,
+      "capture_scope": "Offline replay of the 2026-10-30 full capture, with 2026-11-06 metadata/count refresh only.",
+      "attributes": {
+        "scientific_fields": 53,
+        "attribute_cells_compared": 2160280,
+        "exact_numeric_matches": 2160076,
+        "null_matches": 204,
+        "mismatch_counts": {}
+      },
+      "identity": {
+        "uniquely_matched_points": 40722,
+        "coincident_groups_verified": 19,
+        "coincident_records_verified": 38,
+        "source_records_verified": 40760
+      },
+      "geometry_diagnostics": {
+        "within_one_meter": 40760,
+        "maximum_observed_diagnostic_m": 0.34945638926427325
+      },
+      "strict_report": {
+        "path": "research/gee-release-validation-20261106/plastic-replay-r1/strict.json",
+        "sha256": "dfa89707b9dc0368427dc6166a898f3d0087645f37efd541ee381b5228aac6b7",
+        "bytes": 470761
+      },
+      "diagnostic_report": {
+        "path": "research/gee-release-validation-20261106/plastic-replay-r1/diagnostic.json",
+        "sha256": "cc0b1d1993ee582b0daf0752f57e1a1c1a8a0c1174db3c3e9c8bc4ccfd706140",
+        "bytes": 35779
+      }
+    },
+    {
+      "layer_id": "hydrolakes",
+      "dataset_id": "hydrolakes",
+      "status": "completed_sampled_with_documented_differences",
+      "strict_status": "sampled_fail",
+      "count": {
+        "local_row_count": 1427688,
+        "frozen_expected_count": 1427688,
+        "gee_synchronous_count": 1427688,
+        "pass": true
+      },
+      "identity": {
+        "matching": "Hylak_id",
+        "requested_sample_count": 522,
+        "matched_sample_count": 522,
+        "missing_sample_count": 0,
+        "repeated_identical_ids_across_raw_queries": 0,
+        "conflicting_duplicate_gee_feature_ids": 0,
+        "extra_gee_records": 0
+      },
+      "sample_context": {
+        "countries": [
+          "Argentina",
+          "Australia",
+          "Bangladesh",
+          "Bolivia",
+          "Brazil",
+          "Canada",
+          "Chile",
+          "China",
+          "Colombia",
+          "Cuba",
+          "Democratic Republic of the Congo",
+          "Denmark",
+          "Finland",
+          "Germany",
+          "Guatemala",
+          "India",
+          "Indonesia",
+          "Italy",
+          "Japan",
+          "Kazakhstan",
+          "Latvia",
+          "Mexico",
+          "Mongolia",
+          "Mozambique",
+          "New Zealand",
+          "Nigeria",
+          "Norway",
+          "Poland",
+          "Russia",
+          "Solomon Islands",
+          "South Korea",
+          "Sri Lanka",
+          "Sweden",
+          "Thailand",
+          "Ukraine",
+          "United Kingdom",
+          "United States of America",
+          "Venezuela"
+        ],
+        "continents": [
+          "Africa",
+          "Asia",
+          "Europe",
+          "North America",
+          "Oceania",
+          "South America"
+        ],
+        "source_tiles": [],
+        "coordinate_bounds_wgs84": {
+          "west": -179.5164421505397,
+          "south": -54.26146751873054,
+          "east": 175.35240885416584,
+          "north": 77.68863677978516
+        }
+      },
+      "capture_integrity": "passed",
+      "source_and_historical_git_provenance": "passed",
+      "strict_geometry": {
+        "strict_pass": 0,
+        "strict_fail": 522
+      },
+      "comparison_report": {
+        "path": "research/gee-release-validation-20261106/comparisons-r1/hydrolakes.json",
+        "sha256": "8aee13775af793279f2d92abd9dd3741e7992f9fb8f9f771d4b5fdff397eabdc",
+        "bytes": 192547
+      },
+      "attributes": {
+        "scientific_field_count": 21,
+        "counts": {
+          "exact": 10454,
+          "representational": 0,
+          "mismatch": 508
+        },
+        "mismatching_fields": [
+          "Lake_name"
+        ],
+        "missing_required_properties": 0,
+        "geometry_derived_fields_excluded_from_these_counts": [],
+        "diagnostic_report": {
+          "path": "research/gee-release-validation-20261106/attribute-diagnostics-r1/hydrolakes.json",
+          "sha256": "b68ab5dad0f1b91c3afbc106dcac9c0a3926a3b561c9c3e5afad658f5b2167b0",
+          "bytes": 25520
+        }
+      },
+      "geometry_diagnostics": {
+        "initial_diagnostic_within_one_meter": 508,
+        "followup_cases": 14,
+        "within_one_meter_across_mixed_diagnostics": 519,
+        "over_one_meter": 3,
+        "incomplete": 0,
+        "maximum_observed_diagnostic_m": 843.3533688959003,
+        "interpretation": "Aligned WGS84 vertices or discrete locally projected distances; not a continuous Hausdorff certificate, strict parity pass or exhaustive check.",
+        "above_one_meter_cases": [
+          {
+            "local_id": "2",
+            "maximum_sampled_distance_m": 19.611646856977302
+          },
+          {
+            "local_id": "3",
+            "maximum_sampled_distance_m": 64.70806605755135
+          },
+          {
+            "local_id": "4",
+            "maximum_sampled_distance_m": 843.3533688959003
+          }
+        ],
+        "followup_report": {
+          "path": "research/gee-release-validation-20261106/geometry-diagnostics-r2/hydrolakes.json",
+          "sha256": "d09b73a44f8d9987e1cc0c78a527f2684b1267c7bbc0c7ab25162841e12ca8d4",
+          "bytes": 42925
+        }
+      }
+    },
+    {
+      "layer_id": "lakeatlas-polygons",
+      "dataset_id": "lakeatlas",
+      "status": "completed_sampled_with_documented_differences",
+      "strict_status": "sampled_fail",
+      "count": {
+        "local_row_count": 1427688,
+        "frozen_expected_count": 1427688,
+        "gee_synchronous_count": 1427688,
+        "pass": true
+      },
+      "identity": {
+        "matching": "Hylak_id",
+        "requested_sample_count": 522,
+        "matched_sample_count": 522,
+        "missing_sample_count": 0,
+        "repeated_identical_ids_across_raw_queries": 0,
+        "conflicting_duplicate_gee_feature_ids": 0,
+        "extra_gee_records": 0
+      },
+      "sample_context": {
+        "countries": [
+          "Argentina",
+          "Australia",
+          "Bangladesh",
+          "Bolivia",
+          "Brazil",
+          "Canada",
+          "Chile",
+          "China",
+          "Colombia",
+          "Cuba",
+          "Democratic Republic of the Congo",
+          "Denmark",
+          "Finland",
+          "Germany",
+          "Guatemala",
+          "India",
+          "Indonesia",
+          "Italy",
+          "Japan",
+          "Kazakhstan",
+          "Latvia",
+          "Mexico",
+          "Mongolia",
+          "Mozambique",
+          "New Zealand",
+          "Nigeria",
+          "Norway",
+          "Poland",
+          "Russia",
+          "Solomon Islands",
+          "South Korea",
+          "Sri Lanka",
+          "Sweden",
+          "Thailand",
+          "Ukraine",
+          "United Kingdom",
+          "United States of America",
+          "Venezuela"
+        ],
+        "continents": [
+          "Africa",
+          "Asia",
+          "Europe",
+          "North America",
+          "Oceania",
+          "South America"
+        ],
+        "source_tiles": [],
+        "coordinate_bounds_wgs84": {
+          "west": -179.5164421505397,
+          "south": -54.26146751873054,
+          "east": 175.35240885416584,
+          "north": 77.68863677978516
+        }
+      },
+      "capture_integrity": "passed",
+      "source_and_historical_git_provenance": "passed",
+      "strict_geometry": {
+        "strict_pass": 0,
+        "strict_fail": 522
+      },
+      "comparison_report": {
+        "path": "research/gee-release-validation-20261106/comparisons-r1/lakeatlas-polygons.json",
+        "sha256": "f0b07901c4bb43e28345292599cb4ebb04233b8dc2e17f2ec863f3274adfdb5c",
+        "bytes": 274379
+      },
+      "attributes": {
+        "scientific_field_count": 305,
+        "counts": {
+          "exact": 150402,
+          "representational": 8466,
+          "mismatch": 342
+        },
+        "mismatching_fields": [
+          "Lake_area",
+          "Shore_len",
+          "Dis_avg",
+          "Wshd_area",
+          "dis_m3_pyr",
+          "dis_m3_pmn",
+          "dis_m3_pmx",
+          "ria_ha_vsu",
+          "ria_ha_usu",
+          "riv_tc_vsu",
+          "riv_tc_usu",
+          "pop_ct_vsu",
+          "pop_ct_usu",
+          "ppd_pk_vav",
+          "ppd_pk_uav",
+          "gdp_ud_vsu",
+          "gdp_ud_usu"
+        ],
+        "missing_required_properties": 0,
+        "geometry_derived_fields_excluded_from_these_counts": [
+          "Shape_Length",
+          "Shape_Area"
+        ],
+        "diagnostic_report": {
+          "path": "research/gee-release-validation-20261106/attribute-diagnostics-r1/lakeatlas-polygons.json",
+          "sha256": "ea2ac696e59659d515bba24542c5b277ea3171a39cec645cff322a45c0c3a630",
+          "bytes": 410990
+        },
+        "six_significant_digit_diagnostic": {
+          "mismatches_tested": 342,
+          "compatible": 263,
+          "outliers": 79,
+          "outlier_fields": [
+            "gdp_ud_usu",
+            "gdp_ud_vsu"
+          ],
+          "outliers_with_integral_gee_value": 79,
+          "outliers_equal_nearest_source_integer": 75,
+          "maximum_outlier_absolute_difference": 0.5390625,
+          "largest_relative_difference_example": {
+            "field": "gdp_ud_vsu",
+            "local_id": "814710",
+            "local": 5.815999984741211,
+            "gee": 6,
+            "absolute_error": 0.18400001525878906,
+            "hypothesis": {
+              "tested": true,
+              "match": false,
+              "bound": 5e-06,
+              "exception": null,
+              "serialization_allowance": 1.7763568394002505e-15,
+              "effective_bound": 5.000000001776357e-06
+            }
+          },
+          "interpretation": "Posthoc descriptive integer counts; not a new tolerance or proof of the ingestion method. Six exceptions across both layers differ from nearest-integer rounding of the retained source value."
+        }
+      },
+      "geometry_diagnostics": {
+        "initial_diagnostic_within_one_meter": 508,
+        "followup_cases": 14,
+        "within_one_meter_across_mixed_diagnostics": 519,
+        "over_one_meter": 3,
+        "incomplete": 0,
+        "maximum_observed_diagnostic_m": 843.3533688959003,
+        "interpretation": "Aligned WGS84 vertices or discrete locally projected distances; not a continuous Hausdorff certificate, strict parity pass or exhaustive check.",
+        "above_one_meter_cases": [
+          {
+            "local_id": "2",
+            "maximum_sampled_distance_m": 19.611646856977302
+          },
+          {
+            "local_id": "3",
+            "maximum_sampled_distance_m": 64.70806605755135
+          },
+          {
+            "local_id": "4",
+            "maximum_sampled_distance_m": 843.3533688959003
+          }
+        ],
+        "followup_report": {
+          "path": "research/gee-release-validation-20261106/geometry-diagnostics-r2/lakeatlas-polygons.json",
+          "sha256": "a652f3cdb395630d7ffe58b92261f9323d92878eccf6e9ef448d460d0567c176",
+          "bytes": 42990
+        }
+      }
+    },
+    {
+      "layer_id": "lakeatlas-points",
+      "dataset_id": "lakeatlas",
+      "status": "completed_sampled_with_documented_differences",
+      "strict_status": "sampled_fail",
+      "count": {
+        "local_row_count": 1427688,
+        "frozen_expected_count": 1427688,
+        "gee_synchronous_count": 1427688,
+        "pass": true
+      },
+      "identity": {
+        "matching": "Hylak_id",
+        "requested_sample_count": 522,
+        "matched_sample_count": 522,
+        "missing_sample_count": 0,
+        "repeated_identical_ids_across_raw_queries": 0,
+        "conflicting_duplicate_gee_feature_ids": 0,
+        "extra_gee_records": 0
+      },
+      "sample_context": {
+        "countries": [
+          "Argentina",
+          "Australia",
+          "Bangladesh",
+          "Bolivia",
+          "Brazil",
+          "Canada",
+          "Chile",
+          "China",
+          "Colombia",
+          "Cuba",
+          "Democratic Republic of the Congo",
+          "Denmark",
+          "Finland",
+          "Germany",
+          "Guatemala",
+          "India",
+          "Indonesia",
+          "Italy",
+          "Japan",
+          "Kazakhstan",
+          "Latvia",
+          "Mexico",
+          "Mongolia",
+          "Mozambique",
+          "New Zealand",
+          "Nigeria",
+          "Norway",
+          "Poland",
+          "Russia",
+          "Solomon Islands",
+          "South Korea",
+          "Sri Lanka",
+          "Sweden",
+          "Thailand",
+          "Ukraine",
+          "United Kingdom",
+          "United States of America",
+          "Venezuela"
+        ],
+        "continents": [
+          "Africa",
+          "Asia",
+          "Europe",
+          "North America",
+          "Oceania",
+          "South America"
+        ],
+        "source_tiles": [],
+        "coordinate_bounds_wgs84": {
+          "west": -175.42702399999996,
+          "south": -54.25980899999996,
+          "east": 175.40909800000009,
+          "north": 77.69451900000007
+        }
+      },
+      "capture_integrity": "passed",
+      "source_and_historical_git_provenance": "passed",
+      "strict_geometry": {
+        "strict_pass": 0,
+        "strict_fail": 522
+      },
+      "comparison_report": {
+        "path": "research/gee-release-validation-20261106/comparisons-r1/lakeatlas-points.json",
+        "sha256": "45de05e735eba875b671f9381206e19217dbba9aad286f33b5eb5f4c8df9dd21",
+        "bytes": 274682
+      },
+      "attributes": {
+        "scientific_field_count": 305,
+        "counts": {
+          "exact": 150380,
+          "representational": 8484,
+          "mismatch": 346
+        },
+        "mismatching_fields": [
+          "Lake_area",
+          "Shore_len",
+          "Dis_avg",
+          "Wshd_area",
+          "dis_m3_pyr",
+          "dis_m3_pmn",
+          "dis_m3_pmx",
+          "ria_ha_vsu",
+          "ria_ha_usu",
+          "riv_tc_vsu",
+          "riv_tc_usu",
+          "pop_ct_vsu",
+          "pop_ct_usu",
+          "ppd_pk_vav",
+          "ppd_pk_uav",
+          "gdp_ud_vsu",
+          "gdp_ud_usu"
+        ],
+        "missing_required_properties": 0,
+        "geometry_derived_fields_excluded_from_these_counts": [],
+        "diagnostic_report": {
+          "path": "research/gee-release-validation-20261106/attribute-diagnostics-r1/lakeatlas-points.json",
+          "sha256": "43e91faf1cfc948635bff1c8397752911196d3d8b5cca0d8ceb31eb3151a6c62",
+          "bytes": 406780
+        },
+        "six_significant_digit_diagnostic": {
+          "mismatches_tested": 346,
+          "compatible": 271,
+          "outliers": 75,
+          "outlier_fields": [
+            "gdp_ud_usu",
+            "gdp_ud_vsu"
+          ],
+          "outliers_with_integral_gee_value": 75,
+          "outliers_equal_nearest_source_integer": 73,
+          "maximum_outlier_absolute_difference": 0.52734375,
+          "largest_relative_difference_example": {
+            "field": "gdp_ud_usu",
+            "local_id": "819702",
+            "local": 4.454999923706055,
+            "gee": 4,
+            "absolute_error": 0.4549999237060547,
+            "hypothesis": {
+              "tested": true,
+              "match": false,
+              "bound": 5e-06,
+              "exception": null,
+              "serialization_allowance": 1.7763568394002505e-15,
+              "effective_bound": 5.000000001776357e-06
+            }
+          },
+          "interpretation": "Posthoc descriptive integer counts; not a new tolerance or proof of the ingestion method. Six exceptions across both layers differ from nearest-integer rounding of the retained source value."
+        }
+      },
+      "geometry_diagnostics": {
+        "initial_diagnostic_within_one_meter": 522,
+        "followup_cases": 0,
+        "within_one_meter_across_mixed_diagnostics": 522,
+        "over_one_meter": 0,
+        "incomplete": 0,
+        "maximum_observed_diagnostic_m": 0.3009194134620777,
+        "interpretation": "Aligned WGS84 vertices or discrete locally projected distances; not a continuous Hausdorff certificate, strict parity pass or exhaustive check."
+      }
+    },
+    {
+      "layer_id": "free-flowing-rivers",
+      "dataset_id": "free-flowing-rivers",
+      "status": "completed_sampled_with_documented_differences",
+      "strict_status": "sampled_fail",
+      "count": {
+        "local_row_count": 8477883,
+        "frozen_expected_count": 8477883,
+        "gee_synchronous_count": 8477883,
+        "pass": true
+      },
+      "identity": {
+        "matching": "GOID",
+        "requested_sample_count": 521,
+        "matched_sample_count": 521,
+        "missing_sample_count": 0,
+        "repeated_identical_ids_across_raw_queries": 0,
+        "conflicting_duplicate_gee_feature_ids": 0,
+        "extra_gee_records": 0
+      },
+      "sample_context": {
+        "countries": [
+          "Afghanistan",
+          "Algeria",
+          "Angola",
+          "Argentina",
+          "Armenia",
+          "Australia",
+          "Bangladesh",
+          "Belarus",
+          "Belgium",
+          "Bhutan",
+          "Bolivia",
+          "Botswana",
+          "Brazil",
+          "Canada",
+          "Central African Republic",
+          "Chad",
+          "Chile",
+          "China",
+          "Colombia",
+          "Costa Rica",
+          "Democratic Republic of the Congo",
+          "Ecuador",
+          "Egypt",
+          "Equatorial Guinea",
+          "Eritrea",
+          "Ethiopia",
+          "France",
+          "French Guiana",
+          "Gabon",
+          "Germany",
+          "Greenland",
+          "Guyana",
+          "Iceland",
+          "India",
+          "Indonesia",
+          "Iran",
+          "Iraq",
+          "Ireland",
+          "Italy",
+          "Japan",
+          "Kazakhstan",
+          "Laos",
+          "Libya",
+          "Lithuania",
+          "Madagascar",
+          "Malaysia",
+          "Mali",
+          "Mauritania",
+          "Mexico",
+          "Mongolia",
+          "Mozambique",
+          "Myanmar",
+          "Namibia",
+          "New Zealand",
+          "Niger",
+          "Nigeria",
+          "Norway",
+          "Pakistan",
+          "Papua New Guinea",
+          "Paraguay",
+          "Peru",
+          "Philippines",
+          "Poland",
+          "Republic of Congo",
+          "Romania",
+          "Russia",
+          "Saudi Arabia",
+          "Sierra Leone",
+          "Slovakia",
+          "Somalia",
+          "South Africa",
+          "South Korea",
+          "South Sudan",
+          "Spain",
+          "Sudan",
+          "Sweden",
+          "Tajikistan",
+          "Tanzania",
+          "Thailand",
+          "Togo",
+          "Tunisia",
+          "Turkey",
+          "Turkmenistan",
+          "Uganda",
+          "Ukraine",
+          "United Arab Emirates",
+          "United Kingdom",
+          "United States",
+          "Uruguay",
+          "Uzbekistan",
+          "Venezuela",
+          "Vietnam",
+          "Yemen",
+          "Zambia",
+          "Zimbabwe"
+        ],
+        "continents": [
+          "Africa",
+          "Asia",
+          "Australia",
+          "Europe",
+          "North America",
+          "South America"
+        ],
+        "source_tiles": [],
+        "coordinate_bounds_wgs84": {
+          "west": -178.42708333299998,
+          "south": -48.38541666699996,
+          "east": 169.84166666700003,
+          "north": 83.42291666700004
+        }
+      },
+      "capture_integrity": "passed",
+      "source_and_historical_git_provenance": "passed",
+      "strict_geometry": {
+        "strict_pass": 0,
+        "strict_fail": 521
+      },
+      "comparison_report": {
+        "path": "research/gee-release-validation-20261106/comparisons-r1/free-flowing-rivers.json",
+        "sha256": "3f4ddd874aae723ea02fb5f9d6bb90a5cef1fe4633930edd7d9350a412178421",
+        "bytes": 217844
+      },
+      "attributes": {
+        "scientific_field_count": 37,
+        "counts": {
+          "exact": 18143,
+          "representational": 210,
+          "mismatch": 924
+        },
+        "mismatching_fields": [
+          "BAS_NAME",
+          "ERO_YLD_TON",
+          "BB_LEN_KM",
+          "BB_VOL_TCM",
+          "DOF",
+          "DOR",
+          "SED",
+          "USE",
+          "URB",
+          "RDD",
+          "FLD"
+        ],
+        "missing_required_properties": 521,
+        "geometry_derived_fields_excluded_from_these_counts": [
+          "Shape_Length"
+        ],
+        "diagnostic_report": {
+          "path": "research/gee-release-validation-20261106/attribute-diagnostics-r1/free-flowing-rivers.json",
+          "sha256": "10918f089bbe05792639a6053946a70d230aab042e1ad6a20d31b172e062fa59",
+          "bytes": 681551
+        },
+        "twelve_significant_digit_diagnostic": {
+          "original_mapped_mismatches_tested": 402,
+          "original_mapped_compatible": 392,
+          "remaining_cases": 10,
+          "remaining_max_absolute_difference": 4.996003610813204e-16,
+          "explicit_erosion_alias": {
+            "source": "ERO_YLD_TON",
+            "gee": "ERO_YLD_TO",
+            "counts": {
+              "exact": 115,
+              "representational": 0,
+              "mismatch": 406
+            },
+            "rounding_compatible": 406,
+            "maximum_absolute_difference": 4.1833845898509026e-07,
+            "definition_url": "https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_v1_FreeFlowingRivers"
+          },
+          "interpretation": "Alias diagnostic is separate; the original missing-field and numerical failures remain."
+        }
+      },
+      "geometry_diagnostics": {
+        "initial_diagnostic_within_one_meter": 516,
+        "followup_cases": 5,
+        "within_one_meter_across_mixed_diagnostics": 516,
+        "over_one_meter": 5,
+        "incomplete": 0,
+        "maximum_observed_diagnostic_m": 2.876463833607293,
+        "interpretation": "Aligned WGS84 vertices or discrete locally projected distances; not a continuous Hausdorff certificate, strict parity pass or exhaustive check.",
+        "above_one_meter_cases": [
+          {
+            "local_id": "1671168",
+            "maximum_sampled_distance_m": 2.429407786230265
+          },
+          {
+            "local_id": "8075947",
+            "maximum_sampled_distance_m": 1.4205316608802911
+          },
+          {
+            "local_id": "8404993",
+            "maximum_sampled_distance_m": 1.3714460064789549
+          },
+          {
+            "local_id": "8406358",
+            "maximum_sampled_distance_m": 1.5135137381827568
+          },
+          {
+            "local_id": "8407723",
+            "maximum_sampled_distance_m": 2.876463833607293
+          }
+        ],
+        "followup_report": {
+          "path": "research/gee-release-validation-20261106/geometry-diagnostics-r2/free-flowing-rivers.json",
+          "sha256": "00a8b6d9b67a688e60d0210590c211544a4a6e5148a100860f8312f1cf3ba529",
+          "bytes": 16268
+        }
+      }
+    },
+    {
+      "layer_id": "grwl-raw",
+      "dataset_id": "grwl-raw",
+      "status": "completed_sampled_with_documented_differences",
+      "strict_status": "sampled_fail",
+      "count": {
+        "local_row_count": 64572998,
+        "frozen_expected_count": 64572998,
+        "gee_synchronous_count": 64572998,
+        "pass": true
+      },
+      "identity": {
+        "matching": "raw compound-key multiset; no per-row identity asserted",
+        "requested_sample_count": 512,
+        "matched_sample_count": 512,
+        "missing_sample_count": 0,
+        "repeated_identical_ids_across_raw_queries": 0,
+        "conflicting_duplicate_gee_feature_ids": 0,
+        "extra_gee_records": 507
+      },
+      "sample_context": {
+        "countries": [],
+        "continents": [],
+        "source_tiles": [
+          "NA17",
+          "NA19",
+          "NA21",
+          "NA34",
+          "NA48",
+          "NB18",
+          "NB19",
+          "NB21",
+          "NB32",
+          "NB44",
+          "NC19",
+          "NC31",
+          "NC36",
+          "ND15",
+          "ND32",
+          "ND48",
+          "NE15",
+          "NE43",
+          "NE47",
+          "NE51",
+          "NF44",
+          "NF45",
+          "NF47",
+          "NF49",
+          "NG44",
+          "NG45",
+          "NG47",
+          "NG49",
+          "NH15",
+          "NH42",
+          "NH46",
+          "NH48",
+          "NH50",
+          "NI14",
+          "NI17",
+          "NI43",
+          "NI48",
+          "NI53",
+          "NJ15",
+          "NJ36",
+          "NJ44",
+          "NJ53",
+          "NK15",
+          "NK30",
+          "NK38",
+          "NK51",
+          "NL12",
+          "NL18",
+          "NL32",
+          "NL37",
+          "NL51",
+          "NM13",
+          "NM19",
+          "NM33",
+          "NM39",
+          "NM47",
+          "NM52",
+          "NN12",
+          "NN19",
+          "NN35",
+          "NN41",
+          "NN47",
+          "NN51",
+          "NN59",
+          "NO14",
+          "NO36",
+          "NO41",
+          "NO46",
+          "NO50",
+          "NO54",
+          "NP05",
+          "NP11",
+          "NP33",
+          "NP41",
+          "NP45",
+          "NP49",
+          "NP54",
+          "NP59",
+          "NQ05",
+          "NQ12",
+          "NQ27",
+          "NQ38",
+          "NQ42",
+          "NQ46",
+          "NQ50",
+          "NQ53",
+          "NQ56",
+          "NR01",
+          "NR17",
+          "NR42",
+          "NR46",
+          "NR49",
+          "NR53",
+          "NR57",
+          "NS45",
+          "NS49",
+          "SA17",
+          "SA19",
+          "SA20",
+          "SA21",
+          "SA32",
+          "SA35",
+          "SA49",
+          "SA54",
+          "SB19",
+          "SB20",
+          "SB22",
+          "SB34",
+          "SB53",
+          "SB55",
+          "SC19",
+          "SC21",
+          "SC33",
+          "SC58",
+          "SD20",
+          "SD23",
+          "SD52",
+          "SE21",
+          "SE24",
+          "SE39",
+          "SF22",
+          "SF38",
+          "SG22",
+          "SH20",
+          "SH54",
+          "SI35",
+          "SJ55",
+          "SN19"
+        ],
+        "coordinate_bounds_wgs84": {
+          "west": -180.0,
+          "south": -54.03461402039702,
+          "east": 173.79902004512098,
+          "north": 75.14550531100002
+        }
+      },
+      "capture_integrity": "passed",
+      "source_and_historical_git_provenance": "passed",
+      "strict_geometry": {
+        "strict_pass": 0,
+        "strict_fail": 512
+      },
+      "comparison_report": {
+        "path": "research/gee-release-validation-20261106/comparisons-r1/grwl-raw.json",
+        "sha256": "e6fefb572c865af88d93d8f7e9fbdedcbb03f0c1ee7d480c56d45ca273ff2dc3",
+        "bytes": 366482
+      },
+      "attributes": {
+        "pass": true,
+        "cells": {
+          "exact": 5120
+        },
+        "missing_required_cells": 0,
+        "mismatch_count": 0
+      },
+      "geometry_diagnostics": {
+        "initial_diagnostic_within_one_meter": 489,
+        "followup_cases": 23,
+        "within_one_meter_across_mixed_diagnostics": 512,
+        "over_one_meter": 0,
+        "incomplete": 0,
+        "maximum_observed_diagnostic_m": 0.339047743712597,
+        "interpretation": "Aligned WGS84 vertices or discrete locally projected distances; not a continuous Hausdorff certificate, strict parity pass or exhaustive check.",
+        "above_one_meter_cases": [],
+        "followup_report": {
+          "path": "research/gee-release-validation-20261106/geometry-diagnostics-r2/grwl-raw.json",
+          "sha256": "a2a4aa20155e4722475f50a6883c4ebe250fe8e72aca84f7491a1dca4701850a",
+          "bytes": 70948
+        }
+      }
+    }
+  ],
+  "lake_spike_trace": {
+    "path": "research/gee-release-validation-20261106/lake-spike-traces-r1.json",
+    "sha256": "820ea3eaa2777dc9620cfdbde0da17e6fdf1d319fc9940bc127079678f2ff08a",
+    "bytes": 3474
+  },
+  "grwl_global_selected_key_inventory": {
+    "path": "research/gee-release-validation-20261106/grwl-key-inventory-r1.json",
+    "sha256": "07f2cceb83c4143f1b97a3e46a6339f654cf1d6d008551acd7461d0a081934c8",
+    "bytes": 730
+  },
+  "grwl_primary_license_review": {
+    "path": "research/gee-release-validation-20261106/zenodo-metadata/review.json",
+    "sha256": "72ebfa2356bc2031d1ec719120027ab2edc7c5ad3dc123aecc29a4797183c400",
+    "bytes": 1817
+  },
+  "generator": {
+    "path": "research/gee-release-validation-20261106/summarize.py",
+    "sha256": "ad4c4561a3dd4ed7c39b2948828d063d26bbd01365630d7fd66a4798e7836d50",
+    "bytes": 10344
+  },
+  "evidence": [
+    {
+      "path": "research/gee-release-validation-20261106/attribute-diagnostics-r1/free-flowing-rivers.json",
+      "sha256": "10918f089bbe05792639a6053946a70d230aab042e1ad6a20d31b172e062fa59",
+      "bytes": 681551
+    },
+    {
+      "path": "research/gee-release-validation-20261106/attribute-diagnostics-r1/hydrolakes.json",
+      "sha256": "b68ab5dad0f1b91c3afbc106dcac9c0a3926a3b561c9c3e5afad658f5b2167b0",
+      "bytes": 25520
+    },
+    {
+      "path": "research/gee-release-validation-20261106/attribute-diagnostics-r1/lakeatlas-points.json",
+      "sha256": "43e91faf1cfc948635bff1c8397752911196d3d8b5cca0d8ceb31eb3151a6c62",
+      "bytes": 406780
+    },
+    {
+      "path": "research/gee-release-validation-20261106/attribute-diagnostics-r1/lakeatlas-polygons.json",
+      "sha256": "ea2ac696e59659d515bba24542c5b277ea3171a39cec645cff322a45c0c3a630",
+      "bytes": 410990
+    },
+    {
+      "path": "research/gee-release-validation-20261106/comparisons-r1/free-flowing-rivers.json",
+      "sha256": "3f4ddd874aae723ea02fb5f9d6bb90a5cef1fe4633930edd7d9350a412178421",
+      "bytes": 217844
+    },
+    {
+      "path": "research/gee-release-validation-20261106/comparisons-r1/grwl-raw.json",
+      "sha256": "e6fefb572c865af88d93d8f7e9fbdedcbb03f0c1ee7d480c56d45ca273ff2dc3",
+      "bytes": 366482
+    },
+    {
+      "path": "research/gee-release-validation-20261106/comparisons-r1/hydrolakes.json",
+      "sha256": "8aee13775af793279f2d92abd9dd3741e7992f9fb8f9f771d4b5fdff397eabdc",
+      "bytes": 192547
+    },
+    {
+      "path": "research/gee-release-validation-20261106/comparisons-r1/lakeatlas-points.json",
+      "sha256": "45de05e735eba875b671f9381206e19217dbba9aad286f33b5eb5f4c8df9dd21",
+      "bytes": 274682
+    },
+    {
+      "path": "research/gee-release-validation-20261106/comparisons-r1/lakeatlas-polygons.json",
+      "sha256": "f0b07901c4bb43e28345292599cb4ebb04233b8dc2e17f2ec863f3274adfdb5c",
+      "bytes": 274379
+    },
+    {
+      "path": "research/gee-release-validation-20261106/count-deadline-followup.json",
+      "sha256": "0839272d31ac30a7b27cdd84b0cab52fd03786df78ea62700ffcfcb5c6ed3add",
+      "bytes": 489
+    },
+    {
+      "path": "research/gee-release-validation-20261106/count-metadata/free-flowing-rivers-r1/free-flowing-rivers-before-001.json",
+      "sha256": "a2da2cac8b2b2a6bbf8dad2b4a7f1cea4daa1b717fe851ac8571d651b67d5d2f",
+      "bytes": 229
+    },
+    {
+      "path": "research/gee-release-validation-20261106/count-metadata/free-flowing-rivers-r2/free-flowing-rivers-after-001.json",
+      "sha256": "a2da2cac8b2b2a6bbf8dad2b4a7f1cea4daa1b717fe851ac8571d651b67d5d2f",
+      "bytes": 229
+    },
+    {
+      "path": "research/gee-release-validation-20261106/count-metadata/free-flowing-rivers-r2/free-flowing-rivers-before-001.json",
+      "sha256": "a2da2cac8b2b2a6bbf8dad2b4a7f1cea4daa1b717fe851ac8571d651b67d5d2f",
+      "bytes": 229
+    },
+    {
+      "path": "research/gee-release-validation-20261106/count-metadata/free-flowing-rivers-r2/free-flowing-rivers-count-001.json",
+      "sha256": "dedacddece236f065314de2f8c92f578e9efd6a846a8f156563933940183a446",
+      "bytes": 24
+    },
+    {
+      "path": "research/gee-release-validation-20261106/count-metadata/grwl-raw-r2/grwl-raw-after-001.json",
+      "sha256": "ea7c756eac5278275464802dfb64b3c0728e255e1271d3511f7c8d9188b9f6d7",
+      "bytes": 2249
+    },
+    {
+      "path": "research/gee-release-validation-20261106/count-metadata/grwl-raw-r2/grwl-raw-before-001.json",
+      "sha256": "ea7c756eac5278275464802dfb64b3c0728e255e1271d3511f7c8d9188b9f6d7",
+      "bytes": 2249
+    },
+    {
+      "path": "research/gee-release-validation-20261106/count-metadata/grwl-raw-r2/grwl-raw-count-001.json",
+      "sha256": "d63f96783e160125b819de00f492f1901647e4a6bf9be931bb4b7de12b192617",
+      "bytes": 25
+    },
+    {
+      "path": "research/gee-release-validation-20261106/count-metadata/hydrolakes-r1/hydrolakes-after-001.json",
+      "sha256": "9e0efc5e403e17627554807b8118a1ddcf98e9c3012ba5b76cc19485f9bd1824",
+      "bytes": 267
+    },
+    {
+      "path": "research/gee-release-validation-20261106/count-metadata/hydrolakes-r1/hydrolakes-before-001.json",
+      "sha256": "9e0efc5e403e17627554807b8118a1ddcf98e9c3012ba5b76cc19485f9bd1824",
+      "bytes": 267
+    },
+    {
+      "path": "research/gee-release-validation-20261106/count-metadata/hydrolakes-r1/hydrolakes-count-001.json",
+      "sha256": "f307744fe138278cbfe4fb347c5571e26e9a75b5acea5808c9e5aa72b3f8b811",
+      "bytes": 24
+    },
+    {
+      "path": "research/gee-release-validation-20261106/count-metadata/lakeatlas-points-r1/lakeatlas-points-after-001.json",
+      "sha256": "f5f34411b4a343f181f481ad2fbdfd78a9afe86301c11d859c82212fa01f3836",
+      "bytes": 298
+    },
+    {
+      "path": "research/gee-release-validation-20261106/count-metadata/lakeatlas-points-r1/lakeatlas-points-before-001.json",
+      "sha256": "f5f34411b4a343f181f481ad2fbdfd78a9afe86301c11d859c82212fa01f3836",
+      "bytes": 298
+    },
+    {
+      "path": "research/gee-release-validation-20261106/count-metadata/lakeatlas-points-r1/lakeatlas-points-count-001.json",
+      "sha256": "f307744fe138278cbfe4fb347c5571e26e9a75b5acea5808c9e5aa72b3f8b811",
+      "bytes": 24
+    },
+    {
+      "path": "research/gee-release-validation-20261106/count-metadata/lakeatlas-polygons-r1/lakeatlas-polygons-after-001.json",
+      "sha256": "9a6488b22831799e7c0b1ec88f69ca60a008c9c945d2c0845d8a3dc620c8a4b0",
+      "bytes": 302
+    },
+    {
+      "path": "research/gee-release-validation-20261106/count-metadata/lakeatlas-polygons-r1/lakeatlas-polygons-before-001.json",
+      "sha256": "9a6488b22831799e7c0b1ec88f69ca60a008c9c945d2c0845d8a3dc620c8a4b0",
+      "bytes": 302
+    },
+    {
+      "path": "research/gee-release-validation-20261106/count-metadata/lakeatlas-polygons-r1/lakeatlas-polygons-count-001.json",
+      "sha256": "f307744fe138278cbfe4fb347c5571e26e9a75b5acea5808c9e5aa72b3f8b811",
+      "bytes": 24
+    },
+    {
+      "path": "research/gee-release-validation-20261106/count-metadata/river-plastic-refresh-r1/river-plastic-inputs-after-001.json",
+      "sha256": "50f8cadabbb52c486e5acf4a8bcf2ef8e4edd83ec4285ee32fcd7dff3c95880f",
+      "bytes": 284
+    },
+    {
+      "path": "research/gee-release-validation-20261106/count-metadata/river-plastic-refresh-r1/river-plastic-inputs-before-001.json",
+      "sha256": "50f8cadabbb52c486e5acf4a8bcf2ef8e4edd83ec4285ee32fcd7dff3c95880f",
+      "bytes": 284
+    },
+    {
+      "path": "research/gee-release-validation-20261106/count-metadata/river-plastic-refresh-r1/river-plastic-inputs-count-001.json",
+      "sha256": "9a1193b27300da3972531db8d654df03d05ddd0a8fd04a394e231c47d60fe98a",
+      "bytes": 22
+    },
+    {
+      "path": "research/gee-release-validation-20261106/criteria.json",
+      "sha256": "46d82a976f5099e89b52cf3be76924903b7ab0e21640268e4fd5d4e8cb8f2977",
+      "bytes": 8243
+    },
+    {
+      "path": "research/gee-release-validation-20261106/followup-criteria.json",
+      "sha256": "981c69aa52d7ee9c590fc46f50ee42d7c881f51f9fe6788bb3a21b77cd23a246",
+      "bytes": 3134
+    },
+    {
+      "path": "research/gee-release-validation-20261106/geometry-diagnostic-attempt-r1.json",
+      "sha256": "481b3ca71dead470561ba574b0341152aaeb5cb7e60fd600c8a60a1897158d38",
+      "bytes": 448
+    },
+    {
+      "path": "research/gee-release-validation-20261106/geometry-diagnostics-r2/free-flowing-rivers.json",
+      "sha256": "00a8b6d9b67a688e60d0210590c211544a4a6e5148a100860f8312f1cf3ba529",
+      "bytes": 16268
+    },
+    {
+      "path": "research/gee-release-validation-20261106/geometry-diagnostics-r2/grwl-raw.json",
+      "sha256": "a2a4aa20155e4722475f50a6883c4ebe250fe8e72aca84f7491a1dca4701850a",
+      "bytes": 70948
+    },
+    {
+      "path": "research/gee-release-validation-20261106/geometry-diagnostics-r2/hydrolakes.json",
+      "sha256": "d09b73a44f8d9987e1cc0c78a527f2684b1267c7bbc0c7ab25162841e12ca8d4",
+      "bytes": 42925
+    },
+    {
+      "path": "research/gee-release-validation-20261106/geometry-diagnostics-r2/lakeatlas-polygons.json",
+      "sha256": "a652f3cdb395630d7ffe58b92261f9323d92878eccf6e9ef448d460d0567c176",
+      "bytes": 42990
+    },
+    {
+      "path": "research/gee-release-validation-20261106/grwl-key-inventory-r1.json",
+      "sha256": "07f2cceb83c4143f1b97a3e46a6339f654cf1d6d008551acd7461d0a081934c8",
+      "bytes": 730
+    },
+    {
+      "path": "research/gee-release-validation-20261106/lake-spike-traces-r1.json",
+      "sha256": "820ea3eaa2777dc9620cfdbde0da17e6fdf1d319fc9940bc127079678f2ff08a",
+      "bytes": 3474
+    },
+    {
+      "path": "research/gee-release-validation-20261106/metadata-plan.json",
+      "sha256": "b173b773201b82ac72762fca353cb1c9c3a69d3ce34c17fd9edf0fa06974cf72",
+      "bytes": 2805
+    },
+    {
+      "path": "research/gee-release-validation-20261106/metadata-r1/capture.json",
+      "sha256": "8b45067d40997043d76efbf4740a1d4abf573d5f0c5a789cb8c9ce12555ac513",
+      "bytes": 7247
+    },
+    {
+      "path": "research/gee-release-validation-20261106/metadata-r1/free-flowing-rivers-001.json",
+      "sha256": "a2da2cac8b2b2a6bbf8dad2b4a7f1cea4daa1b717fe851ac8571d651b67d5d2f",
+      "bytes": 229
+    },
+    {
+      "path": "research/gee-release-validation-20261106/metadata-r1/grwl-folder-001.json",
+      "sha256": "78154a5b430743e741c474f0599b4c2bdff71315a8fddcb72f85b80f59b5b594",
+      "bytes": 173
+    },
+    {
+      "path": "research/gee-release-validation-20261106/metadata-r1/grwl-raw-001.json",
+      "sha256": "ea7c756eac5278275464802dfb64b3c0728e255e1271d3511f7c8d9188b9f6d7",
+      "bytes": 2249
+    },
+    {
+      "path": "research/gee-release-validation-20261106/metadata-r1/grwl-summary-001.json",
+      "sha256": "378a91a3292d0c388ca1ea4b2d9c7b3abf4c3aaa35a616988de357a1a2fee61b",
+      "bytes": 2548
+    },
+    {
+      "path": "research/gee-release-validation-20261106/metadata-r1/hydrolakes-001.json",
+      "sha256": "9e0efc5e403e17627554807b8118a1ddcf98e9c3012ba5b76cc19485f9bd1824",
+      "bytes": 267
+    },
+    {
+      "path": "research/gee-release-validation-20261106/metadata-r1/lakeatlas-points-001.json",
+      "sha256": "f5f34411b4a343f181f481ad2fbdfd78a9afe86301c11d859c82212fa01f3836",
+      "bytes": 298
+    },
+    {
+      "path": "research/gee-release-validation-20261106/metadata-r1/lakeatlas-polygons-001.json",
+      "sha256": "9a6488b22831799e7c0b1ec88f69ca60a008c9c945d2c0845d8a3dc620c8a4b0",
+      "bytes": 302
+    },
+    {
+      "path": "research/gee-release-validation-20261106/metadata-r1/river-plastic-inputs-001.json",
+      "sha256": "50f8cadabbb52c486e5acf4a8bcf2ef8e4edd83ec4285ee32fcd7dff3c95880f",
+      "bytes": 284
+    },
+    {
+      "path": "research/gee-release-validation-20261106/plans/free-flowing-rivers-plan-r2.json",
+      "sha256": "be7c67c4081cc82364679e57b51e481ecb25e379ce678dc466266e39ca537c91",
+      "bytes": 15711
+    },
+    {
+      "path": "research/gee-release-validation-20261106/plans/free-flowing-rivers-plan.json",
+      "sha256": "8339fc517f72aa71188b927342bf9753155f157562d766212c03e31df7b1ecc9",
+      "bytes": 15541
+    },
+    {
+      "path": "research/gee-release-validation-20261106/plans/grwl-raw-plan-r2.json",
+      "sha256": "ccd503ab51aac7f5a9e4ee6491324ea7c6942724d80d05e1b8008909ec88c244",
+      "bytes": 143229
+    },
+    {
+      "path": "research/gee-release-validation-20261106/plans/grwl-raw-plan.json",
+      "sha256": "0c282acd7ae6127fa8c5dee9bd50bba90be4b3f7d3a3dff910f36e4a5499767a",
+      "bytes": 143059
+    },
+    {
+      "path": "research/gee-release-validation-20261106/plans/hydrolakes-plan.json",
+      "sha256": "14eb35ee253b4f437a7c721b459bca1a8aa24dfc7e7115ca0b6374c0015e8878",
+      "bytes": 17493
+    },
+    {
+      "path": "research/gee-release-validation-20261106/plans/lakeatlas-points-plan.json",
+      "sha256": "3c173cd3e825a3aff5bc17298d8973a7f69a52d180a8aeb876af2bdaf584a56d",
+      "bytes": 17940
+    },
+    {
+      "path": "research/gee-release-validation-20261106/plans/lakeatlas-polygons-plan.json",
+      "sha256": "05c9610f92cf64b30079a49f15a31403ebe7029fa9bf81f41f0ceadb6e87fd4e",
+      "bytes": 18029
+    },
+    {
+      "path": "research/gee-release-validation-20261106/plans/river-plastic-refresh-plan.json",
+      "sha256": "243e27f2d7e5305a32557618b33078d8a165f84ad5eb74185ca50b8c3e1940e6",
+      "bytes": 860
+    },
+    {
+      "path": "research/gee-release-validation-20261106/plastic-replay-r1/diagnostic.json",
+      "sha256": "cc0b1d1993ee582b0daf0752f57e1a1c1a8a0c1174db3c3e9c8bc4ccfd706140",
+      "bytes": 35779
+    },
+    {
+      "path": "research/gee-release-validation-20261106/plastic-replay-r1/strict.json",
+      "sha256": "dfa89707b9dc0368427dc6166a898f3d0087645f37efd541ee381b5228aac6b7",
+      "bytes": 470761
+    },
+    {
+      "path": "research/gee-release-validation-20261106/raw-query-identity-binding.json",
+      "sha256": "ee4f279fe6e377f4fb18710b412ed8f18fab291f95b0bbdd7c2cd9604d5ed55a",
+      "bytes": 584
+    },
+    {
+      "path": "research/gee-release-validation-20261106/receipts/free-flowing-rivers-r1.json",
+      "sha256": "e5527ff2024363c5b72d1926891799233604812bebc39dc815abf3bef87d0912",
+      "bytes": 2824
+    },
+    {
+      "path": "research/gee-release-validation-20261106/receipts/free-flowing-rivers-r2.json",
+      "sha256": "9da2fbbabfac8507b0982c5cf0344a11ae707c62e86115386a59bc54f64c151b",
+      "bytes": 28556
+    },
+    {
+      "path": "research/gee-release-validation-20261106/receipts/grwl-raw-r2.json",
+      "sha256": "12348b6d1b851a40ce880d2ce00fcca3b9ee39687eb6bfb8b484a8a7a4325972",
+      "bytes": 165779
+    },
+    {
+      "path": "research/gee-release-validation-20261106/receipts/hydrolakes-r1.json",
+      "sha256": "333d91772e8648553780ee29871d764f887e09554497ac03f8a0fee580cdd819",
+      "bytes": 30202
+    },
+    {
+      "path": "research/gee-release-validation-20261106/receipts/lakeatlas-points-r1.json",
+      "sha256": "2ea784ea66037a97c0373c9b16d8a3fb3f10b101cbf9c6a2a694c18c3ffecc2c",
+      "bytes": 30894
+    },
+    {
+      "path": "research/gee-release-validation-20261106/receipts/lakeatlas-polygons-r1.json",
+      "sha256": "e548e53ffbafd6b5a80c45516bc81bc1ce1e7a80ea27f62c5227995b10c7a23d",
+      "bytes": 31064
+    },
+    {
+      "path": "research/gee-release-validation-20261106/receipts/river-plastic-refresh-r1.json",
+      "sha256": "7e3b04859e1352342da5f842eb68dcd8ef2b91da8bfcfdeee15ef386d8c5ca5a",
+      "bytes": 4213
+    },
+    {
+      "path": "research/gee-release-validation-20261106/sample-inventory.json",
+      "sha256": "52a70ddb489fb862df3465507fc3e6ec014fde5169b3a7059cc398d270e10bc7",
+      "bytes": 62013
+    },
+    {
+      "path": "research/gee-release-validation-20261106/zenodo-metadata/1297434.json",
+      "sha256": "08a4437333cc3d9223fbb97276df126b826d948ac0e80234c834f55ddfe8f325",
+      "bytes": 9557
+    },
+    {
+      "path": "research/gee-release-validation-20261106/zenodo-metadata/18624542.json",
+      "sha256": "d640b2ad046194fd80cf77c670ec355853c46e4bbc80ce98182991f50f302ef5",
+      "bytes": 9585
+    },
+    {
+      "path": "research/gee-release-validation-20261106/zenodo-metadata/review.json",
+      "sha256": "72ebfa2356bc2031d1ec719120027ab2edc7c5ad3dc123aecc29a4797183c400",
+      "bytes": 1817
+    }
+  ]
+}

@@ -1,0 +1,766 @@
+{
+  "schema_version": 1,
+  "diagnostic_only": true,
+  "dataset_id": "hydrolakes",
+  "status": "diagnostic_complete",
+  "interpretation": "Observed compatibility patterns are descriptive only; they do not prove causes, establish new tolerances, change aliases, or turn strict failures into passes.",
+  "strict_comparison": {
+    "status": "sampled_fail",
+    "attribute_pass": false,
+    "geometry_pass": false,
+    "status_unchanged_by_diagnostic": true
+  },
+  "provenance": {
+    "capture_issues": [],
+    "independent_verification": {
+      "status": "passed",
+      "checks": {
+        "tracked_manifest_sha256": true,
+        "manifest_asset_sha256_rows_and_size": true,
+        "canonical_selected_release": true,
+        "historical_manifest_sha256": true,
+        "historical_sample_script": true,
+        "historical_sample_lock": true,
+        "historical_capture_script": true,
+        "historical_capture_lock": true,
+        "historical_committed_request_plan": true,
+        "sample_bytes_match_committed_plan": true
+      },
+      "errors": [],
+      "scope": "Manifest/canonical asset pins and historical code/lock/request-plan bytes independently verified. The complete analytical SHA was checked during sample extraction; this replay does not rehash the multi-GB asset."
+    },
+    "sample_sha256": "161c4ebf5552ca11aedcf20dd89107d9086f5c2644366212b777628649dd877a",
+    "plan_sha256": "14eb35ee253b4f437a7c721b459bca1a8aa24dfc7e7115ca0b6374c0015e8878",
+    "criteria_sha256": "46d82a976f5099e89b52cf3be76924903b7ab0e21640268e4fd5d4e8cb8f2977",
+    "followup_criteria_sha256": "981c69aa52d7ee9c590fc46f50ee42d7c881f51f9fe6788bb3a21b77cd23a246",
+    "followup_parent_criteria_bound": true,
+    "diagnostic_script_sha256": "a89994f7224900e6f5ba5d89bd49a9ce64592fde4a3e9d4cd4903639f207e522",
+    "environment_lock_sha256": "2cf752aac36445732b59e0db89088aa3f421238fecf4693b27da4dacf89c7335",
+    "git_commit": "6f1bab33702113aed67743a55fc3e9f89282c8d9",
+    "diagnostic_script_lock_criteria_worktree_changes": ""
+  },
+  "matching": {
+    "identifier_field": "Hylak_id",
+    "requested_rows": 522,
+    "missing_ids": [],
+    "duplicate_ids": [],
+    "malformed_gee_features_missing_identifier": 0
+  },
+  "attributes": {
+    "source_scientific_attributes": {
+      "Hylak_id": {
+        "role": "source",
+        "type": "int32",
+        "observations": 522,
+        "counts": {
+          "exact": 522,
+          "representational": 0,
+          "mismatch": 0
+        },
+        "missing_required_property": 0,
+        "absent_property_null_equivalence": 0,
+        "numeric": {
+          "valid_numeric_pairs": 522,
+          "mismatch_pairs": 0,
+          "maximum_absolute_error": 0.0,
+          "maximum_relative_error": 0.0,
+          "relative_error_undefined_count": 0,
+          "precision_hypothesis": {
+            "kind": "not_applicable",
+            "tested_mismatch_pairs": 0,
+            "compatible_mismatch_pairs": 0,
+            "compatibility_is_observation_not_causal_proof_or_tolerance": true,
+            "exceptions": {},
+            "ffr_case_results": [],
+            "lakeatlas_outliers": []
+          },
+          "largest_absolute_error_examples": []
+        },
+        "string_null_and_type_patterns": {},
+        "string_null_type_mismatch_examples": {}
+      },
+      "Lake_name": {
+        "role": "source",
+        "type": "string",
+        "observations": 522,
+        "counts": {
+          "exact": 14,
+          "representational": 0,
+          "mismatch": 508
+        },
+        "missing_required_property": 0,
+        "absent_property_null_equivalence": 0,
+        "numeric": {
+          "valid_numeric_pairs": 0,
+          "mismatch_pairs": 0,
+          "maximum_absolute_error": null,
+          "maximum_relative_error": null,
+          "relative_error_undefined_count": 0,
+          "precision_hypothesis": {
+            "kind": "not_applicable",
+            "tested_mismatch_pairs": 0,
+            "compatible_mismatch_pairs": 0,
+            "compatibility_is_observation_not_causal_proof_or_tolerance": true,
+            "exceptions": {},
+            "ffr_case_results": [],
+            "lakeatlas_outliers": []
+          },
+          "largest_absolute_error_examples": []
+        },
+        "string_null_and_type_patterns": {
+          "null_to_empty": 508,
+          "strict_reason:null": 508,
+          "null_value_mismatch": 508
+        },
+        "string_null_type_mismatch_examples": {
+          "null_to_empty": [
+            {
+              "local_id": "1867",
+              "local": null,
+              "gee": ""
+            },
+            {
+              "local_id": "2200",
+              "local": null,
+              "gee": ""
+            },
+            {
+              "local_id": "2394",
+              "local": null,
+              "gee": ""
+            },
+            {
+              "local_id": "5383",
+              "local": null,
+              "gee": ""
+            },
+            {
+              "local_id": "7975",
+              "local": null,
+              "gee": ""
+            }
+          ],
+          "null_value_mismatch": [
+            {
+              "local_id": "1867",
+              "local": null,
+              "gee": ""
+            },
+            {
+              "local_id": "2200",
+              "local": null,
+              "gee": ""
+            },
+            {
+              "local_id": "2394",
+              "local": null,
+              "gee": ""
+            },
+            {
+              "local_id": "5383",
+              "local": null,
+              "gee": ""
+            },
+            {
+              "local_id": "7975",
+              "local": null,
+              "gee": ""
+            }
+          ]
+        }
+      },
+      "Country": {
+        "role": "source",
+        "type": "string",
+        "observations": 522,
+        "counts": {
+          "exact": 522,
+          "representational": 0,
+          "mismatch": 0
+        },
+        "missing_required_property": 0,
+        "absent_property_null_equivalence": 0,
+        "numeric": {
+          "valid_numeric_pairs": 0,
+          "mismatch_pairs": 0,
+          "maximum_absolute_error": null,
+          "maximum_relative_error": null,
+          "relative_error_undefined_count": 0,
+          "precision_hypothesis": {
+            "kind": "not_applicable",
+            "tested_mismatch_pairs": 0,
+            "compatible_mismatch_pairs": 0,
+            "compatibility_is_observation_not_causal_proof_or_tolerance": true,
+            "exceptions": {},
+            "ffr_case_results": [],
+            "lakeatlas_outliers": []
+          },
+          "largest_absolute_error_examples": []
+        },
+        "string_null_and_type_patterns": {},
+        "string_null_type_mismatch_examples": {}
+      },
+      "Continent": {
+        "role": "source",
+        "type": "string",
+        "observations": 522,
+        "counts": {
+          "exact": 522,
+          "representational": 0,
+          "mismatch": 0
+        },
+        "missing_required_property": 0,
+        "absent_property_null_equivalence": 0,
+        "numeric": {
+          "valid_numeric_pairs": 0,
+          "mismatch_pairs": 0,
+          "maximum_absolute_error": null,
+          "maximum_relative_error": null,
+          "relative_error_undefined_count": 0,
+          "precision_hypothesis": {
+            "kind": "not_applicable",
+            "tested_mismatch_pairs": 0,
+            "compatible_mismatch_pairs": 0,
+            "compatibility_is_observation_not_causal_proof_or_tolerance": true,
+            "exceptions": {},
+            "ffr_case_results": [],
+            "lakeatlas_outliers": []
+          },
+          "largest_absolute_error_examples": []
+        },
+        "string_null_and_type_patterns": {},
+        "string_null_type_mismatch_examples": {}
+      },
+      "Poly_src": {
+        "role": "source",
+        "type": "string",
+        "observations": 522,
+        "counts": {
+          "exact": 522,
+          "representational": 0,
+          "mismatch": 0
+        },
+        "missing_required_property": 0,
+        "absent_property_null_equivalence": 0,
+        "numeric": {
+          "valid_numeric_pairs": 0,
+          "mismatch_pairs": 0,
+          "maximum_absolute_error": null,
+          "maximum_relative_error": null,
+          "relative_error_undefined_count": 0,
+          "precision_hypothesis": {
+            "kind": "not_applicable",
+            "tested_mismatch_pairs": 0,
+            "compatible_mismatch_pairs": 0,
+            "compatibility_is_observation_not_causal_proof_or_tolerance": true,
+            "exceptions": {},
+            "ffr_case_results": [],
+            "lakeatlas_outliers": []
+          },
+          "largest_absolute_error_examples": []
+        },
+        "string_null_and_type_patterns": {},
+        "string_null_type_mismatch_examples": {}
+      },
+      "Lake_type": {
+        "role": "source",
+        "type": "int32",
+        "observations": 522,
+        "counts": {
+          "exact": 522,
+          "representational": 0,
+          "mismatch": 0
+        },
+        "missing_required_property": 0,
+        "absent_property_null_equivalence": 0,
+        "numeric": {
+          "valid_numeric_pairs": 522,
+          "mismatch_pairs": 0,
+          "maximum_absolute_error": 0.0,
+          "maximum_relative_error": 0.0,
+          "relative_error_undefined_count": 0,
+          "precision_hypothesis": {
+            "kind": "not_applicable",
+            "tested_mismatch_pairs": 0,
+            "compatible_mismatch_pairs": 0,
+            "compatibility_is_observation_not_causal_proof_or_tolerance": true,
+            "exceptions": {},
+            "ffr_case_results": [],
+            "lakeatlas_outliers": []
+          },
+          "largest_absolute_error_examples": []
+        },
+        "string_null_and_type_patterns": {},
+        "string_null_type_mismatch_examples": {}
+      },
+      "Grand_id": {
+        "role": "source",
+        "type": "int32",
+        "observations": 522,
+        "counts": {
+          "exact": 522,
+          "representational": 0,
+          "mismatch": 0
+        },
+        "missing_required_property": 0,
+        "absent_property_null_equivalence": 0,
+        "numeric": {
+          "valid_numeric_pairs": 522,
+          "mismatch_pairs": 0,
+          "maximum_absolute_error": 0.0,
+          "maximum_relative_error": 0.0,
+          "relative_error_undefined_count": 0,
+          "precision_hypothesis": {
+            "kind": "not_applicable",
+            "tested_mismatch_pairs": 0,
+            "compatible_mismatch_pairs": 0,
+            "compatibility_is_observation_not_causal_proof_or_tolerance": true,
+            "exceptions": {},
+            "ffr_case_results": [],
+            "lakeatlas_outliers": []
+          },
+          "largest_absolute_error_examples": []
+        },
+        "string_null_and_type_patterns": {},
+        "string_null_type_mismatch_examples": {}
+      },
+      "Lake_area": {
+        "role": "source",
+        "type": "double",
+        "observations": 522,
+        "counts": {
+          "exact": 522,
+          "representational": 0,
+          "mismatch": 0
+        },
+        "missing_required_property": 0,
+        "absent_property_null_equivalence": 0,
+        "numeric": {
+          "valid_numeric_pairs": 522,
+          "mismatch_pairs": 0,
+          "maximum_absolute_error": 0.0,
+          "maximum_relative_error": 0.0,
+          "relative_error_undefined_count": 0,
+          "precision_hypothesis": {
+            "kind": "not_applicable",
+            "tested_mismatch_pairs": 0,
+            "compatible_mismatch_pairs": 0,
+            "compatibility_is_observation_not_causal_proof_or_tolerance": true,
+            "exceptions": {},
+            "ffr_case_results": [],
+            "lakeatlas_outliers": []
+          },
+          "largest_absolute_error_examples": []
+        },
+        "string_null_and_type_patterns": {},
+        "string_null_type_mismatch_examples": {}
+      },
+      "Shore_len": {
+        "role": "source",
+        "type": "double",
+        "observations": 522,
+        "counts": {
+          "exact": 522,
+          "representational": 0,
+          "mismatch": 0
+        },
+        "missing_required_property": 0,
+        "absent_property_null_equivalence": 0,
+        "numeric": {
+          "valid_numeric_pairs": 522,
+          "mismatch_pairs": 0,
+          "maximum_absolute_error": 0.0,
+          "maximum_relative_error": 0.0,
+          "relative_error_undefined_count": 0,
+          "precision_hypothesis": {
+            "kind": "not_applicable",
+            "tested_mismatch_pairs": 0,
+            "compatible_mismatch_pairs": 0,
+            "compatibility_is_observation_not_causal_proof_or_tolerance": true,
+            "exceptions": {},
+            "ffr_case_results": [],
+            "lakeatlas_outliers": []
+          },
+          "largest_absolute_error_examples": []
+        },
+        "string_null_and_type_patterns": {},
+        "string_null_type_mismatch_examples": {}
+      },
+      "Shore_dev": {
+        "role": "source",
+        "type": "double",
+        "observations": 522,
+        "counts": {
+          "exact": 522,
+          "representational": 0,
+          "mismatch": 0
+        },
+        "missing_required_property": 0,
+        "absent_property_null_equivalence": 0,
+        "numeric": {
+          "valid_numeric_pairs": 522,
+          "mismatch_pairs": 0,
+          "maximum_absolute_error": 0.0,
+          "maximum_relative_error": 0.0,
+          "relative_error_undefined_count": 0,
+          "precision_hypothesis": {
+            "kind": "not_applicable",
+            "tested_mismatch_pairs": 0,
+            "compatible_mismatch_pairs": 0,
+            "compatibility_is_observation_not_causal_proof_or_tolerance": true,
+            "exceptions": {},
+            "ffr_case_results": [],
+            "lakeatlas_outliers": []
+          },
+          "largest_absolute_error_examples": []
+        },
+        "string_null_and_type_patterns": {},
+        "string_null_type_mismatch_examples": {}
+      },
+      "Vol_total": {
+        "role": "source",
+        "type": "double",
+        "observations": 522,
+        "counts": {
+          "exact": 522,
+          "representational": 0,
+          "mismatch": 0
+        },
+        "missing_required_property": 0,
+        "absent_property_null_equivalence": 0,
+        "numeric": {
+          "valid_numeric_pairs": 522,
+          "mismatch_pairs": 0,
+          "maximum_absolute_error": 0.0,
+          "maximum_relative_error": 0.0,
+          "relative_error_undefined_count": 0,
+          "precision_hypothesis": {
+            "kind": "not_applicable",
+            "tested_mismatch_pairs": 0,
+            "compatible_mismatch_pairs": 0,
+            "compatibility_is_observation_not_causal_proof_or_tolerance": true,
+            "exceptions": {},
+            "ffr_case_results": [],
+            "lakeatlas_outliers": []
+          },
+          "largest_absolute_error_examples": []
+        },
+        "string_null_and_type_patterns": {},
+        "string_null_type_mismatch_examples": {}
+      },
+      "Vol_res": {
+        "role": "source",
+        "type": "double",
+        "observations": 522,
+        "counts": {
+          "exact": 522,
+          "representational": 0,
+          "mismatch": 0
+        },
+        "missing_required_property": 0,
+        "absent_property_null_equivalence": 0,
+        "numeric": {
+          "valid_numeric_pairs": 522,
+          "mismatch_pairs": 0,
+          "maximum_absolute_error": 0.0,
+          "maximum_relative_error": 0.0,
+          "relative_error_undefined_count": 0,
+          "precision_hypothesis": {
+            "kind": "not_applicable",
+            "tested_mismatch_pairs": 0,
+            "compatible_mismatch_pairs": 0,
+            "compatibility_is_observation_not_causal_proof_or_tolerance": true,
+            "exceptions": {},
+            "ffr_case_results": [],
+            "lakeatlas_outliers": []
+          },
+          "largest_absolute_error_examples": []
+        },
+        "string_null_and_type_patterns": {},
+        "string_null_type_mismatch_examples": {}
+      },
+      "Vol_src": {
+        "role": "source",
+        "type": "int32",
+        "observations": 522,
+        "counts": {
+          "exact": 522,
+          "representational": 0,
+          "mismatch": 0
+        },
+        "missing_required_property": 0,
+        "absent_property_null_equivalence": 0,
+        "numeric": {
+          "valid_numeric_pairs": 522,
+          "mismatch_pairs": 0,
+          "maximum_absolute_error": 0.0,
+          "maximum_relative_error": 0.0,
+          "relative_error_undefined_count": 0,
+          "precision_hypothesis": {
+            "kind": "not_applicable",
+            "tested_mismatch_pairs": 0,
+            "compatible_mismatch_pairs": 0,
+            "compatibility_is_observation_not_causal_proof_or_tolerance": true,
+            "exceptions": {},
+            "ffr_case_results": [],
+            "lakeatlas_outliers": []
+          },
+          "largest_absolute_error_examples": []
+        },
+        "string_null_and_type_patterns": {},
+        "string_null_type_mismatch_examples": {}
+      },
+      "Depth_avg": {
+        "role": "source",
+        "type": "double",
+        "observations": 522,
+        "counts": {
+          "exact": 522,
+          "representational": 0,
+          "mismatch": 0
+        },
+        "missing_required_property": 0,
+        "absent_property_null_equivalence": 0,
+        "numeric": {
+          "valid_numeric_pairs": 522,
+          "mismatch_pairs": 0,
+          "maximum_absolute_error": 0.0,
+          "maximum_relative_error": 0.0,
+          "relative_error_undefined_count": 0,
+          "precision_hypothesis": {
+            "kind": "not_applicable",
+            "tested_mismatch_pairs": 0,
+            "compatible_mismatch_pairs": 0,
+            "compatibility_is_observation_not_causal_proof_or_tolerance": true,
+            "exceptions": {},
+            "ffr_case_results": [],
+            "lakeatlas_outliers": []
+          },
+          "largest_absolute_error_examples": []
+        },
+        "string_null_and_type_patterns": {},
+        "string_null_type_mismatch_examples": {}
+      },
+      "Dis_avg": {
+        "role": "source",
+        "type": "double",
+        "observations": 522,
+        "counts": {
+          "exact": 522,
+          "representational": 0,
+          "mismatch": 0
+        },
+        "missing_required_property": 0,
+        "absent_property_null_equivalence": 0,
+        "numeric": {
+          "valid_numeric_pairs": 522,
+          "mismatch_pairs": 0,
+          "maximum_absolute_error": 0.0,
+          "maximum_relative_error": 0.0,
+          "relative_error_undefined_count": 0,
+          "precision_hypothesis": {
+            "kind": "not_applicable",
+            "tested_mismatch_pairs": 0,
+            "compatible_mismatch_pairs": 0,
+            "compatibility_is_observation_not_causal_proof_or_tolerance": true,
+            "exceptions": {},
+            "ffr_case_results": [],
+            "lakeatlas_outliers": []
+          },
+          "largest_absolute_error_examples": []
+        },
+        "string_null_and_type_patterns": {},
+        "string_null_type_mismatch_examples": {}
+      },
+      "Res_time": {
+        "role": "source",
+        "type": "double",
+        "observations": 522,
+        "counts": {
+          "exact": 522,
+          "representational": 0,
+          "mismatch": 0
+        },
+        "missing_required_property": 0,
+        "absent_property_null_equivalence": 0,
+        "numeric": {
+          "valid_numeric_pairs": 522,
+          "mismatch_pairs": 0,
+          "maximum_absolute_error": 0.0,
+          "maximum_relative_error": 0.0,
+          "relative_error_undefined_count": 0,
+          "precision_hypothesis": {
+            "kind": "not_applicable",
+            "tested_mismatch_pairs": 0,
+            "compatible_mismatch_pairs": 0,
+            "compatibility_is_observation_not_causal_proof_or_tolerance": true,
+            "exceptions": {},
+            "ffr_case_results": [],
+            "lakeatlas_outliers": []
+          },
+          "largest_absolute_error_examples": []
+        },
+        "string_null_and_type_patterns": {},
+        "string_null_type_mismatch_examples": {}
+      },
+      "Elevation": {
+        "role": "source",
+        "type": "int32",
+        "observations": 522,
+        "counts": {
+          "exact": 522,
+          "representational": 0,
+          "mismatch": 0
+        },
+        "missing_required_property": 0,
+        "absent_property_null_equivalence": 0,
+        "numeric": {
+          "valid_numeric_pairs": 522,
+          "mismatch_pairs": 0,
+          "maximum_absolute_error": 0.0,
+          "maximum_relative_error": 0.0,
+          "relative_error_undefined_count": 0,
+          "precision_hypothesis": {
+            "kind": "not_applicable",
+            "tested_mismatch_pairs": 0,
+            "compatible_mismatch_pairs": 0,
+            "compatibility_is_observation_not_causal_proof_or_tolerance": true,
+            "exceptions": {},
+            "ffr_case_results": [],
+            "lakeatlas_outliers": []
+          },
+          "largest_absolute_error_examples": []
+        },
+        "string_null_and_type_patterns": {},
+        "string_null_type_mismatch_examples": {}
+      },
+      "Slope_100": {
+        "role": "source",
+        "type": "double",
+        "observations": 522,
+        "counts": {
+          "exact": 522,
+          "representational": 0,
+          "mismatch": 0
+        },
+        "missing_required_property": 0,
+        "absent_property_null_equivalence": 0,
+        "numeric": {
+          "valid_numeric_pairs": 522,
+          "mismatch_pairs": 0,
+          "maximum_absolute_error": 0.0,
+          "maximum_relative_error": 0.0,
+          "relative_error_undefined_count": 0,
+          "precision_hypothesis": {
+            "kind": "not_applicable",
+            "tested_mismatch_pairs": 0,
+            "compatible_mismatch_pairs": 0,
+            "compatibility_is_observation_not_causal_proof_or_tolerance": true,
+            "exceptions": {},
+            "ffr_case_results": [],
+            "lakeatlas_outliers": []
+          },
+          "largest_absolute_error_examples": []
+        },
+        "string_null_and_type_patterns": {},
+        "string_null_type_mismatch_examples": {}
+      },
+      "Wshd_area": {
+        "role": "source",
+        "type": "double",
+        "observations": 522,
+        "counts": {
+          "exact": 522,
+          "representational": 0,
+          "mismatch": 0
+        },
+        "missing_required_property": 0,
+        "absent_property_null_equivalence": 0,
+        "numeric": {
+          "valid_numeric_pairs": 522,
+          "mismatch_pairs": 0,
+          "maximum_absolute_error": 0.0,
+          "maximum_relative_error": 0.0,
+          "relative_error_undefined_count": 0,
+          "precision_hypothesis": {
+            "kind": "not_applicable",
+            "tested_mismatch_pairs": 0,
+            "compatible_mismatch_pairs": 0,
+            "compatibility_is_observation_not_causal_proof_or_tolerance": true,
+            "exceptions": {},
+            "ffr_case_results": [],
+            "lakeatlas_outliers": []
+          },
+          "largest_absolute_error_examples": []
+        },
+        "string_null_and_type_patterns": {},
+        "string_null_type_mismatch_examples": {}
+      },
+      "Pour_long": {
+        "role": "source",
+        "type": "double",
+        "observations": 522,
+        "counts": {
+          "exact": 522,
+          "representational": 0,
+          "mismatch": 0
+        },
+        "missing_required_property": 0,
+        "absent_property_null_equivalence": 0,
+        "numeric": {
+          "valid_numeric_pairs": 522,
+          "mismatch_pairs": 0,
+          "maximum_absolute_error": 0.0,
+          "maximum_relative_error": 0.0,
+          "relative_error_undefined_count": 0,
+          "precision_hypothesis": {
+            "kind": "not_applicable",
+            "tested_mismatch_pairs": 0,
+            "compatible_mismatch_pairs": 0,
+            "compatibility_is_observation_not_causal_proof_or_tolerance": true,
+            "exceptions": {},
+            "ffr_case_results": [],
+            "lakeatlas_outliers": []
+          },
+          "largest_absolute_error_examples": []
+        },
+        "string_null_and_type_patterns": {},
+        "string_null_type_mismatch_examples": {}
+      },
+      "Pour_lat": {
+        "role": "source",
+        "type": "double",
+        "observations": 522,
+        "counts": {
+          "exact": 522,
+          "representational": 0,
+          "mismatch": 0
+        },
+        "missing_required_property": 0,
+        "absent_property_null_equivalence": 0,
+        "numeric": {
+          "valid_numeric_pairs": 522,
+          "mismatch_pairs": 0,
+          "maximum_absolute_error": 0.0,
+          "maximum_relative_error": 0.0,
+          "relative_error_undefined_count": 0,
+          "precision_hypothesis": {
+            "kind": "not_applicable",
+            "tested_mismatch_pairs": 0,
+            "compatible_mismatch_pairs": 0,
+            "compatibility_is_observation_not_causal_proof_or_tolerance": true,
+            "exceptions": {},
+            "ffr_case_results": [],
+            "lakeatlas_outliers": []
+          },
+          "largest_absolute_error_examples": []
+        },
+        "string_null_and_type_patterns": {},
+        "string_null_type_mismatch_examples": {}
+      }
+    },
+    "geometry_derived_attributes": {}
+  },
+  "explicit_ffr_candidate_mapping": null,
+  "geometry_derived_fields_are_separate": true
+}

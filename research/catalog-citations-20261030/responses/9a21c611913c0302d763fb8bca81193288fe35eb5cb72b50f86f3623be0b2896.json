@@ -1,0 +1,80 @@
+{
+  "request_url": "https://api.openalex.org/works?search=Updates+of+%27AW3D30%27+ALOS+Global+Digital+Surface+Model+in+Antarctica+with+Other+Open+Access+Datasets&corpus=all&per_page=5&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date",
+  "retrieved_at": "2026-10-30T22:08:03.397123+00:00",
+  "response_path": "responses/9a21c611913c0302d763fb8bca81193288fe35eb5cb72b50f86f3623be0b2896.json",
+  "status": 200,
+  "response_sha256": "9dc4b48fddf66415c324eca876bd80ad14fee36cc0477a923fef99fb25cb0a01",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 61,
+      "db_response_time_ms": 114,
+      "page": 1,
+      "per_page": 5,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where full text has (Updates of 'AW3D30' ALOS Global Digital Surface Model in Antarctica with Other Open Access Datasets)",
+        "x_new_oql": "get works (all corpora) where full text has (Updates of 'AW3D30' ALOS Global Digital Surface Model in Antarctica with Other Open Access Datasets)",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "Updates of 'AW3D30' ALOS Global Digital Surface Model in Antarctica with Other Open Access Datasets",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:Updates of %27AW3D30%27 ALOS Global Digital Surface Model in Antarctica with Other Open Access Datasets&corpus=all&per_page=5",
+        "order": "best matches first",
+        "order_default": true
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W3177738539",
+        "doi": "https://doi.org/10.5194/isprs-archives-xliii-b4-2021-401-2021",
+        "title": "UPDATES OF ‘AW3D30’ ALOS GLOBAL DIGITAL SURFACE MODEL IN ANTARCTICA WITH OTHER OPEN ACCESS DATASETS",
+        "type": "article",
+        "publication_year": 2021,
+        "publication_date": "2021-06-30"
+      },
+      {
+        "id": "https://openalex.org/W3015526299",
+        "doi": "https://doi.org/10.3390/rs12071156",
+        "title": "ASTER Global Digital Elevation Model (GDEM) and ASTER Global Water Body Dataset (ASTWBD)",
+        "type": "article",
+        "publication_year": 2020,
+        "publication_date": "2020-04-04"
+      },
+      {
+        "id": "https://openalex.org/W2755431016",
+        "doi": "https://doi.org/10.1016/j.isprsjprs.2017.08.008",
+        "title": "Generation and performance assessment of the global TanDEM-X digital elevation model",
+        "type": "article",
+        "publication_year": 2017,
+        "publication_date": "2017-09-12"
+      },
+      {
+        "id": "https://openalex.org/W3181132894",
+        "doi": "https://doi.org/10.1109/jstars.2021.3095178",
+        "title": "Shaping the Global High-Resolution TanDEM-X Digital Elevation Model",
+        "type": "article",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01"
+      },
+      {
+        "id": "https://openalex.org/W3214716400",
+        "doi": "https://doi.org/10.1007/s13753-021-00377-z",
+        "title": "The Importance of Digital Elevation Model Selection in Flood Simulation and a Proposed Method to Reduce DEM Errors: A Case Study in Shanghai",
+        "type": "article",
+        "publication_year": 2021,
+        "publication_date": "2021-11-09"
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "98f689fbb0ba5a5ddcc29cbc3ef2f76b30d5ab275105da60c9581fe3f749a9d1"
+}

@@ -1,0 +1,74 @@
+{
+  "checks": [
+    "GeoParquet metadata",
+    "asset checksums",
+    "HTTP 206/CORS and range cap",
+    "DuckDB local/HTTP subset match"
+  ],
+  "http_and_subset": {
+    "base_url": "http://127.0.0.1:51564",
+    "cors_preflight": "OPTIONS 204; wildcard origin; GET/HEAD/OPTIONS and Range permitted",
+    "duckdb_subsets": [
+      {
+        "asset_id": "grwl-raw-observations",
+        "bbox": [
+          -79.7413778947852,
+          0.3416989562954168,
+          -79.0213778947852,
+          0.6149412419209945
+        ],
+        "duckdb_http_bytes_served": 22467893,
+        "http_probe_bytes": 8388656,
+        "identifier_wkb_sha256_multiset_sum": "618db1a172f3a849f3e3fd0e5677c03e3e1ad7aa2e53d0c5adff158cb65433b9",
+        "local_remote_equal": true,
+        "nonempty_geometry_rows": 4821,
+        "query_engine": "DuckDB 1.5.2",
+        "rows": 4821
+      }
+    ],
+    "max_probe_response_bytes": 8388608,
+    "ranges": [
+      {
+        "asset_id": "grwl-raw-observations",
+        "cors": "*",
+        "range": "bytes=0-31",
+        "response_bytes": 32,
+        "status": 206
+      },
+      {
+        "asset_id": "grwl-raw-observations",
+        "cors": "*",
+        "range": "bytes=-16",
+        "response_bytes": 16,
+        "status": 206
+      },
+      {
+        "asset_id": "grwl-raw-observations",
+        "cors": "*",
+        "range": "bytes=5529859810-5529859873",
+        "response_bytes": 0,
+        "status": 416
+      },
+      {
+        "asset_id": "grwl-raw-observations",
+        "cors": "*",
+        "range": "bytes=0-8388607",
+        "response_bytes": 8388608,
+        "status": 206
+      },
+      {
+        "asset_id": "grwl-raw-observations",
+        "cors": "*",
+        "range": "bytes=0-134217728",
+        "response_bytes": 0,
+        "status": 416
+      }
+    ],
+    "status": "passed"
+  },
+  "release_manifest_sha256": "ef2a063cb54327b50d47e8ad17c735cadde87fb9ba3136d6b39fe43126863c8c",
+  "status": "passed",
+  "validated_asset_ids": [
+    "grwl-raw-observations"
+  ]
+}

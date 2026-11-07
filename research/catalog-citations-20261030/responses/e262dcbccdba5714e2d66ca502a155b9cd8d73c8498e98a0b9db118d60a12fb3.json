@@ -1,0 +1,80 @@
+{
+  "request_url": "https://api.openalex.org/works?search=The+Global+Precipitation+Climatology+Project+%28GPCP%29+Combined+Precipitation+Dataset&corpus=all&per_page=5&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date",
+  "retrieved_at": "2026-10-30T22:07:58.383146+00:00",
+  "response_path": "responses/e262dcbccdba5714e2d66ca502a155b9cd8d73c8498e98a0b9db118d60a12fb3.json",
+  "status": 200,
+  "response_sha256": "9072190f8a3cc069c0cb63aa4c26ce95b80cbac866396f2ed07d4098171f0237",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 4391,
+      "db_response_time_ms": 324,
+      "page": 1,
+      "per_page": 5,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where full text has (The Global Precipitation Climatology Project GPCP Combined Precipitation Dataset)",
+        "x_new_oql": "get works (all corpora) where full text has (The Global Precipitation Climatology Project GPCP Combined Precipitation Dataset)",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "The Global Precipitation Climatology Project (GPCP) Combined Precipitation Dataset",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:The Global Precipitation Climatology Project %28GPCP%29 Combined Precipitation Dataset&corpus=all&per_page=5",
+        "order": "best matches first",
+        "order_default": true
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W2013537840",
+        "doi": "https://doi.org/10.1175/1520-0477(1997)078<0005:tgpcpg>2.0.co;2",
+        "title": "The Global Precipitation Climatology Project (GPCP) Combined Precipitation Dataset",
+        "type": "article",
+        "publication_year": 1997,
+        "publication_date": "1997-01-01"
+      },
+      {
+        "id": "https://openalex.org/W2022548072",
+        "doi": "https://doi.org/10.1175/1525-7541(2003)004<1147:tvgpcp>2.0.co;2",
+        "title": "The Version-2 Global Precipitation Climatology Project (GPCP) Monthly Precipitation Analysis (1979–Present)",
+        "type": "article",
+        "publication_year": 2003,
+        "publication_date": "2003-12-01"
+      },
+      {
+        "id": "https://openalex.org/W2125414710",
+        "doi": "https://doi.org/10.1175/1520-0442(1998)011<2960:acotnn>2.0.co;2",
+        "title": "A Comparison of the NCEP–NCAR Reanalysis Precipitation and the GPCP Rain Gauge–Satellite Combined Dataset with Observational Error Considerations",
+        "type": "article",
+        "publication_year": 1998,
+        "publication_date": "1998-11-01"
+      },
+      {
+        "id": "https://openalex.org/W2788194454",
+        "doi": "https://doi.org/10.5065/d6r78c9s",
+        "title": "GPCP Version 2.2 Combined Precipitation Data Set",
+        "type": "dataset",
+        "publication_year": 2015,
+        "publication_date": "2015-01-01"
+      },
+      {
+        "id": "https://openalex.org/W3122208454",
+        "doi": "https://doi.org/10.5065/mm6j-9282",
+        "title": "Global Precipitation Climatology Project (GPCP) Climate Data Record (CDR), Version 2.3 (Monthly)",
+        "type": "dataset",
+        "publication_year": 2020,
+        "publication_date": "2020-01-01"
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "a40293ffc51cb6171b436da8ec2c8ffaa31ef21206758ff44b490641dd128401"
+}

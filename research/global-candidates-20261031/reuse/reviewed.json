@@ -1,0 +1,474 @@
+{
+  "candidate_count": 10,
+  "candidates": [
+    {
+      "access_summary": "The WFP collection metadata declares public daily COG assets under the Source Cooperative S3 namespace. The saved queries returned a matching 1981-01-01 item, latest sample 2026-09-30, and all 31 dates in August 2020 (16,708 total matched items for latest query). No asset GET/HEAD or COG byte check was run. Collection scope is quasi-global land, 60°S–60°N, all longitudes; coverage/completeness is sampled only.",
+      "conversion_rationale": "Reuse the existing v3 daily publication where appropriate; keep separate from canonical CHIRPS v2.0 GEE daily/pentad products. Historical evidence does not establish exact version parity, complete coverage, COG conformance or daily-value validation.",
+      "evidence_key": "chirps_wfp_v3_rnl_public_cogs",
+      "evidence_urls": [
+        "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily",
+        "https://source.coop/wfp/chirps-rnl-daily",
+        "https://www.chc.ucsb.edu/data/chirps3",
+        "https://data.chc.ucsb.edu/products/CHIRPS/v3.0/daily/readme.txt"
+      ],
+      "existing_record_id": null,
+      "format_labels": [
+        "COG"
+      ],
+      "hosting_status": "native_available",
+      "identity_note": "Same CHIRPS product family, but WFP STAC is v3 daily RNL and current `chirps` is GEE CHIRPS v2.0 Final. Do not merge as the same release.",
+      "license_summary": "Collection metadata declares CC-BY-4.0; attribution and exact terms need release-level review. Metadata conflict: README describes mm precipitation while collection and sampled item raster:bands say unit \"1\". Update status also conflicts between preliminary RNL messaging and CHC daily docs; not resolved here.",
+      "observed_on": "2026-10-30",
+      "recommended_formats": [],
+      "source_evidence": [
+        {
+          "path": "research/chirps-priorities-20261030/README.md",
+          "sha256": "2d29b99a2d0d56df350e1e9fa2b8bdd7722c3df71c35014ea2f71dc461ecb411"
+        },
+        {
+          "path": "research/chirps-priorities-20261030/priorities.json",
+          "sha256": "096351cdcadf306a8db499be19fb66c2e652706d338455ad3e6e495024bd8617"
+        },
+        {
+          "path": "research/chirps-priorities-20261030/evidence/wfp-collection.json",
+          "sha256": "0586752fac8f51c385705abe60a13cff653e5fd35a02b522ffd5fba0b6b32f79"
+        },
+        {
+          "path": "research/chirps-priorities-20261030/evidence/wfp-items-1981-01-01.json",
+          "sha256": "36669f0c94628f9c8de6bc2acd157ccf97983f46bfb27bf761e6bd794b727307"
+        },
+        {
+          "path": "research/chirps-priorities-20261030/evidence/wfp-items-latest.json",
+          "sha256": "2dfebc807f11717398299220f488f6e621698d799930a65a5b6752d43e3c5d09"
+        },
+        {
+          "path": "research/chirps-priorities-20261030/evidence/wfp-items-august-2020.json",
+          "sha256": "00da9a946732d88c9e24ac9b7653dff026c8224fe15a75cea0f4bee9767e76c2"
+        }
+      ],
+      "sources": [
+        {
+          "entry_id": "chirps_rnl_daily",
+          "provider": "WFP VAM STAC / Source Cooperative",
+          "relationship": "related_release",
+          "url": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+        },
+        {
+          "entry_id": "wfp/chirps-rnl-daily/v3.0",
+          "provider": "Source Cooperative",
+          "relationship": "related_release",
+          "url": "https://source.coop/wfp/chirps-rnl-daily"
+        }
+      ],
+      "suggested_id": "chirps_wfp_v3_rnl_public_cogs",
+      "target_id": "chirps",
+      "title": "CHIRPS v3 RNL daily COG publication on WFP Source Cooperative"
+    },
+    {
+      "access_summary": "Local audit records six complete public August 2020 global pentad COG objects from the CHC COG prefix. Scope is six pentads for one month, not daily CHIRPS or the full archive. Existing benchmark checked exact values for four Bengaluru cells after summing the six pentads; no full archive inventory is implied.",
+      "conversion_rationale": "Keep as historical evidence for the precise v2 pentad source and its sampled validated access. It does not validate WFP v3 RNL or recommend another conversion.",
+      "evidence_key": "chirps_v2_pentad_public_cogs_sample",
+      "evidence_urls": [
+        "https://data.chc.ucsb.edu/products/CHIRPS-2.0/global_pentad/cogs/"
+      ],
+      "existing_record_id": null,
+      "format_labels": [
+        "COG"
+      ],
+      "hosting_status": "download_available",
+      "identity_note": "CHIRPS v2.0 pentad COG subset, distinct temporal product from the current GEE daily v2.0 candidate and distinct release from WFP v3 RNL.",
+      "license_summary": "No license or redistribution review is contained in this local access observation; use producer terms for the exact v2 release.",
+      "observed_on": "2026-10-30",
+      "recommended_formats": [],
+      "source_evidence": [
+        {
+          "path": "research/chirps-priorities-20261030/local-audit.json",
+          "sha256": "0549dc110bdcedabd8d61629b3c92a445a73e27c67e12ae44505f637f38224fd"
+        },
+        {
+          "path": "research/chirps-priorities-20261030/README.md",
+          "sha256": "2d29b99a2d0d56df350e1e9fa2b8bdd7722c3df71c35014ea2f71dc461ecb411"
+        }
+      ],
+      "sources": [
+        {
+          "entry_id": "CHIRPS-2.0/global_pentad/cogs",
+          "provider": "Climate Hazards Center",
+          "relationship": "component",
+          "url": "https://data.chc.ucsb.edu/products/CHIRPS-2.0/global_pentad/cogs/"
+        }
+      ],
+      "suggested_id": "chirps_v2_pentad_public_cogs_sample",
+      "target_id": "chirps",
+      "title": "CHIRPS v2.0 pentad public COGs, six-object August 2020 benchmark sample"
+    },
+    {
+      "access_summary": "Prior review consulted ISRIC product and layer documentation for global SoilGrids 2.0 products and documented statistics. No original source file or data endpoint was fetched, no format/host availability was established, and no asset access was validated. Existing Source Cooperative publication covers only selected means and is not evidence for the full original product family.",
+      "conversion_rationale": "Retain this as a pointer to the producer scope; do not infer a missing or available bulk copy from documentation alone.",
+      "evidence_key": "soilgrids_isric_original_publisher_access",
+      "evidence_urls": [
+        "https://isric.org/explore/soilgrids",
+        "https://docs.isric.org/globaldata/soilgrids/SoilGrids_faqs_01.html",
+        "https://docs.isric.org/globaldata/soilgrids/SoilGrids_faqs_03.html"
+      ],
+      "existing_record_id": null,
+      "format_labels": [],
+      "hosting_status": "unknown",
+      "identity_note": "Source is the broader SoilGrids family. Canonical `isric` is one GEE bulk-density entry, not a canonical record for all SoilGrids layers.",
+      "license_summary": "No redistribution license status established in this access review; verify the exact producer product and terms.",
+      "observed_on": "2026-10-30",
+      "recommended_formats": [],
+      "source_evidence": [
+        {
+          "path": "research/soilgrids-options-20261030/review.json",
+          "sha256": "7790be846cb80a7ccbab6378d1bc140da5f582fafad6a29549467b1cda866652"
+        },
+        {
+          "path": "research/soilgrids-options-20261030/README.md",
+          "sha256": "916e435d64f76b47ebd61a3b81990b53e663e5edaee8d57faec4fdba4fb0218b"
+        }
+      ],
+      "sources": [
+        {
+          "entry_id": "SoilGrids 2.0 producer documentation",
+          "provider": "ISRIC",
+          "relationship": "same_family",
+          "url": "https://isric.org/explore/soilgrids"
+        },
+        {
+          "entry_id": "SoilGrids layer FAQ",
+          "provider": "ISRIC",
+          "relationship": "same_family",
+          "url": "https://docs.isric.org/globaldata/soilgrids/SoilGrids_faqs_01.html"
+        }
+      ],
+      "suggested_id": "soilgrids_isric_original_publisher_access",
+      "target_id": "isric",
+      "title": "ISRIC SoilGrids producer documentation and original-data scope"
+    },
+    {
+      "access_summary": "Prior product-page review documented a v0.1.0.icechunk store tagged soilgrids-2.0.0, with sharded Zarr v3 arrays, 250 m native Interrupted Goode Homolosine grid; ten depth-indexed properties plus OCS, means only. Publisher reports ~177 GB native plus ~90 GB overviews (not measured in this review). Direct GET of the Source Cooperative README returned HTTP 403; no store-reader, asset or data access test was run. It omits Q0.05/Q0.50/Q0.95, relative uncertainty, WRB probabilities, landmask and original 1/5 km aggregates.",
+      "conversion_rationale": "Reuse is a documented existing-host option for matching mean layers only, subject to successful Icechunk access and immutable pinning. It does not supply the original quantile products and is not an exact substitute for other SoilGrids products.",
+      "evidence_key": "soilgrids_sourcecoop_icechunk_mean_publication",
+      "evidence_urls": [
+        "https://source.coop/chill/soilgrids",
+        "https://github.com/colinahill/soilgrids_data",
+        "https://isric.org/explore/soilgrids"
+      ],
+      "existing_record_id": null,
+      "format_labels": [
+        "Icechunk",
+        "Zarr v3"
+      ],
+      "hosting_status": "unknown",
+      "identity_note": "Existing third-party publication of a selected SoilGrids 2.0 subset; GEE `isric` candidate/source is one bulk-density family entry.",
+      "license_summary": "No redistribution license confirmed in retained review; check publisher and producer terms for the pinned tag.",
+      "observed_on": "2026-10-30",
+      "recommended_formats": [],
+      "source_evidence": [
+        {
+          "path": "research/soilgrids-options-20261030/review.json",
+          "sha256": "7790be846cb80a7ccbab6378d1bc140da5f582fafad6a29549467b1cda866652"
+        },
+        {
+          "path": "research/soilgrids-options-20261030/evidence/soilgrids-sourcecoop-readme.json",
+          "sha256": "0d9f389c38dc00e4a358a0045168dac72d66ca187a66168fbe6debc345ffd21b"
+        },
+        {
+          "path": "research/availability/availability-review.json",
+          "sha256": "7e690e08ad0d5ddf243052a5292c1f6db4a4ad8e224c8890ce2c7a0f6851ce8c"
+        }
+      ],
+      "sources": [
+        {
+          "entry_id": "SoilGrids 2.0 / v0.1.0.icechunk",
+          "provider": "Source Cooperative publisher (chill)",
+          "relationship": "related_product",
+          "url": "https://source.coop/chill/soilgrids"
+        }
+      ],
+      "suggested_id": "soilgrids_sourcecoop_icechunk_mean_publication",
+      "target_id": "isric",
+      "title": "SoilGrids v2 mean-only Source Cooperative Icechunk/Zarr publication"
+    },
+    {
+      "access_summary": "The v1.5 Occurrence release inventory contains 504 public .tif tiles totaling 14,453,956,859 bytes for 1984–2024; per-object listing hashes are opaque source metadata, not verified SHA-256. Eight geographically varied tiles received bounded range probes (HTTP 206), with matching Content-Range and tiled pyramids consistent with COG layout. No image payloads were fetched; no all-object COG certification or local mirror is established. Processing combines Landsat C1 (1984–2021) and C2 (2022–2024); v1.5 corrects prior Occurrence calculations.",
+      "conversion_rationale": "Existing public producer tiles already support direct access; retain the source inventory and sample qualification. No second mirror or conversion was proposed without an analytic need.",
+      "evidence_key": "jrc_gsw_v15_occurrence_producer_tiles",
+      "evidence_urls": [
+        "https://global-surface-water.appspot.com/download",
+        "https://s3.waw4-1.cloudferro.com/swift/v1/global-surface-water/"
+      ],
+      "existing_record_id": "jrc-gsw-occurrence",
+      "format_labels": [
+        "GeoTIFF (tiled, overviews; sampled COG-like layout)"
+      ],
+      "hosting_status": "download_available",
+      "identity_note": "Exact same v1.5 1984–2024 Occurrence product as the canonical producer-source record; sample qualification is not exhaustive validation.",
+      "license_summary": "JRC access page links Copernicus terms; exact attribution/redistribution obligations remain for release review. Existing record states attribution `Source: EC JRC/Google`.",
+      "observed_on": "2026-10-31",
+      "recommended_formats": [],
+      "source_evidence": [
+        {
+          "path": "research/hydro-releases-20261031/jrc/qualification.md",
+          "sha256": "2d29eaf9b32d56361f4e5cc3594ba4e192ec9278c7e82fcaf3610dcc06a53be7"
+        },
+        {
+          "path": "research/hydro-releases-20261031/jrc/occurrence-current-inventory-response.json",
+          "sha256": "338037170377b21953074a9163d68498048764532642ef0f44ee82c1b72e7410"
+        },
+        {
+          "path": "research/hydro-releases-20261031/jrc/occurrence-current-inventory-metadata.json",
+          "sha256": "b7350a42d4c6a2ee72406b8634b4af9ee315fd52fd61329d24ee07b52941e193"
+        },
+        {
+          "path": "research/hydro-releases-20261031/jrc/occurrence-range-probes.json",
+          "sha256": "664daba8aa7a9e6f3ba13921827cc50bd47c064e6a7232977dbfd7ea072b395b"
+        },
+        {
+          "path": "research/chirps-priorities-20261030/evidence/jrc-v15-aggregated-list.json",
+          "sha256": "5d6604a069618b2de7e30319798b4666b293f7b4a28b12b4784a2376c2525f85"
+        }
+      ],
+      "sources": [
+        {
+          "entry_id": "Occurrence v1.5, download2024/Aggregated/VER1-5/occurrence",
+          "provider": "European Commission JRC / Google; object host CloudFerro",
+          "relationship": "exact_dataset",
+          "url": "https://global-surface-water.appspot.com/download"
+        },
+        {
+          "entry_id": "global-surface-water/download2024/Aggregated/VER1-5/occurrence",
+          "provider": "CloudFerro public object listing",
+          "relationship": "exact_dataset",
+          "url": "https://s3.waw4-1.cloudferro.com/swift/v1/global-surface-water/"
+        }
+      ],
+      "suggested_id": "jrc_gsw_v15_occurrence_producer_tiles",
+      "target_id": "jrc-gsw-occurrence",
+      "title": "JRC Global Surface Water v1.5 Occurrence producer-hosted tiled GeoTIFFs"
+    },
+    {
+      "access_summary": "A prior public README request returned HTTP 200 and the frozen report describes this mirror as MonthlyHistory 2017–2024; its STAC index covers only an older 2017–2021 portion. No object bytes or current asset access were checked in that review. This is not the long-term v1.5 Occurrence release and must not be counted as its mirror.",
+      "conversion_rationale": "Record as a related, non-equivalent host observation to prevent duplicate-work assumptions. It does not replace or validate JRC Occurrence v1.5.",
+      "evidence_key": "jrc_sourcecoop_monthlyhistory_counterpart",
+      "evidence_urls": [
+        "https://data.source.coop/epoch/jrc-global-surface-water-monthly/README.md"
+      ],
+      "existing_record_id": null,
+      "format_labels": [],
+      "hosting_status": "metadata_only",
+      "identity_note": "Monthly-history time slices differ scientifically and temporally from 1984–2024 occurrence frequency.",
+      "license_summary": "No independent mirror redistribution clearance established; retain producer terms/attribution and review publisher terms per release.",
+      "observed_on": "2026-10-30",
+      "recommended_formats": [],
+      "source_evidence": [
+        {
+          "path": "research/chirps-priorities-20261030/evidence/jrc-sourcecoop-readme.json",
+          "sha256": "a8656bdd887a12582412b8ce76a337e82b4599447ab7313ab4e99b08af36a2da"
+        },
+        {
+          "path": "research/chirps-priorities-20261030/priorities.json",
+          "sha256": "096351cdcadf306a8db499be19fb66c2e652706d338455ad3e6e495024bd8617"
+        },
+        {
+          "path": "research/publication-top10-20261030/priorities.json",
+          "sha256": "1f9abfdc3aa68eb372f49cdc3510bf4fd9614e1a58fd808549a7bd653e7af492"
+        }
+      ],
+      "sources": [
+        {
+          "entry_id": "jrc-global-surface-water-monthly",
+          "provider": "Source Cooperative publisher (epoch)",
+          "relationship": "related_product",
+          "url": "https://data.source.coop/epoch/jrc-global-surface-water-monthly/README.md"
+        }
+      ],
+      "suggested_id": "jrc_sourcecoop_monthlyhistory_counterpart",
+      "target_id": "jrc-gsw-occurrence",
+      "title": "Source Cooperative JRC Global Surface Water MonthlyHistory mirror, not Occurrence v1.5"
+    },
+    {
+      "access_summary": "The saved STAC collection response (HTTP 200) declares monthly global-terrestrial TerraClimate at ~4 km (1/24°), 1958-01 through 2021-12, with public-looking HTTPS and Azure Zarr roots. It declares CC0-1.0. Collection metadata only: no Zarr root/asset GET, content/checksum, v1.1 parity, or reader test. Producer v1.1 archive elsewhere is documented as 1950–2025, so dates/releases differ.",
+      "conversion_rationale": "Existing native Zarr access is a reuse signal for historical baseline coverage 1958–2021. Do not treat it as the full TerraClimate v1.1 1950–2025 archive or the separate CMIP scenario product.",
+      "evidence_key": "terraclimate_planetary_computer_baseline_zarr",
+      "evidence_urls": [
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/terraclimate",
+        "https://planetarycomputer.microsoft.com/dataset/terraclimate"
+      ],
+      "existing_record_id": "terraclimate_baseline",
+      "format_labels": [
+        "Zarr"
+      ],
+      "hosting_status": "native_available",
+      "identity_note": "Historical baseline product; distinct from legacy TerraClimate +2C/+4C scenarios and from the longer producer v1.1 archive.",
+      "license_summary": "PC collection metadata declares CC0-1.0; this is a provider metadata declaration, not an independent legal review or proof covering other versions/producer archive.",
+      "observed_on": "2026-10-31",
+      "recommended_formats": [],
+      "source_evidence": [
+        {
+          "path": "research/publication-top10-20261030/evidence/terraclimate-pc-collection.json",
+          "sha256": "541a49e82db0283d1a65918a2baf3de9792f0ac1ac335a5076995bdabc76c1ff"
+        },
+        {
+          "path": "research/publication-top10-20261030/priorities.json",
+          "sha256": "1f9abfdc3aa68eb372f49cdc3510bf4fd9614e1a58fd808549a7bd653e7af492"
+        }
+      ],
+      "sources": [
+        {
+          "entry_id": "terraclimate",
+          "provider": "Microsoft Planetary Computer STAC",
+          "relationship": "exact_dataset",
+          "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/terraclimate"
+        }
+      ],
+      "suggested_id": "terraclimate_planetary_computer_baseline_zarr",
+      "target_id": "terraclimate_baseline",
+      "title": "TerraClimate historical baseline on Microsoft Planetary Computer"
+    },
+    {
+      "access_summary": "Prior THREDDS catalog metadata returned HTTP 200 and declares NetCDF files with OpenDAP, HTTPServer and subset services; the inventory covers v1.1 annual files, 1950–2025, with 1,064 files across 14 variables. Prior reports estimate ~116–121 GB from publisher-rounded Mbytes, not a measured transfer. One inspected vapour-pressure 1958 .das response declares V1.1, WorldClim v2.1/ERA5, CC0 1.0 and modified date 2026-06-02; this single-file attribute result is not an archive-wide license audit. No NetCDF body downloaded.",
+      "conversion_rationale": "This is a producer-native NetCDF access path and longer time span than the PC collection. Treat as related version/coverage evidence; do not infer that a Zarr conversion is needed without qualifying the existing host against the use case.",
+      "evidence_key": "terraclimate_v11_producer_netcdf_archive",
+      "evidence_urls": [
+        "https://tds-proxy.nkn.uidaho.edu/thredds/catalog/TERRACLIMATE_ALL/data/catalog.xml",
+        "https://www.reacchpna.org/thredds/dodsC/TERRACLIMATE_ALL/data/TerraClimate_vap_1958.nc.das"
+      ],
+      "existing_record_id": null,
+      "format_labels": [
+        "NetCDF"
+      ],
+      "hosting_status": "download_available",
+      "identity_note": "Producer v1.1 archive (1950–2025) is related to, but not the same version/coverage as, PC STAC baseline (1958–2021) or warming-scenario data.",
+      "license_summary": "CC0 1.0 declaration observed in one inspected producer NetCDF attributes response; verify consistency across exact pinned archive/version.",
+      "observed_on": "2026-10-30",
+      "recommended_formats": [],
+      "source_evidence": [
+        {
+          "path": "research/top30-download-audit-20261030/evidence-parent/terraclimate-catalog.json",
+          "sha256": "dd54d68845f95ac949e106f0b29afb03257919fce99a302c0b55d9db1d986d23"
+        },
+        {
+          "path": "research/top30-download-audit-20261030/evidence-parent/terraclimate-base-size-summary.json",
+          "sha256": "65ef62b3b75285eb8de985c1c9faef84129bb7eead73002a5b1732a20fa423fa"
+        },
+        {
+          "path": "research/chirps-priorities-20261030/evidence/terraclimate-v11-attributes.json",
+          "sha256": "76cd722934db0dc1f646a9581d24048824a5496dfbe454bce5a18024c1690ad4"
+        },
+        {
+          "path": "research/chirps-priorities-20261030/priorities.json",
+          "sha256": "096351cdcadf306a8db499be19fb66c2e652706d338455ad3e6e495024bd8617"
+        }
+      ],
+      "sources": [
+        {
+          "entry_id": "TERRACLIMATE_ALL/data",
+          "provider": "Northwest Knowledge Network / TerraClimate producer access",
+          "relationship": "related_release",
+          "url": "https://tds-proxy.nkn.uidaho.edu/thredds/catalog/TERRACLIMATE_ALL/data/catalog.xml"
+        },
+        {
+          "entry_id": "TerraClimate_vap_1958.nc attributes",
+          "provider": "ClimateLab producer metadata via OPeNDAP",
+          "relationship": "related_release",
+          "url": "https://www.reacchpna.org/thredds/dodsC/TERRACLIMATE_ALL/data/TerraClimate_vap_1958.nc.das"
+        }
+      ],
+      "suggested_id": "terraclimate_v11_producer_netcdf_archive",
+      "target_id": "terraclimate_baseline",
+      "title": "TerraClimate v1.1 producer THREDDS archive, annual NetCDF files"
+    },
+    {
+      "access_summary": "The current candidate record retains producer documentation describing monthly global map releases in S3 and Azure and GeoParquet plus PMTiles formats, linked through the producer STAC catalog. This is documented access, not per-theme completeness, version parity, object access, or byte validation; feature coverage is theme-specific.",
+      "conversion_rationale": "Reuse documented producer cloud copies for matching themes/releases. Do not mirror or convert without confirming exact release, theme scope, asset path and use case.",
+      "evidence_key": "overture_global_native_cloud_access_docs",
+      "evidence_urls": [
+        "https://docs.overturemaps.org/getting-data/cloud-sources/",
+        "https://overturemaps.org/",
+        "https://stac.overturemaps.org/"
+      ],
+      "existing_record_id": null,
+      "format_labels": [
+        "GeoParquet",
+        "PMTiles"
+      ],
+      "hosting_status": "documented_native",
+      "identity_note": "Global monthly family access; exact product/theme and release must be pinned before matching any canonical record.",
+      "license_summary": "Review terms and attribution for each Overture theme and release; no universal license clearance inferred.",
+      "observed_on": "2026-10-31",
+      "recommended_formats": [],
+      "source_evidence": [
+        {
+          "path": "research/global-candidates-20261031/citations/supplemental-global.json",
+          "sha256": "8eecd1b6859f60c355df02ed5f4f4bea5bcdfe69f156abafa95e9c622b975202"
+        }
+      ],
+      "sources": [
+        {
+          "entry_id": "global release STAC catalog",
+          "provider": "Overture Maps Foundation",
+          "relationship": "same_family",
+          "url": "https://stac.overturemaps.org/"
+        },
+        {
+          "entry_id": "cloud sources documentation",
+          "provider": "Overture Maps Foundation",
+          "relationship": "same_family",
+          "url": "https://docs.overturemaps.org/getting-data/cloud-sources/"
+        }
+      ],
+      "suggested_id": "overture_global_native_cloud_access_docs",
+      "target_id": "overture_global_maps",
+      "title": "Overture Maps producer-documented monthly cloud-hosted global releases"
+    },
+    {
+      "access_summary": "The frozen 2026-10-29 community-audit crosswalk records a Source Cooperative repository reference for the Overture Buildings theme, but says it contains an older experiment/release; version parity is unverified against the GEE CONUS extract from release 2024-07-22. No asset inspection was performed here; no format is claimed.",
+      "conversion_rationale": "Preserve the prior counterpart lead and release mismatch. Do not assume a global, current or exact CONUS copy based on repository URL alone.",
+      "evidence_key": "overture_buildings_sourcecoop_older_experiment_host",
+      "evidence_urls": [
+        "https://source.coop/cholmes/overture",
+        "https://gee-community-catalog.org/projects/overture_buildings"
+      ],
+      "existing_record_id": null,
+      "format_labels": [],
+      "geographic_scope": "regional",
+      "hosting_status": "metadata_only",
+      "identity_note": "The reviewed source item is regional CONUS. Source Cooperative reference is an older same-theme publication with release parity unverified; no global scope inferred.",
+      "license_summary": "No exact release-level license/redistribution check was retained for this host; review theme and release terms.",
+      "observed_on": "2026-10-29",
+      "recommended_formats": [],
+      "source_evidence": [
+        {
+          "path": "research/gee-community-audit-20261029/crosswalk.csv",
+          "sha256": "16655102d698853c17b9aa27e318d6092d0bacdf1779e012c250c0e0b7de0cae"
+        },
+        {
+          "path": "research/catalog-citations-20261030/ranking-community-all.csv",
+          "sha256": "8453f911f9f33af642521015147ef3ebde88136d14b1ba1c3a709f59ce9fefef"
+        }
+      ],
+      "sources": [
+        {
+          "entry_id": "cholmes/overture",
+          "provider": "Source Cooperative publisher (cholmes)",
+          "relationship": "same_family",
+          "url": "https://source.coop/cholmes/overture"
+        }
+      ],
+      "spatial_coverage": "The GEE item under this canonical family is a CONUS extract from the 2024-07-22.0 release; the Source Cooperative reference describes an older same-theme experiment/release with parity unverified. This row is regional and does not imply global coverage.",
+      "suggested_id": "overture_buildings_sourcecoop_older_experiment_host",
+      "target_id": "overture_buildings",
+      "title": "Overture Buildings Source Cooperative older experiment/release reference"
+    }
+  ],
+  "limitations": [
+    "Existing source URLs do not establish current remote availability; no network was used.",
+    "Format evidence is limited to saved STAC/catalog/documentation declarations and specific prior bounded tests noted per observation.",
+    "No asset data were fetched for this lane. A source-counterpart relationship does not prove exact release equivalence."
+  ],
+  "review_scope": "Reuse evidence extraction from prior saved research snapshots and current candidate references. No network requests or dataset assets were accessed in this lane. Dates describe the underlying prior observations, not a fresh check. Canonical record files are referenced as targets only and are never hashed as evidence.",
+  "reviewed_on": "2026-10-31",
+  "schema_version": 1
+}

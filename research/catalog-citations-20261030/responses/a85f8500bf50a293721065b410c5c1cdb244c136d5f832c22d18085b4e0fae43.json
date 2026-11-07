@@ -1,0 +1,80 @@
+{
+  "request_url": "https://api.openalex.org/works?search=Global+river+hydrography+and+network+routing%3A+baseline+data+and+new+approaches+to+study+the+world%27s+large+river+systems&corpus=all&per_page=5&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date",
+  "retrieved_at": "2026-10-30T22:07:49.570208+00:00",
+  "response_path": "responses/a85f8500bf50a293721065b410c5c1cdb244c136d5f832c22d18085b4e0fae43.json",
+  "status": 200,
+  "response_sha256": "512398094a898a27cbe49e90e73f54c829f2d7aeda4df256e648f6c8e4d5c715",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 2385,
+      "db_response_time_ms": 297,
+      "page": 1,
+      "per_page": 5,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where full text has (Global river hydrography \"and\" network routing: baseline data \"and\" new approaches to study the world's large river systems)",
+        "x_new_oql": "get works (all corpora) where full text has (Global river hydrography \"and\" network routing: baseline data \"and\" new approaches to study the world's large river systems)",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "Global river hydrography and network routing: baseline data and new approaches to study the world's large river systems",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:Global river hydrography and network routing: baseline data and new approaches to study the world%27s large river systems&corpus=all&per_page=5",
+        "order": "best matches first",
+        "order_default": true
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W2097208041",
+        "doi": "https://doi.org/10.1002/hyp.9740",
+        "title": "Global river hydrography and network routing: baseline data and new approaches to study the world's large river systems",
+        "type": "article",
+        "publication_year": 2013,
+        "publication_date": "2013-02-13"
+      },
+      {
+        "id": "https://openalex.org/W6948708057",
+        "doi": "https://doi.org/10.5281/zenodo.11066335",
+        "title": "River migration and forest loss in the Amazon basin",
+        "type": "dataset",
+        "publication_year": 2024,
+        "publication_date": "2024-04-25"
+      },
+      {
+        "id": "https://openalex.org/W6967324411",
+        "doi": "https://doi.org/10.5281/zenodo.10301002",
+        "title": "Downscaling WaterGAP streamflow from 0.5 arc-deg to 15 arc-sec",
+        "type": "article",
+        "publication_year": 2023,
+        "publication_date": "2023-12-08"
+      },
+      {
+        "id": "https://openalex.org/W4410403290",
+        "doi": "https://doi.org/10.1029/2024wr038308",
+        "title": "Global River Topology (GRIT): A Bifurcating River Hydrography",
+        "type": "article",
+        "publication_year": 2025,
+        "publication_date": "2025-05-01"
+      },
+      {
+        "id": "https://openalex.org/W6907334413",
+        "doi": "https://doi.org/10.20383/102.0694",
+        "title": "PHyDAP - Prairie Hydrology Design and Analysis Product",
+        "type": "conference-abstract",
+        "publication_year": 2023,
+        "publication_date": "2023-04-12"
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "56a5f0be5843c4f66cf49d192ef667f05a131ee60b5ada87b13f6d029a698d13"
+}

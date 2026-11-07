@@ -1,0 +1,55 @@
+name: Prepare catalog metadata for review
+
+"on":
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  prepare:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          version: "0.9.27"
+          python-version: "3.12.12"
+          enable-cache: true
+          cache-dependency-glob: |
+            uv.lock
+            tools/portolan/uv.lock
+      - name: Install locked environments
+        run: |
+          uv sync --locked --no-build
+          uv sync --locked --project tools/portolan --no-build
+      - name: Verify records and deterministic catalog
+        run: |
+          uv run --locked python scripts/catalog.py --check
+          uv run --locked python scripts/publication_catalog.py check
+      - name: Validate tracked publication metadata
+        run: uv run --locked --project tools/portolan python scripts/check_portolan.py --catalog catalog --report .local/preparation/tracked-validation.json
+      - name: Prepare a new metadata bundle and upload plan
+        run: uv run --locked python scripts/publication_catalog.py stage .local/publication-stage
+      - name: Validate staged publication metadata
+        run: uv run --locked --project tools/portolan python scripts/check_portolan.py --catalog .local/publication-stage/catalog --report .local/preparation/staged-validation.json
+      - name: Retain metadata bundle for review
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: catalog-publication-review
+          path: |
+            .local/publication-stage/
+            .local/preparation/
+          if-no-files-found: error
+          include-hidden-files: true
+      - name: Retain checks even if preparation is not ready
+        if: failure()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: catalog-preparation-checks
+          path: .local/preparation/
+          if-no-files-found: warn
+          include-hidden-files: true

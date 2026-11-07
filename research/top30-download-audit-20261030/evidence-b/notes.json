@@ -1,0 +1,56 @@
+{
+  "accessed": "2026-10-30",
+  "scope": "Ranks 11-20 review evidence notes. Browser/source pages were accessed as metadata only; no raster, vector, climate, or MODIS granule data bodies were downloaded.",
+  "claims": [
+    {
+      "rank": 11,
+      "url": "https://cds.climate.copernicus.eu/datasets/reanalysis-era5-land?tab=download",
+      "note": "CDS full gridded product page states global regular lat-lon 0.1\u00b0 grid, hourly, 1950-present, GRIB; configurable variable/date/area UI gives no fixed total download size. Separate producer time-series documentation confirms point/limited-area ARCO Zarr subset. For context only, one global float32 array variable for a 365-day year calculates as 3600\u00d71801\u00d78760\u00d74 = 227,185,344,000 bytes (~227 GB decimal); this is illustrative uncompressed raw-array payload, not download bytes or archive total."
+    },
+    {
+      "rank": 12,
+      "url": "https://global-surface-water.appspot.com/download",
+      "note": "Public GCS JSON API object metadata listing for downloads2021/occurrence/ returned 504 names and exact size fields, no nextPageToken, 56,671-byte response; exact size sum 15,972,544,704 bytes. This scopes only the global 2021 occurrence layer, not all v1.4 products. The listing is preserved in evidence-b/gsw-occurrence-v1.4-2021-object-listing.json; TIFF bodies were not fetched."
+    },
+    {
+      "rank": 13,
+      "url": "https://rda.ucar.edu/datasets/d093002/detailed_metadata/",
+      "note": "UCAR RDA d093002 monthly CFSR products: January 1979-December 2010, WMO GRIB2, publisher total volume 5.05 TB. This is monthly-products scope only."
+    },
+    {
+      "rank": 14,
+      "url": "https://api.figshare.com/v2/articles/4725541",
+      "note": "Source inventory in datasets/river-plastic-inputs/dataset.yaml and releases/figshare-v6-r2/manifest.json records Figshare v6 file PlasticRiverInputs.zip as 5,764,810 bytes (MD5 4b3167c75df6b1227839e6b1674d3cda); 40,760 rows. Local derivative asset byte counts are separately in releases/figshare-v6-r2/manifest.json and are not published."
+    },
+    {
+      "rank": 15,
+      "url": "https://doi.org/10.1038/sdata.2017.191",
+      "note": "Current NKN/THREDDS v1.1 catalog page lists TerraClimate_vap_2024.nc at 135.6 Mbytes (publisher-rounded), one variable-year compressed NetCDF4 file. Current producer page states v1.1 uses ERA5 anomalies and warns not to mix v1.0/v1.1. Original 2018 paper\u2019s ~800 GB is only the uncompressed 1958-2015 all-variable v1.0 historical archive; retained separately."
+    },
+    {
+      "rank": 16,
+      "url": "https://data.nasa.gov/dataset/global-mangrove-forests-distribution-2000",
+      "note": "Parent CMR evidence was independently checked: query reports 111 hits and 111 returned entries; 111 unique titles and granule IDs; all ZIP names are unique; every record has one data link whose description says GeoTIFF format; summed rounded per-granule granule_size values = 59.39 MB. Evidence response is evidence-parent/mangrove-granules.json. No granule bodies downloaded."
+    },
+    {
+      "rank": 17,
+      "url": "https://data.prism.oregonstate.edu/time_series/us/lt/800m/vpdmax/monthly/2024/",
+      "note": "PRISM directory lists prism_vpdmax_us_30s_2024.zip at rounded 49M; only one variable-year, not family total. Current web-service docs identify COG; old official GEE collection is about 4.64 km and 1981-present, distinct from the chosen 800m source."
+    },
+    {
+      "rank": 18,
+      "url": "https://www.epa.gov/eco-research/level-iii-and-iv-ecoregions-continental-united-states",
+      "note": "EPA lists US Level III shapefile with state boundaries as 35 MB and without state boundaries as 28 MB. Used only the with-boundaries package as a publisher-stated rounded size."
+    },
+    {
+      "rank": 19,
+      "url": "https://www.usgs.gov/programs/gap-analysis-project/science/land-cover-data-download",
+      "note": "Public USGS ScienceBase item metadata JSON (24,144-byte response) lists gap_landfire_nationalterrestrialecosystems2011.zip at 1,998,043,721 bytes. The request retrieved metadata only; archive was not downloaded. Response is preserved in evidence-b/gap-sciencebase-item-metadata.json."
+    },
+    {
+      "rank": 20,
+      "url": "https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MOD17A2H",
+      "note": "Parent evidence was independently checked: three CMR UMM pages returned 100+100+90=290 records, all unique granule URs/IDs; all records are MOD17A3HGF and begin/end in 2024. Summed DataGranule.ArchiveAndDistributionInformation Size = 2044.3589506149292 MB as CMR labels it. Native format supported by current LP DAAC V6.1 user guide, HDF-EOS2. Evidence receipts are evidence-parent/mod17-2024-page1/2/3.json and mod17-2024-size-summary.json. No granule bodies downloaded."
+    }
+  ]
+}

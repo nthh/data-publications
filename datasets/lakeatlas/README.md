@@ -1,0 +1,102 @@
+# LakeATLAS v1.0 local analytic release
+
+## GEE review — 2026-11-06
+
+Live GEE counts and 522 sampled IDs per layer match. Both layers have numeric differences including integral GEE GDP values; the polygon layer also has three narrow source spikes absent spatially from GEE. Strict parity fails. No exhaustive GEE or independent scientific-accuracy claim. See the [complete comparison review](../../research/gee-release-validation-20261106/README.md) and [structured evidence](../../research/gee-release-validation-20261106/summary.json). The validated release is [public on Source Cooperative](https://source.coop/nthh/lakeatlas); hosting checks do not change these scientific-comparison findings.
+
+
+This workflow converts both layers in the pinned HydroATLAS LakeATLAS v1.0 File Geodatabase into GeoParquet: complete lake polygon footprints and their separate pour-point locations. It preserves native lake IDs, every decoded attribute and null, and source WKB geometry. It does not repair or simplify geometry and does not produce display tiles.
+
+## Source pin
+
+Figshare article version 1 (`10.6084/m9.figshare.19312001.v1`) provides `LakeATLAS_Data_v10.gdb.zip` (file 35959544; 1,530,962,499 bytes; producer MD5 `952e0724afc96d3a5899f08935d4a094`). The catalog and technical documentation are included from the same article. HydroSHEDS identifies HydroATLAS as version 1; LakeATLAS is described in Lehner et al. (2022), DOI `10.1038/s41597-022-01425-z`. The collective HydroATLAS database is licensed CC BY 4.0. Individual attribute columns are licensed CC BY 4.0 or ODbL 1.0 as specified per attribute in the bundled LakeATLAS catalog. The technical documentation says original licenses of underpinning source datasets in their original formats are not changed. Attribute observation years vary by source.
+
+The archive contains 3,061,068,949 uncompressed bytes and includes the native `OBJECTID` feature ID plus `Hylak_id`; both are retained in output. The layer field counts are 307 polygon attributes plus `OBJECTID` and 305 pour-point attributes plus `OBJECTID`. The builder reads the geodatabase directly through GDAL `/vsizip`, so it does not create an extracted copy. GDAL/OpenFileGDB emits an `organizePolygons()` warning for a polygon with more than 100 parts. The workflow retains GDAL’s default ring classification and writes the resulting WKB unchanged; it does not skip ring classification, repair, or simplify geometry. The full source comparison independently rereads the same native layer through that decoder and checks every output WKB byte. This establishes decoded source fidelity, not raw geodatabase ring-record encoding identity.
+
+## Run
+
+Use the durable cache and a new release directory. Acquire and inspect are network/source operations; build and validation are local:
+
+```sh
+cd datasets/lakeatlas
+uv sync --locked
+SOURCE_CACHE=/path/to/durable/lakeatlas/source
+INSPECTION_REPORT=/path/to/durable/lakeatlas/inspection/lakeatlas-v1.0-source.json
+RELEASE_DIR=/path/to/durable/lakeatlas/releases/lakeatlas-v1.0-r1-rowgroup4096
+uv run python build.py acquire --cache "$SOURCE_CACHE"
+uv run python build.py inspect --source-cache "$SOURCE_CACHE" --output "$INSPECTION_REPORT"
+uv run python build.py build --source-cache "$SOURCE_CACHE" --output "$RELEASE_DIR"
+uv run python validate.py --source-cache "$SOURCE_CACHE" --release "$RELEASE_DIR" --report "$RELEASE_DIR/source-fidelity.json"
+uv run python test_faults.py
+```
+
+The builder reads 1,024-row Arrow batches, decodes geometries in 128-row slices, and buffers 4,096-row Parquet groups. This keeps geometry processing bounded while avoiding excessive row-group footer metadata. The build refuses to overwrite an existing output directory and refuses to run with uncommitted LakeATLAS workflow files. It writes two Parquet assets plus their manifests, source field catalog, technical documentation, attribution notice, and the build-time dataset record. To prove deterministic rebuild bytes, run the same build to a second new directory and compare the two asset SHA-256 values recorded in `build-manifest.json`.
+
+The validation coordinator runs source fidelity and each independent GeoPandas subset read in separate sequential worker processes. It retains the source-worker report beside the combined report and records worker hashes and the maximum phase RSS.
+
+## Spatial-order companion
+
+The source-order assets remain immutable. Build a separate companion that preserves their values and restores producer order by `OBJECTID`. Each asset uses two sequential processes: the writer records an immutable checkpoint and partial candidate; a fresh process validates and promotes that candidate. The writer report is not a passed validation report, and the completion command accepts no overrides from the checkpoint.
+
+```sh
+# Process 1: write the candidate and immutable checkpoint.
+uv run --locked --project scripts/release_tools python -B scripts/release_tools/spatial_order.py \
+  --defer-validation \
+  --checkpoint "$RELEASE_DIR/spatial/checkpoints/lakeatlas-polygons.json" \
+  --input "$RELEASE_DIR/lakeatlas/data/lakeatlas-polygons.parquet" \
+  --output "$RELEASE_DIR/spatial/lakeatlas-polygons-spatial.parquet" \
+  --report "$RELEASE_DIR/spatial/lakeatlas-polygons-spatial.json" \
+  --identifier-column OBJECTID --geometry-column geometry \
+  --buckets 128 --batch-rows 128 --buffer-rows 32 --row-group-size 16384 \
+  --task-owned-baseline-gb "$POLYGON_TASK_BASELINE_GB"
+
+# Process 2: start a fresh process and complete this checkpoint without overrides.
+uv run --locked --project scripts/release_tools python -B scripts/release_tools/spatial_order.py \
+  --complete-stage "$RELEASE_DIR/spatial/checkpoints/lakeatlas-polygons.json"
+
+# Process 1: write the candidate and immutable checkpoint.
+uv run --locked --project scripts/release_tools python -B scripts/release_tools/spatial_order.py \
+  --defer-validation \
+  --checkpoint "$RELEASE_DIR/spatial/checkpoints/lakeatlas-pour-points.json" \
+  --input "$RELEASE_DIR/lakeatlas/data/lakeatlas-pour-points.parquet" \
+  --output "$RELEASE_DIR/spatial/lakeatlas-pour-points-spatial.parquet" \
+  --report "$RELEASE_DIR/spatial/lakeatlas-pour-points-spatial.json" \
+  --identifier-column OBJECTID --geometry-column geometry \
+  --buckets 128 --batch-rows 128 --buffer-rows 32 --row-group-size 16384 \
+  --task-owned-baseline-gb "$POINT_TASK_BASELINE_GB"
+
+# Process 2: start a fresh process and complete this checkpoint without overrides.
+uv run --locked --project scripts/release_tools python -B scripts/release_tools/spatial_order.py \
+  --complete-stage "$RELEASE_DIR/spatial/checkpoints/lakeatlas-pour-points.json"
+```
+
+Each baseline counts other task-owned analytic files already retained but excludes the active input and the source archive/documents. The writer uses compressed Arrow IPC buckets, records the candidate path and byte hashes in its checkpoint, and stops before promotion. The fresh completion process verifies the checkpoint and stage hash, compares every source attribute and per-feature WKB identity, recomputes bbox values, then promotes the output only after all checks pass. Both processes check the memory and disk limits; failures retain reports and partial-artifact hashes. A spatial companion is accepted only after the checks in the validation plan pass on its actual bytes, including bbox pruning for the four fixed geographic windows and the bounded local HTTP Europe subset.
+
+## Source attribution
+
+HydroSHEDS / HydroATLAS authors. LakeATLAS version 1.0. DOI: `10.6084/m9.figshare.19312001.v1`. Cite Lehner, B., Messager, M.L., Korver, M.C., and Linke, S. (2022), *Global hydro-environmental lake characteristics at high spatial resolution*, Scientific Data 9, 351, DOI `10.1038/s41597-022-01425-z`. The collective database license is CC BY 4.0; each attribute license is given in the bundled catalog as CC BY 4.0 or ODbL 1.0. Conversion code license: Apache-2.0.
+
+## Current local state
+
+Both original layers passed complete source comparison and byte-identical clean
+rebuilds. The [r1 package report](releases/lakeatlas-v1.0-r1/package-validation.json)
+records the Portolan spatial-order failure. The spatially ordered polygon and
+pour-point assets passed full source comparison, clean byte-identical rebuilds,
+and the predeclared bbox-pruning windows. The local r2 package passed STAC Node, Portolan, package integrity, bounded HTTP/CORS, DuckDB subset parity, and independent package verification. The prepared release remains local; no upload or registry submission has occurred.
+
+## PMTiles display
+
+The local [display-v1 package](display/display-v1/README.md) contains separate
+polygon and pour-point PMTiles, bound to the unchanged r2 GeoParquet assets.
+Both layers retain stable source IDs, selected display fields and exact source
+bboxes for full-attribute lookup. Complete maximum-zoom ID/attribute checks,
+independent geometry samples and browser layer-switch checks passed.
+
+The [shared display workflow](../../docs/display-derivatives.md) documents builds
+and validation; the [local viewer](../../scripts/cloud_viewer/README.md) reads
+PMTiles ranges and queries the original GeoParquet for all fields. Display
+generalization does not change analytical geometry or field-level license terms.
+
+## Source selection audit
+
+Both official FileGDB layers and all decoded fields retained. No lower-detail source substitution found; decoded geometry comparisons share GDAL/OpenFileGDB. The [2026-11-02 source audit](../../research/grwl-raw-release-20261102/source-audit/hydro-audit.md) distinguishes full source fidelity from scientific accuracy and records the limits of rebuild/GEE evidence.

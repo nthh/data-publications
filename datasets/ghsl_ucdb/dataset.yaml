@@ -1,0 +1,61 @@
+schema_version: 1
+id: ghsl_ucdb
+title: GHSL Urban Centre Database (UCDB)
+intake:
+  kind: official_catalog
+  reference_url: https://www.arcgis.com/home/item.html?id=2344906dc4a04c748b690b9a92c8446c
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'esri: The JRC producer describes the current UCDB R2024A as global coverage of about
+    11,000 urban centres, with multiple thematic domains and time epochs. The Esri FeatureServer item
+    is an older R2019A representation describing 2015 centres; do not treat the two vintages as identical.
+    UCDB R2024A/R2019A centres differ from ghsl GHS-BUILT-S R2023A 10 m. Related canonical records, with
+    distinct scope: ghsl.'
+  sources:
+  - provider: esri_public
+    entry_id: 2344906dc4a04c748b690b9a92c8446c
+    url: https://www.arcgis.com/home/item.html?id=2344906dc4a04c748b690b9a92c8446c
+    relationship: related_release
+  - provider: producer
+    entry_id: GHS-UCDB R2019A dataset landing page
+    url: https://human-settlement.emergency.copernicus.eu/ghs_stat_ucdb2015mt_r2019a.php
+    relationship: exact_dataset
+  - provider: producer
+    entry_id: GHS-UCDB R2024A
+    url: https://human-settlement.emergency.copernicus.eu/datasets.php
+    relationship: same_family
+  access:
+  - provider: esri_public
+    status: download_available
+    formats:
+    - vector
+    summary: The Esri service is a hosted/linked view of an older release. The JRC producer catalog directly
+      lists downloadable current UCDB files in CSV, XLS, and GeoPackage. No Esri feature export was performed.
+      UCDB R2024A/R2019A centres differ from ghsl GHS-BUILT-S R2023A 10 m.
+    license_summary: The Esri R2019A item states CC BY 4.0 for the dataset. The JRC catalog states reuse
+      is authorized with proper acknowledgement. Apply the license for the exact producer release selected
+      and preserve attribution and change notices.
+    proposed_outputs:
+    - GeoParquet
+    rationale: Reuse the existing GHSL family record and review UCDB as a distinct family component rather
+      than creating a duplicate GHSL family. Current producer-native GeoPackage offers a suitable route
+      to assess a GeoParquet output after release, geometry, and schema are pinned.
+    evidence_urls:
+    - https://human-settlement.emergency.copernicus.eu/datasets.php
+    - https://www.arcgis.com/home/item.html?id=2344906dc4a04c748b690b9a92c8446c
+    - https://human-settlement.emergency.copernicus.eu/ghs_stat_ucdb2015mt_r2019a.php
+  citations: []
+  evidence:
+  - path: research/global-candidates-20261031/esri/reviewed.json
+    sha256: e02bd2202c3026ccd7564155bfa69b5e8bc666f65698da6bacce91ab7327d5be
+    key: ghsl-ucdb-global-urban-centres

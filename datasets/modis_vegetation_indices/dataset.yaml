@@ -1,0 +1,124 @@
+schema_version: 1
+id: modis_vegetation_indices
+title: MODIS vegetation indices (Terra and Aqua, Collection 6.1)
+intake:
+  kind: official_catalog
+  reference_url: https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MOD13A1
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'citations: Global land Distinct named producer product; retain exact source edition
+    and footprint. planetary: review_note: Global 500 m 16-day NDVI/EVI collection; STAC bbox all-world.;
+    stac_bbox: [-180, -90, 180, 90]; temporal_interval: [["2000-02-18T00:00:00Z", null]] Exact MOD13A1.061
+    500 m 16-day member of citation MODIS VI family.'
+  sources:
+  - provider: gee_official
+    entry_id: MODIS/061/MOD13A1
+    url: https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MOD13A1
+    relationship: same_family
+  - provider: gee_official
+    entry_id: MODIS/061/MOD13A2
+    url: https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MOD13A2
+    relationship: same_family
+  - provider: gee_official
+    entry_id: MODIS/061/MOD13A3
+    url: https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MOD13A3
+    relationship: same_family
+  - provider: gee_official
+    entry_id: MODIS/061/MOD13C1
+    url: https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MOD13C1
+    relationship: same_family
+  - provider: gee_official
+    entry_id: MODIS/061/MOD13Q1
+    url: https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MOD13Q1
+    relationship: same_family
+  - provider: gee_official
+    entry_id: MODIS/061/MYD13A1
+    url: https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MYD13A1
+    relationship: same_family
+  - provider: gee_official
+    entry_id: MODIS/061/MYD13A2
+    url: https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MYD13A2
+    relationship: same_family
+  - provider: gee_official
+    entry_id: MODIS/061/MYD13A3
+    url: https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MYD13A3
+    relationship: same_family
+  - provider: gee_official
+    entry_id: MODIS/061/MYD13C1
+    url: https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MYD13C1
+    relationship: same_family
+  - provider: gee_official
+    entry_id: MODIS/061/MYD13Q1
+    url: https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MYD13Q1
+    relationship: same_family
+  - provider: planetary_computer
+    entry_id: modis-13A1-061
+    url: https://planetarycomputer.microsoft.com/api/stac/v1/collections/modis-13A1-061
+    relationship: component
+  access:
+  - provider: literature
+    status: unknown
+    formats: []
+    summary: GEE catalog entries are available through Earth Engine; frozen metadata does not establish
+      an independently downloadable native bulk copy or its format. Distinct named producer product; retain
+      exact source edition and footprint.
+    license_summary: Not inferred from citation records. Verify producer terms for the exact edition before
+      conversion or redistribution.
+    proposed_outputs: []
+    rationale: 'Candidate discovery only: global/near-global scope and associated-paper citation signal
+      justify source-format and licensing review. Citation rank does not establish conversion priority
+      or exact-release use.'
+    evidence_urls:
+    - https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MOD13A1
+    - https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MOD13A2
+    - https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MOD13A3
+    - https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MOD13C1
+    - https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MOD13Q1
+    - https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MYD13A1
+    - https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MYD13A2
+    - https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MYD13A3
+    - https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MYD13C1
+    - https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MYD13Q1
+    - https://doi.org/10.1016/s0034-4257(02)00096-2
+  - provider: planetary_computer
+    status: native_available
+    formats:
+    - COG
+    - HDF
+    summary: 'Collection metadata declares per-item data assets / provider storage roots in the listed
+      native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain
+      unvalidated. Exact MOD13A1.061 500 m 16-day member of citation MODIS VI family.'
+    license_summary: 'note: Do not treat this metadata label as legal clearance.; review_status: provider
+      declaration captured; terms and redistribution permission not independently reviewed; stac_license:
+      other'
+    proposed_outputs:
+    - COG
+    - HDF
+    rationale: Reuse declared COG variables; preserve MODIS product/version and quality fields.
+    evidence_urls:
+    - https://planetarycomputer.microsoft.com/api/stac/v1/collections/modis-13A1-061
+    - https://planetarycomputer.microsoft.com/dataset/modis-13A1-061
+  citations:
+  - provider: OpenAlex
+    paper_doi: 10.1016/s0034-4257(02)00096-2
+    work_id: https://openalex.org/W2113410727
+    cited_by_count: 9954
+    observed_on: '2026-10-30'
+    scope: base_dataset_family
+  evidence:
+  - path: research/global-candidates-20261031/citations/reviewed.json
+    sha256: 572140255cd3b41a1ec8ecca0139e64d38899cda7fdd55756f399a0dca57a467
+    key: modis_vegetation_indices
+  - path: research/global-candidates-20261031/planetary/reviewed.json
+    sha256: 07da016851a07f3e3e0937e120ce46442785f4e9096e563d92c1a3c0ce9e616a
+    key: modis_vegetation_indices_16day_v061

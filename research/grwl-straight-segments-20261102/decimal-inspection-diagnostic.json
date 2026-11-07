@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "recorded_before_fix": true,
+  "source_row": 28938,
+  "source_parquet_sha256": "82ac4eeac2168b1aad6e5c9ae53c0c228ffcc7c8cd3f8d795493d939e626fa9c",
+  "observed": "All-attributes inspector shows scaled DECIMAL storage integer9700000000000 for width_mean while the tile width summary correctly shows97m. Browser field-count checks missed this value error.",
+  "expected_width_mean": "97.00000000000",
+  "screenshot_sha256": "ca7e90fa74769b02d71b34e263cfe2638460fd8261e4b0222ac0d44905c91f09",
+  "acceptance": [
+    "Keep original Parquet bytes and decimal precision.",
+    "Convert DECIMAL values to exact textual decimal values for inspector display rather than exposing Arrow scaled integers.",
+    "Preserve nulls and nondecimal values.",
+    "Browser must assert all-attributes width_mean equals the measured tile width for the same source ID; the28938 dateline case must equal97m.",
+    "Add negative/zero/null/precision controls for Decimal handling."
+  ]
+}

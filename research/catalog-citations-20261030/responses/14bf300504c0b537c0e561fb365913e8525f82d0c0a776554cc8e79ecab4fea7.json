@@ -1,0 +1,80 @@
+{
+  "request_url": "https://api.openalex.org/works?search=A+gauge-based+analysis+of+daily+precipitation+over+East+Asia&corpus=all&per_page=5&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date",
+  "retrieved_at": "2026-10-30T22:07:39.096726+00:00",
+  "response_path": "responses/14bf300504c0b537c0e561fb365913e8525f82d0c0a776554cc8e79ecab4fea7.json",
+  "status": 200,
+  "response_sha256": "7f7dbbe7591e1dd8eb518609a00aeb55d9274ba2d83fabb31100e77fe9ba95fd",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 17187,
+      "db_response_time_ms": 238,
+      "page": 1,
+      "per_page": 5,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where full text has (A gauge-based analysis of daily precipitation over East Asia)",
+        "x_new_oql": "get works (all corpora) where full text has (A gauge-based analysis of daily precipitation over East Asia)",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "A gauge-based analysis of daily precipitation over East Asia",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:A gauge-based analysis of daily precipitation over East Asia&corpus=all&per_page=5",
+        "order": "best matches first",
+        "order_default": true
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W2143357393",
+        "doi": "https://doi.org/10.1175/jhm583.1",
+        "title": "A Gauge-Based Analysis of Daily Precipitation over East Asia",
+        "type": "article",
+        "publication_year": 2007,
+        "publication_date": "2007-06-01"
+      },
+      {
+        "id": "https://openalex.org/W7057045906",
+        "doi": null,
+        "title": "A Gauge-based analysis of daily precipitation over East Asia",
+        "type": "article",
+        "publication_year": 2007,
+        "publication_date": "2007-01-01"
+      },
+      {
+        "id": "https://openalex.org/W3012043012",
+        "doi": null,
+        "title": "Evaluation of Precipitation from Reanalyses Products Using Gauge-Based Analysis of Daily Precipitation over East Asia",
+        "type": "article",
+        "publication_year": 2009,
+        "publication_date": "2009-12-01"
+      },
+      {
+        "id": "https://openalex.org/W2907273243",
+        "doi": "https://doi.org/10.1007/s00704-018-2749-1",
+        "title": "Validation of Integrated MultisatellitE Retrievals for GPM (IMERG) by using gauge-based analysis products of daily precipitation over East Asia",
+        "type": "article",
+        "publication_year": 2019,
+        "publication_date": "2019-01-04"
+      },
+      {
+        "id": "https://openalex.org/W1608463673",
+        "doi": "https://doi.org/10.1002/joc.4341",
+        "title": "Validation and comparison of a new gauge-based precipitation analysis over mainland China",
+        "type": "article",
+        "publication_year": 2015,
+        "publication_date": "2015-04-15"
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "26b50a3f24e6034ada4ba3ecb96d3436213ecef6a56c7018472dc3727fccd668"
+}

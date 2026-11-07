@@ -1,0 +1,55 @@
+{
+  "current_authentication": {
+    "action": "Allow a cooldown before one bounded credential refresh retry; do not launch upload until authentication succeeds.",
+    "credential_values": "not recorded",
+    "safe_error": "Cached credentials have expired and refresh failed (Token request failed (HTTP 429 Too Many Requests)).",
+    "status": "temporarily_rate_limited"
+  },
+  "dataset_id": "grwl-raw",
+  "failed_attempt": {
+    "bytes_transferred": 1342177280,
+    "completed_objects": 299,
+    "error_code": null,
+    "failure_record_updated_at_utc": "2026-11-07T05:18:42.275024+00:00",
+    "http_status": null,
+    "multipart_state": "open",
+    "operation": "UploadPart",
+    "receipt": ".local/source-upload-grwl-raw-r4",
+    "record_name": "0299-ef3e6214f3dde8c4.json",
+    "record_sha256": "6d5461c0a6cd5eca6cd80c46ab445a8989acf521507695ed17b4ad6933628d40",
+    "selected_objects": 343,
+    "successful_parts": 20,
+    "summary_sha256": "547390fd98a544edb2156a5a7b17ed333280b6f44e144418c2b5bc27427f704c",
+    "total_parts": 83
+  },
+  "power_diagnostic": {
+    "battery_percent_at_sleep": 3,
+    "clamshell_sleep_utc": "2026-11-07T04:42:57Z",
+    "interpretation": "The transfer stopped during clamshell sleep and recorded a generic UploadPart failure five seconds after maintenance wake. This timing supports a sleep/network interruption; the receipt did not preserve a specific underlying transport exception.",
+    "last_successful_part_observed_utc": "2026-11-07T04:41:28Z",
+    "maintenance_wake_utc": "2026-11-07T05:18:37Z",
+    "source": "local pmset -g log; selected sleep/wake events only"
+  },
+  "public_state": {
+    "four_other_products": "All seven hosted validation checks passed; official Browser selected-four preflight passed.",
+    "github": "Private; main 2bbbf58e812ce365d60f92ebfba6ad7c4f827199, CI run 42338775741 passed.",
+    "remaining": "Complete GRWL upload and hosted checks, then all-five Browser preflight, approved listings, backed-up fresh Git history, public Pages deployment and live Browser checks.",
+    "source_products": "All five remain unlisted."
+  },
+  "recorded_at_utc": "2026-11-07T19:33:18.020231+00:00",
+  "recovery_plan": {
+    "auth_retry_criteria": "research/source-publication-20261106/multipart-auth-retry-criteria-r1.json",
+    "criteria": "research/source-publication-20261106/multipart-resume-criteria-r1.json",
+    "expected_resume_record_sha256": "6a35e9594016ad9f99ef62f8ed7331b951a4f749f020528046af2c054f663c7f",
+    "expected_resume_summary_sha256": "de78ceff5522dc8646b0fb6c793776f82f29b153c9a726ab9728278ff5adae6c",
+    "failure_preservation": "Keep all previous failed receipts unchanged.",
+    "implementation": "scripts/source_publish/upload.py",
+    "implementation_sha256": "4c418a065e41ea14a4c5841bd77a95b725f35b81dff59f5f0ca4fc7f39aa6559",
+    "keep_awake": "Use caffeinate while the transfer runs on AC power; this does not prevent lid closure or low-battery sleep.",
+    "next_receipt": ".local/source-upload-grwl-raw-r5",
+    "replay": "Use the same original multipart ID, replay every part with fresh ETags, require absent target before upload and full remote SHA-256 after completion. No new upload ID and no immutable-object overwrite.",
+    "resume_parent": ".local/source-upload-grwl-raw-r1"
+  },
+  "schema_version": 1,
+  "status": "upload_incomplete"
+}

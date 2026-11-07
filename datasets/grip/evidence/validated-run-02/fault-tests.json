@@ -1,0 +1,61 @@
+{
+  "case_count": 10,
+  "cases": [
+    {
+      "compared_cells": 12,
+      "name": "identical_table_passes",
+      "status": "passed"
+    },
+    {
+      "name": "lost_row_rejected",
+      "rejection": "Lost or extra rows",
+      "status": "passed"
+    },
+    {
+      "name": "duplicate_identifier_rejected",
+      "rejection": "Source values changed: OBJECTID",
+      "status": "passed"
+    },
+    {
+      "name": "changed_attribute_rejected",
+      "rejection": "Source values changed: nullable_measure",
+      "status": "passed"
+    },
+    {
+      "name": "null_to_zero_rejected",
+      "rejection": "Source null mask changed: nullable_measure",
+      "status": "passed"
+    },
+    {
+      "name": "signed_zero_bit_change_rejected",
+      "rejection": "Source floating bits changed: float_measure",
+      "status": "passed"
+    },
+    {
+      "changed_value": "np.float64(0.12500000000000003)",
+      "name": "one_ulp_float_change_rejected",
+      "rejection": "Source floating bits changed: float_measure",
+      "status": "passed"
+    },
+    {
+      "name": "changed_wkb_geometry_rejected",
+      "rejection": "Source values changed: geometry",
+      "status": "passed"
+    },
+    {
+      "limit_tile_units": 4.0,
+      "maximum_error_tile_units": 0.620080639918989,
+      "name": "tile_quantization_within_four_units",
+      "status": "passed"
+    },
+    {
+      "limit_tile_units": 4.0,
+      "maximum_error_tile_units": 9.794906839782495,
+      "name": "translated_tile_line_exceeds_four_units",
+      "status": "passed"
+    }
+  ],
+  "scope": "Independent small Arrow fixtures and synthetic tile-coordinate geometries; no source archive or GEE is read.",
+  "status": "passed",
+  "release_manifest_sha256": "eab3b57b5bd796fa9577fb1b4512b61cc43da9fd5fd3bcf2ab2a69c6a078815d"
+}

@@ -1,0 +1,99 @@
+schema_version: 1
+id: hydrolakes
+title: 'HydroLAKES v1.0: Polygons'
+community_url: https://gee-community-catalog.org/projects/hydrolakes
+audit:
+  snapshot: gee-community-audit-20261029
+  family_key: hydrolakes
+  unique_gee_asset_count: 2
+  initial_queue: research_original_source
+  folia_registry_status: direct_or_component
+  folia_registry_ids:
+  - '@hydrosheds/hydrolakes/v1'
+  source_coop_urls: []
+  source_coop_scope: null
+  external_native_urls: []
+  external_native_scope: null
+triage:
+  decision: publish_conversion
+  priority: pilot_review
+  rationale: User selected local release preparation; reuse the validated native-geometry GeoParquet and
+    revalidate against pinned original source.
+review:
+  citation_assessment:
+    as_of: '2026-10-29'
+    provider: OpenAlex
+    evidence_path: research/citations/rankings.json
+    evidence_key: hydrolakes
+    geographic_scope: global
+    paper_count_status: matched
+    max_paper_citations: 1775
+    max_data_doi_citations: null
+    top_paper_doi: https://doi.org/10.1038/ncomms13603
+    top_paper_openalex_id: https://openalex.org/W2564545777
+    citation_scope: associated_dataset_publication
+  publication_assessment:
+    as_of: '2026-10-29'
+    route: review_global_vector_conversion_terms
+    scope: Global v1.0 polygons and points; existing Folia identity covers the original product.
+    existing_native: Official FGDB (763 MB) and shapefile (820 MB) ZIPs; no original native copy established
+      in this review. WaterNet is a derived dataset, not a HydroLAKES mirror.
+    license_note: Producer page states CC BY 4.0; technical document also requests permission for redistribution
+      of the complete database in its original format. Clarify how that wording applies to the intended
+      transformed publication; do not infer a blanket ban on derivatives.
+    evidence_urls:
+    - https://www.hydrosheds.org/products/hydrolakes
+    - https://data.hydrosheds.org/file/technical-documentation/HydroLAKES_TechDoc_v10.pdf
+  priority_reason: Among the six most cited resolved global families in the 2026-10-29 OpenAlex snapshot;
+    publication readiness is assessed separately.
+  version_review_path: research/hydro-releases-20261031/version-review/producer-version-review.md
+source:
+  source_version: v1 (producer filename v10)
+  source_url: https://data.hydrosheds.org/file/hydrolakes/HydroLAKES_polys_v10_shp.zip
+  source_name: HydroLAKES_polys_v10_shp.zip
+  source_size: 820295132
+  source_sha256: 9ef63498569dd7ccd0b8d8852da026e009a75f42d293f00e483f3b9fcfe8e1f9
+  license: CC-BY-4.0
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  expected_rows: 1427688
+  producer: Lehner and Messager / HydroSHEDS
+  version_checked_on: '2026-10-31'
+  observation_vintage: Composite legacy shoreline sources; static research release, not current 2026 observations.
+  paper_doi: 10.1038/ncomms13603
+build:
+  status: spatial_validation_in_progress
+  planned_outputs:
+  - geoparquet
+  display_outputs: PMTiles deferred; analytic release scope only
+  validation_plan_path: datasets/hydrolakes/VALIDATION.md
+  release_id: v1-local-r1
+  next_release_id: v1-local-r3
+publication:
+  status: candidate
+  release: v1-local-r2
+  source_cooperative:
+    status: proposed_not_created
+    owner: folia
+    product: hydrolakes
+    url: null
+  portolan:
+    status: not_submitted
+    url: null
+  limits:
+  - No public upload or registry submission.
+  - No fresh GEE parity or independent observational accuracy test.
+  - Retain producer original-format redistribution request; proposed analytic artifact is GeoParquet.
+  last_package_status: failed_spatial_order_gate
+  next_release: v1-local-r3
+  cleanup_approval: approved_completed
+  validation:
+    source_rows: 1427688
+    source_cells_compared: 31409136
+    raw_clean_rebuild: byte_identical
+    bbox_augmentation_rebuild: byte_identical
+    stac: passed
+    portolan: failed_PTL-DAT-006
+    http: passed_loopback
+    gee: not_run
+    remote_host: not_tested
+  cleanup_plan_path: research/hydro-releases-20261031/cleanup-approval-plan.json

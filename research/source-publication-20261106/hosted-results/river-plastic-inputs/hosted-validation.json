@@ -1,0 +1,539 @@
+{
+  "checked_at": "2026-11-07T00:34:08.179998Z",
+  "checks": {
+    "anonymous_access": "passed",
+    "asset_checksums": "passed",
+    "browser_render": "passed",
+    "catalog_links": "passed",
+    "cors": "passed",
+    "range_requests": "passed",
+    "subset_query": "passed"
+  },
+  "dataset_id": "river-plastic-inputs",
+  "display_manifest_sha256": null,
+  "display_package_base_url": null,
+  "display_release": null,
+  "evidence": {
+    "asset_checksum_scope": "Full remote bytes were SHA-256 verified during the uploader receipt's actual range-download pass; this hosted run checks plan/receipt binding and samples anonymous ranges afterward, not a second full hash.",
+    "browser_evidence": {
+      "browser_cases_sha256": "6ff14a9c438cdee14af4ea21876ca32876883f7b676c16596b4ddfc924b6aa10",
+      "case_ids": [
+        "river-plastic-inputs-river-plastic-inputs-display-global",
+        "river-plastic-inputs-river-plastic-inputs-display-atlantic_coast"
+      ],
+      "catalog_url": "https://source.coop/nthh/river-plastic-inputs",
+      "checked_at": "2026-11-07T00:09:19.734Z",
+      "dataset_id": "river-plastic-inputs",
+      "display_release": null,
+      "plan_sha256": "754c02dde3cf258263619599f893558d3348c7fb51c07f8fa700efa1900ac610",
+      "planned_object_prefixes": [
+        "river-plastic-inputs/releases/figshare-v6-r2/"
+      ],
+      "planned_object_url_prefixes": [
+        "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/"
+      ],
+      "product_id": "river-plastic-inputs",
+      "release": "figshare-v6-r2",
+      "screenshots": [
+        "river-plastic-inputs-river-plastic-inputs-display-global.png",
+        "river-plastic-inputs-river-plastic-inputs-display-atlantic_coast.png"
+      ],
+      "status": "passed",
+      "tested_object_urls": [
+        "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/river-plastic-inputs.pmtiles"
+      ],
+      "viewer_build_sha256": "9fb4f4aa6b641363160db0f54610750884ff91bfe02669cb7394f148726b62f6",
+      "viewer_config_sha256": "87e1d532d23d65ec45b88aac318d13b83c273f140644ba7ec3dd3edd36e198fe"
+    },
+    "catalog_inventory": {
+      "catalog": [
+        "catalog.json"
+      ],
+      "collections": [
+        "river-plastic-inputs/collection.json"
+      ],
+      "documentation": [
+        "AGENTS.md",
+        "README.md",
+        "river-plastic-inputs/AGENTS.md",
+        "river-plastic-inputs/README.md"
+      ],
+      "styles": [
+        "river-plastic-inputs/styles/annual-input.json"
+      ]
+    },
+    "catalog_link_scope": "Immutable product package catalog/collection/styles/docs only; the aggregate Portolan catalog is not deployed or checked by this per-product run.",
+    "cors": [
+      {
+        "get_headers": {
+          "Accept-Ranges": "bytes",
+          "Access-Control-Allow-Origin": "*",
+          "CF-Cache-Status": "DYNAMIC",
+          "CF-Ray": "a5683feae98afb2e-SLC",
+          "Cache-Control": "private, no-cache, no-transform",
+          "Connection": "close",
+          "Content-Length": "1",
+          "Content-Range": "bytes 0-0/6360991",
+          "Content-Type": "application/vnd.apache.parquet",
+          "Date": "Sat, 07 Nov 2026 00:33:59 GMT",
+          "ETag": "\"9667f37ab79992617d4abc4b4a1dadb7\"",
+          "Last-Modified": "Fri, 06 Nov 2026 23:47:45 GMT",
+          "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+          "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=PaxMcttjph%2FM7a9%2FsybOHdb3c0tmK6N%2BQPweuIhrfWhbjUxEC5CBcHiioQR2%2BE%2FZyVPkixfQxDHrRlmUaW%2Bi0I4tIgmjDVMmdMZacq9xV5zrnpPhudJjcojbcbkKlYsVXmZQ\"}]}",
+          "Server": "cloudflare",
+          "Server-Timing": "cfEdge;dur=3,cfOrigin;dur=0,cfWorker;dur=211",
+          "Speculation-Rules": "\"/cdn-cgi/speculation\"",
+          "access-control-allow-headers": "*",
+          "access-control-allow-methods": "GET, HEAD, PUT, POST, DELETE, OPTIONS",
+          "access-control-expose-headers": "*",
+          "access-control-max-age": "7200",
+          "alt-svc": "h3=\":443\"; ma=86400",
+          "server-timing": "total;dur=204, dispatch;dur=204, backend;dur=198",
+          "x-amz-id-2": "4YroEdceIWTBHqhrCpIt5Wyfoqpk/DXjQpmXyzsAyLADQPQ/GMdoqUYc+NyAROyanxB+Z5RDw0k=",
+          "x-amz-request-id": "ED5CMX7ZC53VWRJM",
+          "x-amz-server-side-encryption": "AES256",
+          "x-amz-version-id": "nWleKFSkYFWYhlg7y85Nkxezwj8uV_KO",
+          "x-request-id": "a5683feae98afb2e"
+        },
+        "get_passed": true,
+        "get_status": 206,
+        "preflight_headers": {
+          "Access-Control-Allow-Origin": "*",
+          "CF-RAY": "a5683fea8864fb2e-SLC",
+          "Connection": "close",
+          "Date": "Sat, 07 Nov 2026 00:33:59 GMT",
+          "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+          "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=fosqwPA%2FRA1FQB%2BCqY9fRd1LcDnTy1fRUos%2F9ginZ4TX1OSHR4ynXonHU70RUuBbTjXRiyqkMml5UeQs9gtsvthLCvoB7pbViItHU9K0p4nSdb0SGQcdElrt272aNSYcbGGr\"}]}",
+          "Server": "cloudflare",
+          "Server-Timing": "cfEdge;dur=3,cfOrigin;dur=0,cfWorker;dur=1",
+          "access-control-allow-headers": "*",
+          "access-control-allow-methods": "GET, HEAD, PUT, POST, DELETE, OPTIONS",
+          "access-control-expose-headers": "*",
+          "access-control-max-age": "7200",
+          "alt-svc": "h3=\":443\"; ma=86400"
+        },
+        "preflight_note": "credentialless request; Fetch wildcard CORS fields apply",
+        "preflight_passed": true,
+        "preflight_status": 204,
+        "url": "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/river-plastic-inputs.parquet"
+      },
+      {
+        "get_headers": {
+          "Accept-Ranges": "bytes",
+          "Access-Control-Allow-Origin": "*",
+          "CF-Cache-Status": "DYNAMIC",
+          "CF-Ray": "a5683fed68c8fb2e-SLC",
+          "Cache-Control": "private, no-cache, no-transform",
+          "Connection": "close",
+          "Content-Length": "1",
+          "Content-Range": "bytes 0-0/3705340",
+          "Content-Type": "application/vnd.pmtiles",
+          "Date": "Sat, 07 Nov 2026 00:33:59 GMT",
+          "ETag": "\"3f20f241c5f347251647fc51e0044812\"",
+          "Last-Modified": "Fri, 06 Nov 2026 23:47:48 GMT",
+          "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+          "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=h6TAmP7lg1nLiAej2Y%2BCZgjumBDDEECrfW4M%2B0EJCg1PN6MIK6KDWrKji5mgqRtKp7zKyrTXD9WXOQ3ysu6Knv2FZIN1hXZ8u2m1mzsicOt1EXh59N8tJXz6pxYgdQQ20rMj\"}]}",
+          "Server": "cloudflare",
+          "Server-Timing": "cfEdge;dur=2,cfOrigin;dur=0,cfWorker;dur=73",
+          "Speculation-Rules": "\"/cdn-cgi/speculation\"",
+          "access-control-allow-headers": "*",
+          "access-control-allow-methods": "GET, HEAD, PUT, POST, DELETE, OPTIONS",
+          "access-control-expose-headers": "*",
+          "access-control-max-age": "7200",
+          "alt-svc": "h3=\":443\"; ma=86400",
+          "server-timing": "total;dur=68, dispatch;dur=68, backend;dur=61",
+          "x-amz-id-2": "8vDrOK5a8ava1yF8npVo0O++W8d5Ie29jnpipj/HmWtATtewWpRrp8wAsd7ZuXRjk7XU6+n4gHc=",
+          "x-amz-request-id": "ED546NEF9KJM3QXQ",
+          "x-amz-server-side-encryption": "AES256",
+          "x-amz-version-id": "t46E58e8FzmeWEngMcoLEruFZ5OhluCT",
+          "x-request-id": "a5683fed68c8fb2e"
+        },
+        "get_passed": true,
+        "get_status": 206,
+        "preflight_headers": {
+          "Access-Control-Allow-Origin": "*",
+          "CF-RAY": "a5683fed0fbafb2e-SLC",
+          "Connection": "close",
+          "Date": "Sat, 07 Nov 2026 00:33:59 GMT",
+          "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+          "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=wpvR1n%2FgPxy8COa%2FtNCCPLqCuupptbSqB3fyr0Hpy7shwXbeo%2B0GBFnvfvweru7XHYsDFH9Uy%2BrvOZoeg%2FLLDDWaD40I%2FPRjU7VawX3yIy2Ek2IvwDzkF9UPOifs66FOi0b%2B\"}]}",
+          "Server": "cloudflare",
+          "Server-Timing": "cfEdge;dur=4,cfOrigin;dur=0,cfWorker;dur=0",
+          "access-control-allow-headers": "*",
+          "access-control-allow-methods": "GET, HEAD, PUT, POST, DELETE, OPTIONS",
+          "access-control-expose-headers": "*",
+          "access-control-max-age": "7200",
+          "alt-svc": "h3=\":443\"; ma=86400"
+        },
+        "preflight_note": "credentialless request; Fetch wildcard CORS fields apply",
+        "preflight_passed": true,
+        "preflight_status": 204,
+        "url": "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/river-plastic-inputs.pmtiles"
+      }
+    ],
+    "duckdb_remote_transfer_bytes_instrumented": false,
+    "json_asset_links": [
+      {
+        "link": "link:root",
+        "url": "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/catalog.json"
+      },
+      {
+        "link": "link:describedby",
+        "url": "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/README.md"
+      },
+      {
+        "link": "link:agents",
+        "url": "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/AGENTS.md"
+      },
+      {
+        "link": "link:child",
+        "url": "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/collection.json"
+      },
+      {
+        "link": "link:root",
+        "url": "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/catalog.json"
+      },
+      {
+        "link": "link:parent",
+        "url": "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/catalog.json"
+      },
+      {
+        "link": "link:describedby",
+        "url": "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/README.md"
+      },
+      {
+        "link": "link:agents",
+        "url": "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/AGENTS.md"
+      },
+      {
+        "link": "link:pmtiles",
+        "url": "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/river-plastic-inputs.pmtiles"
+      },
+      {
+        "link": "asset:data",
+        "url": "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/river-plastic-inputs.parquet"
+      },
+      {
+        "link": "asset:tiles",
+        "url": "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/river-plastic-inputs.pmtiles"
+      },
+      {
+        "link": "asset:style-annual-input",
+        "url": "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/styles/annual-input.json"
+      },
+      {
+        "link": "asset:thumbnail",
+        "url": "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/thumbnail.png"
+      },
+      {
+        "link": "asset:schema",
+        "url": "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/schema.json"
+      },
+      {
+        "link": "asset:quality",
+        "url": "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/quality.json"
+      },
+      {
+        "link": "style-source:data",
+        "url": "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/river-plastic-inputs.pmtiles"
+      }
+    ],
+    "metadata_gets": [
+      {
+        "content_type": "text/markdown",
+        "sha256": "7bbf3ad0c6010d61f434981cb5a6a02d9fbae8685aaf22a33c706fe45b7aae6c",
+        "size_bytes": 1586,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/AGENTS.md"
+      },
+      {
+        "content_type": "text/plain",
+        "sha256": "7cad97bff02dbe7dc7f3449d29bf320dc6b5a4d525791f0415167fdb4327e38b",
+        "size_bytes": 517,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/LICENSE.txt"
+      },
+      {
+        "content_type": "text/markdown",
+        "sha256": "6438aaf8b630f09c95a41056f7a0e89eeffef4f1fc513946403683156cc41c0c",
+        "size_bytes": 1679,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/README.md"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "00ef7a3ffc6c1eb9f58799d87fdcb1743e45d12f64318f327eb7f1d03565da4f",
+        "size_bytes": 1464,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/catalog.json"
+      },
+      {
+        "content_type": "application/yaml",
+        "sha256": "168063a15fb69da8b4c110f56121029195c7f58793cbd1e5f34e89ae50d1f442",
+        "size_bytes": 5492,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/dataset.yaml"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "ad86186ea962c3c0dfc62feb28aac7a68145ac3c7451f2602812c5b5278c2300",
+        "size_bytes": 8402,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/manifest.json"
+      },
+      {
+        "content_type": "text/markdown",
+        "sha256": "7bbf3ad0c6010d61f434981cb5a6a02d9fbae8685aaf22a33c706fe45b7aae6c",
+        "size_bytes": 1586,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/AGENTS.md"
+      },
+      {
+        "content_type": "text/markdown",
+        "sha256": "ac0011966396424991fcdf6c29f985722c0b163e0b8d51c3fdda0aaa97748569",
+        "size_bytes": 9710,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/README.md"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "5d20fde7a74d725f4d2c7f9f01ab305272abca47445a634995cd177c1aff2d9d",
+        "size_bytes": 14030,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/collection.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "938199ee9cb0f9ef8522b2dbd1d6d32eb70c562ff816fc3d3849b11d74dcb643",
+        "size_bytes": 2420,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/quality.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "7858a6c3b596e9d9b322f5aa9896209e7cc2c0750de267293cef4f6befb1f828",
+        "size_bytes": 9542,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/schema.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "ae46644a56751e87743cb5f3e6fdb4fd32074919678158bcb858f95722431c22",
+        "size_bytes": 2118,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/styles/annual-input.json"
+      },
+      {
+        "content_type": "image/png",
+        "sha256": "ff0e30b5c3768605f41b75c0bce515d82eeffa9d2422a4d408b8efbad46034c1",
+        "size_bytes": 198924,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/thumbnail.png"
+      },
+      {
+        "content_type": "text/markdown",
+        "sha256": "e745caa7cedd7f39abc267c6fc43133533af50713ee745fbbc371cf593a24aa6",
+        "size_bytes": 3477,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/river-plastic-inputs/README.md"
+      }
+    ],
+    "package_manifest": {
+      "object_key": "river-plastic-inputs/releases/figshare-v6-r2/manifest.json",
+      "sha256": "ad86186ea962c3c0dfc62feb28aac7a68145ac3c7451f2602812c5b5278c2300",
+      "size_bytes": 8402
+    },
+    "plan_sha256": "754c02dde3cf258263619599f893558d3348c7fb51c07f8fa700efa1900ac610",
+    "query_controls": [
+      {
+        "id_column": "source_row",
+        "ids": [
+          2258,
+          326,
+          2257
+        ],
+        "name": "river-plastic-inputs-parquet-1",
+        "path": "river-plastic-inputs/river-plastic-inputs.parquet",
+        "selection": {
+          "row_count": 40760,
+          "row_group_count": 10,
+          "row_groups": [
+            0,
+            5,
+            9
+          ],
+          "selected_from": "row_group_min_statistics"
+        }
+      }
+    ],
+    "query_controls_sha256": "9fab1ab0408ac437ed7b3161be79beccef167556297010780fb746205473f749",
+    "range_samples": [
+      {
+        "samples": [
+          {
+            "content_range": "bytes 0-65535/6360991",
+            "content_type": "application/vnd.apache.parquet",
+            "end": 65535,
+            "sha256": "4fd770cfff0848604cb3f68744deaac19835133ae7f9aa1d1caace628d3b7666",
+            "start": 0,
+            "status": 206
+          },
+          {
+            "content_range": "bytes 3147727-3213262/6360991",
+            "content_type": "application/vnd.apache.parquet",
+            "end": 3213262,
+            "sha256": "1ba83bf4770dd04d5a915ecb956bb906099a437d94a20a3476cd4f012c557528",
+            "start": 3147727,
+            "status": 206
+          },
+          {
+            "content_range": "bytes 6295455-6360990/6360991",
+            "content_type": "application/vnd.apache.parquet",
+            "end": 6360990,
+            "sha256": "58abca7462a00cb963e708fef697807072e0c128e42ecdcf37652868bd96676c",
+            "start": 6295455,
+            "status": 206
+          }
+        ],
+        "url": "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/river-plastic-inputs.parquet"
+      },
+      {
+        "samples": [
+          {
+            "content_range": "bytes 0-65535/3705340",
+            "content_type": "application/vnd.pmtiles",
+            "end": 65535,
+            "sha256": "075a115cda4203f2ea8c3aebd459e3e90af1a70229f493c5481606dabcb8901f",
+            "start": 0,
+            "status": 206
+          },
+          {
+            "content_range": "bytes 1819902-1885437/3705340",
+            "content_type": "application/vnd.pmtiles",
+            "end": 1885437,
+            "sha256": "be6e9598a05ebf603a9cafc61833264039af84c8bcb34bade43faa409651fa9c",
+            "start": 1819902,
+            "status": 206
+          },
+          {
+            "content_range": "bytes 3639804-3705339/3705340",
+            "content_type": "application/vnd.pmtiles",
+            "end": 3705339,
+            "sha256": "637b1a3076843b85be6eec6efdae20851a247560f7a4dd2fd662ca6a29481f50",
+            "start": 3639804,
+            "status": 206
+          }
+        ],
+        "url": "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/river-plastic-inputs.pmtiles"
+      }
+    ],
+    "receipt_checksums": [
+      {
+        "object_key": "river-plastic-inputs/releases/figshare-v6-r2/AGENTS.md",
+        "sha256": "7bbf3ad0c6010d61f434981cb5a6a02d9fbae8685aaf22a33c706fe45b7aae6c",
+        "size_bytes": 1586
+      },
+      {
+        "object_key": "river-plastic-inputs/releases/figshare-v6-r2/LICENSE.txt",
+        "sha256": "7cad97bff02dbe7dc7f3449d29bf320dc6b5a4d525791f0415167fdb4327e38b",
+        "size_bytes": 517
+      },
+      {
+        "object_key": "river-plastic-inputs/releases/figshare-v6-r2/README.md",
+        "sha256": "6438aaf8b630f09c95a41056f7a0e89eeffef4f1fc513946403683156cc41c0c",
+        "size_bytes": 1679
+      },
+      {
+        "object_key": "river-plastic-inputs/releases/figshare-v6-r2/catalog.json",
+        "sha256": "00ef7a3ffc6c1eb9f58799d87fdcb1743e45d12f64318f327eb7f1d03565da4f",
+        "size_bytes": 1464
+      },
+      {
+        "object_key": "river-plastic-inputs/releases/figshare-v6-r2/dataset.yaml",
+        "sha256": "168063a15fb69da8b4c110f56121029195c7f58793cbd1e5f34e89ae50d1f442",
+        "size_bytes": 5492
+      },
+      {
+        "object_key": "river-plastic-inputs/releases/figshare-v6-r2/manifest.json",
+        "sha256": "ad86186ea962c3c0dfc62feb28aac7a68145ac3c7451f2602812c5b5278c2300",
+        "size_bytes": 8402
+      },
+      {
+        "object_key": "river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/AGENTS.md",
+        "sha256": "7bbf3ad0c6010d61f434981cb5a6a02d9fbae8685aaf22a33c706fe45b7aae6c",
+        "size_bytes": 1586
+      },
+      {
+        "object_key": "river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/README.md",
+        "sha256": "ac0011966396424991fcdf6c29f985722c0b163e0b8d51c3fdda0aaa97748569",
+        "size_bytes": 9710
+      },
+      {
+        "object_key": "river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/collection.json",
+        "sha256": "5d20fde7a74d725f4d2c7f9f01ab305272abca47445a634995cd177c1aff2d9d",
+        "size_bytes": 14030
+      },
+      {
+        "object_key": "river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/quality.json",
+        "sha256": "938199ee9cb0f9ef8522b2dbd1d6d32eb70c562ff816fc3d3849b11d74dcb643",
+        "size_bytes": 2420
+      },
+      {
+        "object_key": "river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/river-plastic-inputs.parquet",
+        "sha256": "de35bd69b144565af1fcd33f915e8521a1af502e3ac50235560990f6c441e8c9",
+        "size_bytes": 6360991
+      },
+      {
+        "object_key": "river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/river-plastic-inputs.pmtiles",
+        "sha256": "ca412601ea905a43bf55d5251f27e2c2d9b1403b2eb93adea1525c4fa7bc05fe",
+        "size_bytes": 3705340
+      },
+      {
+        "object_key": "river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/schema.json",
+        "sha256": "7858a6c3b596e9d9b322f5aa9896209e7cc2c0750de267293cef4f6befb1f828",
+        "size_bytes": 9542
+      },
+      {
+        "object_key": "river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/styles/annual-input.json",
+        "sha256": "ae46644a56751e87743cb5f3e6fdb4fd32074919678158bcb858f95722431c22",
+        "size_bytes": 2118
+      },
+      {
+        "object_key": "river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/thumbnail.png",
+        "sha256": "ff0e30b5c3768605f41b75c0bce515d82eeffa9d2422a4d408b8efbad46034c1",
+        "size_bytes": 198924
+      },
+      {
+        "object_key": "river-plastic-inputs/README.md",
+        "sha256": "e745caa7cedd7f39abc267c6fc43133533af50713ee745fbbc371cf593a24aa6",
+        "size_bytes": 3477
+      }
+    ],
+    "receipt_object_count": 16,
+    "subset_queries": [
+      {
+        "footer_rows": 40760,
+        "id_multiplicity": {
+          "2257": 1,
+          "2258": 1,
+          "326": 1
+        },
+        "ids": [
+          2258,
+          326,
+          2257
+        ],
+        "name": "river-plastic-inputs-parquet-1",
+        "path": "river-plastic-inputs/river-plastic-inputs.parquet",
+        "result_sha256": "b2b935cb8ce120d9c39b38cf953ec313b0e99c308245a86c358bdd765665a792",
+        "rows": 3
+      }
+    ]
+  },
+  "failures": [],
+  "package_base_url": "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/",
+  "package_manifest_sha256": "ad86186ea962c3c0dfc62feb28aac7a68145ac3c7451f2602812c5b5278c2300",
+  "release": "figshare-v6-r2",
+  "schema_version": 1,
+  "status": "passed"
+}

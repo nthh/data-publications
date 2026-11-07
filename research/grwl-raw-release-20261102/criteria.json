@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-11-02T23:42:01.717471+00:00",
+  "objective": "Build a detailed raw GRWL GeoParquet/PMTiles release and audit other prepared products for omitted source detail or overstated validation.",
+  "pilot_tiles": [
+    "NI15",
+    "NI16",
+    "NJ12",
+    "NK12",
+    "NL10",
+    "NL11",
+    "NL12",
+    "NL13",
+    "NM11"
+  ],
+  "raw_component": {
+    "record": "https://zenodo.org/records/18624542",
+    "filename": "GRWL_vector_V01.01.zip",
+    "archive_size_bytes": 3104998836,
+    "provider_md5": "40171f15c0fccd470db32446dda0480e",
+    "expected_tiles": 829
+  },
+  "geometry_contract": [
+    "Preserve raw record multiplicity, source tile, original record ordinal, multipart boundaries and all XY float64 values. No connecting records by segmentID or segmentInd.",
+    "Preserve all ten original DBF numeric values including original width_m sentinel1; expose width validity separately.",
+    "Use deterministic JSON-safe numeric feature IDs from tile identity plus original record ordinal; segmentID is not globally unique.",
+    "Analytical GeoParquet is lossless; display is explicitly generalized. Dateline splitting is display-only.",
+    "No fabricated edges crossing gaps; compare actual PMTiles to raw sources. At maxzoom require complete source-ID accounting including enumerated quantization collapses; never silently drop unexpected IDs."
+  ],
+  "validation": {
+    "known_bad_summary_ids": [
+      11839,
+      13164,
+      15394,
+      15397,
+      15450
+    ],
+    "source_comparison": "All pilot source records and attributes, exact source geometry; global streaming source-row and per-tile equality checks for every acquired tile.",
+    "display_geometry_maximum_mercator_metres": 30,
+    "pilot_sample_rule": "Each pilot tile: first32 original records plus up to32 longest source pieces, selected before display results; known error locations compare decoded raw coverage to raw source.",
+    "global_controls": [
+      [
+        -125,
+        30,
+        -65,
+        55
+      ],
+      [
+        -80,
+        -45,
+        -35,
+        10
+      ],
+      [
+        -20,
+        -35,
+        55,
+        35
+      ],
+      [
+        -10,
+        35,
+        40,
+        70
+      ],
+      [
+        60,
+        0,
+        150,
+        65
+      ],
+      [
+        110,
+        -50,
+        180,
+        0
+      ]
+    ],
+    "global_sample_rule": "Per tile first8 original nonempty records plus longest8; explicitly test dateline crossing records wherever present.",
+    "fixtures": [
+      "two separated pieces sharing segmentID must stay separate",
+      "multipart parts",
+      "width_m1 unknown and true width values",
+      "both dateline directions and tiny boundary fragments",
+      "stable IDs and sentinel-preserving analytical fields"
+    ],
+    "browser": "Local range serving, inspect actual width fields and exact source lookup; inspect known problem regions; no public hosting claim.",
+    "fidelity_is_not_independent_scientific_accuracy": true
+  },
+  "resources": {
+    "native_threads": 2,
+    "one_native_production_build_at_a_time": true,
+    "native_start_free_bytes": 42949672960,
+    "native_stop_free_bytes": 16106127360,
+    "task_storage_ceiling_bytes": 12884901888,
+    "global_scale_after_pilot_measurement": true,
+    "never_lower_floors": true
+  },
+  "audit": {
+    "prepared_ids": [
+      "hydrolakes",
+      "lakeatlas",
+      "free-flowing-rivers",
+      "river-plastic-inputs"
+    ],
+    "other_status_ids": [
+      "grip",
+      "jrc-gsw-occurrence",
+      "gdw",
+      "swot_prior_lake_database"
+    ],
+    "rubric": [
+      "Exact scientific product, version and scope versus complete authoritative release",
+      "Any lower-detail source selected when richer matching data exist",
+      "Omitted layers, rows, fields, precision, time spans or geography",
+      "Analytical modifications versus display-only generalization",
+      "What actual validation ran and what remains untested",
+      "Known failures and whether final claims disclose them"
+    ],
+    "not_implied": "Rebuilding the producer scientific model from original observations is outside a format-conversion mirror; authoritative derived science products are not automatically shortcuts."
+  },
+  "exclusions": [
+    "No GEE jobs",
+    "No external paid compute",
+    "No remote data upload, registry submission, push or messages to producers",
+    "No overwrite of immutable summary release"
+  ]
+}

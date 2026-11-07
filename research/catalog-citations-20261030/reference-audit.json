@@ -1,0 +1,177 @@
+[
+  {
+    "group_id": "refs-6729246166aa",
+    "entry_ids": ["NASA/GDDP-CMIP6", "NASA/NEX-GDDP"],
+    "remove_paper_dois": ["10.5194/hess-16-3309-2012"],
+    "reason": "The 2012 technical note covers a quantile-mapping bias-correction method; it is not a publication of either NEX-GDDP release. The CMIP6 collection description separately points to Thrasher et al. 2022, so the shared DOI is especially misleading for that version. Resolve a release-specific producer paper or data DOI separately before replacement.",
+    "evidence_urls": ["https://developers.google.com/earth-engine/datasets/catalog/NASA_GDDP-CMIP6", "https://doi.org/10.5194/hess-16-3309-2012"],
+    "evidence_catalog_paths": ["reference-groups.json#refs-6729246166aa", "official-entries.json#NASA/GDDP-CMIP6"]
+  },
+  {
+    "group_ids": ["refs-b1aae2a8df0e", "refs-b809c08d0d9c"],
+    "entry_ids": ["NASA_USDA/HSL/SMAP_soil_moisture", "NASA_USDA/HSL/soil_moisture"],
+    "remove_paper_dois": ["10.1029/2012gl053470", "10.1109/jstars.2009.2037163", "10.1109/jstars.2016.2639338", "10.3390/rs10081265"],
+    "reason": "The four titles in sci:citation/publications concern drought monitoring, vegetation prediction, crop-yield index comparisons, and an Earth Engine drought application. None describes construction or release of the NASA-USDA assimilated soil-moisture grids. These are applications/background under the fixed paper-role policy.",
+    "evidence_catalog_paths": ["reference-groups.json#refs-b1aae2a8df0e", "reference-groups.json#refs-b809c08d0d9c"]
+  },
+  {
+    "group_id": "refs-0673bc072497",
+    "entry_ids": ["NOAA/GOES/16/MCMIPC", "NOAA/GOES/16/MCMIPF", "NOAA/GOES/16/MCMIPM", "NOAA/GOES/17/MCMIPC", "NOAA/GOES/17/MCMIPF", "NOAA/GOES/17/MCMIPM", "NOAA/GOES/18/MCMIPC", "NOAA/GOES/18/MCMIPF", "NOAA/GOES/18/MCMIPM", "NOAA/GOES/19/MCMIPC", "NOAA/GOES/19/MCMIPF", "NOAA/GOES/19/MCMIPM"],
+    "remove_paper_dois": ["10.1029/2018ea000379", "10.1175/bams-d-15-00230.1"],
+    "reason": "The first paper is a recipe for generating GOES-16 true-color imagery without a green band, not the multispectral Level-2 Cloud and Moisture Imagery product, and cannot describe GOES-17/18/19. The second is an ABI instrument overview rather than a specific MCMIP data-product publication.",
+    "evidence_urls": ["https://developers.google.com/earth-engine/datasets/catalog/NOAA_GOES_16_MCMIPF"],
+    "evidence_catalog_paths": ["reference-groups.json#refs-0673bc072497"]
+  },
+  {
+    "group_id": "refs-79f56fc320cc",
+    "remove_paper_dois": ["10.1016/j.agrformet.2021.108775", "10.1016/s0022-1694(98)00253-4", "10.1111/jawr.12056"],
+    "citation_scope": "base_dataset_family",
+    "reason": "For OpenET geeSEBAL, retain the geeSEBAL implementation paper 10.1016/j.isprsjprs.2021.05.018 as a family proxy. The other papers are a subtropical uncertainty assessment, original generic SEBAL formulation, and METRIC calibration method respectively; the catalog describes these as background inputs to the product.",
+    "evidence_catalog_paths": ["reference-groups.json#refs-79f56fc320cc"]
+  },
+  {
+    "group_id": "refs-4397cdb88cd7",
+    "remove_paper_dois": ["10.1016/j.agwat.2020.106197", "10.1111/1752-1688.12956"],
+    "citation_scope": "base_dataset_family",
+    "reason": "The first paper predicts crop coefficients from cover and height, a method component, while the second describes the OpenET platform broadly. The catalog identifies Melton et al. 2012 (10.1109/jstars.2012.2214474) as the SIMS model framework; retain that as a broader SIMS-family proxy if the policy admits model-specific methods.",
+    "evidence_catalog_paths": ["reference-groups.json#refs-4397cdb88cd7"]
+  },
+  {
+    "group_id": "refs-aac93902d4ff",
+    "remove_paper_dois": ["10.1111/1752-1688.12956"],
+    "reason": "The sole selected paper describes the OpenET platform for water management, not a publication specifically of the monthly ensemble collection. This follows the explicit exclusion of platform papers; if the team treats an ensemble description within that paper as product-specific, document that narrower rationale first.",
+    "evidence_catalog_paths": ["reference-groups.json#refs-aac93902d4ff"]
+  },
+  {
+    "group_id": "refs-883348a112f1",
+    "remove_paper_dois": ["10.3390/rs8070583"],
+    "reason": "AquaSEBS is a separate open-water energy-balance approach cited as a component of the OpenET PT-JPL implementation, not a PT-JPL product paper. The 2008 Fisher paper is the PT-JPL model foundation and needs a consistent family-versus-generic-method decision across OpenET; do not infer exact OpenET release use from it.",
+    "evidence_catalog_paths": ["reference-groups.json#refs-883348a112f1"]
+  },
+  {
+    "group_id": "refs-9fcba55b1f8c",
+    "remove_paper_dois": ["10.1016/j.rse.2017.05.005c"],
+    "reason": "The DOI ending 005c is a malformed copy of the linked DOI ending 005 and must never be resolved as a distinct work. Consider the correctly formed paper separately; the title is a southwestern-US application rather than the CONUS OpenET release.",
+    "evidence_catalog_paths": ["reference-groups.json#refs-9fcba55b1f8c"]
+  },
+  {
+    "group_id": "refs-a1cc5a747968",
+    "remove_paper_dois": ["10.5194/egusphere-2023-19623"],
+    "reason": "The text accidentally appends 3 to the DOI; its own link points to 10.5194/egusphere-2023-1962, which is already separately in paper_dois. Do not treat the typo as a second work.",
+    "evidence_catalog_paths": ["reference-groups.json#refs-a1cc5a747968"]
+  },
+  {
+    "group_id": "refs-4528b065cf64",
+    "entry_ids": ["IDAHO_EPSCOR/MACAv2_METDATA", "IDAHO_EPSCOR/MACAv2_METDATA_MONTHLY"],
+    "remove_paper_dois": ["10.1002/joc.2312"],
+    "geographic_scope": "regional",
+    "region": "Conterminous United States",
+    "reason": "The paper compares generic statistical downscaling methods for wildfire applications, not a MACAv2-METDATA release. Both catalog descriptions say the collection covers CONUS, and both bboxes are [-124.9,24.9,-67,49.6], so global is false.",
+    "evidence_catalog_paths": ["reference-groups.json#refs-4528b065cf64"]
+  },
+  {
+    "group_id": "refs-024688920b4b",
+    "entry_ids": ["projects/ngis-cat/assets/DEA/NIDEM"],
+    "geographic_scope": "regional",
+    "region": "Australian intertidal zone",
+    "reason": "Description explicitly says Australia's intertidal zone; bbox [108.81,-44.41,157.82,-9.13]. The paper role itself is product-specific.",
+    "evidence_catalog_paths": ["reference-groups.json#refs-024688920b4b"]
+  },
+  {
+    "entry_ids": ["EDF/MethaneSAT/MethaneAIR/L3concentration", "EDF/MethaneSAT/MethaneAIR/L4area", "EDF/MethaneSAT/MethaneAIR/L4point", "EDF/MethaneSAT/MethaneAIR/methaneair-L4area-2021", "EDF/MethaneSAT/MethaneAIR/methaneair-L4point-2021"],
+    "geographic_scope": "regional",
+    "region": "Observed North American flight areas, varying by collection",
+    "reason": "These collection bboxes cover limited North American flight/target areas, not the world; descriptions identify individual oil-and-gas basins or MethaneAIR flight observations. The regional label should retain collection-specific area notes.",
+    "evidence_catalog_paths": ["reference-groups.json#refs-1203d157f2eb", "reference-groups.json#refs-a1cc5a747968", "reference-groups.json#refs-44136fa355b3"]
+  },
+  {
+    "group_id": "refs-2eba67fa7742",
+    "entry_ids": ["projects/planet-nicfi/assets/basemaps/africa", "projects/planet-nicfi/assets/basemaps/americas", "projects/planet-nicfi/assets/basemaps/asia"],
+    "geographic_scope": "regional",
+    "region": "Tropical Africa, Americas, or Asia according to collection ID",
+    "reason": "Each asset is a continental tropical subset. The Asia bbox has global longitude due antimeridian handling but spans only -27.5 to 30.2 latitude; its global classification is still false.",
+    "evidence_catalog_paths": ["reference-groups.json#refs-2eba67fa7742"]
+  },
+  {
+    "group_id": "refs-44148a5a7270",
+    "entry_ids": ["projects/nature-trace/assets/species_distribution_models/australia_mammals/v0"],
+    "geographic_scope": "regional",
+    "region": "Australia",
+    "reason": "The collection name and bbox [112.9,-43.7,153.7,-10.4] are explicitly Australian.",
+    "evidence_catalog_paths": ["reference-groups.json#refs-44148a5a7270"]
+  },
+  {
+    "group_id": "refs-21d6199a84da",
+    "entry_ids": ["projects/forestdatapartnership/assets/cocoa/model_2024a"],
+    "geographic_scope": "regional",
+    "region": "West Africa",
+    "reason": "The observed 2024a collection bbox [-11.35,0.61,18.17,14.51] covers West Africa only. Do not carry that label over to later cocoa versions whose metadata bounds differ.",
+    "evidence_catalog_paths": ["reference-groups.json#refs-21d6199a84da"]
+  },
+  {
+    "group_id": "refs-44136fa355b3",
+    "entry_ids": ["DOE/ORNL/LandScan_HD/Ukraine_202201"],
+    "geographic_scope": "regional",
+    "region": "Ukraine",
+    "reason": "The collection is explicitly Ukraine and has bbox [22.125,44.175,40.225,52.4]. Its global label is a clear classifier error.",
+    "evidence_catalog_paths": ["reference-groups.json#refs-44136fa355b3"]
+  },
+  {
+    "group_id": "refs-79f56fc320cc",
+    "entry_ids": ["OpenET/GEESEBAL/CONUS/GRIDMET/MONTHLY/v2_0", "projects/openet/assets/geesebal/conus/gridmet/monthly/v2_0", "projects/openet/assets/geesebal/conus/gridmet/monthly/v2_0_pre2000", "projects/openet/assets/geesebal/conus/gridmet/monthly/v2_1"],
+    "geographic_scope": "regional",
+    "region": "Conterminous United States",
+    "reason": "All IDs encode CONUS; bboxes span approximately -126 to -66 longitude and 25 to 50 latitude. The global labels confuse globally applicable method prose with actual collection coverage.",
+    "evidence_urls": ["https://developers.google.com/earth-engine/datasets/catalog/projects_openet_assets_geesebal_conus_gridmet_monthly_v2_0"],
+    "evidence_catalog_paths": ["reference-groups.json#refs-79f56fc320cc"]
+  },
+  {
+    "group_ids": ["refs-4397cdb88cd7", "refs-7af18c5f916b", "refs-883348a112f1"],
+    "entry_ids": ["OpenET/SIMS/CONUS/GRIDMET/MONTHLY/v2_0", "projects/openet/assets/sims/conus/gridmet/monthly/v2_0", "projects/openet/assets/sims/conus/gridmet/monthly/v2_0_pre2000", "OpenET/DISALEXI/CONUS/GRIDMET/MONTHLY/v2_0", "projects/openet/assets/disalexi/conus/gridmet/monthly/v2_0", "OpenET/PTJPL/CONUS/GRIDMET/MONTHLY/v2_0", "projects/openet/assets/ptjpl/conus/gridmet/monthly/v2_0", "projects/openet/assets/ptjpl/conus/gridmet/monthly/v2_0_pre2000"],
+    "geographic_scope": "regional",
+    "region": "Conterminous United States",
+    "reason": "These are marked unclear despite CONUS IDs and bboxes bounded at roughly [-126,25,-66,50]. The same product families' v2_1 entries are already marked regional.",
+    "evidence_catalog_paths": ["reference-groups.json#refs-4397cdb88cd7", "reference-groups.json#refs-7af18c5f916b", "reference-groups.json#refs-883348a112f1"]
+  },
+  {
+    "group_id": "refs-0673bc072497",
+    "entry_ids": ["NOAA/GOES/16/MCMIPF", "NOAA/GOES/16/MCMIPM", "NOAA/GOES/17/MCMIPF", "NOAA/GOES/17/MCMIPM", "NOAA/GOES/18/MCMIPF", "NOAA/GOES/18/MCMIPM", "NOAA/GOES/19/MCMIPF", "NOAA/GOES/19/MCMIPM"],
+    "geographic_scope": "regional",
+    "region": "GOES satellite visible disk or mesoscale sector, varying by satellite and image",
+    "reason": "Full Disk is a geostationary satellite's visible hemisphere, not full-Earth coverage; mesoscale sectors are smaller. The world bbox is a metadata envelope and cannot establish actual global coverage.",
+    "evidence_urls": ["https://developers.google.com/earth-engine/datasets/catalog/NOAA_GOES_16_MCMIPF"],
+    "evidence_catalog_paths": ["reference-groups.json#refs-0673bc072497"]
+  },
+  {
+    "group_id": "refs-42a075bcc8cd",
+    "entry_ids": ["IPCC/AR6/SLP"],
+    "geographic_scope": "global",
+    "region": "Global ocean and regional projections on a global grid",
+    "reason": "The catalog explicitly says global and regional sea-level projections, including globally averaged and regional projections on a regular global grid. The current 'Antarctica, Arctic' regional note appears to be triggered by process names, not spatial coverage.",
+    "evidence_urls": ["https://developers.google.com/earth-engine/datasets/catalog/IPCC_AR6_SLP"],
+    "evidence_catalog_paths": ["reference-groups.json#refs-42a075bcc8cd"]
+  },
+  {
+    "entry_ids": ["NASA_USDA/HSL/soil_moisture"],
+    "geographic_scope": "global",
+    "region": "Global land, approximately 60 S to 90 N",
+    "reason": "The shared catalog description says the NASA-USDA grids provide soil moisture across the globe; bbox is [-180,-60,180,90]. The current CONUS region note for this entry is unsupported. SMAP_soil_moisture is already global but carries the same erroneous CONUS note.",
+    "evidence_catalog_paths": ["reference-groups.json#refs-b809c08d0d9c", "reference-groups.json#refs-b1aae2a8df0e"]
+  },
+  {
+    "group_id": "refs-faf43ad5c216",
+    "entry_ids": ["WorldPop/POP"],
+    "geographic_scope": "mixed",
+    "region": "Multiple countries across Africa, Asia, and Latin America/Caribbean",
+    "citation_scope_note": "The selected Sorichetta et al. paper is a Latin America/Caribbean component publication, not documentation of all WorldPop geographies.",
+    "reason": "The WorldPop catalog cites separate region-specific papers, while the collection bbox spans longitudes globally but only -59.94 to 54.08 latitude. Treat as a multi-region collection; do not describe this one paper as a whole-world product publication.",
+    "evidence_catalog_paths": ["reference-groups.json#refs-faf43ad5c216", "reference-groups.json#refs-54ef679e07c3"]
+  },
+  {
+    "group_id": "refs-e42eb117dc7e",
+    "entry_ids": ["JAXA/ALOS/AW3D30/V1_1", "JAXA/ALOS/AW3D30/V2_1", "JAXA/ALOS/AW3D30/V2_2", "JAXA/ALOS/AW3D30/V3_2"],
+    "remove_unresolved_titles": ["Updates of 'AW3D30' ALOS Global Digital Surface Model in Antarctica with Other Open Access Datasets"],
+    "reason": "This title is not in the older-version group's own citation fields; it appears in refs-d2826b9136c0 for V4_1. The unresolved list appears copied across versions and overstates source provenance.",
+    "evidence_catalog_paths": ["reference-groups.json#refs-e42eb117dc7e", "reference-groups.json#refs-d2826b9136c0"]
+  }
+]

@@ -1,0 +1,249 @@
+[
+  {
+    "rank": 21,
+    "label": "WWF HydroSHEDS Free Flowing Rivers Network v1",
+    "selected_scope": "The global static river-reach geometry and attributes/classification of the Grill et al. (2019) FFR assessment; selected as the exact figshare record linked by the paper. It is one network layer, not the full HydroSHEDS product family.",
+    "native_formats": ["ZIP download-all bundle (vector data plus technical documentation; inner vector encoding not exposed in the public figshare record)"],
+    "download_size": {
+      "display": "911.8 MB",
+      "status": "publisher_stated",
+      "bytes": null,
+      "scope": "figshare Download all bundle for the FFR data set and technical documentation",
+      "basis": "Figshare item page reports Download all (911.8 MB). Retain publisher unit; exact byte count and per-file split are not shown in the accessible item metadata."
+    },
+    "alternative_sizes": [],
+    "desired_formats": ["GeoParquet", "PMTiles (optional display derivative)"],
+    "rationale": "River reaches are vector lines with reach-level pressure indicators, connectivity status, and other attributes. GeoParquet supports analytical scans and attribute access; PMTiles can serve a display copy while preserving the full-resolution source geometry separately.",
+    "existing_cloud_native": "Not checked beyond the linked figshare ZIP; no maintained cloud-native distribution verified.",
+    "caveats": ["The associated GEE entry is a vector FeatureCollection; the figshare page gives a bundle size but does not expose exact inner file names or sizes in its text view.", "The Nature paper states that dam databases used for some pressure indices are excluded from the data repository because of licensing; 911.8 MB covers the released supplementary bundle, not every input needed to recompute the assessment."],
+    "sources": [
+      {"url": "https://doi.org/10.6084/m9.figshare.7688801", "supports": "Producer/author figshare record, publication identity, and Download all 911.8 MB publisher-stated size.", "accessed": "2026-10-30"},
+      {"url": "https://www.nature.com/articles/s41586-019-1111-9", "supports": "Paper data availability, linked dataset contents, CC-BY-4.0 license, and excluded licensed dam inputs.", "accessed": "2026-10-30"},
+      {"url": "https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_v1_FreeFlowingRivers", "supports": "Official GEE catalog membership and hosted vector dataset identity.", "accessed": "2026-10-30"}
+    ]
+  },
+  {
+    "rank": 22,
+    "label": "RESOLVE Ecoregions 2017",
+    "selected_scope": "The global 2017 RESOLVE terrestrial ecoregion boundaries and associated attributes (846 ecoregions), matching the GEE catalog entry.",
+    "native_formats": ["Shapefile in ZIP archive", "Earth Engine FeatureCollection"],
+    "download_size": {
+      "display": "150 MB ZIP",
+      "status": "publisher_stated",
+      "bytes": null,
+      "scope": "RESOLVE Ecoregions 2017 global shapefile download",
+      "basis": "The producer site labels the download ‘Shapefile (150mb zip)’. Exact bytes are not exposed; publisher unit is preserved."
+    },
+    "alternative_sizes": [],
+    "desired_formats": ["GeoParquet", "PMTiles (optional display derivative)"],
+    "rationale": "This is a static polygon layer with stable attributes. GeoParquet offers interoperable analytical vector storage; PMTiles can provide an independently generated web-display derivative.",
+    "existing_cloud_native": "Earth Engine FeatureCollection exists; no public cloud object distribution in a columnar vector format was verified.",
+    "caveats": ["Some complex ecoregion geometries are split into multiple features in the catalog representation; preserve ECO_ID when exporting or converting."],
+    "sources": [
+      {"url": "https://ecoregions.world/", "supports": "Producer-hosted shapefile ZIP format and stated 150 MB download size.", "accessed": "2026-10-30"},
+      {"url": "https://developers.google.com/earth-engine/datasets/catalog/RESOLVE_ECOREGIONS_2017", "supports": "Official GEE dataset identity, global 846-ecoregion coverage, and feature representation.", "accessed": "2026-10-30"}
+    ]
+  },
+  {
+    "rank": 23,
+    "label": "WWF HydroSHEDS v1 core rasters and HydroBASINS vectors",
+    "selected_scope": "The rank group spans multiple HydroSHEDS v1 products: 3/15/30-arc-second DEM, drainage-direction and flow-accumulation rasters, plus HydroBASINS nested vector basin levels. For a defensible size example, this row sizes only the six continental 3-arc-second hydrologically conditioned DEM ZIPs (v1.1). This does not size the full group.",
+    "native_formats": ["GeoTIFF rasters (HydroSHEDS v1.1 core downloads)", "Shapefile vectors (HydroBASINS levels; continent packages)"],
+    "download_size": {
+      "display": "16,460 MB (sum of six continental 3-arc-second conditioned-DEM publisher figures; not the family total)",
+      "status": "bounded_estimate",
+      "bytes": null,
+      "scope": "Africa 3,156 MB + Asia 4,555 MB + Australasia 1,458 MB + Europe/Middle East 2,286 MB + North/Central America 2,705 MB + South America 2,300 MB; hydrologically conditioned DEM only, 3 arc-seconds, v1.1",
+      "basis": "Arithmetic sum of six rounded file-size values published in the HydroSHEDS download table: 3156+4555+1458+2286+2705+2300=16460 MB. Because the source rounds sizes and does not clarify decimal/binary MB, no byte conversion is asserted. This is one raster product only; HydroBASINS and other resolutions/layers are excluded."
+    },
+    "alternative_sizes": [
+      {"display": "1,048 MB", "status": "publisher_stated", "bytes": null, "scope": "HydroSHEDS void-filled DEM, global 15-arc-second download, v1.1", "basis": "Official download table states Global 15s 1048MB; not additive to the selected 3s conditioned DEM and not a family total."}
+    ],
+    "desired_formats": ["COG for each raster layer/tile", "GeoParquet for HydroBASINS vector layers", "PMTiles (optional basin display derivative)"],
+    "rationale": "Keep each native resolution, layer, projection, coding, and nodata semantics explicit. COG supports range-based raster access; GeoParquet preserves basin geometries and attributes for analytical access.",
+    "existing_cloud_native": "No maintained cloud-native distribution verified. Official publisher downloads are tiled GeoTIFF and shapefile products.",
+    "caveats": ["The rank group contains 21 distinct catalog assets and is not one archive or one dataset identity.", "The selected 3s conditioned DEM is listed only by continent; no global single-file download is listed. HydroBASINS has 12 nested levels and continental packages; its download page does not state their sizes.", "The publisher download page is for v1.1, while the GEE rank group includes named v1 core layers and basin assets; do not treat v1.1 file figures as the measured size of every GEE asset."],
+    "sources": [
+      {"url": "https://www.hydrosheds.org/hydrosheds-core-downloads", "supports": "v1.1 core raster formats, resolutions, continental conditioned-DEM sizes, and global 15s void-filled DEM size.", "accessed": "2026-10-30"},
+      {"url": "https://www.hydrosheds.org/products/hydrobasins", "supports": "HydroBASINS vector polygons, 12 levels, shapefile continental packages, and product scope.", "accessed": "2026-10-30"},
+      {"url": "https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_03CONDEM", "supports": "Official GEE rank-group representative conditioned DEM identity.", "accessed": "2026-10-30"}
+    ]
+  },
+  {
+    "rank": 24,
+    "label": "SoilGrids 250 m v2.0",
+    "selected_scope": "The community catalog page is a SoilGrids 250 m v2.0 overview, not a bulk-density-only dataset: it enumerates 11 soil properties. For the rank's title-specific measure, selected scope is bdod_mean, bulk density of fine earth at six standard depths. The wider SoilGrids property family is not sized as one archive.",
+    "native_formats": ["Tiled GeoTIFF maps per property/depth/statistic", "Global virtual-mosaic VRT descriptors", "Earth Engine image assets for mean layers (six depth bands)"],
+    "download_size": {
+      "display": "Unknown",
+      "status": "unknown",
+      "bytes": null,
+      "scope": "Global SoilGrids 250 m v2.0 bdod_mean product across six standard depths",
+      "basis": "ISRIC WebDAV exposes public per-tile GeoTIFF listings and one VRT per map, but no aggregate byte total for all tiles covering the global bdod_mean six-depth set. A complete global map needs hundreds of tile objects; VRT descriptor sizes are not map payload size. No data body was downloaded."
+    },
+    "alternative_sizes": [],
+    "desired_formats": ["COG (one band per depth, with explicit units and nodata)", "Zarr (optional grouped property/depth/quantile cube if multiple SoilGrids properties are published together)"],
+    "rationale": "Soil variables are static gridded predictions and are natural raster COGs. A multi-property Zarr grouping could serve repeated depth/property analysis, provided all prediction and uncertainty layers, scale factors, units and native 250 m grid are preserved.",
+    "existing_cloud_native": "ISRIC WMS/WCS endpoint and WebDAV VRT mosaics exist; VRTs point to public tiled files rather than consolidating the map payload. Earth Engine assets exist for cataloged mean properties.",
+    "caveats": ["The community page title begins ‘Bulk density’ but its full page enumerates bdod plus cec, cfvo, clay, nitrogen, phh2o, sand, silt, soc, ocd and ocs mean layers; this row captures that broader membership while selecting bdod for size scope.", "The ISRIC directory lists six depth intervals and mean, quantile and uncertainty variants. This selected scope is bdod mean at all six depths only; VRT/overview file size must not be mistaken for raster payload size."],
+    "sources": [
+      {"url": "https://gee-community-catalog.org/projects/isric/", "supports": "Full community catalog overview: all listed properties and associated SoilGrids 2.0 Earth Engine assets.", "accessed": "2026-10-30"},
+      {"url": "https://maps.isric.org/soilgrids.html", "supports": "ISRIC producer property menu, including separate bulk density and other SoilGrids property services.", "accessed": "2026-10-30"},
+      {"url": "https://maps.isric.org/generated/soilgrids/bdod.html", "supports": "ISRIC bdod mapfile, WMS/WCS access, and bulk-density layer identity.", "accessed": "2026-10-30"},
+      {"url": "https://docs.isric.org/globaldata/soilgrids/index.html", "supports": "Producer documentation that SoilGrids outputs global six-depth 250 m property maps and WebDAV provides complete global maps as VRT mosaics.", "accessed": "2026-10-30"},
+      {"url": "https://files.isric.org/soilgrids/latest/data/bdod/", "supports": "Public producer directory lists per-depth/statistic VRT descriptors and tile folders for bdod.", "accessed": "2026-10-30"},
+      {"url": "https://files.isric.org/soilgrids/latest/data/bdod/bdod_0-5cm_mean/tileSG-000-019/", "supports": "Public producer tile listing confirms GeoTIFF tile format and size of an individual component tile; not used as a whole-map estimate.", "accessed": "2026-10-30"}
+    ]
+  },
+  {
+    "rank": 25,
+    "label": "GRIDMET and GRIDMET DROUGHT",
+    "selected_scope": "Two distinct datasets in the cited rank group: (1) the primary NCAR GDEX bulk distribution for daily CONUS gridMET, 1979–2025, ten listed variables in NetCDF4; (2) separate 5-day GRIDMET DROUGHT indices from 1980 to present. The publisher total below applies only to the complete NCAR base gridMET distribution, not the current 16-band GEE collection or the drought product.",
+    "native_formats": ["NetCDF-4 daily GRIDMET variable files", "GRIDMET DROUGHT Earth Engine ImageCollection (standalone native file format not specified by checked producer page)", "NetCDF/OPeNDAP and Zarr access options for GRIDMET"],
+    "download_size": {
+      "display": "79.53 GB",
+      "status": "publisher_stated",
+      "bytes": null,
+      "scope": "Full NCAR GDEX gridMET Daily Surface Data distribution, 1979-01-01 through 2025-12-31, ten cataloged variables, CONUS, NetCDF4",
+      "basis": "NCAR GDEX dataset d761426 reports Total Volume 79.53 GB and format netCDF4. This covers that archived 10-variable distribution only; it excludes GRIDMET DROUGHT and does not cover later GEE dates/bands."
+    },
+    "alternative_sizes": [
+      {"display": "Unknown", "status": "unknown", "bytes": null, "scope": "Current GEE IDAHO_EPSCOR/GRIDMET collection, 1979 to 2026-10-26, 16 bands", "basis": "GEE catalog lists 16 bands, while NCAR GDEX d761426 metadata lists ten variables through 2025-12-31; no matching current full-manifest size was found."},
+      {"display": "Unknown", "status": "unknown", "bytes": null, "scope": "Separate GRIDMET/DROUGHT 5-day index collection, 1980 to 2026-10-22", "basis": "GEE catalog identifies separate drought indices and cadence; GDEX d761426 is the base meteorology distribution and excludes this derived product."}
+    ],
+    "desired_formats": ["Zarr for multidimensional time series, separately for GRIDMET variables and drought indices", "COG for explicitly requested one-date raster extracts"],
+    "rationale": "Daily and 5-day spatial series are multidimensional in time and variable, well suited to chunked Zarr; standalone date extracts can be COG while preserving native grid and scale/offset metadata.",
+    "existing_cloud_native": "GRIDMET is accessible from an aggregated THREDDS/OPeNDAP catalog and a USGS Geo Data Portal Zarr API; the latter is a cloud-native access path for GRIDMET. No equivalent cloud-native distribution verified for GRIDMET DROUGHT.",
+    "caveats": ["NCAR GDEX dataset d761426 is an archived 1979–2025 distribution listing ten variables (including biomass burning and wildland fuels). GEE's current daily collection lists 16 bands and extends through 2026-10-26, so its total is not represented by 79.53 GB.", "GRIDMET DROUGHT is a separate 5-day derived product with SPI/EDDI/SPEI scales and PDSI/Z; it is excluded from NCAR d761426's 79.53 GB.", "NETCDF4 files use scale_factor and offset; preserve those attributes."],
+    "sources": [
+      {"url": "https://www.climatologylab.org/gridmet.html", "supports": "Publisher direct NetCDF, wget, THREDDS/OPeNDAP and USGS Zarr access; NETCDF4 encoding and scale/offset note.", "accessed": "2026-10-30"},
+      {"url": "https://gdex.ucar.edu/datasets/d761426/", "supports": "NCAR GDEX primary metadata: 1979–2025 coverage, ten listed variables, CONUS grid dimensions, netCDF4 format, and 79.53 GB Total Volume.", "accessed": "2026-10-30"},
+      {"url": "https://developers.google.com/earth-engine/datasets/catalog/IDAHO_EPSCOR_GRIDMET", "supports": "GRIDMET spatial extent, daily cadence, temporal coverage, and product description.", "accessed": "2026-10-30"},
+      {"url": "https://developers.google.com/earth-engine/datasets/catalog/GRIDMET_DROUGHT", "supports": "Separate drought-index product, 5-day cadence, available indices and time scales.", "accessed": "2026-10-30"}
+    ]
+  },
+  {
+    "rank": 26,
+    "label": "Hugonnet et al. global glacier elevation change 2000–2019",
+    "selected_scope": "The community GEE entry ingests only global elevation-change products, not every publication supplement. Size is for the author's publicly available elevation-change GeoTIFF raster bundle covering 5-, 10- and 20-year periods at 100 m; per-glacier/global tables and on-demand monthly elevation time series are excluded.",
+    "native_formats": ["GeoTIFF raster tiles (.tif)", "CSV tables and NetCDF monthly time series exist in the broader publication data release, but are outside the selected GEE product scope"],
+    "download_size": {
+      "display": "Approximately 15 GB",
+      "status": "publisher_stated",
+      "bytes": null,
+      "scope": "Public elevation-change raster files for successive 5-, 10- and 20-year periods of 2000–2019, 100 m posting; associated uncertainty rasters included in the raster family",
+      "basis": "The lead author's GitHub README states elevation-change rasters (.tif) are approximately 15 GB. It separately lists public CSV products (~500 MB and ~3 GB) and monthly elevation time series (~3 TB, on demand); these are not added to this raster-only figure."
+    },
+    "alternative_sizes": [
+      {"display": "~500 MB + ~3 GB", "status": "publisher_stated", "bytes": null, "scope": "Broader public CSV time-series tables at annual and period aggregation intervals; separate from the selected GEE raster product", "basis": "Author repository README provides approximate sizes; not included in the 15 GB raster claim."},
+      {"display": "~3 TB, on demand", "status": "publisher_stated", "bytes": null, "scope": "100 m monthly elevation time series; not included in publicly downloadable selected raster product", "basis": "Author repository README says available only on demand."}
+    ],
+    "desired_formats": ["COG for the existing period-specific raster maps", "Zarr for monthly NetCDF time series when distributed"],
+    "rationale": "Period-specific elevation change and uncertainty rasters fit COG. The monthly 100 m temporal stack is multidimensional and better served as chunked Zarr, while retaining original units, period definitions and uncertainty values.",
+    "existing_cloud_native": "Theia/SEDOO provides bulk download and tile-oriented access; no cloud-native COG/Zarr object layout verified. The GEE community collection exposes image collections.",
+    "caveats": ["Do not combine ~15 GB raster, ~3.5 GB public CSV tables, ~3 TB on-demand monthly series, and ~10 TB on-demand bias-corrected DEMs into one size claim.", "Theia product tiles cover 1° x 1°; author README uses approximate size and does not specify decimal/binary GB.", "Theia documents periods 2000–2004, 2005–2009, 2010–2014, 2015–2019, 2000–2009, 2010–2019, and 2000–2019; retain both elevation-change and uncertainty layers."],
+    "sources": [
+      {"url": "https://github.com/rhugonnet/ww_tvol_study", "supports": "Lead-author repository: public GeoTIFF raster family (~15 GB), separate public CSV tables, and on-demand NetCDF and raw DEM size/scope distinctions.", "accessed": "2026-10-30"},
+      {"url": "https://gee-community-catalog.org/projects/glacier/", "supports": "Community GEE entry's ingested scope, GeoTIFF raster format, 100 m tiles, time periods and uncertainty rasters.", "accessed": "2026-10-30"},
+      {"url": "https://www.theia-land.fr/en/blog/product/rate-of-glacier-elevation-changes-from-2000-to-2019/", "supports": "Producer service summary, Theia tile/period access, 100 m products and Hugonnet study provenance.", "accessed": "2026-10-30"},
+      {"url": "https://www.nature.com/articles/s41586-021-03436-z", "supports": "Publication data availability and 100 m 5-, 10- and 20-year elevation-change maps.", "accessed": "2026-10-30"}
+    ]
+  },
+  {
+    "rank": 27,
+    "label": "WHRC Pantropical National Level Carbon Stock Dataset",
+    "selected_scope": "One static global/pantropical 500 m above-ground live woody biomass density image (2012-01-29), band Mg in megagrams per hectare, matching WHRC/biomass/tropical.",
+    "native_formats": ["Earth Engine ee.Image hosted asset; standalone producer download format not documented in the checked source"],
+    "download_size": {
+      "display": "Unknown",
+      "status": "unknown",
+      "bytes": null,
+      "scope": "Single static 500 m WHRC tropical biomass density image",
+      "basis": "The official GEE catalog confirms one image, one band, 500 m pixels and units, but no public file manifest or downloadable byte total was found in the checked producer documentation."
+    },
+    "alternative_sizes": [],
+    "desired_formats": ["COG"],
+    "rationale": "This is a single spatial biomass raster; COG provides ranged reads while preserving biomass values, units and spatial grid. Do not infer size from the 500 m pixel size alone.",
+    "existing_cloud_native": "Google Earth Engine hosted image is verified; no COG/COG-hosted source distribution verified.",
+    "caveats": ["Static 2012 snapshot, not a time series.", "Catalog use terms state scientific, conservation and educational use; verify licensing/redistribution before mirroring."],
+    "sources": [
+      {"url": "https://developers.google.com/earth-engine/datasets/catalog/WHRC_biomass_tropical", "supports": "Official catalog image identity, 500 m resolution, date, band and units; no standalone file-size manifest.", "accessed": "2026-10-30"},
+      {"url": "https://doi.org/10.1038/nclimate1354", "supports": "Associated publication and original biomass-density map context.", "accessed": "2026-10-30"}
+    ]
+  },
+  {
+    "rank": 28,
+    "label": "HydroLAKES v1.0 lake polygons",
+    "selected_scope": "Global polygons and all attributes for 1,427,688 lakes/reservoirs, using the HydroLAKES v1.0 shapefile download. The community GEE entry also exposes a separate point layer, not included in this polygon size.",
+    "native_formats": ["Shapefile in ZIP archive (polygon layer)", "File geodatabase in ZIP archive (polygon layer)", "Earth Engine FeatureCollection"],
+    "download_size": {
+      "display": "820 MB ZIP",
+      "status": "publisher_stated",
+      "bytes": null,
+      "scope": "Global HydroLAKES v1 polygon shapefile, including all attributes",
+      "basis": "HydroSHEDS producer page states lake polygons in shapefile format are 820 MB. This is not the geodatabase package, pour-point layer, or both-layer total."
+    },
+    "alternative_sizes": [
+      {"display": "763 MB ZIP", "status": "publisher_stated", "bytes": null, "scope": "Same global HydroLAKES v1 polygon data and attributes in geodatabase format", "basis": "HydroSHEDS producer page lists separate geodatabase polygon package."},
+      {"display": "79 MB ZIP shapefile; 81 MB ZIP geodatabase", "status": "publisher_stated", "bytes": null, "scope": "Separate global lake pour-point layer", "basis": "HydroSHEDS producer page lists pour points separately; not included in selected polygon size."}
+    ],
+    "desired_formats": ["GeoParquet", "PMTiles (optional display derivative)"],
+    "rationale": "Lake boundaries and descriptive attributes are vector data. GeoParquet suits analytical joins/filtering and PMTiles can serve visualization while keeping the full polygons and attributes in the analytical release.",
+    "existing_cloud_native": "Earth Engine FeatureCollections for lake polygons and points are verified; no public cloud object distribution in a columnar vector format was verified.",
+    "caveats": ["Four distinct producer downloads exist: polygon/point crossed with shapefile/geodatabase; never conflate their sizes.", "HydroLAKES v1 includes lakes >=10 ha and about 1.4 million lakes/reservoirs; community catalog exposes both polygon and point collections."],
+    "sources": [
+      {"url": "https://www.hydrosheds.org/products/hydrolakes", "supports": "Producer-published v1 polygon and point distribution formats and sizes.", "accessed": "2026-10-30"},
+      {"url": "https://gee-community-catalog.org/projects/hydrolakes/", "supports": "Community GEE membership, separate polygon/point layers and 1,427,688 feature scope.", "accessed": "2026-10-30"},
+      {"url": "https://data.hydrosheds.org/file/technical-documentation/HydroLAKES_TechDoc_v10.pdf", "supports": "HydroLAKES v1 technical documentation and shapefile composition.", "accessed": "2026-10-30"}
+    ]
+  },
+  {
+    "rank": 29,
+    "label": "MapBiomas land cover family (Collection 9 community page; Brazil V1 official GEE asset)",
+    "selected_scope": "The community entry is a multi-country, multi-product family and explicitly expands beyond Brazil to Pan-Amazonia, Indonesia, Bolivia, Peru and other regions. Size scope is narrowed to MapBiomas Brazil Collection 9 annual land-cover maps, 1985–2023; no full family total. The separate official GEE Brazil V1 collection is a different catalog asset/vintage (1985–2024), not the same dataset as Collection 9.",
+    "native_formats": ["GeoTIFF for pixel classification maps, including producer-generated regional/geometry subsets", "CSV or Excel for area statistics", "Earth Engine ImageCollections / publisher assets"],
+    "download_size": {
+      "display": "Unknown",
+      "status": "unknown",
+      "bytes": null,
+      "scope": "Brazil Collection 9 annual LULC maps, 1985–2023, as full-resolution 30 m producer-distributed GeoTIFF maps; excludes stats, other MapBiomas regions/products, and official GEE Brazil V1",
+      "basis": "MapBiomas provides no complete Collection 9 byte manifest on checked producer pages; its current full-map GeoTIFF download function is temporarily suspended. Its toolkit exports clips through GEE, which does not provide a producer size for the global annual Collection 9 maps."
+    },
+    "alternative_sizes": [],
+    "desired_formats": ["COG for annual categorical map rasters", "Zarr only for explicitly packaged multi-year categorical time stacks, preserving class codes and year coordinate"],
+    "rationale": "Annual land-cover classifications are categorical raster maps and fit COG. Zarr is an optional temporal stack for multi-year operations; preserve integer class values, legend version, year, region, scale and nodata exactly.",
+    "existing_cloud_native": "Community/official Earth Engine assets exist; producer's current toolkit exports clipped GeoTIFF through GEE. No public cloud-native COG/Zarr Collection 9 distribution verified.",
+    "caveats": ["Community page's inline example is Collection 8 and its changelog says catalog links updated to v8; it describes a broad family, not a current Collection 9-only raster identity.", "The producer FAQ states Collection 9 covers 1985–2023 and Collection 10 (released 2025) covers 1985–2024. The current Brazil export toolkit lists Collection 11, while the full-map GeoTIFF function is temporarily suspended.", "Official Earth Engine projects/mapbiomas-public/assets/brazil/lulc/v1 is distinct and cataloged for 1985–2024; do not use its coverage or version to label Collection 9 or vice versa."],
+    "sources": [
+      {"url": "https://gee-community-catalog.org/projects/mapbiomas/", "supports": "Community family includes Brazil plus multiple regions, multi-raster scope, and stale Collection 8 code/changelog.", "accessed": "2026-10-30"},
+      {"url": "https://brasil.mapbiomas.org/downloads/", "supports": "Producer lists annual GeoTIFF downloads, GEE assets, clipped exports and statistics resources; linked full-map page is stale/404.", "accessed": "2026-10-30"},
+      {"url": "https://brasil.mapbiomas.org/downloads/baixe-mapas-recortados-geotiff-via-google-earth-engine/", "supports": "Producer says full-map downloads are temporarily suspended and its clipped export toolkit requires GEE; current toolkit lists Collection 11 and historical collections.", "accessed": "2026-10-30"},
+      {"url": "https://brasil.mapbiomas.org/faq/?tema=dados", "supports": "Producer-published Collection 9 1985–2023 and Collection 10 1985–2024 version coverage; GeoTIFF/CSV/Excel formats.", "accessed": "2026-10-30"},
+      {"url": "https://developers.google.com/earth-engine/datasets/catalog/projects_mapbiomas-public_assets_brazil_lulc_v1", "supports": "Separate official Brazil V1 ImageCollection identity and 1985–2024 coverage.", "accessed": "2026-10-30"}
+    ]
+  },
+  {
+    "rank": 30,
+    "label": "MERIT DEM v1.0.3",
+    "selected_scope": "One static global land elevation product at 3-arc-second (~90 m) resolution, covering 60°S–90°N, in the official Earth Engine catalog. Producer files are 5° x 5° GeoTIFF tiles bundled into 30° x 30° TAR packages.",
+    "native_formats": ["Float32 GeoTIFF tiles (.tif)", "TAR bundles of tiles", "Earth Engine ee.Image hosted asset"],
+    "download_size": {
+      "display": "Unknown",
+      "status": "unknown",
+      "bytes": null,
+      "scope": "Global MERIT DEM v1.0.3 tiled producer download, 3 arc-seconds, 60°S–90°N",
+      "basis": "The producer documents tile/package format and says a password is issued after registration, but no public file-size manifest was found without following the registration-gated download. No account was created and no data files were fetched."
+    },
+    "alternative_sizes": [
+      {"display": "311.04 GB uncompressed rectangular-grid payload (calculated upper envelope; not download size)", "status": "calculated_uncompressed", "bytes": 311040000000, "scope": "Rectangular 3-arc-second grid envelope covering 360° longitude by 150° latitude, one Float32 elevation value per cell, before NoData omission, headers, tiling or compression", "basis": "432,000 longitude cells (360×1,200) × 180,000 latitude cells (150×1,200) × 4 bytes/Float32 = 311,040,000,000 bytes = 311.04 decimal GB. This is a rectangular payload calculation, not a measured archive or the sum of land-only tiles."}
+    ],
+    "desired_formats": ["COG tiles (Float32)"],
+    "rationale": "A static elevation surface is suited to tiled COG range access. Preserve EGM96-referenced elevation, original grid alignment, NoData and license metadata.",
+    "existing_cloud_native": "Earth Engine hosted image is verified; no public open cloud COG tile distribution verified. Producer download is tiled GeoTIFF/TAR and requires registration-issued password.",
+    "caveats": ["The producer page states access password is issued by email after registration; registration was not attempted.", "The calculated 311.04 GB is an uncompressed rectangular grid envelope with ocean/NoData slots, not an observed download total.", "Official catalog specifies approximately 92.77 m pixels in the dataset metadata and extent -60,-180,90,180; geographic resolution is 3 arc-seconds (~90 m at equator)."],
+    "sources": [
+      {"url": "https://global-hydrodynamics.github.io/MERIT_DEM/", "supports": "Producer documentation of v1.0.3, Float32 GeoTIFF 5° tiles, 30° TAR packages, and registration/password-gated access.", "accessed": "2026-10-30"},
+      {"url": "https://developers.google.com/earth-engine/datasets/catalog/MERIT_DEM_v1_0_3", "supports": "Official GEE asset scope, 3-arc-second resolution, pixel size, band and geographic extent.", "accessed": "2026-10-30"}
+    ]
+  }
+]

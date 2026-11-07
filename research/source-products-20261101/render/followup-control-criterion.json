@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "criterion_recorded_before_query": true,
+  "purpose": "Show that a browser can request a narrower extent from the local analytic query endpoint and receive a non-empty uncapped result, independent of the five capped control renders.",
+  "extent_construction": {
+    "parent_control_id": "europe",
+    "parent_bbox": [5, 45, 15, 55],
+    "rule": "Take the southwest 1/16 tile from a 4 by 4 equal-degree grid over the parent bbox; tile selection is fixed by position, not by observed data values.",
+    "tile_row": 0,
+    "tile_column": 0,
+    "bbox": [5, 45, 7.5, 47.5]
+  },
+  "asset": "hydrolakes-polygons",
+  "pass_conditions": [
+    "The browser requests the fixed bbox through the API's bbox query parameter.",
+    "The exact analytic bbox match count is greater than zero and below the 1,000-feature response cap.",
+    "The browser page finishes its dynamic query and a real Chrome screenshot shows the queried features, bbox, and uncapped count.",
+    "The source file SHA-256 equals the immutable release manifest value."
+  ],
+  "failure_policy": "Record a failed criterion as-is; do not pick a different tile after observing its count."
+}

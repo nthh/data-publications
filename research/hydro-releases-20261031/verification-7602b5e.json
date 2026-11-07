@@ -1,0 +1,55 @@
+{
+  "checked_at": "2026-10-31T20:21:13.734017+00:00",
+  "code_revision": "7602b5e5252aec2f26167a7f560eaa7dd65a38a0",
+  "clean_checkout": "<worktree>/hydro-release-checks-20261031/tree",
+  "git_status_before_after": "clean",
+  "checks": [
+    {
+      "command": "uv run --locked --project scripts/release_tools python -m unittest discover -s scripts/release_tools -p test_*.py -v",
+      "status": "passed",
+      "tests": 24
+    },
+    {
+      "command": "uv run --locked --project scripts/release_tools python -m unittest discover -s research/hydro-releases-20261031 -p test_bind_fidelity.py -v",
+      "status": "passed",
+      "tests": 9
+    },
+    {
+      "command": "uv run --locked python -m unittest discover -s scripts -p test_catalog.py -v",
+      "status": "passed",
+      "tests": 9
+    },
+    {
+      "command": "uv run --locked python scripts/catalog.py --check",
+      "status": "passed",
+      "records": 366,
+      "frozen_families": 363,
+      "supplemental_records": 3
+    },
+    {
+      "command": "uv run --locked python scripts/rank_citations.py --check",
+      "status": "passed"
+    },
+    {
+      "command": "python3 scripts/rank_catalog_citations.py --check",
+      "status": "passed"
+    },
+    {
+      "command": "uv run --locked python scripts/check_provenance.py",
+      "status": "passed",
+      "historical_entries": 114,
+      "unique_blobs": 44
+    }
+  ],
+  "full_release_checks": {
+    "free_flowing_rivers_r2": "passed; full package independently verified",
+    "hydrolakes": "source fidelity and raw/bbox rebuilds passed; package failed spatial ordering",
+    "lakeatlas": "source fidelity and raw rebuilds passed; package failed spatial ordering",
+    "jrc_occurrence": "complete metadata inventory and eight bounded source samples; no full raster or pixel certification"
+  },
+  "pending": [
+    "Direct user approval of the eight-file cleanup proposal; no files have been removed.",
+    "Full spatial ordering, fixed-window pruning, clean sorted rebuilds and packaging for HydroLAKES and LakeATLAS.",
+    "Public upload and endpoint verification, then registry submission; not authorized in this local-only task."
+  ]
+}

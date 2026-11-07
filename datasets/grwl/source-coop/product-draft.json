@@ -1,0 +1,110 @@
+{
+  "assets": [],
+  "attribution": "Allen and Pavelsky; Global River Width from Landsat. Original processing and conversion evidence retain Folia attribution.",
+  "blockers": [
+    "Canonical local follow-up: The separate grwl-raw analytical and display packages are prepared. Keep this summary unchanged as historical source evidence.",
+    "Canonical publication review stage: withheld_source_geometry_errors",
+    "Source Cooperative account verification is not recorded",
+    "canonical publication status is deferred_source_quality, not prepared or published"
+  ],
+  "created": false,
+  "creation_ready": false,
+  "dataset_id": "grwl",
+  "dataset_title": "Global River Width from Landsat — simplified global river network V01.02",
+  "display_publication": {
+    "assets": [
+      {
+        "href": "display/display-v1/assets/grwl.pmtiles",
+        "id": "grwl-display",
+        "path": "assets/grwl.pmtiles",
+        "sha256": "7b56696bc08daa4ed512a02fd35017f913827d60f9dc1d8fba94b1f726ba5343",
+        "size_bytes": 115384572,
+        "style_href": "display/display-v1/styles/grwl-width.json",
+        "style_path": "styles/grwl-width.json",
+        "title": "GRWL river network"
+      }
+    ],
+    "manifest_href": "display/display-v1/manifest.json",
+    "manifest_path": "datasets/grwl/display/display-v1/manifest.json",
+    "manifest_sha256": "a3deb37bc36ef5f16917ff668b8cbcf33d5b2bdd6477b106f26aa0be9dfc2523",
+    "release": "display-v1"
+  },
+  "draft_type": "source_coop_product_draft",
+  "hosted": false,
+  "independent_maintainer_proposal": {
+    "owner": "nthh",
+    "relationship": "new Source Cooperative product proposal; immutable package metadata is unchanged",
+    "status": "confirmed"
+  },
+  "license_note": "CC BY 4.0. Retain Allen and Pavelsky attribution and the source data and paper citations.",
+  "limitations": [
+    "The scope is the simplified summary network only; raw vectors, raster masks, tile indexes and RSSA basin products are excluded.",
+    "The selected producer filename is V01.02 while its record metadata and GEE counterpart name V01.01. Exact source DOI, filename and checksums identify this release.",
+    "PMTiles geometry is a display derivative; use GeoParquet for analysis.",
+    "Raw-vector and water-mask inspection confirms geometry errors in source-summary rows 11839, 13164, 15394, 15397 and 15450. Straight connectors of 6.2 to 110.1 km join observations at tile exit/re-entry locations while the raw river follows a curved path. The prepared GeoParquet and PMTiles preserve these source errors. The five examples are not an exhaustive error inventory.",
+    "Source row28938 crosses the dateline. Use display/display-v1/assets/grwl.pmtiles for maps; original release-bundled PMTiles are retained as historical evidence and contain a world-spanning rendering artifact. Analytical GeoParquet preserves the original longitude discontinuity."
+  ],
+  "local_readiness": "blocked",
+  "owner": "nthh",
+  "owner_status": "confirmed",
+  "product_id": "grwl",
+  "proposed_source_proxy": {
+    "status": "proposed",
+    "uri": "s3://nthh/grwl"
+  },
+  "publication_status": "deferred_source_quality",
+  "ready_for_creation": false,
+  "ready_for_review": true,
+  "related_dataset_links": [],
+  "release": "summary-v01.02-local-r1",
+  "release_files": [],
+  "review_context": {
+    "asset_integrity": "passed_fresh_sha256_audit",
+    "local_followup": [
+      "The separate grwl-raw analytical and display packages are prepared. Keep this summary unchanged as historical source evidence."
+    ],
+    "public_followup": [
+      "Keep the simplified summary withheld because of confirmed source geometry errors; use the separate grwl-raw publication workflow."
+    ],
+    "stage": "withheld_source_geometry_errors",
+    "status_basis": "canonical publication status plus local manifest/snapshot hashes; this tool does not rerun scientific or public-host validation"
+  },
+  "schema_version": 1,
+  "snapshot_binding": {
+    "manifest_path": "datasets/grwl/releases/summary-v01.02-local-r1/manifest.json",
+    "manifest_sha256": "a6eb5095a56461e45c57069886e9a04f0b85a5e8edc1bc9f971ac6560f1b4f4b",
+    "release": "summary-v01.02-local-r1",
+    "snapshot_path": "datasets/grwl/releases/summary-v01.02-local-r1/catalog-input-r1/snapshot.json",
+    "snapshot_sha256": "bab3e13d8f4ad9315400ddd57bf7f2f721d328118965402a7e81bf3c1d4b6c7e"
+  },
+  "snapshot_collection": null,
+  "source_links": [
+    {
+      "title": "License terms",
+      "url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "title": "Dataset release",
+      "url": "https://doi.org/10.5281/zenodo.18624542"
+    },
+    {
+      "title": "Producer source",
+      "url": "https://gee-community-catalog.org/projects/grwl"
+    },
+    {
+      "title": "Original download",
+      "url": "https://zenodo.org/api/records/18624542/files/GRWL_summaryStats_V01.02.zip/content"
+    }
+  ],
+  "summary": "Historical simplified GRWL summary mirror, retained for comparison and withheld from publication because raw-source checks confirm artificial connecting edges. The separate grwl-raw product has complete analytical and display packages prepared from original observations.",
+  "supplements": [],
+  "tags": [
+    "hydrology",
+    "rivers",
+    "global",
+    "geoparquet",
+    "pmtiles"
+  ],
+  "temporal_note": "Static Landsat-derived research product. The conversion date is not the observation date; no single observation interval is asserted.",
+  "title": "Global River Width from Landsat — summary network V01.02"
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "kind": "official_browser_collection_navigation_followup",
+  "frozen_before_viewer_run": true,
+  "prior_attempt_report": ".local/portolan-four-verified-preflight-r7/portolan-browser-report.json",
+  "prior_attempt_sha256": "a88e7c8f7f6b5b699974e83fff253588b17f7ae510cf76559ee18dc6a54f82a9",
+  "observed_issue": "In the four-product preflight, the River case issued Source requests for Free-Flowing Rivers assets; those cross-product requests were blocked by the unchanged allowlist, and navigation then timed out waiting for the River title. The attempt did not record the selected child link href or current route at failure, so the precise navigation cause is unknown.",
+  "scope": {
+    "mode": "normal_browser_keyboard_navigation_diagnostic",
+    "official_browser_origin": "https://browser.portolan-sdi.org",
+    "no_direct_router_or_vue_access": true,
+    "no_data_or_catalog_changes": true
+  },
+  "primary_source_references": {
+    "collection_card": "https://github.com/portolan-sdi/portolan-browser/blob/15af01335da62a60d209911c9bde994981fd29be/src/components/Catalog.vue",
+    "stac_link": "https://github.com/portolan-sdi/portolan-browser/blob/15af01335da62a60d209911c9bde994981fd29be/src/components/StacLink.vue",
+    "display_title": "https://github.com/portolan-sdi/portolan-browser/blob/15af01335da62a60d209911c9bde994981fd29be/src/models/stac.js",
+    "external_route": "https://github.com/portolan-sdi/portolan-browser/blob/15af01335da62a60d209911c9bde994981fd29be/src/store/index.js",
+    "external_route_parsing": "https://github.com/portolan-sdi/portolan-browser/blob/15af01335da62a60d209911c9bde994981fd29be/src/router/index.js"
+  },
+  "navigation_contract": {
+    "root_child_selector": ".catalog-card .stac-link with exactly one descendant .title whose textContent matches the collection title",
+    "expected_route_source": "The intended collection URL from the staged catalog, transformed using the already-frozen external_catalog_route template.",
+    "before_activation": [
+      "Record page URL, exact .title text, full textContent, raw href attribute, resolved href, and visibility for the candidate link.",
+      "Require the resolved href to equal the expected external Browser route for this collection.",
+      "Focus that exact visible link and verify it is document.activeElement."
+    ],
+    "activation": "Send Enter to the focused link; do not use a mouse click or manipulate application routing state.",
+    "after_activation": [
+      "Wait for the full page URL, including hash route, to equal the expected collection route.",
+      "Wait for the exact collection title to be visible and then require the existing map and canvas readiness checks."
+    ]
+  },
+  "failure_evidence": [
+    "Record the expected collection route and selected link raw/resolved href when available.",
+    "Record page URL before activation and the actual URL after success or failure.",
+    "On navigation failure, retain the error and capture a bounded list of visible exact-title link hrefs and visible headings/title text.",
+    "A failed or mismatched navigation remains a failed case; diagnostics do not change Source product allowlists or acceptance gates."
+  ],
+  "unchanged_gates": [
+    "Keep exact per-product Source object allowlists and reject cross-product Source requests.",
+    "Keep all frozen Pages metadata, Source range, Content-Range, CORS, MIME, byte-budget, PMTiles tile-data, layer-read, map-readiness, and manual visual-review requirements.",
+    "Preflight metadata interception remains local synthetic metadata and is not evidence of deployed Pages hosting.",
+    "Partial selected-dataset runs cannot satisfy the full five-collection gate."
+  ]
+}

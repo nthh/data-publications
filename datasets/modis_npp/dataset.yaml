@@ -1,0 +1,84 @@
+schema_version: 1
+id: modis_npp
+title: MODIS annual net primary productivity (Collection 6.1)
+intake:
+  kind: official_catalog
+  reference_url: https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MOD17A3HGF
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'citations: Global; Global land MOD17A2 8-day GPP and MOD17A3 annual NPP need separate
+    component identities. planetary: review_note: Global annual gap-filled net primary productivity; STAC
+    bbox all-world.; stac_bbox: [-180, -90, 180, 90]; temporal_interval: [["2000-02-18T00:00:00Z", null]]
+    Join citation MOD17A3HGF annual NPP, not MOD17A2H 8-day GPP.'
+  sources:
+  - provider: gee_official
+    entry_id: MODIS/061/MOD17A3HGF
+    url: https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MOD17A3HGF
+    relationship: component
+  - provider: gee_official
+    entry_id: MODIS/061/MYD17A3HGF
+    url: https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MYD17A3HGF
+    relationship: component
+  - provider: planetary_computer
+    entry_id: modis-17A3HGF-061
+    url: https://planetarycomputer.microsoft.com/api/stac/v1/collections/modis-17A3HGF-061
+    relationship: component
+  access:
+  - provider: literature
+    status: unknown
+    formats: []
+    summary: GEE catalog entries are available through Earth Engine; frozen metadata does not establish
+      an independently downloadable native bulk copy or its format. MOD17A2 8-day GPP and MOD17A3 annual
+      NPP need separate component identities.
+    license_summary: Not inferred from citation records. Verify producer terms for the exact edition before
+      conversion or redistribution.
+    proposed_outputs: []
+    rationale: 'Candidate discovery only: global/near-global scope and associated-paper citation signal
+      justify source-format and licensing review. Citation rank does not establish conversion priority
+      or exact-release use.'
+    evidence_urls:
+    - https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MOD17A3HGF
+    - https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MYD17A3HGF
+    - https://doi.org/10.1641/0006-3568(2004)054[0547:acsmog]2.0.co;2
+  - provider: planetary_computer
+    status: native_available
+    formats:
+    - COG
+    - HDF
+    summary: 'Collection metadata declares per-item data assets / provider storage roots in the listed
+      native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain
+      unvalidated. Join citation MOD17A3HGF annual NPP, not MOD17A2H 8-day GPP.'
+    license_summary: 'note: Do not treat this metadata label as legal clearance.; review_status: provider
+      declaration captured; terms and redistribution permission not independently reviewed; stac_license:
+      other'
+    proposed_outputs:
+    - COG
+    - HDF
+    rationale: Reuse declared COG; inspect yearly grid, units and gap-fill flags.
+    evidence_urls:
+    - https://planetarycomputer.microsoft.com/api/stac/v1/collections/modis-17A3HGF-061
+    - https://planetarycomputer.microsoft.com/dataset/modis-17A3HGF-061
+  citations:
+  - provider: OpenAlex
+    paper_doi: 10.1641/0006-3568(2004)054[0547:acsmog]2.0.co;2
+    work_id: https://openalex.org/W2147423506
+    cited_by_count: 2477
+    observed_on: '2026-10-30'
+    scope: base_dataset_family
+  evidence:
+  - path: research/global-candidates-20261031/citations/reviewed.json
+    sha256: 572140255cd3b41a1ec8ecca0139e64d38899cda7fdd55756f399a0dca57a467
+    key: modis_mod17
+  - path: research/global-candidates-20261031/planetary/reviewed.json
+    sha256: 07da016851a07f3e3e0937e120ce46442785f4e9096e563d92c1a3c0ce9e616a
+    key: modis_npp_yearly_v061

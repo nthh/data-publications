@@ -1,0 +1,74 @@
+schema_version: 1
+id: gpm
+title: Global Precipitation Measurement (GPM)
+community_url: https://gee-community-catalog.org/projects/gpm
+audit:
+  snapshot: gee-community-audit-20261029
+  family_key: gpm
+  unique_gee_asset_count: 1
+  initial_queue: research_original_source
+  folia_registry_status: not_identified
+  folia_registry_ids: []
+  source_coop_urls: []
+  source_coop_scope: null
+  external_native_urls: []
+  external_native_scope: null
+triage:
+  decision: pending
+  priority: normal
+review:
+  citation_assessment:
+    as_of: '2026-10-29'
+    provider: OpenAlex
+    evidence_path: research/citations/rankings.json
+    evidence_key: gpm
+    geographic_scope: global
+    paper_count_status: matched
+    max_paper_citations: 789
+    max_data_doi_citations: null
+    top_paper_doi: https://doi.org/10.1007/978-3-030-24568-9_19
+    top_paper_openalex_id: https://openalex.org/W3016242410
+    citation_scope: base_dataset_family
+    citation_scope_note: These describe IMERG V06 rather than the generic GPM mission.
+      Climate Engine sums half-hourly V06 precipitationCal by UTC day; no exact derived-product
+      citation is established. V07 must not silently replace V06.
+
+# Cross-catalog discovery: global-candidates-20261031
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'citations: Global Existing Climate Engine daily IMERG V06 derivative differs from
+    PC half-hourly source.'
+  sources:
+  - provider: gee_community
+    entry_id: gpm
+    url: https://gee-community-catalog.org/projects/gpm
+    relationship: same_family
+  access:
+  - provider: literature
+    status: unknown
+    formats: []
+    summary: GEE catalog entries are available through Earth Engine; frozen metadata does not establish
+      an independently downloadable native bulk copy or its format. Existing Climate Engine daily IMERG
+      V06 derivative differs from PC half-hourly source.
+    license_summary: Not inferred from citation records. Verify producer terms for the exact edition before
+      conversion or redistribution.
+    proposed_outputs: []
+    rationale: 'Candidate discovery only: global/near-global scope and associated-paper citation signal
+      justify source-format and licensing review. Citation rank does not establish conversion priority
+      or exact-release use.'
+    evidence_urls:
+    - https://gee-community-catalog.org/projects/gpm
+    - https://doi.org/10.1007/978-3-030-24568-9_19
+  citations:
+  - provider: OpenAlex
+    paper_doi: 10.1007/978-3-030-24568-9_19
+    work_id: https://openalex.org/W3016242410
+    cited_by_count: 789
+    observed_on: '2026-10-30'
+    scope: base_dataset_family
+  evidence:
+  - path: research/global-candidates-20261031/citations/reviewed.json
+    sha256: 572140255cd3b41a1ec8ecca0139e64d38899cda7fdd55756f399a0dca57a467
+    key: gpm

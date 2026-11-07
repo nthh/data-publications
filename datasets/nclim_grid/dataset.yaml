@@ -1,0 +1,32 @@
+schema_version: 1
+id: nclim_grid
+title: NOAA Monthly U.S. Climate Gridded Dataset (NClimGrid) daily
+community_url: https://gee-community-catalog.org/projects/nclim_grid
+audit:
+  snapshot: gee-community-audit-20261029
+  family_key: nclim_grid
+  unique_gee_asset_count: 2
+  initial_queue: review_external_native_counterpart
+  folia_registry_status: not_identified
+  folia_registry_ids: []
+  source_coop_urls: []
+  source_coop_scope: null
+  external_native_urls:
+  - https://planetarycomputer.microsoft.com/api/stac/v1/collections/noaa-nclimgrid-monthly
+  external_native_scope: Monthly NClimGrid component; no claim of daily component.
+triage:
+  decision: pending
+  priority: normal
+review:
+  citation_assessment:
+    as_of: '2026-10-29'
+    provider: OpenAlex
+    evidence_path: research/citations/rankings.json
+    evidence_key: nclim_grid
+    geographic_scope: regional
+    paper_count_status: unknown
+    max_paper_citations: null
+    max_data_doi_citations: 34
+    top_paper_doi: null
+    top_paper_openalex_id: null
+    citation_scope: associated_dataset_publication

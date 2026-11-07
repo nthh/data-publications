@@ -1,0 +1,71 @@
+{
+  "source_ranking": "research/catalog-citations-20261030/groups-combined-all.json at 54b99b4",
+  "population": "Top 30 combined official/community shared-leading-paper groups. Preserve ranking and entry membership; a group can contain several distinct products and versions.",
+  "objective": "Show catalog membership, source download volume with explicit scope, current downloadable formats and recommended publication formats.",
+  "size_policy": [
+    "Prefer exact producer file manifests or Content-Length / object listings. Public metadata only; do not download dataset bodies.",
+    "Use a producer-published total where available and state its vintage/scope.",
+    "For continuing time series, report a scoped product/period or per-year/per-variable figure and distinguish it from the whole archive.",
+    "Separate measured compressed download bytes, publisher-stated size, calculated uncompressed payload and unknown. Never present a raw-array calculation as compressed download size.",
+    "No single archive-size claim for an unspecified multi-product paper family. Preserve unknowns and bounded scenarios.",
+    "Use decimal MB/GB/TB for computed byte totals; preserve publisher units when conversion is ambiguous."
+  ],
+  "format_policy": [
+    "Record native distribution format, not just GEE data type. Do not assume all GeoTIFF files are COGs.",
+    "Recommend COG for spatial raster maps; Zarr for multidimensional time series; GeoParquet for vectors/tables and optional PMTiles for vector display. Preserve native grids, values, QA and uncertainty.",
+    "If a maintained cloud-native distribution already exists, prefer indexing/referencing it or a justified versioned mirror before conversion."
+  ],
+  "validation": [
+    "Exactly 30 ranks, matching frozen work IDs and catalog membership.",
+    "Every size claim has scope, units, evidence URL and an evidence/status label; calculations include formula and assumptions.",
+    "No citations to derivative search snippets as sole size evidence when producer metadata is accessible.",
+    "Review ambiguous product/version groupings and show source vs desired formats separately.",
+    "Generate CSV and Markdown deterministically from reviewed JSON; check offline output equality; preserve frozen citation inputs."
+  ],
+  "guardrails": {
+    "dataset_body_downloads": 0,
+    "authenticated_gee_calls": 0,
+    "cloud_jobs": 0,
+    "uploads": 0,
+    "paid_apis": 0,
+    "public_metadata_requests_per_worker_max": 100,
+    "metadata_response_bytes_max": 5000000
+  },
+  "delegation": {
+    "parent": "sole committer; synthesis, verification, report generator and final repository state",
+    "worker_a": "ranks 1-10 only, review-a.json",
+    "worker_b": "ranks 11-20 only, review-b.json",
+    "worker_c": "ranks 21-30 only, review-c.json"
+  },
+  "row_schema": {
+    "rank": "1..30",
+    "label": "friendly product/family name",
+    "selected_scope": "exact product/release/time/variables sized; clarify family not total",
+    "native_formats": [
+      "format"
+    ],
+    "download_size": {
+      "display": "human-readable amount or unknown",
+      "status": "measured|publisher_stated|calculated_uncompressed|bounded_estimate|unknown",
+      "bytes": "integer or null",
+      "scope": "what is included",
+      "basis": "evidence and formulas; no unsupported estimate"
+    },
+    "alternative_sizes": [],
+    "desired_formats": [
+      "format"
+    ],
+    "rationale": "why formats fit",
+    "existing_cloud_native": "verified host/format or not checked",
+    "caveats": [
+      "scope/metadata limits"
+    ],
+    "sources": [
+      {
+        "url": "primary URL",
+        "supports": "claim",
+        "accessed": "2026-10-30"
+      }
+    ]
+  }
+}

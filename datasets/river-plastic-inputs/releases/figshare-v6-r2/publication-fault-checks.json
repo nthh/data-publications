@@ -1,0 +1,44 @@
+{
+  "status": "passed",
+  "scope": "Five deliberate in-memory faults in a copy of the real local table; release bytes unchanged.",
+  "checks": [
+    {
+      "fault": "Annual tonnes misinterpreted as kilograms",
+      "status": "detected",
+      "failed_checks": [
+        "global_lower_annual",
+        "global_upper_annual"
+      ]
+    },
+    {
+      "fault": "Monthly midpoint labels shifted by six months",
+      "status": "detected",
+      "failed_checks": [
+        "may_october_midpoint_share",
+        "ordered_uncertainty"
+      ]
+    },
+    {
+      "fault": "Lower uncertainty bound replaced by upper bound",
+      "status": "detected",
+      "failed_checks": [
+        "global_lower_annual",
+        "ordered_uncertainty"
+      ]
+    },
+    {
+      "fault": "Negative runoff introduced",
+      "status": "detected",
+      "failed_checks": [
+        "nonnegative_estimates"
+      ]
+    },
+    {
+      "fault": "Only midpoint nulls changed to zeros",
+      "status": "detected",
+      "failed_checks": [
+        "ordered_uncertainty"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "assets": [
+    {
+      "asset_id": "ffr-reach-network-v1",
+      "sha256": "62130e4999ba449bd2768bcdd9346bc2ba8fa4c4f06d39597e5227cd496a1a63",
+      "size_bytes": 887132886
+    }
+  ],
+  "evidence": {
+    "clean_checkout_evidence": {
+      "checkout": "detached persistent clean worktree",
+      "raw_asset_sha256_identical_to_first": true,
+      "raw_build_inputs_identical_to_first": true,
+      "raw_conversion_commit": "a6c2026768cd21cef5e59c88364dfa3ba04efacc",
+      "raw_manifest_sha256": "15b09065208475e4129dcc3dba3b66d1f1f3483c2e003ae85890e3eda4143fba",
+      "raw_source_validation_path": "datasets/free-flowing-rivers/evidence/raw-r1/clean-rebuild-validation.json",
+      "source_archive_cache_evicted_after_both_full_source_validations": "datasets/free-flowing-rivers/evidence/raw-r1/source-cache-eviction.json",
+      "spatial_code_revision": "c18b96e",
+      "spatialization_repeated_independently": true
+    },
+    "clean_checkout_independently_verified": false,
+    "code_revisions": {
+      "raw": "4f8ec8854a88b30441a9d5ba13bbdeb4108df3dd",
+      "spatial": "c18b96e2f3d631089453459d158c91fc0fa31d87"
+    },
+    "dataset_id": "free-flowing-rivers",
+    "dataset_record": {
+      "path": "datasets/free-flowing-rivers/dataset.yaml",
+      "pinned_source_sha256": "e45aa83a60e91840ddf6cc0820a4c32f44edf7a0318c78b62980fa9e44d6e31a",
+      "sha256": "5724f9cec12738bb6d8d050aff023bb51f57b6a92f00372fbdf321aa348fb965"
+    },
+    "final_assets": [
+      {
+        "asset_id": "ffr-reach-network-v1",
+        "clean_rebuild_sha256_equal": true,
+        "sha256": "62130e4999ba449bd2768bcdd9346bc2ba8fa4c4f06d39597e5227cd496a1a63",
+        "size_bytes": 887132886
+      }
+    ],
+    "normalizer": "research/hydro-releases-20261031/bind_fidelity.py",
+    "raw_assets": [
+      {
+        "asset_id": "ffr-reach-network-v1",
+        "rebuilt_sha256_equal": true,
+        "sha256": "17b7c3da77c9e149b4c8fd9117e4ac82fe583c08b8ca0a39f7d1142790acd431",
+        "size_bytes": 811725336
+      }
+    ],
+    "source_validation_report_sha256": "b08588c6a18a4fc5e6ec71037725dab157898ea4afcfbeb0946373a9416c6939",
+    "spatial_augmentation": {
+      "ffr-reach-network-v1": {
+        "clean_rebuild": {
+          "derived_bbox_values_recomputed_and_compared": true,
+          "geometry_types": {
+            "MultiLineString": 8477883
+          },
+          "global_bbox": [
+            -179.99791666699997,
+            -55.87708333299997,
+            179.99791666700003,
+            83.58958333300006
+          ],
+          "input_sha256": "17b7c3da77c9e149b4c8fd9117e4ac82fe583c08b8ca0a39f7d1142790acd431",
+          "input_size_bytes": 811725336,
+          "output_sha256": "62130e4999ba449bd2768bcdd9346bc2ba8fa4c4f06d39597e5227cd496a1a63",
+          "output_size_bytes": 887132886,
+          "path": "augmentation-report.json",
+          "sha256": "7e4ba87299e30afcbf7d2e832b91db5a08a6ae7299f06c47f38e5546ff02be3c",
+          "source_rows": 8477883,
+          "source_values_nulls_and_raw_wkb_compared": true,
+          "status": "passed"
+        },
+        "original": {
+          "derived_bbox_values_recomputed_and_compared": true,
+          "geometry_types": {
+            "MultiLineString": 8477883
+          },
+          "global_bbox": [
+            -179.99791666699997,
+            -55.87708333299997,
+            179.99791666700003,
+            83.58958333300006
+          ],
+          "input_sha256": "17b7c3da77c9e149b4c8fd9117e4ac82fe583c08b8ca0a39f7d1142790acd431",
+          "input_size_bytes": 811725336,
+          "output_sha256": "62130e4999ba449bd2768bcdd9346bc2ba8fa4c4f06d39597e5227cd496a1a63",
+          "output_size_bytes": 887132886,
+          "path": "augmentation-report-02.json",
+          "sha256": "12867c87856dc031f224f8223e2632a98a985f779976b80baa3a80733ecbff36",
+          "source_rows": 8477883,
+          "source_values_nulls_and_raw_wkb_compared": true,
+          "status": "passed"
+        }
+      }
+    }
+  },
+  "status": "passed"
+}

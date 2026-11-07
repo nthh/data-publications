@@ -1,0 +1,89 @@
+{
+  "builder": {
+    "sha256": "812954f5bec04c4a697d39c364f0d6bbbf14ce8c22b01060cc18ddafa1cca2c0",
+    "size_bytes": 13948
+  },
+  "command": [
+    "tippecanoe",
+    "--quiet",
+    "--output",
+    "assets/grwl-raw.pmtiles",
+    "--layer",
+    "grwl_raw",
+    "--name",
+    "GRWL raw width observations",
+    "--description",
+    "Detailed raw observations at zoom 8 and above. GeoParquet retains the exact source records.",
+    "--attribution",
+    "Allen and Pavelsky (2018), GRWL raw vectors V01.01; CC BY 4.0",
+    "--minimum-zoom",
+    "8",
+    "--maximum-zoom",
+    "12",
+    "--base-zoom",
+    "12",
+    "--full-detail",
+    "12",
+    "--low-detail",
+    "12",
+    "--minimum-detail",
+    "12",
+    "--simplification",
+    "1",
+    "--no-feature-limit",
+    "--no-tile-size-limit",
+    "--temporary-directory",
+    ".scratch",
+    "/dev/stdin"
+  ],
+  "criteria": {
+    "sha256": "03ea3bc45b8bc2ce7fd1e66835244408da32a5ac59c00bb908c375720f1ae481",
+    "size_bytes": 5439
+  },
+  "dateline_helper": {
+    "sha256": "1bc82c0f480ae7b60334ba913c5da7e9de2b3e55358438526daec90b3990576b",
+    "size_bytes": 18259
+  },
+  "environment_lock": {
+    "sha256": "edc334d3dddf7c50b08f5b8db0ad4e1cafaa8964de487940a7e8e4924a9bc385",
+    "size_bytes": 70097
+  },
+  "policy": {
+    "sha256": "084684c6b47701645b08b8ed42ba0818061c0b2d36959aebce8026b6401060f7",
+    "size_bytes": 948
+  },
+  "python": "3.12.12",
+  "python_packages": {
+    "mapbox-vector-tile": "2.2.0",
+    "numpy": "2.5.4",
+    "pmtiles": "3.8.1",
+    "pyarrow": "23.0.1",
+    "pyproj": "3.8.0",
+    "shapely": "2.1.2"
+  },
+  "resource_start": {
+    "free_bytes": 145025724416,
+    "task_bytes": 14945111104
+  },
+  "schema_version": 1,
+  "scope": "all records in the supplied manifest; regional pilot does not imply global completion",
+  "source": {
+    "sha256": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+    "size_bytes": 5529859809
+  },
+  "source_fidelity": {
+    "sha256": "eb225411b335fcd5c968bb70337738fcb8bcc2ed31d8f48c4e02e7948da2fd0a",
+    "size_bytes": 5455118
+  },
+  "source_manifest": {
+    "sha256": "160dfaf91ede202da57172ff16492601ca349d43e0b629819a7e4eb82222acda",
+    "size_bytes": 1771863
+  },
+  "threads": 2,
+  "tippecanoe": {
+    "sha256": "c504719334e5335d60c66a01491707bdbfb773ebbfe3efc7c1c8239eb18d58d1",
+    "size_bytes": 1143256
+  },
+  "tippecanoe_version": "2.79.0",
+  "working_directory": "<OUTPUT>"
+}

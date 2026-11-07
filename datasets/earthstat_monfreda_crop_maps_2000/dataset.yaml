@@ -1,0 +1,56 @@
+schema_version: 1
+id: earthstat_monfreda_crop_maps_2000
+title: EarthStat harvested area and yield maps for 175 crops circa 2000
+intake:
+  kind: producer
+  reference_url: https://www.earthstat.org/
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'literature: Crop-specific gridded agricultural area and yield distributed over global
+    croplands; thematic agricultural cells, not wall-to-wall land cover. Monfreda, Ramankutty and Foley
+    2008 crop-area, crop-yield, physiological-type and NPP maps; circa 2000 at 5 arc-minute resolution.
+    The paper describes the circa-2000 maps; later EarthStat crop products are separate releases.'
+  sources:
+  - provider: producer
+    entry_id: EarthStat harvested area and yield maps for 175 crops circa 2000
+    url: https://www.earthstat.org/
+    relationship: same_family
+  access:
+  - provider: literature
+    status: download_available
+    formats:
+    - raster
+    summary: EarthStat provides direct global crop-area/yield raster downloads. Monfreda, Ramankutty and
+      Foley 2008 crop-area, crop-yield, physiological-type and NPP maps; circa 2000 at 5 arc-minute resolution.
+      The paper describes the circa-2000 maps; later EarthStat crop products are separate releases.
+    license_summary: Exact release terms need product-specific review; no redistribution permission is
+      inferred from literature or access pages.
+    proposed_outputs:
+    - COG
+    rationale: Supplementary literature discovery only. A high associated-paper count is evidence of a
+      documented product family, not exact-edition usage, conversion priority, or native-format readiness.
+      Review producer bytes, terms and existing record component coverage before promotion.
+    evidence_urls:
+    - https://doi.org/10.1029/2007GB002947
+    - https://www.earthstat.org/
+  citations:
+  - provider: OpenAlex
+    paper_doi: 10.1029/2007GB002947
+    work_id: https://openalex.org/W1885078460
+    cited_by_count: 1895
+    observed_on: '2026-11-01'
+    scope: associated_dataset_publication
+  evidence:
+  - path: research/global-candidates-20261031/literature/reviewed.json
+    sha256: eef4edb7f4a59e399d3670b9f2aace33bd24083f46d260a7859163c673fabbb6
+    key: earthstat_monfreda_crop_maps_2000

@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "status": "failed_before_network",
+  "mode": "preflight",
+  "pages_plan_sha256": "b62f130f4c8db4556aedb3d5d76645561dccfefdbc90828b950ce5167f2179c6",
+  "source_plan_sha256": "754c02dde3cf258263619599f893558d3348c7fb51c07f8fa700efa1900ac610",
+  "harness_commit": "26b3938f4e92346d6a3fa830b0ba0bb1c9a62142",
+  "harness_sha256": "94aa2d4bf2e0f2ce11de45687f973d1dcf96c5bd26f67f7c9ff5f3d173a134b8",
+  "selected_datasets": [
+    "river-plastic-inputs",
+    "hydrolakes",
+    "lakeatlas"
+  ],
+  "failure": "Source object is outside its dataset product prefix: https://data.source.coop/nthh/lakeatlas/metadata/field-semantics-v1/README.md",
+  "diagnosis": "The harness assumed every source descriptor has dataset_id. Repository-kind metadata supplements use a datasets/<id>/... path and object-key ownership instead. The fixed immutable upload plan already includes these authorized files.",
+  "scope": "Input-inventory refusal before launching the official Browser or requesting any Source objects; no dataset hosting failure established."
+}

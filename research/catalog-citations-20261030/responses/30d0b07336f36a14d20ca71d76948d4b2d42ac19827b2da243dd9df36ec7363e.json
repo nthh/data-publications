@@ -1,0 +1,1048 @@
+{
+  "request_url": "https://api.openalex.org/works?filter=doi%3A10.5281%2Fzenodo.5220816%7C10.5281%2Fzenodo.5571936%7C10.5281%2Fzenodo.5652257%7C10.5281%2Fzenodo.5652263%7C10.5281%2Fzenodo.5652265%7C10.5281%2Fzenodo.5655797%7C10.5281%2Fzenodo.5655807%7C10.5281%2Fzenodo.5774954%7C10.5281%2Fzenodo.5793918%7C10.5281%2Fzenodo.5914709%7C10.5281%2Fzenodo.6364593%7C10.5281%2Fzenodo.6555216%7C10.5281%2Fzenodo.6637599%7C10.5281%2Fzenodo.6644980%7C10.5281%2Fzenodo.6784716%7C10.5281%2Fzenodo.6894684%7C10.5281%2Fzenodo.6895820%7C10.5281%2Fzenodo.7139222%7C10.5281%2Fzenodo.7254221%7C10.5281%2Fzenodo.7352284%7C10.5281%2Fzenodo.7616852%7C10.5281%2Fzenodo.7680163%7C10.5281%2Fzenodo.7764460%7C10.5281%2Fzenodo.7803903%7C10.5281%2Fzenodo.7839588%7C10.5281%2Fzenodo.7894216%7C10.5281%2Fzenodo.7932317%7C10.5281%2Fzenodo.8004633%7C10.5281%2Fzenodo.8076540%7C10.5281%2Fzenodo.8239305%7C10.5281%2Fzenodo.8253971%7C10.5281%2Fzenodo.8310513%7C10.5285%2F58f00d8814064b79a0c49662ad3af537%7C10.5285%2F95913ffb6467447ca72c4e9d8cf30501%7C10.5285%2Fb1bd715112ca43ab948226d11d72b85e%7C10.5285%2Ff98b053b-0cbc-6c23-e053-6c86abc0af7b%7C10.57746%2Feo.01gs73bkt358gfpy92y2qns5e9%7C10.57760%2Fsciencedb.06669%7C10.5880%2Fgfz.lkut.2025.002%7C10.5880%2Fpik.2020.010&corpus=all&per_page=100&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date%2Ccited_by_count%2Ccounts_by_year",
+  "retrieved_at": "2026-10-30T22:27:44.463810+00:00",
+  "response_path": "responses/30d0b07336f36a14d20ca71d76948d4b2d42ac19827b2da243dd9df36ec7363e.json",
+  "status": 200,
+  "response_sha256": "aea72df1adac1e891d75b13d422fdc73ee1e761dfaa11ac596cc82d0939e7e54",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 40,
+      "db_response_time_ms": 22,
+      "page": 1,
+      "per_page": 100,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where DOI is (\n    10.5281/zenodo.5220816 or 10.5281/zenodo.5571936 or 10.5281/zenodo.5652257\n    or 10.5281/zenodo.5652263 or 10.5281/zenodo.5652265\n    or 10.5281/zenodo.5655797 or 10.5281/zenodo.5655807\n    or 10.5281/zenodo.5774954 or 10.5281/zenodo.5793918\n    or 10.5281/zenodo.5914709 or 10.5281/zenodo.6364593\n    or 10.5281/zenodo.6555216 or 10.5281/zenodo.6637599\n    or 10.5281/zenodo.6644980 or 10.5281/zenodo.6784716\n    or 10.5281/zenodo.6894684 or 10.5281/zenodo.6895820\n    or 10.5281/zenodo.7139222 or 10.5281/zenodo.7254221\n    or 10.5281/zenodo.7352284 or 10.5281/zenodo.7616852\n    or 10.5281/zenodo.7680163 or 10.5281/zenodo.7764460\n    or 10.5281/zenodo.7803903 or 10.5281/zenodo.7839588\n    or 10.5281/zenodo.7894216 or 10.5281/zenodo.7932317\n    or 10.5281/zenodo.8004633 or 10.5281/zenodo.8076540\n    or 10.5281/zenodo.8239305 or 10.5281/zenodo.8253971\n    or 10.5281/zenodo.8310513 or 10.5285/58f00d8814064b79a0c49662ad3af537\n    or 10.5285/95913ffb6467447ca72c4e9d8cf30501\n    or 10.5285/b1bd715112ca43ab948226d11d72b85e\n    or 10.5285/f98b053b-0cbc-6c23-e053-6c86abc0af7b\n    or 10.57746/eo.01gs73bkt358gfpy92y2qns5e9 or 10.57760/sciencedb.06669\n    or 10.5880/gfz.lkut.2025.002 or 10.5880/pik.2020.010\n  )",
+        "x_new_oql": "get works (all corpora) where DOI is (\n    10.5281/zenodo.5220816 or 10.5281/zenodo.5571936 or 10.5281/zenodo.5652257\n    or 10.5281/zenodo.5652263 or 10.5281/zenodo.5652265\n    or 10.5281/zenodo.5655797 or 10.5281/zenodo.5655807\n    or 10.5281/zenodo.5774954 or 10.5281/zenodo.5793918\n    or 10.5281/zenodo.5914709 or 10.5281/zenodo.6364593\n    or 10.5281/zenodo.6555216 or 10.5281/zenodo.6637599\n    or 10.5281/zenodo.6644980 or 10.5281/zenodo.6784716\n    or 10.5281/zenodo.6894684 or 10.5281/zenodo.6895820\n    or 10.5281/zenodo.7139222 or 10.5281/zenodo.7254221\n    or 10.5281/zenodo.7352284 or 10.5281/zenodo.7616852\n    or 10.5281/zenodo.7680163 or 10.5281/zenodo.7764460\n    or 10.5281/zenodo.7803903 or 10.5281/zenodo.7839588\n    or 10.5281/zenodo.7894216 or 10.5281/zenodo.7932317\n    or 10.5281/zenodo.8004633 or 10.5281/zenodo.8076540\n    or 10.5281/zenodo.8239305 or 10.5281/zenodo.8253971\n    or 10.5281/zenodo.8310513 or 10.5285/58f00d8814064b79a0c49662ad3af537\n    or 10.5285/95913ffb6467447ca72c4e9d8cf30501\n    or 10.5285/b1bd715112ca43ab948226d11d72b85e\n    or 10.5285/f98b053b-0cbc-6c23-e053-6c86abc0af7b\n    or 10.57746/eo.01gs73bkt358gfpy92y2qns5e9 or 10.57760/sciencedb.06669\n    or 10.5880/gfz.lkut.2025.002 or 10.5880/pik.2020.010\n  )",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "join": "or",
+              "filters": [
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.5220816"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.5571936"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.5652257"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.5652263"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.5652265"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.5655797"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.5655807"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.5774954"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.5793918"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.5914709"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.6364593"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.6555216"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.6637599"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.6644980"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.6784716"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.6894684"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.6895820"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.7139222"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.7254221"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.7352284"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.7616852"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.7680163"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.7764460"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.7803903"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.7839588"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.7894216"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.7932317"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.8004633"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.8076540"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.8239305"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.8253971"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5281/zenodo.8310513"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5285/58f00d8814064b79a0c49662ad3af537"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5285/95913ffb6467447ca72c4e9d8cf30501"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5285/b1bd715112ca43ab948226d11d72b85e"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5285/f98b053b-0cbc-6c23-e053-6c86abc0af7b"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.57746/eo.01gs73bkt358gfpy92y2qns5e9"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.57760/sciencedb.06669"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5880/gfz.lkut.2025.002"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5880/pik.2020.010"
+                }
+              ]
+            }
+          ]
+        },
+        "url": "/works?filter=doi:10.5281%2Fzenodo.5220816|10.5281%2Fzenodo.5571936|10.5281%2Fzenodo.5652257|10.5281%2Fzenodo.5652263|10.5281%2Fzenodo.5652265|10.5281%2Fzenodo.5655797|10.5281%2Fzenodo.5655807|10.5281%2Fzenodo.5774954|10.5281%2Fzenodo.5793918|10.5281%2Fzenodo.5914709|10.5281%2Fzenodo.6364593|10.5281%2Fzenodo.6555216|10.5281%2Fzenodo.6637599|10.5281%2Fzenodo.6644980|10.5281%2Fzenodo.6784716|10.5281%2Fzenodo.6894684|10.5281%2Fzenodo.6895820|10.5281%2Fzenodo.7139222|10.5281%2Fzenodo.7254221|10.5281%2Fzenodo.7352284|10.5281%2Fzenodo.7616852|10.5281%2Fzenodo.7680163|10.5281%2Fzenodo.7764460|10.5281%2Fzenodo.7803903|10.5281%2Fzenodo.7839588|10.5281%2Fzenodo.7894216|10.5281%2Fzenodo.7932317|10.5281%2Fzenodo.8004633|10.5281%2Fzenodo.8076540|10.5281%2Fzenodo.8239305|10.5281%2Fzenodo.8253971|10.5281%2Fzenodo.8310513|10.5285%2F58f00d8814064b79a0c49662ad3af537|10.5285%2F95913ffb6467447ca72c4e9d8cf30501|10.5285%2Fb1bd715112ca43ab948226d11d72b85e|10.5285%2Ff98b053b-0cbc-6c23-e053-6c86abc0af7b|10.57746%2Feo.01gs73bkt358gfpy92y2qns5e9|10.57760%2Fsciencedb.06669|10.5880%2Fgfz.lkut.2025.002|10.5880%2Fpik.2020.010&corpus=all&per_page=100",
+        "order": "most cited (age-adjusted) first",
+        "order_default": true
+      },
+      "cost_usd": 0.0001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W4393704289",
+        "doi": "https://doi.org/10.5281/zenodo.6364593",
+        "title": "Global map of Local Climate Zones",
+        "type": "article",
+        "publication_year": 2022,
+        "publication_date": "2022-03-17",
+        "cited_by_count": 31,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 8
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6968668845",
+        "doi": "https://doi.org/10.5281/zenodo.6806816",
+        "title": "Global mining footprint mapped from high-resolution satellite imagery",
+        "type": "article",
+        "publication_year": 2023,
+        "publication_date": "2023-04-26",
+        "cited_by_count": 1,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4393493644",
+        "doi": "https://doi.org/10.5281/zenodo.5571935",
+        "title": "ESA WorldCover 10 m 2020 v100",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-10-20",
+        "cited_by_count": 520,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 42
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 95
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 134
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 108
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 138
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4393636991",
+        "doi": "https://doi.org/10.5281/zenodo.7254220",
+        "title": "ESA WorldCover 10 m 2021 v200",
+        "type": "dataset",
+        "publication_year": 2022,
+        "publication_date": "2022-10-28",
+        "cited_by_count": 337,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 102
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 105
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 82
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 47
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6912992814",
+        "doi": "https://doi.org/10.5285/f98b053b-0cbc-6c23-e053-6c86abc0af7b",
+        "title": "The GEBCO_2023 Grid - a continuous terrain model of the global oceans and land.",
+        "type": "dataset",
+        "publication_year": 2023,
+        "publication_date": "2023-04-20",
+        "cited_by_count": 139,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 29
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 52
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 50
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 8
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4393809015",
+        "doi": "https://doi.org/10.5281/zenodo.5914709",
+        "title": "IPCC AR6 Sea Level Projections",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-08-09",
+        "cited_by_count": 96,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 26
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 25
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 28
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 16
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4393485123",
+        "doi": "https://doi.org/10.5281/zenodo.8239304",
+        "title": "GLC_FCS30D: the first global 30-m land-cover dynamic monitoring product with fine classification system from 1985 to 2022",
+        "type": "dataset",
+        "publication_year": 2023,
+        "publication_date": "2023-08-11",
+        "cited_by_count": 30,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 16
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6950724828",
+        "doi": "https://doi.org/10.5285/58f00d8814064b79a0c49662ad3af537",
+        "title": "ESA Fire Climate Change Initiative (Fire_cci): MODIS Fire_cci Burned Area Pixel product, version 5.1",
+        "type": "dataset",
+        "publication_year": 2018,
+        "publication_date": "2018-01-01",
+        "cited_by_count": 29,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4393469685",
+        "doi": "https://doi.org/10.5281/zenodo.7441558",
+        "title": "Spatiotemporally consistent global dataset of the GIMMS Normalized Difference Vegetation Index (PKU GIMMS NDVI) from 1982 to 2020",
+        "type": "dataset",
+        "publication_year": 2022,
+        "publication_date": "2022-12-15",
+        "cited_by_count": 18,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 6
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6912870172",
+        "doi": "https://doi.org/10.5285/95913ffb6467447ca72c4e9d8cf30501",
+        "title": "ESA Biomass Climate Change Initiative (Biomass_cci): Global datasets of forest above-ground biomass for the years 2007, 2010, 2015, 2016, 2017, 2018, 2019, 2020, 2021 and 2022, v6.0",
+        "type": "dataset",
+        "publication_year": 2025,
+        "publication_date": "2025-01-01",
+        "cited_by_count": 12,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4393744644",
+        "doi": "https://doi.org/10.5281/zenodo.5220815",
+        "title": "GISD30: global 30-m impervious surface dynamic dataset from 1985 to 2020 using time-series Landsat imagery on the Google Earth Engine platform",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-08-19",
+        "cited_by_count": 10,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 6
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4393661863",
+        "doi": "https://doi.org/10.5281/zenodo.5652262",
+        "title": "Daily 1-km gap-free PM10 grids in China, v1 (2000–2020)",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-11-08",
+        "cited_by_count": 7,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4393668099",
+        "doi": "https://doi.org/10.5281/zenodo.8076539",
+        "title": "Sensor-Independent LAI/FPAR CDR",
+        "type": "dataset",
+        "publication_year": 2023,
+        "publication_date": "2023-06-24",
+        "cited_by_count": 7,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4393610436",
+        "doi": "https://doi.org/10.5281/zenodo.5774953",
+        "title": "Global MODIS-based snow cover monthly long-term (2000-2012) at 500 m, and aggregated monthly values (2000-2020) at 1 km",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-12-12",
+        "cited_by_count": 6,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 5
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4393625989",
+        "doi": "https://doi.org/10.5281/zenodo.5794335",
+        "title": "A map of global peatland extent created using machine learning (Peat-ML)",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-12-20",
+        "cited_by_count": 6,
+        "counts_by_year": [
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 5
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4394036734",
+        "doi": "https://doi.org/10.5281/zenodo.5652264",
+        "title": "Daily 1-km gap-free PM2.5 grids in China, v1 (2000–2020)",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-11-08",
+        "cited_by_count": 6,
+        "counts_by_year": [
+          {
+            "year": 2023,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4393418227",
+        "doi": "https://doi.org/10.5281/zenodo.8310512",
+        "title": "GloUTCI-M: A Global Monthly 1 km Universal Thermal Climate Index Dataset from 2000 to 2022",
+        "type": "dataset",
+        "publication_year": 2023,
+        "publication_date": "2023-09-17",
+        "cited_by_count": 4,
+        "counts_by_year": [
+          {
+            "year": 2024,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4393658900",
+        "doi": "https://doi.org/10.5281/zenodo.7764459",
+        "title": "Africa tree cover map",
+        "type": "dataset",
+        "publication_year": 2023,
+        "publication_date": "2023-03-23",
+        "cited_by_count": 4,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4393734140",
+        "doi": "https://doi.org/10.5281/zenodo.5652256",
+        "title": "Daily 1-km gap-free AOD grids in China, v1 (2000–2020)",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-11-08",
+        "cited_by_count": 4,
+        "counts_by_year": [
+          {
+            "year": 2022,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4393875770",
+        "doi": "https://doi.org/10.5281/zenodo.8004632",
+        "title": "Reconstructed streamflow for Indian sub-continental river basins, 1951-2021",
+        "type": "dataset",
+        "publication_year": 2023,
+        "publication_date": "2023-06-05",
+        "cited_by_count": 4,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6936170222",
+        "doi": "https://doi.org/10.57746/eo.01gs73bkt358gfpy92y2qns5e9",
+        "title": "GSMaP(Hourly)",
+        "type": "dataset",
+        "publication_year": 1998,
+        "publication_date": "1998-01-01",
+        "cited_by_count": 4,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4393424322",
+        "doi": "https://doi.org/10.5281/zenodo.7139221",
+        "title": "Global hydrology and water quality data from 1980-2019, derived from the dynamical surface water quality model (DynQual) at 5 arcmin spatial resolution",
+        "type": "dataset",
+        "publication_year": 2022,
+        "publication_date": "2022-10-03",
+        "cited_by_count": 3,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6975059799",
+        "doi": "https://doi.org/10.5880/pik.2020.010",
+        "title": "Rain for Peru and Ecuador (RAIN4PE)",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-12-22",
+        "cited_by_count": 3,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4393532091",
+        "doi": "https://doi.org/10.5281/zenodo.4017060",
+        "title": "A Consistent and Corrected Nighttime Light dataset (CCNL 1992-2013) from DMSP-OLS data",
+        "type": "dataset",
+        "publication_year": 2020,
+        "publication_date": "2020-09-27",
+        "cited_by_count": 2,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4393542204",
+        "doi": "https://doi.org/10.5281/zenodo.6624934",
+        "title": "Global Channel Belt (GCB)",
+        "type": "dataset",
+        "publication_year": 2022,
+        "publication_date": "2022-06-08",
+        "cited_by_count": 2,
+        "counts_by_year": [
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4393824355",
+        "doi": "https://doi.org/10.5281/zenodo.5655796",
+        "title": "Monthly averaged 1-km gap-free AOD, PM2.5, and PM10 grids in China, v1 (2000–2020)",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-11-08",
+        "cited_by_count": 2,
+        "counts_by_year": [
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4393845455",
+        "doi": "https://doi.org/10.5281/zenodo.7616851",
+        "title": "Global Dam Tracker: A database of more than 35,000 dams with location, catchment, and attribute information",
+        "type": "dataset",
+        "publication_year": 2023,
+        "publication_date": "2023-02-07",
+        "cited_by_count": 2,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4394051810",
+        "doi": "https://doi.org/10.5281/zenodo.6637598",
+        "title": "Tallo database",
+        "type": "dataset",
+        "publication_year": 2022,
+        "publication_date": "2022-06-13",
+        "cited_by_count": 2,
+        "counts_by_year": [
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6898802296",
+        "doi": "https://doi.org/10.57760/sciencedb.06669",
+        "title": "CloudSEN12 - a global dataset for semantic understanding of cloud and cloud shadow in Sentinel-2",
+        "type": "dataset",
+        "publication_year": 2022,
+        "publication_date": "2022-11-23",
+        "cited_by_count": 2,
+        "counts_by_year": [
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6968883218",
+        "doi": "https://doi.org/10.5281/zenodo.7398410",
+        "title": "UU-Hydro/DYNQUAL: DynQual v1.0",
+        "type": "software",
+        "publication_year": 2022,
+        "publication_date": "2022-12-05",
+        "cited_by_count": 2,
+        "counts_by_year": [
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6969342816",
+        "doi": "https://doi.org/10.5285/b1bd715112ca43ab948226d11d72b85e",
+        "title": "ESA Fire Climate Change Initiative (Fire_cci): AVHRR-LTDR Burned Area Pixel product, version 1.1",
+        "type": "dataset",
+        "publication_year": 2020,
+        "publication_date": "2020-01-01",
+        "cited_by_count": 2,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W7081124571",
+        "doi": "https://doi.org/10.5880/gfz.lkut.2025.002",
+        "title": "OpenBuildingMap",
+        "type": "dataset",
+        "publication_year": 2025,
+        "publication_date": "2025-09-10",
+        "cited_by_count": 2,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4393826400",
+        "doi": "https://doi.org/10.5281/zenodo.5519844",
+        "title": "Global River Obstruction Database v1.0",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-09-23",
+        "cited_by_count": 1,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4393832073",
+        "doi": "https://doi.org/10.5281/zenodo.5655806",
+        "title": "Annual mean 1-km gap-free AOD, PM2.5, and PM10 grids in China, v1 (2000–2020)",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-11-09",
+        "cited_by_count": 1,
+        "counts_by_year": [
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4394038471",
+        "doi": "https://doi.org/10.5281/zenodo.6895819",
+        "title": "Surface Area of River and Lakes (SARL)",
+        "type": "dataset",
+        "publication_year": 2023,
+        "publication_date": "2023-07-01",
+        "cited_by_count": 1,
+        "counts_by_year": [
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6931777307",
+        "doi": "https://doi.org/10.5281/zenodo.6784716",
+        "title": "Replication package for \"Global Dam Tracker: A database of more than 35,000 dams with location, catchment, and attribute information\"",
+        "type": "software",
+        "publication_year": 2022,
+        "publication_date": "2022-06-30",
+        "cited_by_count": 1,
+        "counts_by_year": [
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4393664002",
+        "doi": "https://doi.org/10.5281/zenodo.7803902",
+        "title": "Temporal trends of surface water area in India's rivers and basins",
+        "type": "dataset",
+        "publication_year": 2023,
+        "publication_date": "2023-04-19",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W4393873320",
+        "doi": "https://doi.org/10.5281/zenodo.6894683",
+        "title": "Legacy of MPW in Rivers",
+        "type": "dataset",
+        "publication_year": 2022,
+        "publication_date": "2022-07-24",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W4394028186",
+        "doi": "https://doi.org/10.5281/zenodo.6555215",
+        "title": "Global Plantation Forest Carbon database",
+        "type": "dataset",
+        "publication_year": 2022,
+        "publication_date": "2022-05-16",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W6969097276",
+        "doi": "https://doi.org/10.5281/zenodo.7839587",
+        "title": "pskoulgi/surface-water-trends: Code behind the data for: Temporal trends of surface water area in India's rivers and basins",
+        "type": "software",
+        "publication_year": 2023,
+        "publication_date": "2023-04-18",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "0725e6d43862bc91afd4b05e8b1de361b6aae3ea2cc5e444147a521d7e253aec"
+}

@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "scope": "Fresh-process full validator only; failed stage is not promoted",
+  "validation": {
+    "source_rows": 1427688,
+    "source_fields_compared": 310,
+    "source_attribute_values_nulls_compared": 441155592,
+    "source_values_nulls_and_raw_wkb_compared": true,
+    "source_order_reconstructed_and_compared": true,
+    "derived_bbox_values_recomputed_and_compared": true,
+    "wkb_rows_compared": 1427688,
+    "wkb_validation_batch_rows": 32,
+    "wkb_hash_input": "Arrow scalar byte buffer; no whole-batch Python byte copies",
+    "wkb_comparison_method": "Complete per-native-ID SHA-256, byte length and null-state equality; every WKB byte hashed independently in both files",
+    "attribute_comparison_method": "Exact Arrow equality for each original column after restoring native identifier order",
+    "global_bbox": [
+      -179.9999999999999,
+      -55.86513888888899,
+      179.99999999999903,
+      83.57595062255876
+    ],
+    "geometry_types": {
+      "MultiPolygon": 1427688
+    },
+    "rashid_order_metrics": {
+      "validator": "Rashid 0.1.8 PTL-DAT-006 predicate",
+      "chunks": 10,
+      "rows_per_chunk_ceiling": 142769,
+      "adjacent_pairs": 9,
+      "overlapping_pairs": 9,
+      "overlap_fraction": 1.0,
+      "overlap_limit_exclusive": 0.3,
+      "mean_chunk_area_over_global_extent_area": 0.1310052704485944,
+      "area_ratio_limit_exclusive": 0.3,
+      "passed": true
+    }
+  },
+  "peak_rss_bytes": 820592640
+}

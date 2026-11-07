@@ -1,0 +1,136 @@
+#!/usr/bin/env python3
+"""Capture bounded, read-only GEE table responses; credentials never enter artifacts."""
+from __future__ import annotations
+
+import argparse
+from datetime import datetime, timezone
+import hashlib
+import importlib.metadata
+import json
+from pathlib import Path
+import platform
+import subprocess
+
+import google.auth
+from google.auth.transport.requests import AuthorizedSession
+
+HERE = Path(__file__).resolve().parent
+PRODUCT = HERE.parent
+ROOT = PRODUCT.parents[1]
+CONTRACT = PRODUCT / 'gee-parity-contract.json'
+
+
+def stamp():
+    return datetime.now(timezone.utc).isoformat()
+
+
+def digest(path):
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--output', required=True, type=Path)
+    parser.add_argument('--contract', type=Path, default=CONTRACT,
+                        help='Request contract (defaults to the historical pinned contract).')
+    parser.add_argument('--project', required=True,
+                        help='Google Cloud quota project for this read-only request.')
+    args = parser.parse_args()
+    contract_path = args.contract.resolve()
+    contract = json.loads(contract_path.read_text())
+    limits = contract['request_limits']
+    if contract.get('quota_project') != args.project:
+        raise SystemExit('The requested project must match quota_project in the selected contract.')
+    if args.output.exists():
+        raise SystemExit('Choose a new capture directory; previous captures are immutable.')
+    owned = [str(HERE), str(contract_path)]
+    if subprocess.check_output(['git', 'status', '--porcelain', '--', *owned], cwd=ROOT, text=True).strip():
+        raise SystemExit('Commit the capture code, environment and contract before live retrieval.')
+    args.output.mkdir(parents=True)
+    receipt = {
+        'status': 'incomplete', 'started_at': stamp(),
+        'contract_sha256': digest(contract_path), 'capture_script_sha256': digest(Path(__file__)),
+        'environment_lock_sha256': digest(HERE / 'uv.lock'),
+        'git_commit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
+        'asset_id': contract['asset_id'], 'rest_asset_name': contract['rest_asset_name'],
+        'quota_project': args.project, 'requests': [], 'total_rows': 0,
+        'total_response_bytes': 0, 'feature_pages': 0,
+        'environment': {'python': platform.python_version(), **{
+            name: importlib.metadata.version(name) for name in ('google-auth', 'requests', 'pyarrow')}},
+        'scope': 'GET existing metadata and table features only; no export or computation task submitted.',
+    }
+    try:
+        credentials, _ = google.auth.default(
+            scopes=['https://www.googleapis.com/auth/cloud-platform.read-only'],
+            quota_project_id=args.project)
+        session = AuthorizedSession(credentials, max_refresh_attempts=0)
+        url = contract['api'] + contract['rest_asset_name']
+
+        def capture(name, endpoint, params=None):
+            started = stamp()
+            with session.get(endpoint, params=params, timeout=limits['timeout_seconds'], stream=True) as response:
+                payload = bytearray()
+                for chunk in response.iter_content(1 << 20):
+                    payload.extend(chunk)
+                    if receipt['total_response_bytes'] + len(payload) > limits['maximum_total_response_bytes']:
+                        raise ValueError('Response byte limit exceeded')
+                raw = bytes(payload)
+                (args.output / name).write_bytes(raw)
+                receipt['total_response_bytes'] += len(raw)
+                receipt['requests'].append({
+                    'method': 'GET', 'url': endpoint, 'params': params or {},
+                    'started_at': started, 'finished_at': stamp(), 'http_status': response.status_code,
+                    'response_path': name, 'response_bytes': len(raw),
+                    'response_sha256': hashlib.sha256(raw).hexdigest(),
+                    'response_headers': {key: response.headers[key] for key in ('Date', 'ETag', 'Content-Type') if key in response.headers},
+                })
+                if not response.ok:
+                    raise ValueError(f'GEE returned HTTP {response.status_code}')
+                return json.loads(raw)
+
+        before = capture('metadata-before.json', url)
+        if before.get('type') != 'TABLE' or before.get('name') != contract['rest_asset_name']:
+            raise ValueError('Unexpected asset identity or type')
+        token = None
+        seen_tokens = set()
+        for page in range(1, limits['maximum_feature_pages'] + 1):
+            params = {'pageSize': limits['page_size']}
+            if token:
+                params['pageToken'] = token
+            body = capture(f'features-{page:03d}.json', url + ':listFeatures', params)
+            if body.get('type') != 'FeatureCollection' or not isinstance(body.get('features'), list):
+                raise ValueError('Invalid feature response')
+            receipt['feature_pages'] = page
+            receipt['total_rows'] += len(body['features'])
+            if receipt['total_rows'] > limits['maximum_rows']:
+                raise ValueError('Row limit exceeded')
+            token = body.get('nextPageToken')
+            if page % 5 == 0 or not token:
+                print(json.dumps({'pages': page, 'rows': receipt['total_rows'], 'bytes': receipt['total_response_bytes']}), flush=True)
+            if not token:
+                break
+            if token in seen_tokens:
+                raise ValueError('Repeated pagination token')
+            seen_tokens.add(token)
+        else:
+            raise ValueError('Page limit reached without termination')
+        after = capture('metadata-after.json', url)
+        receipt['metadata_stable'] = before == after
+        if before != after:
+            raise ValueError('Asset metadata changed during capture')
+        receipt['status'] = 'complete'
+    except Exception as error:
+        receipt['error_type'] = type(error).__name__
+        # Only our own validation messages are safe to put in evidence.
+        if type(error) is ValueError:
+            receipt['error'] = str(error)
+        print(json.dumps({'status': 'incomplete', 'error_type': type(error).__name__}), flush=True)
+    finally:
+        receipt['finished_at'] = stamp()
+        (args.output / 'capture.json').write_text(json.dumps(receipt, indent=2) + '\n')
+    print(json.dumps({key: receipt[key] for key in ('status', 'feature_pages', 'total_rows', 'total_response_bytes')}))
+    return 0 if receipt['status'] == 'complete' else 1
+
+
+if __name__ == '__main__':
+    raise SystemExit(main())

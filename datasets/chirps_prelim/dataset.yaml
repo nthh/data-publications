@@ -1,0 +1,71 @@
+schema_version: 1
+id: chirps_prelim
+title: Climate Hazards Group InfraRed Precipitation with Station Data-Prelim (CHIRPS-Prelim)
+community_url: https://gee-community-catalog.org/projects/chirps_prelim
+audit:
+  snapshot: gee-community-audit-20261029
+  family_key: chirps_prelim
+  unique_gee_asset_count: 1
+  initial_queue: research_original_source
+  folia_registry_status: not_identified
+  folia_registry_ids: []
+  source_coop_urls: []
+  source_coop_scope: null
+  external_native_urls: []
+  external_native_scope: null
+triage:
+  decision: pending
+  priority: normal
+review:
+  citation_assessment:
+    as_of: '2026-10-29'
+    provider: OpenAlex
+    evidence_path: research/citations/rankings.json
+    evidence_key: chirps_prelim
+    geographic_scope: global
+    paper_count_status: matched
+    max_paper_citations: 776
+    max_data_doi_citations: null
+    top_paper_doi: https://doi.org/10.3133/ds832
+    top_paper_openalex_id: https://openalex.org/W1479862749
+    citation_scope: base_dataset_family
+    citation_scope_note: Recommended CHIRPS USGS report describes the wider precipitation
+      product; the catalog entry is preliminary low-latency pentads.
+
+# Cross-catalog discovery: global-candidates-20261031
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'citations: Global Existing catalog identity.'
+  sources:
+  - provider: gee_community
+    entry_id: chirps_prelim
+    url: https://gee-community-catalog.org/projects/chirps_prelim
+    relationship: same_family
+  access:
+  - provider: literature
+    status: unknown
+    formats: []
+    summary: GEE catalog entries are available through Earth Engine; frozen metadata does not establish
+      an independently downloadable native bulk copy or its format. Existing catalog identity.
+    license_summary: Not inferred from citation records. Verify producer terms for the exact edition before
+      conversion or redistribution.
+    proposed_outputs: []
+    rationale: 'Candidate discovery only: global/near-global scope and associated-paper citation signal
+      justify source-format and licensing review. Citation rank does not establish conversion priority
+      or exact-release use.'
+    evidence_urls:
+    - https://gee-community-catalog.org/projects/chirps_prelim
+    - https://doi.org/10.3133/ds832
+  citations:
+  - provider: OpenAlex
+    paper_doi: 10.3133/ds832
+    work_id: https://openalex.org/W1479862749
+    cited_by_count: 777
+    observed_on: '2026-10-30'
+    scope: base_dataset_family
+  evidence:
+  - path: research/global-candidates-20261031/citations/reviewed.json
+    sha256: 572140255cd3b41a1ec8ecca0139e64d38899cda7fdd55756f399a0dca57a467
+    key: chirps_prelim

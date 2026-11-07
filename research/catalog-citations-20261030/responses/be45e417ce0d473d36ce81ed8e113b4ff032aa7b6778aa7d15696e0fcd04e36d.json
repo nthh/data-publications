@@ -1,0 +1,80 @@
+{
+  "request_url": "https://api.openalex.org/works?search=WaPOR+Database+Methodology%3A+Level+1&corpus=all&per_page=5&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date",
+  "retrieved_at": "2026-10-30T22:08:04.576574+00:00",
+  "response_path": "responses/be45e417ce0d473d36ce81ed8e113b4ff032aa7b6778aa7d15696e0fcd04e36d.json",
+  "status": 200,
+  "response_sha256": "e8d7b24a5bddfe5c05e6089914a0ef477d9276795376fab519015e72509cac30",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 365,
+      "db_response_time_ms": 59,
+      "page": 1,
+      "per_page": 5,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where full text has (WaPOR Database Methodology: Level 1)",
+        "x_new_oql": "get works (all corpora) where full text has (WaPOR Database Methodology: Level 1)",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "WaPOR Database Methodology: Level 1",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:WaPOR Database Methodology: Level 1&corpus=all&per_page=5",
+        "order": "best matches first",
+        "order_default": true
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W3021364612",
+        "doi": "https://doi.org/10.1002/hyp.13791",
+        "title": "Evaluation of WaPOR V2 evapotranspiration products across Africa",
+        "type": "article",
+        "publication_year": 2020,
+        "publication_date": "2020-05-03"
+      },
+      {
+        "id": "https://openalex.org/W4385326963",
+        "doi": "https://doi.org/10.1016/j.agsy.2023.103712",
+        "title": "Agronomic analysis of WaPOR applications: Confirming conservative biomass water productivity in inherent and climatological variance of WaPOR data outputs",
+        "type": "article",
+        "publication_year": 2023,
+        "publication_date": "2023-07-27"
+      },
+      {
+        "id": "https://openalex.org/W3112643123",
+        "doi": null,
+        "title": "The FAO WAPOR database: Remote sensing for agricultural water productivity - Keynote",
+        "type": "other",
+        "publication_year": 2020,
+        "publication_date": "2020-11-24"
+      },
+      {
+        "id": "https://openalex.org/W4401087726",
+        "doi": "https://doi.org/10.1088/1755-1315/1371/8/082039",
+        "title": "Calculating Water Productivity Using the Portal WaPOR",
+        "type": "conference-paper",
+        "publication_year": 2024,
+        "publication_date": "2024-07-01"
+      },
+      {
+        "id": "https://openalex.org/W2967280708",
+        "doi": "https://doi.org/10.3390/w11081647",
+        "title": "METRIC and WaPOR Estimates of Evapotranspiration over the Lake Urmia Basin: Comparative Analysis and Composite Assessment",
+        "type": "article",
+        "publication_year": 2019,
+        "publication_date": "2019-08-09"
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "10d585a339482c9b8b5902760f0f2772bd125ff53663fee29e85e7555ff84384"
+}

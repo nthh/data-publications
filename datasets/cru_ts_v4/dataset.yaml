@@ -1,0 +1,133 @@
+schema_version: 1
+id: cru_ts_v4
+title: CRU TS monthly high-resolution gridded multivariate climate dataset
+intake:
+  kind: producer
+  reference_url: https://www.nature.com/articles/s41597-020-0453-3
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'literature: Global land gridded monthly climate variables; station support varies
+    spatially and some cells may use inserted climatology. Producer grids are 0.5 degree. CRU TS v4.10,
+    current producer release observed 2026-10-31; global land time series 1901-2025. Paper describes the
+    v4 family and initial v4.03 release; CRU TS v3.26 paper DOI 10.1002/joc.3711 is a distinct earlier
+    edition and is not used for this count. The 2020 paper documents CRU TS v4.03; v4.10 is a later continuation
+    of the v4 family.'
+  sources:
+  - provider: producer
+    entry_id: CRU TS monthly high-resolution gridded multivariate climate dataset
+    url: https://www.nature.com/articles/s41597-020-0453-3
+    relationship: same_family
+  access:
+  - provider: literature
+    status: download_available
+    formats:
+    - raster
+    - time-series
+    summary: CRU producer/CRU website and CEDA archive offer gridded releases; station support varies
+      by cell. CRU TS v4.10, current producer release observed 2026-10-31; global land time series 1901-2025.
+      Paper describes the v4 family and initial v4.03 release; CRU TS v3.26 paper DOI 10.1002/joc.3711
+      is a distinct earlier edition and is not used for this count. The 2020 paper documents CRU TS v4.03;
+      v4.10 is a later continuation of the v4 family.
+    license_summary: Exact release terms need product-specific review; no redistribution permission is
+      inferred from literature or access pages.
+    proposed_outputs:
+    - Zarr
+    rationale: Supplementary literature discovery only. A high associated-paper count is evidence of a
+      documented product family, not exact-edition usage, conversion priority, or native-format readiness.
+      Review producer bytes, terms and existing record component coverage before promotion.
+    evidence_urls:
+    - https://doi.org/10.1038/s41597-020-0453-3
+    - https://www.nature.com/articles/s41597-020-0453-3
+    - https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.10/
+  citations:
+  - provider: OpenAlex
+    paper_doi: 10.1038/s41597-020-0453-3
+    work_id: https://openalex.org/W3014125413
+    cited_by_count: 4909
+    observed_on: '2026-11-01'
+    scope: associated_dataset_publication_base_family
+  evidence:
+  - path: research/global-candidates-20261031/literature/reviewed.json
+    sha256: eef4edb7f4a59e399d3670b9f2aace33bd24083f46d260a7859163c673fabbb6
+    key: cru_ts_v4
+
+review:
+  availability:
+    shortlist_id: native-publication-gaps-20261031
+    rank: 4
+    reviewed_on: '2026-11-01'
+    label: CRU-TS v4.10
+    scope: Ten monthly variables over global land excluding Antarctica, 1901–2025; one full-period NetCDF.gz
+      per variable, excluding duplicate decades and ASCII files.
+    geographic_scope: global
+    download:
+      bytes: 3648920307
+      precision: exact
+      reported_size: null
+      format: gzip-compressed NetCDF
+      file_count: 10
+      basis: http_head
+      note: Sum of Content-Length from ten successful application/x-gzip HEAD responses. No data bodies
+        downloaded. Producer rounded Size(MB) labels sum differently; exact header bytes take precedence.
+        NetCDF source files include station support; do not duplicate separate ASCII .stn files.
+      evidence_urls:
+      - https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.10/
+      - https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.10/cruts.2604091129.v4.10/
+    locations:
+    - service_id: cru_uea
+      label: CRU / University of East Anglia
+      platform: external
+      relationship: matching_scope
+      access: download
+      formats:
+      - NetCDF.gz
+      - ASCII.gz
+      urls:
+      - https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.10/
+      - https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.10/cruts.2604091129.v4.10/
+      asset_ids: []
+      note: Current producer v4.10 full-period download. The producer Google Earth interface is a subset
+        on this same service and is not Google Earth Engine.
+    - service_id: ceda
+      label: CEDA Archive
+      platform: external
+      relationship: other_version_or_subset
+      access: download
+      formats:
+      - NetCDF.gz
+      - ASCII.gz
+      urls:
+      - https://data.ceda.ac.uk/badc/cru/data/cru_ts/cru_ts_4.09/
+      - https://crudata.uea.ac.uk/cru/data/hrg/
+      asset_ids: []
+      note: Producer identifies older CEDA releases; v4.10 CEDA link is not yet available on the current
+        edition page. No exact v4.10 CEDA mirror established.
+    - service_id: world_bank_cckp
+      label: World Bank CCKP / AWS
+      platform: external
+      relationship: other_version_or_subset
+      access: download
+      formats:
+      - NetCDF
+      urls:
+      - https://registry.opendata.aws/wbg-cckp/
+      - https://worldbank.github.io/climateknowledgeportal/docs/collections/cru-x0.5.html
+      asset_ids: []
+      note: World Bank documentation describes four selected variables from v4.07 through 2022 in public
+        bucket wbg-cckp. Different version and scope; no complete bucket scan. No matching GEE entry identified
+        in bounded sources.
+    output_manifest: null
+    evidence:
+    - path: research/availability-sizes-20261101/observations.json
+      sha256: a7c4fd21000b497faf92810420cde5cc4ee80ae533721dd13c69cb7e692fcd7b
+      key: cru_ts_v4

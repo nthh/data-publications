@@ -1,0 +1,156 @@
+{
+  "schema_version": 1,
+  "study_id": "global-candidates-20261031",
+  "validated_code_commit": "a5817bdde5a41c63ecd5e2ed43ad573bdee708cb",
+  "completed_at": "2026-11-01T01:03:09.938747+00:00",
+  "status": "passed_with_incomplete_optional_advisory",
+  "scope": "Metadata inventory, reproducible views, preserved original records and existing empty publication catalog. No new scientific/data/host validation.",
+  "inventory": {
+    "total_records": 450,
+    "new_candidates": 84,
+    "augmented_existing_records": 28,
+    "global_or_near_global_records": 292,
+    "expanded_global_or_near_global_records": 111,
+    "expanded_regional_records": 1,
+    "prepared_releases": 5,
+    "published_collections": 0
+  },
+  "clean_checkout": {
+    "fresh_locked_environments": true,
+    "installation": "uv sync --locked --no-build; uv sync --locked --project tools/portolan --no-build",
+    "python": "Python 3.12.12",
+    "working_tree_clean_after": true,
+    "checks": [
+      {
+        "command": "python scripts/catalog.py --check",
+        "environment": "root",
+        "exit_code": 0,
+        "elapsed_seconds": 4.539
+      },
+      {
+        "command": "python scripts/check_provenance.py",
+        "environment": "root",
+        "exit_code": 0,
+        "elapsed_seconds": 0.042
+      },
+      {
+        "command": "python scripts/test_catalog.py",
+        "environment": "root",
+        "exit_code": 0,
+        "elapsed_seconds": 13.534,
+        "tests": 19
+      },
+      {
+        "command": "python -m unittest discover -s tests -p test_publication_catalog.py -v",
+        "environment": "root",
+        "exit_code": 0,
+        "elapsed_seconds": 0.764,
+        "tests": 9
+      },
+      {
+        "command": "python -m unittest discover -s tests -p test_candidate_discovery.py -v",
+        "environment": "root",
+        "exit_code": 0,
+        "elapsed_seconds": 0.184,
+        "tests": 12
+      },
+      {
+        "command": "python research/global-candidates-20261031/integrate.py --check",
+        "environment": "root",
+        "exit_code": 0,
+        "elapsed_seconds": 1.142
+      },
+      {
+        "command": "python research/global-candidates-20261031/planetary/capture.py --check",
+        "environment": "root",
+        "exit_code": 0,
+        "elapsed_seconds": 0.067
+      },
+      {
+        "command": "python research/global-candidates-20261031/esri/capture.py --check",
+        "environment": "root",
+        "exit_code": 0,
+        "elapsed_seconds": 0.057
+      },
+      {
+        "command": "python research/global-candidates-20261031/citations/extract_frozen.py --check",
+        "environment": "root",
+        "exit_code": 0,
+        "elapsed_seconds": 0.03
+      },
+      {
+        "command": "python research/global-candidates-20261031/citations/enrich_coverage.py --check",
+        "environment": "root",
+        "exit_code": 0,
+        "elapsed_seconds": 0.049
+      },
+      {
+        "command": "python research/global-candidates-20261031/citations/check_review.py",
+        "environment": "root",
+        "exit_code": 0,
+        "elapsed_seconds": 0.693
+      },
+      {
+        "command": "python research/global-candidates-20261031/literature/build_review.py --check",
+        "environment": "root",
+        "exit_code": 0,
+        "elapsed_seconds": 0.034
+      },
+      {
+        "command": "python research/global-candidates-20261031/reuse/check.py",
+        "environment": "root",
+        "exit_code": 0,
+        "elapsed_seconds": 0.034
+      },
+      {
+        "command": "python scripts/publication_catalog.py check",
+        "environment": "root",
+        "exit_code": 0,
+        "elapsed_seconds": 2.294
+      },
+      {
+        "command": "python -m unittest discover -s tests -p test_portolan_gate.py -v",
+        "environment": "gate",
+        "exit_code": 0,
+        "elapsed_seconds": 15.974,
+        "tests": 7
+      },
+      {
+        "command": "python scripts/check_portolan.py --catalog catalog --report .local/portolan-rehearsal.json",
+        "environment": "gate",
+        "exit_code": 0,
+        "elapsed_seconds": 0.315
+      }
+    ],
+    "unit_tests_passed": 47
+  },
+  "publication_gate": {
+    "conformance": "passed",
+    "validator": "rashid",
+    "version": "0.3.0",
+    "stac_check_advisory": "incomplete",
+    "advisory_reason": "stac-check 1.14.0 attempted to fetch a remote STAC schema; the offline guard blocked the request. Not counted as passing.",
+    "live": "off",
+    "data": "off",
+    "objects_checked": 1
+  },
+  "preservation": {
+    "original_canonical_records": 366,
+    "original_record_bytes": "All pre-discovery bytes match baseline hashes; independent audit also compared augmented originals with Git baseline.",
+    "changed_immutable_release_paths": [],
+    "existing_triage_and_publication_decisions": "unchanged"
+  },
+  "retained_evidence": {
+    "source_integrity_checks": "all passed",
+    "independent_resolution_audit": "resolution-review.json",
+    "first_audit_findings": "integration-review.json retained; followup fixes separately recorded",
+    "credential_scan": "No private-key, AWS-access-key, GitHub-token or credential-bearing query-string patterns in final task files.",
+    "pc_redaction": "Two signed thumbnail query strings removed before the first implementation commit; original response digest/bytes and retained redacted digest/bytes are separate."
+  },
+  "remaining_limits": [
+    "Bounded catalog and purposive literature discovery, not an exhaustive global literature or ArcGIS census.",
+    "Observation dates and distinct edition/component relationships remain visible; citation counts do not establish conversion value.",
+    "Native format and host observations do not certify bytes, complete coverage or redistribution terms.",
+    "Data hosting, live verification and conversion selection are separate future work."
+  ]
+}

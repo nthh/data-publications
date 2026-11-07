@@ -1,0 +1,48 @@
+schema_version: 1
+id: climate_impact_lab_gdpcir_cc0
+title: CIL Global Downscaled Projections for Climate Impacts Research (CC0-1.0)
+intake:
+  kind: official_catalog
+  reference_url: https://planetarycomputer.microsoft.com/api/stac/v1/collections/cil-gdpcir-cc0
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'planetary: review_note: Global daily downscaled CMIP6 temperature/precipitation;
+    STAC bbox global, 1950–2100.; stac_bbox: [-180, -90, 180, 90]; temporal_interval: [["1950-01-01T00:00:00Z",
+    "2100-12-31T00:00:00Z"]] Distinct named producer product; retain exact source edition and footprint.'
+  sources:
+  - provider: planetary_computer
+    entry_id: cil-gdpcir-cc0
+    url: https://planetarycomputer.microsoft.com/api/stac/v1/collections/cil-gdpcir-cc0
+    relationship: exact_dataset
+  access:
+  - provider: planetary_computer
+    status: native_available
+    formats:
+    - Zarr
+    summary: 'Collection metadata declares per-item data assets / provider storage roots in the listed
+      native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain
+      unvalidated. Distinct named producer product; retain exact source edition and footprint.'
+    license_summary: 'note: Do not treat this metadata label as legal clearance.; review_status: provider
+      declaration captured; terms and redistribution permission not independently reviewed; stac_license:
+      CC0-1.0'
+    proposed_outputs:
+    - Zarr
+    rationale: Reuse declared Zarr variables; separate CC0 edition from CC-BY and CC-BY-SA siblings.
+    evidence_urls:
+    - https://planetarycomputer.microsoft.com/api/stac/v1/collections/cil-gdpcir-cc0
+    - https://planetarycomputer.microsoft.com/dataset/cil-gdpcir-cc0
+  citations: []
+  evidence:
+  - path: research/global-candidates-20261031/planetary/reviewed.json
+    sha256: 07da016851a07f3e3e0937e120ce46442785f4e9096e563d92c1a3c0ce9e616a
+    key: climate_impact_lab_gdpcir_cc0

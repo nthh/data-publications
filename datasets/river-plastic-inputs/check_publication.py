@@ -1,0 +1,124 @@
+#!/usr/bin/env python3
+"""Check a pinned local release against registered publication benchmarks.
+
+This supplements conversion validation. It does not run GEE, change release
+bytes, or claim independent validation of the underlying environmental model.
+"""
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+from decimal import Decimal
+from pathlib import Path
+
+import pyarrow.parquet as pq
+
+HERE = Path(__file__).resolve().parent
+MONTHS = ('jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec')
+LEVELS = ('low', 'mid', 'high')
+ZERO = Decimal(0)
+
+
+def sha256(path):
+    with Path(path).open('rb') as stream:
+        return hashlib.file_digest(stream, 'sha256').hexdigest()
+
+
+def evaluate(table, contract):
+    """Evaluate declared checks using exact decimal arithmetic from GeoParquet."""
+    names = [f'i_{level}{suffix}' for suffix in ('', *(f'_{m}' for m in MONTHS)) for level in LEVELS]
+    names += [f'runoff_{m}' for m in MONTHS] + ['mpw', 'area']
+    columns = {name: table[name].to_pylist() for name in names}
+    totals = {name: sum((x for x in values if x is not None), ZERO) for name, values in columns.items()}
+    checks = []
+    for rule in contract['checks']:
+        operation = rule['operation']
+        result = {'id': rule['id'], 'basis': rule['basis']}
+        if operation == 'sum':
+            observed = totals[rule['field']]
+            passed = Decimal(rule['minimum_inclusive']) <= observed < Decimal(rule['maximum_exclusive'])
+            result.update(observed=str(observed), unit=rule['unit'],
+                          accepted_interval={'minimum_inclusive': rule['minimum_inclusive'],
+                                             'maximum_exclusive': rule['maximum_exclusive']})
+        elif operation == 'seasonal_share':
+            numerator = sum((totals[rule['prefix'] + m] for m in rule['months']), ZERO)
+            denominator = sum((totals[rule['prefix'] + m] for m in MONTHS), ZERO)
+            observed = numerator / denominator if denominator > ZERO else None
+            passed = observed is not None and Decimal(rule['minimum_exclusive']) < observed <= Decimal(rule['maximum_inclusive'])
+            result.update(numerator_tonnes=str(numerator), denominator_tonnes=str(denominator),
+                          observed_share=str(observed) if observed is not None else None,
+                          minimum_exclusive=rule['minimum_exclusive'], maximum_inclusive=rule['maximum_inclusive'])
+        elif operation == 'nonnegative':
+            invalid = {name: sum(value is not None and value < ZERO for value in values)
+                       for name, values in columns.items()}
+            invalid = {name: count for name, count in invalid.items() if count}
+            passed = not invalid
+            result.update(invalid_cells=sum(invalid.values()), invalid_by_field=invalid,
+                          cells_checked=table.num_rows * len(names))
+        elif operation == 'ordered_uncertainty':
+            invalid = 0
+            partial_nulls = 0
+            for suffix in ('', *(f'_{m}' for m in MONTHS)):
+                for values in zip(*(columns[f'i_{level}{suffix}'] for level in LEVELS)):
+                    present = sum(value is not None for value in values)
+                    if 0 < present < 3:
+                        partial_nulls += 1
+                    elif present == 3 and not values[0] <= values[1] <= values[2]:
+                        invalid += 1
+            passed = invalid == 0 and partial_nulls == 0
+            result.update(triplets_checked=table.num_rows * 13,
+                          inverted_triplets=invalid, partially_null_triplets=partial_nulls)
+        else:
+            raise ValueError(f'Unsupported benchmark operation: {operation}')
+        result['status'] = 'passed' if passed else 'failed'
+        checks.append(result)
+    return {
+        'status': 'passed' if all(c['status'] == 'passed' for c in checks) else 'failed',
+        'scope': contract['scope'],
+        'rows': table.num_rows,
+        'null_counts': {name: sum(value is None for value in values) for name, values in columns.items()},
+        'checks': checks,
+        'annual_totals_tonnes': {f'i_{level}': str(totals[f'i_{level}']) for level in LEVELS},
+        'monthly_midpoint_totals_tonnes': {month: str(totals[f'i_mid_{month}']) for month in MONTHS},
+        'pending': contract['pending'],
+    }
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('release', type=Path)
+    parser.add_argument('--report', type=Path, required=True)
+    args = parser.parse_args()
+    contract_path = HERE / 'publication-benchmarks.json'
+    contract = json.loads(contract_path.read_text())
+    manifest_path = args.release / 'manifest.json'
+    manifest = json.loads(manifest_path.read_text())
+    asset = 'river-plastic-inputs/river-plastic-inputs.parquet'
+    parquet = args.release / asset
+    expected = manifest['assets'][asset]
+    if parquet.stat().st_size != expected['size_bytes'] or sha256(parquet) != expected['sha256']:
+        raise SystemExit('GeoParquet bytes do not match the pinned release manifest')
+    if manifest['source']['source_doi'] != contract['source_doi']:
+        raise SystemExit('Source version differs from the benchmark contract')
+    table = pq.read_table(parquet)
+    if table.num_rows != manifest['source']['expected_rows']:
+        raise SystemExit('Unexpected row count')
+    report = evaluate(table, contract)
+    report['provenance'] = {
+        'source_doi': contract['source_doi'],
+        'paper_doi': contract['paper_doi'],
+        'release_manifest_sha256': sha256(manifest_path),
+        'geoparquet_sha256': expected['sha256'],
+        'benchmark_contract_sha256': sha256(contract_path),
+        'validator_sha256': sha256(Path(__file__)),
+        'reference_urls': contract['reference_urls'],
+    }
+    args.report.parent.mkdir(parents=True, exist_ok=True)
+    args.report.write_text(json.dumps(report, indent=2) + '\n')
+    print(json.dumps({'status': report['status'], 'checks': report['checks'], 'report': str(args.report)}, indent=2))
+    return 0 if report['status'] == 'passed' else 1
+
+
+if __name__ == '__main__':
+    raise SystemExit(main())

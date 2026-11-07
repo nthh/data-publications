@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "selected_before_first_raw_display_build": true,
+  "min_zoom": 8,
+  "max_zoom": 12,
+  "extent": 4096,
+  "simplification": 1,
+  "source_feature_filter": "none; every source record enters Tippecanoe independently",
+  "line_joining": "none; no concatenation by segmentID, segmentInd, tile or proximity",
+  "dateline": "Split only crossing source parts at +/-180 in display geometry; analytical XY bytes remain unchanged",
+  "width": "Original width_m in metres; value1 is missing, represented by width_valid=false and a muted thin stroke",
+  "low_zoom": "Individual roughly30m observations are unsuitable as a world overview. This detail layer begins at zoom8; no faulty summary fallback or fabricated connecting edges.",
+  "maxzoom_coverage": "All source IDs must appear, except individually enumerated geometries that collapse at the frozen quantization; unexpected loss fails",
+  "sample_tolerance_mercator_metres": 30
+}

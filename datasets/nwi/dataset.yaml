@@ -1,0 +1,38 @@
+schema_version: 1
+id: nwi
+title: NWI_AK_Wetlands
+community_url: https://gee-community-catalog.org/projects/nwi
+audit:
+  snapshot: gee-community-audit-20261029
+  family_key: nwi
+  unique_gee_asset_count: 212
+  initial_queue: review_source_coop_counterpart
+  folia_registry_status: not_identified
+  folia_registry_ids: []
+  source_coop_urls:
+  - https://source.coop/giswqs/nwi
+  source_coop_scope: Same USFWS NWI product, state by state, matching catalog assets.
+    cboettig/wetlands also references NWI but points at an external NRP S3 bucket;
+    not counted separately.
+  external_native_urls:
+  - https://planetarycomputer.microsoft.com/api/stac/v1/collections/fws-nwi
+  - https://source.coop/giswqs/nwi
+  external_native_scope: Wetland polygons, state/regional partitioning; vintage can
+    differ. | Same USFWS NWI product, state by state, matching catalog assets. cboettig/wetlands
+    also references NWI but points at an external NRP S3 bucket; not counted separately.
+triage:
+  decision: pending
+  priority: normal
+review:
+  citation_assessment:
+    as_of: '2026-10-29'
+    provider: OpenAlex
+    evidence_path: research/citations/rankings.json
+    evidence_key: nwi
+    geographic_scope: regional
+    paper_count_status: unknown
+    max_paper_citations: null
+    max_data_doi_citations: null
+    top_paper_doi: null
+    top_paper_openalex_id: null
+    citation_scope: associated_dataset_publication

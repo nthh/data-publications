@@ -1,0 +1,72 @@
+schema_version: 1
+id: era5_land
+title: ERA5-Land global land reanalysis
+intake:
+  kind: official_catalog
+  reference_url: https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_LAND_DAILY_AGGR
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'citations: Global; Global coverage Distinct named producer product; retain exact
+    source edition and footprint.'
+  sources:
+  - provider: gee_official
+    entry_id: ECMWF/ERA5_LAND/DAILY_AGGR
+    url: https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_LAND_DAILY_AGGR
+    relationship: same_family
+  - provider: gee_official
+    entry_id: ECMWF/ERA5_LAND/HOURLY
+    url: https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_LAND_HOURLY
+    relationship: same_family
+  - provider: gee_official
+    entry_id: ECMWF/ERA5_LAND/MONTHLY_AGGR
+    url: https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_LAND_MONTHLY_AGGR
+    relationship: same_family
+  - provider: gee_official
+    entry_id: ECMWF/ERA5_LAND/MONTHLY_BY_HOUR
+    url: https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_LAND_MONTHLY_BY_HOUR
+    relationship: same_family
+  - provider: gee_official
+    entry_id: ECMWF/ERA5_LAND/STATIC
+    url: https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_LAND_STATIC
+    relationship: same_family
+  access:
+  - provider: literature
+    status: unknown
+    formats: []
+    summary: GEE catalog entries are available through Earth Engine; frozen metadata does not establish
+      an independently downloadable native bulk copy or its format. Distinct named producer product; retain
+      exact source edition and footprint.
+    license_summary: Not inferred from citation records. Verify producer terms for the exact edition before
+      conversion or redistribution.
+    proposed_outputs: []
+    rationale: 'Candidate discovery only: global/near-global scope and associated-paper citation signal
+      justify source-format and licensing review. Citation rank does not establish conversion priority
+      or exact-release use.'
+    evidence_urls:
+    - https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_LAND_DAILY_AGGR
+    - https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_LAND_HOURLY
+    - https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_LAND_MONTHLY_AGGR
+    - https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_LAND_MONTHLY_BY_HOUR
+    - https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_LAND_STATIC
+    - https://doi.org/10.5194/essd-13-4349-2021
+  citations:
+  - provider: OpenAlex
+    paper_doi: 10.5194/essd-13-4349-2021
+    work_id: https://openalex.org/W3136179920
+    cited_by_count: 5540
+    observed_on: '2026-10-30'
+    scope: base_dataset_family
+  evidence:
+  - path: research/global-candidates-20261031/citations/reviewed.json
+    sha256: 572140255cd3b41a1ec8ecca0139e64d38899cda7fdd55756f399a0dca57a467
+    key: era5_land

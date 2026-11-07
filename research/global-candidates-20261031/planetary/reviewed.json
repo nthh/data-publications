@@ -1,0 +1,4354 @@
+{
+  "candidate_count": 38,
+  "candidates": [
+    {
+      "access_summary": "Collection metadata declares per-item data assets / provider storage roots in the listed native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain unvalidated.",
+      "canonical_counterpart_note": "PC baseline TerraClimate (1958–2021) is distinct from canonical legacy GEE +2C/+4C scenario series (1985–2015).",
+      "conversion_rationale": "Reuse existing canonical family; STAC declares HTTPS Zarr root and monthly global product. Byte-level Zarr/layout validation remains outstanding.",
+      "evidence_key": "terraclimate",
+      "evidence_urls": [
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/terraclimate",
+        "https://planetarycomputer.microsoft.com/dataset/terraclimate"
+      ],
+      "existing_record_id": null,
+      "format_labels": [
+        "Zarr"
+      ],
+      "geographic_scope": "global",
+      "hosting_status": "native_available",
+      "license_summary": {
+        "note": "Do not treat this metadata label as legal clearance.",
+        "review_status": "provider declaration captured; terms and redistribution permission not independently reviewed",
+        "stac_license": "CC0-1.0"
+      },
+      "observed_formats": [
+        {
+          "asset_key": "zarr-abfs",
+          "href": "az://cpdata/terraclimate.zarr",
+          "media_type": "application/vnd+zarr",
+          "roles": [
+            "data",
+            "zarr",
+            "abfs"
+          ]
+        },
+        {
+          "asset_key": "zarr-https",
+          "href": "https://cpdataeuwest.blob.core.windows.net/cpdata/terraclimate.zarr",
+          "media_type": "application/vnd+zarr",
+          "roles": [
+            "data",
+            "zarr",
+            "https"
+          ]
+        }
+      ],
+      "proposed_outputs": [
+        "Retain declared native format pending byte-level validation."
+      ],
+      "recommended_formats": [
+        "Zarr"
+      ],
+      "related_record_id": "terraclim",
+      "sources": [
+        {
+          "entry_id": "terraclimate",
+          "provider": "Microsoft Planetary Computer STAC",
+          "relationship": "related_product",
+          "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/terraclimate"
+        }
+      ],
+      "spatial_coverage": {
+        "review_note": "Global terrestrial climate/water-balance grids; terrestrial land domain despite all-world STAC bbox.",
+        "stac_bbox": [
+          -180,
+          -90,
+          180,
+          90
+        ],
+        "temporal_interval": [
+          [
+            "1958-01-01T00:00:00Z",
+            "2021-12-01T00:00:00Z"
+          ]
+        ]
+      },
+      "suggested_id": "terraclimate",
+      "title": "TerraClimate"
+    },
+    {
+      "access_summary": "Collection metadata declares per-item data assets / provider storage roots in the listed native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain unvalidated.",
+      "conversion_rationale": "Reuse declared COG item assets; preserve distinct 2020/2021 product years and class semantics.",
+      "evidence_key": "esa_worldcover",
+      "evidence_urls": [
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/esa-worldcover",
+        "https://planetarycomputer.microsoft.com/dataset/esa-worldcover"
+      ],
+      "existing_record_id": null,
+      "format_labels": [
+        "COG"
+      ],
+      "geographic_scope": "near_global",
+      "hosting_status": "native_available",
+      "license_summary": {
+        "note": "Do not treat this metadata label as legal clearance.",
+        "review_status": "provider declaration captured; terms and redistribution permission not independently reviewed",
+        "stac_license": "CC-BY-4.0"
+      },
+      "observed_formats": [
+        {
+          "asset_key": "input_quality",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "metadata"
+          ]
+        },
+        {
+          "asset_key": "map",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        }
+      ],
+      "proposed_outputs": [
+        "Retain declared native format pending byte-level validation."
+      ],
+      "recommended_formats": [
+        "COG"
+      ],
+      "sources": [
+        {
+          "entry_id": "esa-worldcover",
+          "provider": "Microsoft Planetary Computer STAC",
+          "relationship": "exact_dataset",
+          "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/esa-worldcover"
+        }
+      ],
+      "spatial_coverage": {
+        "review_note": "Explicitly described by producer as global land-cover maps; STAC latitude extent is 60°S–82.75°N.",
+        "stac_bbox": [
+          -180,
+          -60,
+          180,
+          82.75
+        ],
+        "temporal_interval": [
+          [
+            "2020-01-01T00:00:00Z",
+            "2021-12-31T23:59:59Z"
+          ]
+        ]
+      },
+      "suggested_id": "esa_worldcover",
+      "title": "ESA WorldCover"
+    },
+    {
+      "access_summary": "Collection metadata declares per-item data assets / provider storage roots in the listed native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain unvalidated.",
+      "conversion_rationale": "Reuse declared COG layers; preserve occurrence/change/seasonality layer distinctions.",
+      "evidence_key": "jrc_global_surface_water",
+      "evidence_urls": [
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/jrc-gsw",
+        "https://planetarycomputer.microsoft.com/dataset/jrc-gsw"
+      ],
+      "existing_record_id": null,
+      "format_labels": [
+        "COG"
+      ],
+      "geographic_scope": "near_global",
+      "hosting_status": "native_available",
+      "license_summary": {
+        "note": "Do not treat this metadata label as legal clearance.",
+        "review_status": "provider declaration captured; terms and redistribution permission not independently reviewed",
+        "stac_license": "other"
+      },
+      "observed_formats": [
+        {
+          "asset_key": "change",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "extent",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "occurrence",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "recurrence",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "seasonality",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "transitions",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        }
+      ],
+      "proposed_outputs": [
+        "Retain declared native format pending byte-level validation."
+      ],
+      "recommended_formats": [
+        "COG"
+      ],
+      "sources": [
+        {
+          "entry_id": "jrc-gsw",
+          "provider": "Microsoft Planetary Computer STAC",
+          "relationship": "exact_dataset",
+          "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/jrc-gsw"
+        }
+      ],
+      "spatial_coverage": {
+        "review_note": "Global surface-water mapping; STAC extent is 56°S–78°N.",
+        "stac_bbox": [
+          -180,
+          -56,
+          180,
+          78
+        ],
+        "temporal_interval": [
+          [
+            "1984-03-01T00:00:00Z",
+            "2020-12-31T11:59:59Z"
+          ]
+        ]
+      },
+      "suggested_id": "jrc_global_surface_water",
+      "title": "JRC Global Surface Water"
+    },
+    {
+      "access_summary": "Collection metadata declares per-item data assets / provider storage roots in the listed native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain unvalidated.",
+      "citation": {
+        "doi": "10.5069/G9028PQB",
+        "note": "Collection metadata directly cites this DOI; no citation count inferred.",
+        "source_field": "Planetary Computer collection description"
+      },
+      "conversion_rationale": "Reuse declared COGs; retain DSM meaning and source license uncertainty for review.",
+      "evidence_key": "copernicus_dem_glo_30",
+      "evidence_urls": [
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/cop-dem-glo-30",
+        "https://planetarycomputer.microsoft.com/dataset/cop-dem-glo-30"
+      ],
+      "existing_record_id": null,
+      "format_labels": [
+        "COG"
+      ],
+      "geographic_scope": "global",
+      "hosting_status": "native_available",
+      "license_summary": {
+        "note": "Do not treat this metadata label as legal clearance.",
+        "review_status": "provider declaration captured; terms and redistribution permission not independently reviewed",
+        "stac_license": "other"
+      },
+      "observed_formats": [
+        {
+          "asset_key": "data",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        }
+      ],
+      "proposed_outputs": [
+        "Retain declared native format pending byte-level validation."
+      ],
+      "recommended_formats": [
+        "COG"
+      ],
+      "sources": [
+        {
+          "entry_id": "cop-dem-glo-30",
+          "provider": "Microsoft Planetary Computer STAC",
+          "relationship": "exact_dataset",
+          "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/cop-dem-glo-30"
+        }
+      ],
+      "spatial_coverage": {
+        "review_note": "Global land digital surface model; STAC bbox is world-wide but oceans are not terrain coverage.",
+        "stac_bbox": [
+          -180,
+          -90,
+          180,
+          90
+        ],
+        "temporal_interval": [
+          [
+            "2021-04-22T00:00:00Z",
+            "2021-04-22T00:00:00Z"
+          ]
+        ]
+      },
+      "suggested_id": "copernicus_dem_glo_30",
+      "title": "Copernicus DEM GLO-30"
+    },
+    {
+      "access_summary": "Collection metadata declares per-item data assets / provider storage roots in the listed native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain unvalidated.",
+      "citation": {
+        "doi": "10.5069/G9028PQB",
+        "note": "Collection metadata directly cites this DOI; no citation count inferred.",
+        "source_field": "Planetary Computer collection description"
+      },
+      "conversion_rationale": "Reuse declared COGs; preserve resolution as separate product, compare source pins before family merge.",
+      "evidence_key": "copernicus_dem_glo_90",
+      "evidence_urls": [
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/cop-dem-glo-90",
+        "https://planetarycomputer.microsoft.com/dataset/cop-dem-glo-90"
+      ],
+      "existing_record_id": null,
+      "format_labels": [
+        "COG"
+      ],
+      "geographic_scope": "global",
+      "hosting_status": "native_available",
+      "license_summary": {
+        "note": "Do not treat this metadata label as legal clearance.",
+        "review_status": "provider declaration captured; terms and redistribution permission not independently reviewed",
+        "stac_license": "other"
+      },
+      "observed_formats": [
+        {
+          "asset_key": "data",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        }
+      ],
+      "proposed_outputs": [
+        "Retain declared native format pending byte-level validation."
+      ],
+      "recommended_formats": [
+        "COG"
+      ],
+      "sources": [
+        {
+          "entry_id": "cop-dem-glo-90",
+          "provider": "Microsoft Planetary Computer STAC",
+          "relationship": "exact_dataset",
+          "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/cop-dem-glo-90"
+        }
+      ],
+      "spatial_coverage": {
+        "review_note": "Global land digital surface model at 90 m; same producer family as GLO-30 but a separate resolution product.",
+        "stac_bbox": [
+          -180,
+          -90,
+          180,
+          90
+        ],
+        "temporal_interval": [
+          [
+            "2021-04-22T00:00:00Z",
+            "2021-04-22T00:00:00Z"
+          ]
+        ]
+      },
+      "suggested_id": "copernicus_dem_glo_90",
+      "title": "Copernicus DEM GLO-90"
+    },
+    {
+      "access_summary": "Collection metadata declares per-item data assets / provider storage roots in the listed native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain unvalidated.",
+      "canonical_counterpart_note": "PC COG series is documented through 2020; canonical C3S/GEE record describes a 1992–2022 series. No complete release parity established.",
+      "conversion_rationale": "Reuse existing c3slc candidate and COG access; do not create duplicate canonical family.",
+      "evidence_key": "esa_cci_land_cover_cog",
+      "evidence_urls": [
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/esa-cci-lc",
+        "https://planetarycomputer.microsoft.com/dataset/esa-cci-lc"
+      ],
+      "existing_record_id": null,
+      "format_labels": [
+        "COG"
+      ],
+      "geographic_scope": "global",
+      "hosting_status": "native_available",
+      "license_summary": {
+        "note": "Do not treat this metadata label as legal clearance.",
+        "review_status": "provider declaration captured; terms and redistribution permission not independently reviewed",
+        "stac_license": "other"
+      },
+      "observed_formats": [
+        {
+          "asset_key": "change_count",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "quality"
+          ]
+        },
+        {
+          "asset_key": "current_pixel_state",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "quality"
+          ]
+        },
+        {
+          "asset_key": "lccs_class",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "observation_count",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "quality"
+          ]
+        },
+        {
+          "asset_key": "processed_flag",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "quality"
+          ]
+        }
+      ],
+      "proposed_outputs": [
+        "Retain declared native format pending byte-level validation."
+      ],
+      "recommended_formats": [
+        "COG"
+      ],
+      "related_record_id": "c3slc",
+      "sources": [
+        {
+          "entry_id": "esa-cci-lc",
+          "provider": "Microsoft Planetary Computer STAC",
+          "relationship": "related_release",
+          "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/esa-cci-lc"
+        }
+      ],
+      "spatial_coverage": {
+        "review_note": "Global annual land cover; all-world STAC bbox. This COG collection is the exact catalog source already recorded as c3slc.",
+        "stac_bbox": [
+          -180,
+          -90,
+          180,
+          90
+        ],
+        "temporal_interval": [
+          [
+            "1992-01-01T00:00:00Z",
+            "2020-12-31T23:59:59Z"
+          ]
+        ]
+      },
+      "suggested_id": "esa_cci_land_cover_cog",
+      "title": "ESA Climate Change Initiative Land Cover Maps (Cloud Optimized GeoTIFF)"
+    },
+    {
+      "access_summary": "Collection metadata declares per-item data assets / provider storage roots in the listed native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain unvalidated.",
+      "canonical_counterpart_note": "PC NetCDF representation is a same-source family counterpart through 2020; canonical GEE series extends through 2022.",
+      "conversion_rationale": "Review relation to c3slc; preserve native NetCDF as a related representation and compare content/version before merging.",
+      "evidence_key": "esa_cci_land_cover_netcdf",
+      "evidence_urls": [
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/esa-cci-lc-netcdf",
+        "https://planetarycomputer.microsoft.com/dataset/esa-cci-lc-netcdf"
+      ],
+      "existing_record_id": null,
+      "format_labels": [
+        "NetCDF"
+      ],
+      "geographic_scope": "global",
+      "hosting_status": "native_available",
+      "license_summary": {
+        "note": "Do not treat this metadata label as legal clearance.",
+        "review_status": "provider declaration captured; terms and redistribution permission not independently reviewed",
+        "stac_license": "other"
+      },
+      "observed_formats": [
+        {
+          "asset_key": "netcdf",
+          "media_type": "application/netcdf",
+          "roles": [
+            "data",
+            "quality"
+          ]
+        }
+      ],
+      "proposed_outputs": [
+        "Retain declared native format pending byte-level validation."
+      ],
+      "recommended_formats": [
+        "NetCDF"
+      ],
+      "related_record_id": "c3slc",
+      "sources": [
+        {
+          "entry_id": "esa-cci-lc-netcdf",
+          "provider": "Microsoft Planetary Computer STAC",
+          "relationship": "related_release",
+          "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/esa-cci-lc-netcdf"
+        }
+      ],
+      "spatial_coverage": {
+        "review_note": "Global annual land cover, 1992–2020; same ESA CCI product family as COG collection, distinct NetCDF representation.",
+        "stac_bbox": [
+          -180,
+          -90,
+          180,
+          90
+        ],
+        "temporal_interval": [
+          [
+            "1992-01-01T00:00:00Z",
+            "2020-12-31T23:59:59Z"
+          ]
+        ]
+      },
+      "suggested_id": "esa_cci_land_cover_netcdf",
+      "title": "ESA Climate Change Initiative Land Cover Maps (NetCDF)"
+    },
+    {
+      "access_summary": "Collection metadata declares per-item data assets / provider storage roots in the listed native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain unvalidated.",
+      "canonical_counterpart_note": "PC collection is a multi-year 2017–2021 series; canonical record identifies the original 2020 product, one year within that family.",
+      "conversion_rationale": "Reuse existing record; inspect source edition and year range before expansion.",
+      "evidence_key": "esri_10m_lulc",
+      "evidence_urls": [
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/io-lulc",
+        "https://planetarycomputer.microsoft.com/dataset/io-lulc"
+      ],
+      "existing_record_id": null,
+      "format_labels": [
+        "COG"
+      ],
+      "geographic_scope": "global",
+      "hosting_status": "native_available",
+      "license_summary": {
+        "note": "Do not treat this metadata label as legal clearance.",
+        "review_status": "provider declaration captured; terms and redistribution permission not independently reviewed",
+        "stac_license": "CC-BY-4.0"
+      },
+      "observed_formats": [
+        {
+          "asset_key": "data",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        }
+      ],
+      "proposed_outputs": [
+        "Retain declared native format pending byte-level validation."
+      ],
+      "recommended_formats": [
+        "COG"
+      ],
+      "related_record_id": "esrilc2020",
+      "sources": [
+        {
+          "entry_id": "io-lulc",
+          "provider": "Microsoft Planetary Computer STAC",
+          "relationship": "component",
+          "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/io-lulc"
+        }
+      ],
+      "spatial_coverage": {
+        "review_note": "Global 10 m land-cover product; STAC extent global. Existing esrilc2020 records this collection source.",
+        "stac_bbox": [
+          -180,
+          -90,
+          180,
+          90
+        ],
+        "temporal_interval": [
+          [
+            "2017-01-01T00:00:00Z",
+            "2021-01-01T00:00:00Z"
+          ]
+        ]
+      },
+      "suggested_id": "esri_10m_lulc",
+      "title": "Esri 10-Meter Land Cover (10-class)"
+    },
+    {
+      "access_summary": "Collection metadata declares per-item data assets / provider storage roots in the listed native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain unvalidated.",
+      "canonical_counterpart_note": "PC V2 series ends in 2023; canonical GEE record describes V3/2017–2025. Related edition, not exact.",
+      "conversion_rationale": "Reuse existing record and native COG; retain exact V2 identity and years.",
+      "evidence_key": "impact_observatory_annual_lulc_v2",
+      "evidence_urls": [
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/io-lulc-annual-v02",
+        "https://planetarycomputer.microsoft.com/dataset/io-lulc-annual-v02"
+      ],
+      "existing_record_id": null,
+      "format_labels": [
+        "COG"
+      ],
+      "geographic_scope": "global",
+      "hosting_status": "native_available",
+      "license_summary": {
+        "note": "Do not treat this metadata label as legal clearance.",
+        "review_status": "provider declaration captured; terms and redistribution permission not independently reviewed",
+        "stac_license": "CC-BY-4.0"
+      },
+      "observed_formats": [
+        {
+          "asset_key": "data",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        }
+      ],
+      "proposed_outputs": [
+        "Retain declared native format pending byte-level validation."
+      ],
+      "recommended_formats": [
+        "COG"
+      ],
+      "related_record_id": "S2TSLULC",
+      "sources": [
+        {
+          "entry_id": "io-lulc-annual-v02",
+          "provider": "Microsoft Planetary Computer STAC",
+          "relationship": "related_release",
+          "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/io-lulc-annual-v02"
+        }
+      ],
+      "spatial_coverage": {
+        "review_note": "Annual global maps; STAC extent global; described as 2017–2023 Sentinel-2 10 m composite. Existing record cites this exact collection.",
+        "stac_bbox": [
+          -180,
+          -90,
+          180,
+          90
+        ],
+        "temporal_interval": [
+          [
+            "2017-01-01T00:00:00Z",
+            "2024-01-01T00:00:00Z"
+          ]
+        ]
+      },
+      "suggested_id": "impact_observatory_annual_lulc_v2",
+      "title": "10m Annual Land Use Land Cover (9-class) V2"
+    },
+    {
+      "access_summary": "Collection metadata declares per-item data assets / provider storage roots in the listed native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain unvalidated.",
+      "conversion_rationale": "Related V1 release to V2 catalog family; compare source IDs, dates and class schema before combining.",
+      "evidence_key": "impact_observatory_annual_lulc_v1",
+      "evidence_urls": [
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/io-lulc-9-class",
+        "https://planetarycomputer.microsoft.com/dataset/io-lulc-9-class"
+      ],
+      "existing_record_id": null,
+      "format_labels": [
+        "COG"
+      ],
+      "geographic_scope": "global",
+      "hosting_status": "native_available",
+      "license_summary": {
+        "note": "Do not treat this metadata label as legal clearance.",
+        "review_status": "provider declaration captured; terms and redistribution permission not independently reviewed",
+        "stac_license": "CC-BY-4.0"
+      },
+      "observed_formats": [
+        {
+          "asset_key": "data",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        }
+      ],
+      "proposed_outputs": [
+        "Retain declared native format pending byte-level validation."
+      ],
+      "recommended_formats": [
+        "COG"
+      ],
+      "sources": [
+        {
+          "entry_id": "io-lulc-9-class",
+          "provider": "Microsoft Planetary Computer STAC",
+          "relationship": "exact_dataset",
+          "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/io-lulc-9-class"
+        }
+      ],
+      "spatial_coverage": {
+        "review_note": "Annual 9-class maps with world bbox; confirm actual land coverage and extent by release documentation.",
+        "stac_bbox": [
+          -180,
+          -90,
+          180,
+          90
+        ],
+        "temporal_interval": [
+          [
+            "2017-01-01T00:00:00Z",
+            "2023-01-01T00:00:00Z"
+          ]
+        ]
+      },
+      "suggested_id": "impact_observatory_annual_lulc_v1",
+      "title": "10m Annual Land Use Land Cover (9-class) V1"
+    },
+    {
+      "access_summary": "Collection metadata declares per-item data assets / provider storage roots in the listed native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain unvalidated.",
+      "conversion_rationale": "Reuse declared COG; preserve annual years and distinct biodiversity-intactness measure.",
+      "evidence_key": "biodiversity_intactness",
+      "evidence_urls": [
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/io-biodiversity",
+        "https://planetarycomputer.microsoft.com/dataset/io-biodiversity"
+      ],
+      "existing_record_id": null,
+      "format_labels": [
+        "COG"
+      ],
+      "geographic_scope": "global",
+      "hosting_status": "native_available",
+      "license_summary": {
+        "note": "Do not treat this metadata label as legal clearance.",
+        "review_status": "provider declaration captured; terms and redistribution permission not independently reviewed",
+        "stac_license": "CC-BY-4.0"
+      },
+      "observed_formats": [
+        {
+          "asset_key": "data",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        }
+      ],
+      "proposed_outputs": [
+        "Retain declared native format pending byte-level validation."
+      ],
+      "recommended_formats": [
+        "COG"
+      ],
+      "sources": [
+        {
+          "entry_id": "io-biodiversity",
+          "provider": "Microsoft Planetary Computer STAC",
+          "relationship": "exact_dataset",
+          "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/io-biodiversity"
+        }
+      ],
+      "spatial_coverage": {
+        "review_note": "Global terrestrial 100 m maps; STAC bbox is world-wide and product description says global biodiversity intactness.",
+        "stac_bbox": [
+          -180,
+          -90,
+          180,
+          90
+        ],
+        "temporal_interval": [
+          [
+            "2017-01-01T00:00:00Z",
+            "2020-12-31T23:59:59Z"
+          ]
+        ]
+      },
+      "suggested_id": "biodiversity_intactness",
+      "title": "Biodiversity Intactness"
+    },
+    {
+      "access_summary": "Collection metadata declares per-item data assets / provider storage roots in the listed native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain unvalidated.",
+      "conversion_rationale": "Reuse declared COG layers including uncertainty; preserve harmonized 2010 edition.",
+      "evidence_key": "harmonized_global_biomass",
+      "evidence_urls": [
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/hgb",
+        "https://planetarycomputer.microsoft.com/dataset/hgb"
+      ],
+      "existing_record_id": null,
+      "format_labels": [
+        "COG"
+      ],
+      "geographic_scope": "near_global",
+      "hosting_status": "native_available",
+      "license_summary": {
+        "note": "Do not treat this metadata label as legal clearance.",
+        "review_status": "provider declaration captured; terms and redistribution permission not independently reviewed",
+        "stac_license": "other"
+      },
+      "observed_formats": [
+        {
+          "asset_key": "aboveground",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "aboveground_uncertainty",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "belowground",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "belowground_uncertainty",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        }
+      ],
+      "proposed_outputs": [
+        "Retain declared native format pending byte-level validation."
+      ],
+      "recommended_formats": [
+        "COG"
+      ],
+      "sources": [
+        {
+          "entry_id": "hgb",
+          "provider": "Microsoft Planetary Computer STAC",
+          "relationship": "exact_dataset",
+          "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/hgb"
+        }
+      ],
+      "spatial_coverage": {
+        "review_note": "Harmonized global above/below-ground biomass at 300 m; STAC latitude range 61°S–84°N.",
+        "stac_bbox": [
+          -180,
+          -61.002778,
+          180,
+          84
+        ],
+        "temporal_interval": [
+          [
+            "2010-12-31T00:00:00Z",
+            "2010-12-31T00:00:00Z"
+          ]
+        ]
+      },
+      "suggested_id": "harmonized_global_biomass",
+      "title": "HGB: Harmonized Global Biomass for 2010"
+    },
+    {
+      "access_summary": "Collection metadata declares per-item data assets / provider storage roots in the listed native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain unvalidated.",
+      "conversion_rationale": "Reuse declared COG layers; license is CC BY-NC-SA metadata and needs use-case review.",
+      "evidence_key": "chloris_global_biomass",
+      "evidence_urls": [
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/chloris-biomass",
+        "https://planetarycomputer.microsoft.com/dataset/chloris-biomass"
+      ],
+      "existing_record_id": null,
+      "format_labels": [
+        "COG"
+      ],
+      "geographic_scope": "near_global",
+      "hosting_status": "native_available",
+      "license_summary": {
+        "note": "Do not treat this metadata label as legal clearance.",
+        "review_status": "provider declaration captured; terms and redistribution permission not independently reviewed",
+        "stac_license": "CC-BY-NC-SA-4.0"
+      },
+      "observed_formats": [
+        {
+          "asset_key": "biomass",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "biomass_change",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "biomass_change_wm",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "biomass_wm",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        }
+      ],
+      "proposed_outputs": [
+        "Retain declared native format pending byte-level validation."
+      ],
+      "recommended_formats": [
+        "COG"
+      ],
+      "sources": [
+        {
+          "entry_id": "chloris-biomass",
+          "provider": "Microsoft Planetary Computer STAC",
+          "relationship": "exact_dataset",
+          "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/chloris-biomass"
+        }
+      ],
+      "spatial_coverage": {
+        "review_note": "Global terrestrial woody biomass, 2003–2019; STAC bounds 60°S–90°N and producer description says global.",
+        "stac_bbox": [
+          -179.95,
+          -60,
+          179.95,
+          90
+        ],
+        "temporal_interval": [
+          [
+            "2003-07-31T00:00:00Z",
+            "2019-07-31T00:00:00Z"
+          ]
+        ]
+      },
+      "suggested_id": "chloris_global_biomass",
+      "title": "Chloris Biomass"
+    },
+    {
+      "access_summary": "Collection metadata declares per-item data assets / provider storage roots in the listed native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain unvalidated.",
+      "conversion_rationale": "Review native rasters and source editions; annual mosaics are not equivalent to general land-cover products.",
+      "evidence_key": "alos_forest_nonforest_mosaic",
+      "evidence_urls": [
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/alos-fnf-mosaic",
+        "https://planetarycomputer.microsoft.com/dataset/alos-fnf-mosaic"
+      ],
+      "existing_record_id": null,
+      "format_labels": [],
+      "geographic_scope": "near_global",
+      "hosting_status": "native_available",
+      "license_summary": {
+        "note": "Do not treat this metadata label as legal clearance.",
+        "review_status": "provider declaration captured; terms and redistribution permission not independently reviewed",
+        "stac_license": "other"
+      },
+      "observed_formats": [
+        {
+          "asset_key": "C",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": []
+        }
+      ],
+      "proposed_outputs": [
+        "Retain declared native format pending byte-level validation."
+      ],
+      "recommended_formats": [],
+      "sources": [
+        {
+          "entry_id": "alos-fnf-mosaic",
+          "provider": "Microsoft Planetary Computer STAC",
+          "relationship": "exact_dataset",
+          "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/alos-fnf-mosaic"
+        }
+      ],
+      "spatial_coverage": {
+        "review_note": "Annual ALOS forest/non-forest mosaics; STAC bounds 56°S–85°N. Coverage likely latitude-limited; confirm masks/docs.",
+        "stac_bbox": [
+          -180,
+          85,
+          180,
+          -56
+        ],
+        "temporal_interval": [
+          [
+            "2015-01-01T00:00:00Z",
+            "2020-12-31T23:59:59Z"
+          ]
+        ]
+      },
+      "suggested_id": "alos_forest_nonforest_mosaic",
+      "title": "ALOS Forest/Non-Forest Annual Mosaic"
+    },
+    {
+      "access_summary": "Collection metadata declares per-item data assets / provider storage roots in the listed native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain unvalidated.",
+      "conversion_rationale": "Reuse declared raster assets after validating actual assets; preserve year, polarization and mosaic identity.",
+      "evidence_key": "alos_palsar_mosaic",
+      "evidence_urls": [
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/alos-palsar-mosaic",
+        "https://planetarycomputer.microsoft.com/dataset/alos-palsar-mosaic"
+      ],
+      "existing_record_id": null,
+      "format_labels": [],
+      "geographic_scope": "near_global",
+      "hosting_status": "native_available",
+      "license_summary": {
+        "note": "Do not treat this metadata label as legal clearance.",
+        "review_status": "provider declaration captured; terms and redistribution permission not independently reviewed",
+        "stac_license": "other"
+      },
+      "observed_formats": [
+        {
+          "asset_key": "HH",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": []
+        },
+        {
+          "asset_key": "HV",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": []
+        },
+        {
+          "asset_key": "VH",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": []
+        },
+        {
+          "asset_key": "VV",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": []
+        },
+        {
+          "asset_key": "date",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": []
+        },
+        {
+          "asset_key": "linci",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": []
+        },
+        {
+          "asset_key": "mask",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": []
+        },
+        {
+          "asset_key": "metadata",
+          "media_type": "application/xml",
+          "roles": []
+        }
+      ],
+      "proposed_outputs": [
+        "Retain declared native format pending byte-level validation."
+      ],
+      "recommended_formats": [],
+      "sources": [
+        {
+          "entry_id": "alos-palsar-mosaic",
+          "provider": "Microsoft Planetary Computer STAC",
+          "relationship": "exact_dataset",
+          "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/alos-palsar-mosaic"
+        }
+      ],
+      "spatial_coverage": {
+        "review_note": "Annual ALOS PALSAR mosaic; STAC bounds 56°S–85°N. Global land coverage is latitude-limited.",
+        "stac_bbox": [
+          -180,
+          85,
+          180,
+          -56
+        ],
+        "temporal_interval": [
+          [
+            "2015-01-01T00:00:00Z",
+            "2021-12-31T23:59:59Z"
+          ]
+        ]
+      },
+      "suggested_id": "alos_palsar_mosaic",
+      "title": "ALOS PALSAR Annual Mosaic"
+    },
+    {
+      "access_summary": "Collection metadata declares per-item data assets / provider storage roots in the listed native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain unvalidated.",
+      "conversion_rationale": "Reuse declared Zarr collection root; retain half-hourly temporal resolution and note non-global high-latitude footprint.",
+      "evidence_key": "gpm_imerg_half_hourly",
+      "evidence_urls": [
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/gpm-imerg-hhr",
+        "https://planetarycomputer.microsoft.com/dataset/gpm-imerg-hhr"
+      ],
+      "existing_record_id": null,
+      "format_labels": [
+        "Zarr"
+      ],
+      "geographic_scope": "near_global",
+      "hosting_status": "native_available",
+      "license_summary": {
+        "note": "Do not treat this metadata label as legal clearance.",
+        "review_status": "provider declaration captured; terms and redistribution permission not independently reviewed",
+        "stac_license": "other"
+      },
+      "observed_formats": [
+        {
+          "asset_key": "zarr-abfs",
+          "href": "abfs://imerg/gpm-imerg-hhr.zarr",
+          "media_type": "application/vnd+zarr",
+          "roles": [
+            "data",
+            "zarr"
+          ]
+        }
+      ],
+      "proposed_outputs": [
+        "Retain declared native format pending byte-level validation."
+      ],
+      "recommended_formats": [
+        "Zarr"
+      ],
+      "sources": [
+        {
+          "entry_id": "gpm-imerg-hhr",
+          "provider": "Microsoft Planetary Computer STAC",
+          "relationship": "exact_dataset",
+          "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/gpm-imerg-hhr"
+        }
+      ],
+      "spatial_coverage": {
+        "review_note": "Global precipitation estimates; STAC bbox all-world and description says majority of Earth, with known high-latitude limits.",
+        "stac_bbox": [
+          -180,
+          -90,
+          180,
+          90
+        ],
+        "temporal_interval": [
+          [
+            "2000-06-01T00:00:00Z",
+            "2021-05-31T23:30:00Z"
+          ]
+        ]
+      },
+      "suggested_id": "gpm_imerg_half_hourly",
+      "title": "GPM IMERG"
+    },
+    {
+      "access_summary": "Collection metadata declares per-item data assets / provider storage roots in the listed native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain unvalidated.",
+      "conversion_rationale": "Reuse native Zarr variables and static NetCDF asset; inspect variable/coordinate conventions and access paths.",
+      "evidence_key": "era5_reanalysis",
+      "evidence_urls": [
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/era5-pds",
+        "https://planetarycomputer.microsoft.com/dataset/era5-pds"
+      ],
+      "existing_record_id": null,
+      "format_labels": [
+        "Zarr",
+        "NetCDF"
+      ],
+      "geographic_scope": "global",
+      "hosting_status": "native_available",
+      "license_summary": {
+        "note": "Do not treat this metadata label as legal clearance.",
+        "review_status": "provider declaration captured; terms and redistribution permission not independently reviewed",
+        "stac_license": "other"
+      },
+      "observed_formats": [
+        {
+          "asset_key": "air_pressure_at_mean_sea_level",
+          "media_type": "application/vnd+zarr",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "air_temperature_at_2_metres",
+          "media_type": "application/vnd+zarr",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "air_temperature_at_2_metres_1hour_Maximum",
+          "media_type": "application/vnd+zarr",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "air_temperature_at_2_metres_1hour_Minimum",
+          "media_type": "application/vnd+zarr",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "dew_point_temperature_at_2_metres",
+          "media_type": "application/vnd+zarr",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "eastward_wind_at_100_metres",
+          "media_type": "application/vnd+zarr",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "eastward_wind_at_10_metres",
+          "media_type": "application/vnd+zarr",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "era5-static-var",
+          "href": "https://cpdataeuwest.blob.core.windows.net/era5/era5_static.nc",
+          "media_type": "application/netcdf",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "integral_wrt_time_of_surface_direct_downwelling_shortwave_flux_in_air_1hour_Accumulation",
+          "media_type": "application/vnd+zarr",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "northward_wind_at_100_metres",
+          "media_type": "application/vnd+zarr",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "northward_wind_at_10_metres",
+          "media_type": "application/vnd+zarr",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "precipitation_amount_1hour_Accumulation",
+          "media_type": "application/vnd+zarr",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "sea_surface_temperature",
+          "media_type": "application/vnd+zarr",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "surface_air_pressure",
+          "media_type": "application/vnd+zarr",
+          "roles": [
+            "data"
+          ]
+        }
+      ],
+      "proposed_outputs": [
+        "Retain declared native format pending byte-level validation."
+      ],
+      "recommended_formats": [
+        "Zarr",
+        "NetCDF"
+      ],
+      "sources": [
+        {
+          "entry_id": "era5-pds",
+          "provider": "Microsoft Planetary Computer STAC",
+          "relationship": "exact_dataset",
+          "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/era5-pds"
+        }
+      ],
+      "spatial_coverage": {
+        "review_note": "Global atmospheric reanalysis from 1950 onward; STAC bbox global.",
+        "stac_bbox": [
+          -180,
+          -90,
+          180,
+          90
+        ],
+        "temporal_interval": [
+          [
+            "1979-01-01T00:00:00Z",
+            null
+          ]
+        ]
+      },
+      "suggested_id": "era5_reanalysis",
+      "title": "ERA5 - PDS"
+    },
+    {
+      "access_summary": "Collection metadata declares per-item data assets / provider storage roots in the listed native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain unvalidated.",
+      "conversion_rationale": "Reuse declared NetCDF assets; preserve GCM, scenario, variable and daily time dimensions.",
+      "evidence_key": "nasa_nex_gddp_cmip6",
+      "evidence_urls": [
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/nasa-nex-gddp-cmip6",
+        "https://planetarycomputer.microsoft.com/dataset/nasa-nex-gddp-cmip6"
+      ],
+      "existing_record_id": null,
+      "format_labels": [
+        "NetCDF"
+      ],
+      "geographic_scope": "global",
+      "hosting_status": "native_available",
+      "license_summary": {
+        "note": "Do not treat this metadata label as legal clearance.",
+        "review_status": "provider declaration captured; terms and redistribution permission not independently reviewed",
+        "stac_license": "other"
+      },
+      "observed_formats": [
+        {
+          "asset_key": "hurs",
+          "media_type": "application/netcdf",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "huss",
+          "media_type": "application/netcdf",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "pr",
+          "media_type": "application/netcdf",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "rlds",
+          "media_type": "application/netcdf",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "rsds",
+          "media_type": "application/netcdf",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "sfcWind",
+          "media_type": "application/netcdf",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "tas",
+          "media_type": "application/netcdf",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "tasmax",
+          "media_type": "application/netcdf",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "tasmin",
+          "media_type": "application/netcdf",
+          "roles": [
+            "data"
+          ]
+        }
+      ],
+      "proposed_outputs": [
+        "Retain declared native format pending byte-level validation."
+      ],
+      "recommended_formats": [
+        "NetCDF"
+      ],
+      "sources": [
+        {
+          "entry_id": "nasa-nex-gddp-cmip6",
+          "provider": "Microsoft Planetary Computer STAC",
+          "relationship": "exact_dataset",
+          "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/nasa-nex-gddp-cmip6"
+        }
+      ],
+      "spatial_coverage": {
+        "review_note": "Global downscaled CMIP6 scenario grids; STAC bbox world; 1950–2100.",
+        "stac_bbox": [
+          -180,
+          -90,
+          180,
+          90
+        ],
+        "temporal_interval": [
+          [
+            "1950-01-01T00:00:00Z",
+            "2100-12-31T00:00:00Z"
+          ]
+        ]
+      },
+      "suggested_id": "nasa_nex_gddp_cmip6",
+      "title": "Earth Exchange Global Daily Downscaled Projections (NEX-GDDP-CMIP6)"
+    },
+    {
+      "access_summary": "Collection metadata declares per-item data assets / provider storage roots in the listed native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain unvalidated.",
+      "citation": {
+        "doi": "10.1175/JCLI-D-14-00754.1",
+        "note": "Collection metadata directly cites this DOI; no citation count inferred.",
+        "source_field": "Planetary Computer collection description"
+      },
+      "conversion_rationale": "Reuse declared Zarr variables; separate CC0 edition from CC-BY and CC-BY-SA siblings.",
+      "evidence_key": "climate_impact_lab_gdpcir_cc0",
+      "evidence_urls": [
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/cil-gdpcir-cc0",
+        "https://planetarycomputer.microsoft.com/dataset/cil-gdpcir-cc0"
+      ],
+      "existing_record_id": null,
+      "format_labels": [
+        "Zarr"
+      ],
+      "geographic_scope": "global",
+      "hosting_status": "native_available",
+      "license_summary": {
+        "note": "Do not treat this metadata label as legal clearance.",
+        "review_status": "provider declaration captured; terms and redistribution permission not independently reviewed",
+        "stac_license": "CC0-1.0"
+      },
+      "observed_formats": [
+        {
+          "asset_key": "pr",
+          "media_type": "application/vnd+zarr",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "tasmax",
+          "media_type": "application/vnd+zarr",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "tasmin",
+          "media_type": "application/vnd+zarr",
+          "roles": [
+            "data"
+          ]
+        }
+      ],
+      "proposed_outputs": [
+        "Retain declared native format pending byte-level validation."
+      ],
+      "recommended_formats": [
+        "Zarr"
+      ],
+      "sources": [
+        {
+          "entry_id": "cil-gdpcir-cc0",
+          "provider": "Microsoft Planetary Computer STAC",
+          "relationship": "exact_dataset",
+          "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/cil-gdpcir-cc0"
+        }
+      ],
+      "spatial_coverage": {
+        "review_note": "Global daily downscaled CMIP6 temperature/precipitation; STAC bbox global, 1950–2100.",
+        "stac_bbox": [
+          -180,
+          -90,
+          180,
+          90
+        ],
+        "temporal_interval": [
+          [
+            "1950-01-01T00:00:00Z",
+            "2100-12-31T00:00:00Z"
+          ]
+        ]
+      },
+      "suggested_id": "climate_impact_lab_gdpcir_cc0",
+      "title": "CIL Global Downscaled Projections for Climate Impacts Research (CC0-1.0)"
+    },
+    {
+      "access_summary": "Collection metadata declares per-item data assets / provider storage roots in the listed native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain unvalidated.",
+      "conversion_rationale": "Reuse declared COG and NetCDF assets; distinguish CDR values from interpolated cells and inspect provenance.",
+      "evidence_key": "noaa_oisst_cdr",
+      "evidence_urls": [
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/noaa-cdr-sea-surface-temperature-optimum-interpolation",
+        "https://planetarycomputer.microsoft.com/dataset/noaa-cdr-sea-surface-temperature-optimum-interpolation"
+      ],
+      "existing_record_id": null,
+      "format_labels": [
+        "COG",
+        "NetCDF"
+      ],
+      "geographic_scope": "global",
+      "hosting_status": "native_available",
+      "license_summary": {
+        "note": "Do not treat this metadata label as legal clearance.",
+        "review_status": "provider declaration captured; terms and redistribution permission not independently reviewed",
+        "stac_license": "other"
+      },
+      "observed_formats": [
+        {
+          "asset_key": "anom",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "err",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "ice",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "netcdf",
+          "media_type": "application/x-netcdf",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "sst",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        }
+      ],
+      "proposed_outputs": [
+        "Retain declared native format pending byte-level validation."
+      ],
+      "recommended_formats": [
+        "COG",
+        "NetCDF"
+      ],
+      "sources": [
+        {
+          "entry_id": "noaa-cdr-sea-surface-temperature-optimum-interpolation",
+          "provider": "Microsoft Planetary Computer STAC",
+          "relationship": "exact_dataset",
+          "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/noaa-cdr-sea-surface-temperature-optimum-interpolation"
+        }
+      ],
+      "spatial_coverage": {
+        "review_note": "Global ocean SST grid; STAC bbox all-world; complete fields are described as gap-filled interpolation.",
+        "stac_bbox": [
+          -180,
+          -90,
+          180,
+          90
+        ],
+        "temporal_interval": [
+          [
+            "1981-09-01T00:00:00Z",
+            null
+          ]
+        ]
+      },
+      "suggested_id": "noaa_oisst_cdr",
+      "title": "Sea Surface Temperature - Optimum Interpolation CDR"
+    },
+    {
+      "access_summary": "Collection metadata declares per-item data assets / provider storage roots in the listed native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain unvalidated.",
+      "conversion_rationale": "Reuse declared COG layers; review relationship to NOAA OSB bundle and exact vintage.",
+      "evidence_key": "noaa_whoi_sst_cdr",
+      "evidence_urls": [
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/noaa-cdr-sea-surface-temperature-whoi",
+        "https://planetarycomputer.microsoft.com/dataset/noaa-cdr-sea-surface-temperature-whoi"
+      ],
+      "existing_record_id": null,
+      "format_labels": [
+        "COG"
+      ],
+      "geographic_scope": "global",
+      "hosting_status": "native_available",
+      "license_summary": {
+        "note": "Do not treat this metadata label as legal clearance.",
+        "review_status": "provider declaration captured; terms and redistribution permission not independently reviewed",
+        "stac_license": "other"
+      },
+      "observed_formats": [
+        {
+          "asset_key": "fill_missing_qc",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "sea_surface_temperature",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        }
+      ],
+      "proposed_outputs": [
+        "Retain declared native format pending byte-level validation."
+      ],
+      "recommended_formats": [
+        "COG"
+      ],
+      "sources": [
+        {
+          "entry_id": "noaa-cdr-sea-surface-temperature-whoi",
+          "provider": "Microsoft Planetary Computer STAC",
+          "relationship": "exact_dataset",
+          "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/noaa-cdr-sea-surface-temperature-whoi"
+        }
+      ],
+      "spatial_coverage": {
+        "review_note": "Global ocean SST CDR; STAC bbox all-world.",
+        "stac_bbox": [
+          -180,
+          -90,
+          180,
+          90
+        ],
+        "temporal_interval": [
+          [
+            "1988-01-01T00:00:00Z",
+            null
+          ]
+        ]
+      },
+      "suggested_id": "noaa_whoi_sst_cdr",
+      "title": "Sea Surface Temperature - WHOI CDR"
+    },
+    {
+      "access_summary": "Collection metadata declares per-item data assets / provider storage roots in the listed native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain unvalidated.",
+      "conversion_rationale": "Reuse declared COG product; check ocean mask, vertical integration and CDR version.",
+      "evidence_key": "noaa_ocean_heat_content_cdr",
+      "evidence_urls": [
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/noaa-cdr-ocean-heat-content",
+        "https://planetarycomputer.microsoft.com/dataset/noaa-cdr-ocean-heat-content"
+      ],
+      "existing_record_id": null,
+      "format_labels": [
+        "COG"
+      ],
+      "geographic_scope": "global",
+      "hosting_status": "native_available",
+      "license_summary": {
+        "note": "Do not treat this metadata label as legal clearance.",
+        "review_status": "provider declaration captured; terms and redistribution permission not independently reviewed",
+        "stac_license": "other"
+      },
+      "observed_formats": [
+        {
+          "asset_key": "heat_content",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "mean_halosteric_sea_level",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "mean_salinity",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "mean_temperature",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "mean_thermosteric_sea_level",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "mean_total_steric_sea_level",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        }
+      ],
+      "proposed_outputs": [
+        "Retain declared native format pending byte-level validation."
+      ],
+      "recommended_formats": [
+        "COG"
+      ],
+      "sources": [
+        {
+          "entry_id": "noaa-cdr-ocean-heat-content",
+          "provider": "Microsoft Planetary Computer STAC",
+          "relationship": "exact_dataset",
+          "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/noaa-cdr-ocean-heat-content"
+        }
+      ],
+      "spatial_coverage": {
+        "review_note": "Global ocean heat-content CDR, 1972–2022; STAC bbox all-world.",
+        "stac_bbox": [
+          -180,
+          -90,
+          180,
+          90
+        ],
+        "temporal_interval": [
+          [
+            "1972-03-01T00:00:00Z",
+            "2022-03-31T23:59:59Z"
+          ]
+        ]
+      },
+      "suggested_id": "noaa_ocean_heat_content_cdr",
+      "title": "Global Ocean Heat Content CDR"
+    },
+    {
+      "access_summary": "Collection metadata declares per-item data assets / provider storage roots in the listed native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain unvalidated.",
+      "conversion_rationale": "Review NetCDF distribution and scenario dimensions; inverted bbox makes extent alone insufficient.",
+      "evidence_key": "deltares_global_flood_maps",
+      "evidence_urls": [
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/deltares-floods",
+        "https://planetarycomputer.microsoft.com/dataset/deltares-floods"
+      ],
+      "existing_record_id": null,
+      "format_labels": [
+        "NetCDF"
+      ],
+      "geographic_scope": "global",
+      "hosting_status": "native_available",
+      "license_summary": {
+        "note": "Do not treat this metadata label as legal clearance.",
+        "review_status": "provider declaration captured; terms and redistribution permission not independently reviewed",
+        "stac_license": "CDLA-Permissive-1.0"
+      },
+      "observed_formats": [
+        {
+          "asset_key": "data",
+          "media_type": "application/x-netcdf",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "index",
+          "media_type": "application/json",
+          "roles": [
+            "index"
+          ]
+        }
+      ],
+      "proposed_outputs": [
+        "Retain declared native format pending byte-level validation."
+      ],
+      "recommended_formats": [
+        "NetCDF"
+      ],
+      "sources": [
+        {
+          "entry_id": "deltares-floods",
+          "provider": "Microsoft Planetary Computer STAC",
+          "relationship": "exact_dataset",
+          "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/deltares-floods"
+        }
+      ],
+      "spatial_coverage": {
+        "review_note": "Global flood-depth model; STAC world bbox is inverted latitude order, so actual geographic coverage must be verified from producer masks/docs.",
+        "stac_bbox": [
+          -180,
+          90,
+          180,
+          -90
+        ],
+        "temporal_interval": [
+          [
+            "2018-01-01T00:00:00Z",
+            "2018-12-31T00:00:00Z"
+          ],
+          [
+            "2050-01-01T00:00:00Z",
+            "2050-12-31T00:00:00Z"
+          ]
+        ]
+      },
+      "suggested_id": "deltares_global_flood_maps",
+      "title": "Deltares Global Flood Maps"
+    },
+    {
+      "access_summary": "Collection metadata declares per-item data assets / provider storage roots in the listed native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain unvalidated.",
+      "conversion_rationale": "Review native distribution and definitions; preserve water-balance method and temporal aggregation.",
+      "evidence_key": "deltares_global_water_availability",
+      "evidence_urls": [
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/deltares-water-availability",
+        "https://planetarycomputer.microsoft.com/dataset/deltares-water-availability"
+      ],
+      "existing_record_id": null,
+      "format_labels": [
+        "NetCDF"
+      ],
+      "geographic_scope": "global",
+      "hosting_status": "native_available",
+      "license_summary": {
+        "note": "Do not treat this metadata label as legal clearance.",
+        "review_status": "provider declaration captured; terms and redistribution permission not independently reviewed",
+        "stac_license": "CDLA-Permissive-1.0"
+      },
+      "observed_formats": [
+        {
+          "asset_key": "data",
+          "media_type": "application/x-netcdf",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "index",
+          "media_type": "application/json",
+          "roles": [
+            "index"
+          ]
+        }
+      ],
+      "proposed_outputs": [
+        "Retain declared native format pending byte-level validation."
+      ],
+      "recommended_formats": [
+        "NetCDF"
+      ],
+      "sources": [
+        {
+          "entry_id": "deltares-water-availability",
+          "provider": "Microsoft Planetary Computer STAC",
+          "relationship": "exact_dataset",
+          "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/deltares-water-availability"
+        }
+      ],
+      "spatial_coverage": {
+        "review_note": "Global water-availability product; STAC world bbox and 1970–2020 interval.",
+        "stac_bbox": [
+          -180,
+          90,
+          180,
+          -90
+        ],
+        "temporal_interval": [
+          [
+            "1970-01-01T00:00:00Z",
+            "2020-12-31T00:00:00Z"
+          ]
+        ]
+      },
+      "suggested_id": "deltares_global_water_availability",
+      "title": "Deltares Global Water Availability"
+    },
+    {
+      "access_summary": "Collection metadata declares per-item data assets / provider storage roots in the listed native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain unvalidated.",
+      "conversion_rationale": "Reuse declared COG; keep separate from Copernicus DSM due to different source/product semantics.",
+      "evidence_key": "nasadem",
+      "evidence_urls": [
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/nasadem",
+        "https://planetarycomputer.microsoft.com/dataset/nasadem"
+      ],
+      "existing_record_id": null,
+      "format_labels": [
+        "COG"
+      ],
+      "geographic_scope": "near_global",
+      "hosting_status": "native_available",
+      "license_summary": {
+        "note": "Do not treat this metadata label as legal clearance.",
+        "review_status": "provider declaration captured; terms and redistribution permission not independently reviewed",
+        "stac_license": "other"
+      },
+      "observed_formats": [
+        {
+          "asset_key": "elevation",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        }
+      ],
+      "proposed_outputs": [
+        "Retain declared native format pending byte-level validation."
+      ],
+      "recommended_formats": [
+        "COG"
+      ],
+      "sources": [
+        {
+          "entry_id": "nasadem",
+          "provider": "Microsoft Planetary Computer STAC",
+          "relationship": "exact_dataset",
+          "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/nasadem"
+        }
+      ],
+      "spatial_coverage": {
+        "review_note": "Global topographic product with SRTM-derived latitude bounds about 56°S–61°N; explicit global description but polar gaps.",
+        "stac_bbox": [
+          -179.000139,
+          -56.000139,
+          179.000139,
+          61.000139
+        ],
+        "temporal_interval": [
+          [
+            "2000-02-20T00:00:00Z",
+            "2000-02-20T00:00:00Z"
+          ]
+        ]
+      },
+      "suggested_id": "nasadem",
+      "title": "NASADEM HGT v001"
+    },
+    {
+      "access_summary": "Collection metadata declares per-item data assets / provider storage roots in the listed native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain unvalidated.",
+      "canonical_counterpart_note": "Same MOD10A2 Collection 6.1 observations; PC retains native sinusoidal assets while the GEE counterpart is UTM-converted. Semantic family match, not byte identity.",
+      "conversion_rationale": "Reuse existing canonical record; native COG item assets are declared; verify bytes before any publication.",
+      "evidence_key": "modis_snow_8day_v061",
+      "evidence_urls": [
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/modis-10A2-061",
+        "https://planetarycomputer.microsoft.com/dataset/modis-10A2-061"
+      ],
+      "existing_record_id": "modis_8day_snow",
+      "format_labels": [
+        "COG",
+        "HDF"
+      ],
+      "geographic_scope": "global",
+      "hosting_status": "native_available",
+      "license_summary": {
+        "note": "Do not treat this metadata label as legal clearance.",
+        "review_status": "provider declaration captured; terms and redistribution permission not independently reviewed",
+        "stac_license": "other"
+      },
+      "observed_formats": [
+        {
+          "asset_key": "Eight_Day_Snow_Cover",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "Maximum_Snow_Extent",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "hdf",
+          "media_type": "application/x-hdf",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "metadata",
+          "media_type": "application/xml",
+          "roles": [
+            "metadata"
+          ]
+        }
+      ],
+      "proposed_outputs": [
+        "Retain declared native format pending byte-level validation."
+      ],
+      "recommended_formats": [
+        "COG",
+        "HDF"
+      ],
+      "sources": [
+        {
+          "entry_id": "modis-10A2-061",
+          "provider": "Microsoft Planetary Computer STAC",
+          "relationship": "same_family",
+          "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/modis-10A2-061"
+        }
+      ],
+      "spatial_coverage": {
+        "review_note": "Global MODIS snow-cover 8-day product; all-world STAC bbox. Existing canonical record cites this exact collection.",
+        "stac_bbox": [
+          -180,
+          -90,
+          180,
+          90
+        ],
+        "temporal_interval": [
+          [
+            "2000-02-18T00:00:00Z",
+            null
+          ]
+        ]
+      },
+      "suggested_id": "modis_snow_8day_v061",
+      "title": "MODIS Snow Cover 8-day"
+    },
+    {
+      "access_summary": "Collection metadata declares per-item data assets / provider storage roots in the listed native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain unvalidated.",
+      "conversion_rationale": "Reuse declared COG variables; preserve MODIS product/version and quality fields.",
+      "evidence_key": "modis_vegetation_indices_16day_v061",
+      "evidence_urls": [
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/modis-13A1-061",
+        "https://planetarycomputer.microsoft.com/dataset/modis-13A1-061"
+      ],
+      "existing_record_id": null,
+      "format_labels": [
+        "COG",
+        "HDF"
+      ],
+      "geographic_scope": "global",
+      "hosting_status": "native_available",
+      "license_summary": {
+        "note": "Do not treat this metadata label as legal clearance.",
+        "review_status": "provider declaration captured; terms and redistribution permission not independently reviewed",
+        "stac_license": "other"
+      },
+      "observed_formats": [
+        {
+          "asset_key": "500m_16_days_EVI",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "500m_16_days_MIR_reflectance",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "500m_16_days_NDVI",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "500m_16_days_NIR_reflectance",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "500m_16_days_VI_Quality",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "500m_16_days_blue_reflectance",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "500m_16_days_composite_day_of_the_year",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "500m_16_days_pixel_reliability",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "500m_16_days_red_reflectance",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "500m_16_days_relative_azimuth_angle",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "500m_16_days_sun_zenith_angle",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "500m_16_days_view_zenith_angle",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "hdf",
+          "media_type": "application/x-hdf",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "metadata",
+          "media_type": "application/xml",
+          "roles": [
+            "metadata"
+          ]
+        }
+      ],
+      "proposed_outputs": [
+        "Retain declared native format pending byte-level validation."
+      ],
+      "recommended_formats": [
+        "COG",
+        "HDF"
+      ],
+      "sources": [
+        {
+          "entry_id": "modis-13A1-061",
+          "provider": "Microsoft Planetary Computer STAC",
+          "relationship": "exact_dataset",
+          "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/modis-13A1-061"
+        }
+      ],
+      "spatial_coverage": {
+        "review_note": "Global 500 m 16-day NDVI/EVI collection; STAC bbox all-world.",
+        "stac_bbox": [
+          -180,
+          -90,
+          180,
+          90
+        ],
+        "temporal_interval": [
+          [
+            "2000-02-18T00:00:00Z",
+            null
+          ]
+        ]
+      },
+      "suggested_id": "modis_vegetation_indices_16day_v061",
+      "title": "MODIS Vegetation Indices 16-Day (500m)"
+    },
+    {
+      "access_summary": "Collection metadata declares per-item data assets / provider storage roots in the listed native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain unvalidated.",
+      "conversion_rationale": "Reuse declared COG; inspect yearly grid, units and gap-fill flags.",
+      "evidence_key": "modis_npp_yearly_v061",
+      "evidence_urls": [
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/modis-17A3HGF-061",
+        "https://planetarycomputer.microsoft.com/dataset/modis-17A3HGF-061"
+      ],
+      "existing_record_id": null,
+      "format_labels": [
+        "COG",
+        "HDF"
+      ],
+      "geographic_scope": "global",
+      "hosting_status": "native_available",
+      "license_summary": {
+        "note": "Do not treat this metadata label as legal clearance.",
+        "review_status": "provider declaration captured; terms and redistribution permission not independently reviewed",
+        "stac_license": "other"
+      },
+      "observed_formats": [
+        {
+          "asset_key": "Gpp_500m",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "Npp_500m",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "Npp_QC_500m",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "hdf",
+          "media_type": "application/x-hdf",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "metadata",
+          "media_type": "application/xml",
+          "roles": [
+            "metadata"
+          ]
+        }
+      ],
+      "proposed_outputs": [
+        "Retain declared native format pending byte-level validation."
+      ],
+      "recommended_formats": [
+        "COG",
+        "HDF"
+      ],
+      "sources": [
+        {
+          "entry_id": "modis-17A3HGF-061",
+          "provider": "Microsoft Planetary Computer STAC",
+          "relationship": "exact_dataset",
+          "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/modis-17A3HGF-061"
+        }
+      ],
+      "spatial_coverage": {
+        "review_note": "Global annual gap-filled net primary productivity; STAC bbox all-world.",
+        "stac_bbox": [
+          -180,
+          -90,
+          180,
+          90
+        ],
+        "temporal_interval": [
+          [
+            "2000-02-18T00:00:00Z",
+            null
+          ]
+        ]
+      },
+      "suggested_id": "modis_npp_yearly_v061",
+      "title": "MODIS Net Primary Production Yearly Gap-Filled"
+    },
+    {
+      "access_summary": "Collection metadata declares per-item data assets / provider storage roots in the listed native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain unvalidated.",
+      "conversion_rationale": "Reuse declared COG; inspect algorithm, units, temporal fields and QC.",
+      "evidence_key": "modis_et_yearly_v061",
+      "evidence_urls": [
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/modis-16A3GF-061",
+        "https://planetarycomputer.microsoft.com/dataset/modis-16A3GF-061"
+      ],
+      "existing_record_id": null,
+      "format_labels": [
+        "COG",
+        "HDF"
+      ],
+      "geographic_scope": "global",
+      "hosting_status": "native_available",
+      "license_summary": {
+        "note": "Do not treat this metadata label as legal clearance.",
+        "review_status": "provider declaration captured; terms and redistribution permission not independently reviewed",
+        "stac_license": "other"
+      },
+      "observed_formats": [
+        {
+          "asset_key": "ET_500m",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "ET_QC_500m",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "LE_500m",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "PET_500m",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "PLE_500m",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "hdf",
+          "media_type": "application/x-hdf",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "metadata",
+          "media_type": "application/xml",
+          "roles": [
+            "metadata"
+          ]
+        }
+      ],
+      "proposed_outputs": [
+        "Retain declared native format pending byte-level validation."
+      ],
+      "recommended_formats": [
+        "COG",
+        "HDF"
+      ],
+      "sources": [
+        {
+          "entry_id": "modis-16A3GF-061",
+          "provider": "Microsoft Planetary Computer STAC",
+          "relationship": "exact_dataset",
+          "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/modis-16A3GF-061"
+        }
+      ],
+      "spatial_coverage": {
+        "review_note": "Global yearly gap-filled net evapotranspiration; STAC bbox all-world.",
+        "stac_bbox": [
+          -180,
+          -90,
+          180,
+          90
+        ],
+        "temporal_interval": [
+          [
+            "2001-01-01T00:00:00Z",
+            null
+          ]
+        ]
+      },
+      "suggested_id": "modis_et_yearly_v061",
+      "title": "MODIS Net Evapotranspiration Yearly Gap-Filled"
+    },
+    {
+      "access_summary": "Collection metadata declares per-item data assets / provider storage roots in the listed native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain unvalidated.",
+      "conversion_rationale": "Reuse declared COG; preserve monthly compositing and quality flags.",
+      "evidence_key": "modis_burned_area_monthly_v061",
+      "evidence_urls": [
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/modis-64A1-061",
+        "https://planetarycomputer.microsoft.com/dataset/modis-64A1-061"
+      ],
+      "existing_record_id": null,
+      "format_labels": [
+        "COG",
+        "HDF"
+      ],
+      "geographic_scope": "global",
+      "hosting_status": "native_available",
+      "license_summary": {
+        "note": "Do not treat this metadata label as legal clearance.",
+        "review_status": "provider declaration captured; terms and redistribution permission not independently reviewed",
+        "stac_license": "other"
+      },
+      "observed_formats": [
+        {
+          "asset_key": "Burn_Date",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "Burn_Date_Uncertainty",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "First_Day",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "Last_Day",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "QA",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "hdf",
+          "media_type": "application/x-hdf",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "metadata",
+          "media_type": "application/xml",
+          "roles": [
+            "metadata"
+          ]
+        }
+      ],
+      "proposed_outputs": [
+        "Retain declared native format pending byte-level validation."
+      ],
+      "recommended_formats": [
+        "COG",
+        "HDF"
+      ],
+      "sources": [
+        {
+          "entry_id": "modis-64A1-061",
+          "provider": "Microsoft Planetary Computer STAC",
+          "relationship": "exact_dataset",
+          "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/modis-64A1-061"
+        }
+      ],
+      "spatial_coverage": {
+        "review_note": "Global monthly burned area; STAC bbox all-world.",
+        "stac_bbox": [
+          -180,
+          -90,
+          180,
+          90
+        ],
+        "temporal_interval": [
+          [
+            "2000-11-01T00:00:00Z",
+            null
+          ]
+        ]
+      },
+      "suggested_id": "modis_burned_area_monthly_v061",
+      "title": "MODIS Burned Area Monthly"
+    },
+    {
+      "access_summary": "Collection metadata declares per-item data assets / provider storage roots in the listed native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain unvalidated.",
+      "conversion_rationale": "Reuse declared COG; preserve daily timing and confidence/quality fields.",
+      "evidence_key": "modis_thermal_anomalies_daily_v061",
+      "evidence_urls": [
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/modis-14A1-061",
+        "https://planetarycomputer.microsoft.com/dataset/modis-14A1-061"
+      ],
+      "existing_record_id": null,
+      "format_labels": [
+        "COG",
+        "HDF"
+      ],
+      "geographic_scope": "global",
+      "hosting_status": "native_available",
+      "license_summary": {
+        "note": "Do not treat this metadata label as legal clearance.",
+        "review_status": "provider declaration captured; terms and redistribution permission not independently reviewed",
+        "stac_license": "other"
+      },
+      "observed_formats": [
+        {
+          "asset_key": "FireMask",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "MaxFRP",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "QA",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "hdf",
+          "media_type": "application/x-hdf",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "metadata",
+          "media_type": "application/xml",
+          "roles": [
+            "metadata"
+          ]
+        },
+        {
+          "asset_key": "sample",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        }
+      ],
+      "proposed_outputs": [
+        "Retain declared native format pending byte-level validation."
+      ],
+      "recommended_formats": [
+        "COG",
+        "HDF"
+      ],
+      "sources": [
+        {
+          "entry_id": "modis-14A1-061",
+          "provider": "Microsoft Planetary Computer STAC",
+          "relationship": "exact_dataset",
+          "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/modis-14A1-061"
+        }
+      ],
+      "spatial_coverage": {
+        "review_note": "Global daily thermal-anomaly/fire product; STAC bbox all-world.",
+        "stac_bbox": [
+          -180,
+          -90,
+          180,
+          90
+        ],
+        "temporal_interval": [
+          [
+            "2000-02-18T00:00:00Z",
+            null
+          ]
+        ]
+      },
+      "suggested_id": "modis_thermal_anomalies_daily_v061",
+      "title": "MODIS Thermal Anomalies/Fire Daily"
+    },
+    {
+      "access_summary": "Collection metadata declares per-item data assets / provider storage roots in the listed native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain unvalidated.",
+      "conversion_rationale": "Reuse declared band COG item assets; retain scene granularity, processing baseline and cloud/QA bands.",
+      "evidence_key": "sentinel_2_l2a",
+      "evidence_urls": [
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-2-l2a",
+        "https://planetarycomputer.microsoft.com/dataset/sentinel-2-l2a"
+      ],
+      "existing_record_id": null,
+      "format_labels": [
+        "COG"
+      ],
+      "geographic_scope": "near_global",
+      "hosting_status": "native_available",
+      "license_summary": {
+        "note": "Do not treat this metadata label as legal clearance.",
+        "review_status": "provider declaration captured; terms and redistribution permission not independently reviewed",
+        "stac_license": "proprietary"
+      },
+      "observed_formats": [
+        {
+          "asset_key": "AOT",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "B01",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "B02",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "B03",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "B04",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "B05",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "B06",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "B07",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "B08",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "B09",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "B11",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "B12",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "B8A",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "SCL",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "WVP",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "datastrip-metadata",
+          "media_type": "application/xml",
+          "roles": [
+            "metadata"
+          ]
+        },
+        {
+          "asset_key": "granule-metadata",
+          "media_type": "application/xml",
+          "roles": [
+            "metadata"
+          ]
+        },
+        {
+          "asset_key": "inspire-metadata",
+          "media_type": "application/xml",
+          "roles": [
+            "metadata"
+          ]
+        },
+        {
+          "asset_key": "preview",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "thumbnail"
+          ]
+        },
+        {
+          "asset_key": "product-metadata",
+          "media_type": "application/xml",
+          "roles": [
+            "metadata"
+          ]
+        },
+        {
+          "asset_key": "safe-manifest",
+          "media_type": "application/xml",
+          "roles": [
+            "metadata"
+          ]
+        },
+        {
+          "asset_key": "visual",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        }
+      ],
+      "proposed_outputs": [
+        "Retain declared native format pending byte-level validation."
+      ],
+      "recommended_formats": [
+        "COG"
+      ],
+      "sources": [
+        {
+          "entry_id": "sentinel-2-l2a",
+          "provider": "Microsoft Planetary Computer STAC",
+          "relationship": "exact_dataset",
+          "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-2-l2a"
+        }
+      ],
+      "spatial_coverage": {
+        "review_note": "Globally distributed Sentinel-2 archive, but coverage is per acquisition tile and season/availability; the world STAC bbox is only an envelope, not wall-to-wall coverage.",
+        "stac_bbox": [
+          -180,
+          -90,
+          180,
+          90
+        ],
+        "temporal_interval": [
+          [
+            "2015-06-27T10:25:31Z",
+            null
+          ]
+        ]
+      },
+      "suggested_id": "sentinel_2_l2a",
+      "title": "Sentinel-2 Level-2A"
+    },
+    {
+      "access_summary": "Collection metadata declares per-item data assets / provider storage roots in the listed native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain unvalidated.",
+      "conversion_rationale": "Reuse declared COG assets; retain polarization, orbit and RTC processing metadata.",
+      "evidence_key": "sentinel_1_rtc",
+      "evidence_urls": [
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc",
+        "https://planetarycomputer.microsoft.com/dataset/sentinel-1-rtc"
+      ],
+      "existing_record_id": null,
+      "format_labels": [
+        "COG"
+      ],
+      "geographic_scope": "near_global",
+      "hosting_status": "native_available",
+      "license_summary": {
+        "note": "Do not treat this metadata label as legal clearance.",
+        "review_status": "provider declaration captured; terms and redistribution permission not independently reviewed",
+        "stac_license": "CC-BY-4.0"
+      },
+      "observed_formats": [
+        {
+          "asset_key": "hh",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "hv",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "vh",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "vv",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        }
+      ],
+      "proposed_outputs": [
+        "Retain declared native format pending byte-level validation."
+      ],
+      "recommended_formats": [
+        "COG"
+      ],
+      "sources": [
+        {
+          "entry_id": "sentinel-1-rtc",
+          "provider": "Microsoft Planetary Computer STAC",
+          "relationship": "exact_dataset",
+          "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc"
+        }
+      ],
+      "spatial_coverage": {
+        "review_note": "Globally distributed Sentinel-1 RTC archive, but coverage is per acquisition/swath; the world STAC bbox is only an envelope, not wall-to-wall coverage.",
+        "stac_bbox": [
+          -180,
+          -90,
+          180,
+          90
+        ],
+        "temporal_interval": [
+          [
+            "2014-10-10T00:28:21Z",
+            null
+          ]
+        ]
+      },
+      "suggested_id": "sentinel_1_rtc",
+      "title": "Sentinel 1 Radiometrically Terrain Corrected (RTC)"
+    },
+    {
+      "access_summary": "Collection metadata declares per-item data assets / provider storage roots in the listed native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain unvalidated.",
+      "conversion_rationale": "Reuse declared NetCDF assets; retain pollutant/product-specific variable and QA semantics.",
+      "evidence_key": "sentinel_5p_l2",
+      "evidence_urls": [
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-5p-l2-netcdf",
+        "https://planetarycomputer.microsoft.com/dataset/sentinel-5p-l2-netcdf"
+      ],
+      "existing_record_id": null,
+      "format_labels": [
+        "NetCDF"
+      ],
+      "geographic_scope": "near_global",
+      "hosting_status": "native_available",
+      "license_summary": {
+        "note": "Do not treat this metadata label as legal clearance.",
+        "review_status": "provider declaration captured; terms and redistribution permission not independently reviewed",
+        "stac_license": "proprietary"
+      },
+      "observed_formats": [
+        {
+          "asset_key": "aer-ai",
+          "media_type": "application/x-netcdf",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "aer-lh",
+          "media_type": "application/x-netcdf",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "ch4",
+          "media_type": "application/x-netcdf",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "cloud",
+          "media_type": "application/x-netcdf",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "co",
+          "media_type": "application/x-netcdf",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "hcho",
+          "media_type": "application/x-netcdf",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "no2",
+          "media_type": "application/x-netcdf",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "np-bd3",
+          "media_type": "application/x-netcdf",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "np-bd6",
+          "media_type": "application/x-netcdf",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "np-bd7",
+          "media_type": "application/x-netcdf",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "o3",
+          "media_type": "application/x-netcdf",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "o3-tcl",
+          "media_type": "application/x-netcdf",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "so2",
+          "media_type": "application/x-netcdf",
+          "roles": [
+            "data"
+          ]
+        }
+      ],
+      "proposed_outputs": [
+        "Retain declared native format pending byte-level validation."
+      ],
+      "recommended_formats": [
+        "NetCDF"
+      ],
+      "sources": [
+        {
+          "entry_id": "sentinel-5p-l2-netcdf",
+          "provider": "Microsoft Planetary Computer STAC",
+          "relationship": "exact_dataset",
+          "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-5p-l2-netcdf"
+        }
+      ],
+      "spatial_coverage": {
+        "review_note": "Global orbital product family with per-orbit swath sampling; world STAC bbox does not imply wall-to-wall instantaneous coverage.",
+        "stac_bbox": [
+          -180,
+          -90,
+          180,
+          90
+        ],
+        "temporal_interval": [
+          [
+            "2018-04-30T00:18:50Z",
+            null
+          ]
+        ]
+      },
+      "suggested_id": "sentinel_5p_l2",
+      "title": "Sentinel-5P Level-2"
+    },
+    {
+      "access_summary": "Collection metadata declares per-item data assets / provider storage roots in the listed native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain unvalidated.",
+      "conversion_rationale": "Reuse source assets only after provider access and license review; STAC license is marked proprietary.",
+      "evidence_key": "landsat_collection_2_level2",
+      "evidence_urls": [
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/landsat-c2-l2",
+        "https://planetarycomputer.microsoft.com/dataset/landsat-c2-l2"
+      ],
+      "existing_record_id": null,
+      "format_labels": [
+        "COG"
+      ],
+      "geographic_scope": "near_global",
+      "hosting_status": "native_available",
+      "license_summary": {
+        "note": "Do not treat this metadata label as legal clearance.",
+        "review_status": "provider declaration captured; terms and redistribution permission not independently reviewed",
+        "stac_license": "proprietary"
+      },
+      "observed_formats": [
+        {
+          "asset_key": "ang",
+          "media_type": "text/plain",
+          "roles": [
+            "metadata"
+          ]
+        },
+        {
+          "asset_key": "atmos_opacity",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "atran",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "blue",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data",
+            "reflectance"
+          ]
+        },
+        {
+          "asset_key": "cdist",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "cloud_qa",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "cloud",
+            "cloud-shadow",
+            "snow-ice",
+            "water-mask"
+          ]
+        },
+        {
+          "asset_key": "coastal",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data",
+            "reflectance"
+          ]
+        },
+        {
+          "asset_key": "drad",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "emis",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "emsd",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "green",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data",
+            "reflectance"
+          ]
+        },
+        {
+          "asset_key": "lwir",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data",
+            "temperature"
+          ]
+        },
+        {
+          "asset_key": "lwir11",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data",
+            "temperature"
+          ]
+        },
+        {
+          "asset_key": "mtl.json",
+          "media_type": "application/json",
+          "roles": [
+            "metadata"
+          ]
+        },
+        {
+          "asset_key": "mtl.txt",
+          "media_type": "text/plain",
+          "roles": [
+            "metadata"
+          ]
+        },
+        {
+          "asset_key": "mtl.xml",
+          "media_type": "application/xml",
+          "roles": [
+            "metadata"
+          ]
+        },
+        {
+          "asset_key": "nir08",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data",
+            "reflectance"
+          ]
+        },
+        {
+          "asset_key": "qa",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "qa_aerosol",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data-mask",
+            "water-mask"
+          ]
+        },
+        {
+          "asset_key": "qa_pixel",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "cloud",
+            "cloud-shadow",
+            "snow-ice",
+            "water-mask"
+          ]
+        },
+        {
+          "asset_key": "qa_radsat",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "saturation"
+          ]
+        },
+        {
+          "asset_key": "red",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data",
+            "reflectance"
+          ]
+        },
+        {
+          "asset_key": "swir16",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data",
+            "reflectance"
+          ]
+        },
+        {
+          "asset_key": "swir22",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data",
+            "reflectance"
+          ]
+        },
+        {
+          "asset_key": "trad",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "urad",
+          "media_type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "roles": [
+            "data"
+          ]
+        }
+      ],
+      "proposed_outputs": [
+        "Retain declared native format pending byte-level validation."
+      ],
+      "recommended_formats": [
+        "COG"
+      ],
+      "sources": [
+        {
+          "entry_id": "landsat-c2-l2",
+          "provider": "Microsoft Planetary Computer STAC",
+          "relationship": "exact_dataset",
+          "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/landsat-c2-l2"
+        }
+      ],
+      "spatial_coverage": {
+        "review_note": "Globally distributed Landsat archive, but coverage is per scene and acquisition; the world STAC bbox is only an envelope, not wall-to-wall coverage.",
+        "stac_bbox": [
+          -180,
+          -90,
+          180,
+          90
+        ],
+        "temporal_interval": [
+          [
+            "1982-08-22T00:00:00Z",
+            null
+          ]
+        ]
+      },
+      "suggested_id": "landsat_collection_2_level2",
+      "title": "Landsat Collection 2 Level-2"
+    },
+    {
+      "access_summary": "Collection metadata declares per-item data assets / provider storage roots in the listed native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain unvalidated.",
+      "conversion_rationale": "Reuse declared GeoParquet root as a tabular point-data source; retain dataset occurrence IDs, licensing and observation quality.",
+      "evidence_key": "gbif_occurrence_records",
+      "evidence_urls": [
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/gbif",
+        "https://planetarycomputer.microsoft.com/dataset/gbif"
+      ],
+      "existing_record_id": null,
+      "format_labels": [
+        "Parquet"
+      ],
+      "geographic_scope": "global",
+      "hosting_status": "native_available",
+      "license_summary": {
+        "note": "Do not treat this metadata label as legal clearance.",
+        "review_status": "provider declaration captured; terms and redistribution permission not independently reviewed",
+        "stac_license": "other"
+      },
+      "observed_formats": [
+        {
+          "asset_key": "data",
+          "media_type": "application/x-parquet",
+          "roles": [
+            "data"
+          ]
+        }
+      ],
+      "proposed_outputs": [
+        "Retain declared native format pending byte-level validation."
+      ],
+      "recommended_formats": [
+        "Parquet"
+      ],
+      "sources": [
+        {
+          "entry_id": "gbif",
+          "provider": "Microsoft Planetary Computer STAC",
+          "relationship": "exact_dataset",
+          "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/gbif"
+        }
+      ],
+      "spatial_coverage": {
+        "review_note": "Global occurrence database; world bbox and description identifies global species occurrences. Point records are clustered, not wall-to-wall coverage.",
+        "stac_bbox": [
+          -180,
+          -90,
+          180,
+          90
+        ],
+        "temporal_interval": [
+          [
+            "2021-04-13T00:00:00Z",
+            null
+          ]
+        ]
+      },
+      "suggested_id": "gbif_occurrence_records",
+      "title": "Global Biodiversity Information Facility (GBIF)"
+    },
+    {
+      "access_summary": "Collection metadata declares per-item data assets / provider storage roots in the listed native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain unvalidated.",
+      "conversion_rationale": "Reuse declared NetCDF assets; preserve retrieval algorithm and quality flags.",
+      "evidence_key": "sentinel_3_global_aerosol",
+      "evidence_urls": [
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-3-synergy-aod-l2-netcdf",
+        "https://planetarycomputer.microsoft.com/dataset/sentinel-3-synergy-aod-l2-netcdf"
+      ],
+      "existing_record_id": null,
+      "format_labels": [
+        "NetCDF"
+      ],
+      "geographic_scope": "near_global",
+      "hosting_status": "native_available",
+      "license_summary": {
+        "note": "Do not treat this metadata label as legal clearance.",
+        "review_status": "provider declaration captured; terms and redistribution permission not independently reviewed",
+        "stac_license": "proprietary"
+      },
+      "observed_formats": [
+        {
+          "asset_key": "ntc-aod",
+          "media_type": "application/x-netcdf",
+          "roles": [
+            "data"
+          ]
+        },
+        {
+          "asset_key": "safe-manifest",
+          "media_type": "application/xml",
+          "roles": [
+            "metadata"
+          ]
+        }
+      ],
+      "proposed_outputs": [
+        "Retain declared native format pending byte-level validation."
+      ],
+      "recommended_formats": [
+        "NetCDF"
+      ],
+      "sources": [
+        {
+          "entry_id": "sentinel-3-synergy-aod-l2-netcdf",
+          "provider": "Microsoft Planetary Computer STAC",
+          "relationship": "exact_dataset",
+          "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-3-synergy-aod-l2-netcdf"
+        }
+      ],
+      "spatial_coverage": {
+        "review_note": "Global orbital product family with per-orbit swath sampling; world STAC bbox does not imply wall-to-wall instantaneous coverage.",
+        "stac_bbox": [
+          -180,
+          -90,
+          180,
+          90
+        ],
+        "temporal_interval": [
+          [
+            "2020-04-16T19:36:28.012367Z",
+            null
+          ]
+        ]
+      },
+      "suggested_id": "sentinel_3_global_aerosol",
+      "title": "Sentinel-3 Global Aerosol"
+    },
+    {
+      "access_summary": "Collection metadata declares per-item data assets / provider storage roots in the listed native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain unvalidated.",
+      "canonical_counterpart_note": "Canonical GEE record is the Australia partition; PC collection describes the worldwide family. Global family is not identical in scope to the regional record.",
+      "conversion_rationale": "Reuse existing record and declared Delta/GeoParquet access; ABFS paths and ODbL obligations need separate validation.",
+      "evidence_key": "microsoft_building_footprints",
+      "evidence_urls": [
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/ms-buildings",
+        "https://planetarycomputer.microsoft.com/dataset/ms-buildings"
+      ],
+      "existing_record_id": null,
+      "format_labels": [
+        "GeoParquet"
+      ],
+      "geographic_scope": "near_global",
+      "hosting_status": "native_available",
+      "license_summary": {
+        "note": "Do not treat this metadata label as legal clearance.",
+        "review_status": "provider declaration captured; terms and redistribution permission not independently reviewed",
+        "stac_license": "ODbL-1.0"
+      },
+      "observed_formats": [
+        {
+          "asset_key": "data",
+          "media_type": "application/x-parquet",
+          "roles": [
+            "data"
+          ]
+        }
+      ],
+      "proposed_outputs": [
+        "Retain declared native format pending byte-level validation."
+      ],
+      "recommended_formats": [
+        "GeoParquet"
+      ],
+      "related_record_id": "msbuildings",
+      "sources": [
+        {
+          "entry_id": "ms-buildings",
+          "provider": "Microsoft Planetary Computer STAC",
+          "relationship": "component",
+          "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/ms-buildings"
+        }
+      ],
+      "spatial_coverage": {
+        "review_note": "Broad worldwide building footprints, but coverage is country/imagery dependent and not complete global land cover.",
+        "stac_bbox": [
+          -180,
+          90,
+          180,
+          -90
+        ],
+        "temporal_interval": [
+          [
+            "2014-01-01T00:00:00Z",
+            null
+          ]
+        ]
+      },
+      "suggested_id": "microsoft_building_footprints",
+      "title": "Microsoft Building Footprints"
+    }
+  ],
+  "collection_count": 139,
+  "coverage_triage": {
+    "counts": {
+      "regional_or_latitude_limited": 64,
+      "unknown_extent": 0,
+      "world_bbox_scope_unverified": 37
+    },
+    "regional_or_latitude_limited": [
+      {
+        "entry_id": "3dep-lidar-classification",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -166.8546920006028,
+          17.655357747708283,
+          -64.56116757979399,
+          71.39330810146807
+        ],
+        "title": "USGS 3DEP Lidar Classification"
+      },
+      {
+        "entry_id": "3dep-lidar-copc",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -166.8546920006028,
+          17.655357747708283,
+          -64.56116757979399,
+          71.39330810146807
+        ],
+        "title": "USGS 3DEP Lidar Point Cloud"
+      },
+      {
+        "entry_id": "3dep-lidar-dsm",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -166.8546920006028,
+          17.655357747708283,
+          -64.56116757979399,
+          71.39330810146807
+        ],
+        "title": "USGS 3DEP Lidar Digital Surface Model"
+      },
+      {
+        "entry_id": "3dep-lidar-dtm",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -166.8546920006028,
+          17.655357747708283,
+          -64.56116757979399,
+          71.39330810146807
+        ],
+        "title": "USGS 3DEP Lidar Digital Terrain Model"
+      },
+      {
+        "entry_id": "3dep-lidar-dtm-native",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -166.8546920006028,
+          17.655357747708283,
+          -64.56116757979399,
+          71.39330810146807
+        ],
+        "title": "USGS 3DEP Lidar Digital Terrain Model (Native)"
+      },
+      {
+        "entry_id": "3dep-lidar-hag",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -166.8546920006028,
+          17.655357747708283,
+          -64.56116757979399,
+          71.39330810146807
+        ],
+        "title": "USGS 3DEP Lidar Height above Ground"
+      },
+      {
+        "entry_id": "3dep-lidar-intensity",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -166.8546920006028,
+          17.655357747708283,
+          -64.56116757979399,
+          71.39330810146807
+        ],
+        "title": "USGS 3DEP Lidar Intensity"
+      },
+      {
+        "entry_id": "3dep-lidar-pointsourceid",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -166.8546920006028,
+          17.655357747708283,
+          -64.56116757979399,
+          71.39330810146807
+        ],
+        "title": "USGS 3DEP Lidar Point Source"
+      },
+      {
+        "entry_id": "3dep-lidar-returns",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -166.8546920006028,
+          17.655357747708283,
+          -64.56116757979399,
+          71.39330810146807
+        ],
+        "title": "USGS 3DEP Lidar Returns"
+      },
+      {
+        "entry_id": "3dep-seamless",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -174.001666666983,
+          -15.00166666667,
+          164.0016666666,
+          84.00166666666
+        ],
+        "title": "USGS 3DEP Seamless DEMs"
+      },
+      {
+        "entry_id": "chesapeake-lc-13",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -81.14658496196135,
+          36.21291717905733,
+          -73.27357561029186,
+          44.77821441524524
+        ],
+        "title": "Chesapeake Land Cover (13-class)"
+      },
+      {
+        "entry_id": "chesapeake-lc-7",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -81.14658496196135,
+          36.21291717905733,
+          -73.27357561029186,
+          44.77821441524524
+        ],
+        "title": "Chesapeake Land Cover (7-class)"
+      },
+      {
+        "entry_id": "chesapeake-lu",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -81.14648244566828,
+          36.18730972451623,
+          -73.11082086653798,
+          44.7781991560751
+        ],
+        "title": "Chesapeake Land Use"
+      },
+      {
+        "entry_id": "conus404",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -137.873,
+          17.631,
+          -58.463,
+          56.704
+        ],
+        "title": "CONUS404"
+      },
+      {
+        "entry_id": "daymet-annual-hi",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -160.3056,
+          17.9539,
+          -154.772,
+          23.5186
+        ],
+        "title": "Daymet Annual Hawaii"
+      },
+      {
+        "entry_id": "daymet-annual-na",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -178.1333,
+          14.0749,
+          -53.0567,
+          82.9143
+        ],
+        "title": "Daymet Annual North America"
+      },
+      {
+        "entry_id": "daymet-annual-pr",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -67.9927,
+          16.8444,
+          -64.1196,
+          19.9382
+        ],
+        "title": "Daymet Annual Puerto Rico"
+      },
+      {
+        "entry_id": "daymet-daily-hi",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -160.3056,
+          17.9539,
+          -154.772,
+          23.5186
+        ],
+        "title": "Daymet Daily Hawaii"
+      },
+      {
+        "entry_id": "daymet-daily-na",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -178.1333,
+          14.0749,
+          -53.0567,
+          82.9143
+        ],
+        "title": "Daymet Daily North America"
+      },
+      {
+        "entry_id": "daymet-daily-pr",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -67.9927,
+          16.8444,
+          -64.1196,
+          19.9382
+        ],
+        "title": "Daymet Daily Puerto Rico"
+      },
+      {
+        "entry_id": "daymet-monthly-hi",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -160.3056,
+          17.9539,
+          -154.772,
+          23.5186
+        ],
+        "title": "Daymet Monthly Hawaii"
+      },
+      {
+        "entry_id": "daymet-monthly-na",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -178.1333,
+          14.0749,
+          -53.0567,
+          82.9143
+        ],
+        "title": "Daymet Monthly North America"
+      },
+      {
+        "entry_id": "daymet-monthly-pr",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -67.9927,
+          16.8444,
+          -64.1196,
+          19.9382
+        ],
+        "title": "Daymet Monthly Puerto Rico"
+      },
+      {
+        "entry_id": "drcog-lulc",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -105.93962510864995,
+          39.10438697007073,
+          -103.66801443832743,
+          40.320593119647256
+        ],
+        "title": "Denver Regional Council of Governments Land Use Land Cover"
+      },
+      {
+        "entry_id": "eclipse",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -87.94011408252348,
+          41.64454312178303,
+          -87.5241371038952,
+          42.023038586147585
+        ],
+        "title": "Urban Innovation Eclipse Sensor Data"
+      },
+      {
+        "entry_id": "ecmwf-forecast",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -180,
+          90,
+          180,
+          -90
+        ],
+        "title": "ECMWF Open Data (real-time)"
+      },
+      {
+        "entry_id": "fia",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          138.06,
+          0.92,
+          163.05,
+          9.78
+        ],
+        "title": "Forest Inventory and Analysis"
+      },
+      {
+        "entry_id": "fws-nwi",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -64.54958,
+          13.16667,
+          144.6,
+          71.99633
+        ],
+        "title": "FWS National Wetlands Inventory"
+      },
+      {
+        "entry_id": "gap",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -127.9710481801793,
+          22.797789263564383,
+          -65.26634281147894,
+          51.64692620669362
+        ],
+        "title": "USGS Gap Land Cover"
+      },
+      {
+        "entry_id": "gnatsgo-rasters",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -170.8513,
+          -14.3799,
+          -169.4152,
+          -14.1432
+        ],
+        "title": "gNATSGO Soil Database - Rasters"
+      },
+      {
+        "entry_id": "gnatsgo-tables",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -170.8513,
+          -14.3799,
+          -169.4152,
+          -14.1432
+        ],
+        "title": "gNATSGO Soil Database - Tables"
+      },
+      {
+        "entry_id": "goes-cmi",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -180,
+          -81.33,
+          6.3,
+          81.33
+        ],
+        "title": "GOES-R Cloud & Moisture Imagery"
+      },
+      {
+        "entry_id": "goes-glm",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -180,
+          -66.56,
+          -8.44,
+          66.56
+        ],
+        "title": "GOES-R Lightning Detection"
+      },
+      {
+        "entry_id": "gridmet",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -124.76666663333334,
+          25.066666666666666,
+          -67.05833330000002,
+          49.400000000000006
+        ],
+        "title": "gridMET"
+      },
+      {
+        "entry_id": "hrea",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -117.413972,
+          -55.54235,
+          -53.092722,
+          32.718434
+        ],
+        "title": "HREA: High Resolution Electricity Access"
+      },
+      {
+        "entry_id": "kaza-hydroforecast",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          21.04494,
+          -17.792517,
+          23.343421,
+          -13.08062
+        ],
+        "title": "HydroForecast - Kwando & Upper Zambezi Rivers"
+      },
+      {
+        "entry_id": "met-office-uk-deterministic-height",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -13.7254,
+          48.8643,
+          4.3408,
+          61.6102
+        ],
+        "title": "Height levels collection Met Office UKV 2km deterministic forecast"
+      },
+      {
+        "entry_id": "met-office-uk-deterministic-near-surface",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -13.7254,
+          48.8643,
+          4.3408,
+          61.6102
+        ],
+        "title": "Near-surface level collection Met Office UKV 2km deterministic forecast"
+      },
+      {
+        "entry_id": "met-office-uk-deterministic-pressure",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -13.7254,
+          48.8643,
+          4.3408,
+          61.6102
+        ],
+        "title": "Pressure levels collection Met Office UKV 2km deterministic forecast"
+      },
+      {
+        "entry_id": "met-office-uk-deterministic-whole-atmosphere",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -13.7254,
+          48.8643,
+          4.3408,
+          61.6102
+        ],
+        "title": "Whole Atmosphere collection Met Office UKV 2km deterministic forecast"
+      },
+      {
+        "entry_id": "mobi",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -130.23751729209377,
+          21.736663926419077,
+          -63.66198266211968,
+          49.184200486300604
+        ],
+        "title": "MoBI: Map of Biodiversity Importance"
+      },
+      {
+        "entry_id": "mtbs",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -166.705027,
+          56.331164,
+          -137.664767,
+          69.980073
+        ],
+        "title": "MTBS: Monitoring Trends in Burn Severity"
+      },
+      {
+        "entry_id": "naip",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -124.784,
+          24.744,
+          -66.951,
+          49.346
+        ],
+        "title": "NAIP: National Agriculture Imagery Program"
+      },
+      {
+        "entry_id": "nested-eagle-conus",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -131.53,
+          22.75,
+          -63.61,
+          51.32
+        ],
+        "title": "NOAA Nested-EAGLE (CONUS)"
+      },
+      {
+        "entry_id": "noaa-c-cap",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -160.315986,
+          17.892786,
+          -64.966857,
+          49.471148
+        ],
+        "title": "C-CAP Regional Land Cover and Change"
+      },
+      {
+        "entry_id": "noaa-climate-normals-gridded",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -124.708333,
+          24.541666,
+          -66.999995,
+          49.375001
+        ],
+        "title": "NOAA US Gridded Climate Normals (Cloud-Optimized GeoTIFF)"
+      },
+      {
+        "entry_id": "noaa-climate-normals-netcdf",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -124.708333,
+          24.541666,
+          -66.999995,
+          49.375001
+        ],
+        "title": "NOAA US Gridded Climate Normals (NetCDF)"
+      },
+      {
+        "entry_id": "noaa-climate-normals-tabular",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -177.38333,
+          -14.3306,
+          174.1,
+          71.3214
+        ],
+        "title": "NOAA US Tabular Climate Normals"
+      },
+      {
+        "entry_id": "noaa-hrrr",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -174.8849,
+          21.122192719272277,
+          -60.891244531606546,
+          76.3464
+        ],
+        "title": "NOAA High Resolution Rapid Refresh (HRRR)"
+      },
+      {
+        "entry_id": "noaa-mrms-qpe-1h-pass1",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -176,
+          9,
+          150,
+          72
+        ],
+        "title": "NOAA MRMS QPE 1-Hour Pass 1"
+      },
+      {
+        "entry_id": "noaa-mrms-qpe-1h-pass2",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -176,
+          9,
+          150,
+          72
+        ],
+        "title": "NOAA MRMS QPE 1-Hour Pass 2"
+      },
+      {
+        "entry_id": "noaa-mrms-qpe-24h-pass2",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -176,
+          9,
+          150,
+          72
+        ],
+        "title": "NOAA MRMS QPE 24-Hour Pass 2"
+      },
+      {
+        "entry_id": "noaa-nclimgrid-monthly",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -124.708333,
+          24.541666,
+          -66.999995,
+          49.375001
+        ],
+        "title": "Monthly NOAA U.S. Climate Gridded Dataset (NClimGrid)"
+      },
+      {
+        "entry_id": "nrcan-landcover",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -141.003,
+          41.6755,
+          -52.6174,
+          83.1139
+        ],
+        "title": "Land Cover of Canada"
+      },
+      {
+        "entry_id": "planet-nicfi-analytic",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -180,
+          -34.161818157002,
+          180,
+          30.145127179625
+        ],
+        "title": "Planet-NICFI Basemaps (Analytic)"
+      },
+      {
+        "entry_id": "planet-nicfi-visual",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -180,
+          -34.161818157002,
+          180,
+          30.145127179625
+        ],
+        "title": "Planet-NICFI Basemaps (Visual)"
+      },
+      {
+        "entry_id": "predicted-damage-colombia-2026",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -76.6146,
+          3.4127,
+          -75.6922,
+          4.8433
+        ],
+        "title": "Predicted Building Damage: Colombia Earthquake 2026"
+      },
+      {
+        "entry_id": "predicted-damage-venezuela-2026",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -73.354,
+          0.647,
+          -59.7589,
+          12.2019
+        ],
+        "title": "Predicted Building Damage: Venezuela Earthquakes (Catia La Mar, La Guaira, and Caraballeda) 2026"
+      },
+      {
+        "entry_id": "sentinel-3-synergy-v10-l2-netcdf",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -180,
+          -56,
+          180,
+          75
+        ],
+        "title": "Sentinel-3 10-Day Surface Reflectance and NDVI (SPOT VEGETATION)"
+      },
+      {
+        "entry_id": "sentinel-3-synergy-vg1-l2-netcdf",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -180,
+          -56,
+          180,
+          75
+        ],
+        "title": "Sentinel-3 1-Day Surface Reflectance and NDVI (SPOT VEGETATION)"
+      },
+      {
+        "entry_id": "us-census",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -124.763068,
+          24.523096,
+          -66.949895,
+          49.384358
+        ],
+        "title": "US Census"
+      },
+      {
+        "entry_id": "usda-cdl",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -127.887212,
+          22.94027,
+          -65.345507,
+          51.603492
+        ],
+        "title": "USDA Cropland Data Layers (CDLs)"
+      },
+      {
+        "entry_id": "usgs-lcmap-conus-v13",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -129.27732,
+          21.805095,
+          -63.11843,
+          52.92172
+        ],
+        "title": "USGS LCMAP CONUS Collection 1.3"
+      },
+      {
+        "entry_id": "usgs-lcmap-hawaii-v10",
+        "reason": "Collection extent is visibly geographically/latitudinally limited; not treated as global without primary coverage evidence.",
+        "stac_bbox": [
+          -161.27577,
+          18.505136,
+          -154.058649,
+          22.624478
+        ],
+        "title": "USGS LCMAP Hawaii Collection 1.0"
+      }
+    ],
+    "unknown_extent": [],
+    "world_bbox_scope_unverified": [
+      {
+        "entry_id": "alos-dem",
+        "reason": "Broad world STAC bbox, but not separately promoted; a bbox alone is not coverage evidence.",
+        "title": "ALOS World 3D-30m"
+      },
+      {
+        "entry_id": "aster-l1t",
+        "reason": "Broad world STAC bbox, but not separately promoted; a bbox alone is not coverage evidence.",
+        "title": "ASTER L1T"
+      },
+      {
+        "entry_id": "cil-gdpcir-cc-by",
+        "reason": "Broad world STAC bbox, but not separately promoted; a bbox alone is not coverage evidence.",
+        "title": "CIL Global Downscaled Projections for Climate Impacts Research (CC-BY-4.0)"
+      },
+      {
+        "entry_id": "cil-gdpcir-cc-by-sa",
+        "reason": "Broad world STAC bbox, but not separately promoted; a bbox alone is not coverage evidence.",
+        "title": "CIL Global Downscaled Projections for Climate Impacts Research (CC-BY-SA-4.0)"
+      },
+      {
+        "entry_id": "hls2-l30",
+        "reason": "Broad world STAC bbox, but not separately promoted; a bbox alone is not coverage evidence.",
+        "title": "Harmonized Landsat Sentinel-2 (HLS) Version 2.0, Landsat Data"
+      },
+      {
+        "entry_id": "hls2-s30",
+        "reason": "Broad world STAC bbox, but not separately promoted; a bbox alone is not coverage evidence.",
+        "title": "Harmonized Landsat Sentinel-2 (HLS) Version 2.0, Sentinel-2 Data"
+      },
+      {
+        "entry_id": "landsat-c2-l1",
+        "reason": "Broad world STAC bbox, but not separately promoted; a bbox alone is not coverage evidence.",
+        "title": "Landsat Collection 2 Level-1"
+      },
+      {
+        "entry_id": "met-office-global-deterministic-height",
+        "reason": "Broad world STAC bbox, but not separately promoted; a bbox alone is not coverage evidence.",
+        "title": "Height levels collection Met Office Global 10km deterministic weather forecast"
+      },
+      {
+        "entry_id": "met-office-global-deterministic-near-surface",
+        "reason": "Broad world STAC bbox, but not separately promoted; a bbox alone is not coverage evidence.",
+        "title": "Near-surface level collection Met Office global deterministic 10km forecast"
+      },
+      {
+        "entry_id": "met-office-global-deterministic-pressure",
+        "reason": "Broad world STAC bbox, but not separately promoted; a bbox alone is not coverage evidence.",
+        "title": "Pressure levels collection Met Office Global 10km deterministic weather forecast"
+      },
+      {
+        "entry_id": "met-office-global-deterministic-whole-atmosphere",
+        "reason": "Broad world STAC bbox, but not separately promoted; a bbox alone is not coverage evidence.",
+        "title": "Whole Atmosphere collection Met Office Global 10km deterministic weather forecast"
+      },
+      {
+        "entry_id": "modis-09A1-061",
+        "reason": "Broad world STAC bbox, but not separately promoted; a bbox alone is not coverage evidence.",
+        "title": "MODIS Surface Reflectance 8-Day (500m)"
+      },
+      {
+        "entry_id": "modis-09Q1-061",
+        "reason": "Broad world STAC bbox, but not separately promoted; a bbox alone is not coverage evidence.",
+        "title": "MODIS Surface Reflectance 8-Day (250m)"
+      },
+      {
+        "entry_id": "modis-10A1-061",
+        "reason": "Broad world STAC bbox, but not separately promoted; a bbox alone is not coverage evidence.",
+        "title": "MODIS Snow Cover Daily"
+      },
+      {
+        "entry_id": "modis-11A1-061",
+        "reason": "Broad world STAC bbox, but not separately promoted; a bbox alone is not coverage evidence.",
+        "title": "MODIS Land Surface Temperature/Emissivity Daily"
+      },
+      {
+        "entry_id": "modis-11A2-061",
+        "reason": "Broad world STAC bbox, but not separately promoted; a bbox alone is not coverage evidence.",
+        "title": "MODIS Land Surface Temperature/Emissivity 8-Day"
+      },
+      {
+        "entry_id": "modis-13Q1-061",
+        "reason": "Broad world STAC bbox, but not separately promoted; a bbox alone is not coverage evidence.",
+        "title": "MODIS Vegetation Indices 16-Day (250m)"
+      },
+      {
+        "entry_id": "modis-14A2-061",
+        "reason": "Broad world STAC bbox, but not separately promoted; a bbox alone is not coverage evidence.",
+        "title": "MODIS Thermal Anomalies/Fire 8-Day"
+      },
+      {
+        "entry_id": "modis-15A2H-061",
+        "reason": "Broad world STAC bbox, but not separately promoted; a bbox alone is not coverage evidence.",
+        "title": "MODIS Leaf Area Index/FPAR 8-Day"
+      },
+      {
+        "entry_id": "modis-15A3H-061",
+        "reason": "Broad world STAC bbox, but not separately promoted; a bbox alone is not coverage evidence.",
+        "title": "MODIS Leaf Area Index/FPAR 4-Day"
+      },
+      {
+        "entry_id": "modis-17A2H-061",
+        "reason": "Broad world STAC bbox, but not separately promoted; a bbox alone is not coverage evidence.",
+        "title": "MODIS Gross Primary Productivity 8-Day"
+      },
+      {
+        "entry_id": "modis-17A2HGF-061",
+        "reason": "Broad world STAC bbox, but not separately promoted; a bbox alone is not coverage evidence.",
+        "title": "MODIS Gross Primary Productivity 8-Day Gap-Filled"
+      },
+      {
+        "entry_id": "modis-21A2-061",
+        "reason": "Broad world STAC bbox, but not separately promoted; a bbox alone is not coverage evidence.",
+        "title": "MODIS Land Surface Temperature/3-Band Emissivity 8-Day"
+      },
+      {
+        "entry_id": "modis-43A4-061",
+        "reason": "Broad world STAC bbox, but not separately promoted; a bbox alone is not coverage evidence.",
+        "title": "MODIS Nadir BRDF-Adjusted Reflectance (NBAR) Daily"
+      },
+      {
+        "entry_id": "nested-eagle-global",
+        "reason": "Broad world STAC bbox, but not separately promoted; a bbox alone is not coverage evidence.",
+        "title": "NOAA Nested-EAGLE (Global)"
+      },
+      {
+        "entry_id": "noaa-cdr-ocean-heat-content-netcdf",
+        "reason": "Broad world STAC bbox, but not separately promoted; a bbox alone is not coverage evidence.",
+        "title": "Global Ocean Heat Content CDR NetCDFs"
+      },
+      {
+        "entry_id": "noaa-cdr-sea-surface-temperature-whoi-netcdf",
+        "reason": "Broad world STAC bbox, but not separately promoted; a bbox alone is not coverage evidence.",
+        "title": "Sea Surface Temperature - WHOI CDR NetCDFs"
+      },
+      {
+        "entry_id": "sentinel-1-grd",
+        "reason": "Broad world STAC bbox, but not separately promoted; a bbox alone is not coverage evidence.",
+        "title": "Sentinel 1 Level-1 Ground Range Detected (GRD)"
+      },
+      {
+        "entry_id": "sentinel-3-olci-lfr-l2-netcdf",
+        "reason": "Broad world STAC bbox, but not separately promoted; a bbox alone is not coverage evidence.",
+        "title": "Sentinel-3 Land (Full Resolution)"
+      },
+      {
+        "entry_id": "sentinel-3-olci-wfr-l2-netcdf",
+        "reason": "Broad world STAC bbox, but not separately promoted; a bbox alone is not coverage evidence.",
+        "title": "Sentinel-3 Water (Full Resolution)"
+      },
+      {
+        "entry_id": "sentinel-3-slstr-frp-l2-netcdf",
+        "reason": "Broad world STAC bbox, but not separately promoted; a bbox alone is not coverage evidence.",
+        "title": "Sentinel-3 Fire Radiative Power"
+      },
+      {
+        "entry_id": "sentinel-3-slstr-lst-l2-netcdf",
+        "reason": "Broad world STAC bbox, but not separately promoted; a bbox alone is not coverage evidence.",
+        "title": "Sentinel-3 Land Surface Temperature"
+      },
+      {
+        "entry_id": "sentinel-3-slstr-wst-l2-netcdf",
+        "reason": "Broad world STAC bbox, but not separately promoted; a bbox alone is not coverage evidence.",
+        "title": "Sentinel-3 Sea Surface Temperature"
+      },
+      {
+        "entry_id": "sentinel-3-sral-lan-l2-netcdf",
+        "reason": "Broad world STAC bbox, but not separately promoted; a bbox alone is not coverage evidence.",
+        "title": "Sentinel-3 Land Radar Altimetry"
+      },
+      {
+        "entry_id": "sentinel-3-sral-wat-l2-netcdf",
+        "reason": "Broad world STAC bbox, but not separately promoted; a bbox alone is not coverage evidence.",
+        "title": "Sentinel-3 Ocean Radar Altimetry"
+      },
+      {
+        "entry_id": "sentinel-3-synergy-syn-l2-netcdf",
+        "reason": "Broad world STAC bbox, but not separately promoted; a bbox alone is not coverage evidence.",
+        "title": "Sentinel-3 Land Surface Reflectance and Aerosol"
+      },
+      {
+        "entry_id": "sentinel-3-synergy-vgp-l2-netcdf",
+        "reason": "Broad world STAC bbox, but not separately promoted; a bbox alone is not coverage evidence.",
+        "title": "Sentinel-3 Top of Atmosphere Reflectance (SPOT VEGETATION)"
+      }
+    ]
+  },
+  "limitations": [
+    "All evidence is from Microsoft Planetary Computer collection metadata and the linked Microsoft dataset overview URLs; no items or data assets were fetched.",
+    "STAC bbox and temporal interval are declarations and can be envelope-level or incomplete; collection descriptions and provider terms require review.",
+    "Native format declarations and Azure storage paths do not establish downloadability, authorization, checksum integrity, or byte-level COG/Zarr/NetCDF/GeoParquet conformance.",
+    "No citation metrics collected. Candidate suggestions do not change canonical records."
+  ],
+  "observed_at": "2026-11-01T00:24:09.426676+00:00",
+  "provider": "Microsoft Planetary Computer",
+  "review_method": "Metadata-only review of captured current collection records; world-scale descriptions and STAC bounds are combined. A world bbox alone does not qualify coverage. Native asset declarations are reuse signals, not validated downloads. DOI is emitted only when present in collection description.",
+  "schema_version": 1,
+  "source_inventory": "inventory.json",
+  "source_inventory_sha256": "fe443ceb2317bbf738f94af74d45cf1572288a3fbcede4c1ef5a060048bbd331",
+  "source_retention_note": "Source inventory reproduces from normalized retained metadata with two signed-thumbnail query credentials removed. Manifest distinguishes original response digest/bytes from retained body digest/bytes; no original raw-response replay claim."
+}

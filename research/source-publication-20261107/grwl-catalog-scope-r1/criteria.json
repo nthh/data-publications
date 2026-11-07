@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-11-07T21:33:09.796770+00:00",
+  "failure_report": "research/source-publication-20261106/hosted-results/grwl-raw/failed-hosted-r2.json",
+  "failure_report_sha256": "b5cfed1de7270191a95d599aed067d4275f8595fe92a00c7825dfb035ea6e742",
+  "diagnosis": "All parsed JSON was treated as active catalog metadata, including retained historical display styles whose original relative tile paths intentionally refer to older release layouts.",
+  "active_style": "grwl-raw/display/raw-v01.01-display-r3/styles/width.json",
+  "archived_styles": [
+    "grwl-raw/display/raw-v01.01-display-r3/reports/baseline-r2/styles/width.json",
+    "grwl-raw/display/raw-v01.01-display-r3/reports/baseline-r2/reports/baseline-r1/styles/width.json"
+  ],
+  "required_behavior": [
+    "Derive the active catalog graph from exact current analytical catalog/collection roots and current styles declared by the checksum-bound display manifest.",
+    "Check every reachable active structural/asset/style reference against exact planned product objects.",
+    "A historical snapshot reached from the active catalog must be checked as active; no path-name waiver.",
+    "All archived files keep anonymous access, full-byte checksum and declared JSON/NDJSON syntax checks, with historical scope recorded.",
+    "Missing current metadata or invalid current style links must fail and cannot be satisfied by archived copies."
+  ],
+  "required_negative_checks": [
+    "Invalid current style target fails.",
+    "Active catalog link to archived broken style fails.",
+    "Missing current style fails despite historical copy."
+  ],
+  "unchanged": "Immutable product bytes, upload plan and receipts, browser20cases, footer policy, seven required hosting gates and query controls remain unchanged.",
+  "retry_output": ".local/hosted-validation-grwl-raw-r3.json"
+}

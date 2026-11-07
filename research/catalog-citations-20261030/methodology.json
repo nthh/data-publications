@@ -1,0 +1,51 @@
+{
+  "study_id": "official-and-community-20261030",
+  "as_of": "2026-10-30",
+  "timezone": "America/Denver",
+  "scope": "Public official Earth Engine STAC catalog collection metadata and the previously reviewed 363 community documentation families. No authenticated Earth Engine calls, exports, dataset downloads or publication.",
+  "metric": "Maximum OpenAlex cited_by_count among reviewed associated dataset papers, never a sum. Data-release DOI citations are separate. Unknown never becomes zero.",
+  "reference_policy": [
+    "Review references without citation counts; use recommended catalog citations and primary producer sources.",
+    "Separate data papers and product-specific methods from generic algorithms, background references, applications, platform papers and data-release DOIs.",
+    "Label broader family papers used for derived products or versions as base_dataset_family. A paper count never proves use of an exact GEE release.",
+    "A title-only match requires identity evidence; ambiguous or unmatched references remain unresolved.",
+    "Use corpus=all for work-list lookups and preserve actual request parameters, UTC timestamps and responses."
+  ],
+  "population_policy": [
+    "Each current official STAC Collection is one entry, including deprecated versions; emit active-only and global-only views.",
+    "The community population remains the pinned 363 documentation families. Refresh counts in this separate snapshot without altering the original study.",
+    "Publish entry-level rankings plus shared-paper groups. Grouping by paper is a presentation aid, not a claim of dataset equivalence.",
+    "Shared asset references are overlap candidates, not sufficient evidence for equivalent primary products.",
+    "Geographic scope is classified from catalog descriptions and bounds before counts: global, regional, mixed, unclear. Store region notes."
+  ],
+  "validation_before_results": [
+    "Every discovered collection must have one normalized entry and one reference/scope review, with any crawl errors preventing a complete-inventory claim.",
+    "All counted paper identities must be reviewed; no works typed dataset may enter paper rankings.",
+    "One observed work ID has one count across official and community views in this snapshot. Counts must be nonnegative integers; missing/API errors remain null.",
+    "Duplicate paper references never increase scores; paper/data counts never sum; ties use stable entry IDs.",
+    "Test complex DOI parsing including parentheses, angle brackets and Markdown escaping; role exclusions, unknown-versus-zero, global filters and non-equivalence of shared papers.",
+    "Offline rebuild must byte-match committed JSON/CSV outputs; original community files and canonical dataset records remain unchanged.",
+    "Review leading shared-paper groups against primary source/catalog metadata and report coverage and unresolved titles rather than claim universal top ten."
+  ],
+  "cost_guardrails": {
+    "catalog_metadata_max_documents": 3000,
+    "catalog_metadata_max_bytes": 120000000,
+    "catalog_concurrency": 8,
+    "openalex_max_search_queries": 60,
+    "openalex_max_list_requests": 100,
+    "openalex_auth": "Public no-key allowance only; stop on budget response. No account creation or paid requests.",
+    "dataset_asset_requests": 0
+  },
+  "inputs": {
+    "official_root": "https://storage.googleapis.com/earthengine-stac/catalog/catalog.json",
+    "official_old_inventory": "/Users/nathan/projects/folia/commons/gee-official/_manifest.json",
+    "community_study": "research/citations/",
+    "community_catalog_commit": "ca7e707b8f12442630c0212564d701f81f1be203"
+  },
+  "limitations": [
+    "Citation totals favor older publications and do not measure current quality, exact-release usage, cloud-native availability or conversion need.",
+    "Official collection entries and community documentation families have different granularity.",
+    "Unresolved references can change the leading order; results rank resolved reviewed references only.",
+    "A fresh cloud-host/registry/licensing audit remains a separate step before choosing conversions."
+  ]
+}

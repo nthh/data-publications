@@ -1,0 +1,55 @@
+{
+  "dataset_id": "lakeatlas",
+  "release": "lakeatlas-v1.0-r1",
+  "reports": [
+    {
+      "path": "evidence/validation/source-fidelity-final.json",
+      "sha256": "487a641efa52190a141c0d01d5195f99be88c58f8676a1ed16b15f5f98d36290",
+      "size_bytes": 7365,
+      "status": "passed_source_fidelity"
+    },
+    {
+      "path": "evidence/validation/source-worker-final.json",
+      "sha256": "e18e69e7ebdc40080c81f2da1ca981633caffc8de7695ba5d132f00fa6482619",
+      "size_bytes": 2746,
+      "status": "passed_source_only_pending_reader"
+    },
+    {
+      "path": "evidence/validation/source-fidelity-clean-rebuild.json",
+      "sha256": "e5cc22eeee428d221b35a073f82f9de184298c76cf2cd8e41b524a9d3e3bfc3f",
+      "size_bytes": 7366,
+      "status": "passed_source_fidelity"
+    },
+    {
+      "path": "evidence/validation/source-worker-clean-rebuild.json",
+      "sha256": "c41362f767a14c033a6263b456189b7c5afd1990b278e6357278f1b72b9e7c48",
+      "size_bytes": 2746,
+      "status": "passed_source_only_pending_reader"
+    },
+    {
+      "path": "evidence/validation/failure-first-validation.json",
+      "sha256": "cefcbde32181e15c37f43dd8f1cf6f3d948a52e34843fc1ac8d64a9cb3936b5a",
+      "size_bytes": 163,
+      "status": "failed_source_fidelity"
+    },
+    {
+      "path": "evidence/validation/failure-memory-limit-validation.json",
+      "sha256": "2b22a05370a16f01bc57e1435ec3e645cd18b1143448017a6406e5624a98bfe6",
+      "size_bytes": 3033,
+      "status": "failed_memory_limit"
+    },
+    {
+      "path": "evidence/validation/failure-sequential-ordering-validation.json",
+      "sha256": "6c37ccbf50bce5001c40d0debdf90b1ca8c8bae76a16387b8ac24ad1d4798cec",
+      "size_bytes": 827,
+      "status": "failed_source_fidelity"
+    },
+    {
+      "path": "evidence/validation/failure-sequential-ordering-worker.json",
+      "sha256": "6ad46b2636f5caa1ccb3bb26d68e57a1f414deca2fdef5141a0c30047edd43d3",
+      "size_bytes": 177,
+      "status": "failed_source_fidelity"
+    }
+  ],
+  "schema_version": 1
+}

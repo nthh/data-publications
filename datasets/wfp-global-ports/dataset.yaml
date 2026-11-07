@@ -1,0 +1,60 @@
+schema_version: 1
+id: wfp-global-ports
+title: World Food Programme Global Ports locations
+intake:
+  kind: official_catalog
+  reference_url: https://gis.wfp.org/arcgis/rest/services/GLOBAL/GlobalPorts/MapServer/layers
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: near_global
+  spatial_coverage: 'esri: WFP describes a global-scale, country-by-country port locations dataset maintained
+    by its Emergency and Preparedness Geospatial Information Unit, with regular updates and partner inputs.
+    Completeness and update date vary by country. Distinct named producer product; retain exact source
+    edition and footprint.'
+  sources:
+  - provider: esri_public
+    entry_id: 0e23294067994b1dacbabaa541536e36
+    url: https://www.arcgis.com/home/item.html?id=0e23294067994b1dacbabaa541536e36
+    relationship: same_family
+  - provider: producer
+    entry_id: 21ae599c26944c068e828eeaf1cbf7ff
+    url: https://gis.wfp.org/arcgis/rest/services/GLOBAL/GlobalPorts/MapServer/layers
+    relationship: exact_dataset
+  - provider: producer
+    entry_id: Logistics Capacity Assessments
+    url: https://dlca.logcluster.org/
+    relationship: component
+  access:
+  - provider: esri_public
+    status: service_only
+    formats:
+    - vector
+    summary: The WFP REST service documents point features and source lineage. No producer bulk package,
+      item license, export configuration, or redistribution permission was established. Distinct named
+      producer product; retain exact source edition and footprint.
+    license_summary: No license declaration was present in the inspected item or service description.
+      The dataset combines public sources, OSM, World Port Source, WFP, and partner inputs; review the
+      rights for each source before redistribution.
+    proposed_outputs: []
+    rationale: Useful operational global port locations with a named humanitarian data steward and update
+      pathway. Further review is needed to resolve per-source provenance, country completeness, and rights
+      before any offline product; service access alone is insufficient.
+    evidence_urls:
+    - https://gis.wfp.org/arcgis/rest/services/GLOBAL/GlobalPorts/MapServer/layers
+    - https://www.wfp.org/logistics-cluster
+    - https://www.arcgis.com/home/item.html?id=0e23294067994b1dacbabaa541536e36
+    - https://dlca.logcluster.org/
+  citations: []
+  evidence:
+  - path: research/global-candidates-20261031/esri/reviewed.json
+    sha256: e02bd2202c3026ccd7564155bfa69b5e8bc666f65698da6bacce91ab7327d5be
+    key: wfp-global-ports

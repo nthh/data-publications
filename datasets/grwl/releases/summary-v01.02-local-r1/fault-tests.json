@@ -1,0 +1,46 @@
+{
+  "status": "passed",
+  "cases": [
+    {
+      "fault": "identifier",
+      "status": "detected",
+      "validator_error": "DBF field mismatch: ID"
+    },
+    {
+      "fault": "null",
+      "status": "detected",
+      "validator_error": "DBF field mismatch: width_min_"
+    },
+    {
+      "fault": "lost-row",
+      "status": "detected",
+      "validator_error": "analytic row count mismatch"
+    },
+    {
+      "fault": "duplicate-source-row",
+      "status": "detected",
+      "validator_error": "source row ordinal mismatch"
+    },
+    {
+      "fault": "units",
+      "status": "detected",
+      "validator_error": "field unit mismatch: Shape_Leng"
+    },
+    {
+      "fault": "geometry-vertex",
+      "status": "detected",
+      "validator_error": "SHP part vertices or binary float64 values changed at row 1 part 1"
+    },
+    {
+      "fault": "multipart-boundary",
+      "status": "detected",
+      "validator_error": "SHP part vertices or binary float64 values changed at row 10336 part 1"
+    },
+    {
+      "fault": "signed-zero-bit-comparison",
+      "status": "detected",
+      "validator_error": "IEEE-754 uint64 bit comparison distinguishes +0.0 from -0.0"
+    }
+  ],
+  "release_manifest_sha256": "a6eb5095a56461e45c57069886e9a04f0b85a5e8edc1bc9f971ac6560f1b4f4b"
+}

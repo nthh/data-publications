@@ -1,0 +1,49 @@
+schema_version: 1
+id: biodiversity_intactness
+title: Biodiversity Intactness
+intake:
+  kind: official_catalog
+  reference_url: https://planetarycomputer.microsoft.com/api/stac/v1/collections/io-biodiversity
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'planetary: review_note: Global terrestrial 100 m maps; STAC bbox is world-wide and
+    product description says global biodiversity intactness.; stac_bbox: [-180, -90, 180, 90]; temporal_interval:
+    [["2017-01-01T00:00:00Z", "2020-12-31T23:59:59Z"]] Distinct named producer product; retain exact source
+    edition and footprint.'
+  sources:
+  - provider: planetary_computer
+    entry_id: io-biodiversity
+    url: https://planetarycomputer.microsoft.com/api/stac/v1/collections/io-biodiversity
+    relationship: exact_dataset
+  access:
+  - provider: planetary_computer
+    status: native_available
+    formats:
+    - COG
+    summary: 'Collection metadata declares per-item data assets / provider storage roots in the listed
+      native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain
+      unvalidated. Distinct named producer product; retain exact source edition and footprint.'
+    license_summary: 'note: Do not treat this metadata label as legal clearance.; review_status: provider
+      declaration captured; terms and redistribution permission not independently reviewed; stac_license:
+      CC-BY-4.0'
+    proposed_outputs:
+    - COG
+    rationale: Reuse declared COG; preserve annual years and distinct biodiversity-intactness measure.
+    evidence_urls:
+    - https://planetarycomputer.microsoft.com/api/stac/v1/collections/io-biodiversity
+    - https://planetarycomputer.microsoft.com/dataset/io-biodiversity
+  citations: []
+  evidence:
+  - path: research/global-candidates-20261031/planetary/reviewed.json
+    sha256: 07da016851a07f3e3e0937e120ce46442785f4e9096e563d92c1a3c0ce9e616a
+    key: biodiversity_intactness

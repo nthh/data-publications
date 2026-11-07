@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "frozen_at": "2026-11-03T21:42:07.269345+00:00",
+  "status": "precommitted_before_candidate_benchmarks",
+  "scope": "Nine-tile development source check: first32 records per source tile. Global heldout controls remain unchanged and are checked separately.",
+  "source": {
+    "parquet_sha256": "1c7177cc55b732dc7e609ed22ae50c46d677548da98c4b39e4f1ab76996ca509",
+    "bytes": 78903097,
+    "rows": 919832,
+    "source_tiles": 9,
+    "detail_pmtiles_sha256": "a1a7787c7ba28ffc271819bddc54339f9bc741aa9ed44ca619d93e809cbad4f5",
+    "detail_bytes": 11498067077
+  },
+  "development_source_tiles": [
+    "NI15",
+    "NI16",
+    "NJ12",
+    "NK12",
+    "NL10",
+    "NL11",
+    "NL12",
+    "NL13",
+    "NM11"
+  ],
+  "heldout_source_tiles": [],
+  "split_rationale": "Development reuses the nine-tile raw pilot and known connector regions. Holdout tiles are frozen from source-only geographic controls, a dateline tile, and the densest source tile. Rectangular geographic controls are not claims of continental membership.",
+  "overview": {
+    "zooms": [
+      0,
+      7
+    ],
+    "cells_per_tile": 512,
+    "extent": 4096,
+    "layer": "grwl_overview",
+    "meaning": "Cells touched by original width-observation geometry; display coverage, not riverbank polygons or measured width. No invented connections or individual-feature lookup at overview zooms.",
+    "boundaries": "Closed-cell intersection in continuous spherical Web Mercator, without native Tippecanoe rounding. X cells wrap periodically modulo grid size, including both edge columns for a segment exactly on the antimeridian. Clamp only the finite north/south world edge. Unwrap crossing segments to their shortest periodic frame; never connect separate source parts.",
+    "aggregation": "2 by 2 logical OR from the finest occupancy grid.",
+    "encoding": "Nonoverlapping horizontal cell-run rectangles as separate valid MVT polygons.",
+    "gates": [
+      "Every decoded overview cell exactly matches the source-derived occupancy mask at every zoom.",
+      "Independent segment/cell-intersection oracle on frozen heldout source records and boundary fixtures.",
+      "Zero invalid polygons, non-grid vertices, overlaps or unexpected layers.",
+      "Global overview has nonempty data at every zoom 0 through 7."
+    ],
+    "maximum_gzip_tile_bytes": 262144,
+    "projection": "x=(longitude+180)/360*N; y=(1-asinh(tan(latitude*pi/180))/pi)/2*N; latitude clipped to +/-85.0511287798066 only for display. Source coordinates remain unchanged.",
+    "independent_source_controls": {
+      "all_records_in_heldout_source_tiles": true,
+      "first_records_per_other_source_tile": 32,
+      "synthetic": [
+        "closed grid edge and corner",
+        "vertical/horizontal/zero-length segment",
+        "both dateline directions and exact +/-180",
+        "multipart disjoint segments",
+        "finite north/south world edges"
+      ]
+    }
+  },
+  "detail": {
+    "zooms": [
+      8,
+      12
+    ],
+    "layer": "grwl_raw",
+    "keep_attributes": [
+      "width_m",
+      "width_valid"
+    ],
+    "keep_mvt_feature_id": true,
+    "remove_attributes": [
+      "_src_xmin",
+      "_src_ymin",
+      "_src_xmax",
+      "_src_ymax"
+    ],
+    "gates": [
+      "All original detail tile coordinates, feature multiplicity, IDs, integer geometry commands and retained attribute values match the sealed r1 archive. No geometry rescale.",
+      "No new omissions; the same 304 source observations remain absent from z12 due to documented native quantization collapse. All remain in GeoParquet."
+    ],
+    "maximum_gzip_tile_bytes": 1048576
+  },
+  "size": {
+    "development_maximum_fraction_of_existing_detail": 0.6,
+    "global_maximum_archive_bytes": 5529859809,
+    "miss_policy": "Preserve the failed benchmark. Review a new explicit design or threshold revision before evaluating further candidates; do not silently relax fidelity."
+  },
+  "browser": {
+    "existing_controls": "research/grwl-raw-release-20261102/global-browser-controls-r2.json",
+    "all_11_detail_cases": true,
+    "all_14_analytic_fields_exact": true,
+    "additional_zooms": [
+      0,
+      3,
+      7,
+      8
+    ],
+    "overview_to_detail_transition": true,
+    "http_get_status": 206,
+    "maximum_cold_object_bytes_per_case": 33554432,
+    "exact_id_lookup": "Read complete source attributes by unique feature_id; establish row-group pruning from ID statistics and actual range requests.",
+    "timing": "Report measurements; no latency pass threshold on this shared Mac."
+  },
+  "resources": {
+    "native_workers": 2,
+    "heavy_production_jobs_at_once": 1,
+    "minimum_start_free_gib": 40,
+    "minimum_running_free_gib": 15,
+    "maximum_new_artifacts_gib": 24,
+    "maximum_pilot_artifacts_gib": 4,
+    "bulk_policy": "Reference existing bulk files; no new copies of the source or analytical release. Preserve failed evidence; cleanup only within existing authorization."
+  },
+  "reproducibility": [
+    "Commit criteria and source split before running candidate benchmarks.",
+    "Pinned tile-join binary SHA256 da56cb1a2ddf59b2f03798b5314db665dad87bc03cab6f86a03e630e420173fa, version 2.79.0.",
+    "Focused refusal/fixture tests, clean-checkout regional replay, content-bound manifests and reports.",
+    "New display release raw-v01.01-display-r2 only after validation; never overwrite r1."
+  ],
+  "parent_criteria_sha256": "4f40b5868bf30e41ce6d2db977c36f3c8b4b3705a2c82008c33648abeb74ed43"
+}

@@ -1,0 +1,117 @@
+name: Validate dataset records and publication catalog
+
+"on":
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          version: "0.9.27"
+          python-version: "3.12.12"
+          enable-cache: true
+          cache-dependency-glob: |
+            uv.lock
+            tools/portolan/uv.lock
+            scripts/gee_validation/uv.lock
+            scripts/source_publish/uv.lock
+      - name: Install locked environments
+        run: |
+          uv sync --locked --no-build
+          uv sync --locked --project tools/portolan --no-build
+          uv sync --locked --project scripts/gee_validation --no-build
+          uv sync --locked --project scripts/source_publish --no-build
+      - name: Verify canonical records and retained provenance
+        run: |
+          uv run --locked python scripts/catalog.py --check
+          uv run --locked python scripts/check_provenance.py
+      - name: Run focused record and catalog tests
+        run: |
+          uv run --locked python scripts/test_catalog.py
+          uv run --locked python -m unittest discover -s tests -p test_publication_catalog.py -v
+          uv run --locked python -m unittest discover -s tests -p test_candidate_discovery.py -v
+          uv run --locked python -m unittest tests.test_source_products tests.test_lakeatlas_semantics -v
+          uv run --locked python scripts/source_products.py check
+      - name: Check publication execution refusal controls offline
+        run: uv run --locked --project scripts/source_publish python -m pytest tests/test_source_upload.py tests/test_source_api.py tests/test_hosted_validation.py tests/test_browser_range_evidence.py tests/test_hosted_ndjson.py tests/test_hosted_catalog_scope.py tests/test_bounded_http.py tests/test_query_hints.py tests/test_hosted_viewer.py -q
+      - name: Check GEE comparison refusal controls and retained findings offline
+        run: |
+          uv run --locked --project scripts/gee_validation python -m unittest tests.test_gee_request_contract tests.test_gee_release_comparison tests.test_gee_provenance tests.test_gee_geometry_diagnostic tests.test_gee_attribute_diagnostics tests.test_provenance_archive -v
+          python research/gee-release-validation-20261106/summarize.py --check
+      - name: Verify frozen discovery observations offline
+        run: |
+          python research/global-candidates-20261031/planetary/capture.py --check
+          python research/global-candidates-20261031/esri/capture.py --check
+          python research/global-candidates-20261031/citations/extract_frozen.py --check
+          python research/global-candidates-20261031/citations/enrich_coverage.py --check
+          python research/global-candidates-20261031/citations/check_review.py
+          python research/global-candidates-20261031/literature/build_review.py --check
+          python research/global-candidates-20261031/reuse/check.py
+      - name: Verify generated catalog matches its inputs
+        run: uv run --locked python scripts/publication_catalog.py check
+      - name: Exercise the actual validator and failure controls
+        run: uv run --locked --project tools/portolan python -m unittest discover -s tests -p test_portolan_gate.py -v
+      - name: Run offline conformance gate and record advisory results
+        run: uv run --locked --project tools/portolan python scripts/check_portolan.py --catalog catalog --report .local/ci/portolan.json
+      - name: Retain validation report
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: catalog-validation
+          path: .local/ci/portolan.json
+          if-no-files-found: warn
+          include-hidden-files: true
+
+  local-render-tool:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          version: "0.9.27"
+          python-version: "3.12.12"
+          enable-cache: true
+          cache-dependency-glob: |
+            scripts/release_tools/uv.lock
+            scripts/display_tools/uv.lock
+            datasets/river-plastic-inputs/uv.lock
+      - name: Install existing locked analytical environment
+        run: |
+          uv sync --locked --project scripts/release_tools --no-build
+          uv sync --locked --project scripts/display_tools --no-build
+          uv sync --locked --project datasets/river-plastic-inputs --no-build
+      - name: Check local renderer with synthetic fixtures
+        run: uv run --locked --project scripts/release_tools python -m unittest tests.test_render_preview -v
+      - name: Check display conversion and independent geometry oracle
+        run: uv run --locked --project scripts/display_tools python -m unittest tests.test_display_tools tests.test_validate_display tests.test_finalize_display tests.test_grwl_display_wrap tests.test_grwl_display_finalize -v
+      - name: Check raw GRWL source fidelity and display controls offline
+        run: uv run --locked --project scripts/display_tools python -m unittest discover -s tests -p "test_grwl_raw_*.py" -v
+      - name: Check source-selected global browser controls
+        run: uv run --locked --project scripts/display_tools python -m unittest tests.test_global_browser_controls -v
+      - name: Check prepared dataset source and schema refusal gates
+        run: uv run --locked --project datasets/river-plastic-inputs python -m unittest tests.test_hydrolakes_source_binding tests.test_ffr_statistics_contract tests.test_plastic_validation_contract tests.test_grwl_release_preparation -v
+      - name: Check viewer preparation, launcher and range server
+        run: uv run --locked --project scripts/release_tools python -m unittest tests.test_cloud_viewer_prepare tests.test_cloud_viewer_run tests.test_cloud_viewer_server -v
+      - name: Build pinned browser viewer and check client logic
+        run: |
+          node --version
+          npm --prefix scripts/cloud_viewer ci --ignore-scripts --no-audit --no-fund
+          npm --prefix scripts/cloud_viewer run setup
+          npm --prefix scripts/cloud_viewer test
+          node scripts/cloud_viewer/export-grwl-style.mjs --check
+          npm --prefix scripts/cloud_viewer run build

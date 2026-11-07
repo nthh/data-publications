@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "status": "failed_flag_only_regression_preserved_before_fallback",
+  "tippecanoe_version": "2.79.0",
+  "tippecanoe_binary_sha256": "c504719334e5335d60c66a01491707bdbfb773ebbfe3efc7c1c8239eb18d58d1",
+  "tippecanoe_lock_sha256": "28d3bedda9835f808c3c8303b64ad660654b17a48af529d0b32e0c1b496bbd0d",
+  "fixture_lines": [
+    {"id": 1, "coordinates": [[178, 10], [-178, 10]]},
+    {"id": 2, "coordinates": [[-178, 20], [178, 20]]}
+  ],
+  "native_argv": [
+    "/opt/homebrew/bin/tippecanoe", "--quiet", "--output", "<temporary>/True.pmtiles",
+    "--layer", "grwl", "--minimum-zoom", "0", "--maximum-zoom", "3",
+    "--simplification", "2", "--no-feature-limit", "--no-tile-size-limit",
+    "--use-attribute-for-id", "source_row", "--detect-longitude-wraparound", "<temporary>/in.json"
+  ],
+  "environment": {"TIPPECANOE_MAX_THREADS": "2"},
+  "generator_options_confirmed_flag": true,
+  "native_exit_code": 0,
+  "extent": 4096,
+  "coordinate_convention": "MVT XY with y down",
+  "decoded_z0_0_0_with_flag": [
+    {"id": 1, "type": "MultiLineString", "coordinates": [[[4073, 1934], [23, 1934]], [[4176, 1934], [4119, 1934]], [[-23, 1934], [-80, 1934]]]},
+    {"id": 2, "type": "MultiLineString", "coordinates": [[[23, 1816], [4073, 1816]], [[4119, 1816], [4176, 1816]], [[-80, 1816], [-23, 1816]]]}
+  ],
+  "same_decoded_geometries_without_flag": true,
+  "failed_assertion": "Feature1 has 20037508.342789244 metres of geometry within the middle half of the projected world; expected less than1 metre.",
+  "initial_test_command": "GRWL_NATIVE_WRAP_TESTS=1 PYTHONDONTWRITEBYTECODE=1 <display-env>/bin/python -m unittest discover -s tests -p test_grwl_display_wrap.py -v",
+  "initial_test_result": {"tests": 3, "passed": 2, "failures": 1},
+  "limitations": "Temporary fixture archives were deleted by TemporaryDirectory; exact decoded failing coordinates and native command are retained here. This is a negative control, not a passing correction."
+}

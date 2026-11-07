@@ -1,0 +1,80 @@
+{
+  "request_url": "https://api.openalex.org/works?search=High-Resolution+Building+and+Road+Detection+from+Sentinel-2&corpus=all&per_page=5&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date",
+  "retrieved_at": "2026-10-30T22:07:51.188143+00:00",
+  "response_path": "responses/0edbf87cdab2b0c22590102c21afd77582ce5291c920ef27dddb60b3dc45db58.json",
+  "status": 200,
+  "response_sha256": "04ab04249b8ec87bfce88b1c8fcc2e02679c925227a5b9111e60e8ef3e965f6d",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 13885,
+      "db_response_time_ms": 158,
+      "page": 1,
+      "per_page": 5,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where full text has (High-Resolution Building \"and\" Road Detection from Sentinel-2)",
+        "x_new_oql": "get works (all corpora) where full text has (High-Resolution Building \"and\" Road Detection from Sentinel-2)",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "High-Resolution Building and Road Detection from Sentinel-2",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:High-Resolution Building and Road Detection from Sentinel-2&corpus=all&per_page=5",
+        "order": "best matches first",
+        "order_default": true
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W4387800351",
+        "doi": "https://doi.org/10.48550/arxiv.2310.11622",
+        "title": "High-Resolution Building and Road Detection from Sentinel-2",
+        "type": "preprint",
+        "publication_year": 2023,
+        "publication_date": "2023-10-17"
+      },
+      {
+        "id": "https://openalex.org/W3190771647",
+        "doi": "https://doi.org/10.3390/rs13163135",
+        "title": "A Deep Learning Approach to an Enhanced Building Footprint and Road Detection in High-Resolution Satellite Imagery",
+        "type": "article",
+        "publication_year": 2021,
+        "publication_date": "2021-08-07"
+      },
+      {
+        "id": "https://openalex.org/W3044439402",
+        "doi": "https://doi.org/10.3390/rs12152368",
+        "title": "Towards Circumpolar Mapping of Arctic Settlements and Infrastructure Based on Sentinel-1 and Sentinel-2",
+        "type": "article",
+        "publication_year": 2020,
+        "publication_date": "2020-07-23"
+      },
+      {
+        "id": "https://openalex.org/W4402038071",
+        "doi": "https://doi.org/10.1016/j.rse.2024.114383",
+        "title": "High-resolution population maps derived from Sentinel-1 and Sentinel-2",
+        "type": "article",
+        "publication_year": 2024,
+        "publication_date": "2024-08-30"
+      },
+      {
+        "id": "https://openalex.org/W4288722736",
+        "doi": "https://doi.org/10.3390/rs14153625",
+        "title": "Mapping Roads in the Brazilian Amazon with Artificial Intelligence and Sentinel-2",
+        "type": "article",
+        "publication_year": 2022,
+        "publication_date": "2022-07-28"
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "82f085a714b7e0834b9fc4d36be54297c6b9a05297d02e1771f8c9ce73ecca8f"
+}

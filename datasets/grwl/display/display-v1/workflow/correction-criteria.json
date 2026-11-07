@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "status": "frozen_before_corrected_display_build",
+  "scope": "New separately versioned GRWL display package correcting antimeridian handling; all analytical and historical release bytes unchanged.",
+  "diagnosis": {
+    "13164": "Original SHP part 0 vertices 117 to 118 already contain the 31.281 km near-horizontal edge; retain it.",
+    "28938": "Original SHP part 0 vertices 115 to 116 cross +179.9884 to -179.999991 degrees; 522.69 m shortest geodesic, but retained PMTiles draw it through central longitudes."
+  },
+  "implementation": {
+    "display_release": "display-v1",
+    "analytic_release": "summary-v01.02-local-r1",
+    "source_geometry_changes": "None; the split applies only to streamed display GeoJSON, not to the analytical GeoParquet or original SHP.",
+    "display_handling": "Split every original line part independently at +/-180 when consecutive longitude difference exceeds 180 degrees. Interpolate the crossing in Web Mercator, end one fragment at +180/-180 and start the next at the opposite boundary. Leave all noncrossing vertices unchanged. Retain native detect-longitude-wraparound only as a secondary guard.",
+    "minimum_zoom": 0,
+    "maximum_zoom": 10,
+    "simplification": 2,
+    "tippecanoe_threads": 2,
+    "crossing_source_ids": [
+      28938
+    ]
+  },
+  "gates": [
+    "Before fixing, record a failed antimeridian regression against the existing archive.",
+    "Synthetic eastward and westward dateline crossings must occur at both map edges and have no features through central-longitude tiles; include a noncrossing long line and multipart boundaries.",
+    "A flag-only native fixture remains a failing control; explicit display splitting must pass eastward/westward, boundary and multipart tests. The independent oracle must unwrap reference longitudes without calling the builder split helper.",
+    "Actual row 28938 must remain present at the dateline and have no central-longitude chord at every zoom 0 through 10. Validate every source record containing a longitude jump greater than 180 degrees, with the exact IDs recorded before inspecting corrected results.",
+    "Account for all 42077 source-row IDs and all ten producer numeric attributes at z10; retain exact source bbox scalars for analytical lookup.",
+    "Retain row13164 upstream edge; check original SHP and GeoParquet coordinate bits and multipart boundaries for both user IDs.",
+    "Check sampled source geometry for deterministic 32 lowest eligible global IDs and 8 per existing five regional windows at z10, including both reported IDs as mandatory extra controls; compare dateline references after explicit longitude unwrapping. Use <=30m Web Mercator Hausdorff tolerance and <=64 tiles per ordinary sampled source bbox.",
+    "Run native pmtiles verify; retain binary/code/lock hashes and prepared manifest bindings.",
+    "Use fresh-browser global and Great Lakes rendering/width checks plus a dedicated feature28938 dateline check; confirm HTTP206/CORS/partial reads and source-ID attribute lookup.",
+    "Repeat the small native regression fixtures in a clean checkout; do not claim two full production builds.",
+    "Stage a new exact upload plan and verify normal launcher with canonical display metadata; no upload or push."
+  ],
+  "resources": {
+    "min_free_start_gib": 40,
+    "stop_below_free_gib": 15,
+    "max_extra_disk_gib": 1,
+    "one_native_build_at_a_time": true
+  },
+  "ownership": {
+    "parent": [
+      "datasets/grwl/build_display.py",
+      "Canonical records, generated metadata, new display package finalization and upload plan",
+      "Viewer integration and diagnostics documentation"
+    ],
+    "tile_oracle": [
+      "datasets/grwl/trace_straight_segments.py",
+      "datasets/grwl/validate_display_wrap.py",
+      "tests/test_grwl_display_wrap.py",
+      "research/grwl-straight-segments-20261102/diagnosis.json",
+      "research/grwl-straight-segments-20261102/original-wrap-regression.json",
+      "research/grwl-straight-segments-20261102/crossing-source-ids.json"
+    ]
+  },
+  "supersedes": "research/grwl-straight-segments-20261102/correction-criteria.json",
+  "reason": "Pre-production native eastward/westward fixtures failed with --detect-longitude-wraparound alone on the pinned Tippecanoe 2.79.0 binary. Preserve that failed control and explicitly split display geometry."
+}

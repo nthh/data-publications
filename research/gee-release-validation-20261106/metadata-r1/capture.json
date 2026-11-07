@@ -1,0 +1,210 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "started_at": "2026-11-06T22:00:56.057735+00:00",
+  "git_commit": "d4945bebe8f3f85986694036cce6c3991dc38b14",
+  "script_sha256": "ac804f66d8471ae5c78a36a9ff67196ee653f2f1772c3bb9009d5426a4c48180",
+  "plan_sha256": "b173b773201b82ac72762fca353cb1c9c3a69d3ce34c17fd9edf0fa06974cf72",
+  "lock_sha256": "2cf752aac36445732b59e0db89088aa3f421238fecf4693b27da4dacf89c7335",
+  "quota_project": "mtnmap-f75ec",
+  "scope": "Read-only GET of existing GEE metadata/features; no exports, jobs, writes or publication.",
+  "environment": {
+    "python": "3.12.12",
+    "google-auth": "2.53.0",
+    "requests": "2.32.5"
+  },
+  "requests": [
+    {
+      "query": "hydrolakes",
+      "method": "GET",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroLakes/lake_poly_v10",
+      "params": {},
+      "started_at": "2026-11-06T22:00:58.395277+00:00",
+      "response_path": "hydrolakes-001.json",
+      "http_status": 200,
+      "finished_at": "2026-11-06T22:00:59.452007+00:00",
+      "response_bytes": 267,
+      "response_sha256": "9e0efc5e403e17627554807b8118a1ddcf98e9c3012ba5b76cc19485f9bd1824",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 22:00:59 GMT",
+        "Content-Type": "application/json; charset=UTF-8"
+      }
+    },
+    {
+      "query": "lakeatlas-polygons",
+      "method": "GET",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroAtlas/LakeAtlas/LakeAtlas_v10_polygon",
+      "params": {},
+      "started_at": "2026-11-06T22:00:59.452238+00:00",
+      "response_path": "lakeatlas-polygons-001.json",
+      "http_status": 200,
+      "finished_at": "2026-11-06T22:00:59.730235+00:00",
+      "response_bytes": 302,
+      "response_sha256": "9a6488b22831799e7c0b1ec88f69ca60a008c9c945d2c0845d8a3dc620c8a4b0",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 22:00:59 GMT",
+        "Content-Type": "application/json; charset=UTF-8"
+      }
+    },
+    {
+      "query": "lakeatlas-points",
+      "method": "GET",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroAtlas/LakeAtlas/LakeAtlas_v10_point",
+      "params": {},
+      "started_at": "2026-11-06T22:00:59.730330+00:00",
+      "response_path": "lakeatlas-points-001.json",
+      "http_status": 200,
+      "finished_at": "2026-11-06T22:00:59.953991+00:00",
+      "response_bytes": 298,
+      "response_sha256": "f5f34411b4a343f181f481ad2fbdfd78a9afe86301c11d859c82212fa01f3836",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 22:01:00 GMT",
+        "Content-Type": "application/json; charset=UTF-8"
+      }
+    },
+    {
+      "query": "free-flowing-rivers",
+      "method": "GET",
+      "resource": "projects/earthengine-public/assets/WWF/HydroSHEDS/v1/FreeFlowingRivers",
+      "params": {},
+      "started_at": "2026-11-06T22:00:59.954062+00:00",
+      "response_path": "free-flowing-rivers-001.json",
+      "http_status": 200,
+      "finished_at": "2026-11-06T22:01:00.146345+00:00",
+      "response_bytes": 229,
+      "response_sha256": "a2da2cac8b2b2a6bbf8dad2b4a7f1cea4daa1b717fe851ac8571d651b67d5d2f",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 22:01:00 GMT",
+        "Content-Type": "application/json; charset=UTF-8"
+      }
+    },
+    {
+      "query": "grwl-summary",
+      "method": "GET",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/GRWL/grwl_SummaryStats_v01_01",
+      "params": {},
+      "started_at": "2026-11-06T22:01:00.146408+00:00",
+      "response_path": "grwl-summary-001.json",
+      "http_status": 200,
+      "finished_at": "2026-11-06T22:01:00.468933+00:00",
+      "response_bytes": 2548,
+      "response_sha256": "378a91a3292d0c388ca1ea4b2d9c7b3abf4c3aaa35a616988de357a1a2fee61b",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 22:01:00 GMT",
+        "Content-Type": "application/json; charset=UTF-8"
+      }
+    },
+    {
+      "query": "grwl-raw",
+      "method": "GET",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/GRWL/water_vector_v01_01",
+      "params": {},
+      "started_at": "2026-11-06T22:01:00.469018+00:00",
+      "response_path": "grwl-raw-001.json",
+      "http_status": 200,
+      "finished_at": "2026-11-06T22:01:00.699952+00:00",
+      "response_bytes": 2249,
+      "response_sha256": "ea7c756eac5278275464802dfb64b3c0728e255e1271d3511f7c8d9188b9f6d7",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 22:01:00 GMT",
+        "Content-Type": "application/json; charset=UTF-8"
+      }
+    },
+    {
+      "query": "river-plastic-inputs",
+      "method": "GET",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/open-ocean/river_plastic_emissions",
+      "params": {},
+      "started_at": "2026-11-06T22:01:00.700259+00:00",
+      "response_path": "river-plastic-inputs-001.json",
+      "http_status": 200,
+      "finished_at": "2026-11-06T22:01:00.986921+00:00",
+      "response_bytes": 284,
+      "response_sha256": "50f8cadabbb52c486e5acf4a8bcf2ef8e4edd83ec4285ee32fcd7dff3c95880f",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 22:01:01 GMT",
+        "Content-Type": "application/json; charset=UTF-8"
+      }
+    },
+    {
+      "query": "grwl-folder",
+      "method": "GET",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/GRWL:listAssets",
+      "params": {
+        "pageSize": 100
+      },
+      "started_at": "2026-11-06T22:01:00.986987+00:00",
+      "response_path": "grwl-folder-001.json",
+      "http_status": 404,
+      "finished_at": "2026-11-06T22:01:01.141683+00:00",
+      "response_bytes": 173,
+      "response_sha256": "78154a5b430743e741c474f0599b4c2bdff71315a8fddcb72f85b80f59b5b594",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 22:01:01 GMT",
+        "Content-Type": "application/json; charset=UTF-8"
+      }
+    }
+  ],
+  "total_bytes": 6350,
+  "queries": [
+    {
+      "id": "hydrolakes",
+      "rows": 0,
+      "pages": 1,
+      "pagination_terminated": true,
+      "complete_enumeration": false
+    },
+    {
+      "id": "lakeatlas-polygons",
+      "rows": 0,
+      "pages": 1,
+      "pagination_terminated": true,
+      "complete_enumeration": false
+    },
+    {
+      "id": "lakeatlas-points",
+      "rows": 0,
+      "pages": 1,
+      "pagination_terminated": true,
+      "complete_enumeration": false
+    },
+    {
+      "id": "free-flowing-rivers",
+      "rows": 0,
+      "pages": 1,
+      "pagination_terminated": true,
+      "complete_enumeration": false
+    },
+    {
+      "id": "grwl-summary",
+      "rows": 0,
+      "pages": 1,
+      "pagination_terminated": true,
+      "complete_enumeration": false
+    },
+    {
+      "id": "grwl-raw",
+      "rows": 0,
+      "pages": 1,
+      "pagination_terminated": true,
+      "complete_enumeration": false
+    },
+    {
+      "id": "river-plastic-inputs",
+      "rows": 0,
+      "pages": 1,
+      "pagination_terminated": true,
+      "complete_enumeration": false
+    },
+    {
+      "id": "grwl-folder",
+      "rows": 0,
+      "pages": 1,
+      "pagination_terminated": true,
+      "complete_enumeration": true
+    }
+  ],
+  "errors": [],
+  "finished_at": "2026-11-06T22:01:01.141739+00:00",
+  "elapsed_seconds": 5.044
+}

@@ -1,0 +1,1457 @@
+{
+  "request_url": "https://api.openalex.org/works?filter=doi%3A10.5067%2Fmodis%2Fmod16a2.006%7C10.5067%2Fmodis%2Fmod16a2.061%7C10.5067%2Fmodis%2Fmod16a2gf.061%7C10.5067%2Fmodis%2Fmod17a2h.006%7C10.5067%2Fmodis%2Fmod17a2h.061%7C10.5067%2Fmodis%2Fmod17a2hgf.061%7C10.5067%2Fmodis%2Fmod17a3h.006%7C10.5067%2Fmodis%2Fmod17a3hgf.006%7C10.5067%2Fmodis%2Fmod17a3hgf.061%7C10.5067%2Fmodis%2Fmod21a1d.061%7C10.5067%2Fmodis%2Fmod21a1n.061%7C10.5067%2Fmodis%2Fmod21c1.061%7C10.5067%2Fmodis%2Fmod21c2.061%7C10.5067%2Fmodis%2Fmod21c3.061%7C10.5067%2Fmodis%2Fmod44w.006%7C10.5067%2Fmodis%2Fmodocga.006%7C10.5067%2Fmodis%2Fmyd08_m3.006%7C10.5067%2Fmodis%2Fmyd08_m3.061%7C10.5067%2Fmodis%2Fmyd09a1.006%7C10.5067%2Fmodis%2Fmyd09a1.061%7C10.5067%2Fmodis%2Fmyd09cmg.061%7C10.5067%2Fmodis%2Fmyd09ga.006%7C10.5067%2Fmodis%2Fmyd09ga.061%7C10.5067%2Fmodis%2Fmyd09gq.006%7C10.5067%2Fmodis%2Fmyd09gq.061%7C10.5067%2Fmodis%2Fmyd09q1.006%7C10.5067%2Fmodis%2Fmyd09q1.061%7C10.5067%2Fmodis%2Fmyd10a1.006%7C10.5067%2Fmodis%2Fmyd10a1.061%7C10.5067%2Fmodis%2Fmyd11a1.006%7C10.5067%2Fmodis%2Fmyd11a1.061%7C10.5067%2Fmodis%2Fmyd11a2.006%7C10.5067%2Fmodis%2Fmyd11a2.061%7C10.5067%2Fmodis%2Fmyd13a1.006%7C10.5067%2Fmodis%2Fmyd13a1.061%7C10.5067%2Fmodis%2Fmyd13a2.006%7C10.5067%2Fmodis%2Fmyd13a2.061%7C10.5067%2Fmodis%2Fmyd13a3.061%7C10.5067%2Fmodis%2Fmyd13c1.061%7C10.5067%2Fmodis%2Fmyd13q1.006&corpus=all&per_page=100&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date%2Ccited_by_count%2Ccounts_by_year",
+  "retrieved_at": "2026-10-30T22:27:41.701776+00:00",
+  "response_path": "responses/a8f48b0e4ee0ed6767f6b8bb2fa2b3e6e03560fa61401720847d78eec03470dd.json",
+  "status": 200,
+  "response_sha256": "b2c4a0cf29fce8c18e14e0f510ba217ab75916becf0875299d24004e7d8feb95",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 40,
+      "db_response_time_ms": 17,
+      "page": 1,
+      "per_page": 100,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where DOI is (\n    10.5067/modis/mod16a2.006 or 10.5067/modis/mod16a2.061\n    or 10.5067/modis/mod16a2gf.061 or 10.5067/modis/mod17a2h.006\n    or 10.5067/modis/mod17a2h.061 or 10.5067/modis/mod17a2hgf.061\n    or 10.5067/modis/mod17a3h.006 or 10.5067/modis/mod17a3hgf.006\n    or 10.5067/modis/mod17a3hgf.061 or 10.5067/modis/mod21a1d.061\n    or 10.5067/modis/mod21a1n.061 or 10.5067/modis/mod21c1.061\n    or 10.5067/modis/mod21c2.061 or 10.5067/modis/mod21c3.061\n    or 10.5067/modis/mod44w.006 or 10.5067/modis/modocga.006\n    or 10.5067/modis/myd08_m3.006 or 10.5067/modis/myd08_m3.061\n    or 10.5067/modis/myd09a1.006 or 10.5067/modis/myd09a1.061\n    or 10.5067/modis/myd09cmg.061 or 10.5067/modis/myd09ga.006\n    or 10.5067/modis/myd09ga.061 or 10.5067/modis/myd09gq.006\n    or 10.5067/modis/myd09gq.061 or 10.5067/modis/myd09q1.006\n    or 10.5067/modis/myd09q1.061 or 10.5067/modis/myd10a1.006\n    or 10.5067/modis/myd10a1.061 or 10.5067/modis/myd11a1.006\n    or 10.5067/modis/myd11a1.061 or 10.5067/modis/myd11a2.006\n    or 10.5067/modis/myd11a2.061 or 10.5067/modis/myd13a1.006\n    or 10.5067/modis/myd13a1.061 or 10.5067/modis/myd13a2.006\n    or 10.5067/modis/myd13a2.061 or 10.5067/modis/myd13a3.061\n    or 10.5067/modis/myd13c1.061 or 10.5067/modis/myd13q1.006\n  )",
+        "x_new_oql": "get works (all corpora) where DOI is (\n    10.5067/modis/mod16a2.006 or 10.5067/modis/mod16a2.061\n    or 10.5067/modis/mod16a2gf.061 or 10.5067/modis/mod17a2h.006\n    or 10.5067/modis/mod17a2h.061 or 10.5067/modis/mod17a2hgf.061\n    or 10.5067/modis/mod17a3h.006 or 10.5067/modis/mod17a3hgf.006\n    or 10.5067/modis/mod17a3hgf.061 or 10.5067/modis/mod21a1d.061\n    or 10.5067/modis/mod21a1n.061 or 10.5067/modis/mod21c1.061\n    or 10.5067/modis/mod21c2.061 or 10.5067/modis/mod21c3.061\n    or 10.5067/modis/mod44w.006 or 10.5067/modis/modocga.006\n    or 10.5067/modis/myd08_m3.006 or 10.5067/modis/myd08_m3.061\n    or 10.5067/modis/myd09a1.006 or 10.5067/modis/myd09a1.061\n    or 10.5067/modis/myd09cmg.061 or 10.5067/modis/myd09ga.006\n    or 10.5067/modis/myd09ga.061 or 10.5067/modis/myd09gq.006\n    or 10.5067/modis/myd09gq.061 or 10.5067/modis/myd09q1.006\n    or 10.5067/modis/myd09q1.061 or 10.5067/modis/myd10a1.006\n    or 10.5067/modis/myd10a1.061 or 10.5067/modis/myd11a1.006\n    or 10.5067/modis/myd11a1.061 or 10.5067/modis/myd11a2.006\n    or 10.5067/modis/myd11a2.061 or 10.5067/modis/myd13a1.006\n    or 10.5067/modis/myd13a1.061 or 10.5067/modis/myd13a2.006\n    or 10.5067/modis/myd13a2.061 or 10.5067/modis/myd13a3.061\n    or 10.5067/modis/myd13c1.061 or 10.5067/modis/myd13q1.006\n  )",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "join": "or",
+              "filters": [
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/mod16a2.006"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/mod16a2.061"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/mod16a2gf.061"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/mod17a2h.006"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/mod17a2h.061"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/mod17a2hgf.061"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/mod17a3h.006"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/mod17a3hgf.006"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/mod17a3hgf.061"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/mod21a1d.061"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/mod21a1n.061"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/mod21c1.061"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/mod21c2.061"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/mod21c3.061"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/mod44w.006"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/modocga.006"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/myd08_m3.006"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/myd08_m3.061"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/myd09a1.006"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/myd09a1.061"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/myd09cmg.061"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/myd09ga.006"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/myd09ga.061"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/myd09gq.006"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/myd09gq.061"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/myd09q1.006"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/myd09q1.061"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/myd10a1.006"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/myd10a1.061"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/myd11a1.006"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/myd11a1.061"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/myd11a2.006"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/myd11a2.061"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/myd13a1.006"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/myd13a1.061"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/myd13a2.006"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/myd13a2.061"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/myd13a3.061"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/myd13c1.061"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/myd13q1.006"
+                }
+              ]
+            }
+          ]
+        },
+        "url": "/works?filter=doi:10.5067%2Fmodis%2Fmod16a2.006|10.5067%2Fmodis%2Fmod16a2.061|10.5067%2Fmodis%2Fmod16a2gf.061|10.5067%2Fmodis%2Fmod17a2h.006|10.5067%2Fmodis%2Fmod17a2h.061|10.5067%2Fmodis%2Fmod17a2hgf.061|10.5067%2Fmodis%2Fmod17a3h.006|10.5067%2Fmodis%2Fmod17a3hgf.006|10.5067%2Fmodis%2Fmod17a3hgf.061|10.5067%2Fmodis%2Fmod21a1d.061|10.5067%2Fmodis%2Fmod21a1n.061|10.5067%2Fmodis%2Fmod21c1.061|10.5067%2Fmodis%2Fmod21c2.061|10.5067%2Fmodis%2Fmod21c3.061|10.5067%2Fmodis%2Fmod44w.006|10.5067%2Fmodis%2Fmodocga.006|10.5067%2Fmodis%2Fmyd08_m3.006|10.5067%2Fmodis%2Fmyd08_m3.061|10.5067%2Fmodis%2Fmyd09a1.006|10.5067%2Fmodis%2Fmyd09a1.061|10.5067%2Fmodis%2Fmyd09cmg.061|10.5067%2Fmodis%2Fmyd09ga.006|10.5067%2Fmodis%2Fmyd09ga.061|10.5067%2Fmodis%2Fmyd09gq.006|10.5067%2Fmodis%2Fmyd09gq.061|10.5067%2Fmodis%2Fmyd09q1.006|10.5067%2Fmodis%2Fmyd09q1.061|10.5067%2Fmodis%2Fmyd10a1.006|10.5067%2Fmodis%2Fmyd10a1.061|10.5067%2Fmodis%2Fmyd11a1.006|10.5067%2Fmodis%2Fmyd11a1.061|10.5067%2Fmodis%2Fmyd11a2.006|10.5067%2Fmodis%2Fmyd11a2.061|10.5067%2Fmodis%2Fmyd13a1.006|10.5067%2Fmodis%2Fmyd13a1.061|10.5067%2Fmodis%2Fmyd13a2.006|10.5067%2Fmodis%2Fmyd13a2.061|10.5067%2Fmodis%2Fmyd13a3.061|10.5067%2Fmodis%2Fmyd13c1.061|10.5067%2Fmodis%2Fmyd13q1.006&corpus=all&per_page=100",
+        "order": "most cited (age-adjusted) first",
+        "order_default": true
+      },
+      "cost_usd": 0.0001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W6948856385",
+        "doi": "https://doi.org/10.5067/modis/mod16a2.006",
+        "title": "MOD16A2 MODIS/Terra Net Evapotranspiration 8-Day L4 Global 500m SIN Grid V006",
+        "type": "dataset",
+        "publication_year": 2017,
+        "publication_date": "2017-01-01",
+        "cited_by_count": 219,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 23
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 39
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 40
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 40
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 26
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 23
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 16
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6948489170",
+        "doi": "https://doi.org/10.5067/modis/mod17a2h.006",
+        "title": "MOD17A2H MODIS/Terra Gross Primary Productivity 8-Day L4 Global 500m SIN Grid V006",
+        "type": "dataset",
+        "publication_year": 2015,
+        "publication_date": "2015-01-01",
+        "cited_by_count": 155,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 20
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 27
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 28
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 32
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 16
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 16
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6892131133",
+        "doi": "https://doi.org/10.5067/modis/mod17a3hgf.061",
+        "title": "MODIS/Terra Net Primary Production Gap-Filled Yearly L4 Global 500m SIN Grid V061",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 111,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 35
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 34
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 29
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6948916803",
+        "doi": "https://doi.org/10.5067/modis/mod17a3hgf.006",
+        "title": "MOD17A3HGF MODIS/Terra Net Primary Production Gap-Filled Yearly L4 Global 500 m SIN Grid V006",
+        "type": "dataset",
+        "publication_year": 2019,
+        "publication_date": "2019-01-01",
+        "cited_by_count": 72,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 19
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 14
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 13
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6929887687",
+        "doi": "https://doi.org/10.5067/modis/myd11a1.006",
+        "title": "MYD11A1 MODIS/Aqua Land Surface Temperature/Emissivity Daily L3 Global 1km SIN Grid V006",
+        "type": "dataset",
+        "publication_year": 2015,
+        "publication_date": "2015-01-01",
+        "cited_by_count": 56,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 15
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6948505945",
+        "doi": "https://doi.org/10.5067/modis/mod16a2gf.061",
+        "title": "MODIS/Terra Net Evapotranspiration Gap-Filled 8-Day L4 Global 500m SIN Grid V061",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 55,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 19
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 14
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 13
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6892290026",
+        "doi": "https://doi.org/10.5067/modis/myd11a2.006",
+        "title": "MYD11A2 MODIS/Aqua Land Surface Temperature/Emissivity 8-Day L3 Global 1km SIN Grid V006",
+        "type": "dataset",
+        "publication_year": 2015,
+        "publication_date": "2015-01-01",
+        "cited_by_count": 50,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6892272739",
+        "doi": "https://doi.org/10.5067/modis/mod17a3h.006",
+        "title": "MOD17A3H MODIS/Terra Net Primary Production Yearly L4 Global 500m SIN Grid V006",
+        "type": "dataset",
+        "publication_year": 2015,
+        "publication_date": "2015-01-01",
+        "cited_by_count": 49,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6948405331",
+        "doi": "https://doi.org/10.5067/modis/myd13q1.006",
+        "title": "MYD13Q1 MODIS/Aqua Vegetation Indices 16-Day L3 Global 250m SIN Grid V006",
+        "type": "dataset",
+        "publication_year": 2015,
+        "publication_date": "2015-01-01",
+        "cited_by_count": 44,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 3
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6948298721",
+        "doi": "https://doi.org/10.5067/modis/mod16a2.061",
+        "title": "MODIS/Terra Net Evapotranspiration 8-Day L4 Global 500m SIN Grid V061",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 39,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 15
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 4
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6892099294",
+        "doi": "https://doi.org/10.5067/modis/mod17a2h.061",
+        "title": "MODIS/Terra Gross Primary Productivity 8-Day L4 Global 500m SIN Grid V061",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 34,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 13
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6929578599",
+        "doi": "https://doi.org/10.5067/modis/myd08_m3.006",
+        "title": "MYD08_M3 MODIS/Aqua Aerosol Cloud Water Vapor Ozone Monthly L3 Global 1Deg CMG",
+        "type": "dataset",
+        "publication_year": 2014,
+        "publication_date": "2014-01-01",
+        "cited_by_count": 33,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6948253224",
+        "doi": "https://doi.org/10.5067/modis/myd10a1.006",
+        "title": "MODIS/Aqua Snow Cover Daily L3 Global 500m SIN Grid, Version 6",
+        "type": "dataset",
+        "publication_year": 2015,
+        "publication_date": "2015-01-01",
+        "cited_by_count": 33,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6929748007",
+        "doi": "https://doi.org/10.5067/modis/mod17a2hgf.061",
+        "title": "MODIS/Terra Gross Primary Productivity Gap-Filled 8-Day L4 Global 500m SIN Grid V061",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 30,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 12
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6967004723",
+        "doi": "https://doi.org/10.5067/modis/myd08_m3.061",
+        "title": "MYD08_M3 MODIS/Aqua Aerosol Cloud Water Vapor Ozone Monthly L3 Global 1Deg CMG",
+        "type": "dataset",
+        "publication_year": 2017,
+        "publication_date": "2017-01-01",
+        "cited_by_count": 27,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6892261215",
+        "doi": "https://doi.org/10.5067/modis/myd11a1.061",
+        "title": "MODIS/Aqua Land Surface Temperature/Emissivity Daily L3 Global 1km SIN Grid V061",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 24,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6967185597",
+        "doi": "https://doi.org/10.5067/modis/mod44w.006",
+        "title": "MOD44W MODIS/Terra Land Water Mask Derived from MODIS and SRTM L3 Global 250m SIN Grid V006",
+        "type": "dataset",
+        "publication_year": 2017,
+        "publication_date": "2017-01-01",
+        "cited_by_count": 24,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6967555305",
+        "doi": "https://doi.org/10.5067/modis/myd13a2.006",
+        "title": "MYD13A2 MODIS/Aqua Vegetation Indices 16-Day L3 Global 1km SIN Grid V006",
+        "type": "dataset",
+        "publication_year": 2015,
+        "publication_date": "2015-01-01",
+        "cited_by_count": 22,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6929614748",
+        "doi": "https://doi.org/10.5067/modis/myd09ga.006",
+        "title": "MYD09GA MODIS/Aqua Surface Reflectance Daily L2G Global 1kmand 500m SIN Grid V006",
+        "type": "dataset",
+        "publication_year": 2015,
+        "publication_date": "2015-01-01",
+        "cited_by_count": 19,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6948514307",
+        "doi": "https://doi.org/10.5067/modis/myd09a1.006",
+        "title": "MYD09A1 MODIS/Aqua Surface Reflectance 8-Day L3 Global 500m SIN Grid V006",
+        "type": "dataset",
+        "publication_year": 2015,
+        "publication_date": "2015-01-01",
+        "cited_by_count": 15,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6948342833",
+        "doi": "https://doi.org/10.5067/modis/myd11a2.061",
+        "title": "MODIS/Aqua Land Surface Temperature/Emissivity 8-Day L3 Global 1km SIN Grid V061",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 13,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6910803622",
+        "doi": "https://doi.org/10.5067/modis/myd09gq.006",
+        "title": "MYD09GQ MODIS/Aqua Surface Reflectance Daily L2G Global 250m SIN Grid V006",
+        "type": "dataset",
+        "publication_year": 2015,
+        "publication_date": "2015-01-01",
+        "cited_by_count": 10,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 3
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6948258264",
+        "doi": "https://doi.org/10.5067/modis/myd13a1.006",
+        "title": "MYD13A1 MODIS/Aqua Vegetation Indices 16-day L3 Global 500m SIN Grid V006",
+        "type": "dataset",
+        "publication_year": 2015,
+        "publication_date": "2015-01-01",
+        "cited_by_count": 9,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6948814736",
+        "doi": "https://doi.org/10.5067/modis/myd13a2.061",
+        "title": "MODIS/Aqua Vegetation Indices 16-Day L3 Global 1km SIN Grid V061",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 8,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6948819524",
+        "doi": "https://doi.org/10.5067/modis/mod21a1d.061",
+        "title": "MODIS/Terra Land Surface Temperature/3-Band Emissivity Daily L3 Global 1km SIN Grid Day V061",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 8,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6948203868",
+        "doi": "https://doi.org/10.5067/modis/myd10a1.061",
+        "title": "MODIS/Aqua Snow Cover Daily L3 Global 500m SIN Grid, Version 61",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 7,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6967309664",
+        "doi": "https://doi.org/10.5067/modis/myd13a1.061",
+        "title": "MODIS/Aqua Vegetation Indices 16-Day L3 Global 500m SIN Grid V061",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 6,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6967405243",
+        "doi": "https://doi.org/10.5067/modis/mod21a1n.061",
+        "title": "MODIS/Terra Land Surface Temperature/3-Band Emissivity Daily L3 Global 1km SIN Grid Night V061",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 6,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6911088458",
+        "doi": "https://doi.org/10.5067/modis/myd09a1.061",
+        "title": "MODIS/Aqua Surface Reflectance 8-Day L3 Global 500m SIN Grid V061",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 5,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 3
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6929770217",
+        "doi": "https://doi.org/10.5067/modis/mod21c3.061",
+        "title": "MODIS/Terra Land Surface Temperature/3-Band Emissivity Monthly L3 Global 0.05Deg CMG V061",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 5,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6948532582",
+        "doi": "https://doi.org/10.5067/modis/myd13a3.061",
+        "title": "MODIS/Aqua Vegetation Indices Monthly L3 Global 1km SIN Grid V061",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 4,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 3
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6966903951",
+        "doi": "https://doi.org/10.5067/modis/myd09ga.061",
+        "title": "MODIS/Aqua Surface Reflectance Daily L2G Global 1km and 500m SIN Grid V061",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 4,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6892111856",
+        "doi": "https://doi.org/10.5067/modis/modocga.006",
+        "title": "MODOCGA MODIS/Terra Ocean Reflectance Daily L2G-Lite Global 1km SIN Grid V006",
+        "type": "dataset",
+        "publication_year": 2015,
+        "publication_date": "2015-01-01",
+        "cited_by_count": 3,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6948562553",
+        "doi": "https://doi.org/10.5067/modis/myd09q1.006",
+        "title": "MYD09Q1 MODIS/Aqua Surface Reflectance 8-Day L3 Global 250m SIN Grid V006",
+        "type": "dataset",
+        "publication_year": 2015,
+        "publication_date": "2015-01-01",
+        "cited_by_count": 3,
+        "counts_by_year": [
+          {
+            "year": 2018,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6892201370",
+        "doi": "https://doi.org/10.5067/modis/mod21c2.061",
+        "title": "MODIS/Terra Land Surface Temperature/3-Band Emissivity 8-Day L3 Global 0.05Deg CMG V061",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 1,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6910816153",
+        "doi": "https://doi.org/10.5067/modis/myd13c1.061",
+        "title": "MODIS/Aqua Vegetation Indices 16-Day L3 Global 0.05Deg CMG V061",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 1,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6967252106",
+        "doi": "https://doi.org/10.5067/modis/mod21c1.061",
+        "title": "MODIS/Terra Land Surface Temperature/3-Band Emissivity Daily L3 Global 0.05Deg CMG V061",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 1,
+        "counts_by_year": [
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6910825791",
+        "doi": "https://doi.org/10.5067/modis/myd09gq.061",
+        "title": "MODIS/Aqua Surface Reflectance Daily L2G Global 250m SIN Grid V061",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W6948628616",
+        "doi": "https://doi.org/10.5067/modis/myd09cmg.061",
+        "title": "MODIS/Aqua Surface Reflectance Daily L3 Global 0.05Deg CMG V061",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W6948897820",
+        "doi": "https://doi.org/10.5067/modis/myd09q1.061",
+        "title": "MODIS/Aqua Surface Reflectance 8-Day L3 Global 250m SIN Grid V061",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "1b3891b0b9b4ccc6aa3b20f2b537f6d93ec1d3f68708f6f5db34e0a0677e5f62"
+}

@@ -1,0 +1,80 @@
+{
+  "request_url": "https://api.openalex.org/works?search=A+land+data+assimilation+system+for+sub-Saharan+Africa+food+and+water+security+applications&corpus=all&per_page=5&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date",
+  "retrieved_at": "2026-10-30T22:07:40.124890+00:00",
+  "response_path": "responses/5e3e756236b6ede165cb9a1da9a5ca0cc16b1a3162982b41fef5df07db99f333.json",
+  "status": 200,
+  "response_sha256": "6cb00ff3b99e8ea303356f06c82c671cb4fdcee20fe34f087c7c2d94ca12c310",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 4686,
+      "db_response_time_ms": 233,
+      "page": 1,
+      "per_page": 5,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where full text has (A land data assimilation system for sub-Saharan Africa food \"and\" water security applications)",
+        "x_new_oql": "get works (all corpora) where full text has (A land data assimilation system for sub-Saharan Africa food \"and\" water security applications)",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "A land data assimilation system for sub-Saharan Africa food and water security applications",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:A land data assimilation system for sub-Saharan Africa food and water security applications&corpus=all&per_page=5",
+        "order": "best matches first",
+        "order_default": true
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W2588865615",
+        "doi": "https://doi.org/10.1038/sdata.2017.12",
+        "title": "A land data assimilation system for sub-Saharan Africa food and water security applications",
+        "type": "data-paper",
+        "publication_year": 2017,
+        "publication_date": "2017-02-13"
+      },
+      {
+        "id": "https://openalex.org/W4327605926",
+        "doi": "https://doi.org/10.3389/fsoil.2023.1123931",
+        "title": "Fertilizers for food and nutrition security in sub-Saharan Africa: An overview of soil health implications",
+        "type": "article",
+        "publication_year": 2023,
+        "publication_date": "2023-03-16"
+      },
+      {
+        "id": "https://openalex.org/W4280513169",
+        "doi": "https://doi.org/10.3389/fpls.2022.782140",
+        "title": "The Exploitation of Orphan Legumes for Food, Income, and Nutrition Security in Sub-Saharan Africa",
+        "type": "review",
+        "publication_year": 2022,
+        "publication_date": "2022-05-17"
+      },
+      {
+        "id": "https://openalex.org/W3008894482",
+        "doi": "https://doi.org/10.1175/bams-d-18-0264.1",
+        "title": "The NASA Hydrological Forecast System for Food and Water Security Applications",
+        "type": "article",
+        "publication_year": 2020,
+        "publication_date": "2020-02-21"
+      },
+      {
+        "id": "https://openalex.org/W4410403394",
+        "doi": "https://doi.org/10.3389/fagro.2025.1572061",
+        "title": "Closing yield gap for sustainable food security in sub-Saharan Africa – progress, challenges, and opportunities",
+        "type": "article",
+        "publication_year": 2025,
+        "publication_date": "2025-05-15"
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "ab49617c57e298a984ec7ac306bb100fc86558b2d4af4309db63cbe2a56cb2bf"
+}

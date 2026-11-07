@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-31T23:44:26.032657+00:00",
+  "scope": "Shared Git-backed publication metadata workflow; no data conversions or external publication",
+  "verified_implementation_commit": "abd585e247cca8e375bce61505d9f324843e9127",
+  "acceptance_criteria": "docs/catalog-acceptance.md",
+  "status": "passed_with_incomplete_advisory",
+  "records": {
+    "count": 366,
+    "prior_identity_decisions_and_status_preserved": true,
+    "index_byte_identical": true,
+    "publication_statuses": {
+      "candidate": 360,
+      "deferred_after_local_validation": 1,
+      "prepared": 5
+    }
+  },
+  "metadata_snapshots": {
+    "datasets": 5,
+    "metadata_files": 22,
+    "metadata_bytes": 377514,
+    "reexports": "byte_identical_for_all_five",
+    "source_packages_modified": false,
+    "evidence": "preservation-and-reexports.json"
+  },
+  "tests": {
+    "passed": 35,
+    "failed": 0,
+    "suites": [
+      {
+        "suite": "record-tests",
+        "passed": 19,
+        "evidence": "record-tests.txt"
+      },
+      {
+        "suite": "generator-tests",
+        "passed": 9,
+        "evidence": "generator-tests.txt"
+      },
+      {
+        "suite": "actual-validator-tests",
+        "passed": 7,
+        "evidence": "actual-validator-tests.txt"
+      }
+    ]
+  },
+  "fresh_checkout": {
+    "status": "passed",
+    "platform": "macOS-15.1.1-arm64-arm-64bit-Mach-O",
+    "checks": 11,
+    "bulk_data_required": false,
+    "dataset_downloads": 0,
+    "regeneration_tracked_changes": 0,
+    "evidence": "fresh-checkout.json"
+  },
+  "conformance": [
+    {
+      "evidence": "root-validation.json",
+      "conformance": "passed",
+      "errors": 0,
+      "warnings": 0,
+      "stac_check_advisory": "incomplete"
+    },
+    {
+      "evidence": "populated-fixture-validation.json",
+      "conformance": "passed",
+      "errors": 0,
+      "warnings": 0,
+      "stac_check_advisory": "incomplete"
+    },
+    {
+      "evidence": "staged-fixture-validation.json",
+      "conformance": "passed",
+      "errors": 0,
+      "warnings": 0,
+      "stac_check_advisory": "incomplete"
+    }
+  ],
+  "generated_catalog": {
+    "published_collections": 0,
+    "files": 3,
+    "catalog_json_sha256": "fabf3141327d9a6450b3aab61d1522e5ec4717867f8a22226fcca6eb646e0daa",
+    "unready_stage_refused": true
+  },
+  "retained_provenance": {
+    "status": "passed",
+    "historical_entries": 114,
+    "unique_blobs": 44
+  },
+  "whitespace_check": {
+    "authored_files": "passed",
+    "immutable_snapshot_markdown_findings": [
+      "datasets/free-flowing-rivers/releases/figshare-v1-local-r2/catalog-input-r1/files/README.md:5: trailing whitespace.",
+      "datasets/free-flowing-rivers/releases/figshare-v1-local-r2/catalog-input-r1/files/README.md:6: trailing whitespace.",
+      "datasets/free-flowing-rivers/releases/figshare-v1-local-r2/catalog-input-r1/files/README.md:7: trailing whitespace.",
+      "datasets/hydrolakes/releases/v1-local-r3/catalog-input-r1/files/README.md:5: trailing whitespace.",
+      "datasets/hydrolakes/releases/v1-local-r3/catalog-input-r1/files/README.md:6: trailing whitespace.",
+      "datasets/hydrolakes/releases/v1-local-r3/catalog-input-r1/files/README.md:7: trailing whitespace.",
+      "datasets/lakeatlas/releases/lakeatlas-v1.0-r2/catalog-input-r1/files/README.md:5: trailing whitespace.",
+      "datasets/lakeatlas/releases/lakeatlas-v1.0-r2/catalog-input-r1/files/README.md:6: trailing whitespace.",
+      "datasets/lakeatlas/releases/lakeatlas-v1.0-r2/catalog-input-r1/files/README.md:7: trailing whitespace.",
+      "datasets/river-plastic-inputs/releases/figshare-v6-r2/catalog-input-r1/files/river-plastic-inputs/README.md:96: new blank line at EOF."
+    ],
+    "policy": "Retain checksum-bound original metadata exactly, including Markdown hard line breaks and original final newlines."
+  },
+  "limitations": [
+    "stac-check 1.14.0 advisory is incomplete because offline validation blocks schema fetches; it is not counted as passed.",
+    "GitHub Actions have not run remotely; this rehearsal used macOS with the same locked commands. The configured CI runner is Ubuntu.",
+    "All five datasets remain locally prepared. No public URLs or hosting attestations have been invented.",
+    "Public hosting, browser rendering, deployed aggregate catalog checks and Portolan registry submission remain future publication work.",
+    "Free-Flowing Rivers, HydroLAKES and LakeATLAS still need a demonstrated render path; LakeATLAS field semantics remain incomplete.",
+    "Source-fidelity, GEE and scientific-validation evidence retains its earlier scope and was not rerun by this metadata change."
+  ],
+  "external_actions": {
+    "pushes": 0,
+    "remote_repositories_created": 0,
+    "data_uploads": 0,
+    "registry_submissions": 0,
+    "live_gee_jobs": 0
+  },
+  "evidence": [
+    {
+      "path": "actual-validator-tests.txt",
+      "sha256": "7011f62a44b46255483f55a30d18782e380b7369ff1ca6fdd74bf3d84fd396ff",
+      "size_bytes": 1083
+    },
+    {
+      "path": "diagnostic-followups.json",
+      "sha256": "2f36ec3816593a33781874c4fac4e733c229aa690ad73e9bf5ca80da0583ae6a",
+      "size_bytes": 865
+    },
+    {
+      "path": "fresh-checkout.json",
+      "sha256": "42182cf70fd7564805a3a44d676e198ab1793f37ece1dd4957a8c69c98de1383",
+      "size_bytes": 5320
+    },
+    {
+      "path": "generator-tests.txt",
+      "sha256": "4fba62e10177619ccc76bac9627002f58f1556b73da8e19d77c2c8f3ad39ff05",
+      "size_bytes": 2147
+    },
+    {
+      "path": "populated-fixture-validation.json",
+      "sha256": "18d50695319331030b1772d22345715b2a8b97e6f17342afb88fddc61cf7271b",
+      "size_bytes": 7794
+    },
+    {
+      "path": "preservation-and-reexports.json",
+      "sha256": "92f8ecd989fd3e020a52b160729f1c36d24464de8877f07f0bc65d74fa55fc88",
+      "size_bytes": 1224
+    },
+    {
+      "path": "publication-integration.json",
+      "sha256": "86c92cf91b3de8133120e2584bffddf6ae012deb93236685eaf9a425d1574db9",
+      "size_bytes": 644
+    },
+    {
+      "path": "record-tests.txt",
+      "sha256": "92c332c64cc8944fd8258bc12942cbbaf194a98fac68dc42dea26e203c05fdbc",
+      "size_bytes": 2701
+    },
+    {
+      "path": "root-validation.json",
+      "sha256": "b89f16e7b49f4fb12a690b1f4b748d2afcde027081352bfb39be77ca4f266c3e",
+      "size_bytes": 4247
+    },
+    {
+      "path": "snapshot-exports.json",
+      "sha256": "98e3b54f121d64e9f7697a906d21491a601d2b6cc08eaed9985506af2b475492",
+      "size_bytes": 2123
+    },
+    {
+      "path": "staged-fixture-validation.json",
+      "sha256": "27302c74632495df8a6c20a0b8dca9659d6df48eeb6a8ce521822d0bfc0f7725",
+      "size_bytes": 7688
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "dataset_id": "lakeatlas",
+  "source_validation_path": "__ARTIFACT_ROOT__/releases/lakeatlas-v1.0-r1-rowgroup4096/source-fidelity-sequential2.json",
+  "rebuild_context": {
+    "raw_code_revision": "691fc304a2df25d04c13652d6429ff0e32993be2",
+    "spatial_code_revision": "b6579442c8a0ba73e38b444f143bb6194ef056e5",
+    "clean_checkout": {
+      "commit": "b6579442c8a0ba73e38b444f143bb6194ef056e5",
+      "raw_build_workflow_commit": "691fc304a2df25d04c13652d6429ff0e32993be2",
+      "evidence": "__ARTIFACT_ROOT__/releases/lakeatlas-v1.0-r2-spatial-clean-b657944/clean-rebuild.json"
+    }
+  },
+  "final_transform": "spatial_order",
+  "assets": [
+    {
+      "asset_id": "lakeatlas-polygons",
+      "raw_asset_path": "__ARTIFACT_ROOT__/releases/lakeatlas-v1.0-r1-rowgroup4096/lakeatlas/data/lakeatlas-polygons.parquet",
+      "rebuilt_raw_asset_path": "__ARTIFACT_ROOT__/releases/lakeatlas-v1.0-r1-rowgroup4096-clean691fc30/lakeatlas/data/lakeatlas-polygons.parquet",
+      "final_asset_path": "__ARTIFACT_ROOT__/releases/lakeatlas-v1.0-r2-spatial-primary-b657944/data/lakeatlas-polygons-spatial.parquet",
+      "rebuilt_final_asset_path": "__ARTIFACT_ROOT__/releases/lakeatlas-v1.0-r2-spatial-clean-b657944/data/lakeatlas-polygons-spatial.parquet",
+      "augmentation_report_path": "__ARTIFACT_ROOT__/releases/lakeatlas-v1.0-r2-spatial-primary-b657944/reports/lakeatlas-polygons-spatial.json",
+      "rebuilt_augmentation_report_path": "__ARTIFACT_ROOT__/releases/lakeatlas-v1.0-r2-spatial-clean-b657944/reports/lakeatlas-polygons-spatial.json"
+    },
+    {
+      "asset_id": "lakeatlas-pour-points",
+      "raw_asset_path": "__ARTIFACT_ROOT__/releases/lakeatlas-v1.0-r1-rowgroup4096/lakeatlas/data/lakeatlas-pour-points.parquet",
+      "rebuilt_raw_asset_path": "__ARTIFACT_ROOT__/releases/lakeatlas-v1.0-r1-rowgroup4096-clean691fc30/lakeatlas/data/lakeatlas-pour-points.parquet",
+      "final_asset_path": "__ARTIFACT_ROOT__/releases/lakeatlas-v1.0-r2-spatial-primary-b657944/data/lakeatlas-pour-points-spatial.parquet",
+      "rebuilt_final_asset_path": "__ARTIFACT_ROOT__/releases/lakeatlas-v1.0-r2-spatial-clean-b657944/data/lakeatlas-pour-points-spatial.parquet",
+      "augmentation_report_path": "__ARTIFACT_ROOT__/releases/lakeatlas-v1.0-r2-spatial-primary-b657944/reports/lakeatlas-pour-points-spatial.json",
+      "rebuilt_augmentation_report_path": "__ARTIFACT_ROOT__/releases/lakeatlas-v1.0-r2-spatial-clean-b657944/reports/lakeatlas-pour-points-spatial.json"
+    }
+  ]
+}

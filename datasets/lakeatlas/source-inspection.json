@@ -1,0 +1,5153 @@
+{
+  "attribute_column_licenses": [
+    "CC-BY-4.0",
+    "ODbL-1.0"
+  ],
+  "collective_database_license": "CC-BY-4.0",
+  "doi": "10.6084/m9.figshare.19312001.v1",
+  "figshare_article": "https://api.figshare.com/v2/articles/19312001",
+  "layers": {
+    "LakeATLAS_v10_pnt": {
+      "attribute_field_count": 305,
+      "crs": "EPSG:4326",
+      "extent": [
+        -179.99249799999998,
+        -55.86087599999996,
+        179.9987920000001,
+        83.57118000000008
+      ],
+      "feature_count": 1427688,
+      "fid_column": "OBJECTID",
+      "fields": [
+        {
+          "arrow": "int64",
+          "metadata": {},
+          "name": "OBJECTID",
+          "nullable": "false"
+        },
+        {
+          "arrow": "int32",
+          "metadata": {},
+          "name": "Hylak_id",
+          "nullable": "true"
+        },
+        {
+          "arrow": "string",
+          "metadata": {
+            "GDAL:OGR:width": "40"
+          },
+          "name": "Lake_name",
+          "nullable": "true"
+        },
+        {
+          "arrow": "string",
+          "metadata": {
+            "GDAL:OGR:width": "35"
+          },
+          "name": "Country",
+          "nullable": "true"
+        },
+        {
+          "arrow": "string",
+          "metadata": {
+            "GDAL:OGR:width": "15"
+          },
+          "name": "Continent",
+          "nullable": "true"
+        },
+        {
+          "arrow": "string",
+          "metadata": {
+            "GDAL:OGR:width": "10"
+          },
+          "name": "Poly_src",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "Lake_type",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "Grand_id",
+          "nullable": "true"
+        },
+        {
+          "arrow": "float",
+          "metadata": {},
+          "name": "Lake_area",
+          "nullable": "true"
+        },
+        {
+          "arrow": "float",
+          "metadata": {},
+          "name": "Shore_len",
+          "nullable": "true"
+        },
+        {
+          "arrow": "float",
+          "metadata": {},
+          "name": "Shore_dev",
+          "nullable": "true"
+        },
+        {
+          "arrow": "float",
+          "metadata": {},
+          "name": "Vol_total",
+          "nullable": "true"
+        },
+        {
+          "arrow": "float",
+          "metadata": {},
+          "name": "Vol_res",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "Vol_src",
+          "nullable": "true"
+        },
+        {
+          "arrow": "float",
+          "metadata": {},
+          "name": "Depth_avg",
+          "nullable": "true"
+        },
+        {
+          "arrow": "float",
+          "metadata": {},
+          "name": "Dis_avg",
+          "nullable": "true"
+        },
+        {
+          "arrow": "float",
+          "metadata": {},
+          "name": "Res_time",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "Elevation",
+          "nullable": "true"
+        },
+        {
+          "arrow": "float",
+          "metadata": {},
+          "name": "Slope_100",
+          "nullable": "true"
+        },
+        {
+          "arrow": "float",
+          "metadata": {},
+          "name": "Wshd_area",
+          "nullable": "true"
+        },
+        {
+          "arrow": "double",
+          "metadata": {},
+          "name": "Pour_long",
+          "nullable": "true"
+        },
+        {
+          "arrow": "double",
+          "metadata": {},
+          "name": "Pour_lat",
+          "nullable": "true"
+        },
+        {
+          "arrow": "double",
+          "metadata": {},
+          "name": "HYBAS_L12",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int32",
+          "metadata": {},
+          "name": "HYRIV_RCH",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int32",
+          "metadata": {},
+          "name": "HYRIV_CAT",
+          "nullable": "true"
+        },
+        {
+          "arrow": "float",
+          "metadata": {},
+          "name": "dis_m3_pyr",
+          "nullable": "true"
+        },
+        {
+          "arrow": "float",
+          "metadata": {},
+          "name": "dis_m3_pmn",
+          "nullable": "true"
+        },
+        {
+          "arrow": "float",
+          "metadata": {},
+          "name": "dis_m3_pmx",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "run_mm_vyr",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "inu_pc_vmn",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "inu_pc_umn",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "inu_pc_vmx",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "inu_pc_umx",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "inu_pc_vlt",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "inu_pc_ult",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "lka_pc_vse",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "lka_pc_use",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int32",
+          "metadata": {},
+          "name": "lkv_mc_usu",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int32",
+          "metadata": {},
+          "name": "rev_mc_usu",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "dor_pc_pva",
+          "nullable": "true"
+        },
+        {
+          "arrow": "float",
+          "metadata": {},
+          "name": "ria_ha_vsu",
+          "nullable": "true"
+        },
+        {
+          "arrow": "float",
+          "metadata": {},
+          "name": "ria_ha_usu",
+          "nullable": "true"
+        },
+        {
+          "arrow": "float",
+          "metadata": {},
+          "name": "riv_tc_vsu",
+          "nullable": "true"
+        },
+        {
+          "arrow": "float",
+          "metadata": {},
+          "name": "riv_tc_usu",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "gwt_cm_vav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "ele_mt_lav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "ele_mt_uav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "ele_mt_lmn",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "ele_mt_vmx",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "slp_dg_vav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "slp_dg_uav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "sgr_dk_vav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "clz_cl_lmj",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "cls_cl_lmj",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "tmp_dc_lyr",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "tmp_dc_uyr",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "tmp_dc_lmn",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "tmp_dc_lmx",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "tmp_dc_l01",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "tmp_dc_l02",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "tmp_dc_l03",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "tmp_dc_l04",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "tmp_dc_l05",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "tmp_dc_l06",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "tmp_dc_l07",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "tmp_dc_l08",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "tmp_dc_l09",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "tmp_dc_l10",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "tmp_dc_l11",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "tmp_dc_l12",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pre_mm_lyr",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pre_mm_uyr",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pre_mm_l01",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pre_mm_l02",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pre_mm_l03",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pre_mm_l04",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pre_mm_l05",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pre_mm_l06",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pre_mm_l07",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pre_mm_l08",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pre_mm_l09",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pre_mm_l10",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pre_mm_l11",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pre_mm_l12",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pet_mm_lyr",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pet_mm_uyr",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pet_mm_l01",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pet_mm_l02",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pet_mm_l03",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pet_mm_l04",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pet_mm_l05",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pet_mm_l06",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pet_mm_l07",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pet_mm_l08",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pet_mm_l09",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pet_mm_l10",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pet_mm_l11",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pet_mm_l12",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "aet_mm_vyr",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "aet_mm_uyr",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "aet_mm_v01",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "aet_mm_v02",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "aet_mm_v03",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "aet_mm_v04",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "aet_mm_v05",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "aet_mm_v06",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "aet_mm_v07",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "aet_mm_v08",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "aet_mm_v09",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "aet_mm_v10",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "aet_mm_v11",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "aet_mm_v12",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "ari_ix_lav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "ari_ix_uav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "cmi_ix_lyr",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "cmi_ix_uyr",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "cmi_ix_l01",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "cmi_ix_l02",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "cmi_ix_l03",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "cmi_ix_l04",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "cmi_ix_l05",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "cmi_ix_l06",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "cmi_ix_l07",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "cmi_ix_l08",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "cmi_ix_l09",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "cmi_ix_l10",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "cmi_ix_l11",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "cmi_ix_l12",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "snw_pc_vyr",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "snw_pc_uyr",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "snw_pc_vmx",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "snw_pc_v01",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "snw_pc_v02",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "snw_pc_v03",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "snw_pc_v04",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "snw_pc_v05",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "snw_pc_v06",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "snw_pc_v07",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "snw_pc_v08",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "snw_pc_v09",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "snw_pc_v10",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "snw_pc_v11",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "snw_pc_v12",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_cl_vmj",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_v01",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_v02",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_v03",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_v04",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_v05",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_v06",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_v07",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_v08",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_v09",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_v10",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_v11",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_v12",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_v13",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_v14",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_v15",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_v16",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_v17",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_v18",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_v19",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_v20",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_v21",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_v22",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_u01",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_u02",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_u03",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_u04",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_u05",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_u06",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_u07",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_u08",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_u09",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_u10",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_u11",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_u12",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_u13",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_u14",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_u15",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_u16",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_u17",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_u18",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_u19",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_u20",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_u21",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_u22",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_cl_vmj",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_v01",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_v02",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_v03",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_v04",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_v05",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_v06",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_v07",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_v08",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_v09",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_v10",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_v11",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_v12",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_v13",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_v14",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_v15",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_u01",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_u02",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_u03",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_u04",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_u05",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_u06",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_u07",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_u08",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_u09",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_u10",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_u11",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_u12",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_u13",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_u14",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_u15",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "wet_cl_vmj",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "wet_pc_vg1",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "wet_pc_ug1",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "wet_pc_vg2",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "wet_pc_ug2",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "wet_pc_v01",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "wet_pc_v02",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "wet_pc_v03",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "wet_pc_v04",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "wet_pc_v05",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "wet_pc_v06",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "wet_pc_v07",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "wet_pc_v08",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "wet_pc_v09",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "wet_pc_u01",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "wet_pc_u02",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "wet_pc_u03",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "wet_pc_u04",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "wet_pc_u05",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "wet_pc_u06",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "wet_pc_u07",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "wet_pc_u08",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "wet_pc_u09",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "for_pc_vse",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "for_pc_use",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "crp_pc_vse",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "crp_pc_use",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pst_pc_vse",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pst_pc_use",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "ire_pc_vse",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "ire_pc_use",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "gla_pc_vse",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "gla_pc_use",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "prm_pc_vse",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "prm_pc_use",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pac_pc_lse",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pac_pc_use",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "tbi_cl_lmj",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "tec_cl_lmj",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "fmh_cl_lmj",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "fec_cl_lmj",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "cly_pc_vav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "cly_pc_uav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "slt_pc_vav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "slt_pc_uav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "snd_pc_vav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "snd_pc_uav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "soc_th_vav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "soc_th_uav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "swc_pc_vyr",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "swc_pc_uyr",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "swc_pc_v01",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "swc_pc_v02",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "swc_pc_v03",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "swc_pc_v04",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "swc_pc_v05",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "swc_pc_v06",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "swc_pc_v07",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "swc_pc_v08",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "swc_pc_v09",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "swc_pc_v10",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "swc_pc_v11",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "swc_pc_v12",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "lit_cl_vmj",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "kar_pc_vse",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "kar_pc_use",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int32",
+          "metadata": {},
+          "name": "ero_kh_vav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int32",
+          "metadata": {},
+          "name": "ero_kh_uav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "float",
+          "metadata": {},
+          "name": "pop_ct_vsu",
+          "nullable": "true"
+        },
+        {
+          "arrow": "float",
+          "metadata": {},
+          "name": "pop_ct_usu",
+          "nullable": "true"
+        },
+        {
+          "arrow": "float",
+          "metadata": {},
+          "name": "ppd_pk_vav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "float",
+          "metadata": {},
+          "name": "ppd_pk_uav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "urb_pc_vse",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "urb_pc_use",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "nli_ix_vav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "nli_ix_uav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int32",
+          "metadata": {},
+          "name": "rdd_mk_vav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int32",
+          "metadata": {},
+          "name": "rdd_mk_uav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "hft_ix_v93",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "hft_ix_u93",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "hft_ix_v09",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "hft_ix_u09",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "gad_id_lmj",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int32",
+          "metadata": {},
+          "name": "gdp_ud_vav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "float",
+          "metadata": {},
+          "name": "gdp_ud_vsu",
+          "nullable": "true"
+        },
+        {
+          "arrow": "float",
+          "metadata": {},
+          "name": "gdp_ud_usu",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "hdi_ix_vav",
+          "nullable": "true"
+        }
+      ],
+      "geometry_arrow_type": "binary",
+      "geometry_type": "Point",
+      "name": "LakeATLAS_v10_pnt",
+      "native_fid_type": "int64",
+      "output_source_field_count": 306,
+      "source_geometry_field": "Shape"
+    },
+    "LakeATLAS_v10_pol": {
+      "attribute_field_count": 307,
+      "crs": "EPSG:4326",
+      "extent": [
+        -179.9999999999999,
+        -55.86513888888899,
+        179.99999999999903,
+        83.57595062255876
+      ],
+      "feature_count": 1427688,
+      "fid_column": "OBJECTID",
+      "fields": [
+        {
+          "arrow": "int64",
+          "metadata": {},
+          "name": "OBJECTID",
+          "nullable": "false"
+        },
+        {
+          "arrow": "int32",
+          "metadata": {},
+          "name": "Hylak_id",
+          "nullable": "true"
+        },
+        {
+          "arrow": "string",
+          "metadata": {
+            "GDAL:OGR:width": "40"
+          },
+          "name": "Lake_name",
+          "nullable": "true"
+        },
+        {
+          "arrow": "string",
+          "metadata": {
+            "GDAL:OGR:width": "35"
+          },
+          "name": "Country",
+          "nullable": "true"
+        },
+        {
+          "arrow": "string",
+          "metadata": {
+            "GDAL:OGR:width": "15"
+          },
+          "name": "Continent",
+          "nullable": "true"
+        },
+        {
+          "arrow": "string",
+          "metadata": {
+            "GDAL:OGR:width": "10"
+          },
+          "name": "Poly_src",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "Lake_type",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "Grand_id",
+          "nullable": "true"
+        },
+        {
+          "arrow": "float",
+          "metadata": {},
+          "name": "Lake_area",
+          "nullable": "true"
+        },
+        {
+          "arrow": "float",
+          "metadata": {},
+          "name": "Shore_len",
+          "nullable": "true"
+        },
+        {
+          "arrow": "float",
+          "metadata": {},
+          "name": "Shore_dev",
+          "nullable": "true"
+        },
+        {
+          "arrow": "float",
+          "metadata": {},
+          "name": "Vol_total",
+          "nullable": "true"
+        },
+        {
+          "arrow": "float",
+          "metadata": {},
+          "name": "Vol_res",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "Vol_src",
+          "nullable": "true"
+        },
+        {
+          "arrow": "float",
+          "metadata": {},
+          "name": "Depth_avg",
+          "nullable": "true"
+        },
+        {
+          "arrow": "float",
+          "metadata": {},
+          "name": "Dis_avg",
+          "nullable": "true"
+        },
+        {
+          "arrow": "float",
+          "metadata": {},
+          "name": "Res_time",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "Elevation",
+          "nullable": "true"
+        },
+        {
+          "arrow": "float",
+          "metadata": {},
+          "name": "Slope_100",
+          "nullable": "true"
+        },
+        {
+          "arrow": "float",
+          "metadata": {},
+          "name": "Wshd_area",
+          "nullable": "true"
+        },
+        {
+          "arrow": "double",
+          "metadata": {},
+          "name": "Pour_long",
+          "nullable": "true"
+        },
+        {
+          "arrow": "double",
+          "metadata": {},
+          "name": "Pour_lat",
+          "nullable": "true"
+        },
+        {
+          "arrow": "double",
+          "metadata": {},
+          "name": "HYBAS_L12",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int32",
+          "metadata": {},
+          "name": "HYRIV_RCH",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int32",
+          "metadata": {},
+          "name": "HYRIV_CAT",
+          "nullable": "true"
+        },
+        {
+          "arrow": "float",
+          "metadata": {},
+          "name": "dis_m3_pyr",
+          "nullable": "true"
+        },
+        {
+          "arrow": "float",
+          "metadata": {},
+          "name": "dis_m3_pmn",
+          "nullable": "true"
+        },
+        {
+          "arrow": "float",
+          "metadata": {},
+          "name": "dis_m3_pmx",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "run_mm_vyr",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "inu_pc_vmn",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "inu_pc_umn",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "inu_pc_vmx",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "inu_pc_umx",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "inu_pc_vlt",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "inu_pc_ult",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "lka_pc_vse",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "lka_pc_use",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int32",
+          "metadata": {},
+          "name": "lkv_mc_usu",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int32",
+          "metadata": {},
+          "name": "rev_mc_usu",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "dor_pc_pva",
+          "nullable": "true"
+        },
+        {
+          "arrow": "float",
+          "metadata": {},
+          "name": "ria_ha_vsu",
+          "nullable": "true"
+        },
+        {
+          "arrow": "float",
+          "metadata": {},
+          "name": "ria_ha_usu",
+          "nullable": "true"
+        },
+        {
+          "arrow": "float",
+          "metadata": {},
+          "name": "riv_tc_vsu",
+          "nullable": "true"
+        },
+        {
+          "arrow": "float",
+          "metadata": {},
+          "name": "riv_tc_usu",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "gwt_cm_vav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "ele_mt_lav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "ele_mt_uav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "ele_mt_lmn",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "ele_mt_vmx",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "slp_dg_vav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "slp_dg_uav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "sgr_dk_vav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "clz_cl_lmj",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "cls_cl_lmj",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "tmp_dc_lyr",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "tmp_dc_uyr",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "tmp_dc_lmn",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "tmp_dc_lmx",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "tmp_dc_l01",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "tmp_dc_l02",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "tmp_dc_l03",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "tmp_dc_l04",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "tmp_dc_l05",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "tmp_dc_l06",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "tmp_dc_l07",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "tmp_dc_l08",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "tmp_dc_l09",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "tmp_dc_l10",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "tmp_dc_l11",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "tmp_dc_l12",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pre_mm_lyr",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pre_mm_uyr",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pre_mm_l01",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pre_mm_l02",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pre_mm_l03",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pre_mm_l04",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pre_mm_l05",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pre_mm_l06",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pre_mm_l07",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pre_mm_l08",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pre_mm_l09",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pre_mm_l10",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pre_mm_l11",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pre_mm_l12",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pet_mm_lyr",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pet_mm_uyr",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pet_mm_l01",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pet_mm_l02",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pet_mm_l03",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pet_mm_l04",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pet_mm_l05",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pet_mm_l06",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pet_mm_l07",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pet_mm_l08",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pet_mm_l09",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pet_mm_l10",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pet_mm_l11",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pet_mm_l12",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "aet_mm_vyr",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "aet_mm_uyr",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "aet_mm_v01",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "aet_mm_v02",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "aet_mm_v03",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "aet_mm_v04",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "aet_mm_v05",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "aet_mm_v06",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "aet_mm_v07",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "aet_mm_v08",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "aet_mm_v09",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "aet_mm_v10",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "aet_mm_v11",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "aet_mm_v12",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "ari_ix_lav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "ari_ix_uav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "cmi_ix_lyr",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "cmi_ix_uyr",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "cmi_ix_l01",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "cmi_ix_l02",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "cmi_ix_l03",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "cmi_ix_l04",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "cmi_ix_l05",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "cmi_ix_l06",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "cmi_ix_l07",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "cmi_ix_l08",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "cmi_ix_l09",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "cmi_ix_l10",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "cmi_ix_l11",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "cmi_ix_l12",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "snw_pc_vyr",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "snw_pc_uyr",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "snw_pc_vmx",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "snw_pc_v01",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "snw_pc_v02",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "snw_pc_v03",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "snw_pc_v04",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "snw_pc_v05",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "snw_pc_v06",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "snw_pc_v07",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "snw_pc_v08",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "snw_pc_v09",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "snw_pc_v10",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "snw_pc_v11",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "snw_pc_v12",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_cl_vmj",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_v01",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_v02",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_v03",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_v04",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_v05",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_v06",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_v07",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_v08",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_v09",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_v10",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_v11",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_v12",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_v13",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_v14",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_v15",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_v16",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_v17",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_v18",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_v19",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_v20",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_v21",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_v22",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_u01",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_u02",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_u03",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_u04",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_u05",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_u06",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_u07",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_u08",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_u09",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_u10",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_u11",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_u12",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_u13",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_u14",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_u15",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_u16",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_u17",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_u18",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_u19",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_u20",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_u21",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "glc_pc_u22",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_cl_vmj",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_v01",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_v02",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_v03",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_v04",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_v05",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_v06",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_v07",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_v08",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_v09",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_v10",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_v11",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_v12",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_v13",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_v14",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_v15",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_u01",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_u02",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_u03",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_u04",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_u05",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_u06",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_u07",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_u08",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_u09",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_u10",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_u11",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_u12",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_u13",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_u14",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pnv_pc_u15",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "wet_cl_vmj",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "wet_pc_vg1",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "wet_pc_ug1",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "wet_pc_vg2",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "wet_pc_ug2",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "wet_pc_v01",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "wet_pc_v02",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "wet_pc_v03",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "wet_pc_v04",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "wet_pc_v05",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "wet_pc_v06",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "wet_pc_v07",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "wet_pc_v08",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "wet_pc_v09",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "wet_pc_u01",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "wet_pc_u02",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "wet_pc_u03",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "wet_pc_u04",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "wet_pc_u05",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "wet_pc_u06",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "wet_pc_u07",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "wet_pc_u08",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "wet_pc_u09",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "for_pc_vse",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "for_pc_use",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "crp_pc_vse",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "crp_pc_use",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pst_pc_vse",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pst_pc_use",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "ire_pc_vse",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "ire_pc_use",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "gla_pc_vse",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "gla_pc_use",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "prm_pc_vse",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "prm_pc_use",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pac_pc_lse",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "pac_pc_use",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "tbi_cl_lmj",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "tec_cl_lmj",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "fmh_cl_lmj",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "fec_cl_lmj",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "cly_pc_vav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "cly_pc_uav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "slt_pc_vav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "slt_pc_uav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "snd_pc_vav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "snd_pc_uav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "soc_th_vav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "soc_th_uav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "swc_pc_vyr",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "swc_pc_uyr",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "swc_pc_v01",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "swc_pc_v02",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "swc_pc_v03",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "swc_pc_v04",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "swc_pc_v05",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "swc_pc_v06",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "swc_pc_v07",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "swc_pc_v08",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "swc_pc_v09",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "swc_pc_v10",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "swc_pc_v11",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "swc_pc_v12",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "lit_cl_vmj",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "kar_pc_vse",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "kar_pc_use",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int32",
+          "metadata": {},
+          "name": "ero_kh_vav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int32",
+          "metadata": {},
+          "name": "ero_kh_uav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "float",
+          "metadata": {},
+          "name": "pop_ct_vsu",
+          "nullable": "true"
+        },
+        {
+          "arrow": "float",
+          "metadata": {},
+          "name": "pop_ct_usu",
+          "nullable": "true"
+        },
+        {
+          "arrow": "float",
+          "metadata": {},
+          "name": "ppd_pk_vav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "float",
+          "metadata": {},
+          "name": "ppd_pk_uav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "urb_pc_vse",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "urb_pc_use",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "nli_ix_vav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "nli_ix_uav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int32",
+          "metadata": {},
+          "name": "rdd_mk_vav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int32",
+          "metadata": {},
+          "name": "rdd_mk_uav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "hft_ix_v93",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "hft_ix_u93",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "hft_ix_v09",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "hft_ix_u09",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "gad_id_lmj",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int32",
+          "metadata": {},
+          "name": "gdp_ud_vav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "float",
+          "metadata": {},
+          "name": "gdp_ud_vsu",
+          "nullable": "true"
+        },
+        {
+          "arrow": "float",
+          "metadata": {},
+          "name": "gdp_ud_usu",
+          "nullable": "true"
+        },
+        {
+          "arrow": "int16",
+          "metadata": {
+            "GDAL:OGR:subtype": "Int16"
+          },
+          "name": "hdi_ix_vav",
+          "nullable": "true"
+        },
+        {
+          "arrow": "double",
+          "metadata": {
+            "GDAL:OGR:default": "FILEGEODATABASE_SHAPE_LENGTH"
+          },
+          "name": "Shape_Length",
+          "nullable": "true"
+        },
+        {
+          "arrow": "double",
+          "metadata": {
+            "GDAL:OGR:default": "FILEGEODATABASE_SHAPE_AREA"
+          },
+          "name": "Shape_Area",
+          "nullable": "true"
+        }
+      ],
+      "geometry_arrow_type": "binary",
+      "geometry_type": "MultiPolygon",
+      "name": "LakeATLAS_v10_pol",
+      "native_fid_type": "int64",
+      "output_source_field_count": 308,
+      "source_geometry_field": "Shape"
+    }
+  },
+  "producer": "HydroSHEDS / HydroATLAS",
+  "release": "LakeATLAS version 1.0",
+  "source_documents": {
+    "HydroATLAS_TechDoc_v10_1.pdf": {
+      "md5": "f37085c99a987752a37d8327c0a96922",
+      "sha256": "0ad77c88140d8a0b569d79d5cceadf727b558a7e422a36b9c394cc593db2ccab",
+      "size_bytes": 3656999
+    },
+    "LakeATLAS_Catalog_v10.pdf": {
+      "md5": "dfb3501640ed034360486a8304d00d8b",
+      "sha256": "e736eedbbe32cdeb498348696b9d085b1caddd937a19c7c669501deaffe670e1",
+      "size_bytes": 54055742
+    }
+  },
+  "source_file": {
+    "md5": "952e0724afc96d3a5899f08935d4a094",
+    "name": "LakeATLAS_Data_v10.gdb.zip",
+    "sha256": "baa4d760a163350dd6a30c21c82db1e23b150834a8b848885eba6dc9ba1175df",
+    "size_bytes": 1530962499
+  },
+  "zip_inventory": {
+    "members": [
+      {
+        "compressed_bytes": 3455386,
+        "crc32": "972fd2f4",
+        "name": "HydroATLAS_TechDoc_v10_1.pdf",
+        "uncompressed_bytes": 3656999
+      },
+      {
+        "compressed_bytes": 74860,
+        "crc32": "bc203aba",
+        "name": "HydroATLAS_v10_Legends.xlsx",
+        "uncompressed_bytes": 83700
+      },
+      {
+        "compressed_bytes": 53529364,
+        "crc32": "327da9d3",
+        "name": "LakeATLAS_Catalog_v10.pdf",
+        "uncompressed_bytes": 54055742
+      },
+      {
+        "compressed_bytes": 0,
+        "crc32": "00000000",
+        "name": "LakeATLAS_v10.gdb/",
+        "uncompressed_bytes": 0
+      },
+      {
+        "compressed_bytes": 82,
+        "crc32": "96cbdec4",
+        "name": "LakeATLAS_v10.gdb/a00000001.gdbindexes",
+        "uncompressed_bytes": 110
+      },
+      {
+        "compressed_bytes": 210,
+        "crc32": "23aa2573",
+        "name": "LakeATLAS_v10.gdb/a00000001.gdbtable",
+        "uncompressed_bytes": 354
+      },
+      {
+        "compressed_bytes": 70,
+        "crc32": "1d9f490c",
+        "name": "LakeATLAS_v10.gdb/a00000001.gdbtablx",
+        "uncompressed_bytes": 5152
+      },
+      {
+        "compressed_bytes": 209,
+        "crc32": "c361747a",
+        "name": "LakeATLAS_v10.gdb/a00000001.TablesByName.atx",
+        "uncompressed_bytes": 4118
+      },
+      {
+        "compressed_bytes": 642,
+        "crc32": "6f6586b3",
+        "name": "LakeATLAS_v10.gdb/a00000002.gdbtable",
+        "uncompressed_bytes": 2055
+      },
+      {
+        "compressed_bytes": 133,
+        "crc32": "81192413",
+        "name": "LakeATLAS_v10.gdb/a00000002.gdbtablx",
+        "uncompressed_bytes": 5152
+      },
+      {
+        "compressed_bytes": 40,
+        "crc32": "10a41729",
+        "name": "LakeATLAS_v10.gdb/a00000003.gdbindexes",
+        "uncompressed_bytes": 42
+      },
+      {
+        "compressed_bytes": 377,
+        "crc32": "516669eb",
+        "name": "LakeATLAS_v10.gdb/a00000003.gdbtable",
+        "uncompressed_bytes": 991
+      },
+      {
+        "compressed_bytes": 45,
+        "crc32": "2db12fea",
+        "name": "LakeATLAS_v10.gdb/a00000003.gdbtablx",
+        "uncompressed_bytes": 5152
+      },
+      {
+        "compressed_bytes": 109,
+        "crc32": "a5df37fb",
+        "name": "LakeATLAS_v10.gdb/a00000004.CatItemsByPhysicalName.atx",
+        "uncompressed_bytes": 4118
+      },
+      {
+        "compressed_bytes": 133,
+        "crc32": "9f7b2066",
+        "name": "LakeATLAS_v10.gdb/a00000004.CatItemsByType.atx",
+        "uncompressed_bytes": 4118
+      },
+      {
+        "compressed_bytes": 153,
+        "crc32": "94ee13c0",
+        "name": "LakeATLAS_v10.gdb/a00000004.FDO_UUID.atx",
+        "uncompressed_bytes": 4118
+      },
+      {
+        "compressed_bytes": 132,
+        "crc32": "20b0d3a9",
+        "name": "LakeATLAS_v10.gdb/a00000004.gdbindexes",
+        "uncompressed_bytes": 310
+      },
+      {
+        "compressed_bytes": 2587,
+        "crc32": "4040d3d4",
+        "name": "LakeATLAS_v10.gdb/a00000004.gdbtable",
+        "uncompressed_bytes": 17783
+      },
+      {
+        "compressed_bytes": 52,
+        "crc32": "5bc37cf4",
+        "name": "LakeATLAS_v10.gdb/a00000004.gdbtablx",
+        "uncompressed_bytes": 5152
+      },
+      {
+        "compressed_bytes": 33,
+        "crc32": "863010df",
+        "name": "LakeATLAS_v10.gdb/a00000004.spx",
+        "uncompressed_bytes": 4118
+      },
+      {
+        "compressed_bytes": 532,
+        "crc32": "4739a7c1",
+        "name": "LakeATLAS_v10.gdb/a00000005.CatItemTypesByName.atx",
+        "uncompressed_bytes": 12310
+      },
+      {
+        "compressed_bytes": 278,
+        "crc32": "368acb39",
+        "name": "LakeATLAS_v10.gdb/a00000005.CatItemTypesByParentTypeID.atx",
+        "uncompressed_bytes": 4118
+      },
+      {
+        "compressed_bytes": 866,
+        "crc32": "c95416b6",
+        "name": "LakeATLAS_v10.gdb/a00000005.CatItemTypesByUUID.atx",
+        "uncompressed_bytes": 4118
+      },
+      {
+        "compressed_bytes": 119,
+        "crc32": "81a6dd1a",
+        "name": "LakeATLAS_v10.gdb/a00000005.gdbindexes",
+        "uncompressed_bytes": 296
+      },
+      {
+        "compressed_bytes": 1120,
+        "crc32": "4c82b9ee",
+        "name": "LakeATLAS_v10.gdb/a00000005.gdbtable",
+        "uncompressed_bytes": 1803
+      },
+      {
+        "compressed_bytes": 130,
+        "crc32": "7778ede6",
+        "name": "LakeATLAS_v10.gdb/a00000005.gdbtablx",
+        "uncompressed_bytes": 5152
+      },
+      {
+        "compressed_bytes": 101,
+        "crc32": "c86b7572",
+        "name": "LakeATLAS_v10.gdb/a00000006.CatRelsByDestinationID.atx",
+        "uncompressed_bytes": 4118
+      },
+      {
+        "compressed_bytes": 80,
+        "crc32": "2d10c7ba",
+        "name": "LakeATLAS_v10.gdb/a00000006.CatRelsByOriginID.atx",
+        "uncompressed_bytes": 4118
+      },
+      {
+        "compressed_bytes": 79,
+        "crc32": "9f1c593f",
+        "name": "LakeATLAS_v10.gdb/a00000006.CatRelsByType.atx",
+        "uncompressed_bytes": 4118
+      },
+      {
+        "compressed_bytes": 101,
+        "crc32": "cf1e524d",
+        "name": "LakeATLAS_v10.gdb/a00000006.FDO_UUID.atx",
+        "uncompressed_bytes": 4118
+      },
+      {
+        "compressed_bytes": 129,
+        "crc32": "11bee99e",
+        "name": "LakeATLAS_v10.gdb/a00000006.gdbindexes",
+        "uncompressed_bytes": 318
+      },
+      {
+        "compressed_bytes": 271,
+        "crc32": "7496b74a",
+        "name": "LakeATLAS_v10.gdb/a00000006.gdbtable",
+        "uncompressed_bytes": 336
+      },
+      {
+        "compressed_bytes": 38,
+        "crc32": "d97f8004",
+        "name": "LakeATLAS_v10.gdb/a00000006.gdbtablx",
+        "uncompressed_bytes": 5152
+      },
+      {
+        "compressed_bytes": 333,
+        "crc32": "a3efb0f8",
+        "name": "LakeATLAS_v10.gdb/a00000007.CatRelTypesByBackwardLabel.atx",
+        "uncompressed_bytes": 4118
+      },
+      {
+        "compressed_bytes": 297,
+        "crc32": "2a4d01c2",
+        "name": "LakeATLAS_v10.gdb/a00000007.CatRelTypesByDestItemTypeID.atx",
+        "uncompressed_bytes": 4118
+      },
+      {
+        "compressed_bytes": 265,
+        "crc32": "28b60e40",
+        "name": "LakeATLAS_v10.gdb/a00000007.CatRelTypesByForwardLabel.atx",
+        "uncompressed_bytes": 4118
+      },
+      {
+        "compressed_bytes": 339,
+        "crc32": "64d5e44a",
+        "name": "LakeATLAS_v10.gdb/a00000007.CatRelTypesByName.atx",
+        "uncompressed_bytes": 4118
+      },
+      {
+        "compressed_bytes": 382,
+        "crc32": "e4822b05",
+        "name": "LakeATLAS_v10.gdb/a00000007.CatRelTypesByOriginItemTypeID.atx",
+        "uncompressed_bytes": 4118
+      },
+      {
+        "compressed_bytes": 483,
+        "crc32": "adf0e335",
+        "name": "LakeATLAS_v10.gdb/a00000007.CatRelTypesByUUID.atx",
+        "uncompressed_bytes": 4118
+      },
+      {
+        "compressed_bytes": 172,
+        "crc32": "c1cd0064",
+        "name": "LakeATLAS_v10.gdb/a00000007.gdbindexes",
+        "uncompressed_bytes": 602
+      },
+      {
+        "compressed_bytes": 1306,
+        "crc32": "b5e35041",
+        "name": "LakeATLAS_v10.gdb/a00000007.gdbtable",
+        "uncompressed_bytes": 2504
+      },
+      {
+        "compressed_bytes": 93,
+        "crc32": "8981bd0f",
+        "name": "LakeATLAS_v10.gdb/a00000007.gdbtablx",
+        "uncompressed_bytes": 5152
+      },
+      {
+        "compressed_bytes": 70,
+        "crc32": "673aef5b",
+        "name": "LakeATLAS_v10.gdb/a00000009.gdbindexes",
+        "uncompressed_bytes": 116
+      },
+      {
+        "compressed_bytes": 1092110123,
+        "crc32": "ad64c9d8",
+        "name": "LakeATLAS_v10.gdb/a00000009.gdbtable",
+        "uncompressed_bytes": 1843293070
+      },
+      {
+        "compressed_bytes": 3789681,
+        "crc32": "75414e8d",
+        "name": "LakeATLAS_v10.gdb/a00000009.gdbtablx",
+        "uncompressed_bytes": 7142432
+      },
+      {
+        "compressed_bytes": 6689522,
+        "crc32": "953eb94f",
+        "name": "LakeATLAS_v10.gdb/a00000009.spx",
+        "uncompressed_bytes": 27594774
+      },
+      {
+        "compressed_bytes": 70,
+        "crc32": "673aef5b",
+        "name": "LakeATLAS_v10.gdb/a0000000a.gdbindexes",
+        "uncompressed_bytes": 116
+      },
+      {
+        "compressed_bytes": 363552196,
+        "crc32": "c9f7c760",
+        "name": "LakeATLAS_v10.gdb/a0000000a.gdbtable",
+        "uncompressed_bytes": 1100692714
+      },
+      {
+        "compressed_bytes": 3760536,
+        "crc32": "c77b5dd3",
+        "name": "LakeATLAS_v10.gdb/a0000000a.gdbtablx",
+        "uncompressed_bytes": 7142432
+      },
+      {
+        "compressed_bytes": 3978177,
+        "crc32": "b6b59f9e",
+        "name": "LakeATLAS_v10.gdb/a0000000a.spx",
+        "uncompressed_bytes": 17260566
+      },
+      {
+        "compressed_bytes": 4,
+        "crc32": "169a2f2e",
+        "name": "LakeATLAS_v10.gdb/gdb",
+        "uncompressed_bytes": 4
+      },
+      {
+        "compressed_bytes": 33,
+        "crc32": "25095b80",
+        "name": "LakeATLAS_v10.gdb/timestamps",
+        "uncompressed_bytes": 400
+      }
+    ],
+    "total_compressed_bytes": 1530952543,
+    "total_uncompressed_bytes": 3061068949
+  }
+}

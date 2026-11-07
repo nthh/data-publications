@@ -1,0 +1,1932 @@
+{
+  "request_url": "https://api.openalex.org/works?filter=doi%3A10.1002%2F2013eo370002%7C10.1002%2F2014jb011547%7C10.1002%2F2016wr019344%7C10.1002%2F2017gl072874%7C10.1002%2Fece3.2579%7C10.1002%2Fecs2.2762%7C10.1002%2Fecs2.3649%7C10.1002%2Fjoc.1276%7C10.1002%2Fjoc.1688%7C10.1002%2Fjoc.2312%7C10.1002%2Fjoc.3413%7C10.1002%2Fjoc.4436%7C10.1002%2Fjoc.7566%7C10.1002%2Fjoc.7731%7C10.1002%2Fldr.4138%7C10.1002%2Fqj.3803%7C10.1002%2Frse2.157%7C10.1002%2Frse2.357%7C10.1002%2Frse2.70041%7C10.1002%2Frse2.74%7C10.1002%2Fsaj2.20769%7C10.1007%2F978-3-030-24568-9_19%7C10.1007%2F978-3-030-24568-9_20%7C10.1007%2F978-3-319-72583-3_7%7C10.1007%2Fs11069-009-9401-4%7C10.1007%2Fs11430-020-9797-9%7C10.1016%2Fj.advwatres.2016.05.002%7C10.1016%2Fj.advwatres.2021.103910%7C10.1016%2Fj.agrformet.2018.06.028%7C10.1016%2Fj.agrformet.2021.108775%7C10.1016%2Fj.agwat.2020.106197%7C10.1016%2Fj.atmosenv.2014.04.008%7C10.1016%2Fj.catena.2025.109243%7C10.1016%2Fj.compenvurbsys.2022.101917%7C10.1016%2Fj.dib.2023.109991%7C10.1016%2Fj.ecss.2019.03.006%7C10.1016%2Fj.ecss.2025.109435%7C10.1016%2Fj.eiar.2023.107396%7C10.1016%2Fj.foreco.2012.02.002%7C10.1016%2Fj.foreco.2024.122313&corpus=all&per_page=100&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date%2Ccited_by_count%2Ccounts_by_year",
+  "retrieved_at": "2026-10-30T22:19:44.777025+00:00",
+  "response_path": "responses/d4ae5411f5f04ea6efd352d409d72d4061a2d8b51cebca2a77c26ebf034850ee.json",
+  "status": 200,
+  "response_sha256": "89689e4cadc39f4988f095633544cc21236d0567ddb12f9add77f09ceb1483f1",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 40,
+      "db_response_time_ms": 34,
+      "page": 1,
+      "per_page": 100,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where DOI is (\n    10.1002/2013eo370002 or 10.1002/2014jb011547 or 10.1002/2016wr019344\n    or 10.1002/2017gl072874 or 10.1002/ece3.2579 or 10.1002/ecs2.2762\n    or 10.1002/ecs2.3649 or 10.1002/joc.1276 or 10.1002/joc.1688\n    or 10.1002/joc.2312 or 10.1002/joc.3413 or 10.1002/joc.4436\n    or 10.1002/joc.7566 or 10.1002/joc.7731 or 10.1002/ldr.4138\n    or 10.1002/qj.3803 or 10.1002/rse2.157 or 10.1002/rse2.357\n    or 10.1002/rse2.70041 or 10.1002/rse2.74 or 10.1002/saj2.20769\n    or 10.1007/978-3-030-24568-9_19 or 10.1007/978-3-030-24568-9_20\n    or 10.1007/978-3-319-72583-3_7 or 10.1007/s11069-009-9401-4\n    or 10.1007/s11430-020-9797-9 or 10.1016/j.advwatres.2016.05.002\n    or 10.1016/j.advwatres.2021.103910 or 10.1016/j.agrformet.2018.06.028\n    or 10.1016/j.agrformet.2021.108775 or 10.1016/j.agwat.2020.106197\n    or 10.1016/j.atmosenv.2014.04.008 or 10.1016/j.catena.2025.109243\n    or 10.1016/j.compenvurbsys.2022.101917 or 10.1016/j.dib.2023.109991\n    or 10.1016/j.ecss.2019.03.006 or 10.1016/j.ecss.2025.109435\n    or 10.1016/j.eiar.2023.107396 or 10.1016/j.foreco.2012.02.002\n    or 10.1016/j.foreco.2024.122313\n  )",
+        "x_new_oql": "get works (all corpora) where DOI is (\n    10.1002/2013eo370002 or 10.1002/2014jb011547 or 10.1002/2016wr019344\n    or 10.1002/2017gl072874 or 10.1002/ece3.2579 or 10.1002/ecs2.2762\n    or 10.1002/ecs2.3649 or 10.1002/joc.1276 or 10.1002/joc.1688\n    or 10.1002/joc.2312 or 10.1002/joc.3413 or 10.1002/joc.4436\n    or 10.1002/joc.7566 or 10.1002/joc.7731 or 10.1002/ldr.4138\n    or 10.1002/qj.3803 or 10.1002/rse2.157 or 10.1002/rse2.357\n    or 10.1002/rse2.70041 or 10.1002/rse2.74 or 10.1002/saj2.20769\n    or 10.1007/978-3-030-24568-9_19 or 10.1007/978-3-030-24568-9_20\n    or 10.1007/978-3-319-72583-3_7 or 10.1007/s11069-009-9401-4\n    or 10.1007/s11430-020-9797-9 or 10.1016/j.advwatres.2016.05.002\n    or 10.1016/j.advwatres.2021.103910 or 10.1016/j.agrformet.2018.06.028\n    or 10.1016/j.agrformet.2021.108775 or 10.1016/j.agwat.2020.106197\n    or 10.1016/j.atmosenv.2014.04.008 or 10.1016/j.catena.2025.109243\n    or 10.1016/j.compenvurbsys.2022.101917 or 10.1016/j.dib.2023.109991\n    or 10.1016/j.ecss.2019.03.006 or 10.1016/j.ecss.2025.109435\n    or 10.1016/j.eiar.2023.107396 or 10.1016/j.foreco.2012.02.002\n    or 10.1016/j.foreco.2024.122313\n  )",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "join": "or",
+              "filters": [
+                {
+                  "column_id": "doi",
+                  "value": "10.1002/2013eo370002"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.1002/2014jb011547"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.1002/2016wr019344"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.1002/2017gl072874"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.1002/ece3.2579"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.1002/ecs2.2762"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.1002/ecs2.3649"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.1002/joc.1276"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.1002/joc.1688"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.1002/joc.2312"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.1002/joc.3413"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.1002/joc.4436"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.1002/joc.7566"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.1002/joc.7731"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.1002/ldr.4138"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.1002/qj.3803"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.1002/rse2.157"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.1002/rse2.357"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.1002/rse2.70041"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.1002/rse2.74"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.1002/saj2.20769"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.1007/978-3-030-24568-9_19"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.1007/978-3-030-24568-9_20"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.1007/978-3-319-72583-3_7"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.1007/s11069-009-9401-4"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.1007/s11430-020-9797-9"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.1016/j.advwatres.2016.05.002"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.1016/j.advwatres.2021.103910"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.1016/j.agrformet.2018.06.028"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.1016/j.agrformet.2021.108775"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.1016/j.agwat.2020.106197"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.1016/j.atmosenv.2014.04.008"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.1016/j.catena.2025.109243"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.1016/j.compenvurbsys.2022.101917"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.1016/j.dib.2023.109991"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.1016/j.ecss.2019.03.006"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.1016/j.ecss.2025.109435"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.1016/j.eiar.2023.107396"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.1016/j.foreco.2012.02.002"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.1016/j.foreco.2024.122313"
+                }
+              ]
+            }
+          ]
+        },
+        "url": "/works?filter=doi:10.1002%2F2013eo370002|10.1002%2F2014jb011547|10.1002%2F2016wr019344|10.1002%2F2017gl072874|10.1002%2Fece3.2579|10.1002%2Fecs2.2762|10.1002%2Fecs2.3649|10.1002%2Fjoc.1276|10.1002%2Fjoc.1688|10.1002%2Fjoc.2312|10.1002%2Fjoc.3413|10.1002%2Fjoc.4436|10.1002%2Fjoc.7566|10.1002%2Fjoc.7731|10.1002%2Fldr.4138|10.1002%2Fqj.3803|10.1002%2Frse2.157|10.1002%2Frse2.357|10.1002%2Frse2.70041|10.1002%2Frse2.74|10.1002%2Fsaj2.20769|10.1007%2F978-3-030-24568-9_19|10.1007%2F978-3-030-24568-9_20|10.1007%2F978-3-319-72583-3_7|10.1007%2Fs11069-009-9401-4|10.1007%2Fs11430-020-9797-9|10.1016%2Fj.advwatres.2016.05.002|10.1016%2Fj.advwatres.2021.103910|10.1016%2Fj.agrformet.2018.06.028|10.1016%2Fj.agrformet.2021.108775|10.1016%2Fj.agwat.2020.106197|10.1016%2Fj.atmosenv.2014.04.008|10.1016%2Fj.catena.2025.109243|10.1016%2Fj.compenvurbsys.2022.101917|10.1016%2Fj.dib.2023.109991|10.1016%2Fj.ecss.2019.03.006|10.1016%2Fj.ecss.2025.109435|10.1016%2Fj.eiar.2023.107396|10.1016%2Fj.foreco.2012.02.002|10.1016%2Fj.foreco.2024.122313&corpus=all&per_page=100",
+        "order": "most cited (age-adjusted) first",
+        "order_default": true
+      },
+      "cost_usd": 0.0001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W3025949386",
+        "doi": "https://doi.org/10.1002/qj.3803",
+        "title": "The ERA5 global reanalysis",
+        "type": "article",
+        "publication_year": 2020,
+        "publication_date": "2020-05-17",
+        "cited_by_count": 31882,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 6111
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 6093
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 6153
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 5593
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 4523
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 2988
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 414
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2014,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W2112776483",
+        "doi": "https://doi.org/10.1002/joc.1276",
+        "title": "Very high resolution interpolated climate surfaces for global land areas",
+        "type": "article",
+        "publication_year": 2005,
+        "publication_date": "2005-01-01",
+        "cited_by_count": 19860,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 402
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 622
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 800
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 900
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 1089
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 1355
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 1573
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 1588
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 1755
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 1717
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 1675
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 1463
+          },
+          {
+            "year": 2014,
+            "cited_by_count": 1236
+          },
+          {
+            "year": 2013,
+            "cited_by_count": 1086
+          },
+          {
+            "year": 2012,
+            "cited_by_count": 841
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W1966334841",
+        "doi": "https://doi.org/10.1002/joc.1688",
+        "title": "Physiographically sensitive mapping of climatological temperature and precipitation across the conterminous United States",
+        "type": "article",
+        "publication_year": 2008,
+        "publication_date": "2008-03-12",
+        "cited_by_count": 3113,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 205
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 185
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 210
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 250
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 224
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 259
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 232
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 252
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 210
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 219
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 217
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 189
+          },
+          {
+            "year": 2014,
+            "cited_by_count": 140
+          },
+          {
+            "year": 2013,
+            "cited_by_count": 104
+          },
+          {
+            "year": 2012,
+            "cited_by_count": 70
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W1995047010",
+        "doi": "https://doi.org/10.1002/joc.3413",
+        "title": "Development of gridded surface meteorological data for ecological applications and modelling",
+        "type": "article",
+        "publication_year": 2011,
+        "publication_date": "2011-12-21",
+        "cited_by_count": 1948,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 255
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 280
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 267
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 231
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 226
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 188
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 140
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 90
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 77
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 72
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 40
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 36
+          },
+          {
+            "year": 2014,
+            "cited_by_count": 29
+          },
+          {
+            "year": 2013,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2012,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W2620109964",
+        "doi": "https://doi.org/10.1002/2017gl072874",
+        "title": "A high‐accuracy map of global terrain elevations",
+        "type": "article",
+        "publication_year": 2017,
+        "publication_date": "2017-05-31",
+        "cited_by_count": 1582,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 179
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 196
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 226
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 269
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 255
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 194
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 131
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 77
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 52
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W1532228020",
+        "doi": "https://doi.org/10.1002/2014jb011547",
+        "title": "Improved methods for observing Earth's time variable mass distribution with GRACE using spherical cap mascons",
+        "type": "article",
+        "publication_year": 2015,
+        "publication_date": "2015-02-26",
+        "cited_by_count": 1279,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 134
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 150
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 144
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 130
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 155
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 162
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 130
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 101
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 70
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 57
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 39
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 7
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W2105729095",
+        "doi": "https://doi.org/10.1002/joc.2312",
+        "title": "A comparison of statistical downscaling methods suited for wildfire applications",
+        "type": "article",
+        "publication_year": 2011,
+        "publication_date": "2011-03-17",
+        "cited_by_count": 864,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 40
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 66
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 78
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 89
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 103
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 91
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 82
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 71
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 53
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 67
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 40
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 31
+          },
+          {
+            "year": 2014,
+            "cited_by_count": 23
+          },
+          {
+            "year": 2013,
+            "cited_by_count": 16
+          },
+          {
+            "year": 2012,
+            "cited_by_count": 8
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W3016242410",
+        "doi": "https://doi.org/10.1007/978-3-030-24568-9_19",
+        "title": "Integrated Multi-satellite Retrievals for the Global Precipitation Measurement (GPM) Mission (IMERG)",
+        "type": "book-chapter",
+        "publication_year": 2020,
+        "publication_date": "2020-01-01",
+        "cited_by_count": 789,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 149
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 179
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 147
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 138
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 98
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 67
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 11
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W2520852046",
+        "doi": "https://doi.org/10.1002/2016wr019344",
+        "title": "Quantifying and reducing leakage errors in the JPL RL05M GRACE mascon solution",
+        "type": "article",
+        "publication_year": 2016,
+        "publication_date": "2016-09-01",
+        "cited_by_count": 742,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 108
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 92
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 73
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 72
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 110
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 105
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 79
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 59
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 29
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 13
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W2153656222",
+        "doi": "https://doi.org/10.1007/s11069-009-9401-4",
+        "title": "A global landslide catalog for hazard applications: method, results, and limitations",
+        "type": "article",
+        "publication_year": 2009,
+        "publication_date": "2009-05-09",
+        "cited_by_count": 506,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 52
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 49
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 53
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 52
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 54
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 50
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 39
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 29
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 22
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 16
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 17
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 24
+          },
+          {
+            "year": 2014,
+            "cited_by_count": 13
+          },
+          {
+            "year": 2013,
+            "cited_by_count": 18
+          },
+          {
+            "year": 2012,
+            "cited_by_count": 8
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W2346877152",
+        "doi": "https://doi.org/10.1016/j.advwatres.2016.05.002",
+        "title": "Development and evaluation of a framework for global flood hazard mapping",
+        "type": "article",
+        "publication_year": 2016,
+        "publication_date": "2016-05-03",
+        "cited_by_count": 453,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 42
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 41
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 67
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 48
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 48
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 74
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 52
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 40
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 24
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W3015853878",
+        "doi": "https://doi.org/10.1007/978-3-030-24568-9_20",
+        "title": "Global Satellite Mapping of Precipitation (GSMaP) Products in the GPM Era",
+        "type": "book-chapter",
+        "publication_year": 2020,
+        "publication_date": "2020-01-01",
+        "cited_by_count": 377,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 57
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 79
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 73
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 64
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 45
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 45
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 12
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W2567469350",
+        "doi": "https://doi.org/10.1002/ece3.2579",
+        "title": "The database of the PREDICTS (Projecting Responses of Ecological Diversity In Changing Terrestrial Systems) project",
+        "type": "article",
+        "publication_year": 2016,
+        "publication_date": "2016-12-16",
+        "cited_by_count": 285,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 34
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 40
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 30
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 43
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 28
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 27
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 29
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 26
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 15
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 12
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4281390056",
+        "doi": "https://doi.org/10.1002/joc.7731",
+        "title": "New improved Brazilian daily weather gridded data (1961–2020)",
+        "type": "article",
+        "publication_year": 2022,
+        "publication_date": "2022-05-23",
+        "cited_by_count": 234,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 73
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 80
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 59
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 16
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 6
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W2005741744",
+        "doi": "https://doi.org/10.1016/j.atmosenv.2014.04.008",
+        "title": "A novel hybrid approach for estimating total deposition in the United States",
+        "type": "article",
+        "publication_year": 2014,
+        "publication_date": "2014-04-12",
+        "cited_by_count": 230,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 13
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 17
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 12
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 23
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 21
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 23
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 12
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 27
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 25
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 30
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 16
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2014,
+            "cited_by_count": 5
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W2792093398",
+        "doi": "https://doi.org/10.1002/rse2.74",
+        "title": "Terrestrial primary production for the conterminous United States derived from Landsat 30 m and MODIS 250 m",
+        "type": "article",
+        "publication_year": 2018,
+        "publication_date": "2018-03-02",
+        "cited_by_count": 195,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 31
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 35
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 32
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 26
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 17
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 24
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 16
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 14
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W3187173039",
+        "doi": "https://doi.org/10.1007/s11430-020-9797-9",
+        "title": "30 m global impervious surface area dynamics and urban expansion pattern observed by Landsat satellites: From 1972 to 2019",
+        "type": "article",
+        "publication_year": 2021,
+        "publication_date": "2021-07-26",
+        "cited_by_count": 192,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 28
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 36
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 41
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 40
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 37
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 10
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W2159835749",
+        "doi": "https://doi.org/10.1002/2013eo370002",
+        "title": "Downscaled Climate Projections Suitable for Resource Management",
+        "type": "article",
+        "publication_year": 2013,
+        "publication_date": "2013-09-10",
+        "cited_by_count": 180,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 14
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 17
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 20
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 19
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 17
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 16
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 14
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 21
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2014,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2013,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W2161922175",
+        "doi": "https://doi.org/10.1016/j.foreco.2012.02.002",
+        "title": "A nearest-neighbor imputation approach to mapping tree species over large areas using forest inventory plots and moderate resolution raster data",
+        "type": "article",
+        "publication_year": 2012,
+        "publication_date": "2012-03-09",
+        "cited_by_count": 179,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 16
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 12
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 16
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 12
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 27
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 17
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 15
+          },
+          {
+            "year": 2014,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2013,
+            "cited_by_count": 12
+          },
+          {
+            "year": 2012,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W3045144182",
+        "doi": "https://doi.org/10.1016/j.agwat.2020.106197",
+        "title": "Prediction of crop coefficients from fraction of ground cover and height. Background and validation using ground and remote sensing data",
+        "type": "article",
+        "publication_year": 2020,
+        "publication_date": "2020-07-22",
+        "cited_by_count": 153,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 23
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 23
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 35
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 27
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 19
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 18
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 8
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4220745068",
+        "doi": "https://doi.org/10.1002/joc.7566",
+        "title": "A global climate model ensemble for downscaled monthly climate normals over North America",
+        "type": "article",
+        "publication_year": 2022,
+        "publication_date": "2022-02-13",
+        "cited_by_count": 151,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 45
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 41
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 38
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 21
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 6
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W3013875551",
+        "doi": "https://doi.org/10.1002/rse2.157",
+        "title": "Mapping the world's coral reefs using a global multiscale earth observation framework",
+        "type": "article",
+        "publication_year": 2020,
+        "publication_date": "2020-03-25",
+        "cited_by_count": 150,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 17
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 35
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 28
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 27
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 20
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 16
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 7
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W2922862189",
+        "doi": "https://doi.org/10.1016/j.ecss.2019.03.006",
+        "title": "Between the tides: Modelling the elevation of Australia's exposed intertidal zone at continental scale",
+        "type": "article",
+        "publication_year": 2019,
+        "publication_date": "2019-03-20",
+        "cited_by_count": 143,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 20
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 15
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 21
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 19
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 32
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 25
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 5
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W1873566469",
+        "doi": "https://doi.org/10.1002/joc.4436",
+        "title": "Spatial downscaling of European climate data",
+        "type": "article",
+        "publication_year": 2015,
+        "publication_date": "2015-08-06",
+        "cited_by_count": 138,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 13
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 14
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 17
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 19
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 22
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 12
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 6
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W3154760224",
+        "doi": "https://doi.org/10.1016/j.advwatres.2021.103910",
+        "title": "A new dataset of global irrigation areas from 2001 to 2015",
+        "type": "article",
+        "publication_year": 2021,
+        "publication_date": "2021-04-09",
+        "cited_by_count": 89,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 14
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 20
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 22
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 18
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 12
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 3
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4389985385",
+        "doi": "https://doi.org/10.1016/j.eiar.2023.107396",
+        "title": "Urbanization-led land cover change impacts terrestrial carbon storage capacity: A high-resolution remote sensing-based nation-wide assessment in Pakistan (1990–2020)",
+        "type": "article",
+        "publication_year": 2023,
+        "publication_date": "2023-12-20",
+        "cited_by_count": 72,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 17
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 40
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 15
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W3210231951",
+        "doi": "https://doi.org/10.1002/ldr.4138",
+        "title": "Impact assessment of land cover and land use changes on soil erosion changes (2005–2015) in Pakistan",
+        "type": "article",
+        "publication_year": 2021,
+        "publication_date": "2021-10-28",
+        "cited_by_count": 56,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 17
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 17
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 4
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4311777063",
+        "doi": "https://doi.org/10.1016/j.compenvurbsys.2022.101917",
+        "title": "Intra-urban land use maps for a global sample of cities from Sentinel-2 satellite imagery and computer vision",
+        "type": "article",
+        "publication_year": 2022,
+        "publication_date": "2022-12-09",
+        "cited_by_count": 44,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 16
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 6
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4403156041",
+        "doi": "https://doi.org/10.1016/j.foreco.2024.122313",
+        "title": "Characterizing long-term tree species dynamics in Canada’s forested ecosystems using annual time series remote sensing data",
+        "type": "article",
+        "publication_year": 2024,
+        "publication_date": "2024-10-05",
+        "cited_by_count": 30,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 15
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 15
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4403793012",
+        "doi": "https://doi.org/10.1002/saj2.20769",
+        "title": "Soil landscapes of the United States (SOLUS): Developing predictive soil property maps of the conterminous United States using hybrid training sets",
+        "type": "article",
+        "publication_year": 2024,
+        "publication_date": "2024-10-25",
+        "cited_by_count": 26,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 18
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 8
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4411535854",
+        "doi": "https://doi.org/10.1016/j.catena.2025.109243",
+        "title": "Digital mapping of peat thickness and carbon stock of global peatlands",
+        "type": "article",
+        "publication_year": 2025,
+        "publication_date": "2025-06-23",
+        "cited_by_count": 17,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 12
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 5
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W2948828936",
+        "doi": "https://doi.org/10.1002/ecs2.2762",
+        "title": "Long‐term trajectories of fractional component change in the Northern Great Basin, USA",
+        "type": "article",
+        "publication_year": 2019,
+        "publication_date": "2019-06-01",
+        "cited_by_count": 43,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 5
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W2788201727",
+        "doi": "https://doi.org/10.1007/978-3-319-72583-3_7",
+        "title": "Global Precipitation Measurement (GPM): Unified Precipitation Estimation from Space",
+        "type": "book-chapter",
+        "publication_year": 2018,
+        "publication_date": "2018-01-01",
+        "cited_by_count": 32,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W2860316154",
+        "doi": "https://doi.org/10.1016/j.agrformet.2018.06.028",
+        "title": "Development and analysis of spring plant phenology products: 36 years of 1-km grids over the conterminous US",
+        "type": "article",
+        "publication_year": 2018,
+        "publication_date": "2018-07-04",
+        "cited_by_count": 30,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W3181872338",
+        "doi": "https://doi.org/10.1002/ecs2.3649",
+        "title": "Innovations to expand drone data collection and analysis for rangeland monitoring",
+        "type": "article",
+        "publication_year": 2021,
+        "publication_date": "2021-07-01",
+        "cited_by_count": 24,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 6
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4412426619",
+        "doi": "https://doi.org/10.1016/j.ecss.2025.109435",
+        "title": "Spatial distribution of mangrove soil organic carbon in Indus Delta, Pakistan: A multi-sensor remote sensing and machine learning approach",
+        "type": "article",
+        "publication_year": 2025,
+        "publication_date": "2025-07-15",
+        "cited_by_count": 4,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 4
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4416678092",
+        "doi": "https://doi.org/10.1002/rse2.70041",
+        "title": "Wall‐to‐wall Amazon forest height mapping with Planet NICFI , Aerial LiDAR , and a U‐Net regression model",
+        "type": "article",
+        "publication_year": 2025,
+        "publication_date": "2025-11-16",
+        "cited_by_count": 4,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 4
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4200548650",
+        "doi": "https://doi.org/10.1016/j.agrformet.2021.108775",
+        "title": "Assessing geeSEBAL automated calibration and meteorological reanalysis uncertainties to estimate evapotranspiration in subtropical humid climates",
+        "type": "article",
+        "publication_year": 2021,
+        "publication_date": "2021-12-23",
+        "cited_by_count": 22,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 4
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4384825621",
+        "doi": "https://doi.org/10.1002/rse2.357",
+        "title": "Mapping tree cover expansion in Montana, U.S.A. rangelands using high‐resolution historical aerial imagery",
+        "type": "article",
+        "publication_year": 2023,
+        "publication_date": "2023-07-19",
+        "cited_by_count": 7,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4389935287",
+        "doi": "https://doi.org/10.1016/j.dib.2023.109991",
+        "title": "Dataset of temporal trends of surface water area across India's rivers and basins",
+        "type": "data-paper",
+        "publication_year": 2023,
+        "publication_date": "2023-12-19",
+        "cited_by_count": 4,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          }
+        ]
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "7f48854789bffce99214a4ab2c1cedfff2ab5ba099ff026733377999f2b0aede"
+}

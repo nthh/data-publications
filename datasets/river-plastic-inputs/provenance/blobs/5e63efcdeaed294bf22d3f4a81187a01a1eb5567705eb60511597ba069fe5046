@@ -1,0 +1,14 @@
+{
+  "id": "river-plastic-gee-coincident-groups-v1",
+  "scope": "Supplement to failed unique-only geodesic association. Verify coincident source records as multisets without assigning invented individual identity or deduplicating data.",
+  "geometry_contract_sha256": "17708104b02b93de5191dc3367b6f98d0f754718367ab163d3478048086c9203",
+  "unique_geodesic_report_sha256": "2f138613052f8b6e4f7021c5ddcce5cebdd22842e6b199e171a8829e5463047e",
+  "known_before_registration": "The one-metre diagnostic uniquely matches 40,722 points and all 2,158,266 associated attributes exactly. Its 38 ambiguous records correspond to 19 groups of exactly coincident original coordinates. The four original null-estimate records occur in those groups. The full 53-field group multisets have not yet been compared.",
+  "matching": "Determine candidate groups only from geometry within the existing one-metre WGS84 bound. A group is eligible only if all candidate original coordinates are exactly identical. Reject ambiguity involving different original coordinates. No attributes may choose among different locations.",
+  "attribute_check": "For each eligible coincident group compare the complete 53-field original and GEE record tuples as exact order-independent multisets. Numeric equality is exact after JSON decimal parsing; null and zero are distinct. Count duplicates with multiplicity. Reject invalid types, altered records and missing/extra records. No rounding allowance is used for group tuple equality.",
+  "coverage": "Retain every source row. Require every unique point and every coincident group to be covered exactly once with complete group multiplicity.",
+  "unchanged_criteria": "One-metre radius, all 53fields, null rules, per-value tolerance for unique points and complete emission-sum comparisons are unchanged.",
+  "reporting": "Report unique point matches separately from verified coincident groups and records. Preserve original strict-coordinate failure and unique-only diagnostic failure. Successful overall content result is passed_with_documented_geometry_difference; individual GEE-to-source row identity within a coincident group is not asserted.",
+  "source_quality_note": "Source has 19 coincident-coordinate pairs. They remain in the analytic file and PMTiles with distinct source_row identifiers; this validation does not decide which estimate is scientifically preferable.",
+  "independent_review": "Read-only reviewer agreed that geometry-defined group equality preserves content and multiplicity without circular attribute-based location assignment."
+}

@@ -1,0 +1,80 @@
+{
+  "request_url": "https://api.openalex.org/works?search=Mapping+the+world%27s+free-flowing+rivers&corpus=all&per_page=5&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date",
+  "retrieved_at": "2026-10-30T22:07:54.188628+00:00",
+  "response_path": "responses/23c7ebbf82f2f0809cf394e59edca2d6ff16fb1968ccb786825a1cfd2b7aa21c.json",
+  "status": 200,
+  "response_sha256": "8daf72cf76da3a33925060fd56b28ca3c5ab23b537813d7cd25500276c04ff8f",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 30992,
+      "db_response_time_ms": 195,
+      "page": 1,
+      "per_page": 5,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where full text has (Mapping the world's free-flowing rivers)",
+        "x_new_oql": "get works (all corpora) where full text has (Mapping the world's free-flowing rivers)",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "Mapping the world's free-flowing rivers",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:Mapping the world%27s free-flowing rivers&corpus=all&per_page=5",
+        "order": "best matches first",
+        "order_default": true
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W2944057425",
+        "doi": "https://doi.org/10.1038/s41586-019-1111-9",
+        "title": "Mapping the world’s free-flowing rivers",
+        "type": "article",
+        "publication_year": 2019,
+        "publication_date": "2019-05-08"
+      },
+      {
+        "id": "https://openalex.org/W2962880589",
+        "doi": "https://doi.org/10.1038/s41586-019-1379-9",
+        "title": "Author Correction: Mapping the world’s free-flowing rivers",
+        "type": "erratum",
+        "publication_year": 2019,
+        "publication_date": "2019-07-23"
+      },
+      {
+        "id": "https://openalex.org/W4393814707",
+        "doi": "https://doi.org/10.5281/zenodo.3875114",
+        "title": "Mapping the world's free-flowing rivers: CSV Dataset",
+        "type": "dataset",
+        "publication_year": 2020,
+        "publication_date": "2020-06-03"
+      },
+      {
+        "id": "https://openalex.org/W4394364805",
+        "doi": "https://doi.org/10.6084/m9.figshare.7688801",
+        "title": "Mapping the world's free-flowing rivers: data set and technical documentation",
+        "type": "dataset",
+        "publication_year": 2019,
+        "publication_date": "2019-01-01"
+      },
+      {
+        "id": "https://openalex.org/W4247517754",
+        "doi": "https://doi.org/10.3410/f.735710639.793560471",
+        "title": "Faculty Opinions recommendation of Mapping the world's free-flowing rivers.",
+        "type": "peer-review",
+        "publication_year": 2019,
+        "publication_date": "2019-05-21"
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "4063e7c97f5940a49b9b72b21be42026873ecae4224085a02a2c5625af4052d6"
+}

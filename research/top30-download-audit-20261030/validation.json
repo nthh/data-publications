@@ -1,0 +1,77 @@
+{
+  "research_commit": "a0666ad2a5a9e93002b14c40d0be59ae11f32339",
+  "timestamp_utc": "2026-10-30T23:05:59.623692+00:00",
+  "criteria_commit": "a5433fa",
+  "clean_rehearsal": {
+    "method": "git archive; no untracked files, local caches, virtual environment or network",
+    "directory": "/Users/nathan/.folia-fleets/top30-download-audit-20261030/tree/.local/offline-top30-rehearsal-a0666ad/tree",
+    "python": "3.14.6 (main, Jun 10 2026, 10:03:53) [Clang 17.0.0 (clang-1700.6.4.2)]",
+    "command": "python3 scripts/report_download_audit.py --check (via network-disabled runpy harness)",
+    "exit_code": 0,
+    "stdout": "{\"rows\": 30, \"membership\": {\"Official\": 22, \"Both\": 4, \"Community\": 4}, \"size_evidence\": {\"publisher_stated\": 13, \"measured\": 8, \"bounded_estimate\": 4, \"unknown\": 5}, \"outputs\": 4, \"result\": \"byte-identical\"}"
+  },
+  "checks": [
+    {
+      "check": "All 30 ranks and work IDs match the frozen combined citation ranking",
+      "status": "passed"
+    },
+    {
+      "check": "Catalog membership: 22 official only, 4 community only, 4 both",
+      "status": "passed"
+    },
+    {
+      "check": "All four JSON/CSV/Markdown/manifest outputs reproduced byte-for-byte",
+      "status": "passed"
+    },
+    {
+      "check": "Independent source-manifest sums for JRC, Hansen core maps, TerraClimate, mangroves, MOD17 and FFR",
+      "status": "passed"
+    },
+    {
+      "check": "PRISM monthly file sum and CHIRPS leap-year correction",
+      "status": "passed"
+    },
+    {
+      "check": "Unknown bytes remain null; publisher MB figures are separate from measured byte counts",
+      "status": "passed"
+    },
+    {
+      "check": "Report generator compiles; whitespace check passed",
+      "status": "passed"
+    },
+    {
+      "check": "Frozen citation studies, canonical dataset records, index and prior reports unchanged",
+      "status": "passed"
+    }
+  ],
+  "retained_failed_checks": [
+    {
+      "check": "Hansen full imagery URL-manifest reconciliation",
+      "status": "failed",
+      "detail": "224 last-image URLs absent from the captured listing; verified core maps remain complete and their 83.91 GB total excludes imagery."
+    },
+    {
+      "check": "Initial PRISM 49M monthly-year scope",
+      "status": "failed_then_corrected",
+      "detail": "49M is annual-average grid; 12 monthly ZIPs sum to 654M in rounded publisher units."
+    },
+    {
+      "check": "First clean runpy rehearsal at f06d496",
+      "status": "failed_then_corrected",
+      "detail": "Relative __file__ path could not be made relative to absolute repository root. Script path now resolved explicitly; clean rehearsal repeated successfully."
+    }
+  ],
+  "limitations": [
+    "Five unverified download totals: ERA5-Land, SoilGrids, WHRC, MapBiomas, MERIT.",
+    "GAP package inner raster encoding unverified; measured ZIP bytes retained.",
+    "Sizes refer to selected scopes, not every member in a paper family.",
+    "No transformed output sizes or scientific GEE parity were measured.",
+    "Hansen imagery manifest incompleteness and MERIT publication restrictions remain in row caveats."
+  ],
+  "output_sha256": {
+    "inventory.json": "8c827eaef64c5024ca82f835e53343155814ae01566eb2714ef5df242717267d",
+    "top30.csv": "40c5f9783c2bb88ed272402c9e905434799cb5ded8afa18f76e2390b43e6bee7",
+    "README.md": "2e2cfda93c7fcbbbd73667754d8dfa96bda03b1f4c236e592ce25672f374a32f",
+    "input-manifest.json": "f3ba013e8c2e8b1841c680d407a951948bd6641cf04672dbd0a066a1ebc55dfd"
+  }
+}

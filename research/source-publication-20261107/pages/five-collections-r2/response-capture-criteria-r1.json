@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-11-07T22:15:34.031155+00:00",
+  "failed_report": "research/source-publication-20261107/pages/five-collections-r2/failed-preflight-r2/portolan-browser-report.json",
+  "failed_report_sha256": "0a74f3c1b8a3b76a5baf06739ffb2d60ce92b3e71d0d61c74f972b10d1dcc8a8",
+  "failure": [
+    "grwl-raw: response.body: Protocol error (Network.getResponseBody): Request content was evicted from inspector cache\nResponse body is not available for a response that was navigated away from. Read response.body() before triggering any navigation.",
+    "page.waitForTimeout: Target page, context or browser has been closed",
+    "Approved GRWL footer-prefix request lacks an independently verified response body"
+  ],
+  "scope": "Browser instrumentation failure: HTTP206 metadata prefix arrived, but its body was evicted from the default inspector cache before hashing. No change to Source bytes, policy, navigation, collection count, screenshots, or transfer budgets is allowed.",
+  "required_followup": [
+    "Read actual browser response bytes through a bounded Chrome DevTools Network session with enough resource buffer for the approved prefix. Do not replace responses or refetch through Node/curl.",
+    "Bind the captured body to one exact browser request URL, Range and collection; preserve the existing Content-Range/MIME/CORS/length/SHA checks.",
+    "A missing, ambiguous, mismatched, oversized or evicted capture fails. Record actual capture configuration and protocol evidence.",
+    "Repeat all five collections/six PMTiles; preserve failed r2 unchanged."
+  ],
+  "maximum_capture_resource_bytes": 33554432,
+  "maximum_capture_total_bytes": 134217728,
+  "source_plan_sha256": "754c02dde3cf258263619599f893558d3348c7fb51c07f8fa700efa1900ac610",
+  "pages_plan_sha256": "f374b6eb9a2cd54454378cd4b23dd5b79edcde9941b408941cfaad0acdd30751",
+  "metadata_policy_sha256": "0d870ab879e6a4441a3dc1e8ff8ae1473d1e98068018196d0cfbed8147a73cca"
+}

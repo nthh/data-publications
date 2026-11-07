@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "status": "clean_finalization_preflight_passed_global_checks_pending",
+  "git_revision": "b4983998f55663bdab094ce4e11734c73c066ca1",
+  "observed_clean_checkout": true,
+  "focused_finalizer_tests": {
+    "command": [
+      "python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_grwl_raw_finalization.py"
+    ],
+    "passed": 18,
+    "failed": 0
+  },
+  "file_sha256": {
+    "datasets/grwl-raw/finalize_display.py": "583c49f7b1e8985ee12a6db2d5a47896ddc5b922ee907118f23f714391b7fd95",
+    "datasets/grwl-raw/validate_display.py": "a21937f071d728902b8eb721376d3e2e22c138acd6eba747a131ee7f6ddbc9f8",
+    "datasets/grwl-raw/native_quantization.py": "ba0f76b356aa5813b50bde0803c0bc2d477f3452ba664d2ed0eccc1a773bed44",
+    "datasets/grwl-raw/prepare_preview.py": "bda95cfa59fa0716a7671ef84ac96bf3241be29166781ec3fb037b709e898d25",
+    "scripts/cloud_viewer/raw-browser-check.mjs": "46579f2da13e20c6d63be1b8977a246b6e2cb8cc9eedbc8f0d4cc976012219e8",
+    "scripts/cloud_viewer/package-lock.json": "2719495eaa1f7bcbdcf768957b823c444251a746c342ed2ea86789d27abb110d"
+  },
+  "viewer_build": {
+    "manifest_sha256": "1964199fb333d6056827d36945937e3fb5326ca1d21bb0c350976fc741a822a4",
+    "files_rehashed": 10,
+    "total_bytes": 40135555,
+    "ui_code_matches_build_checkout": "5ecbfca153a5cb432c7f471a12fa55877f971611",
+    "package_lock_matches": true
+  },
+  "limits": [
+    "Global data oracle and browser checks are separate gates; this receipt does not claim their completion.",
+    "UI files were built earlier from identical source and lock bytes; browser dependencies were reused without downloading."
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "datasets": {
+    "free-flowing-rivers": {
+      "queries": [
+        {
+          "id_column": "OBJECTID",
+          "ids": [1, 4239361, 8474625],
+          "name": "free-flowing-rivers-parquet-1",
+          "path": "assets/ffr-reach-network-v1.parquet",
+          "selection": {
+            "row_count": 8477883,
+            "row_group_count": 2070,
+            "row_groups": [0, 1035, 2069],
+            "selected_from": "row_group_min_statistics"
+          }
+        }
+      ],
+      "release": "figshare-v1-local-r2"
+    },
+    "grwl-raw": {
+      "queries": [
+        {
+          "id_column": "feature_id",
+          "ids": [145242909048833, 151225798516737, 206669531324417],
+          "name": "grwl-raw-parquet-1",
+          "path": "assets/grwl-raw-observations.parquet",
+          "selection": {
+            "row_count": 64572998,
+            "row_group_count": 8315,
+            "row_groups": [0, 4157, 8314],
+            "selected_from": "row_group_min_statistics"
+          }
+        }
+      ],
+      "release": "raw-v01.01-local-r1"
+    },
+    "hydrolakes": {
+      "queries": [
+        {
+          "id_column": "Hylak_id",
+          "ids": [87, 46, 16],
+          "name": "hydrolakes-parquet-1",
+          "path": "assets/hydrolakes-polygons.parquet",
+          "selection": {
+            "row_count": 1427688,
+            "row_group_count": 128,
+            "row_groups": [0, 64, 127],
+            "selected_from": "row_group_min_statistics"
+          }
+        }
+      ],
+      "release": "v1-local-r3"
+    },
+    "lakeatlas": {
+      "queries": [
+        {
+          "id_column": "OBJECTID",
+          "ids": [87, 46, 16],
+          "name": "lakeatlas-parquet-1",
+          "path": "assets/lakeatlas-polygons.parquet",
+          "selection": {
+            "row_count": 1427688,
+            "row_group_count": 128,
+            "row_groups": [0, 64, 127],
+            "selected_from": "row_group_min_statistics"
+          }
+        },
+        {
+          "id_column": "OBJECTID",
+          "ids": [87, 46, 17],
+          "name": "lakeatlas-parquet-2",
+          "path": "assets/lakeatlas-pour-points.parquet",
+          "selection": {
+            "row_count": 1427688,
+            "row_group_count": 128,
+            "row_groups": [0, 64, 127],
+            "selected_from": "row_group_min_statistics"
+          }
+        }
+      ],
+      "release": "lakeatlas-v1.0-r2"
+    },
+    "river-plastic-inputs": {
+      "queries": [
+        {
+          "id_column": "source_row",
+          "ids": [2258, 326, 2257],
+          "name": "river-plastic-inputs-parquet-1",
+          "path": "river-plastic-inputs/river-plastic-inputs.parquet",
+          "selection": {
+            "row_count": 40760,
+            "row_group_count": 10,
+            "row_groups": [0, 5, 9],
+            "selected_from": "row_group_min_statistics"
+          }
+        }
+      ],
+      "release": "figshare-v6-r2"
+    }
+  },
+  "frozen_at": "2026-11-06T23:54:04.643145Z",
+  "plan_sha256": "754c02dde3cf258263619599f893558d3348c7fb51c07f8fa700efa1900ac610",
+  "schema_version": 1,
+  "selection_method": "IDs are Parquet row-group minimum statistics from first, middle, and last row groups; only those row groups and ID columns were read to confirm each selected ID. Hosted comparison returns all attributes and geometry for each ID, preserving duplicate multiplicity."
+}

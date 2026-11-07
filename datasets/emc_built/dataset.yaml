@@ -1,0 +1,35 @@
+schema_version: 1
+id: emc_built
+title: 'Copernicus EMC-BUILT Global Built-up Surface R2025A: Built Up Surface'
+community_url: https://gee-community-catalog.org/projects/emc_built
+audit:
+  snapshot: gee-community-audit-20261029
+  family_key: emc_built
+  unique_gee_asset_count: 3
+  initial_queue: review_external_native_counterpart
+  folia_registry_status: not_identified
+  folia_registry_ids: []
+  source_coop_urls: []
+  source_coop_scope: null
+  external_native_urls:
+  - https://human-settlement.emergency.copernicus.eu/documents/EMC-BUILT_R2025.pdf
+  external_native_scope: 'EMC-BUILT R2025A: built-up, nonresidential built-up, greenness;
+    official report declares COG delivery.'
+triage:
+  decision: pending
+  priority: normal
+review:
+  citation_assessment:
+    as_of: '2026-10-29'
+    provider: OpenAlex
+    evidence_path: research/citations/rankings.json
+    evidence_key: emc_built
+    geographic_scope: global
+    paper_count_status: unknown
+    max_paper_citations: null
+    max_data_doi_citations: 0
+    top_paper_doi: null
+    top_paper_openalex_id: null
+    citation_scope: associated_dataset_publication
+    citation_scope_note: 'Role correction: this is a direct data-release DOI, not
+      a research paper, even though the initial review put it in paper_dois.'

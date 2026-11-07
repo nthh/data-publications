@@ -1,0 +1,805 @@
+{
+  "schema_version": 1,
+  "dataset": "river-plastic-inputs",
+  "product_path": "commons/publish/gee-community/products/river-plastic-inputs",
+  "publication_state": "local_preparation",
+  "public_code_repository": null,
+  "public_source_archive": null,
+  "current_version": "current",
+  "data_release": {
+    "source_doi": "10.6084/m9.figshare.4725541.v6",
+    "source_sha256": "c24a1ccdfbdc44c59954ab9796a522a3271b7c91ca31898526a93bccaeabd4f4",
+    "manifest_path": "commons/publish/gee-community/products/river-plastic-inputs/evidence/release-manifest.json",
+    "manifest_sha256": "78ddda062d812eebe6861cc6db86cd5fc23d15400f0e29bce63046c70c6ee4f9",
+    "conversion_git_revision": "21f14552cd80dc4e93d28c889faae841fc182c48",
+    "data_license": "CC-BY-4.0"
+  },
+  "software_license": {
+    "repository_declaration": "Apache-2.0",
+    "evidence_path": "pyproject.toml",
+    "status": "public_package_license_text_and_scope_to_finalize",
+    "note": "The root Python project declares Apache-2.0. Dataset CC BY 4.0 is separate; include an explicit software license/notice for the public publication code package."
+  },
+  "stages": {
+    "build": [
+      "build.py",
+      "catalog.py"
+    ],
+    "source_and_format_validation": [
+      "validate.py"
+    ],
+    "research_validation": [
+      "check_publication.py"
+    ],
+    "gee_capture": [
+      "gee/fetch.py"
+    ],
+    "gee_comparison": [
+      "gee/compare.py",
+      "gee/diagnose_geometry.py"
+    ],
+    "fault_tests": [
+      "test_publication.py",
+      "gee/test_compare.py"
+    ],
+    "package_data": [
+      "package.py"
+    ],
+    "local_serving": [
+      "serve.py"
+    ]
+  },
+  "versions": [
+    {
+      "id": "conversion",
+      "git_revision": "21f14552cd80dc4e93d28c889faae841fc182c48",
+      "purpose": "Original release conversion inputs; rebuilding in another Git checkout records that checkout revision.",
+      "files": [
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/.gitignore",
+          "role": "workspace-config",
+          "bytes": 34,
+          "sha256": "844559599368afb4ef69527fd55659a6a5e570d2c3ce6e4e0aaf45b08805d4a5"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/README.md",
+          "role": "documentation",
+          "bytes": 4606,
+          "sha256": "1e18a12b418015d02e941d153bb5e9380cd040ddd3d57873aed2b90c55f769ea"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/build.py",
+          "role": "python",
+          "bytes": 11954,
+          "sha256": "83452106125e3ad54deebdc50c8c8453ca5de86ce5dbb54610eacb1665b3bd2b"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/catalog.py",
+          "role": "python",
+          "bytes": 13822,
+          "sha256": "2ee91e41e380899a90986e2351426d5050cead64f125e8e86409f49360f709ec"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/package-lock.json",
+          "role": "environment",
+          "bytes": 54338,
+          "sha256": "83092848670ab1b7c381d2dab9d8f0ccfb0a71924af5fa6629f23b90c229e83a"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/package.json",
+          "role": "environment",
+          "bytes": 158,
+          "sha256": "3b68e75eb52b61f7bce0416eb346e6ea4a4854d0341dfa369a387a4a8f66f1d5"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/pyproject.toml",
+          "role": "environment",
+          "bytes": 446,
+          "sha256": "a232b620aa7f441281c983dbf34c3255528a342e8276d87848409642647c9323"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/serve.py",
+          "role": "python",
+          "bytes": 3506,
+          "sha256": "e55a48f8702a5b093f48a16d67c01039ca188aba0fdcb1c8ee5d365a010ed015"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/source.json",
+          "role": "source-pin",
+          "bytes": 1065,
+          "sha256": "d8bef0bf8b6f873331b8fdcd98c2c41d6cb3bb0c56071cfbb659b6710bde353c"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/uv.lock",
+          "role": "environment",
+          "bytes": 233320,
+          "sha256": "8ad5895cdb74eb45ed203aa5cb34dee4ddcae1fa4a76b4ee66f7e8ba3da45d70"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/validate.py",
+          "role": "python",
+          "bytes": 12358,
+          "sha256": "1e529b180ec863b95ace2ad7b179bca3b799f2d86052fe0a46cc62b8e5e8598a"
+        }
+      ]
+    },
+    {
+      "id": "strict-gee",
+      "git_revision": "74f6b47959c5774607bdd8b8e8afcea4987fa085",
+      "purpose": "Original failed strict coordinate comparison and its registered criteria.",
+      "files": [
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/.gitignore",
+          "role": "workspace-config",
+          "bytes": 34,
+          "sha256": "844559599368afb4ef69527fd55659a6a5e570d2c3ce6e4e0aaf45b08805d4a5"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/README.md",
+          "role": "documentation",
+          "bytes": 6598,
+          "sha256": "83bb6e3766cc43a89a3b674b6c8889f17cb0a7373f90577840ed895096274431"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/VALIDATION.md",
+          "role": "documentation",
+          "bytes": 8568,
+          "sha256": "dda3a77a6fdf15ecea7c0c1ab2d184c19d1b0307107838bc01eebb8804e9495d"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/build.py",
+          "role": "python",
+          "bytes": 11954,
+          "sha256": "83452106125e3ad54deebdc50c8c8453ca5de86ce5dbb54610eacb1665b3bd2b"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/catalog.py",
+          "role": "python",
+          "bytes": 13822,
+          "sha256": "2ee91e41e380899a90986e2351426d5050cead64f125e8e86409f49360f709ec"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/check_publication.py",
+          "role": "python",
+          "bytes": 6419,
+          "sha256": "f0ae40eb090358481ba3461a3bb4d8ed13bd11176743b732fd9666451010d587"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/evidence/gee-capture.json",
+          "role": "evidence",
+          "bytes": 34265,
+          "sha256": "eafc9374be0bb47c605a3a15ed8078a36ee7cf788209687971f2a835dc739d6d"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/evidence/gee-strict-validation.json",
+          "role": "evidence",
+          "bytes": 32526,
+          "sha256": "9171d9147643892d054713485a2576c604e1b85f7622ede2f59e8ce9ea7d8c45"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/evidence/publication-fault-checks.json",
+          "role": "evidence",
+          "bytes": 1582,
+          "sha256": "76bd9d7bb31feed4f8c01b5952ca1bf9ee239b5877b8d965bc04aaaa2a942fb9"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/evidence/publication-validation.json",
+          "role": "evidence",
+          "bytes": 5235,
+          "sha256": "37b46c4a02b3f33d7a2b3bb11823ecb8f1c0fdfecffee09904a295e9c892f533"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/evidence/release-manifest.json",
+          "role": "evidence",
+          "bytes": 6877,
+          "sha256": "78ddda062d812eebe6861cc6db86cd5fc23d15400f0e29bce63046c70c6ee4f9"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/evidence/release-receipt.json",
+          "role": "evidence",
+          "bytes": 1055,
+          "sha256": "01cf11df1c788c8d825fe30a5fcc51ded4593309c80a079bb4cafd6ca0d1c169"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/evidence/reproducibility.json",
+          "role": "evidence",
+          "bytes": 1811,
+          "sha256": "c92275e0b438a207e6bf6483ca762519c1c6446e4bba7916efeea3dfea54f6bf"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/evidence/stac-validation.json",
+          "role": "evidence",
+          "bytes": 307,
+          "sha256": "b478e026a83bfe0bc45d6aae2642339d80aa0de292c5e59ed985f3a35b2b2f4c"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/evidence/validation.json",
+          "role": "evidence",
+          "bytes": 2950,
+          "sha256": "38e91d8db38038e866db3d0a371bb406de8c79f7345d3b0bd147d7ea490b6b55"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/gee-geometry-diagnostic.json",
+          "role": "validation-contract",
+          "bytes": 2538,
+          "sha256": "17708104b02b93de5191dc3367b6f98d0f754718367ab163d3478048086c9203"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/gee-parity-contract.json",
+          "role": "validation-contract",
+          "bytes": 3935,
+          "sha256": "1f6cce811873e9919215e5c74aca5a044506d5d535e8542ecd3dfa41b3e0ed7a"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/gee/compare.py",
+          "role": "python",
+          "bytes": 16007,
+          "sha256": "bdfcab806f9d16a77efb6f5000d6c1c1e6bdb377aba184fafe72de4f1d31e455"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/gee/fetch.py",
+          "role": "python",
+          "bytes": 6241,
+          "sha256": "85a9f9222366d33b0189c5ef272038c51299aada1558bd6050bb4c187c69cd17"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/gee/pyproject.toml",
+          "role": "environment",
+          "bytes": 213,
+          "sha256": "0c4af7a3e7bfeddb0d67ddae7cd848e68fc7f9da070d842ce069111b517ff3af"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/gee/uv.lock",
+          "role": "environment",
+          "bytes": 82558,
+          "sha256": "c8177fcbf0748989047e5890a34f4887961a79a1db31201e038da9506ed46411"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/package-lock.json",
+          "role": "environment",
+          "bytes": 54338,
+          "sha256": "83092848670ab1b7c381d2dab9d8f0ccfb0a71924af5fa6629f23b90c229e83a"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/package.json",
+          "role": "environment",
+          "bytes": 158,
+          "sha256": "3b68e75eb52b61f7bce0416eb346e6ea4a4854d0341dfa369a387a4a8f66f1d5"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/package.py",
+          "role": "python",
+          "bytes": 4205,
+          "sha256": "0aaa486f0301d975cfbad11dbd91c62cc51d680df0d7a9ad6fcde40dd4b61504"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/publication-benchmarks.json",
+          "role": "validation-contract",
+          "bytes": 3419,
+          "sha256": "a54fc8a96346df48640204a42a9c337f551df2e39c8ce047222f9aa3ffd29a1d"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/pyproject.toml",
+          "role": "environment",
+          "bytes": 446,
+          "sha256": "a232b620aa7f441281c983dbf34c3255528a342e8276d87848409642647c9323"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/serve.py",
+          "role": "python",
+          "bytes": 3506,
+          "sha256": "e55a48f8702a5b093f48a16d67c01039ca188aba0fdcb1c8ee5d365a010ed015"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/source.json",
+          "role": "source-pin",
+          "bytes": 1065,
+          "sha256": "d8bef0bf8b6f873331b8fdcd98c2c41d6cb3bb0c56071cfbb659b6710bde353c"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/test_publication.py",
+          "role": "python",
+          "bytes": 3170,
+          "sha256": "205f88bddfdb62c910c1982dd6f883255b9574b1c1b51538c5553eafaffb3915"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/uv.lock",
+          "role": "environment",
+          "bytes": 233320,
+          "sha256": "8ad5895cdb74eb45ed203aa5cb34dee4ddcae1fa4a76b4ee66f7e8ba3da45d70"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/validate.py",
+          "role": "python",
+          "bytes": 12358,
+          "sha256": "1e529b180ec863b95ace2ad7b179bca3b799f2d86052fe0a46cc62b8e5e8598a"
+        }
+      ]
+    },
+    {
+      "id": "unique-gee",
+      "git_revision": "27a0bc1ea87cf3ed43b4dce1fd7241d800cc71aa",
+      "purpose": "Failed unique-only geodesic diagnostic before coincident-group support.",
+      "files": [
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/.gitignore",
+          "role": "workspace-config",
+          "bytes": 34,
+          "sha256": "844559599368afb4ef69527fd55659a6a5e570d2c3ce6e4e0aaf45b08805d4a5"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/README.md",
+          "role": "documentation",
+          "bytes": 6598,
+          "sha256": "83bb6e3766cc43a89a3b674b6c8889f17cb0a7373f90577840ed895096274431"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/VALIDATION.md",
+          "role": "documentation",
+          "bytes": 8568,
+          "sha256": "dda3a77a6fdf15ecea7c0c1ab2d184c19d1b0307107838bc01eebb8804e9495d"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/build.py",
+          "role": "python",
+          "bytes": 11954,
+          "sha256": "83452106125e3ad54deebdc50c8c8453ca5de86ce5dbb54610eacb1665b3bd2b"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/catalog.py",
+          "role": "python",
+          "bytes": 13822,
+          "sha256": "2ee91e41e380899a90986e2351426d5050cead64f125e8e86409f49360f709ec"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/check_publication.py",
+          "role": "python",
+          "bytes": 6419,
+          "sha256": "f0ae40eb090358481ba3461a3bb4d8ed13bd11176743b732fd9666451010d587"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/evidence/gee-capture.json",
+          "role": "evidence",
+          "bytes": 34265,
+          "sha256": "eafc9374be0bb47c605a3a15ed8078a36ee7cf788209687971f2a835dc739d6d"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/evidence/gee-strict-validation.json",
+          "role": "evidence",
+          "bytes": 32526,
+          "sha256": "9171d9147643892d054713485a2576c604e1b85f7622ede2f59e8ce9ea7d8c45"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/evidence/gee-unique-geodesic-validation.json",
+          "role": "evidence",
+          "bytes": 34603,
+          "sha256": "2f138613052f8b6e4f7021c5ddcce5cebdd22842e6b199e171a8829e5463047e"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/evidence/publication-fault-checks.json",
+          "role": "evidence",
+          "bytes": 1582,
+          "sha256": "76bd9d7bb31feed4f8c01b5952ca1bf9ee239b5877b8d965bc04aaaa2a942fb9"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/evidence/publication-validation.json",
+          "role": "evidence",
+          "bytes": 5235,
+          "sha256": "37b46c4a02b3f33d7a2b3bb11823ecb8f1c0fdfecffee09904a295e9c892f533"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/evidence/release-manifest.json",
+          "role": "evidence",
+          "bytes": 6877,
+          "sha256": "78ddda062d812eebe6861cc6db86cd5fc23d15400f0e29bce63046c70c6ee4f9"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/evidence/release-receipt.json",
+          "role": "evidence",
+          "bytes": 1055,
+          "sha256": "01cf11df1c788c8d825fe30a5fcc51ded4593309c80a079bb4cafd6ca0d1c169"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/evidence/reproducibility.json",
+          "role": "evidence",
+          "bytes": 1811,
+          "sha256": "c92275e0b438a207e6bf6483ca762519c1c6446e4bba7916efeea3dfea54f6bf"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/evidence/stac-validation.json",
+          "role": "evidence",
+          "bytes": 307,
+          "sha256": "b478e026a83bfe0bc45d6aae2642339d80aa0de292c5e59ed985f3a35b2b2f4c"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/evidence/validation.json",
+          "role": "evidence",
+          "bytes": 2950,
+          "sha256": "38e91d8db38038e866db3d0a371bb406de8c79f7345d3b0bd147d7ea490b6b55"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/gee-coincident-diagnostic.json",
+          "role": "validation-contract",
+          "bytes": 2569,
+          "sha256": "5e63efcdeaed294bf22d3f4a81187a01a1eb5567705eb60511597ba069fe5046"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/gee-geometry-diagnostic.json",
+          "role": "validation-contract",
+          "bytes": 2538,
+          "sha256": "17708104b02b93de5191dc3367b6f98d0f754718367ab163d3478048086c9203"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/gee-parity-contract.json",
+          "role": "validation-contract",
+          "bytes": 3935,
+          "sha256": "1f6cce811873e9919215e5c74aca5a044506d5d535e8542ecd3dfa41b3e0ed7a"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/gee/compare.py",
+          "role": "python",
+          "bytes": 18120,
+          "sha256": "bca480b54a40291703c61fe7f868f1bef57e976486e5e2bf5e59dd5c8a56a18d"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/gee/diagnose_geometry.py",
+          "role": "python",
+          "bytes": 4477,
+          "sha256": "075a71d952d8fc2000ef676ba470f7b04d5dc312822ac8800ee1557218c79546"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/gee/fetch.py",
+          "role": "python",
+          "bytes": 6241,
+          "sha256": "85a9f9222366d33b0189c5ef272038c51299aada1558bd6050bb4c187c69cd17"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/gee/pyproject.toml",
+          "role": "environment",
+          "bytes": 213,
+          "sha256": "0c4af7a3e7bfeddb0d67ddae7cd848e68fc7f9da070d842ce069111b517ff3af"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/gee/uv.lock",
+          "role": "environment",
+          "bytes": 82558,
+          "sha256": "c8177fcbf0748989047e5890a34f4887961a79a1db31201e038da9506ed46411"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/package-lock.json",
+          "role": "environment",
+          "bytes": 54338,
+          "sha256": "83092848670ab1b7c381d2dab9d8f0ccfb0a71924af5fa6629f23b90c229e83a"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/package.json",
+          "role": "environment",
+          "bytes": 158,
+          "sha256": "3b68e75eb52b61f7bce0416eb346e6ea4a4854d0341dfa369a387a4a8f66f1d5"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/package.py",
+          "role": "python",
+          "bytes": 4205,
+          "sha256": "0aaa486f0301d975cfbad11dbd91c62cc51d680df0d7a9ad6fcde40dd4b61504"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/publication-benchmarks.json",
+          "role": "validation-contract",
+          "bytes": 3419,
+          "sha256": "a54fc8a96346df48640204a42a9c337f551df2e39c8ce047222f9aa3ffd29a1d"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/pyproject.toml",
+          "role": "environment",
+          "bytes": 446,
+          "sha256": "a232b620aa7f441281c983dbf34c3255528a342e8276d87848409642647c9323"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/serve.py",
+          "role": "python",
+          "bytes": 3506,
+          "sha256": "e55a48f8702a5b093f48a16d67c01039ca188aba0fdcb1c8ee5d365a010ed015"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/source.json",
+          "role": "source-pin",
+          "bytes": 1065,
+          "sha256": "d8bef0bf8b6f873331b8fdcd98c2c41d6cb3bb0c56071cfbb659b6710bde353c"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/test_publication.py",
+          "role": "python",
+          "bytes": 3170,
+          "sha256": "205f88bddfdb62c910c1982dd6f883255b9574b1c1b51538c5553eafaffb3915"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/uv.lock",
+          "role": "environment",
+          "bytes": 233320,
+          "sha256": "8ad5895cdb74eb45ed203aa5cb34dee4ddcae1fa4a76b4ee66f7e8ba3da45d70"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/validate.py",
+          "role": "python",
+          "bytes": 12358,
+          "sha256": "1e529b180ec863b95ace2ad7b179bca3b799f2d86052fe0a46cc62b8e5e8598a"
+        }
+      ]
+    },
+    {
+      "id": "current",
+      "git_revision": "d029aa970c0a3ed202febc17df713d96f3cfd968",
+      "purpose": "Complete validated workflow, group handling, fault tests and current evidence.",
+      "files": [
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/.gitignore",
+          "role": "workspace-config",
+          "bytes": 34,
+          "sha256": "844559599368afb4ef69527fd55659a6a5e570d2c3ce6e4e0aaf45b08805d4a5"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/README.md",
+          "role": "documentation",
+          "bytes": 7334,
+          "sha256": "6a07e411beb7a8cdac258d50cfe95090f1c93aec37b3c51d5254485d3da62f2b"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/VALIDATION.md",
+          "role": "documentation",
+          "bytes": 10746,
+          "sha256": "e7765adb4892b99e696c43345d514b9127a0783b89cc68e2d948ad9e5cf2d178"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/build.py",
+          "role": "python",
+          "bytes": 11954,
+          "sha256": "83452106125e3ad54deebdc50c8c8453ca5de86ce5dbb54610eacb1665b3bd2b"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/catalog.py",
+          "role": "python",
+          "bytes": 13822,
+          "sha256": "2ee91e41e380899a90986e2351426d5050cead64f125e8e86409f49360f709ec"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/check_publication.py",
+          "role": "python",
+          "bytes": 6419,
+          "sha256": "f0ae40eb090358481ba3461a3bb4d8ed13bd11176743b732fd9666451010d587"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/evidence/gee-capture.json",
+          "role": "evidence",
+          "bytes": 34265,
+          "sha256": "eafc9374be0bb47c605a3a15ed8078a36ee7cf788209687971f2a835dc739d6d"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/evidence/gee-fault-tests.json",
+          "role": "evidence",
+          "bytes": 458,
+          "sha256": "4361d9db1fb4fc3b2aa5326a349be46e93f8524ea8f639cffd400ce1466b7c4b"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/evidence/gee-strict-validation.json",
+          "role": "evidence",
+          "bytes": 32526,
+          "sha256": "9171d9147643892d054713485a2576c604e1b85f7622ede2f59e8ce9ea7d8c45"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/evidence/gee-unique-geodesic-validation.json",
+          "role": "evidence",
+          "bytes": 34603,
+          "sha256": "2f138613052f8b6e4f7021c5ddcce5cebdd22842e6b199e171a8829e5463047e"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/evidence/gee-validation.json",
+          "role": "evidence",
+          "bytes": 34624,
+          "sha256": "e06773b673f150f3cbbc066b77a474e138fd66a8da22742b7208a2f430d5f05d"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/evidence/publication-fault-checks.json",
+          "role": "evidence",
+          "bytes": 1582,
+          "sha256": "76bd9d7bb31feed4f8c01b5952ca1bf9ee239b5877b8d965bc04aaaa2a942fb9"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/evidence/publication-validation.json",
+          "role": "evidence",
+          "bytes": 5235,
+          "sha256": "37b46c4a02b3f33d7a2b3bb11823ecb8f1c0fdfecffee09904a295e9c892f533"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/evidence/release-manifest.json",
+          "role": "evidence",
+          "bytes": 6877,
+          "sha256": "78ddda062d812eebe6861cc6db86cd5fc23d15400f0e29bce63046c70c6ee4f9"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/evidence/release-receipt.json",
+          "role": "evidence",
+          "bytes": 1055,
+          "sha256": "01cf11df1c788c8d825fe30a5fcc51ded4593309c80a079bb4cafd6ca0d1c169"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/evidence/reproducibility.json",
+          "role": "evidence",
+          "bytes": 1811,
+          "sha256": "c92275e0b438a207e6bf6483ca762519c1c6446e4bba7916efeea3dfea54f6bf"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/evidence/stac-validation.json",
+          "role": "evidence",
+          "bytes": 307,
+          "sha256": "b478e026a83bfe0bc45d6aae2642339d80aa0de292c5e59ed985f3a35b2b2f4c"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/evidence/validation.json",
+          "role": "evidence",
+          "bytes": 2950,
+          "sha256": "38e91d8db38038e866db3d0a371bb406de8c79f7345d3b0bd147d7ea490b6b55"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/gee-coincident-diagnostic.json",
+          "role": "validation-contract",
+          "bytes": 2569,
+          "sha256": "5e63efcdeaed294bf22d3f4a81187a01a1eb5567705eb60511597ba069fe5046"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/gee-geometry-diagnostic.json",
+          "role": "validation-contract",
+          "bytes": 2538,
+          "sha256": "17708104b02b93de5191dc3367b6f98d0f754718367ab163d3478048086c9203"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/gee-parity-contract.json",
+          "role": "validation-contract",
+          "bytes": 3935,
+          "sha256": "1f6cce811873e9919215e5c74aca5a044506d5d535e8542ecd3dfa41b3e0ed7a"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/gee/README.md",
+          "role": "documentation",
+          "bytes": 3925,
+          "sha256": "e61bc522212d67b48882c0ac44bab8daa24b211f8940a0577e614b7208a013f4"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/gee/compare.py",
+          "role": "python",
+          "bytes": 20796,
+          "sha256": "ad49f0874622d07a6d80561ec87754e724930af0e7a220961874e922bfa93e99"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/gee/diagnose_geometry.py",
+          "role": "python",
+          "bytes": 5394,
+          "sha256": "c48feb4c83b6cb7cb3a4cea515150319678037edb1fbf7858fa4384c93a3d402"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/gee/fetch.py",
+          "role": "python",
+          "bytes": 6241,
+          "sha256": "85a9f9222366d33b0189c5ef272038c51299aada1558bd6050bb4c187c69cd17"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/gee/pyproject.toml",
+          "role": "environment",
+          "bytes": 213,
+          "sha256": "0c4af7a3e7bfeddb0d67ddae7cd848e68fc7f9da070d842ce069111b517ff3af"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/gee/test_compare.py",
+          "role": "python",
+          "bytes": 12419,
+          "sha256": "b8422fcf1c97f747ccd29950096096a64a6a853444fa05b9e954db3c6643ea5d"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/gee/uv.lock",
+          "role": "environment",
+          "bytes": 82558,
+          "sha256": "c8177fcbf0748989047e5890a34f4887961a79a1db31201e038da9506ed46411"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/package-lock.json",
+          "role": "environment",
+          "bytes": 54338,
+          "sha256": "83092848670ab1b7c381d2dab9d8f0ccfb0a71924af5fa6629f23b90c229e83a"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/package.json",
+          "role": "environment",
+          "bytes": 158,
+          "sha256": "3b68e75eb52b61f7bce0416eb346e6ea4a4854d0341dfa369a387a4a8f66f1d5"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/package.py",
+          "role": "python",
+          "bytes": 4205,
+          "sha256": "0aaa486f0301d975cfbad11dbd91c62cc51d680df0d7a9ad6fcde40dd4b61504"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/publication-benchmarks.json",
+          "role": "validation-contract",
+          "bytes": 3419,
+          "sha256": "a54fc8a96346df48640204a42a9c337f551df2e39c8ce047222f9aa3ffd29a1d"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/pyproject.toml",
+          "role": "environment",
+          "bytes": 446,
+          "sha256": "a232b620aa7f441281c983dbf34c3255528a342e8276d87848409642647c9323"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/serve.py",
+          "role": "python",
+          "bytes": 3506,
+          "sha256": "e55a48f8702a5b093f48a16d67c01039ca188aba0fdcb1c8ee5d365a010ed015"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/source.json",
+          "role": "source-pin",
+          "bytes": 1065,
+          "sha256": "d8bef0bf8b6f873331b8fdcd98c2c41d6cb3bb0c56071cfbb659b6710bde353c"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/test_publication.py",
+          "role": "python",
+          "bytes": 3170,
+          "sha256": "205f88bddfdb62c910c1982dd6f883255b9574b1c1b51538c5553eafaffb3915"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/uv.lock",
+          "role": "environment",
+          "bytes": 233320,
+          "sha256": "8ad5895cdb74eb45ed203aa5cb34dee4ddcae1fa4a76b4ee66f7e8ba3da45d70"
+        },
+        {
+          "path": "commons/publish/gee-community/products/river-plastic-inputs/validate.py",
+          "role": "python",
+          "bytes": 12358,
+          "sha256": "1e529b180ec863b95ace2ad7b179bca3b799f2d86052fe0a46cc62b8e5e8598a"
+        }
+      ]
+    }
+  ],
+  "replay_inputs_outside_git": [
+    {
+      "kind": "producer_archive",
+      "source_url": "https://ndownloader.figshare.com/files/7714864",
+      "sha256": "c24a1ccdfbdc44c59954ab9796a522a3271b7c91ca31898526a93bccaeabd4f4"
+    },
+    {
+      "kind": "data_release",
+      "path": ".local/gee-publication/river-plastic-inputs/river-plastic-inputs-figshare-v6-r1.zip",
+      "sha256": "eae78b08e8df3aa4c0039eca43a0c1f0be6338bf739e0cf2a50bb487e1a39669"
+    },
+    {
+      "kind": "gee_capture",
+      "path": ".local/gee-publication/river-plastic-inputs/gee-20261030-r1",
+      "receipt": "commons/publish/gee-community/products/river-plastic-inputs/evidence/gee-capture.json",
+      "receipt_sha256": "eafc9374be0bb47c605a3a15ed8078a36ee7cf788209687971f2a835dc739d6d",
+      "public_archive_url": null,
+      "note": "Replay requires all raw metadata/pages pinned by the receipt. A fresh GEE fetch is a new observation, not a substitute for this historical capture."
+    }
+  ],
+  "portability": {
+    "layout": "Preserve the recorded commons/publish/gee-community/products/<id> tree depth; selected scripts use HERE.parents[4].",
+    "git": "Build/capture require a clean Git checkout. A new public repository has different commit IDs; retain original revision-to-file-hash provenance and record new build commits honestly.",
+    "native_tools": [
+      "tippecanoe v2.79.0",
+      "pmtiles CLI",
+      "Node/npm for locked stac-node-validator",
+      "DuckDB matching httpfs extension"
+    ],
+    "credentials": "Original-source build and cached GEE comparison require no cloud credentials. A fresh GEE capture requires the caller's authorized project and credentials, with a new capture contract.",
+    "reproducibility": "Recorded byte reproducibility applies to the original commit and tested environment. A rebuild under a different commit can change provenance-bearing metadata; compare semantic values and relevant asset hashes separately."
+  },
+  "pending_publication": [
+    "Choose and create the public code repository only when publication is authorized.",
+    "Finalize explicit software license text and notice for the publication package.",
+    "Publish any required historical capture as a separately licensed/hash-pinned validation-data artifact outside Git.",
+    "Run a clean-checkout rehearsal in the public repository layout and record its scope.",
+    "Add real code/archive/catalog URLs after they exist; publish data and register Portolan/Folia only after remote checks."
+  ]
+}

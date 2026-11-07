@@ -1,0 +1,272 @@
+{
+  "assets": {
+    "grwl-raw-observations": {
+      "file:checksum": "1220d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+      "file:size": 5529859809,
+      "href": "https://data.source.coop/nthh/grwl-raw/releases/raw-v01.01-local-r1/assets/grwl-raw-observations.parquet",
+      "roles": [
+        "data"
+      ],
+      "title": "Global River Width from Landsat — raw vector observations V01.01",
+      "type": "application/vnd.apache.parquet"
+    },
+    "grwl-raw-observations_fields": {
+      "file:checksum": "1220c63c946029f0dc306180eebd105cf063ac21a253d946f6a5bd42080817f8dffb",
+      "file:size": 1271,
+      "href": "https://data.source.coop/nthh/grwl-raw/releases/raw-v01.01-local-r1/metadata/grwl-raw-observations-field-dictionary.json",
+      "roles": [
+        "metadata"
+      ],
+      "title": "grwl-raw-observations field dictionary",
+      "type": "application/json"
+    },
+    "thumbnail": {
+      "file:checksum": "1220689a7c232287133509fe4005d73912c97f26828328c4ece3811b06e3e6eaec42",
+      "file:size": 2710,
+      "href": "display/thumbnail.png",
+      "roles": [
+        "thumbnail"
+      ],
+      "title": "Sampled display-only overview; not an analytic asset",
+      "type": "image/png"
+    },
+    "display_tiles_grwl-raw-display": {
+      "href": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "roles": [
+        "visual"
+      ],
+      "title": "GRWL raw width observations at every zoom",
+      "file:size": 3190539066,
+      "file:checksum": "12208b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60"
+    },
+    "display_style_grwl-raw-display": {
+      "href": "display/raw-v01.01-display-r3/styles/width.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "style",
+        "default"
+      ],
+      "title": "GRWL raw width observations at every zoom display style",
+      "file:size": 10377,
+      "file:checksum": "1220aeeba3167e6d4cc8d11f14181cee0360435bc6519d32a168eab7698877fe40a3"
+    }
+  },
+  "created": "2026-11-03T02:18:50Z",
+  "description": "Detailed producer GRWL vector observations with each source record, part and coordinate retained. Records are kept separate; segmentID is tile-local. width_m=1 means unknown width, and width_valid marks usable measurements. Static producer release derived from Landsat observations; source observation dates vary. This is not a current river-width observation or a time series.",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -180.0,
+          -54.31039221809525,
+          180.0,
+          82.31075059469364
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  "id": "grwl-raw",
+  "license": "CC-BY-4.0",
+  "links": [
+    {
+      "href": "display/thumbnail.png",
+      "rel": "thumbnail",
+      "type": "image/png"
+    },
+    {
+      "href": "https://zenodo.org/records/18624542",
+      "rel": "via",
+      "title": "Global River Width from Landsat raw vector component V01.01",
+      "type": "text/html"
+    },
+    {
+      "href": "https://creativecommons.org/licenses/by/4.0/",
+      "rel": "license",
+      "type": "text/html"
+    },
+    {
+      "rel": "root",
+      "href": "../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "describedby",
+      "href": "./README.md",
+      "type": "text/markdown"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "GRWL raw width observations at every zoom",
+      "pmtiles:layers": [
+        "grwl_raw",
+        "grwl_width_overview"
+      ]
+    },
+    {
+      "rel": "style",
+      "href": "display/raw-v01.01-display-r3/styles/width.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "GRWL raw width observations at every zoom display style"
+    },
+    {
+      "rel": "vcs",
+      "href": "https://github.com/nthh/data-publications",
+      "title": "Repository",
+      "type": "text/html"
+    },
+    {
+      "rel": "issues",
+      "href": "https://github.com/nthh/data-publications/issues",
+      "title": "Issues",
+      "type": "text/html"
+    },
+    {
+      "rel": "about",
+      "href": "https://source.coop/nthh",
+      "title": "Hosting",
+      "type": "text/html"
+    },
+    {
+      "rel": "alternate",
+      "href": "https://browser.portolan-sdi.org/#/external/nthh.github.io/data-publications/grwl-raw/collection.json",
+      "title": "Browser view",
+      "type": "text/html"
+    }
+  ],
+  "providers": [
+    {
+      "name": "Allen and Pavelsky / GRWL",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://zenodo.org/records/18624542"
+    },
+    {
+      "description": "Independent data processing and hosting on Source Cooperative.",
+      "name": "nthh",
+      "roles": [
+        "processor",
+        "host"
+      ],
+      "url": "https://source.coop/nthh/grwl-raw"
+    }
+  ],
+  "sci:citation": "Allen, G.H. and Pavelsky, T.M. (2018), Global extent of rivers and streams. Science 361(6402), 585–588. https://doi.org/10.1126/science.aat0636",
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/scientific/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/version/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
+  ],
+  "stac_version": "1.1.0",
+  "table:columns": [
+    {
+      "asset": "grwl-raw-observations",
+      "name": "utm_east",
+      "type": "decimal128(38, 18)"
+    },
+    {
+      "asset": "grwl-raw-observations",
+      "name": "utm_north",
+      "type": "decimal128(38, 18)"
+    },
+    {
+      "asset": "grwl-raw-observations",
+      "name": "width_m",
+      "type": "int64"
+    },
+    {
+      "asset": "grwl-raw-observations",
+      "name": "nchannels",
+      "type": "decimal128(38, 18)"
+    },
+    {
+      "asset": "grwl-raw-observations",
+      "name": "segmentID",
+      "type": "int64"
+    },
+    {
+      "asset": "grwl-raw-observations",
+      "name": "segmentInd",
+      "type": "int64"
+    },
+    {
+      "asset": "grwl-raw-observations",
+      "name": "lakeFlag",
+      "type": "decimal128(38, 18)"
+    },
+    {
+      "asset": "grwl-raw-observations",
+      "name": "lon",
+      "type": "decimal128(38, 18)"
+    },
+    {
+      "asset": "grwl-raw-observations",
+      "name": "lat",
+      "type": "decimal128(38, 18)"
+    },
+    {
+      "asset": "grwl-raw-observations",
+      "name": "elev_m",
+      "type": "int64"
+    },
+    {
+      "asset": "grwl-raw-observations",
+      "name": "source_tile",
+      "type": "string"
+    },
+    {
+      "asset": "grwl-raw-observations",
+      "name": "source_row",
+      "type": "uint32"
+    },
+    {
+      "asset": "grwl-raw-observations",
+      "name": "feature_id",
+      "type": "uint64"
+    },
+    {
+      "asset": "grwl-raw-observations",
+      "name": "width_valid",
+      "type": "bool"
+    },
+    {
+      "asset": "grwl-raw-observations",
+      "name": "bbox",
+      "type": "struct<xmin: double not null, ymin: double not null, xmax: double not null, ymax: double not null>"
+    },
+    {
+      "asset": "grwl-raw-observations",
+      "name": "geometry",
+      "type": "binary"
+    }
+  ],
+  "title": "Global River Width from Landsat — raw vector observations V01.01",
+  "type": "Collection",
+  "updated": "2026-11-03T02:18:50Z",
+  "version": "1.0.0"
+}

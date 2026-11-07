@@ -1,0 +1,18 @@
+{
+  "recorded_at": "2026-10-31T22:14:46.384887+00:00",
+  "revision": "f6e773158afdcc5e2a82bb0061ffaa932dc0cb22",
+  "checkout": "Isolated detached clean checkout; git status --porcelain empty before the tests and again at final verification.",
+  "command": "uv run --locked --project scripts/release_tools python -m unittest discover -s datasets/lakeatlas/releases/lakeatlas-v1.0-r2/reproduction -p test_prepare_portable_evidence.py -v",
+  "exit_code": 0,
+  "tests_passed": 3,
+  "checks": [
+    "Passed ten-report bundle accepted",
+    "Failed required report rejected",
+    "Pruning receipt with mismatched asset SHA-256 rejected"
+  ],
+  "files": {
+    "datasets/lakeatlas/releases/lakeatlas-v1.0-r2/reproduction/prepare_portable_evidence.py": "27e7bd38a3c663bbc8d5b86aa55ede5a21f1746eb9b85e4963dbefca8cea951f",
+    "datasets/lakeatlas/releases/lakeatlas-v1.0-r2/reproduction/test_prepare_portable_evidence.py": "77888a09b664c71d1d4c553ee77b89910b51d04cfded15d5b68cedc6755abc5a"
+  },
+  "scope": "Focused clean-checkout checks completed before the package-title metadata correction; the corrected recipe was exercised by the successful full local package at e0d34d4."
+}

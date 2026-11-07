@@ -1,0 +1,275 @@
+{
+  "request_url": "https://api.openalex.org/works?filter=openalex%3AW7124132628%7CW7125848378%7CW7126230012%7CW7130718734%7CW7134938896%7CW7139077055%7CW7154228460%7CW7155488357%7CW7159589463%7CW7160593659%7CW7160865480%7CW7162208388%7CW7162445361%7CW7163161488%7CW7221472141&corpus=all&per_page=100&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date%2Ccited_by_count%2Ccounts_by_year",
+  "retrieved_at": "2026-10-30T22:19:44.416811+00:00",
+  "response_path": "responses/e14e1d4ddafbf4b970f9bcf105aa1f12a67e96c1e7cd8c863495f8a22cf89654.json",
+  "status": 200,
+  "response_sha256": "73915592110075790ed02a651c6b81fb8ccddeb3657e6c92ebceacc0b5f6befd",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 15,
+      "db_response_time_ms": 20,
+      "page": 1,
+      "per_page": 100,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where openalex id is (\n    W7124132628 or W7125848378 or W7126230012 or W7130718734 or W7134938896\n    or W7139077055 or W7154228460 or W7155488357 or W7159589463 or W7160593659\n    or W7160865480 or W7162208388 or W7162445361 or W7163161488 or W7221472141\n  )",
+        "x_new_oql": "get works (all corpora) where openalex id is (\n    W7124132628 or W7125848378 or W7126230012 or W7130718734 or W7134938896\n    or W7139077055 or W7154228460 or W7155488357 or W7159589463 or W7160593659\n    or W7160865480 or W7162208388 or W7162445361 or W7163161488 or W7221472141\n  )",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "join": "or",
+              "filters": [
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W7124132628"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W7125848378"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W7126230012"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W7130718734"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W7134938896"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W7139077055"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W7154228460"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W7155488357"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W7159589463"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W7160593659"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W7160865480"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W7162208388"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W7162445361"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W7163161488"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W7221472141"
+                }
+              ]
+            }
+          ]
+        },
+        "url": "/works?filter=ids.openalex:W7124132628|W7125848378|W7126230012|W7130718734|W7134938896|W7139077055|W7154228460|W7155488357|W7159589463|W7160593659|W7160865480|W7162208388|W7162445361|W7163161488|W7221472141&corpus=all&per_page=100",
+        "order": "most cited (age-adjusted) first",
+        "order_default": true
+      },
+      "cost_usd": 0.0001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W7126230012",
+        "doi": "https://doi.org/10.1038/s41467-026-68996-y",
+        "title": "Crowdsourced biodiversity monitoring fills gaps in global plant trait mapping",
+        "type": "article",
+        "publication_year": 2026,
+        "publication_date": "2026-01-30",
+        "cited_by_count": 9,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 9
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W7124132628",
+        "doi": "https://doi.org/10.1038/s43247-025-03094-3",
+        "title": "High resolution US water table depth estimates reveal quantity of accessible groundwater",
+        "type": "article",
+        "publication_year": 2026,
+        "publication_date": "2026-01-14",
+        "cited_by_count": 6,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 6
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W7125848378",
+        "doi": "https://doi.org/10.5258/soton/wp00841",
+        "title": "Estimates of 2015-2030 total number of people per grid square broken down by gender and age groupings at a resolution of 3 arc (approximately 100m at the equator) R2025A version v1.",
+        "type": "dataset",
+        "publication_year": 2025,
+        "publication_date": "2025-01-01",
+        "cited_by_count": 2,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W7134938896",
+        "doi": "https://doi.org/10.31223/x5rr2k",
+        "title": "Groundsource: A Dataset of Flood Events from News",
+        "type": "preprint",
+        "publication_year": 2026,
+        "publication_date": "2026-03-10",
+        "cited_by_count": 2,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W7160593659",
+        "doi": "https://doi.org/10.31223/x5kj4q",
+        "title": "From Snapshot Maps to Continuous Monitoring of Global Forest Carbon at 100 m Resolution (2000–2025)",
+        "type": "preprint",
+        "publication_year": 2026,
+        "publication_date": "2026-05-08",
+        "cited_by_count": 1,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W7130718734",
+        "doi": "https://doi.org/10.2737/rds-2026-0015",
+        "title": "Spatial datasets of wildfire risk to rangeland carbon for the conterminous United States (30m) circa 2014 and 2020 landscapes",
+        "type": "dataset",
+        "publication_year": 2026,
+        "publication_date": "2026-02-20",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W7139077055",
+        "doi": "https://doi.org/10.5194/egusphere-2026-1401",
+        "title": "GEM-Forest: A Global satellite EMbedding–based map of forests and tree crops for 2020",
+        "type": "preprint",
+        "publication_year": 2026,
+        "publication_date": "2026-03-19",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W7154228460",
+        "doi": "https://doi.org/10.1073/pnas.2612145123",
+        "title": "Global monitoring of methane point sources using deep learning on hyperspectral radiance measurements from EMIT",
+        "type": "article",
+        "publication_year": 2026,
+        "publication_date": "2026-09-01",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W7155488357",
+        "doi": "https://doi.org/10.82924/7vmb-zv66",
+        "title": "CTrees Global Aboveground Biomass",
+        "type": "dataset",
+        "publication_year": 2026,
+        "publication_date": "2026-04-24",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W7159589463",
+        "doi": "https://doi.org/10.5066/p138cyel",
+        "title": "Rangeland Condition Monitoring Assessment and Projection (RCMAP) Fractional Component Time-Series Across Western North America from 1985-2025",
+        "type": "dataset",
+        "publication_year": 2026,
+        "publication_date": "2026-05-01",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W7160865480",
+        "doi": "https://doi.org/10.5066/p13qwbfh",
+        "title": "Weekly Herbaceous and Exotic Annual Grass (EAG) Cover for western North America 2016 – 2026",
+        "type": "dataset",
+        "publication_year": 2026,
+        "publication_date": "2026-05-11",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W7162208388",
+        "doi": "https://doi.org/10.1016/j.rse.2026.115500",
+        "title": "STaPL: Scale Transfer with Pseudo-Labelling for satellite-based mapping of agricultural practices",
+        "type": "article",
+        "publication_year": 2026,
+        "publication_date": "2026-05-23",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W7162445361",
+        "doi": "https://doi.org/10.48690/lsm/zew2-1n91",
+        "title": "LandScan Mosaic Annual Global Ambient Population Time Series, Version 1.0: 1975–2024",
+        "type": "dataset",
+        "publication_year": 2026,
+        "publication_date": "2026-05-21",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W7163161488",
+        "doi": "https://doi.org/10.5067/j8dmnxtbz22j",
+        "title": "ICESat-2 Derived Canopy Height Model, Version 1",
+        "type": "dataset",
+        "publication_year": 2025,
+        "publication_date": "2025-01-01",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W7221472141",
+        "doi": "https://doi.org/10.5194/essd-2026-633",
+        "title": "TreeMap 2020, 2022, and 2023: Improved species range mapping in a tree-level forest dataset for the conterminous United States",
+        "type": "preprint",
+        "publication_year": 2026,
+        "publication_date": "2026-10-11",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "bf452f0da982cf895cd9bacfd2f4a71027a27f525ca83b64c2619c8b9c188bad"
+}

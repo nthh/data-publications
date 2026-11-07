@@ -1,0 +1,63 @@
+{
+  "asset": "lakeatlas-pour-points-spatial.parquet",
+  "measurement": "row groups ruled out by bbox min/max; engine I/O checked separately",
+  "minimum_prunable_fraction": 0.5,
+  "queries": [
+    {
+      "bbox": [
+        5,
+        45,
+        15,
+        55
+      ],
+      "matching_rows": 5252,
+      "name": "Europe",
+      "prunable_fraction": 0.984375,
+      "row_groups_prunable": 126,
+      "status": "passed"
+    },
+    {
+      "bbox": [
+        -100,
+        40,
+        -90,
+        50
+      ],
+      "matching_rows": 19623,
+      "name": "North America",
+      "prunable_fraction": 0.96875,
+      "row_groups_prunable": 124,
+      "status": "passed"
+    },
+    {
+      "bbox": [
+        20,
+        -5,
+        35,
+        5
+      ],
+      "matching_rows": 578,
+      "name": "East Africa",
+      "prunable_fraction": 0.9765625,
+      "row_groups_prunable": 125,
+      "status": "passed"
+    },
+    {
+      "bbox": [
+        135,
+        -35,
+        150,
+        -20
+      ],
+      "matching_rows": 3683,
+      "name": "Australia",
+      "prunable_fraction": 0.9765625,
+      "row_groups_prunable": 125,
+      "status": "passed"
+    }
+  ],
+  "row_groups": 128,
+  "sha256": "ff621c1db763551cdb6ced8958eefcc9da76a73c16e7f7259c238bec3aae5720",
+  "size_bytes": 283780050,
+  "status": "passed"
+}

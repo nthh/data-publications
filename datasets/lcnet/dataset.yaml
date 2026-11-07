@@ -1,0 +1,35 @@
+schema_version: 1
+id: lcnet
+title: LandCoverNet v1.0 - Australia
+community_url: https://gee-community-catalog.org/projects/lcnet
+audit:
+  snapshot: gee-community-audit-20261029
+  family_key: lcnet
+  unique_gee_asset_count: 6
+  initial_queue: review_source_coop_counterpart
+  folia_registry_status: not_identified
+  folia_registry_ids: []
+  source_coop_urls:
+  - https://source.coop/zarr/landcovernet-zarr
+  source_coop_scope: Same LandCoverNet training labels/chips; GEE family is organized
+    regionally. Source describes six training sets and may not mirror each asset one-for-one.
+  external_native_urls:
+  - https://source.coop/zarr/landcovernet-zarr
+  external_native_scope: Same LandCoverNet training labels/chips; GEE family is organized
+    regionally. Source describes six training sets and may not mirror each asset one-for-one.
+triage:
+  decision: pending
+  priority: normal
+review:
+  citation_assessment:
+    as_of: '2026-10-29'
+    provider: OpenAlex
+    evidence_path: research/citations/rankings.json
+    evidence_key: lcnet
+    geographic_scope: global
+    paper_count_status: matched
+    max_paper_citations: 44
+    max_data_doi_citations: 1
+    top_paper_doi: https://doi.org/10.48550/arxiv.2012.03111
+    top_paper_openalex_id: https://openalex.org/W3110893706
+    citation_scope: associated_dataset_publication

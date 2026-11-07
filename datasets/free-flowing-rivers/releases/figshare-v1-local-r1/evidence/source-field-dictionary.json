@@ -1,0 +1,351 @@
+[
+  {
+    "name": "OBJECTID",
+    "type": "int64",
+    "nullable": false,
+    "description": "Esri-generated feature identifier; unique row identifier within this release.",
+    "unit": null,
+    "source_field_metadata": {}
+  },
+  {
+    "name": "REACH_ID",
+    "type": "double",
+    "nullable": true,
+    "description": "River reach identifier used to link to HydroATLAS.",
+    "unit": null,
+    "source_field_metadata": {}
+  },
+  {
+    "name": "GOID",
+    "type": "int32",
+    "nullable": true,
+    "description": "Global object identifier used to identify a reach across free-flowing-river assessments and link dams to reaches.",
+    "unit": null,
+    "source_field_metadata": {}
+  },
+  {
+    "name": "NOID",
+    "type": "int32",
+    "nullable": true,
+    "description": "Network object identifier; same purpose as GOID.",
+    "unit": null,
+    "source_field_metadata": {}
+  },
+  {
+    "name": "NUOID",
+    "type": "string",
+    "nullable": true,
+    "description": "One or more upstream NOIDs separated by underscores; an empty value identifies a headwater reach.",
+    "unit": null,
+    "source_field_metadata": {
+      "GDAL:OGR:width": "50"
+    }
+  },
+  {
+    "name": "NDOID",
+    "type": "int32",
+    "nullable": true,
+    "description": "Next downstream NOID; zero denotes a terminal reach.",
+    "unit": null,
+    "source_field_metadata": {}
+  },
+  {
+    "name": "CON_ID",
+    "type": "int16",
+    "nullable": true,
+    "description": "Continent identifier: 1 North America, 2 South America, 3 Europe, 4 Africa, 5 Asia, 6 Australia.",
+    "unit": null,
+    "source_field_metadata": {
+      "GDAL:OGR:subtype": "Int16"
+    }
+  },
+  {
+    "name": "CONTINENT",
+    "type": "string",
+    "nullable": true,
+    "description": "Continent name; boundaries are delineated from HydroBASINS.",
+    "unit": null,
+    "source_field_metadata": {
+      "GDAL:OGR:width": "50"
+    }
+  },
+  {
+    "name": "COUNTRY",
+    "type": "string",
+    "nullable": true,
+    "description": "Country name.",
+    "unit": null,
+    "source_field_metadata": {
+      "GDAL:OGR:width": "52"
+    }
+  },
+  {
+    "name": "BAS_ID",
+    "type": "int32",
+    "nullable": true,
+    "description": "HydroSHEDS hydrological river basin identifier.",
+    "unit": null,
+    "source_field_metadata": {}
+  },
+  {
+    "name": "BAS_NAME",
+    "type": "string",
+    "nullable": true,
+    "description": "Hydrological basin name when available.",
+    "unit": null,
+    "source_field_metadata": {
+      "GDAL:OGR:width": "255"
+    }
+  },
+  {
+    "name": "LENGTH_KM",
+    "type": "double",
+    "nullable": true,
+    "description": "Length of the river reach.",
+    "unit": "km",
+    "source_field_metadata": {}
+  },
+  {
+    "name": "VOLUME_TCM",
+    "type": "double",
+    "nullable": true,
+    "description": "Volume of the reach channel, calculated from width, length, and depth.",
+    "unit": "thousand cubic metres",
+    "source_field_metadata": {}
+  },
+  {
+    "name": "UPLAND_SKM",
+    "type": "double",
+    "nullable": true,
+    "description": "Upstream watershed area of the river reach.",
+    "unit": "km²",
+    "source_field_metadata": {}
+  },
+  {
+    "name": "DIS_AV_CMS",
+    "type": "double",
+    "nullable": true,
+    "description": "Average long-term (1971–2000) naturalized discharge.",
+    "unit": "m³/s",
+    "source_field_metadata": {}
+  },
+  {
+    "name": "RIV_ORD",
+    "type": "int32",
+    "nullable": true,
+    "description": "River order calculated from long-term average discharge using logarithmic classes.",
+    "unit": null,
+    "source_field_metadata": {
+      "GDAL:OGR:default": "5"
+    }
+  },
+  {
+    "name": "ERO_YLD_TON",
+    "type": "double",
+    "nullable": true,
+    "description": "Erosion yield summed within the river reach catchment; not accumulated along the network.",
+    "unit": "tonnes/year",
+    "source_field_metadata": {}
+  },
+  {
+    "name": "HYFALL",
+    "type": "int16",
+    "nullable": true,
+    "description": "Presence (1) or absence (0) of one or more waterfalls along the reach.",
+    "unit": null,
+    "source_field_metadata": {
+      "GDAL:OGR:subtype": "Int16"
+    }
+  },
+  {
+    "name": "BB_ID",
+    "type": "int32",
+    "nullable": true,
+    "description": "Backbone river identifier for a contiguous source-to-terminus flow path.",
+    "unit": null,
+    "source_field_metadata": {}
+  },
+  {
+    "name": "BB_NAME",
+    "type": "string",
+    "nullable": true,
+    "description": "Backbone river name.",
+    "unit": null,
+    "source_field_metadata": {
+      "GDAL:OGR:width": "50"
+    }
+  },
+  {
+    "name": "BB_LEN_KM",
+    "type": "double",
+    "nullable": true,
+    "description": "Backbone river length, the sum of its reach lengths.",
+    "unit": "km",
+    "source_field_metadata": {}
+  },
+  {
+    "name": "BB_DIS_ORD",
+    "type": "int32",
+    "nullable": true,
+    "description": "Discharge order of the most downstream reach in the backbone river.",
+    "unit": null,
+    "source_field_metadata": {
+      "GDAL:OGR:default": "5"
+    }
+  },
+  {
+    "name": "BB_VOL_TCM",
+    "type": "double",
+    "nullable": true,
+    "description": "Backbone river volume, the sum of its reach volumes.",
+    "unit": "thousand cubic metres",
+    "source_field_metadata": {}
+  },
+  {
+    "name": "BB_OCEAN",
+    "type": "int16",
+    "nullable": true,
+    "description": "Indicates whether the backbone river is directly connected to the ocean (1) or not (0).",
+    "unit": null,
+    "source_field_metadata": {
+      "GDAL:OGR:subtype": "Int16"
+    }
+  },
+  {
+    "name": "INC",
+    "type": "int16",
+    "nullable": true,
+    "description": "Analysis filter: Grill et al. (2019) included reaches with value 1 in analysis results.",
+    "unit": null,
+    "source_field_metadata": {
+      "GDAL:OGR:subtype": "Int16"
+    }
+  },
+  {
+    "name": "DOF",
+    "type": "double",
+    "nullable": true,
+    "description": "Degree of fragmentation pressure index (0–100%).",
+    "unit": "%",
+    "source_field_metadata": {}
+  },
+  {
+    "name": "DOR",
+    "type": "double",
+    "nullable": true,
+    "description": "Degree of regulation pressure index (0–100%).",
+    "unit": "%",
+    "source_field_metadata": {}
+  },
+  {
+    "name": "SED",
+    "type": "double",
+    "nullable": true,
+    "description": "Sediment trapping pressure index (0–100%).",
+    "unit": "%",
+    "source_field_metadata": {}
+  },
+  {
+    "name": "USE",
+    "type": "double",
+    "nullable": true,
+    "description": "Water consumption pressure index (0–100%).",
+    "unit": "%",
+    "source_field_metadata": {}
+  },
+  {
+    "name": "URB",
+    "type": "double",
+    "nullable": true,
+    "description": "Urbanization pressure index (0–100%).",
+    "unit": "%",
+    "source_field_metadata": {}
+  },
+  {
+    "name": "RDD",
+    "type": "double",
+    "nullable": true,
+    "description": "Road construction pressure index (0–100%).",
+    "unit": "%",
+    "source_field_metadata": {}
+  },
+  {
+    "name": "FLD",
+    "type": "double",
+    "nullable": true,
+    "description": "Inundation (floodplain) extent in the river reach catchment (%).",
+    "unit": "%",
+    "source_field_metadata": {}
+  },
+  {
+    "name": "CSI",
+    "type": "double",
+    "nullable": true,
+    "description": "Connectivity Status Index (0–100%); 100% is full connectivity.",
+    "unit": "%",
+    "source_field_metadata": {}
+  },
+  {
+    "name": "CSI_D",
+    "type": "string",
+    "nullable": true,
+    "description": "Dominant pressure factor; documented values include DOF, DOR, SED, USE, RDD, and URB.",
+    "unit": null,
+    "source_field_metadata": {
+      "GDAL:OGR:width": "3"
+    }
+  },
+  {
+    "name": "CSI_FF",
+    "type": "int32",
+    "nullable": true,
+    "description": "Indicates whether CSI is below (0) or above (1) the 95% free-flowing threshold.",
+    "unit": null,
+    "source_field_metadata": {}
+  },
+  {
+    "name": "CSI_FF1",
+    "type": "int32",
+    "nullable": true,
+    "description": "Two-category free-flowing status: free-flowing (1) or non-free-flowing (3).",
+    "unit": null,
+    "source_field_metadata": {}
+  },
+  {
+    "name": "CSI_FF2",
+    "type": "int32",
+    "nullable": true,
+    "description": "Three-category status: free-flowing (1), good connectivity (2), or impacted (3).",
+    "unit": null,
+    "source_field_metadata": {}
+  },
+  {
+    "name": "CSI_FFID",
+    "type": "int32",
+    "nullable": true,
+    "description": "Identifier for contiguous river stretches.",
+    "unit": null,
+    "source_field_metadata": {}
+  },
+  {
+    "name": "Shape_Length",
+    "type": "double",
+    "nullable": true,
+    "description": "Length value maintained by the ESRI File Geodatabase; see LENGTH_KM for reach length.",
+    "unit": null,
+    "source_field_metadata": {
+      "GDAL:OGR:default": "FILEGEODATABASE_SHAPE_LENGTH"
+    }
+  },
+  {
+    "name": "Shape",
+    "type": "MultiLineString",
+    "nullable": true,
+    "description": "Source MultiLineString reach geometry, stored as WKB without coordinate transformation.",
+    "unit": null,
+    "source_field_metadata": {
+      "ARROW:extension:name": "geoarrow.wkb",
+      "ARROW:extension:metadata": "{\"crs\":{\n  \"$schema\": \"https://proj.org/schemas/v0.7/projjson.schema.json\",\n  \"type\": \"GeographicCRS\",\n  \"name\": \"WGS 84\",\n  \"datum_ensemble\": {\n    \"name\": \"World Geodetic System 1984 ensemble\",\n    \"members\": [\n      {\n        \"name\": \"World Geodetic System 1984 (Transit)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1166\n        }\n      },\n      {\n        \"name\": \"World Geodetic System 1984 (G730)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1152\n        }\n      },\n      {\n        \"name\": \"World Geodetic System 1984 (G873)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1153\n        }\n      },\n      {\n        \"name\": \"World Geodetic System 1984 (G1150)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1154\n        }\n      },\n      {\n        \"name\": \"World Geodetic System 1984 (G1674)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1155\n        }\n      },\n      {\n        \"name\": \"World Geodetic System 1984 (G1762)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1156\n        }\n      },\n      {\n        \"name\": \"World Geodetic System 1984 (G2139)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1309\n        }\n      },\n      {\n        \"name\": \"World Geodetic System 1984 (G2296)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1383\n        }\n      }\n    ],\n    \"ellipsoid\": {\n      \"name\": \"WGS 84\",\n      \"semi_major_axis\": 6378137,\n      \"inverse_flattening\": 298.257223563\n    },\n    \"accuracy\": \"2.0\",\n    \"id\": {\n      \"authority\": \"EPSG\",\n      \"code\": 6326\n    }\n  },\n  \"coordinate_system\": {\n    \"subtype\": \"ellipsoidal\",\n    \"axis\": [\n      {\n        \"name\": \"Geodetic latitude\",\n        \"abbreviation\": \"Lat\",\n        \"direction\": \"north\",\n        \"unit\": \"degree\"\n      },\n      {\n        \"name\": \"Geodetic longitude\",\n        \"abbreviation\": \"Lon\",\n        \"direction\": \"east\",\n        \"unit\": \"degree\"\n      }\n    ]\n  },\n  \"scope\": \"Horizontal component of 3D system.\",\n  \"area\": \"World.\",\n  \"bbox\": {\n    \"south_latitude\": -90,\n    \"west_longitude\": -180,\n    \"north_latitude\": 90,\n    \"east_longitude\": 180\n  },\n  \"id\": {\n    \"authority\": \"EPSG\",\n    \"code\": 4326\n  }\n}}"
+    }
+  }
+]

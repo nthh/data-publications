@@ -1,0 +1,189 @@
+{
+  "status": "local_prepared_not_published",
+  "dataset": "grwl",
+  "source": {
+    "id": "grwl",
+    "title": "Global River Width from Landsat — simplified global river network V01.02",
+    "source_doi": "10.5281/zenodo.18624542",
+    "source_version": "summary-v01.02",
+    "source_url": "https://zenodo.org/api/records/18624542/files/GRWL_summaryStats_V01.02.zip/content",
+    "source_name": "GRWL_summaryStats_V01.02.zip",
+    "source_size": 43282861,
+    "source_md5": "cac403c1a59bce7a74432085d3f5bd3a",
+    "source_sha256": "78aa43a7104d24b1696e9b1547347eec13ba5d660aa990c1e7cea98e7ae70e4a",
+    "license": "CC-BY-4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "expected_rows": 42077,
+    "archive_metadata_version_label": "V01.01",
+    "archive_filename_version_label": "V01.02",
+    "source_verification": "Full source ZIP size, MD5, SHA-256 and ZIP CRC checked; DBF header/schema inspected."
+  },
+  "source_archive": "GRWL_summaryStats_V01.02.zip",
+  "source_sha256": "78aa43a7104d24b1696e9b1547347eec13ba5d660aa990c1e7cea98e7ae70e4a",
+  "effective_config_sha256": "3d6c76c6011ff7a5f1323030694f44232ac1333e37055f50dc97a1aa287b8056",
+  "release": "summary-v01.02-local-r1",
+  "conversion_git_commit": "4d230a077be8b96999b9a933c77dbaebb055e8bf",
+  "dataset_record_sha256": "e3e4d34e3d8e6ec10a69048ca55feb8b7f223092659f6c7da93004ed487ca31b",
+  "build_input_sha256": {
+    "build.py": "65ef73664cd1c8da157a4fe887b12482ba7c26431586eaee33c22136f59e124c",
+    "catalog.py": "e97c751e6e165ff89dc88f02bf12064cafe7906363356d937ef93eeadde8dc17",
+    "validate.py": "7b97681443cbde2ee145ef5091059c4022af3ea7634a5522e1cab7dc4543160b",
+    "serve.py": "b3a306cc983254ec7d93929c569916f00efd0c97874b915b8c6a9a0c6f27416c",
+    "dataset_config.py": "c8c2a630c227432679b0e73436240bba2c080e994b8e9f443e2e5b907425adbe",
+    "pyproject.toml": "28bfba50ac8082d50cd2afde354378884cd54fd3511d40e5bead48180acdeac3",
+    "uv.lock": "5e898925ed922c153402fed631ad4d9e1b6e9b14dbebd0aee9c2d962644be6fb",
+    "package.json": "8eebc2fd826cf22f6008ee889293d7880952ea19ddac557ae905821489108470",
+    "package-lock.json": "8f19898156a139859a49d15238a92a5204a7d61b909ee5ac54080e8110a2cc3c",
+    "tippecanoe.lock.json": "28d3bedda9835f808c3c8303b64ad660654b17a48af529d0b32e0c1b496bbd0d",
+    "fault_tests.py": "28777f942a4d5c137fd346c7fa1bbd833b8c31c94f831e7c4e45fe5e2f6422c0",
+    "test_serve.py": "5acf61c9cae90ae60d00d1e097a79626eebfee17fc7677db8400ed211d8ea958",
+    "reproduce.py": "a462d4e845fb4cf784b9f7f31bea8db75f2dcb67b99eabc6059b08cdc7b265cc",
+    "README.md": "06ec7e31d54b3d08754574a134a9f4761378ca592b8ff08278c14d9ef8608b39",
+    "VALIDATION.md": "ee08409aebee692d17cf78530c5dbd14bae1a8e78d213e582f46d0eff6e3eb00"
+  },
+  "environment": {
+    "python": "3.12.12",
+    "packages": {
+      "pyarrow": "23.0.1",
+      "pyproj": "3.8.0",
+      "shapely": "2.1.2",
+      "duckdb": "1.5.2",
+      "PyYAML": "6.0.3",
+      "pmtiles": "3.8.1",
+      "mapbox-vector-tile": "2.2.0",
+      "rashid": "0.1.8"
+    },
+    "tippecanoe": "tippecanoe v2.79.0",
+    "tippecanoe_sha256": "c504719334e5335d60c66a01491707bdbfb773ebbfe3efc7c1c8239eb18d58d1",
+    "max_threads": 2,
+    "tool_lock": {
+      "name": "tippecanoe",
+      "version": "2.79.0",
+      "binary_sha256": "c504719334e5335d60c66a01491707bdbfb773ebbfe3efc7c1c8239eb18d58d1",
+      "max_threads": 2,
+      "display_contract": {
+        "min_zoom": 0,
+        "max_zoom": 10,
+        "feature_drop": false,
+        "simplification_factor": 2,
+        "simplification_measure": "scale factor over 1 tile unit standard tolerance",
+        "tile_extent": 4096
+      }
+    }
+  },
+  "records": 42077,
+  "fields": 10,
+  "bbox": [
+    -179.9999910168292,
+    -54.31026000029875,
+    179.99996999961581,
+    82.31061999981318
+  ],
+  "quality": {
+    "source_records": 42077,
+    "shape_parts": 42117,
+    "shape_vertices": 3129821,
+    "producer_id_distinct_values": 383,
+    "producer_id_duplicate_groups": 365,
+    "producer_id_records_in_repeated_groups": 42059,
+    "producer_id_excess_records": 41694,
+    "producer_id_max_multiplicity": 802,
+    "shp_header_bbox": [
+      -179.9999910168292,
+      -54.31026000029875,
+      180.00000000010002,
+      82.31061999981318
+    ],
+    "feature_coordinate_bbox": [
+      -179.9999910168292,
+      -54.31026000029875,
+      179.99996999961581,
+      82.31061999981318
+    ],
+    "stac_bbox": [
+      -180.0,
+      -54.31026000029875,
+      180.0,
+      82.31061999981318
+    ],
+    "bbox_extent_note": "STAC spatial extent uses a conservative global longitude envelope; analytic feature bbox and coordinates are unchanged. The SHP header bbox alone has a tiny 180-degree overshoot; feature vertices are in range.",
+    "null_counts": {},
+    "distinct_geometry_wkb": 42077,
+    "multiplicity": "Preserve every producer record, including coincident or identical geometries.",
+    "longitude_overshoot_rows": [],
+    "max_longitude": 179.99996999961581,
+    "analytic_coordinate_handling": "No coordinate normalization; exact source XY float64 values and part order are preserved.",
+    "numeric_storage_scales": {
+      "OBJECTID": 0,
+      "ID": 0,
+      "width_min_": 0,
+      "width_med_": 11,
+      "width_mean": 11,
+      "width_max_": 0,
+      "width_sd_m": 12,
+      "lakeFlag": 12,
+      "nSegPx": 0,
+      "Shape_Leng": 13
+    },
+    "numeric_scale_note": "Some scientific-notation DBF text exceeds its nominal field scale; Arrow Decimal scale expands to the maximum lexical decimal places observed per field so no numeric value is rounded."
+  },
+  "assets": {
+    "AGENTS.md": {
+      "size_bytes": 380,
+      "sha256": "3a631daec679eb8a0fc10f68589352414067086c6e72defc85b6e0f4c0d101b3"
+    },
+    "README.md": {
+      "size_bytes": 1155,
+      "sha256": "ed92f290afe03883799efe76550d96e6f9f50f0a3902029919ed0cde6e4a7c46"
+    },
+    "catalog.json": {
+      "size_bytes": 1687,
+      "sha256": "77bc5cd43643335ea5d0d62762b9b1354d7d535afc9ea1ebc69c4db8c5502a2a"
+    },
+    "dataset.yaml": {
+      "size_bytes": 4161,
+      "sha256": "e3e4d34e3d8e6ec10a69048ca55feb8b7f223092659f6c7da93004ed487ca31b"
+    },
+    "grwl/AGENTS.md": {
+      "size_bytes": 380,
+      "sha256": "3a631daec679eb8a0fc10f68589352414067086c6e72defc85b6e0f4c0d101b3"
+    },
+    "grwl/README.md": {
+      "size_bytes": 2926,
+      "sha256": "cb1f1e2e64ecdd9b31e86f073d137189ae367e435714d78ecb021b1ca363f05a"
+    },
+    "grwl/collection.json": {
+      "size_bytes": 7560,
+      "sha256": "750a7a9f8022528101b225da4001de550f65a896cde4b178302bf88bdceecad4"
+    },
+    "grwl/grwl-display.pmtiles": {
+      "size_bytes": 86545489,
+      "sha256": "382b0da7d0a879f3b74c0f32a92427b51a58600aa22f703098a0d08c819eaafe"
+    },
+    "grwl/grwl-summary-v0102.parquet": {
+      "size_bytes": 46297145,
+      "sha256": "82ac4eeac2168b1aad6e5c9ae53c0c228ffcc7c8cd3f8d795493d939e626fa9c"
+    },
+    "grwl/quality.json": {
+      "size_bytes": 1665,
+      "sha256": "c4d61032abd667ad3c2858de08124de39e6f12a37aff71d5debdc442c67446c0"
+    },
+    "grwl/schema.json": {
+      "size_bytes": 2891,
+      "sha256": "b30b106035cce463beae82492df5b9bca7ce5bb8e88a3ecdb37a792dceb0a134"
+    },
+    "grwl/styles/grwl.json": {
+      "size_bytes": 911,
+      "sha256": "1747af74326008a96f63d7482dd8c3d767b04d18639380155ec89ab1ed8156a9"
+    },
+    "grwl/thumbnail.png": {
+      "size_bytes": 22212,
+      "sha256": "15f9e47cc2949ad7fc76b2f2f25300416ae44262c6dc875cc8f8868f8a93c4db"
+    }
+  },
+  "limitations": [
+    "No V01.01 GEE parity is claimed or tested.",
+    "This establishes conversion fidelity to the pinned summary archive, not scientific accuracy.",
+    "PMTiles is a display derivative with pixel simplification and quantized coordinates; use GeoParquet for analysis."
+  ]
+}

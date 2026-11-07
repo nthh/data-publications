@@ -1,0 +1,21 @@
+{
+  "objective": "Compare existing pinned CHIRPS benchmark sources to WFP Source Cooperative v3 RNL daily, and prioritize five global publication candidates from the combined citation top30.",
+  "ranking_basis": [
+    "Incremental public access value: prefer filling a verified or plausible cloud-native packaging gap over duplicating maintained public datasets.",
+    "Existing validated local conversion and clear provenance reduce work; private staging is not public publication.",
+    "Global scientific usefulness and dataset-paper citations, with exact products/versions separated.",
+    "Practical archive size, conversion complexity, update burden and ability to validate without new GEE jobs.",
+    "Producer licensing and maintenance/version suitability; do not promote an obsolete release merely because its paper has many citations."
+  ],
+  "limits": [
+    "Search misses do not prove absence of an existing cloud-native mirror.",
+    "A CHIRPS generation or temporal-product switch requires a new identity and validation; historical pinned benchmarks stay unchanged.",
+    "This is a recommendation and read-only metadata study. No dataset downloads, cloud jobs, private-bucket calls, exports, uploads or registry changes."
+  ],
+  "verification": [
+    "Inspect named repository scripts and actual receipts; distinguish proof from unsent/failed experiments.",
+    "Inspect WFP product README, collection and at least one STAC item; compare reported units, temporal coverage, version and upstream algorithm.",
+    "Record primary sources for shortlisted candidates and existing cloud-native alternatives.",
+    "Retain dated prior studies, record follow-up corrections separately, and commit locally."
+  ]
+}

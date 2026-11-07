@@ -1,0 +1,307 @@
+schema_version: 1
+id: river-plastic-inputs
+title: Global river plastic inputs — Lebreton et al. (2017)
+community_url: https://gee-community-catalog.org/projects/plastic
+audit:
+  snapshot: gee-community-audit-20261029
+  family_key: plastic
+  unique_gee_asset_count: 1
+  initial_queue: research_original_source
+  folia_registry_status: not_identified
+  folia_registry_ids: []
+  source_coop_urls: []
+  source_coop_scope: null
+  external_native_urls: []
+  external_native_scope: null
+triage:
+  decision: publish_conversion
+  priority: normal
+  rationale: Retain the already validated and packaged historical 2010-baseline pilot. Its 5.76 MB original
+    makes additional cloud-format benefit modest; deprioritized on 2026-11-01 while preserving all source
+    pins, data and validation evidence.
+review:
+  citation_assessment:
+    as_of: '2026-10-29'
+    provider: OpenAlex
+    evidence_path: research/citations/rankings.json
+    evidence_key: plastic
+    geographic_scope: global
+    paper_count_status: matched
+    max_paper_citations: 4008
+    max_data_doi_citations: 4
+    top_paper_doi: https://doi.org/10.1038/ncomms15611
+    top_paper_openalex_id: https://openalex.org/W2604316091
+    citation_scope: associated_dataset_publication
+  publication_assessment:
+    as_of: '2026-10-29'
+    route: prepare_global_vector_conversion
+    conversion_priority: 1
+    scope: Lebreton et al. 2017 model; Figshare v6, 40,760 river input locations worldwide, 2010 estimates.
+      Not the different Meijer 2021 dataset.
+    source_license: CC-BY-4.0 confirmed by original Figshare API metadata
+    source_release: 10.6084/m9.figshare.4725541.v6
+    source_size_bytes: 5764810
+    outputs:
+    - GeoParquet
+    - PMTiles
+    existing_native: No exact counterpart found in targeted Source Coop search or local indexed products;
+      absence is not proven.
+    next_step: Publish the code repository and immutable local release after confirming organization access;
+      verify public HTTP behavior before registry submission.
+    evidence_urls:
+    - https://api.figshare.com/v2/articles/4725541
+    - https://www.nature.com/articles/ncomms15611
+    local_evidence: research/citations/figshare-plastic-metadata.json
+    source_inspection: research/citations/plastic-source-inspection.json
+    source_sha256: c24a1ccdfbdc44c59954ab9796a522a3271b7c91ca31898526a93bccaeabd4f4
+  priority_reason: Among the six most cited resolved global families in the 2026-10-29 OpenAlex snapshot;
+    publication readiness is assessed separately.
+  as_of: '2026-10-29'
+  original_source: https://doi.org/10.6084/m9.figshare.4725541.v6
+  version: '6'
+  proposed_scope: Lebreton et al. 2017 river plastic input model, 2010 estimates; original PlasticRiverInputs.zip
+    from Figshare v6. Distinct from the Meijer 2021 model.
+  geographic_scope: global
+  proposed_outputs:
+  - geoparquet
+  - pmtiles
+  license:
+    id: CC-BY-4.0
+    evidence_url: https://api.figshare.com/v2/articles/4725541
+    evidence_path: research/citations/figshare-plastic-metadata.json
+    scope: Original data record license, verified independently of the paper and community catalog.
+  source_files:
+  - name: PlasticRiverInputs.zip
+    url: https://ndownloader.figshare.com/files/7714864
+    size_bytes: 5764810
+    provider_checksum: md5:4b3167c75df6b1227839e6b1674d3cda
+    sha256: c24a1ccdfbdc44c59954ab9796a522a3271b7c91ca31898526a93bccaeabd4f4
+  source_inspection:
+    evidence_path: research/citations/plastic-source-inspection.json
+    features: 40760
+    geometry_type: Point
+    crs: EPSG:4326
+    invalid_coordinates: 0
+    null_geometries: 0
+  field_units:
+    i_low/i_mid/i_high: tonnes/year
+    i_<level>_<month>: tonnes/month
+    runoff_<month>: mm/day
+    mpw: kg/year
+    area: m2
+  conversion_priority: 1
+  remaining:
+  - Confirm Source Cooperative organization access/product and public contact before uploading.
+  - Upload immutable release and verify real anonymous ranges, CORS and a remote subset query.
+  - Submit reachable catalog to Portolan and register verified endpoints in Folia.
+  version_review_path: research/hydro-releases-20261031/version-review/producer-version-review.md
+  availability:
+    shortlist_id: native-publication-gaps-20261031
+    rank: 8
+    reviewed_on: '2026-11-01'
+    label: Lebreton river-plastic inputs, Figshare v6
+    scope: 40,760 modeled river inputs, historical model baseline 2010; selected original shapefile ZIP.
+    geographic_scope: global
+    download:
+      bytes: 5764810
+      precision: exact
+      reported_size: null
+      format: Shapefile ZIP
+      file_count: 1
+      basis: validated_download
+      note: Exact selected archive size from the previously downloaded, checksum-validated source pin. Excludes
+        optional formats, separate layers and documentation.
+      evidence_urls:
+      - https://doi.org/10.6084/m9.figshare.4725541.v6
+      - https://ndownloader.figshare.com/files/7714864
+    locations:
+    - service_id: figshare
+      label: Figshare
+      platform: external
+      relationship: matching_scope
+      access: download
+      formats:
+      - Shapefile ZIP
+      urls:
+      - https://doi.org/10.6084/m9.figshare.4725541.v6
+      - https://ndownloader.figshare.com/files/7714864
+      asset_ids: []
+      note: Producer landing page, DOI and repository/CDN download links identify one distribution service;
+        they are not separate hosts.
+    - service_id: earth_engine
+      label: GEE community
+      platform: gee
+      relationship: edition_unverified
+      access: gee_collection
+      formats:
+      - Earth Engine FeatureCollection
+      urls:
+      - https://gee-community-catalog.org/projects/plastic/
+      asset_ids:
+      - projects/sat-io/open-datasets/open-ocean/river_plastic_emissions
+      note: Catalog describes the same paper/model and 40,760 watersheds, but GEE does not declare an upstream
+        Figshare version manifest. Do not label it verified v6 bytes.
+    output_manifest:
+      path: datasets/river-plastic-inputs/releases/figshare-v6-r2/manifest.json
+      sha256: ad86186ea962c3c0dfc62feb28aac7a68145ac3c7451f2602812c5b5278c2300
+    evidence:
+    - path: research/availability-sizes-20261101/observations.json
+      sha256: a7c4fd21000b497faf92810420cde5cc4ee80ae533721dd13c69cb7e692fcd7b
+      key: river-plastic-inputs
+    source_size_key: source_size
+  publication_readiness:
+    reviewed_on: '2026-11-01'
+    stage: prepared_for_upload_review
+    asset_integrity: passed_fresh_sha256_audit
+    integrity_evidence:
+      path: research/gdw-swot-preparation-20261101/prepared-packages.json
+      sha256: 712a71ca57f472cd1121941e132958f745e4468bfdb267b217466eccf49eaf1e
+    scientific_validation_rerun: false
+    local_followup: []
+    public_followup:
+    - Confirm Source Cooperative owner/product and immutable destination.
+    - Upload only under separately authorized publication scope.
+    - Verify public anonymous access, ranges, CORS, hosted checksums, subset queries, catalog links and
+      browser rendering.
+    - Deploy and verify generated catalog before registry submission.
+    published: false
+source:
+  source_doi: 10.6084/m9.figshare.4725541.v6
+  paper_doi: 10.1038/ncomms15611
+  source_url: https://ndownloader.figshare.com/files/7714864
+  source_name: PlasticRiverInputs.zip
+  source_size: 5764810
+  source_md5: 4b3167c75df6b1227839e6b1674d3cda
+  source_sha256: c24a1ccdfbdc44c59954ab9796a522a3271b7c91ca31898526a93bccaeabd4f4
+  source_version: figshare-v6
+  expected_rows: 40760
+  model_year: 2010
+  license: CC-BY-4.0
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  metadata_timestamp: '2026-10-30T00:30:27Z'
+  expected_missing_estimate_rows:
+  - 22271
+  - 36248
+  - 36262
+  - 36276
+  version_checked_on: '2026-10-31'
+build:
+  tippecanoe_version: tippecanoe v2.79.0
+  portolan_schema: https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json
+  row_group_size: 4096
+  pmtiles_maxzoom: 8
+  pmtiles_fields:
+  - source_row
+  - i_low
+  - i_mid
+  - i_high
+  - mpw
+  - area
+  release: figshare-v6-r2
+publication:
+  status: prepared
+  source_cooperative:
+    owner: folia
+    product: river-plastic-inputs
+    status: proposed_not_created
+    url: null
+  portolan:
+    status: not_submitted
+    url: null
+  code_repository: null
+  release: figshare-v6-r2
+  historical_evidence: datasets/river-plastic-inputs/evidence
+  prior_publication_state: datasets/river-plastic-inputs/provenance/prior-publication-state.json
+  conversion_git_commit: 4c54a01451967421bf17b1346cd749c0738efdde
+  manifest_path: datasets/river-plastic-inputs/releases/figshare-v6-r2/manifest.json
+  validation_path: datasets/river-plastic-inputs/releases/figshare-v6-r2/rehearsal.json
+  release_receipt_path: datasets/river-plastic-inputs/releases/figshare-v6-r2/release-receipt.json
+  local_bundle_directory: .local/river-plastic-inputs/figshare-v6-r2
+  local_archive:
+    path: .local/river-plastic-inputs/river-plastic-inputs-figshare-v6-r2.zip
+    size_bytes: 9644436
+    sha256: 82e7c87b4c3101b792b6f1f2b777361f123f97933f0256b07eb7daafd7d19c77
+  validation:
+    source_rows: 40760
+    numeric_cells: 2160280
+    assets_rebuilt_identically: 14
+    fault_tests_passed: 39
+    source_data_hashes_unchanged: true
+    gee: passed_with_documented_geometry_difference
+    strict_coordinate_parity: failed
+    maximum_gee_displacement_meters: 0.34945638926427325
+    remote_host: not_tested
+  limits:
+  - Data release prepared locally; dataset upload and registry submission remain pending.
+  - Raw GEE capture retained locally; public capture hosting remains pending.
+  - Reproducibility tested on this machine; independent observational model validation not performed.
+  manifest_sha256: ad86186ea962c3c0dfc62feb28aac7a68145ac3c7451f2602812c5b5278c2300
+  catalog:
+    snapshot_path: datasets/river-plastic-inputs/releases/figshare-v6-r2/catalog-input-r1/snapshot.json
+    snapshot_sha256: e00804f782c3f97fed59f2ab5cc90f9dbf916d5265adfb8f6b025c00ede6f64a
+    package_base_url: null
+    hosting_report_path: null
+    hosting_report_sha256: null
+  source_coop:
+    owner: nthh
+    owner_status: confirmed
+    account_verification: null
+    product_id: river-plastic-inputs
+    title: Global river plastic inputs — Lebreton et al. (2017)
+    summary: Modeled plastic inputs at global river outlets from the Lebreton et al. study, with analytical
+      GeoParquet and a separate PMTiles display layer.
+    tags:
+    - rivers
+    - plastic
+    - pollution
+    - global
+    - geoparquet
+    - pmtiles
+    license_note: CC BY 4.0. Retain Lebreton et al. attribution and the Figshare v6 source citation.
+    attribution: Lebreton et al. (2017), River plastic emissions to the world’s oceans. Original conversion
+      evidence retains Folia attribution.
+    temporal_note: 'Historical model baseline: 2010; paper published in 2017. These are modeled estimates,
+      not current measurements.'
+    limitations:
+    - This is the Lebreton dataset, not the later Meijer et al. model.
+    - Preserve null estimates and coincident outlet records; their multiplicity is intentional.
+    - Retained GEE comparison established matching values and nulls with documented sub-metre geometry differences,
+      not identical upstream release identity or scientific accuracy.
+    supplements: []
+# Cross-catalog discovery: global-candidates-20261031
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'citations: Global Existing catalog identity.'
+  sources:
+  - provider: gee_community
+    entry_id: plastic
+    url: https://gee-community-catalog.org/projects/plastic
+    relationship: same_family
+  access:
+  - provider: literature
+    status: unknown
+    formats: []
+    summary: GEE catalog entries are available through Earth Engine; frozen metadata does not establish
+      an independently downloadable native bulk copy or its format. Existing catalog identity.
+    license_summary: Not inferred from citation records. Verify producer terms for the exact edition before
+      conversion or redistribution.
+    proposed_outputs: []
+    rationale: 'Candidate discovery only: global/near-global scope and associated-paper citation signal
+      justify source-format and licensing review. Citation rank does not establish conversion priority
+      or exact-release use.'
+    evidence_urls:
+    - https://gee-community-catalog.org/projects/plastic
+    - https://doi.org/10.1038/ncomms15611
+  citations:
+  - provider: OpenAlex
+    paper_doi: 10.1038/ncomms15611
+    work_id: https://openalex.org/W2604316091
+    cited_by_count: 4009
+    observed_on: '2026-10-30'
+    scope: associated_dataset_publication
+  evidence:
+  - path: research/global-candidates-20261031/citations/reviewed.json
+    sha256: 572140255cd3b41a1ec8ecca0139e64d38899cda7fdd55756f399a0dca57a467
+    key: river-plastic-inputs

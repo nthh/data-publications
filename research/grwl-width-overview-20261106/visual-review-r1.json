@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "status": "passed_for_stated_visual_scope",
+  "archive_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+  "viewer_build_sha256": "22e160ae15299752273ce5c4bb71fa2c01923caeef5bc10a5ce0b91ae096b785",
+  "browser_report": {
+    "sha256": "b4e73f4ae52d4b9d9dd5a126f6fa96be9fc1f619f27d79ee17a1ff2bcb910cd5",
+    "size_bytes": 203842
+  },
+  "reviewed_screenshots": {
+    "mississippi-z0.png": {
+      "sha256": "b0c8c551fc04b5875b832d529c2e88db04add828e571f6e1e335c2a304b7bca3",
+      "size_bytes": 263560,
+      "observation": "Global source distribution and width legend are visible; dense world-scale symbols are explicitly described as selected, exaggerated width observations."
+    },
+    "mississippi-z5.png": {
+      "sha256": "2d7160d01f22917133ad99333be6765c39d6262c87dce5a9772d20a091eaf815",
+      "size_bytes": 349476,
+      "observation": "The Mississippi and other large channels are visibly wider than small tributaries. The former coverage-only rectangular cells are absent."
+    },
+    "mississippi-z7.png": {
+      "sha256": "a0e9e74f4164a863d62f3fbb1cdfc177b59452f9dd3593e9c1b7777086fa988a",
+      "size_bytes": 224295,
+      "observation": "Width-scaled observations and a 848 m selected source observation are visible. The panel shows all fourteen source attributes."
+    },
+    "mississippi-z8.png": {
+      "sha256": "63d75a9d83c10186b2bd9fdd6154d10ce08d619414d4f5189bc66ffbdb8c70b7",
+      "size_bytes": 184981,
+      "observation": "The detailed source segments retain varying widths. Individual short segments remain visible; no synthetic connecting geometry is introduced by this overview update."
+    },
+    "amazon-z7.png": {
+      "sha256": "7ebd278df98983c7b34ee3bc3538f8b19950994b4cd4cac79c53e81a027ecd4d",
+      "size_bytes": 313936,
+      "observation": "Large Amazon channels are visibly wider than smaller tributaries under the same capped width scale."
+    },
+    "dateline-z7.png": {
+      "sha256": "e4b3438b847536f411d10477378eb208690d0e1c72eea6cd2b142980927e77d4",
+      "size_bytes": 150097,
+      "observation": "Width observations render at the existing world edge without a river-layer connector across the map. World wrapping remains disabled in this viewer; this screenshot does not claim a continuous two-sided dateline viewport."
+    }
+  },
+  "limitations": [
+    "This is a visual rendering review, not scientific accuracy or GEE parity.",
+    "Symbols show widest original observations per screen-scale cell; they are exaggerated and capped at the legend maximum, not mapped riverbanks.",
+    "Detailed zoom-8 source fragments may appear segmented; all detailed tile payloads exactly match the prior validated release."
+  ]
+}

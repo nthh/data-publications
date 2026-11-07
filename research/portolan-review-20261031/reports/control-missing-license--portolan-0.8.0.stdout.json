@@ -1,0 +1,69 @@
+{
+  "success": false,
+  "command": "check",
+  "data": {
+    "mode": "metadata",
+    "spec_version": "0.2.0",
+    "validator": {
+      "name": "rashid",
+      "version": "0.1.8"
+    },
+    "passed": false,
+    "files_checked": 2,
+    "error_count": 2,
+    "warning_count": 0,
+    "info_count": 1,
+    "findings": [
+      {
+        "rule_id": "PTL-LIC-001",
+        "severity": "error",
+        "message": "collection declares no license",
+        "path": "river-plastic-inputs/collection.json",
+        "object_id": "river-plastic-inputs",
+        "json_pointer": "/license",
+        "fix_hint": "add a license with an SPDX identifier, e.g. 'CC-BY-4.0', or 'other' plus a rel:'license' link to the license text",
+        "remediation": "instruct",
+        "auto_fixable": false,
+        "requirement": "Declare the license as an SPDX identifier, or 'other' with a rel='license' link."
+      },
+      {
+        "rule_id": "PTL-PRO-002",
+        "severity": "info",
+        "message": "mirror collection has no rel:'canonical' link; add one if the upstream publishes its own STAC catalog",
+        "path": "river-plastic-inputs/collection.json",
+        "object_id": "river-plastic-inputs",
+        "json_pointer": "/links",
+        "fix_hint": "add {\"rel\": \"canonical\", \"href\": <the upstream collection.json>, \"type\": \"application/json\"} to links when the upstream publishes STAC",
+        "remediation": "instruct",
+        "auto_fixable": false,
+        "requirement": "Add a rel='canonical' link to the upstream STAC object, when the source publishes one."
+      },
+      {
+        "rule_id": "PTL-STR-001",
+        "severity": "error",
+        "message": "STAC 1.1.0 structural validation failed: 'license' is a required property",
+        "path": "river-plastic-inputs/collection.json",
+        "object_id": "river-plastic-inputs",
+        "json_pointer": "",
+        "remediation": "instruct",
+        "auto_fixable": false,
+        "requirement": "Correct the object against STAC 1.1.0; the structural error names the failing field."
+      }
+    ],
+    "counts_by_remediation": {
+      "auto": 0,
+      "instruct": 3,
+      "external": 0
+    }
+  },
+  "errors": [
+    {
+      "type": "PTL-LIC-001",
+      "message": "collection declares no license"
+    },
+    {
+      "type": "PTL-STR-001",
+      "message": "STAC 1.1.0 structural validation failed: 'license' is a required property"
+    }
+  ]
+}

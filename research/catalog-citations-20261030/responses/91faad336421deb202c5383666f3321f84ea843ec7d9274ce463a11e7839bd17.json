@@ -1,0 +1,80 @@
+{
+  "request_url": "https://api.openalex.org/works?search=GEM-15%3A+Global+surface+and+terrain+elevation+models+%2815+meters%29+from+sub-meter+optical+stereo+imagery&corpus=all&per_page=5&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date",
+  "retrieved_at": "2026-10-30T22:07:45.747715+00:00",
+  "response_path": "responses/91faad336421deb202c5383666f3321f84ea843ec7d9274ce463a11e7839bd17.json",
+  "status": 200,
+  "response_sha256": "e0fc2d3987b3de44f153f43e6a26e269aaa198c9d4cc889e505baa4d636f33d5",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 51,
+      "db_response_time_ms": 197,
+      "page": 1,
+      "per_page": 5,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where full text has (GEM-15: Global surface \"and\" terrain elevation models 15 meters from sub-meter optical stereo imagery)",
+        "x_new_oql": "get works (all corpora) where full text has (GEM-15: Global surface \"and\" terrain elevation models 15 meters from sub-meter optical stereo imagery)",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "GEM-15: Global surface and terrain elevation models (15 meters) from sub-meter optical stereo imagery",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:GEM-15: Global surface and terrain elevation models %2815 meters%29 from sub-meter optical stereo imagery&corpus=all&per_page=5",
+        "order": "best matches first",
+        "order_default": true
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W7117781252",
+        "doi": "https://doi.org/10.1029/2025ea004477",
+        "title": "Effect of Land Cover Type on 3D Deformation Recovery From Synthetically Deformed High Resolution Satellite Optical Imagery",
+        "type": "article",
+        "publication_year": 2025,
+        "publication_date": "2025-12-31"
+      },
+      {
+        "id": "https://openalex.org/W4308168668",
+        "doi": "https://doi.org/10.1371/journal.pone.0276547",
+        "title": "From Macro- to Microscale: A combined modelling approach for near-surface wind flow on Mars at sub-dune length-scales",
+        "type": "article",
+        "publication_year": 2022,
+        "publication_date": "2022-11-04"
+      },
+      {
+        "id": "https://openalex.org/W4211203694",
+        "doi": "https://doi.org/10.1016/j.isprsjprs.2022.01.020",
+        "title": "Direct photogrammetry with multispectral imagery for UAV-based snow depth estimation",
+        "type": "article",
+        "publication_year": 2022,
+        "publication_date": "2022-02-09"
+      },
+      {
+        "id": "https://openalex.org/W1524278090",
+        "doi": "https://doi.org/10.14943/doctoral.k11345",
+        "title": "Variations in the terminus position, ice velocity and surface elevation of the Langhovde Glacier, East Antarctica",
+        "type": "article",
+        "publication_year": 2014,
+        "publication_date": "2014-03-25"
+      },
+      {
+        "id": "https://openalex.org/W4317829631",
+        "doi": "https://doi.org/10.1017/jog.2022.118",
+        "title": "Up-glacier propagation of surface lowering of Yala Glacier, Langtang Valley, Nepal Himalaya",
+        "type": "article",
+        "publication_year": 2023,
+        "publication_date": "2023-01-24"
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "18854a252df0fae1cb6992c4ea32421cf6dea0d218ab8e3387a2683e64b002ca"
+}

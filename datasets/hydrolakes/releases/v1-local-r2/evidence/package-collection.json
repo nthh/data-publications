@@ -1,0 +1,363 @@
+{
+  "assets": {
+    "hydrolakes-polygons": {
+      "file:checksum": "1220273f66aa591f575616e731e6f31111ddf8ecfb39c0c05eacf0e903b6ddd6944d",
+      "file:size": 1001702072,
+      "href": "assets/hydrolakes-polygons.parquet",
+      "roles": [
+        "data"
+      ],
+      "title": "HydroLAKES v1.0 polygons",
+      "type": "application/vnd.apache.parquet"
+    },
+    "hydrolakes-polygons_fields": {
+      "file:checksum": "12203adab03f28cd479056d918270e95c7f87516fc21cf150a06dd43631ad5bc9e05",
+      "file:size": 4056,
+      "href": "metadata/hydrolakes-polygons-field-dictionary.json",
+      "roles": [
+        "metadata"
+      ],
+      "title": "hydrolakes-polygons field dictionary",
+      "type": "application/json"
+    },
+    "support-1": {
+      "file:checksum": "12203d1e30abb0691750127fd8e2ff6a149c83f36b93619fb44774476663e0f01f47",
+      "file:size": 989557,
+      "href": "source/HydroLAKES_TechDoc_v10.pdf",
+      "roles": [
+        "metadata"
+      ],
+      "title": "HydroLAKES Technical Documentation v1.0",
+      "type": "application/pdf"
+    },
+    "support-2": {
+      "file:checksum": "1220a88381fc802f5e8b2d45f9a0271656806d97336893268445d0f7f64fbee89c12",
+      "file:size": 402,
+      "href": "provenance/source-document.json",
+      "roles": [
+        "metadata"
+      ],
+      "title": "Producer technical document identity",
+      "type": "application/json"
+    },
+    "support-3": {
+      "file:checksum": "1220a0421cae7c83446007540a96afcbd39a609135ed82461c612b79db31fe1948c1",
+      "file:size": 969,
+      "href": "provenance/source-validation.json",
+      "roles": [
+        "metadata"
+      ],
+      "title": "Complete independent source fidelity report",
+      "type": "application/json"
+    },
+    "support-4": {
+      "file:checksum": "1220711630170213a5aca4b1456de32b2a4363d910e9b31bda5f8f3820740461a376",
+      "file:size": 632,
+      "href": "provenance/clean-rebuild-raw.json",
+      "roles": [
+        "metadata"
+      ],
+      "title": "Clean raw conversion rebuild report",
+      "type": "application/json"
+    },
+    "support-5": {
+      "file:checksum": "12207a6686bcf273c5fb55cb4f5af2a4602777565e20c1593aa64307d565a29bba90",
+      "file:size": 2129,
+      "href": "provenance/spatial-validation-retained.json",
+      "roles": [
+        "metadata"
+      ],
+      "title": "Retained asset spatial augmentation validation",
+      "type": "application/json"
+    },
+    "support-6": {
+      "file:checksum": "1220fef41b4a83f023838100999803c550f5172e9f3142832b53326f2414e072aa3c",
+      "file:size": 2148,
+      "href": "provenance/spatial-validation-clean-rebuild.json",
+      "roles": [
+        "metadata"
+      ],
+      "title": "Clean rebuild spatial augmentation validation",
+      "type": "application/json"
+    },
+    "support-7": {
+      "file:checksum": "122008acd00da4b7056b175ec845976a8f990e50fa276c929864579be9cb9620d813",
+      "file:size": 604,
+      "href": "provenance/source-cache-eviction.json",
+      "roles": [
+        "metadata"
+      ],
+      "title": "Source archive cache eviction receipt",
+      "type": "application/json"
+    },
+    "support-8": {
+      "file:checksum": "122072cf3124a0fc648d0eed4e750692c62e137da2e1933f578d35cfb5e686085d4f",
+      "file:size": 2038,
+      "href": "provenance/evidence-provenance.json",
+      "roles": [
+        "metadata"
+      ],
+      "title": "Evidence original hashes and portable copy hashes",
+      "type": "application/json"
+    },
+    "thumbnail": {
+      "file:checksum": "1220fcd2c020f9eecac7f4fa7a8a55d4c986a592bb5e1b410c84d14dd46b1a892df1",
+      "file:size": 3768,
+      "href": "display/thumbnail.png",
+      "roles": [
+        "thumbnail"
+      ],
+      "title": "Sampled display-only overview; not an analytic asset",
+      "type": "image/png"
+    }
+  },
+  "created": "2026-10-31T00:00:00Z",
+  "description": "Static global lake polygons derived from composite legacy shoreline sources. This is not a 2026 shoreline observation; no GEE parity or independent scientific-accuracy claim is made.",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -179.9999999999999,
+          -55.86513888888899,
+          179.99999999999903,
+          83.57595062255876
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  "id": "hydrolakes",
+  "license": "CC-BY-4.0",
+  "links": [
+    {
+      "href": "catalog.json",
+      "rel": "root",
+      "type": "application/json"
+    },
+    {
+      "href": "catalog.json",
+      "rel": "parent",
+      "type": "application/json"
+    },
+    {
+      "href": "README.md",
+      "rel": "describedby",
+      "type": "text/markdown"
+    },
+    {
+      "href": "AGENTS.md",
+      "rel": "agents",
+      "type": "text/markdown"
+    },
+    {
+      "href": "display/thumbnail.png",
+      "rel": "thumbnail",
+      "type": "image/png"
+    },
+    {
+      "href": "https://data.hydrosheds.org/file/hydrolakes/HydroLAKES_polys_v10_shp.zip",
+      "rel": "via",
+      "title": "HydroLAKES v1 polygon dataset",
+      "type": "text/html"
+    },
+    {
+      "href": "https://creativecommons.org/licenses/by/4.0/",
+      "rel": "license",
+      "type": "text/html"
+    }
+  ],
+  "portolan:version": "0.2.0",
+  "providers": [
+    {
+      "name": "Lehner and Messager / HydroSHEDS",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://www.hydrosheds.org/products/hydrolakes"
+    },
+    {
+      "description": "Local candidate package only; public hosting has not occurred.",
+      "name": "Folia",
+      "roles": [
+        "host",
+        "processor"
+      ],
+      "url": "https://folia.sh"
+    }
+  ],
+  "sci:citation": "Messager, M.L., Lehner, B., Grill, G., Nedeva, I., Schmitt, O. (2016). Estimating the volume and age of water stored in global lakes using a geo-statistical approach. Nature Communications 7, 13603. https://doi.org/10.1038/ncomms13603.",
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/scientific/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/version/v1.2.0/schema.json"
+  ],
+  "stac_version": "1.1.0",
+  "table:columns": [
+    {
+      "asset": "hydrolakes-polygons",
+      "description": "Native unique lake key.",
+      "name": "Hylak_id",
+      "type": "int32"
+    },
+    {
+      "asset": "hydrolakes-polygons",
+      "description": "Producer lake name.",
+      "name": "Lake_name",
+      "type": "string"
+    },
+    {
+      "asset": "hydrolakes-polygons",
+      "description": "Country assigned through pour point.",
+      "name": "Country",
+      "type": "string"
+    },
+    {
+      "asset": "hydrolakes-polygons",
+      "description": "Producer continent.",
+      "name": "Continent",
+      "type": "string"
+    },
+    {
+      "asset": "hydrolakes-polygons",
+      "description": "Shoreline source code.",
+      "name": "Poly_src",
+      "type": "string"
+    },
+    {
+      "asset": "hydrolakes-polygons",
+      "description": "Waterbody category.",
+      "name": "Lake_type",
+      "type": "int32"
+    },
+    {
+      "asset": "hydrolakes-polygons",
+      "description": "GRanD join key; zero means unlinked.",
+      "name": "Grand_id",
+      "type": "int32"
+    },
+    {
+      "asset": "hydrolakes-polygons",
+      "description": "Lake area.",
+      "name": "Lake_area",
+      "type": "double",
+      "unit": "km2"
+    },
+    {
+      "asset": "hydrolakes-polygons",
+      "description": "Shoreline length.",
+      "name": "Shore_len",
+      "type": "double",
+      "unit": "km"
+    },
+    {
+      "asset": "hydrolakes-polygons",
+      "description": "Outline complexity ratio.",
+      "name": "Shore_dev",
+      "type": "double",
+      "unit": "1"
+    },
+    {
+      "asset": "hydrolakes-polygons",
+      "description": "Estimated or reported total volume.",
+      "name": "Vol_total",
+      "type": "double",
+      "unit": "10^6 m3"
+    },
+    {
+      "asset": "hydrolakes-polygons",
+      "description": "Reservoir storage.",
+      "name": "Vol_res",
+      "type": "double",
+      "unit": "10^6 m3"
+    },
+    {
+      "asset": "hydrolakes-polygons",
+      "description": "Volume provenance code.",
+      "name": "Vol_src",
+      "type": "int32"
+    },
+    {
+      "asset": "hydrolakes-polygons",
+      "description": "Mean depth.",
+      "name": "Depth_avg",
+      "type": "double",
+      "unit": "m"
+    },
+    {
+      "asset": "hydrolakes-polygons",
+      "description": "Modelled discharge.",
+      "name": "Dis_avg",
+      "type": "double",
+      "unit": "m3/s"
+    },
+    {
+      "asset": "hydrolakes-polygons",
+      "description": "Water residence time.",
+      "name": "Res_time",
+      "type": "double",
+      "unit": "day"
+    },
+    {
+      "asset": "hydrolakes-polygons",
+      "description": "Water-surface elevation.",
+      "name": "Elevation",
+      "type": "int32",
+      "unit": "m above sea level"
+    },
+    {
+      "asset": "hydrolakes-polygons",
+      "description": "Surrounding terrain slope.",
+      "name": "Slope_100",
+      "type": "double",
+      "unit": "degree"
+    },
+    {
+      "asset": "hydrolakes-polygons",
+      "description": "Contributing catchment area.",
+      "name": "Wshd_area",
+      "type": "double",
+      "unit": "km2"
+    },
+    {
+      "asset": "hydrolakes-polygons",
+      "description": "Outlet longitude.",
+      "name": "Pour_long",
+      "type": "double",
+      "unit": "degree"
+    },
+    {
+      "asset": "hydrolakes-polygons",
+      "description": "Outlet latitude.",
+      "name": "Pour_lat",
+      "type": "double",
+      "unit": "degree"
+    },
+    {
+      "asset": "hydrolakes-polygons",
+      "description": "Unchanged source WKB.",
+      "name": "wkb_geometry",
+      "type": "binary"
+    },
+    {
+      "asset": "hydrolakes-polygons",
+      "description": "Derived WKB bounds for spatial pruning.",
+      "name": "bbox",
+      "type": "struct<xmin: double, ymin: double, xmax: double, ymax: double>",
+      "unit": "degree"
+    }
+  ],
+  "title": "HydroLAKES v1.0: Polygons",
+  "type": "Collection",
+  "updated": "2026-10-31T00:00:00Z",
+  "version": "1.0.1"
+}

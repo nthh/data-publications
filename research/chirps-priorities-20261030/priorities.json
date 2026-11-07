@@ -1,0 +1,135 @@
+{
+  "scope": "Five priorities for qualification/publication from the combined top30 families; not five proven hosting gaps or five authorized builds.",
+  "ranking": "Judgment based on criteria.json; citations are one input, not a new numeric score.",
+  "citation_caveat": "Counts describe associated papers in the frozen 2026-10-30 audit, not downloads, unique users, or citations of these exact current releases.",
+  "recommendations": [
+    {
+      "priority": 1,
+      "top30_rank": 28,
+      "dataset": "HydroLAKES v1.0 polygons",
+      "action": "Prepare existing validated release for public publication",
+      "download_size": "820,295,132 bytes source ZIP; validated GeoParquet already 945,383,282 bytes",
+      "source_bytes": 820295132,
+      "source_format": "Zipped Shapefile",
+      "outputs": [
+        "GeoParquet",
+        "PMTiles (optional display derivative)"
+      ],
+      "reason": "Complete validated conversion already exists; broad global lake/basin use and very little conversion work remains.",
+      "next_check": "Port the reusable converter and checks into the standalone dataset record; inspect retained files, preserve source/output hashes, add public packaging and attribution. Add a separately validated spatial layout only if needed.",
+      "remaining": "Private staging is not public publication. Public scripts, PMTiles and Portolan record are not yet prepared.",
+      "sources": [
+        "https://www.hydrosheds.org/products/hydrolakes"
+      ],
+      "paper_citations_as_of_2026_10_30": 1775,
+      "catalogs_in_frozen_top30": [
+        "community"
+      ],
+      "work_id": "https://openalex.org/W2564545777"
+    },
+    {
+      "priority": 2,
+      "top30_rank": 21,
+      "dataset": "WWF Free-Flowing Rivers v1",
+      "action": "New vector conversion candidate",
+      "download_size": "954,710,486 bytes source geodatabase ZIP",
+      "source_bytes": 954710486,
+      "source_format": "Zipped File Geodatabase",
+      "outputs": [
+        "GeoParquet",
+        "PMTiles (display derivative)"
+      ],
+      "reason": "Manageable global network with connectivity/free-flowing attributes; complements existing rivers and lake work.",
+      "next_check": "Retain all reach IDs, geometry, nulls and connectivity attributes; compare full counts and per-feature identities to the released network.",
+      "remaining": "Targeted search found no exact hosted match, not proof of absence. The released network excludes some licensed dam inputs; publication is of the released data, not study recomputation.",
+      "sources": [
+        "https://api.figshare.com/v2/articles/7688801",
+        "https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_v1_FreeFlowingRivers",
+        "https://www.nature.com/articles/s41586-019-1111-9"
+      ],
+      "paper_citations_as_of_2026_10_30": 2473,
+      "catalogs_in_frozen_top30": [
+        "official"
+      ],
+      "work_id": "https://openalex.org/W2944057425"
+    },
+    {
+      "priority": 3,
+      "top30_rank": 12,
+      "dataset": "JRC Global Surface Water v1.5 Occurrence (1984\u20132024)",
+      "action": "Qualify producer tiles, then register or publish a useful indexed release",
+      "download_size": "14,453,956,859 bytes across 504 occurrence tiles (v1.5 only)",
+      "source_bytes": 14453956859,
+      "source_format": "GeoTIFF; COG conformance not checked here",
+      "outputs": [
+        "COG (retain originals if conforming)",
+        "STAC index"
+      ],
+      "reason": "Highly cited global surface-water layer; existing Source Cooperative mirror covers monthly history, a different product.",
+      "next_check": "Check native COG layout/range access before converting; if producer files already satisfy the access need, register them instead of creating a duplicate mirror.",
+      "remaining": "Current producer v1.5 has corrected Occurrence calculations; it is not the prior audit's v1.4. Preserve the documented Landsat collection seam and version.",
+      "sources": [
+        "https://global-surface-water.appspot.com/download",
+        "https://data.source.coop/epoch/jrc-global-surface-water-monthly/README.md",
+        "https://s3.waw4-1.cloudferro.com/swift/v1/global-surface-water/?format=json&prefix=download2024/Aggregated/&limit=10000"
+      ],
+      "paper_citations_as_of_2026_10_30": 5374,
+      "catalogs_in_frozen_top30": [
+        "official"
+      ],
+      "work_id": "https://openalex.org/W2560167313"
+    },
+    {
+      "priority": 4,
+      "top30_rank": 15,
+      "dataset": "TerraClimate v1.1 base archive (1950\u20132025)",
+      "action": "New time-series packaging candidate",
+      "download_size": "115,507.4 publisher Mbytes; about 116\u2013121 GB; 1,064 annual files",
+      "source_bytes": null,
+      "source_format": "NetCDF4, annual files by variable",
+      "outputs": [
+        "Zarr"
+      ],
+      "reason": "Global monthly climate/water-balance time series is well suited to spatial and time-series reads; stronger incremental format value than another raster ZIP mirror.",
+      "next_check": "Start with one complete variable, measure chunked time-series and regional reads, then extend to all 14 variables. Preserve packing, masks, calendar, units and native grid.",
+      "remaining": "Larger job. Current v1.1 metadata declares CC0; confirm this across the pinned release inventory. Do not mix v1.0/v1.1 or transfer older GEE validation. Excludes warming/counterfactual scenarios.",
+      "sources": [
+        "https://www.climatologylab.org/terraclimate.html",
+        "https://www.reacchpna.org/thredds/dodsC/TERRACLIMATE_ALL/data/TerraClimate_vap_1958.nc.html",
+        "https://tds-proxy.nkn.uidaho.edu/thredds/catalog/TERRACLIMATE_ALL/data/catalog.xml"
+      ],
+      "paper_citations_as_of_2026_10_30": 3477,
+      "catalogs_in_frozen_top30": [
+        "community",
+        "official"
+      ],
+      "work_id": "https://openalex.org/W2784327149"
+    },
+    {
+      "priority": 5,
+      "top30_rank": 26,
+      "dataset": "Hugonnet global glacier elevation change (2000\u20132019)",
+      "action": "Conditional raster publication candidate",
+      "download_size": "Approximately 15 GB for the public elevation-change raster family",
+      "source_bytes": null,
+      "source_format": "GeoTIFF, 100 m posting",
+      "outputs": [
+        "COG",
+        "STAC index"
+      ],
+      "reason": "A bounded global scientific product with important uncertainty layers and a manageable raster release size.",
+      "next_check": "Confirm redistribution terms for the exact DOI release, then inventory all change/uncertainty tiles and periods; inspect existing TIFF layout before conversion.",
+      "remaining": "Redistribution term not resolved by this check: DataCite rightsList is empty and publisher JSON-LD lacks a named license. Do not mistake the code license for the data license. Excludes ~3 TB monthly elevation series and ~10 TB raw DEMs.",
+      "sources": [
+        "https://github.com/rhugonnet/ww_tvol_study",
+        "https://doi.org/10.6096/13",
+        "https://www.theia-land.fr/en/blog/product/rate-of-glacier-elevation-changes-from-2000-to-2019/"
+      ],
+      "paper_citations_as_of_2026_10_30": 1910,
+      "catalogs_in_frozen_top30": [
+        "community"
+      ],
+      "work_id": "https://openalex.org/W3157632309"
+    }
+  ]
+}

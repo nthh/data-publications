@@ -1,0 +1,80 @@
+{
+  "request_url": "https://api.openalex.org/works?search=Physiographically-sensitive+mapping+of+temperature+and+precipitation+across+the+conterminous+United+States&corpus=all&per_page=5&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date",
+  "retrieved_at": "2026-10-30T22:07:55.991791+00:00",
+  "response_path": "responses/7f05c16a9d53ece1aa4b78b1f3044d6b905bd3f775331f14887f46990684ef1e.json",
+  "status": 200,
+  "response_sha256": "18840276ee3f6dc7a9e5414b0a5d40da517f9da5c8c8ee4b9eb5be3897f40fa8",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 2041,
+      "db_response_time_ms": 126,
+      "page": 1,
+      "per_page": 5,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where full text has (Physiographically-sensitive mapping of temperature \"and\" precipitation across the conterminous United States)",
+        "x_new_oql": "get works (all corpora) where full text has (Physiographically-sensitive mapping of temperature \"and\" precipitation across the conterminous United States)",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "Physiographically-sensitive mapping of temperature and precipitation across the conterminous United States",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:Physiographically-sensitive mapping of temperature and precipitation across the conterminous United States&corpus=all&per_page=5",
+        "order": "best matches first",
+        "order_default": true
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W1966334841",
+        "doi": "https://doi.org/10.1002/joc.1688",
+        "title": "Physiographically sensitive mapping of climatological temperature and precipitation across the conterminous United States",
+        "type": "article",
+        "publication_year": 2008,
+        "publication_date": "2008-03-12"
+      },
+      {
+        "id": "https://openalex.org/W2125628364",
+        "doi": "https://doi.org/10.1371/journal.pone.0141140",
+        "title": "Mapping Atmospheric Moisture Climatologies across the Conterminous United States",
+        "type": "article",
+        "publication_year": 2015,
+        "publication_date": "2015-10-20"
+      },
+      {
+        "id": "https://openalex.org/W2125772301",
+        "doi": "https://doi.org/10.1175/2007jamc1356.1",
+        "title": "Constructing Retrospective Gridded Daily Precipitation and Temperature Datasets for the Conterminous United States",
+        "type": "article",
+        "publication_year": 2008,
+        "publication_date": "2008-02-01"
+      },
+      {
+        "id": "https://openalex.org/W3203923138",
+        "doi": "https://doi.org/10.1175/jtech-d-21-0054.1",
+        "title": "Challenges in Observation-Based Mapping of Daily Precipitation across the Conterminous United States",
+        "type": "article",
+        "publication_year": 2021,
+        "publication_date": "2021-10-04"
+      },
+      {
+        "id": "https://openalex.org/W2529644886",
+        "doi": "https://doi.org/10.5194/hess-21-5517-2017",
+        "title": "Future shift of the relative roles of precipitation and temperature in controlling annual runoff in the conterminous United States",
+        "type": "article",
+        "publication_year": 2017,
+        "publication_date": "2017-11-13"
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "57c2b45d253f482cbe444f0c0222ea0e3b610667579cdb9c2af45fc67253dd8b"
+}

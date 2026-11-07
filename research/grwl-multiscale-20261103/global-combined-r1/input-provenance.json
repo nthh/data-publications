@@ -1,0 +1,78 @@
+{
+  "binary": {
+    "bytes": 805448,
+    "path": "/opt/homebrew/Cellar/tippecanoe/2.79.0/bin/tile-join",
+    "sha256": "da56cb1a2ddf59b2f03798b5314db665dad87bc03cab6f86a03e630e420173fa"
+  },
+  "builder": {
+    "bytes": 9373,
+    "path": "/Users/nathan/.folia-fleets/grwl-multiscale-clean-20261103/tree/datasets/grwl-raw/repack_detail.py",
+    "sha256": "347a2c704e2aa508f9b8d491a3b746eac8c569b07b98c33ebe8cbd909161666e"
+  },
+  "command": [
+    "tile-join",
+    "--no-tile-size-limit",
+    "-o",
+    "assets/grwl-raw.pmtiles",
+    "-x",
+    "_src_xmin",
+    "-x",
+    "_src_ymin",
+    "-x",
+    "_src_xmax",
+    "-x",
+    "_src_ymax",
+    "inputs/detail.pmtiles",
+    "inputs/overview.pmtiles"
+  ],
+  "criteria": {
+    "bytes": 5483,
+    "path": "/Users/nathan/.folia-fleets/grwl-multiscale-clean-20261103/tree/research/grwl-multiscale-20261103/criteria.json",
+    "sha256": "4f40b5868bf30e41ce6d2db977c36f3c8b4b3705a2c82008c33648abeb74ed43"
+  },
+  "detail": {
+    "bytes": 11498067077,
+    "path": "/Users/nathan/projects/data-publications/.local/grwl-raw/global-display-v1/assets/grwl-raw.pmtiles",
+    "sha256": "a1a7787c7ba28ffc271819bddc54339f9bc741aa9ed44ca619d93e809cbad4f5"
+  },
+  "environment": {
+    "LC_ALL": "C",
+    "SQLITE_TMPDIR": "<OUTPUT>/.scratch",
+    "TIPPECANOE_MAX_THREADS": "2",
+    "TMPDIR": "<OUTPUT>/.scratch"
+  },
+  "environment_lock": {
+    "bytes": 70097,
+    "path": "/Users/nathan/.folia-fleets/pmtiles-clean-20261102/tree/scripts/display_tools/uv.lock",
+    "sha256": "edc334d3dddf7c50b08f5b8db0ad4e1cafaa8964de487940a7e8e4924a9bc385"
+  },
+  "maximum_new_artifacts_gib": 24.0,
+  "native_lock": "/Users/nathan/projects/data-publications/.local/grwl-raw/.native-build.lock",
+  "overview": {
+    "bytes": 18816249,
+    "path": "/Users/nathan/projects/data-publications/.local/grwl-multiscale/global-overview-r1/overview.pmtiles",
+    "sha256": "c32cef27eeb3511844320da831dcbe6579e2f57bd58250172f7de4ce9f1366d4"
+  },
+  "packages": {
+    "mapbox-vector-tile": "2.2.0",
+    "pmtiles": "3.8.1",
+    "protobuf": "6.33.6"
+  },
+  "python": "3.12.12",
+  "remove_properties": [
+    "_src_xmin",
+    "_src_ymin",
+    "_src_xmax",
+    "_src_ymax"
+  ],
+  "resource_start": {
+    "free_bytes": 57047146496,
+    "named_output_bytes": 0,
+    "volume_allocation_delta": 0
+  },
+  "schema_version": 1,
+  "status": "provisional_requires_independent_comparison",
+  "upstream_commit": "68ab8dcc229f95b8b25877697d5e8d66783af503",
+  "version": "2.79.0",
+  "workers": 2
+}

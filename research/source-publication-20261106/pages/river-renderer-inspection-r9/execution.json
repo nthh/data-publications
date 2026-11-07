@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "status": "developer_diagnostic_resolved_not_acceptance",
+  "harness_commit": "8b65060",
+  "criteria_sha256": "cadf15db3e3bd41b9d667691ba69d23ff030ae086917dfedeb946efc11ba8f1f",
+  "observed": {
+    "map_loaded": true,
+    "source_points": 166,
+    "rendered_query_points": 27,
+    "rendered_i_mid_max": 8.252425,
+    "largest_sample_radius_pixels": 2.1662555733977187,
+    "circle_opacity": 0.8,
+    "river_layer_stack_index": 69,
+    "total_layers": 98,
+    "non_symbol_layers_above_river": 0,
+    "errors": []
+  },
+  "manual_visual_review": "Confirmed actual turquoise point symbols in the original screenshot at the Amazon outlet and Angola coast by inspecting nearest-neighbor magnified copies of unchanged pixels. They were already present in earlier identical screenshots; small radii and subtle colors at the default overview explain why they were initially overlooked. No missing data, failed styling or opaque basemap-overdraw problem was found. This diagnostic does not replace the original full Browser preflight or deployed Pages check.",
+  "pixel_inspection_scope": "Exploratory localization, not a new statistical test or altered acceptance screenshot. Original PNG retained byte-for-byte; derivative crops are separately labeled and checksum-bound.",
+  "remaining": "Run all-five official Browser preflight under unchanged acceptance rules after GRWL is hosted. Review full original images, using diagnostic locations to identify small River symbols.",
+  "files": [
+    {
+      "path": "portolan-browser-report.json",
+      "sha256": "2aac880d6b5935dc81401a1371a1afe52d9103cffe59d95b97bfc16c91069d5e"
+    },
+    {
+      "path": "river-plastic-inputs--style-annual-input.png",
+      "sha256": "636a94b3e0c9f6b44edc4a89040748915b923061ca22f0021696ffbe2222191f"
+    },
+    {
+      "path": "pixel-inspection/amazon.png",
+      "sha256": "ad656152e3df0a969b35a9729f6f8eca8f8ebe5fd729bd2489d93edafa1b7927"
+    },
+    {
+      "path": "pixel-inspection/angola.png",
+      "sha256": "f4bb40727dbf07b626e4c5c0ea60a5c7d825a25a2ebde1277bb668853afaa6ad"
+    },
+    {
+      "path": "pixel-inspection/inspection.json",
+      "sha256": "e57bbba7205b49a37675c9e36cf42e234c8f736ddf3c947144d6ff93e11158a4"
+    }
+  ],
+  "reviewed_at": "2026-11-07T04:09:12.491633+00:00"
+}

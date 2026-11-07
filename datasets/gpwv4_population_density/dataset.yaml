@@ -1,0 +1,58 @@
+schema_version: 1
+id: gpwv4_population_density
+title: GPWv4 population density grids
+intake:
+  kind: official_catalog
+  reference_url: https://www.arcgis.com/home/item.html?id=d314746e11834a04968e64b25c49882c
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'esri: Global population-density estimates for 2000, 2005, 2010, 2015, and 2020 at
+    30-arc-second resolution, with coarser grids also published by SEDAC. The Esri map-service item represents
+    the 2015 cartographic layer; source pixels reflect census/register inputs and proportional allocation,
+    not population observations in every cell. Gridded density differs from GPWv4 administrative-unit
+    center points. Related canonical records, with distinct scope: GPWv4.'
+  sources:
+  - provider: esri_public
+    entry_id: d314746e11834a04968e64b25c49882c
+    url: https://www.arcgis.com/home/item.html?id=d314746e11834a04968e64b25c49882c
+    relationship: related_release
+  - provider: producer
+    entry_id: GPWv4 Population Density Revision 10/11
+    url: https://sedac.ciesin.columbia.edu/data/collection/gpw-v4
+    relationship: component
+  access:
+  - provider: esri_public
+    status: download_available
+    formats:
+    - raster
+    summary: Esri map service is a cartographic service mirror; SEDAC supplies downloadable global raster
+      files. The service was not queried for an export. Native producer resolution and revision should
+      be chosen from SEDAC, not inferred from the Esri display layer. Gridded density differs from GPWv4
+      administrative-unit center points.
+    license_summary: The ArcGIS item does not establish a redistribution license for the service contents.
+      Review SEDAC's terms and attribution requirements for the exact revision before processing or redistributing
+      the native files.
+    proposed_outputs:
+    - COG
+    rationale: Extend the existing GPWv4 family record with the distinct density-grid component. COG is
+      a reasonable derivative to consider from the producer's GeoTIFF after preserving cell values, units,
+      masks, epoch, revision, and source documentation.
+    evidence_urls:
+    - https://sedac.ciesin.columbia.edu/data/collection/gpw-v4
+    - https://catalog.data.gov/dataset/gridded-population-of-the-world-version-4-gpwv4-population-density-revision-10
+    - https://www.arcgis.com/home/item.html?id=d314746e11834a04968e64b25c49882c
+  citations: []
+  evidence:
+  - path: research/global-candidates-20261031/esri/reviewed.json
+    sha256: e02bd2202c3026ccd7564155bfa69b5e8bc666f65698da6bacce91ab7327d5be
+    key: gpwv4-population-density

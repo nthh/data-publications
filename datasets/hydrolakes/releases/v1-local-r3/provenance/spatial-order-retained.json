@@ -1,0 +1,128 @@
+{
+  "arrow_cpu_threads": 2,
+  "arrow_io_threads": 2,
+  "bbox_was_added": true,
+  "created": "2026-10-31T20:59:40Z",
+  "derived_bbox_values_recomputed_and_compared": true,
+  "disk_preflight": {
+    "estimate_note": "Conservatively counts one input plus at most two input-sized temporary/output copies for one asset. Source archive and producer PDFs are excluded from the task-owned baseline.",
+    "estimated_artifact_peak_bytes": 2970367574,
+    "estimated_task_peak_bytes": 6610367574,
+    "free_bytes_before": 69650522112,
+    "minimum_remaining_free_bytes": 10000000000,
+    "minimum_start_free_bytes": 40000000000,
+    "task_disk_limit_bytes": 8000000000,
+    "task_owned_baseline_bytes": 3640000000
+  },
+  "geometry_batch_rows_max": 128,
+  "geometry_column": "wkb_geometry",
+  "geometry_types": {
+    "Polygon": 1427688
+  },
+  "global_bbox": [
+    -179.9999999999999,
+    -55.86513888888899,
+    179.99999999999903,
+    83.57595062255876
+  ],
+  "identifier_column": "Hylak_id",
+  "input": {
+    "allocated_bytes": 945385472,
+    "path": ".local/hydrolakes/retained/data.parquet",
+    "sha256": "4c7c83b0a91e4cbd1e31583ab89eee9721ba22250272640591f4795d186a6a76",
+    "size_bytes": 945383282
+  },
+  "ipc_threaded_compression": false,
+  "output": {
+    "allocated_bytes": 956706816,
+    "path": ".local/hydrolakes/spatial-order-r4/hydrolakes.parquet",
+    "sha256": "6f588d97c14651eb23bea2d74fdf2a85f218a00ff11519c81efa5512b916b7f8",
+    "size_bytes": 949598607
+  },
+  "peak_rss_bytes": 700252160,
+  "peak_rss_limit_bytes": 1000000000,
+  "row_groups": 128,
+  "source_columns": [
+    "Hylak_id",
+    "Lake_name",
+    "Country",
+    "Continent",
+    "Poly_src",
+    "Lake_type",
+    "Grand_id",
+    "Lake_area",
+    "Shore_len",
+    "Shore_dev",
+    "Vol_total",
+    "Vol_res",
+    "Vol_src",
+    "Depth_avg",
+    "Dis_avg",
+    "Res_time",
+    "Elevation",
+    "Slope_100",
+    "Wshd_area",
+    "Pour_long",
+    "Pour_lat",
+    "wkb_geometry"
+  ],
+  "source_order_identity": "Hylak_id exactly equals the one-based input row ordinal 1..1427688",
+  "source_order_reconstructed_and_compared": true,
+  "source_rows": 1427688,
+  "source_values_nulls_and_raw_wkb_compared": true,
+  "spatial_order": {
+    "bucket_rows_max": 11154,
+    "bucket_rows_min": 11153,
+    "buckets": 128,
+    "key": "16-bit Hilbert distance of the WGS84 bbox center",
+    "quantization": "x=floor((lon+180)/360*65535), y=floor((lat+90)/180*65535), clamped to [0,65535]",
+    "rashid_order_metrics": {
+      "adjacent_pairs": 9,
+      "area_ratio_limit_exclusive": 0.3,
+      "chunks": 10,
+      "mean_chunk_area_over_global_extent_area": 0.1310052704485944,
+      "overlap_fraction": 1.0,
+      "overlap_limit_exclusive": 0.3,
+      "overlapping_pairs": 9,
+      "passed": true,
+      "rows_per_chunk_ceiling": 142769,
+      "validator": "Rashid 0.1.8 PTL-DAT-006 predicate"
+    },
+    "row_group_size": 16384,
+    "tie_breaker": "Hylak_id ascending"
+  },
+  "status": "passed",
+  "transformation": "spatial_order",
+  "validation": {
+    "attribute_comparison_method": "Exact Arrow equality for each original column after restoring native identifier order",
+    "derived_bbox_values_recomputed_and_compared": true,
+    "geometry_types": {
+      "Polygon": 1427688
+    },
+    "global_bbox": [
+      -179.9999999999999,
+      -55.86513888888899,
+      179.99999999999903,
+      83.57595062255876
+    ],
+    "rashid_order_metrics": {
+      "adjacent_pairs": 9,
+      "area_ratio_limit_exclusive": 0.3,
+      "chunks": 10,
+      "mean_chunk_area_over_global_extent_area": 0.1310052704485944,
+      "overlap_fraction": 1.0,
+      "overlap_limit_exclusive": 0.3,
+      "overlapping_pairs": 9,
+      "passed": true,
+      "rows_per_chunk_ceiling": 142769,
+      "validator": "Rashid 0.1.8 PTL-DAT-006 predicate"
+    },
+    "source_attribute_values_nulls_compared": 29981448,
+    "source_fields_compared": 22,
+    "source_order_reconstructed_and_compared": true,
+    "source_rows": 1427688,
+    "source_values_nulls_and_raw_wkb_compared": true,
+    "wkb_comparison_method": "Complete per-native-ID SHA-256, byte length and null-state equality; every WKB byte hashed independently in both files",
+    "wkb_rows_compared": 1427688
+  }
+}

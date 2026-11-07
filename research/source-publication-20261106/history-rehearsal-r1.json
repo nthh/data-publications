@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "source_commit": "dffa601c78e493e15bc2ab005224ad486c60d0e1",
+  "standalone_commit": "63a579ea95e673c20015712e74d4daeabfebe9bc",
+  "standalone_git_commit_count": 1,
+  "standalone_checkout_clean": true,
+  "historical_git_objects_absent": true,
+  "archive_inventory": {
+    "status": "passed",
+    "historical_entries": 186,
+    "unique_blobs": 104
+  },
+  "package_template_workflow_pins": {
+    "status": "passed",
+    "pins_verified_via_archive_resolver": 100,
+    "unique_historical_revisions": 11,
+    "all_historical_revisions_absent_from_standalone_git": true
+  },
+  "gee_rehearsal": {
+    "status": "passed_reproducibility_of_retained_strict_failures",
+    "focused_tests_passed": 32,
+    "retained_summary_check_passed": true,
+    "comparisons": [
+      {
+        "layer_id": "hydrolakes",
+        "strict_status": "sampled_fail",
+        "capture_integrity_passed": true,
+        "source_provenance_passed": true,
+        "byte_identical_to_retained_report": true,
+        "report_sha256": "8aee13775af793279f2d92abd9dd3741e7992f9fb8f9f771d4b5fdff397eabdc"
+      },
+      {
+        "layer_id": "lakeatlas-polygons",
+        "strict_status": "sampled_fail",
+        "capture_integrity_passed": true,
+        "source_provenance_passed": true,
+        "byte_identical_to_retained_report": true,
+        "report_sha256": "f0b07901c4bb43e28345292599cb4ebb04233b8dc2e17f2ec863f3274adfdb5c"
+      },
+      {
+        "layer_id": "lakeatlas-points",
+        "strict_status": "sampled_fail",
+        "capture_integrity_passed": true,
+        "source_provenance_passed": true,
+        "byte_identical_to_retained_report": true,
+        "report_sha256": "45de05e735eba875b671f9381206e19217dbba9aad286f33b5eb5f4c8df9dd21"
+      },
+      {
+        "layer_id": "free-flowing-rivers",
+        "strict_status": "sampled_fail",
+        "capture_integrity_passed": true,
+        "source_provenance_passed": true,
+        "byte_identical_to_retained_report": true,
+        "report_sha256": "3f4ddd874aae723ea02fb5f9d6bb90a5cef1fe4633930edd7d9350a412178421"
+      },
+      {
+        "layer_id": "grwl-raw",
+        "strict_status": "sampled_fail",
+        "capture_integrity_passed": true,
+        "source_provenance_passed": true,
+        "byte_identical_to_retained_report": true,
+        "report_sha256": "e6fefb572c865af88d93d8f7e9fbdedcbb03f0c1ee7d480c56d45ca273ff2dc3"
+      }
+    ],
+    "private_test_log_sha256": "3fdb913aa7461e9ea201779f214cc6a3f92e95a3ddae337f843998d387f57990",
+    "private_rehearsal_report_sha256": "f78ec5158c57a87702ba2ede7c106115aa3cdf2f3169eff94b8409e71ace678a"
+  },
+  "scope": "Standalone one-commit checkout; historical source bytes resolved from the portable archive; existing capture cache read without rebuilding or reconverting data."
+}

@@ -1,0 +1,80 @@
+{
+  "arrow_batches_written": 2789,
+  "batch_rows_max": 512,
+  "bbox_column": "bbox",
+  "created": "2026-10-31T19:51:16Z",
+  "crs_argument": null,
+  "derived_bbox_values_recomputed_and_compared": true,
+  "estimated_output_bytes": 1292940834,
+  "geometry_column": "wkb_geometry",
+  "geometry_types": {
+    "Polygon": 1427688
+  },
+  "geoparquet_version": "1.1.0",
+  "global_bbox": [
+    -179.9999999999999,
+    -55.86513888888899,
+    179.99999999999903,
+    83.57595062255876
+  ],
+  "input": {
+    "path": "retained/data.parquet",
+    "sha256": "4c7c83b0a91e4cbd1e31583ab89eee9721ba22250272640591f4795d186a6a76",
+    "size_bytes": 945383282
+  },
+  "limitations": "Spatial bbox is derived from unchanged raw WKB coordinates in the source CRS; no reprojection, repair, sort, or geometry rewrite was performed.",
+  "metadata_geometry_batch_rows_max": 128,
+  "minimum_remaining_free_bytes": 10000000000,
+  "minimum_start_free_bytes": 40000000000,
+  "output": {
+    "path": "spatial-r3/hydrolakes.parquet",
+    "sha256": "273f66aa591f575616e731e6f31111ddf8ecfb39c0c05eacf0e903b6ddd6944d",
+    "size_bytes": 1001702072
+  },
+  "peak_rss_bytes": 942473216,
+  "peak_rss_limit_bytes": 1073741824,
+  "row_groups": 2789,
+  "source_columns_exactly_compared": [
+    "Hylak_id",
+    "Lake_name",
+    "Country",
+    "Continent",
+    "Poly_src",
+    "Lake_type",
+    "Grand_id",
+    "Lake_area",
+    "Shore_len",
+    "Shore_dev",
+    "Vol_total",
+    "Vol_res",
+    "Vol_src",
+    "Depth_avg",
+    "Dis_avg",
+    "Res_time",
+    "Elevation",
+    "Slope_100",
+    "Wshd_area",
+    "Pour_long",
+    "Pour_lat",
+    "wkb_geometry"
+  ],
+  "source_rows": 1427688,
+  "source_values_nulls_and_raw_wkb_compared": true,
+  "status": "passed",
+  "validation": {
+    "bbox_values_recomputed_and_compared": 5710752,
+    "geometry_type_counts": {
+      "Polygon": 1427688
+    },
+    "global_bbox": [
+      -179.9999999999999,
+      -55.86513888888899,
+      179.99999999999903,
+      83.57595062255876
+    ],
+    "source_fields_compared": 22,
+    "source_rows": 1427688,
+    "source_values_nulls_wkb_compared": 31409136
+  },
+  "validation_batch_rows_max": 128
+}

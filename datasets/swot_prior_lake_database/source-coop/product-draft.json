@@ -1,0 +1,79 @@
+{
+  "assets": [],
+  "attribution": "CNES / Theia and the SWOT Prior Lake Database producers; scientific PLD version 2.03, Hydroweb.next.",
+  "blockers": [
+    "Canonical publication review stage: metadata_qualified_sample_blocked_by_disk",
+    "Source Cooperative account verification is not recorded",
+    "canonical publication status is candidate, not prepared or published"
+  ],
+  "created": false,
+  "creation_ready": false,
+  "dataset_id": "swot_prior_lake_database",
+  "dataset_title": "SWOT Prior Lake Database v2.03",
+  "display_publication": null,
+  "draft_type": "source_coop_product_draft",
+  "hosted": false,
+  "independent_maintainer_proposal": {
+    "owner": "nthh",
+    "relationship": "new Source Cooperative product proposal; immutable package metadata is unchanged",
+    "status": "confirmed"
+  },
+  "license_note": "The current CNES/Theia producer STAC collection declares ETALAB 2.0. Preserve attribution and source notices with the conversion.",
+  "limitations": [
+    "The selected inventory has 61 v2.03 SQLite tiles totaling 29,990,277,120 provider-declared bytes; v2.02 and Light/Geometries variants are excluded.",
+    "Anonymous metadata and a tiny range read succeeded; a complete tile and its SQLite schema have not been validated.",
+    "Source acquisition remains gated by disk space and a measured streaming/retention plan; no converted release exists."
+  ],
+  "local_readiness": "blocked",
+  "owner": "nthh",
+  "owner_status": "confirmed",
+  "product_id": "swot-prior-lake",
+  "proposed_source_proxy": {
+    "status": "proposed",
+    "uri": "s3://nthh/swot-prior-lake"
+  },
+  "publication_status": "candidate",
+  "ready_for_creation": false,
+  "ready_for_review": true,
+  "related_dataset_links": [],
+  "release": null,
+  "release_files": [],
+  "review_context": {
+    "asset_integrity": null,
+    "local_followup": [],
+    "public_followup": [],
+    "stage": "metadata_qualified_sample_blocked_by_disk",
+    "status_basis": "canonical publication status plus local manifest/snapshot hashes; this tool does not rerun scientific or public-host validation"
+  },
+  "schema_version": 1,
+  "snapshot_binding": {
+    "manifest_path": null,
+    "manifest_sha256": null,
+    "release": null,
+    "snapshot_path": null,
+    "snapshot_sha256": null
+  },
+  "snapshot_collection": null,
+  "source_links": [
+    {
+      "title": "Producer source",
+      "url": "https://hydroweb.next.theia-land.fr/api/catalog/stac/collections/SWOT_PRIOR_LAKE_DATABASE"
+    },
+    {
+      "title": "Producer source",
+      "url": "https://hydroweb.next.theia-land.fr/catalog/details/SWOT_PRIOR_LAKE_DATABASE"
+    }
+  ],
+  "summary": "Planned conversion of the scientific SWOT prior-lake reference database to GeoParquet spatial tables and Parquet auxiliary tables while preserving identifiers and relationships.",
+  "supplements": [],
+  "tags": [
+    "hydrology",
+    "lakes",
+    "swot",
+    "global",
+    "geoparquet",
+    "parquet"
+  ],
+  "temporal_note": "Scientific reference database edition v2.03; not a time series of SWOT satellite measurements.",
+  "title": "SWOT Prior Lake Database — scientific v2.03"
+}

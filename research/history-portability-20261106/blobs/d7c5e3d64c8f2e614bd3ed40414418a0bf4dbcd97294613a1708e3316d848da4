@@ -1,0 +1,111 @@
+schema_version: 1
+id: lakeatlas
+title: HydroATLAS LakeATLAS v1.0 — global hydro-environmental lake attributes
+intake:
+  kind: producer
+  reference_url: https://www.hydrosheds.org/hydroatlas
+  added_on: '2026-10-31'
+  related_family: hydroatlas
+triage:
+  decision: publish_conversion
+  priority: pilot_review
+source:
+  producer: HydroSHEDS / HydroATLAS authors
+  release: LakeATLAS version 1.0
+  version: '1.0'
+  observation_vintage: Varies by contributing attribute; see producer catalog and technical documentation.
+  figshare_article_id: 19312001
+  doi: 10.6084/m9.figshare.19312001.v1
+  paper: Lehner, B., Messager, M.L., Korver, M.C., Linke, S. (2022). Global hydro-environmental lake characteristics at high spatial resolution. Scientific Data 9, 351.
+  paper_doi: 10.1038/s41597-022-01425-z
+  url: https://ndownloader.figshare.com/files/35959544
+  filename: LakeATLAS_Data_v10.gdb.zip
+  size_bytes: 1530962499
+  provider_md5: 952e0724afc96d3a5899f08935d4a094
+  sha256: baa4d760a163350dd6a30c21c82db1e23b150834a8b848885eba6dc9ba1175df
+  source_layers:
+    - name: LakeATLAS_v10_pol
+      geometry: MultiPolygon
+      expected_rows: 1427688
+      source_fields: 307
+      fid_column: OBJECTID
+      output_source_fields: 308
+    - name: LakeATLAS_v10_pnt
+      geometry: Point
+      expected_rows: 1427688
+      source_fields: 305
+      fid_column: OBJECTID
+      output_source_fields: 306
+  crs: EPSG:4326
+  archive_uncompressed_bytes: 3061068949
+  field_catalog:
+    url: https://ndownloader.figshare.com/files/35959535
+    filename: LakeATLAS_Catalog_v10.pdf
+    size_bytes: 54055742
+    provider_md5: dfb3501640ed034360486a8304d00d8b
+    sha256: e736eedbbe32cdeb498348696b9d085b1caddd937a19c7c669501deaffe670e1
+  technical_documentation:
+    url: https://ndownloader.figshare.com/files/35959532
+    filename: HydroATLAS_TechDoc_v10_1.pdf
+    size_bytes: 3656999
+    provider_md5: f37085c99a987752a37d8327c0a96922
+    sha256: 0ad77c88140d8a0b569d79d5cceadf727b558a7e422a36b9c394cc593db2ccab
+  license:
+    id: CC-BY-4.0
+    url: https://creativecommons.org/licenses/by/4.0/
+    evidence: HydroSHEDS product page and Figshare v1 article metadata; the producer states that column-level content is licensed CC-BY-4.0 or ODbL-1.0 as listed per attribute in LakeATLAS_Catalog_v10.pdf.
+review:
+  as_of: '2026-10-31'
+  source_release: LakeATLAS version 1.0 (Figshare article version 1)
+  proposed_scope: Complete global polygon and pour-point layers; both contain 1,427,688 lake records.
+  proposed_outputs:
+    - geoparquet
+  paper_citation: Lehner, B., Messager, M.L., Korver, M.C., Linke, S. (2022). Global hydro-environmental lake characteristics at high spatial resolution. Scientific Data 9, 351.
+  paper_doi: 10.1038/s41597-022-01425-z
+  source_license:
+    id: CC-BY-4.0
+    url: https://creativecommons.org/licenses/by/4.0/
+    evidence: The collective HydroATLAS database is CC-BY-4.0. Individual attribute columns are CC-BY-4.0 or ODbL-1.0 per LakeATLAS_Catalog_v10.pdf; see the bundled field catalog for column-specific notices.
+  spatial:
+    extent: Global; exact per-layer extent is pinned in the source/build manifests.
+    crs: EPSG:4326 (WGS 84 geographic)
+    geometry: Lake polygon footprints and separate pour-point locations.
+  temporal:
+    extent: Static publication; observation years/periods vary by attribute.
+    resolution: Variable by source attribute; consult the producer field catalog.
+  field_units: Retained in the bundled LakeATLAS catalog PDF and schema inventory.
+  nulls: Source nulls are preserved without imputation; full per-field null counts are reported.
+  uncertainty: Source-specific uncertainty and provenance are described in the producer catalog; no harmonized uncertainty field is inferred.
+  multiplicity: Keep every record in each native layer. Polygon and pour-point layers are separate assets and share native Hylak_id values by design.
+  acceptance_criteria:
+    path: validation-plan.md
+    recorded_before_evaluation: true
+build:
+  status: implemented_local
+  format: GeoParquet
+  analytic_only: true
+  entrypoint: build.py
+  environment: uv.lock
+  validation_plan: validation-plan.md
+  batch_size: 1024
+  geometry_batch_size: 128
+  parquet_row_group_size: 4096
+publication:
+  status: candidate
+  release: lakeatlas-v1.0-r1
+  immutable_prefix: null
+  local_artifacts:
+    status: not_built
+    directory: .local/lakeatlas/releases/lakeatlas-v1.0-r1-rowgroup4096
+  source_cooperative:
+    status: deferred_not_created
+    url: null
+  portolan:
+    status: not_submitted
+    url: null
+  validation_evidence: []
+  limitations:
+    - Source fidelity does not establish scientific accuracy of the contributing attributes.
+    - Attribute observation vintage varies; this release is not a single-year observation.
+    - Display products are not included.
+    - Source polygon WKB is decoded using GDAL OpenFileGDB ring organization; a source feature with more than 100 parts emits a warning. No later geometry repair or simplification is applied.

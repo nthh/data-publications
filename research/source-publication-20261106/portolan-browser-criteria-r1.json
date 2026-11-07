@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "frozen_before_viewer_run": true,
+  "purpose": "Exercise the official Portolan Browser against the five-collection aggregate and the six Source Cooperative PMTiles assets. Preflight substitutes only exact, SHA-256-bound GitHub Pages plan files from the local stage. Live mode makes no metadata substitutions.",
+  "browser": {
+    "origin": "https://browser.portolan-sdi.org",
+    "external_catalog_route": "#/external/{catalog_host_path}",
+    "source_repository": "https://github.com/portolan-sdi/portolan-browser",
+    "source_commit": "15af01335da62a60d209911c9bde994981fd29be",
+    "successful_deploy_run": "https://github.com/portolan-sdi/portolan-browser/actions/runs/42209401931",
+    "expected_entry_script": "/assets/index-aJ73QkZk.js",
+    "expected_index_html_sha256": "f584060cd43837a7353cab94ac3afe4840ed61301459cbe23a5cfe086a1a48c4"
+  },
+  "aggregate": {
+    "destination": "github-pages://nthh/data-publications/",
+    "public_base": "https://nthh.github.io/data-publications/",
+    "root_path": "catalog/catalog.json",
+    "required_collection_ids": [
+      "river-plastic-inputs",
+      "hydrolakes",
+      "lakeatlas",
+      "free-flowing-rivers",
+      "grwl-raw"
+    ],
+    "expected_collection_count": 5,
+    "expected_pmtiles_by_collection": {
+      "river-plastic-inputs": 1,
+      "hydrolakes": 1,
+      "lakeatlas": 2,
+      "free-flowing-rivers": 1,
+      "grwl-raw": 1
+    },
+    "expected_pmtiles_count": 6,
+    "page_plan_sha256": "required CLI input; freeze and commit the staged publish-plan.json before running"
+  },
+  "source_objects": {
+    "plan_path": "research/source-publication-20261106/staging-r2/immutable-upload-plan.json",
+    "plan_sha256": "754c02dde3cf258263619599f893558d3348c7fb51c07f8fa700efa1900ac610",
+    "endpoint": "https://data.source.coop",
+    "owner": "nthh",
+    "range_required_for_extensions": [
+      ".parquet",
+      ".pmtiles",
+      ".tif",
+      ".tiff",
+      ".zarr",
+      ".gpkg"
+    ],
+    "maximum_range_bytes": 16777216,
+    "maximum_transferred_bytes_per_collection": 134217728,
+    "maximum_transferred_bytes_full_run": 671088640,
+    "maximum_full_get_bytes_for_planned_metadata_only": 524288,
+    "allowed_small_metadata_extensions": [
+      ".json",
+      ".md",
+      ".txt",
+      ".png",
+      ".svg"
+    ],
+    "checks": [
+      "Source requests must match an exact URL in the pinned immutable upload plan and that dataset's own product prefix.",
+      "Every PMTiles and GeoParquet GET must have one bounded Range header and receive HTTP 206 with a matching Content-Range and exact received body length.",
+      "A PMTiles or GeoParquet full GET, an unbounded/oversized range, a non-206 ranged response, or any off-plan Source request fails the case.",
+      "Small planned metadata GETs may be full responses only under the size ceiling and only when the complete received body matches its plan SHA-256.",
+      "Record actual response CORS headers; if the browser sends OPTIONS, require a successful preflight authorizing the request headers and method.",
+      "Never claim that sampled range bodies independently verify an object's full-file SHA-256; the immutable upload receipt and hosted validator own that claim."
+    ]
+  },
+  "ui": {
+    "wait_for": [
+      ".loading hidden",
+      ".map-container .map visible",
+      ".maplibregl-canvas visible",
+      ".maplibregl-ctrl-zoom-in visible"
+    ],
+    "style_picker": ".map-stylepicker select",
+    "layer_control_button": ".map-layercontrol button.layer-btn",
+    "layer_control_panel": ".layercontrol",
+    "geoparquet_preview": ".parquet-viewer",
+    "screenshots_per_collection": "one screenshot per rendered style, at least one per collection",
+    "manual_visual_review_required": true
+  },
+  "mode_semantics": {
+    "preflight": "Intercept only exact target_url entries in the supplied Pages publish plan. Fulfill those files from the staged catalog after checking their local size and SHA-256. The synthetic response is only for Browser integration; it does not verify GitHub Pages reachability, deployed metadata or real Pages CORS. Source assets remain live and are never substituted.",
+    "live": "Install no route for the Pages origin. Read the deployed root, collection JSON, style JSON and documentation from real GitHub Pages and compare each observed body with the same staged publish-plan entry. Source assets remain live.",
+    "pass_policy": "A run can be automated-successful only when all five collections navigate, render a visible map canvas, and all six expected PMTiles assets produce verified bounded 206 responses. Save one screenshot per collection and mark the report awaiting manual visual review; do not self-assert that screenshots look correct. A selected-dataset run or a plan missing any required collection is partial/not-ready and cannot pass the aggregate gate."
+  },
+  "not_in_scope": [
+    "No Source or GitHub mutations, uploads, repository visibility change, Pages deployment, or registry submission.",
+    "No fixed-row analytical query or feature-attribute acceptance; those checks are separate hosted-query/custom-viewer gates.",
+    "No Browser Vue internals or test-only hooks. Use visible DOM, map canvas, layer controls, table UI when present, and screenshots."
+  ]
+}

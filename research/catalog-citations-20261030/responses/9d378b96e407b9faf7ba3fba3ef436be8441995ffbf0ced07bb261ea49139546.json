@@ -1,0 +1,39 @@
+{
+  "request_url": "https://api.openalex.org/works?search=Updated+Calibration+Description%3A+Spatial+Delapsing+in+eeMETRIC&corpus=all&per_page=5&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date",
+  "retrieved_at": "2026-10-30T22:08:02.870053+00:00",
+  "response_path": "responses/9d378b96e407b9faf7ba3fba3ef436be8441995ffbf0ced07bb261ea49139546.json",
+  "status": 200,
+  "response_sha256": "d2d35d79e2ab7b72460da423a2e4564fbad167b81a1f49095a9d8935aadf1cd6",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 0,
+      "db_response_time_ms": 41,
+      "page": 1,
+      "per_page": 5,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where full text has (Updated Calibration Description: Spatial Delapsing in eeMETRIC)",
+        "x_new_oql": "get works (all corpora) where full text has (Updated Calibration Description: Spatial Delapsing in eeMETRIC)",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "Updated Calibration Description: Spatial Delapsing in eeMETRIC",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:Updated Calibration Description: Spatial Delapsing in eeMETRIC&corpus=all&per_page=5",
+        "order": "best matches first",
+        "order_default": true
+      },
+      "cost_usd": 0.001
+    },
+    "results": [],
+    "group_by": []
+  },
+  "response_normalized_sha256": "7f970b5dd1f6d6a4c6713a4bacabf612563a476a97f3bd208d8209f4dd7703f1"
+}

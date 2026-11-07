@@ -1,0 +1,1280 @@
+{
+  "request_url": "https://api.openalex.org/works?filter=doi%3A10.5067%2Fgpm%2Fimerg%2F3b-month%2F06%7C10.5067%2Fgpm%2Fimerg%2F3b-month%2F07%7C10.5067%2Fhls%2Fhlsl30.002%7C10.5067%2Fis-40e%2Ftempo%2Fcldo4_l3.004%7C10.5067%2Fis-40e%2Ftempo%2Fhcho_l3.003%7C10.5067%2Fis-40e%2Ftempo%2Fhcho_l3.004%7C10.5067%2Fis-40e%2Ftempo%2Fno2_l3.003%7C10.5067%2Fis-40e%2Ftempo%2Fno2_l3.004%7C10.5067%2Fis-40e%2Ftempo%2Fo3prof_l3.004%7C10.5067%2Fis-40e%2Ftempo%2Fo3tot_l3.003%7C10.5067%2Fis-40e%2Ftempo%2Fo3tot_l3.004%7C10.5067%2Fj8dmnxtbz22j%7C10.5067%2Flwj6tf5szrg3%7C10.5067%2Fmeasures%2Fgfcc%2Fgfcc30tc.003%7C10.5067%2Fmeasures%2Fgfsad%2Fgfsad30afce.001%7C10.5067%2Fmeasures%2Fgfsad%2Fgfsad30aunzcnmoce.001%7C10.5067%2Fmeasures%2Fgfsad%2Fgfsad30eucearumece.001%7C10.5067%2Fmeasures%2Fgfsad%2Fgfsad30nace.001%7C10.5067%2Fmeasures%2Fgfsad%2Fgfsad30saafgirce.001%7C10.5067%2Fmeasures%2Fgfsad%2Fgfsad30sace.001%7C10.5067%2Fmeasures%2Fgfsad%2Fgfsad30seace.001%7C10.5067%2Fmeasures%2Fgfsad%2Fgfsad30val.001%7C10.5067%2Fmeasures%2Fglance%2Fglance30.001%7C10.5067%2Fmeasures%2Fnasadem%2Fnasadem_hgt.001%7C10.5067%2Fmodis%2Fmcd12c1.061%7C10.5067%2Fmodis%2Fmcd12q1.006%7C10.5067%2Fmodis%2Fmcd12q1.061%7C10.5067%2Fmodis%2Fmcd12q2.006%7C10.5067%2Fmodis%2Fmcd12q2.061%7C10.5067%2Fmodis%2Fmcd15a3h.006%7C10.5067%2Fmodis%2Fmcd15a3h.061%7C10.5067%2Fmodis%2Fmcd18a1.061%7C10.5067%2Fmodis%2Fmcd18a1.062%7C10.5067%2Fmodis%2Fmcd18c2.061%7C10.5067%2Fmodis%2Fmcd18c2.062%7C10.5067%2Fmodis%2Fmcd19a1.061%7C10.5067%2Fmodis%2Fmcd19a2.006%7C10.5067%2Fmodis%2Fmcd19a2.061%7C10.5067%2Fmodis%2Fmcd43a1.006%7C10.5067%2Fmodis%2Fmcd43a1.061&corpus=all&per_page=100&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date%2Ccited_by_count%2Ccounts_by_year",
+  "retrieved_at": "2026-10-30T22:27:40.679333+00:00",
+  "response_path": "responses/e52f4a59558b4f4897fb5c8947fd617882d4ec56d3ca2a11bde992181381973e.json",
+  "status": 200,
+  "response_sha256": "22c24254855588ad2ec3a22dd9d7a1aae40697322410bb3f672488c0ae19ad11",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 40,
+      "db_response_time_ms": 18,
+      "page": 1,
+      "per_page": 100,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where DOI is (\n    10.5067/gpm/imerg/3b-month/06 or 10.5067/gpm/imerg/3b-month/07\n    or 10.5067/hls/hlsl30.002 or 10.5067/is-40e/tempo/cldo4_l3.004\n    or 10.5067/is-40e/tempo/hcho_l3.003 or 10.5067/is-40e/tempo/hcho_l3.004\n    or 10.5067/is-40e/tempo/no2_l3.003 or 10.5067/is-40e/tempo/no2_l3.004\n    or 10.5067/is-40e/tempo/o3prof_l3.004 or 10.5067/is-40e/tempo/o3tot_l3.003\n    or 10.5067/is-40e/tempo/o3tot_l3.004 or 10.5067/j8dmnxtbz22j\n    or 10.5067/lwj6tf5szrg3 or 10.5067/measures/gfcc/gfcc30tc.003\n    or 10.5067/measures/gfsad/gfsad30afce.001\n    or 10.5067/measures/gfsad/gfsad30aunzcnmoce.001\n    or 10.5067/measures/gfsad/gfsad30eucearumece.001\n    or 10.5067/measures/gfsad/gfsad30nace.001\n    or 10.5067/measures/gfsad/gfsad30saafgirce.001\n    or 10.5067/measures/gfsad/gfsad30sace.001\n    or 10.5067/measures/gfsad/gfsad30seace.001\n    or 10.5067/measures/gfsad/gfsad30val.001\n    or 10.5067/measures/glance/glance30.001\n    or 10.5067/measures/nasadem/nasadem_hgt.001 or 10.5067/modis/mcd12c1.061\n    or 10.5067/modis/mcd12q1.006 or 10.5067/modis/mcd12q1.061\n    or 10.5067/modis/mcd12q2.006 or 10.5067/modis/mcd12q2.061\n    or 10.5067/modis/mcd15a3h.006 or 10.5067/modis/mcd15a3h.061\n    or 10.5067/modis/mcd18a1.061 or 10.5067/modis/mcd18a1.062\n    or 10.5067/modis/mcd18c2.061 or 10.5067/modis/mcd18c2.062\n    or 10.5067/modis/mcd19a1.061 or 10.5067/modis/mcd19a2.006\n    or 10.5067/modis/mcd19a2.061 or 10.5067/modis/mcd43a1.006\n    or 10.5067/modis/mcd43a1.061\n  )",
+        "x_new_oql": "get works (all corpora) where DOI is (\n    10.5067/gpm/imerg/3b-month/06 or 10.5067/gpm/imerg/3b-month/07\n    or 10.5067/hls/hlsl30.002 or 10.5067/is-40e/tempo/cldo4_l3.004\n    or 10.5067/is-40e/tempo/hcho_l3.003 or 10.5067/is-40e/tempo/hcho_l3.004\n    or 10.5067/is-40e/tempo/no2_l3.003 or 10.5067/is-40e/tempo/no2_l3.004\n    or 10.5067/is-40e/tempo/o3prof_l3.004 or 10.5067/is-40e/tempo/o3tot_l3.003\n    or 10.5067/is-40e/tempo/o3tot_l3.004 or 10.5067/j8dmnxtbz22j\n    or 10.5067/lwj6tf5szrg3 or 10.5067/measures/gfcc/gfcc30tc.003\n    or 10.5067/measures/gfsad/gfsad30afce.001\n    or 10.5067/measures/gfsad/gfsad30aunzcnmoce.001\n    or 10.5067/measures/gfsad/gfsad30eucearumece.001\n    or 10.5067/measures/gfsad/gfsad30nace.001\n    or 10.5067/measures/gfsad/gfsad30saafgirce.001\n    or 10.5067/measures/gfsad/gfsad30sace.001\n    or 10.5067/measures/gfsad/gfsad30seace.001\n    or 10.5067/measures/gfsad/gfsad30val.001\n    or 10.5067/measures/glance/glance30.001\n    or 10.5067/measures/nasadem/nasadem_hgt.001 or 10.5067/modis/mcd12c1.061\n    or 10.5067/modis/mcd12q1.006 or 10.5067/modis/mcd12q1.061\n    or 10.5067/modis/mcd12q2.006 or 10.5067/modis/mcd12q2.061\n    or 10.5067/modis/mcd15a3h.006 or 10.5067/modis/mcd15a3h.061\n    or 10.5067/modis/mcd18a1.061 or 10.5067/modis/mcd18a1.062\n    or 10.5067/modis/mcd18c2.061 or 10.5067/modis/mcd18c2.062\n    or 10.5067/modis/mcd19a1.061 or 10.5067/modis/mcd19a2.006\n    or 10.5067/modis/mcd19a2.061 or 10.5067/modis/mcd43a1.006\n    or 10.5067/modis/mcd43a1.061\n  )",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "join": "or",
+              "filters": [
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/gpm/imerg/3b-month/06"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/gpm/imerg/3b-month/07"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/hls/hlsl30.002"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/is-40e/tempo/cldo4_l3.004"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/is-40e/tempo/hcho_l3.003"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/is-40e/tempo/hcho_l3.004"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/is-40e/tempo/no2_l3.003"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/is-40e/tempo/no2_l3.004"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/is-40e/tempo/o3prof_l3.004"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/is-40e/tempo/o3tot_l3.003"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/is-40e/tempo/o3tot_l3.004"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/j8dmnxtbz22j"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/lwj6tf5szrg3"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/measures/gfcc/gfcc30tc.003"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/measures/gfsad/gfsad30afce.001"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/measures/gfsad/gfsad30aunzcnmoce.001"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/measures/gfsad/gfsad30eucearumece.001"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/measures/gfsad/gfsad30nace.001"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/measures/gfsad/gfsad30saafgirce.001"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/measures/gfsad/gfsad30sace.001"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/measures/gfsad/gfsad30seace.001"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/measures/gfsad/gfsad30val.001"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/measures/glance/glance30.001"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/measures/nasadem/nasadem_hgt.001"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/mcd12c1.061"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/mcd12q1.006"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/mcd12q1.061"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/mcd12q2.006"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/mcd12q2.061"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/mcd15a3h.006"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/mcd15a3h.061"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/mcd18a1.061"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/mcd18a1.062"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/mcd18c2.061"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/mcd18c2.062"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/mcd19a1.061"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/mcd19a2.006"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/mcd19a2.061"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/mcd43a1.006"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/mcd43a1.061"
+                }
+              ]
+            }
+          ]
+        },
+        "url": "/works?filter=doi:10.5067%2Fgpm%2Fimerg%2F3b-month%2F06|10.5067%2Fgpm%2Fimerg%2F3b-month%2F07|10.5067%2Fhls%2Fhlsl30.002|10.5067%2Fis-40e%2Ftempo%2Fcldo4_l3.004|10.5067%2Fis-40e%2Ftempo%2Fhcho_l3.003|10.5067%2Fis-40e%2Ftempo%2Fhcho_l3.004|10.5067%2Fis-40e%2Ftempo%2Fno2_l3.003|10.5067%2Fis-40e%2Ftempo%2Fno2_l3.004|10.5067%2Fis-40e%2Ftempo%2Fo3prof_l3.004|10.5067%2Fis-40e%2Ftempo%2Fo3tot_l3.003|10.5067%2Fis-40e%2Ftempo%2Fo3tot_l3.004|10.5067%2Fj8dmnxtbz22j|10.5067%2Flwj6tf5szrg3|10.5067%2Fmeasures%2Fgfcc%2Fgfcc30tc.003|10.5067%2Fmeasures%2Fgfsad%2Fgfsad30afce.001|10.5067%2Fmeasures%2Fgfsad%2Fgfsad30aunzcnmoce.001|10.5067%2Fmeasures%2Fgfsad%2Fgfsad30eucearumece.001|10.5067%2Fmeasures%2Fgfsad%2Fgfsad30nace.001|10.5067%2Fmeasures%2Fgfsad%2Fgfsad30saafgirce.001|10.5067%2Fmeasures%2Fgfsad%2Fgfsad30sace.001|10.5067%2Fmeasures%2Fgfsad%2Fgfsad30seace.001|10.5067%2Fmeasures%2Fgfsad%2Fgfsad30val.001|10.5067%2Fmeasures%2Fglance%2Fglance30.001|10.5067%2Fmeasures%2Fnasadem%2Fnasadem_hgt.001|10.5067%2Fmodis%2Fmcd12c1.061|10.5067%2Fmodis%2Fmcd12q1.006|10.5067%2Fmodis%2Fmcd12q1.061|10.5067%2Fmodis%2Fmcd12q2.006|10.5067%2Fmodis%2Fmcd12q2.061|10.5067%2Fmodis%2Fmcd15a3h.006|10.5067%2Fmodis%2Fmcd15a3h.061|10.5067%2Fmodis%2Fmcd18a1.061|10.5067%2Fmodis%2Fmcd18a1.062|10.5067%2Fmodis%2Fmcd18c2.061|10.5067%2Fmodis%2Fmcd18c2.062|10.5067%2Fmodis%2Fmcd19a1.061|10.5067%2Fmodis%2Fmcd19a2.006|10.5067%2Fmodis%2Fmcd19a2.061|10.5067%2Fmodis%2Fmcd43a1.006|10.5067%2Fmodis%2Fmcd43a1.061&corpus=all&per_page=100",
+        "order": "most cited (age-adjusted) first",
+        "order_default": true
+      },
+      "cost_usd": 0.0001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W3122249549",
+        "doi": "https://doi.org/10.5067/modis/mcd43a1.006",
+        "title": "MCD43A1 MODIS/Terra+Aqua BRDF/Albedo Model Parameters Daily L3 Global - 500m V006",
+        "type": "conference-paper",
+        "publication_year": 2015,
+        "publication_date": "2015-01-01",
+        "cited_by_count": 62,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 18
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 14
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 3
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W2903086087",
+        "doi": "https://doi.org/10.5067/measures/gfsad/gfsad30seace.001",
+        "title": "NASA Making Earth System Data Records for Use in Research Environments (MEaSUREs) Global Food Security-support Analysis Data (GFSAD) Cropland Extent 2015 Southeast Asia 30 m V001",
+        "type": "book",
+        "publication_year": 2017,
+        "publication_date": "2017-01-01",
+        "cited_by_count": 22,
+        "counts_by_year": [
+          {
+            "year": 2022,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6948354480",
+        "doi": "https://doi.org/10.5067/measures/gfsad/gfsad30afce.001",
+        "title": "NASA Making Earth System Data Records for Use in Research Environments (MEaSUREs) Global Food Security-support Analysis Data (GFSAD) Cropland Extent 2015 Africa 30 m V001",
+        "type": "book",
+        "publication_year": 2017,
+        "publication_date": "2017-01-01",
+        "cited_by_count": 14,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W2903435086",
+        "doi": "https://doi.org/10.5067/measures/gfsad/gfsad30aunzcnmoce.001",
+        "title": "NASA Making Earth System Data Records for Use in Research Environments (MEaSUREs) Global Food Security-support Analysis Data (GFSAD) Cropland Extent 2015 Australia, New Zealand, China, Mongolia 30 m V001",
+        "type": "book",
+        "publication_year": 2017,
+        "publication_date": "2017-01-01",
+        "cited_by_count": 10,
+        "counts_by_year": [
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W2910759249",
+        "doi": "https://doi.org/10.5067/measures/gfsad/gfsad30saafgirce.001",
+        "title": "NASA Making Earth System Data Records for Use in Research Environments (MEaSUREs) Global Food Security-support Analysis Data (GFSAD) Cropland Extent 2015 South Asia, Afghanistan, Iran 30 m V001",
+        "type": "book",
+        "publication_year": 2017,
+        "publication_date": "2017-01-01",
+        "cited_by_count": 8,
+        "counts_by_year": [
+          {
+            "year": 2024,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6892345605",
+        "doi": "https://doi.org/10.5067/modis/mcd12q1.006",
+        "title": "MCD12Q1 MODIS/Terra+Aqua Land Cover Type Yearly L3 Global 500m SIN Grid V006",
+        "type": "dataset",
+        "publication_year": 2019,
+        "publication_date": "2019-01-01",
+        "cited_by_count": 518,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 31
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 67
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 97
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 94
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 95
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 74
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 39
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 16
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 3
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6967342698",
+        "doi": "https://doi.org/10.5067/modis/mcd12q1.061",
+        "title": "MODIS/Terra+Aqua Land Cover Type Yearly L3 Global 500m SIN Grid V061",
+        "type": "dataset",
+        "publication_year": 2022,
+        "publication_date": "2022-01-01",
+        "cited_by_count": 227,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 57
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 87
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 62
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 20
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6911195082",
+        "doi": "https://doi.org/10.5067/measures/nasadem/nasadem_hgt.001",
+        "title": "NASADEM Merged DEM Global 1 arc second V001",
+        "type": "dataset",
+        "publication_year": 2020,
+        "publication_date": "2020-01-01",
+        "cited_by_count": 150,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 21
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 33
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 35
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 25
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 26
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6929492162",
+        "doi": "https://doi.org/10.5067/modis/mcd15a3h.006",
+        "title": "MCD15A3H MODIS/Terra+Aqua Leaf Area Index/FPAR 4-day L4 Global 500m SIN Grid V006",
+        "type": "dataset",
+        "publication_year": 2015,
+        "publication_date": "2015-01-01",
+        "cited_by_count": 108,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 14
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 14
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 12
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 20
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 16
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6948489328",
+        "doi": "https://doi.org/10.5067/modis/mcd12c1.061",
+        "title": "MODIS/Terra+Aqua Land Cover Type Yearly L3 Global 0.05Deg CMG V061",
+        "type": "dataset",
+        "publication_year": 2022,
+        "publication_date": "2022-01-01",
+        "cited_by_count": 103,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 36
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 40
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 21
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 6
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6967809855",
+        "doi": "https://doi.org/10.5067/modis/mcd19a2.006",
+        "title": "MCD19A2 MODIS/Terra+Aqua Land Aerosol Optical Depth Daily L2G Global 1km SIN Grid V006",
+        "type": "dataset",
+        "publication_year": 2018,
+        "publication_date": "2018-01-01",
+        "cited_by_count": 79,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 13
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 17
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 14
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6892113314",
+        "doi": "https://doi.org/10.5067/modis/mcd12q2.006",
+        "title": "MCD12Q2 MODIS/Terra+Aqua Land Cover Dynamics Yearly L3 Global 500m SIN Grid V006",
+        "type": "dataset",
+        "publication_year": 2019,
+        "publication_date": "2019-01-01",
+        "cited_by_count": 76,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 14
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 18
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 16
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6892328767",
+        "doi": "https://doi.org/10.5067/modis/mcd15a3h.061",
+        "title": "MODIS/Terra+Aqua Leaf Area Index/FPAR 4-Day L4 Global 500m SIN Grid V061",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 61,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 16
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 20
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 16
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6948427573",
+        "doi": "https://doi.org/10.5067/gpm/imerg/3b-month/06",
+        "title": "GPM IMERG Final Precipitation L3 1 month 0.1 degree x 0.1 degree V06",
+        "type": "dataset",
+        "publication_year": 2019,
+        "publication_date": "2019-04-04",
+        "cited_by_count": 61,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 13
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 13
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 9
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6929767459",
+        "doi": "https://doi.org/10.5067/modis/mcd19a2.061",
+        "title": "MODIS/Terra+Aqua Land Aerosol Optical Depth Daily L2G Global 1km SIN Grid V061",
+        "type": "dataset",
+        "publication_year": 2022,
+        "publication_date": "2022-01-01",
+        "cited_by_count": 35,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 12
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 3
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6929957795",
+        "doi": "https://doi.org/10.5067/modis/mcd12q2.061",
+        "title": "MODIS/Terra+Aqua Land Cover Dynamics Yearly L3 Global 500m SIN Grid V061",
+        "type": "dataset",
+        "publication_year": 2022,
+        "publication_date": "2022-01-01",
+        "cited_by_count": 35,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 15
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6892128339",
+        "doi": "https://doi.org/10.5067/lwj6tf5szrg3",
+        "title": "SMAP L4 Global 3-hourly 9 km EASE-Grid Surface and Root Zone Soil Moisture Analysis Update, Version 7",
+        "type": "dataset",
+        "publication_year": 2022,
+        "publication_date": "2022-01-01",
+        "cited_by_count": 30,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6967474874",
+        "doi": "https://doi.org/10.5067/hls/hlsl30.002",
+        "title": "HLS Operational Land Imager Surface Reflectance and TOA Brightness Daily Global 30m v2.0",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 26,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 12
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6929266197",
+        "doi": "https://doi.org/10.5067/gpm/imerg/3b-month/07",
+        "title": "GPM IMERG Final Precipitation L3 1 month 0.1 degree x 0.1 degree V07",
+        "type": "dataset",
+        "publication_year": 2023,
+        "publication_date": "2023-07-13",
+        "cited_by_count": 16,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 3
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6911232087",
+        "doi": "https://doi.org/10.5067/measures/gfcc/gfcc30tc.003",
+        "title": "Global Forest Cover Change (GFCC) Tree Cover Multi-Year Global 30 m V003",
+        "type": "dataset",
+        "publication_year": 2016,
+        "publication_date": "2016-01-01",
+        "cited_by_count": 14,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 3
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6929625189",
+        "doi": "https://doi.org/10.5067/modis/mcd43a1.061",
+        "title": "MODIS/Terra+Aqua BRDF/Albedo Model Parameters Daily L3 Global - 500m V061",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 11,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 3
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6892220228",
+        "doi": "https://doi.org/10.5067/measures/gfsad/gfsad30val.001",
+        "title": "NASA Making Earth System Data Records for Use in Research Environments (MEaSUREs) Global Food Security-support Analysis Data (GFSAD) Cropland Extent 2015 Validation Global 30 m V001",
+        "type": "dataset",
+        "publication_year": 2017,
+        "publication_date": "2017-01-01",
+        "cited_by_count": 8,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6929816030",
+        "doi": "https://doi.org/10.5067/measures/gfsad/gfsad30nace.001",
+        "title": "NASA Making Earth System Data Records for Use in Research Environments (MEaSUREs) Global Food Security-support Analysis Data (GFSAD) Cropland Extent 2010 North America 30 m V001",
+        "type": "dataset",
+        "publication_year": 2017,
+        "publication_date": "2017-01-01",
+        "cited_by_count": 8,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6967324104",
+        "doi": "https://doi.org/10.5067/measures/gfsad/gfsad30sace.001",
+        "title": "NASA Making Earth System Data Records for Use in Research Environments (MEaSUREs) Global Food Security-support Analysis Data (GFSAD) Cropland Extent 2015 South America 30 m V001",
+        "type": "dataset",
+        "publication_year": 2017,
+        "publication_date": "2017-01-01",
+        "cited_by_count": 7,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6910910126",
+        "doi": "https://doi.org/10.5067/measures/glance/glance30.001",
+        "title": "Global Land Cover Mapping and Estimation Yearly 30 m V001",
+        "type": "dataset",
+        "publication_year": 2022,
+        "publication_date": "2022-01-01",
+        "cited_by_count": 6,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6929561982",
+        "doi": "https://doi.org/10.5067/measures/gfsad/gfsad30eucearumece.001",
+        "title": "NASA Making Earth System Data Records for Use in Research Environments (MEaSUREs) Global Food Security-support Analysis Data (GFSAD) Cropland Extent 2015 Europe, Central Asia, Russia, Middle East 30 m V001",
+        "type": "dataset",
+        "publication_year": 2017,
+        "publication_date": "2017-01-01",
+        "cited_by_count": 6,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6929633158",
+        "doi": "https://doi.org/10.5067/modis/mcd18c2.061",
+        "title": "MODIS/Terra+Aqua Photosynthetically Active Radiation Daily/3-Hour L3 Global 0.05Deg CMG V061",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 5,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6966981365",
+        "doi": "https://doi.org/10.5067/modis/mcd18a1.061",
+        "title": "MODIS/Terra+Aqua Surface Radiation Daily/3-Hour L3 Global 1km SIN Grid V061",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 4,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6892246548",
+        "doi": "https://doi.org/10.5067/modis/mcd19a1.061",
+        "title": "MODIS/Terra+Aqua Land Surface BRF Daily L2G Global 500m and 1km SIN Grid V061",
+        "type": "dataset",
+        "publication_year": 2022,
+        "publication_date": "2022-01-01",
+        "cited_by_count": 2,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6929657219",
+        "doi": "https://doi.org/10.5067/modis/mcd18a1.062",
+        "title": "MODIS/Terra+Aqua Surface Radiation Daily/3-Hour L3 Global 1km SIN Grid V062",
+        "type": "dataset",
+        "publication_year": 2024,
+        "publication_date": "2024-01-01",
+        "cited_by_count": 2,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6948158598",
+        "doi": "https://doi.org/10.5067/modis/mcd18c2.062",
+        "title": "MODIS/Terra+Aqua Photosynthetically Active Radiation Daily/3-Hour L3 Global 0.05Deg CMG V062",
+        "type": "dataset",
+        "publication_year": 2024,
+        "publication_date": "2024-01-01",
+        "cited_by_count": 2,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6911000455",
+        "doi": "https://doi.org/10.5067/is-40e/tempo/no2_l3.003",
+        "title": "TEMPO gridded NO2 tropospheric and stratospheric columns V03 (PROVISIONAL)",
+        "type": "dataset",
+        "publication_year": 2026,
+        "publication_date": "2026-01-01",
+        "cited_by_count": 1,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6892299772",
+        "doi": "https://doi.org/10.5067/is-40e/tempo/o3tot_l3.003",
+        "title": "TEMPO gridded ozone total column V03 (PROVISIONAL)",
+        "type": "dataset",
+        "publication_year": 2026,
+        "publication_date": "2026-01-01",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W6929831291",
+        "doi": "https://doi.org/10.5067/is-40e/tempo/hcho_l3.003",
+        "title": "TEMPO gridded formaldehyde total column V03 (PROVISIONAL)",
+        "type": "dataset",
+        "publication_year": 2026,
+        "publication_date": "2026-01-01",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W7081931262",
+        "doi": "https://doi.org/10.5067/is-40e/tempo/o3tot_l3.004",
+        "title": "TEMPO gridded ozone total column V04 (PROVISIONAL)?????",
+        "type": "dataset",
+        "publication_year": 2026,
+        "publication_date": "2026-01-01",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W7081968163",
+        "doi": "https://doi.org/10.5067/is-40e/tempo/no2_l3.004",
+        "title": "TEMPO gridded NO2 tropospheric and stratospheric columns V04 (PROVISIONAL)",
+        "type": "dataset",
+        "publication_year": 2026,
+        "publication_date": "2026-01-01",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W7081988273",
+        "doi": "https://doi.org/10.5067/is-40e/tempo/hcho_l3.004",
+        "title": "TEMPO gridded formaldehyde total column V04 (PROVISIONAL)",
+        "type": "dataset",
+        "publication_year": 2026,
+        "publication_date": "2026-01-01",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W7082153672",
+        "doi": "https://doi.org/10.5067/is-40e/tempo/cldo4_l3.004",
+        "title": "TEMPO gridded cloud fraction and pressure (O2-O2 dimer) Version V04 (PROVISIONAL)",
+        "type": "dataset",
+        "publication_year": 2026,
+        "publication_date": "2026-01-01",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W7082285519",
+        "doi": "https://doi.org/10.5067/is-40e/tempo/o3prof_l3.004",
+        "title": "TEMPO gridded ozone profile V04 (BETA)",
+        "type": "dataset",
+        "publication_year": 2026,
+        "publication_date": "2026-01-01",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W7163161488",
+        "doi": "https://doi.org/10.5067/j8dmnxtbz22j",
+        "title": "ICESat-2 Derived Canopy Height Model, Version 1",
+        "type": "dataset",
+        "publication_year": 2025,
+        "publication_date": "2025-01-01",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "d04ba76d6c74df3514a4302d982e500650efc9df3154a7e87fca071dc13fb870"
+}

@@ -1,0 +1,3800 @@
+[
+  {
+    "rank": 1,
+    "label": "ERA5",
+    "selected_scope": "Broad ERA5 archive scale, rather than a single variable-year. Exact compressed download bytes depend on which fields, levels, grid, time span and distribution are selected.",
+    "native_formats": [
+      "GRIB / GRIB2",
+      "NetCDF4 download option",
+      "Zarr in ARCO distributions"
+    ],
+    "download_size": {
+      "display": "Approximately 5 PB (broad publisher archive-scale estimate; compressed transfer total unverified)",
+      "status": "publisher_stated",
+      "bytes": null,
+      "scope": "Total ERA5 archive approximation in Google Research ARCO-ERA5 introduction; not a measurement of any single Zarr store or of four GEE entries.",
+      "basis": "Producer-maintainer README states total ERA5 is about 5 petabytes. Compression/logical-size basis and vintage of that estimate are not specified. Do not use it as an exact transfer quote."
+    },
+    "alternative_sizes": [
+      {
+        "display": "About 5 PB",
+        "status": "publisher_stated",
+        "scope": "Broad original ERA5 archive, approximate scale statement in Google Research README; not a measurement of the ARCO mirror.",
+        "basis": "The introductory README gives about 5 PB for total ERA5. It separately lists sizes for different ARCO representations; these must not be conflated."
+      },
+      {
+        "display": "36.55 GB raw array payload (calculated uncompressed)",
+        "status": "calculated_uncompressed",
+        "bytes": 36548505600,
+        "scope": "One regular 0.25° global single-level variable, 8,784 hourly records for 2024.",
+        "basis": "1,440 longitude × 721 latitude × 8,784 hours × 4 bytes/value = 36,548,505,600 bytes. Dense float32 payload only; not transfer/compressed bytes; excludes metadata, packing and coordinates. Native ERA5 grid differs (reduced Gaussian), so exact request output bytes depend on selected request representation."
+      }
+    ],
+    "desired_formats": [
+      "Zarr"
+    ],
+    "rationale": "Multidimensional hourly series suit chunked Zarr. Reference the maintained ARCO Zarr mirror when product/periods match; otherwise publish versioned Zarr preserving grid, units and metadata.",
+    "existing_cloud_native": "Google Research ARCO-ERA5 provides public Zarr distributions. Prefer an appropriate existing store/reference; source store revisions are not assumed to identify a particular Zarr specification version.",
+    "caveats": [
+      "The full-archive approximation does not determine actual transfer bytes for a selected GEE product.",
+      "The separately calculated 36.55 GB one-variable 2024 float32 array is uncompressed logical payload only."
+    ],
+    "sources": [
+      {
+        "url": "https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=download",
+        "supports": "Single-level data request; GRIB and experimental NetCDF4 formats.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://cds.climate.copernicus.eu/datasets/reanalysis-era5-complete?tab=overview",
+        "supports": "ERA5 native coverage, temporal scope, native grid and formats.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://github.com/google-research/arco-era5/blob/main/README.md?plain=1",
+        "supports": "ARCO-ERA5 Zarr v3 mirror and approximate 5 PB publisher statement.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_HOURLY",
+        "supports": "GEE hourly collection identity and representation.",
+        "accessed": "2026-10-30"
+      }
+    ],
+    "parent_review": [
+      "Present whole-archive scale separately from a hypothetical one-variable raw array."
+    ],
+    "work_id": "https://openalex.org/W3025949386",
+    "citations": 31882,
+    "catalogs": [
+      "official"
+    ],
+    "catalog_entries": [
+      {
+        "id": "official:ECMWF/ERA5/DAILY",
+        "catalog": "official",
+        "catalog_id": "ECMWF/ERA5/DAILY",
+        "title": "ERA5 Daily Aggregates - Latest Climate Reanalysis Produced by ECMWF / Copernicus Climate Change Service",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_DAILY",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": false,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:ECMWF/ERA5/HOURLY",
+        "catalog": "official",
+        "catalog_id": "ECMWF/ERA5/HOURLY",
+        "title": "ERA5 Hourly - ECMWF Climate Reanalysis",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_HOURLY",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": false,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:ECMWF/ERA5/HOURLY_PRESSURE_LEVELS",
+        "catalog": "official",
+        "catalog_id": "ECMWF/ERA5/HOURLY_PRESSURE_LEVELS",
+        "title": "ERA5 Hourly Pressure Levels - ECMWF Climate Reanalysis",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_HOURLY_PRESSURE_LEVELS",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": false,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:ECMWF/ERA5/MONTHLY",
+        "catalog": "official",
+        "catalog_id": "ECMWF/ERA5/MONTHLY",
+        "title": "ERA5 Monthly Aggregates - Latest Climate Reanalysis Produced by ECMWF / Copernicus Climate Change Service",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_MONTHLY",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": false,
+        "citation_scope": "base_dataset_family"
+      }
+    ],
+    "catalog_membership": "Official",
+    "presentation": {
+      "rank": 1,
+      "name": "ERA5",
+      "size": "≈5 PB, publisher archive-scale figure",
+      "scope": "Whole ERA5; selected transfer bytes vary",
+      "source": "GRIB / NetCDF; Zarr mirrors",
+      "output": "Zarr; reference existing store"
+    }
+  },
+  {
+    "rank": 2,
+    "label": "NCEP/NCAR Reanalysis",
+    "selected_scope": "NOAA PSL NCEP/NCAR Reanalysis 1 surface air temperature at sigma 0.995, full global daily-averaged calendar-year file 2024 (air.sig995.2024.nc); a complete annual source file corresponding to the GEE surface-temperature family, not a full NCEP archive total.",
+    "native_formats": [
+      "NetCDF4 (NOAA PSL public distribution); original archive GRIB"
+    ],
+    "download_size": {
+      "display": "7,004,162 bytes (NOAA HTTP Content-Length)",
+      "status": "measured",
+      "bytes": 7004162,
+      "scope": "One complete global NetCDF annual air.sig995 daily-average file for 2024.",
+      "basis": "Metadata-only HTTP HEAD to NOAA PSL THREDDS fileServer returned Content-Length: 7,004,162 for the exact annual file URL; THREDDS catalog metadata lists the same exact dataSize. No file body was read."
+    },
+    "alternative_sizes": [
+      {
+        "display": "0.505 MB raw array payload (calculated uncompressed)",
+        "status": "calculated_uncompressed",
+        "scope": "12 monthly SLP grids at 144×73 cells, 4-byte values.",
+        "basis": "144 × 73 × 12 × 4 = 504,576 bytes (0.505 decimal MB). Dense payload only, excludes NetCDF metadata/compression. NOAA documents this 2.5° grid; actual files vary with compression."
+      }
+    ],
+    "desired_formats": [
+      "Zarr"
+    ],
+    "rationale": "Gridded reanalysis time series suit Zarr while preserving monthly coordinates, CF metadata, source grid and missing values.",
+    "existing_cloud_native": "Not checked for a maintained cloud-native mirror; NOAA PSL provides public NetCDF access.",
+    "caveats": [
+      "This scope is one full global annual surface-temperature file, not all NCEP variables or the other two GEE entries.",
+      "The prior raw monthly-SLP payload estimate is retained as an alternative and is not an observed download size.",
+      "NOAA PSL stopped NCEP/NCAR production 2026-03-17; 2024 is complete."
+    ],
+    "sources": [
+      {
+        "url": "https://psl.noaa.gov/thredds/fileServer/Datasets/ncep.reanalysis.dailyavgs/surface/air.sig995.2024.nc",
+        "supports": "Metadata-only HEAD Content-Length=7,004,162 bytes for complete annual global NetCDF file; no body downloaded.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://psl.noaa.gov/thredds/catalog/Datasets/ncep.reanalysis.dailyavgs/surface/catalog.html?dataset=Datasets/ncep.reanalysis.dailyavgs/surface/air.sig995.2024.nc",
+        "supports": "TDS catalog records exact dataSize=7004162 for air.sig995.2024.nc.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://psl.noaa.gov/data/gridded/data.ncep.reanalysis.html",
+        "supports": "NetCDF4 distribution, 2.5° global 144×73 grid and dataset coverage.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://psl.noaa.gov/data/reanalysis/",
+        "supports": "PSL source collection, access and production-stop notice.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/NCEP_RE_sea_level_pressure",
+        "supports": "Deprecated GEE SLP entry.",
+        "accessed": "2026-10-30"
+      }
+    ],
+    "work_id": "https://openalex.org/W2173251738",
+    "citations": 28374,
+    "catalogs": [
+      "official"
+    ],
+    "catalog_entries": [
+      {
+        "id": "official:NCEP_RE/sea_level_pressure",
+        "catalog": "official",
+        "catalog_id": "NCEP_RE/sea_level_pressure",
+        "title": "NCEP/NCAR Reanalysis Data, Sea-Level Pressure [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/NCEP_RE_sea_level_pressure",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:NCEP_RE/surface_temp",
+        "catalog": "official",
+        "catalog_id": "NCEP_RE/surface_temp",
+        "title": "NCEP/NCAR Reanalysis Data, Surface Temperature [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/NCEP_RE_surface_temp",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:NCEP_RE/surface_wv",
+        "catalog": "official",
+        "catalog_id": "NCEP_RE/surface_wv",
+        "title": "NCEP/NCAR Reanalysis Data, Water Vapor [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/NCEP_RE_surface_wv",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      }
+    ],
+    "catalog_membership": "Official",
+    "presentation": {
+      "rank": 2,
+      "name": "NCEP/NCAR Reanalysis",
+      "size": "7.00 MB",
+      "scope": "2024 global daily surface temperature only",
+      "source": "NetCDF",
+      "output": "Zarr"
+    }
+  },
+  {
+    "rank": 3,
+    "label": "WorldClim v1",
+    "selected_scope": "WorldClim v1.4 BIO, global land, 30-arc-second (~1 km) release as represented by the GEE WORLDCLIM/V1/BIO catalog; all 19 bioclimatic variables in the worldwide ESRI-grid ZIP package.",
+    "native_formats": [
+      "ZIP-compressed ESRI grid package (selected global release); generic BIL/HDR ZIP distribution; 30-second tiled GeoTIFF is also documented for tiled data"
+    ],
+    "download_size": {
+      "display": "1,862,513,222 bytes (measured Content-Length; 1.86 decimal GB)",
+      "status": "measured",
+      "bytes": 1862513222,
+      "scope": "One complete global 30-arc-second WorldClim v1.4 BIO ESRI ZIP containing all 19 BIO layers.",
+      "basis": "Metadata-only HTTP HEAD to the producer-hosted UC Davis geodata file bio_30s_esri.zip returned Content-Length: 1,862,513,222 bytes. Archive body was not downloaded."
+    },
+    "alternative_sizes": [
+      {
+        "display": "35.46 GB raw array payload (calculated uncompressed at selected 30-second grid)",
+        "status": "calculated_uncompressed",
+        "bytes": 35458560000,
+        "scope": "Dense rectangular 30-arc-second global array for all 19 BIO bands, including ocean no-data cells.",
+        "basis": "43200 longitude × 21600 latitude × 19 layers × 2 bytes/int16 = 35,458,560,000 bytes (35.46 decimal GB). This is an uncompressed payload calculation, not a source ZIP size."
+      },
+      {
+        "display": "88.65 MB raw array payload (calculated uncompressed)",
+        "status": "calculated_uncompressed",
+        "scope": "19 10-minute rasters over rectangular 360°×180° grid; includes ocean nodata cells; int16 values.",
+        "basis": "2160 rows × 1080 cols × 19 layers × 2 bytes = 88,646,400 bytes. Raw payload only, not ZIP size; excludes headers/compression."
+      }
+    ],
+    "desired_formats": [
+      "COG"
+    ],
+    "rationale": "Static climate rasters suit COG; preserve integer precision, scaling/units, CRS and nodata; retain native grids for provenance.",
+    "existing_cloud_native": "GEE has hosted collections; no public downloadable cloud-native COG/Zarr mirror verified.",
+    "caveats": [
+      "This is the full 30-arc-second BIO ESRI package corresponding to GEE pixel scale, not the earlier 10-minute lower-resolution proxy; that raw payload calculation is retained only as a separate alternative.",
+      "ZIP bytes include the producer package and compression; unpacked grid size is larger. Preserve units/scaling and nodata."
+    ],
+    "sources": [
+      {
+        "url": "https://geodata.ucdavis.edu/climate/worldclim/1_4/grid/cur/bio_30s_esri.zip",
+        "supports": "Producer-hosted full BIO v1.4 30s ESRI package; HEAD returned exact Content-Length 1,862,513,222 bytes.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://geodata.ucdavis.edu/climate/worldclim/1_4/grid/cur/",
+        "supports": "Producer directory index lists bio_30s_esri.zip (1.7G), bio1-9 and bio10-19 30s BIL packages (1.1G each), and lower-resolution alternatives.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://worldclim.org/data/v1.4/formats.html",
+        "supports": "V1 resolutions, 19 BIO layers, zip package layout, BIL/HDR and ESRI grids, cell type and GeoTIFF availability.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/WORLDCLIM_V1_MONTHLY",
+        "supports": "Separate monthly collection in same group.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/WORLDCLIM_V1_BIO",
+        "supports": "GEE WORLDCLIM/V1/BIO is at 927.67 m (~30 arc seconds) and includes 19 bands.",
+        "accessed": "2026-10-30"
+      }
+    ],
+    "work_id": "https://openalex.org/W2112776483",
+    "citations": 19860,
+    "catalogs": [
+      "official"
+    ],
+    "catalog_entries": [
+      {
+        "id": "official:WORLDCLIM/V1/BIO",
+        "catalog": "official",
+        "catalog_id": "WORLDCLIM/V1/BIO",
+        "title": "WorldClim BIO Variables V1",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/WORLDCLIM_V1_BIO",
+        "geographic_scope": "global",
+        "region": "Global land",
+        "deprecated": false,
+        "citation_scope": "associated_dataset_publication"
+      },
+      {
+        "id": "official:WORLDCLIM/V1/MONTHLY",
+        "catalog": "official",
+        "catalog_id": "WORLDCLIM/V1/MONTHLY",
+        "title": "WorldClim Climatology V1",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/WORLDCLIM_V1_MONTHLY",
+        "geographic_scope": "global",
+        "region": "Global land",
+        "deprecated": false,
+        "citation_scope": "associated_dataset_publication"
+      }
+    ],
+    "catalog_membership": "Official",
+    "presentation": {
+      "rank": 3,
+      "name": "WorldClim v1",
+      "size": "1.86 GB",
+      "scope": "Global 30″ BIO: all 19 variables",
+      "source": "ESRI grids in ZIP; BIL alternatives",
+      "output": "COG"
+    }
+  },
+  {
+    "rank": 4,
+    "label": "Hansen Global Forest Change",
+    "selected_scope": "GFC-2025-v1.13 global core maps: treecover2000, gain, lossyear and datamask; all 1,792 objects listed by these four producer URL manifests.",
+    "native_formats": [
+      "GeoTIFF tiles (.tif)"
+    ],
+    "download_size": {
+      "display": "83,910,291,871 bytes (83.91 GB), four core map layers",
+      "status": "measured",
+      "bytes": 83910291871,
+      "scope": "All four global core-map products in the v1.13 URL manifests; excludes first/last multispectral imagery.",
+      "basis": "Exact GCS object-size sum; three listing pages, no remaining page token, unique objects, all four core URL manifests covered. Treecover2000 alone is 58,875,497,056 bytes, exceeding the stale <50GB webpage statement."
+    },
+    "alternative_sizes": [
+      {
+        "display": "1,676,700,778,015 bytes (1.677 TB) of TIFF objects currently listed",
+        "status": "measured",
+        "bytes": 1676700778015,
+        "scope": "All 2,576 TIFFs currently listed under the version prefix, including imagery; not proof of a complete six-product release.",
+        "basis": "The last-imagery URL manifest lists 504 objects but 224 are absent from the captured bucket listing. This amount is available listed bytes, not a verified complete imagery download."
+      }
+    ],
+    "desired_formats": [
+      "COG"
+    ],
+    "rationale": "Already tile-based GeoTIFF; index/reference in place where possible. A necessary mirror should preserve granules and integer values, masks and grid as validated COGs.",
+    "existing_cloud_native": "Public producer GeoTIFF granules on GCS plus layer URL-list manifests; also hosted in GEE. Prefer referencing/indexing producer files.",
+    "caveats": [
+      "Core-map manifests are complete in the captured listing. The imagery manifest fails completeness: 224 last-image URLs are absent.",
+      "Source GeoTIFFs have not been validated as COGs."
+    ],
+    "sources": [
+      {
+        "url": "https://storage.googleapis.com/earthenginepartners-hansen/GFC-2025-v1.13/download.html",
+        "supports": "Producer 10×10° granules, global URL lists, v1.13 identity and size bounds (<50 GB treecover2000, <10 GB gain/lossyear/datamask each, >600 GB first/last each).",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/UMD_hansen_global_forest_change_2025_v1_13",
+        "supports": "GEE current collection, bands and scale.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://storage.googleapis.com/storage/v1/b/earthenginepartners-hansen/o?prefix=GFC-2025-v1.13/&fields=items(name,size),nextPageToken&maxResults=1000",
+        "supports": "Saved paginated object-size inventory and producer URL-manifest reconciliation in evidence-parent/.",
+        "accessed": "2026-10-30"
+      }
+    ],
+    "parent_review": [
+      "Replace stale <50GB single-layer statement with exact producer object sizes and verified core manifests; retain failed imagery completeness check."
+    ],
+    "work_id": "https://openalex.org/W1981213426",
+    "citations": 11704,
+    "catalogs": [
+      "official"
+    ],
+    "catalog_entries": [
+      {
+        "id": "official:UMD/hansen/global_forest_change_2025_v1_13",
+        "catalog": "official",
+        "catalog_id": "UMD/hansen/global_forest_change_2025_v1_13",
+        "title": "Hansen Global Forest Change v1.13 (2000-2025)",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/UMD_hansen_global_forest_change_2025_v1_13",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": false,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:UMD/hansen/global_forest_change_2013",
+        "catalog": "official",
+        "catalog_id": "UMD/hansen/global_forest_change_2013",
+        "title": "Hansen Global Forest Change v1.0 (2000-2012) [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/UMD_hansen_global_forest_change_2013",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:UMD/hansen/global_forest_change_2014",
+        "catalog": "official",
+        "catalog_id": "UMD/hansen/global_forest_change_2014",
+        "title": "Hansen Global Forest Change v1.1 (2000-2013) [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/UMD_hansen_global_forest_change_2014",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:UMD/hansen/global_forest_change_2015",
+        "catalog": "official",
+        "catalog_id": "UMD/hansen/global_forest_change_2015",
+        "title": "Hansen Global Forest Change v1.2 (2000-2014) [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/UMD_hansen_global_forest_change_2015",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:UMD/hansen/global_forest_change_2015_v1_3",
+        "catalog": "official",
+        "catalog_id": "UMD/hansen/global_forest_change_2015_v1_3",
+        "title": "Hansen Global Forest Change v1.3 (2000-2015) [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/UMD_hansen_global_forest_change_2015_v1_3",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:UMD/hansen/global_forest_change_2016_v1_4",
+        "catalog": "official",
+        "catalog_id": "UMD/hansen/global_forest_change_2016_v1_4",
+        "title": "Hansen Global Forest Change v1.4 (2000-2016) [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/UMD_hansen_global_forest_change_2016_v1_4",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:UMD/hansen/global_forest_change_2017_v1_5",
+        "catalog": "official",
+        "catalog_id": "UMD/hansen/global_forest_change_2017_v1_5",
+        "title": "Hansen Global Forest Change v1.5 (2000-2017) [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/UMD_hansen_global_forest_change_2017_v1_5",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:UMD/hansen/global_forest_change_2018_v1_6",
+        "catalog": "official",
+        "catalog_id": "UMD/hansen/global_forest_change_2018_v1_6",
+        "title": "Hansen Global Forest Change v1.6 (2000-2018) [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/UMD_hansen_global_forest_change_2018_v1_6",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:UMD/hansen/global_forest_change_2019_v1_7",
+        "catalog": "official",
+        "catalog_id": "UMD/hansen/global_forest_change_2019_v1_7",
+        "title": "Hansen Global Forest Change v1.7 (2000-2019) [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/UMD_hansen_global_forest_change_2019_v1_7",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:UMD/hansen/global_forest_change_2020_v1_8",
+        "catalog": "official",
+        "catalog_id": "UMD/hansen/global_forest_change_2020_v1_8",
+        "title": "Hansen Global Forest Change v1.8 (2000-2020) [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/UMD_hansen_global_forest_change_2020_v1_8",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:UMD/hansen/global_forest_change_2021_v1_9",
+        "catalog": "official",
+        "catalog_id": "UMD/hansen/global_forest_change_2021_v1_9",
+        "title": "Hansen Global Forest Change v1.9 (2000-2021) [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/UMD_hansen_global_forest_change_2021_v1_9",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:UMD/hansen/global_forest_change_2022_v1_10",
+        "catalog": "official",
+        "catalog_id": "UMD/hansen/global_forest_change_2022_v1_10",
+        "title": "Hansen Global Forest Change v1.10 (2000-2022) [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/UMD_hansen_global_forest_change_2022_v1_10",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:UMD/hansen/global_forest_change_2023_v1_11",
+        "catalog": "official",
+        "catalog_id": "UMD/hansen/global_forest_change_2023_v1_11",
+        "title": "Hansen Global Forest Change v1.11 (2000-2023) [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/UMD_hansen_global_forest_change_2023_v1_11",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:UMD/hansen/global_forest_change_2024_v1_12",
+        "catalog": "official",
+        "catalog_id": "UMD/hansen/global_forest_change_2024_v1_12",
+        "title": "Hansen Global Forest Change v1.12 (2000-2024) [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/UMD_hansen_global_forest_change_2024_v1_12",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      }
+    ],
+    "catalog_membership": "Official",
+    "presentation": {
+      "rank": 4,
+      "name": "Hansen Global Forest Change",
+      "size": "83.91 GB",
+      "scope": "Global v1.13 core maps; imagery excluded",
+      "source": "GeoTIFF",
+      "output": "COG"
+    }
+  },
+  {
+    "rank": 5,
+    "label": "MODIS vegetation indices (NDVI/EVI)",
+    "selected_scope": "MOD13C1.061 global 0.05-degree Terra vegetation-index collection, all 23 16-day global composite granules whose acquisition dates are in calendar year 2024; full native granules (including science and QA SDS), not an arbitrary tile/variable slice.",
+    "native_formats": [
+      "HDF-EOS MODIS granule files"
+    ],
+    "download_size": {
+      "display": "About 2,191.46 MB (sum of NASA CMR granule size metadata)",
+      "status": "publisher_stated",
+      "bytes": null,
+      "scope": "23 MOD13C1.061 2024-start-date global 0.05-degree composites; the 2023 day-353 overlap is excluded. Sum includes all data/SDS in granules as represented in CMR size metadata.",
+      "basis": "NASA CMR granules.umm_json query for MOD13C1, version 061, 2024 returned 24 records overlapping the year; selecting the 23 producer granule IDs A2024001 through A2024353 and summing ArchiveAndDistributionInformation.Size yields 2,191.460275 reported MB. CMR sizes have decimal precision and MB units, so display the summed publisher unit without converting to an asserted exact byte count."
+    },
+    "alternative_sizes": [
+      {
+        "display": "2.88 MB raw array payload (calculated uncompressed)",
+        "status": "calculated_uncompressed",
+        "scope": "One 1200×1200 tile, one 16-bit NDVI science layer.",
+        "basis": "1200 × 1200 × 2 bytes = 2,880,000 bytes. Excludes QA, EVI, ancillary SDS, HDF metadata and compression; actual file size is unknown."
+      }
+    ],
+    "desired_formats": [
+      "Zarr",
+      "COG (optional map derivative)"
+    ],
+    "rationale": "MOD13C1 consists of global 16-day composites, so publish/index a time-chunked Zarr preserving native 0.05-degree grid, all science and QA SDS, scale factors and dates. Retain original HDF-EOS granules as provenance; COG can be a per-date map derivative.",
+    "existing_cloud_native": "GEE image collections verified; no separate open COG/Zarr mirror verified.",
+    "caveats": [
+      "The input groups 16 catalog products across Terra/Aqua, resolutions and versions. This size is one listed product, MOD13C1.061, for one complete annual set of global composite granules.",
+      "CMR records report file sizes in MB rounded to varying decimal precision; total preserves that unit and is not HEAD-verified object Content-Length.",
+      "Prior single-NDVI-tile raw-array calculation is retained as an alternate illustrative payload, not a family download size."
+    ],
+    "sources": [
+      {
+        "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?short_name=MOD13C1&version=061&temporal=2024-01-01T00%3A00%3A00Z%2C2024-12-31T23%3A59%3A59Z&page_size=30",
+        "supports": "NASA CMR public granule manifest and each 2024 MOD13C1.061 granule ArchiveAndDistributionInformation.Size; 23 acquisition-year files sum to about 2,191.46 MB.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MOD13C1",
+        "supports": "GEE listed MOD13C1.061 global 0.05-degree 16-day product, NDVI/EVI and QA bands.",
+        "accessed": "2026-10-30"
+      }
+    ],
+    "parent_review": [
+      "Remove an unrelated MOD13A2 citation description after choosing MOD13C1.",
+      "Align the optional spatial-map derivative with the summary table."
+    ],
+    "work_id": "https://openalex.org/W2113410727",
+    "citations": 9954,
+    "catalogs": [
+      "official"
+    ],
+    "catalog_entries": [
+      {
+        "id": "official:MODIS/061/MOD13A1",
+        "catalog": "official",
+        "catalog_id": "MODIS/061/MOD13A1",
+        "title": "MOD13A1.061 Terra Vegetation Indices 16-Day Global 500m",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MOD13A1",
+        "geographic_scope": "global",
+        "region": "Global land",
+        "deprecated": false,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:MODIS/061/MOD13A2",
+        "catalog": "official",
+        "catalog_id": "MODIS/061/MOD13A2",
+        "title": "MOD13A2.061 Terra Vegetation Indices 16-Day Global 1km",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MOD13A2",
+        "geographic_scope": "global",
+        "region": "Global land",
+        "deprecated": false,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:MODIS/061/MOD13A3",
+        "catalog": "official",
+        "catalog_id": "MODIS/061/MOD13A3",
+        "title": "MOD13A3.061 Vegetation Indices Monthly L3 Global 1 km SIN Grid",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MOD13A3",
+        "geographic_scope": "global",
+        "region": "Global land",
+        "deprecated": false,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:MODIS/061/MOD13C1",
+        "catalog": "official",
+        "catalog_id": "MODIS/061/MOD13C1",
+        "title": "MOD13C1.061: Terra Vegetation Indices 16-Day L3 Global 0.05 Deg Climate Modeling Grid",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MOD13C1",
+        "geographic_scope": "global",
+        "region": "Global land",
+        "deprecated": false,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:MODIS/061/MOD13Q1",
+        "catalog": "official",
+        "catalog_id": "MODIS/061/MOD13Q1",
+        "title": "MOD13Q1.061 Terra Vegetation Indices 16-Day Global 250m",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MOD13Q1",
+        "geographic_scope": "global",
+        "region": "Global land",
+        "deprecated": false,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:MODIS/061/MYD13A1",
+        "catalog": "official",
+        "catalog_id": "MODIS/061/MYD13A1",
+        "title": "MYD13A1.061 Aqua Vegetation Indices 16-Day Global 500m",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MYD13A1",
+        "geographic_scope": "global",
+        "region": "Global land",
+        "deprecated": false,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:MODIS/061/MYD13A2",
+        "catalog": "official",
+        "catalog_id": "MODIS/061/MYD13A2",
+        "title": "MYD13A2.061 Aqua Vegetation Indices 16-Day Global 1km",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MYD13A2",
+        "geographic_scope": "global",
+        "region": "Global land",
+        "deprecated": false,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:MODIS/061/MYD13A3",
+        "catalog": "official",
+        "catalog_id": "MODIS/061/MYD13A3",
+        "title": "MYD13A3.061 Aqua Vegetation Indices Monthly L3 Global 1 km SIN Grid",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MYD13A3",
+        "geographic_scope": "global",
+        "region": "Global land",
+        "deprecated": false,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:MODIS/061/MYD13C1",
+        "catalog": "official",
+        "catalog_id": "MODIS/061/MYD13C1",
+        "title": "MYD13C1.061: Aqua Vegetation Indices 16-Day L3 Global 0.05 Deg CMG",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MYD13C1",
+        "geographic_scope": "global",
+        "region": "Global land",
+        "deprecated": false,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:MODIS/061/MYD13Q1",
+        "catalog": "official",
+        "catalog_id": "MODIS/061/MYD13Q1",
+        "title": "MYD13Q1.061 Aqua Vegetation Indices 16-Day Global 250m",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MYD13Q1",
+        "geographic_scope": "global",
+        "region": "Global land",
+        "deprecated": false,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:MODIS/006/MOD13A1",
+        "catalog": "official",
+        "catalog_id": "MODIS/006/MOD13A1",
+        "title": "MOD13A1.006 Terra Vegetation Indices 16-Day Global 500m [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/MODIS_006_MOD13A1",
+        "geographic_scope": "global",
+        "region": "Global land",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:MODIS/006/MOD13A2",
+        "catalog": "official",
+        "catalog_id": "MODIS/006/MOD13A2",
+        "title": "MOD13A2.006 Terra Vegetation Indices 16-Day Global 1km [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/MODIS_006_MOD13A2",
+        "geographic_scope": "global",
+        "region": "Global land",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:MODIS/006/MOD13Q1",
+        "catalog": "official",
+        "catalog_id": "MODIS/006/MOD13Q1",
+        "title": "MOD13Q1.006 Terra Vegetation Indices 16-Day Global 250m [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/MODIS_006_MOD13Q1",
+        "geographic_scope": "global",
+        "region": "Global land",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:MODIS/006/MYD13A1",
+        "catalog": "official",
+        "catalog_id": "MODIS/006/MYD13A1",
+        "title": "MYD13A1.006 Aqua Vegetation Indices 16-Day Global 500m [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/MODIS_006_MYD13A1",
+        "geographic_scope": "global",
+        "region": "Global land",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:MODIS/006/MYD13A2",
+        "catalog": "official",
+        "catalog_id": "MODIS/006/MYD13A2",
+        "title": "MYD13A2.006 Aqua Vegetation Indices 16-Day Global 1km [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/MODIS_006_MYD13A2",
+        "geographic_scope": "global",
+        "region": "Global land",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:MODIS/006/MYD13Q1",
+        "catalog": "official",
+        "catalog_id": "MODIS/006/MYD13Q1",
+        "title": "MYD13Q1.006 Aqua Vegetation Indices 16-Day Global 250m [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/MODIS_006_MYD13Q1",
+        "geographic_scope": "global",
+        "region": "Global land",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      }
+    ],
+    "catalog_membership": "Official",
+    "presentation": {
+      "rank": 5,
+      "name": "MODIS vegetation indices",
+      "size": "≈2,191 MB",
+      "scope": "MOD13C1.061, global 0.05°, all 23 composites in 2024",
+      "source": "HDF-EOS2",
+      "output": "Zarr; COG maps optional"
+    }
+  },
+  {
+    "rank": 6,
+    "label": "MERRA-2",
+    "selected_scope": "MERRA-2 M2T1NXSLV (tavg1_2d_slv_Nx), full global hourly single-level source product for calendar year 2024, all variables in each daily NetCDF granule; one of the listed official family products.",
+    "native_formats": [
+      "NetCDF (NASA GES DISC); hosted GEE collections"
+    ],
+    "download_size": {
+      "display": "About 146,400 MB (146.4 decimal GB; publisher average summed for 366 daily files)",
+      "status": "bounded_estimate",
+      "bytes": null,
+      "scope": "All 366 MERRA-2 M2T1NXSLV daily files for leap year 2024, global 0.5°×0.625°, all fields, 24 hourly records per file.",
+      "basis": "NASA CMR collection metadata reports Native NetCDF AverageFileSize=400 MB per file. Product is hourly and source files are daily. 366 × 400 MB = 146,400 MB (decimal conversion shown); this is a publisher-average estimate, not an exact sum of granule Content-Lengths."
+    },
+    "alternative_sizes": [
+      {
+        "display": "1.2 GB per monthly file",
+        "status": "publisher_stated",
+        "scope": "Distinct MERRA-2 instM_3d_asm_Np 42-pressure-level monthly product, not SLV subset.",
+        "basis": "NASA GES DISC size for the separate monthly multidimensional product; shown to demonstrate family products cannot be conflated."
+      },
+      {
+        "display": "7.34 GB raw array payload (calculated uncompressed)",
+        "status": "calculated_uncompressed",
+        "scope": "One 0.5°×0.625° global T2M field, 8,784 hourly records, 4-byte values.",
+        "basis": "576 longitude × 361 latitude × 8,784 hours × 4 = 7,335,728,640 bytes (7.34 decimal GB). Dense payload only; no metadata or compression; not source-file bytes."
+      },
+      {
+        "display": "1.2 GB per monthly file",
+        "status": "publisher_stated",
+        "scope": "A distinct 42-pressure-level MERRA-2 monthly collection, not M2T1NXSLV.",
+        "basis": "GES DISC summary size; retained only to distinguish prior comparison."
+      }
+    ],
+    "desired_formats": [
+      "Zarr"
+    ],
+    "rationale": "Hourly model fields suit chunked Zarr, preserving native grid, time, units, model version and variables.",
+    "existing_cloud_native": "NASA GES DISC has cloud-enabled access and GEE has hosted collections; no public analysis-ready Zarr mirror verified.",
+    "caveats": [
+      "GEE entries represent distinct aerosol, flux, land, radiation and state-variable collections; community member is separate. This selected M2T1NXSLV product-wide annual size is not a sum across the GEE family.",
+      "400 MB is an average source granule size. Total is estimated from 366 daily granules and can vary.",
+      "The earlier single-variable raw array estimate is retained as alternative."
+    ],
+    "sources": [
+      {
+        "url": "https://cmr.earthdata.nasa.gov/search/collections.umm_json?short_name=M2T1NXSLV&page_size=1",
+        "supports": "NASA CMR metadata identifies M2T1NXSLV and Native NetCDF average file size of 400 MB; direct S3 distribution prefix recorded in metadata (protected).",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://disc.gsfc.nasa.gov/datasets?keywords=MERRA2&page=1&sort=timeRes",
+        "supports": "GES DISC hourly product families, 0.5°×0.625° resolution and temporal coverage.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://disc.gsfc.nasa.gov/datasets/M2IMNPASM_5.12.4/summary?keywords=MERRA-2",
+        "supports": "NetCDF format and distinct 1.2 GB/month pressure-level product size.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/NASA_GSFC_MERRA_slv_2",
+        "supports": "GEE SLV product bands, dates and spatial scale.",
+        "accessed": "2026-10-30"
+      }
+    ],
+    "parent_review": [
+      "Keep publisher MB totals/average-derived estimates separate from exact measured bytes."
+    ],
+    "work_id": "https://openalex.org/W2611772571",
+    "citations": 9045,
+    "catalogs": [
+      "community",
+      "official"
+    ],
+    "catalog_entries": [
+      {
+        "id": "community:merrav2",
+        "catalog": "community",
+        "catalog_id": "merrav2",
+        "title": "Modern-Era Retrospective analysis for Research and Applications, Version 2 (MERRA2)",
+        "url": "https://gee-community-catalog.org/projects/merrav2",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": null,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:NASA/GSFC/MERRA/aer/2",
+        "catalog": "official",
+        "catalog_id": "NASA/GSFC/MERRA/aer/2",
+        "title": "MERRA-2 M2T1NXAER: Aerosol Diagnostics V5.12.4",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/NASA_GSFC_MERRA_aer_2",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": false,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:NASA/GSFC/MERRA/aer_nv/2",
+        "catalog": "official",
+        "catalog_id": "NASA/GSFC/MERRA/aer_nv/2",
+        "title": "MERRA-2 M2I3NVAER: Aerosol Mixing Ratio V5.12.4",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/NASA_GSFC_MERRA_aer_nv_2",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": false,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:NASA/GSFC/MERRA/flx/2",
+        "catalog": "official",
+        "catalog_id": "NASA/GSFC/MERRA/flx/2",
+        "title": "MERRA-2 M2T1NXFLX: Surface Flux Diagnostics V5.12.4",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/NASA_GSFC_MERRA_flx_2",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": false,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:NASA/GSFC/MERRA/lnd/2",
+        "catalog": "official",
+        "catalog_id": "NASA/GSFC/MERRA/lnd/2",
+        "title": "MERRA-2 M2T1NXLND: Land Surface Diagnostics V5.12.4",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/NASA_GSFC_MERRA_lnd_2",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": false,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:NASA/GSFC/MERRA/rad/2",
+        "catalog": "official",
+        "catalog_id": "NASA/GSFC/MERRA/rad/2",
+        "title": "MERRA-2 M2T1NXRAD: Radiation Diagnostics V5.12.4",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/NASA_GSFC_MERRA_rad_2",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": false,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:NASA/GSFC/MERRA/slv/2",
+        "catalog": "official",
+        "catalog_id": "NASA/GSFC/MERRA/slv/2",
+        "title": "MERRA-2 M2T1NXSLV: Single-Level Diagnostics V5.12.4",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/NASA_GSFC_MERRA_slv_2",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": false,
+        "citation_scope": "base_dataset_family"
+      }
+    ],
+    "catalog_membership": "Both",
+    "presentation": {
+      "rank": 6,
+      "name": "MERRA-2",
+      "size": "≈146,400 MB (estimate)",
+      "scope": "All SLV fields, hourly, global 2024",
+      "source": "NetCDF",
+      "output": "Zarr"
+    }
+  },
+  {
+    "rank": 7,
+    "label": "SRTM elevation",
+    "selected_scope": "Entire SRTMGL1 version 003 global 1-arc-second HGT-in-ZIP tile collection, rather than one representative tile.",
+    "native_formats": [
+      "HGT distributed as compressed ZIP tile files (NASA CMR); GeoTIFF product variants also exist in USGS/LP DAAC distribution"
+    ],
+    "download_size": {
+      "display": "99,883.2 MB (~99.9 decimal GB), publisher-stated full collection size",
+      "status": "publisher_stated",
+      "bytes": null,
+      "scope": "Entire SRTMGL1 version 003 global collection (all available 1-arc-second tiles).",
+      "basis": "NASA CMR UMM collection metadata TotalCollectionFileSize=99,883.2 MB. Byte equivalent uses decimal MB (1 MB=1,000,000 bytes); the preserved publisher display is authoritative. Not a current remeasurement."
+    },
+    "alternative_sizes": [
+      {
+        "display": "99,883.2 MB (~99.9 GB)",
+        "status": "publisher_stated",
+        "scope": "Entire SRTMGL1 version 003 collection, according to NASA CMR TotalCollectionFileSize metadata.",
+        "basis": "Public CMR UMM collection metadata field TotalCollectionFileSize=99883.2 MB; publisher-stated collection size, not sum recalculated by this audit."
+      },
+      {
+        "display": "About 7 MB per tile (publisher-stated average)",
+        "status": "publisher_stated",
+        "scope": "One SRTMGL1 V003 1°×1° HGT tile; NASA CMR metadata reports 7 MB average file size for this collection.",
+        "basis": "Public NASA CMR UMM metadata for short_name=SRTMGL1, version=003 reports Format HGT, compressed ZIP download and AverageFileSize=7 MB. This is a rounded mean across files, not the exact size of a particular tile."
+      },
+      {
+        "display": "7 MB average per file",
+        "status": "publisher_stated",
+        "scope": "One SRTMGL1 V003 HGT tile in compressed ZIP distribution.",
+        "basis": "NASA CMR reports AverageFileSize=7 MB. This is a collection average, not a particular tile size."
+      }
+    ],
+    "desired_formats": [
+      "COG"
+    ],
+    "rationale": "Static elevation raster suits COG; preserve 1-arc-second postings, geoid reference, integer elevations and void/water values.",
+    "existing_cloud_native": "GEE asset is hosted; no openly downloadable cloud-native mirror checked.",
+    "caveats": [
+      "CMR collection total is a producer metadata archive size; individual tile sizes vary.",
+      "Keep release and void-fill provenance separate."
+    ],
+    "sources": [
+      {
+        "url": "https://cmr.earthdata.nasa.gov/search/collections.umm_json?short_name=SRTMGL1&version=003&page_size=5",
+        "supports": "NASA CMR collection metadata: format HGT, ZIP compression, 7 MB average file size and 99,883.2 MB total collection size.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://lpdaac.usgs.gov/documents/179/SRTM_User_Guide_V3.pdf",
+        "supports": "1°×1° SRTM tiles and SRTMGL1 3601×3601 grid.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://lpdaac.usgs.gov/documents/13/SRTM_Quick_Guide.pdf",
+        "supports": "Product versions and global data access points.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/USGS_SRTMGL1_003",
+        "supports": "GEE asset identity and band.",
+        "accessed": "2026-10-30"
+      }
+    ],
+    "parent_review": [
+      "Keep publisher MB totals/average-derived estimates separate from exact measured bytes."
+    ],
+    "work_id": "https://openalex.org/W2084744129",
+    "citations": 8927,
+    "catalogs": [
+      "official"
+    ],
+    "catalog_entries": [
+      {
+        "id": "official:USGS/SRTMGL1_003",
+        "catalog": "official",
+        "catalog_id": "USGS/SRTMGL1_003",
+        "title": "NASA SRTM Digital Elevation 30m",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/USGS_SRTMGL1_003",
+        "geographic_scope": "global",
+        "region": "Near-global land, 60°N–56°S",
+        "deprecated": false,
+        "citation_scope": "base_dataset_family"
+      }
+    ],
+    "catalog_membership": "Official",
+    "presentation": {
+      "rank": 7,
+      "name": "SRTM elevation",
+      "size": "≈99,883 MB",
+      "scope": "Entire SRTMGL1 v3 collection",
+      "source": "HGT in ZIP",
+      "output": "COG"
+    }
+  },
+  {
+    "rank": 8,
+    "label": "TRMM TMPA precipitation",
+    "selected_scope": "TRMM TMPA 3B43 V7 global monthly precipitation rate, year 2019 (12 monthly granules); not separate 3-hourly 3B42.",
+    "native_formats": [
+      "HDF4, one file per monthly 3B43 granule; NASA services also offer subset output formats"
+    ],
+    "download_size": {
+      "display": "About 58.8 MB (publisher average 4.9 MB × 12 monthly files)",
+      "status": "bounded_estimate",
+      "bytes": null,
+      "scope": "TRMM_3B43 V7 global monthly files for calendar year 2019, 12 granules, native HDF product.",
+      "basis": "NASA CMR collection metadata reports Native HDF AverageFileSize=4.9 MB. 12 × 4.9 MB = 58.8 MB (decimal MB), a publisher-average annual estimate; exact per-granule Content-Lengths not queried."
+    },
+    "alternative_sizes": [
+      {
+        "display": "About 11 MB uncompressed per granule",
+        "status": "publisher_stated",
+        "scope": "Different 3-hourly 3B42 product.",
+        "basis": "NASA documentation per-file amount; do not conflate with 3B43."
+      },
+      {
+        "display": "Approximately 60 MB uncompressed (calculated from publisher-stated per-file size)",
+        "status": "calculated_uncompressed",
+        "scope": "12 monthly 3B43 V7 files in 2019.",
+        "basis": "NASA says approximately 5 MB uncompressed per 3B43 file; 12 × approx. 5 MB = approx. 60 MB. This is rounded uncompressed size, not measured transfer bytes."
+      }
+    ],
+    "desired_formats": [
+      "Zarr"
+    ],
+    "rationale": "Monthly gridded rainfall series suit Zarr; preserve 0.25° cells, units, error fields and time.",
+    "existing_cloud_native": "NASA GES DISC cloud-enabled service; no public Zarr mirror verified.",
+    "caveats": [
+      "Input has both 3B42 and 3B43 with different timesteps and sizes. Scope is 3B43 only.",
+      "5 MB is producer's approximate uncompressed size; exact transfer bytes may differ."
+    ],
+    "sources": [
+      {
+        "url": "https://cmr.earthdata.nasa.gov/search/collections.umm_json?short_name=TRMM_3B43&version=7&page_size=1",
+        "supports": "NASA CMR identifies TRMM 3B43 V7 and reports Native HDF average file size of 4.9 MB per granule.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://gpm.nasa.gov/sites/default/files/document_files/3B42_3B43_doc_V7.pdf",
+        "supports": "NASA HDF archive; separate files per timestep; approximate uncompressed 11 MB 3B42 and 5 MB 3B43 sizes.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/TRMM_3B43V7",
+        "supports": "GEE 3B43 V7 monthly product and cadence.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/TRMM_3B42",
+        "supports": "Distinct 3-hourly member.",
+        "accessed": "2026-10-30"
+      }
+    ],
+    "parent_review": [
+      "Keep publisher MB totals/average-derived estimates separate from exact measured bytes."
+    ],
+    "work_id": "https://openalex.org/W1995622703",
+    "citations": 6773,
+    "catalogs": [
+      "official"
+    ],
+    "catalog_entries": [
+      {
+        "id": "official:TRMM/3B42",
+        "catalog": "official",
+        "catalog_id": "TRMM/3B42",
+        "title": "TRMM 3B42: 3-Hourly Precipitation Estimates",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/TRMM_3B42",
+        "geographic_scope": "global",
+        "region": "Near-global precipitation, 50°N–50°S",
+        "deprecated": false,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:TRMM/3B43V7",
+        "catalog": "official",
+        "catalog_id": "TRMM/3B43V7",
+        "title": "TRMM 3B43: Monthly Precipitation Estimates",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/TRMM_3B43V7",
+        "geographic_scope": "global",
+        "region": "Near-global precipitation, 50°N–50°S",
+        "deprecated": false,
+        "citation_scope": "base_dataset_family"
+      }
+    ],
+    "catalog_membership": "Official",
+    "presentation": {
+      "rank": 8,
+      "name": "TRMM TMPA",
+      "size": "≈58.8 MB (estimate)",
+      "scope": "12 global monthly 3B43 files, 2019",
+      "source": "HDF4",
+      "output": "Zarr"
+    }
+  },
+  {
+    "rank": 9,
+    "label": "CHIRPS precipitation",
+    "selected_scope": "CHIRPS v2 daily, global 50°S–50°N at 0.05°, 2024; one daily field, not pentad collection or full archive.",
+    "native_formats": [
+      "GeoTIFF, BIL, NetCDF"
+    ],
+    "download_size": {
+      "display": "1,359,386,943 bytes (NOAA ERDDAP file-list metadata for annual NetCDF mirror)",
+      "status": "measured",
+      "bytes": 1359386943,
+      "scope": "One full global CHIRPS v2 daily 0.05-degree annual NetCDF file, chirps-v2.0.2024.days_p05.nc, covering 2024.",
+      "basis": "NOAA CoastWatch ERDDAP file listing for its CHIRPS20GlobalDailyP05_Lon0360 mirror reports exact file length 1,359,386,943 bytes for this annual file. This is the mirror copy size, not a direct CHC Content-Length."
+    },
+    "alternative_sizes": [
+      {
+        "display": "21.0816 GB raw array payload (calculated uncompressed)",
+        "status": "calculated_uncompressed",
+        "scope": "366 daily 2024 grids at 7200 × 2000 cells, 32-bit values.",
+        "basis": "7200×2000×366×4=21,081,600,000 bytes. Leapyear 2024; excludes compression/metadata, not transfer size.",
+        "bytes": 21081600000
+      }
+    ],
+    "desired_formats": [
+      "Zarr",
+      "COG (optional map derivative)"
+    ],
+    "rationale": "Daily precipitation series suit chunked Zarr; preserve 0.05° grid, daily total units, nodata, version and provenance.",
+    "existing_cloud_native": "CHC provides public bulk-download archives; no maintained public Zarr verified. GEE collection is separately hosted.",
+    "caveats": [
+      "CHIRPS v2 production is scheduled to end after December 2026; this scope follows v2 GEE catalog entries.",
+      "Direct CHC metadata access attempts failed (HTTP 429 for the annual NetCDF HEAD and web directory fetch 404); the exact size is from NOAA CoastWatch ERDDAP mirror listing. Treat source-copy byte identity as unverified.",
+      "The prior 21.02 GB dense raw-array figure is retained as an alternative and is not an observed compressed download size."
+    ],
+    "sources": [
+      {
+        "url": "https://coastwatch.pfeg.noaa.gov/erddap/pt/files/chirps20GlobalDailyP05_Lon0360/",
+        "supports": "NOAA CoastWatch ERDDAP file-list metadata gives chirps-v2.0.2024.days_p05.nc length 1,359,386,943 bytes; mirrored CHIRPS file, not direct producer listing.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://chc.ucsb.edu/data/chirps/",
+        "supports": "Producer v2 coverage/status and archive links.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://wiki.chc.ucsb.edu/index.php?title=CHIRPS2_FAQ",
+        "supports": "Producer grid domain/dimensions 7200×2000, 0.05° resolution, daily cadence and TIF/BIL/NetCDF formats.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+        "supports": "GEE daily product identity and cadence.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_PENTAD",
+        "supports": "Separate pentad product.",
+        "accessed": "2026-10-30"
+      }
+    ],
+    "parent_review": [
+      "Correct leap-year length in the alternative raw-payload calculation.",
+      "Align the optional spatial-map derivative with the summary table."
+    ],
+    "work_id": "https://openalex.org/W2261645655",
+    "citations": 6459,
+    "catalogs": [
+      "official"
+    ],
+    "catalog_entries": [
+      {
+        "id": "official:UCSB-CHG/CHIRPS/DAILY",
+        "catalog": "official",
+        "catalog_id": "UCSB-CHG/CHIRPS/DAILY",
+        "title": "CHIRPS Precipitation Daily: Climate Hazards Center InfraRed Precipitation With Station Data (Version 2.0 Final)",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+        "geographic_scope": "global",
+        "region": "Near-global land, 50°N–50°S",
+        "deprecated": false,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:UCSB-CHG/CHIRPS/PENTAD",
+        "catalog": "official",
+        "catalog_id": "UCSB-CHG/CHIRPS/PENTAD",
+        "title": "CHIRPS Precipitation Pentad: Climate Hazards Center InfraRed Precipitation With Station Data (Version 2.0 Final)",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_PENTAD",
+        "geographic_scope": "global",
+        "region": "Near-global land, 50°N–50°S",
+        "deprecated": false,
+        "citation_scope": "base_dataset_family"
+      }
+    ],
+    "catalog_membership": "Official",
+    "presentation": {
+      "rank": 9,
+      "name": "CHIRPS",
+      "size": "1.36 GB",
+      "scope": "Global daily 2024; NOAA mirror",
+      "source": "NetCDF; GeoTIFF alternatives",
+      "output": "Zarr; COG maps optional"
+    }
+  },
+  {
+    "rank": 10,
+    "label": "GLDAS",
+    "selected_scope": "GLDAS-2.1 Noah 0.25° 3-hourly, full global-land leap year 2020, all eight 3-hour steps/day and all source fields; distinct from CLSM daily and legacy Noah v2.0 entries.",
+    "native_formats": [
+      "NetCDF"
+    ],
+    "download_size": {
+      "display": "About 55,632 MB (55.63 decimal GB; 2,928 files × 19 MB/file)",
+      "status": "bounded_estimate",
+      "bytes": null,
+      "scope": "All 366 days × eight 3-hourly global-land files/day for GLDAS Noah V2.1 0.25° (all source fields).",
+      "basis": "NASA GES DISC reports 19 MB per file and 3-hour cadence. Leap-year 2020 has 366 × 8 = 2,928 files; 2,928 × 19 MB = 55,632 MB (decimal conversion shown). This is a publisher average per-file estimate, not exact Content-Length for all granules."
+    },
+    "alternative_sizes": [
+      {
+        "display": "About 152 MB publisher-stated (8 files × 19 MB/file)",
+        "status": "publisher_stated",
+        "scope": "Eight GLDAS Noah v2.1 3-hourly files for one day, all included fields.",
+        "basis": "NASA GES DISC states 19 MB per file; eight 3-hour files/day × 19 MB = about 152 MB. Rounded publisher file size summed across daily granules, not measured exact transfer bytes."
+      }
+    ],
+    "desired_formats": [
+      "Zarr"
+    ],
+    "rationale": "Land-model fields form multidimensional time series; Zarr suits time/variable chunking while preserving model version, grid, timestep bounds, units and all fields.",
+    "existing_cloud_native": "NASA GES DISC publicly distributes NetCDF/cloud-enabled data; no maintained Zarr mirror verified.",
+    "caveats": [
+      "Input also includes separate CLSM daily and legacy Noah datasets; this estimate covers only GLDAS Noah V2.1 3-hourly.",
+      "19 MB/file is rounded; yearly total is an estimate. Earlier one-day estimate is retained in alternatives."
+    ],
+    "sources": [
+      {
+        "url": "https://cmr.earthdata.nasa.gov/search/collections.umm_json?short_name=GLDAS_NOAH025_3H&version=2.1&page_size=1",
+        "supports": "NASA CMR Native NetCDF average granule size of 19 MB for GLDAS_NOAH025_3H V2.1.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://disc.gsfc.nasa.gov/datasets/GLDAS_NOAH025_3H_2.1/summary?keywords=GLDAS",
+        "supports": "NASA NetCDF, 0.25°/3-hourly coverage, 36 fields and 19 MB per file.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/NASA_GLDAS_V021_NOAH_G025_T3H",
+        "supports": "GEE Noah 2.1 3-hour collection identity, dates and bands.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/NASA_GLDAS_V022_CLSM_G025_DA1D",
+        "supports": "Separate daily CLSM product.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/NASA_GLDAS_V20_NOAH_G025_T3H",
+        "supports": "Separate legacy Noah product.",
+        "accessed": "2026-10-30"
+      }
+    ],
+    "parent_review": [
+      "Keep publisher MB totals/average-derived estimates separate from exact measured bytes."
+    ],
+    "work_id": "https://openalex.org/W2119132330",
+    "citations": 5648,
+    "catalogs": [
+      "official"
+    ],
+    "catalog_entries": [
+      {
+        "id": "official:NASA/GLDAS/V021/NOAH/G025/T3H",
+        "catalog": "official",
+        "catalog_id": "NASA/GLDAS/V021/NOAH/G025/T3H",
+        "title": "GLDAS-2.1: Global Land Data Assimilation System",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/NASA_GLDAS_V021_NOAH_G025_T3H",
+        "geographic_scope": "global",
+        "region": "Global land",
+        "deprecated": false,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:NASA/GLDAS/V022/CLSM/G025/DA1D",
+        "catalog": "official",
+        "catalog_id": "NASA/GLDAS/V022/CLSM/G025/DA1D",
+        "title": "GLDAS-2.2: Global Land Data Assimilation System",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/NASA_GLDAS_V022_CLSM_G025_DA1D",
+        "geographic_scope": "global",
+        "region": "Global land",
+        "deprecated": false,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:NASA/GLDAS/V20/NOAH/G025/T3H",
+        "catalog": "official",
+        "catalog_id": "NASA/GLDAS/V20/NOAH/G025/T3H",
+        "title": "Reprocessed GLDAS-2.0: Global Land Data Assimilation System",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/NASA_GLDAS_V20_NOAH_G025_T3H",
+        "geographic_scope": "global",
+        "region": "Global land",
+        "deprecated": false,
+        "citation_scope": "base_dataset_family"
+      }
+    ],
+    "catalog_membership": "Official",
+    "presentation": {
+      "rank": 10,
+      "name": "GLDAS",
+      "size": "≈55,632 MB (estimate)",
+      "scope": "Noah 2.1 global 3-hourly 2020, all fields",
+      "source": "NetCDF",
+      "output": "Zarr"
+    }
+  },
+  {
+    "rank": 11,
+    "label": "ERA5-Land",
+    "selected_scope": "Global ERA5-Land hourly reanalysis, 1950-present, as referenced by GEE hourly, daily aggregate, monthly aggregate, monthly-by-hour and static entries. Multi-product family, not one archive.",
+    "native_formats": [
+      "GRIB (full gridded CDS product)",
+      "NetCDF4 (experimental CDS download option)",
+      "Zarr (subset/ARCO time-series service)",
+      "NetCDF/CSV (single-point time-series service)"
+    ],
+    "download_size": {
+      "display": "unknown",
+      "status": "unknown",
+      "bytes": null,
+      "scope": "No total selected for the ERA5-Land family; CDS requires user-selected variables, times and area.",
+      "basis": "Producer download interface exposes GRIB and experimental NetCDF4 and selectable dates/variables, but no fixed all-family archive byte total. No request submitted."
+    },
+    "alternative_sizes": [
+      {
+        "display": "227,185,344,000 bytes (~227 GB decimal), raw float32 array payload",
+        "status": "calculated_uncompressed",
+        "bytes": 227185344000,
+        "scope": "Illustrative one-variable global 0.1° grid for one complete 365-day hourly year (3600 longitude cells × 1801 latitude cells × 8760 hours). Not a compressed download estimate and not whole ERA5-Land archive size.",
+        "basis": "3600 × 1801 × 8760 × 4 bytes per float32 value; grid spacing/global coverage/hourly cadence from producer product documentation. Assumes every grid/time cell is stored as a four-byte value; excludes masks, metadata, compression, packing and any missing-point optimizations."
+      }
+    ],
+    "desired_formats": [
+      "Zarr"
+    ],
+    "rationale": "Chunked Zarr fits the full grid/time dimensions where a cloud-native publication is needed; use/reference the producer ARCO Zarr for its point/limited-area scope. Preserve source units, coordinates and variable metadata.",
+    "existing_cloud_native": "CDS publishes a maintained ARCO Zarr subset for point/limited-area long time series; the full gridded product remains distributed separately. Prefer referencing ARCO where its subset scope matches.",
+    "caveats": [
+      "GEE contains several temporal aggregations and a static image; these are not interchangeable with the hourly archive.",
+      "Full archive size varies with requested variables, period, area and encoding."
+    ],
+    "sources": [
+      {
+        "url": "https://cds.climate.copernicus.eu/datasets/reanalysis-era5-land?tab=download",
+        "supports": "ERA5-Land producer download interface; GRIB/NetCDF4 and configurable selection",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_LAND_HOURLY",
+        "supports": "GEE hourly product identity and cadence",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_LAND_DAILY_AGGR",
+        "supports": "GEE daily aggregated product identity",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://cds.climate.copernicus.eu/datasets/reanalysis-era5-land",
+        "supports": "Producer global coverage, regular lat-lon 0.1° grid, hourly temporal resolution, GRIB full-product format",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://confluence.ecmwf.int/pages/viewpage.action?pageId=627854121",
+        "supports": "Producer documentation for 0.1° hourly single-point time series and ARCO Zarr storage",
+        "accessed": "2026-10-30"
+      }
+    ],
+    "work_id": "https://openalex.org/W3136179920",
+    "citations": 5540,
+    "catalogs": [
+      "official"
+    ],
+    "catalog_entries": [
+      {
+        "id": "official:ECMWF/ERA5_LAND/DAILY_AGGR",
+        "catalog": "official",
+        "catalog_id": "ECMWF/ERA5_LAND/DAILY_AGGR",
+        "title": "ERA5-Land Daily Aggregated - ECMWF Climate Reanalysis",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_LAND_DAILY_AGGR",
+        "geographic_scope": "global",
+        "region": "Global coverage",
+        "deprecated": false,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:ECMWF/ERA5_LAND/HOURLY",
+        "catalog": "official",
+        "catalog_id": "ECMWF/ERA5_LAND/HOURLY",
+        "title": "ERA5-Land Hourly - ECMWF Climate Reanalysis",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_LAND_HOURLY",
+        "geographic_scope": "global",
+        "region": "Global coverage",
+        "deprecated": false,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:ECMWF/ERA5_LAND/MONTHLY_AGGR",
+        "catalog": "official",
+        "catalog_id": "ECMWF/ERA5_LAND/MONTHLY_AGGR",
+        "title": "ERA5-Land Monthly Aggregated - ECMWF Climate Reanalysis",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_LAND_MONTHLY_AGGR",
+        "geographic_scope": "global",
+        "region": "Global coverage",
+        "deprecated": false,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:ECMWF/ERA5_LAND/MONTHLY_BY_HOUR",
+        "catalog": "official",
+        "catalog_id": "ECMWF/ERA5_LAND/MONTHLY_BY_HOUR",
+        "title": "ERA5-Land Monthly Averaged by Hour of Day - ECMWF Climate Reanalysis",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_LAND_MONTHLY_BY_HOUR",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": false,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:ECMWF/ERA5_LAND/STATIC",
+        "catalog": "official",
+        "catalog_id": "ECMWF/ERA5_LAND/STATIC",
+        "title": "ERA5-Land Static - ECMWF Climate Reanalysis",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_LAND_STATIC",
+        "geographic_scope": "global",
+        "region": "Global coverage",
+        "deprecated": false,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:ECMWF/ERA5_LAND/MONTHLY",
+        "catalog": "official",
+        "catalog_id": "ECMWF/ERA5_LAND/MONTHLY",
+        "title": "ERA5-Land Monthly Averaged - ECMWF Climate Reanalysis [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_LAND_MONTHLY",
+        "geographic_scope": "global",
+        "region": "Global coverage",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      }
+    ],
+    "catalog_membership": "Official",
+    "presentation": {
+      "rank": 11,
+      "name": "ERA5-Land",
+      "size": "Unknown; request-dependent",
+      "scope": "Raw example: 227 GB per hourly variable/year",
+      "source": "GRIB / NetCDF; ARCO Zarr",
+      "output": "Zarr; reference existing subset"
+    }
+  },
+  {
+    "rank": 12,
+    "label": "JRC Global Surface Water",
+    "selected_scope": "Exact size-bearing subset: JRC GSW v1.4 global Occurrence layer (1984-2021), 504 GeoTIFF tiles; other GSW products (metadata, yearly history, monthly history and recurrence) are separate and excluded from this total.",
+    "native_formats": [
+      "GeoTIFF tiles (10° x 10°)"
+    ],
+    "download_size": {
+      "display": "15,972,544,704 bytes (15.97 GB decimal)",
+      "status": "measured",
+      "bytes": 15972544704,
+      "scope": "All 504 producer objects under downloads2021/occurrence/ matching occurrence_*_v1_4_2021.tif; occurrence layer only, not total GSW v1.4 portfolio.",
+      "basis": "Summed exact object size metadata from the public Google Cloud Storage JSON API listing (504 items, no nextPageToken; response 56,671 bytes). No TIFF bodies downloaded."
+    },
+    "alternative_sizes": [],
+    "desired_formats": [
+      "COG",
+      "Zarr"
+    ],
+    "rationale": "Use COG for discrete global summary layers and chunked Zarr for monthly history/recurrence time dimensions, preserving class codes and masks.",
+    "existing_cloud_native": "Google Earth Engine asset collection; JRC also serves WMS tiles. No cloud-native analytic archive verified.",
+    "caveats": [
+      "This is only the v1.4 global Occurrence layer; monthly history, metadata, yearly history, recurrence and other summary layers add separate volumes.",
+      "The total applies to the v1.4 1984-2021 object names, not current GSW v1.5 products through 2024.",
+      "Tile GeoTIFF compression/COG status was not inferred from the file suffix."
+    ],
+    "sources": [
+      {
+        "url": "https://global-surface-water.appspot.com/download",
+        "supports": "JRC download mechanisms, GeoTIFF tile delivery, available product types and v1.4 period through 2021",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/JRC_GSW1_4_MonthlyHistory",
+        "supports": "GEE monthly-history v1.4 product identity",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://storage.googleapis.com/storage/v1/b/global-surface-water/o?prefix=downloads2021%2Foccurrence%2F&fields=items(name%2Csize)%2CnextPageToken&maxResults=1000",
+        "supports": "Complete public object listing for all 504 2021 v1.4 occurrence GeoTIFF tiles and exact sizes; summed to 15,972,544,704 bytes",
+        "accessed": "2026-10-30"
+      }
+    ],
+    "work_id": "https://openalex.org/W2560167313",
+    "citations": 5374,
+    "catalogs": [
+      "official"
+    ],
+    "catalog_entries": [
+      {
+        "id": "official:JRC/GSW1_4/GlobalSurfaceWater",
+        "catalog": "official",
+        "catalog_id": "JRC/GSW1_4/GlobalSurfaceWater",
+        "title": "JRC Global Surface Water Mapping Layers, v1.4",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/JRC_GSW1_4_GlobalSurfaceWater",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": false,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:JRC/GSW1_4/Metadata",
+        "catalog": "official",
+        "catalog_id": "JRC/GSW1_4/Metadata",
+        "title": "JRC Global Surface Water Metadata, v1.4",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/JRC_GSW1_4_Metadata",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": false,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:JRC/GSW1_4/MonthlyHistory",
+        "catalog": "official",
+        "catalog_id": "JRC/GSW1_4/MonthlyHistory",
+        "title": "JRC Monthly Water History, v1.4",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/JRC_GSW1_4_MonthlyHistory",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": false,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:JRC/GSW1_4/MonthlyRecurrence",
+        "catalog": "official",
+        "catalog_id": "JRC/GSW1_4/MonthlyRecurrence",
+        "title": "JRC Monthly Water Recurrence, v1.4",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/JRC_GSW1_4_MonthlyRecurrence",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": false,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:JRC/GSW1_4/YearlyHistory",
+        "catalog": "official",
+        "catalog_id": "JRC/GSW1_4/YearlyHistory",
+        "title": "JRC Yearly Water Classification History, v1.4",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/JRC_GSW1_4_YearlyHistory",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": false,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:JRC/GSW1_0/GlobalSurfaceWater",
+        "catalog": "official",
+        "catalog_id": "JRC/GSW1_0/GlobalSurfaceWater",
+        "title": "JRC Global Surface Water Mapping Layers, v1.0 [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/JRC_GSW1_0_GlobalSurfaceWater",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:JRC/GSW1_0/Metadata",
+        "catalog": "official",
+        "catalog_id": "JRC/GSW1_0/Metadata",
+        "title": "JRC Global Surface Water Metadata, v1.0 [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/JRC_GSW1_0_Metadata",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:JRC/GSW1_0/MonthlyHistory",
+        "catalog": "official",
+        "catalog_id": "JRC/GSW1_0/MonthlyHistory",
+        "title": "JRC Monthly Water History, v1.0 [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/JRC_GSW1_0_MonthlyHistory",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:JRC/GSW1_0/MonthlyRecurrence",
+        "catalog": "official",
+        "catalog_id": "JRC/GSW1_0/MonthlyRecurrence",
+        "title": "JRC Monthly Water Recurrence, v1.0 [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/JRC_GSW1_0_MonthlyRecurrence",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:JRC/GSW1_0/YearlyHistory",
+        "catalog": "official",
+        "catalog_id": "JRC/GSW1_0/YearlyHistory",
+        "title": "JRC Yearly Water Classification History, v1.0 [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/JRC_GSW1_0_YearlyHistory",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:JRC/GSW1_1/GlobalSurfaceWater",
+        "catalog": "official",
+        "catalog_id": "JRC/GSW1_1/GlobalSurfaceWater",
+        "title": "JRC Global Surface Water Mapping Layers, v1.1 [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/JRC_GSW1_1_GlobalSurfaceWater",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:JRC/GSW1_1/Metadata",
+        "catalog": "official",
+        "catalog_id": "JRC/GSW1_1/Metadata",
+        "title": "JRC Global Surface Water Metadata, v1.1 [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/JRC_GSW1_1_Metadata",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:JRC/GSW1_1/MonthlyHistory",
+        "catalog": "official",
+        "catalog_id": "JRC/GSW1_1/MonthlyHistory",
+        "title": "JRC Monthly Water History, v1.1 [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/JRC_GSW1_1_MonthlyHistory",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:JRC/GSW1_1/MonthlyRecurrence",
+        "catalog": "official",
+        "catalog_id": "JRC/GSW1_1/MonthlyRecurrence",
+        "title": "JRC Monthly Water Recurrence, v1.1 [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/JRC_GSW1_1_MonthlyRecurrence",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:JRC/GSW1_1/YearlyHistory",
+        "catalog": "official",
+        "catalog_id": "JRC/GSW1_1/YearlyHistory",
+        "title": "JRC Yearly Water Classification History, v1.1 [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/JRC_GSW1_1_YearlyHistory",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:JRC/GSW1_2/GlobalSurfaceWater",
+        "catalog": "official",
+        "catalog_id": "JRC/GSW1_2/GlobalSurfaceWater",
+        "title": "JRC Global Surface Water Mapping Layers, v1.2 [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/JRC_GSW1_2_GlobalSurfaceWater",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:JRC/GSW1_2/Metadata",
+        "catalog": "official",
+        "catalog_id": "JRC/GSW1_2/Metadata",
+        "title": "JRC Global Surface Water Metadata, v1.2 [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/JRC_GSW1_2_Metadata",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:JRC/GSW1_2/MonthlyHistory",
+        "catalog": "official",
+        "catalog_id": "JRC/GSW1_2/MonthlyHistory",
+        "title": "JRC Monthly Water History, v1.2 [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/JRC_GSW1_2_MonthlyHistory",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:JRC/GSW1_2/MonthlyRecurrence",
+        "catalog": "official",
+        "catalog_id": "JRC/GSW1_2/MonthlyRecurrence",
+        "title": "JRC Monthly Water Recurrence, v1.2 [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/JRC_GSW1_2_MonthlyRecurrence",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:JRC/GSW1_2/YearlyHistory",
+        "catalog": "official",
+        "catalog_id": "JRC/GSW1_2/YearlyHistory",
+        "title": "JRC Yearly Water Classification History, v1.2 [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/JRC_GSW1_2_YearlyHistory",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:JRC/GSW1_3/GlobalSurfaceWater",
+        "catalog": "official",
+        "catalog_id": "JRC/GSW1_3/GlobalSurfaceWater",
+        "title": "JRC Global Surface Water Mapping Layers, v1.3 [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/JRC_GSW1_3_GlobalSurfaceWater",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:JRC/GSW1_3/Metadata",
+        "catalog": "official",
+        "catalog_id": "JRC/GSW1_3/Metadata",
+        "title": "JRC Global Surface Water Metadata, v1.3 [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/JRC_GSW1_3_Metadata",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:JRC/GSW1_3/MonthlyHistory",
+        "catalog": "official",
+        "catalog_id": "JRC/GSW1_3/MonthlyHistory",
+        "title": "JRC Monthly Water History, v1.3 [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/JRC_GSW1_3_MonthlyHistory",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:JRC/GSW1_3/MonthlyRecurrence",
+        "catalog": "official",
+        "catalog_id": "JRC/GSW1_3/MonthlyRecurrence",
+        "title": "JRC Monthly Water Recurrence, v1.3 [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/JRC_GSW1_3_MonthlyRecurrence",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:JRC/GSW1_3/YearlyHistory",
+        "catalog": "official",
+        "catalog_id": "JRC/GSW1_3/YearlyHistory",
+        "title": "JRC Yearly Water Classification History, v1.3 [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/JRC_GSW1_3_YearlyHistory",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      }
+    ],
+    "catalog_membership": "Official",
+    "presentation": {
+      "rank": 12,
+      "name": "JRC Global Surface Water",
+      "size": "15.97 GB",
+      "scope": "Global v1.4 Occurrence only, 504 tiles",
+      "source": "GeoTIFF",
+      "output": "COG; Zarr for histories"
+    }
+  },
+  {
+    "rank": 13,
+    "label": "CFSR: Climate Forecast System Reanalysis Harmonized",
+    "selected_scope": "NCAR GDEX d093000: complete CFSR six-hourly analyzed and forecast-product archive, January 1979–December 2010, global, multiple fields/levels/resolutions. Wider than the GEE band subset.",
+    "native_formats": [
+      "GRIB2"
+    ],
+    "download_size": {
+      "display": "55.81 TB (publisher-stated six-hourly archive)",
+      "status": "publisher_stated",
+      "bytes": null,
+      "scope": "NCAR d093000 full six-hourly archive; not just the GEE subset and not later CFSv2.",
+      "basis": "NCAR producer archive metadata reports 55.81 TB and WMO GRIB2; metadata page captured in evidence-parent/cfsr-6hourly.json."
+    },
+    "alternative_sizes": [
+      {
+        "display": "5.05 TB (UCAR-published total volume)",
+        "status": "publisher_stated",
+        "bytes": null,
+        "scope": "NCAR Research Data Archive d093002 monthly CFSR products, January 1979-December 2010; not the entire CFSR collection or GEE harmonized image collection.",
+        "basis": "NCAR RDA reports total volume 5.05 TB and WMO GRIB2 for dataset d093002. Publisher unit retained; no byte conversion inferred."
+      }
+    ],
+    "desired_formats": [
+      "Zarr"
+    ],
+    "rationale": "For a curated variable/time subset, chunked Zarr supports multidimensional reanalysis queries while keeping source grid, time, vertical levels and metadata.",
+    "existing_cloud_native": "NOAA/NCEP and NCAR RDA provide public download services; cloud-native distribution not verified.",
+    "caveats": [
+      "55.81 TB includes a broader parameter/level archive than the GEE collection.",
+      "Separate monthly archive d093002 is 5.05 TB; do not add it as an independent dataset without considering overlap."
+    ],
+    "sources": [
+      {
+        "url": "https://gdex.ucar.edu/datasets/d093000/",
+        "supports": "Full six-hourly 1979–2010 archive 55.81 TB, WMO GRIB2.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://rda.ucar.edu/datasets/d093002/detailed_metadata/",
+        "supports": "CFSR monthly product period, GRIB2 format and published 5.05 TB volume",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://www.ncei.noaa.gov/products/weather-climate-models/climate-forecast-system",
+        "supports": "NOAA CFSR period and GRIB2/BUFR distribution formats",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/NOAA_CFSR_HARMONIZED",
+        "supports": "GEE harmonized catalog product identity",
+        "accessed": "2026-10-30"
+      }
+    ],
+    "parent_review": [
+      "Use the six-hourly producer archive, closer to the GEE product cadence, and keep monthly archive separate."
+    ],
+    "work_id": "https://openalex.org/W1974038018",
+    "citations": 5159,
+    "catalogs": [
+      "official"
+    ],
+    "catalog_entries": [
+      {
+        "id": "official:NOAA/CFSR_HARMONIZED",
+        "catalog": "official",
+        "catalog_id": "NOAA/CFSR_HARMONIZED",
+        "title": "CFSR: Climate Forecast System Reanalysis Harmonized",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/NOAA_CFSR_HARMONIZED",
+        "geographic_scope": "global",
+        "region": "Global coupled atmosphere, ocean, land, and sea-ice model fields",
+        "deprecated": false,
+        "citation_scope": "associated_dataset_publication"
+      },
+      {
+        "id": "official:NOAA/CFSR",
+        "catalog": "official",
+        "catalog_id": "NOAA/CFSR",
+        "title": "CFSR: Climate Forecast System Reanalysis [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/NOAA_CFSR",
+        "geographic_scope": "global",
+        "region": "Global coupled atmosphere, ocean, land, and sea-ice model fields",
+        "deprecated": true,
+        "citation_scope": "associated_dataset_publication"
+      }
+    ],
+    "catalog_membership": "Official",
+    "presentation": {
+      "rank": 13,
+      "name": "CFSR",
+      "size": "55.81 TB",
+      "scope": "NCAR six-hourly archive, 1979–2010",
+      "source": "GRIB2",
+      "output": "Zarr"
+    }
+  },
+  {
+    "rank": 14,
+    "label": "River plastic inputs (Lebreton et al. 2017)",
+    "selected_scope": "Figshare v6 PlasticRiverInputs.zip: worldwide modeled 2010 river plastic inputs, 40,760 point records. Distinct from the Meijer et al. 2021 river-plastic model.",
+    "native_formats": [
+      "ZIP archive containing ESRI Shapefile components"
+    ],
+    "download_size": {
+      "display": "5,764,810 bytes (5.76 MB decimal)",
+      "status": "measured",
+      "bytes": 5764810,
+      "scope": "Original Figshare v6 source archive PlasticRiverInputs.zip only.",
+      "basis": "Exact producer file size recorded in local source inventory/release manifest; Figshare article API metadata is primary remote source. Local prepared GeoParquet (6,360,991 bytes) and PMTiles (3,705,340 bytes) are separate unpublished derivatives and are not source download volume."
+    },
+    "alternative_sizes": [
+      {
+        "display": "GeoParquet 6,360,991 bytes",
+        "status": "measured",
+        "bytes": 6360991,
+        "scope": "Locally prepared unpublished derivative only; not a public producer download.",
+        "basis": "Local releases/figshare-v6-r2/manifest.json asset size; not included in source download size."
+      },
+      {
+        "display": "PMTiles 3,705,340 bytes",
+        "status": "measured",
+        "bytes": 3705340,
+        "scope": "Locally prepared unpublished derivative only; not a public producer download.",
+        "basis": "Local releases/figshare-v6-r2/manifest.json asset size; not included in source download size."
+      }
+    ],
+    "desired_formats": [
+      "GeoParquet",
+      "PMTiles (optional display derivative)"
+    ],
+    "rationale": "GeoParquet retains point attributes and nulls for analytic filtering; PMTiles supports compact map display. Keep full-resolution analytical records separate from generalized display tiles.",
+    "existing_cloud_native": "No exact native cloud-native counterpart established in targeted inventory; locally prepared outputs are not published.",
+    "caveats": [
+      "Source estimate is for 2010; model values are not an annually updated time series.",
+      "Four source rows contain null emission estimates; preserve null rather than replacing with zero.",
+      "Local derivatives have not been uploaded and are not public downloads."
+    ],
+    "sources": [
+      {
+        "url": "https://api.figshare.com/v2/articles/4725541",
+        "supports": "Figshare v6 article metadata, file inventory, file size and license",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://ndownloader.figshare.com/files/7714864",
+        "supports": "Original PlasticRiverInputs.zip producer file",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://gee-community-catalog.org/projects/plastic",
+        "supports": "Community catalog source identity",
+        "accessed": "2026-10-30"
+      }
+    ],
+    "work_id": "https://openalex.org/W2604316091",
+    "citations": 4009,
+    "catalogs": [
+      "community"
+    ],
+    "catalog_entries": [
+      {
+        "id": "community:plastic",
+        "catalog": "community",
+        "catalog_id": "plastic",
+        "title": "Plastic Inputs from Rivers into Oceans",
+        "url": "https://gee-community-catalog.org/projects/plastic",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": null,
+        "citation_scope": "associated_dataset_publication"
+      }
+    ],
+    "catalog_membership": "Community",
+    "presentation": {
+      "rank": 14,
+      "name": "River plastic inputs",
+      "size": "5.76 MB",
+      "scope": "Complete Figshare v6 source ZIP",
+      "source": "Shapefile in ZIP",
+      "output": "GeoParquet + PMTiles"
+    }
+  },
+  {
+    "rank": 15,
+    "label": "TerraClimate",
+    "selected_scope": "Current TerraClimate v1.1 base archive:14 variables × 76 years (1950–2025) = 1,064 global annual NetCDF files. Excludes plus2C/plus4C scenarios.",
+    "native_formats": [
+      "NetCDF4 (.nc annual file per variable; producer says NetCDF4)"
+    ],
+    "download_size": {
+      "display": "115,507.4 Mbytes (sum of rounded producer catalog sizes; about 116–121 GB depending on MB convention)",
+      "status": "publisher_stated",
+      "bytes": null,
+      "scope": "All 1,064 base variable-year files in the captured THREDDS catalog, 1950–2025; all 14 variables, no scenarios.",
+      "basis": "Parsed producer catalog.xml. Each of 14 variables has 76 annual files. Summed rounded dataSize values; retained Mbytes unit because exact byte values are not present. Saved file inventory and arithmetic in evidence-parent/terraclimate-base-size-summary.json."
+    },
+    "alternative_sizes": [
+      {
+        "display": "135.6 Mbytes (THREDDS-published file size)",
+        "status": "publisher_stated",
+        "bytes": null,
+        "scope": "TerraClimate v1.1 global vap 2024 NetCDF file, monthly annual series for one variable only.",
+        "basis": "NKN/THREDDS producer catalog lists TerraClimate_vap_2024.nc at 135.6 Mbytes. Catalog reports rounded Mbytes; no conversion to exact bytes inferred."
+      },
+      {
+        "display": "about 800 GB uncompressed (original 1958-2015 all-variable archive)",
+        "status": "calculated_uncompressed",
+        "bytes": null,
+        "scope": "Historical TerraClimate v1.0 original dataset paper’s full global multi-variable archive for 1958-2015, not current v1.1 compressed distribution.",
+        "basis": "2018 producer paper states approx. 800 GB after uncompressing the original all-variable archive. This is not a compressed download total."
+      }
+    ],
+    "desired_formats": [
+      "Zarr"
+    ],
+    "rationale": "Monthly global variables across years fit chunked multidimensional Zarr; preserve scale/offset, CF metadata, time axis, variable units and masks.",
+    "existing_cloud_native": "THREDDS serves current v1.1 annual NetCDF files and aggregated NetCDF; GEE hosts a TerraClimate collection, but v1.1/current-vintage parity was not verified.",
+    "caveats": [
+      "Current producer v1.1 is a different vintage from older GEE/community representations; parity has not been established.",
+      "Producer warns against mixing v1.0 and v1.1. Warming scenarios are excluded.",
+      "Rounded catalog sizes imply approximate total only."
+    ],
+    "sources": [
+      {
+        "url": "https://tds-proxy.nkn.uidaho.edu/thredds/catalog/TERRACLIMATE_ALL/data/catalog.xml",
+        "supports": "1,064 base NetCDF variable-year files, 1950–2025; sizes and paths.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://www.climatologylab.org/terraclimate.html",
+        "supports": "Current monthly global coverage, variables and annual NetCDF availability",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/IDAHO_EPSCOR_TERRACLIMATE",
+        "supports": "Official GEE collection identity",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://tds-proxy.nkn.uidaho.edu/thredds/catalog/TERRACLIMATE_ALL/data/catalog.html",
+        "supports": "Producer THREDDS v1.1 catalog listing TerraClimate_vap_2024.nc at 135.6 Mbytes",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://www.climatologylab.org/terraclimate.html",
+        "supports": "Current v1.1, current temporal period and NetCDF4 update; warning against mixing v1.0/v1.1",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://doi.org/10.1038/sdata.2017.191",
+        "supports": "Original TerraClimate 1958-2015 archive and ~800 GB uncompressed alternative scope",
+        "accessed": "2026-10-30"
+      }
+    ],
+    "parent_review": [
+      "Size all base variables and years in current producer catalog, excluding warming scenarios."
+    ],
+    "work_id": "https://openalex.org/W2784327149",
+    "citations": 3477,
+    "catalogs": [
+      "community",
+      "official"
+    ],
+    "catalog_entries": [
+      {
+        "id": "community:terraclim",
+        "catalog": "community",
+        "catalog_id": "terraclim",
+        "title": "TerraClimate layer commensurate with global mean temperatures +2C : aet",
+        "url": "https://gee-community-catalog.org/projects/terraclim",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": null,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:IDAHO_EPSCOR/TERRACLIMATE",
+        "catalog": "official",
+        "catalog_id": "IDAHO_EPSCOR/TERRACLIMATE",
+        "title": "TerraClimate:  Monthly Climate and Climatic Water Balance for Global Terrestrial Surfaces, University of Idaho",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/IDAHO_EPSCOR_TERRACLIMATE",
+        "geographic_scope": "global",
+        "region": "Global land",
+        "deprecated": false,
+        "citation_scope": "associated_dataset_publication"
+      }
+    ],
+    "catalog_membership": "Both",
+    "presentation": {
+      "rank": 15,
+      "name": "TerraClimate",
+      "size": "≈115,507 Mbytes",
+      "scope": "v1.1 base 1950–2025, 14 variables; ≈116–121 GB",
+      "source": "NetCDF4",
+      "output": "Zarr"
+    }
+  },
+  {
+    "rank": 16,
+    "label": "Global Mangrove Forests Distribution, v1 (2000)",
+    "selected_scope": "Complete producer tile release for the global 30 m Global Mangrove Forests Distribution 2000 map: all 111 CMR granules, each a ZIP file whose data-link description identifies GeoTIFF format. Distinct from Global Mangrove Watch epochs.",
+    "native_formats": [
+      "ZIP containing GeoTIFF tile"
+    ],
+    "download_size": {
+      "display": "59.39 MB (sum of 111 rounded CMR granule_size values)",
+      "status": "publisher_stated",
+      "bytes": null,
+      "scope": "All 111 unique global year-2000 SEDAC granule records returned for CMR collection C3550194192-ESDIS; one ZIP tile per record.",
+      "basis": "CMR public granule metadata lists 111 records with unique granule IDs/titles, each data-link description states GeoTIFF format, and per-granule granule_size values sum to 59.39 MB. CMR sizes are rounded per granule; no exact bytes are inferred. Parent evidence response saved at evidence-parent/mangrove-granules.json."
+    },
+    "alternative_sizes": [],
+    "desired_formats": [
+      "COG"
+    ],
+    "rationale": "A single categorical global raster is suited to COG for range reads, preserving 30 m grid, class value and NoData semantics.",
+    "existing_cloud_native": "GEE asset; NASA metadata identifies WMS access. No COG-hosted source verified.",
+    "caveats": [
+      "CMR records identify 111 unique grid tile ZIPs for this global year-2000 product; size is rounded per-granule metadata, not exact byte sum.",
+      "This is the Giri et al. year-2000 product, not later Global Mangrove Watch time series.",
+      "Do not infer COG tiling or internal TIFF compression from .zip/.tif names."
+    ],
+    "sources": [
+      {
+        "url": "https://cmr.earthdata.nasa.gov/search/granules.json?collection_concept_id=C3550194192-ESDIS&page_size=200",
+        "supports": "All 111 CMR granule metadata records, unique tile IDs/titles, per-granule size fields and GeoTIFF data-link descriptions",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/LANDSAT_MANGROVE_FORESTS",
+        "supports": "GEE baseline map identity and 2000 time span",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://data.nasa.gov/dataset/global-mangrove-forests-distribution-2000",
+        "supports": "NASA/SEDAC dataset record and global 30 m extent",
+        "accessed": "2026-10-30"
+      }
+    ],
+    "work_id": "https://openalex.org/W2160615957",
+    "citations": 3186,
+    "catalogs": [
+      "official"
+    ],
+    "catalog_entries": [
+      {
+        "id": "official:LANDSAT/MANGROVE_FORESTS",
+        "catalog": "official",
+        "catalog_id": "LANDSAT/MANGROVE_FORESTS",
+        "title": "Global Mangrove Forests Distribution, v1 (2000)",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/LANDSAT_MANGROVE_FORESTS",
+        "geographic_scope": "global",
+        "region": "Global Landsat acquisition footprint",
+        "deprecated": false,
+        "citation_scope": "associated_dataset_publication"
+      }
+    ],
+    "catalog_membership": "Official",
+    "presentation": {
+      "rank": 16,
+      "name": "Global Mangrove Forests 2000",
+      "size": "≈59.39 MB",
+      "scope": "All 111 global GeoTIFF ZIP tiles",
+      "source": "GeoTIFF in ZIP",
+      "output": "COG"
+    }
+  },
+  {
+    "rank": 17,
+    "label": "PRISM climate",
+    "selected_scope": "For a size-bearing current producer example: CONUS 800 m monthly PRISM VPD maximum, all 12 months of 2024 (one variable-year), using PRISM time-series source. Distinct from older official GEE PRISM collection at 4,638.3 m pixel size (1981-present) and community 800 m catalog entries.",
+    "native_formats": [
+      "ZIP of raster grid(s) in legacy bulk distribution",
+      "Cloud Optimized GeoTIFF for current one-grid web service",
+      "NetCDF/ASCII/BIL available as alternate web-service formats"
+    ],
+    "download_size": {
+      "display": "Approximately 654M in producer listing units (12 monthly ZIPs)",
+      "status": "publisher_stated",
+      "bytes": null,
+      "scope": "PRISM 800 m CONUS vpdmax, all 12 monthly grids for 2024; excludes the separate 49M annual-average grid.",
+      "basis": "Producer directory 202401–202412 values 56+56+56+57+58+59+59+59+50+49+48+47=654M. Rounded listing units retained; no exact byte conversion."
+    },
+    "alternative_sizes": [
+      {
+        "display": "49M",
+        "status": "publisher_stated",
+        "scope": "One annual 2024 vpdmax grid, not a 12-month stack.",
+        "basis": "Separate prism_vpdmax_us_30s_2024.zip entry."
+      }
+    ],
+    "desired_formats": [
+      "COG",
+      "Zarr"
+    ],
+    "rationale": "COG suits independent monthly grid access; Zarr is useful for full monthly/daily series across variables. Retain PRISM release/stability metadata because grids may be re-modeled.",
+    "existing_cloud_native": "Current PRISM web service explicitly serves COG; GEE also hosts an older 4 km collection.",
+    "caveats": [
+      "One variable and one year at 800 m. GEE official 4 km and community 800 m product variants differ.",
+      "PRISM already provides COG web-service outputs; existing delivery may be preferable to conversion.",
+      "Source directory sizes are rounded."
+    ],
+    "sources": [
+      {
+        "url": "https://data.prism.oregonstate.edu/time_series/us/lt/800m/vpdmax/monthly/2024/",
+        "supports": "Twelve monthly ZIP sizes total 654M; annual grid is separate 49M.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://prism.nacse.org/documents/PRISM_downloads_web_service.pdf",
+        "supports": "YYYY is annual; YYYYMM is monthly; current service formats.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://data.prism.oregonstate.edu/time_series/us/lt/800m/vpdmax/monthly/2024/",
+        "supports": "Producer listing for 2024 vpdmax monthly ZIP and rounded 49M file size",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://prism.nacse.org/documents/PRISM_downloads_web_service.pdf",
+        "supports": "Current PRISM web service COG output and alternate formats",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/OREGONSTATE_PRISM_ANd",
+        "supports": "GEE PRISM pixel size, 1981-present span and AN81/AN91 distinction",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://prism.oregonstate.edu/data/",
+        "supports": "PRISM daily/monthly/annual availability and stability notes",
+        "accessed": "2026-10-30"
+      }
+    ],
+    "parent_review": [
+      "Independent review found49M is annual grid, not12monthly files; sum the actual monthly archives."
+    ],
+    "work_id": "https://openalex.org/W1966334841",
+    "citations": 3113,
+    "catalogs": [
+      "community",
+      "official"
+    ],
+    "catalog_entries": [
+      {
+        "id": "community:prism_daily",
+        "catalog": "community",
+        "catalog_id": "prism_daily",
+        "title": "PRISM Climate Dataset (800m Resolution) Daily",
+        "url": "https://gee-community-catalog.org/projects/prism_daily",
+        "geographic_scope": "regional",
+        "region": "Conterminous United States.",
+        "deprecated": null,
+        "citation_scope": "associated_dataset_publication"
+      },
+      {
+        "id": "community:prism_monthly",
+        "catalog": "community",
+        "catalog_id": "prism_monthly",
+        "title": "PRISM Climate Dataset (800m Resolution) Monthly",
+        "url": "https://gee-community-catalog.org/projects/prism_monthly",
+        "geographic_scope": "regional",
+        "region": "Conterminous United States.",
+        "deprecated": null,
+        "citation_scope": "associated_dataset_publication"
+      },
+      {
+        "id": "official:OREGONSTATE/PRISM/ANd",
+        "catalog": "official",
+        "catalog_id": "OREGONSTATE/PRISM/ANd",
+        "title": "PRISM Daily Spatial Dataset ANd",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/OREGONSTATE_PRISM_ANd",
+        "geographic_scope": "regional",
+        "region": "United States/CONUS",
+        "deprecated": false,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:OREGONSTATE/PRISM/ANm",
+        "catalog": "official",
+        "catalog_id": "OREGONSTATE/PRISM/ANm",
+        "title": "PRISM Monthly Spatial Dataset ANm",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/OREGONSTATE_PRISM_ANm",
+        "geographic_scope": "regional",
+        "region": "United States/CONUS",
+        "deprecated": false,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:OREGONSTATE/PRISM/Norm91m",
+        "catalog": "official",
+        "catalog_id": "OREGONSTATE/PRISM/Norm91m",
+        "title": "PRISM Long-Term Normals Dataset Norm91m",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/OREGONSTATE_PRISM_Norm91m",
+        "geographic_scope": "regional",
+        "region": "United States/CONUS",
+        "deprecated": false,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:OREGONSTATE/PRISM/AN81d",
+        "catalog": "official",
+        "catalog_id": "OREGONSTATE/PRISM/AN81d",
+        "title": "PRISM Daily Spatial Dataset AN81d [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/OREGONSTATE_PRISM_AN81d",
+        "geographic_scope": "regional",
+        "region": "United States/CONUS",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:OREGONSTATE/PRISM/AN81m",
+        "catalog": "official",
+        "catalog_id": "OREGONSTATE/PRISM/AN81m",
+        "title": "PRISM Monthly Spatial Dataset AN81m [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/OREGONSTATE_PRISM_AN81m",
+        "geographic_scope": "regional",
+        "region": "United States/CONUS",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:OREGONSTATE/PRISM/Norm81m",
+        "catalog": "official",
+        "catalog_id": "OREGONSTATE/PRISM/Norm81m",
+        "title": "PRISM Long-Term Normals Dataset Norm81m [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/OREGONSTATE_PRISM_Norm81m",
+        "geographic_scope": "regional",
+        "region": "North America",
+        "deprecated": true,
+        "citation_scope": "associated_dataset_publication"
+      }
+    ],
+    "catalog_membership": "Both",
+    "presentation": {
+      "rank": 17,
+      "name": "PRISM",
+      "size": "≈654M, rounded listing",
+      "scope": "800 m vpdmax, 12 monthly grids in 2024",
+      "source": "Raster ZIP; COG service available",
+      "output": "COG or Zarr time series"
+    }
+  },
+  {
+    "rank": 18,
+    "label": "EPA ecoregions (Omernik framework)",
+    "selected_scope": "US EPA Level III ecoregions shapefile covering continental United States, with state boundaries, as native vector analogue to GEE EPA/Ecoregions/2013/L3 feature collection.",
+    "native_formats": [
+      "ESRI Shapefile ZIP",
+      "PDF map products"
+    ],
+    "download_size": {
+      "display": "35 MB (EPA publisher-stated) for Level III shapefile with state boundaries",
+      "status": "publisher_stated",
+      "bytes": null,
+      "scope": "US Level III ecoregions shapefile with state boundaries; not separate 28 MB version without boundaries or Level IV coverage.",
+      "basis": "EPA producer page labels shapefile size as 35 mb; publisher unit preserved and not converted to exact byte count."
+    },
+    "alternative_sizes": [],
+    "desired_formats": [
+      "GeoParquet",
+      "PMTiles (optional display derivative)"
+    ],
+    "rationale": "GeoParquet preserves polygon attributes and supports spatial filtering; PMTiles is useful for map display. Preserve ecoregion identifiers, boundaries and source geometry.",
+    "existing_cloud_native": "GEE feature collection; EPA page also distributes shapefile and metadata/symbology. No cloud-native vector archive verified.",
+    "caveats": [
+      "EPA page cautions that maps and GIS files may differ and recommends GIS shapefiles for current data.",
+      "35 MB published value is for with-state-boundaries package, not necessarily byte-exact compressed transfer size."
+    ],
+    "sources": [
+      {
+        "url": "https://www.epa.gov/eco-research/level-iii-and-iv-ecoregions-continental-united-states",
+        "supports": "EPA Level III shapefile format, with/without state-boundary package sizes and scope",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/EPA_Ecoregions_2013_L3",
+        "supports": "GEE 2013 Level III collection identity",
+        "accessed": "2026-10-30"
+      }
+    ],
+    "work_id": "https://openalex.org/W2075845155",
+    "citations": 2695,
+    "catalogs": [
+      "official"
+    ],
+    "catalog_entries": [
+      {
+        "id": "official:EPA/Ecoregions/2013/L3",
+        "catalog": "official",
+        "catalog_id": "EPA/Ecoregions/2013/L3",
+        "title": "US EPA Ecoregions (Level III)",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/EPA_Ecoregions_2013_L3",
+        "geographic_scope": "regional",
+        "region": "North America",
+        "deprecated": false,
+        "citation_scope": "associated_dataset_publication"
+      }
+    ],
+    "catalog_membership": "Official",
+    "presentation": {
+      "rank": 18,
+      "name": "EPA Level III ecoregions",
+      "size": "≈35 MB",
+      "scope": "CONUS vector package with state boundaries",
+      "source": "Shapefile ZIP",
+      "output": "GeoParquet + PMTiles"
+    }
+  },
+  {
+    "rank": 19,
+    "label": "USGS GAP CONUS 2011",
+    "selected_scope": "Exact size-bearing source package: USGS GAP/LANDFIRE National Terrestrial Ecosystems 2011 CONUS package (GAP/LANDFIRE 2011 raster; 30 m, 2011 imagery basis). This is GAP, not an NLCD volume.",
+    "native_formats": [
+      "ZIP containing 30 m raster and ancillary files; inner raster encoding unverified"
+    ],
+    "download_size": {
+      "display": "1,998,043,721 bytes (1.998 GB decimal)",
+      "status": "measured",
+      "bytes": 1998043721,
+      "scope": "The CONUS producer ZIP gap_landfire_nationalterrestrialecosystems2011.zip listed on USGS ScienceBase item 573cc51be4b0dae0d5e4b0c5.",
+      "basis": "Exact producer item-file size from the public ScienceBase item metadata JSON; only the metadata response was retrieved (24,144 bytes). The archive body was not downloaded."
+    },
+    "alternative_sizes": [],
+    "desired_formats": [
+      "COG"
+    ],
+    "rationale": "A categorical 30 m national raster is suited to tiled COG access; retain GAP class codes, native grid, masks and metadata.",
+    "existing_cloud_native": "GEE image asset; USGS offers land-cover downloads by CONUS, state and LCC. No cloud-native download archive verified.",
+    "caveats": [
+      "The size covers the CONUS GAP/LANDFIRE 2011 package only, not state or LCC subsets and not NLCD as a separate product.",
+      "The package is a ZIP containing the raster and associated files; the package byte count is compressed transfer size and does not describe uncompressed raster size.",
+      "The public item metadata identifies the ZIP but not its inner raster encoding. A proposed direct-file metadata read was rejected by automatic approval review; the retained safe catalog metadata was sufficient for the size claim."
+    ],
+    "sources": [
+      {
+        "url": "https://www.usgs.gov/programs/gap-analysis-project/science/land-cover-data-download",
+        "supports": "GAP/LANDFIRE 2011 download choices and 2011 CONUS imagery scope",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://www.usgs.gov/programs/gap-analysis-project/science/land-cover-data-overview",
+        "supports": "30 m raster resolution and download by state, territory or LCC",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/USGS_GAP_CONUS_2011",
+        "supports": "GEE GAP CONUS 2011 product identity",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://catalog.data.gov/dataset/gap-landfire-national-terrestrial-ecosystems-2011",
+        "supports": "USGS original metadata and dataset landing page; raster dimensions/scope and landing page, but no byte-size field",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://www.sciencebase.gov/catalog/item/573cc51be4b0dae0d5e4b0c5?format=json",
+        "supports": "USGS ScienceBase item metadata names gap_landfire_nationalterrestrialecosystems2011.zip with exact size 1,998,043,721 bytes",
+        "accessed": "2026-10-30"
+      }
+    ],
+    "parent_review": [
+      "Only ZIP container and raster identity are established by safe metadata inspection."
+    ],
+    "work_id": "https://openalex.org/W2199321793",
+    "citations": 2589,
+    "catalogs": [
+      "official"
+    ],
+    "catalog_entries": [
+      {
+        "id": "official:USGS/GAP/CONUS/2011",
+        "catalog": "official",
+        "catalog_id": "USGS/GAP/CONUS/2011",
+        "title": "USGS GAP CONUS 2011",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/USGS_GAP_CONUS_2011",
+        "geographic_scope": "regional",
+        "region": "North America",
+        "deprecated": false,
+        "citation_scope": "associated_dataset_publication"
+      }
+    ],
+    "catalog_membership": "Official",
+    "presentation": {
+      "rank": 19,
+      "name": "USGS GAP CONUS 2011",
+      "size": "2.00 GB",
+      "scope": "Complete CONUS producer package",
+      "source": "Raster ZIP; inner encoding unverified",
+      "output": "COG"
+    }
+  },
+  {
+    "rank": 20,
+    "label": "MODIS GPP/NPP (MOD17)",
+    "selected_scope": "MODIS/061 Terra MOD17A3HGF (gap-filled annual NPP with annual GPP output), complete global annual year 2024 across 290 unique CMR HDF granules, including science and QA layers. Other 8-day GPP and Aqua siblings are excluded.",
+    "native_formats": [
+      "HDF-EOS2/HDF4 .hdf granules"
+    ],
+    "download_size": {
+      "display": "Approximately 2,044.36 MB (NASA CMR-reported granule-size sum)",
+      "status": "publisher_stated",
+      "bytes": null,
+      "scope": "All 290 unique MOD17A3HGF.061 granules for annual 2024; every granule metadata record covers 2024-01-01 to 2024-12-31.",
+      "basis": "Summed CMR UMM DataGranule.ArchiveAndDistributionInformation Size values for all 290 unique global 2024 granules. CMR reports size unit MB; unit retained without converting to bytes or assuming decimal vs binary. Parent evidence contains three complete CMR pages and a size summary in evidence-parent/mod17-2024-*.json and mod17-2024-size-summary.json."
+    },
+    "alternative_sizes": [],
+    "desired_formats": [
+      "COG",
+      "Zarr"
+    ],
+    "rationale": "COG can serve individual spatial composites; Zarr suits multi-year 8-day and annual product time axes. Preserve GPP/NPP units, QA, scale factors, projection and fill values.",
+    "existing_cloud_native": "LP DAAC public granules are listed in CMR and LP DAAC data cloud; no maintained cloud-native analytical array distribution verified.",
+    "caveats": [
+      "This is one full annual Terra product/version/year, not the summed volume of all MOD17 products. MOD17A2H/HGF are separate 8-day GPP products; Aqua MYD17 products are separate.",
+      "CMR lists granule sizes in MB; unit retained and no exact-byte conversion inferred.",
+      "Preserve NPP and annual GPP science layers, QA, fill values, scale factors and native sinusoidal tiling."
+    ],
+    "sources": [
+      {
+        "url": "https://cmr.earthdata.nasa.gov/search/collections.umm_json?short_name=MOD17A3HGF&version=061&page_size=5",
+        "supports": "Current LP DAAC MOD17A3HGF.061 collection metadata and native HDF-EOS2 collection format",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?collection_concept_id=C2565791034-LPCLOUD&temporal=2024-01-01T00%3A00%3A00Z%2C2024-12-31T23%3A59%3A59Z&page_size=100&page_num=1",
+        "supports": "First 100 of 290 unique global MOD17A3HGF.061 2024 granule metadata records and size fields",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?collection_concept_id=C2565791034-LPCLOUD&temporal=2024-01-01T00%3A00%3A00Z%2C2024-12-31T23%3A59%3A59Z&page_size=100&page_num=2",
+        "supports": "Second 100 granules in the complete 2024 size aggregation",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?collection_concept_id=C2565791034-LPCLOUD&temporal=2024-01-01T00%3A00%3A00Z%2C2024-12-31T23%3A59%3A59Z&page_size=100&page_num=3",
+        "supports": "Final 90 granules in the complete 2024 size aggregation",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://lpdaac.usgs.gov/documents/972/MOD17_User_Guide_V61.pdf",
+        "supports": "Current V6.1 MOD17 HDF-EOS2 format, annual science layers and QA fields",
+        "accessed": "2026-10-30"
+      }
+    ],
+    "parent_review": [
+      "CMRMB values are publisher metadata, not exact byte measurements; avoid false precision."
+    ],
+    "work_id": "https://openalex.org/W2147423506",
+    "citations": 2477,
+    "catalogs": [
+      "official"
+    ],
+    "catalog_entries": [
+      {
+        "id": "official:MODIS/061/MOD17A2H",
+        "catalog": "official",
+        "catalog_id": "MODIS/061/MOD17A2H",
+        "title": "MOD17A2H.061: Terra Gross Primary Productivity 8-Day Global 500m",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MOD17A2H",
+        "geographic_scope": "global",
+        "region": "Global land",
+        "deprecated": false,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:MODIS/061/MOD17A2HGF",
+        "catalog": "official",
+        "catalog_id": "MODIS/061/MOD17A2HGF",
+        "title": "MOD17A2HGF.061: Terra Gross Primary Productivity 8-Day Global 500m",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MOD17A2HGF",
+        "geographic_scope": "global",
+        "region": "Global land",
+        "deprecated": false,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:MODIS/061/MOD17A3HGF",
+        "catalog": "official",
+        "catalog_id": "MODIS/061/MOD17A3HGF",
+        "title": "MOD17A3HGF.061: Terra Net Primary Production Gap-Filled Yearly Global 500m",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MOD17A3HGF",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": false,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:MODIS/061/MYD17A2H",
+        "catalog": "official",
+        "catalog_id": "MODIS/061/MYD17A2H",
+        "title": "MYD17A2H.061: Aqua Gross Primary Productivity 8-Day Global 500m",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MYD17A2H",
+        "geographic_scope": "global",
+        "region": "Global land",
+        "deprecated": false,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:MODIS/061/MYD17A3HGF",
+        "catalog": "official",
+        "catalog_id": "MODIS/061/MYD17A3HGF",
+        "title": "MYD17A3HGF.061: Aqua Net Primary Production Gap-Filled Yearly Global 500m",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MYD17A3HGF",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": false,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:MODIS/006/MOD17A2H",
+        "catalog": "official",
+        "catalog_id": "MODIS/006/MOD17A2H",
+        "title": "MOD17A2H.006: Terra Gross Primary Productivity 8-Day Global 500m [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/MODIS_006_MOD17A2H",
+        "geographic_scope": "global",
+        "region": "Global land",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:MODIS/006/MOD17A3H",
+        "catalog": "official",
+        "catalog_id": "MODIS/006/MOD17A3H",
+        "title": "MOD17A3H.006: Terra Net Primary Production Yearly Global 500m [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/MODIS_006_MOD17A3H",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:MODIS/006/MOD17A3HGF",
+        "catalog": "official",
+        "catalog_id": "MODIS/006/MOD17A3HGF",
+        "title": "MOD17A3HGF.006: Terra Net Primary Production  Gap-Filled Yearly Global 500m [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/MODIS_006_MOD17A3HGF",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:MODIS/006/MYD17A2H",
+        "catalog": "official",
+        "catalog_id": "MODIS/006/MYD17A2H",
+        "title": "MYD17A2H.006: Aqua Gross Primary Productivity 8-Day Global 500m [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/MODIS_006_MYD17A2H",
+        "geographic_scope": "global",
+        "region": "Global land",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:MODIS/006/MYD17A3H",
+        "catalog": "official",
+        "catalog_id": "MODIS/006/MYD17A3H",
+        "title": "MYD17A3H.006: Aqua Net Primary Production Yearly Global 500m [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/MODIS_006_MYD17A3H",
+        "geographic_scope": "global",
+        "region": "Global coverage",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      },
+      {
+        "id": "official:MODIS/006/MYD17A3HGF",
+        "catalog": "official",
+        "catalog_id": "MODIS/006/MYD17A3HGF",
+        "title": "MYD17A3HGF.006: Aqua Net Primary Production  Gap-Filled Yearly Global 500m [deprecated]",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/MODIS_006_MYD17A3HGF",
+        "geographic_scope": "global",
+        "region": "Global coverage",
+        "deprecated": true,
+        "citation_scope": "base_dataset_family"
+      }
+    ],
+    "catalog_membership": "Official",
+    "presentation": {
+      "rank": 20,
+      "name": "MODIS GPP/NPP",
+      "size": "≈2,044 MB",
+      "scope": "Global 2024 MOD17A3HGF.061, 290 tiles",
+      "source": "HDF-EOS2",
+      "output": "COG; Zarr across years"
+    }
+  },
+  {
+    "rank": 21,
+    "label": "WWF HydroSHEDS Free Flowing Rivers Network v1",
+    "selected_scope": "Global free-flowing river network and attributes in the author-released file-geodatabase ZIP; technicalPDF excluded from primary download size.",
+    "native_formats": [
+      "File geodatabase in ZIP",
+      "Technical documentation PDF (separate)"
+    ],
+    "download_size": {
+      "display": "954,710,486 bytes (954.71 MB), geodatabase ZIP",
+      "status": "measured",
+      "bytes": 954710486,
+      "scope": "Mapping the worlds free-flowing rivers_Data_Geodatabase.zip",
+      "basis": "Exact Figshare articleAPI file.size; archive body not downloaded. Technical documentation PDF is1,383,410 bytes separately."
+    },
+    "alternative_sizes": [],
+    "desired_formats": [
+      "GeoParquet",
+      "PMTiles (optional display derivative)"
+    ],
+    "rationale": "River reaches are vector lines with reach-level pressure indicators, connectivity status, and other attributes. GeoParquet supports analytical scans and attribute access; PMTiles can serve a display copy while preserving the full-resolution source geometry separately.",
+    "existing_cloud_native": "Not checked beyond the linked figshare ZIP; no maintained cloud-native distribution verified.",
+    "caveats": [
+      "Released network does not include every licensed dam input needed to recompute the study."
+    ],
+    "sources": [
+      {
+        "url": "https://api.figshare.com/v2/articles/7688801",
+        "supports": "Exact file names and sizes:954,710,486-byte geodatabase ZIP;1,383,410-byte PDF.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://doi.org/10.6084/m9.figshare.7688801",
+        "supports": "Producer/author figshare record, publication identity, and Download all 911.8 MB publisher-stated size.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://www.nature.com/articles/s41586-019-1111-9",
+        "supports": "Paper data availability, linked dataset contents, CC-BY-4.0 license, and excluded licensed dam inputs.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_v1_FreeFlowingRivers",
+        "supports": "Official GEE catalog membership and hosted vector dataset identity.",
+        "accessed": "2026-10-30"
+      }
+    ],
+    "parent_review": [
+      "FigshareAPI exposes exact bytes and actual geodatabase ZIP format."
+    ],
+    "work_id": "https://openalex.org/W2944057425",
+    "citations": 2473,
+    "catalogs": [
+      "official"
+    ],
+    "catalog_entries": [
+      {
+        "id": "official:WWF/HydroSHEDS/v1/FreeFlowingRivers",
+        "catalog": "official",
+        "catalog_id": "WWF/HydroSHEDS/v1/FreeFlowingRivers",
+        "title": "WWF HydroSHEDS Free Flowing Rivers Network v1",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_v1_FreeFlowingRivers",
+        "geographic_scope": "global",
+        "region": "Global (limited latitude range)",
+        "deprecated": false,
+        "citation_scope": "associated_dataset_publication"
+      }
+    ],
+    "catalog_membership": "Official",
+    "presentation": {
+      "rank": 21,
+      "name": "Free-flowing rivers",
+      "size": "954.71 MB",
+      "scope": "Global author-released network; excludes PDF",
+      "source": "File geodatabase ZIP",
+      "output": "GeoParquet + PMTiles"
+    }
+  },
+  {
+    "rank": 22,
+    "label": "RESOLVE Ecoregions 2017",
+    "selected_scope": "The global 2017 RESOLVE terrestrial ecoregion boundaries and associated attributes (846 ecoregions), matching the GEE catalog entry.",
+    "native_formats": [
+      "Shapefile in ZIP archive",
+      "Earth Engine FeatureCollection"
+    ],
+    "download_size": {
+      "display": "150 MB ZIP",
+      "status": "publisher_stated",
+      "bytes": null,
+      "scope": "RESOLVE Ecoregions 2017 global shapefile download",
+      "basis": "The producer site labels the download ‘Shapefile (150mb zip)’. Exact bytes are not exposed; publisher unit is preserved."
+    },
+    "alternative_sizes": [],
+    "desired_formats": [
+      "GeoParquet",
+      "PMTiles (optional display derivative)"
+    ],
+    "rationale": "This is a static polygon layer with stable attributes. GeoParquet offers interoperable analytical vector storage; PMTiles can provide an independently generated web-display derivative.",
+    "existing_cloud_native": "Earth Engine FeatureCollection exists; no public cloud object distribution in a columnar vector format was verified.",
+    "caveats": [
+      "Some complex ecoregion geometries are split into multiple features in the catalog representation; preserve ECO_ID when exporting or converting."
+    ],
+    "sources": [
+      {
+        "url": "https://ecoregions.world/",
+        "supports": "Producer-hosted shapefile ZIP format and stated 150 MB download size.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/RESOLVE_ECOREGIONS_2017",
+        "supports": "Official GEE dataset identity, global 846-ecoregion coverage, and feature representation.",
+        "accessed": "2026-10-30"
+      }
+    ],
+    "work_id": "https://openalex.org/W2605932719",
+    "citations": 2459,
+    "catalogs": [
+      "official"
+    ],
+    "catalog_entries": [
+      {
+        "id": "official:RESOLVE/ECOREGIONS/2017",
+        "catalog": "official",
+        "catalog_id": "RESOLVE/ECOREGIONS/2017",
+        "title": "RESOLVE Ecoregions 2017",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/RESOLVE_ECOREGIONS_2017",
+        "geographic_scope": "global",
+        "region": "Global coverage",
+        "deprecated": false,
+        "citation_scope": "associated_dataset_publication"
+      }
+    ],
+    "catalog_membership": "Official",
+    "presentation": {
+      "rank": 22,
+      "name": "RESOLVE Ecoregions 2017",
+      "size": "≈150 MB",
+      "scope": "Global polygon shapefile",
+      "source": "Shapefile ZIP",
+      "output": "GeoParquet + PMTiles"
+    }
+  },
+  {
+    "rank": 23,
+    "label": "WWF HydroSHEDS v1 core rasters and HydroBASINS vectors",
+    "selected_scope": "The rank group spans multiple HydroSHEDS v1 products: 3/15/30-arc-second DEM, drainage-direction and flow-accumulation rasters, plus HydroBASINS nested vector basin levels. For a defensible size example, this row sizes only the six continental 3-arc-second hydrologically conditioned DEM ZIPs (v1.1). This does not size the full group.",
+    "native_formats": [
+      "GeoTIFF rasters (HydroSHEDS v1.1 core downloads)",
+      "Shapefile vectors (HydroBASINS levels; continent packages)"
+    ],
+    "download_size": {
+      "display": "16,460 MB (sum of six continental 3-arc-second conditioned-DEM publisher figures; not the family total)",
+      "status": "bounded_estimate",
+      "bytes": null,
+      "scope": "Africa 3,156 MB + Asia 4,555 MB + Australasia 1,458 MB + Europe/Middle East 2,286 MB + North/Central America 2,705 MB + South America 2,300 MB; hydrologically conditioned DEM only, 3 arc-seconds, v1.1",
+      "basis": "Arithmetic sum of six rounded file-size values published in the HydroSHEDS download table: 3156+4555+1458+2286+2705+2300=16460 MB. Because the source rounds sizes and does not clarify decimal/binary MB, no byte conversion is asserted. This is one raster product only; HydroBASINS and other resolutions/layers are excluded."
+    },
+    "alternative_sizes": [
+      {
+        "display": "1,048 MB",
+        "status": "publisher_stated",
+        "bytes": null,
+        "scope": "HydroSHEDS void-filled DEM, global 15-arc-second download, v1.1",
+        "basis": "Official download table states Global 15s 1048MB; not additive to the selected 3s conditioned DEM and not a family total."
+      }
+    ],
+    "desired_formats": [
+      "COG for each raster layer/tile",
+      "GeoParquet for HydroBASINS vector layers",
+      "PMTiles (optional basin display derivative)"
+    ],
+    "rationale": "Keep each native resolution, layer, projection, coding, and nodata semantics explicit. COG supports range-based raster access; GeoParquet preserves basin geometries and attributes for analytical access.",
+    "existing_cloud_native": "No maintained cloud-native distribution verified. Official publisher downloads are tiled GeoTIFF and shapefile products.",
+    "caveats": [
+      "The rank group contains 21 distinct catalog assets and is not one archive or one dataset identity.",
+      "The selected 3s conditioned DEM is listed only by continent; no global single-file download is listed. HydroBASINS has 12 nested levels and continental packages; its download page does not state their sizes.",
+      "The publisher download page is for v1.1, while the GEE rank group includes named v1 core layers and basin assets; do not treat v1.1 file figures as the measured size of every GEE asset."
+    ],
+    "sources": [
+      {
+        "url": "https://www.hydrosheds.org/hydrosheds-core-downloads",
+        "supports": "v1.1 core raster formats, resolutions, continental conditioned-DEM sizes, and global 15s void-filled DEM size.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://www.hydrosheds.org/products/hydrobasins",
+        "supports": "HydroBASINS vector polygons, 12 levels, shapefile continental packages, and product scope.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_03CONDEM",
+        "supports": "Official GEE rank-group representative conditioned DEM identity.",
+        "accessed": "2026-10-30"
+      }
+    ],
+    "work_id": "https://openalex.org/W2171675471",
+    "citations": 2411,
+    "catalogs": [
+      "official"
+    ],
+    "catalog_entries": [
+      {
+        "id": "official:WWF/HydroSHEDS/03CONDEM",
+        "catalog": "official",
+        "catalog_id": "WWF/HydroSHEDS/03CONDEM",
+        "title": "WWF HydroSHEDS Hydrologically Conditioned DEM, 3 Arc-Seconds",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_03CONDEM",
+        "geographic_scope": "global",
+        "region": "Global coverage",
+        "deprecated": false,
+        "citation_scope": "associated_dataset_publication"
+      },
+      {
+        "id": "official:WWF/HydroSHEDS/03DIR",
+        "catalog": "official",
+        "catalog_id": "WWF/HydroSHEDS/03DIR",
+        "title": "WWF HydroSHEDS Drainage Direction, 3 Arc-Seconds",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_03DIR",
+        "geographic_scope": "global",
+        "region": "Global coverage",
+        "deprecated": false,
+        "citation_scope": "associated_dataset_publication"
+      },
+      {
+        "id": "official:WWF/HydroSHEDS/03VFDEM",
+        "catalog": "official",
+        "catalog_id": "WWF/HydroSHEDS/03VFDEM",
+        "title": "WWF HydroSHEDS Void-Filled DEM, 3 Arc-Seconds",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_03VFDEM",
+        "geographic_scope": "global",
+        "region": "Global coverage",
+        "deprecated": false,
+        "citation_scope": "associated_dataset_publication"
+      },
+      {
+        "id": "official:WWF/HydroSHEDS/15ACC",
+        "catalog": "official",
+        "catalog_id": "WWF/HydroSHEDS/15ACC",
+        "title": "WWF HydroSHEDS Flow Accumulation, 15 Arc-Seconds",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_15ACC",
+        "geographic_scope": "global",
+        "region": "Global coverage",
+        "deprecated": false,
+        "citation_scope": "associated_dataset_publication"
+      },
+      {
+        "id": "official:WWF/HydroSHEDS/15CONDEM",
+        "catalog": "official",
+        "catalog_id": "WWF/HydroSHEDS/15CONDEM",
+        "title": "WWF HydroSHEDS Hydrologically Conditioned DEM, 15 Arc-Seconds",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_15CONDEM",
+        "geographic_scope": "global",
+        "region": "Global coverage",
+        "deprecated": false,
+        "citation_scope": "associated_dataset_publication"
+      },
+      {
+        "id": "official:WWF/HydroSHEDS/15DIR",
+        "catalog": "official",
+        "catalog_id": "WWF/HydroSHEDS/15DIR",
+        "title": "WWF HydroSHEDS Drainage Direction, 15 Arc-Seconds",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_15DIR",
+        "geographic_scope": "global",
+        "region": "Global coverage",
+        "deprecated": false,
+        "citation_scope": "associated_dataset_publication"
+      },
+      {
+        "id": "official:WWF/HydroSHEDS/30ACC",
+        "catalog": "official",
+        "catalog_id": "WWF/HydroSHEDS/30ACC",
+        "title": "WWF HydroSHEDS Flow Accumulation, 30 Arc-Seconds",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_30ACC",
+        "geographic_scope": "global",
+        "region": "Global coverage",
+        "deprecated": false,
+        "citation_scope": "associated_dataset_publication"
+      },
+      {
+        "id": "official:WWF/HydroSHEDS/30CONDEM",
+        "catalog": "official",
+        "catalog_id": "WWF/HydroSHEDS/30CONDEM",
+        "title": "WWF HydroSHEDS Hydrologically Conditioned DEM, 30 Arc-Seconds",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_30CONDEM",
+        "geographic_scope": "global",
+        "region": "Global coverage",
+        "deprecated": false,
+        "citation_scope": "associated_dataset_publication"
+      },
+      {
+        "id": "official:WWF/HydroSHEDS/30DIR",
+        "catalog": "official",
+        "catalog_id": "WWF/HydroSHEDS/30DIR",
+        "title": "WWF HydroSHEDS Drainage Direction, 30 Arc-Seconds",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_30DIR",
+        "geographic_scope": "global",
+        "region": "Global coverage",
+        "deprecated": false,
+        "citation_scope": "associated_dataset_publication"
+      },
+      {
+        "id": "official:WWF/HydroSHEDS/v1/Basins/hybas_1",
+        "catalog": "official",
+        "catalog_id": "WWF/HydroSHEDS/v1/Basins/hybas_1",
+        "title": "WWF HydroSHEDS Basins Level 1",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_v1_Basins_hybas_1",
+        "geographic_scope": "global",
+        "region": "Global land drainage basins",
+        "deprecated": false,
+        "citation_scope": "associated_dataset_publication"
+      },
+      {
+        "id": "official:WWF/HydroSHEDS/v1/Basins/hybas_10",
+        "catalog": "official",
+        "catalog_id": "WWF/HydroSHEDS/v1/Basins/hybas_10",
+        "title": "WWF HydroSHEDS Basins Level 10",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_v1_Basins_hybas_10",
+        "geographic_scope": "global",
+        "region": "Global land drainage basins",
+        "deprecated": false,
+        "citation_scope": "associated_dataset_publication"
+      },
+      {
+        "id": "official:WWF/HydroSHEDS/v1/Basins/hybas_11",
+        "catalog": "official",
+        "catalog_id": "WWF/HydroSHEDS/v1/Basins/hybas_11",
+        "title": "WWF HydroSHEDS Basins Level 11",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_v1_Basins_hybas_11",
+        "geographic_scope": "global",
+        "region": "Global land drainage basins",
+        "deprecated": false,
+        "citation_scope": "associated_dataset_publication"
+      },
+      {
+        "id": "official:WWF/HydroSHEDS/v1/Basins/hybas_12",
+        "catalog": "official",
+        "catalog_id": "WWF/HydroSHEDS/v1/Basins/hybas_12",
+        "title": "WWF HydroSHEDS Basins Level 12",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_v1_Basins_hybas_12",
+        "geographic_scope": "global",
+        "region": "Global land drainage basins",
+        "deprecated": false,
+        "citation_scope": "associated_dataset_publication"
+      },
+      {
+        "id": "official:WWF/HydroSHEDS/v1/Basins/hybas_2",
+        "catalog": "official",
+        "catalog_id": "WWF/HydroSHEDS/v1/Basins/hybas_2",
+        "title": "WWF HydroSHEDS Basins Level 2",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_v1_Basins_hybas_2",
+        "geographic_scope": "global",
+        "region": "Global land drainage basins",
+        "deprecated": false,
+        "citation_scope": "associated_dataset_publication"
+      },
+      {
+        "id": "official:WWF/HydroSHEDS/v1/Basins/hybas_3",
+        "catalog": "official",
+        "catalog_id": "WWF/HydroSHEDS/v1/Basins/hybas_3",
+        "title": "WWF HydroSHEDS Basins Level 3",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_v1_Basins_hybas_3",
+        "geographic_scope": "global",
+        "region": "Global land drainage basins",
+        "deprecated": false,
+        "citation_scope": "associated_dataset_publication"
+      },
+      {
+        "id": "official:WWF/HydroSHEDS/v1/Basins/hybas_4",
+        "catalog": "official",
+        "catalog_id": "WWF/HydroSHEDS/v1/Basins/hybas_4",
+        "title": "WWF HydroSHEDS Basins Level 4",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_v1_Basins_hybas_4",
+        "geographic_scope": "global",
+        "region": "Global land drainage basins",
+        "deprecated": false,
+        "citation_scope": "associated_dataset_publication"
+      },
+      {
+        "id": "official:WWF/HydroSHEDS/v1/Basins/hybas_5",
+        "catalog": "official",
+        "catalog_id": "WWF/HydroSHEDS/v1/Basins/hybas_5",
+        "title": "WWF HydroSHEDS Basins Level 5",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_v1_Basins_hybas_5",
+        "geographic_scope": "global",
+        "region": "Global land drainage basins",
+        "deprecated": false,
+        "citation_scope": "associated_dataset_publication"
+      },
+      {
+        "id": "official:WWF/HydroSHEDS/v1/Basins/hybas_6",
+        "catalog": "official",
+        "catalog_id": "WWF/HydroSHEDS/v1/Basins/hybas_6",
+        "title": "WWF HydroSHEDS Basins Level 6",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_v1_Basins_hybas_6",
+        "geographic_scope": "global",
+        "region": "Global land drainage basins",
+        "deprecated": false,
+        "citation_scope": "associated_dataset_publication"
+      },
+      {
+        "id": "official:WWF/HydroSHEDS/v1/Basins/hybas_7",
+        "catalog": "official",
+        "catalog_id": "WWF/HydroSHEDS/v1/Basins/hybas_7",
+        "title": "WWF HydroSHEDS Basins Level 7",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_v1_Basins_hybas_7",
+        "geographic_scope": "global",
+        "region": "Global land drainage basins",
+        "deprecated": false,
+        "citation_scope": "associated_dataset_publication"
+      },
+      {
+        "id": "official:WWF/HydroSHEDS/v1/Basins/hybas_8",
+        "catalog": "official",
+        "catalog_id": "WWF/HydroSHEDS/v1/Basins/hybas_8",
+        "title": "WWF HydroSHEDS Basins Level 8",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_v1_Basins_hybas_8",
+        "geographic_scope": "global",
+        "region": "Global land drainage basins",
+        "deprecated": false,
+        "citation_scope": "associated_dataset_publication"
+      },
+      {
+        "id": "official:WWF/HydroSHEDS/v1/Basins/hybas_9",
+        "catalog": "official",
+        "catalog_id": "WWF/HydroSHEDS/v1/Basins/hybas_9",
+        "title": "WWF HydroSHEDS Basins Level 9",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_v1_Basins_hybas_9",
+        "geographic_scope": "global",
+        "region": "Global land drainage basins",
+        "deprecated": false,
+        "citation_scope": "associated_dataset_publication"
+      }
+    ],
+    "catalog_membership": "Official",
+    "presentation": {
+      "rank": 23,
+      "name": "HydroSHEDS",
+      "size": "≈16,460 MB",
+      "scope": "Global continental 3″ conditioned DEM only",
+      "source": "GeoTIFF; HydroBASINS are shapefiles",
+      "output": "COG; GeoParquet + PMTiles for basins"
+    }
+  },
+  {
+    "rank": 24,
+    "label": "SoilGrids 250 m v2.0",
+    "selected_scope": "The community catalog page is a SoilGrids 250 m v2.0 overview, not a bulk-density-only dataset: it enumerates 11 soil properties. For the rank's title-specific measure, selected scope is bdod_mean, bulk density of fine earth at six standard depths. The wider SoilGrids property family is not sized as one archive.",
+    "native_formats": [
+      "Tiled GeoTIFF maps per property/depth/statistic",
+      "Global virtual-mosaic VRT descriptors",
+      "Earth Engine image assets for mean layers (six depth bands)"
+    ],
+    "download_size": {
+      "display": "Unknown",
+      "status": "unknown",
+      "bytes": null,
+      "scope": "Global SoilGrids 250 m v2.0 bdod_mean product across six standard depths",
+      "basis": "ISRIC WebDAV exposes public per-tile GeoTIFF listings and one VRT per map, but no aggregate byte total for all tiles covering the global bdod_mean six-depth set. A complete global map needs hundreds of tile objects; VRT descriptor sizes are not map payload size. No data body was downloaded."
+    },
+    "alternative_sizes": [],
+    "desired_formats": [
+      "COG (one band per depth, with explicit units and nodata)",
+      "Zarr (optional grouped property/depth/quantile cube if multiple SoilGrids properties are published together)"
+    ],
+    "rationale": "Soil variables are static gridded predictions and are natural raster COGs. A multi-property Zarr grouping could serve repeated depth/property analysis, provided all prediction and uncertainty layers, scale factors, units and native 250 m grid are preserved.",
+    "existing_cloud_native": "ISRIC WMS/WCS endpoint and WebDAV VRT mosaics exist; VRTs point to public tiled files rather than consolidating the map payload. Earth Engine assets exist for cataloged mean properties.",
+    "caveats": [
+      "The community page title begins ‘Bulk density’ but its full page enumerates bdod plus cec, cfvo, clay, nitrogen, phh2o, sand, silt, soc, ocd and ocs mean layers; this row captures that broader membership while selecting bdod for size scope.",
+      "The ISRIC directory lists six depth intervals and mean, quantile and uncertainty variants. This selected scope is bdod mean at all six depths only; VRT/overview file size must not be mistaken for raster payload size."
+    ],
+    "sources": [
+      {
+        "url": "https://gee-community-catalog.org/projects/isric/",
+        "supports": "Full community catalog overview: all listed properties and associated SoilGrids 2.0 Earth Engine assets.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://maps.isric.org/soilgrids.html",
+        "supports": "ISRIC producer property menu, including separate bulk density and other SoilGrids property services.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://maps.isric.org/generated/soilgrids/bdod.html",
+        "supports": "ISRIC bdod mapfile, WMS/WCS access, and bulk-density layer identity.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://docs.isric.org/globaldata/soilgrids/index.html",
+        "supports": "Producer documentation that SoilGrids outputs global six-depth 250 m property maps and WebDAV provides complete global maps as VRT mosaics.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://files.isric.org/soilgrids/latest/data/bdod/",
+        "supports": "Public producer directory lists per-depth/statistic VRT descriptors and tile folders for bdod.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://files.isric.org/soilgrids/latest/data/bdod/bdod_0-5cm_mean/tileSG-000-019/",
+        "supports": "Public producer tile listing confirms GeoTIFF tile format and size of an individual component tile; not used as a whole-map estimate.",
+        "accessed": "2026-10-30"
+      }
+    ],
+    "work_id": "https://openalex.org/W3166420679",
+    "citations": 2383,
+    "catalogs": [
+      "community"
+    ],
+    "catalog_entries": [
+      {
+        "id": "community:isric",
+        "catalog": "community",
+        "catalog_id": "isric",
+        "title": "Bulk density of the fine earth fraction",
+        "url": "https://gee-community-catalog.org/projects/isric",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": null,
+        "citation_scope": "associated_dataset_publication"
+      }
+    ],
+    "catalog_membership": "Community",
+    "presentation": {
+      "rank": 24,
+      "name": "SoilGrids 2.0",
+      "size": "Unknown",
+      "scope": "Global bulk-density means at six depths",
+      "source": "Tiled GeoTIFF + VRT",
+      "output": "COG; optional depth/property Zarr"
+    }
+  },
+  {
+    "rank": 25,
+    "label": "GRIDMET and GRIDMET DROUGHT",
+    "selected_scope": "Two distinct datasets in the cited rank group: (1) the primary NCAR GDEX bulk distribution for daily CONUS gridMET, 1979–2025, ten listed variables in NetCDF4; (2) separate 5-day GRIDMET DROUGHT indices from 1980 to present. The publisher total below applies only to the complete NCAR base gridMET distribution, not the current 16-band GEE collection or the drought product.",
+    "native_formats": [
+      "NetCDF-4 daily GRIDMET variable files",
+      "GRIDMET DROUGHT Earth Engine ImageCollection (standalone native file format not specified by checked producer page)",
+      "NetCDF/OPeNDAP and Zarr access options for GRIDMET"
+    ],
+    "download_size": {
+      "display": "79.53 GB",
+      "status": "publisher_stated",
+      "bytes": null,
+      "scope": "Full NCAR GDEX gridMET Daily Surface Data distribution, 1979-01-01 through 2025-12-31, ten cataloged variables, CONUS, NetCDF4",
+      "basis": "NCAR GDEX dataset d761426 reports Total Volume 79.53 GB and format netCDF4. This covers that archived 10-variable distribution only; it excludes GRIDMET DROUGHT and does not cover later GEE dates/bands."
+    },
+    "alternative_sizes": [
+      {
+        "display": "Unknown",
+        "status": "unknown",
+        "bytes": null,
+        "scope": "Current GEE IDAHO_EPSCOR/GRIDMET collection, 1979 to 2026-10-26, 16 bands",
+        "basis": "GEE catalog lists 16 bands, while NCAR GDEX d761426 metadata lists ten variables through 2025-12-31; no matching current full-manifest size was found."
+      },
+      {
+        "display": "Unknown",
+        "status": "unknown",
+        "bytes": null,
+        "scope": "Separate GRIDMET/DROUGHT 5-day index collection, 1980 to 2026-10-22",
+        "basis": "GEE catalog identifies separate drought indices and cadence; GDEX d761426 is the base meteorology distribution and excludes this derived product."
+      }
+    ],
+    "desired_formats": [
+      "Zarr for multidimensional time series, separately for GRIDMET variables and drought indices",
+      "COG for explicitly requested one-date raster extracts"
+    ],
+    "rationale": "Daily and 5-day spatial series are multidimensional in time and variable, well suited to chunked Zarr; standalone date extracts can be COG while preserving native grid and scale/offset metadata.",
+    "existing_cloud_native": "GRIDMET is accessible from an aggregated THREDDS/OPeNDAP catalog and a USGS Geo Data Portal Zarr API; the latter is a cloud-native access path for GRIDMET. No equivalent cloud-native distribution verified for GRIDMET DROUGHT.",
+    "caveats": [
+      "NCAR GDEX dataset d761426 is an archived 1979–2025 distribution listing ten variables (including biomass burning and wildland fuels). GEE's current daily collection lists 16 bands and extends through 2026-10-26, so its total is not represented by 79.53 GB.",
+      "GRIDMET DROUGHT is a separate 5-day derived product with SPI/EDDI/SPEI scales and PDSI/Z; it is excluded from NCAR d761426's 79.53 GB.",
+      "NETCDF4 files use scale_factor and offset; preserve those attributes."
+    ],
+    "sources": [
+      {
+        "url": "https://www.climatologylab.org/gridmet.html",
+        "supports": "Publisher direct NetCDF, wget, THREDDS/OPeNDAP and USGS Zarr access; NETCDF4 encoding and scale/offset note.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://gdex.ucar.edu/datasets/d761426/",
+        "supports": "NCAR GDEX primary metadata: 1979–2025 coverage, ten listed variables, CONUS grid dimensions, netCDF4 format, and 79.53 GB Total Volume.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/IDAHO_EPSCOR_GRIDMET",
+        "supports": "GRIDMET spatial extent, daily cadence, temporal coverage, and product description.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/GRIDMET_DROUGHT",
+        "supports": "Separate drought-index product, 5-day cadence, available indices and time scales.",
+        "accessed": "2026-10-30"
+      }
+    ],
+    "work_id": "https://openalex.org/W1995047010",
+    "citations": 1948,
+    "catalogs": [
+      "official"
+    ],
+    "catalog_entries": [
+      {
+        "id": "official:GRIDMET/DROUGHT",
+        "catalog": "official",
+        "catalog_id": "GRIDMET/DROUGHT",
+        "title": "GRIDMET DROUGHT: CONUS Drought Indices",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/GRIDMET_DROUGHT",
+        "geographic_scope": "regional",
+        "region": "United States/CONUS",
+        "deprecated": false,
+        "citation_scope": "associated_dataset_publication"
+      },
+      {
+        "id": "official:IDAHO_EPSCOR/GRIDMET",
+        "catalog": "official",
+        "catalog_id": "IDAHO_EPSCOR/GRIDMET",
+        "title": "GRIDMET: University of Idaho Gridded Surface Meteorological Dataset",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/IDAHO_EPSCOR_GRIDMET",
+        "geographic_scope": "regional",
+        "region": "North America",
+        "deprecated": false,
+        "citation_scope": "associated_dataset_publication"
+      }
+    ],
+    "catalog_membership": "Official",
+    "presentation": {
+      "rank": 25,
+      "name": "gridMET",
+      "size": "79.53 GB",
+      "scope": "NCAR 1979–2025 archive; drought product excluded",
+      "source": "NetCDF4; Zarr access exists",
+      "output": "Zarr"
+    }
+  },
+  {
+    "rank": 26,
+    "label": "Hugonnet et al. global glacier elevation change 2000–2019",
+    "selected_scope": "The community GEE entry ingests only global elevation-change products, not every publication supplement. Size is for the author's publicly available elevation-change GeoTIFF raster bundle covering 5-, 10- and 20-year periods at 100 m; per-glacier/global tables and on-demand monthly elevation time series are excluded.",
+    "native_formats": [
+      "GeoTIFF raster tiles (.tif)",
+      "CSV tables and NetCDF monthly time series exist in the broader publication data release, but are outside the selected GEE product scope"
+    ],
+    "download_size": {
+      "display": "Approximately 15 GB",
+      "status": "publisher_stated",
+      "bytes": null,
+      "scope": "Public elevation-change raster files for successive 5-, 10- and 20-year periods of 2000–2019, 100 m posting; associated uncertainty rasters included in the raster family",
+      "basis": "The lead author's GitHub README states elevation-change rasters (.tif) are approximately 15 GB. It separately lists public CSV products (~500 MB and ~3 GB) and monthly elevation time series (~3 TB, on demand); these are not added to this raster-only figure."
+    },
+    "alternative_sizes": [
+      {
+        "display": "~500 MB + ~3 GB",
+        "status": "publisher_stated",
+        "bytes": null,
+        "scope": "Broader public CSV time-series tables at annual and period aggregation intervals; separate from the selected GEE raster product",
+        "basis": "Author repository README provides approximate sizes; not included in the 15 GB raster claim."
+      },
+      {
+        "display": "~3 TB, on demand",
+        "status": "publisher_stated",
+        "bytes": null,
+        "scope": "100 m monthly elevation time series; not included in publicly downloadable selected raster product",
+        "basis": "Author repository README says available only on demand."
+      }
+    ],
+    "desired_formats": [
+      "COG for the existing period-specific raster maps",
+      "Zarr for monthly NetCDF time series when distributed"
+    ],
+    "rationale": "Period-specific elevation change and uncertainty rasters fit COG. The monthly 100 m temporal stack is multidimensional and better served as chunked Zarr, while retaining original units, period definitions and uncertainty values.",
+    "existing_cloud_native": "Theia/SEDOO provides bulk download and tile-oriented access; no cloud-native COG/Zarr object layout verified. The GEE community collection exposes image collections.",
+    "caveats": [
+      "Do not combine ~15 GB raster, ~3.5 GB public CSV tables, ~3 TB on-demand monthly series, and ~10 TB on-demand bias-corrected DEMs into one size claim.",
+      "Theia product tiles cover 1° x 1°; author README uses approximate size and does not specify decimal/binary GB.",
+      "Theia documents periods 2000–2004, 2005–2009, 2010–2014, 2015–2019, 2000–2009, 2010–2019, and 2000–2019; retain both elevation-change and uncertainty layers."
+    ],
+    "sources": [
+      {
+        "url": "https://github.com/rhugonnet/ww_tvol_study",
+        "supports": "Lead-author repository: public GeoTIFF raster family (~15 GB), separate public CSV tables, and on-demand NetCDF and raw DEM size/scope distinctions.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://gee-community-catalog.org/projects/glacier/",
+        "supports": "Community GEE entry's ingested scope, GeoTIFF raster format, 100 m tiles, time periods and uncertainty rasters.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://www.theia-land.fr/en/blog/product/rate-of-glacier-elevation-changes-from-2000-to-2019/",
+        "supports": "Producer service summary, Theia tile/period access, 100 m products and Hugonnet study provenance.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://www.nature.com/articles/s41586-021-03436-z",
+        "supports": "Publication data availability and 100 m 5-, 10- and 20-year elevation-change maps.",
+        "accessed": "2026-10-30"
+      }
+    ],
+    "work_id": "https://openalex.org/W3157632309",
+    "citations": 1910,
+    "catalogs": [
+      "community"
+    ],
+    "catalog_entries": [
+      {
+        "id": "community:glacier",
+        "catalog": "community",
+        "catalog_id": "glacier",
+        "title": "Global Glacier Elevation change products (2000-2019) Elevation Change",
+        "url": "https://gee-community-catalog.org/projects/glacier",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": null,
+        "citation_scope": "associated_dataset_publication"
+      }
+    ],
+    "catalog_membership": "Community",
+    "presentation": {
+      "rank": 26,
+      "name": "Global glacier elevation change",
+      "size": "≈15 GB",
+      "scope": "2000–2019 change/uncertainty raster family",
+      "source": "GeoTIFF",
+      "output": "COG"
+    }
+  },
+  {
+    "rank": 27,
+    "label": "WHRC Pantropical National Level Carbon Stock Dataset",
+    "selected_scope": "One static global/pantropical 500 m above-ground live woody biomass density image (2012-01-29), band Mg in megagrams per hectare, matching WHRC/biomass/tropical.",
+    "native_formats": [
+      "Earth Engine ee.Image hosted asset; standalone producer download format not documented in the checked source"
+    ],
+    "download_size": {
+      "display": "Unknown",
+      "status": "unknown",
+      "bytes": null,
+      "scope": "Single static 500 m WHRC tropical biomass density image",
+      "basis": "The official GEE catalog confirms one image, one band, 500 m pixels and units, but no public file manifest or downloadable byte total was found in the checked producer documentation."
+    },
+    "alternative_sizes": [],
+    "desired_formats": [
+      "COG"
+    ],
+    "rationale": "This is a single spatial biomass raster; COG provides ranged reads while preserving biomass values, units and spatial grid. Do not infer size from the 500 m pixel size alone.",
+    "existing_cloud_native": "Google Earth Engine hosted image is verified; no COG/COG-hosted source distribution verified.",
+    "caveats": [
+      "Static 2012 snapshot, not a time series.",
+      "Catalog use terms state scientific, conservation and educational use; verify licensing/redistribution before mirroring."
+    ],
+    "sources": [
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/WHRC_biomass_tropical",
+        "supports": "Official catalog image identity, 500 m resolution, date, band and units; no standalone file-size manifest.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://doi.org/10.1038/nclimate1354",
+        "supports": "Associated publication and original biomass-density map context.",
+        "accessed": "2026-10-30"
+      }
+    ],
+    "work_id": "https://openalex.org/W2166394891",
+    "citations": 1788,
+    "catalogs": [
+      "official"
+    ],
+    "catalog_entries": [
+      {
+        "id": "official:WHRC/biomass/tropical",
+        "catalog": "official",
+        "catalog_id": "WHRC/biomass/tropical",
+        "title": "WHRC Pantropical National Level Carbon Stock Dataset",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/WHRC_biomass_tropical",
+        "geographic_scope": "regional",
+        "region": "Tropical regions",
+        "deprecated": false,
+        "citation_scope": "associated_dataset_publication"
+      }
+    ],
+    "catalog_membership": "Official",
+    "presentation": {
+      "rank": 27,
+      "name": "WHRC tropical biomass",
+      "size": "Unknown",
+      "scope": "One 500 m pantropical map",
+      "source": "GEE image; standalone format unverified",
+      "output": "COG"
+    }
+  },
+  {
+    "rank": 28,
+    "label": "HydroLAKES v1.0 lake polygons",
+    "selected_scope": "Global polygons and all attributes for 1,427,688 lakes/reservoirs, using the HydroLAKES v1.0 shapefile download. The community GEE entry also exposes a separate point layer, not included in this polygon size.",
+    "native_formats": [
+      "Shapefile in ZIP archive (polygon layer)",
+      "File geodatabase in ZIP archive (polygon layer)",
+      "Earth Engine FeatureCollection"
+    ],
+    "download_size": {
+      "display": "820 MB ZIP",
+      "status": "publisher_stated",
+      "bytes": null,
+      "scope": "Global HydroLAKES v1 polygon shapefile, including all attributes",
+      "basis": "HydroSHEDS producer page states lake polygons in shapefile format are 820 MB. This is not the geodatabase package, pour-point layer, or both-layer total."
+    },
+    "alternative_sizes": [
+      {
+        "display": "763 MB ZIP",
+        "status": "publisher_stated",
+        "bytes": null,
+        "scope": "Same global HydroLAKES v1 polygon data and attributes in geodatabase format",
+        "basis": "HydroSHEDS producer page lists separate geodatabase polygon package."
+      },
+      {
+        "display": "79 MB ZIP shapefile; 81 MB ZIP geodatabase",
+        "status": "publisher_stated",
+        "bytes": null,
+        "scope": "Separate global lake pour-point layer",
+        "basis": "HydroSHEDS producer page lists pour points separately; not included in selected polygon size."
+      }
+    ],
+    "desired_formats": [
+      "GeoParquet",
+      "PMTiles (optional display derivative)"
+    ],
+    "rationale": "Lake boundaries and descriptive attributes are vector data. GeoParquet suits analytical joins/filtering and PMTiles can serve visualization while keeping the full polygons and attributes in the analytical release.",
+    "existing_cloud_native": "Earth Engine FeatureCollections for lake polygons and points are verified; no public cloud object distribution in a columnar vector format was verified.",
+    "caveats": [
+      "Four distinct producer downloads exist: polygon/point crossed with shapefile/geodatabase; never conflate their sizes.",
+      "HydroLAKES v1 includes lakes >=10 ha and about 1.4 million lakes/reservoirs; community catalog exposes both polygon and point collections."
+    ],
+    "sources": [
+      {
+        "url": "https://www.hydrosheds.org/products/hydrolakes",
+        "supports": "Producer-published v1 polygon and point distribution formats and sizes.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://gee-community-catalog.org/projects/hydrolakes/",
+        "supports": "Community GEE membership, separate polygon/point layers and 1,427,688 feature scope.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://data.hydrosheds.org/file/technical-documentation/HydroLAKES_TechDoc_v10.pdf",
+        "supports": "HydroLAKES v1 technical documentation and shapefile composition.",
+        "accessed": "2026-10-30"
+      }
+    ],
+    "work_id": "https://openalex.org/W2564545777",
+    "citations": 1775,
+    "catalogs": [
+      "community"
+    ],
+    "catalog_entries": [
+      {
+        "id": "community:hydrolakes",
+        "catalog": "community",
+        "catalog_id": "hydrolakes",
+        "title": "HydroLAKES v1.0: Polygons",
+        "url": "https://gee-community-catalog.org/projects/hydrolakes",
+        "geographic_scope": "global",
+        "region": "Global",
+        "deprecated": null,
+        "citation_scope": "associated_dataset_publication"
+      }
+    ],
+    "catalog_membership": "Community",
+    "presentation": {
+      "rank": 28,
+      "name": "HydroLAKES",
+      "size": "≈820 MB",
+      "scope": "Global v1 polygon layer",
+      "source": "Shapefile ZIP; geodatabase alternative",
+      "output": "GeoParquet + PMTiles"
+    }
+  },
+  {
+    "rank": 29,
+    "label": "MapBiomas land cover family (Collection 9 community page; Brazil V1 official GEE asset)",
+    "selected_scope": "The community entry is a multi-country, multi-product family and explicitly expands beyond Brazil to Pan-Amazonia, Indonesia, Bolivia, Peru and other regions. Size scope is narrowed to MapBiomas Brazil Collection 9 annual land-cover maps, 1985–2023; no full family total. The separate official GEE Brazil V1 collection is a different catalog asset/vintage (1985–2024), not the same dataset as Collection 9.",
+    "native_formats": [
+      "GeoTIFF for pixel classification maps, including producer-generated regional/geometry subsets",
+      "CSV or Excel for area statistics",
+      "Earth Engine ImageCollections / publisher assets"
+    ],
+    "download_size": {
+      "display": "Unknown",
+      "status": "unknown",
+      "bytes": null,
+      "scope": "Brazil Collection 9 annual LULC maps, 1985–2023, as full-resolution 30 m producer-distributed GeoTIFF maps; excludes stats, other MapBiomas regions/products, and official GEE Brazil V1",
+      "basis": "MapBiomas provides no complete Collection 9 byte manifest on checked producer pages; its current full-map GeoTIFF download function is temporarily suspended. Its toolkit exports clips through GEE, which does not provide a producer size for the global annual Collection 9 maps."
+    },
+    "alternative_sizes": [],
+    "desired_formats": [
+      "COG for annual categorical map rasters",
+      "Zarr only for explicitly packaged multi-year categorical time stacks, preserving class codes and year coordinate"
+    ],
+    "rationale": "Annual land-cover classifications are categorical raster maps and fit COG. Zarr is an optional temporal stack for multi-year operations; preserve integer class values, legend version, year, region, scale and nodata exactly.",
+    "existing_cloud_native": "Community/official Earth Engine assets exist; producer's current toolkit exports clipped GeoTIFF through GEE. No public cloud-native COG/Zarr Collection 9 distribution verified.",
+    "caveats": [
+      "Community page's inline example is Collection 8 and its changelog says catalog links updated to v8; it describes a broad family, not a current Collection 9-only raster identity.",
+      "The producer FAQ states Collection 9 covers 1985–2023 and Collection 10 (released 2025) covers 1985–2024. The current Brazil export toolkit lists Collection 11, while the full-map GeoTIFF function is temporarily suspended.",
+      "Official Earth Engine projects/mapbiomas-public/assets/brazil/lulc/v1 is distinct and cataloged for 1985–2024; do not use its coverage or version to label Collection 9 or vice versa."
+    ],
+    "sources": [
+      {
+        "url": "https://gee-community-catalog.org/projects/mapbiomas/",
+        "supports": "Community family includes Brazil plus multiple regions, multi-raster scope, and stale Collection 8 code/changelog.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://brasil.mapbiomas.org/downloads/",
+        "supports": "Producer lists annual GeoTIFF downloads, GEE assets, clipped exports and statistics resources; linked full-map page is stale/404.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://brasil.mapbiomas.org/downloads/baixe-mapas-recortados-geotiff-via-google-earth-engine/",
+        "supports": "Producer says full-map downloads are temporarily suspended and its clipped export toolkit requires GEE; current toolkit lists Collection 11 and historical collections.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://brasil.mapbiomas.org/faq/?tema=dados",
+        "supports": "Producer-published Collection 9 1985–2023 and Collection 10 1985–2024 version coverage; GeoTIFF/CSV/Excel formats.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/projects_mapbiomas-public_assets_brazil_lulc_v1",
+        "supports": "Separate official Brazil V1 ImageCollection identity and 1985–2024 coverage.",
+        "accessed": "2026-10-30"
+      }
+    ],
+    "work_id": "https://openalex.org/W3080319602",
+    "citations": 1727,
+    "catalogs": [
+      "community",
+      "official"
+    ],
+    "catalog_entries": [
+      {
+        "id": "community:mapbiomas",
+        "catalog": "community",
+        "catalog_id": "mapbiomas",
+        "title": "Mapbiomas Brazil: Land Use Land Cover Collection 9 Integration",
+        "url": "https://gee-community-catalog.org/projects/mapbiomas",
+        "geographic_scope": "mixed",
+        "region": "Family combines country- and biome-specific MapBiomas products across South America and Indonesia.",
+        "deprecated": null,
+        "citation_scope": "associated_dataset_publication"
+      },
+      {
+        "id": "official:projects/mapbiomas-public/assets/brazil/lulc/v1",
+        "catalog": "official",
+        "catalog_id": "projects/mapbiomas-public/assets/brazil/lulc/v1",
+        "title": "MapBiomas Land Use and Land Cover - Brazil V1.0",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/projects_mapbiomas-public_assets_brazil_lulc_v1",
+        "geographic_scope": "regional",
+        "region": "Brazil",
+        "deprecated": false,
+        "citation_scope": "associated_dataset_publication"
+      }
+    ],
+    "catalog_membership": "Both",
+    "presentation": {
+      "rank": 29,
+      "name": "MapBiomas",
+      "size": "Unknown",
+      "scope": "Brazil Collection 9 annual maps, 1985–2023",
+      "source": "GeoTIFF; GEE assets",
+      "output": "COG; optional Zarr time stack"
+    }
+  },
+  {
+    "rank": 30,
+    "label": "MERIT DEM v1.0.3",
+    "selected_scope": "One static global land elevation product at 3-arc-second (~90 m) resolution, covering 60°S–90°N, in the official Earth Engine catalog. Producer files are 5° x 5° GeoTIFF tiles bundled into 30° x 30° TAR packages.",
+    "native_formats": [
+      "Float32 GeoTIFF tiles (.tif)",
+      "TAR bundles of tiles",
+      "Earth Engine ee.Image hosted asset"
+    ],
+    "download_size": {
+      "display": "Unknown",
+      "status": "unknown",
+      "bytes": null,
+      "scope": "Global MERIT DEM v1.0.3 tiled producer download, 3 arc-seconds, 60°S–90°N",
+      "basis": "The producer documents tile/package format and says a password is issued after registration, but no public file-size manifest was found without following the registration-gated download. No account was created and no data files were fetched."
+    },
+    "alternative_sizes": [
+      {
+        "display": "311.04 GB uncompressed rectangular-grid payload (calculated upper envelope; not download size)",
+        "status": "calculated_uncompressed",
+        "bytes": 311040000000,
+        "scope": "Rectangular 3-arc-second grid envelope covering 360° longitude by 150° latitude, one Float32 elevation value per cell, before NoData omission, headers, tiling or compression",
+        "basis": "432,000 longitude cells (360×1,200) × 180,000 latitude cells (150×1,200) × 4 bytes/Float32 = 311,040,000,000 bytes = 311.04 decimal GB. This is a rectangular payload calculation, not a measured archive or the sum of land-only tiles."
+      }
+    ],
+    "desired_formats": [
+      "COG tiles (Float32)"
+    ],
+    "rationale": "A static elevation surface is suited to tiled COG range access. Preserve EGM96-referenced elevation, original grid alignment, NoData and license metadata.",
+    "existing_cloud_native": "Earth Engine hosted image is verified; no public open cloud COG tile distribution verified. Producer download is tiled GeoTIFF/TAR and requires registration-issued password.",
+    "caveats": [
+      "The producer page states access password is issued by email after registration; registration was not attempted.",
+      "The calculated 311.04 GB is an uncompressed rectangular grid envelope with ocean/NoData slots, not an observed download total.",
+      "Official catalog specifies approximately 92.77 m pixels in the dataset metadata and extent -60,-180,90,180; geographic resolution is 3 arc-seconds (~90 m at equator).",
+      "Producer explicitly requires written permission to redistribute the complete original dataset on another website. Desired COG is a technical target; a public mirror needs a separate rights review."
+    ],
+    "sources": [
+      {
+        "url": "https://global-hydrodynamics.github.io/MERIT_DEM/",
+        "supports": "Producer documentation of v1.0.3, Float32 GeoTIFF 5° tiles, 30° TAR packages, and registration/password-gated access.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/MERIT_DEM_v1_0_3",
+        "supports": "Official GEE asset scope, 3-arc-second resolution, pixel size, band and geographic extent.",
+        "accessed": "2026-10-30"
+      }
+    ],
+    "parent_review": [
+      "Producer publication restriction is relevant to a proposed hosted derivative."
+    ],
+    "work_id": "https://openalex.org/W2620109964",
+    "citations": 1582,
+    "catalogs": [
+      "official"
+    ],
+    "catalog_entries": [
+      {
+        "id": "official:MERIT/DEM/v1_0_3",
+        "catalog": "official",
+        "catalog_id": "MERIT/DEM/v1_0_3",
+        "title": "MERIT DEM: Multi-Error-Removed Improved-Terrain DEM",
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/MERIT_DEM_v1_0_3",
+        "geographic_scope": "global",
+        "region": "Global land, approximately 60°S–90°N",
+        "deprecated": false,
+        "citation_scope": "associated_dataset_publication"
+      }
+    ],
+    "catalog_membership": "Official",
+    "presentation": {
+      "rank": 30,
+      "name": "MERIT DEM",
+      "size": "Unknown; registration-gated",
+      "scope": "Global v1.0.3, 3″ elevation",
+      "source": "Float32 GeoTIFF in TAR",
+      "output": "COG; publication rights review"
+    }
+  }
+]

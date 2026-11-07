@@ -1,0 +1,52 @@
+schema_version: 1
+id: gaia_impervious_area
+title: Tsinghua FROM-GLC Year of Change to Impervious Surface
+intake:
+  kind: official_catalog
+  reference_url: https://developers.google.com/earth-engine/datasets/catalog/Tsinghua_FROM-GLC_GAIA_v10
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'citations: Global Distinct named producer product; retain exact source edition and
+    footprint.'
+  sources:
+  - provider: gee_official
+    entry_id: Tsinghua/FROM-GLC/GAIA/v10
+    url: https://developers.google.com/earth-engine/datasets/catalog/Tsinghua_FROM-GLC_GAIA_v10
+    relationship: same_family
+  access:
+  - provider: literature
+    status: unknown
+    formats: []
+    summary: GEE catalog entries are available through Earth Engine; frozen metadata does not establish
+      an independently downloadable native bulk copy or its format. Distinct named producer product; retain
+      exact source edition and footprint.
+    license_summary: Not inferred from citation records. Verify producer terms for the exact edition before
+      conversion or redistribution.
+    proposed_outputs: []
+    rationale: 'Candidate discovery only: global/near-global scope and associated-paper citation signal
+      justify source-format and licensing review. Citation rank does not establish conversion priority
+      or exact-release use.'
+    evidence_urls:
+    - https://developers.google.com/earth-engine/datasets/catalog/Tsinghua_FROM-GLC_GAIA_v10
+    - https://doi.org/10.1016/j.rse.2019.111510
+  citations:
+  - provider: OpenAlex
+    paper_doi: 10.1016/j.rse.2019.111510
+    work_id: https://openalex.org/W2990323597
+    cited_by_count: 1261
+    observed_on: '2026-10-30'
+    scope: associated_dataset_publication
+  evidence:
+  - path: research/global-candidates-20261031/citations/reviewed.json
+    sha256: 572140255cd3b41a1ec8ecca0139e64d38899cda7fdd55756f399a0dca57a467
+    key: gaia_impervious_area

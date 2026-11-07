@@ -1,0 +1,263 @@
+schema_version: 1
+id: hydrolakes
+title: 'HydroLAKES v1.0: Polygons'
+community_url: https://gee-community-catalog.org/projects/hydrolakes
+audit:
+  snapshot: gee-community-audit-20261029
+  family_key: hydrolakes
+  unique_gee_asset_count: 2
+  initial_queue: research_original_source
+  folia_registry_status: direct_or_component
+  folia_registry_ids:
+  - '@hydrosheds/hydrolakes/v1'
+  source_coop_urls: []
+  source_coop_scope: null
+  external_native_urls: []
+  external_native_scope: null
+triage:
+  decision: publish_conversion
+  priority: pilot_review
+  rationale: User selected local release preparation; reuse the validated native-geometry GeoParquet and
+    revalidate against pinned original source.
+review:
+  citation_assessment:
+    as_of: '2026-10-29'
+    provider: OpenAlex
+    evidence_path: research/citations/rankings.json
+    evidence_key: hydrolakes
+    geographic_scope: global
+    paper_count_status: matched
+    max_paper_citations: 1775
+    max_data_doi_citations: null
+    top_paper_doi: https://doi.org/10.1038/ncomms13603
+    top_paper_openalex_id: https://openalex.org/W2564545777
+    citation_scope: associated_dataset_publication
+  publication_assessment:
+    as_of: '2026-10-29'
+    route: review_global_vector_conversion_terms
+    scope: Global v1.0 polygons and points; existing Folia identity covers the original product.
+    existing_native: Official FGDB (763 MB) and shapefile (820 MB) ZIPs; no original native copy established
+      in this review. WaterNet is a derived dataset, not a HydroLAKES mirror.
+    license_note: Producer page states CC BY 4.0; technical document also requests permission for redistribution
+      of the complete database in its original format. Clarify how that wording applies to the intended
+      transformed publication; do not infer a blanket ban on derivatives.
+    evidence_urls:
+    - https://www.hydrosheds.org/products/hydrolakes
+    - https://data.hydrosheds.org/file/technical-documentation/HydroLAKES_TechDoc_v10.pdf
+  priority_reason: Among the six most cited resolved global families in the 2026-10-29 OpenAlex snapshot;
+    publication readiness is assessed separately.
+  version_review_path: research/hydro-releases-20261031/version-review/producer-version-review.md
+  availability:
+    shortlist_id: native-publication-gaps-20261031
+    rank: 6
+    reviewed_on: '2026-11-01'
+    label: HydroLAKES v1.0 polygons
+    scope: Complete global original lake polygon inventory only; excludes separate pour-point layer.
+    geographic_scope: global
+    download:
+      bytes: 820295132
+      precision: exact
+      reported_size: null
+      format: Shapefile ZIP
+      file_count: 1
+      basis: validated_download
+      note: Exact selected archive size from the previously downloaded, checksum-validated source pin. Excludes
+        optional formats, separate layers and documentation.
+      evidence_urls:
+      - https://www.hydrosheds.org/products/hydrolakes
+      - https://data.hydrosheds.org/file/hydrolakes/HydroLAKES_polys_v10_shp.zip
+    locations:
+    - service_id: hydrosheds
+      label: HydroSHEDS download
+      platform: external
+      relationship: matching_scope
+      access: download
+      formats:
+      - Shapefile ZIP
+      urls:
+      - https://www.hydrosheds.org/products/hydrolakes
+      - https://data.hydrosheds.org/file/hydrolakes/HydroLAKES_polys_v10_shp.zip
+      asset_ids: []
+      note: Producer landing page, DOI and repository/CDN download links identify one distribution service;
+        they are not separate hosts.
+    - service_id: earth_engine
+      label: GEE community
+      platform: gee
+      relationship: matching_scope
+      access: gee_collection
+      formats:
+      - Earth Engine FeatureCollection
+      urls:
+      - https://gee-community-catalog.org/projects/hydrolakes/
+      asset_ids:
+      - projects/sat-io/open-datasets/HydroLakes/lake_poly_v10
+      note: Catalog-declared edition and scope; no new live GEE requests or full content comparison in this
+        review.
+    output_manifest:
+      path: datasets/hydrolakes/releases/v1-local-r3/evidence/package-manifest.json
+      sha256: 48d1d1061f0785255f14c3d5bb7ce8a1c0b47963c45c0e3b02a70441c0b86fcc
+    evidence:
+    - path: research/availability-sizes-20261101/observations.json
+      sha256: a7c4fd21000b497faf92810420cde5cc4ee80ae533721dd13c69cb7e692fcd7b
+      key: hydrolakes
+    source_size_key: source_size
+  publication_readiness:
+    reviewed_on: '2026-11-01'
+    stage: prepared_for_upload_review
+    asset_integrity: passed_fresh_sha256_audit
+    integrity_evidence:
+      path: research/gdw-swot-preparation-20261101/prepared-packages.json
+      sha256: 712a71ca57f472cd1121941e132958f745e4468bfdb267b217466eccf49eaf1e
+    scientific_validation_rerun: false
+    local_followup: []
+    public_followup:
+    - Confirm Source Cooperative owner/product and immutable destination.
+    - Upload only under separately authorized publication scope.
+    - Verify public anonymous access, ranges, CORS, hosted checksums, subset queries, catalog links and
+      browser rendering.
+    - Deploy and verify generated catalog before registry submission.
+    - Demonstrate rendering against public hosted assets; the local query-server demonstration does not
+      provide a hosted browser service.
+    - Align the generated public host provider with the confirmed Source Cooperative maintainer while preserving
+      historical processor credit.
+    published: false
+    local_render:
+      status: passed_bounded_local_browser_demonstration
+      evidence_path: research/source-products-20261101/render/render-evidence.json
+      evidence_sha256: cdead48b6ed51777a9e2fd6fa95ac0577f41f177874dbca1bf9a466031cbb64c
+      scope: Four analytical layers across five fixed regions; up to 1,000 source IDs per layer/window with
+        clipped and simplified display geometry. A fixed narrower HydroLAKES control returned all 295 matches.
+        Requires local query server; no public browser or global visual-completeness claim.
+source:
+  source_version: v1 (producer filename v10)
+  source_url: https://data.hydrosheds.org/file/hydrolakes/HydroLAKES_polys_v10_shp.zip
+  source_name: HydroLAKES_polys_v10_shp.zip
+  source_size: 820295132
+  source_sha256: 9ef63498569dd7ccd0b8d8852da026e009a75f42d293f00e483f3b9fcfe8e1f9
+  license: CC-BY-4.0
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  expected_rows: 1427688
+  producer: Lehner and Messager / HydroSHEDS
+  version_checked_on: '2026-10-31'
+  observation_vintage: Composite legacy shoreline sources; static research release, not current 2026 observations.
+  paper_doi: 10.1038/ncomms13603
+build:
+  status: local_release_prepared
+  planned_outputs:
+  - geoparquet
+  display_outputs: PMTiles deferred; analytic release scope only
+  validation_plan_path: datasets/hydrolakes/VALIDATION.md
+  release_id: v1-local-r3
+  conversion: Preserve native-ID raw baseline; deterministic Hilbert16 bbox-center/ID GeoParquet companion
+    with full original-column and per-ID WKB validation.
+publication:
+  status: prepared
+  release: v1-local-r3
+  source_cooperative:
+    status: proposed_not_created
+    owner: folia
+    product: hydrolakes
+    url: null
+  portolan:
+    status: not_submitted
+    url: null
+  limits:
+  - No public upload or registry submission.
+  - No fresh GEE parity or independent observational accuracy test.
+  - Retain producer original-format redistribution request; proposed analytic artifact is GeoParquet.
+  last_package_status: passed_all_local_gates
+  cleanup_approval: approved_completed
+  validation:
+    source_rows: 1427688
+    source_cells_compared: 31409136
+    raw_clean_rebuild: byte_identical
+    spatial_clean_rebuild: byte_identical
+    source_values_nulls_wkb: passed_complete_source_reread_and_per_ID_spatial_comparison
+    final_columns: 23
+    final_row_groups: 128
+    fixed_geographic_pruning: passed_all_four_windows
+    stac: passed
+    portolan: passed
+    http: passed_loopback
+    gee: not_run
+    remote_host: not_tested
+  cleanup_plan_path: research/hydro-releases-20261031/cleanup-approval-plan.json
+  local_processing_order: 4
+  conversion_git_commit: 5a77efc39b6cf3c1deeb82fbf4a8bac0ee52bff4
+  spatial_code_revision: 100eaadad0e42a6f12d61c08de7d061eb5bac499
+  manifest_path: datasets/hydrolakes/releases/v1-local-r3/evidence/package-manifest.json
+  manifest_sha256: 48d1d1061f0785255f14c3d5bb7ce8a1c0b47963c45c0e3b02a70441c0b86fcc
+  release_receipt_path: datasets/hydrolakes/releases/v1-local-r3/evidence/package-receipt.json
+  validation_path: datasets/hydrolakes/releases/v1-local-r3/evidence/package-final-package-verification.json
+  local_bundle_directory: .local/hydrolakes/releases/v1-local-r3
+  previous_failed_releases:
+  - v1-local-r1
+  - v1-local-r2
+  catalog:
+    snapshot_path: datasets/hydrolakes/releases/v1-local-r3/catalog-input-r1/snapshot.json
+    snapshot_sha256: f3f5dc58cbae1e18000815c4ca183b0e444ef21642e410a57a03596de6506ab6
+    package_base_url: null
+    hosting_report_path: null
+    hosting_report_sha256: null
+  source_coop:
+    owner: nthh
+    owner_status: confirmed
+    account_verification: null
+    product_id: hydrolakes
+    title: HydroLAKES v1.0 — global lake polygons
+    summary: The complete HydroLAKES v1.0 polygon layer in spatially ordered GeoParquet, preserving producer
+      fields and geometry for lake analysis and joins.
+    tags:
+    - hydrology
+    - lakes
+    - global
+    - geoparquet
+    license_note: 'Producer license: CC BY 4.0. Retain attribution and technical-document notices, including
+      the producer request concerning redistribution of the complete database in its original format. This
+      product contains transformed GeoParquet.'
+    attribution: Lehner and Messager / HydroSHEDS. Cite Messager et al. (2016), DOI 10.1038/ncomms13603.
+      Original conversion evidence retains Folia attribution.
+    temporal_note: Static research release compiled from multiple shoreline sources; not a current inventory
+      of lake conditions.
+    limitations:
+    - This release contains polygons; it does not include the separate HydroLAKES pour-point source layer.
+    - Spatial ordering and added bounding boxes preserve original attributes and WKB; local display queries
+      do not establish public-host performance.
+    supplements: []
+# Cross-catalog discovery: global-candidates-20261031
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'citations: Global Existing catalog identity.'
+  sources:
+  - provider: gee_community
+    entry_id: hydrolakes
+    url: https://gee-community-catalog.org/projects/hydrolakes
+    relationship: same_family
+  access:
+  - provider: literature
+    status: unknown
+    formats: []
+    summary: GEE catalog entries are available through Earth Engine; frozen metadata does not establish
+      an independently downloadable native bulk copy or its format. Existing catalog identity.
+    license_summary: Not inferred from citation records. Verify producer terms for the exact edition before
+      conversion or redistribution.
+    proposed_outputs: []
+    rationale: 'Candidate discovery only: global/near-global scope and associated-paper citation signal
+      justify source-format and licensing review. Citation rank does not establish conversion priority
+      or exact-release use.'
+    evidence_urls:
+    - https://gee-community-catalog.org/projects/hydrolakes
+    - https://doi.org/10.1038/ncomms13603
+  citations:
+  - provider: OpenAlex
+    paper_doi: 10.1038/ncomms13603
+    work_id: https://openalex.org/W2564545777
+    cited_by_count: 1775
+    observed_on: '2026-10-30'
+    scope: associated_dataset_publication
+  evidence:
+  - path: research/global-candidates-20261031/citations/reviewed.json
+    sha256: 572140255cd3b41a1ec8ecca0139e64d38899cda7fdd55756f399a0dca57a467
+    key: hydrolakes

@@ -1,0 +1,1020 @@
+{
+  "schema_version": 1,
+  "datasets": [
+    {
+      "id": "lakeatlas",
+      "record_path": "datasets/lakeatlas/dataset.yaml",
+      "title": "HydroATLAS LakeATLAS v1.0 — global hydro-environmental lake attributes",
+      "decision": "publish_conversion",
+      "publication_status": "published",
+      "preparation_stage": "hosted_verified_pending_catalog_deployment",
+      "availability": {
+        "shortlist_id": "native-publication-gaps-20261031",
+        "rank": 1,
+        "reviewed_on": "2026-11-01",
+        "label": "LakeATLAS v1.0",
+        "scope": "Global lake polygons AND pour points with all producer attributes; selected FileGDB representation.",
+        "geographic_scope": "global",
+        "download": {
+          "bytes": 1530962499,
+          "precision": "exact",
+          "reported_size": null,
+          "format": "FileGDB ZIP",
+          "file_count": 1,
+          "basis": "validated_download",
+          "note": "Exact selected archive size from the previously downloaded, checksum-validated source pin. Excludes optional formats, separate layers and documentation.",
+          "evidence_urls": [
+            "https://doi.org/10.6084/m9.figshare.19312001.v1",
+            "https://ndownloader.figshare.com/files/35959544"
+          ]
+        },
+        "locations": [
+          {
+            "service_id": "figshare",
+            "label": "Figshare",
+            "platform": "external",
+            "relationship": "matching_scope",
+            "access": "download",
+            "formats": [
+              "FileGDB ZIP"
+            ],
+            "urls": [
+              "https://doi.org/10.6084/m9.figshare.19312001.v1",
+              "https://ndownloader.figshare.com/files/35959544"
+            ],
+            "asset_ids": [],
+            "note": "Producer landing page, DOI and repository/CDN download links identify one distribution service; they are not separate hosts."
+          },
+          {
+            "service_id": "earth_engine",
+            "label": "GEE community",
+            "platform": "gee",
+            "relationship": "matching_scope",
+            "access": "gee_collection",
+            "formats": [
+              "Earth Engine FeatureCollection"
+            ],
+            "urls": [
+              "https://gee-community-catalog.org/projects/hydroatlas/"
+            ],
+            "asset_ids": [
+              "projects/sat-io/open-datasets/HydroAtlas/LakeAtlas/LakeAtlas_v10_polygon",
+              "projects/sat-io/open-datasets/HydroAtlas/LakeAtlas/LakeAtlas_v10_point"
+            ],
+            "note": "Catalog-declared edition and scope; no new live GEE requests or full content comparison in this review."
+          }
+        ],
+        "output_manifest": {
+          "path": "datasets/lakeatlas/releases/lakeatlas-v1.0-r2/evidence/prepared-local/manifest.json",
+          "sha256": "32b4877b8809cabd3e2caca8da175115e8ff8317402058846ed0db06a54d52e9"
+        },
+        "evidence": [
+          {
+            "path": "research/availability-sizes-20261101/observations.json",
+            "sha256": "a7c4fd21000b497faf92810420cde5cc4ee80ae533721dd13c69cb7e692fcd7b",
+            "key": "lakeatlas"
+          }
+        ],
+        "source_size_key": "size_bytes"
+      },
+      "summary": {
+        "shortlist_id": "native-publication-gaps-20261031",
+        "shortlist_rank": 1,
+        "source_download_bytes": 1530962499,
+        "source_size_precision": "exact",
+        "source_size_display": "1.53 GB",
+        "external_locations": 1,
+        "external_matching_locations": 1,
+        "gee_locations": 1,
+        "gee_matching_locations": 1,
+        "gee_asset_count": 2,
+        "prepared_analytic_bytes": 1427772917,
+        "prepared_display_bytes": 0,
+        "prepared_data_bytes": 1427772917
+      },
+      "prepared_assets": [
+        {
+          "href": "assets/lakeatlas-polygons.parquet",
+          "size_bytes": 1143992867,
+          "media_type": "application/vnd.apache.parquet",
+          "kind": "analytic"
+        },
+        {
+          "href": "assets/lakeatlas-pour-points.parquet",
+          "size_bytes": 283780050,
+          "media_type": "application/vnd.apache.parquet",
+          "kind": "analytic"
+        }
+      ]
+    },
+    {
+      "id": "free-flowing-rivers",
+      "record_path": "datasets/free-flowing-rivers/dataset.yaml",
+      "title": "Mapping the world's free-flowing rivers — global river reach connectivity assessment",
+      "decision": "publish_conversion",
+      "publication_status": "published",
+      "preparation_stage": "hosted_verified_pending_catalog_deployment",
+      "availability": {
+        "shortlist_id": "native-publication-gaps-20261031",
+        "rank": 2,
+        "reviewed_on": "2026-11-01",
+        "label": "Free-Flowing Rivers 2019 v1",
+        "scope": "Complete global reach-level connectivity and pressure assessment; original FileGDB ZIP.",
+        "geographic_scope": "global",
+        "download": {
+          "bytes": 954710486,
+          "precision": "exact",
+          "reported_size": null,
+          "format": "FileGDB ZIP",
+          "file_count": 1,
+          "basis": "validated_download",
+          "note": "Exact selected archive size from the previously downloaded, checksum-validated source pin. Excludes optional formats, separate layers and documentation.",
+          "evidence_urls": [
+            "https://doi.org/10.6084/m9.figshare.7688801.v1",
+            "https://ndownloader.figshare.com/files/15090536"
+          ]
+        },
+        "locations": [
+          {
+            "service_id": "figshare",
+            "label": "Figshare",
+            "platform": "external",
+            "relationship": "matching_scope",
+            "access": "download",
+            "formats": [
+              "FileGDB ZIP"
+            ],
+            "urls": [
+              "https://doi.org/10.6084/m9.figshare.7688801.v1",
+              "https://ndownloader.figshare.com/files/15090536"
+            ],
+            "asset_ids": [],
+            "note": "Producer landing page, DOI and repository/CDN download links identify one distribution service; they are not separate hosts."
+          },
+          {
+            "service_id": "earth_engine",
+            "label": "GEE official",
+            "platform": "gee",
+            "relationship": "matching_scope",
+            "access": "gee_collection",
+            "formats": [
+              "Earth Engine FeatureCollection"
+            ],
+            "urls": [
+              "https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_v1_FreeFlowingRivers"
+            ],
+            "asset_ids": [
+              "WWF/HydroSHEDS/v1/FreeFlowingRivers"
+            ],
+            "note": "Catalog-declared edition and scope; no new live GEE requests or full content comparison in this review."
+          }
+        ],
+        "output_manifest": {
+          "path": "datasets/free-flowing-rivers/releases/figshare-v1-local-r2/manifest.json",
+          "sha256": "756286b624de53823a2af2c26344a15dcf02070c048f5d1d02ec3f65a97d5120"
+        },
+        "evidence": [
+          {
+            "path": "research/availability-sizes-20261101/observations.json",
+            "sha256": "a7c4fd21000b497faf92810420cde5cc4ee80ae533721dd13c69cb7e692fcd7b",
+            "key": "free-flowing-rivers"
+          }
+        ],
+        "source_size_key": "source_size_bytes"
+      },
+      "summary": {
+        "shortlist_id": "native-publication-gaps-20261031",
+        "shortlist_rank": 2,
+        "source_download_bytes": 954710486,
+        "source_size_precision": "exact",
+        "source_size_display": "954.71 MB",
+        "external_locations": 1,
+        "external_matching_locations": 1,
+        "gee_locations": 1,
+        "gee_matching_locations": 1,
+        "gee_asset_count": 1,
+        "prepared_analytic_bytes": 887132886,
+        "prepared_display_bytes": 0,
+        "prepared_data_bytes": 887132886
+      },
+      "prepared_assets": [
+        {
+          "href": "assets/ffr-reach-network-v1.parquet",
+          "size_bytes": 887132886,
+          "media_type": "application/vnd.apache.parquet",
+          "kind": "analytic"
+        }
+      ]
+    },
+    {
+      "id": "terraclimate_baseline",
+      "record_path": "datasets/terraclimate_baseline/dataset.yaml",
+      "title": "TerraClimate historical climate and water-balance grids",
+      "decision": "defer",
+      "publication_status": "candidate",
+      "preparation_stage": null,
+      "availability": {
+        "shortlist_id": "native-publication-gaps-20261031",
+        "rank": 3,
+        "reviewed_on": "2026-11-01",
+        "label": "TerraClimate v1.1 baseline",
+        "scope": "Monthly historical baseline 1950–2025, 14 variables × 76 annual files; excludes climate-change scenarios and climatologies.",
+        "geographic_scope": "global",
+        "download": {
+          "bytes": 115507400000,
+          "precision": "rounded",
+          "reported_size": "115507.4 Mbytes (rounded catalog sum)",
+          "format": "NetCDF",
+          "file_count": 1064,
+          "basis": "producer_listing",
+          "note": "Sum of rounded producer THREDDS Mbytes values. One ws_2025 HEAD is 43,220,665 bytes against 43.22 Mbytes, supporting decimal MB interpretation. Total remains an estimate, not a full 1064-object HEAD inventory.",
+          "evidence_urls": [
+            "https://tds-proxy.nkn.uidaho.edu/thredds/catalog/TERRACLIMATE_ALL/data/catalog.xml",
+            "https://www.climatologylab.org/terraclimate.html"
+          ]
+        },
+        "locations": [
+          {
+            "service_id": "nkn_thredds",
+            "label": "Producer / NKN THREDDS",
+            "platform": "external",
+            "relationship": "matching_scope",
+            "access": "download",
+            "formats": [
+              "NetCDF"
+            ],
+            "urls": [
+              "https://tds-proxy.nkn.uidaho.edu/thredds/catalog/TERRACLIMATE_ALL/data/catalog.xml",
+              "https://tds-proxy.nkn.uidaho.edu/thredds/terraclimate_catalog.html"
+            ],
+            "asset_ids": [],
+            "note": "HTTP files, OPeNDAP and NCSS are protocols of the same producer distribution; counted once."
+          },
+          {
+            "service_id": "planetary_computer",
+            "label": "Microsoft Planetary Computer",
+            "platform": "external",
+            "relationship": "other_version_or_subset",
+            "access": "cloud_native",
+            "formats": [
+              "Zarr"
+            ],
+            "urls": [
+              "https://planetarycomputer.microsoft.com/api/stac/v1/collections/terraclimate"
+            ],
+            "asset_ids": [],
+            "note": "Collection metadata covers 1958–2021, not the full reprocessed 1950–2025 v1.1 scope. Arrays not read; do not infer exact source version from collection name."
+          },
+          {
+            "service_id": "earth_engine",
+            "label": "GEE official",
+            "platform": "gee",
+            "relationship": "other_version_or_subset",
+            "access": "gee_collection",
+            "formats": [
+              "Earth Engine ImageCollection"
+            ],
+            "urls": [
+              "https://developers.google.com/earth-engine/datasets/catalog/IDAHO_EPSCOR_TERRACLIMATE"
+            ],
+            "asset_ids": [
+              "IDAHO_EPSCOR/TERRACLIMATE"
+            ],
+            "note": "Catalog describes 1958 onward with CRU/JRA-55 lineage; it does not establish the new ERA5-based v1.1 baseline. Community 2C/4C scenarios are different products and excluded."
+          }
+        ],
+        "output_manifest": null,
+        "evidence": [
+          {
+            "path": "research/availability-sizes-20261101/observations.json",
+            "sha256": "a7c4fd21000b497faf92810420cde5cc4ee80ae533721dd13c69cb7e692fcd7b",
+            "key": "terraclimate_baseline"
+          }
+        ]
+      },
+      "summary": {
+        "shortlist_id": "native-publication-gaps-20261031",
+        "shortlist_rank": 3,
+        "source_download_bytes": 115507400000,
+        "source_size_precision": "rounded",
+        "source_size_display": "~115.51 GB",
+        "external_locations": 2,
+        "external_matching_locations": 1,
+        "gee_locations": 1,
+        "gee_matching_locations": 0,
+        "gee_asset_count": 1,
+        "prepared_analytic_bytes": null,
+        "prepared_display_bytes": null,
+        "prepared_data_bytes": null
+      },
+      "prepared_assets": null
+    },
+    {
+      "id": "cru_ts_v4",
+      "record_path": "datasets/cru_ts_v4/dataset.yaml",
+      "title": "CRU TS monthly high-resolution gridded multivariate climate dataset",
+      "decision": "pending",
+      "publication_status": "candidate",
+      "preparation_stage": null,
+      "availability": {
+        "shortlist_id": "native-publication-gaps-20261031",
+        "rank": 4,
+        "reviewed_on": "2026-11-01",
+        "label": "CRU-TS v4.10",
+        "scope": "Ten monthly variables over global land excluding Antarctica, 1901–2025; one full-period NetCDF.gz per variable, excluding duplicate decades and ASCII files.",
+        "geographic_scope": "global",
+        "download": {
+          "bytes": 3648920307,
+          "precision": "exact",
+          "reported_size": null,
+          "format": "gzip-compressed NetCDF",
+          "file_count": 10,
+          "basis": "http_head",
+          "note": "Sum of Content-Length from ten successful application/x-gzip HEAD responses. No data bodies downloaded. Producer rounded Size(MB) labels sum differently; exact header bytes take precedence. NetCDF source files include station support; do not duplicate separate ASCII .stn files.",
+          "evidence_urls": [
+            "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.10/",
+            "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.10/cruts.2604091129.v4.10/"
+          ]
+        },
+        "locations": [
+          {
+            "service_id": "cru_uea",
+            "label": "CRU / University of East Anglia",
+            "platform": "external",
+            "relationship": "matching_scope",
+            "access": "download",
+            "formats": [
+              "NetCDF.gz",
+              "ASCII.gz"
+            ],
+            "urls": [
+              "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.10/",
+              "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.10/cruts.2604091129.v4.10/"
+            ],
+            "asset_ids": [],
+            "note": "Current producer v4.10 full-period download. The producer Google Earth interface is a subset on this same service and is not Google Earth Engine."
+          },
+          {
+            "service_id": "ceda",
+            "label": "CEDA Archive",
+            "platform": "external",
+            "relationship": "other_version_or_subset",
+            "access": "download",
+            "formats": [
+              "NetCDF.gz",
+              "ASCII.gz"
+            ],
+            "urls": [
+              "https://data.ceda.ac.uk/badc/cru/data/cru_ts/cru_ts_4.09/",
+              "https://crudata.uea.ac.uk/cru/data/hrg/"
+            ],
+            "asset_ids": [],
+            "note": "Producer identifies older CEDA releases; v4.10 CEDA link is not yet available on the current edition page. No exact v4.10 CEDA mirror established."
+          },
+          {
+            "service_id": "world_bank_cckp",
+            "label": "World Bank CCKP / AWS",
+            "platform": "external",
+            "relationship": "other_version_or_subset",
+            "access": "download",
+            "formats": [
+              "NetCDF"
+            ],
+            "urls": [
+              "https://registry.opendata.aws/wbg-cckp/",
+              "https://worldbank.github.io/climateknowledgeportal/docs/collections/cru-x0.5.html"
+            ],
+            "asset_ids": [],
+            "note": "World Bank documentation describes four selected variables from v4.07 through 2022 in public bucket wbg-cckp. Different version and scope; no complete bucket scan. No matching GEE entry identified in bounded sources."
+          }
+        ],
+        "output_manifest": null,
+        "evidence": [
+          {
+            "path": "research/availability-sizes-20261101/observations.json",
+            "sha256": "a7c4fd21000b497faf92810420cde5cc4ee80ae533721dd13c69cb7e692fcd7b",
+            "key": "cru_ts_v4"
+          }
+        ]
+      },
+      "summary": {
+        "shortlist_id": "native-publication-gaps-20261031",
+        "shortlist_rank": 4,
+        "source_download_bytes": 3648920307,
+        "source_size_precision": "exact",
+        "source_size_display": "3.65 GB",
+        "external_locations": 3,
+        "external_matching_locations": 1,
+        "gee_locations": 0,
+        "gee_matching_locations": 0,
+        "gee_asset_count": 0,
+        "prepared_analytic_bytes": null,
+        "prepared_display_bytes": null,
+        "prepared_data_bytes": null
+      },
+      "prepared_assets": null
+    },
+    {
+      "id": "riveratlas",
+      "record_path": "datasets/riveratlas/dataset.yaml",
+      "title": "RiverATLAS v1.0",
+      "decision": "pending",
+      "publication_status": "candidate",
+      "preparation_stage": null,
+      "availability": {
+        "shortlist_id": "native-publication-gaps-20261031",
+        "rank": 5,
+        "reviewed_on": "2026-11-01",
+        "label": "RiverATLAS v1.0",
+        "scope": "Complete global enriched river-reach layer, original FileGDB ZIP; excludes BasinATLAS and LakeATLAS.",
+        "geographic_scope": "global",
+        "download": {
+          "bytes": null,
+          "precision": "rounded",
+          "reported_size": "2.33 GB (producer label; exact bytes unverified)",
+          "format": "FileGDB ZIP",
+          "file_count": 1,
+          "basis": "producer_listing",
+          "note": "Producer labels the GDB ZIP 2.33 GB. Both download HEAD endpoints returned 403. Exact bytes and the producer display-unit convention remain unverified; do not silently interpret the label as measured decimal bytes. Shapefile alternative excluded.",
+          "evidence_urls": [
+            "https://www.hydrosheds.org/hydroatlas",
+            "https://figshare.com/ndownloader/files/20087321"
+          ]
+        },
+        "locations": [
+          {
+            "service_id": "figshare",
+            "label": "Figshare",
+            "platform": "external",
+            "relationship": "matching_scope",
+            "access": "download",
+            "formats": [
+              "FileGDB ZIP",
+              "Shapefile ZIP"
+            ],
+            "urls": [
+              "https://www.hydrosheds.org/hydroatlas",
+              "https://figshare.com/ndownloader/files/20087321"
+            ],
+            "asset_ids": [],
+            "note": "HydroSHEDS links to Figshare; those pages and the CDN are one distribution service."
+          },
+          {
+            "service_id": "earth_engine",
+            "label": "GEE community",
+            "platform": "gee",
+            "relationship": "matching_scope",
+            "access": "gee_collection",
+            "formats": [
+              "Earth Engine FeatureCollection"
+            ],
+            "urls": [
+              "https://gee-community-catalog.org/projects/hydroatlas/"
+            ],
+            "asset_ids": [
+              "projects/sat-io/open-datasets/HydroAtlas/RiverAtlas_v10"
+            ],
+            "note": "One RiverATLAS feature collection. The family catalog also has basin/lake layers, which are not counted here."
+          }
+        ],
+        "output_manifest": null,
+        "evidence": [
+          {
+            "path": "research/availability-sizes-20261101/observations.json",
+            "sha256": "a7c4fd21000b497faf92810420cde5cc4ee80ae533721dd13c69cb7e692fcd7b",
+            "key": "riveratlas"
+          }
+        ]
+      },
+      "summary": {
+        "shortlist_id": "native-publication-gaps-20261031",
+        "shortlist_rank": 5,
+        "source_download_bytes": null,
+        "source_size_precision": "rounded",
+        "source_size_display": "2.33 GB (producer label; exact bytes unverified)",
+        "external_locations": 1,
+        "external_matching_locations": 1,
+        "gee_locations": 1,
+        "gee_matching_locations": 1,
+        "gee_asset_count": 1,
+        "prepared_analytic_bytes": null,
+        "prepared_display_bytes": null,
+        "prepared_data_bytes": null
+      },
+      "prepared_assets": null
+    },
+    {
+      "id": "hydrolakes",
+      "record_path": "datasets/hydrolakes/dataset.yaml",
+      "title": "HydroLAKES v1.0: Polygons",
+      "decision": "publish_conversion",
+      "publication_status": "published",
+      "preparation_stage": "hosted_verified_pending_catalog_deployment",
+      "availability": {
+        "shortlist_id": "native-publication-gaps-20261031",
+        "rank": 6,
+        "reviewed_on": "2026-11-01",
+        "label": "HydroLAKES v1.0 polygons",
+        "scope": "Complete global original lake polygon inventory only; excludes separate pour-point layer.",
+        "geographic_scope": "global",
+        "download": {
+          "bytes": 820295132,
+          "precision": "exact",
+          "reported_size": null,
+          "format": "Shapefile ZIP",
+          "file_count": 1,
+          "basis": "validated_download",
+          "note": "Exact selected archive size from the previously downloaded, checksum-validated source pin. Excludes optional formats, separate layers and documentation.",
+          "evidence_urls": [
+            "https://www.hydrosheds.org/products/hydrolakes",
+            "https://data.hydrosheds.org/file/hydrolakes/HydroLAKES_polys_v10_shp.zip"
+          ]
+        },
+        "locations": [
+          {
+            "service_id": "hydrosheds",
+            "label": "HydroSHEDS download",
+            "platform": "external",
+            "relationship": "matching_scope",
+            "access": "download",
+            "formats": [
+              "Shapefile ZIP"
+            ],
+            "urls": [
+              "https://www.hydrosheds.org/products/hydrolakes",
+              "https://data.hydrosheds.org/file/hydrolakes/HydroLAKES_polys_v10_shp.zip"
+            ],
+            "asset_ids": [],
+            "note": "Producer landing page, DOI and repository/CDN download links identify one distribution service; they are not separate hosts."
+          },
+          {
+            "service_id": "earth_engine",
+            "label": "GEE community",
+            "platform": "gee",
+            "relationship": "matching_scope",
+            "access": "gee_collection",
+            "formats": [
+              "Earth Engine FeatureCollection"
+            ],
+            "urls": [
+              "https://gee-community-catalog.org/projects/hydrolakes/"
+            ],
+            "asset_ids": [
+              "projects/sat-io/open-datasets/HydroLakes/lake_poly_v10"
+            ],
+            "note": "Catalog-declared edition and scope; no new live GEE requests or full content comparison in this review."
+          }
+        ],
+        "output_manifest": {
+          "path": "datasets/hydrolakes/releases/v1-local-r3/evidence/package-manifest.json",
+          "sha256": "48d1d1061f0785255f14c3d5bb7ce8a1c0b47963c45c0e3b02a70441c0b86fcc"
+        },
+        "evidence": [
+          {
+            "path": "research/availability-sizes-20261101/observations.json",
+            "sha256": "a7c4fd21000b497faf92810420cde5cc4ee80ae533721dd13c69cb7e692fcd7b",
+            "key": "hydrolakes"
+          }
+        ],
+        "source_size_key": "source_size"
+      },
+      "summary": {
+        "shortlist_id": "native-publication-gaps-20261031",
+        "shortlist_rank": 6,
+        "source_download_bytes": 820295132,
+        "source_size_precision": "exact",
+        "source_size_display": "820.3 MB",
+        "external_locations": 1,
+        "external_matching_locations": 1,
+        "gee_locations": 1,
+        "gee_matching_locations": 1,
+        "gee_asset_count": 1,
+        "prepared_analytic_bytes": 949598607,
+        "prepared_display_bytes": 0,
+        "prepared_data_bytes": 949598607
+      },
+      "prepared_assets": [
+        {
+          "href": "assets/hydrolakes-polygons.parquet",
+          "size_bytes": 949598607,
+          "media_type": "application/vnd.apache.parquet",
+          "kind": "analytic"
+        }
+      ]
+    },
+    {
+      "id": "grwl",
+      "record_path": "datasets/grwl/dataset.yaml",
+      "title": "Global River Width from Landsat — simplified global river network V01.02",
+      "decision": "defer",
+      "publication_status": "deferred_source_quality",
+      "preparation_stage": "withheld_source_geometry_errors",
+      "availability": {
+        "shortlist_id": "native-publication-gaps-20261031",
+        "rank": 7,
+        "reviewed_on": "2026-11-01",
+        "label": "GRWL summary V01.02",
+        "scope": "Complete simplified global summary polyline product; excludes raw vectors, masks, tile index and basin supplement.",
+        "geographic_scope": "global",
+        "download": {
+          "bytes": 43282861,
+          "precision": "exact",
+          "reported_size": null,
+          "format": "Shapefile ZIP",
+          "file_count": 1,
+          "basis": "validated_download",
+          "note": "Exact selected archive size from the previously downloaded, checksum-validated source pin. Excludes optional formats, separate layers and documentation.",
+          "evidence_urls": [
+            "https://zenodo.org/records/18624542",
+            "https://zenodo.org/api/records/18624542/files/GRWL_summaryStats_V01.02.zip/content"
+          ]
+        },
+        "locations": [
+          {
+            "service_id": "zenodo",
+            "label": "Zenodo",
+            "platform": "external",
+            "relationship": "matching_scope",
+            "access": "download",
+            "formats": [
+              "Shapefile ZIP"
+            ],
+            "urls": [
+              "https://zenodo.org/records/18624542",
+              "https://zenodo.org/api/records/18624542/files/GRWL_summaryStats_V01.02.zip/content"
+            ],
+            "asset_ids": [],
+            "note": "Producer landing page, DOI and repository/CDN download links identify one distribution service; they are not separate hosts."
+          },
+          {
+            "service_id": "earth_engine",
+            "label": "GEE community",
+            "platform": "gee",
+            "relationship": "other_version_or_subset",
+            "access": "gee_collection",
+            "formats": [
+              "Earth Engine FeatureCollection"
+            ],
+            "urls": [
+              "https://gee-community-catalog.org/projects/grwl/"
+            ],
+            "asset_ids": [
+              "projects/sat-io/open-datasets/GRWL/grwl_SummaryStats_v01_01"
+            ],
+            "note": "GEE summary is V01.01; selected producer file and prepared release are V01.02. It is not an exact-edition counterpart."
+          }
+        ],
+        "output_manifest": {
+          "path": "datasets/grwl/releases/summary-v01.02-local-r1/manifest.json",
+          "sha256": "a6eb5095a56461e45c57069886e9a04f0b85a5e8edc1bc9f971ac6560f1b4f4b"
+        },
+        "evidence": [
+          {
+            "path": "research/availability-sizes-20261101/observations.json",
+            "sha256": "a7c4fd21000b497faf92810420cde5cc4ee80ae533721dd13c69cb7e692fcd7b",
+            "key": "grwl"
+          }
+        ],
+        "source_size_key": "source_size"
+      },
+      "summary": {
+        "shortlist_id": "native-publication-gaps-20261031",
+        "shortlist_rank": 7,
+        "source_download_bytes": 43282861,
+        "source_size_precision": "exact",
+        "source_size_display": "43.28 MB",
+        "external_locations": 1,
+        "external_matching_locations": 1,
+        "gee_locations": 1,
+        "gee_matching_locations": 0,
+        "gee_asset_count": 1,
+        "prepared_analytic_bytes": 46297145,
+        "prepared_display_bytes": 86545489,
+        "prepared_data_bytes": 132842634
+      },
+      "prepared_assets": [
+        {
+          "href": "grwl/grwl-display.pmtiles",
+          "size_bytes": 86545489,
+          "media_type": null,
+          "kind": "display"
+        },
+        {
+          "href": "grwl/grwl-summary-v0102.parquet",
+          "size_bytes": 46297145,
+          "media_type": null,
+          "kind": "analytic"
+        }
+      ]
+    },
+    {
+      "id": "river-plastic-inputs",
+      "record_path": "datasets/river-plastic-inputs/dataset.yaml",
+      "title": "Global river plastic inputs — Lebreton et al. (2017)",
+      "decision": "publish_conversion",
+      "publication_status": "published",
+      "preparation_stage": "hosted_verified_pending_catalog_deployment",
+      "availability": {
+        "shortlist_id": "native-publication-gaps-20261031",
+        "rank": 8,
+        "reviewed_on": "2026-11-01",
+        "label": "Lebreton river-plastic inputs, Figshare v6",
+        "scope": "40,760 modeled river inputs, historical model baseline 2010; selected original shapefile ZIP.",
+        "geographic_scope": "global",
+        "download": {
+          "bytes": 5764810,
+          "precision": "exact",
+          "reported_size": null,
+          "format": "Shapefile ZIP",
+          "file_count": 1,
+          "basis": "validated_download",
+          "note": "Exact selected archive size from the previously downloaded, checksum-validated source pin. Excludes optional formats, separate layers and documentation.",
+          "evidence_urls": [
+            "https://doi.org/10.6084/m9.figshare.4725541.v6",
+            "https://ndownloader.figshare.com/files/7714864"
+          ]
+        },
+        "locations": [
+          {
+            "service_id": "figshare",
+            "label": "Figshare",
+            "platform": "external",
+            "relationship": "matching_scope",
+            "access": "download",
+            "formats": [
+              "Shapefile ZIP"
+            ],
+            "urls": [
+              "https://doi.org/10.6084/m9.figshare.4725541.v6",
+              "https://ndownloader.figshare.com/files/7714864"
+            ],
+            "asset_ids": [],
+            "note": "Producer landing page, DOI and repository/CDN download links identify one distribution service; they are not separate hosts."
+          },
+          {
+            "service_id": "earth_engine",
+            "label": "GEE community",
+            "platform": "gee",
+            "relationship": "edition_unverified",
+            "access": "gee_collection",
+            "formats": [
+              "Earth Engine FeatureCollection"
+            ],
+            "urls": [
+              "https://gee-community-catalog.org/projects/plastic/"
+            ],
+            "asset_ids": [
+              "projects/sat-io/open-datasets/open-ocean/river_plastic_emissions"
+            ],
+            "note": "Catalog describes the same paper/model and 40,760 watersheds, but GEE does not declare an upstream Figshare version manifest. Do not label it verified v6 bytes."
+          }
+        ],
+        "output_manifest": {
+          "path": "datasets/river-plastic-inputs/releases/figshare-v6-r2/manifest.json",
+          "sha256": "ad86186ea962c3c0dfc62feb28aac7a68145ac3c7451f2602812c5b5278c2300"
+        },
+        "evidence": [
+          {
+            "path": "research/availability-sizes-20261101/observations.json",
+            "sha256": "a7c4fd21000b497faf92810420cde5cc4ee80ae533721dd13c69cb7e692fcd7b",
+            "key": "river-plastic-inputs"
+          }
+        ],
+        "source_size_key": "source_size"
+      },
+      "summary": {
+        "shortlist_id": "native-publication-gaps-20261031",
+        "shortlist_rank": 8,
+        "source_download_bytes": 5764810,
+        "source_size_precision": "exact",
+        "source_size_display": "5.76 MB",
+        "external_locations": 1,
+        "external_matching_locations": 1,
+        "gee_locations": 1,
+        "gee_matching_locations": 0,
+        "gee_asset_count": 1,
+        "prepared_analytic_bytes": 6360991,
+        "prepared_display_bytes": 3705340,
+        "prepared_data_bytes": 10066331
+      },
+      "prepared_assets": [
+        {
+          "href": "river-plastic-inputs/river-plastic-inputs.parquet",
+          "size_bytes": 6360991,
+          "media_type": null,
+          "kind": "analytic"
+        },
+        {
+          "href": "river-plastic-inputs/river-plastic-inputs.pmtiles",
+          "size_bytes": 3705340,
+          "media_type": null,
+          "kind": "display"
+        }
+      ]
+    },
+    {
+      "id": "gdw",
+      "record_path": "datasets/gdw/dataset.yaml",
+      "title": "Global Dam Watch consensus v1.0 — barriers and reservoirs",
+      "decision": "publish_conversion",
+      "publication_status": "candidate",
+      "preparation_stage": "blocked_source_access",
+      "availability": {
+        "shortlist_id": "native-publication-gaps-20261031",
+        "rank": 9,
+        "reviewed_on": "2026-11-01",
+        "label": "Global Dam Watch consensus v1.0",
+        "scope": "Consensus v1.0 barrier points and reservoir polygons; excludes separate evolving intelligence products and the JRC v1_delta edition.",
+        "geographic_scope": "global",
+        "download": {
+          "bytes": null,
+          "precision": "unknown",
+          "reported_size": null,
+          "format": "Shapefile ZIP",
+          "file_count": 1,
+          "basis": "not_established",
+          "note": "Selected final v1.0 Shapefile archive has a documented direct file URL, but HEAD/GET requests return 403. DataCite registers 127,938,795 bytes for the release containing two alternative ZIP formats; this is not the selected archive size. Exact selected bytes remain null.",
+          "evidence_urls": [
+            "https://api.datacite.org/dois/10.6084%2Fm9.figshare.25988293.v1",
+            "https://ndownloader.figshare.com/files/47913754",
+            "https://github.com/Rekin226/aquascope/blob/main/aquascope/archive/context_mirror.py"
+          ]
+        },
+        "locations": [
+          {
+            "service_id": "figshare",
+            "label": "Figshare",
+            "platform": "external",
+            "relationship": "matching_scope",
+            "access": "download",
+            "formats": [
+              "FileGDB ZIP",
+              "Shapefile ZIP"
+            ],
+            "urls": [
+              "https://doi.org/10.6084/m9.figshare.25988293.v1",
+              "https://www.globaldamwatch.org/database"
+            ],
+            "asset_ids": [],
+            "note": "Final v1.0 release, two alternative full-layer archive formats; CC BY 4.0 verified from producer-deposited DataCite metadata. Official acquisition is currently HTTP 403; producer form redirects to the same Figshare service."
+          },
+          {
+            "service_id": "jrc",
+            "label": "European Commission JRC",
+            "platform": "external",
+            "relationship": "other_version_or_subset",
+            "access": "download",
+            "formats": [
+              "Shapefile"
+            ],
+            "urls": [
+              "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GDW/",
+              "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GDW/GDW_v1_delta_shp/"
+            ],
+            "asset_ids": [],
+            "note": "Directory lists v1_delta, a different edition. It contributes to identified locations, not matching consensus v1.0 locations."
+          },
+          {
+            "service_id": "aquascope_huggingface",
+            "label": "AquaScope / Hugging Face",
+            "platform": "external",
+            "relationship": "other_version_or_subset",
+            "access": "cloud_native",
+            "formats": [
+              "Parquet (latitude/longitude columns; no GeoParquet geometry)"
+            ],
+            "urls": [
+              "https://huggingface.co/datasets/Rekin226/aquascope-gauges/blob/main/context/dams/gdw_barriers.parquet",
+              "https://rachidouedraogo.com/aquascope/archive-layout/"
+            ],
+            "asset_ids": [],
+            "note": "Actual footer: 41,145 rows, 16 selected columns, one row group, no geometry column or geo metadata. File is 1,514,458 bytes. Reservoir polygons are absent from this documented mirror; not the complete two-layer/full-attribute GDW scope."
+          },
+          {
+            "service_id": "earth_engine",
+            "label": "GEE community",
+            "platform": "gee",
+            "relationship": "matching_scope",
+            "access": "gee_collection",
+            "formats": [
+              "Earth Engine FeatureCollection"
+            ],
+            "urls": [
+              "https://gee-community-catalog.org/projects/gdw/"
+            ],
+            "asset_ids": [
+              "projects/sat-io/open-datasets/GDW/GDW_BARRIERS_V1_0",
+              "projects/sat-io/open-datasets/GDW/GDW_RESERVOIRS_V1_0"
+            ],
+            "note": "Two catalog-declared v1.0 feature collections, one GEE service. No new live GEE reads."
+          }
+        ],
+        "output_manifest": null,
+        "evidence": [
+          {
+            "path": "research/availability-sizes-20261101/observations.json",
+            "sha256": "a7c4fd21000b497faf92810420cde5cc4ee80ae533721dd13c69cb7e692fcd7b",
+            "key": "gdw"
+          },
+          {
+            "path": "research/gdw-swot-preparation-20261101/observations.json",
+            "sha256": "1b4cddc40d19f126a59f7311d886ce60edfa3120c0bf385c4bcecde7ed465bfb",
+            "key": "gdw"
+          }
+        ]
+      },
+      "summary": {
+        "shortlist_id": "native-publication-gaps-20261031",
+        "shortlist_rank": 9,
+        "source_download_bytes": null,
+        "source_size_precision": "unknown",
+        "source_size_display": "Unknown",
+        "external_locations": 3,
+        "external_matching_locations": 1,
+        "gee_locations": 1,
+        "gee_matching_locations": 1,
+        "gee_asset_count": 2,
+        "prepared_analytic_bytes": null,
+        "prepared_display_bytes": null,
+        "prepared_data_bytes": null
+      },
+      "prepared_assets": null
+    },
+    {
+      "id": "swot_prior_lake_database",
+      "record_path": "datasets/swot_prior_lake_database/dataset.yaml",
+      "title": "SWOT Prior Lake Database v2.03",
+      "decision": "pending",
+      "publication_status": "candidate",
+      "preparation_stage": "metadata_qualified_sample_blocked_by_disk",
+      "availability": {
+        "shortlist_id": "native-publication-gaps-20261031",
+        "rank": 10,
+        "reviewed_on": "2026-11-01",
+        "label": "SWOT Prior Lake Database v2.03",
+        "scope": "Complete scientific PLD v2.03; excludes Light/Geometries variants and previous v2.02 tiles.",
+        "geographic_scope": "global",
+        "download": {
+          "bytes": 29990277120,
+          "precision": "exact",
+          "reported_size": null,
+          "format": "SQLite",
+          "file_count": 61,
+          "basis": "producer_listing",
+          "note": "Exact sum of provider-declared file:size for 61 unique scientific v2.03 tile assets. Collection total 122 includes 61 older v2.02 assets, excluded. Data bytes/checksums are not globally verified. Anonymous 206 on the smallest tile confirms a SQLite header; full source inspection stopped before download because free space was below the recorded 40 GiB start threshold.",
+          "evidence_urls": [
+            "https://hydroweb.next.theia-land.fr/api/catalog/stac/collections/SWOT_PRIOR_LAKE_DATABASE",
+            "https://hydroweb.next.theia-land.fr/api/catalog/stac/collections/SWOT_PRIOR_LAKE_DATABASE/items?limit=10"
+          ]
+        },
+        "locations": [
+          {
+            "service_id": "hydroweb_next",
+            "label": "Hydroweb.next / CNES-THEIA",
+            "platform": "external",
+            "relationship": "matching_scope",
+            "access": "download",
+            "formats": [
+              "SQLite"
+            ],
+            "urls": [
+              "https://hydroweb.next.theia-land.fr/api/catalog/stac/collections/SWOT_PRIOR_LAKE_DATABASE",
+              "https://hydroweb.next.theia-land.fr/catalog/details/SWOT_PRIOR_LAKE_DATABASE"
+            ],
+            "asset_ids": [],
+            "note": "Live STAC metadata explicitly identifies 2.03 Sci and 61 edition-specific files. Provider-declared sizes/MD5s retained. Anonymous metadata and 16-byte source range reads work. Matching is edition/scope metadata, not full SQLite/table validation. Older HTML description is stale."
+          }
+        ],
+        "output_manifest": null,
+        "evidence": [
+          {
+            "path": "research/availability-sizes-20261101/observations.json",
+            "sha256": "a7c4fd21000b497faf92810420cde5cc4ee80ae533721dd13c69cb7e692fcd7b",
+            "key": "swot_prior_lake_database"
+          },
+          {
+            "path": "research/gdw-swot-preparation-20261101/observations.json",
+            "sha256": "1b4cddc40d19f126a59f7311d886ce60edfa3120c0bf385c4bcecde7ed465bfb",
+            "key": "swot_prior_lake_database"
+          }
+        ]
+      },
+      "summary": {
+        "shortlist_id": "native-publication-gaps-20261031",
+        "shortlist_rank": 10,
+        "source_download_bytes": 29990277120,
+        "source_size_precision": "exact",
+        "source_size_display": "29.99 GB",
+        "external_locations": 1,
+        "external_matching_locations": 1,
+        "gee_locations": 0,
+        "gee_matching_locations": 0,
+        "gee_asset_count": 0,
+        "prepared_analytic_bytes": null,
+        "prepared_display_bytes": null,
+        "prepared_data_bytes": null
+      },
+      "prepared_assets": null
+    }
+  ]
+}

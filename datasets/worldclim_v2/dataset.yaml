@@ -1,0 +1,59 @@
+schema_version: 1
+id: worldclim_v2
+title: WorldClim v2.1 global land climate surfaces
+intake:
+  kind: producer
+  reference_url: https://www.worldclim.org/data/worldclim21.html
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'literature: Global land surfaces; resolutions from 30 arc-seconds to 10 arc-minutes.
+    Land cells only; no claimed ocean coverage. WorldClim v2.1 historical climate data, released 2020;
+    1970-2000 normals. v1 is a separate edition and has its own 2005 associated paper. Paper describes
+    WorldClim v2; producer''s current v2.1 is a later data release within that product family. Related
+    canonical records, with distinct scope: worldclim_v1.'
+  sources:
+  - provider: producer
+    entry_id: WorldClim v2 global land climate surfaces
+    url: https://www.worldclim.org/data/worldclim21.html
+    relationship: same_family
+  access:
+  - provider: literature
+    status: download_available
+    formats:
+    - raster
+    summary: Producer page provides downloadable resolution-specific archives. Exact release remains separate
+      from WorldClim v1. WorldClim v2.1 historical climate data, released 2020; 1970-2000 normals. v1
+      is a separate edition and has its own 2005 associated paper. Paper describes WorldClim v2; producer's
+      current v2.1 is a later data release within that product family.
+    license_summary: Exact release terms need product-specific review; no redistribution permission is
+      inferred from literature or access pages.
+    proposed_outputs:
+    - COG
+    rationale: Supplementary literature discovery only. A high associated-paper count is evidence of a
+      documented product family, not exact-edition usage, conversion priority, or native-format readiness.
+      Review producer bytes, terms and existing record component coverage before promotion.
+    evidence_urls:
+    - https://doi.org/10.1002/joc.5086
+    - https://www.worldclim.org/data/worldclim21.html
+    - https://www.worldclim.org/data/index.html
+  citations:
+  - provider: OpenAlex
+    paper_doi: 10.1002/joc.5086
+    work_id: https://openalex.org/W2614464134
+    cited_by_count: 17262
+    observed_on: '2026-11-01'
+    scope: associated_dataset_publication_base_family
+  evidence:
+  - path: research/global-candidates-20261031/literature/reviewed.json
+    sha256: eef4edb7f4a59e399d3670b9f2aace33bd24083f46d260a7859163c673fabbb6
+    key: worldclim_v2

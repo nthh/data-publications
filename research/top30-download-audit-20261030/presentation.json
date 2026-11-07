@@ -1,0 +1,242 @@
+[
+  {
+    "rank": 1,
+    "name": "ERA5",
+    "size": "≈5 PB, publisher archive-scale figure",
+    "scope": "Whole ERA5; selected transfer bytes vary",
+    "source": "GRIB / NetCDF; Zarr mirrors",
+    "output": "Zarr; reference existing store"
+  },
+  {
+    "rank": 2,
+    "name": "NCEP/NCAR Reanalysis",
+    "size": "7.00 MB",
+    "scope": "2024 global daily surface temperature only",
+    "source": "NetCDF",
+    "output": "Zarr"
+  },
+  {
+    "rank": 3,
+    "name": "WorldClim v1",
+    "size": "1.86 GB",
+    "scope": "Global 30″ BIO: all 19 variables",
+    "source": "ESRI grids in ZIP; BIL alternatives",
+    "output": "COG"
+  },
+  {
+    "rank": 4,
+    "name": "Hansen Global Forest Change",
+    "size": "83.91 GB",
+    "scope": "Global v1.13 core maps; imagery excluded",
+    "source": "GeoTIFF",
+    "output": "COG"
+  },
+  {
+    "rank": 5,
+    "name": "MODIS vegetation indices",
+    "size": "≈2,191 MB",
+    "scope": "MOD13C1.061, global 0.05°, all 23 composites in 2024",
+    "source": "HDF-EOS2",
+    "output": "Zarr; COG maps optional"
+  },
+  {
+    "rank": 6,
+    "name": "MERRA-2",
+    "size": "≈146,400 MB (estimate)",
+    "scope": "All SLV fields, hourly, global 2024",
+    "source": "NetCDF",
+    "output": "Zarr"
+  },
+  {
+    "rank": 7,
+    "name": "SRTM elevation",
+    "size": "≈99,883 MB",
+    "scope": "Entire SRTMGL1 v3 collection",
+    "source": "HGT in ZIP",
+    "output": "COG"
+  },
+  {
+    "rank": 8,
+    "name": "TRMM TMPA",
+    "size": "≈58.8 MB (estimate)",
+    "scope": "12 global monthly 3B43 files, 2019",
+    "source": "HDF4",
+    "output": "Zarr"
+  },
+  {
+    "rank": 9,
+    "name": "CHIRPS",
+    "size": "1.36 GB",
+    "scope": "Global daily 2024; NOAA mirror",
+    "source": "NetCDF; GeoTIFF alternatives",
+    "output": "Zarr; COG maps optional"
+  },
+  {
+    "rank": 10,
+    "name": "GLDAS",
+    "size": "≈55,632 MB (estimate)",
+    "scope": "Noah 2.1 global 3-hourly 2020, all fields",
+    "source": "NetCDF",
+    "output": "Zarr"
+  },
+  {
+    "rank": 11,
+    "name": "ERA5-Land",
+    "size": "Unknown; request-dependent",
+    "scope": "Raw example: 227 GB per hourly variable/year",
+    "source": "GRIB / NetCDF; ARCO Zarr",
+    "output": "Zarr; reference existing subset"
+  },
+  {
+    "rank": 12,
+    "name": "JRC Global Surface Water",
+    "size": "15.97 GB",
+    "scope": "Global v1.4 Occurrence only, 504 tiles",
+    "source": "GeoTIFF",
+    "output": "COG; Zarr for histories"
+  },
+  {
+    "rank": 13,
+    "name": "CFSR",
+    "size": "55.81 TB",
+    "scope": "NCAR six-hourly archive, 1979–2010",
+    "source": "GRIB2",
+    "output": "Zarr"
+  },
+  {
+    "rank": 14,
+    "name": "River plastic inputs",
+    "size": "5.76 MB",
+    "scope": "Complete Figshare v6 source ZIP",
+    "source": "Shapefile in ZIP",
+    "output": "GeoParquet + PMTiles"
+  },
+  {
+    "rank": 15,
+    "name": "TerraClimate",
+    "size": "≈115,507 Mbytes",
+    "scope": "v1.1 base 1950–2025, 14 variables; ≈116–121 GB",
+    "source": "NetCDF4",
+    "output": "Zarr"
+  },
+  {
+    "rank": 16,
+    "name": "Global Mangrove Forests 2000",
+    "size": "≈59.39 MB",
+    "scope": "All 111 global GeoTIFF ZIP tiles",
+    "source": "GeoTIFF in ZIP",
+    "output": "COG"
+  },
+  {
+    "rank": 17,
+    "name": "PRISM",
+    "size": "≈654M, rounded listing",
+    "scope": "800 m vpdmax, 12 monthly grids in 2024",
+    "source": "Raster ZIP; COG service available",
+    "output": "COG or Zarr time series"
+  },
+  {
+    "rank": 18,
+    "name": "EPA Level III ecoregions",
+    "size": "≈35 MB",
+    "scope": "CONUS vector package with state boundaries",
+    "source": "Shapefile ZIP",
+    "output": "GeoParquet + PMTiles"
+  },
+  {
+    "rank": 19,
+    "name": "USGS GAP CONUS 2011",
+    "size": "2.00 GB",
+    "scope": "Complete CONUS producer package",
+    "source": "Raster ZIP; inner encoding unverified",
+    "output": "COG"
+  },
+  {
+    "rank": 20,
+    "name": "MODIS GPP/NPP",
+    "size": "≈2,044 MB",
+    "scope": "Global 2024 MOD17A3HGF.061, 290 tiles",
+    "source": "HDF-EOS2",
+    "output": "COG; Zarr across years"
+  },
+  {
+    "rank": 21,
+    "name": "Free-flowing rivers",
+    "size": "954.71 MB",
+    "scope": "Global author-released network; excludes PDF",
+    "source": "File geodatabase ZIP",
+    "output": "GeoParquet + PMTiles"
+  },
+  {
+    "rank": 22,
+    "name": "RESOLVE Ecoregions 2017",
+    "size": "≈150 MB",
+    "scope": "Global polygon shapefile",
+    "source": "Shapefile ZIP",
+    "output": "GeoParquet + PMTiles"
+  },
+  {
+    "rank": 23,
+    "name": "HydroSHEDS",
+    "size": "≈16,460 MB",
+    "scope": "Global continental 3″ conditioned DEM only",
+    "source": "GeoTIFF; HydroBASINS are shapefiles",
+    "output": "COG; GeoParquet + PMTiles for basins"
+  },
+  {
+    "rank": 24,
+    "name": "SoilGrids 2.0",
+    "size": "Unknown",
+    "scope": "Global bulk-density means at six depths",
+    "source": "Tiled GeoTIFF + VRT",
+    "output": "COG; optional depth/property Zarr"
+  },
+  {
+    "rank": 25,
+    "name": "gridMET",
+    "size": "79.53 GB",
+    "scope": "NCAR 1979–2025 archive; drought product excluded",
+    "source": "NetCDF4; Zarr access exists",
+    "output": "Zarr"
+  },
+  {
+    "rank": 26,
+    "name": "Global glacier elevation change",
+    "size": "≈15 GB",
+    "scope": "2000–2019 change/uncertainty raster family",
+    "source": "GeoTIFF",
+    "output": "COG"
+  },
+  {
+    "rank": 27,
+    "name": "WHRC tropical biomass",
+    "size": "Unknown",
+    "scope": "One 500 m pantropical map",
+    "source": "GEE image; standalone format unverified",
+    "output": "COG"
+  },
+  {
+    "rank": 28,
+    "name": "HydroLAKES",
+    "size": "≈820 MB",
+    "scope": "Global v1 polygon layer",
+    "source": "Shapefile ZIP; geodatabase alternative",
+    "output": "GeoParquet + PMTiles"
+  },
+  {
+    "rank": 29,
+    "name": "MapBiomas",
+    "size": "Unknown",
+    "scope": "Brazil Collection 9 annual maps, 1985–2023",
+    "source": "GeoTIFF; GEE assets",
+    "output": "COG; optional Zarr time stack"
+  },
+  {
+    "rank": 30,
+    "name": "MERIT DEM",
+    "size": "Unknown; registration-gated",
+    "scope": "Global v1.0.3, 3″ elevation",
+    "source": "Float32 GeoTIFF in TAR",
+    "output": "COG; publication rights review"
+  }
+]

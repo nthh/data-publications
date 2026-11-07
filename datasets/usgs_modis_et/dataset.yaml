@@ -1,0 +1,34 @@
+schema_version: 1
+id: usgs_modis_et
+title: USGS MODIS Evapotranspiration Dekadal
+community_url: https://gee-community-catalog.org/projects/usgs_modis_et
+audit:
+  snapshot: gee-community-audit-20261029
+  family_key: usgs_modis_et
+  unique_gee_asset_count: 3
+  initial_queue: research_original_source
+  folia_registry_status: not_identified
+  folia_registry_ids: []
+  source_coop_urls: []
+  source_coop_scope: null
+  external_native_urls: []
+  external_native_scope: null
+triage:
+  decision: pending
+  priority: normal
+review:
+  citation_assessment:
+    as_of: '2026-10-29'
+    provider: OpenAlex
+    evidence_path: research/citations/rankings.json
+    evidence_key: usgs_modis_et
+    geographic_scope: global
+    paper_count_status: matched
+    max_paper_citations: 111
+    max_data_doi_citations: 2
+    top_paper_doi: https://doi.org/10.3390/s20071915
+    top_paper_openalex_id: https://openalex.org/W3013855791
+    citation_scope: base_dataset_family
+    citation_scope_note: Correct a mistyped Sensors DOI; the 2020 paper describes
+      the operational global SSEBop product, not all details of the later Climate
+      Engine v5 refresh.

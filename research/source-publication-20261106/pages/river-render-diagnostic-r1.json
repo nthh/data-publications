@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "frozen_before_viewer_run": true,
+  "kind": "river_map_render_diagnostic",
+  "dataset_id": "river-plastic-inputs",
+  "browser_source": "https://github.com/portolan-sdi/portolan-browser/tree/15af01335da62a60d209911c9bde994981fd29be",
+  "prior_observation": "The r4 screenshot showed the basemap without clearly visible River points although the planned PMTiles tile-data ranges succeeded and the official layer checkbox was checked.",
+  "steps": [
+    "Preserve the existing default-view screenshot and initial actual layer-control checkbox states.",
+    "Use exactly three clicks on the visible MapLibre zoom-in button and save a zoomed screenshot.",
+    "Use the official visible layer-control checkbox named exactly River input display tiles: record its checked state, uncheck it and save a screenshot, then check it again and save a screenshot.",
+    "After each view change, allow planned Source requests to pass the unchanged exact-object, ranged-206, CORS, range-size and byte-budget checks, then wait for Source activity to settle before saving the image."
+  ],
+  "overlay_title": "River input display tiles",
+  "zoom_in_clicks": 3,
+  "expected_observation": "At least one saved view should show actual River point features clearly enough for manual visual review. The automated harness records states, requests and images; it does not self-assert that any image meets this visual expectation.",
+  "interpretation": [
+    "The default view remains part of the evidence and is not overwritten.",
+    "If points appear only after zooming, the initial view may be too broad for legible low-zoom thinning.",
+    "If points disappear when the checkbox is unchecked and return when rechecked, the visible overlay is connected to the expected UI control.",
+    "A missing or ambiguous visual result remains unresolved and requires manual review; it does not authorize changing data, styles or catalog metadata."
+  ],
+  "unchanged_gates": [
+    "This is a selected River diagnostic, not the five-collection acceptance gate.",
+    "All Source plan, cross-product, MIME, HEAD, range, Content-Range, CORS, tile-data, transfer-budget and failure rules remain unchanged.",
+    "No request may be substituted or exempted, and every diagnostic screenshot is still pending human visual review."
+  ]
+}

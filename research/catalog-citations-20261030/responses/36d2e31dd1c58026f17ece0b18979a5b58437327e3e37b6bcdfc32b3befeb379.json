@@ -1,0 +1,80 @@
+{
+  "request_url": "https://api.openalex.org/works?search=The+Global+Land+Data+Assimilation+System&corpus=all&per_page=5&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date",
+  "retrieved_at": "2026-10-30T22:07:57.752268+00:00",
+  "response_path": "responses/36d2e31dd1c58026f17ece0b18979a5b58437327e3e37b6bcdfc32b3befeb379.json",
+  "status": 200,
+  "response_sha256": "ecfd752a3cc9c827cd8a5150722605ae0afaa3960aa38249f7ee1e1e23d0d7ec",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 192474,
+      "db_response_time_ms": 288,
+      "page": 1,
+      "per_page": 5,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where full text has (The Global Land Data Assimilation System)",
+        "x_new_oql": "get works (all corpora) where full text has (The Global Land Data Assimilation System)",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "The Global Land Data Assimilation System",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:The Global Land Data Assimilation System&corpus=all&per_page=5",
+        "order": "best matches first",
+        "order_default": true
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W2119132330",
+        "doi": "https://doi.org/10.1175/bams-85-3-381",
+        "title": "The Global Land Data Assimilation System",
+        "type": "article",
+        "publication_year": 2004,
+        "publication_date": "2004-03-01"
+      },
+      {
+        "id": "https://openalex.org/W2941039154",
+        "doi": "https://doi.org/10.1007/s13351-019-8172-4",
+        "title": "Regional and Global Land Data Assimilation Systems: Innovations, Challenges, and Prospects",
+        "type": "article",
+        "publication_year": 2019,
+        "publication_date": "2019-04-01"
+      },
+      {
+        "id": "https://openalex.org/W1509654529",
+        "doi": "https://doi.org/10.1175/jhm-d-14-0230.1",
+        "title": "Evaluation of the Global Land Data Assimilation System (GLDAS) Air Temperature Data Products",
+        "type": "article",
+        "publication_year": 2015,
+        "publication_date": "2015-07-31"
+      },
+      {
+        "id": "https://openalex.org/W2156041524",
+        "doi": "https://doi.org/10.1029/2008jd009807",
+        "title": "Assessing land‐atmosphere coupling using soil moisture from the Global Land Data Assimilation System and observational precipitation",
+        "type": "article",
+        "publication_year": 2008,
+        "publication_date": "2008-09-12"
+      },
+      {
+        "id": "https://openalex.org/W2037172764",
+        "doi": "https://doi.org/10.1175/jhm437.1",
+        "title": "Analysis of Multiple Precipitation Products and Preliminary Assessment of Their Impact on Global Land Data Assimilation System Land Surface States",
+        "type": "article",
+        "publication_year": 2005,
+        "publication_date": "2005-10-01"
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "cc17dbc6074a44db99f51d043e4c04b23d455db2085c26622288c9026dbdef11"
+}

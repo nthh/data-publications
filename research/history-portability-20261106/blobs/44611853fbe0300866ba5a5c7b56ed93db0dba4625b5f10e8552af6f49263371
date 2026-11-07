@@ -1,0 +1,45 @@
+# HydroLAKES v1 polygons
+
+This package preserves the complete 1,427,688-feature HydroLAKES polygon release
+as ID-sorted GeoParquet. Producer: Lehner and Messager / HydroSHEDS. The
+[canonical record](dataset.yaml) pins the original archive, license and workflow.
+The current producer release is v1; its composite shoreline sources are older
+than the release preparation date. It is not a 2026 shoreline observation.
+
+## Repeat locally
+
+From the repository root:
+
+```sh
+uv sync --locked --project datasets/hydrolakes
+uv run --locked --project datasets/hydrolakes python datasets/hydrolakes/acquire.py --output .local/hydrolakes/source/HydroLAKES_polys_v10_shp.zip
+uv run --locked --project datasets/hydrolakes python datasets/hydrolakes/convert.py --source .local/hydrolakes/source/HydroLAKES_polys_v10_shp.zip --output .local/hydrolakes/new-run/data.parquet --staging-dir .local/hydrolakes/new-run/staging --source-url https://data.hydrosheds.org/file/hydrolakes/HydroLAKES_polys_v10_shp.zip --source-sha256 9ef63498569dd7ccd0b8d8852da026e009a75f42d293f00e483f3b9fcfe8e1f9
+uv run --locked --project datasets/hydrolakes python datasets/hydrolakes/validate.py --source .local/hydrolakes/source/HydroLAKES_polys_v10_shp.zip --data .local/hydrolakes/new-run/data.parquet --report .local/hydrolakes/new-run/source-validation.json
+```
+
+Use a fresh output directory. The converter retains staging for inspection and
+will not overwrite it. Source attributes are preserved as decoded by GDAL/Arrow,
+including nulls and producer sentinel values; no coordinate repair, reprojection,
+simplification or deduplication occurs. `Hylak_id` remains the unique identifier.
+ID sorting permits ID pruning; bbox spatial pruning is not claimed for this layout.
+The analytic release has no PMTiles derivative.
+
+The converter was ported from Folia's FRC11 workflow. Its historical output is
+945,383,282 bytes with SHA-256
+`4c7c83b0a91e4cbd1e31583ab89eee9721ba22250272640591f4795d186a6a76`.
+That historical identity is evidence to verify, not a substitute for source
+fidelity, clean rebuild and packaging checks in this standalone repository.
+
+## Validation and attribution
+
+[VALIDATION.md](VALIDATION.md) defines source fidelity and release gates. Routine
+checks are local; no GEE request or upload occurs. A source match does not establish
+scientific accuracy or parity with the GEE representation. The original source
+reader remains part of the validation boundary.
+
+Data: CC-BY-4.0. Cite Messager et al. (2016), *Estimating the volume and age of water
+stored in global lakes using a geo-statistical approach*, Nature Communications,
+[doi:10.1038/ncomms13603](https://doi.org/10.1038/ncomms13603).
+The producer technical documentation also requests permission for redistributing
+the whole database in its original format; preserve that request and assess the
+intended transformed release specifically. Repository-authored code: Apache-2.0.

@@ -1,0 +1,92 @@
+{
+  "status": "passed",
+  "release_manifest_sha256": "876c848046d966a07da169d6651b864ba294de5ce5d295e35df5083c83815399",
+  "records": 42077,
+  "numeric_field_comparisons": 420770,
+  "polyline_parts": 42117,
+  "vertices": 3129821,
+  "duckdb_bbox_subset_rows": 2378,
+  "pmtiles_minzoom": 0,
+  "pmtiles_maxzoom": 10,
+  "pmtiles_tiles_by_zoom": {
+    "0": 1,
+    "1": 4,
+    "2": 12,
+    "3": 38,
+    "4": 111,
+    "5": 322,
+    "6": 981,
+    "7": 3062,
+    "8": 9459,
+    "9": 26808,
+    "10": 67331
+  },
+  "pmtiles_z10_tiles": 67331,
+  "pmtiles_z10_features": 126361,
+  "pmtiles_z10_distinct_ids": 42077,
+  "pmtiles_z10_sample_rows": [
+    4,
+    5,
+    13,
+    14,
+    18,
+    20,
+    21,
+    23,
+    24,
+    27,
+    28,
+    33,
+    38,
+    39,
+    40,
+    41,
+    43,
+    44,
+    46,
+    48,
+    50,
+    52,
+    53,
+    55,
+    59,
+    61,
+    62,
+    64,
+    66,
+    67,
+    68,
+    69
+  ],
+  "pmtiles_z10_max_hausdorff_m": 22.152840547671076,
+  "pmtiles_z10_hausdorff_limit_m": 25.893043331603455,
+  "pmtiles_z10_geometry_metric": "symmetric discrete Hausdorff with vertices and segment midpoints (densify=0.5); diagnostic only",
+  "catalog_structure": "passed",
+  "http": {
+    "range_cases": [
+      {
+        "range": "bytes=0-31",
+        "status": 206,
+        "bytes": 32
+      },
+      {
+        "range": "bytes=128-159",
+        "status": 206,
+        "bytes": 32
+      },
+      {
+        "range": "bytes=-16",
+        "status": 206,
+        "bytes": 16
+      },
+      {
+        "range": "bytes=46297146-46297154",
+        "status": 416,
+        "bytes": 0
+      }
+    ],
+    "cors": "*",
+    "duckdb_subset_rows": 2378,
+    "handler": "datasets/grwl/serve.py"
+  }
+}

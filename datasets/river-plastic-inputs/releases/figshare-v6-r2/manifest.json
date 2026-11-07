@@ -1,0 +1,293 @@
+{
+  "status": "local_prepared_not_published",
+  "dataset": "river-plastic-inputs",
+  "source": {
+    "id": "river-plastic-inputs",
+    "title": "Global river plastic inputs — Lebreton et al. (2017)",
+    "source_doi": "10.6084/m9.figshare.4725541.v6",
+    "paper_doi": "10.1038/ncomms15611",
+    "source_url": "https://ndownloader.figshare.com/files/7714864",
+    "source_name": "PlasticRiverInputs.zip",
+    "source_size": 5764810,
+    "source_md5": "4b3167c75df6b1227839e6b1674d3cda",
+    "source_sha256": "c24a1ccdfbdc44c59954ab9796a522a3271b7c91ca31898526a93bccaeabd4f4",
+    "source_version": "figshare-v6",
+    "expected_rows": 40760,
+    "model_year": 2010,
+    "license": "CC-BY-4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "metadata_timestamp": "2026-10-30T00:30:27Z",
+    "expected_missing_estimate_rows": [
+      22271,
+      36248,
+      36262,
+      36276
+    ],
+    "tippecanoe_version": "tippecanoe v2.79.0",
+    "portolan_schema": "https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json",
+    "row_group_size": 4096,
+    "pmtiles_maxzoom": 8,
+    "pmtiles_fields": [
+      "source_row",
+      "i_low",
+      "i_mid",
+      "i_high",
+      "mpw",
+      "area"
+    ],
+    "release": "figshare-v6-r2"
+  },
+  "release": "figshare-v6-r2",
+  "conversion_git_commit": "4c54a01451967421bf17b1346cd749c0738efdde",
+  "dataset_record_sha256_at_build": "168063a15fb69da8b4c110f56121029195c7f58793cbd1e5f34e89ae50d1f442",
+  "effective_config_sha256": "554b5ae5f6ad3221acdfddf26a4532c51c5a243f10545c227a1a23e8cd01bbb1",
+  "build_input_sha256": {
+    "build.py": "0c58ea189e1559c898fd094f66739c7b14f5f1e37c7442e47b241151a7d4569b",
+    "catalog.py": "7b64b6dc53662bddf5a044961b37aead409710e8932c6b744cc7f6956436ea5b",
+    "validate.py": "c60c18f92f18b9fea1ef3674d63126d8f2dceb1ca7a1b9f0fbde41ec8d7c61d3",
+    "serve.py": "e55a48f8702a5b093f48a16d67c01039ca188aba0fdcb1c8ee5d365a010ed015",
+    "dataset_config.py": "f07fec35cd3a26d0ce8364a4d38494ff0e7699d29619857ab752285227f392cc",
+    "pyproject.toml": "d02d165614f8dd83b9a468cdc1a0514ca39a125d71e4de63a013cc3346db5bfc",
+    "uv.lock": "5ab3657aafe140bf19e3f86afb29e125eb15bdb49662b593819e920b08905e93",
+    "package.json": "3b68e75eb52b61f7bce0416eb346e6ea4a4854d0341dfa369a387a4a8f66f1d5",
+    "package-lock.json": "83092848670ab1b7c381d2dab9d8f0ccfb0a71924af5fa6629f23b90c229e83a"
+  },
+  "environment": {
+    "python": "3.12.12",
+    "packages": {
+      "pyarrow": "23.0.1",
+      "geopandas": "1.1.3",
+      "shapely": "2.1.2",
+      "numpy": "2.5.4",
+      "pyproj": "3.8.0",
+      "matplotlib": "3.10.8",
+      "pmtiles": "3.8.1",
+      "mapbox-vector-tile": "2.2.0",
+      "rashid": "0.1.8"
+    },
+    "tippecanoe_version": "tippecanoe v2.79.0",
+    "tippecanoe_sha256": "c504719334e5335d60c66a01491707bdbfb773ebbfe3efc7c1c8239eb18d58d1",
+    "tippecanoe_max_threads": 2
+  },
+  "records": 40760,
+  "source_quality": {
+    "distinct_coordinates": 40741,
+    "coincident_coordinate_groups": 19,
+    "coincident_source_rows": [
+      [
+        22261,
+        36168
+      ],
+      [
+        22262,
+        36169
+      ],
+      [
+        22263,
+        36170
+      ],
+      [
+        22265,
+        36174
+      ],
+      [
+        22266,
+        36175
+      ],
+      [
+        22271,
+        36178
+      ],
+      [
+        22278,
+        36184
+      ],
+      [
+        22280,
+        36192
+      ],
+      [
+        22309,
+        36240
+      ],
+      [
+        22310,
+        36243
+      ],
+      [
+        22318,
+        36248
+      ],
+      [
+        22323,
+        36253
+      ],
+      [
+        22338,
+        36262
+      ],
+      [
+        22341,
+        36270
+      ],
+      [
+        22343,
+        36276
+      ],
+      [
+        22348,
+        36286
+      ],
+      [
+        22350,
+        36289
+      ],
+      [
+        22352,
+        36292
+      ],
+      [
+        22356,
+        36299
+      ]
+    ],
+    "coincident_handling": "Retain all source records and multiplicity. Coincident points are not duplicate records to remove.",
+    "missing_estimate_source_rows": [
+      22271,
+      36248,
+      36262,
+      36276
+    ],
+    "null_counts": {
+      "i_mid": 4,
+      "i_low": 4,
+      "i_high": 4,
+      "i_mid_jan": 4,
+      "i_low_jan": 4,
+      "i_high_jan": 4,
+      "i_mid_feb": 4,
+      "i_low_feb": 4,
+      "i_high_feb": 4,
+      "i_mid_mar": 4,
+      "i_low_mar": 4,
+      "i_high_mar": 4,
+      "i_mid_apr": 4,
+      "i_low_apr": 4,
+      "i_high_apr": 4,
+      "i_mid_may": 4,
+      "i_low_may": 4,
+      "i_high_may": 4,
+      "i_mid_jun": 4,
+      "i_low_jun": 4,
+      "i_high_jun": 4,
+      "i_mid_jul": 4,
+      "i_low_jul": 4,
+      "i_high_jul": 4,
+      "i_mid_aug": 4,
+      "i_low_aug": 4,
+      "i_high_aug": 4,
+      "i_mid_sep": 4,
+      "i_low_sep": 4,
+      "i_high_sep": 4,
+      "i_mid_oct": 4,
+      "i_low_oct": 4,
+      "i_high_oct": 4,
+      "i_mid_nov": 4,
+      "i_low_nov": 4,
+      "i_high_nov": 4,
+      "i_mid_dec": 4,
+      "i_low_dec": 4,
+      "i_high_dec": 4,
+      "runoff_jan": 4,
+      "runoff_feb": 4,
+      "runoff_mar": 4,
+      "runoff_apr": 4,
+      "runoff_may": 4,
+      "runoff_jun": 4,
+      "runoff_jul": 4,
+      "runoff_aug": 4,
+      "runoff_sep": 4,
+      "runoff_oct": 4,
+      "runoff_nov": 4,
+      "runoff_dec": 4
+    },
+    "source_null_encoding": "Numeric DBF fields filled with asterisks are preserved as null, not zero.",
+    "independent_check": "GDAL/pyogrio reads the same four rows as null; catchment area, waste production and geometry remain populated.",
+    "encoding_reference": "https://github.com/OSGeo/shapelib/blob/master/dbfopen.c"
+  },
+  "original_numeric_fields": 53,
+  "bbox": [
+    -137.9375,
+    -55.62083333,
+    179.8791667,
+    60.4125
+  ],
+  "annual_input_totals_tonnes": {
+    "i_low": "1149724.175239",
+    "i_mid": "1412158.416612",
+    "i_high": "2407866.149084"
+  },
+  "assets": {
+    "AGENTS.md": {
+      "size_bytes": 1586,
+      "sha256": "7bbf3ad0c6010d61f434981cb5a6a02d9fbae8685aaf22a33c706fe45b7aae6c"
+    },
+    "LICENSE.txt": {
+      "size_bytes": 517,
+      "sha256": "7cad97bff02dbe7dc7f3449d29bf320dc6b5a4d525791f0415167fdb4327e38b"
+    },
+    "README.md": {
+      "size_bytes": 1679,
+      "sha256": "6438aaf8b630f09c95a41056f7a0e89eeffef4f1fc513946403683156cc41c0c"
+    },
+    "catalog.json": {
+      "size_bytes": 1464,
+      "sha256": "00ef7a3ffc6c1eb9f58799d87fdcb1743e45d12f64318f327eb7f1d03565da4f"
+    },
+    "dataset.yaml": {
+      "size_bytes": 5492,
+      "sha256": "168063a15fb69da8b4c110f56121029195c7f58793cbd1e5f34e89ae50d1f442"
+    },
+    "river-plastic-inputs/AGENTS.md": {
+      "size_bytes": 1586,
+      "sha256": "7bbf3ad0c6010d61f434981cb5a6a02d9fbae8685aaf22a33c706fe45b7aae6c"
+    },
+    "river-plastic-inputs/README.md": {
+      "size_bytes": 9710,
+      "sha256": "ac0011966396424991fcdf6c29f985722c0b163e0b8d51c3fdda0aaa97748569"
+    },
+    "river-plastic-inputs/collection.json": {
+      "size_bytes": 14030,
+      "sha256": "5d20fde7a74d725f4d2c7f9f01ab305272abca47445a634995cd177c1aff2d9d"
+    },
+    "river-plastic-inputs/quality.json": {
+      "size_bytes": 2420,
+      "sha256": "938199ee9cb0f9ef8522b2dbd1d6d32eb70c562ff816fc3d3849b11d74dcb643"
+    },
+    "river-plastic-inputs/river-plastic-inputs.parquet": {
+      "size_bytes": 6360991,
+      "sha256": "de35bd69b144565af1fcd33f915e8521a1af502e3ac50235560990f6c441e8c9"
+    },
+    "river-plastic-inputs/river-plastic-inputs.pmtiles": {
+      "size_bytes": 3705340,
+      "sha256": "ca412601ea905a43bf55d5251f27e2c2d9b1403b2eb93adea1525c4fa7bc05fe"
+    },
+    "river-plastic-inputs/schema.json": {
+      "size_bytes": 9542,
+      "sha256": "7858a6c3b596e9d9b322f5aa9896209e7cc2c0750de267293cef4f6befb1f828"
+    },
+    "river-plastic-inputs/styles/annual-input.json": {
+      "size_bytes": 2118,
+      "sha256": "ae46644a56751e87743cb5f3e6fdb4fd32074919678158bcb858f95722431c22"
+    },
+    "river-plastic-inputs/thumbnail.png": {
+      "size_bytes": 198924,
+      "sha256": "ff0e30b5c3768605f41b75c0bce515d82eeffa9d2422a4d408b8efbad46034c1"
+    }
+  },
+  "limitations": [
+    "Local preparation only; no remote publication or registry acceptance.",
+    "Decimal values and coordinates are preserved from the source; this does not establish scientific accuracy of the model.",
+    "PMTiles quantizes positions, stores display attributes as doubles, and thins lower zooms. Use GeoParquet for analysis."
+  ]
+}

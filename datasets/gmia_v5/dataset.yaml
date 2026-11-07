@@ -1,0 +1,62 @@
+schema_version: 1
+id: gmia_v5
+title: FAO/University of Bonn Global Map of Irrigation Areas (GMIA) v5
+intake:
+  kind: producer
+  reference_url: https://www.fao.org/aquastat/en/resources/publications/reports/
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: near_global
+  spatial_coverage: 'literature: Area equipped for irrigation globally over land; reported grid extent
+    -180,-60 to 180,90. Does not mean actual irrigated area for every cell; v5 also includes actual-irrigation
+    and water-source percentage layers. GMIA v5, circa 2005 static map at 5 arc-minutes; v5 technical
+    report is DOI 10.13140/2.1.2660.6728. The older peer-reviewed 2005 development paper describes the
+    original GMIA family and is retained as a separate related paper, not silently substituted for the
+    v5 report count. FAO/Bonn report directly describes v5; it is a technical report DOI and may not resolve
+    as a Crossref/OpenAlex work. The v5 technical report has 89 observed citations, retained only in evidence;
+    report counts are excluded from the associated-paper backlog metric. The older 2005 paper is not substituted.
+    Related canonical records, with distinct scope: global_irrigation.'
+  sources:
+  - provider: producer
+    entry_id: FAO/University of Bonn Global Map of Irrigation Areas (GMIA) v5
+    url: https://www.fao.org/aquastat/en/resources/publications/reports/
+    relationship: same_family
+  access:
+  - provider: literature
+    status: download_available
+    formats:
+    - raster
+    - vector
+    summary: FAO AQUASTAT links to the producer GMIA v5 report/data; do not confuse area equipped with
+      actual irrigated area. GMIA v5, circa 2005 static map at 5 arc-minutes; v5 technical report is DOI
+      10.13140/2.1.2660.6728. The older peer-reviewed 2005 development paper describes the original GMIA
+      family and is retained as a separate related paper, not silently substituted for the v5 report count.
+      FAO/Bonn report directly describes v5; it is a technical report DOI and may not resolve as a Crossref/OpenAlex
+      work. The v5 technical report has 89 observed citations, retained only in evidence; report counts
+      are excluded from the associated-paper backlog metric. The older 2005 paper is not substituted.
+    license_summary: Exact release terms need product-specific review; no redistribution permission is
+      inferred from literature or access pages.
+    proposed_outputs:
+    - COG
+    rationale: Supplementary literature discovery only. A high associated-paper count is evidence of a
+      documented product family, not exact-edition usage, conversion priority, or native-format readiness.
+      Review producer bytes, terms and existing record component coverage before promotion.
+    evidence_urls:
+    - https://www.fao.org/aquastat/en/resources/publications/reports/
+    - https://www.fao.org/aquastat/en/geospatial-information/global-maps-irrigated-areas/latest-version/
+    - https://doi.org/10.5194/hess-9-535-2005
+    - https://doi.org/10.13140/2.1.2660.6728
+  citations: []
+  evidence:
+  - path: research/global-candidates-20261031/literature/reviewed.json
+    sha256: eef4edb7f4a59e399d3670b9f2aace33bd24083f46d260a7859163c673fabbb6
+    key: gmia_v5

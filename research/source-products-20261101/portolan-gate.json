@@ -1,0 +1,90 @@
+{
+  "status": "passed",
+  "toolchain_versions_match": true,
+  "schema_version": 1,
+  "created": "2026-11-02T00:27:48.913572Z",
+  "catalog_path": "/Users/nathan/.folia-fleets/source-products-20261101/tree/catalog",
+  "scope": "schema_stac_extensions_metadata_only",
+  "network_access": "prohibited",
+  "versions": {
+    "rashid": {
+      "expected": "0.3.0",
+      "observed": "0.3.0",
+      "matches": true
+    },
+    "stac-check": {
+      "expected": "1.14.0",
+      "observed": "1.14.0",
+      "matches": true
+    }
+  },
+  "conformance": {
+    "status": "passed",
+    "tool": "rashid",
+    "expected_scope": {
+      "schema": true,
+      "stac_structure": true,
+      "stac_extensions": true,
+      "data": "off",
+      "live": "off"
+    },
+    "command": [
+      "/Users/nathan/.folia-fleets/git-backed-catalog-20261031/tree/tools/portolan/.venv/bin/python",
+      "/Users/nathan/.folia-fleets/source-products-20261101/tree/tools/portolan/offline_cli.py",
+      "rashid",
+      "check",
+      "/Users/nathan/.folia-fleets/source-products-20261101/tree/catalog",
+      "--schema",
+      "--no-live",
+      "--json",
+      "--no-data"
+    ],
+    "exit_code": 0,
+    "launch_error": null,
+    "report_parse_status": "parsed",
+    "report": {
+      "passed": true,
+      "files_checked": 1,
+      "error_count": 0,
+      "warning_count": 0,
+      "info_count": 0,
+      "summary": {
+        "by_severity": {
+          "error": 0,
+          "warning": 0,
+          "info": 0
+        },
+        "by_rule": []
+      },
+      "findings": []
+    },
+    "stdout": "{\n  \"passed\": true,\n  \"files_checked\": 1,\n  \"error_count\": 0,\n  \"warning_count\": 0,\n  \"info_count\": 0,\n  \"summary\": {\n    \"by_severity\": {\n      \"error\": 0,\n      \"warning\": 0,\n      \"info\": 0\n    },\n    \"by_rule\": []\n  },\n  \"findings\": []\n}\n",
+    "stderr": ""
+  },
+  "stac_check_advisory": {
+    "status": "incomplete",
+    "tool": "stac-check",
+    "network_access": "prohibited",
+    "enumeration_error": null,
+    "objects_checked": 1,
+    "results": [
+      {
+        "path": "catalog.json",
+        "status": "tool_error",
+        "command": [
+          "/Users/nathan/.folia-fleets/git-backed-catalog-20261031/tree/tools/portolan/.venv/bin/python",
+          "/Users/nathan/.folia-fleets/source-products-20261101/tree/tools/portolan/offline_cli.py",
+          "stac-check",
+          "/Users/nathan/.folia-fleets/source-products-20261101/tree/catalog/catalog.json",
+          "--no-assets-urls"
+        ],
+        "exit_code": 1,
+        "stdout": "\n________________________________________________________\n ____  ____  __    ___       ___  _  _  ____  ___  __ _ \n/ ___)(_  _)/ _\\  / __)___  / __)/ )( \\(  __)/ __)(  / )\n\\___ \\  )( /    \\( (__(___)( (__ ) __ ( ) _)( (__  )  ( \n(____/ (__)\\_/\\_/ \\___)     \\___)\\_)(_/(____)\\___)(__\\_)\n________________________________________________________\n    \nstac-check: STAC spec validation and linting tool\n\nThanks for using STAC version 1.1.0!\n\n Validator: stac-valid 4.2.2\n\n Validation method: JSONSchema\n\nCATALOG Passed: False\n\nSchemas checked: \n    https://schemas.stacspec.org/v1.1.0/catalog-spec/json-schema/catalog.json\n\nRecommendation: \n    For more accurate error information, rerun with --verbose.\n\n\n Validation Errors: \n\nValidation error type: \n    Exception\n\nValidation error message: \n    OFFLINE GUARD: validator attempted a network operation\n\n STAC Best Practices: \n\nLinks in catalogs and collections should always have a 'title' field\n\nA link to 'self' in links is strongly recommended\n\n\n Additional Information: \n\nThis object has 5 links\n\nDisclaimer: Schema-based STAC validation may be incomplete and should only be considered as a first indicator of validity.\nSee: https://github.com/radiantearth/stac-spec/discussions/1242\n\n",
+        "stderr": "OFFLINE GUARD: validator attempted a network operation\n",
+        "launch_error": null,
+        "advisory": true
+      }
+    ],
+    "note": "Advisory only; tool failures or crashes do not change the Rashid conformance result."
+  }
+}

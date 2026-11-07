@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-11-02T22:20:48.182829+00:00",
+  "status": "passed_local_grwl_display_correction",
+  "code_commit": "5fdbc3ef29692287b62474f0d93f1af7137ceb0d",
+  "diagnosis": {
+    "path": "research/grwl-straight-segments-20261102/diagnosis.json",
+    "sha256": "fb9e0c229c21806ef921a552142fe8155e667c27497872f9a5720e9a5ae97319",
+    "size_bytes": 145709
+  },
+  "analytic_source_sha256": "82ac4eeac2168b1aad6e5c9ae53c0c228ffcc7c8cd3f8d795493d939e626fa9c",
+  "original_pmtiles_sha256": "382b0da7d0a879f3b74c0f32a92427b51a58600aa22f703098a0d08c819eaafe",
+  "corrected_pmtiles": {
+    "id": "grwl-display",
+    "title": "GRWL river network",
+    "path": "assets/grwl.pmtiles",
+    "size_bytes": 115384572,
+    "sha256": "7b56696bc08daa4ed512a02fd35017f913827d60f9dc1d8fba94b1f726ba5343",
+    "source_layer": "grwl",
+    "geometry_type": "line",
+    "min_zoom": 0,
+    "max_zoom": 10,
+    "id_field": "source_row",
+    "id_encoding": "mvt_feature_id",
+    "source_rows": 42077,
+    "attribute_fields": [
+      "OBJECTID",
+      "ID",
+      "width_min_",
+      "width_med_",
+      "width_mean",
+      "width_max_",
+      "width_sd_m",
+      "lakeFlag",
+      "nSegPx",
+      "Shape_Leng",
+      "_src_xmin",
+      "_src_ymin",
+      "_src_xmax",
+      "_src_ymax"
+    ],
+    "source_asset": {
+      "path": "grwl/grwl-summary-v0102.parquet",
+      "size_bytes": 46297145,
+      "sha256": "82ac4eeac2168b1aad6e5c9ae53c0c228ffcc7c8cd3f8d795493d939e626fa9c"
+    },
+    "style_path": "styles/grwl-width.json"
+  },
+  "prepared_manifest": {
+    "path": "datasets/grwl/display/display-v1/manifest.json",
+    "sha256": "a3deb37bc36ef5f16917ff668b8cbcf33d5b2bdd6477b106f26aa0be9dfc2523",
+    "size_bytes": 3890
+  },
+  "independent_validation": {
+    "path": "research/grwl-straight-segments-20261102/corrected-validation-r2.json",
+    "sha256": "87454e22265d601a87b9746c01db8e8d02084099c6b79ce5672f0c7eea55e703",
+    "size_bytes": 25985,
+    "source_ids_accounted": 42077,
+    "attributes_checked": 1754788,
+    "missing_source_ids": 0,
+    "attribute_failures": 0,
+    "geometry_samples": 74,
+    "maximum_sampled_distance_m": 18.438252625322207,
+    "threshold_m": 30,
+    "dateline_zoom_checks": 11,
+    "feature_28938_distance_m": 7.370288410127116
+  },
+  "browser": {
+    "path": "research/grwl-straight-segments-20261102/final-browser/browser-validation.json",
+    "sha256": "1d4e08dcb71cdd8644ad8dd345c05ab51defc01567f90fa4aa6a4fca344edc2c",
+    "size_bytes": 168565,
+    "cases": 13,
+    "passed": 13,
+    "normal_launcher_from_clean_checkout": true,
+    "all_six_active_layers_are_pmtiles": true,
+    "exact_grwl_dateline_source_id": 28938,
+    "tile_and_analytic_mean_width_m": 97,
+    "max_case_data_body_bytes": 26151359,
+    "ceiling_bytes": 134217728,
+    "reviewed_screenshot": {
+      "path": "research/grwl-straight-segments-20261102/final-browser/grwl-display-dateline.png",
+      "sha256": "154ec312b170267cca772b0c37df30ed96528de86b801aa13d9ad6eba9c6c2b1",
+      "size_bytes": 167960
+    }
+  },
+  "focused_checks": [
+    {
+      "command": "GRWL_NATIVE_WRAP_TESTS=1 python -m unittest tests.test_grwl_display_wrap tests.test_grwl_display_finalize -v",
+      "environment": "locked scripts/display_tools",
+      "checkout": "clean rehearsal",
+      "tests": 8,
+      "passed": 8,
+      "skipped": 0
+    },
+    {
+      "command": "python -m unittest tests.test_cloud_viewer_prepare tests.test_cloud_viewer_run -v",
+      "environment": "locked scripts/release_tools",
+      "checkout": "clean rehearsal",
+      "tests": 21,
+      "passed": 21
+    },
+    {
+      "command": "node --test scripts/cloud_viewer/tests/core.test.mjs",
+      "tests": 11,
+      "passed": 11
+    }
+  ],
+  "offline_metadata": {
+    "canonical_records": 452,
+    "published_collections": 0,
+    "historical_provenance_entries": 114,
+    "historical_provenance_blobs": 44,
+    "catalog_check": "passed",
+    "product_draft_check": "passed",
+    "provenance_check": "passed"
+  },
+  "upload_plan": {
+    "path": "research/grwl-straight-segments-20261102/staging-r1/immutable-upload-plan.json",
+    "sha256": "9c295219af9cbbd75a333cf47b33a5132aeb965f3fad3240c8e5a28633d2e5aa",
+    "size_bytes": 270304,
+    "products": 5,
+    "files": 296,
+    "bytes": 9878979687,
+    "pmtiles_files_including_legacy": 7,
+    "active_viewer_layers": 6,
+    "ready_for_upload": false,
+    "upload_blockers": [
+      "Source Cooperative account verification is not recorded"
+    ]
+  },
+  "limits": [
+    "Feature13164 retains its upstream31.281km near-horizontal edge; no automatic scientific correction is made.",
+    "Feature28938 western sub-metre tail quantizes to a map-boundary point; periodic-frame displacement remains within the unchanged30m tolerance.",
+    "Analytical GeoParquet preserves original decimal values and longitude encoding.",
+    "The original embedded GRWL PMTiles are historical; the canonical display package supersedes them for maps.",
+    "No new GEE comparison, public hosting, upload or Git push.",
+    "Native fixtures were repeated in a clean checkout; the full corrected production archive was built once."
+  ]
+}

@@ -1,0 +1,2391 @@
+{
+  "schema_version": 1,
+  "dataset_id": "grwl-raw",
+  "status": "completed_explanatory_diagnostic",
+  "strict_parity_unchanged": true,
+  "sample_sha256": "38286e83b5a5158e107f135f32c3b9698c57307d62d1d2fc2e54134235eeb634",
+  "plan_sha256": "ccd503ab51aac7f5a9e4ee6491324ea7c6942724d80d05e1b8008909ec88c244",
+  "comparison_sha256": "e6fefb572c865af88d93d8f7e9fbdedcbb03f0c1ee7d480c56d45ca273ff2dc3",
+  "criteria_sha256": "46d82a976f5099e89b52cf3be76924903b7ab0e21640268e4fd5d4e8cb8f2977",
+  "followup_criteria_sha256": "981c69aa52d7ee9c590fc46f50ee42d7c881f51f9fe6788bb3a21b77cd23a246",
+  "script_sha256": "65e5e187f751ec233630aaa62e619cffc531cb2b7a5401ccc7c7c7165a1a693e",
+  "lock_sha256": "2cf752aac36445732b59e0db89088aa3f421238fecf4693b27da4dacf89c7335",
+  "git_commit": "7e7d6125aec3c630964a72d2ed28af5e4a282edc",
+  "cases": 23,
+  "discrete_within_one_meter": 23,
+  "discrete_over_one_meter": 0,
+  "incomplete": 0,
+  "maximum_sampled_distance_m": 0.31267031133823475,
+  "results": [
+    {
+      "local_id": "145251499122688",
+      "previous_diagnostic": {
+        "strict": false,
+        "diagnostic": "aligned_vertices",
+        "reason": "strict_structure_or_coordinate_mismatch",
+        "max_vertex_displacement_m": 30.051545239063213,
+        "hausdorff_m": null,
+        "geometry_type_changed": true,
+        "diagnostic_pass": false
+      },
+      "status": "completed",
+      "discrete_within_one_meter": true,
+      "maximum_sampled_distance_m": 0.10742581244871519,
+      "local_to_gee": {
+        "sampled_points": 3,
+        "maximum_m": 0.1032660111403124,
+        "p95_m": 0.10302029010939945,
+        "witness_projected": {
+          "query_point_index": 0,
+          "query_xy": [
+            -0.052861612973730834,
+            15.008521422048993
+          ],
+          "nearest_segment_xy": [
+            [
+              0.050404398164519026,
+              15.033959455357406
+            ],
+            [
+              0.05040440060316049,
+              -15.042846390198218
+            ]
+          ],
+          "query_kind": "original_vertex",
+          "query_lonlat": [
+            -69.91454510445138,
+            0.5879545393485409
+          ],
+          "nearest_segment_lonlat": [
+            [
+              -69.9145441767485,
+              0.5879547694021063
+            ],
+            [
+              -69.9145441767485,
+              0.587682764237846
+            ]
+          ]
+        }
+      },
+      "gee_to_local": {
+        "sampled_points": 3,
+        "maximum_m": 0.10742581244871519,
+        "p95_m": 0.10731853213752912,
+        "witness_projected": {
+          "query_point_index": 1,
+          "query_xy": [
+            0.05040440060316049,
+            -15.042846390198218
+          ],
+          "nearest_segment_xy": [
+            [
+              -0.052861612973730834,
+              15.008521422048993
+            ],
+            [
+              -0.047947189922396334,
+              -14.99963447261337
+            ]
+          ],
+          "query_kind": "original_vertex",
+          "query_lonlat": [
+            -69.9145441767485,
+            0.587682764237846
+          ],
+          "nearest_segment_lonlat": [
+            [
+              -69.91454510445138,
+              0.5879545393485409
+            ],
+            [
+              -69.91454506030205,
+              0.5876831550328262
+            ]
+          ]
+        }
+      },
+      "local_vertices": 2,
+      "gee_vertices": 2,
+      "local_line_or_ring_parts": 1,
+      "gee_line_or_ring_parts": 1,
+      "local_geometry_type": "MultiLineString",
+      "gee_geometry_type": "LineString",
+      "local_geometry_valid": true,
+      "gee_geometry_valid": true,
+      "maximum_projected_segment_length_m": 30.076805845555626,
+      "projection_center": [
+        -69.91454462956261,
+        0.5878188070053297
+      ],
+      "claim": "Both directions of every vertex and segment midpoint to opposite line/ring segments. Discrete diagnostic, not continuous Hausdorff or strict parity. No segments join separate parts."
+    },
+    {
+      "local_id": "145260088986283",
+      "previous_diagnostic": {
+        "strict": false,
+        "diagnostic": "aligned_vertices",
+        "reason": "strict_structure_or_coordinate_mismatch",
+        "max_vertex_displacement_m": 29.79986469881967,
+        "hausdorff_m": null,
+        "geometry_type_changed": true,
+        "diagnostic_pass": false
+      },
+      "status": "completed",
+      "discrete_within_one_meter": true,
+      "maximum_sampled_distance_m": 0.21733346863444378,
+      "local_to_gee": {
+        "sampled_points": 3,
+        "maximum_m": 0.21733346863444378,
+        "p95_m": 0.215721385888171,
+        "witness_projected": {
+          "query_point_index": 1,
+          "query_xy": [
+            0.0291174213333709,
+            -15.003702028403922
+          ],
+          "nearest_segment_xy": [
+            [
+              -0.0027549007663018126,
+              14.796145625948247
+            ],
+            [
+              -0.0027549015635055414,
+              -14.788718327575612
+            ]
+          ],
+          "query_kind": "original_vertex",
+          "query_lonlat": [
+            -58.61678709682907,
+            3.56972694506376
+          ],
+          "nearest_segment_lonlat": [
+            [
+              -58.61678738369589,
+              3.5699964352982505
+            ],
+            [
+              -58.61678738369589,
+              3.5697288892350443
+            ]
+          ]
+        }
+      },
+      "gee_to_local": {
+        "sampled_points": 3,
+        "maximum_m": 0.03149444005957572,
+        "p95_m": 0.030395088656271788,
+        "witness_projected": {
+          "query_point_index": 1,
+          "query_xy": [
+            -0.0027549015635055414,
+            -14.788718327575612
+          ],
+          "nearest_segment_xy": [
+            [
+              -0.02360758582436327,
+              14.996274815456342
+            ],
+            [
+              0.0291174213333709,
+              -15.003702028403922
+            ]
+          ],
+          "query_kind": "original_vertex",
+          "query_lonlat": [
+            -58.61678738369589,
+            3.5697288892350443
+          ],
+          "nearest_segment_lonlat": [
+            [
+              -58.61678757138053,
+              3.569998245135089
+            ],
+            [
+              -58.61678709682907,
+              3.56972694506376
+            ]
+          ]
+        }
+      },
+      "local_vertices": 2,
+      "gee_vertices": 2,
+      "local_line_or_ring_parts": 1,
+      "gee_line_or_ring_parts": 1,
+      "local_geometry_type": "MultiLineString",
+      "gee_geometry_type": "LineString",
+      "local_geometry_valid": true,
+      "gee_geometry_valid": true,
+      "maximum_projected_segment_length_m": 30.000023175966575,
+      "projection_center": [
+        -58.61678735890035,
+        3.5698626286830355
+      ],
+      "claim": "Both directions of every vertex and segment midpoint to opposite line/ring segments. Discrete diagnostic, not continuous Hausdorff or strict parity. No segments join separate parts."
+    },
+    {
+      "local_id": "145315923555670",
+      "previous_diagnostic": {
+        "strict": false,
+        "diagnostic": "aligned_vertices",
+        "reason": "strict_structure_or_coordinate_mismatch",
+        "max_vertex_displacement_m": 30.17035253618234,
+        "hausdorff_m": null,
+        "geometry_type_changed": true,
+        "diagnostic_pass": false
+      },
+      "status": "completed",
+      "discrete_within_one_meter": true,
+      "maximum_sampled_distance_m": 0.21223471893060186,
+      "local_to_gee": {
+        "sampled_points": 3,
+        "maximum_m": 0.20200516570966104,
+        "p95_m": 0.19612241276953582,
+        "witness_projected": {
+          "query_point_index": 1,
+          "query_xy": [
+            0.10825817787941924,
+            -15.062010738198095
+          ],
+          "nearest_segment_xy": [
+            [
+              -0.07158880744344377,
+              15.107805754794063
+            ],
+            [
+              -0.07158882745899199,
+              -14.970026274052278
+            ]
+          ],
+          "query_kind": "original_vertex",
+          "query_lonlat": [
+            18.633710936954873,
+            3.392915782413649
+          ],
+          "nearest_segment_lonlat": [
+            [
+              18.63370931854385,
+              3.3931886194280687
+            ],
+            [
+              18.63370931854385,
+              3.3929166142638083
+            ]
+          ]
+        }
+      },
+      "gee_to_local": {
+        "sampled_points": 3,
+        "maximum_m": 0.21223471893060186,
+        "p95_m": 0.20897339679020963,
+        "witness_projected": {
+          "query_point_index": 0,
+          "query_xy": [
+            -0.07158880744344377,
+            15.107805754794063
+          ],
+          "nearest_segment_xy": [
+            [
+              0.03491945965158986,
+              14.924231342198068
+            ],
+            [
+              0.10825817787941924,
+              -15.062010738198095
+            ]
+          ],
+          "query_kind": "original_vertex",
+          "query_lonlat": [
+            18.63370931854385,
+            3.3931886194280687
+          ],
+          "nearest_segment_lonlat": [
+            [
+              18.633710276992957,
+              3.393186959295515
+            ],
+            [
+              18.633710936954873,
+              3.392915782413649
+            ]
+          ]
+        }
+      },
+      "local_vertices": 2,
+      "gee_vertices": 2,
+      "local_line_or_ring_parts": 1,
+      "gee_line_or_ring_parts": 1,
+      "local_geometry_type": "MultiLineString",
+      "gee_geometry_type": "LineString",
+      "local_geometry_valid": true,
+      "gee_geometry_valid": true,
+      "maximum_projected_segment_length_m": 30.07783202884634,
+      "projection_center": [
+        18.633709962758886,
+        3.3930519938502597
+      ],
+      "claim": "Both directions of every vertex and segment midpoint to opposite line/ring segments. Discrete diagnostic, not continuous Hausdorff or strict parity. No segments join separate parts."
+    },
+    {
+      "local_id": "145376053043201",
+      "previous_diagnostic": {
+        "strict": false,
+        "diagnostic": "aligned_vertices",
+        "reason": "strict_structure_or_coordinate_mismatch",
+        "max_vertex_displacement_m": 30.122795419209883,
+        "hausdorff_m": null,
+        "geometry_type_changed": true,
+        "diagnostic_pass": false
+      },
+      "status": "completed",
+      "discrete_within_one_meter": true,
+      "maximum_sampled_distance_m": 0.2041139780757665,
+      "local_to_gee": {
+        "sampled_points": 3,
+        "maximum_m": 0.15989397755575255,
+        "p95_m": 0.15894960626361718,
+        "witness_projected": {
+          "query_point_index": 0,
+          "query_xy": [
+            -0.07802079001285935,
+            15.037377449282543
+          ],
+          "nearest_segment_xy": [
+            [
+              0.07522515425959068,
+              14.991751090424481
+            ],
+            [
+              0.07522515573018386,
+              -15.085028157639181
+            ]
+          ],
+          "query_kind": "original_vertex",
+          "query_lonlat": [
+            102.42421654979333,
+            0.23765712147629667
+          ],
+          "nearest_segment_lonlat": [
+            [
+              102.42421792643684,
+              0.23765670884550497
+            ],
+            [
+              102.42421792643684,
+              0.23738470368124473
+            ]
+          ]
+        }
+      },
+      "gee_to_local": {
+        "sampled_points": 3,
+        "maximum_m": 0.2041139780757665,
+        "p95_m": 0.19902632352549754,
+        "witness_projected": {
+          "query_point_index": 1,
+          "query_xy": [
+            0.07522515573018386,
+            -15.085028157639181
+          ],
+          "nearest_segment_xy": [
+            [
+              -0.07802079001285935,
+              15.037377449282543
+            ],
+            [
+              -0.07242942927528563,
+              -14.944100376230486
+            ]
+          ],
+          "query_kind": "original_vertex",
+          "query_lonlat": [
+            102.42421792643684,
+            0.23738470368124473
+          ],
+          "nearest_segment_lonlat": [
+            [
+              102.42421654979333,
+              0.23765712147629667
+            ],
+            [
+              102.42421660002182,
+              0.23738597818886478
+            ]
+          ]
+        }
+      },
+      "local_vertices": 2,
+      "gee_vertices": 2,
+      "local_line_or_ring_parts": 1,
+      "gee_line_or_ring_parts": 1,
+      "local_geometry_type": "MultiLineString",
+      "gee_geometry_type": "LineString",
+      "local_geometry_valid": true,
+      "gee_geometry_valid": true,
+      "maximum_projected_segment_length_m": 30.076779248063662,
+      "projection_center": [
+        102.42421725067221,
+        0.2375211280479778
+      ],
+      "claim": "Both directions of every vertex and segment midpoint to opposite line/ring segments. Discrete diagnostic, not continuous Hausdorff or strict parity. No segments join separate parts."
+    },
+    {
+      "local_id": "145376053048662",
+      "previous_diagnostic": {
+        "strict": false,
+        "diagnostic": "aligned_vertices",
+        "reason": "strict_structure_or_coordinate_mismatch",
+        "max_vertex_displacement_m": 30.038370479814695,
+        "hausdorff_m": null,
+        "geometry_type_changed": true,
+        "diagnostic_pass": false
+      },
+      "status": "completed",
+      "discrete_within_one_meter": true,
+      "maximum_sampled_distance_m": 0.10755402611961717,
+      "local_to_gee": {
+        "sampled_points": 3,
+        "maximum_m": 0.0939707762088692,
+        "p95_m": 0.09164534017858995,
+        "witness_projected": {
+          "query_point_index": 1,
+          "query_xy": [
+            -0.058612595818629126,
+            14.989642355833919
+          ],
+          "nearest_segment_xy": [
+            [
+              0.03535818520163234,
+              -15.035233635165488
+            ],
+            [
+              0.035358180381855994,
+              15.041962158536315
+            ]
+          ],
+          "query_kind": "original_vertex",
+          "query_lonlat": [
+            102.6232535163185,
+            2.1416700900039367
+          ],
+          "nearest_segment_lonlat": [
+            [
+              102.62325436105846,
+              2.1413985579973684
+            ],
+            [
+              102.62325436105847,
+              2.141670563161628
+            ]
+          ]
+        }
+      },
+      "gee_to_local": {
+        "sampled_points": 3,
+        "maximum_m": 0.10755402611961717,
+        "p95_m": 0.10387130019016375,
+        "witness_projected": {
+          "query_point_index": 1,
+          "query_xy": [
+            0.035358180381855994,
+            15.041962158536315
+          ],
+          "nearest_segment_xy": [
+            [
+              -0.012103870407879495,
+              -14.996370825042515
+            ],
+            [
+              -0.058612595818629126,
+              14.989642355833919
+            ]
+          ],
+          "query_kind": "original_vertex",
+          "query_lonlat": [
+            102.62325436105847,
+            2.141670563161628
+          ],
+          "nearest_segment_lonlat": [
+            [
+              102.62325393440359,
+              2.1413989094558334
+            ],
+            [
+              102.6232535163185,
+              2.1416700900039367
+            ]
+          ]
+        }
+      },
+      "local_vertices": 2,
+      "gee_vertices": 2,
+      "local_line_or_ring_parts": 1,
+      "gee_line_or_ring_parts": 1,
+      "local_geometry_type": "MultiLineString",
+      "gee_geometry_type": "LineString",
+      "local_geometry_valid": true,
+      "gee_geometry_valid": true,
+      "maximum_projected_segment_length_m": 30.077195793701804,
+      "projection_center": [
+        102.62325404320977,
+        2.141534530154691
+      ],
+      "claim": "Both directions of every vertex and segment midpoint to opposite line/ring segments. Discrete diagnostic, not continuous Hausdorff or strict parity. No segments join separate parts."
+    },
+    {
+      "local_id": "145736830413483",
+      "previous_diagnostic": {
+        "strict": false,
+        "diagnostic": "aligned_vertices",
+        "reason": "strict_structure_or_coordinate_mismatch",
+        "max_vertex_displacement_m": 30.096869724282637,
+        "hausdorff_m": null,
+        "geometry_type_changed": true,
+        "diagnostic_pass": false
+      },
+      "status": "completed",
+      "discrete_within_one_meter": true,
+      "maximum_sampled_distance_m": 0.23026192636216838,
+      "local_to_gee": {
+        "sampled_points": 3,
+        "maximum_m": 0.23026192636216838,
+        "p95_m": 0.22386416853097285,
+        "witness_projected": {
+          "query_point_index": 0,
+          "query_xy": [
+            -0.1464756576433978,
+            15.021182157238755
+          ],
+          "nearest_segment_xy": [
+            [
+              0.08314216381577384,
+              15.003971381533963
+            ],
+            [
+              0.0831421958113306,
+              -15.074811643438663
+            ]
+          ],
+          "query_kind": "original_vertex",
+          "query_lonlat": [
+            6.033643238685388,
+            4.678167925638172
+          ],
+          "nearest_segment_lonlat": [
+            [
+              6.033645308226046,
+              4.678167769999568
+            ],
+            [
+              6.0336453082260455,
+              4.6778957648353074
+            ]
+          ]
+        }
+      },
+      "gee_to_local": {
+        "sampled_points": 3,
+        "maximum_m": 0.2295430345775079,
+        "p95_m": 0.223187078851128,
+        "witness_projected": {
+          "query_point_index": 0,
+          "query_xy": [
+            0.08314216381577384,
+            15.003971381533963
+          ],
+          "nearest_segment_xy": [
+            [
+              -0.1464756576433978,
+              15.021182157238755
+            ],
+            [
+              -0.019808678980633466,
+              -14.95034177859192
+            ]
+          ],
+          "query_kind": "original_vertex",
+          "query_lonlat": [
+            6.033645308226046,
+            4.678167769999568
+          ],
+          "nearest_segment_lonlat": [
+            [
+              6.033643238685388,
+              4.678167925638172
+            ],
+            [
+              6.033644380332306,
+              4.677896890427595
+            ]
+          ]
+        }
+      },
+      "local_vertices": 2,
+      "gee_vertices": 2,
+      "local_line_or_ring_parts": 1,
+      "gee_line_or_ring_parts": 1,
+      "local_geometry_type": "MultiLineString",
+      "gee_geometry_type": "LineString",
+      "local_geometry_valid": true,
+      "gee_geometry_valid": true,
+      "maximum_projected_segment_length_m": 30.078783024972626,
+      "projection_center": [
+        6.033644558867447,
+        4.678032087725161
+      ],
+      "claim": "Both directions of every vertex and segment midpoint to opposite line/ring segments. Discrete diagnostic, not continuous Hausdorff or strict parity. No segments join separate parts."
+    },
+    {
+      "local_id": "145788369912094",
+      "previous_diagnostic": {
+        "strict": false,
+        "diagnostic": "aligned_vertices",
+        "reason": "strict_structure_or_coordinate_mismatch",
+        "max_vertex_displacement_m": 30.177635110991606,
+        "hausdorff_m": null,
+        "geometry_type_changed": true,
+        "diagnostic_pass": false
+      },
+      "status": "completed",
+      "discrete_within_one_meter": true,
+      "maximum_sampled_distance_m": 0.21301779334229387,
+      "local_to_gee": {
+        "sampled_points": 3,
+        "maximum_m": 0.1279258463795009,
+        "p95_m": 0.12687398107709535,
+        "witness_projected": {
+          "query_point_index": 0,
+          "query_xy": [
+            -0.07932642977720658,
+            14.936840696407392
+          ],
+          "nearest_segment_xy": [
+            [
+              0.048599416451760996,
+              15.107168492574145
+            ],
+            [
+              0.0485994430367394,
+              -14.973615613583203
+            ]
+          ],
+          "query_kind": "original_vertex",
+          "query_lonlat": [
+            79.98172169525026,
+            6.6165463759473555
+          ],
+          "nearest_segment_lonlat": [
+            [
+              79.98172285208166,
+              6.616547916134599
+            ],
+            [
+              79.98172285208166,
+              6.616275910970337
+            ]
+          ]
+        }
+      },
+      "gee_to_local": {
+        "sampled_points": 3,
+        "maximum_m": 0.21301779334229387,
+        "p95_m": 0.20146322973751324,
+        "witness_projected": {
+          "query_point_index": 0,
+          "query_xy": [
+            0.048599416451760996,
+            15.107168492574145
+          ],
+          "nearest_segment_xy": [
+            [
+              -0.07932642977720658,
+              14.936840696407392
+            ],
+            [
+              -0.017872408959153367,
+              -15.070393410333486
+            ]
+          ],
+          "query_kind": "original_vertex",
+          "query_lonlat": [
+            79.98172285208166,
+            6.616547916134599
+          ],
+          "nearest_segment_lonlat": [
+            [
+              79.98172169525026,
+              6.6165463759473555
+            ],
+            [
+              79.98172225097808,
+              6.616275035858155
+            ]
+          ]
+        }
+      },
+      "local_vertices": 2,
+      "gee_vertices": 2,
+      "local_line_or_ring_parts": 1,
+      "gee_line_or_ring_parts": 1,
+      "local_geometry_type": "MultiLineString",
+      "gee_geometry_type": "LineString",
+      "local_geometry_valid": true,
+      "gee_geometry_valid": true,
+      "maximum_projected_segment_length_m": 30.080784106157346,
+      "projection_center": [
+        79.98172241259792,
+        6.616411309727612
+      ],
+      "claim": "Both directions of every vertex and segment midpoint to opposite line/ring segments. Discrete diagnostic, not continuous Hausdorff or strict parity. No segments join separate parts."
+    },
+    {
+      "local_id": "146595823788033",
+      "previous_diagnostic": {
+        "strict": false,
+        "diagnostic": "aligned_vertices",
+        "reason": "strict_structure_or_coordinate_mismatch",
+        "max_vertex_displacement_m": 30.05615726552124,
+        "hausdorff_m": null,
+        "geometry_type_changed": true,
+        "diagnostic_pass": false
+      },
+      "status": "completed",
+      "discrete_within_one_meter": true,
+      "maximum_sampled_distance_m": 0.22127633247545925,
+      "local_to_gee": {
+        "sampled_points": 3,
+        "maximum_m": 0.21827470946984445,
+        "p95_m": 0.20406699768895092,
+        "witness_projected": {
+          "query_point_index": 0,
+          "query_xy": [
+            -0.18275540927103698,
+            15.000396618649289
+          ],
+          "nearest_segment_xy": [
+            [
+              0.03551930015272077,
+              15.036719704142733
+            ],
+            [
+              0.035519338333017354,
+              -15.054968055521005
+            ]
+          ],
+          "query_kind": "original_vertex",
+          "query_lonlat": [
+            6.468811428408324,
+            12.836690338487871
+          ],
+          "nearest_segment_lonlat": [
+            [
+              6.468813439132883,
+              12.836690666819962
+            ],
+            [
+              6.468813439132883,
+              12.836418661655701
+            ]
+          ]
+        }
+      },
+      "gee_to_local": {
+        "sampled_points": 3,
+        "maximum_m": 0.22127633247545925,
+        "p95_m": 0.20968854587019337,
+        "witness_projected": {
+          "query_point_index": 0,
+          "query_xy": [
+            0.03551930015272077,
+            15.036719704142733
+          ],
+          "nearest_segment_xy": [
+            [
+              -0.18275540927103698,
+              15.000396618649289
+            ],
+            [
+              0.11171692990153267,
+              -14.982147977496906
+            ]
+          ],
+          "query_kind": "original_vertex",
+          "query_lonlat": [
+            6.468813439132883,
+            12.836690666819962
+          ],
+          "nearest_segment_lonlat": [
+            [
+              6.468811428408324,
+              12.836690338487871
+            ],
+            [
+              6.468814141056643,
+              12.836419319891878
+            ]
+          ]
+        }
+      },
+      "local_vertices": 2,
+      "gee_vertices": 2,
+      "local_line_or_ring_parts": 1,
+      "gee_line_or_ring_parts": 1,
+      "local_geometry_type": "MultiLineString",
+      "gee_geometry_type": "LineString",
+      "local_geometry_valid": true,
+      "gee_geometry_valid": true,
+      "maximum_projected_segment_length_m": 30.09168775966374,
+      "projection_center": [
+        6.468813111932683,
+        12.836554746713855
+      ],
+      "claim": "Both directions of every vertex and segment midpoint to opposite line/ring segments. Discrete diagnostic, not continuous Hausdorff or strict parity. No segments join separate parts."
+    },
+    {
+      "local_id": "147519241901398",
+      "previous_diagnostic": {
+        "strict": false,
+        "diagnostic": "aligned_vertices",
+        "reason": "strict_structure_or_coordinate_mismatch",
+        "max_vertex_displacement_m": 30.23179696249152,
+        "hausdorff_m": null,
+        "geometry_type_changed": true,
+        "diagnostic_pass": false
+      },
+      "status": "completed",
+      "discrete_within_one_meter": true,
+      "maximum_sampled_distance_m": 0.26260814798992954,
+      "local_to_gee": {
+        "sampled_points": 3,
+        "maximum_m": 0.19769389531505435,
+        "p95_m": 0.19047226293281322,
+        "witness_projected": {
+          "query_point_index": 1,
+          "query_xy": [
+            0.14999807718714728,
+            -15.08766730357659
+          ],
+          "nearest_segment_xy": [
+            [
+              -0.00817340735842325,
+              15.143715882770802
+            ],
+            [
+              -0.008173421543583467,
+              -14.969072812835602
+            ]
+          ],
+          "query_kind": "original_vertex",
+          "query_lonlat": [
+            97.4308824072864,
+            20.190750530439587
+          ],
+          "nearest_segment_lonlat": [
+            [
+              97.43088089397973,
+              20.191023606853495
+            ],
+            [
+              97.43088089397973,
+              20.19075160168925
+            ]
+          ]
+        }
+      },
+      "gee_to_local": {
+        "sampled_points": 3,
+        "maximum_m": 0.26260814798992954,
+        "p95_m": 0.2520516530256004,
+        "witness_projected": {
+          "query_point_index": 0,
+          "query_xy": [
+            -0.00817340735842325,
+            15.143715882770802
+          ],
+          "nearest_segment_xy": [
+            [
+              -0.13365097895973757,
+              14.913024707352804
+            ],
+            [
+              0.14999807718714728,
+              -15.08766730357659
+            ]
+          ],
+          "query_kind": "original_vertex",
+          "query_lonlat": [
+            97.43088089397973,
+            20.191023606853495
+          ],
+          "nearest_segment_lonlat": [
+            [
+              97.43087969347033,
+              20.19102152304815
+            ],
+            [
+              97.4308824072864,
+              20.190750530439587
+            ]
+          ]
+        }
+      },
+      "local_vertices": 2,
+      "gee_vertices": 2,
+      "local_line_or_ring_parts": 1,
+      "gee_line_or_ring_parts": 1,
+      "local_geometry_type": "MultiLineString",
+      "gee_geometry_type": "LineString",
+      "local_geometry_valid": true,
+      "gee_geometry_valid": true,
+      "maximum_projected_segment_length_m": 30.112788695606405,
+      "projection_center": [
+        97.43088097217904,
+        20.19088681550762
+      ],
+      "claim": "Both directions of every vertex and segment midpoint to opposite line/ring segments. Discrete diagnostic, not continuous Hausdorff or strict parity. No segments join separate parts."
+    },
+    {
+      "local_id": "149224343734955",
+      "previous_diagnostic": {
+        "strict": false,
+        "diagnostic": "aligned_vertices",
+        "reason": "strict_structure_or_coordinate_mismatch",
+        "max_vertex_displacement_m": 30.119803703418164,
+        "hausdorff_m": null,
+        "geometry_type_changed": true,
+        "diagnostic_pass": false
+      },
+      "status": "completed",
+      "discrete_within_one_meter": true,
+      "maximum_sampled_distance_m": 0.16524326257096406,
+      "local_to_gee": {
+        "sampled_points": 3,
+        "maximum_m": 0.14504862257611795,
+        "p95_m": 0.14388539362782804,
+        "witness_projected": {
+          "query_point_index": 1,
+          "query_xy": [
+            0.07834033405255773,
+            -15.013069127492159
+          ],
+          "nearest_segment_xy": [
+            [
+              -0.06670803056048137,
+              15.106385318454278
+            ],
+            [
+              -0.06670828920153528,
+              -15.092228667139562
+            ]
+          ],
+          "query_kind": "original_vertex",
+          "query_lonlat": [
+            80.929956832982,
+            39.35193761505369
+          ],
+          "nearest_segment_lonlat": [
+            [
+              80.92995515019798,
+              39.352208907211576
+            ],
+            [
+              80.92995515019798,
+              39.351936902047306
+            ]
+          ]
+        }
+      },
+      "gee_to_local": {
+        "sampled_points": 3,
+        "maximum_m": 0.16524326257096406,
+        "p95_m": 0.16496135326469683,
+        "witness_projected": {
+          "query_point_index": 1,
+          "query_xy": [
+            -0.06670828920153528,
+            -15.092228667139562
+          ],
+          "nearest_segment_xy": [
+            [
+              0.055076012129375684,
+              14.998913192828265
+            ],
+            [
+              0.07834033405255773,
+              -15.013069127492159
+            ]
+          ],
+          "query_kind": "original_vertex",
+          "query_lonlat": [
+            80.92995515019798,
+            39.351936902047306
+          ],
+          "nearest_segment_lonlat": [
+            [
+              80.92995656308304,
+              39.352207939187934
+            ],
+            [
+              80.929956832982,
+              39.35193761505369
+            ]
+          ]
+        }
+      },
+      "local_vertices": 2,
+      "gee_vertices": 2,
+      "local_line_or_ring_parts": 1,
+      "gee_line_or_ring_parts": 1,
+      "local_geometry_type": "MultiLineString",
+      "gee_geometry_type": "LineString",
+      "local_geometry_valid": true,
+      "gee_geometry_valid": true,
+      "maximum_projected_segment_length_m": 30.19861398559384,
+      "projection_center": [
+        80.92995592411526,
+        39.352072840875124
+      ],
+      "claim": "Both directions of every vertex and segment midpoint to opposite line/ring segments. Discrete diagnostic, not continuous Hausdorff or strict parity. No segments join separate parts."
+    },
+    {
+      "local_id": "149224343740416",
+      "previous_diagnostic": {
+        "strict": false,
+        "diagnostic": "aligned_vertices",
+        "reason": "strict_structure_or_coordinate_mismatch",
+        "max_vertex_displacement_m": 30.19530110902496,
+        "hausdorff_m": null,
+        "geometry_type_changed": true,
+        "diagnostic_pass": false
+      },
+      "status": "completed",
+      "discrete_within_one_meter": true,
+      "maximum_sampled_distance_m": 0.24815514635780964,
+      "local_to_gee": {
+        "sampled_points": 3,
+        "maximum_m": 0.16655871812261364,
+        "p95_m": 0.16029119944419828,
+        "witness_projected": {
+          "query_point_index": 0,
+          "query_xy": [
+            -0.1146169925112602,
+            14.959022437117032
+          ],
+          "nearest_segment_xy": [
+            [
+              0.051941724433716675,
+              15.142976699023379
+            ],
+            [
+              0.05194191772093638,
+              -15.049702145853875
+            ]
+          ],
+          "query_kind": "original_vertex",
+          "query_lonlat": [
+            80.61308060946611,
+            38.20665527113945
+          ],
+          "nearest_segment_lonlat": [
+            [
+              80.61308251113802,
+              38.206656928379225
+            ],
+            [
+              80.61308251113802,
+              38.206384923214976
+            ]
+          ]
+        }
+      },
+      "gee_to_local": {
+        "sampled_points": 3,
+        "maximum_m": 0.24815514635780964,
+        "p95_m": 0.23376685239118314,
+        "witness_projected": {
+          "query_point_index": 0,
+          "query_xy": [
+            0.051941724433716675,
+            15.142976699023379
+          ],
+          "nearest_segment_xy": [
+            [
+              -0.1146169925112602,
+              14.959022437117032
+            ],
+            [
+              0.010733573183236967,
+              -15.052296290560438
+            ]
+          ],
+          "query_kind": "original_vertex",
+          "query_lonlat": [
+            80.61308251113802,
+            38.206656928379225
+          ],
+          "nearest_segment_lonlat": [
+            [
+              80.61308060946611,
+              38.20665527113945
+            ],
+            [
+              80.61308204064652,
+              38.20638489984438
+            ]
+          ]
+        }
+      },
+      "local_vertices": 2,
+      "gee_vertices": 2,
+      "local_line_or_ring_parts": 1,
+      "gee_line_or_ring_parts": 1,
+      "local_geometry_type": "MultiLineString",
+      "gee_geometry_type": "LineString",
+      "local_geometry_valid": true,
+      "gee_geometry_valid": true,
+      "maximum_projected_segment_length_m": 30.192678844877253,
+      "projection_center": [
+        80.61308191809717,
+        38.2065205056445
+      ],
+      "claim": "Both directions of every vertex and segment midpoint to opposite line/ring segments. Discrete diagnostic, not continuous Hausdorff or strict parity. No segments join separate parts."
+    },
+    {
+      "local_id": "201077483926870",
+      "previous_diagnostic": {
+        "strict": false,
+        "diagnostic": "aligned_vertices",
+        "reason": "strict_structure_or_coordinate_mismatch",
+        "max_vertex_displacement_m": 30.118103446359285,
+        "hausdorff_m": null,
+        "geometry_type_changed": true,
+        "diagnostic_pass": false
+      },
+      "status": "completed",
+      "discrete_within_one_meter": true,
+      "maximum_sampled_distance_m": 0.17389418410282703,
+      "local_to_gee": {
+        "sampled_points": 3,
+        "maximum_m": 0.17389418410282703,
+        "p95_m": 0.16981779846947265,
+        "witness_projected": {
+          "query_point_index": 0,
+          "query_xy": [
+            -0.1026428464319742,
+            15.033709555179618
+          ],
+          "nearest_segment_xy": [
+            [
+              0.06656517099173503,
+              14.993611748452496
+            ],
+            [
+              0.0665651552644136,
+              -15.08391856962009
+            ]
+          ],
+          "query_kind": "original_vertex",
+          "query_lonlat": [
+            -78.2461173891662,
+            -2.8681246486605554
+          ],
+          "nearest_segment_lonlat": [
+            [
+              -78.24611586725104,
+              -2.8681250112837624
+            ],
+            [
+              -78.24611586725104,
+              -2.8683970164480233
+            ]
+          ]
+        }
+      },
+      "gee_to_local": {
+        "sampled_points": 3,
+        "maximum_m": 0.17077439511849077,
+        "p95_m": 0.1706080567571384,
+        "witness_projected": {
+          "query_point_index": 1,
+          "query_xy": [
+            0.0665651552644136,
+            -15.08391856962009
+          ],
+          "nearest_segment_xy": [
+            [
+              -0.1026428464319742,
+              15.033709555179618
+            ],
+            [
+              -0.0304874827560023,
+              -14.943402807225388
+            ]
+          ],
+          "query_kind": "original_vertex",
+          "query_lonlat": [
+            -78.24611586725104,
+            -2.8683970164480233
+          ],
+          "nearest_segment_lonlat": [
+            [
+              -78.2461173891662,
+              -2.8681246486605554
+            ],
+            [
+              -78.24611674017608,
+              -2.868395745698314
+            ]
+          ]
+        }
+      },
+      "local_vertices": 2,
+      "gee_vertices": 2,
+      "local_line_or_ring_parts": 1,
+      "gee_line_or_ring_parts": 1,
+      "local_geometry_type": "MultiLineString",
+      "gee_geometry_type": "LineString",
+      "local_geometry_valid": true,
+      "gee_geometry_valid": true,
+      "maximum_projected_segment_length_m": 30.077530318072586,
+      "projection_center": [
+        -78.24611646596108,
+        -2.868260605522664
+      ],
+      "claim": "Both directions of every vertex and segment midpoint to opposite line/ring segments. Discrete diagnostic, not continuous Hausdorff or strict parity. No segments join separate parts."
+    },
+    {
+      "local_id": "201077483929600",
+      "previous_diagnostic": {
+        "strict": false,
+        "diagnostic": "aligned_vertices",
+        "reason": "strict_structure_or_coordinate_mismatch",
+        "max_vertex_displacement_m": 30.101895560499003,
+        "hausdorff_m": null,
+        "geometry_type_changed": true,
+        "diagnostic_pass": false
+      },
+      "status": "completed",
+      "discrete_within_one_meter": true,
+      "maximum_sampled_distance_m": 0.22670950813882843,
+      "local_to_gee": {
+        "sampled_points": 3,
+        "maximum_m": 0.22670950813882843,
+        "p95_m": 0.22364155619120393,
+        "witness_projected": {
+          "query_point_index": 0,
+          "query_xy": [
+            0.12745712449377983,
+            -15.027123493843035
+          ],
+          "nearest_segment_xy": [
+            [
+              -0.09801499075393809,
+              -15.003469185012099
+            ],
+            [
+              -0.09801501176318937,
+              15.073927628228404
+            ]
+          ],
+          "query_kind": "original_vertex",
+          "query_lonlat": [
+            -78.5235992391778,
+            -2.602755203309011
+          ],
+          "nearest_segment_lonlat": [
+            [
+              -78.52360126670591,
+              -2.602754989391092
+            ],
+            [
+              -78.52360126670591,
+              -2.602482984226832
+            ]
+          ]
+        }
+      },
+      "gee_to_local": {
+        "sampled_points": 3,
+        "maximum_m": 0.2254252265431347,
+        "p95_m": 0.22325475408009102,
+        "witness_projected": {
+          "query_point_index": 0,
+          "query_xy": [
+            -0.09801499075393809,
+            -15.003469185012099
+          ],
+          "nearest_segment_xy": [
+            [
+              0.12745712449377983,
+              -15.027123493843035
+            ],
+            [
+              0.0685728504126912,
+              14.956664986798017
+            ]
+          ],
+          "query_kind": "original_vertex",
+          "query_lonlat": [
+            -78.52360126670591,
+            -2.602754989391092
+          ],
+          "nearest_segment_lonlat": [
+            [
+              -78.5235992391778,
+              -2.602755203309011
+            ],
+            [
+              -78.52359976868696,
+              -2.6024840446924147
+            ]
+          ]
+        }
+      },
+      "local_vertices": 2,
+      "gee_vertices": 2,
+      "local_line_or_ring_parts": 1,
+      "gee_line_or_ring_parts": 1,
+      "local_geometry_type": "MultiLineString",
+      "gee_geometry_type": "LineString",
+      "local_geometry_valid": true,
+      "gee_geometry_valid": true,
+      "maximum_projected_segment_length_m": 30.077396813240505,
+      "projection_center": [
+        -78.52360038531914,
+        -2.602619305404837
+      ],
+      "claim": "Both directions of every vertex and segment midpoint to opposite line/ring segments. Discrete diagnostic, not continuous Hausdorff or strict parity. No segments join separate parts."
+    },
+    {
+      "local_id": "201090368929793",
+      "previous_diagnostic": {
+        "strict": false,
+        "diagnostic": "aligned_vertices",
+        "reason": "strict_structure_or_coordinate_mismatch",
+        "max_vertex_displacement_m": 29.797259276010276,
+        "hausdorff_m": null,
+        "geometry_type_changed": true,
+        "diagnostic_pass": false
+      },
+      "status": "completed",
+      "discrete_within_one_meter": true,
+      "maximum_sampled_distance_m": 0.28755292546551486,
+      "local_to_gee": {
+        "sampled_points": 3,
+        "maximum_m": 0.28755292546551486,
+        "p95_m": 0.28642016845197343,
+        "witness_projected": {
+          "query_point_index": 0,
+          "query_xy": [
+            -0.09798347064392601,
+            15.00216086233251
+          ],
+          "nearest_segment_xy": [
+            [
+              0.09529460247994037,
+              14.789251793964576
+            ],
+            [
+              0.09529459976952756,
+              -14.794471563987342
+            ]
+          ],
+          "query_kind": "original_vertex",
+          "query_lonlat": [
+            -61.32548343219362,
+            -0.35120133258654923
+          ],
+          "nearest_segment_lonlat": [
+            [
+              -61.325481695914746,
+              -0.3512032580704509
+            ],
+            [
+              -61.325481695914746,
+              -0.35147080413365756
+            ]
+          ]
+        }
+      },
+      "gee_to_local": {
+        "sampled_points": 3,
+        "maximum_m": 0.1932399032099442,
+        "p95_m": 0.19297473909866242,
+        "witness_projected": {
+          "query_point_index": 0,
+          "query_xy": [
+            0.09529460247994037,
+            14.789251793964576
+          ],
+          "nearest_segment_xy": [
+            [
+              -0.09798347064392601,
+              15.00216086233251
+            ],
+            [
+              -0.09260572885163443,
+              -14.996941101032547
+            ]
+          ],
+          "query_kind": "original_vertex",
+          "query_lonlat": [
+            -61.325481695914746,
+            -0.3512032580704509
+          ],
+          "nearest_segment_lonlat": [
+            [
+              -61.32548343219362,
+              -0.35120133258654923
+            ],
+            [
+              -61.325483383883665,
+              -0.351472635205659
+            ]
+          ]
+        }
+      },
+      "local_vertices": 2,
+      "gee_vertices": 2,
+      "local_line_or_ring_parts": 1,
+      "gee_line_or_ring_parts": 1,
+      "local_geometry_type": "MultiLineString",
+      "gee_geometry_type": "LineString",
+      "local_geometry_valid": true,
+      "gee_geometry_valid": true,
+      "maximum_projected_segment_length_m": 29.99910244538126,
+      "projection_center": [
+        -61.325482551976705,
+        -0.3513370074990792
+      ],
+      "claim": "Both directions of every vertex and segment midpoint to opposite line/ring segments. Discrete diagnostic, not continuous Hausdorff or strict parity. No segments join separate parts."
+    },
+    {
+      "local_id": "201154793360043",
+      "previous_diagnostic": {
+        "strict": false,
+        "diagnostic": "aligned_vertices",
+        "reason": "strict_structure_or_coordinate_mismatch",
+        "max_vertex_displacement_m": 30.0685821866612,
+        "hausdorff_m": null,
+        "geometry_type_changed": true,
+        "diagnostic_pass": false
+      },
+      "status": "completed",
+      "discrete_within_one_meter": true,
+      "maximum_sampled_distance_m": 0.16957298378876492,
+      "local_to_gee": {
+        "sampled_points": 3,
+        "maximum_m": 0.15980925192722145,
+        "p95_m": 0.15939760044375031,
+        "witness_projected": {
+          "query_point_index": 1,
+          "query_xy": [
+            0.08196288602513571,
+            -14.993878081554687
+          ],
+          "nearest_segment_xy": [
+            [
+              -0.07784638314566981,
+              15.026853613271673
+            ],
+            [
+              -0.07784636586951225,
+              -15.050587867658125
+            ]
+          ],
+          "query_kind": "original_vertex",
+          "query_lonlat": [
+            27.33435778130835,
+            -2.6945406126206075
+          ],
+          "nearest_segment_lonlat": [
+            [
+              27.334356344139042,
+              -2.694269120310962
+            ],
+            [
+              27.334356344139042,
+              -2.694541125475222
+            ]
+          ]
+        }
+      },
+      "gee_to_local": {
+        "sampled_points": 3,
+        "maximum_m": 0.16957298378876492,
+        "p95_m": 0.1681856096323532,
+        "witness_projected": {
+          "query_point_index": 1,
+          "query_xy": [
+            -0.07784636586951225,
+            -15.050587867658125
+          ],
+          "nearest_segment_xy": [
+            [
+              0.07372983911743698,
+              15.017612267599144
+            ],
+            [
+              0.08196288602513571,
+              -14.993878081554687
+            ]
+          ],
+          "query_kind": "original_vertex",
+          "query_lonlat": [
+            27.334356344139042,
+            -2.694541125475222
+          ],
+          "nearest_segment_lonlat": [
+            [
+              27.33435770726817,
+              -2.694269203885017
+            ],
+            [
+              27.33435778130835,
+              -2.6945406126206075
+            ]
+          ]
+        }
+      },
+      "local_vertices": 2,
+      "gee_vertices": 2,
+      "local_line_or_ring_parts": 1,
+      "gee_line_or_ring_parts": 1,
+      "local_geometry_type": "MultiLineString",
+      "gee_geometry_type": "LineString",
+      "local_geometry_valid": true,
+      "gee_geometry_valid": true,
+      "maximum_projected_segment_length_m": 30.0774414809298,
+      "projection_center": [
+        27.33435704421365,
+        -2.6944050155729524
+      ],
+      "claim": "Both directions of every vertex and segment midpoint to opposite line/ring segments. Discrete diagnostic, not continuous Hausdorff or strict parity. No segments join separate parts."
+    },
+    {
+      "local_id": "201154793362774",
+      "previous_diagnostic": {
+        "strict": false,
+        "diagnostic": "aligned_vertices",
+        "reason": "strict_structure_or_coordinate_mismatch",
+        "max_vertex_displacement_m": 30.243746071476878,
+        "hausdorff_m": null,
+        "geometry_type_changed": true,
+        "diagnostic_pass": false
+      },
+      "status": "completed",
+      "discrete_within_one_meter": true,
+      "maximum_sampled_distance_m": 0.2456500953704501,
+      "local_to_gee": {
+        "sampled_points": 3,
+        "maximum_m": 0.19053523917289214,
+        "p95_m": 0.17986737151581733,
+        "witness_projected": {
+          "query_point_index": 1,
+          "query_xy": [
+            0.051412666219075316,
+            -15.10479718295754
+          ],
+          "nearest_segment_xy": [
+            [
+              -0.04192829055307308,
+              15.138804849638472
+            ],
+            [
+              -0.04192828087329289,
+              -14.938691358368
+            ]
+          ],
+          "query_kind": "original_vertex",
+          "query_lonlat": [
+            27.740603585106832,
+            -2.802916619652476
+          ],
+          "nearest_segment_lonlat": [
+            [
+              27.740602745613224,
+              -2.80264311231391
+            ],
+            [
+              27.740602745613224,
+              -2.80291511747817
+            ]
+          ]
+        }
+      },
+      "gee_to_local": {
+        "sampled_points": 3,
+        "maximum_m": 0.2456500953704501,
+        "p95_m": 0.230408679249499,
+        "witness_projected": {
+          "query_point_index": 0,
+          "query_xy": [
+            -0.04192829055307308,
+            15.138804849638472
+          ],
+          "nearest_segment_xy": [
+            [
+              0.03244388768765121,
+              14.904683623648086
+            ],
+            [
+              0.051412666219075316,
+              -15.10479718295754
+            ]
+          ],
+          "query_kind": "original_vertex",
+          "query_lonlat": [
+            27.740602745613224,
+            -2.80264311231391
+          ],
+          "nearest_segment_lonlat": [
+            [
+              27.740603414504594,
+              -2.8026452295839865
+            ],
+            [
+              27.740603585106832,
+              -2.802916619652476
+            ]
+          ]
+        }
+      },
+      "local_vertices": 2,
+      "gee_vertices": 2,
+      "local_line_or_ring_parts": 1,
+      "gee_line_or_ring_parts": 1,
+      "local_geometry_type": "MultiLineString",
+      "gee_geometry_type": "LineString",
+      "local_geometry_valid": true,
+      "gee_geometry_valid": true,
+      "maximum_projected_segment_length_m": 30.077496208006473,
+      "projection_center": [
+        27.74060312270947,
+        -2.8027800197571366
+      ],
+      "claim": "Both directions of every vertex and segment midpoint to opposite line/ring segments. Discrete diagnostic, not continuous Hausdorff or strict parity. No segments join separate parts."
+    },
+    {
+      "local_id": "201214922915841",
+      "previous_diagnostic": {
+        "strict": false,
+        "diagnostic": "aligned_vertices",
+        "reason": "strict_structure_or_coordinate_mismatch",
+        "max_vertex_displacement_m": 30.1506984229711,
+        "hausdorff_m": null,
+        "geometry_type_changed": true,
+        "diagnostic_pass": false
+      },
+      "status": "completed",
+      "discrete_within_one_meter": true,
+      "maximum_sampled_distance_m": 0.2829858752826969,
+      "local_to_gee": {
+        "sampled_points": 3,
+        "maximum_m": 0.2428600515957671,
+        "p95_m": 0.2412103949096133,
+        "witness_projected": {
+          "query_point_index": 1,
+          "query_xy": [
+            0.12967832654296033,
+            -14.947930723639614
+          ],
+          "nearest_segment_xy": [
+            [
+              -0.1131817516591897,
+              14.984340873792195
+            ],
+            [
+              -0.11318172492368857,
+              -15.093189117583409
+            ]
+          ],
+          "query_kind": "original_vertex",
+          "query_lonlat": [
+            112.25911529406017,
+            -2.867775887762035
+          ],
+          "nearest_segment_lonlat": [
+            [
+              112.2591131096939,
+              -2.8675051962373344
+            ],
+            [
+              112.2591131096939,
+              -2.8677772014015943
+            ]
+          ]
+        }
+      },
+      "gee_to_local": {
+        "sampled_points": 3,
+        "maximum_m": 0.2829858752826969,
+        "p95_m": 0.2773355914683095,
+        "witness_projected": {
+          "query_point_index": 1,
+          "query_xy": [
+            -0.11318172492368857,
+            -15.093189117583409
+          ],
+          "nearest_segment_xy": [
+            [
+              0.09668516614911203,
+              15.056778897023017
+            ],
+            [
+              0.12967832654296033,
+              -14.947930723639614
+            ]
+          ],
+          "query_kind": "original_vertex",
+          "query_lonlat": [
+            112.2591131096939,
+            -2.8677772014015943
+          ],
+          "nearest_segment_lonlat": [
+            [
+              112.2591149973082,
+              -2.8675045411464257
+            ],
+            [
+              112.25911529406017,
+              -2.867775887762035
+            ]
+          ]
+        }
+      },
+      "local_vertices": 2,
+      "gee_vertices": 2,
+      "local_line_or_ring_parts": 1,
+      "gee_line_or_ring_parts": 1,
+      "local_geometry_type": "MultiLineString",
+      "gee_geometry_type": "LineString",
+      "local_geometry_valid": true,
+      "gee_geometry_valid": true,
+      "maximum_projected_segment_length_m": 30.077529991375606,
+      "projection_center": [
+        112.25911412768905,
+        -2.867640706636847
+      ],
+      "claim": "Both directions of every vertex and segment midpoint to opposite line/ring segments. Discrete diagnostic, not continuous Hausdorff or strict parity. No segments join separate parts."
+    },
+    {
+      "local_id": "201214922921302",
+      "previous_diagnostic": {
+        "strict": false,
+        "diagnostic": "aligned_vertices",
+        "reason": "strict_structure_or_coordinate_mismatch",
+        "max_vertex_displacement_m": 30.097632256187243,
+        "hausdorff_m": null,
+        "geometry_type_changed": true,
+        "diagnostic_pass": false
+      },
+      "status": "completed",
+      "discrete_within_one_meter": true,
+      "maximum_sampled_distance_m": 0.10408896072319845,
+      "local_to_gee": {
+        "sampled_points": 3,
+        "maximum_m": 0.059766960918123314,
+        "p95_m": 0.05705469639610344,
+        "witness_projected": {
+          "query_point_index": 0,
+          "query_xy": [
+            -0.03993411358377358,
+            15.027911256734436
+          ],
+          "nearest_segment_xy": [
+            [
+              0.016322211383753036,
+              15.007729197410955
+            ],
+            [
+              0.016322207882756557,
+              -15.0696684243408
+            ]
+          ],
+          "query_kind": "original_vertex",
+          "query_lonlat": [
+            112.98451916319037,
+            -2.6041728010094864
+          ],
+          "nearest_segment_lonlat": [
+            [
+              112.98451966906848,
+              -2.604172983526087
+            ],
+            [
+              112.98451966906848,
+              -2.604444988690347
+            ]
+          ]
+        }
+      },
+      "gee_to_local": {
+        "sampled_points": 3,
+        "maximum_m": 0.10408896072319845,
+        "p95_m": 0.09930251260475516,
+        "witness_projected": {
+          "query_point_index": 1,
+          "query_xy": [
+            0.016322207882756557,
+            -15.0696684243408
+          ],
+          "nearest_segment_xy": [
+            [
+              -0.03993411358377358,
+              15.027911256734436
+            ],
+            [
+              0.007289901468853424,
+              -14.965972092750523
+            ]
+          ],
+          "query_kind": "original_vertex",
+          "query_lonlat": [
+            112.98451966906848,
+            -2.604444988690347
+          ],
+          "nearest_segment_lonlat": [
+            [
+              112.98451916319037,
+              -2.6041728010094864
+            ],
+            [
+              112.98451958784655,
+              -2.604444050911819
+            ]
+          ]
+        }
+      },
+      "local_vertices": 2,
+      "gee_vertices": 2,
+      "local_line_or_ring_parts": 1,
+      "gee_line_or_ring_parts": 1,
+      "local_geometry_type": "MultiLineString",
+      "gee_geometry_type": "LineString",
+      "local_geometry_valid": true,
+      "gee_geometry_valid": true,
+      "maximum_projected_segment_length_m": 30.077397621751757,
+      "projection_center": [
+        112.98451952229348,
+        -2.6043087060344354
+      ],
+      "claim": "Both directions of every vertex and segment midpoint to opposite line/ring segments. Discrete diagnostic, not continuous Hausdorff or strict parity. No segments join separate parts."
+    },
+    {
+      "local_id": "201528455520257",
+      "previous_diagnostic": {
+        "strict": false,
+        "diagnostic": "aligned_vertices",
+        "reason": "strict_structure_or_coordinate_mismatch",
+        "max_vertex_displacement_m": 29.829274287099636,
+        "hausdorff_m": null,
+        "geometry_type_changed": true,
+        "diagnostic_pass": false
+      },
+      "status": "completed",
+      "discrete_within_one_meter": true,
+      "maximum_sampled_distance_m": 0.31267031133823475,
+      "local_to_gee": {
+        "sampled_points": 3,
+        "maximum_m": 0.31267031133823475,
+        "p95_m": 0.30721714660256993,
+        "witness_projected": {
+          "query_point_index": 0,
+          "query_xy": [
+            -0.10172798312381327,
+            15.020827723419547
+          ],
+          "nearest_segment_xy": [
+            [
+              0.09467431861668239,
+              14.7775401169465
+            ],
+            [
+              0.09467428601930601,
+              -14.807799979510856
+            ]
+          ],
+          "query_kind": "original_vertex",
+          "query_lonlat": [
+            -50.63617101073786,
+            -4.24506200278268
+          ],
+          "nearest_segment_lonlat": [
+            [
+              -50.636169241604826,
+              -4.245064202880475
+            ],
+            [
+              -50.636169241604826,
+              -4.245331748943682
+            ]
+          ]
+        }
+      },
+      "gee_to_local": {
+        "sampled_points": 3,
+        "maximum_m": 0.19628791862390563,
+        "p95_m": 0.19559256274062523,
+        "witness_projected": {
+          "query_point_index": 0,
+          "query_xy": [
+            0.09467431861668239,
+            14.7775401169465
+          ],
+          "nearest_segment_xy": [
+            [
+              -0.10172798312381327,
+              15.020827723419547
+            ],
+            [
+              -0.08762062192394263,
+              -14.990567964618098
+            ]
+          ],
+          "query_kind": "original_vertex",
+          "query_lonlat": [
+            -50.636169241604826,
+            -4.245064202880475
+          ],
+          "nearest_segment_lonlat": [
+            [
+              -50.63617101073786,
+              -4.24506200278268
+            ],
+            [
+              -50.63617088366326,
+              -4.2453334017506
+            ]
+          ]
+        }
+      },
+      "local_vertices": 2,
+      "gee_vertices": 2,
+      "local_line_or_ring_parts": 1,
+      "gee_line_or_ring_parts": 1,
+      "local_geometry_type": "MultiLineString",
+      "gee_geometry_type": "LineString",
+      "local_geometry_valid": true,
+      "gee_geometry_valid": true,
+      "maximum_projected_segment_length_m": 30.01139900373864,
+      "projection_center": [
+        -50.6361700944027,
+        -4.245197839089359
+      ],
+      "claim": "Both directions of every vertex and segment midpoint to opposite line/ring segments. Discrete diagnostic, not continuous Hausdorff or strict parity. No segments join separate parts."
+    },
+    {
+      "local_id": "201528455525718",
+      "previous_diagnostic": {
+        "strict": false,
+        "diagnostic": "aligned_vertices",
+        "reason": "strict_structure_or_coordinate_mismatch",
+        "max_vertex_displacement_m": 30.221605635014104,
+        "hausdorff_m": null,
+        "geometry_type_changed": true,
+        "diagnostic_pass": false
+      },
+      "status": "completed",
+      "discrete_within_one_meter": true,
+      "maximum_sampled_distance_m": 0.2582252028882448,
+      "local_to_gee": {
+        "sampled_points": 3,
+        "maximum_m": 0.15165535344847572,
+        "p95_m": 0.1495810787699394,
+        "witness_projected": {
+          "query_point_index": 1,
+          "query_xy": [
+            -0.006443062121699015,
+            -15.09072967474887
+          ],
+          "nearest_segment_xy": [
+            [
+              0.04578522468238829,
+              15.130830830266515
+            ],
+            [
+              0.04578520532484444,
+              -14.948351466061183
+            ]
+          ],
+          "query_kind": "original_vertex",
+          "query_lonlat": [
+            -49.31748867631511,
+            -5.123089242432254
+          ],
+          "nearest_segment_lonlat": [
+            [
+              -49.31748820527138,
+              -5.12281594974603
+            ],
+            [
+              -49.31748820527138,
+              -5.1230879549102895
+            ]
+          ]
+        }
+      },
+      "gee_to_local": {
+        "sampled_points": 3,
+        "maximum_m": 0.2582252028882448,
+        "p95_m": 0.24160755717581806,
+        "witness_projected": {
+          "query_point_index": 0,
+          "query_xy": [
+            0.04578522468238829,
+            15.130830830266515
+          ],
+          "nearest_segment_xy": [
+            [
+              -0.08512738212396673,
+              14.908250182442316
+            ],
+            [
+              -0.006443062121699015,
+              -15.09072967474887
+            ]
+          ],
+          "query_kind": "original_vertex",
+          "query_lonlat": [
+            -49.31748820527138,
+            -5.12281594974603
+          ],
+          "nearest_segment_lonlat": [
+            [
+              -49.31748938596413,
+              -5.122817962536316
+            ],
+            [
+              -49.31748867631511,
+              -5.123089242432254
+            ]
+          ]
+        }
+      },
+      "local_vertices": 2,
+      "gee_vertices": 2,
+      "local_line_or_ring_parts": 1,
+      "gee_line_or_ring_parts": 1,
+      "local_geometry_type": "MultiLineString",
+      "gee_geometry_type": "LineString",
+      "local_geometry_valid": true,
+      "gee_geometry_valid": true,
+      "maximum_projected_segment_length_m": 30.079182296327698,
+      "projection_center": [
+        -49.317488618205495,
+        -5.122952777406223
+      ],
+      "claim": "Both directions of every vertex and segment midpoint to opposite line/ring segments. Discrete diagnostic, not continuous Hausdorff or strict parity. No segments join separate parts."
+    },
+    {
+      "local_id": "201661599517355",
+      "previous_diagnostic": {
+        "strict": false,
+        "diagnostic": "aligned_vertices",
+        "reason": "strict_structure_or_coordinate_mismatch",
+        "max_vertex_displacement_m": 30.136863067145033,
+        "hausdorff_m": null,
+        "geometry_type_changed": true,
+        "diagnostic_pass": false
+      },
+      "status": "completed",
+      "discrete_within_one_meter": true,
+      "maximum_sampled_distance_m": 0.15219680025212207,
+      "local_to_gee": {
+        "sampled_points": 3,
+        "maximum_m": 0.12614907198990993,
+        "p95_m": 0.11906732819078916,
+        "witness_projected": {
+          "query_point_index": 1,
+          "query_xy": [
+            0.08462057556674193,
+            -15.04465297786536
+          ],
+          "nearest_segment_xy": [
+            [
+              -0.02766585422995214,
+              15.092000905531998
+            ],
+            [
+              -0.027665842583533832,
+              -14.987160816113544
+            ]
+          ],
+          "query_kind": "original_vertex",
+          "query_lonlat": [
+            137.44659167331108,
+            -5.101100647516038
+          ],
+          "nearest_segment_lonlat": [
+            [
+              137.44659066064088,
+              -5.100828122451488
+            ],
+            [
+              137.44659066064088,
+              -5.10110012761575
+            ]
+          ]
+        }
+      },
+      "gee_to_local": {
+        "sampled_points": 3,
+        "maximum_m": 0.15219680025212207,
+        "p95_m": 0.14818384017152234,
+        "witness_projected": {
+          "query_point_index": 0,
+          "query_xy": [
+            -0.02766585422995214,
+            15.092000905531998
+          ],
+          "nearest_segment_xy": [
+            [
+              -0.02928900430163681,
+              14.939812760820168
+            ],
+            [
+              0.08462057556674193,
+              -15.04465297786536
+            ]
+          ],
+          "query_kind": "original_vertex",
+          "query_lonlat": [
+            137.44659066064088,
+            -5.100828122451488
+          ],
+          "nearest_segment_lonlat": [
+            [
+              137.44659064600228,
+              -5.100829498685369
+            ],
+            [
+              137.44659167331108,
+              -5.101100647516038
+            ]
+          ]
+        }
+      },
+      "local_vertices": 2,
+      "gee_vertices": 2,
+      "local_line_or_ring_parts": 1,
+      "gee_line_or_ring_parts": 1,
+      "local_geometry_type": "MultiLineString",
+      "gee_geometry_type": "LineString",
+      "local_geometry_valid": true,
+      "gee_geometry_valid": true,
+      "maximum_projected_segment_length_m": 30.07916172164554,
+      "projection_center": [
+        137.44659091014879,
+        -5.1009645990671615
+      ],
+      "claim": "Both directions of every vertex and segment midpoint to opposite line/ring segments. Discrete diagnostic, not continuous Hausdorff or strict parity. No segments join separate parts."
+    },
+    {
+      "local_id": "201661599522816",
+      "previous_diagnostic": {
+        "strict": false,
+        "diagnostic": "aligned_vertices",
+        "reason": "strict_structure_or_coordinate_mismatch",
+        "max_vertex_displacement_m": 30.057466949833408,
+        "hausdorff_m": null,
+        "geometry_type_changed": true,
+        "diagnostic_pass": false
+      },
+      "status": "completed",
+      "discrete_within_one_meter": true,
+      "maximum_sampled_distance_m": 0.18410520038612466,
+      "local_to_gee": {
+        "sampled_points": 3,
+        "maximum_m": 0.1771334169775304,
+        "p95_m": 0.1749549153432113,
+        "witness_projected": {
+          "query_point_index": 0,
+          "query_xy": [
+            -0.0994591603438689,
+            14.99632671623098
+          ],
+          "nearest_segment_xy": [
+            [
+              0.07767425668249338,
+              15.04651114989103
+            ],
+            [
+              0.07767422741450329,
+              -15.032178930803985
+            ]
+          ],
+          "query_kind": "original_vertex",
+          "query_lonlat": [
+            136.04439798352487,
+            -4.568171119036954
+          ],
+          "nearest_segment_lonlat": [
+            [
+              136.0443995797785,
+              -4.568170665213164
+            ],
+            [
+              136.0443995797785,
+              -4.568442670377425
+            ]
+          ]
+        }
+      },
+      "gee_to_local": {
+        "sampled_points": 3,
+        "maximum_m": 0.18410520038612466,
+        "p95_m": 0.18123158507385578,
+        "witness_projected": {
+          "query_point_index": 0,
+          "query_xy": [
+            0.07767425668249338,
+            15.04651114989103
+          ],
+          "nearest_segment_xy": [
+            [
+              -0.0994591603438689,
+              14.99632671623098
+            ],
+            [
+              -0.055889156855705,
+              -15.01065904727774
+            ]
+          ],
+          "query_kind": "original_vertex",
+          "query_lonlat": [
+            136.0443995797785,
+            -4.568170665213164
+          ],
+          "nearest_segment_lonlat": [
+            [
+              136.04439798352487,
+              -4.568171119036954
+            ],
+            [
+              136.04439837615968,
+              -4.568442475770564
+            ]
+          ]
+        }
+      },
+      "local_vertices": 2,
+      "gee_vertices": 2,
+      "local_line_or_ring_parts": 1,
+      "gee_line_or_ring_parts": 1,
+      "local_geometry_type": "MultiLineString",
+      "gee_geometry_type": "LineString",
+      "local_geometry_valid": true,
+      "gee_geometry_valid": true,
+      "maximum_projected_segment_length_m": 30.078690080695015,
+      "projection_center": [
+        136.0443988798104,
+        -4.5683067325995275
+      ],
+      "claim": "Both directions of every vertex and segment midpoint to opposite line/ring segments. Discrete diagnostic, not continuous Hausdorff or strict parity. No segments join separate parts."
+    },
+    {
+      "local_id": "206669531328139",
+      "previous_diagnostic": {
+        "strict": false,
+        "diagnostic": "aligned_vertices",
+        "reason": "strict_structure_or_coordinate_mismatch",
+        "max_vertex_displacement_m": 29.9144235395864,
+        "hausdorff_m": null,
+        "geometry_type_changed": true,
+        "diagnostic_pass": false
+      },
+      "status": "completed",
+      "discrete_within_one_meter": true,
+      "maximum_sampled_distance_m": 0.17039904433638217,
+      "local_to_gee": {
+        "sampled_points": 3,
+        "maximum_m": 0.17039904433638217,
+        "p95_m": 0.1683822113788686,
+        "witness_projected": {
+          "query_point_index": 1,
+          "query_xy": [
+            0.12162212631529459,
+            -14.995784715811993
+          ],
+          "nearest_segment_xy": [
+            [
+              -0.018767980249961735,
+              14.879853768741027
+            ],
+            [
+              -0.018767860042054968,
+              -14.899210982109006
+            ]
+          ],
+          "query_kind": "original_vertex",
+          "query_lonlat": [
+            -68.51437984752513,
+            -53.96992782984646
+          ],
+          "nearest_segment_lonlat": [
+            [
+              -68.51438198686544,
+              -53.96965941612936
+            ],
+            [
+              -68.51438198686544,
+              -53.969926962192574
+            ]
+          ]
+        }
+      },
+      "gee_to_local": {
+        "sampled_points": 3,
+        "maximum_m": 0.13972474199953017,
+        "p95_m": 0.13219127997713648,
+        "witness_projected": {
+          "query_point_index": 1,
+          "query_xy": [
+            -0.018767860042054968,
+            -14.899210982109006
+          ],
+          "nearest_segment_xy": [
+            [
+              -0.08408693893448617,
+              15.015141245227376
+            ],
+            [
+              0.12162212631529459,
+              -14.995784715811993
+            ]
+          ],
+          "query_kind": "original_vertex",
+          "query_lonlat": [
+            -68.51438198686544,
+            -53.969926962192574
+          ],
+          "nearest_segment_lonlat": [
+            [
+              -68.51438298222544,
+              -53.969658200656916
+            ],
+            [
+              -68.51437984752513,
+              -53.96992782984646
+            ]
+          ]
+        }
+      },
+      "local_vertices": 2,
+      "gee_vertices": 2,
+      "local_line_or_ring_parts": 1,
+      "gee_line_or_ring_parts": 1,
+      "local_geometry_type": "MultiLineString",
+      "gee_geometry_type": "LineString",
+      "local_geometry_valid": true,
+      "gee_geometry_valid": true,
+      "maximum_projected_segment_length_m": 30.01163096631892,
+      "projection_center": [
+        -68.51438170087037,
+        -53.969793102206324
+      ],
+      "claim": "Both directions of every vertex and segment midpoint to opposite line/ring segments. Discrete diagnostic, not continuous Hausdorff or strict parity. No segments join separate parts."
+    }
+  ],
+  "claim": "Posthoc diagnostic of previously failed or incomplete geometry metrics only. Strict comparisons unchanged; no exhaustive or scientific-accuracy claim."
+}

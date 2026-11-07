@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "capture_status": "post-launch follow-up",
+  "production_run_builder_sha256": "ec0b190384de5bfba2c0398bbc0bd0d9faf2f3f3ec995550cf6bf6a123fa4c15",
+  "current_builder_sha256": "7eea09c741c6ca3c4a35d3a9eac4b027766d0debe28f807ed8dcea4be667957d",
+  "changes_after_launch": [
+    "Removed duplicate shutil import.",
+    "Stopped counting the destination .scratch directory twice against the task storage cap.",
+    "Named normal builds mvt_feature_id_and_property; the running FFR process already supplied each OBJECTID as both GeoJSON Feature.id and an OBJECTID property. This change only corrects emitted metadata for later builds; the running process output bytes are unchanged.",
+    "Added a read-only destination manifest preflight that rejects prepared packages, dataset/release mismatches, duplicate declared asset IDs, and reserved output files before any filesystem mutation; added focused fault tests."
+  ],
+  "applied_to_running_ffr_process": false,
+  "note": "The production provenance record remains bound to the builder SHA loaded at launch. Separate post-launch notes record metadata correction and validation-only source edits; FFR archive bytes are unchanged.",
+  "observations_after_launch": {
+    "pmtiles_cli_version": "pmtiles dev, commit none, built at unknown",
+    "pmtiles_cli_sha256": "82b16b50ed0c171a10420e840456b8b0c55d79aed2e5c7e40b333587ba7d5553",
+    "captured_after_launch": true
+  }
+}

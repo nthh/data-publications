@@ -1,0 +1,120 @@
+{
+  "dataset_key": "lakeatlas-pour-points",
+  "source_path": "lakeatlas/releases/lakeatlas-v1.0-r2-prepared/assets/lakeatlas-pour-points.parquet",
+  "source_sha256": "ff621c1db763551cdb6ced8958eefcc9da76a73c16e7f7259c238bec3aae5720",
+  "source_rows": 1427688,
+  "unique_source_ids": 1427688,
+  "id_field": "OBJECTID",
+  "id_encoding": "mvt_feature_id_and_property",
+  "attribute_fields": [
+    "OBJECTID",
+    "Hylak_id",
+    "Lake_area",
+    "Lake_name",
+    "Country",
+    "Continent",
+    "_src_xmin",
+    "_src_ymin",
+    "_src_xmax",
+    "_src_ymax"
+  ],
+  "geometry_type": "point",
+  "layer": "lakeatlas-pour-points",
+  "min_zoom": 0,
+  "max_zoom": 12,
+  "minzoom_policy": "criteria.json piecewise threshold schedule; explicit per-feature tippecanoe.minzoom; unknown metric at z12",
+  "minzoom_metric": {
+    "field": "Lake_area",
+    "units": "km2",
+    "thresholds": [
+      [
+        10000,
+        0
+      ],
+      [
+        1000,
+        2
+      ],
+      [
+        100,
+        4
+      ],
+      [
+        10,
+        6
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        0.1,
+        10
+      ],
+      [
+        0,
+        12
+      ]
+    ],
+    "unknown_metric_minzoom": 12
+  },
+  "maxzoom_tiles": 566592,
+  "maxzoom_ids_decoded": 1427688,
+  "maxzoom_ids_accounted": 1427688,
+  "maxzoom_ids_attribute_checked": 1427688,
+  "maxzoom_missing_id_count": 0,
+  "maxzoom_missing_ids_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "maxzoom_missing_ids_path": "lakeatlas-pour-points.maxzoom-missing-ids.txt",
+  "maxzoom_missing_classification_path": "lakeatlas-pour-points.maxzoom-missing-classification.jsonl",
+  "maxzoom_missing_classification_counts": {},
+  "coverage_classification": "empty, zero-dimension, quantization-collapse, and unexpected-loss IDs are enumerated by source ID; only explicitly classified collapses are acceptable exceptions",
+  "empty_geometry_rows": 0,
+  "input_mbtiles_removed_after_conversion": true,
+  "minzoom_feature_counts": {
+    "0": 18,
+    "2": 160,
+    "4": 1530,
+    "6": 14981,
+    "8": 168492,
+    "10": 1242507
+  },
+  "source_geometry_handling": "read WKB from pinned GeoParquet in row order, convert directly to GeoJSON geometry without coordinate rewriting; Tippecanoe projects to Web Mercator and quantizes/simplifies for display only",
+  "source_bounds": [
+    -179.99249799999998,
+    -55.86087599999996,
+    179.9987920000001,
+    83.57118000000008
+  ],
+  "pmtiles_bounds": [
+    -179.992498,
+    -55.860876,
+    179.998792,
+    83.57118
+  ],
+  "attribution": "HydroSHEDS / HydroATLAS authors; Lehner et al. (2022), DOI 10.1038/s41597-022-01425-z; CC BY 4.0, with some field-level ODbL 1.0 notices",
+  "python_packages": {
+    "pyarrow": "23.0.1",
+    "shapely": "2.1.2",
+    "numpy": "2.5.4",
+    "pmtiles": "3.8.1"
+  },
+  "source_row_bbox_fields": [
+    "_src_xmin",
+    "_src_ymin",
+    "_src_xmax",
+    "_src_ymax"
+  ],
+  "resource_usage_at_start": {
+    "free_bytes": 44973277184,
+    "task_output_and_scratch_bytes": 7006408657
+  },
+  "pmtiles_path": "assets/lakeatlas-pour-points.pmtiles",
+  "pmtiles_sha256": "68c28ecb4585378e0e729a5c72902214e935fa7645a6bef68372f0ec61bc4ffb",
+  "pmtiles_size_bytes": 409205238,
+  "tippecanoe_sha256": "c504719334e5335d60c66a01491707bdbfb773ebbfe3efc7c1c8239eb18d58d1",
+  "tippecanoe_version": "2.79.0",
+  "threads": 2,
+  "tile_archive_reused": false,
+  "tile_archive_reused_from": null,
+  "attribution_embedded": true
+}

@@ -1,0 +1,25 @@
+{
+  "recorded_before_next_bulk_attempt": true,
+  "observation": "Combined sorting and validation exceeded1GB during source WKB hashing. The identical complete validator succeeds in a fresh process.",
+  "code_revision_measured": "5a77efc39b6cf3c1deeb82fbf4a8bac0ee52bff4",
+  "raw_source_sha256": "f1e69b9db782314151bb496d0d7b613e015e59bf628c9100f998c2b67eda77e2",
+  "staged_output_sha256": "bbef606fd8522b230efc90e2952a67c1e4265e7bf733208fa4cc31395a7277b7",
+  "diagnostic_peaks_bytes": {
+    "fresh_wkb_hash": 503939072,
+    "fresh_full_validator": 820592640
+  },
+  "scope": "Read-only diagnostics of the failed stage, no promotion and no waiver of its failure.",
+  "next_method": "Run sort/write and complete validation as separate sequential processes, bound by immutable source/stage/code/checkpoint hashes. Only completion can promote the final asset.",
+  "unchanged_gates": {
+    "peak_rss_bytes": 1000000000,
+    "task_disk_bytes": 8000000000,
+    "free_disk_start_bytes": 40000000000,
+    "free_disk_floor_bytes": 10000000000,
+    "full_source_fidelity": true,
+    "clean_repeat_same_bytes": true
+  },
+  "diagnostic_reports": [
+    "fresh-wkb-hash-5a77efc.json",
+    "fresh-full-validation-5a77efc.json"
+  ]
+}

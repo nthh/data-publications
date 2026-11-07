@@ -1,0 +1,80 @@
+{
+  "request_url": "https://api.openalex.org/works?search=Generation+of+High+Resolution+Global+DSM+from+ALOS+PRISM&corpus=all&per_page=5&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date",
+  "retrieved_at": "2026-10-30T22:07:46.376342+00:00",
+  "response_path": "responses/0663b906bffaae42c6adf8361be46ef776214f817bc829f93d72669ca8195861.json",
+  "status": 200,
+  "response_sha256": "a14c8aeb2d8fe234ac74eacf2a0619c5276598e074c54f1a08cba32238bafaa4",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 680,
+      "db_response_time_ms": 169,
+      "page": 1,
+      "per_page": 5,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where full text has (Generation of High Resolution Global DSM from ALOS PRISM)",
+        "x_new_oql": "get works (all corpora) where full text has (Generation of High Resolution Global DSM from ALOS PRISM)",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "Generation of High Resolution Global DSM from ALOS PRISM",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:Generation of High Resolution Global DSM from ALOS PRISM&corpus=all&per_page=5",
+        "order": "best matches first",
+        "order_default": true
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W2162263667",
+        "doi": "https://doi.org/10.5194/isprsarchives-xl-4-243-2014",
+        "title": "Generation of High Resolution Global DSM from ALOS PRISM",
+        "type": "article",
+        "publication_year": 2014,
+        "publication_date": "2014-04-23"
+      },
+      {
+        "id": "https://openalex.org/W2136624896",
+        "doi": "https://doi.org/10.5194/isprsannals-ii-4-71-2014",
+        "title": "Precise Global DEM Generation by ALOS PRISM",
+        "type": "article",
+        "publication_year": 2014,
+        "publication_date": "2014-04-23"
+      },
+      {
+        "id": "https://openalex.org/W2471576742",
+        "doi": "https://doi.org/10.5194/isprs-annals-iii-4-25-2016",
+        "title": "VALIDATION OF \"AW3D\" GLOBAL DSM GENERATED FROM ALOS PRISM",
+        "type": "article",
+        "publication_year": 2016,
+        "publication_date": "2016-06-03"
+      },
+      {
+        "id": "https://openalex.org/W2066497294",
+        "doi": "https://doi.org/10.1109/igarss.2014.6947564",
+        "title": "Algorithm development of high resolution global DSM generation by ALOS prism",
+        "type": "conference-paper",
+        "publication_year": 2014,
+        "publication_date": "2014-07-01"
+      },
+      {
+        "id": "https://openalex.org/W7005300635",
+        "doi": null,
+        "title": "PRECISE GLOBAL DEM GENERATION BY ALOS PRISM",
+        "type": "conference-paper",
+        "publication_year": 2014,
+        "publication_date": "2014-05-01"
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "1eb4282934f45864e7f1d52000743a6f77197bcd82b363f10a3b55b208de71ce"
+}

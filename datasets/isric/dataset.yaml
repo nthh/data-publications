@@ -1,0 +1,160 @@
+schema_version: 1
+id: isric
+title: Bulk density of the fine earth fraction
+community_url: https://gee-community-catalog.org/projects/isric
+audit:
+  snapshot: gee-community-audit-20261029
+  family_key: isric
+  unique_gee_asset_count: 11
+  initial_queue: research_original_source
+  folia_registry_status: direct_or_component
+  folia_registry_ids:
+  - '@isric/soilgrids/texture'
+  source_coop_urls: []
+  source_coop_scope: null
+  external_native_urls: []
+  external_native_scope: null
+triage:
+  decision: pending
+  priority: pilot_review
+review:
+  citation_assessment:
+    as_of: '2026-10-29'
+    provider: OpenAlex
+    evidence_path: research/citations/rankings.json
+    evidence_key: isric
+    geographic_scope: global
+    paper_count_status: matched
+    max_paper_citations: 2382
+    max_data_doi_citations: 2
+    top_paper_doi: https://doi.org/10.5194/soil-7-217-2021
+    top_paper_openalex_id: https://openalex.org/W3166420679
+    citation_scope: associated_dataset_publication
+  publication_assessment:
+    as_of: '2026-10-29'
+    route: review_existing_source_coop_product
+    scope: SoilGrids 2.0 mean predictions in native-grid Icechunk/Zarr; quantiles,
+      uncertainty and WRB class probabilities not included.
+    source_coop_url: https://source.coop/chill/soilgrids
+    format: Icechunk/Zarr v3
+    evidence_kind: publisher_metadata
+    asset_access_verified: false
+    next_step: Evaluate existing mean-prediction product for registry reuse; inspect
+      missing components before proposing another publication.
+    evidence_urls:
+    - https://source.coop/chill/soilgrids
+    - https://github.com/colinahill/soilgrids_data
+  priority_reason: Among the six most cited resolved global families in the 2026-10-29
+    OpenAlex snapshot; publication readiness is assessed separately.
+
+# Cross-catalog discovery: global-candidates-20261031
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'citations: Global Existing catalog identity. reuse: Prior review consulted ISRIC
+    product and layer documentation for global SoilGrids 2.0 products and documented statistics. No original
+    source file or data endpoint was fetched, no format/host availability was established, and no asset
+    access was validated. Existing Source Cooperative publication covers only selected means and is not
+    evidence for the full original product family. Prior observation dated 2026-10-30; no new remote access
+    check. Source is the broader SoilGrids family. Canonical `isric` is one GEE bulk-density entry, not
+    a canonical record for all SoilGrids layers. reuse: Prior product-page review documented a v0.1.0.icechunk
+    store tagged soilgrids-2.0.0, with sharded Zarr v3 arrays, 250 m native Interrupted Goode Homolosine
+    grid; ten depth-indexed properties plus OCS, means only. Publisher reports ~177 GB native plus ~90
+    GB overviews (not measured in this review). Direct GET of the Source Cooperative README returned HTTP
+    403; no store-reader, asset or data access test was run. It omits Q0.05/Q0.50/Q0.95, relative uncertainty,
+    WRB probabilities, landmask and original 1/5 km aggregates. Prior observation dated 2026-10-30; no
+    new remote access check. Existing third-party publication of a selected SoilGrids 2.0 subset; GEE
+    `isric` candidate/source is one bulk-density family entry.'
+  sources:
+  - provider: gee_community
+    entry_id: isric
+    url: https://gee-community-catalog.org/projects/isric
+    relationship: same_family
+  - provider: producer
+    entry_id: SoilGrids 2.0 producer documentation
+    url: https://isric.org/explore/soilgrids
+    relationship: same_family
+  - provider: producer
+    entry_id: SoilGrids layer FAQ
+    url: https://docs.isric.org/globaldata/soilgrids/SoilGrids_faqs_01.html
+    relationship: same_family
+  - provider: source_coop
+    entry_id: SoilGrids 2.0 / v0.1.0.icechunk
+    url: https://source.coop/chill/soilgrids
+    relationship: related_product
+  access:
+  - provider: literature
+    status: unknown
+    formats: []
+    summary: GEE catalog entries are available through Earth Engine; frozen metadata does not establish
+      an independently downloadable native bulk copy or its format. Existing catalog identity.
+    license_summary: Not inferred from citation records. Verify producer terms for the exact edition before
+      conversion or redistribution.
+    proposed_outputs: []
+    rationale: 'Candidate discovery only: global/near-global scope and associated-paper citation signal
+      justify source-format and licensing review. Citation rank does not establish conversion priority
+      or exact-release use.'
+    evidence_urls:
+    - https://gee-community-catalog.org/projects/isric
+    - https://doi.org/10.5194/soil-7-217-2021
+  - provider: producer
+    status: unknown
+    formats: []
+    summary: Prior review consulted ISRIC product and layer documentation for global SoilGrids 2.0 products
+      and documented statistics. No original source file or data endpoint was fetched, no format/host
+      availability was established, and no asset access was validated. Existing Source Cooperative publication
+      covers only selected means and is not evidence for the full original product family. Prior observation
+      dated 2026-10-30; no new remote access check. Source is the broader SoilGrids family. Canonical
+      `isric` is one GEE bulk-density entry, not a canonical record for all SoilGrids layers.
+    observed_on: '2026-10-30'
+    license_summary: No redistribution license status established in this access review; verify the exact
+      producer product and terms.
+    proposed_outputs: []
+    rationale: Retain this as a pointer to the producer scope; do not infer a missing or available bulk
+      copy from documentation alone.
+    evidence_urls:
+    - https://isric.org/explore/soilgrids
+    - https://docs.isric.org/globaldata/soilgrids/SoilGrids_faqs_01.html
+    - https://docs.isric.org/globaldata/soilgrids/SoilGrids_faqs_03.html
+  - provider: source_coop
+    status: unknown
+    formats:
+    - Icechunk
+    - Zarr v3
+    summary: Prior product-page review documented a v0.1.0.icechunk store tagged soilgrids-2.0.0, with
+      sharded Zarr v3 arrays, 250 m native Interrupted Goode Homolosine grid; ten depth-indexed properties
+      plus OCS, means only. Publisher reports ~177 GB native plus ~90 GB overviews (not measured in this
+      review). Direct GET of the Source Cooperative README returned HTTP 403; no store-reader, asset or
+      data access test was run. It omits Q0.05/Q0.50/Q0.95, relative uncertainty, WRB probabilities, landmask
+      and original 1/5 km aggregates. Prior observation dated 2026-10-30; no new remote access check.
+      Existing third-party publication of a selected SoilGrids 2.0 subset; GEE `isric` candidate/source
+      is one bulk-density family entry.
+    observed_on: '2026-10-30'
+    license_summary: No redistribution license confirmed in retained review; check publisher and producer
+      terms for the pinned tag.
+    proposed_outputs: []
+    rationale: Reuse is a documented existing-host option for matching mean layers only, subject to successful
+      Icechunk access and immutable pinning. It does not supply the original quantile products and is
+      not an exact substitute for other SoilGrids products.
+    evidence_urls:
+    - https://source.coop/chill/soilgrids
+    - https://github.com/colinahill/soilgrids_data
+    - https://isric.org/explore/soilgrids
+  citations:
+  - provider: OpenAlex
+    paper_doi: 10.5194/soil-7-217-2021
+    work_id: https://openalex.org/W3166420679
+    cited_by_count: 2383
+    observed_on: '2026-10-30'
+    scope: associated_dataset_publication
+  evidence:
+  - path: research/global-candidates-20261031/citations/reviewed.json
+    sha256: 572140255cd3b41a1ec8ecca0139e64d38899cda7fdd55756f399a0dca57a467
+    key: isric
+  - path: research/global-candidates-20261031/reuse/reviewed.json
+    sha256: 936d932d9ec3305e1499934f4cdc530b00e5e518b08e647671356646dbd85de8
+    key: soilgrids_isric_original_publisher_access
+  - path: research/global-candidates-20261031/reuse/reviewed.json
+    sha256: 936d932d9ec3305e1499934f4cdc530b00e5e518b08e647671356646dbd85de8
+    key: soilgrids_sourcecoop_icechunk_mean_publication

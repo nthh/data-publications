@@ -1,0 +1,493 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-11-02T22:34:23.012Z",
+  "criteria_sha256": "d0d36e4bddeb5ed862a8c32106151e4871f28c19a28d12df2cb2767f574da586",
+  "scope": "Unchanged live app; test-browser-only viewer-config interception adds frozen regions. Local range reads only.",
+  "source_layer": {
+    "id": "grwl-display",
+    "title": "GRWL river network",
+    "format": "pmtiles",
+    "object_path": "/nthh/grwl/display/display-v1/assets/grwl.pmtiles",
+    "size_bytes": 115384572,
+    "sha256": "7b56696bc08daa4ed512a02fd35017f913827d60f9dc1d8fba94b1f726ba5343",
+    "source_layer": "grwl",
+    "geometry_type": "line",
+    "min_zoom": 0,
+    "max_zoom": 10,
+    "id_field": "source_row",
+    "id_encoding": "mvt_feature_id",
+    "attribute_fields": [
+      "OBJECTID",
+      "ID",
+      "width_min_",
+      "width_med_",
+      "width_mean",
+      "width_max_",
+      "width_sd_m",
+      "lakeFlag",
+      "nSegPx",
+      "Shape_Leng",
+      "_src_xmin",
+      "_src_ymin",
+      "_src_xmax",
+      "_src_ymax"
+    ],
+    "bbox": [
+      -179.9999910168292,
+      -54.31026000029875,
+      179.99996999961581,
+      82.31061999981318
+    ],
+    "analytic": {
+      "format": "geoparquet",
+      "object_path": "/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+      "size_bytes": 46297145,
+      "sha256": "82ac4eeac2168b1aad6e5c9ae53c0c228ffcc7c8cd3f8d795493d939e626fa9c",
+      "geometry_column": "geometry",
+      "geometry_type": "line",
+      "id_field": "OBJECTID",
+      "fields": [
+        "source_row",
+        "OBJECTID",
+        "ID",
+        "width_min_",
+        "width_med_",
+        "width_mean",
+        "width_max_",
+        "width_sd_m",
+        "lakeFlag",
+        "nSegPx",
+        "Shape_Leng"
+      ],
+      "decimal_fields": [
+        "OBJECTID",
+        "ID",
+        "width_min_",
+        "width_med_",
+        "width_mean",
+        "width_max_",
+        "width_sd_m",
+        "lakeFlag",
+        "nSegPx",
+        "Shape_Leng"
+      ],
+      "bbox": [
+        -179.9999910168292,
+        -54.31026000029875,
+        179.99996999961581,
+        82.31061999981318
+      ],
+      "row_count": 42077,
+      "covering": {
+        "xmin": "bbox.xmin",
+        "ymin": "bbox.ymin",
+        "xmax": "bbox.xmax",
+        "ymax": "bbox.ymax"
+      }
+    }
+  },
+  "cases": [
+    {
+      "region": {
+        "id": "source_15397",
+        "label": "Feature 15397 at 48 N",
+        "bbox": [
+          -120.6,
+          46.5,
+          -118,
+          48.5
+        ],
+        "feature_id": 15397
+      },
+      "errors": [],
+      "requests": [
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/display/display-v1/assets/grwl.pmtiles",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/115384572",
+          "bytes": 16384,
+          "cors": "*"
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/display/display-v1/assets/grwl.pmtiles",
+          "status": 206,
+          "range": "bytes=7405-16792",
+          "content_range": "bytes 7405-16792/115384572",
+          "bytes": 9388,
+          "cors": "*"
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/display/display-v1/assets/grwl.pmtiles",
+          "status": 206,
+          "range": "bytes=38399611-38401841",
+          "content_range": "bytes 38399611-38401841/115384572",
+          "bytes": 2231,
+          "cors": "*"
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/display/display-v1/assets/grwl.pmtiles",
+          "status": 206,
+          "range": "bytes=38396663-38399610",
+          "content_range": "bytes 38396663-38399610/115384572",
+          "bytes": 2948,
+          "cors": "*"
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/display/display-v1/assets/grwl.pmtiles",
+          "status": 206,
+          "range": "bytes=38401842-38404757",
+          "content_range": "bytes 38401842-38404757/115384572",
+          "bytes": 2916,
+          "cors": "*"
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/display/display-v1/assets/grwl.pmtiles",
+          "status": 206,
+          "range": "bytes=38391011-38394152",
+          "content_range": "bytes 38391011-38394152/115384572",
+          "bytes": 3142,
+          "cors": "*"
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/display/display-v1/assets/grwl.pmtiles",
+          "status": 206,
+          "range": "bytes=38412075-38415175",
+          "content_range": "bytes 38412075-38415175/115384572",
+          "bytes": 3101,
+          "cors": "*"
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/display/display-v1/assets/grwl.pmtiles",
+          "status": 206,
+          "range": "bytes=38394153-38396662",
+          "content_range": "bytes 38394153-38396662/115384572",
+          "bytes": 2510,
+          "cors": "*"
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "status": 206,
+          "range": "bytes=46297137-46297144",
+          "content_range": "bytes 46297137-46297144/46297145",
+          "bytes": 8,
+          "cors": "*"
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "status": 206,
+          "range": "bytes=46268830-46297136",
+          "content_range": "bytes 46268830-46297136/46297145",
+          "bytes": 28307,
+          "cors": "*"
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "status": 206,
+          "range": "bytes=7900803-7901058",
+          "content_range": "bytes 7900803-7901058/46297145",
+          "bytes": 256,
+          "cors": "*"
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "status": 206,
+          "range": "bytes=7900822-7906520",
+          "content_range": "bytes 7900822-7906520/46297145",
+          "bytes": 5699,
+          "cors": "*"
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "status": 206,
+          "range": "bytes=7906521-7929316",
+          "content_range": "bytes 7906521-7929316/46297145",
+          "bytes": 22796,
+          "cors": "*"
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "status": 206,
+          "range": "bytes=16130330-16130585",
+          "content_range": "bytes 16130330-16130585/46297145",
+          "bytes": 256,
+          "cors": "*"
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "status": 206,
+          "range": "bytes=16130349-16189837",
+          "content_range": "bytes 16130349-16189837/46297145",
+          "bytes": 59489,
+          "cors": "*"
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "status": 206,
+          "range": "bytes=16189838-16427793",
+          "content_range": "bytes 16189838-16427793/46297145",
+          "bytes": 237956,
+          "cors": "*"
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "status": 206,
+          "range": "bytes=7868654-7868909",
+          "content_range": "bytes 7868654-7868909/46297145",
+          "bytes": 256,
+          "cors": "*"
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "status": 206,
+          "range": "bytes=7868674-7887618",
+          "content_range": "bytes 7868674-7887618/46297145",
+          "bytes": 18945,
+          "cors": "*"
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "status": 206,
+          "range": "bytes=7887619-7963398",
+          "content_range": "bytes 7887619-7963398/46297145",
+          "bytes": 75780,
+          "cors": "*"
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "status": 206,
+          "range": "bytes=7963399-8266518",
+          "content_range": "bytes 7963399-8266518/46297145",
+          "bytes": 303120,
+          "cors": "*"
+        }
+      ],
+      "status": "passed",
+      "viewer": {
+        "dataset": "grwl",
+        "layer": "grwl-display",
+        "phase": "ready",
+        "error": null,
+        "feature_count": 28,
+        "capped": false,
+        "query": null,
+        "bbox": null,
+        "bytes": 42620,
+        "ranges": 8,
+        "requests": 8,
+        "generation": 1,
+        "selected": {
+          "id": 15397
+        },
+        "traffic": [
+          [
+            "http://127.0.0.1:8911/nthh/grwl/display/display-v1/assets/grwl.pmtiles",
+            {
+              "bytes": 42620,
+              "ranges": 8,
+              "requests": 8
+            }
+          ]
+        ]
+      },
+      "tile_properties": "OBJECTID\n15397\nID\n6\nwidth_min_\n30\nwidth_med_\n1236\nwidth_mean\n1237\nwidth_max_\n3794\nwidth_sd_m\n555.293462998\nlakeFlag\n1\nnSegPx\n2347\nShape_Leng\n124.691979007\nsource_row\n15397",
+      "analytic_properties": "source_row\n15397\nOBJECTID\n15397\nID\n6\nwidth_min_\n30\nwidth_med_\n1236.00000000000\nwidth_mean\n1237.00000000000\nwidth_max_\n3794\nwidth_sd_m\n555.293462998000\nlakeFlag\n1.000000000000\nnSegPx\n2347\nShape_Leng\n124.6919790070000",
+      "analytic_note": "All source attributes for this ID.",
+      "response_body_bytes": 795488
+    },
+    {
+      "region": {
+        "id": "source_13164",
+        "label": "Feature 13164 at 40 N",
+        "bbox": [
+          -110.05,
+          39.75,
+          -109.15,
+          40.25
+        ],
+        "feature_id": 13164
+      },
+      "errors": [],
+      "requests": [
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/display/display-v1/assets/grwl.pmtiles",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/115384572",
+          "bytes": 16384,
+          "cors": "*"
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/display/display-v1/assets/grwl.pmtiles",
+          "status": 206,
+          "range": "bytes=41526-49519",
+          "content_range": "bytes 41526-49519/115384572",
+          "bytes": 7994,
+          "cors": "*"
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/display/display-v1/assets/grwl.pmtiles",
+          "status": 206,
+          "range": "bytes=64251443-64252867",
+          "content_range": "bytes 64251443-64252867/115384572",
+          "bytes": 1425,
+          "cors": "*"
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/display/display-v1/assets/grwl.pmtiles",
+          "status": 206,
+          "range": "bytes=64229662-64230370",
+          "content_range": "bytes 64229662-64230370/115384572",
+          "bytes": 709,
+          "cors": "*"
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/display/display-v1/assets/grwl.pmtiles",
+          "status": 206,
+          "range": "bytes=64250391-64250649",
+          "content_range": "bytes 64250391-64250649/115384572",
+          "bytes": 259,
+          "cors": "*"
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/display/display-v1/assets/grwl.pmtiles",
+          "status": 206,
+          "range": "bytes=64230371-64230983",
+          "content_range": "bytes 64230371-64230983/115384572",
+          "bytes": 613,
+          "cors": "*"
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "status": 206,
+          "range": "bytes=46297137-46297144",
+          "content_range": "bytes 46297137-46297144/46297145",
+          "bytes": 8,
+          "cors": "*"
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "status": 206,
+          "range": "bytes=46268830-46297136",
+          "content_range": "bytes 46268830-46297136/46297145",
+          "bytes": 28307,
+          "cors": "*"
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "status": 206,
+          "range": "bytes=7900803-7901058",
+          "content_range": "bytes 7900803-7901058/46297145",
+          "bytes": 256,
+          "cors": "*"
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "status": 206,
+          "range": "bytes=7900822-7906520",
+          "content_range": "bytes 7900822-7906520/46297145",
+          "bytes": 5699,
+          "cors": "*"
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "status": 206,
+          "range": "bytes=7906521-7929316",
+          "content_range": "bytes 7906521-7929316/46297145",
+          "bytes": 22796,
+          "cors": "*"
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "status": 206,
+          "range": "bytes=16130330-16130585",
+          "content_range": "bytes 16130330-16130585/46297145",
+          "bytes": 256,
+          "cors": "*"
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "status": 206,
+          "range": "bytes=16130349-16189837",
+          "content_range": "bytes 16130349-16189837/46297145",
+          "bytes": 59489,
+          "cors": "*"
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "status": 206,
+          "range": "bytes=16189838-16427793",
+          "content_range": "bytes 16189838-16427793/46297145",
+          "bytes": 237956,
+          "cors": "*"
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "status": 206,
+          "range": "bytes=7868654-7868909",
+          "content_range": "bytes 7868654-7868909/46297145",
+          "bytes": 256,
+          "cors": "*"
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "status": 206,
+          "range": "bytes=7868674-7887618",
+          "content_range": "bytes 7868674-7887618/46297145",
+          "bytes": 18945,
+          "cors": "*"
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "status": 206,
+          "range": "bytes=7887619-7963398",
+          "content_range": "bytes 7887619-7963398/46297145",
+          "bytes": 75780,
+          "cors": "*"
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "status": 206,
+          "range": "bytes=7963399-8266518",
+          "content_range": "bytes 7963399-8266518/46297145",
+          "bytes": 303120,
+          "cors": "*"
+        }
+      ],
+      "status": "passed",
+      "viewer": {
+        "dataset": "grwl",
+        "layer": "grwl-display",
+        "phase": "ready",
+        "error": null,
+        "feature_count": 7,
+        "capped": false,
+        "query": null,
+        "bbox": null,
+        "bytes": 27384,
+        "ranges": 6,
+        "requests": 6,
+        "generation": 1,
+        "selected": {
+          "id": 13164
+        },
+        "traffic": [
+          [
+            "http://127.0.0.1:8911/nthh/grwl/display/display-v1/assets/grwl.pmtiles",
+            {
+              "bytes": 27384,
+              "ranges": 6,
+              "requests": 6
+            }
+          ]
+        ]
+      },
+      "tile_properties": "OBJECTID\n13164\nID\n0\nwidth_min_\n30\nwidth_med_\n92\nwidth_mean\n97\nwidth_max_\n256\nwidth_sd_m\n40.1031937016\nlakeFlag\n0\nnSegPx\n13267\nShape_Leng\n468.401757204\nsource_row\n13164",
+      "analytic_properties": "source_row\n13164\nOBJECTID\n13164\nID\n0\nwidth_min_\n30\nwidth_med_\n92.00000000000\nwidth_mean\n97.00000000000\nwidth_max_\n256\nwidth_sd_m\n40.103193701600\nlakeFlag\n0.000000000000\nnSegPx\n13267\nShape_Leng\n468.4017572040000",
+      "analytic_note": "All source attributes for this ID.",
+      "response_body_bytes": 780252
+    }
+  ],
+  "browser_version": "156.0.8078.79",
+  "status": "passed"
+}

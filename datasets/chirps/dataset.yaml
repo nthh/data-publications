@@ -1,0 +1,131 @@
+schema_version: 1
+id: chirps
+title: 'CHIRPS Precipitation Daily: Climate Hazards Center InfraRed Precipitation With Station Data (Version
+  2.0 Final)'
+intake:
+  kind: official_catalog
+  reference_url: https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: near_global
+  spatial_coverage: 'citations: Near-global land, 50°N–50°S; official GEE catalog extent latitude envelope
+    -50° to 50° (extent is not a completeness/no-data guarantee). Distinct named producer product; retain
+    exact source edition and footprint. reuse: The WFP collection metadata declares public daily COG assets
+    under the Source Cooperative S3 namespace. The saved queries returned a matching 1981-01-01 item,
+    latest sample 2026-09-30, and all 31 dates in August 2020 (16,708 total matched items for latest query).
+    No asset GET/HEAD or COG byte check was run. Collection scope is quasi-global land, 60°S–60°N, all
+    longitudes; coverage/completeness is sampled only. Prior observation dated 2026-10-30; no new remote
+    access check. Same CHIRPS product family, but WFP STAC is v3 daily RNL and current `chirps` is GEE
+    CHIRPS v2.0 Final. Do not merge as the same release. reuse: Local audit records six complete public
+    August 2020 global pentad COG objects from the CHC COG prefix. Scope is six pentads for one month,
+    not daily CHIRPS or the full archive. Existing benchmark checked exact values for four Bengaluru cells
+    after summing the six pentads; no full archive inventory is implied. Prior observation dated 2026-10-30;
+    no new remote access check. CHIRPS v2.0 pentad COG subset, distinct temporal product from the current
+    GEE daily v2.0 candidate and distinct release from WFP v3 RNL.'
+  sources:
+  - provider: gee_official
+    entry_id: UCSB-CHG/CHIRPS/DAILY
+    url: https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY
+    relationship: same_family
+  - provider: gee_official
+    entry_id: UCSB-CHG/CHIRPS/PENTAD
+    url: https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_PENTAD
+    relationship: same_family
+  - provider: producer
+    entry_id: CHIRPS-2.0/global_pentad/cogs
+    url: https://data.chc.ucsb.edu/products/CHIRPS-2.0/global_pentad/cogs/
+    relationship: component
+  - provider: producer
+    entry_id: chirps_rnl_daily
+    url: https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily
+    relationship: related_release
+  - provider: source_coop
+    entry_id: wfp/chirps-rnl-daily/v3.0
+    url: https://source.coop/wfp/chirps-rnl-daily
+    relationship: related_release
+  access:
+  - provider: literature
+    status: unknown
+    formats: []
+    summary: GEE catalog entries are available through Earth Engine; frozen metadata does not establish
+      an independently downloadable native bulk copy or its format. Distinct named producer product; retain
+      exact source edition and footprint.
+    license_summary: Not inferred from citation records. Verify producer terms for the exact edition before
+      conversion or redistribution.
+    proposed_outputs: []
+    rationale: 'Candidate discovery only: global/near-global scope and associated-paper citation signal
+      justify source-format and licensing review. Citation rank does not establish conversion priority
+      or exact-release use.'
+    evidence_urls:
+    - https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY
+    - https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_PENTAD
+    - https://doi.org/10.1038/sdata.2015.66
+  - provider: source_coop
+    status: native_available
+    formats:
+    - COG
+    summary: The WFP collection metadata declares public daily COG assets under the Source Cooperative
+      S3 namespace. The saved queries returned a matching 1981-01-01 item, latest sample 2026-09-30, and
+      all 31 dates in August 2020 (16,708 total matched items for latest query). No asset GET/HEAD or
+      COG byte check was run. Collection scope is quasi-global land, 60°S–60°N, all longitudes; coverage/completeness
+      is sampled only. Prior observation dated 2026-10-30; no new remote access check. Same CHIRPS product
+      family, but WFP STAC is v3 daily RNL and current `chirps` is GEE CHIRPS v2.0 Final. Do not merge
+      as the same release.
+    observed_on: '2026-10-30'
+    license_summary: 'Collection metadata declares CC-BY-4.0; attribution and exact terms need release-level
+      review. Metadata conflict: README describes mm precipitation while collection and sampled item raster:bands
+      say unit "1". Update status also conflicts between preliminary RNL messaging and CHC daily docs;
+      not resolved here.'
+    proposed_outputs: []
+    rationale: Reuse the existing v3 daily publication where appropriate; keep separate from canonical
+      CHIRPS v2.0 GEE daily/pentad products. Historical evidence does not establish exact version parity,
+      complete coverage, COG conformance or daily-value validation.
+    evidence_urls:
+    - https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily
+    - https://source.coop/wfp/chirps-rnl-daily
+    - https://www.chc.ucsb.edu/data/chirps3
+    - https://data.chc.ucsb.edu/products/CHIRPS/v3.0/daily/readme.txt
+  - provider: producer
+    status: download_available
+    formats:
+    - COG
+    summary: Local audit records six complete public August 2020 global pentad COG objects from the CHC
+      COG prefix. Scope is six pentads for one month, not daily CHIRPS or the full archive. Existing benchmark
+      checked exact values for four Bengaluru cells after summing the six pentads; no full archive inventory
+      is implied. Prior observation dated 2026-10-30; no new remote access check. CHIRPS v2.0 pentad COG
+      subset, distinct temporal product from the current GEE daily v2.0 candidate and distinct release
+      from WFP v3 RNL.
+    observed_on: '2026-10-30'
+    license_summary: No license or redistribution review is contained in this local access observation;
+      use producer terms for the exact v2 release.
+    proposed_outputs: []
+    rationale: Keep as historical evidence for the precise v2 pentad source and its sampled validated
+      access. It does not validate WFP v3 RNL or recommend another conversion.
+    evidence_urls:
+    - https://data.chc.ucsb.edu/products/CHIRPS-2.0/global_pentad/cogs/
+  citations:
+  - provider: OpenAlex
+    paper_doi: 10.1038/sdata.2015.66
+    work_id: https://openalex.org/W2261645655
+    cited_by_count: 6459
+    observed_on: '2026-10-30'
+    scope: base_dataset_family
+  evidence:
+  - path: research/global-candidates-20261031/citations/reviewed.json
+    sha256: 572140255cd3b41a1ec8ecca0139e64d38899cda7fdd55756f399a0dca57a467
+    key: chirps
+  - path: research/global-candidates-20261031/reuse/reviewed.json
+    sha256: 936d932d9ec3305e1499934f4cdc530b00e5e518b08e647671356646dbd85de8
+    key: chirps_wfp_v3_rnl_public_cogs
+  - path: research/global-candidates-20261031/reuse/reviewed.json
+    sha256: 936d932d9ec3305e1499934f4cdc530b00e5e518b08e647671356646dbd85de8
+    key: chirps_v2_pentad_public_cogs_sample

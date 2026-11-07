@@ -1,0 +1,62 @@
+schema_version: 1
+id: usgs-world-ecological-land-units-2015
+title: USGS World Ecological Land Units (ELUs) 2015
+intake:
+  kind: official_catalog
+  reference_url: https://www.arcgis.com/home/item.html?id=77bbcb86d5eb48a8adb084d499c1f7ef
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: near_global
+  spatial_coverage: 'esri: Global terrestrial ecosystem classification at 250 m base resolution, with
+    3,923 ELU classes. Data.gov reports spatial bounds of -180,-56.0001 to 180,83.6249, so it excludes
+    Antarctica and the far southern/high northern latitude regions outside those bounds. Producer extent
+    −56° to 83.6249° latitude; not wall-to-wall global land.'
+  sources:
+  - provider: esri_public
+    entry_id: 77bbcb86d5eb48a8adb084d499c1f7ef
+    url: https://www.arcgis.com/home/item.html?id=77bbcb86d5eb48a8adb084d499c1f7ef
+    relationship: related_release
+  - provider: producer
+    entry_id: P9WRNPTN
+    url: https://doi.org/10.5066/P9WRNPTN
+    relationship: same_family
+  - provider: producer
+    entry_id: World Ecological Land Units ELUs 2015 / USGS:63c9d475d34e06fef14f3b22
+    url: https://catalog.data.gov/dataset/world-ecological-land-units-elus-2015
+    relationship: exact_dataset
+  access:
+  - provider: esri_public
+    status: unknown
+    formats:
+    - raster
+    summary: Data.gov lists public access to a USGS digital-data landing page and original XML metadata;
+      the Esri item is a MapServer. This inventory did not access data bytes or establish the source file
+      format or Esri export permission. Producer extent −56° to 83.6249° latitude; not wall-to-wall global
+      land.
+    license_summary: The USGS/Data.gov catalog marks access public but the inspected catalog record does
+      not state a reuse license. The Esri item declares Esri Master License terms and requires an ArcGIS
+      organizational subscription or developer account. Public catalog access is not itself a redistribution
+      license.
+    proposed_outputs: []
+    rationale: Worth reviewing as a global 250 m derived ecological raster because USGS is the named producer
+      and public data catalog lists the source. Before conversion, confirm exact downloadable files, value
+      definitions, projection, licensing, and source-component lineage.
+    evidence_urls:
+    - https://catalog.data.gov/dataset/world-ecological-land-units-elus-2015
+    - https://www.usgs.gov/centers/geosciences-and-environmental-change-science-center/science/global-ecosystems-global-data
+    - https://www.arcgis.com/home/item.html?id=77bbcb86d5eb48a8adb084d499c1f7ef
+    - https://doi.org/10.5066/P9WRNPTN
+  citations: []
+  evidence:
+  - path: research/global-candidates-20261031/esri/reviewed.json
+    sha256: e02bd2202c3026ccd7564155bfa69b5e8bc666f65698da6bacce91ab7327d5be
+    key: usgs-world-ecological-land-units-2015

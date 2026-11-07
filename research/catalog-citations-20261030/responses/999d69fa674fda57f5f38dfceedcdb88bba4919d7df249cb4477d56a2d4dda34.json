@@ -1,0 +1,80 @@
+{
+  "request_url": "https://api.openalex.org/works?search=Validation+of+%27AW3D%27+Global+DSM+Generated+from+ALOS+PRISM&corpus=all&per_page=5&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date",
+  "retrieved_at": "2026-10-30T22:08:04.103381+00:00",
+  "response_path": "responses/999d69fa674fda57f5f38dfceedcdb88bba4919d7df249cb4477d56a2d4dda34.json",
+  "status": 200,
+  "response_sha256": "dfaa1b6c662cd4df13c9c8835008ae7daf1f80193408018f44b4b7ef5a888ca0",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 210,
+      "db_response_time_ms": 76,
+      "page": 1,
+      "per_page": 5,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where full text has (Validation of 'AW3D' Global DSM Generated from ALOS PRISM)",
+        "x_new_oql": "get works (all corpora) where full text has (Validation of 'AW3D' Global DSM Generated from ALOS PRISM)",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "Validation of 'AW3D' Global DSM Generated from ALOS PRISM",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:Validation of %27AW3D%27 Global DSM Generated from ALOS PRISM&corpus=all&per_page=5",
+        "order": "best matches first",
+        "order_default": true
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W2471576742",
+        "doi": "https://doi.org/10.5194/isprs-annals-iii-4-25-2016",
+        "title": "VALIDATION OF \"AW3D\" GLOBAL DSM GENERATED FROM ALOS PRISM",
+        "type": "article",
+        "publication_year": 2016,
+        "publication_date": "2016-06-03"
+      },
+      {
+        "id": "https://openalex.org/W2077415854",
+        "doi": "https://doi.org/10.1109/igarss.2015.7326657",
+        "title": "Status of “ALOS World 3D (AW3D)” global DSM generation",
+        "type": "conference-paper",
+        "publication_year": 2015,
+        "publication_date": "2015-07-01"
+      },
+      {
+        "id": "https://openalex.org/W2774040382",
+        "doi": "https://doi.org/10.1109/igarss.2017.8128293",
+        "title": "Quality updates of ‘AW3D’ global DSM generated from ALOS PRISM",
+        "type": "conference-paper",
+        "publication_year": 2017,
+        "publication_date": "2017-07-01"
+      },
+      {
+        "id": "https://openalex.org/W2437003282",
+        "doi": "https://doi.org/10.5194/isprs-archives-xli-b4-157-2016",
+        "title": "GENERATION OF THE 30 M-MESH GLOBAL DIGITAL SURFACE MODEL BY ALOS PRISM",
+        "type": "article",
+        "publication_year": 2016,
+        "publication_date": "2016-06-13"
+      },
+      {
+        "id": "https://openalex.org/W3177738539",
+        "doi": "https://doi.org/10.5194/isprs-archives-xliii-b4-2021-401-2021",
+        "title": "UPDATES OF ‘AW3D30’ ALOS GLOBAL DIGITAL SURFACE MODEL IN ANTARCTICA WITH OTHER OPEN ACCESS DATASETS",
+        "type": "article",
+        "publication_year": 2021,
+        "publication_date": "2021-06-30"
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "62ca0a8dd5cfc4e891a848084de717b5e6f32adc9700b06060e8902a9fadd7b1"
+}

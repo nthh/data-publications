@@ -1,0 +1,1873 @@
+{
+  "checked_at": "2026-11-07T02:47:21.941890Z",
+  "checks": {
+    "anonymous_access": "passed",
+    "asset_checksums": "passed",
+    "browser_render": "passed",
+    "catalog_links": "passed",
+    "cors": "passed",
+    "range_requests": "passed",
+    "subset_query": "passed"
+  },
+  "dataset_id": "free-flowing-rivers",
+  "display_manifest_sha256": "2f7046f914ff49749dffd20df9c6c5010706710b881af915633766da4d91fb6d",
+  "display_package_base_url": "https://data.source.coop/nthh/free-flowing-rivers/display/display-v1/",
+  "display_release": "display-v1",
+  "evidence": {
+    "asset_checksum_scope": "Full remote bytes were SHA-256 verified in original upload attempt receipts. For reused objects, this run binds their original byte proofs and separately checks current HEAD and anonymous range samples; current HEAD is not a fresh full-byte hash.",
+    "browser_evidence": {
+      "browser_cases_sha256": "6ff14a9c438cdee14af4ea21876ca32876883f7b676c16596b4ddfc924b6aa10",
+      "case_ids": [
+        "free-flowing-rivers-free-flowing-rivers-1-global",
+        "free-flowing-rivers-free-flowing-rivers-1-north_america"
+      ],
+      "catalog_url": "https://source.coop/nthh/free-flowing-rivers",
+      "checked_at": "2026-11-07T01:56:07.175Z",
+      "dataset_id": "free-flowing-rivers",
+      "display_release": "display-v1",
+      "plan_sha256": "754c02dde3cf258263619599f893558d3348c7fb51c07f8fa700efa1900ac610",
+      "planned_object_prefixes": [
+        "free-flowing-rivers/releases/figshare-v1-local-r2/",
+        "free-flowing-rivers/display/display-v1/"
+      ],
+      "planned_object_url_prefixes": [
+        "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/",
+        "https://data.source.coop/nthh/free-flowing-rivers/display/display-v1/"
+      ],
+      "product_id": "free-flowing-rivers",
+      "release": "figshare-v1-local-r2",
+      "screenshots": [
+        "../../browser-free-flowing-rivers-r1/free-flowing-rivers-free-flowing-rivers-1-global.png",
+        "../../browser-free-flowing-rivers-r1/free-flowing-rivers-free-flowing-rivers-1-north_america.png"
+      ],
+      "status": "passed",
+      "tested_object_urls": [
+        "https://data.source.coop/nthh/free-flowing-rivers/display/display-v1/assets/ffr-reaches.pmtiles",
+        "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet"
+      ],
+      "viewer_build_sha256": "9fb4f4aa6b641363160db0f54610750884ff91bfe02669cb7394f148726b62f6",
+      "viewer_config_sha256": "87e1d532d23d65ec45b88aac318d13b83c273f140644ba7ec3dd3edd36e198fe"
+    },
+    "catalog_inventory": {
+      "catalog": [
+        "catalog.json"
+      ],
+      "collections": [
+        "collection.json"
+      ],
+      "documentation": [
+        "AGENTS.md",
+        "README.md",
+        "verification/workflow/datasets/free-flowing-rivers/README.md",
+        "verification/workflow/datasets/free-flowing-rivers/releases/figshare-v1-local-r2/README.md",
+        "verification/workflow/scripts/release_tools/AGENTS.md",
+        "verification/workflow/scripts/release_tools/README.md"
+      ],
+      "styles": [
+        "styles/ffr-reaches.json"
+      ]
+    },
+    "catalog_link_scope": "Immutable product package catalog/collection/styles/docs only; the aggregate Portolan catalog is not deployed or checked by this per-product run.",
+    "cors": [
+      {
+        "get_headers": {
+          "Accept-Ranges": "bytes",
+          "Access-Control-Allow-Origin": "*",
+          "CF-Cache-Status": "DYNAMIC",
+          "CF-Ray": "a56901dd6d0236ed-DEN",
+          "Cache-Control": "private, no-cache, no-transform",
+          "Connection": "close",
+          "Content-Length": "1",
+          "Content-Range": "bytes 0-0/3570445458",
+          "Content-Type": "application/vnd.pmtiles",
+          "Date": "Sat, 07 Nov 2026 02:46:23 GMT",
+          "ETag": "\"5e0bdacbadbf7e8a1de3311eedacd333-54\"",
+          "Last-Modified": "Fri, 06 Nov 2026 23:51:43 GMT",
+          "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+          "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=0ijwa3nkhpivFZYdLsYu34G0rpBaJr5mMWXCOKW%2FWlDqU%2FuNiNSl9iN8zBg7gMelWrcKh6Gy9Tjx2l6d4PjFxsloxfeleXstXIlq1TjX8NEpdAGF0Z4UQYncsJ5409vNT7xsK3u%2BzA5lgSmCV80f\"}]}",
+          "Server": "cloudflare",
+          "Server-Timing": "cfEdge;dur=4,cfOrigin;dur=0,cfWorker;dur=109",
+          "Speculation-Rules": "\"/cdn-cgi/speculation\"",
+          "access-control-allow-headers": "*",
+          "access-control-allow-methods": "GET, HEAD, PUT, POST, DELETE, OPTIONS",
+          "access-control-expose-headers": "*",
+          "access-control-max-age": "7200",
+          "alt-svc": "h3=\":443\"; ma=86400",
+          "server-timing": "total;dur=99, dispatch;dur=99, backend;dur=89",
+          "x-amz-id-2": "uiPOTB+uvDRPTwmSsbNC0nJh8f5hsneg2cd1EfvlDHtZXDuC/2p4ugH959S5Lup/H1gzaBRjWcqiYqGFHy0cRiEKsfdBawvf",
+          "x-amz-request-id": "J8H9BPWGFJEG0X65",
+          "x-amz-server-side-encryption": "AES256",
+          "x-amz-version-id": "ZIXOF4GpZizJdyVbFuMuigJpszt4on2h",
+          "x-request-id": "a56901dd6d0236ed"
+        },
+        "get_passed": true,
+        "get_status": 206,
+        "preflight_headers": {
+          "Access-Control-Allow-Origin": "*",
+          "CF-RAY": "a56901dc6ad836ed-DEN",
+          "Connection": "close",
+          "Date": "Sat, 07 Nov 2026 02:46:23 GMT",
+          "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+          "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=6c3xtYolfr%2FbLhBmXpTz6pJbYnVM%2F4FCJEl6gYEixuFWbIVQu5Ee%2BMSqleNg6ULZd2%2FeC0p0MfIuwhPEYh8JQq9TQl8dG8LIMKJ0r5gDd5JnjMfxE%2BFCCN8IQnFKKCZQiM343r1wFI22KzUvzxYp\"}]}",
+          "Server": "cloudflare",
+          "Server-Timing": "cfEdge;dur=2,cfOrigin;dur=0,cfWorker;dur=0",
+          "access-control-allow-headers": "*",
+          "access-control-allow-methods": "GET, HEAD, PUT, POST, DELETE, OPTIONS",
+          "access-control-expose-headers": "*",
+          "access-control-max-age": "7200",
+          "alt-svc": "h3=\":443\"; ma=86400"
+        },
+        "preflight_note": "credentialless request; Fetch wildcard CORS fields apply",
+        "preflight_passed": true,
+        "preflight_status": 204,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/display/display-v1/assets/ffr-reaches.pmtiles"
+      },
+      {
+        "get_headers": {
+          "Accept-Ranges": "bytes",
+          "Access-Control-Allow-Origin": "*",
+          "CF-Cache-Status": "DYNAMIC",
+          "CF-Ray": "a56901e05b6536ed-DEN",
+          "Cache-Control": "private, no-cache, no-transform",
+          "Connection": "close",
+          "Content-Length": "1",
+          "Content-Range": "bytes 0-0/887132886",
+          "Content-Type": "application/vnd.apache.parquet",
+          "Date": "Sat, 07 Nov 2026 02:46:24 GMT",
+          "ETag": "\"118c18b565c5d9808c3c6104ed133ec4-14\"",
+          "Last-Modified": "Sat, 07 Nov 2026 00:37:52 GMT",
+          "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+          "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=wSnBrxpOtRwtc%2FySlp7yyMFlq57%2BdgHj9ZlfUdkevWt2ZHtPYTMQwUfJa8lzUG%2BMxdsGl%2FGjgKpwWtNLklTKVeD5Kbla3ibXCtmO7KrxdcUN2PEFIJf9sCVKYUPrbOfTd6A%2B0f9%2BtfNH5z2uuDzE\"}]}",
+          "Server": "cloudflare",
+          "Server-Timing": "cfEdge;dur=3,cfOrigin;dur=0,cfWorker;dur=278",
+          "Speculation-Rules": "\"/cdn-cgi/speculation\"",
+          "access-control-allow-headers": "*",
+          "access-control-allow-methods": "GET, HEAD, PUT, POST, DELETE, OPTIONS",
+          "access-control-expose-headers": "*",
+          "access-control-max-age": "7200",
+          "alt-svc": "h3=\":443\"; ma=86400",
+          "server-timing": "total;dur=268, dispatch;dur=268, backend;dur=255",
+          "x-amz-id-2": "6MrOlugCWKdZZQndRbWHSuETVF67kRAf03Drhipq2ko+h5i4DILOLuo4t5iVIobtH9ahwzpzZjU0m+Wpa6EMT/PXa9wW3EYr",
+          "x-amz-request-id": "KBAMY95SV380MA16",
+          "x-amz-server-side-encryption": "AES256",
+          "x-amz-version-id": "sygCO8YtEaeV8cP2JxP8knjjFOAoXP7u",
+          "x-request-id": "a56901e05b6536ed"
+        },
+        "get_passed": true,
+        "get_status": 206,
+        "preflight_headers": {
+          "Access-Control-Allow-Origin": "*",
+          "CF-RAY": "a56901df28b436ed-DEN",
+          "Connection": "close",
+          "Date": "Sat, 07 Nov 2026 02:46:23 GMT",
+          "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+          "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=hmgsLz8PwutVQ6Ex4P4rBAcknJbfXU1dEEGThZBzUSOr%2FfIVN%2FN3PaU%2BIPaEjkXkhap6bjma9HnLUkQfjToGjESc1fF3wH4PS4Gd4vmqIb1i4pxxxGOSDtMV5bzvDuMzpW%2FRO5j076xwZYl%2B5O%2Br\"}]}",
+          "Server": "cloudflare",
+          "Server-Timing": "cfEdge;dur=2,cfOrigin;dur=0,cfWorker;dur=0",
+          "access-control-allow-headers": "*",
+          "access-control-allow-methods": "GET, HEAD, PUT, POST, DELETE, OPTIONS",
+          "access-control-expose-headers": "*",
+          "access-control-max-age": "7200",
+          "alt-svc": "h3=\":443\"; ma=86400"
+        },
+        "preflight_note": "credentialless request; Fetch wildcard CORS fields apply",
+        "preflight_passed": true,
+        "preflight_status": 204,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet"
+      }
+    ],
+    "display_manifest": {
+      "object_key": "free-flowing-rivers/display/display-v1/manifest.json",
+      "sha256": "2f7046f914ff49749dffd20df9c6c5010706710b881af915633766da4d91fb6d",
+      "size_bytes": 3117
+    },
+    "duckdb_bounded_http": {
+      "assets": {
+        "assets/ffr-reach-network-v1.parquet": {
+          "content_type": "application/vnd.apache.parquet",
+          "get_count": 19,
+          "head_count": 3,
+          "reserved_bytes": 12907619,
+          "response_body_bytes": 12907619,
+          "size_bytes": 887132886,
+          "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet"
+        }
+      },
+      "errors": [],
+      "events": [
+        {
+          "asset_path": "assets/ffr-reach-network-v1.parquet",
+          "body_bytes": 0,
+          "content_range": null,
+          "method": "HEAD",
+          "range": null,
+          "status": 200
+        },
+        {
+          "asset_path": "assets/ffr-reach-network-v1.parquet",
+          "body_bytes": 262144,
+          "content_range": "bytes 886870742-887132885/887132886",
+          "method": "GET",
+          "range": "bytes=886870742-887132885",
+          "status": 206
+        },
+        {
+          "asset_path": "assets/ffr-reach-network-v1.parquet",
+          "body_bytes": 11497505,
+          "content_range": "bytes 875373237-886870741/887132886",
+          "method": "GET",
+          "range": "bytes=875373237-886870741",
+          "status": 206
+        },
+        {
+          "asset_path": "assets/ffr-reach-network-v1.parquet",
+          "body_bytes": 0,
+          "content_range": null,
+          "method": "HEAD",
+          "range": null,
+          "status": 200
+        },
+        {
+          "asset_path": "assets/ffr-reach-network-v1.parquet",
+          "body_bytes": 10489,
+          "content_range": "bytes 4-10492/887132886",
+          "method": "GET",
+          "range": "bytes=4-10492",
+          "status": 206
+        },
+        {
+          "asset_path": "assets/ffr-reach-network-v1.parquet",
+          "body_bytes": 8355,
+          "content_range": "bytes 875119208-875127562/887132886",
+          "method": "GET",
+          "range": "bytes=875119208-875127562",
+          "status": 206
+        },
+        {
+          "asset_path": "assets/ffr-reach-network-v1.parquet",
+          "body_bytes": 10454,
+          "content_range": "bytes 455568653-455579106/887132886",
+          "method": "GET",
+          "range": "bytes=455568653-455579106",
+          "status": 206
+        },
+        {
+          "asset_path": "assets/ffr-reach-network-v1.parquet",
+          "body_bytes": 0,
+          "content_range": null,
+          "method": "HEAD",
+          "range": null,
+          "status": 200
+        },
+        {
+          "asset_path": "assets/ffr-reach-network-v1.parquet",
+          "body_bytes": 13223,
+          "content_range": "bytes 434769-447991/887132886",
+          "method": "GET",
+          "range": "bytes=434769-447991",
+          "status": 206
+        },
+        {
+          "asset_path": "assets/ffr-reach-network-v1.parquet",
+          "body_bytes": 7508,
+          "content_range": "bytes 875349237-875356744/887132886",
+          "method": "GET",
+          "range": "bytes=875349237-875356744",
+          "status": 206
+        },
+        {
+          "asset_path": "assets/ffr-reach-network-v1.parquet",
+          "body_bytes": 13895,
+          "content_range": "bytes 455957916-455971810/887132886",
+          "method": "GET",
+          "range": "bytes=455957916-455971810",
+          "status": 206
+        },
+        {
+          "asset_path": "assets/ffr-reach-network-v1.parquet",
+          "body_bytes": 4438,
+          "content_range": "bytes 447992-452429/887132886",
+          "method": "GET",
+          "range": "bytes=447992-452429",
+          "status": 206
+        },
+        {
+          "asset_path": "assets/ffr-reach-network-v1.parquet",
+          "body_bytes": 3375,
+          "content_range": "bytes 875356745-875360119/887132886",
+          "method": "GET",
+          "range": "bytes=875356745-875360119",
+          "status": 206
+        },
+        {
+          "asset_path": "assets/ffr-reach-network-v1.parquet",
+          "body_bytes": 1554,
+          "content_range": "bytes 455971811-455973364/887132886",
+          "method": "GET",
+          "range": "bytes=455971811-455973364",
+          "status": 206
+        },
+        {
+          "asset_path": "assets/ffr-reach-network-v1.parquet",
+          "body_bytes": 13050,
+          "content_range": "bytes 452430-465479/887132886",
+          "method": "GET",
+          "range": "bytes=452430-465479",
+          "status": 206
+        },
+        {
+          "asset_path": "assets/ffr-reach-network-v1.parquet",
+          "body_bytes": 13917,
+          "content_range": "bytes 455973365-455987281/887132886",
+          "method": "GET",
+          "range": "bytes=455973365-455987281",
+          "status": 206
+        },
+        {
+          "asset_path": "assets/ffr-reach-network-v1.parquet",
+          "body_bytes": 13117,
+          "content_range": "bytes 875360120-875373236/887132886",
+          "method": "GET",
+          "range": "bytes=875360120-875373236",
+          "status": 206
+        },
+        {
+          "asset_path": "assets/ffr-reach-network-v1.parquet",
+          "body_bytes": 3990,
+          "content_range": "bytes 455987282-455991271/887132886",
+          "method": "GET",
+          "range": "bytes=455987282-455991271",
+          "status": 206
+        },
+        {
+          "asset_path": "assets/ffr-reach-network-v1.parquet",
+          "body_bytes": 5846,
+          "content_range": "bytes 465480-471325/887132886",
+          "method": "GET",
+          "range": "bytes=465480-471325",
+          "status": 206
+        },
+        {
+          "asset_path": "assets/ffr-reach-network-v1.parquet",
+          "body_bytes": 221674,
+          "content_range": "bytes 875127563-875349236/887132886",
+          "method": "GET",
+          "range": "bytes=875127563-875349236",
+          "status": 206
+        },
+        {
+          "asset_path": "assets/ffr-reach-network-v1.parquet",
+          "body_bytes": 424276,
+          "content_range": "bytes 10493-434768/887132886",
+          "method": "GET",
+          "range": "bytes=10493-434768",
+          "status": 206
+        },
+        {
+          "asset_path": "assets/ffr-reach-network-v1.parquet",
+          "body_bytes": 378809,
+          "content_range": "bytes 455579107-455957915/887132886",
+          "method": "GET",
+          "range": "bytes=455579107-455957915",
+          "status": 206
+        }
+      ],
+      "per_asset_total_ceiling_bytes": 134217728,
+      "per_request_ceiling_bytes": 67108864
+    },
+    "duckdb_remote_transfer_bytes_instrumented": true,
+    "json_asset_links": [
+      {
+        "link": "style-source:data",
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/display/display-v1/assets/ffr-reaches.pmtiles"
+      },
+      {
+        "link": "link:root",
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/catalog.json"
+      },
+      {
+        "link": "link:child",
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/collection.json"
+      },
+      {
+        "link": "link:describedby",
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/README.md"
+      },
+      {
+        "link": "link:agents",
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/AGENTS.md"
+      },
+      {
+        "link": "link:thumbnail",
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/display/thumbnail.png"
+      },
+      {
+        "link": "link:root",
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/catalog.json"
+      },
+      {
+        "link": "link:parent",
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/catalog.json"
+      },
+      {
+        "link": "link:describedby",
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/README.md"
+      },
+      {
+        "link": "link:agents",
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/AGENTS.md"
+      },
+      {
+        "link": "link:thumbnail",
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/display/thumbnail.png"
+      },
+      {
+        "link": "asset:ffr-reach-network-v1",
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet"
+      },
+      {
+        "link": "asset:ffr-reach-network-v1_fields",
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/metadata/ffr-reach-network-v1-field-dictionary.json"
+      },
+      {
+        "link": "asset:support-1",
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/source/source-metadata.json"
+      },
+      {
+        "link": "asset:support-2",
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/source/source-inspection.json"
+      },
+      {
+        "link": "asset:support-3",
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/source/source-field-dictionary.json"
+      },
+      {
+        "link": "asset:thumbnail",
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/display/thumbnail.png"
+      }
+    ],
+    "metadata_gets": [
+      {
+        "content_type": "text/markdown",
+        "sha256": "52906787444dbdc5c67b60a2f7a0c5116bbdda2514d6848c90fcd14e18324e4d",
+        "size_bytes": 2310,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/display/display-v1/README.md"
+      },
+      {
+        "content_type": "text/plain",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_bytes": 0,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/display/display-v1/ffr-reaches.maxzoom-missing-ids.txt"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "2f7046f914ff49749dffd20df9c6c5010706710b881af915633766da4d91fb6d",
+        "size_bytes": 3117,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/display/display-v1/manifest.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "e1df34e7fb5ab27125d6dc026ed7b720c570337014c12f925f9f39a36340947a",
+        "size_bytes": 1273,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/display/display-v1/reports/build-provenance.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "a4fe0e815f2f4cbd985418bdbd291ef8706ccf9450ae5a713a662f39eddb2498",
+        "size_bytes": 3653,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/display/display-v1/reports/ffr-reaches.build-report.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "1ab8b20ed219e2b48c3845f43c4f36953884aeecd013fb79c9e33e2e4df19396",
+        "size_bytes": 22242,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/display/display-v1/reports/finalization/browser-validation.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "754a164186219b1fab5416e4780ca510aa99790ae3f5f006209dccc9d6abc49a",
+        "size_bytes": 22273,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/display/display-v1/reports/finalization/geometry/free-flowing-rivers-1.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "e2c4e8473652c4788f999f69774c017134634c8546c0fb59cb027c5cd1d7b2a5",
+        "size_bytes": 564,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/display/display-v1/reports/finalization/pmtiles-verify/free-flowing-rivers-1.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "fc322a6d4f49b65e74e89da0cb9fd6f3f4ece20d051884cd98a55eab17d51ef0",
+        "size_bytes": 1441,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/display/display-v1/reports/post-launch-validation-changes.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "7dd8ffd7dcce6b78adc9dea8dc2b238e6fd8978cd48d1efd76e05aeceb3bc1bd",
+        "size_bytes": 408,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/display/display-v1/styles/ffr-reaches.json"
+      },
+      {
+        "content_type": "text/markdown",
+        "sha256": "8e701cb07ed0bfef7e61155dfb2b166554ceacb1a09a1337546ea4436593fb70",
+        "size_bytes": 501,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/AGENTS.md"
+      },
+      {
+        "content_type": "text/markdown",
+        "sha256": "771b4326ef229282245f1dc8276e185b7c4f5a633bcab0158ef2d49edba966eb",
+        "size_bytes": 2172,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/README.md"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "9a17c0d879f21b52e301d1a4e9bfb342103019bc228121defc1bc3e8f86d1ad6",
+        "size_bytes": 1851,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/catalog.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "280265311514e74df26f5e331783f70a2b34dc8e5019d016c517e01f1687f282",
+        "size_bytes": 13861,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/collection.json"
+      },
+      {
+        "content_type": "application/yaml",
+        "sha256": "5724f9cec12738bb6d8d050aff023bb51f57b6a92f00372fbdf321aa348fb965",
+        "size_bytes": 2351,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/dataset.yaml"
+      },
+      {
+        "content_type": "image/png",
+        "sha256": "c2d265154f06ccb02dced33bfa1c2f9a1ed708dc39e0caef315a96472f23532f",
+        "size_bytes": 2842,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/display/thumbnail.png"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "82d447b125734a97255b1700b53f0edfa2047b7cb1077db3ea4ff6ab268bb703",
+        "size_bytes": 3974,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/clean-rebuild.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "62ed1b0bbf6ace6f5434aa7de84d9cc9fcb97318383220da89a25e00ffffeafd",
+        "size_bytes": 132,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/final-package-verification.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "7083a9cc0aeff60afd6d6ff453b6090075c523ba35d654811d87ec55428ba0ae",
+        "size_bytes": 1989,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/local-http-duckdb-validation.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "f825c268c80ebafaafc37cda26557c4ad0513211d1e231f2e73c5dc282be23ad",
+        "size_bytes": 7397,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/package-binding.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "9fea62d5e4619824b1e7c1338ec5998426b3c59d773069d0c93939029f3fa85c",
+        "size_bytes": 438,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/package-integrity-validation.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "f2a6605995d320b95465ff569d5a3a241c5142c1b9152c2131bacb78b2ecad94",
+        "size_bytes": 1321,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/portolan-validation.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "c45a5252cf3ca1022e7cecf58f18ae8931aa3c7f10a41853384c6630c4b5278d",
+        "size_bytes": 1286,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/source-fidelity.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "5ae569ed8dd8dc1de72e806f56259318551390d3a68fc3109bc720c4c72adb6f",
+        "size_bytes": 555,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/stac-node-validation.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "12bfb407ad24c68abcfb788c9816bc91e9a294a4b099bbb69247131c68adbbfb",
+        "size_bytes": 299,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/licenses/data-license.json"
+      },
+      {
+        "content_type": "text/plain",
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "size_bytes": 11358,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/licenses/software/LICENSE"
+      },
+      {
+        "content_type": "text/plain",
+        "sha256": "848d1f5c49036457c3f453dea3ace5849b94bc1fe896abeaad21d45d771636dd",
+        "size_bytes": 794,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/licenses/software/NOTICE"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "ff9c4da03ceafae294b7279e28626498dbd9bffa1526765207443e0b82a27cd2",
+        "size_bytes": 155,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/licenses/source-license.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "756286b624de53823a2af2c26344a15dcf02070c048f5d1d02ec3f65a97d5120",
+        "size_bytes": 14853,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/manifest.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "fba7dd8d801f22b659b384f11b630ef703365f0a15e54830552d608cf64580ff",
+        "size_bytes": 12273,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/metadata/ffr-reach-network-v1-field-dictionary.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "f01514b5bfb1146f53c363f96f613b0964458e123cd27ee78ef76ff968a67b5d",
+        "size_bytes": 752,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/package-receipt.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "b18b7d7fd5cf6d312ea0b62be6a8b2fd76c8251ffe6b19478aef7de6976f71ee",
+        "size_bytes": 778,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/source/attribution.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "399562161c85a577bdf495e2343dabbae3e6540adad1815b952d463808bd7133",
+        "size_bytes": 11616,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/source/source-field-dictionary.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "cbe200b7ced3d627e2adc5b2ff043ebb97b68a75dd54ba3b33516127bd4635bb",
+        "size_bytes": 16323,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/source/source-inspection.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "125a2fc527145cb90cd1ae1d946df9c3a85a60dbfe5da041ececec3a1d0cc146",
+        "size_bytes": 5162,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/source/source-metadata.json"
+      },
+      {
+        "content_type": "text/markdown",
+        "sha256": "18e9169bfe9eb4c149493c0eb9a59f3a88e9e36c372322b46f7765a2af63f083",
+        "size_bytes": 3290,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/datasets/free-flowing-rivers/README.md"
+      },
+      {
+        "content_type": "text/markdown",
+        "sha256": "3a25e763b97a0599d70d5ca32a0a4c54b7fffae0e3ad1cd52fb572765e8fe882",
+        "size_bytes": 2325,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/datasets/free-flowing-rivers/VALIDATION.md"
+      },
+      {
+        "content_type": "text/x-python",
+        "sha256": "c931823e569355f29cab4dff482ec8bafe749aaa29ca84858660de4819f07b2e",
+        "size_bytes": 4199,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/datasets/free-flowing-rivers/acquire.py"
+      },
+      {
+        "content_type": "text/x-python",
+        "sha256": "13319840be97220e553d5bc046b5cb175e5def1b18cf4e196dcb8b5a4448db89",
+        "size_bytes": 11070,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/datasets/free-flowing-rivers/build.py"
+      },
+      {
+        "content_type": "application/yaml",
+        "sha256": "5724f9cec12738bb6d8d050aff023bb51f57b6a92f00372fbdf321aa348fb965",
+        "size_bytes": 2351,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/datasets/free-flowing-rivers/dataset.yaml"
+      },
+      {
+        "content_type": "text/x-python",
+        "sha256": "0042029c0d52e0fa03e1f4bf474fac0198cbb058d93960e3c11bf8f60a38bd01",
+        "size_bytes": 2684,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/datasets/free-flowing-rivers/fault_tests.py"
+      },
+      {
+        "content_type": "text/x-python",
+        "sha256": "2fc534551b9089638a9bcf9fc64cc8a31afb3df26cbc612e2b10a0f0074ae842",
+        "size_bytes": 7479,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/datasets/free-flowing-rivers/inspect_source.py"
+      },
+      {
+        "content_type": "application/toml",
+        "sha256": "aaa6e3d5582b3a001773d4ccf9998c74a399ad00d3e1db85c7760c4dcee89a96",
+        "size_bytes": 250,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/datasets/free-flowing-rivers/pyproject.toml"
+      },
+      {
+        "content_type": "text/markdown",
+        "sha256": "c8b985b746aefe9f1621cdc0674132c958705df02c5e44157e1bc70586aa1286",
+        "size_bytes": 7578,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/datasets/free-flowing-rivers/releases/figshare-v1-local-r2/README.md"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "0d883c2dda8221a215e4ef5b08918dd1e1f400de54ce3feac1cb76a317a16fdd",
+        "size_bytes": 1950,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/datasets/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/fidelity-normalizer-template.json"
+      },
+      {
+        "content_type": "text/x-python",
+        "sha256": "88ab721ddf3a64a6ff8b04bb34fba62d7903afb0214b903b0d5673389544831c",
+        "size_bytes": 3819,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/datasets/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/materialize_release_inputs.py"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "2d72004a3481f3aacb5235eb126a74739f2bc8961dfb37db48a0db673143c002",
+        "size_bytes": 6877,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/datasets/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/package-spec-template.json"
+      },
+      {
+        "content_type": "text/x-python",
+        "sha256": "b305e14a177bcd3438739f659699bbe5f62af3fade6431eaf7a41450950b2bca",
+        "size_bytes": 20723,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/datasets/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/spatial-helper-c18/add_spatial_bounds.py"
+      },
+      {
+        "content_type": "application/toml",
+        "sha256": "a6d5a4c17612a98645ce60b3b581caf316707f2b92265e5a3c1ca9a319f6da3c",
+        "size_bytes": 259,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/datasets/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/spatial-helper-c18/pyproject.toml"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "e6175698465ea193cec6a0383cade171845b8c9470cce1a6618565b2b5e00fa0",
+        "size_bytes": 635,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/datasets/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/spatial-helper-c18/sidecar-manifest.json"
+      },
+      {
+        "content_type": "text/plain",
+        "sha256": "d067016a4bd1682e611e3ab04d0f222c925f2610f79327e8b4ec85410f8eed86",
+        "size_bytes": 332,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/datasets/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/spatial-helper-c18/sidecar-sha256.txt"
+      },
+      {
+        "content_type": "text/x-python",
+        "sha256": "006a5c84a8b46e78a4f4aecc2a303672e07e43971116994633f032771df446c7",
+        "size_bytes": 7028,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/datasets/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/spatial-helper-c18/test_spatial_bounds.py"
+      },
+      {
+        "content_type": "text/plain",
+        "sha256": "fe1b9d58a17429f2649a24fbd8299b5d616ca4ab68806e768cd2caac31b8ec1b",
+        "size_bytes": 134378,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/datasets/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/spatial-helper-c18/uv.lock"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "cbe200b7ced3d627e2adc5b2ff043ebb97b68a75dd54ba3b33516127bd4635bb",
+        "size_bytes": 16323,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/datasets/free-flowing-rivers/source-inspection.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "125a2fc527145cb90cd1ae1d946df9c3a85a60dbfe5da041ececec3a1d0cc146",
+        "size_bytes": 5162,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/datasets/free-flowing-rivers/source-metadata.json"
+      },
+      {
+        "content_type": "text/x-python",
+        "sha256": "787f7fea4585173226ed21df3f4b82c0c0b71fe2217227a15ce6b97b1b260e2a",
+        "size_bytes": 1193,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/datasets/free-flowing-rivers/source_schema.py"
+      },
+      {
+        "content_type": "text/plain",
+        "sha256": "a162622f953a6ebcfa630d114122b556024c51cd9674426d7b356ee996bbe78f",
+        "size_bytes": 69097,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/datasets/free-flowing-rivers/uv.lock"
+      },
+      {
+        "content_type": "text/x-python",
+        "sha256": "103285aa5610af8d71ac0dbd19a99beec7dfa2cb4068962f605a295c2de27054",
+        "size_bytes": 9037,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/datasets/free-flowing-rivers/validate.py"
+      },
+      {
+        "content_type": "text/x-python",
+        "sha256": "e0fad0ff331e726abffe724a47ac9c611a2e7b9dec768b5ed6bffa8121da1fc2",
+        "size_bytes": 21835,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/research/hydro-releases-20261031/bind_fidelity.py"
+      },
+      {
+        "content_type": "text/x-python",
+        "sha256": "a3349b9e827813044afd2aab6aecc8da3a56efa7c155a160df45baadcd673d98",
+        "size_bytes": 9312,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/research/hydro-releases-20261031/test_bind_fidelity.py"
+      },
+      {
+        "content_type": "text/markdown",
+        "sha256": "4aa3ee027c7ad8f56209e5c948ab30ad126cd0dfd8e80408590df060db03dc3b",
+        "size_bytes": 857,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/scripts/release_tools/AGENTS.md"
+      },
+      {
+        "content_type": "text/markdown",
+        "sha256": "e011e2353dd27d78159321fd63ab4d032fc84c2101f5f8882ef83416d4e4f3c3",
+        "size_bytes": 10462,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/scripts/release_tools/README.md"
+      },
+      {
+        "content_type": "text/x-python",
+        "sha256": "b305e14a177bcd3438739f659699bbe5f62af3fade6431eaf7a41450950b2bca",
+        "size_bytes": 20723,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/scripts/release_tools/add_spatial_bounds.py"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "8f19898156a139859a49d15238a92a5204a7d61b909ee5ac54080e8110a2cc3c",
+        "size_bytes": 54306,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/scripts/release_tools/package-lock.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "8eebc2fd826cf22f6008ee889293d7880952ea19ddac557ae905821489108470",
+        "size_bytes": 142,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/scripts/release_tools/package.json"
+      },
+      {
+        "content_type": "text/x-python",
+        "sha256": "7985c0ae0b06e028f2f9466a88dde592bfbb6095cb2ab1a4e2892269629c676b",
+        "size_bytes": 62862,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/scripts/release_tools/package_release.py"
+      },
+      {
+        "content_type": "application/toml",
+        "sha256": "a6d5a4c17612a98645ce60b3b581caf316707f2b92265e5a3c1ca9a319f6da3c",
+        "size_bytes": 259,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/scripts/release_tools/pyproject.toml"
+      },
+      {
+        "content_type": "text/x-python",
+        "sha256": "dab2eef0199f839aac9a14d9802cb7b339e9732573bd659d5837867f1f5da175",
+        "size_bytes": 2789,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/scripts/release_tools/serve.py"
+      },
+      {
+        "content_type": "text/x-python",
+        "sha256": "f1245988e4c45e26bce2b3e07766949d9054c9ba1774a0e84e457062571c89cb",
+        "size_bytes": 9275,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/scripts/release_tools/test_package_release.py"
+      },
+      {
+        "content_type": "text/x-python",
+        "sha256": "006a5c84a8b46e78a4f4aecc2a303672e07e43971116994633f032771df446c7",
+        "size_bytes": 7028,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/scripts/release_tools/test_spatial_bounds.py"
+      },
+      {
+        "content_type": "text/plain",
+        "sha256": "fe1b9d58a17429f2649a24fbd8299b5d616ca4ab68806e768cd2caac31b8ec1b",
+        "size_bytes": 134378,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/scripts/release_tools/uv.lock"
+      },
+      {
+        "content_type": "text/markdown",
+        "sha256": "44b03abe681c52beb8e5edea47c38f1ae902d4972afede04d742e8c20527fc4b",
+        "size_bytes": 4272,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/README.md"
+      }
+    ],
+    "package_manifest": {
+      "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/manifest.json",
+      "sha256": "756286b624de53823a2af2c26344a15dcf02070c048f5d1d02ec3f65a97d5120",
+      "size_bytes": 14853
+    },
+    "plan_sha256": "754c02dde3cf258263619599f893558d3348c7fb51c07f8fa700efa1900ac610",
+    "prior_full_byte_proofs": [
+      {
+        "current_head": {
+          "checked_at": "2026-11-07T02:39:58.642062+00:00",
+          "content_type": "text/markdown",
+          "http_status": 200,
+          "size_bytes": 2310
+        },
+        "object_key": "free-flowing-rivers/display/display-v1/README.md",
+        "prior_record_sha256": "ff156e74df4d1f37d8f4da2d9667df239484e070470ba235ff772e8f460fe108",
+        "prior_status": "uploaded_verified",
+        "prior_summary_sha256": "af8844d78edbdcb2c9f402e8127a8c5b5e5873a714c0587b6fb6cb1c86be6f7c"
+      },
+      {
+        "current_head": {
+          "checked_at": "2026-11-07T02:39:59.061726+00:00",
+          "content_type": "application/vnd.pmtiles",
+          "http_status": 200,
+          "size_bytes": 3570445458
+        },
+        "object_key": "free-flowing-rivers/display/display-v1/assets/ffr-reaches.pmtiles",
+        "prior_record_sha256": "7e53bde46fccb1c2fe28b88b810e81cb0fcc4c411fd99910baf937701a9bba33",
+        "prior_status": "uploaded_verified",
+        "prior_summary_sha256": "af8844d78edbdcb2c9f402e8127a8c5b5e5873a714c0587b6fb6cb1c86be6f7c"
+      },
+      {
+        "current_head": {
+          "checked_at": "2026-11-07T02:39:59.306706+00:00",
+          "content_type": "text/plain",
+          "http_status": 200,
+          "size_bytes": 0
+        },
+        "object_key": "free-flowing-rivers/display/display-v1/ffr-reaches.maxzoom-missing-ids.txt",
+        "prior_record_sha256": "04fcc7b7b140d5442a0a4030c769277d0251f866bf8abc2c076cbe156f29fcf5",
+        "prior_status": "uploaded_verified",
+        "prior_summary_sha256": "af8844d78edbdcb2c9f402e8127a8c5b5e5873a714c0587b6fb6cb1c86be6f7c"
+      },
+      {
+        "current_head": {
+          "checked_at": "2026-11-07T02:39:59.527121+00:00",
+          "content_type": "application/json",
+          "http_status": 200,
+          "size_bytes": 3117
+        },
+        "object_key": "free-flowing-rivers/display/display-v1/manifest.json",
+        "prior_record_sha256": "56b0c3246834a2cd8ed1a25dace6436f13f2ca3bf0d811b0edf6052764386cb4",
+        "prior_status": "uploaded_verified",
+        "prior_summary_sha256": "af8844d78edbdcb2c9f402e8127a8c5b5e5873a714c0587b6fb6cb1c86be6f7c"
+      },
+      {
+        "current_head": {
+          "checked_at": "2026-11-07T02:39:59.950288+00:00",
+          "content_type": "application/json",
+          "http_status": 200,
+          "size_bytes": 1273
+        },
+        "object_key": "free-flowing-rivers/display/display-v1/reports/build-provenance.json",
+        "prior_record_sha256": "7547c7f910fc3ca738fc4c73830f2188201aed3d25754c79cd53b484ff5bfeee",
+        "prior_status": "uploaded_verified",
+        "prior_summary_sha256": "af8844d78edbdcb2c9f402e8127a8c5b5e5873a714c0587b6fb6cb1c86be6f7c"
+      },
+      {
+        "current_head": {
+          "checked_at": "2026-11-07T02:40:00.167881+00:00",
+          "content_type": "application/json",
+          "http_status": 200,
+          "size_bytes": 3653
+        },
+        "object_key": "free-flowing-rivers/display/display-v1/reports/ffr-reaches.build-report.json",
+        "prior_record_sha256": "a1be28772cb8d7c6a4853237863dce083494b81b96e87de7a3fdf4d49ea9c8af",
+        "prior_status": "uploaded_verified",
+        "prior_summary_sha256": "af8844d78edbdcb2c9f402e8127a8c5b5e5873a714c0587b6fb6cb1c86be6f7c"
+      },
+      {
+        "current_head": {
+          "checked_at": "2026-11-07T02:40:00.401710+00:00",
+          "content_type": "application/json",
+          "http_status": 200,
+          "size_bytes": 22242
+        },
+        "object_key": "free-flowing-rivers/display/display-v1/reports/finalization/browser-validation.json",
+        "prior_record_sha256": "b0cdf09d7cd52c3d2162ca29a2d123aaeada22f9619c74c3054936c47991cf24",
+        "prior_status": "uploaded_verified",
+        "prior_summary_sha256": "af8844d78edbdcb2c9f402e8127a8c5b5e5873a714c0587b6fb6cb1c86be6f7c"
+      },
+      {
+        "current_head": {
+          "checked_at": "2026-11-07T02:40:00.759713+00:00",
+          "content_type": "application/json",
+          "http_status": 200,
+          "size_bytes": 22273
+        },
+        "object_key": "free-flowing-rivers/display/display-v1/reports/finalization/geometry/free-flowing-rivers-1.json",
+        "prior_record_sha256": "1ab880d6edb6d8187e235abfbe792795c0b58fda730b75418395ab00b2fb6a0c",
+        "prior_status": "uploaded_verified",
+        "prior_summary_sha256": "af8844d78edbdcb2c9f402e8127a8c5b5e5873a714c0587b6fb6cb1c86be6f7c"
+      },
+      {
+        "current_head": {
+          "checked_at": "2026-11-07T02:40:01.031837+00:00",
+          "content_type": "application/json",
+          "http_status": 200,
+          "size_bytes": 564
+        },
+        "object_key": "free-flowing-rivers/display/display-v1/reports/finalization/pmtiles-verify/free-flowing-rivers-1.json",
+        "prior_record_sha256": "84f3fa43903dc0c887c56fc8eb979d8cd38af91560f0e1625f92db3db679554e",
+        "prior_status": "uploaded_verified",
+        "prior_summary_sha256": "af8844d78edbdcb2c9f402e8127a8c5b5e5873a714c0587b6fb6cb1c86be6f7c"
+      },
+      {
+        "current_head": {
+          "checked_at": "2026-11-07T02:40:01.307676+00:00",
+          "content_type": "application/json",
+          "http_status": 200,
+          "size_bytes": 1441
+        },
+        "object_key": "free-flowing-rivers/display/display-v1/reports/post-launch-validation-changes.json",
+        "prior_record_sha256": "6e4fb85eeca708a2ddbf87f15c972e311fa018dad11efa8c0a2de523dc133d23",
+        "prior_status": "uploaded_verified",
+        "prior_summary_sha256": "af8844d78edbdcb2c9f402e8127a8c5b5e5873a714c0587b6fb6cb1c86be6f7c"
+      },
+      {
+        "current_head": {
+          "checked_at": "2026-11-07T02:40:01.752959+00:00",
+          "content_type": "application/json",
+          "http_status": 200,
+          "size_bytes": 408
+        },
+        "object_key": "free-flowing-rivers/display/display-v1/styles/ffr-reaches.json",
+        "prior_record_sha256": "5a21fb0d1430392bc83940398037db79f1e41852eade70bbb5e5f2d53025537e",
+        "prior_status": "uploaded_verified",
+        "prior_summary_sha256": "af8844d78edbdcb2c9f402e8127a8c5b5e5873a714c0587b6fb6cb1c86be6f7c"
+      },
+      {
+        "current_head": {
+          "checked_at": "2026-11-07T02:40:02.068167+00:00",
+          "content_type": "text/markdown",
+          "http_status": 200,
+          "size_bytes": 501
+        },
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/AGENTS.md",
+        "prior_record_sha256": "276d8ad547793781979130b9b02a85e09d54a342aaa956060884e05c16d575ee",
+        "prior_status": "uploaded_verified",
+        "prior_summary_sha256": "af8844d78edbdcb2c9f402e8127a8c5b5e5873a714c0587b6fb6cb1c86be6f7c"
+      },
+      {
+        "current_head": {
+          "checked_at": "2026-11-07T02:40:02.467864+00:00",
+          "content_type": "text/markdown",
+          "http_status": 200,
+          "size_bytes": 2172
+        },
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/README.md",
+        "prior_record_sha256": "815ecaf04738bd9a50aa821d29faec82df93fe93d17c05e39ec7084c73974366",
+        "prior_status": "uploaded_verified",
+        "prior_summary_sha256": "af8844d78edbdcb2c9f402e8127a8c5b5e5873a714c0587b6fb6cb1c86be6f7c"
+      },
+      {
+        "current_head": {
+          "checked_at": "2026-11-07T02:40:02.697569+00:00",
+          "content_type": "application/vnd.apache.parquet",
+          "http_status": 200,
+          "size_bytes": 887132886
+        },
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+        "prior_record_sha256": "7c7688f577e003153dae17a4aaa999ed40b2471c3a40f66cf1933921c28dbb7d",
+        "prior_status": "uploaded_verified",
+        "prior_summary_sha256": "af8844d78edbdcb2c9f402e8127a8c5b5e5873a714c0587b6fb6cb1c86be6f7c"
+      },
+      {
+        "current_head": {
+          "checked_at": "2026-11-07T02:40:02.942229+00:00",
+          "content_type": "application/json",
+          "http_status": 200,
+          "size_bytes": 1851
+        },
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/catalog.json",
+        "prior_record_sha256": "20f47f027f1d22ecfc3fcf656dca3c1f421979e6f31b19bdb7870448d0908dc8",
+        "prior_status": "uploaded_verified",
+        "prior_summary_sha256": "af8844d78edbdcb2c9f402e8127a8c5b5e5873a714c0587b6fb6cb1c86be6f7c"
+      },
+      {
+        "current_head": {
+          "checked_at": "2026-11-07T02:40:03.156030+00:00",
+          "content_type": "application/json",
+          "http_status": 200,
+          "size_bytes": 13861
+        },
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/collection.json",
+        "prior_record_sha256": "e6823ba092b5b3e9c225ca86de88a6f7d6657bbe70de93b55ebd93c736b452e8",
+        "prior_status": "uploaded_verified",
+        "prior_summary_sha256": "af8844d78edbdcb2c9f402e8127a8c5b5e5873a714c0587b6fb6cb1c86be6f7c"
+      },
+      {
+        "current_head": {
+          "checked_at": "2026-11-07T02:40:03.400950+00:00",
+          "content_type": "application/yaml",
+          "http_status": 200,
+          "size_bytes": 2351
+        },
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/dataset.yaml",
+        "prior_record_sha256": "875499a738d6725b2bd90c82c64c50b8b0c368fec1db2ca2730f22b8a19211e0",
+        "prior_status": "uploaded_verified",
+        "prior_summary_sha256": "af8844d78edbdcb2c9f402e8127a8c5b5e5873a714c0587b6fb6cb1c86be6f7c"
+      },
+      {
+        "current_head": {
+          "checked_at": "2026-11-07T02:40:03.823081+00:00",
+          "content_type": "image/png",
+          "http_status": 200,
+          "size_bytes": 2842
+        },
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/display/thumbnail.png",
+        "prior_record_sha256": "2b0d8efcf21c0107c279c5287542f89ae145d779f203d23e31e0d2e45ad74fb9",
+        "prior_status": "uploaded_verified",
+        "prior_summary_sha256": "af8844d78edbdcb2c9f402e8127a8c5b5e5873a714c0587b6fb6cb1c86be6f7c"
+      },
+      {
+        "current_head": {
+          "checked_at": "2026-11-07T02:40:04.119757+00:00",
+          "content_type": "application/json",
+          "http_status": 200,
+          "size_bytes": 3974
+        },
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/evidence/clean-rebuild.json",
+        "prior_record_sha256": "07e9bb90223e53a809151f86829c3dc5e551e89214ad7a6c2251025e2683d9aa",
+        "prior_status": "uploaded_verified",
+        "prior_summary_sha256": "af8844d78edbdcb2c9f402e8127a8c5b5e5873a714c0587b6fb6cb1c86be6f7c"
+      },
+      {
+        "current_head": {
+          "checked_at": "2026-11-07T02:40:04.377151+00:00",
+          "content_type": "application/json",
+          "http_status": 200,
+          "size_bytes": 132
+        },
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/evidence/final-package-verification.json",
+        "prior_record_sha256": "d0e7383066762980f10149ac0ca76599b514fa66236a0a187717aa0a0f3c5993",
+        "prior_status": "uploaded_verified",
+        "prior_summary_sha256": "af8844d78edbdcb2c9f402e8127a8c5b5e5873a714c0587b6fb6cb1c86be6f7c"
+      },
+      {
+        "current_head": {
+          "checked_at": "2026-11-07T02:40:04.620031+00:00",
+          "content_type": "application/json",
+          "http_status": 200,
+          "size_bytes": 1989
+        },
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/evidence/local-http-duckdb-validation.json",
+        "prior_record_sha256": "59e950be3e3830591f7a3fcf666958a226bb2b09aa8f525b823df077dc13f973",
+        "prior_status": "uploaded_verified",
+        "prior_summary_sha256": "af8844d78edbdcb2c9f402e8127a8c5b5e5873a714c0587b6fb6cb1c86be6f7c"
+      },
+      {
+        "current_head": {
+          "checked_at": "2026-11-07T02:40:04.880685+00:00",
+          "content_type": "application/json",
+          "http_status": 200,
+          "size_bytes": 7397
+        },
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/evidence/package-binding.json",
+        "prior_record_sha256": "4649ffd084caba8aee1d8083bece1f485c68b955c0fad65c6398bd3d3b377d60",
+        "prior_status": "uploaded_verified",
+        "prior_summary_sha256": "af8844d78edbdcb2c9f402e8127a8c5b5e5873a714c0587b6fb6cb1c86be6f7c"
+      },
+      {
+        "current_head": {
+          "checked_at": "2026-11-07T02:40:05.194570+00:00",
+          "content_type": "application/json",
+          "http_status": 200,
+          "size_bytes": 438
+        },
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/evidence/package-integrity-validation.json",
+        "prior_record_sha256": "f7617aa59fddc9f0c5e04a44d16618d3feecdc422d09546cd8d0eb625038b402",
+        "prior_status": "uploaded_verified",
+        "prior_summary_sha256": "af8844d78edbdcb2c9f402e8127a8c5b5e5873a714c0587b6fb6cb1c86be6f7c"
+      },
+      {
+        "current_head": {
+          "checked_at": "2026-11-07T02:40:05.440023+00:00",
+          "content_type": "application/json",
+          "http_status": 200,
+          "size_bytes": 1321
+        },
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/evidence/portolan-validation.json",
+        "prior_record_sha256": "941cf02259aea87ef368b442c5df447e4f6432c6824dab859d08ca8c1ed1ec1e",
+        "prior_status": "uploaded_verified",
+        "prior_summary_sha256": "af8844d78edbdcb2c9f402e8127a8c5b5e5873a714c0587b6fb6cb1c86be6f7c"
+      },
+      {
+        "current_head": {
+          "checked_at": "2026-11-07T02:40:05.668915+00:00",
+          "content_type": "application/json",
+          "http_status": 200,
+          "size_bytes": 1286
+        },
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/evidence/source-fidelity.json",
+        "prior_record_sha256": "1efb6a79692dc9a5e44db60674e182cff48ca2320cd88df1b6bf3f076d7926d0",
+        "prior_status": "uploaded_verified",
+        "prior_summary_sha256": "af8844d78edbdcb2c9f402e8127a8c5b5e5873a714c0587b6fb6cb1c86be6f7c"
+      },
+      {
+        "current_head": {
+          "checked_at": "2026-11-07T02:40:05.908240+00:00",
+          "content_type": "application/json",
+          "http_status": 200,
+          "size_bytes": 555
+        },
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/evidence/stac-node-validation.json",
+        "prior_record_sha256": "aa617b6c7414cd955c856e372b81d9c981d9c6fbcedaa28d2e3afcbf3fa6617e",
+        "prior_status": "uploaded_verified",
+        "prior_summary_sha256": "af8844d78edbdcb2c9f402e8127a8c5b5e5873a714c0587b6fb6cb1c86be6f7c"
+      },
+      {
+        "current_head": {
+          "checked_at": "2026-11-07T02:40:06.209119+00:00",
+          "content_type": "application/json",
+          "http_status": 200,
+          "size_bytes": 299
+        },
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/licenses/data-license.json",
+        "prior_record_sha256": "095fa93f256f433837cc673e68d7b89201efaa691c401b3497cb13912d437a95",
+        "prior_status": "uploaded_verified",
+        "prior_summary_sha256": "af8844d78edbdcb2c9f402e8127a8c5b5e5873a714c0587b6fb6cb1c86be6f7c"
+      },
+      {
+        "current_head": {
+          "checked_at": "2026-11-07T02:40:06.444613+00:00",
+          "content_type": "text/plain",
+          "http_status": 200,
+          "size_bytes": 11358
+        },
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/licenses/software/LICENSE",
+        "prior_record_sha256": "1d62b13e69435f598e6cca5f27501fb8f2fc133d0698bb185bb99048762791b3",
+        "prior_status": "uploaded_verified",
+        "prior_summary_sha256": "af8844d78edbdcb2c9f402e8127a8c5b5e5873a714c0587b6fb6cb1c86be6f7c"
+      },
+      {
+        "current_head": {
+          "checked_at": "2026-11-07T02:40:06.711043+00:00",
+          "content_type": "text/plain",
+          "http_status": 200,
+          "size_bytes": 794
+        },
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/licenses/software/NOTICE",
+        "prior_record_sha256": "687029d831f222fbfdf321f7d699644bb2698fba755fcfe45a7fc0c1d2b39f3a",
+        "prior_status": "uploaded_verified",
+        "prior_summary_sha256": "af8844d78edbdcb2c9f402e8127a8c5b5e5873a714c0587b6fb6cb1c86be6f7c"
+      },
+      {
+        "current_head": {
+          "checked_at": "2026-11-07T02:40:06.959206+00:00",
+          "content_type": "application/json",
+          "http_status": 200,
+          "size_bytes": 155
+        },
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/licenses/source-license.json",
+        "prior_record_sha256": "c30661bf1f8b4af21acadbdaa8e6dfc9fd058d4f0be9e5bd06673f5cda68450a",
+        "prior_status": "uploaded_verified",
+        "prior_summary_sha256": "af8844d78edbdcb2c9f402e8127a8c5b5e5873a714c0587b6fb6cb1c86be6f7c"
+      },
+      {
+        "current_head": {
+          "checked_at": "2026-11-07T02:40:07.181385+00:00",
+          "content_type": "application/json",
+          "http_status": 200,
+          "size_bytes": 14853
+        },
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/manifest.json",
+        "prior_record_sha256": "3602e17eb4a4dd9e335695ce1954d3ce31cdca4c918b05c9acb811173a3ba3fe",
+        "prior_status": "uploaded_verified",
+        "prior_summary_sha256": "af8844d78edbdcb2c9f402e8127a8c5b5e5873a714c0587b6fb6cb1c86be6f7c"
+      },
+      {
+        "current_head": {
+          "checked_at": "2026-11-07T02:40:07.486337+00:00",
+          "content_type": "application/json",
+          "http_status": 200,
+          "size_bytes": 12273
+        },
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/metadata/ffr-reach-network-v1-field-dictionary.json",
+        "prior_record_sha256": "56639eb42ce200208eb6ab0d0316b567b6c8b3886a6fb63acf95bc4ef7eb538d",
+        "prior_status": "uploaded_verified",
+        "prior_summary_sha256": "af8844d78edbdcb2c9f402e8127a8c5b5e5873a714c0587b6fb6cb1c86be6f7c"
+      },
+      {
+        "current_head": {
+          "checked_at": "2026-11-07T02:40:07.766211+00:00",
+          "content_type": "application/json",
+          "http_status": 200,
+          "size_bytes": 752
+        },
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/package-receipt.json",
+        "prior_record_sha256": "c424991ab785e996d4a1e8b4a8549979be65eebb3fc2ec75599168eb57cf7e0d",
+        "prior_status": "uploaded_verified",
+        "prior_summary_sha256": "af8844d78edbdcb2c9f402e8127a8c5b5e5873a714c0587b6fb6cb1c86be6f7c"
+      },
+      {
+        "current_head": {
+          "checked_at": "2026-11-07T02:40:08.086874+00:00",
+          "content_type": "application/json",
+          "http_status": 200,
+          "size_bytes": 778
+        },
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/source/attribution.json",
+        "prior_record_sha256": "c3bf1c581d561855a03a6a581977876d072ca6e0bc0368e4eb7a46209f8f1050",
+        "prior_status": "uploaded_verified",
+        "prior_summary_sha256": "af8844d78edbdcb2c9f402e8127a8c5b5e5873a714c0587b6fb6cb1c86be6f7c"
+      },
+      {
+        "current_head": {
+          "checked_at": "2026-11-07T02:40:08.369296+00:00",
+          "content_type": "application/json",
+          "http_status": 200,
+          "size_bytes": 11616
+        },
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/source/source-field-dictionary.json",
+        "prior_record_sha256": "145dbf771bbd1f04399773c6274056f91352ce346c2281a951f59163486ed170",
+        "prior_status": "uploaded_verified",
+        "prior_summary_sha256": "af8844d78edbdcb2c9f402e8127a8c5b5e5873a714c0587b6fb6cb1c86be6f7c"
+      }
+    ],
+    "query_controls": [
+      {
+        "id_column": "OBJECTID",
+        "ids": [
+          1,
+          4239361,
+          8474625
+        ],
+        "name": "free-flowing-rivers-parquet-1",
+        "path": "assets/ffr-reach-network-v1.parquet",
+        "selection": {
+          "row_count": 8477883,
+          "row_group_count": 2070,
+          "row_groups": [
+            0,
+            1035,
+            2069
+          ],
+          "selected_from": "row_group_min_statistics"
+        }
+      }
+    ],
+    "query_controls_sha256": "9fab1ab0408ac437ed7b3161be79beccef167556297010780fb746205473f749",
+    "query_spatial_hints_sha256": "1800adfffc1bd7ecd2fbcafc752ceba9f882146a8098a7eaf7e873cc45f486d6",
+    "range_samples": [
+      {
+        "samples": [
+          {
+            "content_range": "bytes 0-65535/3570445458",
+            "content_type": "application/vnd.pmtiles",
+            "end": 65535,
+            "sha256": "261d3631541d3fae46f92a80cae966b9680037ff78be9191692b28597c3b18fd",
+            "start": 0,
+            "status": 206
+          },
+          {
+            "content_range": "bytes 1785189961-1785255496/3570445458",
+            "content_type": "application/vnd.pmtiles",
+            "end": 1785255496,
+            "sha256": "ba9cb0f122896a79c60b3c3ed5f5800ec7877c760f11c7a029c13af2865dbeb4",
+            "start": 1785189961,
+            "status": 206
+          },
+          {
+            "content_range": "bytes 3570379922-3570445457/3570445458",
+            "content_type": "application/vnd.pmtiles",
+            "end": 3570445457,
+            "sha256": "4ee63bca4529e1ddcf41bd4aadcaa863f8f61649f4d7572ecfcec53dbd355eea",
+            "start": 3570379922,
+            "status": 206
+          }
+        ],
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/display/display-v1/assets/ffr-reaches.pmtiles"
+      },
+      {
+        "samples": [
+          {
+            "content_range": "bytes 0-65535/887132886",
+            "content_type": "application/vnd.apache.parquet",
+            "end": 65535,
+            "sha256": "866afba478aed8de42f5789f0b076c892cd0a3d560216d64ddbe1b029adb5a76",
+            "start": 0,
+            "status": 206
+          },
+          {
+            "content_range": "bytes 443533675-443599210/887132886",
+            "content_type": "application/vnd.apache.parquet",
+            "end": 443599210,
+            "sha256": "ae527ef9d42d1647a7fe2202d0ba97abab45d08e9c7541db1f80d18f5d015010",
+            "start": 443533675,
+            "status": 206
+          },
+          {
+            "content_range": "bytes 887067350-887132885/887132886",
+            "content_type": "application/vnd.apache.parquet",
+            "end": 887132885,
+            "sha256": "fabe01622275f93a18d200a598998eb9c2089242874e3f62f6490f981c3c08dc",
+            "start": 887067350,
+            "status": 206
+          }
+        ],
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet"
+      }
+    ],
+    "receipt_checksums": [
+      {
+        "object_key": "free-flowing-rivers/display/display-v1/README.md",
+        "sha256": "52906787444dbdc5c67b60a2f7a0c5116bbdda2514d6848c90fcd14e18324e4d",
+        "size_bytes": 2310
+      },
+      {
+        "object_key": "free-flowing-rivers/display/display-v1/assets/ffr-reaches.pmtiles",
+        "sha256": "6e248eba5ecdf58ee28705a8f567be9497836f0a1c6c078b50327a1599ecdce3",
+        "size_bytes": 3570445458
+      },
+      {
+        "object_key": "free-flowing-rivers/display/display-v1/ffr-reaches.maxzoom-missing-ids.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_bytes": 0
+      },
+      {
+        "object_key": "free-flowing-rivers/display/display-v1/manifest.json",
+        "sha256": "2f7046f914ff49749dffd20df9c6c5010706710b881af915633766da4d91fb6d",
+        "size_bytes": 3117
+      },
+      {
+        "object_key": "free-flowing-rivers/display/display-v1/reports/build-provenance.json",
+        "sha256": "e1df34e7fb5ab27125d6dc026ed7b720c570337014c12f925f9f39a36340947a",
+        "size_bytes": 1273
+      },
+      {
+        "object_key": "free-flowing-rivers/display/display-v1/reports/ffr-reaches.build-report.json",
+        "sha256": "a4fe0e815f2f4cbd985418bdbd291ef8706ccf9450ae5a713a662f39eddb2498",
+        "size_bytes": 3653
+      },
+      {
+        "object_key": "free-flowing-rivers/display/display-v1/reports/finalization/browser-validation.json",
+        "sha256": "1ab8b20ed219e2b48c3845f43c4f36953884aeecd013fb79c9e33e2e4df19396",
+        "size_bytes": 22242
+      },
+      {
+        "object_key": "free-flowing-rivers/display/display-v1/reports/finalization/geometry/free-flowing-rivers-1.json",
+        "sha256": "754a164186219b1fab5416e4780ca510aa99790ae3f5f006209dccc9d6abc49a",
+        "size_bytes": 22273
+      },
+      {
+        "object_key": "free-flowing-rivers/display/display-v1/reports/finalization/pmtiles-verify/free-flowing-rivers-1.json",
+        "sha256": "e2c4e8473652c4788f999f69774c017134634c8546c0fb59cb027c5cd1d7b2a5",
+        "size_bytes": 564
+      },
+      {
+        "object_key": "free-flowing-rivers/display/display-v1/reports/post-launch-validation-changes.json",
+        "sha256": "fc322a6d4f49b65e74e89da0cb9fd6f3f4ece20d051884cd98a55eab17d51ef0",
+        "size_bytes": 1441
+      },
+      {
+        "object_key": "free-flowing-rivers/display/display-v1/styles/ffr-reaches.json",
+        "sha256": "7dd8ffd7dcce6b78adc9dea8dc2b238e6fd8978cd48d1efd76e05aeceb3bc1bd",
+        "size_bytes": 408
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/AGENTS.md",
+        "sha256": "8e701cb07ed0bfef7e61155dfb2b166554ceacb1a09a1337546ea4436593fb70",
+        "size_bytes": 501
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/README.md",
+        "sha256": "771b4326ef229282245f1dc8276e185b7c4f5a633bcab0158ef2d49edba966eb",
+        "size_bytes": 2172
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+        "sha256": "62130e4999ba449bd2768bcdd9346bc2ba8fa4c4f06d39597e5227cd496a1a63",
+        "size_bytes": 887132886
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/catalog.json",
+        "sha256": "9a17c0d879f21b52e301d1a4e9bfb342103019bc228121defc1bc3e8f86d1ad6",
+        "size_bytes": 1851
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/collection.json",
+        "sha256": "280265311514e74df26f5e331783f70a2b34dc8e5019d016c517e01f1687f282",
+        "size_bytes": 13861
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/dataset.yaml",
+        "sha256": "5724f9cec12738bb6d8d050aff023bb51f57b6a92f00372fbdf321aa348fb965",
+        "size_bytes": 2351
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/display/thumbnail.png",
+        "sha256": "c2d265154f06ccb02dced33bfa1c2f9a1ed708dc39e0caef315a96472f23532f",
+        "size_bytes": 2842
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/evidence/clean-rebuild.json",
+        "sha256": "82d447b125734a97255b1700b53f0edfa2047b7cb1077db3ea4ff6ab268bb703",
+        "size_bytes": 3974
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/evidence/final-package-verification.json",
+        "sha256": "62ed1b0bbf6ace6f5434aa7de84d9cc9fcb97318383220da89a25e00ffffeafd",
+        "size_bytes": 132
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/evidence/local-http-duckdb-validation.json",
+        "sha256": "7083a9cc0aeff60afd6d6ff453b6090075c523ba35d654811d87ec55428ba0ae",
+        "size_bytes": 1989
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/evidence/package-binding.json",
+        "sha256": "f825c268c80ebafaafc37cda26557c4ad0513211d1e231f2e73c5dc282be23ad",
+        "size_bytes": 7397
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/evidence/package-integrity-validation.json",
+        "sha256": "9fea62d5e4619824b1e7c1338ec5998426b3c59d773069d0c93939029f3fa85c",
+        "size_bytes": 438
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/evidence/portolan-validation.json",
+        "sha256": "f2a6605995d320b95465ff569d5a3a241c5142c1b9152c2131bacb78b2ecad94",
+        "size_bytes": 1321
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/evidence/source-fidelity.json",
+        "sha256": "c45a5252cf3ca1022e7cecf58f18ae8931aa3c7f10a41853384c6630c4b5278d",
+        "size_bytes": 1286
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/evidence/stac-node-validation.json",
+        "sha256": "5ae569ed8dd8dc1de72e806f56259318551390d3a68fc3109bc720c4c72adb6f",
+        "size_bytes": 555
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/licenses/data-license.json",
+        "sha256": "12bfb407ad24c68abcfb788c9816bc91e9a294a4b099bbb69247131c68adbbfb",
+        "size_bytes": 299
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/licenses/software/LICENSE",
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "size_bytes": 11358
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/licenses/software/NOTICE",
+        "sha256": "848d1f5c49036457c3f453dea3ace5849b94bc1fe896abeaad21d45d771636dd",
+        "size_bytes": 794
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/licenses/source-license.json",
+        "sha256": "ff9c4da03ceafae294b7279e28626498dbd9bffa1526765207443e0b82a27cd2",
+        "size_bytes": 155
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/manifest.json",
+        "sha256": "756286b624de53823a2af2c26344a15dcf02070c048f5d1d02ec3f65a97d5120",
+        "size_bytes": 14853
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/metadata/ffr-reach-network-v1-field-dictionary.json",
+        "sha256": "fba7dd8d801f22b659b384f11b630ef703365f0a15e54830552d608cf64580ff",
+        "size_bytes": 12273
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/package-receipt.json",
+        "sha256": "f01514b5bfb1146f53c363f96f613b0964458e123cd27ee78ef76ff968a67b5d",
+        "size_bytes": 752
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/source/attribution.json",
+        "sha256": "b18b7d7fd5cf6d312ea0b62be6a8b2fd76c8251ffe6b19478aef7de6976f71ee",
+        "size_bytes": 778
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/source/source-field-dictionary.json",
+        "sha256": "399562161c85a577bdf495e2343dabbae3e6540adad1815b952d463808bd7133",
+        "size_bytes": 11616
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/source/source-inspection.json",
+        "sha256": "cbe200b7ced3d627e2adc5b2ff043ebb97b68a75dd54ba3b33516127bd4635bb",
+        "size_bytes": 16323
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/source/source-metadata.json",
+        "sha256": "125a2fc527145cb90cd1ae1d946df9c3a85a60dbfe5da041ececec3a1d0cc146",
+        "size_bytes": 5162
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/datasets/free-flowing-rivers/README.md",
+        "sha256": "18e9169bfe9eb4c149493c0eb9a59f3a88e9e36c372322b46f7765a2af63f083",
+        "size_bytes": 3290
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/datasets/free-flowing-rivers/VALIDATION.md",
+        "sha256": "3a25e763b97a0599d70d5ca32a0a4c54b7fffae0e3ad1cd52fb572765e8fe882",
+        "size_bytes": 2325
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/datasets/free-flowing-rivers/acquire.py",
+        "sha256": "c931823e569355f29cab4dff482ec8bafe749aaa29ca84858660de4819f07b2e",
+        "size_bytes": 4199
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/datasets/free-flowing-rivers/build.py",
+        "sha256": "13319840be97220e553d5bc046b5cb175e5def1b18cf4e196dcb8b5a4448db89",
+        "size_bytes": 11070
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/datasets/free-flowing-rivers/dataset.yaml",
+        "sha256": "5724f9cec12738bb6d8d050aff023bb51f57b6a92f00372fbdf321aa348fb965",
+        "size_bytes": 2351
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/datasets/free-flowing-rivers/fault_tests.py",
+        "sha256": "0042029c0d52e0fa03e1f4bf474fac0198cbb058d93960e3c11bf8f60a38bd01",
+        "size_bytes": 2684
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/datasets/free-flowing-rivers/inspect_source.py",
+        "sha256": "2fc534551b9089638a9bcf9fc64cc8a31afb3df26cbc612e2b10a0f0074ae842",
+        "size_bytes": 7479
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/datasets/free-flowing-rivers/pyproject.toml",
+        "sha256": "aaa6e3d5582b3a001773d4ccf9998c74a399ad00d3e1db85c7760c4dcee89a96",
+        "size_bytes": 250
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/datasets/free-flowing-rivers/releases/figshare-v1-local-r2/README.md",
+        "sha256": "c8b985b746aefe9f1621cdc0674132c958705df02c5e44157e1bc70586aa1286",
+        "size_bytes": 7578
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/datasets/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/fidelity-normalizer-template.json",
+        "sha256": "0d883c2dda8221a215e4ef5b08918dd1e1f400de54ce3feac1cb76a317a16fdd",
+        "size_bytes": 1950
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/datasets/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/materialize_release_inputs.py",
+        "sha256": "88ab721ddf3a64a6ff8b04bb34fba62d7903afb0214b903b0d5673389544831c",
+        "size_bytes": 3819
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/datasets/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/package-spec-template.json",
+        "sha256": "2d72004a3481f3aacb5235eb126a74739f2bc8961dfb37db48a0db673143c002",
+        "size_bytes": 6877
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/datasets/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/spatial-helper-c18/add_spatial_bounds.py",
+        "sha256": "b305e14a177bcd3438739f659699bbe5f62af3fade6431eaf7a41450950b2bca",
+        "size_bytes": 20723
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/datasets/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/spatial-helper-c18/pyproject.toml",
+        "sha256": "a6d5a4c17612a98645ce60b3b581caf316707f2b92265e5a3c1ca9a319f6da3c",
+        "size_bytes": 259
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/datasets/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/spatial-helper-c18/sidecar-manifest.json",
+        "sha256": "e6175698465ea193cec6a0383cade171845b8c9470cce1a6618565b2b5e00fa0",
+        "size_bytes": 635
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/datasets/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/spatial-helper-c18/sidecar-sha256.txt",
+        "sha256": "d067016a4bd1682e611e3ab04d0f222c925f2610f79327e8b4ec85410f8eed86",
+        "size_bytes": 332
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/datasets/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/spatial-helper-c18/test_spatial_bounds.py",
+        "sha256": "006a5c84a8b46e78a4f4aecc2a303672e07e43971116994633f032771df446c7",
+        "size_bytes": 7028
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/datasets/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/spatial-helper-c18/uv.lock",
+        "sha256": "fe1b9d58a17429f2649a24fbd8299b5d616ca4ab68806e768cd2caac31b8ec1b",
+        "size_bytes": 134378
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/datasets/free-flowing-rivers/source-inspection.json",
+        "sha256": "cbe200b7ced3d627e2adc5b2ff043ebb97b68a75dd54ba3b33516127bd4635bb",
+        "size_bytes": 16323
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/datasets/free-flowing-rivers/source-metadata.json",
+        "sha256": "125a2fc527145cb90cd1ae1d946df9c3a85a60dbfe5da041ececec3a1d0cc146",
+        "size_bytes": 5162
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/datasets/free-flowing-rivers/source_schema.py",
+        "sha256": "787f7fea4585173226ed21df3f4b82c0c0b71fe2217227a15ce6b97b1b260e2a",
+        "size_bytes": 1193
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/datasets/free-flowing-rivers/uv.lock",
+        "sha256": "a162622f953a6ebcfa630d114122b556024c51cd9674426d7b356ee996bbe78f",
+        "size_bytes": 69097
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/datasets/free-flowing-rivers/validate.py",
+        "sha256": "103285aa5610af8d71ac0dbd19a99beec7dfa2cb4068962f605a295c2de27054",
+        "size_bytes": 9037
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/research/hydro-releases-20261031/bind_fidelity.py",
+        "sha256": "e0fad0ff331e726abffe724a47ac9c611a2e7b9dec768b5ed6bffa8121da1fc2",
+        "size_bytes": 21835
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/research/hydro-releases-20261031/test_bind_fidelity.py",
+        "sha256": "a3349b9e827813044afd2aab6aecc8da3a56efa7c155a160df45baadcd673d98",
+        "size_bytes": 9312
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/scripts/release_tools/AGENTS.md",
+        "sha256": "4aa3ee027c7ad8f56209e5c948ab30ad126cd0dfd8e80408590df060db03dc3b",
+        "size_bytes": 857
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/scripts/release_tools/README.md",
+        "sha256": "e011e2353dd27d78159321fd63ab4d032fc84c2101f5f8882ef83416d4e4f3c3",
+        "size_bytes": 10462
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/scripts/release_tools/add_spatial_bounds.py",
+        "sha256": "b305e14a177bcd3438739f659699bbe5f62af3fade6431eaf7a41450950b2bca",
+        "size_bytes": 20723
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/scripts/release_tools/package-lock.json",
+        "sha256": "8f19898156a139859a49d15238a92a5204a7d61b909ee5ac54080e8110a2cc3c",
+        "size_bytes": 54306
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/scripts/release_tools/package.json",
+        "sha256": "8eebc2fd826cf22f6008ee889293d7880952ea19ddac557ae905821489108470",
+        "size_bytes": 142
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/scripts/release_tools/package_release.py",
+        "sha256": "7985c0ae0b06e028f2f9466a88dde592bfbb6095cb2ab1a4e2892269629c676b",
+        "size_bytes": 62862
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/scripts/release_tools/pyproject.toml",
+        "sha256": "a6d5a4c17612a98645ce60b3b581caf316707f2b92265e5a3c1ca9a319f6da3c",
+        "size_bytes": 259
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/scripts/release_tools/serve.py",
+        "sha256": "dab2eef0199f839aac9a14d9802cb7b339e9732573bd659d5837867f1f5da175",
+        "size_bytes": 2789
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/scripts/release_tools/test_package_release.py",
+        "sha256": "f1245988e4c45e26bce2b3e07766949d9054c9ba1774a0e84e457062571c89cb",
+        "size_bytes": 9275
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/scripts/release_tools/test_spatial_bounds.py",
+        "sha256": "006a5c84a8b46e78a4f4aecc2a303672e07e43971116994633f032771df446c7",
+        "size_bytes": 7028
+      },
+      {
+        "object_key": "free-flowing-rivers/releases/figshare-v1-local-r2/verification/workflow/scripts/release_tools/uv.lock",
+        "sha256": "fe1b9d58a17429f2649a24fbd8299b5d616ca4ab68806e768cd2caac31b8ec1b",
+        "size_bytes": 134378
+      },
+      {
+        "object_key": "free-flowing-rivers/README.md",
+        "sha256": "44b03abe681c52beb8e5edea47c38f1ae902d4972afede04d742e8c20527fc4b",
+        "size_bytes": 4272
+      }
+    ],
+    "receipt_object_count": 74,
+    "subset_queries": [
+      {
+        "footer_rows": 8477883,
+        "id_multiplicity": {
+          "1": 1,
+          "4239361": 1,
+          "8474625": 1
+        },
+        "ids": [
+          1,
+          4239361,
+          8474625
+        ],
+        "name": "free-flowing-rivers-parquet-1",
+        "path": "assets/ffr-reach-network-v1.parquet",
+        "result_sha256": "e12090b6ce9f3e7045dbe1e415f344355a4b8199cfb499d4485f3f58eccdef22",
+        "rows": 3,
+        "spatial_hint": {
+          "estimate_scope": "local row-group column-chunk estimate, not remote HTTP byte guarantee",
+          "id_only_candidate_compressed_bytes": 1147970,
+          "id_spatial_candidate_compressed_bytes": 1147970,
+          "local_bbox_verified": true,
+          "predicate": "frozen ID AND center within unchanged local bbox"
+        }
+      }
+    ]
+  },
+  "failures": [],
+  "package_base_url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/",
+  "package_manifest_sha256": "756286b624de53823a2af2c26344a15dcf02070c048f5d1d02ec3f65a97d5120",
+  "release": "figshare-v1-local-r2",
+  "schema_version": 1,
+  "status": "passed"
+}

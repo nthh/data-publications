@@ -1,0 +1,54 @@
+schema_version: 1
+id: microsoft_building_footprints
+title: Microsoft Building Footprints
+intake:
+  kind: official_catalog
+  reference_url: https://planetarycomputer.microsoft.com/api/stac/v1/collections/ms-buildings
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: near_global
+  spatial_coverage: 'planetary: review_note: Broad worldwide building footprints, but coverage is country/imagery
+    dependent and not complete global land cover.; stac_bbox: [-180, 90, 180, -90]; temporal_interval:
+    [["2014-01-01T00:00:00Z", null]] Worldwide PC family differs from msbuildings Australia; coverage
+    has country and imagery gaps. The source STAC bbox has inverted latitude bounds and is invalid provider
+    metadata; worldwide thematic scope comes from its description, not that bbox. Related canonical records,
+    with distinct scope: msbuildings.'
+  sources:
+  - provider: planetary_computer
+    entry_id: ms-buildings
+    url: https://planetarycomputer.microsoft.com/api/stac/v1/collections/ms-buildings
+    relationship: exact_dataset
+  access:
+  - provider: planetary_computer
+    status: native_available
+    formats:
+    - GeoParquet
+    summary: 'Collection metadata declares per-item data assets / provider storage roots in the listed
+      native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain
+      unvalidated. Worldwide PC family differs from msbuildings Australia; coverage has country and imagery
+      gaps. The source STAC bbox has inverted latitude bounds and is invalid provider metadata; worldwide
+      thematic scope comes from its description, not that bbox.'
+    license_summary: 'note: Do not treat this metadata label as legal clearance.; review_status: provider
+      declaration captured; terms and redistribution permission not independently reviewed; stac_license:
+      ODbL-1.0'
+    proposed_outputs:
+    - GeoParquet
+    rationale: Reuse existing record and declared Delta/GeoParquet access; ABFS paths and ODbL obligations
+      need separate validation.
+    evidence_urls:
+    - https://planetarycomputer.microsoft.com/api/stac/v1/collections/ms-buildings
+    - https://planetarycomputer.microsoft.com/dataset/ms-buildings
+  citations: []
+  evidence:
+  - path: research/global-candidates-20261031/planetary/reviewed.json
+    sha256: 07da016851a07f3e3e0937e120ce46442785f4e9096e563d92c1a3c0ce9e616a
+    key: microsoft_building_footprints

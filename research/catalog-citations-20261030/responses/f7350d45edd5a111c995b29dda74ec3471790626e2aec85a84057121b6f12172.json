@@ -1,0 +1,1099 @@
+{
+  "request_url": "https://api.openalex.org/works?filter=doi%3A10.2737%2Frds-2025-0031%7C10.2737%2Frds-2025-0032%7C10.2737%2Frds-2026-0014%7C10.2737%2Frds-2026-0015%7C10.2737%2Frds-2026-0038%7C10.2747%2F1548-1603.45.1.16%7C10.2760%2F1975879%7C10.2760%2F262532%7C10.2760%2F7632707%7C10.2760%2F9982436%7C10.2905%2F2ff68a52-5b5b-4a22-8f40-c41da8332cfe%7C10.2905%2F3c60ddf6-0586-4190-854b-f6aa0edc2a30%7C10.2905%2F4cd8ccee-bfd1-48c5-9047-61c0343c41e9%7C10.2905%2F85005901-3a49-48dd-9d19-6261354f56fe%7C10.2905%2F9f06f36f-4b11-47ec-abb0-4f8b7b1d72ea%7C10.2905%2Fa0df7a6f-49de-46ea-9bde-563437a6e2ba%7C10.2905%2Fab2f107a-03cd-47a3-85e5-139d8ec63283%7C10.2905%2Ff41a22f1-5741-4c41-86eb-6384654f6927%7C10.2905%2Fjrc.3kateh8%7C10.31223%2Fx58r27%7C10.31223%2Fx5kj4q%7C10.31223%2Fx5rr2k%7C10.31223%2Fx5zx6p%7C10.3133%2Fds832%7C10.3133%2Fpp1868%7C10.3334%2Fcdiac%2Fotg%7C10.3334%2Fornldaac%2F1290%7C10.3334%2Fornldaac%2F1328%7C10.3334%2Fornldaac%2F1665%7C10.3334%2Fornldaac%2F1763%7C10.3334%2Fornldaac%2F1840%7C10.3334%2Fornldaac%2F2056%7C10.3334%2Fornldaac%2F2129%7C10.3334%2Fornldaac%2F2251%7C10.3334%2Fornldaac%2F2345%7C10.3334%2Fornldaac%2F2455%7C10.3389%2Ffrsen.2022.894571%7C10.3389%2Ffrsen.2024.1375476%7C10.3389%2Ffrsen.2024.1375476%2Ffull%23b15%29%29%E2%80%94which%7C10.3389%2Ffrsen.2024.1375476%2Ffull%23b17&corpus=all&per_page=100&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date%2Ccited_by_count%2Ccounts_by_year",
+  "retrieved_at": "2026-10-30T22:27:38.556516+00:00",
+  "response_path": "responses/f7350d45edd5a111c995b29dda74ec3471790626e2aec85a84057121b6f12172.json",
+  "status": 200,
+  "response_sha256": "647dfe52a321c6c62a2afbdb5e86b92c31dc57e016366f9e85ed8cc5e0f53d5b",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 36,
+      "db_response_time_ms": 45,
+      "page": 1,
+      "per_page": 100,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where DOI is (\n    10.2737/rds-2025-0031 or 10.2737/rds-2025-0032 or 10.2737/rds-2026-0014\n    or 10.2737/rds-2026-0015 or 10.2737/rds-2026-0038\n    or 10.2747/1548-1603.45.1.16 or 10.2760/1975879 or 10.2760/262532\n    or 10.2760/7632707 or 10.2760/9982436\n    or 10.2905/2ff68a52-5b5b-4a22-8f40-c41da8332cfe\n    or 10.2905/3c60ddf6-0586-4190-854b-f6aa0edc2a30\n    or 10.2905/4cd8ccee-bfd1-48c5-9047-61c0343c41e9\n    or 10.2905/85005901-3a49-48dd-9d19-6261354f56fe\n    or 10.2905/9f06f36f-4b11-47ec-abb0-4f8b7b1d72ea\n    or 10.2905/a0df7a6f-49de-46ea-9bde-563437a6e2ba\n    or 10.2905/ab2f107a-03cd-47a3-85e5-139d8ec63283\n    or 10.2905/f41a22f1-5741-4c41-86eb-6384654f6927 or 10.2905/jrc.3kateh8\n    or 10.31223/x58r27 or 10.31223/x5kj4q or 10.31223/x5rr2k or 10.31223/x5zx6p\n    or 10.3133/ds832 or 10.3133/pp1868 or 10.3334/cdiac/otg\n    or 10.3334/ornldaac/1290 or 10.3334/ornldaac/1328 or 10.3334/ornldaac/1665\n    or 10.3334/ornldaac/1763 or 10.3334/ornldaac/1840 or 10.3334/ornldaac/2056\n    or 10.3334/ornldaac/2129 or 10.3334/ornldaac/2251 or 10.3334/ornldaac/2345\n    or 10.3334/ornldaac/2455 or 10.3389/frsen.2022.894571\n    or 10.3389/frsen.2024.1375476\n    or \"10.3389/frsen.2024.1375476/full#b15))—which\"\n    or 10.3389/frsen.2024.1375476/full#b17\n  )",
+        "x_new_oql": "get works (all corpora) where DOI is (\n    10.2737/rds-2025-0031 or 10.2737/rds-2025-0032 or 10.2737/rds-2026-0014\n    or 10.2737/rds-2026-0015 or 10.2737/rds-2026-0038\n    or 10.2747/1548-1603.45.1.16 or 10.2760/1975879 or 10.2760/262532\n    or 10.2760/7632707 or 10.2760/9982436\n    or 10.2905/2ff68a52-5b5b-4a22-8f40-c41da8332cfe\n    or 10.2905/3c60ddf6-0586-4190-854b-f6aa0edc2a30\n    or 10.2905/4cd8ccee-bfd1-48c5-9047-61c0343c41e9\n    or 10.2905/85005901-3a49-48dd-9d19-6261354f56fe\n    or 10.2905/9f06f36f-4b11-47ec-abb0-4f8b7b1d72ea\n    or 10.2905/a0df7a6f-49de-46ea-9bde-563437a6e2ba\n    or 10.2905/ab2f107a-03cd-47a3-85e5-139d8ec63283\n    or 10.2905/f41a22f1-5741-4c41-86eb-6384654f6927 or 10.2905/jrc.3kateh8\n    or 10.31223/x58r27 or 10.31223/x5kj4q or 10.31223/x5rr2k or 10.31223/x5zx6p\n    or 10.3133/ds832 or 10.3133/pp1868 or 10.3334/cdiac/otg\n    or 10.3334/ornldaac/1290 or 10.3334/ornldaac/1328 or 10.3334/ornldaac/1665\n    or 10.3334/ornldaac/1763 or 10.3334/ornldaac/1840 or 10.3334/ornldaac/2056\n    or 10.3334/ornldaac/2129 or 10.3334/ornldaac/2251 or 10.3334/ornldaac/2345\n    or 10.3334/ornldaac/2455 or 10.3389/frsen.2022.894571\n    or 10.3389/frsen.2024.1375476\n    or \"10.3389/frsen.2024.1375476/full#b15))—which\"\n    or 10.3389/frsen.2024.1375476/full#b17\n  )",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "join": "or",
+              "filters": [
+                {
+                  "column_id": "doi",
+                  "value": "10.2737/rds-2025-0031"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.2737/rds-2025-0032"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.2737/rds-2026-0014"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.2737/rds-2026-0015"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.2737/rds-2026-0038"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.2747/1548-1603.45.1.16"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.2760/1975879"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.2760/262532"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.2760/7632707"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.2760/9982436"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.2905/2ff68a52-5b5b-4a22-8f40-c41da8332cfe"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.2905/3c60ddf6-0586-4190-854b-f6aa0edc2a30"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.2905/4cd8ccee-bfd1-48c5-9047-61c0343c41e9"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.2905/85005901-3a49-48dd-9d19-6261354f56fe"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.2905/9f06f36f-4b11-47ec-abb0-4f8b7b1d72ea"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.2905/a0df7a6f-49de-46ea-9bde-563437a6e2ba"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.2905/ab2f107a-03cd-47a3-85e5-139d8ec63283"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.2905/f41a22f1-5741-4c41-86eb-6384654f6927"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.2905/jrc.3kateh8"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.31223/x58r27"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.31223/x5kj4q"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.31223/x5rr2k"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.31223/x5zx6p"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.3133/ds832"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.3133/pp1868"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.3334/cdiac/otg"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.3334/ornldaac/1290"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.3334/ornldaac/1328"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.3334/ornldaac/1665"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.3334/ornldaac/1763"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.3334/ornldaac/1840"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.3334/ornldaac/2056"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.3334/ornldaac/2129"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.3334/ornldaac/2251"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.3334/ornldaac/2345"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.3334/ornldaac/2455"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.3389/frsen.2022.894571"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.3389/frsen.2024.1375476"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.3389/frsen.2024.1375476/full#b15))—which"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.3389/frsen.2024.1375476/full#b17"
+                }
+              ]
+            }
+          ]
+        },
+        "url": "/works?filter=doi:10.2737%2Frds-2025-0031|10.2737%2Frds-2025-0032|10.2737%2Frds-2026-0014|10.2737%2Frds-2026-0015|10.2737%2Frds-2026-0038|10.2747%2F1548-1603.45.1.16|10.2760%2F1975879|10.2760%2F262532|10.2760%2F7632707|10.2760%2F9982436|10.2905%2F2ff68a52-5b5b-4a22-8f40-c41da8332cfe|10.2905%2F3c60ddf6-0586-4190-854b-f6aa0edc2a30|10.2905%2F4cd8ccee-bfd1-48c5-9047-61c0343c41e9|10.2905%2F85005901-3a49-48dd-9d19-6261354f56fe|10.2905%2F9f06f36f-4b11-47ec-abb0-4f8b7b1d72ea|10.2905%2Fa0df7a6f-49de-46ea-9bde-563437a6e2ba|10.2905%2Fab2f107a-03cd-47a3-85e5-139d8ec63283|10.2905%2Ff41a22f1-5741-4c41-86eb-6384654f6927|10.2905%2Fjrc.3kateh8|10.31223%2Fx58r27|10.31223%2Fx5kj4q|10.31223%2Fx5rr2k|10.31223%2Fx5zx6p|10.3133%2Fds832|10.3133%2Fpp1868|10.3334%2Fcdiac%2Fotg|10.3334%2Fornldaac%2F1290|10.3334%2Fornldaac%2F1328|10.3334%2Fornldaac%2F1665|10.3334%2Fornldaac%2F1763|10.3334%2Fornldaac%2F1840|10.3334%2Fornldaac%2F2056|10.3334%2Fornldaac%2F2129|10.3334%2Fornldaac%2F2251|10.3334%2Fornldaac%2F2345|10.3334%2Fornldaac%2F2455|10.3389%2Ffrsen.2022.894571|10.3389%2Ffrsen.2024.1375476|10.3389%2Ffrsen.2024.1375476%2Ffull%23b15%29%29%E2%80%94which|10.3389%2Ffrsen.2024.1375476%2Ffull%23b17&corpus=all&per_page=100",
+        "order": "most cited (age-adjusted) first",
+        "order_default": true
+      },
+      "cost_usd": 0.0001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W2033996972",
+        "doi": "https://doi.org/10.2747/1548-1603.45.1.16",
+        "title": "The Vegetation Drought Response Index (VegDRI): A New Integrated Approach for Monitoring Drought Stress in Vegetation",
+        "type": "article",
+        "publication_year": 2008,
+        "publication_date": "2008-01-01",
+        "cited_by_count": 495,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 27
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 36
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 30
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 45
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 36
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 37
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 31
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 31
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 39
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 33
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 34
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 27
+          },
+          {
+            "year": 2014,
+            "cited_by_count": 22
+          },
+          {
+            "year": 2013,
+            "cited_by_count": 23
+          },
+          {
+            "year": 2012,
+            "cited_by_count": 16
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4283661785",
+        "doi": "https://doi.org/10.3389/frsen.2022.894571",
+        "title": "Medium Spatial Resolution Mapping of Global Land Cover and Land Cover Change Across Multiple Decades From Landsat",
+        "type": "article",
+        "publication_year": 2022,
+        "publication_date": "2022-06-28",
+        "cited_by_count": 86,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 21
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 17
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 25
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 18
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 5
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4414536560",
+        "doi": "https://doi.org/10.2760/262532",
+        "title": "Mapping global forest cover of the year 2020 to support the EU regulation on deforestation-free supply chains",
+        "type": "book",
+        "publication_year": 2024,
+        "publication_date": "2024-01-01",
+        "cited_by_count": 6,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4392560007",
+        "doi": "https://doi.org/10.3389/frsen.2024.1375476",
+        "title": "A global implementation of the rural access index",
+        "type": "article",
+        "publication_year": 2024,
+        "publication_date": "2024-03-07",
+        "cited_by_count": 5,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W1479862749",
+        "doi": "https://doi.org/10.3133/ds832",
+        "title": "A quasi-global precipitation time series for drought monitoring",
+        "type": "report",
+        "publication_year": 2014,
+        "publication_date": "2014-01-01",
+        "cited_by_count": 777,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 44
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 80
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 80
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 84
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 98
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 92
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 83
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 55
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 54
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 46
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 28
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 25
+          },
+          {
+            "year": 2014,
+            "cited_by_count": 8
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W2917499272",
+        "doi": "https://doi.org/10.3334/ornldaac/1328",
+        "title": "Daymet: Daily Surface Weather Data on a 1-km Grid for North America, Version 3",
+        "type": "other",
+        "publication_year": 2016,
+        "publication_date": "2016-07-13",
+        "cited_by_count": 402,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 22
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 33
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 46
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 82
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 80
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 60
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 31
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 25
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 8
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W3121097908",
+        "doi": "https://doi.org/10.3334/ornldaac/1840",
+        "title": "Daymet: Daily Surface Weather Data on a 1-km Grid for North America, Version 4",
+        "type": "other",
+        "publication_year": 2020,
+        "publication_date": "2020-11-09",
+        "cited_by_count": 245,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 17
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 46
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 78
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 56
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 42
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6945900815",
+        "doi": "https://doi.org/10.3334/ornldaac/2129",
+        "title": "Daymet: Daily Surface Weather Data on a 1-km Grid for North America, Version 4 R1",
+        "type": "other",
+        "publication_year": 2022,
+        "publication_date": "2022-11-01",
+        "cited_by_count": 150,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 27
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 49
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 45
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 27
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W3216164606",
+        "doi": "https://doi.org/10.3133/pp1868",
+        "title": "Global cropland-extent product at 30-m resolution (GCEP30) derived from Landsat satellite time-series data for the year 2015 using multiple machine-learning algorithms on Google Earth Engine cloud",
+        "type": "report",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 88,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 13
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 19
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 19
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 23
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 13
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6889790680",
+        "doi": "https://doi.org/10.2905/2ff68a52-5b5b-4a22-8f40-c41da8332cfe",
+        "title": "GHS-POP R2023A - GHS population grid multitemporal (1975-2030)",
+        "type": "dataset",
+        "publication_year": 2023,
+        "publication_date": "2023-04-25",
+        "cited_by_count": 77,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 28
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 29
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 18
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6908488137",
+        "doi": "https://doi.org/10.2905/9f06f36f-4b11-47ec-abb0-4f8b7b1d72ea",
+        "title": "GHS-BUILT-S R2023A - GHS built-up surface grid, derived from Sentinel2 composite and Landsat, multitemporal (1975-2030)",
+        "type": "dataset",
+        "publication_year": 2023,
+        "publication_date": "2023-04-25",
+        "cited_by_count": 74,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 18
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 29
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 19
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 8
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W3011981510",
+        "doi": "https://doi.org/10.3334/ornldaac/1763",
+        "title": "Global Aboveground and Belowground Biomass Carbon Density Maps for the Year 2010",
+        "type": "other",
+        "publication_year": 2019,
+        "publication_date": "2019-12-06",
+        "cited_by_count": 65,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 13
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 16
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 13
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6908827194",
+        "doi": "https://doi.org/10.2905/a0df7a6f-49de-46ea-9bde-563437a6e2ba",
+        "title": "GHS-SMOD R2023A - GHS settlement layers, application of the Degree of Urbanisation methodology (stage I) to GHS-POP R2023A and GHS-BUILT-S R2023A, multitemporal (1975-2030)",
+        "type": "dataset",
+        "publication_year": 2023,
+        "publication_date": "2023-04-25",
+        "cited_by_count": 50,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 12
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 23
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 13
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W2951446574",
+        "doi": "https://doi.org/10.3334/ornldaac/1665",
+        "title": "Global Mangrove Distribution, Aboveground Biomass, and Canopy Height",
+        "type": "other",
+        "publication_year": 2018,
+        "publication_date": "2018-11-20",
+        "cited_by_count": 35,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W2785799492",
+        "doi": "https://doi.org/10.3334/ornldaac/1290",
+        "title": "NACP NAFD Project: Forest Disturbance History from Landsat, 1986-2010",
+        "type": "other",
+        "publication_year": 2015,
+        "publication_date": "2015-10-02",
+        "cited_by_count": 32,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 4
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6908530337",
+        "doi": "https://doi.org/10.3334/ornldaac/2056",
+        "title": "GEDI L4A Footprint Level Aboveground Biomass Density, Version 2.1",
+        "type": "other",
+        "publication_year": 2022,
+        "publication_date": "2022-03-17",
+        "cited_by_count": 29,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6946187396",
+        "doi": "https://doi.org/10.2905/3c60ddf6-0586-4190-854b-f6aa0edc2a30",
+        "title": "GHS-BUILT-C R2023A - GHS Settlement Characteristics, derived from Sentinel2 composite (2018) and other GHS R2023A data",
+        "type": "dataset",
+        "publication_year": 2023,
+        "publication_date": "2023-04-25",
+        "cited_by_count": 20,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6908651940",
+        "doi": "https://doi.org/10.2905/85005901-3a49-48dd-9d19-6261354f56fe",
+        "title": "GHS-BUILT-H R2023A - GHS building height, derived from AW3D30, SRTM30, and Sentinel2 composite (2018)",
+        "type": "dataset",
+        "publication_year": 2023,
+        "publication_date": "2023-04-25",
+        "cited_by_count": 14,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 4
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6946599771",
+        "doi": "https://doi.org/10.2905/ab2f107a-03cd-47a3-85e5-139d8ec63283",
+        "title": "GHS-BUILT-V R2023A - GHS built-up volume grids derived from joint assessment of Sentinel2, Landsat, and global DEM data, multitemporal (1975-2030)",
+        "type": "dataset",
+        "publication_year": 2023,
+        "publication_date": "2023-04-25",
+        "cited_by_count": 14,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4416192290",
+        "doi": "https://doi.org/10.1038/s41597-025-06097-z",
+        "title": "Natural forests of the world – a 2020 baseline for deforestation and degradation monitoring",
+        "type": "data-paper",
+        "publication_year": 2025,
+        "publication_date": "2025-11-13",
+        "cited_by_count": 10,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6908504677",
+        "doi": "https://doi.org/10.3334/ornldaac/2345",
+        "title": "Classification of Global Forests for IPCC Aboveground Biomass Tier 1 Estimates, 2020",
+        "type": "other",
+        "publication_year": 2024,
+        "publication_date": "2024-04-04",
+        "cited_by_count": 3,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6927502685",
+        "doi": "https://doi.org/10.3334/ornldaac/2251",
+        "title": "CMS: Global Mangrove Canopy Height Maps Derived from TanDEM-X, 2015",
+        "type": "other",
+        "publication_year": 2023,
+        "publication_date": "2023-07-26",
+        "cited_by_count": 2,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6927544238",
+        "doi": "https://doi.org/10.2905/f41a22f1-5741-4c41-86eb-6384654f6927",
+        "title": "GHS-OBAT R2024A - GHS Building Attributes at footprint level, with age, function and morphological information (2020)",
+        "type": "dataset",
+        "publication_year": 2024,
+        "publication_date": "2024-12-16",
+        "cited_by_count": 2,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W7134938896",
+        "doi": "https://doi.org/10.31223/x5rr2k",
+        "title": "Groundsource: A Dataset of Flood Events from News",
+        "type": "preprint",
+        "publication_year": 2026,
+        "publication_date": "2026-03-10",
+        "cited_by_count": 2,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4411485539",
+        "doi": "https://doi.org/10.2737/rds-2025-0031",
+        "title": "TreeMap 2020 CONUS: A tree-level model of the forests of the conterminous United States circa 2020",
+        "type": "dataset",
+        "publication_year": 2025,
+        "publication_date": "2025-06-20",
+        "cited_by_count": 1,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4411542808",
+        "doi": "https://doi.org/10.2737/rds-2025-0032",
+        "title": "TreeMap 2022 CONUS: A tree-level model of the forests of the conterminous United States circa 2022",
+        "type": "dataset",
+        "publication_year": 2025,
+        "publication_date": "2025-06-23",
+        "cited_by_count": 1,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W7160593659",
+        "doi": "https://doi.org/10.31223/x5kj4q",
+        "title": "From Snapshot Maps to Continuous Monitoring of Global Forest Carbon at 100 m Resolution (2000–2025)",
+        "type": "preprint",
+        "publication_year": 2026,
+        "publication_date": "2026-05-08",
+        "cited_by_count": 1,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6908679021",
+        "doi": "https://doi.org/10.2760/7632707",
+        "title": "Accuracy assessment of the global forest cover map for the year 2020: Assessment protocol and analysis",
+        "type": "book",
+        "publication_year": 2025,
+        "publication_date": "2025-01-01",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W7102390998",
+        "doi": "https://doi.org/10.2905/4cd8ccee-bfd1-48c5-9047-61c0343c41e9",
+        "title": "EMC-BUILT R2025A – Exposure Mapping Component built-up surface grid, derived from Sentinel-2 year 2022",
+        "type": "dataset",
+        "publication_year": 2025,
+        "publication_date": "2025-11-04",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W7108663955",
+        "doi": "https://doi.org/10.3334/ornldaac/2455",
+        "title": "GEDI L4D Imputed Waveforms, Version 2",
+        "type": "other",
+        "publication_year": 2025,
+        "publication_date": "2025-12-04",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W7128780435",
+        "doi": "https://doi.org/10.2737/rds-2026-0014",
+        "title": "Spatial datasets of wildfire risk to forest carbon for the conterminous United States (30m) circa 2014 landscapes",
+        "type": "dataset",
+        "publication_year": 2026,
+        "publication_date": "2026-02-13",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W7130718734",
+        "doi": "https://doi.org/10.2737/rds-2026-0015",
+        "title": "Spatial datasets of wildfire risk to rangeland carbon for the conterminous United States (30m) circa 2014 and 2020 landscapes",
+        "type": "dataset",
+        "publication_year": 2026,
+        "publication_date": "2026-02-20",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W7162104510",
+        "doi": "https://doi.org/10.31223/x58r27",
+        "title": "Global forest typology at 10-meter resolution for forest and land-use monitoring",
+        "type": "preprint",
+        "publication_year": 2026,
+        "publication_date": "2026-05-22",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W7163684498",
+        "doi": "https://doi.org/10.2737/rds-2026-0038",
+        "title": "TreeMap 2023 CONUS: A tree-level model of the forests of the conterminous United States circa 2023",
+        "type": "dataset",
+        "publication_year": 2026,
+        "publication_date": "2026-06-05",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W7212166594",
+        "doi": "https://doi.org/10.2905/jrc.3kateh8",
+        "title": "Global map of forest cover 2020 - version 4",
+        "type": "dataset",
+        "publication_year": 2026,
+        "publication_date": "2026-09-30",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W7213458404",
+        "doi": "https://doi.org/10.2760/9982436",
+        "title": "Maps of Global Forest Cover 2020 Version 3 and Global Forest Type 2020 Version 1 Supporting the EU Deforestation Regulation",
+        "type": "article",
+        "publication_year": 2026,
+        "publication_date": "2026-01-01",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "821386d0aa7612997f456b816d7d9feb545fd92cf7bfc9f33c463cfc8dce731a"
+}

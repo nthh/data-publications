@@ -1,0 +1,13 @@
+{
+  "checked_at": "2026-10-31T20:58:13.219960+00:00",
+  "revision": "100eaadad0e42a6f12d61c08de7d061eb5bac499",
+  "checkout": "isolated detached clean checkout; git status --porcelain empty before and after",
+  "command": "uv run --locked --project scripts/release_tools python -m unittest discover -s scripts/release_tools -p test_spatial_order.py -v",
+  "exit_code": 0,
+  "tests_passed": 10,
+  "files": {
+    "scripts/release_tools/spatial_order.py": "37bb23e480291145ad156a23ed2057ac0bdbb1a3a9f8125b8900cc077ac420c2",
+    "scripts/release_tools/test_spatial_order.py": "a4888b7d4d1c193f7c8f4288aaa96fb1a342096a239e9096d6978cfebb5a0581"
+  },
+  "scope": "Runtime changes in the complete per-ID spatial-fidelity validator, including six corruption subcases. Prior unaffected package, bbox, pruning, binder and catalog checks are recorded in verification-7602b5e.json. Full dataset retries and packaging gates remain outstanding at this checkpoint."
+}

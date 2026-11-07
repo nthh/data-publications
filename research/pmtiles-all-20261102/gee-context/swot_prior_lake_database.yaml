@@ -1,0 +1,149 @@
+schema_version: 1
+id: swot_prior_lake_database
+title: SWOT Prior Lake Database v2.03
+intake:
+  kind: producer
+  reference_url: https://hydroweb.next.theia-land.fr/catalog/details/SWOT_PRIOR_LAKE_DATABASE
+  added_on: '2026-11-01'
+triage:
+  decision: pending
+  priority: pilot_review
+  rationale: User selected local qualification on 2026-11-01. Live public inventory confirms 61 scientific
+    v2.03 SQLite tiles totaling 29,990,277,120 provider-declared bytes. One 16-byte range read succeeds;
+    full source/schema validation and a storage plan remain before conversion.
+publication:
+  status: candidate
+  source_coop:
+    owner: nthh
+    owner_status: confirmed
+    account_verification: null
+    product_id: swot-prior-lake
+    title: SWOT Prior Lake Database — scientific v2.03
+    summary: Planned conversion of the scientific SWOT prior-lake reference database to GeoParquet spatial
+      tables and Parquet auxiliary tables while preserving identifiers and relationships.
+    tags:
+    - hydrology
+    - lakes
+    - swot
+    - global
+    - geoparquet
+    - parquet
+    license_note: The current CNES/Theia producer STAC collection declares ETALAB 2.0. Preserve attribution
+      and source notices with the conversion.
+    attribution: CNES / Theia and the SWOT Prior Lake Database producers; scientific PLD version 2.03, Hydroweb.next.
+    temporal_note: Scientific reference database edition v2.03; not a time series of SWOT satellite measurements.
+    limitations:
+    - The selected inventory has 61 v2.03 SQLite tiles totaling 29,990,277,120 provider-declared bytes;
+      v2.02 and Light/Geometries variants are excluded.
+    - Anonymous metadata and a tiny range read succeeded; a complete tile and its SQLite schema have not
+      been validated.
+    - Source acquisition remains gated by disk space and a measured streaming/retention plan; no converted
+      release exists.
+    supplements: []
+review:
+  availability:
+    shortlist_id: native-publication-gaps-20261031
+    rank: 10
+    reviewed_on: '2026-11-01'
+    label: SWOT Prior Lake Database v2.03
+    scope: Complete scientific PLD v2.03; excludes Light/Geometries variants and previous v2.02 tiles.
+    geographic_scope: global
+    download:
+      bytes: 29990277120
+      precision: exact
+      reported_size: null
+      format: SQLite
+      file_count: 61
+      basis: producer_listing
+      note: Exact sum of provider-declared file:size for 61 unique scientific v2.03 tile assets. Collection
+        total 122 includes 61 older v2.02 assets, excluded. Data bytes/checksums are not globally verified.
+        Anonymous 206 on the smallest tile confirms a SQLite header; full source inspection stopped before
+        download because free space was below the recorded 40 GiB start threshold.
+      evidence_urls:
+      - https://hydroweb.next.theia-land.fr/api/catalog/stac/collections/SWOT_PRIOR_LAKE_DATABASE
+      - https://hydroweb.next.theia-land.fr/api/catalog/stac/collections/SWOT_PRIOR_LAKE_DATABASE/items?limit=10
+    locations:
+    - service_id: hydroweb_next
+      label: Hydroweb.next / CNES-THEIA
+      platform: external
+      relationship: matching_scope
+      access: download
+      formats:
+      - SQLite
+      urls:
+      - https://hydroweb.next.theia-land.fr/api/catalog/stac/collections/SWOT_PRIOR_LAKE_DATABASE
+      - https://hydroweb.next.theia-land.fr/catalog/details/SWOT_PRIOR_LAKE_DATABASE
+      asset_ids: []
+      note: Live STAC metadata explicitly identifies 2.03 Sci and 61 edition-specific files. Provider-declared
+        sizes/MD5s retained. Anonymous metadata and 16-byte source range reads work. Matching is edition/scope
+        metadata, not full SQLite/table validation. Older HTML description is stale.
+    output_manifest: null
+    evidence:
+    - path: research/availability-sizes-20261101/observations.json
+      sha256: a7c4fd21000b497faf92810420cde5cc4ee80ae533721dd13c69cb7e692fcd7b
+      key: swot_prior_lake_database
+    - path: research/gdw-swot-preparation-20261101/observations.json
+      sha256: 1b4cddc40d19f126a59f7311d886ce60edfa3120c0bf385c4bcecde7ed465bfb
+      key: swot_prior_lake_database
+  publication_assessment:
+    as_of: '2026-11-01'
+    route: qualify_scientific_reference_database
+    stage: metadata_qualified_sample_blocked_by_disk
+    scope: Scientific v2.03; 61 tiles, excluding v2.02 and Light/Geometries variants.
+    outputs:
+    - GeoParquet
+    - Parquet for related tables
+    source_license: ETALAB 2.0 declared by current producer STAC collection
+    next_step: Retry bounded AU_55 source inspection to a new report once the 40 GiB start threshold is
+      met. Use a separately budgeted streaming/retention plan for 29.99 GB of original SQLite before deciding
+      a full conversion; preserve all scientific tables and relations.
+    sample_failure_report: research/gdw-swot-preparation-20261101/swot-au55-inspection.json
+    evidence_path: research/gdw-swot-preparation-20261101/observations.json
+    latest_attempt:
+      path: research/source-products-20261101/sources/retry-20261102-network.json
+      sha256: 625597acb2868313f503263c2d54d1578f702cad7cbb05abb084d045b70df28b
+      outcome: GDW direct archive GET returned HTTP 403; shared free disk remained below the 40 GiB bulk
+        start threshold. No dataset acquisition or conversion.
+    storage_plan_path: research/source-products-20261101/sources/swot-storage-plan-20261102.md
+discovery:
+  batch: availability-sizes-20261101
+  reviewed_on: '2026-11-01'
+  geographic_scope: global
+  spatial_coverage: Complete scientific PLD v2.03; excludes Light/Geometries variants and previous v2.02
+    tiles.
+  sources:
+  - provider: producer
+    entry_id: SWOT Prior Lake Database v2.03
+    url: https://hydroweb.next.theia-land.fr/catalog/details/SWOT_PRIOR_LAKE_DATABASE
+    relationship: same_family
+  - provider: producer
+    entry_id: SWOT_PRIOR_LAKE_DATABASE:2.03 Sci
+    url: https://hydroweb.next.theia-land.fr/api/catalog/stac/collections/SWOT_PRIOR_LAKE_DATABASE
+    relationship: exact_dataset
+  access:
+  - provider: producer
+    status: download_available
+    formats:
+    - SQLite
+    summary: Live public STAC inventory contains 61 scientific v2.03 files (29,990,277,120 provider-declared
+      bytes), plus 61 excluded v2.02 files. Anonymous 206 probe returned SQLite header; no complete source
+      tile or schema has been validated.
+    license_summary: Current collection declares ETALAB 2.0 with CNES as licensor; retain attribution
+      and source notices.
+    proposed_outputs:
+    - GeoParquet
+    - Parquet
+    rationale: Edition and inventory are now confirmed. Qualification remains incomplete because the sample
+      download stopped at the disk preflight; full source scope exceeds current retained-storage budget.
+    evidence_urls:
+    - https://hydroweb.next.theia-land.fr/api/catalog/stac/collections/SWOT_PRIOR_LAKE_DATABASE
+    - https://hydroweb.next.theia-land.fr/api/catalog/stac/collections/SWOT_PRIOR_LAKE_DATABASE/items?limit=10
+    observed_on: '2026-11-01'
+  citations: []
+  evidence:
+  - path: research/availability-sizes-20261101/observations.json
+    sha256: a7c4fd21000b497faf92810420cde5cc4ee80ae533721dd13c69cb7e692fcd7b
+    key: swot_prior_lake_database
+  - path: research/gdw-swot-preparation-20261101/observations.json
+    sha256: 1b4cddc40d19f126a59f7311d886ce60edfa3120c0bf385c4bcecde7ed465bfb
+    key: swot_prior_lake_database

@@ -1,0 +1,36 @@
+{
+  "criteria_json_sha256": "644de8301d5c09f85d1ad60e912da474ef1885af983d5e39faef248b2d799505",
+  "error": "ValueError: source oracle requires per-tile row groups with pruning statistics",
+  "failures": [],
+  "global_missing_cells": 0,
+  "heldout_tiles": [
+    "NA18",
+    "NA32",
+    "NA47",
+    "NH11",
+    "NI37",
+    "NR01",
+    "SA49",
+    "SB54"
+  ],
+  "oracle_sha256": "7b4bb38c8cff098170797a8d2326b83843a54fa83b2efcd32a1f509690ca166e",
+  "production_module_sha256": "c9378c80edd43d9c95126829c97f8fd88558b2328c9e85731706d285067e3730",
+  "records": 262144,
+  "row_groups_read": 4,
+  "selection": {
+    "all_records_in_heldout_source_tiles": true,
+    "first_records_per_other_source_tile": 32,
+    "synthetic": [
+      "closed grid edge and corner",
+      "vertical/horizontal/zero-length segment",
+      "both dateline directions and exact +/-180",
+      "multipart disjoint segments",
+      "finite north/south world edges"
+    ]
+  },
+  "source_manifest_sha256": "832e4c721c42c701e15ad4d1a102b652098cb8929a344fca9988179b42fc94a6",
+  "source_sha256": "0d5c84a29c57d86b5cd21a9548e2ade9bf4f700d8efaae20bdf37d4c7dbde1c0",
+  "status": "failed",
+  "subset_extra_cells": 0,
+  "subset_missing_cells": 0
+}

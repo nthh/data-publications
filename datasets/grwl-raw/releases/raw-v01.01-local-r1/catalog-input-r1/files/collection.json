@@ -1,0 +1,211 @@
+{
+  "assets": {
+    "grwl-raw-observations": {
+      "file:checksum": "1220d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+      "file:size": 5529859809,
+      "href": "assets/grwl-raw-observations.parquet",
+      "roles": [
+        "data"
+      ],
+      "title": "Global River Width from Landsat — raw vector observations V01.01",
+      "type": "application/vnd.apache.parquet"
+    },
+    "grwl-raw-observations_fields": {
+      "file:checksum": "1220c63c946029f0dc306180eebd105cf063ac21a253d946f6a5bd42080817f8dffb",
+      "file:size": 1271,
+      "href": "metadata/grwl-raw-observations-field-dictionary.json",
+      "roles": [
+        "metadata"
+      ],
+      "title": "grwl-raw-observations field dictionary",
+      "type": "application/json"
+    },
+    "thumbnail": {
+      "file:checksum": "1220689a7c232287133509fe4005d73912c97f26828328c4ece3811b06e3e6eaec42",
+      "file:size": 2710,
+      "href": "display/thumbnail.png",
+      "roles": [
+        "thumbnail"
+      ],
+      "title": "Sampled display-only overview; not an analytic asset",
+      "type": "image/png"
+    }
+  },
+  "created": "2026-11-03T02:18:50Z",
+  "description": "Detailed producer GRWL vector observations with each source record, part and coordinate retained. Records are kept separate; segmentID is tile-local. width_m=1 means unknown width, and width_valid marks usable measurements. Static producer release derived from Landsat observations; source observation dates vary. This is not a current river-width observation or a time series.",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -180.0,
+          -54.31039221809525,
+          180.0,
+          82.31075059469364
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  "id": "grwl-raw",
+  "license": "CC-BY-4.0",
+  "links": [
+    {
+      "href": "catalog.json",
+      "rel": "root",
+      "type": "application/json"
+    },
+    {
+      "href": "catalog.json",
+      "rel": "parent",
+      "type": "application/json"
+    },
+    {
+      "href": "README.md",
+      "rel": "describedby",
+      "type": "text/markdown"
+    },
+    {
+      "href": "AGENTS.md",
+      "rel": "agents",
+      "type": "text/markdown"
+    },
+    {
+      "href": "display/thumbnail.png",
+      "rel": "thumbnail",
+      "type": "image/png"
+    },
+    {
+      "href": "https://zenodo.org/records/18624542",
+      "rel": "via",
+      "title": "Global River Width from Landsat raw vector component V01.01",
+      "type": "text/html"
+    },
+    {
+      "href": "https://creativecommons.org/licenses/by/4.0/",
+      "rel": "license",
+      "type": "text/html"
+    }
+  ],
+  "portolan:version": "0.2.0",
+  "providers": [
+    {
+      "name": "Allen and Pavelsky / GRWL",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://zenodo.org/records/18624542"
+    },
+    {
+      "description": "Independent format conversion and local package host; not publicly hosted.",
+      "name": "nthh",
+      "roles": [
+        "host",
+        "processor"
+      ],
+      "url": "https://github.com/nthh"
+    }
+  ],
+  "sci:citation": "Allen, G.H. and Pavelsky, T.M. (2018), Global extent of rivers and streams. Science 361(6402), 585–588. https://doi.org/10.1126/science.aat0636",
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/scientific/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/version/v1.2.0/schema.json"
+  ],
+  "stac_version": "1.1.0",
+  "table:columns": [
+    {
+      "asset": "grwl-raw-observations",
+      "name": "utm_east",
+      "type": "decimal128(38, 18)"
+    },
+    {
+      "asset": "grwl-raw-observations",
+      "name": "utm_north",
+      "type": "decimal128(38, 18)"
+    },
+    {
+      "asset": "grwl-raw-observations",
+      "name": "width_m",
+      "type": "int64"
+    },
+    {
+      "asset": "grwl-raw-observations",
+      "name": "nchannels",
+      "type": "decimal128(38, 18)"
+    },
+    {
+      "asset": "grwl-raw-observations",
+      "name": "segmentID",
+      "type": "int64"
+    },
+    {
+      "asset": "grwl-raw-observations",
+      "name": "segmentInd",
+      "type": "int64"
+    },
+    {
+      "asset": "grwl-raw-observations",
+      "name": "lakeFlag",
+      "type": "decimal128(38, 18)"
+    },
+    {
+      "asset": "grwl-raw-observations",
+      "name": "lon",
+      "type": "decimal128(38, 18)"
+    },
+    {
+      "asset": "grwl-raw-observations",
+      "name": "lat",
+      "type": "decimal128(38, 18)"
+    },
+    {
+      "asset": "grwl-raw-observations",
+      "name": "elev_m",
+      "type": "int64"
+    },
+    {
+      "asset": "grwl-raw-observations",
+      "name": "source_tile",
+      "type": "string"
+    },
+    {
+      "asset": "grwl-raw-observations",
+      "name": "source_row",
+      "type": "uint32"
+    },
+    {
+      "asset": "grwl-raw-observations",
+      "name": "feature_id",
+      "type": "uint64"
+    },
+    {
+      "asset": "grwl-raw-observations",
+      "name": "width_valid",
+      "type": "bool"
+    },
+    {
+      "asset": "grwl-raw-observations",
+      "name": "bbox",
+      "type": "struct<xmin: double not null, ymin: double not null, xmax: double not null, ymax: double not null>"
+    },
+    {
+      "asset": "grwl-raw-observations",
+      "name": "geometry",
+      "type": "binary"
+    }
+  ],
+  "title": "Global River Width from Landsat — raw vector observations V01.01",
+  "type": "Collection",
+  "updated": "2026-11-03T02:18:50Z",
+  "version": "1.0.0"
+}

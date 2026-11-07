@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "status": "failed",
+  "scope": "Compare every displayed analytical attribute in the five frozen browser cases to exact Arrow source values, including Decimal text and JSON-safe IDs.",
+  "source_sha256": "1c7177cc55b732dc7e609ed22ae50c46d677548da98c4b39e4f1ab76996ca509",
+  "browser_report_sha256": "44d7625b4e11b7adbbdaee467b00cce9e76f1346c94618d2798656dc7c0aa676",
+  "cases": [
+    {
+      "feature_id": 149950193246821,
+      "checked_fields": 14,
+      "mismatches": {},
+      "status": "passed"
+    },
+    {
+      "feature_id": 148674587975197,
+      "checked_fields": 14,
+      "mismatches": {
+        "lakeFlag": {
+          "expected": "0E-18",
+          "observed": "0.000000000000000000"
+        }
+      },
+      "status": "failed"
+    },
+    {
+      "feature_id": 149086904780549,
+      "checked_fields": 14,
+      "mismatches": {
+        "lakeFlag": {
+          "expected": "0E-18",
+          "observed": "0.000000000000000000"
+        }
+      },
+      "status": "failed"
+    },
+    {
+      "feature_id": 149941603317417,
+      "checked_fields": 14,
+      "mismatches": {
+        "lakeFlag": {
+          "expected": "0E-18",
+          "observed": "0.000000000000000000"
+        }
+      },
+      "status": "failed"
+    },
+    {
+      "feature_id": 149941603284494,
+      "checked_fields": 14,
+      "mismatches": {
+        "lakeFlag": {
+          "expected": "0E-18",
+          "observed": "0.000000000000000000"
+        }
+      },
+      "status": "failed"
+    }
+  ]
+}

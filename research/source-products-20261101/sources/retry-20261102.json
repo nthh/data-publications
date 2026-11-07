@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "observed_at_utc": "2026-11-02T00:08:52Z",
+  "scope": "Bounded public GDW v1.0 source retry; no data body requested or acquired.",
+  "disk_preflight": {
+    "available_bytes": 41599676416,
+    "required_free_bytes": 42949672960,
+    "passes_40_gib_start_threshold": false
+  },
+  "requests": [
+    {
+      "key": "figshare_api_file_download_head",
+      "method": "HEAD",
+      "url": "https://api.figshare.com/v2/file/download/47913754",
+      "result": "DNS resolution failed before an HTTP response",
+      "error": "URLError: [Errno 8] nodename nor servname provided, or not known",
+      "redirect_target_recorded": false
+    },
+    {
+      "key": "figshare_api_article_files_get",
+      "method": "GET",
+      "url": "https://api.figshare.com/v2/articles/25988293/files",
+      "result": "DNS resolution failed before an HTTP response",
+      "error": "URLError: [Errno 8] nodename nor servname provided, or not known",
+      "response_body_bytes_read": 0,
+      "redirect_target_recorded": false
+    },
+    {
+      "key": "figshare_direct_file_head",
+      "method": "HEAD",
+      "url": "https://figshare.com/ndownloader/files/47913754?download=1",
+      "result": "DNS resolution failed before an HTTP response",
+      "error": "URLError: [Errno 8] nodename nor servname provided, or not known",
+      "redirect_target_recorded": false
+    },
+    {
+      "key": "gdw_producer_database_get",
+      "method": "GET",
+      "url": "https://www.globaldamwatch.org/database",
+      "result": "DNS resolution failed before an HTTP response",
+      "error": "URLError: [Errno 8] nodename nor servname provided, or not known",
+      "response_body_bytes_read": 0,
+      "redirect_target_recorded": false
+    }
+  ],
+  "prior_official_route_evidence": {
+    "path": "research/gdw-swot-preparation-20261101/gdw-source-access.json",
+    "api_article_and_landing": "HTTP 403",
+    "path_2": "research/gdw-swot-preparation-20261101/gdw-direct-download-heads.json",
+    "bundle_head_routes": "HTTP 403",
+    "path_3": "research/gdw-swot-preparation-20261101/gdw-direct-file-probes.json",
+    "direct_file_range_routes": "HTTP 403",
+    "user_reported_browser_failure": true
+  },
+  "metadata_and_mirror_leads": [
+    {
+      "url": "https://docs.figshare.com/v2/",
+      "classification": "official Figshare API documentation",
+      "contribution": "documents the public GET /file/download/{file_id} endpoint; this task made a HEAD-only probe to the corresponding API route"
+    },
+    {
+      "url": "https://api.datacite.org/dois/10.6084%2Fm9.figshare.25988293.v1",
+      "classification": "producer-deposited registration metadata already captured in research/gdw-swot-preparation-20261101/gdw-datacite-v1.json",
+      "contribution": "confirms DOI, CC BY 4.0, two alternative ZIP formats, release aggregate bytes, and contents description; not a file mirror"
+    },
+    {
+      "url": "https://datasetcatalog.nlm.nih.gov/dataset?q=0002478090",
+      "classification": "metadata index lead surfaced in bounded web search",
+      "contribution": "repeats the Figshare DOI and contents description; links back to the same Figshare article, no data asset located"
+    },
+    {
+      "url": "https://explore.openaire.eu/search/dataset?pid=10.6084%2Fm9.figshare.25988293.v1",
+      "classification": "metadata index lead surfaced in bounded web search",
+      "contribution": "repeats the DOI/abstract, no downloadable file or independent host located"
+    },
+    {
+      "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GDW/",
+      "classification": "already reviewed alternate producer-adjacent location",
+      "contribution": "v1_delta only; excluded because it is not the selected consensus v1.0 edition"
+    },
+    {
+      "url": "https://huggingface.co/datasets/Rekin226/aquascope-gauges/tree/main/context/dams",
+      "classification": "already reviewed public mirror lead",
+      "contribution": "selected-column barrier table only; no reservoir layer or complete source-equivalent attributes"
+    }
+  ],
+  "result": "No new HTTP status or successful official route was observed because direct network name resolution failed. Prior HTTP 403 results remain the latest origin-level evidence. No complete v1.0 mirror was found in the bounded search. No GDW bytes were downloaded."
+}

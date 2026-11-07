@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "criteria": "card-readiness-criteria-r1.json",
+  "change": "Before activation, require verified target metadata, completion of currently requested child metadata and a 500ms unchanged title/href list. Validate and focus one connected ElementHandle, verify its href, then send one Enter.",
+  "review": "Independent read-only review found bounded automation stabilization with acceptance gates unchanged.",
+  "limitations": [
+    "Async replacement is plausible, not proven as the cause of the River focus loss.",
+    "The earlier LakeATLAS wrong-route cause remains unproven.",
+    "Later lazy loading can still change a card; changed nodes, wrong routes and cross-product requests continue to fail."
+  ],
+  "checks": {
+    "node_syntax": "passed",
+    "offline_predicates": "passed",
+    "viewer_tests": {
+      "passed": 44,
+      "failed": 0,
+      "skipped": 0
+    },
+    "diff_check": "passed"
+  },
+  "next_run": "Full five-collection preflight r5, six PMTiles; no post-activation retry."
+}

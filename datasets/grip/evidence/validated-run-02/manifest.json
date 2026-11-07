@@ -1,0 +1,357 @@
+{
+  "schema_version": 1,
+  "source": {
+    "id": "grip",
+    "title": "GRIP4 global roads — 2018",
+    "source_doi": "10.5281/zenodo.6420961",
+    "source_version": "GRIP4-2018",
+    "source_url": "https://zenodo.org/api/records/6420961/files/GRIP4_global_vector_fgdb.zip/content",
+    "source_name": "GRIP4_global_vector_fgdb.zip",
+    "source_size": 2334355294,
+    "source_md5": "526db5eb478f4c990e27fcbc471abf4b",
+    "source_sha256": "851c26a530950f24252465bc67d18fc10ce735d10a1a3d11a06ebfff45c4c8cc",
+    "license": "CC-BY-4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "source_verification": "Whole archive size, producer MD5, SHA-256 and all ZIP CRCs verified; layer, schema, CRS and feature count inspected.",
+    "expected_rows": 25758453,
+    "attribute_dictionary_url": "https://zenodo.org/api/records/6420961/files/GRIP4_AttributeDescription.xlsx/content",
+    "attribute_dictionary_sha256": "38ced93e91000179bd398df7e2d919b234d37c178532a21c12651ecbeb901a51",
+    "status": "implemented_local",
+    "release": "grip4-2018-r1",
+    "metadata_timestamp": "2026-10-30T00:00:00Z",
+    "paper_doi": "10.1088/1748-9326/aabd42",
+    "portolan_schema": "https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json",
+    "tippecanoe_version": "tippecanoe v2.79.0",
+    "batch_size": 65536,
+    "pmtiles_maxzoom": 10,
+    "source_layer": "GRIP4_GlobalRoads",
+    "fid_column": "OBJECTID",
+    "region_field": "gp_gripreg",
+    "road_type_field": "GP_RTP",
+    "source_columns": [
+      "OBJECTID",
+      "GP_RTP",
+      "GP_REX",
+      "GP_RAV",
+      "GP_RRG",
+      "GP_RCY",
+      "GP_RSE",
+      "GP_RSI",
+      "GP_RSY",
+      "Shape_Length",
+      "gp_gripreg",
+      "Shape"
+    ],
+    "source_arrow_types": [
+      "int64",
+      "int32",
+      "int32",
+      "int32",
+      "int32",
+      "int32",
+      "int32",
+      "int32",
+      "int32",
+      "double",
+      "int16",
+      "binary"
+    ],
+    "validation_plan_path": "datasets/grip/CONTRACT.md"
+  },
+  "effective_config_sha256": "88d2b7fe36f3451e143f461d58a070426c0472632f4112960dcb1ee93a9fbca5",
+  "dataset_record_sha256_at_build": "32bdeff0cba3f75b89f720419563bf0ca3bd8a807e3db2639ed64fe9c9e300c6",
+  "conversion_git_commit": "23197105f3ac45d890330a466594921fe35d8f27",
+  "build_input_sha256": {
+    "build.py": "f33d12aa116f4c4bbe1d8e42fa1739663c51f0ab25cb7bf04f4461baced5fb64",
+    "source.py": "a2d201c65121765401d029b9938d2100f3af7e5e6104826554ce0e27698ce4fc",
+    "dataset_config.py": "f07fec35cd3a26d0ce8364a4d38494ff0e7699d29619857ab752285227f392cc",
+    "catalog.py": "92cc2e5904018c35e4db60f4b0c5d3b3d195f2c3f91abff1f82f970588be9551",
+    "validate.py": "6de7988744d0814d88c1c45dd9902682d1d3f43319fa900ee2595fe0a04e802d",
+    "tiles.py": "3d63b2f6aa4f23d2628fa27e120683f20b1a9fc9772022f29c549bb8d8d803db",
+    "serve.py": "9b8e2b17b81fe44b33b19de666abe96a4f003996395edec6b5e62d10a98002c6",
+    "check_catalog.py": "6bb48c6204a10f2611cbea22a6791636cebfe7f98c74dbe8b2fafdc6a7ddd2a5",
+    "package.py": "50df3224c25796628cbbaafcbab5f9b834927ce404a05ed2724ff7bc61f439d3",
+    "reproduce.py": "2973f63fda125d3dd61f5c62b6a43614b88e647bb153cb9d9e0eafbbdf6b4aca",
+    "test_validation.py": "ccf1366e3b9940e4aa15d56cb570f5f1c22c44192bf14d33e50fe8a9b2511e40",
+    "test_package.py": "3b34f48701a9cb662742d8b0dfb5e60033edcf06a172eff585a220a11333dd5c",
+    "test_catalog_release.py": "93c979eaf4275818153d9ff710d0251f3da6056fc5343df83a8a187741492d34",
+    "pyproject.toml": "194f443ee0cb5878a489e21a81eebe32a720ec7958a36e91c4acee5c7b8619a3",
+    "uv.lock": "8cb1b03917f2f30d945422810b601ee350bd9e3ed966c9725f22c89ee7ac05f7",
+    "package.json": "2dd930cec1b0e8392806291e486b1e761a2afb897472d4adc7257436e15d1a41",
+    "package-lock.json": "470ac4d6021baffd882825d9968ac1c67afa38e0e8a531e5752ccb7fd0393f2b",
+    "CONTRACT.md": "b8565c09b4f60ee732e217d1ad711f31ca1fd9836c5fdff98318efde6083f395"
+  },
+  "assets": {
+    "AGENTS.md": {
+      "size_bytes": 809,
+      "sha256": "0e4387da272bb71f3797889a658dba8880da94ccdd4f4c0ce8728ca557949553"
+    },
+    "LICENSE.txt": {
+      "size_bytes": 813,
+      "sha256": "5d8866bf9e30a8e1f2cd8a1b778f760132affb585911932ee7c8d6abba0194f6"
+    },
+    "README.md": {
+      "size_bytes": 1751,
+      "sha256": "d2f132e0c6a536d53f0eefe79eb6105635408e7f25d4e1765a5fb25943dfa0b4"
+    },
+    "catalog.json": {
+      "size_bytes": 1677,
+      "sha256": "41445f079f92a8547eb0dfc20ff5128bd811b3b131334a076b6f6200bdac671f"
+    },
+    "dataset.yaml": {
+      "size_bytes": 5702,
+      "sha256": "32bdeff0cba3f75b89f720419563bf0ca3bd8a807e3db2639ed64fe9c9e300c6"
+    },
+    "grip/AGENTS.md": {
+      "size_bytes": 809,
+      "sha256": "0e4387da272bb71f3797889a658dba8880da94ccdd4f4c0ce8728ca557949553"
+    },
+    "grip/README.md": {
+      "size_bytes": 4821,
+      "sha256": "aee2b931283d65ff365402139d00b1d9eec90e9ec1894be29d5a44753a4ba2fe"
+    },
+    "grip/attribute-codes.json": {
+      "size_bytes": 12658,
+      "sha256": "b3ca522d8ab91a868dc6e1e216b0be1b130d14b75e21c1e5a4f62e18ea537f01"
+    },
+    "grip/collection.json": {
+      "size_bytes": 11063,
+      "sha256": "a7920dd858f793709bb6a96e899d2026f8db586f7fbd8f1170e14261f5c6197c"
+    },
+    "grip/data/region-1.parquet": {
+      "size_bytes": 793260652,
+      "sha256": "6dadc39ca784a702abc86d1d2ed2d8d03c3eea5cc098cf5f45b272fd38931e3c"
+    },
+    "grip/data/region-2.parquet": {
+      "size_bytes": 483828704,
+      "sha256": "334ace41536cd1122273ab88b0208794cb143e8c2c68a1f379cb9e745005a05d"
+    },
+    "grip/data/region-3.parquet": {
+      "size_bytes": 242213234,
+      "sha256": "098cf3899b91ef4f6447975febd69e474b7eacd64f8b5f92eb1758ba7a7670df"
+    },
+    "grip/data/region-4.parquet": {
+      "size_bytes": 1376824394,
+      "sha256": "bcf93b959a9d75b417382205280ba4abbb51a10315e2e47962f3c00a77f2aacc"
+    },
+    "grip/data/region-5.parquet": {
+      "size_bytes": 145298957,
+      "sha256": "2d40960736957393473845095d6f5ddd9326921dc5cd7727ebefcebbfa0cfbdd"
+    },
+    "grip/data/region-6.parquet": {
+      "size_bytes": 750742137,
+      "sha256": "a39999105bcb5bf6f0aa5afabb0e3567eb3a39329d783818fde6904dd5739246"
+    },
+    "grip/data/region-7.parquet": {
+      "size_bytes": 64213138,
+      "sha256": "dfb5ef6c182c1eb8a9747e44684897469e98a959edacb92bec889c04f63f7d5d"
+    },
+    "grip/grip.pmtiles": {
+      "size_bytes": 851859314,
+      "sha256": "930b8b92462859f38575b79b89f9036091ba095edd9828f8cdfddc9efd7e2879"
+    },
+    "grip/original-attribute-dictionary.xlsx": {
+      "size_bytes": 23947,
+      "sha256": "38ced93e91000179bd398df7e2d919b234d37c178532a21c12651ecbeb901a51"
+    },
+    "grip/quality.json": {
+      "size_bytes": 2052,
+      "sha256": "a32594ec94dd4a5533e5fca972921f396c48b92a3bdccc29f8088e914a80a586"
+    },
+    "grip/schema.json": {
+      "size_bytes": 2443,
+      "sha256": "c2b9f746722e29ed8ab8d98c3eed8935f0df75c011118fea502f430d49614533"
+    },
+    "grip/styles/grip.json": {
+      "size_bytes": 911,
+      "sha256": "e405bc75c67883c4af6c177de8bc63417c889d8750a3d2891dd8069c6923669d"
+    },
+    "grip/thumbnail.png": {
+      "size_bytes": 6463,
+      "sha256": "87a9ae64e4c9cfdfc533b77de471ccffe3d505efbaeab956a7e16d8a021c1309"
+    }
+  },
+  "source_quality": {
+    "rows": 25758453,
+    "bbox": [
+      -179.99942,
+      -55.05521999999996,
+      180.0000000000001,
+      73.83582000000007
+    ],
+    "regions": {
+      "1": 5360526,
+      "2": 3083547,
+      "3": 1532578,
+      "4": 8786966,
+      "5": 1354055,
+      "6": 5244510,
+      "7": 396271
+    },
+    "road_classes": {
+      "1": 573396,
+      "2": 788727,
+      "3": 1386948,
+      "4": 3460269,
+      "5": 19549113
+    },
+    "fields": [
+      {
+        "name": "OBJECTID",
+        "type": "int64",
+        "description": "Original File Geodatabase feature identifier, unique within this pinned source."
+      },
+      {
+        "name": "GP_RTP",
+        "type": "int32",
+        "description": "RoadType; producer codes retained (0 is unspecified, not null)."
+      },
+      {
+        "name": "GP_REX",
+        "type": "int32",
+        "description": "RoadExistence; producer codes retained (0 is unspecified, not null)."
+      },
+      {
+        "name": "GP_RAV",
+        "type": "int32",
+        "description": "RoadAvailability; producer codes retained (0 is unspecified, not null)."
+      },
+      {
+        "name": "GP_RRG",
+        "type": "int32",
+        "description": "RoadRegion; producer codes retained (0 is unspecified, not null)."
+      },
+      {
+        "name": "GP_RCY",
+        "type": "int32",
+        "description": "RoadCountry; producer codes retained (0 is unspecified, not null)."
+      },
+      {
+        "name": "GP_RSE",
+        "type": "int32",
+        "description": "RoadSurface; producer codes retained (0 is unspecified, not null)."
+      },
+      {
+        "name": "GP_RSI",
+        "type": "int32",
+        "description": "RoadSourceId; producer codes retained (0 is unspecified, not null)."
+      },
+      {
+        "name": "GP_RSY",
+        "type": "int32",
+        "description": "RoadYear; producer codes retained (0 is unspecified, not null)."
+      },
+      {
+        "name": "Shape_Length",
+        "type": "double",
+        "description": "Original File Geodatabase shape-length value in the source coordinate system; not a newly calculated geodesic length or a metre measurement."
+      },
+      {
+        "name": "gp_gripreg",
+        "type": "int16",
+        "description": "Aggregated region for the GLOBIO website downloads; producer codes retained (0 is unspecified, not null)."
+      },
+      {
+        "name": "geometry",
+        "type": "binary",
+        "description": "Unchanged source WKB coordinates and line parts; OGC:CRS84 longitude/latitude."
+      },
+      {
+        "name": "bbox",
+        "type": "struct<xmin: double, ymin: double, xmax: double, ymax: double>",
+        "description": "Per-feature xmin, ymin, xmax, ymax in source longitude/latitude, for spatial filtering."
+      }
+    ],
+    "null_counts": {
+      "OBJECTID": 0,
+      "GP_RTP": 0,
+      "GP_REX": 0,
+      "GP_RAV": 0,
+      "GP_RRG": 0,
+      "GP_RCY": 13,
+      "GP_RSE": 5067,
+      "GP_RSI": 67,
+      "GP_RSY": 67,
+      "Shape_Length": 0,
+      "gp_gripreg": 0,
+      "geometry": 0,
+      "bbox": 0
+    },
+    "geometry_types": [
+      "MultiLineString"
+    ],
+    "geometry_type_counts": {
+      "5": 25758453
+    },
+    "invalid_source_geometries_preserved": 0,
+    "vertices": 286775634,
+    "max_source_fid": 25758453,
+    "source_reader": "pyogrio 0.13.0, GDAL 3.12.4",
+    "display": {
+      "minimum_zoom": 0,
+      "maximum_zoom": 10,
+      "simplification": 1,
+      "tile_extent": 4096,
+      "max_tile_bytes": 500000,
+      "max_tile_features": 200000,
+      "thinning": "drop-densest-as-needed at every zoom",
+      "input_features": 25758453,
+      "layer": "roads",
+      "id_field": "OBJECTID",
+      "attributes": [
+        "gp_gripreg",
+        "GP_RTP"
+      ],
+      "limits": "Not a complete network at any zoom; source IDs/retention and deterministic geometry samples validated separately. Quantization, clipping and simplification apply."
+    }
+  },
+  "software": {
+    "python": "3.12.12",
+    "packages": {
+      "pyarrow": "23.0.1",
+      "pyogrio": "0.13.0",
+      "duckdb": "1.5.2",
+      "shapely": "2.1.2",
+      "pyproj": "3.8.0"
+    },
+    "tippecanoe": "tippecanoe v2.79.0",
+    "tippecanoe_sha256": "c504719334e5335d60c66a01491707bdbfb773ebbfe3efc7c1c8239eb18d58d1"
+  },
+  "tile_command": [
+    "tippecanoe",
+    "--quiet",
+    "--output",
+    "grip/grip.pmtiles",
+    "--layer",
+    "roads",
+    "--name",
+    "GRIP4 global roads — 2018",
+    "--description",
+    "GRIP4 2018 roads; simplified and thinned at all zooms. Use complete GeoParquet for analysis.",
+    "--attribution",
+    "Meijer et al. (2018), CC BY 4.0; conversion by Folia",
+    "--minimum-zoom",
+    "0",
+    "--maximum-zoom",
+    "10",
+    "--simplification",
+    "1",
+    "--buffer",
+    "5",
+    "--drop-densest-as-needed",
+    "--full-detail",
+    "12",
+    "--low-detail",
+    "12",
+    "--minimum-detail",
+    "12",
+    "--maximum-tile-bytes",
+    "500000",
+    "--maximum-tile-features",
+    "200000",
+    "--temporary-directory",
+    "scratch",
+    "scratch/tiles.geojsonl"
+  ],
+  "publication_status": "local_only"
+}

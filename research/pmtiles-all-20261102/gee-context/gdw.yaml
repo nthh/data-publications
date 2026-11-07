@@ -1,0 +1,210 @@
+schema_version: 1
+id: gdw
+title: Global Dam Watch consensus v1.0 — barriers and reservoirs
+community_url: https://gee-community-catalog.org/projects/gdw
+audit:
+  snapshot: gee-community-audit-20261029
+  family_key: gdw
+  unique_gee_asset_count: 2
+  initial_queue: research_original_source
+  folia_registry_status: not_identified
+  folia_registry_ids: []
+  source_coop_urls: []
+  source_coop_scope: null
+  external_native_urls: []
+  external_native_scope: null
+triage:
+  decision: publish_conversion
+  priority: pilot_review
+  rationale: Selected by the user for local preparation on 2026-11-01. Complete barrier/reservoir attributes
+    remain a useful gap beyond Overture and the AquaScope selected-column barrier mirror. Source acquisition
+    is blocked by official HTTP 403 responses; no conversion or publication claimed.
+review:
+  citation_assessment:
+    as_of: '2026-10-29'
+    provider: OpenAlex
+    evidence_path: research/citations/rankings.json
+    evidence_key: gdw
+    geographic_scope: global
+    paper_count_status: matched
+    max_paper_citations: 120
+    max_data_doi_citations: 3
+    top_paper_doi: https://doi.org/10.1038/s41597-024-03752-9
+    top_paper_openalex_id: https://openalex.org/W4403228728
+    citation_scope: associated_dataset_publication
+  availability:
+    shortlist_id: native-publication-gaps-20261031
+    rank: 9
+    reviewed_on: '2026-11-01'
+    label: Global Dam Watch consensus v1.0
+    scope: Consensus v1.0 barrier points and reservoir polygons; excludes separate evolving intelligence
+      products and the JRC v1_delta edition.
+    geographic_scope: global
+    download:
+      bytes: null
+      precision: unknown
+      reported_size: null
+      format: Shapefile ZIP
+      file_count: 1
+      basis: not_established
+      note: Selected final v1.0 Shapefile archive has a documented direct file URL, but HEAD/GET requests
+        return 403. DataCite registers 127,938,795 bytes for the release containing two alternative ZIP
+        formats; this is not the selected archive size. Exact selected bytes remain null.
+      evidence_urls:
+      - https://api.datacite.org/dois/10.6084%2Fm9.figshare.25988293.v1
+      - https://ndownloader.figshare.com/files/47913754
+      - https://github.com/Rekin226/aquascope/blob/main/aquascope/archive/context_mirror.py
+    locations:
+    - service_id: figshare
+      label: Figshare
+      platform: external
+      relationship: matching_scope
+      access: download
+      formats:
+      - FileGDB ZIP
+      - Shapefile ZIP
+      urls:
+      - https://doi.org/10.6084/m9.figshare.25988293.v1
+      - https://www.globaldamwatch.org/database
+      asset_ids: []
+      note: Final v1.0 release, two alternative full-layer archive formats; CC BY 4.0 verified from producer-deposited
+        DataCite metadata. Official acquisition is currently HTTP 403; producer form redirects to the
+        same Figshare service.
+    - service_id: jrc
+      label: European Commission JRC
+      platform: external
+      relationship: other_version_or_subset
+      access: download
+      formats:
+      - Shapefile
+      urls:
+      - https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GDW/
+      - https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GDW/GDW_v1_delta_shp/
+      asset_ids: []
+      note: Directory lists v1_delta, a different edition. It contributes to identified locations, not
+        matching consensus v1.0 locations.
+    - service_id: aquascope_huggingface
+      label: AquaScope / Hugging Face
+      platform: external
+      relationship: other_version_or_subset
+      access: cloud_native
+      formats:
+      - Parquet (latitude/longitude columns; no GeoParquet geometry)
+      urls:
+      - https://huggingface.co/datasets/Rekin226/aquascope-gauges/blob/main/context/dams/gdw_barriers.parquet
+      - https://rachidouedraogo.com/aquascope/archive-layout/
+      asset_ids: []
+      note: 'Actual footer: 41,145 rows, 16 selected columns, one row group, no geometry column or geo
+        metadata. File is 1,514,458 bytes. Reservoir polygons are absent from this documented mirror;
+        not the complete two-layer/full-attribute GDW scope.'
+    - service_id: earth_engine
+      label: GEE community
+      platform: gee
+      relationship: matching_scope
+      access: gee_collection
+      formats:
+      - Earth Engine FeatureCollection
+      urls:
+      - https://gee-community-catalog.org/projects/gdw/
+      asset_ids:
+      - projects/sat-io/open-datasets/GDW/GDW_BARRIERS_V1_0
+      - projects/sat-io/open-datasets/GDW/GDW_RESERVOIRS_V1_0
+      note: Two catalog-declared v1.0 feature collections, one GEE service. No new live GEE reads.
+    output_manifest: null
+    evidence:
+    - path: research/availability-sizes-20261101/observations.json
+      sha256: a7c4fd21000b497faf92810420cde5cc4ee80ae533721dd13c69cb7e692fcd7b
+      key: gdw
+    - path: research/gdw-swot-preparation-20261101/observations.json
+      sha256: 1b4cddc40d19f126a59f7311d886ce60edfa3120c0bf385c4bcecde7ed465bfb
+      key: gdw
+  publication_assessment:
+    as_of: '2026-11-01'
+    route: prepare_complete_vector_conversion
+    stage: blocked_source_access
+    scope: Both final-v1.0 barrier and reservoir layers, all producer attributes and shared IDs.
+    outputs:
+    - GeoParquet
+    source_release: 10.6084/m9.figshare.25988293.v1
+    source_license: CC-BY-4.0
+    registered_release_total_bytes: 127938795
+    selected_source_file_bytes: null
+    next_step: Obtain the official final GDW_v1_0_shp.zip from file 47913754, pin size and checksums, inspect
+      schema/technical documentation, then implement and validate conversion. Do not use JRC delta or the
+      partial AquaScope mirror as a complete-source substitute.
+    evidence_path: research/gdw-swot-preparation-20261101/observations.json
+    latest_attempt:
+      path: research/source-products-20261101/sources/retry-20261102-network.json
+      sha256: 625597acb2868313f503263c2d54d1578f702cad7cbb05abb084d045b70df28b
+      outcome: GDW direct archive GET returned HTTP 403; shared free disk remained below the 40 GiB bulk
+        start threshold. No dataset acquisition or conversion.
+publication:
+  status: candidate
+  source_coop:
+    owner: nthh
+    owner_status: confirmed
+    account_verification: null
+    product_id: global-dam-watch
+    title: Global Dam Watch v1.0 — barriers and reservoirs
+    summary: Planned complete GeoParquet conversion of the final Global Dam Watch v1.0 barrier and reservoir
+      layers, preserving scientific attributes and shared identifiers.
+    tags:
+    - hydrology
+    - dams
+    - reservoirs
+    - global
+    - geoparquet
+    license_note: The producer-deposited final v1.0 DataCite record declares CC BY 4.0; preserve producer
+      attribution and the release DOI.
+    attribution: Global Dam Watch consortium; final consensus database version 1.0, DOI 10.6084/m9.figshare.25988293.v1.
+    temporal_note: Static consensus database release; individual dam and reservoir attributes have varying
+      observation dates.
+    limitations:
+    - 'No source archive has been acquired or converted: official Figshare API and direct-file requests
+      return HTTP 403.'
+    - Overture and AquaScope offer useful related access; the selected scope includes full original attributes
+      and reservoir polygons beyond the reviewed AquaScope table.
+    - Planned formats and destinations are proposals, not available data.
+    supplements: []
+related_datasets:
+- id: overture-base
+  title: Overture Base infrastructure and water
+  relationship: alternative
+  url: https://docs.overturemaps.org/guides/base/
+  use_case: Generic map features for dams, barriers and water bodies.
+  comparison: OSM-derived features and raw source tags can cover some of the same objects. The documented
+    schema does not supply GDW scientific attributes, paired reservoir relation or its shared IDs. No
+    byte/feature-level equivalence test was performed.
+  spatial_coverage: Global mapped coverage; completeness differs by source.
+  formats:
+  - GeoParquet
+  access: Public Overture releases; follow ODbL attribution requirements.
+  reviewed_on: '2026-11-01'
+  evidence:
+  - title: Overture Base provenance
+    url: https://docs.overturemaps.org/guides/base/
+  - title: Infrastructure schema
+    url: https://docs.overturemaps.org/schema/reference/base/infrastructure/
+  - title: Water schema
+    url: https://docs.overturemaps.org/schema/reference/base/water/
+- id: aquascope-gdw-barriers
+  title: AquaScope GDW v1.0 selected-attribute barrier table
+  relationship: derived_product
+  url: https://huggingface.co/datasets/Rekin226/aquascope-gauges/blob/main/context/dams/gdw_barriers.parquet
+  use_case: Reuse a compact public barrier table when its selected attributes and point coordinates meet
+    the need.
+  comparison: Footer inspection confirms 41,145 rows and 16 columns including lat/lon, but no geometry/GeoParquet
+    metadata. It does not include reservoir polygons or all original GDW attributes. Full source value
+    equivalence was not checked.
+  spatial_coverage: Global barrier rows as declared by the mirror; source completeness not independently
+    reconciled.
+  formats:
+  - Parquet
+  - CSV.gz per cell
+  access: Public HTTPS range reads verified; mirror documents CC BY 4.0 and the producer DOI.
+  reviewed_on: '2026-11-01'
+  evidence:
+  - title: AquaScope archive contract
+    url: https://rachidouedraogo.com/aquascope/archive-layout/
+  - title: Public file directory
+    url: https://huggingface.co/datasets/Rekin226/aquascope-gauges/tree/main/context/dams

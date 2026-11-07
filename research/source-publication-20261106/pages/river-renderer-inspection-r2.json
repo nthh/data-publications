@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "frozen_before_viewer_run": true,
+  "kind": "read_only_browser_renderer_diagnostic",
+  "dataset_id": "river-plastic-inputs",
+  "browser_source": "https://github.com/portolan-sdi/portolan-browser/tree/15af01335da62a60d209911c9bde994981fd29be",
+  "supersedes": {
+    "prior_criteria_path": "research/source-publication-20261106/pages/river-renderer-inspection-r1.json",
+    "prior_criteria_sha256": "b85fda1ba71ebbce758ad64a445948b01ed27cb4049252e6a765d4d1bb88d5c9",
+    "prior_attempt": "r6",
+    "prior_attempt_result": "developer_diagnostic_incomplete; renderer_state.available=false; component_chain_seen=0; the DOM __vueParentComponent reference was absent in the production Browser page."
+  },
+  "purpose": "Distinguish valid loaded PMTiles source features from MapLibre style-layer/render visibility failures after a bounded public Browser load.",
+  "scope": {
+    "mode": "developer_diagnostic_not_acceptance",
+    "selected_datasets": ["river-plastic-inputs"],
+    "page_access": "Fresh anonymous Browser context; no cookies, credentials, or injected metadata outside the exact frozen Pages plan.",
+    "source_access": "Live exact-plan Source requests under the existing strict bounded Range, 206, Content-Range, MIME, CORS and byte-budget checks.",
+    "vue_map_access": "The official Browser mounts Vue on body. Starting from document.body._vnode, traverse only vnode.component, component.subTree/vnode, and vnode children/Suspense branches; stop at strict node/depth limits. Identify the named MapView instance and read its existing proxy.map reference. No Vue state writes, map control clicks, zooms, visibility changes, synthetic data injection, or extra network calls. If unavailable, emit only property-name diagnostics, never object values."
+  },
+  "vue_traversal_limits": {
+    "root_mount_target": "body",
+    "root_vnode_property": "_vnode",
+    "max_vnodes": 5000,
+    "max_components": 2000,
+    "max_queued_nodes": 7000,
+    "max_depth": 64,
+    "max_property_names_on_unavailable": 80
+  },
+  "observations": {
+    "camera": ["center", "zoom", "bounds", "bearing", "pitch"],
+    "map_load_state": ["isStyleLoaded", "areTilesLoaded", "isSourceLoaded for matched PMTiles sources"],
+    "sources": ["id", "type", "url", "tiles", "bounds", "minzoom", "maxzoom", "matched planned PMTiles URL"],
+    "style_layers": ["id", "type", "source", "source-layer", "filter", "minzoom", "maxzoom", "layout.visibility", "paint"],
+    "features": {
+      "rendered": "queryRenderedFeatures counts per planned PMTiles-backed style layer, with at most five small property/geometry samples.",
+      "source": "querySourceFeatures counts per matched PMTiles source and source-layer, with property-type counts over at most 5000 returned features and at most five small property/geometry samples.",
+      "sample_properties": ["i_mid", "source_row"],
+      "maximum_sample_features": 5,
+      "maximum_source_features_examined_for_type_counts": 5000
+    },
+    "console": "Existing harness captures console errors and warnings; any console error remains a failure."
+  },
+  "interpretation": [
+    "A source-feature count above zero with zero rendered features localizes the issue to style/layer filtering, visibility, zoom bounds, projection/rendering, or current camera coverage; it does not by itself identify which one.",
+    "A zero source-feature count with successful PMTiles tile-data ranges means valid tile bytes were fetched but no source features were exposed for the inspected source/layer at the current camera.",
+    "This report is diagnostic evidence only and can never satisfy or alter the original acceptance gates."
+  ],
+  "unchanged_gates": [
+    "Use the exact committed Pages publish plan and immutable Source object plan passed to the existing harness.",
+    "Do not intercept or replace Source data, bypass response checks, permit full data GETs, or suppress failed-request errors.",
+    "Do not claim visual acceptance or infer that a successful query API call proves a visible map. Root must inspect screenshots and state output."
+  ]
+}

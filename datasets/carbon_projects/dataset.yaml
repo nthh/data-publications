@@ -1,0 +1,36 @@
+schema_version: 1
+id: carbon_projects
+title: Carbon Offset Project Boundaries
+community_url: https://gee-community-catalog.org/projects/carbon_projects
+audit:
+  snapshot: gee-community-audit-20261029
+  family_key: carbon_projects
+  unique_gee_asset_count: 1
+  initial_queue: review_source_coop_counterpart
+  folia_registry_status: direct_or_component
+  folia_registry_ids:
+  - '@cecil/forest-carbon-project-boundaries'
+  source_coop_urls:
+  - https://source.coop/cecil/forest-carbon-boundaries
+  source_coop_scope: Exact same database of 575 nature-based carbon project boundaries
+    across 55 countries, republished as GeoParquet.
+  external_native_urls:
+  - https://source.coop/cecil/forest-carbon-boundaries
+  external_native_scope: Exact same database of 575 nature-based carbon project boundaries
+    across 55 countries, republished as GeoParquet.
+triage:
+  decision: pending
+  priority: normal
+review:
+  citation_assessment:
+    as_of: '2026-10-29'
+    provider: OpenAlex
+    evidence_path: research/citations/rankings.json
+    evidence_key: carbon_projects
+    geographic_scope: mixed
+    paper_count_status: matched
+    max_paper_citations: 11
+    max_data_doi_citations: null
+    top_paper_doi: https://doi.org/10.1038/s41597-025-04868-2
+    top_paper_openalex_id: https://openalex.org/W4409185689
+    citation_scope: associated_dataset_publication

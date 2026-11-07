@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "purpose": "Freeze global raw-GRWL browser controls before inspecting global PMTiles output.",
+  "source_selection": {
+    "fidelity_status": "passed",
+    "sample_policy": "global_controls",
+    "longest_parts_per_tile": 8,
+    "minimum_part_length_m": 10,
+    "eligible_bbox_rule": "The complete source-part bbox must lie within the selected window.",
+    "tie_break": "Lexicographically ascending source_tile, source_row, then part; selection occurs from source-validation longest_parts only.",
+    "context_padding_degrees": 2.0,
+    "detail_padding_degrees": 0.004,
+    "detail_zoom_max": 12,
+    "context_region": "grwl_15450",
+    "adjust_after_display": false
+  },
+  "known_error_cases": [
+    {"summary_reference_id": 11839, "source_tile": "NI16", "source_row": 56861, "detail_bbox": [-90.00397193295412, 35.51228964037926, -89.9959719329541, 35.520289640379254]},
+    {"summary_reference_id": 13164, "source_tile": "NJ12", "source_row": 1797, "detail_bbox": [-109.42577349279897, 39.995910538141594, -109.41777349279896, 40.00391053814159]},
+    {"summary_reference_id": 15394, "source_tile": "NL11", "source_row": 13838, "detail_bbox": [-120.00392404286917, 47.7748543994724, -119.99592404286916, 47.7828543994724]},
+    {"summary_reference_id": 15397, "source_tile": "NL11", "source_row": 46761, "detail_bbox": [-119.61722130862934, 47.99597812536007, -119.60922130862933, 48.003978125360064]},
+    {"summary_reference_id": 15450, "source_tile": "NL13", "source_row": 41573, "detail_bbox": [-108.00387820772953, 45.2955862638065, -107.99587820772952, 45.303586263806494]}
+  ],
+  "global_controls": [
+    {"window_id": "north_america", "bbox": [-125, 30, -65, 55]},
+    {"window_id": "south_america", "bbox": [-80, -45, -35, 10]},
+    {"window_id": "africa", "bbox": [-20, -35, 55, 35]},
+    {"window_id": "europe", "bbox": [-10, 35, 40, 70]},
+    {"window_id": "asia", "bbox": [60, 0, 150, 65]},
+    {"window_id": "oceania", "bbox": [110, -50, 180, 0]}
+  ],
+  "analytic_fields": [
+    "utm_east", "utm_north", "width_m", "nchannels", "segmentID", "segmentInd",
+    "lakeFlag", "lon", "lat", "elev_m", "source_tile", "source_row", "feature_id", "width_valid"
+  ],
+  "browser_limits": {"bytes_per_case": 134217728, "require_partial_content": true, "require_cors_star": true}
+}

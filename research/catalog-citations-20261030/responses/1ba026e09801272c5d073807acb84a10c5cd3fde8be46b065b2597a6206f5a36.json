@@ -1,0 +1,80 @@
+{
+  "request_url": "https://api.openalex.org/works?search=Ecoregions+of+the+conterminous+United+States%3A+evolution+of+a+hierarchical+spatial+framework&corpus=all&per_page=5&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date",
+  "retrieved_at": "2026-10-30T22:07:44.639410+00:00",
+  "response_path": "responses/1ba026e09801272c5d073807acb84a10c5cd3fde8be46b065b2597a6206f5a36.json",
+  "status": 200,
+  "response_sha256": "3de4ae7e1f273771d0e83e3cf3f084bfb3889abb8ac0addd1c0471819ff003c3",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 1186,
+      "db_response_time_ms": 85,
+      "page": 1,
+      "per_page": 5,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where full text has (Ecoregions of the conterminous United States: evolution of a hierarchical spatial framework)",
+        "x_new_oql": "get works (all corpora) where full text has (Ecoregions of the conterminous United States: evolution of a hierarchical spatial framework)",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "Ecoregions of the conterminous United States: evolution of a hierarchical spatial framework",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:Ecoregions of the conterminous United States: evolution of a hierarchical spatial framework&corpus=all&per_page=5",
+        "order": "best matches first",
+        "order_default": true
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W2138102892",
+        "doi": "https://doi.org/10.1007/s00267-014-0364-1",
+        "title": "Ecoregions of the Conterminous United States: Evolution of a Hierarchical Spatial Framework",
+        "type": "article",
+        "publication_year": 2014,
+        "publication_date": "2014-09-15"
+      },
+      {
+        "id": "https://openalex.org/W6929763781",
+        "doi": "https://doi.org/10.5066/p9qkhktq",
+        "title": "The Landsat Burned Area products for the conterminous United States (ver. 3.0, March 2022)",
+        "type": "dataset",
+        "publication_year": 2020,
+        "publication_date": "2020-01-01"
+      },
+      {
+        "id": "https://openalex.org/W4205124213",
+        "doi": "https://doi.org/10.33423/jabe.v23i6.4658",
+        "title": "Consumer Ecoregions: Geographic Segmentation of the Eastern Conterminous United States of America",
+        "type": "article",
+        "publication_year": 2021,
+        "publication_date": "2021-10-05"
+      },
+      {
+        "id": "https://openalex.org/W2279677143",
+        "doi": "https://doi.org/10.3133/ofr20161021",
+        "title": "Ecoregions of California",
+        "type": "report",
+        "publication_year": 2016,
+        "publication_date": "2016-01-01"
+      },
+      {
+        "id": "https://openalex.org/W3036971279",
+        "doi": "https://doi.org/10.1016/j.gloplacha.2020.103262",
+        "title": "Climate sensitivity to decadal land cover and land use change across the conterminous United States",
+        "type": "article",
+        "publication_year": 2020,
+        "publication_date": "2020-06-16"
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "f3dd2247187d86c93a35b24074bfa0e86680a26ac4a0af258f763c94d46a834a"
+}

@@ -1,0 +1,396 @@
+#!/usr/bin/env python3
+"""Sample source GeoParquet against actual z12 PMTiles geometry and attributes.
+
+The sample is the lowest 32 eligible global IDs plus the lowest eight in each
+frozen region. Eligibility requires a valid bbox spanning at most 64 z12 tiles.
+Full ID coverage belongs to the separate builder accounting check.
+"""
+from __future__ import annotations
+
+import argparse
+import gzip
+import hashlib
+import json
+import math
+from pathlib import Path
+from typing import Any
+
+import mapbox_vector_tile
+import numpy as np
+import pyarrow.parquet as pq
+import shapely
+from pmtiles.reader import Reader
+from pmtiles.tile import Compression
+from pyproj import Transformer
+from shapely.geometry import shape
+
+ROOT = Path(__file__).resolve().parents[1]
+REGIONS = json.loads((ROOT / "research/pmtiles-all-20261102/criteria.json").read_text())["geographic_controls"]
+ZOOM = 12
+EXTENT = 4096
+TOLERANCE_METRES = 30.0
+MAX_TILES_PER_ID = 64
+MERCATOR_HALF = 20037508.342789244
+MAX_LAT = 85.0511287798066
+TRANSFORMER = Transformer.from_crs(4326, 3857, always_xy=True)
+# Immutable prepared release pins, independent of the new display manifest.
+SOURCE_PINS = {
+    "hydrolakes-polygons.parquet": (949598607, "6f588d97c14651eb23bea2d74fdf2a85f218a00ff11519c81efa5512b916b7f8", 1427688),
+    "ffr-reach-network-v1.parquet": (887132886, "62130e4999ba449bd2768bcdd9346bc2ba8fa4c4f06d39597e5227cd496a1a63", 8477883),
+    "lakeatlas-polygons.parquet": (1143992867, "bbef606fd8522b230efc90e2952a67c1e4265e7bf733208fa4cc31395a7277b7", 1427688),
+    "lakeatlas-pour-points.parquet": (283780050, "ff621c1db763551cdb6ced8958eefcc9da76a73c16e7f7259c238bec3aae5720", 1427688),
+}
+EXPECTED_ASSETS = {
+    "hydrolakes-1": ("hydrolakes-polygons.parquet", "hydrolakes-polygons", "polygon", "Hylak_id"),
+    "free-flowing-rivers-1": ("ffr-reach-network-v1.parquet", "ffr-reaches", "line", "OBJECTID"),
+    "lakeatlas-1": ("lakeatlas-polygons.parquet", "lakeatlas-polygons", "polygon", "OBJECTID"),
+    "lakeatlas-2": ("lakeatlas-pour-points.parquet", "lakeatlas-pour-points", "point", "OBJECTID"),
+}
+
+
+def sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as stream:
+        for block in iter(lambda: stream.read(1024 * 1024), b""):
+            digest.update(block)
+    return digest.hexdigest()
+
+
+def lon_tile(lon: float, zoom: int = ZOOM) -> int:
+    return max(0, min((1 << zoom) - 1, math.floor((lon + 180) / 360 * (1 << zoom))))
+
+
+def lat_tile(lat: float, zoom: int = ZOOM) -> int:
+    lat = max(-MAX_LAT, min(MAX_LAT, lat))
+    y = (1 - math.asinh(math.tan(math.radians(lat))) / math.pi) / 2 * (1 << zoom)
+    return max(0, min((1 << zoom) - 1, math.floor(y)))
+
+
+def tile_range(box: tuple[float, float, float, float], zoom: int = ZOOM) -> tuple[int, int, int, int]:
+    xmin, ymin, xmax, ymax = box
+    if not all(math.isfinite(v) for v in box) or xmin > xmax or ymin > ymax or xmin < -180 or xmax > 180:
+        raise ValueError(f"invalid source bbox: {box}")
+    return lon_tile(xmin, zoom), lat_tile(ymax, zoom), lon_tile(xmax, zoom), lat_tile(ymin, zoom)
+
+
+def tile_count(box: tuple[float, float, float, float]) -> int:
+    x0, y0, x1, y1 = tile_range(box)
+    return (x1 - x0 + 1) * (y1 - y0 + 1)
+
+
+def tile_geometry_mercator(geometry: dict[str, Any], x: int, y: int, extent: int = EXTENT,
+                           zoom: int = ZOOM) -> shapely.Geometry:
+    """Decoder coordinates are y-up; XYZ tile rows increase south."""
+    if extent != EXTENT:
+        raise ValueError(f"unexpected MVT extent {extent}")
+    side = 2 * MERCATOR_HALF / (1 << zoom)
+    return shapely.transform(shape(geometry), lambda xy: np.column_stack((
+        -MERCATOR_HALF + (x + xy[:, 0] / extent) * side,
+        MERCATOR_HALF - (y + (extent - xy[:, 1]) / extent) * side,
+    )))
+
+
+def tile_core_mercator(x: int, y: int, zoom: int = ZOOM) -> shapely.Geometry:
+    side = 2 * MERCATOR_HALF / (1 << zoom)
+    return shapely.box(-MERCATOR_HALF + x * side, MERCATOR_HALF - (y + 1) * side,
+                       -MERCATOR_HALF + (x + 1) * side, MERCATOR_HALF - y * side)
+
+
+def source_geometry_mercator(wkb: bytes) -> shapely.Geometry:
+    return shapely.transform(shapely.from_wkb(wkb),
+                             lambda xy: np.column_stack(TRANSFORMER.transform(xy[:, 0], xy[:, 1])))
+
+
+def _smallest(store: dict[int, tuple[float, float, float, float]], fid: int,
+              box: tuple[float, float, float, float], limit: int) -> None:
+    if fid in store:
+        return
+    if len(store) < limit:
+        store[fid] = box
+    elif fid < max(store):
+        del store[max(store)]
+        store[fid] = box
+
+
+def choose_ids(source: Path, id_field: str) -> tuple[dict[int, tuple[float, float, float, float]], dict[str, list[int]], int]:
+    """Streaming two-column scan; choice is independent of source row order."""
+    chosen: dict[str, dict[int, tuple[float, float, float, float]]] = {name: {} for name in REGIONS}
+    rows = 0
+    for batch in pq.ParquetFile(source).iter_batches(batch_size=8192, columns=[id_field, "bbox"], use_threads=False):
+        ids = batch.column(0).to_numpy(zero_copy_only=False)
+        bbox = batch.column(1)
+        xmin, ymin, xmax, ymax = (bbox.field(k).to_numpy(zero_copy_only=False) for k in ("xmin", "ymin", "xmax", "ymax"))
+        rows += len(ids)
+        valid = np.isfinite(xmin) & np.isfinite(ymin) & np.isfinite(xmax) & np.isfinite(ymax)
+        valid &= (xmin <= xmax) & (ymin <= ymax) & (xmin >= -180) & (xmax <= 180)
+        valid &= (ymin >= -90) & (ymax <= 90)
+        eligible = np.flatnonzero(valid)
+        if not len(eligible):
+            continue
+        # Filter the entire batch by z12 footprint before ranking IDs. Ranking
+        # only its first N rows can discard eligible IDs behind many low-ID
+        # large footprints and violate the stable lowest-eligible rule.
+        n = 1 << ZOOM
+        x0 = np.clip(np.floor((xmin[eligible] + 180) / 360 * n).astype(np.int64), 0, n - 1)
+        x1 = np.clip(np.floor((xmax[eligible] + 180) / 360 * n).astype(np.int64), 0, n - 1)
+        lo = np.clip(ymin[eligible], -MAX_LAT, MAX_LAT)
+        hi = np.clip(ymax[eligible], -MAX_LAT, MAX_LAT)
+        y0 = np.clip(np.floor((1 - np.arcsinh(np.tan(np.deg2rad(hi))) / np.pi) / 2 * n).astype(np.int64), 0, n - 1)
+        y1 = np.clip(np.floor((1 - np.arcsinh(np.tan(np.deg2rad(lo))) / np.pi) / 2 * n).astype(np.int64), 0, n - 1)
+        eligible = eligible[(x1 - x0 + 1) * (y1 - y0 + 1) <= MAX_TILES_PER_ID]
+        for name, window in REGIONS.items():
+            wx0, wy0, wx1, wy1 = window
+            indexes = eligible[(xmax[eligible] >= wx0) & (xmin[eligible] <= wx1) &
+                               (ymax[eligible] >= wy0) & (ymin[eligible] <= wy1)]
+            if not len(indexes):
+                continue
+            limit = 32 if name == "global" else 8
+            candidates = indexes[np.argsort(ids[indexes], kind="stable")[:limit]]
+            for i in candidates:
+                box = (float(xmin[i]), float(ymin[i]), float(xmax[i]), float(ymax[i]))
+                _smallest(chosen[name], int(ids[i]), box, limit)
+    groups = {name: sorted(store) for name, store in chosen.items()}
+    selected: dict[int, tuple[float, float, float, float]] = {}
+    for store in chosen.values():
+        selected.update(store)
+    return selected, groups, rows
+
+
+def load_sample_rows(source: Path, ids: set[int], id_field: str, fields: list[str]) -> dict[int, dict[str, Any]]:
+    parquet = pq.ParquetFile(source)
+    names = set(parquet.schema_arrow.names)
+    geometry = next((name for name in ("wkb_geometry", "Shape", "geometry") if name in names), None)
+    if geometry is None:
+        raise ValueError("source WKB geometry column missing")
+    columns = list(dict.fromkeys([id_field, "bbox", geometry, *[f for f in fields if not f.startswith("_src_")]]))
+    if set(columns) - names:
+        raise ValueError(f"source columns missing: {sorted(set(columns) - names)}")
+    found: dict[int, dict[str, Any]] = {}
+    for batch in parquet.iter_batches(batch_size=8192, columns=columns, use_threads=False):
+        source_ids = batch.column(batch.schema.get_field_index(id_field)).to_numpy(zero_copy_only=False)
+        indexes = np.flatnonzero(np.isin(source_ids, tuple(ids)))
+        if not len(indexes):
+            continue
+        values = {name: batch.column(batch.schema.get_field_index(name)) for name in columns}
+        for i in indexes:
+            fid = int(source_ids[i])
+            if fid in found:
+                raise ValueError(f"duplicate sampled source ID {fid}")
+            found[fid] = {name: values[name][int(i)].as_py() for name in columns}
+        if len(found) == len(ids):
+            break
+    return found
+
+
+def expected_properties(row: dict[str, Any], fields: list[str]) -> dict[str, Any]:
+    result = {}
+    for field in fields:
+        value = row["bbox"][field.removeprefix("_src_")] if field.startswith("_src_") and row["bbox"] else row.get(field)
+        if value is not None and not (isinstance(value, float) and not math.isfinite(value)):
+            result[field] = value
+    return result
+
+
+def property_errors(expected: dict[str, Any], actual: dict[str, Any], *, fid: int | None = None,
+                    id_field: str | None = None, id_encoding: str | None = None) -> list[str]:
+    if id_encoding == "mvt_feature_id":
+        if fid is None or not isinstance(fid, int) or isinstance(fid, bool) or not (0 <= fid <= 2**53 - 1):
+            return [f"MVT Feature.id is not a safe exact integer: {fid!r}"]
+        actual = dict(actual)
+        actual.setdefault(id_field, fid)
+    problems = []
+    for field, value in expected.items():
+        got = actual.get(field)
+        if isinstance(value, (int, float)) and not isinstance(value, bool):
+            equal = isinstance(got, (int, float)) and not isinstance(got, bool) and got == value
+        else:
+            equal = got == value
+        if not equal:
+            problems.append(f"{field}: expected {value!r}, got {got!r}")
+    for field in actual.keys() - expected.keys():
+        problems.append(f"{field}: unexpected value {actual[field]!r} (null source or undeclared)")
+    return problems
+
+
+def _check_file(path: Path, expected: dict[str, Any], label: str, failures: list[str]) -> dict[str, Any] | None:
+    if not path.is_file():
+        failures.append(f"{label} missing: {path.name}")
+        return None
+    observed = {"size_bytes": path.stat().st_size, "sha256": sha256(path)}
+    if observed["size_bytes"] != expected["size_bytes"]:
+        failures.append(f"{label} size mismatch: {path.name}")
+    if observed["sha256"] != expected["sha256"]:
+        failures.append(f"{label} SHA-256 mismatch: {path.name}")
+    return observed
+
+
+def validate(manifest_path: Path, asset_id: str, source: Path) -> dict[str, Any]:
+    manifest = json.loads(manifest_path.read_text())
+    matches = [asset for asset in manifest["assets"] if asset["id"] == asset_id]
+    if len(matches) != 1:
+        raise ValueError(f"expected one manifest asset for {asset_id}, got {len(matches)}")
+    asset = matches[0]
+    tile_path = (manifest_path.parent / asset["path"]).resolve()
+    if not tile_path.is_relative_to(manifest_path.parent.resolve()):
+        raise ValueError("PMTiles path escapes display directory")
+    failures: list[str] = []
+    expected_asset = EXPECTED_ASSETS.get(asset_id)
+    if expected_asset and (source.name, asset["source_layer"], asset["geometry_type"], asset["id_field"]) != expected_asset:
+        failures.append(f"{asset_id} source/layer/geometry/ID metadata differs from display contract")
+    id_encoding = asset.get("id_encoding")
+    if id_encoding not in (None, "mvt_feature_id", "mvt_feature_id_and_property"):
+        failures.append(f"unsupported id_encoding {id_encoding!r}")
+    if asset_id in EXPECTED_ASSETS and asset_id != "hydrolakes-1" and id_encoding == "mvt_feature_id":
+        failures.append(f"{asset_id} requires source ID in both Feature.id and properties")
+    pin = SOURCE_PINS.get(source.name)
+    if pin and (asset["source_asset"]["size_bytes"], asset["source_asset"]["sha256"], asset["source_rows"]) != pin:
+        failures.append(f"display manifest source binding differs from immutable release pin for {source.name}")
+    source_binding = _check_file(source, asset["source_asset"], "source", failures)
+    tile_binding = _check_file(tile_path, asset, "PMTiles", failures)
+    report: dict[str, Any] = {
+        "asset_id": asset_id,
+        "source_asset_path": asset["source_asset"]["path"], "pmtiles_asset_path": asset["path"],
+        "source_size_bytes": source_binding["size_bytes"] if source_binding else None,
+        "source_sha256": source_binding["sha256"] if source_binding else None,
+        "pmtiles_size_bytes": tile_binding["size_bytes"] if tile_binding else None,
+        "pmtiles_sha256": tile_binding["sha256"] if tile_binding else None,
+        "validator_sha256": sha256(Path(__file__)),
+        "id_encoding": id_encoding or "mvt_feature_id_and_property",
+        "sample_rule": {"selection": "lowest eligible IDs within each frozen geographic control after <=64 bbox tiles cap",
+                        "global_ids": 32, "ids_per_region": 8,
+                        "regional_filter": "source bbox intersects frozen window", "max_bbox_tiles": MAX_TILES_PER_ID},
+        "tolerance_m": TOLERANCE_METRES, "failures": failures, "sample_groups": {}, "samples": [],
+    }
+    if failures:
+        report["passed"] = False
+        return report
+    if asset["max_zoom"] != ZOOM or asset["geometry_type"] not in {"polygon", "line", "point"}:
+        failures.append("manifest max_zoom/geometry_type differs from display contract")
+    selected, groups, rows_scanned = choose_ids(source, asset["id_field"])
+    report["sample_groups"] = groups
+    report["source_rows_scanned"] = rows_scanned
+    if rows_scanned != asset["source_rows"]:
+        failures.append(f"source rows {rows_scanned} != manifest {asset['source_rows']}")
+    for name, ids in groups.items():
+        required = 32 if name == "global" else 8
+        if len(ids) < required:
+            failures.append(f"{name}: only {len(ids)} of {required} eligible source IDs")
+    sampled_rows = load_sample_rows(source, set(selected), asset["id_field"], asset["attribute_fields"])
+    with tile_path.open("rb") as stream:
+        def get_bytes(offset: int, length: int) -> bytes:
+            stream.seek(offset)
+            return stream.read(length)
+
+        reader = Reader(get_bytes)
+        header = reader.header()
+        metadata = reader.metadata()
+        if header["max_zoom"] != ZOOM or header["min_zoom"] != asset["min_zoom"]:
+            failures.append("PMTiles header zoom mismatch")
+        layers = metadata.get("vector_layers", [])
+        if [layer.get("id") for layer in layers] != [asset["source_layer"]]:
+            failures.append(f"PMTiles vector_layers mismatch: {layers!r}")
+        compression = header["tile_compression"]
+        for fid in sorted(selected):
+            box = selected[fid]
+            row = sampled_rows.get(fid)
+            entry: dict[str, Any] = {"id": fid, "bbox": box, "tile_requests": 0,
+                                     "fragments": 0, "distance_m": None, "failures": []}
+            report["samples"].append(entry)
+            if row is None:
+                entry["failures"].append("ID missing in second source scan")
+                continue
+            geometry_column = next((name for name in ("wkb_geometry", "Shape", "geometry") if name in row), None)
+            if geometry_column is None or not row[geometry_column]:
+                entry["failures"].append("source geometry empty")
+                continue
+            expected = expected_properties(row, list(dict.fromkeys([asset["id_field"], *asset["attribute_fields"]])))
+            fragments = []
+            x0, y0, x1, y1 = tile_range(box)
+            for x in range(x0, x1 + 1):
+                for y in range(y0, y1 + 1):
+                    entry["tile_requests"] += 1
+                    raw = reader.get(ZOOM, x, y)
+                    if raw is None:
+                        continue
+                    if compression == Compression.GZIP:
+                        raw = gzip.decompress(raw)
+                    decoded = mapbox_vector_tile.decode(raw)
+                    layer = decoded.get(asset["source_layer"])
+                    if layer is None:
+                        entry["failures"].append(f"tile {x}/{y} missing source layer")
+                        continue
+                    for feature in layer["features"]:
+                        encoded_id = feature["id"]
+                        if not isinstance(encoded_id, int) or isinstance(encoded_id, bool) or not (0 <= encoded_id <= 2**53 - 1):
+                            entry["failures"].append(f"tile {x}/{y} unsafe MVT Feature.id {encoded_id!r}")
+                            continue
+                        if encoded_id != fid:
+                            continue
+                        if layer["extent"] != EXTENT:
+                            entry["failures"].append(f"tile {x}/{y} extent {layer['extent']} != {EXTENT}")
+                            continue
+                        geometry = feature["geometry"]
+                        allowed = {"polygon": ("Polygon", "MultiPolygon"), "line": ("LineString", "MultiLineString"),
+                                   "point": ("Point", "MultiPoint")}[asset["geometry_type"]]
+                        if geometry["type"] not in allowed:
+                            entry["failures"].append(f"tile {x}/{y} geometry type {geometry['type']}")
+                            continue
+                        entry["failures"].extend(f"tile {x}/{y} {error}" for error in
+                                                 property_errors(expected, feature["properties"], fid=fid,
+                                                                 id_field=asset["id_field"], id_encoding=id_encoding))
+                        # Tippecanoe includes a buffer beyond each XYZ tile. Keep
+                        # only the tile core before union, or clipped buffer edges
+                        # appear as false 30m+ displacements on large polygons.
+                        fragment = tile_geometry_mercator(geometry, x, y, layer["extent"])
+                        core = shapely.intersection(fragment, tile_core_mercator(x, y))
+                        if not core.is_empty:
+                            fragments.append(core)
+            entry["fragments"] = len(fragments)
+            if not fragments:
+                entry["failures"].append("no z12 tile fragments for source ID")
+                continue
+            original = source_geometry_mercator(row[geometry_column])
+            rendered = shapely.union_all(fragments)
+            if original.is_empty or rendered.is_empty:
+                entry["failures"].append("empty projected geometry")
+                continue
+            distance = float(shapely.hausdorff_distance(original, rendered, densify=0.5))
+            entry["distance_m"] = distance
+            if not math.isfinite(distance) or distance > TOLERANCE_METRES:
+                entry["failures"].append(f"Web Mercator Hausdorff {distance:.3f}m exceeds {TOLERANCE_METRES:.0f}m")
+    for entry in report["samples"]:
+        failures.extend(f"ID {entry['id']}: {problem}" for problem in entry["failures"])
+    report["sampled_unique_ids"] = len(selected)
+    report["sampled_fragments"] = sum(entry["fragments"] for entry in report["samples"])
+    report["max_distance_m"] = max((entry["distance_m"] for entry in report["samples"]
+                                    if entry["distance_m"] is not None), default=None)
+    report["limitations"] = (
+        "Deterministic sample only; builder separately checks all maxzoom IDs. "
+        "Regional selection uses bbox intersection, which may include a geometry outside the window. "
+        "Bbox tile cap excludes source geometries spanning more than 64 z12 tiles; "
+        "the result makes no geometry-fidelity claim for those excluded IDs. "
+        "EPSG:3857 comparisons do not cover polar geometry."
+    )
+    report["passed"] = not failures
+    return report
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--manifest", type=Path, required=True)
+    parser.add_argument("--asset-id", required=True)
+    parser.add_argument("--source", type=Path, required=True)
+    parser.add_argument("--report", type=Path)
+    args = parser.parse_args()
+    report = validate(args.manifest, args.asset_id, args.source)
+    rendered = json.dumps(report, indent=2, allow_nan=False) + "\n"
+    if args.report:
+        args.report.parent.mkdir(parents=True, exist_ok=True)
+        args.report.write_text(rendered)
+    print(rendered, end="")
+    if not report["passed"]:
+        raise SystemExit(1)
+
+
+if __name__ == "__main__":
+    main()

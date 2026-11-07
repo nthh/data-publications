@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "dataset_id": "river-plastic-inputs",
+  "quota_project": "mtnmap-f75ec",
+  "limits": {
+    "maximum_requests": 12,
+    "maximum_total_bytes": 10000000,
+    "maximum_response_bytes": 2000000,
+    "timeout_seconds": 45,
+    "maximum_elapsed_seconds": 600
+  },
+  "requests": [
+    {
+      "id": "river-plastic-inputs-before",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/open-ocean/river_plastic_emissions"
+    },
+    {
+      "id": "river-plastic-inputs-count",
+      "operation": "count",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/open-ocean/river_plastic_emissions"
+    },
+    {
+      "id": "river-plastic-inputs-after",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/open-ocean/river_plastic_emissions"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "scope": "One bounded original-source qualification sample; no global conversion or publication claim.",
+  "tile": "AU_55",
+  "expected_filename": "SWOT_LakeDatabaseSci_AU_55_20000101T000000_20991231T235959_20260902T140000_v203.sqlite",
+  "expected_size_bytes": 14954496,
+  "expected_md5": "5ec84bc8e0ad2e970cb126d9b3491d00",
+  "inventory_sha256": "67128ed2b6d4cc2c09bdad1a3b2de77f2efe035953629d98f065b93a8a21a2e4",
+  "acceptance": [
+    "Refuse existing destination/report and path-traversing names.",
+    "Require 40 GiB free before source transfer, 10 GiB during it; cap transfer at expected size plus one and refuse checksum/size mismatch.",
+    "Verify original source size and producer MD5 before opening SQLite read-only; record independently computed SHA-256.",
+    "Require SQLite quick_check to return only ok; inspect ordinary tables, column types, PK/FK and row counts without loading extensions or executing source schema/view SQL.",
+    "Keep source bytes in ignored local storage. All conclusions about schema/row counts apply only to this tile until other tiles are independently inspected."
+  ]
+}

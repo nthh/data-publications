@@ -1,0 +1,80 @@
+{
+  "request_url": "https://api.openalex.org/works?search=Developing+a+spatial+framework+of+common+ecological+regions+for+the+conterminous+United+States&corpus=all&per_page=5&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date",
+  "retrieved_at": "2026-10-30T22:07:43.554635+00:00",
+  "response_path": "responses/930702b9e83cb11bdb61881de8ddd4fd9c07d85d977a152fed34675d94311f67.json",
+  "status": 200,
+  "response_sha256": "78735ca52dcc499389e4eb9cc1b8ef7a679f383b0b5d2b36893a8d0f5e3e34e5",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 6629,
+      "db_response_time_ms": 218,
+      "page": 1,
+      "per_page": 5,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where full text has (Developing a spatial framework of common ecological regions for the conterminous United States)",
+        "x_new_oql": "get works (all corpora) where full text has (Developing a spatial framework of common ecological regions for the conterminous United States)",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "Developing a spatial framework of common ecological regions for the conterminous United States",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:Developing a spatial framework of common ecological regions for the conterminous United States&corpus=all&per_page=5",
+        "order": "best matches first",
+        "order_default": true
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W2088603092",
+        "doi": "https://doi.org/10.1007/s0026702429",
+        "title": "Developing a Spatial Framework of Common Ecological Regions for the Conterminous United States",
+        "type": "article",
+        "publication_year": 2001,
+        "publication_date": "2001-04-11"
+      },
+      {
+        "id": "https://openalex.org/W2159966478",
+        "doi": "https://doi.org/10.1016/j.gloenvcha.2013.03.006",
+        "title": "Land-cover change in the conterminous United States from 1973 to 2000",
+        "type": "article",
+        "publication_year": 2013,
+        "publication_date": "2013-04-18"
+      },
+      {
+        "id": "https://openalex.org/W2216320743",
+        "doi": "https://doi.org/10.1002/2015gl066941",
+        "title": "Spatial association between dissection density and environmental factors over the entire conterminous United States",
+        "type": "article",
+        "publication_year": 2015,
+        "publication_date": "2015-12-30"
+      },
+      {
+        "id": "https://openalex.org/W2914662114",
+        "doi": "https://doi.org/10.1038/sdata.2019.17",
+        "title": "A stream classification system for the conterminous United States",
+        "type": "data-paper",
+        "publication_year": 2019,
+        "publication_date": "2019-02-12"
+      },
+      {
+        "id": "https://openalex.org/W1980918351",
+        "doi": "https://doi.org/10.1016/j.gloenvcha.2012.03.008",
+        "title": "Scenarios of land use and land cover change in the conterminous United States: Utilizing the special report on emission scenarios at ecoregional scales",
+        "type": "article",
+        "publication_year": 2012,
+        "publication_date": "2012-04-23"
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "d1deaa08d16a600fee836397aacd1f3f5a022c668551f4605f38f4f01cf15d37"
+}

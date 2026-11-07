@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "scope": "Complete nine-tile pilot PMTiles is byte-identical before/after batched serialization; six native dateline/multipart/sentinel controls also retain PMTiles SHA 7f4c138a8802d58d522a578c97a9c6835b18d2103ca5a2d5830365b4d893e621. No global byte-rebuild result is implied.",
+  "runs": [
+    {
+      "run": "pilot-display-v2",
+      "rows": 919832,
+      "archive_sha256": "c3867e547ada2877405993569b7ae4f3553777d063408cb9b45c8a59c6a028d9",
+      "archive_size_bytes": 163886604,
+      "elapsed_seconds": 121.993,
+      "builder_sha256": "65bc76e50681af6617238a61806fa3c06300373bc3f94f50e8aaf14fb21f88ef",
+      "native_binary_sha256": "c504719334e5335d60c66a01491707bdbfb773ebbfe3efc7c1c8239eb18d58d1"
+    },
+    {
+      "run": "pilot-display-v3",
+      "rows": 919832,
+      "archive_sha256": "c3867e547ada2877405993569b7ae4f3553777d063408cb9b45c8a59c6a028d9",
+      "archive_size_bytes": 163886604,
+      "elapsed_seconds": 76.454,
+      "builder_sha256": "812954f5bec04c4a697d39c364f0d6bbbf14ce8c22b01060cc18ddafa1cca2c0",
+      "native_binary_sha256": "c504719334e5335d60c66a01491707bdbfb773ebbfe3efc7c1c8239eb18d58d1"
+    }
+  ],
+  "timing_note": "Single local runs under varying shared-machine load; not a controlled throughput benchmark."
+}

@@ -1,0 +1,52 @@
+schema_version: 1
+id: esri-world-cities
+title: Esri World Cities reference points
+intake:
+  kind: official_catalog
+  reference_url: https://www.arcgis.com/home/item.html?id=6996f03a1b364dbab4008d99380370ed
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'esri: Selected national capitals, provincial capitals, major population centers,
+    and landmark cities worldwide. Esri states that population estimates are supplied only for places
+    present in cited open sources; the layer is not an exhaustive populated-place census. Distinct named
+    producer product; retain exact source edition and footprint.'
+  sources:
+  - provider: esri_public
+    entry_id: 6996f03a1b364dbab4008d99380370ed
+    url: https://www.arcgis.com/home/item.html?id=6996f03a1b364dbab4008d99380370ed
+    relationship: exact_dataset
+  - provider: esri_public
+    entry_id: sources listed in Esri item metadata
+    url: https://www.arcgis.com/home/item.html?id=6996f03a1b364dbab4008d99380370ed
+    relationship: related_release
+  access:
+  - provider: esri_public
+    status: service_only
+    formats:
+    - vector
+    summary: FeatureServer item observed. No native bulk source, export setting, or source-by-source redistribution
+      rights established. Distinct named producer product; retain exact source edition and footprint.
+    license_summary: The item declares the Esri Master License Agreement and lists multiple third-party
+      contributors. Those separate supplier rights require review before any offline copy or derivative
+      distribution.
+    proposed_outputs: []
+    rationale: Further review only if Esri's place selections and joined attributes meet a distinct need.
+      The mixed source lineage and Esri Master License terms mean this item is not a default bulk-conversion
+      candidate.
+    evidence_urls:
+    - https://www.arcgis.com/home/item.html?id=6996f03a1b364dbab4008d99380370ed
+  citations: []
+  evidence:
+  - path: research/global-candidates-20261031/esri/reviewed.json
+    sha256: e02bd2202c3026ccd7564155bfa69b5e8bc666f65698da6bacce91ab7327d5be
+    key: esri-world-cities

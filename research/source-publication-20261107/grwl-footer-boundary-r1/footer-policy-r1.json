@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "kind": "grwl_parquet_footer_range",
+  "dataset_id": "grwl-raw",
+  "case_id": "grwl-raw-mississippi-z7",
+  "max_requests_per_case": 1,
+  "plan_sha256": "754c02dde3cf258263619599f893558d3348c7fb51c07f8fa700efa1900ac610",
+  "browser_controls_sha256": "6ff14a9c438cdee14af4ea21876ca32876883f7b676c16596b4ddfc924b6aa10",
+  "object_url": "https://data.source.coop/nthh/grwl-raw/releases/raw-v01.01-local-r1/assets/grwl-raw-observations.parquet",
+  "object_sha256": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+  "object_size_bytes": 5529859809,
+  "footer_metadata_bytes": 19783655,
+  "range": "bytes=5510076146-5529859800",
+  "range_sha256": "d74b674f3b3757775689be810c061a063211ceb46e9845f1441b4663a2a9081e",
+  "recorded_at_utc": "2026-11-07T21:18:27.598054+00:00",
+  "structural_proof": {
+    "path": "research/source-publication-20261107/grwl-footer-boundary-r1/local-footer-proof.json",
+    "sha256": "976d339c8484c913485b4d846c52fa60ddccb14620b9bfe2eab8ace038e757c3"
+  },
+  "failed_diagnostic": {
+    "path": "research/source-publication-20261107/browser-grwl-raw-r2-failed/hosted-browser-evidence.json",
+    "sha256": "62278ae2f47c040459d2875b7e25986c778b8d2e8f8ef36b43a70790376edf23"
+  },
+  "unchanged_requirements": {
+    "cases": 20,
+    "source_attributes": 14,
+    "exact_analytic_id_matches_selected_id": true,
+    "ordinary_request_limit_bytes": 16777216,
+    "metadata_hard_limit_bytes": 33554432,
+    "per_case_bytes": 134217728,
+    "total_bytes": 1073741824,
+    "complete_uploaded_object_sha256_verified": true
+  },
+  "reason": "DuckDB requests the complete 19,783,655-byte Parquet metadata footer. The original 16 MiB guard rejected exactly that interval before network access. Permit only these independently hashed metadata bytes; no column-data range receives an exception."
+}

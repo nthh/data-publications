@@ -1,0 +1,585 @@
+{
+  "schema_version": 1,
+  "started_at": "2026-11-02T19:58:37.022Z",
+  "status": "passed",
+  "scope": "Installed Chrome, fresh browser context for every layer, direct cross-origin object reads; local hosting only.",
+  "transfer_ceiling_bytes": 134217728,
+  "cases": [
+    {
+      "dataset_id": "free-flowing-rivers",
+      "layer_id": "free-flowing-rivers-1",
+      "format": "pmtiles",
+      "source_sha256": "6e248eba5ecdf58ee28705a8f567be9497836f0a1c6c078b50327a1599ecdce3",
+      "source_size_bytes": 3570445458,
+      "region": "global",
+      "status": "passed",
+      "viewer": {
+        "dataset": "free-flowing-rivers",
+        "layer": "free-flowing-rivers-1",
+        "phase": "ready",
+        "error": null,
+        "feature_count": 4902,
+        "capped": false,
+        "query": null,
+        "bbox": null,
+        "bytes": 369458,
+        "ranges": 6,
+        "requests": 6,
+        "generation": 1,
+        "selected": null,
+        "traffic": [
+          [
+            "http://127.0.0.1:8917/nthh/free-flowing-rivers/display/display-v1/assets/ffr-reaches.pmtiles",
+            {
+              "bytes": 369458,
+              "ranges": 6,
+              "requests": 6
+            }
+          ]
+        ]
+      },
+      "inspected_property_count": 8,
+      "initial_view_body_bytes": 369458,
+      "all_attributes_note": "All source attributes for this ID.",
+      "all_attribute_count": 40,
+      "expected_source_attribute_count": 40,
+      "ui_bytes_after_inspection": 12540630,
+      "requests": [
+        {
+          "url": "http://127.0.0.1:8917/nthh/free-flowing-rivers/display/display-v1/assets/ffr-reaches.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/3570445458",
+          "content_length": 16384,
+          "cors": "*",
+          "object_size_bytes": 3570445458,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8917/nthh/free-flowing-rivers/display/display-v1/assets/ffr-reaches.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=6444-16883",
+          "content_range": "bytes 6444-16883/3570445458",
+          "content_length": 10440,
+          "cors": "*",
+          "object_size_bytes": 3570445458,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8917/nthh/free-flowing-rivers/display/display-v1/assets/ffr-reaches.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=6681028-6702009",
+          "content_range": "bytes 6681028-6702009/3570445458",
+          "content_length": 20982,
+          "cors": "*",
+          "object_size_bytes": 3570445458,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8917/nthh/free-flowing-rivers/display/display-v1/assets/ffr-reaches.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=6567693-6681027",
+          "content_range": "bytes 6567693-6681027/3570445458",
+          "content_length": 113335,
+          "cors": "*",
+          "object_size_bytes": 3570445458,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8917/nthh/free-flowing-rivers/display/display-v1/assets/ffr-reaches.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=6489706-6567692",
+          "content_range": "bytes 6489706-6567692/3570445458",
+          "content_length": 77987,
+          "cors": "*",
+          "object_size_bytes": 3570445458,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8917/nthh/free-flowing-rivers/display/display-v1/assets/ffr-reaches.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=6702010-6832339",
+          "content_range": "bytes 6702010-6832339/3570445458",
+          "content_length": 130330,
+          "cors": "*",
+          "object_size_bytes": 3570445458,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8917/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "HEAD",
+          "status": 200,
+          "range": null,
+          "content_range": null,
+          "content_length": 887132886,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8917/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "HEAD",
+          "status": 206,
+          "range": "bytes=0-",
+          "content_range": "bytes 0-887132885/887132886",
+          "content_length": 887132886,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8917/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=887132878-887132885",
+          "content_range": "bytes 887132878-887132885/887132886",
+          "content_length": 8,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8917/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=875373237-887132877",
+          "content_range": "bytes 875373237-887132877/887132886",
+          "content_length": 11759641,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8917/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "HEAD",
+          "status": 206,
+          "range": "bytes=0-",
+          "content_range": "bytes 0-887132885/887132886",
+          "content_length": 887132886,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8917/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=571006875-571007130",
+          "content_range": "bytes 571006875-571007130/887132886",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8917/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=571006893-571011098",
+          "content_range": "bytes 571006893-571011098/887132886",
+          "content_length": 4206,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8917/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=571011099-571027922",
+          "content_range": "bytes 571011099-571027922/887132886",
+          "content_length": 16824,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8917/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=571391315-571391570",
+          "content_range": "bytes 571391315-571391570/887132886",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8917/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=571391333-571397775",
+          "content_range": "bytes 571391333-571397775/887132886",
+          "content_length": 6443,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8917/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=571397776-571423547",
+          "content_range": "bytes 571397776-571423547/887132886",
+          "content_length": 25772,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8917/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=571027923-571095218",
+          "content_range": "bytes 571027923-571095218/887132886",
+          "content_length": 67296,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8917/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=571095219-571364402",
+          "content_range": "bytes 571095219-571364402/887132886",
+          "content_length": 269184,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8917/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=571380861-571381116",
+          "content_range": "bytes 571380861-571381116/887132886",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8917/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=571380879-571385084",
+          "content_range": "bytes 571380879-571385084/887132886",
+          "content_length": 4206,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8917/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=571385085-571401908",
+          "content_range": "bytes 571385085-571401908/887132886",
+          "content_length": 16824,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        }
+      ],
+      "response_body_bytes": 12540630,
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "dataset_id": "free-flowing-rivers",
+      "layer_id": "free-flowing-rivers-1",
+      "format": "pmtiles",
+      "source_sha256": "6e248eba5ecdf58ee28705a8f567be9497836f0a1c6c078b50327a1599ecdce3",
+      "source_size_bytes": 3570445458,
+      "region": "north_america",
+      "status": "passed",
+      "viewer": {
+        "dataset": "free-flowing-rivers",
+        "layer": "free-flowing-rivers-1",
+        "phase": "ready",
+        "error": null,
+        "feature_count": 2108,
+        "capped": false,
+        "query": null,
+        "bbox": null,
+        "bytes": 340127,
+        "ranges": 6,
+        "requests": 6,
+        "generation": 1,
+        "selected": null,
+        "traffic": [
+          [
+            "http://127.0.0.1:8917/nthh/free-flowing-rivers/display/display-v1/assets/ffr-reaches.pmtiles",
+            {
+              "bytes": 340127,
+              "ranges": 6,
+              "requests": 6
+            }
+          ]
+        ]
+      },
+      "inspected_property_count": 8,
+      "initial_view_body_bytes": 340127,
+      "all_attributes_note": "All source attributes for this ID.",
+      "all_attribute_count": 40,
+      "expected_source_attribute_count": 40,
+      "ui_bytes_after_inspection": 12521859,
+      "requests": [
+        {
+          "url": "http://127.0.0.1:8917/nthh/free-flowing-rivers/display/display-v1/assets/ffr-reaches.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/3570445458",
+          "content_length": 16384,
+          "cors": "*",
+          "object_size_bytes": 3570445458,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8917/nthh/free-flowing-rivers/display/display-v1/assets/ffr-reaches.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=6444-16883",
+          "content_range": "bytes 6444-16883/3570445458",
+          "content_length": 10440,
+          "cors": "*",
+          "object_size_bytes": 3570445458,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8917/nthh/free-flowing-rivers/display/display-v1/assets/ffr-reaches.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=55366084-55439807",
+          "content_range": "bytes 55366084-55439807/3570445458",
+          "content_length": 73724,
+          "cors": "*",
+          "object_size_bytes": 3570445458,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8917/nthh/free-flowing-rivers/display/display-v1/assets/ffr-reaches.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=46028329-46154561",
+          "content_range": "bytes 46028329-46154561/3570445458",
+          "content_length": 126233,
+          "cors": "*",
+          "object_size_bytes": 3570445458,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8917/nthh/free-flowing-rivers/display/display-v1/assets/ffr-reaches.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=45960037-46028328",
+          "content_range": "bytes 45960037-46028328/3570445458",
+          "content_length": 68292,
+          "cors": "*",
+          "object_size_bytes": 3570445458,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8917/nthh/free-flowing-rivers/display/display-v1/assets/ffr-reaches.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=55905171-55950224",
+          "content_range": "bytes 55905171-55950224/3570445458",
+          "content_length": 45054,
+          "cors": "*",
+          "object_size_bytes": 3570445458,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8917/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "HEAD",
+          "status": 200,
+          "range": null,
+          "content_range": null,
+          "content_length": 887132886,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8917/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "HEAD",
+          "status": 206,
+          "range": "bytes=0-",
+          "content_range": "bytes 0-887132885/887132886",
+          "content_length": 887132886,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8917/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=887132878-887132885",
+          "content_range": "bytes 887132878-887132885/887132886",
+          "content_length": 8,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8917/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=875373237-887132877",
+          "content_range": "bytes 875373237-887132877/887132886",
+          "content_length": 11759641,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8917/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "HEAD",
+          "status": 206,
+          "range": "bytes=0-",
+          "content_range": "bytes 0-887132885/887132886",
+          "content_length": 887132886,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8917/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=753591477-753591732",
+          "content_range": "bytes 753591477-753591732/887132886",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8917/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=753591495-753595700",
+          "content_range": "bytes 753591495-753595700/887132886",
+          "content_length": 4206,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8917/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=753595701-753612524",
+          "content_range": "bytes 753595701-753612524/887132886",
+          "content_length": 16824,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8917/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=754002918-754003173",
+          "content_range": "bytes 754002918-754003173/887132886",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8917/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=754002937-754011491",
+          "content_range": "bytes 754002937-754011491/887132886",
+          "content_length": 8555,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8917/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=754011492-754045711",
+          "content_range": "bytes 754011492-754045711/887132886",
+          "content_length": 34220,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8917/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=753612525-753679820",
+          "content_range": "bytes 753612525-753679820/887132886",
+          "content_length": 67296,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8917/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=753679821-753949004",
+          "content_range": "bytes 753679821-753949004/887132886",
+          "content_length": 269184,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8917/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=753992464-753992719",
+          "content_range": "bytes 753992464-753992719/887132886",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8917/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=753992482-753996687",
+          "content_range": "bytes 753992482-753996687/887132886",
+          "content_length": 4206,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8917/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=753996688-754013511",
+          "content_range": "bytes 753996688-754013511/887132886",
+          "content_length": 16824,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        }
+      ],
+      "response_body_bytes": 12521859,
+      "page_errors": [],
+      "external_requests": []
+    }
+  ],
+  "finished_at": "2026-11-02T19:58:49.141Z",
+  "browser_version": "156.0.8078.79"
+}

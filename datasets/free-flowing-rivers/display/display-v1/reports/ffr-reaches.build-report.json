@@ -1,0 +1,124 @@
+{
+  "dataset_key": "free-flowing-rivers",
+  "source_path": "free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+  "source_sha256": "62130e4999ba449bd2768bcdd9346bc2ba8fa4c4f06d39597e5227cd496a1a63",
+  "source_rows": 8477883,
+  "unique_source_ids": 8477883,
+  "id_field": "OBJECTID",
+  "id_encoding": "mvt_feature_id_and_property",
+  "attribute_fields": [
+    "OBJECTID",
+    "REACH_ID",
+    "GOID",
+    "DIS_AV_CMS",
+    "LENGTH_KM",
+    "CSI",
+    "CSI_FF1",
+    "CSI_D",
+    "_src_xmin",
+    "_src_ymin",
+    "_src_xmax",
+    "_src_ymax"
+  ],
+  "geometry_type": "line",
+  "layer": "ffr-reaches",
+  "min_zoom": 0,
+  "max_zoom": 12,
+  "minzoom_policy": "criteria.json piecewise threshold schedule; explicit per-feature tippecanoe.minzoom; unknown metric at z12",
+  "minzoom_metric": {
+    "field": "DIS_AV_CMS",
+    "units": "m3/s",
+    "thresholds": [
+      [
+        10000,
+        0
+      ],
+      [
+        1000,
+        2
+      ],
+      [
+        100,
+        4
+      ],
+      [
+        10,
+        6
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        0.1,
+        10
+      ],
+      [
+        0,
+        12
+      ]
+    ],
+    "unknown_metric_minzoom": 12
+  },
+  "maxzoom_tiles": 2937837,
+  "maxzoom_ids_decoded": 8477883,
+  "maxzoom_ids_accounted": 8477883,
+  "maxzoom_ids_attribute_checked": 8477883,
+  "maxzoom_missing_id_count": 0,
+  "maxzoom_missing_ids_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "maxzoom_missing_ids_path": "ffr-reaches.maxzoom-missing-ids.txt",
+  "maxzoom_missing_classification_path": "ffr-reaches.maxzoom-missing-classification.jsonl",
+  "maxzoom_missing_classification_counts": {},
+  "coverage_classification": "empty, zero-dimension, quantization-collapse, and unexpected-loss IDs are enumerated by source ID; only explicitly classified collapses are acceptable exceptions",
+  "empty_geometry_rows": 0,
+  "input_mbtiles_removed_after_conversion": true,
+  "minzoom_feature_counts": {
+    "0": 8438,
+    "2": 53294,
+    "4": 211459,
+    "6": 584019,
+    "8": 1526711,
+    "10": 3883222,
+    "12": 2210740
+  },
+  "source_geometry_handling": "read WKB from pinned GeoParquet in row order, convert directly to GeoJSON geometry without coordinate rewriting; Tippecanoe projects to Web Mercator and quantizes/simplifies for display only",
+  "source_bounds": [
+    -179.99791666699997,
+    -55.87708333299997,
+    179.99791666700003,
+    83.58958333300006
+  ],
+  "pmtiles_bounds": [
+    -179.997917,
+    -55.877083,
+    179.997917,
+    83.589583
+  ],
+  "attribution": "Source data by G\u00fcnther Grill and Bernhard Lehner; CC BY 4.0",
+  "python_packages": {
+    "pyarrow": "23.0.1",
+    "shapely": "2.1.2",
+    "numpy": "2.5.4",
+    "pmtiles": "3.8.1"
+  },
+  "source_row_bbox_fields": [
+    "_src_xmin",
+    "_src_ymin",
+    "_src_xmax",
+    "_src_ymax"
+  ],
+  "resource_usage_at_start": {
+    "free_bytes": 53233393664,
+    "task_output_and_scratch_bytes": 2245835874
+  },
+  "pmtiles_path": "assets/ffr-reaches.pmtiles",
+  "pmtiles_sha256": "6e248eba5ecdf58ee28705a8f567be9497836f0a1c6c078b50327a1599ecdce3",
+  "pmtiles_size_bytes": 3570445458,
+  "tippecanoe_sha256": "c504719334e5335d60c66a01491707bdbfb773ebbfe3efc7c1c8239eb18d58d1",
+  "tippecanoe_version": "2.79.0",
+  "threads": 2,
+  "tile_archive_reused": false,
+  "tile_archive_reused_from": null,
+  "attribution_embedded": true,
+  "post_launch_id_encoding_correction": "The launched process emitted OBJECTID in both MVT Feature.id and properties; the original process snapshot labeled it mvt_feature_id. This metadata correction reflects actual archive bytes; no tile bytes changed."
+}

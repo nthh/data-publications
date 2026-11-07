@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-11-02T20:47:00.922811+00:00",
+  "status": "criteria_frozen_before_source_coverage_query_or_replacement_browser_case",
+  "trigger": {
+    "report_path": "research/pmtiles-all-20261102/diagnostics/browser-final-r1.json",
+    "report_sha256": "34d040dc7b2eb93d1e29449e8a18db46c06318b5d8d17ac6f7ecf4418f8e0353",
+    "failed_case": {
+      "dataset_id": "river-plastic-inputs",
+      "layer_id": "river-plastic-inputs-display",
+      "region": "north_america",
+      "bbox": [
+        -93,
+        47,
+        -87,
+        50
+      ],
+      "observed": "Viewer ready with zero rendered features; no page errors; nonzero-feature assertion timed out."
+    }
+  },
+  "hypothesis": "The shared inland Great Lakes control has no coastal river-plastic source points. Confirm against the unchanged source rather than assuming a renderer defect.",
+  "source_diagnostic": {
+    "inspect": [
+      "Pinned original GeoParquet source count and bounds",
+      "Feature count within original inland control",
+      "Feature count within proposed Atlantic coast control"
+    ],
+    "source_identity": "Verify the actual file size and SHA-256 against the existing immutable release plan."
+  },
+  "proposed_regional_control": {
+    "id": "atlantic_coast",
+    "label": "Atlantic coast",
+    "bbox": [
+      -82,
+      25,
+      -66,
+      45
+    ],
+    "scope": "river-plastic-inputs browser regional case only",
+    "selection_basis": "A fixed North American coastal window chosen before examining source counts; appropriate to river-mouth plastic inputs."
+  },
+  "acceptance": {
+    "source_count_in_original_control_must_be": 0,
+    "replacement_must_have_source_features": true,
+    "rendered_features_minimum": 1,
+    "fresh_browser_context": true,
+    "cross_origin_get_status": 206,
+    "whole_object_gets_allowed": false,
+    "external_requests_allowed": false,
+    "transfer_ceiling_bytes": 134217728
+  },
+  "unchanged": [
+    "All source and PMTiles bytes",
+    "Global browser control",
+    "All other regional browser and geometry controls",
+    "Nonzero rendering and clicked-attribute assertions",
+    "Range, CORS, byte accounting and transfer ceiling assertions"
+  ],
+  "failure_policy": "Preserve the failed run. If source coverage contradicts the hypothesis, investigate rendering rather than accepting a control change. Record counts and final results separately."
+}

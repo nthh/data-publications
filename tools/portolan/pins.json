@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "profile": "https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json",
+  "tools": {
+    "rashid": "0.3.0",
+    "stac-check": "1.14.0"
+  },
+  "upstream": {
+    "portolan_spec": {
+      "repository": "https://github.com/portolan-sdi/portolan-spec",
+      "commit": "a2f3380fe238aec91e016eed9429463fe2791da3"
+    },
+    "portolan_skills": {
+      "repository": "https://github.com/portolan-sdi/portolan-skills",
+      "commit": "1714d9ab672e6a1bbc56ca12458e41b14484d426",
+      "consulted": [
+        "git-backed-catalog",
+        "portolan-bootstrap",
+        "portolan-cli",
+        "portolan-migrate",
+        "sourcecoop"
+      ]
+    }
+  },
+  "cli_compatibility": "Portolan CLI 0.8.0 requires Rashid <0.2.0. The current conformance gate therefore runs standalone Rashid 0.3.0 in this locked environment; legacy conversion environments remain separately pinned.",
+  "ci": {
+    "uv": "0.9.27",
+    "python": "3.12.12",
+    "runner": "ubuntu-24.04",
+    "actions": {
+      "actions/checkout": {
+        "version": "v7.0.1",
+        "commit": "3d3c42e5aac5ba805825da76410c181273ba90b1"
+      },
+      "astral-sh/setup-uv": {
+        "version": "v10.3.3",
+        "commit": "68559e99cc807c1eb7e9238fd43a15bba460eec2"
+      },
+      "actions/upload-artifact": {
+        "version": "v7.0.2",
+        "commit": "cf430e030ddbb5b0abf93d22962f4752f3646cd9"
+      }
+    }
+  }
+}

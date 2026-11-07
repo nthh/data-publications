@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "status": "passed_exact_local_file_plan_review",
+  "dataset_id": "grwl-raw",
+  "owner": "nthh",
+  "product_id": "grwl-raw",
+  "immutable_file_count": 147,
+  "immutable_total_bytes": 17083817494,
+  "analytical_asset_bytes": 5529859809,
+  "pmtiles_asset_bytes": 11498067077,
+  "immutable_upload_plan_sha256": "3299f161046457ce4eae20e6f090941ec0fe3e1d7811089fe4a9d83b641af0ee",
+  "stage_summary_sha256": "340942210ef3988db4731f542136540630900cefc0fed5b571a65f4d5609eedd",
+  "clean_stage_receipt_sha256": "4795f9d9e99227dda3d3dfe37d5da5238ca8f80f5b0f25177c15a5654b44a53a",
+  "inventory_only_files_compared_to_tracked_evidence": [
+    {
+      "path": "evidence/local-http-duckdb-validation.json",
+      "sha256": "84c4faa7977f0a03b8f53097708eaaac69940294f3aca9cd3ccf9b6716205656",
+      "matches_tracked_path": "datasets/grwl-raw/releases/raw-v01.01-local-r1/evidence/local-http-duckdb-validation.json",
+      "matches_git_revision": "4bcaa18188d04a16fba4c49f6906a5f7cc7286f2"
+    },
+    {
+      "path": "evidence/package-integrity-validation.json",
+      "sha256": "297190a0b186ff542e3ce585f2be8cb3e556ef3f82f6a89917345d9f66b86f87",
+      "matches_tracked_path": "datasets/grwl-raw/releases/raw-v01.01-local-r1/evidence/package-integrity-validation.json",
+      "matches_git_revision": "4bcaa18188d04a16fba4c49f6906a5f7cc7286f2"
+    },
+    {
+      "path": "evidence/portolan-validation.json",
+      "sha256": "f969a71801d7dfb5cef499fc4116a6583803b26583a24926f848625cf2d0dee2",
+      "matches_tracked_path": "datasets/grwl-raw/releases/raw-v01.01-local-r1/evidence/portolan-validation.json",
+      "matches_git_revision": "4bcaa18188d04a16fba4c49f6906a5f7cc7286f2"
+    },
+    {
+      "path": "evidence/stac-node-validation.json",
+      "sha256": "2e928fa668eeac12bdafa088e6cfac97ce1c1877fc01a761b15b5ea54bceae78",
+      "matches_tracked_path": "datasets/grwl-raw/releases/raw-v01.01-local-r1/evidence/stac-node-validation.json",
+      "matches_git_revision": "4bcaa18188d04a16fba4c49f6906a5f7cc7286f2"
+    },
+    {
+      "path": "package-receipt.json",
+      "sha256": "22f3339ad26ba27261c6a3107e3981a289c70a0c2577235235c0e5a6bba32362",
+      "matches_tracked_path": "datasets/grwl-raw/releases/raw-v01.01-local-r1/package-receipt.json",
+      "matches_git_revision": "4bcaa18188d04a16fba4c49f6906a5f7cc7286f2"
+    }
+  ],
+  "remaining_publication_steps": [
+    "Record account verification for nthh and confirm/create the Source Cooperative product.",
+    "Upload under explicit publication authorization, then verify public checksums, ranges, CORS, subset queries and browser access.",
+    "Publish the generated catalog with real verified URLs, then submit the registry entry."
+  ],
+  "publicly_published": false,
+  "registry_submitted": false,
+  "limits": [
+    "All staged file bytes were rehashed. The five analytical reports/receipt retain the generic planner inventory_only_unbound label; this separate review confirms identical bytes in the tracked analytical release at the clean staging commit.",
+    "This is a local exact-file plan, not an account-access, public-host or scientific-accuracy check."
+  ]
+}

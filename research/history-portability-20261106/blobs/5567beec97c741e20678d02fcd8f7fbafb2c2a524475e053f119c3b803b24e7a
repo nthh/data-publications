@@ -1,0 +1,195 @@
+# Local vector release packager
+
+`package_release.py` packages one or more already-built analytic GeoParquet assets into a portable, standalone local release directory. It creates a canonical-record snapshot, source-attribution and data-license records, field dictionaries, README/AGENTS guidance, STAC 1.1 Catalog and Collection with the Portolan v0.2 extension, manifest, checksums, code/workflow snapshots and bound validation reports. It does not convert data, upload, host publicly, or submit to a registry.
+
+The CLI is intentionally strict: both source-fidelity and clean-rebuild reports must exist, have `status: "passed"`, and bind every exact analytic asset by `asset_id`, SHA-256 and byte size. Missing, failed, pending or mismatched reports stop before creating the output directory. After staging, the package must also pass stac-node-validator 2.0.0, Rashid 0.1.8 Portolan v0.2 checks, local asset integrity checks, bounded loopback HTTP 206/CORS/range-limit checks, and a DuckDB remote subset comparison with the local file. A later failure is retained in the output with an explicit failed status and nonzero exit; it is never represented as a prepared package. Only a fully passing local package is made read-only and reported `prepared-local` / `packaged_locally_not_published`.
+
+Run from the repository root:
+
+```sh
+uv sync --locked --project scripts/release_tools
+npm ci --prefix scripts/release_tools --ignore-scripts --no-audit --no-fund
+uv run --locked --project scripts/release_tools python scripts/release_tools/package_release.py path/to/release-spec.json
+```
+
+Relative file paths in the JSON resolve from the JSON specification's directory, except `workflow_paths`, which are relative to the repository root. `output_dir` must not exist; releases are immutable and are never overwritten. On macOS the packager uses `cp -c` APFS clones for data assets and snapshots. If that is unavailable, it checks available disk space before making a portable copy. It never uses hardlinks.
+
+## JSON specification
+
+Required fields:
+
+```json
+{
+  "dataset_record_path": "../../datasets/example/dataset.yaml",
+  "dataset_id": "example",
+  "title": "Example dataset",
+  "release_id": "v01-local-r1",
+  "release_version": "1.0.0",
+  "output_dir": "../../.local/releases/example/v01-local-r1",
+  "source_attribution": {
+    "url": "https://producer.example/data",
+    "title": "Producer data release",
+    "attribution": "Source: Producer",
+    "license": {"identifier": "CC-BY-4.0", "url": "https://creativecommons.org/licenses/by/4.0/"},
+    "version": "1.0",
+    "doi": "https://doi.org/10.example/example"
+  },
+  "producers": [
+    {"name": "Dataset producer", "roles": ["producer", "licensor"], "url": "https://producer.example"}
+  ],
+  "source_fidelity_report_path": "../reports/source-fidelity.json",
+  "clean_rebuild_report_path": "../reports/clean-rebuild.json",
+  "assets": [
+    {
+      "asset_id": "lake-polygons",
+      "path": "../build/lake-polygons.parquet",
+      "identifier_column": "Hylak_id",
+      "title": "Lake polygons",
+      "description": "Analytic lake polygon features",
+      "field_dictionary_path": "../metadata/lake-fields.json"
+    }
+  ],
+  "data_license": {
+    "license": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "attribution": "Source: Producer"
+  },
+  "source_license": {"identifier": "CC-BY-4.0", "url": "https://creativecommons.org/licenses/by/4.0/"},
+  "stac_license": "CC-BY-4.0",
+  "doi": "10.example/example",
+  "citation": "Full source citation",
+  "description": "Product description and limitations.",
+  "bbox": [-180, -90, 180, 90],
+  "temporal_interval": [null, null],
+  "validation_bbox": [-80, 20, -60, 50],
+  "code_revision": "<conversion-code-commit>",
+  "workflow_paths": ["datasets/example/build.py", "datasets/example/validate.py", "datasets/example/uv.lock"]
+}
+```
+
+`dataset_id` and `title` must agree with the canonical record where it has those fields. `bbox` is optional when every asset carries a `bbox` struct with `xmin`, `ymin`, `xmax`, and `ymax`; it is otherwise required. `validation_bbox` is an optional non-empty analytic subset window; without it, the helper derives a small window around the first feature of each asset. Temporal coverage is an STAC interval `[start, end]`; use `null` for unknown/open bounds. `field_dictionary_path` is optional and may be JSON (to populate table descriptions/units) or another file (preserved verbatim). JSON field dictionaries may be either `{"fields": {"name": {"description": ..., "unit": ...}}}` or an array of objects with `name` keys. Schema-derived fields are always written if no dictionary is supplied. The source license is saved separately from the derived dataset license, using `source_license` or `source_attribution.license`.
+
+Both report JSON files must use this normalized shape:
+
+```json
+{
+  "status": "passed",
+  "assets": [
+    {"asset_id": "lake-polygons", "sha256": "<64 lowercase hex chars>", "size_bytes": 12345}
+  ],
+  "evidence": {"details": "Source fidelity/rebuild report content goes here."}
+}
+```
+
+Every report must contain exactly the package asset IDs and match the actual pre-package file checksum and size. Extra report keys are retained. A pass from another asset set or another build is refused. The release `manifest.json` binds the canonical record snapshot, source attribution, data license, analytic asset bytes, report hashes, code revision and each workflow file's independent hash. `evidence/package-binding.json` additionally binds validator/HTTP/remote-subset reports to the manifest hash.
+
+The resulting STAC Collection has one asset per parquet plus a field dictionary asset per parquet, any `supporting_files` supplied in the spec, and a sampled display-only PNG thumbnail. Supporting files use `{path, package_path, title, media_type?, description?}` and are copied into the package with recorded size/SHA-256 and STAC metadata links. LakeATLAS polygons and pour points therefore stay separate assets in one Collection. The thumbnail is rendered from at most 50,000 features / 500,000 vertices and is not an analytic asset. The canonical record is copied unchanged to `dataset.yaml`; this helper does not change its publication status. The package status and local-only limitation are in `manifest.json`, evidence and `package-receipt.json`.
+
+## Verification scope
+
+The package gate validates each Parquet footer, non-empty row count, identifier-column presence, GeoParquet WKB metadata, CRS declaration and a WGS84 bbox. It verifies byte-identical package assets, then checks bounded HTTP range requests and CORS against the streaming loopback server. DuckDB runs the same bbox intersection against each local asset and its loopback HTTP URL, then compares row count, non-null geometry count, and an order-independent SHA-256 multiset fingerprint over each identifier plus raw WKB. The subset check proves remote access to this package copy, not producer-source fidelity; that remains the responsibility of the passed, checksum-bound source-fidelity report. The helper does not declare uniqueness for identifier columns.
+
+The local server rejects any single requested range larger than 128 MiB and streams accepted ranges in at most 1 MiB reads. The report records bytes served during each DuckDB HTTP subset read. The HTTP probe response cap remains 8 MiB, independently of the server limit, so larger Parquet footer reads can succeed without a full-file fallback. No tests require a full mirror or public hosting.
+
+## Spatial bbox augmentation
+
+`add_spatial_bounds.py` is a separate bounded second stage for raw WKB Parquet. Example:
+
+```sh
+uv run --locked --project scripts/release_tools python scripts/release_tools/add_spatial_bounds.py \
+  --input build/raw.parquet --output build/with-bbox.parquet --report reports/spatial-augmentation.json \
+  --geometry-column geometry --crs EPSG:4326
+```
+
+It streams source batches without sorting, reprojection, geometry repair, or WKB rewriting. It appends a `bbox` struct, derives GeoParquet 1.1 global bounds and geometry types from WKB, and performs a full independent reread comparing every original field/null/WKB value and every derived bbox. It emits input/output SHA-256 and byte sizes. Output and report paths are immutable. It requires a known source CRS and rejects explicit unknown CRS and Z/M geometries; memory and free-space guards are configurable.
+
+## Adding spatial statistics without changing source values
+
+Some validated GeoParquet baselines lack row-group spatial statistics required
+by Portolan. `add_spatial_bounds.py` appends a derived bbox struct, with
+GeoParquet 1.1 covering metadata, while preserving all original fields, raw WKB,
+nulls and order. It is deliberately restricted to 2D WKB and never reprojects.
+It scans complete geometry metadata before writing, then independently rereads
+input and output to compare every source cell and recomputed bbox.
+
+```sh
+uv run --locked --project scripts/release_tools python scripts/release_tools/add_spatial_bounds.py --input baseline.parquet --output spatial.parquet --report spatial-validation.json --geometry-column geometry --batch-rows 4096
+```
+
+Supply the actual geometry column name. Use new output/report paths. The report
+binds both checksums; the original producer-source comparison still belongs to
+the baseline workflow. Repeat this step on the independently rebuilt baseline
+from a clean checkout, then compare final asset hashes before packaging.
+
+Bulk spatial writes require at least 40 GB free before starting, enough space
+for the estimated output while retaining 10 GB, and stop if free space falls
+below 10 GB. These are decimal GB, matching the shared-machine build policy.
+Small unit fixtures explicitly disable the disk preflight in the Python API;
+the CLI always applies the bulk start threshold.
+
+## Pinning code from earlier conversion stages
+
+The helper always bundles the spatial augmentation script and its tests. Use
+`workflow_revisions` to snapshot a particular file from the exact Git commit
+used by an earlier stage, even when packaging code has since improved:
+
+```json
+{"workflow_revisions": {"scripts/release_tools/add_spatial_bounds.py": "FULL_40_CHARACTER_COMMIT_ID"}}
+```
+
+Keys must be in the bundled helper defaults or `workflow_paths`. The manifest
+records each selected revision and the SHA-256 of the bytes actually bundled.
+The selected commits must exist locally; a missing revision stops packaging.
+
+
+## Reversible spatial ordering
+
+`spatial_order.py` supports the source-validated HydroLAKES and LakeATLAS layouts.
+The selected native ID must equal the input ordinal 1..N. It writes a new file in
+Hilbert16 bbox-center/ID order and verifies every original field against its
+native ID. Attributes are restored one column at a time and compared exactly,
+including types and nulls. Every WKB byte is independently SHA-256 hashed in both
+files; the validator compares hash, byte length and null state for every ID.
+This is a complete per-feature cryptographic comparison, not a sample or an
+aggregate geometry checksum. Existing bbox values are preserved and checked; a missing bbox column
+is computed from unchanged WKB. Projected CRS and 3D geometries are outside this
+workflow. The pinned geometry coordinates remain unchanged.
+
+The attribute comparison uses Arrow value equality, not bitwise equality of
+floating-point buffers: it treats signed zeros as the same value and can reject
+unchanged NaNs. Raw WKB uses the separate per-ID byte-hash check. The validator
+retains ID/digest arrays and up to three copies of one attribute column; this
+memory scales with row count and the largest decoded column. `--batch-rows`
+does not bound that column-comparison phase. The observed process peak must pass
+the memory gate for each full dataset; do not infer that arbitrary wider or
+larger datasets fit from these lake releases. An over-limit or interrupted run
+cannot produce passing fidelity evidence.
+
+Use the locked release-tools environment. Pass the measured size of other
+retained analytic files with `--task-owned-baseline-gb`; exclude the active input
+and source archives/documentation. Disk values are decimal GB; the memory flag
+`--max-memory-gib` uses binary GiB. Defaults enforce 1,000,000,000 bytes peak RSS,
+8 GB per-dataset working storage, 40 GB free before a bulk write, and a 10 GB floor.
+The bounded lake runs use `--buckets 128 --batch-rows 128 --buffer-rows 32
+--row-group-size 16384`; keep these parameters in the release recipe.
+Failures preserve their partial files and checksums. Do not run another large
+attempt until its retained files are included in the storage budget.
+
+After each successful transform, run:
+
+```sh
+uv run --locked --project scripts/release_tools python scripts/release_tools/check_spatial_pruning.py --input path/to/new.parquet --report path/to/new-pruning-report.json
+```
+
+The four fixed windows cover Europe, North America, East Africa and Australia.
+Each nonempty query must permit at least half the row groups to be excluded by
+bbox statistics. Empty queries are reported explicitly. This checks pruning
+eligibility, not the query engine's internal I/O. Package with
+`validation_bbox: [5, 45, 15, 55]` to separately compare Europe IDs/WKB over actual
+loopback HTTP and record bytes served. Public-host checks remain a later gate.
+
+For these releases, the fidelity binder accepts `final_transform: spatial_order`
+only with original and clean transformation reports that bind exact raw/final
+bytes and affirm complete source-order restoration and bbox comparisons. Include
+both spatial-order scripts/tests and the pruning script/tests in the package's
+`workflow_paths`. Fixture success alone does not prepare a full dataset release.

@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "source_commit": "40a3a5beda0a3fa8f1a46dc3a964e503850832ca",
+  "source_tree_sha1": "6b78ec1de05fc99aef7e8dd7301d8d8cccc7f0e8",
+  "checkout": "/Users/nathan/.folia-fleets/source-publication-clean-20261107-r3/tree",
+  "clean_snapshot_commit": "49a44d22f2a1916f412edba1de643c3d68f1ee1d",
+  "clean_snapshot_tree_sha1": "6b78ec1de05fc99aef7e8dd7301d8d8cccc7f0e8",
+  "archive_method": "git archive of exact committed source; git init -b main in a new independent directory; git add -f -A included two intentional tracked PMTiles ignored by a generic *.pmtiles rule; one synthetic root commit",
+  "history_commit_count": 1,
+  "old_source_commit_available": false,
+  "tracked_tree_matches_source": true,
+  "local_bulk_data_present": false,
+  "checkout_git_status_clean": true,
+  "git_fsck_full_passed": true,
+  "environment": {
+    "catalog_python": "/Users/nathan/projects/data-publications/.venv/bin/python",
+    "publication_test_python": "/Users/nathan/.folia-fleets/source-publication-20261106/tree/scripts/source_publish/.venv/bin/python",
+    "portolan_python": "/Users/nathan/.folia-fleets/source-publication-20261106/tree/tools/portolan/.venv/bin/python",
+    "python_version": "3.12.12",
+    "duckdb_version": "1.5.2",
+    "pyarrow_version": "23.0.1",
+    "portolan_rashid_version": "0.3.0",
+    "portolan_stac_check_version": "1.14.0",
+    "node_version": "v24.21.0",
+    "source_publish_uv_lock_sha256": "123042892fe9a9d53d4af65961e2ce509cb491530aa3c466bb2f830792dee415",
+    "borrowed_locked_environments": true,
+    "fresh_dependency_install": false
+  },
+  "pinned_files": {
+    "upload_py_sha256": "4c418a065e41ea14a4c5841bd77a95b725f35b81dff59f5f0ca4fc7f39aa6559",
+    "test_source_upload_py_sha256": "f70f99f928e4e4566fa3c0566ca362650b6439e5231f93bb9ae261c2eca73118",
+    "validate_hosted_py_sha256": "3f1b36710101aac17e98ee077374991e9e8622a640064c14d90e649625ffb0f9",
+    "test_hosted_validation_py_sha256": "032049d45e6641ed9b365c4c0ef8d8386d70f1bda607431961621b22a60210f4",
+    "multipart_resume_criteria_sha256": "b729d60914d31f9605dc6569647d2a73efdc135a09f647874c1d0828fea5a330",
+    "multipart_auth_retry_criteria_sha256": "8bfcc7550047e91475a3200f85a9fa2f4735a7a764b1609deb968d3d0ad987a2",
+    "multipart_hosted_proof_criteria_sha256": "63bd75917841efd2aa8d7af52cb97385d11c593a5e3088e0f7c3ab7f86525143",
+    "portolan_browser_harness_sha256": "635682779720b017a49e035d84f2a4289a2d14db0916489a9554579499a4fe75"
+  },
+  "results": [
+    {
+      "name": "catalog",
+      "command": "/Users/nathan/projects/data-publications/.venv/bin/python scripts/catalog.py --check",
+      "cwd": "/Users/nathan/.folia-fleets/source-publication-clean-20261107-r3/tree",
+      "exit_code": 0,
+      "output": "{\n  \"records_checked\": 453,\n  \"supplemental_records_checked\": 90,\n  \"family_keys_checked\": 363,\n  \"citations_checked\": 363,\n  \"decisions\": {\n    \"defer\": 3,\n    \"pending\": 443,\n    \"publish_conversion\": 6,\n    \"reuse_existing\": 1\n  }\n}\n",
+      "wall_time_seconds": 12.174478708
+    },
+    {
+      "name": "source_products",
+      "command": "/Users/nathan/projects/data-publications/.venv/bin/python scripts/source_products.py check",
+      "cwd": "/Users/nathan/.folia-fleets/source-publication-clean-20261107-r3/tree",
+      "exit_code": 0,
+      "output": "",
+      "wall_time_seconds": 3.4040225
+    },
+    {
+      "name": "publication_catalog",
+      "command": "/Users/nathan/projects/data-publications/.venv/bin/python scripts/publication_catalog.py check",
+      "cwd": "/Users/nathan/.folia-fleets/source-publication-clean-20261107-r3/tree",
+      "exit_code": 0,
+      "output": "Catalog check passed; 4 published collections.\n",
+      "wall_time_seconds": 5.579617292
+    },
+    {
+      "name": "provenance",
+      "command": "/Users/nathan/projects/data-publications/.venv/bin/python scripts/check_provenance.py",
+      "cwd": "/Users/nathan/.folia-fleets/source-publication-clean-20261107-r3/tree",
+      "exit_code": 0,
+      "output": "{\n  \"status\": \"passed\",\n  \"historical_entries\": 186,\n  \"unique_blobs\": 104\n}\n",
+      "wall_time_seconds": 2.1989326670000002
+    },
+    {
+      "name": "publication_pytest",
+      "command": "/Users/nathan/.folia-fleets/source-publication-20261106/tree/scripts/source_publish/.venv/bin/python -m pytest -q -p no:cacheprovider tests/test_source_upload.py tests/test_source_api.py tests/test_hosted_validation.py tests/test_bounded_http.py tests/test_query_hints.py tests/test_hosted_viewer.py",
+      "cwd": "/Users/nathan/.folia-fleets/source-publication-clean-20261107-r3/tree",
+      "exit_code": 0,
+      "output": "........................................................................ [ 51%]\n...........................................s........................     [100%]\n139 passed, 1 skipped in 1.99s\n",
+      "wall_time_seconds": 3.760414292,
+      "passed": 139,
+      "skipped": 1
+    },
+    {
+      "name": "portolan_gate_unittest_locked_environment",
+      "command": "/Users/nathan/.folia-fleets/source-publication-20261106/tree/tools/portolan/.venv/bin/python -m unittest discover -s tests -p test_portolan_gate.py -v",
+      "cwd": "/Users/nathan/.folia-fleets/source-publication-clean-20261107-r3/tree",
+      "exit_code": 0,
+      "output": "test_data_and_remote_checks_are_off_by_default (test_portolan_gate.PortolanGateTests.test_data_and_remote_checks_are_off_by_default) ... ok\ntest_local_data_flag_opts_into_local_only_scope (test_portolan_gate.PortolanGateTests.test_local_data_flag_opts_into_local_only_scope) ... /Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:239: IOError: sysctlbyname failed for 'hw.l1dcachesize'. Detail: [errno 1] Operation not permitted\n/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:239: IOError: sysctlbyname failed for 'hw.l2cachesize'. Detail: [errno 1] Operation not permitted\n/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:239: IOError: sysctlbyname failed for 'hw.l3cachesize'. Detail: [errno 1] Operation not permitted\n/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:239: IOError: sysctlbyname failed for 'hw.optional.neon'. Detail: [errno 1] Operation not permitted\nok\ntest_offline_guard_blocks_local_socket_connect (test_portolan_gate.PortolanGateTests.test_offline_guard_blocks_local_socket_connect) ... ok\ntest_real_rashid_accepts_complete_root_and_collection (test_portolan_gate.PortolanGateTests.test_real_rashid_accepts_complete_root_and_collection) ... ok\ntest_removing_collection_license_fails_ptl_lic_001 (test_portolan_gate.PortolanGateTests.test_removing_collection_license_fails_ptl_lic_001) ... ok\ntest_report_overwrite_is_refused (test_portolan_gate.PortolanGateTests.test_report_overwrite_is_refused) ... ok\ntest_stac_advisory_failure_is_separate_and_visible (test_portolan_gate.PortolanGateTests.test_stac_advisory_failure_is_separate_and_visible) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 18.341s\n\nOK\n",
+      "wall_time_seconds": 21.11548375,
+      "passed": 7
+    },
+    {
+      "name": "portolan_browser_self_test",
+      "command": "node scripts/cloud_viewer/portolan-browser-check.mjs --self-test",
+      "cwd": "/Users/nathan/.folia-fleets/source-publication-clean-20261107-r3/tree",
+      "exit_code": 0,
+      "output": "offline predicates passed: bounded ranges, Source product binding, verified HEAD classification, PMTiles tile-data proof, exact Browser style-title normalization, read-only renderer inspection, and external route construction\n",
+      "wall_time_seconds": 2.07458225
+    },
+    {
+      "name": "tracked_catalog_rashid",
+      "command": "/Users/nathan/.folia-fleets/source-publication-20261106/tree/tools/portolan/.venv/bin/python scripts/check_portolan.py --catalog catalog --report /Users/nathan/.folia-fleets/source-publication-clean-20261107-r3/catalog-rashid.json",
+      "cwd": "/Users/nathan/.folia-fleets/source-publication-clean-20261107-r3/tree",
+      "exit_code": 0,
+      "output": "Rashid conformance: passed; stac-check advisory: incomplete (5 objects). Report: /Users/nathan/.folia-fleets/source-publication-clean-20261107-r3/catalog-rashid.json\n",
+      "wall_time_seconds": 1.877105667,
+      "report_sha256": "5abc514e9d29754cfcf64414b9ef0f9d234bc5dd1ded376a41c02ff8f5ea2533",
+      "rashid_status": "passed",
+      "stac_check_advisory": "incomplete",
+      "stac_objects_checked": 5
+    }
+  ],
+  "retained_initial_environment_failures": [
+    {
+      "name": "combined_pytest_wrong_interpreter",
+      "command": "/Users/nathan/.folia-fleets/source-publication-20261106/tree/scripts/source_publish/.venv/bin/python -m pytest -q -p no:cacheprovider tests/test_source_upload.py tests/test_source_api.py tests/test_hosted_validation.py tests/test_bounded_http.py tests/test_query_hints.py tests/test_hosted_viewer.py tests/test_portolan_gate.py",
+      "cwd": "/Users/nathan/.folia-fleets/source-publication-clean-20261107-r3/tree",
+      "exit_code": 1,
+      "output": "Warning: truncated output (original token count: 1128)\nTotal output lines: 71\n\n........................................................................ [ 48%]\n...........................................s........................FF.F [ 97%]\nF..                                                                      [100%]\n=================================== FAILURES ===================================\n_______ PortolanGateTests.test_data_and_remote_checks_are_off_by_default _______\n\nself = <test_portolan_gate.PortolanGateTests testMethod=test_data_and_remote_checks_are_off_by_default>\n\n    def test_data_and_remote_checks_are_off_by_default(self):\n        catalog = make_catalog(self.tmp / \"default-scope\")\n        report_path = self.tmp / \"scope-report.json\"\n        result = self.run_cli(catalog, report_path)\n>       self.assertEqual(result.returncode, 0, result.stdout + result.stderr)\nE       AssertionError: 1 != 0 : Rashid conformance: failed; stac-check advisory: incomplete (2 objects). Report: /var/folders/96/tg3h8v914xg739575r3d21c80000gn/T/portolan-gate-p3mfvret/scope-report.json\n\ntests/test_portolan_gate.py:161: AssertionError\n______ PortolanGateTests.test_local_data_flag_opts_into_local_only_scope _______\n\nself = <test_portolan_gate.PortolanGateTests testMethod=test_local_data_flag_opts_into_local_only_scope>\n\n    def test_local_data_flag_opts_into_local_only_scope(self):\n        catalog = make_catalog(self.tmp / \"local-data\", with_data=True)\n        report_path = self.tmp / \"local-data-report.json\"\n        result = self.run_cli(catalog, report_path, \"--local-data\")\n        report = json.loads(report_path.read_text())\n        self.assertEqual(report[\"scope\"], \"local_data\")\n        self.assertEqual(report[\"conformance\"][\"expected_scope\"][\"data\"], \"local\")\n        self.assertIn(\"--data-scope\", report[\"conformance\"][\"command\"])\n        self.assertIn(…228 tokens truncated…ncode, 0, result.stdout + result.stderr)\nE       AssertionError: 1 != 0 : Rashid conformance: failed; stac-check advisory: incomplete (2 objects). Report: /var/folders/96/tg3h8v914xg739575r3d21c80000gn/T/portolan-gate-_klvvl6o/positive-report.json\n\ntests/test_portolan_gate.py:138: AssertionError\n_____ PortolanGateTests.test_removing_collection_license_fails_ptl_lic_001 _____\n\nself = <test_portolan_gate.PortolanGateTests testMethod=test_removing_collection_license_fails_ptl_lic_001>\n\n    def test_removing_collection_license_fails_ptl_lic_001(self):\n        catalog = make_catalog(self.tmp / \"missing-license\")\n        collection_path = catalog / \"fixture/collection.json\"\n        collection = json.loads(collection_path.read_text())\n        del collection[\"license\"]\n        write_json(collection_path, collection)\n        report_path = self.tmp / \"license-report.json\"\n        result = self.run_cli(catalog, report_path)\n        self.assertNotEqual(result.returncode, 0)\n        report = json.loads(report_path.read_text())\n>       findings = report[\"conformance\"][\"report\"][\"findings\"]\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       TypeError: 'NoneType' object is not subscriptable\n\ntests/test_portolan_gate.py:154: TypeError\n=========================== short test summary info ============================\nFAILED tests/test_portolan_gate.py::PortolanGateTests::test_data_and_remote_checks_are_off_by_default\nFAILED tests/test_portolan_gate.py::PortolanGateTests::test_local_data_flag_opts_into_local_only_scope\nFAILED tests/test_portolan_gate.py::PortolanGateTests::test_real_rashid_accepts_complete_root_and_collection\nFAILED tests/test_portolan_gate.py::PortolanGateTests::test_removing_collection_license_fails_ptl_lic_001\n4 failed, 142 passed, 1 skipped in 3.51s\n",
+      "wall_time_seconds": 6.198257458,
+      "summary": "142 passed, 1 skipped, 4 failed; four Rashid integration assertions failed because this interpreter lacks the locked Portolan/Rashid toolchain",
+      "output_truncated": true,
+      "remediation": "The same seven Portolan gate tests were run separately with the borrowed locked tools/portolan interpreter and all passed."
+    },
+    {
+      "name": "rashid_report_write_sandbox_denial",
+      "command": "/Users/nathan/.folia-fleets/source-publication-20261106/tree/tools/portolan/.venv/bin/python scripts/check_portolan.py --catalog catalog --report /Users/nathan/.folia-fleets/source-publication-clean-20261107-r3/catalog-rashid.json",
+      "cwd": "/Users/nathan/.folia-fleets/source-publication-clean-20261107-r3/tree",
+      "exit_code": 2,
+      "output": "[Errno 1] Operation not permitted: '/Users/nathan/.folia-fleets/source-publication-clean-20261107-r3/catalog-rashid.json'\n",
+      "wall_time_seconds": 0,
+      "summary": "Sandbox denied writing a report outside the writable root; reran the same offline command with escalated local filesystem permission and it passed."
+    }
+  ],
+  "sandbox_skip_follow_up": {
+    "name": "loopback_fixture_only",
+    "command": "/Users/nathan/.folia-fleets/source-publication-20261106/tree/scripts/source_publish/.venv/bin/python -m pytest -q -p no:cacheprovider tests/test_bounded_http.py::test_loopback_serves_only_exact_bounded_routes",
+    "cwd": "/Users/nathan/.folia-fleets/source-publication-clean-20261107-r3/tree",
+    "exit_code": 0,
+    "output": ".                                                                        [100%]\n1 passed in 0.55s\n",
+    "wall_time_seconds": 1.625742667,
+    "execution": "require_escalated for local 127.0.0.1 fixture binding only; no external network",
+    "closes_original_sandbox_only_skip": true,
+    "original_suite_result_retained": "139 passed, 1 skipped in 1.99s"
+  },
+  "summary": {
+    "status": "passed_with_recorded_environment_corrections_and_one_original_sandbox_skip",
+    "publication_pytest_passed": 139,
+    "portolan_gate_tests_passed": 7,
+    "original_publication_pytest_skipped": 1,
+    "focused_loopback_follow_up_passed": 1,
+    "required_command_failures_after_correction": 0,
+    "current_published_collections": 4
+  },
+  "gaps": [
+    "Borrowed the locked environments from existing checkouts; this rehearsal does not prove a fresh dependency install.",
+    "The tracked catalog contains four published collections. The final five-collection metadata and live Pages/Browser gates remain pending.",
+    "The stac-check advisory is incomplete for five catalog objects; pinned Rashid conformance passed and the advisory is recorded separately.",
+    "No conversion rebuild, live Source upload, live Portolan Browser run, data download, or remote mutation occurred in this archive-only rehearsal."
+  ]
+}

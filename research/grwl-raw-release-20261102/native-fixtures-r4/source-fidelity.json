@@ -1,0 +1,245 @@
+{
+  "error_count": 0,
+  "errors": [],
+  "errors_truncated": false,
+  "manifest_sha256": "a8079d13c9181d5b9e2fc37da4eae51a71a42eaf80ccdd261cb10961fc55a227",
+  "manifest_tile_count": 1,
+  "parquet_filename": "grwl-raw.parquet",
+  "parquet_metadata": {
+    "row_groups": 1,
+    "rows": 6,
+    "schema": "utm_east: decimal128(38, 18)\nutm_north: decimal128(38, 18)\nwidth_m: int64\nnchannels: decimal128(38, 18)\nsegmentID: int64\nsegmentInd: int64\nlakeFlag: decimal128(38, 18)\nlon: decimal128(38, 18)\nlat: decimal128(38, 18)\nelev_m: int64\nsource_tile: string not null\nsource_row: uint32 not null\nfeature_id: uint64 not null\nwidth_valid: bool not null\nbbox: struct<xmin: double not null, ymin: double not null, xmax: double not null, ymax: double not null> not null\n  child 0, xmin: double not null\n  child 1, ymin: double not null\n  child 2, xmax: double not null\n  child 3, ymax: double not null\ngeometry: binary not null\n-- schema metadata --\ngeo: '{\"columns\":{\"geometry\":{\"covering\":{\"bbox\":{\"xmax\":[\"bbox\",\"xmax\"],' + 1613\ngrwl:source: 'GRWL_vector_V01.01 raw SHP/DBF'\ngrwl:conversion: 'Direct PolyLine-to-MultiLineString WKB; exact source XY' + 6"
+  },
+  "parquet_sha256": "1357b97a3442a56f6c638b15d1290cdd26b623f1f6d5f5976824f8737d3a602b",
+  "progress": {
+    "parquet_rows": 6,
+    "parts": 7,
+    "source_rows": 6,
+    "tiles_completed": [
+      "AA01"
+    ],
+    "width_missing": 0,
+    "width_sentinel_1": 1
+  },
+  "sample_policy": {
+    "first_records_per_tile": 8,
+    "kind": "global_controls",
+    "longest_parts_per_tile": 8
+  },
+  "sample_selection": "selected from raw source records before display processing",
+  "schema_version": 1,
+  "source_archive_identity_checked": false,
+  "source_member_sha256_checked": 4,
+  "status": "passed",
+  "tiles": [
+    {
+      "extent": [
+        -179.9999999,
+        0.0,
+        179.9999999,
+        0.3001
+      ],
+      "first_records": [
+        {
+          "bbox": [
+            -179.999,
+            0.0,
+            179.999,
+            0.0001
+          ],
+          "feature_id": 4294967297,
+          "length_m": 222.91339759434166,
+          "parts": 1,
+          "source_row": 1,
+          "source_tile": "AA01",
+          "vertices": 2
+        },
+        {
+          "bbox": [
+            -179.999,
+            0.1,
+            179.999,
+            0.1001
+          ],
+          "feature_id": 4294967298,
+          "length_m": 222.91306086093923,
+          "parts": 1,
+          "source_row": 2,
+          "source_tile": "AA01",
+          "vertices": 2
+        },
+        {
+          "bbox": [
+            -179.9999999,
+            0.2,
+            179.999,
+            0.2001
+          ],
+          "feature_id": 4294967299,
+          "length_m": 111.8777198915154,
+          "parts": 1,
+          "source_row": 3,
+          "source_tile": "AA01",
+          "vertices": 2
+        },
+        {
+          "bbox": [
+            -179.999,
+            0.3,
+            179.9999999,
+            0.3001
+          ],
+          "feature_id": 4294967300,
+          "length_m": 111.87688186154705,
+          "parts": 1,
+          "source_row": 4,
+          "source_tile": "AA01",
+          "vertices": 2
+        },
+        {
+          "bbox": [
+            10.0,
+            0.0,
+            10.001,
+            0.0
+          ],
+          "feature_id": 4294967301,
+          "length_m": 111.31949079321188,
+          "parts": 1,
+          "source_row": 5,
+          "source_tile": "AA01",
+          "vertices": 2
+        },
+        {
+          "bbox": [
+            10.01,
+            0.0,
+            10.021,
+            0.0
+          ],
+          "feature_id": 4294967302,
+          "length_m": 222.6389815866215,
+          "parts": 2,
+          "source_row": 6,
+          "source_tile": "AA01",
+          "vertices": 4
+        }
+      ],
+      "longest_parts": [
+        {
+          "bbox": [
+            -179.999,
+            0.0,
+            179.999,
+            0.0001
+          ],
+          "feature_id": 4294967297,
+          "length_m": 222.91339759434166,
+          "part": 1,
+          "source_row": 1,
+          "source_tile": "AA01",
+          "vertices": 2
+        },
+        {
+          "bbox": [
+            -179.999,
+            0.1,
+            179.999,
+            0.1001
+          ],
+          "feature_id": 4294967298,
+          "length_m": 222.91306086093923,
+          "part": 1,
+          "source_row": 2,
+          "source_tile": "AA01",
+          "vertices": 2
+        },
+        {
+          "bbox": [
+            -179.9999999,
+            0.2,
+            179.999,
+            0.2001
+          ],
+          "feature_id": 4294967299,
+          "length_m": 111.8777198915154,
+          "part": 1,
+          "source_row": 3,
+          "source_tile": "AA01",
+          "vertices": 2
+        },
+        {
+          "bbox": [
+            -179.999,
+            0.3,
+            179.9999999,
+            0.3001
+          ],
+          "feature_id": 4294967300,
+          "length_m": 111.87688186154705,
+          "part": 1,
+          "source_row": 4,
+          "source_tile": "AA01",
+          "vertices": 2
+        },
+        {
+          "bbox": [
+            10.02,
+            0.0,
+            10.021,
+            0.0
+          ],
+          "feature_id": 4294967302,
+          "length_m": 111.31949079340961,
+          "part": 2,
+          "source_row": 6,
+          "source_tile": "AA01",
+          "vertices": 2
+        },
+        {
+          "bbox": [
+            10.0,
+            0.0,
+            10.001,
+            0.0
+          ],
+          "feature_id": 4294967301,
+          "length_m": 111.31949079321188,
+          "part": 1,
+          "source_row": 5,
+          "source_tile": "AA01",
+          "vertices": 2
+        },
+        {
+          "bbox": [
+            10.01,
+            0.0,
+            10.011,
+            0.0
+          ],
+          "feature_id": 4294967302,
+          "length_m": 111.31949079321188,
+          "part": 1,
+          "source_row": 6,
+          "source_tile": "AA01",
+          "vertices": 2
+        }
+      ],
+      "matched_rows": 6,
+      "parts": 7,
+      "source_rows": 6,
+      "source_sha256": {
+        "dbf": "72734e6f03a2f977f71e8386478a66a4de50f83539a3b12905ca0497b55c5a78",
+        "prj": "a02a27b1d1982c8516d83398e85a3c8b1aef1713c13ef4d84d7bde17430c07c4",
+        "shp": "f1644d3741a2cad178a52fd19289cf0fd2da30239cc671020d63dd87304a3749",
+        "shx": "0ccbe867747ab167ed88d1787a8b201084b037270332bb18470a0fb4dc882949"
+      },
+      "tile": "AA01",
+      "vertices": 14,
+      "width_missing": 0,
+      "width_sentinel_1": 1
+    }
+  ],
+  "usable_release": true,
+  "validation_scope": "All supplied source records; a pilot is not a global release or scientific/GEE validation"
+}

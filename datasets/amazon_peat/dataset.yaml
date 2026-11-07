@@ -1,0 +1,71 @@
+schema_version: 1
+id: amazon_peat
+title: Amazonia Peatland Extent
+community_url: https://gee-community-catalog.org/projects/amazon_peat
+audit:
+  snapshot: gee-community-audit-20261029
+  family_key: amazon_peat
+  unique_gee_asset_count: 1
+  initial_queue: research_original_source
+  folia_registry_status: not_identified
+  folia_registry_ids: []
+  source_coop_urls: []
+  source_coop_scope: null
+  external_native_urls: []
+  external_native_scope: null
+triage:
+  decision: pending
+  priority: normal
+review:
+  as_of: '2026-10-29'
+  original_source: https://zenodo.org/records/13142590
+  version: null
+  source_files:
+  - name: Amazon_peat_map.tif
+    size_bytes: 29106275
+    provider_checksum: md5:a2fadf87db6bcf86595566e6c1a5c028
+    url: https://zenodo.org/api/records/13142590/files/Amazon_peat_map.tif/content
+  - name: Amazon_ecosystem_map.tif
+    size_bytes: 956592884
+    provider_checksum: md5:7dcb5073fcbe2695bade375cfe243f3f
+    url: https://zenodo.org/api/records/13142590/files/Amazon_ecosystem_map.tif/content
+  license:
+    id: CC-BY-4.0
+    evidence_url: https://zenodo.org/api/records/13142590
+    evidence_path: research/availability/zenodo-records.json
+    scope: Zenodo record metadata.license.id is cc-by-4.0; this is data-record metadata,
+      not an inference from the paper or catalog documentation.
+  proposed_scope: Peat extent raster only; ecosystem map requires a separate scope
+    decision.
+  proposed_outputs:
+  - cog
+  remaining:
+  - Complete COG layout and overview validation; bounded reads establish tiling and
+    HTTP range support only.
+  - Check existing mirrors and confirm which file corresponds to the GEE asset.
+  - Preserve original grid, nodata, class values and resolution; verify provider MD5
+    and compute SHA-256.
+  source_record_id: '13142590'
+  source_format_assessment:
+    format: tiled GeoTIFF
+    cog_conformance: not_established
+    evidence_path: research/availability/amazon-peat-header.json
+    method: Read 64 KiB of the header and 16 KiB at the first TIFF directory, with
+      HTTP 206 responses. Tile tags are present, but the first directory starts about
+      13 MB into the file. Full COG layout/overview validation remains required.
+    anonymous_range_access: true
+  geographic_scope: regional_amazon_basin
+  priority_reason: Retain for later review; user prefers global datasets for the first
+    publications (2026-10-29).
+  citation_assessment:
+    as_of: '2026-10-29'
+    provider: OpenAlex
+    evidence_path: research/citations/rankings.json
+    evidence_key: amazon_peat
+    geographic_scope: regional
+    paper_count_status: matched
+    max_paper_citations: 20
+    max_data_doi_citations: null
+    top_paper_doi: https://doi.org/10.1088/1748-9326/ad677b
+    top_paper_openalex_id: https://openalex.org/W4400970010
+    citation_scope: associated_dataset_publication

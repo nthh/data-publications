@@ -1,0 +1,103 @@
+schema_version: 1
+id: pwplants
+title: Global Power Plant Database
+community_url: https://gee-community-catalog.org/projects/pwplants
+audit:
+  snapshot: gee-community-audit-20261029
+  family_key: pwplants
+  unique_gee_asset_count: 1
+  initial_queue: research_original_source
+  folia_registry_status: not_identified
+  folia_registry_ids: []
+  source_coop_urls: []
+  source_coop_scope: null
+  external_native_urls: []
+  external_native_scope: null
+triage:
+  decision: pending
+  priority: normal
+review:
+  as_of: '2026-10-29'
+  original_source: https://github.com/wri/global-power-plant-database
+  version: 1.3.0
+  license:
+    id: CC-BY-4.0
+    evidence_url: https://github.com/wri/global-power-plant-database/blob/master/README.md
+    scope: WRI README explicitly applies CC BY 4.0 to the CSV database; code has a
+      separate MIT license.
+  proposed_outputs:
+  - geoparquet
+  - pmtiles
+  maintenance: Publish a historical v1.3.0 snapshot; upstream says no planned updates
+    since early 2022.
+  remaining:
+  - Find and pin the exact v1.3.0 release download; do not use a moving bleeding-edge
+    CSV.
+  - Check Source Coop and other hosts for matching version and complete coverage.
+  - Measure source size and compute SHA-256.
+  - Inspect coordinate validity and preserve plant identifiers, units, nulls and column
+    meanings.
+  geographic_scope: global
+  priority_reason: Retained as a global candidate; citation-prioritized review now
+    starts with the most cited global families.
+  coverage:
+    description: Worldwide power-plant database; global scope does not imply every
+      plant is included. Publish the historical v1.3.0 release with its documented
+      coverage.
+    evidence_url: https://github.com/wri/global-power-plant-database
+  citation_assessment:
+    as_of: '2026-10-29'
+    provider: OpenAlex
+    evidence_path: research/citations/rankings.json
+    evidence_key: pwplants
+    geographic_scope: global
+    paper_count_status: matched
+    max_paper_citations: 167
+    max_data_doi_citations: null
+    top_paper_doi: null
+    top_paper_openalex_id: https://openalex.org/W3010373562
+    citation_scope: associated_dataset_publication
+
+# Cross-catalog discovery: global-candidates-20261031
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'esri: Plant locations assembled for 164 countries in the Esri item description. The
+    WRI v1.3.0 producer archive is a historical global database with country-level variation and no planned
+    WRI updates since early 2022; this is not a complete current plant census. Existing WRI v1.3.0; Esri
+    2018 mirror may differ from producer release.'
+  sources:
+  - provider: esri_public
+    entry_id: eb54b44c65b846cca12914b87b315169
+    url: https://www.arcgis.com/home/item.html?id=eb54b44c65b846cca12914b87b315169
+    relationship: related_release
+  - provider: producer
+    entry_id: Global Power Plant Database v1.3.0
+    url: https://github.com/wri/global-power-plant-database
+    relationship: same_family
+  access:
+  - provider: esri_public
+    status: download_available
+    formats:
+    - vector
+    summary: Use the pinned WRI producer CSV already reviewed in canonical record `pwplants`; the Esri
+      service is a 2018 mirror. The service's Esri description warns that supplier redistribution rights
+      vary. No service export was performed. Existing WRI v1.3.0; Esri 2018 mirror may differ from producer
+      release.
+    license_summary: WRI states v1.3.0 CSV is CC BY 4.0 and code is MIT. The ArcGIS mirror separately
+      declares Esri Master License terms and warns that supplier rights differ; do not use the mirror
+      as the source for an offline copy.
+    proposed_outputs: []
+    rationale: Reuse existing `pwplants`; do not create a second candidate family from the Esri mirror.
+      The service is a useful provenance cross-check but has older coverage and terms that differ from
+      WRI's direct v1.3.0 download.
+    evidence_urls:
+    - https://github.com/wri/global-power-plant-database
+    - https://datasets.wri.org/datasets/global-power-plant-database
+    - https://www.arcgis.com/home/item.html?id=eb54b44c65b846cca12914b87b315169
+  citations: []
+  evidence:
+  - path: research/global-candidates-20261031/esri/reviewed.json
+    sha256: e02bd2202c3026ccd7564155bfa69b5e8bc666f65698da6bacce91ab7327d5be
+    key: wri-global-power-plant-database-esri-service

@@ -1,0 +1,64 @@
+schema_version: 1
+id: global_intertidal_extent
+title: Murray Global Intertidal Change Data Mask
+intake:
+  kind: official_catalog
+  reference_url: https://developers.google.com/earth-engine/datasets/catalog/UQ_murray_Intertidal_v1_1_data_mask
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: near_global
+  spatial_coverage: 'citations: Global or near-global thematic footprint; only the named glacier/flood/tidal-flat
+    features are represented.; official GEE catalog extent latitude envelope -60° to 60° (extent is not
+    a completeness/no-data guarantee). Tidal-flat thematic and latitude-limited footprint; mask and QA
+    are ancillary components.'
+  sources:
+  - provider: gee_official
+    entry_id: UQ/murray/Intertidal/v1_1/data_mask
+    url: https://developers.google.com/earth-engine/datasets/catalog/UQ_murray_Intertidal_v1_1_data_mask
+    relationship: component
+  - provider: gee_official
+    entry_id: UQ/murray/Intertidal/v1_1/global_intertidal
+    url: https://developers.google.com/earth-engine/datasets/catalog/UQ_murray_Intertidal_v1_1_global_intertidal
+    relationship: component
+  - provider: gee_official
+    entry_id: UQ/murray/Intertidal/v1_1/qa_pixel_count
+    url: https://developers.google.com/earth-engine/datasets/catalog/UQ_murray_Intertidal_v1_1_qa_pixel_count
+    relationship: component
+  access:
+  - provider: literature
+    status: unknown
+    formats: []
+    summary: GEE catalog entries are available through Earth Engine; frozen metadata does not establish
+      an independently downloadable native bulk copy or its format. Tidal-flat thematic and latitude-limited
+      footprint; mask and QA are ancillary components.
+    license_summary: Not inferred from citation records. Verify producer terms for the exact edition before
+      conversion or redistribution.
+    proposed_outputs: []
+    rationale: 'Candidate discovery only: global/near-global scope and associated-paper citation signal
+      justify source-format and licensing review. Citation rank does not establish conversion priority
+      or exact-release use.'
+    evidence_urls:
+    - https://developers.google.com/earth-engine/datasets/catalog/UQ_murray_Intertidal_v1_1_data_mask
+    - https://developers.google.com/earth-engine/datasets/catalog/UQ_murray_Intertidal_v1_1_global_intertidal
+    - https://developers.google.com/earth-engine/datasets/catalog/UQ_murray_Intertidal_v1_1_qa_pixel_count
+    - https://doi.org/10.1038/s41586-018-0805-8
+  citations:
+  - provider: OpenAlex
+    paper_doi: 10.1038/s41586-018-0805-8
+    work_id: https://openalex.org/W2903592875
+    cited_by_count: 1070
+    observed_on: '2026-10-30'
+    scope: associated_dataset_publication,base_dataset_family
+  evidence:
+  - path: research/global-candidates-20261031/citations/reviewed.json
+    sha256: 572140255cd3b41a1ec8ecca0139e64d38899cda7fdd55756f399a0dca57a467
+    key: global_intertidal_extent

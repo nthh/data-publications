@@ -1,0 +1,140 @@
+{
+  "argv": [
+    "scripts/source_publish/.venv/bin/python",
+    "scripts/source_publish/validate_hosted.py",
+    "--plan",
+    "research/source-publication-20261106/staging-r2/immutable-upload-plan.json",
+    "--dataset",
+    "free-flowing-rivers",
+    "--receipt",
+    "research/source-publication-20261106/upload-receipts/free-flowing-rivers",
+    "--prior-receipt",
+    "research/source-publication-20261106/upload-prior-proofs/free-flowing-rivers-r1",
+    "--package",
+    "/Users/nathan/projects/data-publications/.local/free-flowing-rivers/releases/figshare-v1-local-r2",
+    "--package-manifest-sha256",
+    "756286b624de53823a2af2c26344a15dcf02070c048f5d1d02ec3f65a97d5120",
+    "--display-package",
+    "/Users/nathan/projects/data-publications/.local/free-flowing-rivers/display/display-v1",
+    "--query-controls",
+    "research/source-publication-20261106/controls-r1.json",
+    "--controls-sha256",
+    "9fab1ab0408ac437ed7b3161be79beccef167556297010780fb746205473f749",
+    "--query-spatial-hints",
+    "research/source-publication-20261106/query-spatial-hints-r1.json",
+    "--query-spatial-hints-sha256",
+    "1800adfffc1bd7ecd2fbcafc752ceba9f882146a8098a7eaf7e873cc45f486d6",
+    "--browser-evidence",
+    "research/source-publication-20261106/hosted-results/free-flowing-rivers/browser-evidence-portable.json",
+    "--browser-controls",
+    "research/source-publication-20261106/browser-controls-r1.json",
+    "--browser-controls-sha256",
+    "6ff14a9c438cdee14af4ea21876ca32876883f7b676c16596b4ddfc924b6aa10",
+    "--output",
+    ".local/hosted-validation-free-flowing-rivers-spatial-r2.json"
+  ],
+  "code_files": [
+    {
+      "path": "scripts/source_publish/validate_hosted.py",
+      "sha256": "ec598ac2f755100c5e31232274acc65bcc18c53620d3b002c4ba83a5f6dab078"
+    },
+    {
+      "path": "scripts/source_publish/upload.py",
+      "sha256": "c0a1c185c2bcd667f0617fccea50f4fa268d607ffd7e3c5a1f42bcc81b885e4a"
+    },
+    {
+      "path": "scripts/source_publish/bounded_http.py",
+      "sha256": "3f0e105510de8b1b276caf10ba60a39e97dac1781eceb284ae9547ad36f24dd9"
+    }
+  ],
+  "cwd": "<repository-root>",
+  "dataset_id": "free-flowing-rivers",
+  "inputs": [
+    {
+      "path": "research/source-publication-20261106/staging-r2/immutable-upload-plan.json",
+      "sha256": "754c02dde3cf258263619599f893558d3348c7fb51c07f8fa700efa1900ac610"
+    },
+    {
+      "path": "research/source-publication-20261106/controls-r1.json",
+      "sha256": "9fab1ab0408ac437ed7b3161be79beccef167556297010780fb746205473f749"
+    },
+    {
+      "path": "research/source-publication-20261106/query-spatial-hints-r1.json",
+      "sha256": "1800adfffc1bd7ecd2fbcafc752ceba9f882146a8098a7eaf7e873cc45f486d6"
+    },
+    {
+      "path": "research/source-publication-20261106/browser-controls-r1.json",
+      "sha256": "6ff14a9c438cdee14af4ea21876ca32876883f7b676c16596b4ddfc924b6aa10"
+    },
+    {
+      "path": "research/source-publication-20261106/browser-free-flowing-rivers-r1/hosted-browser-evidence.json",
+      "sha256": "ee8ec8b93cad97e6cc71c2fe7e740976c99ec3323f9e6f2e3341dde935373566"
+    },
+    {
+      "path": "research/source-publication-20261106/hosted-results/free-flowing-rivers/browser-evidence-portable.json",
+      "sha256": "21c3c6497f7081de797afd75544fdebfba800476f6f6f5952248e5e83cd691fa"
+    },
+    {
+      "path": "research/source-publication-20261106/hosted-results/free-flowing-rivers/browser-evidence-rebase.json",
+      "sha256": "0ee9c010173cfcc3a8ca8ccb831bd37583cccc2926795e53c4e1cf7ab0e378ca"
+    },
+    {
+      "path": "datasets/free-flowing-rivers/releases/figshare-v1-local-r2/manifest.json",
+      "sha256": "756286b624de53823a2af2c26344a15dcf02070c048f5d1d02ec3f65a97d5120"
+    },
+    {
+      "path": "datasets/free-flowing-rivers/display/display-v1/manifest.json",
+      "sha256": "2f7046f914ff49749dffd20df9c6c5010706710b881af915633766da4d91fb6d"
+    },
+    {
+      "path": "research/source-publication-20261106/upload-receipts/free-flowing-rivers/summary.json",
+      "sha256": "0163af11b9f8ecb353f61eae2fb3c57469f8c0823ad184f64705cfe30cc6b5f3"
+    },
+    {
+      "path": "research/source-publication-20261106/upload-prior-proofs/free-flowing-rivers-r1/summary.json",
+      "sha256": "af8844d78edbdcb2c9f402e8127a8c5b5e5873a714c0587b6fb6cb1c86be6f7c"
+    }
+  ],
+  "kind": "hosted_validation_execution",
+  "output": {
+    "local_original_path": ".local/hosted-validation-free-flowing-rivers-spatial-r2.json",
+    "path": "research/source-publication-20261106/hosted-results/free-flowing-rivers/hosted-validation.json",
+    "sha256": "ad4823afe7009ea14f13baa0a7918a8375dc1349443aac1ed2762eb8baeb62a6"
+  },
+  "prior_object_records": {
+    "algorithm": "sha256 of sorted UTF-8 lines: filename SPACE file_sha256 NEWLINE",
+    "object_count": 35,
+    "path": "research/source-publication-20261106/upload-prior-proofs/free-flowing-rivers-r1/objects",
+    "sha256": "989ebbf586d08e82cdc32d87261c0ff7033a873e64df8c2e721fc4cfadafd428"
+  },
+  "receipt_object_records": {
+    "algorithm": "sha256 of sorted UTF-8 lines: filename SPACE file_sha256 NEWLINE",
+    "object_count": 74,
+    "path": "research/source-publication-20261106/upload-receipts/free-flowing-rivers/objects",
+    "sha256": "9e079dc15e5454bf23538bcb9491f50097699703b28ae28264dfe79a3bbbbf09"
+  },
+  "replay_note": "Use a new output path; bind the same immutable local package roots. No credentials are used. Browser evidence copy changes only screenshot paths and is bound to the committed original in browser-evidence-rebase.json.",
+  "result_scope": {
+    "browser_screenshot_path_rebase_only": true,
+    "duckdb_proxy_asset_ceiling_bytes": 134217728,
+    "duckdb_proxy_response_body_bytes": 12907619,
+    "footer_rows": 8477883,
+    "frozen_query_rows": 3,
+    "prior_full_byte_proof_count": 35
+  },
+  "retained_failed_attempt": {
+    "path": "research/source-publication-20261106/hosted-results/free-flowing-rivers/failed-hosted-r1.json",
+    "sha256": "ab1c1e231c69566ab123e9ea06aa16536f30dd6894d6c4c47bed4183a942ccb8"
+  },
+  "runtime": {
+    "duckdb_version": "1.5.2",
+    "python_version": "3.12.12",
+    "uv_lock": {
+      "path": "scripts/source_publish/uv.lock",
+      "sha256": "123042892fe9a9d53d4af65961e2ce509cb491530aa3c466bb2f830792dee415"
+    }
+  },
+  "schema_version": 1,
+  "status": "passed",
+  "validator_code_commit": "99d7d64"
+}

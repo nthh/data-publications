@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "scope": "Bounded browser observation only; no response substitution or second HTTP fetch.",
+  "files": {
+    "scripts/cloud_viewer/portolan-browser-check.mjs": "59397e1eda36f3a321658522de8afe4848ceaea084ed39ff4d0cdc51dc6d5add",
+    "scripts/cloud_viewer/portolan-cdp-capture.mjs": "e5aa340ad2993dc324af052f4918a1bb6c891fea2d5ac49eb9c811ec908e1ab2",
+    "scripts/cloud_viewer/tests/portolan-cdp-capture.test.mjs": "1d7cb9aa40ae14c7aedd937e397bf0394b2343ef5967a90cf259a9c3b711a77b"
+  },
+  "criteria_path": "research/source-publication-20261107/pages/five-collections-r2/response-capture-criteria-r1.json",
+  "primary_api_documentation": [
+    "https://playwright.dev/docs/api/class-cdpsession",
+    "https://chromedevtools.github.io/devtools-protocol/tot/Network/"
+  ],
+  "pinned_local_source_evidence": {
+    "protocol": "scripts/cloud_viewer/node_modules/playwright-core/types/protocol.d.ts",
+    "protocol_sha256": "ccd722dea5eca655cf111348ec27a38a376d467407c4cc763d31514550d04d5d",
+    "network_enable_lines": "12967-12978",
+    "get_response_body_lines": "13060-13073",
+    "package_version": "1.64.1"
+  },
+  "focused_tests_passed": 12,
+  "syntax_and_offline_harness_selftest": "passed"
+}

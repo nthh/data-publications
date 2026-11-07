@@ -1,0 +1,68 @@
+{
+  "attempts": [
+    {
+      "attempt": "v1-local-r1-attempt1",
+      "package_dir_relative_to_artifact_root": "releases/v1-local-r1",
+      "report_sha256": {
+        "package-staging-failure.json": "a291feb96ea3988e27a25ccfe91b25c3d90f9fef52b43f9bd2670ba9a06d5700"
+      },
+      "staging_failure": {
+        "error": "FileExistsError: [Errno 17] File exists: '<local-path>/failed-output'",
+        "stage": "package_staging",
+        "status": "failed"
+      },
+      "status": "failed"
+    },
+    {
+      "attempt": "v1-local-r1-attempt2",
+      "file_sha256": {
+        "catalog.json": "0ccfa477221dd8e6396b5bfa6039a0a54e893abe8a60d1e922a4e3b43701b778",
+        "collection.json": "94e8a3170fc436080a30f524209b7630df088a788f5462e0dbfc0142e19d194e",
+        "package-receipt.json": "b2cf3ea1553277e7d8a32065b95b9a4e70180cbe3e8dbede36ca904934adac07"
+      },
+      "manifest_sha256": "9bb688421897d32a5b20b47c643d60fc912bb63c2bd23b8557fec632a5813ca6",
+      "package_dir_relative_to_artifact_root": "releases/v1-local-r1-attempt2",
+      "portolan_findings": [
+        {
+          "message": "asset 'hydrolakes-polygons' rows are not spatially ordered: 1427688 rows in 2789 row groups do not cluster spatially, so a reader cannot skip any part of the file",
+          "rule_id": "PTL-DAT-006",
+          "severity": "error"
+        },
+        {
+          "message": "mirror collection has no rel:'canonical' link; add one if the upstream publishes its own STAC catalog",
+          "rule_id": "PTL-PRO-002",
+          "severity": "info"
+        }
+      ],
+      "portolan_status": "failed",
+      "receipt": {
+        "asset_count": 1,
+        "assets": [
+          {
+            "asset_id": "hydrolakes-polygons",
+            "sha256": "273f66aa591f575616e731e6f31111ddf8ecfb39c0c05eacf0e903b6ddd6944d",
+            "size_bytes": 1001702072
+          }
+        ],
+        "dataset_id": "hydrolakes",
+        "final_verification_sha256": "d370d4fcbda8a4b89551fa204859df4a1cd97b0078f721d33854939b4c3b85ea",
+        "manifest_sha256": "9bb688421897d32a5b20b47c643d60fc912bb63c2bd23b8557fec632a5813ca6",
+        "package_binding_sha256": "1b8d882c3cf9dde3fa79e4c91b745c5ca9ff9c469a28ba6886be7c6b056c28ef",
+        "package_dir": "v1-local-r1-attempt2",
+        "publicly_published": false,
+        "registry_submitted": false,
+        "release_id": "v1-local-r1",
+        "release_version": "1.0",
+        "status": "failed-local-validation"
+      },
+      "report_sha256": {
+        "final-package-verification.json": "d370d4fcbda8a4b89551fa204859df4a1cd97b0078f721d33854939b4c3b85ea",
+        "local-http-duckdb-validation.json": "af60c491b94455a002d66f8ec6cdaca0c08ffe6120db07c12bc2a7ac7e2c7e7e",
+        "portolan-validation.json": "6fdf359f7df78f5ac16d253f35e9328ec01ed98ebe09b2dae46f03ba42633bc3",
+        "stac-node-validation.json": "a2461adb15960b712b7e6f6ba46dc22f6f575d93ff26f8a01d71be3c6234c55e"
+      },
+      "status": "failed"
+    }
+  ],
+  "status": "failed_attempts_retained_locally"
+}

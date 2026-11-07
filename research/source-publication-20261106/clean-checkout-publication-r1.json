@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "source_commit": "3e71c58359d99119fa93d157f82596bad00b9356",
+  "checkout": "/Users/nathan/.folia-fleets/source-publication-clean-20261107/tree",
+  "history_commit_count": 1,
+  "old_source_commit_available": false,
+  "results": [
+    {
+      "argv": [
+        "/Users/nathan/projects/data-publications/.venv/bin/python",
+        "scripts/catalog.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"records_checked\": 453,\n  \"supplemental_records_checked\": 90,\n  \"family_keys_checked\": 363,\n  \"citations_checked\": 363,\n  \"decisions\": {\n    \"defer\": 3,\n    \"pending\": 443,\n    \"publish_conversion\": 6,\n    \"reuse_existing\": 1\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/Users/nathan/projects/data-publications/.venv/bin/python",
+        "scripts/source_products.py",
+        "check"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/Users/nathan/projects/data-publications/.venv/bin/python",
+        "scripts/publication_catalog.py",
+        "check"
+      ],
+      "exit_code": 0,
+      "stdout": "Catalog check passed; 3 published collections.\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/Users/nathan/projects/data-publications/.venv/bin/python",
+        "scripts/check_provenance.py"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"passed\",\n  \"historical_entries\": 186,\n  \"unique_blobs\": 104\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/Users/nathan/.folia-fleets/source-publication-20261106/tree/scripts/source_publish/.venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_source_upload.py",
+        "tests/test_source_api.py",
+        "tests/test_hosted_validation.py",
+        "tests/test_bounded_http.py",
+        "tests/test_query_hints.py",
+        "tests/test_hosted_viewer.py"
+      ],
+      "exit_code": 0,
+      "stdout": "........................................................................ [ 78%]\n....................                                                     [100%]\n92 passed in 1.49s\n",
+      "stderr": ""
+    }
+  ],
+  "status": "passed",
+  "scope": "Standalone one-commit source checkout, without old Git objects or local bulk data. Locked Python environments were reused; this is not a clean dependency-install claim. Python publication checks and archive portability were tested; official Browser checks are separate.",
+  "original_receipt_sha256": "1097025923ad84e9bd45f5e9ee3e6bd48187d8e5217de060d52f6c8719701fff"
+}

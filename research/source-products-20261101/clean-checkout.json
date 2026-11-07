@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "started_at_utc": "2026-11-02T00:53:58.595041+00:00",
+  "implementation_commit": "71faba981a3ede58114042dda7d358bfdc9f36ea",
+  "status": "passed",
+  "clean_checkout_without_local_bulk": true,
+  "environment": "Reused existing Python environments with byte-identical committed uv.lock files; no packages installed or network requests made.",
+  "commands": [
+    {
+      "command": [
+        "python",
+        "scripts/source_products.py",
+        "write"
+      ],
+      "environment": "catalog",
+      "exit_code": 0,
+      "seconds": 6.48,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "scripts/source_products.py",
+        "check"
+      ],
+      "environment": "catalog",
+      "exit_code": 0,
+      "seconds": 5.64,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "scripts/catalog.py",
+        "--write"
+      ],
+      "environment": "catalog",
+      "exit_code": 0,
+      "seconds": 29.137,
+      "stdout": "{\n  \"records_checked\": 452,\n  \"supplemental_records_checked\": 89,\n  \"family_keys_checked\": 363,\n  \"citations_checked\": 363,\n  \"decisions\": {\n    \"defer\": 2,\n    \"pending\": 443,\n    \"publish_conversion\": 6,\n    \"reuse_existing\": 1\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "scripts/catalog.py",
+        "--check"
+      ],
+      "environment": "catalog",
+      "exit_code": 0,
+      "seconds": 33.209,
+      "stdout": "{\n  \"records_checked\": 452,\n  \"supplemental_records_checked\": 89,\n  \"family_keys_checked\": 363,\n  \"citations_checked\": 363,\n  \"decisions\": {\n    \"defer\": 2,\n    \"pending\": 443,\n    \"publish_conversion\": 6,\n    \"reuse_existing\": 1\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "scripts/publication_catalog.py",
+        "write"
+      ],
+      "environment": "catalog",
+      "exit_code": 0,
+      "seconds": 4.551,
+      "stdout": "{\n  \"published_collections\": 0,\n  \"generated_files\": 3\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "scripts/publication_catalog.py",
+        "check"
+      ],
+      "environment": "catalog",
+      "exit_code": 0,
+      "seconds": 2.483,
+      "stdout": "Catalog check passed; 0 published collections.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "tests.test_source_products",
+        "tests.test_lakeatlas_semantics"
+      ],
+      "environment": "catalog",
+      "exit_code": 0,
+      "seconds": 0.354,
+      "stdout": "",
+      "stderr": "........refusing existing or dangling output path\nrefusing existing or dangling output path\n...staging failed; failure report written to new output directory (ProductError)\n.staging failed; failure report written to new output directory (ProductError)\nstaging failed; failure report written to new output directory (ProductError)\n....staging failed; failure report written to new output directory (ProductError)\nstaging failed; failure report written to new output directory (ProductError)\nstaging failed; failure report written to new output directory (ProductError)\n.staging failed; failure report written to new output directory (ProductError)\n.staging failed; failure report written to new output directory (ProductError)\n.staging failed; failure report written to new output directory (ProductError)\n.staging failed; failure report written to new output directory (ProductError)\n.staging failed; failure report written to new output directory (ProductError)\n.........\n----------------------------------------------------------------------\nRan 30 tests in 0.264s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "tests.test_render_preview"
+      ],
+      "environment": "release_tools",
+      "exit_code": 0,
+      "seconds": 0.434,
+      "stdout": "",
+      "stderr": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.048s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "scripts/check_provenance.py"
+      ],
+      "environment": "catalog",
+      "exit_code": 0,
+      "seconds": 0.049,
+      "stdout": "{\n  \"status\": \"passed\",\n  \"historical_entries\": 114,\n  \"unique_blobs\": 44\n}\n",
+      "stderr": ""
+    }
+  ],
+  "finished_at_utc": "2026-11-02T00:55:21.101000+00:00",
+  "git_status_porcelain": "",
+  "generated_files_identical": true,
+  "focused_tests": 33,
+  "local_bulk_present": false
+}

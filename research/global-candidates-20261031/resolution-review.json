@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "study_id": "global-candidates-20261031",
+  "review_kind": "independent_final_resolution_audit",
+  "status": "passed_with_metadata_stage_caveats",
+  "checked_at_local_date": "2026-10-31",
+  "scope": {
+    "canonical_records": 450,
+    "baseline_records": 366,
+    "new_records": 84,
+    "augmented_baseline_records": 28,
+    "discovery_records": 112,
+    "discovery_scope": {
+      "global": 83,
+      "near_global": 28,
+      "regional": 1
+    },
+    "observations_by_lane": {
+      "citations": 53,
+      "planetary": 38,
+      "esri": 15,
+      "supplemental": 7,
+      "literature": 10,
+      "reuse": 10
+    }
+  },
+  "checks": [
+    {
+      "name": "canonical_prefix_and_immutable_evidence",
+      "result": "pass",
+      "method": "Independently SHA-256 checked all 366 pre-marker canonical prefixes against baseline-records.json; compared all 28 augmented prefixes byte-for-byte with git show at integration-plan base_commit; compared old and current triage, source, build, publication, audit, review and releases YAML fields.",
+      "finding": "No changed original bytes or changed scientific/source/build/status/release fields."
+    },
+    {
+      "name": "six_lane_partition",
+      "result": "pass",
+      "method": "Compared every observation and source entry in citations/reviewed.json, planetary/reviewed.json, esri/reviewed.json, citations/supplemental-global.json, literature/reviewed.json and reuse/reviewed.json with integration-plan.json mappings and withheld entries.",
+      "finding": "All 133 observations accounted for; no omitted or duplicate partition source entry."
+    },
+    {
+      "name": "integrator_reproduction",
+      "result": "pass",
+      "command": "python research/global-candidates-20261031/integrate.py --check",
+      "finding": "112 reviewed records, 84 new, 28 augmented, zero files written; current canonical evidence hashes match the six source lanes."
+    },
+    {
+      "name": "published_backlog_and_catalog",
+      "result": "pass",
+      "command": "python scripts/catalog.py --check",
+      "finding": "450 records checked, 87 supplemental records; generated backlog/index current. CSV contains 111 expanded global/near-global entries; Overture CONUS remains regional and outside that CSV."
+    },
+    {
+      "name": "literature_capture",
+      "result": "pass",
+      "command": "python research/global-candidates-20261031/literature/build_review.py --check",
+      "finding": "Literature reviewed.json reproduces exactly from paper identities and captured OpenAlex evidence, without network or writes."
+    },
+    {
+      "name": "prior_reuse_provenance",
+      "result": "pass",
+      "command": "python research/global-candidates-20261031/reuse/check.py",
+      "finding": "10 observations, 30 prior source-file hashes, all target IDs resolve. All 10 canonical reuse access entries retain observed_on dates."
+    },
+    {
+      "name": "planetary_redacted_capture",
+      "result": "pass",
+      "command": "python research/global-candidates-20261031/planetary/capture.py --check",
+      "finding": "Retained normalized/redacted page reproduces inventory offline. Manifest records original response SHA-256 and 1,774,281 response bytes, retained body SHA-256 and 2,703,783 stored bytes, and two exact JSON paths whose signed thumbnail query parameters were removed. Original raw response bytes are unavailable. No SAS signature query keys remain in retained page, inventory or reviewed.json. Reviewed source_inventory_sha256 equals current inventory bytes."
+    },
+    {
+      "name": "identity_scope_and_access",
+      "result": "pass",
+      "method": "Inspected risk-based canonical blocks, all discovery source IDs for cross-record duplicate ownership, all access labels, new statuses and generated CSV counts.",
+      "finding": "MOD17 GPP/NPP, MERRA derived/source, HydroSHEDS/HydroBASINS and ALOS FNF/SAR remain split. GFCC v3 and PC ALOS remain withheld. TerraClimate baseline/scenarios, Microsoft worldwide/Australia, GPW density/center-points and UCDB/GHS-BUILT-S remain separate. No duplicated discovery provider/entry ID across records. All 84 new records are pending/candidate. No Esri service or NetCDF-only entry is labeled native_available; mixed COG/NetCDF and Zarr/NetCDF entries have the native label only for COG/Zarr."
+    }
+  ],
+  "prior_findings_resolution": [
+    {
+      "finding": "deltares_scope_and_bbox",
+      "status": "resolved_by_withholding",
+      "evidence": "Both Deltares PC observations are explicitly withheld in integration-plan.json; neither canonical dataset directory exists. First import audit remains intact."
+    },
+    {
+      "finding": "pc_relationship_context",
+      "status": "resolved",
+      "evidence": "PC terraclimate now has same_family relation to terraclimate_baseline; PC ms-buildings has exact_dataset relation to worldwide microsoft_building_footprints. Existing terraclim and msbuildings stay distinct."
+    },
+    {
+      "finding": "pc_inverted_bbox_followup",
+      "status": "resolved_as_qualified_metadata",
+      "evidence": "Worldwide Microsoft buildings record explicitly labels the inverted STAC bbox invalid provider metadata and grounds thematic scope in provider description and country/imagery caveat."
+    }
+  ],
+  "literature_and_reuse_caveats": [
+    "Ten supplementary literature families are a purposive producer-backed sample, not a comprehensive literature ranking. Their OpenAlex counts are dated 2026-11-01 UTC and do not alter the frozen citation selection/counts.",
+    "ERA-Interim is separate from ERA5 and visibly historical/superseded; WorldClim v2.1 is separate from v1 and its v2 paper is not claimed as exact v2.1 usage. MODIS MCD12Q1 Collection 6.1 uses a Collection 5-associated methods paper as broader family evidence.",
+    "GMIA v5 technical-report count 89 stays in lane evidence and is excluded from canonical associated-paper metric and generated CSV; the older paper is not substituted.",
+    "Prior CHIRPS v3 RNL and v2 pentad COG observations retain exact release/temporal limits; SoilGrids third-party Icechunk access remains unknown after HTTP 403; JRC MonthlyHistory is related to but not an occurrence v1.5 mirror; TerraClimate v1.1 NetCDF is a related, longer producer archive.",
+    "Native format listed and download listed remain metadata/access declarations, not asset-byte, COG/Zarr, license, complete coverage or hosting validation. No new network, data, export, job, upload or paid calls were made in this audit."
+  ],
+  "unresolved_blockers": [],
+  "files_written_by_auditor": [
+    "research/global-candidates-20261031/resolution-review.json"
+  ],
+  "command_notation": "Commands use portable python notation; audit used the existing pinned root validation environment."
+}

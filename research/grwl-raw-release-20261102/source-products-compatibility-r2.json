@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "status": "focused_compatibility_checks_passed_actual_staging_pending",
+  "fix": "Permit single internal dot or hyphen separators between lowercase alphanumeric display-version components; retain 40-character limit and path-safety checks.",
+  "files": {
+    "scripts/source_products.py": "cd1ba716f0b786f59cb085f3b96c303e5719a5313e0ddf922c94d92e99902092",
+    "scripts/cloud_viewer/prepare.py": "6d1e1692eedccc4ce5c0b64011f74825159a1365624c02d64e04cfe52303d860",
+    "scripts/cloud_viewer/run.py": "22e47dc0952008c0084604e642465dc9132247cd08e4f9f07daca1fff15ace06",
+    "tests/test_source_products.py": "32e702f8a22019cfe368e4d4de9387f81d44ad4e8e23f4021b7b3f5810d78b8a",
+    "tests/test_cloud_viewer_prepare.py": "0486b4413fc95763c5dbdcecd3362c009ecacf69d5c2810ea67d43ecfee71a5a",
+    "tests/test_cloud_viewer_run.py": "45dff40a13a5719c2437a53641692f20045d08cfb910fdca7f27d598fcef16c7"
+  },
+  "tests": {
+    "source_products_and_viewer_run": 41,
+    "viewer_prepare": 15,
+    "unsafe_values_rejected": [
+      "traversal",
+      "slash and backslash",
+      "repeated separators",
+      "leading and trailing punctuation",
+      "overlong version"
+    ]
+  },
+  "sealed_display_manifest_sha256": "0c241cd3e955ca5431380f86cd1a6ffe274c91073e10c919b60c8e5e3d220524",
+  "sealed_package_unchanged": true,
+  "snapshot_note": "The sealed package records the actual successful clean b498399 verification runtime, including unchanged raw prepare_preview.py, raw-browser-check.mjs, UI/build/server code. Its extra generic prepare.py/run.py snapshots predate this consumer-parser fix; the current repository carries the compatibility change.",
+  "limits": [
+    "Focused fixture checks establish dotted-version routing and safety, not a public upload.",
+    "The generic viewer launcher still expects its retained five-product base plan. The complete raw viewer uses the documented raw-specific preparation helper; a one-product raw upload plan is not a generic viewer base plan.",
+    "Exact local staging is the next separate check."
+  ]
+}

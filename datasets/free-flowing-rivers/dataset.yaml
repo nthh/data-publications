@@ -1,0 +1,287 @@
+schema_version: 1
+id: free-flowing-rivers
+title: Mapping the world's free-flowing rivers — global river reach connectivity assessment
+intake:
+  kind: producer
+  reference_url: https://doi.org/10.6084/m9.figshare.7688801
+  added_on: '2026-10-31'
+triage:
+  decision: publish_conversion
+  priority: pilot_review
+source:
+  source_doi: 10.6084/m9.figshare.7688801.v1
+  source_version: figshare-v1
+  source_url: https://ndownloader.figshare.com/files/15090536
+  source_name: Mapping the worlds free-flowing rivers_Data_Geodatabase.zip
+  file_id: 15090536
+  source_size_bytes: 954710486
+  source_sha256: e45aa83a60e91840ddf6cc0820a4c32f44edf7a0318c78b62980fa9e44d6e31a
+  source_md5: 2df6c603904f61f5dc482d3f9873900f
+  api_metadata_sha256: 125a2fc527145cb90cd1ae1d946df9c3a85a60dbfe5da041ececec3a1d0cc146
+  source_record_count: 8477883
+  source_layer: FFR_river_network_v1
+  source_crs: EPSG:4326
+  source_geometry_type: MultiLineString
+  source_bounds:
+  - -179.99791666699997
+  - -55.87708333299997
+  - 179.99791666700003
+  - 83.58958333300006
+  source_fields: 38
+  source_fid_column: OBJECTID
+  inspection_evidence: datasets/free-flowing-rivers/source-inspection.json
+  api_metadata_evidence: datasets/free-flowing-rivers/source-metadata.json
+  license: CC-BY-4.0
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  citation: Grill, G., Lehner, B., Thieme, M. et al. Mapping the world's free-flowing rivers. Nature 569,
+    215–221 (2019). https://doi.org/10.1038/s41586-019-1111-9
+  temporal_scope: Static assessment based on source data assembled circa 2017; publication year 2019.
+  source_verification: Current API metadata, exact archive size/MD5/SHA-256, ZIP CRC, layer, feature count,
+    CRS, geometry type, bounds, and field types inspected; report is checksum-bound to the source archive.
+  version_checked_on: '2026-10-31'
+build:
+  status: local_release_prepared
+  format: GeoParquet
+  planned_outputs:
+  - geoparquet
+  conversion: Stream all native fields and raw WKB in producer order; retain OBJECTID, add source_row
+    and recomputed bbox; no display derivative.
+  validation_plan_path: datasets/free-flowing-rivers/VALIDATION.md
+  release_id: figshare-v1-local-r2
+publication:
+  display:
+    release: display-v1
+    manifest_path: datasets/free-flowing-rivers/display/display-v1/manifest.json
+    manifest_sha256: 2f7046f914ff49749dffd20df9c6c5010706710b881af915633766da4d91fb6d
+    package_base_url: https://data.source.coop/nthh/free-flowing-rivers/display/display-v1/
+    hosting_report_path: research/source-publication-20261106/hosted-results/free-flowing-rivers/hosted-validation.json
+    hosting_report_sha256: ad4823afe7009ea14f13baa0a7918a8375dc1349443aac1ed2762eb8baeb62a6
+  status: published
+  local_processing_order: 3
+  release: figshare-v1-local-r2
+  source_cooperative:
+    status: hosted_verified_public
+    url: https://source.coop/nthh/free-flowing-rivers
+    owner: nthh
+    product: free-flowing-rivers
+    visibility: public
+  portolan:
+    status: not_submitted
+    url: null
+  conversion_git_commit: 7cc922857065883d1803a6892a5a160ce5a4f722
+  manifest_path: datasets/free-flowing-rivers/releases/figshare-v1-local-r2/manifest.json
+  release_receipt_path: datasets/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/package-receipt.json
+  validation_path: datasets/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/package-final-package-verification.json
+  local_bundle_directory: .local/free-flowing-rivers/releases/figshare-v1-local-r2
+  manifest_sha256: 756286b624de53823a2af2c26344a15dcf02070c048f5d1d02ec3f65a97d5120
+  validation:
+    source_rows: 8477883
+    source_attribute_fields: 38
+    source_fid: OBJECTID
+    final_columns: 42
+    source_values_nulls_wkb: passed_complete_source_reread
+    raw_and_final_rebuilds: byte_identical_clean_checkout
+    fault_cases_detected: 5
+    stac: passed
+    portolan: passed
+    http: passed_loopback
+    gee: completed_sampled_with_documented_differences
+    remote_host: passed
+  limits:
+  - Immutable analytical and display releases are hosted and verified. Aggregate catalog deployment and
+    the registry decision remain pending.
+  - The 2019 publication is a static assessment, not current river connectivity.
+  - Source fidelity and same-machine reproducibility do not establish independent scientific accuracy.
+  - PMTiles display-v1 is published separately; use the unchanged GeoParquet release for analysis.
+  - Live GEE count and all 521 sampled IDs match. A documented erosion-field alias, numeric precision
+    and null/empty differences remain; five selected geometry diagnostics exceed 1 m, up to 2.877 m. Strict
+    parity fails; original source values and geometry are retained.
+  catalog:
+    snapshot_path: datasets/free-flowing-rivers/releases/figshare-v1-local-r2/catalog-input-r1/snapshot.json
+    snapshot_sha256: e00a14670ec104c2f866cff660ccf67058566a5a9cbb4d15c69d328dae4903ff
+    package_base_url: https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/
+    hosting_report_path: research/source-publication-20261106/hosted-results/free-flowing-rivers/hosted-validation.json
+    hosting_report_sha256: ad4823afe7009ea14f13baa0a7918a8375dc1349443aac1ed2762eb8baeb62a6
+  source_coop:
+    owner: nthh
+    owner_status: confirmed
+    account_verification:
+      status: confirmed
+      owner: nthh
+      evidence_path: research/source-publication-20261106/account-verification.json
+      evidence_sha256: 5515f007abc95b38131ac42d95f358a07d4b6f8d950e38d1a202916635460cdc
+    product_id: free-flowing-rivers
+    title: Global free-flowing rivers — connectivity assessment
+    summary: The complete river-reach network from Mapping the world’s free-flowing rivers, preserved
+      in GeoParquet with all producer fields and source geometry. A separately versioned PMTiles layer
+      provides zoom-dependent map display and source-ID attribute lookup.
+    tags:
+    - hydrology
+    - rivers
+    - connectivity
+    - global
+    - geoparquet
+    - pmtiles
+    license_note: CC BY 4.0. Retain Grill, Lehner and coauthors’ attribution, source release identity
+      and original field definitions.
+    attribution: Grill, G., Lehner, B., Thieme, M. et al. (2019), Mapping the world’s free-flowing rivers,
+      DOI 10.1038/s41586-019-1111-9. Original conversion evidence retains Folia attribution.
+    temporal_note: Static assessment using source information assembled circa 2017; paper published in
+      2019.
+    limitations:
+    - Reach connectivity indicators are model-derived research attributes, not a current observation of
+      every barrier or river condition.
+    - Retained validation establishes conversion fidelity and reproducibility; it does not independently
+      revalidate the scientific model.
+    - Live GEE count and all 521 sampled IDs match. A documented erosion-field alias, numeric precision
+      and null/empty differences remain; five selected geometry diagnostics exceed 1 m, up to 2.877 m.
+      Strict parity fails; original source values and geometry are retained.
+    supplements: []
+review:
+  source_alternatives: No exact full native copy established in the bounded hosting review; planned ingestion
+    is documented separately.
+  scientific_validation: not_assessed
+  version_review_path: research/hydro-releases-20261031/version-review/producer-version-review.md
+  availability:
+    shortlist_id: native-publication-gaps-20261031
+    rank: 2
+    reviewed_on: '2026-11-01'
+    label: Free-Flowing Rivers 2019 v1
+    scope: Complete global reach-level connectivity and pressure assessment; original FileGDB ZIP.
+    geographic_scope: global
+    download:
+      bytes: 954710486
+      precision: exact
+      reported_size: null
+      format: FileGDB ZIP
+      file_count: 1
+      basis: validated_download
+      note: Exact selected archive size from the previously downloaded, checksum-validated source pin.
+        Excludes optional formats, separate layers and documentation.
+      evidence_urls:
+      - https://doi.org/10.6084/m9.figshare.7688801.v1
+      - https://ndownloader.figshare.com/files/15090536
+    locations:
+    - service_id: figshare
+      label: Figshare
+      platform: external
+      relationship: matching_scope
+      access: download
+      formats:
+      - FileGDB ZIP
+      urls:
+      - https://doi.org/10.6084/m9.figshare.7688801.v1
+      - https://ndownloader.figshare.com/files/15090536
+      asset_ids: []
+      note: Producer landing page, DOI and repository/CDN download links identify one distribution service;
+        they are not separate hosts.
+    - service_id: earth_engine
+      label: GEE official
+      platform: gee
+      relationship: matching_scope
+      access: gee_collection
+      formats:
+      - Earth Engine FeatureCollection
+      urls:
+      - https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_v1_FreeFlowingRivers
+      asset_ids:
+      - WWF/HydroSHEDS/v1/FreeFlowingRivers
+      note: Catalog-declared edition and scope; no new live GEE requests or full content comparison in
+        this review.
+    output_manifest:
+      path: datasets/free-flowing-rivers/releases/figshare-v1-local-r2/manifest.json
+      sha256: 756286b624de53823a2af2c26344a15dcf02070c048f5d1d02ec3f65a97d5120
+    evidence:
+    - path: research/availability-sizes-20261101/observations.json
+      sha256: a7c4fd21000b497faf92810420cde5cc4ee80ae533721dd13c69cb7e692fcd7b
+      key: free-flowing-rivers
+    source_size_key: source_size_bytes
+  publication_readiness:
+    reviewed_on: '2026-11-07'
+    stage: hosted_verified_pending_catalog_deployment
+    asset_integrity: passed_fresh_sha256_audit
+    integrity_evidence:
+      path: research/gdw-swot-preparation-20261101/prepared-packages.json
+      sha256: 712a71ca57f472cd1121941e132958f745e4468bfdb267b217466eccf49eaf1e
+    scientific_validation_rerun: false
+    local_followup: []
+    public_followup:
+    - Deploy and verify the aggregate catalog in Portolan Browser.
+    - Submit to the main Portolan registry only after a separate decision.
+    published: true
+    local_render:
+      status: passed_bounded_local_browser_demonstration
+      evidence_path: research/source-products-20261101/render/render-evidence.json
+      evidence_sha256: cdead48b6ed51777a9e2fd6fa95ac0577f41f177874dbca1bf9a466031cbb64c
+      scope: Four analytical layers across five fixed regions; up to 1,000 source IDs per layer/window
+        with clipped and simplified display geometry. A fixed narrower HydroLAKES control returned all
+        295 matches. Requires local query server; no public browser or global visual-completeness claim.
+    hosting_evidence:
+      path: research/source-publication-20261106/hosted-results/free-flowing-rivers/hosted-validation.json
+      sha256: ad4823afe7009ea14f13baa0a7918a8375dc1349443aac1ed2762eb8baeb62a6
+  source_selection_audit:
+    reviewed_on: '2026-11-02'
+    path: research/grwl-raw-release-20261102/source-audit/river-audit.json
+    sha256: 49746bc5d285b01b3d2be90980b1a94e5afc0c19edbaf6296ae2ac28e8047708
+    finding: Complete official global reach layer and attributes retained. No lower-detail source substitution
+      found.
+    scientific_accuracy_independently_revalidated: false
+  validation_gate_followup:
+    path: research/grwl-raw-release-20261102/source-audit/validation-gate-followup-r1.json
+    sha256: b8e4ff61664bb6d285403b475282c2d59c9efebbdc9887608c235d411a2f1c86
+    dataset_id: free-flowing-rivers
+    finding: Validator did not fully check row-group ranges and scalar statistics against values.
+    resolution: Require contiguous source_row min/max, bounded groups, null counts and scalar extrema
+      matching each batch.
+    retained_data_affected: Additional full Parquet scan passed on all 8,477,883 retained r2 rows.
+  gee_validation:
+    reviewed_on: '2026-11-06'
+    status: completed_sampled_with_documented_differences
+    strict_parity: failed_retained
+    evidence:
+      path: research/gee-release-validation-20261106/summary.json
+      sha256: 673dc8c3c4bc426aca44a11d0a54a826b868440faecddb50e226dd5990a106c8
+      dataset_id: free-flowing-rivers
+    layers:
+    - free-flowing-rivers
+    finding: Live GEE count and all 521 sampled IDs match. A documented erosion-field alias, numeric precision
+      and null/empty differences remain; five selected geometry diagnostics exceed 1 m, up to 2.877 m.
+      Strict parity fails; original source values and geometry are retained.
+    scientific_accuracy_independently_revalidated: false
+    data_modified: false
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'citations: Global river network; mapped river reaches only. Existing catalog identity.'
+  sources:
+  - provider: gee_official
+    entry_id: WWF/HydroSHEDS/v1/FreeFlowingRivers
+    url: https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_v1_FreeFlowingRivers
+    relationship: same_family
+  access:
+  - provider: literature
+    status: unknown
+    formats: []
+    summary: GEE catalog entries are available through Earth Engine; frozen metadata does not establish
+      an independently downloadable native bulk copy or its format. Existing catalog identity.
+    license_summary: Not inferred from citation records. Verify producer terms for the exact edition before
+      conversion or redistribution.
+    proposed_outputs: []
+    rationale: 'Candidate discovery only: global/near-global scope and associated-paper citation signal
+      justify source-format and licensing review. Citation rank does not establish conversion priority
+      or exact-release use.'
+    evidence_urls:
+    - https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_v1_FreeFlowingRivers
+    - https://doi.org/10.1038/s41586-019-1111-9
+  citations:
+  - provider: OpenAlex
+    paper_doi: 10.1038/s41586-019-1111-9
+    work_id: https://openalex.org/W2944057425
+    cited_by_count: 2473
+    observed_on: '2026-10-30'
+    scope: associated_dataset_publication
+  evidence:
+  - path: research/global-candidates-20261031/citations/reviewed.json
+    sha256: 572140255cd3b41a1ec8ecca0139e64d38899cda7fdd55756f399a0dca57a467
+    key: free-flowing-rivers

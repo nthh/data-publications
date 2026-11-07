@@ -1,0 +1,62 @@
+schema_version: 1
+id: modis_gpp
+title: MODIS 8-day gross primary productivity (Collection 6.1)
+intake:
+  kind: official_catalog
+  reference_url: https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MOD17A2H
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'citations: Global; Global land MOD17A2 8-day GPP and MOD17A3 annual NPP need separate
+    component identities.'
+  sources:
+  - provider: gee_official
+    entry_id: MODIS/061/MOD17A2H
+    url: https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MOD17A2H
+    relationship: component
+  - provider: gee_official
+    entry_id: MODIS/061/MOD17A2HGF
+    url: https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MOD17A2HGF
+    relationship: component
+  - provider: gee_official
+    entry_id: MODIS/061/MYD17A2H
+    url: https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MYD17A2H
+    relationship: component
+  access:
+  - provider: literature
+    status: unknown
+    formats: []
+    summary: GEE catalog entries are available through Earth Engine; frozen metadata does not establish
+      an independently downloadable native bulk copy or its format. MOD17A2 8-day GPP and MOD17A3 annual
+      NPP need separate component identities.
+    license_summary: Not inferred from citation records. Verify producer terms for the exact edition before
+      conversion or redistribution.
+    proposed_outputs: []
+    rationale: 'Candidate discovery only: global/near-global scope and associated-paper citation signal
+      justify source-format and licensing review. Citation rank does not establish conversion priority
+      or exact-release use.'
+    evidence_urls:
+    - https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MOD17A2H
+    - https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MOD17A2HGF
+    - https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MYD17A2H
+    - https://doi.org/10.1641/0006-3568(2004)054[0547:acsmog]2.0.co;2
+  citations:
+  - provider: OpenAlex
+    paper_doi: 10.1641/0006-3568(2004)054[0547:acsmog]2.0.co;2
+    work_id: https://openalex.org/W2147423506
+    cited_by_count: 2477
+    observed_on: '2026-10-30'
+    scope: base_dataset_family
+  evidence:
+  - path: research/global-candidates-20261031/citations/reviewed.json
+    sha256: 572140255cd3b41a1ec8ecca0139e64d38899cda7fdd55756f399a0dca57a467
+    key: modis_mod17

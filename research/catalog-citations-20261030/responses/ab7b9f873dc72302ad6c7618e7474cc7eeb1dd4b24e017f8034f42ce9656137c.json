@@ -1,0 +1,80 @@
+{
+  "request_url": "https://api.openalex.org/works?search=WaPOR+V3+Database+Methodology&corpus=all&per_page=5&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date",
+  "retrieved_at": "2026-10-30T22:08:05.042432+00:00",
+  "response_path": "responses/ab7b9f873dc72302ad6c7618e7474cc7eeb1dd4b24e017f8034f42ce9656137c.json",
+  "status": 200,
+  "response_sha256": "028351b608a07d388fd2b9bd6acc995e704e9ad26d931c679967be3c977dd152",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 36,
+      "db_response_time_ms": 50,
+      "page": 1,
+      "per_page": 5,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where full text has (WaPOR V3 Database Methodology)",
+        "x_new_oql": "get works (all corpora) where full text has (WaPOR V3 Database Methodology)",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "WaPOR V3 Database Methodology",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:WaPOR V3 Database Methodology&corpus=all&per_page=5",
+        "order": "best matches first",
+        "order_default": true
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W4399851125",
+        "doi": "https://doi.org/10.5194/isprs-archives-xlviii-4-w12-2024-35-2024",
+        "title": "Advancing water productivity monitoring: WaPLUGIN for the analysis and validation of FAO WaPOR data in QGIS",
+        "type": "article",
+        "publication_year": 2024,
+        "publication_date": "2024-06-20"
+      },
+      {
+        "id": "https://openalex.org/W7163880896",
+        "doi": "https://doi.org/10.21203/rs.3.rs-9687804/v1",
+        "title": "Downscaling dekadal WaPOR actual evapotranspiration from 300 m to 20 m for irrigation monitoring",
+        "type": "preprint",
+        "publication_year": 2026,
+        "publication_date": "2026-06-08"
+      },
+      {
+        "id": "https://openalex.org/W7214021224",
+        "doi": "https://doi.org/10.7770/jonraf-v2-art2905",
+        "title": "Proportional discrete Fourier analysis of WaPOR actual evapotranspiration and interception over cropland in Comayagua, Honduras",
+        "type": "article",
+        "publication_year": 2026,
+        "publication_date": "2026-09-22"
+      },
+      {
+        "id": "https://openalex.org/W7214053454",
+        "doi": "https://doi.org/10.21203/rs.3.rs-10805791/v1",
+        "title": "Does enforcing physics improve evapotranspiration downscaling? A controlled comparison of mass-conserving and direct deep-learning models for WaPOR",
+        "type": "preprint",
+        "publication_year": 2026,
+        "publication_date": "2026-09-22"
+      },
+      {
+        "id": "https://openalex.org/W7125950918",
+        "doi": "https://doi.org/10.1088/3033-4942/ae3ee0",
+        "title": "Remote sensing model choice drives water pricing forecasts in water-scarce basins",
+        "type": "article",
+        "publication_year": 2026,
+        "publication_date": "2026-01-28"
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "08dc9e9a670b34b49f750456cfc36ed0dcb17963cd72b7dcb071f7500e10d4a0"
+}

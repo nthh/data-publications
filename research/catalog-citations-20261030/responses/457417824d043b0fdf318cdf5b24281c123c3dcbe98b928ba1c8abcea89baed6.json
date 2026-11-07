@@ -1,0 +1,80 @@
+{
+  "request_url": "https://api.openalex.org/works?search=Global+monitoring+of+methane+point+sources+using+deep+learning+on+hyperspectral+radiance+measurements+from+EMIT&corpus=all&per_page=5&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date",
+  "retrieved_at": "2026-10-30T22:07:49.075194+00:00",
+  "response_path": "responses/457417824d043b0fdf318cdf5b24281c123c3dcbe98b928ba1c8abcea89baed6.json",
+  "status": 200,
+  "response_sha256": "060736bcfdec00a0440eb76d56db23668b42ed2884242b9017b3c6d06db19e24",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 170,
+      "db_response_time_ms": 135,
+      "page": 1,
+      "per_page": 5,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where full text has (Global monitoring of methane point sources using deep learning on hyperspectral radiance measurements from EMIT)",
+        "x_new_oql": "get works (all corpora) where full text has (Global monitoring of methane point sources using deep learning on hyperspectral radiance measurements from EMIT)",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "Global monitoring of methane point sources using deep learning on hyperspectral radiance measurements from EMIT",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:Global monitoring of methane point sources using deep learning on hyperspectral radiance measurements from EMIT&corpus=all&per_page=5",
+        "order": "best matches first",
+        "order_default": true
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W7154228460",
+        "doi": "https://doi.org/10.1073/pnas.2612145123",
+        "title": "Global monitoring of methane point sources using deep learning on hyperspectral radiance measurements from EMIT",
+        "type": "article",
+        "publication_year": 2026,
+        "publication_date": "2026-09-01"
+      },
+      {
+        "id": "https://openalex.org/W4413310816",
+        "doi": "https://doi.org/10.1021/acs.est.4c14196",
+        "title": "Global Identification of Solid Waste Methane Super Emitters Using Hyperspectral Satellites",
+        "type": "article",
+        "publication_year": 2025,
+        "publication_date": "2025-08-19"
+      },
+      {
+        "id": "https://openalex.org/W4381572142",
+        "doi": "https://doi.org/10.5194/amt-16-2627-2023",
+        "title": "Using a deep neural network to detect methane point sources and quantify emissions from PRISMA hyperspectral satellite images",
+        "type": "article",
+        "publication_year": 2023,
+        "publication_date": "2023-05-30"
+      },
+      {
+        "id": "https://openalex.org/W4307991655",
+        "doi": "https://doi.org/10.5194/egusphere-2022-924",
+        "title": "Using a deep neural network to detect methane point sources and quantify emissions from PRISMA hyperspectral satellite images",
+        "type": "preprint",
+        "publication_year": 2022,
+        "publication_date": "2022-11-02"
+      },
+      {
+        "id": "https://openalex.org/W7166045311",
+        "doi": "https://doi.org/10.1109/igarss60577.2026.11730319",
+        "title": "Methane-Plume Segmentation from Hyperspectral Satellite Imagery via Multimodal Deep Learning",
+        "type": "conference-paper",
+        "publication_year": 2026,
+        "publication_date": "2026-08-01"
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "2c985c4332df99b379ce711ef89be270682250c37e8b1ce90d4a56b6f89d1340"
+}

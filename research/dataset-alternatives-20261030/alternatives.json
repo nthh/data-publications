@@ -1,0 +1,266 @@
+{
+  "reviewed_on": "2026-10-30",
+  "baseline_commit": "b6bad0f",
+  "comparison_type": "Documentation-based candidate qualification, not a measured accuracy benchmark",
+  "groups": [
+    {
+      "baseline": "HydroLAKES v1",
+      "decision": "Retain validated HydroLAKES for compatibility; qualify LakeATLAS for attribute enrichment and SWOT PLD for smaller-lake inventory needs.",
+      "alternatives": [
+        {
+          "name": "LakeATLAS v1",
+          "relationship": "Enrichment of the same HydroLAKES features",
+          "when_to_choose": "Lake environmental characteristics and catchment context, rather than geometry alone.",
+          "differences": "56 hydro-environmental variables represented by 281 attributes. Same underlying HydroLAKES polygons, so this is not a newer independent shoreline survey.",
+          "distribution": "Producer Shapefile ZIP (~1.5 GB) or FileGDB ZIP (~1.43 GB); suitable GeoParquet candidate. Sizes are producer-rounded figures.",
+          "rights": "Producer states CC-BY-4.0 and points to technical documentation; review component attribute provenance before packaging.",
+          "existing_sourcecoop": "No exact entry identified in targeted search; absence not established.",
+          "sources": [
+            {
+              "url": "https://www.hydrosheds.org/hydroatlas",
+              "supports": "LakeATLAS identity, attributes, formats, publisher sizes and overall license.",
+              "checked_on": "2026-10-30",
+              "basis": "Primary producer, distributor or research-paper documentation; no data equivalence test."
+            },
+            {
+              "url": "https://www.hydrosheds.org/faq",
+              "supports": "HydroATLAS contains the corresponding base HydroLAKES/HydroRIVERS/HydroBASINS geometry and enriches attributes.",
+              "checked_on": "2026-10-30",
+              "basis": "Primary producer, distributor or research-paper documentation; no data equivalence test."
+            }
+          ],
+          "remaining": "Check source IDs, field overlap and exact geometry equality before reusing our validated geometry artifact."
+        },
+        {
+          "name": "SWOT Prior Lake Database",
+          "relationship": "Alternative lake inventory with different geometry and inclusion rules",
+          "when_to_choose": "Small lakes, contemporary mission inventory and linkage to SWOT observations.",
+          "differences": "The 2025 operational-PLD paper describes ~5.9 million polygons targeting lakes >=1 ha; HydroLAKES targets >=10 ha. PLD favors representative stable-season extents and excludes the Caspian Sea. Paper counts are not verified counts of the current scientific release.",
+          "distribution": "Hydroweb.next catalog identifies scientific release 2.02 Sci in SQLite; light and geometry collections also exist. GeoParquet would be a useful candidate representation.",
+          "rights": "Catalog states ETALAB 2.0.",
+          "existing_sourcecoop": "No exact entry identified in targeted search; current public cloud-native equivalent not established.",
+          "sources": [
+            {
+              "url": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2023WR036896",
+              "supports": "Operational inventory definition, thresholds, paper-era counts and representative extents.",
+              "checked_on": "2026-10-30",
+              "basis": "Primary producer, distributor or research-paper documentation; no data equivalence test."
+            },
+            {
+              "url": "https://hydroweb.next.theia-land.fr/catalog/details/SWOT_PRIOR_LAKE_DATABASE",
+              "supports": "Current indexed producer catalog: scientific release 2.02 Sci, SQLite and ETALAB 2.0.",
+              "checked_on": "2026-10-30",
+              "basis": "Primary producer, distributor or research-paper documentation; no data equivalence test."
+            }
+          ],
+          "remaining": "Direct catalog browser fetch timed out; indexed primary catalog text was available. Confirm current downloadable artifacts, size and geometry equivalence; do not use paper counts as current release verification."
+        }
+      ]
+    },
+    {
+      "baseline": "WWF Free-Flowing Rivers v1",
+      "decision": "Keep FFR when connectivity/free-flowing classifications are the requirement; use an existing network for general waterways.",
+      "alternatives": [
+        {
+          "name": "Fika WaterNet",
+          "relationship": "Alternative waterway network, not a free-flowing status assessment",
+          "when_to_choose": "Global river/stream mapping and network exploration, including model-predicted smaller waterways.",
+          "differences": "20 m model outputs, vector topology and known coverage/vectorization artifacts; does not reproduce FFR connectivity index and pressure indicators.",
+          "distribution": "Already on Source Cooperative as GeoParquet, PMTiles and publisher-declared COGs.",
+          "rights": "CC-BY-4.0 per publication README.",
+          "existing_sourcecoop": "https://source.coop/fika/waternet",
+          "sources": [
+            {
+              "url": "https://source.coop/fika/waternet",
+              "supports": "Product purpose, 20 m model outputs, formats, topology fields, known limitations and terms.",
+              "checked_on": "2026-10-30",
+              "basis": "Primary producer, distributor or research-paper documentation; no data equivalence test."
+            }
+          ],
+          "remaining": "Qualify regional fidelity and pin source versions. No need for another mirror solely for format conversion."
+        },
+        {
+          "name": "RiverATLAS v1",
+          "relationship": "HydroRIVERS-based network with environmental attributes",
+          "when_to_choose": "Hydrological network and environmental joins.",
+          "differences": "281 hydro-environmental attributes on the HydroRIVERS geometry base; it is not a recomputation of FFR free-flowing status.",
+          "distribution": "Producer FileGDB (~2.33 GB) or Shapefile (~2.55 GB) ZIP; potential GeoParquet representation.",
+          "rights": "Producer states CC-BY-4.0 and points to technical documentation; component provenance requires review.",
+          "existing_sourcecoop": "No exact entry identified in targeted search; absence not established.",
+          "sources": [
+            {
+              "url": "https://www.hydrosheds.org/hydroatlas",
+              "supports": "RiverATLAS identity, formats, rounded sizes and general license.",
+              "checked_on": "2026-10-30",
+              "basis": "Primary producer, distributor or research-paper documentation; no data equivalence test."
+            },
+            {
+              "url": "https://www.nature.com/articles/s41586-019-1111-9",
+              "supports": "FFR purpose and connectivity assessment differ from a bare river network.",
+              "checked_on": "2026-10-30",
+              "basis": "Primary producer, distributor or research-paper documentation; no data equivalence test."
+            }
+          ],
+          "remaining": "Choose the needed attributes and verify source versions; a newer network does not automatically update dam impacts or FFR classifications."
+        }
+      ]
+    },
+    {
+      "baseline": "JRC Global Surface Water v1.5 Occurrence",
+      "decision": "Keep JRC for long-term occurrence; prefer existing OPERA/Dynamic World products when recent water mapping is the question.",
+      "alternatives": [
+        {
+          "name": "OPERA DSWx-HLS v1",
+          "relationship": "Frequent observed surface-water classification, not a multi-decade occurrence statistic",
+          "when_to_choose": "Contemporary water extent and change monitoring.",
+          "differences": "30 m near-global water classifications with ancillary confidence/cloud/terrain layers. Current catalog lists a 2016-present span while its description specifies validated observations beginning April 2023; full historical coverage was not checked. Does not recreate JRC 1984-2024 occurrence by selecting a single band.",
+          "distribution": "Producer-declared COG at NASA PO.DAAC; data access uses Earthdata Login. Direct S3 access documented in us-west-2.",
+          "rights": "NASA use/citation policy and product-specific attribution apply; ancillary DEM terms are documented separately.",
+          "existing_sourcecoop": "Not needed to establish an existing cloud-native distribution; no SourceCoop mirror verified here.",
+          "sources": [
+            {
+              "url": "https://podaac.jpl.nasa.gov/dataset/OPERA_L3_DSWX-HLS_V1",
+              "supports": "COG format, 30 m resolution, listed time span, validation-period distinction and Earthdata authentication.",
+              "checked_on": "2026-10-30",
+              "basis": "Primary producer, distributor or research-paper documentation; no data equivalence test."
+            },
+            {
+              "url": "https://global-surface-water.appspot.com/download",
+              "supports": "JRC v1.5 Occurrence represents 1984-2024, unlike instantaneous water classification.",
+              "checked_on": "2026-10-30",
+              "basis": "Primary producer, distributor or research-paper documentation; no data equivalence test."
+            }
+          ],
+          "remaining": "Check intended date/region coverage, cloud masking and access requirements. Do not infer anonymous access from COG format."
+        },
+        {
+          "name": "Dynamic World v1",
+          "relationship": "Land-cover probabilities containing a water class",
+          "when_to_choose": "10 m recent land-cover/water context from Sentinel-2 observations.",
+          "differences": "2015-present, cloud-filtered/masked image-level predictions for nine land-cover classes; probability thresholding and temporal aggregation are decisions. It does not reproduce JRC historical water occurrence.",
+          "distribution": "Official Earth Engine image collection; independent cloud-native bulk distribution not verified.",
+          "rights": "Use the catalog-specific terms and attribution.",
+          "existing_sourcecoop": "Not verified.",
+          "sources": [
+            {
+              "url": "https://developers.google.com/earth-engine/datasets/catalog/GOOGLE_DYNAMICWORLD_V1",
+              "supports": "10 m scale, 2015-present coverage, water-class probability/label semantics and cloud masking.",
+              "checked_on": "2026-10-30",
+              "basis": "Primary producer, distributor or research-paper documentation; no data equivalence test."
+            }
+          ],
+          "remaining": "Not a reason to export a new mirror without a defined product, aggregation and access requirement."
+        }
+      ]
+    },
+    {
+      "baseline": "TerraClimate v1.1",
+      "decision": "Use CHELSA or ERA5-Land directly when their variables, period and access meet the need. Retain TerraClimate for its specific downscaled monthly water-balance product.",
+      "alternatives": [
+        {
+          "name": "CHELSA-monthly v2.1",
+          "relationship": "Alternative downscaled monthly climate product",
+          "when_to_choose": "Kilometer-scale climate mapping with overlapping temperature, precipitation, PET and moisture variables.",
+          "differences": "Producer monthly catalog lists 1979-2021, versus TerraClimate v1.1 base 1950-2025; finer nominal grid does not establish greater accuracy for every variable or region. Variable definitions and derived indices differ.",
+          "distribution": "Producer declares COG format; existing files may be registered after access qualification.",
+          "rights": "CC0 per producer.",
+          "existing_sourcecoop": "No exact listing identified in targeted search; already cloud-native producer format does not depend on SourceCoop.",
+          "sources": [
+            {
+              "url": "https://www.chelsa-climate.org/datasets/chelsa_monthly",
+              "supports": "Global kilometer-scale monthly product, 1979-2021, variables, version 2.1, COG and CC0.",
+              "checked_on": "2026-10-30",
+              "basis": "Primary producer, distributor or research-paper documentation; no data equivalence test."
+            }
+          ],
+          "remaining": "Monthly coverage is taken from current documentation, not an object inventory. Do not substitute CHELSA climatologies for a monthly time series."
+        },
+        {
+          "name": "ERA5-Land",
+          "relationship": "Alternative land reanalysis with different resolution and modeling",
+          "when_to_choose": "Hourly climate/land-surface reanalysis from 1950 onward, with selected variables already in Zarr.",
+          "differences": "About 9 km native resolution versus TerraClimate about 4 km; can be aggregated monthly but does not reproduce TerraClimate values or its exact derived water-balance definitions. TerraClimate v1.1 names ERA5 as an input, not ERA5-Land; do not conflate them.",
+          "distribution": "CDS ARCO Zarr subset with geo/time chunking; CDS API key required.",
+          "rights": "CDS dataset license/attribution applies.",
+          "existing_sourcecoop": "Existing publisher ARCO service verified; SourceCoop equivalent not verified.",
+          "sources": [
+            {
+              "url": "https://cds.climate.copernicus.eu/datasets/reanalysis-era5-land?tab=overview",
+              "supports": "Global hourly record, native scale and reanalysis identity.",
+              "checked_on": "2026-10-30",
+              "basis": "Primary producer, distributor or research-paper documentation; no data equivalence test."
+            },
+            {
+              "url": "https://cds.climate.copernicus.eu/datasets/reanalysis-era5-land?tab=analysis_ready_data",
+              "supports": "Subset in ARCO Zarr, alternative chunking and required CDS API key.",
+              "checked_on": "2026-10-30",
+              "basis": "Primary producer, distributor or research-paper documentation; no data equivalence test."
+            },
+            {
+              "url": "https://www.climatologylab.org/terraclimate.html",
+              "supports": "TerraClimate resolution, monthly product, v1.1 inputs and version restrictions.",
+              "checked_on": "2026-10-30",
+              "basis": "Primary producer, distributor or research-paper documentation; no data equivalence test."
+            }
+          ],
+          "remaining": "Check exact ARCO variable/period availability. Overlapping physical quantities do not justify treating the products as identical registry entries."
+        }
+      ]
+    },
+    {
+      "baseline": "Hugonnet glacier elevation change 2000-2019",
+      "decision": "Use GlaMBIE for updated aggregate mass change; keep Hugonnet when the 100 m spatial elevation-change maps are the needed product.",
+      "alternatives": [
+        {
+          "name": "GlaMBIE 2000-2023",
+          "relationship": "Newer global/regional annual mass-change synthesis",
+          "when_to_choose": "Recent global and regional glacier mass-change statistics and comparisons.",
+          "differences": "Combines multiple observation methods and extends through 2023; regional/global series are not gridded 100 m elevation-change maps and cannot be substituted pixel-for-pixel.",
+          "distribution": "WGMS provides tabular CSV data; simple Parquet is plausible, with GeoParquet only if explicitly joining defined regional geometry.",
+          "rights": "WGMS states open access with correct citation; pin exact release terms before republishing.",
+          "existing_sourcecoop": "No exact entry found in targeted search; absence not established.",
+          "sources": [
+            {
+              "url": "https://wgms.ch/data_glambie/",
+              "supports": "GlaMBIE release 1.0.0 and data DOI, publication coverage 2000-2023, rights and download.",
+              "checked_on": "2026-10-30",
+              "basis": "Primary producer, distributor or research-paper documentation; no data equivalence test."
+            },
+            {
+              "url": "https://wgms.ch/glambie_paper/",
+              "supports": "Global/regional mass-change synthesis scientific scope.",
+              "checked_on": "2026-10-30",
+              "basis": "Primary producer, distributor or research-paper documentation; no data equivalence test."
+            }
+          ],
+          "remaining": "Do not claim a scientific supersession of the spatial Hugonnet product. No new citation ranking was calculated."
+        },
+        {
+          "name": "ITS_LIVE",
+          "relationship": "Related glacier/ice-sheet products; global velocity differs from elevation change",
+          "when_to_choose": "Ice-flow velocity or available regional ice-sheet elevation-change products.",
+          "differences": "Its global velocity products measure motion, not glacier surface elevation change. Elevation-change products listed for Greenland/Antarctica do not reproduce the global 100 m mountain-glacier maps.",
+          "distribution": "NASA/JPL advertises cloud access, including Zarr for velocity data.",
+          "rights": "Use the selected product-specific source terms and citations.",
+          "existing_sourcecoop": "No mirror verified or needed to establish existing producer access.",
+          "sources": [
+            {
+              "url": "https://its-live.jpl.nasa.gov/",
+              "supports": "Product inventory distinguishes velocity from Greenland/Antarctic elevation-change offerings and cloud formats.",
+              "checked_on": "2026-10-30",
+              "basis": "Primary producer, distributor or research-paper documentation; no data equivalence test."
+            }
+          ],
+          "remaining": "Select a concrete variable/product before comparing coverage; do not label the entire ITS_LIVE collection an elevation-map replacement."
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "No scientifically equivalent replacement is asserted without a matching quantity, spatial/temporal support and method.",
+    "Cloud-native formats are publisher claims, not byte-level COG/Zarr conformance tests performed here.",
+    "Earthdata and CDS services require credentials; cloud-native does not imply anonymous access.",
+    "Search misses do not establish SourceCoop absence.",
+    "No dataset files or registry entries changed."
+  ]
+}

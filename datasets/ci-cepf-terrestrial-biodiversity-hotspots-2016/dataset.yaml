@@ -1,0 +1,54 @@
+schema_version: 1
+id: ci-cepf-terrestrial-biodiversity-hotspots-2016
+title: Conservation International / CEPF Terrestrial Biodiversity Hotspots 2016
+intake:
+  kind: official_catalog
+  reference_url: https://www.arcgis.com/home/item.html?id=ba55aa1bff5447e7b72559b8dc1a0e83
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: near_global
+  spatial_coverage: 'esri: A global selection of 36 terrestrial regions meeting biodiversity endemism
+    and habitat-loss criteria, not continuous global land coverage and not marine hotspots. The Esri item
+    says these regions are exceptionally species-rich and threatened. Distinct named producer product;
+    retain exact source edition and footprint.'
+  sources:
+  - provider: esri_public
+    entry_id: ba55aa1bff5447e7b72559b8dc1a0e83
+    url: https://www.arcgis.com/home/item.html?id=ba55aa1bff5447e7b72559b8dc1a0e83
+    relationship: related_release
+  - provider: producer
+    entry_id: Biodiversity Hotspots
+    url: https://www.cepf.net/our-work/biodiversity-hotspots
+    relationship: same_family
+  access:
+  - provider: esri_public
+    status: service_only
+    formats:
+    - vector
+    summary: Public feature-service item observed. A producer-native bulk link and service export setting
+      were not verified. Do not assume the ArcGIS feature service can be mirrored or redistributed. Distinct
+      named producer product; retain exact source edition and footprint.
+    license_summary: The inspected ArcGIS item declares CC BY-SA 4.0 and names CEPF and Conservation International
+      as contributors. Confirm that the declaration covers the source geometry and follow share-alike
+      terms; an Esri item declaration alone is not a complete producer rights check.
+    proposed_outputs: []
+    rationale: Keep for further review because the producer-derived global priority polygons are useful
+      but the Esri record is a service copy. Locate and pin the exact producer file and confirm allowed
+      derivatives before proposing an analytic package.
+    evidence_urls:
+    - https://www.arcgis.com/home/item.html?id=ba55aa1bff5447e7b72559b8dc1a0e83
+    - https://www.cepf.net/our-work/biodiversity-hotspots
+  citations: []
+  evidence:
+  - path: research/global-candidates-20261031/esri/reviewed.json
+    sha256: e02bd2202c3026ccd7564155bfa69b5e8bc666f65698da6bacce91ab7327d5be
+    key: ci-cepf-terrestrial-biodiversity-hotspots-2016

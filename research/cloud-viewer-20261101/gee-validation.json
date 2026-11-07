@@ -1,0 +1,331 @@
+{
+  "schema_version": 1,
+  "task": "Existing GEE validation audit for cloud-viewer selected datasets",
+  "criteria": {
+    "path": "research/cloud-viewer-20261101/criteria.json",
+    "sha256": "a140078226077fa66ea1a4341f47e5dbc786efc0818c67c934470ee115923f1d",
+    "commit": "78dd09b"
+  },
+  "conclusion": {
+    "all_selected_datasets_validated_against_gee": false,
+    "selected_datasets": 7,
+    "current_selected_releases_with_actual_data_to_gee_comparison": 1,
+    "count_basis": "Only river-plastic-inputs figshare-v6-r2 has a captured exhaustive data comparison. The other six have no release-bound GEE data comparison; asset IDs/catalog entries are counterpart metadata, not validation.",
+    "prepared_releases_without_release_bound_gee_comparison": 4,
+    "selected_datasets_without_prepared_release": 2,
+    "no_new_live_gee_requests_made": true
+  },
+  "datasets": [
+    {
+      "id": "grwl",
+      "current_release": "summary-v01.02-local-r1",
+      "current_release_manifest": {
+        "path": "datasets/grwl/releases/summary-v01.02-local-r1/manifest.json",
+        "sha256": "a6eb5095a56461e45c57069886e9a04f0b85a5e8edc1bc9f971ac6560f1b4f4b"
+      },
+      "gee_counterpart_recorded": [
+        "projects/sat-io/open-datasets/GRWL/grwl_SummaryStats_v01_01"
+      ],
+      "counterpart_scope": "Catalog says V01.01; selected source/release is V01.02, so this is not an exact-edition counterpart.",
+      "gee_comparison": {
+        "status": "not_run_version_mismatch",
+        "scope": "No GEE feature or attribute comparison; no GEE read recorded."
+      },
+      "source_fidelity_separate_from_gee": {
+        "status": "passed",
+        "scope": "Selected source/release checks: 42,077 records and 420,770 numeric comparisons; source ZIP checksums and CRC checked. This does not establish GEE parity or independent scientific accuracy."
+      },
+      "evidence": [
+        {
+          "path": "datasets/grwl/dataset.yaml",
+          "sha256": "ac05cb5236098c8bb693e5f110664c833b6cc78ae3c970e15e79179a3e24365e"
+        },
+        {
+          "path": "datasets/grwl/releases/summary-v01.02-local-r1/validation.json",
+          "sha256": "2d1e0115b616e3c400cab73d4a4600c846c8e6011d4c1599db833b0bbcb1f093"
+        },
+        {
+          "path": "research/gee-community-audit-20261029/families.json",
+          "sha256": "9ebe949d06952448a810135744270ef5e229422a56d4ebce9a788a985392f53f"
+        }
+      ],
+      "dataset_id": "grwl",
+      "selected_release": "summary-v01.02-local-r1",
+      "gee_status": "not_run_version_mismatch",
+      "gee_summary": "No comparison: selected V01.02 release differs from the catalog V01.01 counterpart; no GEE read or parity check."
+    },
+    {
+      "id": "river-plastic-inputs",
+      "current_release": "figshare-v6-r2",
+      "current_release_manifest": {
+        "path": "datasets/river-plastic-inputs/releases/figshare-v6-r2/manifest.json",
+        "sha256": "ad86186ea962c3c0dfc62feb28aac7a68145ac3c7451f2602812c5b5278c2300"
+      },
+      "gee_counterpart_recorded": [
+        "projects/sat-io/open-datasets/open-ocean/river_plastic_emissions"
+      ],
+      "counterpart_scope": "Catalog describes the same Lebreton model and 40,760 locations, but GEE lacks a Figshare/source-version manifest; v6 byte identity is not established.",
+      "gee_comparison": {
+        "status": "passed_with_documented_geometry_difference",
+        "scope": "Exhaustive worldwide comparison of all 40,760 source points and all 40,760 captured GEE features; no sample. All 53 fields (2,160,280 cells), nulls and totals checked. The report's GeoParquet SHA-256 de35bd69b144565af1fcd33f915e8521a1af502e3ac50235560990f6c441e8c9 matches the asset hash in the current r2 manifest.",
+        "strict_failure": "Strict 1e-8-degree coordinate parity remains failed: all 40,760 points exceeded tolerance. The strict run compared zero attribute cells after geometry matching failed.",
+        "followups": "A one-metre WGS84 geodesic diagnostic matched 40,722 unique points but failed on 38 ambiguous records. A separate geometry-defined multiset follow-up verified all 19 exactly coincident groups / 38 records. The overall content result passes with geometry difference; neither strict failure is erased.",
+        "result": {
+          "numeric_exact_matches": 2160076,
+          "null_matches": 204,
+          "missing_fields": [],
+          "additional_gee_properties": [],
+          "unmatched_source_rows": [],
+          "mismatch_counts": {},
+          "displacement_meters": {
+            "min": 0.0011579202041950977,
+            "median": 0.1787185995991023,
+            "p95": 0.2766460266145288,
+            "p99": 0.3102521755120122,
+            "max": 0.34945638926427325
+          }
+        },
+        "caveats": [
+          "Source has 19 coincident-coordinate groups; four null-estimate rows are among them. Multiplicity is retained; individual row identity within a group is not asserted.",
+          "GEE upstream version and ingestion manifest are undocumented. Default one-metre ingestion transformation is plausible, not proven as the cause."
+        ]
+      },
+      "source_fidelity_separate_from_gee": {
+        "status": "passed",
+        "scope": "Current r2 source validation reports 40,760 rows, 53 fields, 2,160,280 exact numeric comparisons and 40,760 exact source geometry comparisons. This is source fidelity, separate from GEE comparison."
+      },
+      "evidence": [
+        {
+          "path": "datasets/river-plastic-inputs/dataset.yaml",
+          "sha256": "336f1e521f21aec9db95b31585e092b9b6f71e794832fa1da35d935725804e38"
+        },
+        {
+          "path": "datasets/river-plastic-inputs/releases/figshare-v6-r2/gee-validation.json",
+          "sha256": "cc0b1d1993ee582b0daf0752f57e1a1c1a8a0c1174db3c3e9c8bc4ccfd706140"
+        },
+        {
+          "path": "datasets/river-plastic-inputs/releases/figshare-v6-r2/gee-strict-replay.json",
+          "sha256": "dfa89707b9dc0368427dc6166a898f3d0087645f37efd541ee381b5228aac6b7"
+        },
+        {
+          "path": "datasets/river-plastic-inputs/evidence/gee-unique-geodesic-validation.json",
+          "sha256": "2f138613052f8b6e4f7021c5ddcce5cebdd22842e6b199e171a8829e5463047e"
+        },
+        {
+          "path": "datasets/river-plastic-inputs/gee-parity-contract.json",
+          "sha256": "1f6cce811873e9919215e5c74aca5a044506d5d535e8542ecd3dfa41b3e0ed7a"
+        },
+        {
+          "path": "datasets/river-plastic-inputs/gee-geometry-diagnostic.json",
+          "sha256": "17708104b02b93de5191dc3367b6f98d0f754718367ab163d3478048086c9203"
+        },
+        {
+          "path": "datasets/river-plastic-inputs/gee-coincident-diagnostic.json",
+          "sha256": "5e63efcdeaed294bf22d3f4a81187a01a1eb5567705eb60511597ba069fe5046"
+        },
+        {
+          "path": "datasets/river-plastic-inputs/evidence/gee-capture.json",
+          "sha256": "eafc9374be0bb47c605a3a15ed8078a36ee7cf788209687971f2a835dc739d6d"
+        },
+        {
+          "path": "datasets/river-plastic-inputs/releases/figshare-v6-r2/validation.json",
+          "sha256": "688205637e9990291bcea8ede1b2c00deaa04fb5801a782fb029a1c332f8f782"
+        }
+      ],
+      "dataset_id": "river-plastic-inputs",
+      "selected_release": "figshare-v6-r2",
+      "gee_status": "passed_with_documented_geometry_difference",
+      "gee_summary": "Exhaustive comparison of 40,760 rows and 53 fields; content passed only with documented coordinate differences. Strict coordinate check failed for all 40,760 points; unique-only 1 m follow-up failed on 38 ambiguous records; coincident-group multiset follow-up verified 19 groups / 38 records."
+    },
+    {
+      "id": "hydrolakes",
+      "current_release": "v1-local-r3",
+      "current_release_manifest": {
+        "path": "datasets/hydrolakes/releases/v1-local-r3/evidence/package-manifest.json",
+        "sha256": "48d1d1061f0785255f14c3d5bb7ce8a1c0b47963c45c0e3b02a70441c0b86fcc"
+      },
+      "gee_counterpart_recorded": [
+        "projects/sat-io/open-datasets/HydroLakes/lake_poly_v10"
+      ],
+      "counterpart_scope": "Catalog-declared v1 polygons; the catalog also exposes lake points, while selected product is polygons.",
+      "gee_comparison": {
+        "status": "not_run",
+        "scope": "No GEE feature or attribute comparison recorded."
+      },
+      "source_fidelity_separate_from_gee": {
+        "status": "passed",
+        "scope": "Current r3 complete source/output reread: 1,427,688 rows, 21 attribute columns and 31,409,136 compared cells; typed feature digests, ID coverage and decoded WKB bound. Uses the converter's GDAL decoder; does not assert DBF decimal-text equivalence or independent scientific accuracy."
+      },
+      "evidence": [
+        {
+          "path": "datasets/hydrolakes/dataset.yaml",
+          "sha256": "14c116597c90da4165ce727b6b0534898f27084e73c61d29c027f3a4a82b492e"
+        },
+        {
+          "path": "datasets/hydrolakes/releases/v1-local-r3/provenance/source-validation.json",
+          "sha256": "a0421cae7c83446007540a96afcbd39a609135ed82461c612b79db31fe1948c1"
+        }
+      ],
+      "dataset_id": "hydrolakes",
+      "selected_release": "v1-local-r3",
+      "gee_status": "not_run",
+      "gee_summary": "No GEE feature or attribute comparison recorded."
+    },
+    {
+      "id": "free-flowing-rivers",
+      "current_release": "figshare-v1-local-r2",
+      "current_release_manifest": {
+        "path": "datasets/free-flowing-rivers/releases/figshare-v1-local-r2/manifest.json",
+        "sha256": "756286b624de53823a2af2c26344a15dcf02070c048f5d1d02ec3f65a97d5120"
+      },
+      "gee_counterpart_recorded": [
+        "WWF/HydroSHEDS/v1/FreeFlowingRivers"
+      ],
+      "counterpart_scope": "Official Earth Engine catalog declares matching 2019 WWF HydroSHEDS v1 FreeFlowingRivers collection.",
+      "gee_comparison": {
+        "status": "not_run",
+        "scope": "No GEE feature or attribute comparison recorded."
+      },
+      "source_fidelity_separate_from_gee": {
+        "status": "passed",
+        "scope": "Current r2 source-fidelity report binds selected Figshare archive and GeoParquet; full source reread covers 8,477,883 rows and 38 source attributes. Clean rebuild/local package checks do not establish GEE parity or independent scientific accuracy."
+      },
+      "evidence": [
+        {
+          "path": "datasets/free-flowing-rivers/dataset.yaml",
+          "sha256": "626fe4f6571a572b57f8f569d375a234d037d8d18777404f484baf5008476ce2"
+        },
+        {
+          "path": "datasets/free-flowing-rivers/releases/figshare-v1-local-r2/evidence/source-fidelity.json",
+          "sha256": "c45a5252cf3ca1022e7cecf58f18ae8931aa3c7f10a41853384c6630c4b5278d"
+        },
+        {
+          "path": "research/gee-community-audit-20261029/crosswalk.csv",
+          "sha256": "16655102d698853c17b9aa27e318d6092d0bacdf1779e012c250c0e0b7de0cae"
+        }
+      ],
+      "dataset_id": "free-flowing-rivers",
+      "selected_release": "figshare-v1-local-r2",
+      "gee_status": "not_run",
+      "gee_summary": "No GEE feature or attribute comparison recorded."
+    },
+    {
+      "id": "lakeatlas",
+      "current_release": "lakeatlas-v1.0-r2",
+      "current_release_manifest": {
+        "path": "datasets/lakeatlas/releases/lakeatlas-v1.0-r2/evidence/prepared-local/manifest.json",
+        "sha256": "32b4877b8809cabd3e2caca8da175115e8ff8317402058846ed0db06a54d52e9"
+      },
+      "gee_counterpart_recorded": [
+        "projects/sat-io/open-datasets/HydroAtlas/LakeAtlas/LakeAtlas_v10_polygon",
+        "projects/sat-io/open-datasets/HydroAtlas/LakeAtlas/LakeAtlas_v10_point"
+      ],
+      "counterpart_scope": "Catalog declares separate polygon and point assets; selected release also keeps layers separate. Asset identity is not parity.",
+      "gee_comparison": {
+        "status": "not_run",
+        "scope": "No GEE feature or attribute comparison recorded for either layer."
+      },
+      "source_fidelity_separate_from_gee": {
+        "status": "passed_source_fidelity",
+        "scope": "Current r2 report checks both layers independently: 1,427,688 polygon rows and 1,427,688 pour-point rows, including source values, nulls, raw WKB and reconstructed source order; clean spatial rebuilds passed. Canonical record says scientific validation was not rerun for this prepared r2 package; r1 historical evidence is not GEE validation."
+      },
+      "evidence": [
+        {
+          "path": "datasets/lakeatlas/dataset.yaml",
+          "sha256": "693a75c271fade7abed5286aaa4a0db3018d24dbae4bc31eed97eaf7ac4fb4c1"
+        },
+        {
+          "path": "datasets/lakeatlas/releases/lakeatlas-v1.0-r2/evidence/prepared-local/evidence/source-fidelity.json",
+          "sha256": "7fc9ae400a02de3d878dff3b541a920445e93aa49535699d7b54c47ecbd1b16f"
+        },
+        {
+          "path": "datasets/lakeatlas/releases/lakeatlas-v1.0-r1/evidence/validation/source-fidelity-final.json",
+          "sha256": "487a641efa52190a141c0d01d5195f99be88c58f8676a1ed16b15f5f98d36290"
+        },
+        {
+          "path": "research/gee-community-audit-20261029/families.json",
+          "sha256": "9ebe949d06952448a810135744270ef5e229422a56d4ebce9a788a985392f53f"
+        }
+      ],
+      "dataset_id": "lakeatlas",
+      "selected_release": "lakeatlas-v1.0-r2",
+      "gee_status": "not_run",
+      "gee_summary": "No GEE feature or attribute comparison recorded for either polygons or pour points."
+    },
+    {
+      "id": "gdw",
+      "current_release": null,
+      "release_status": "No prepared release; official source archive acquisition is blocked by HTTP 403. No conversion or source-fidelity comparison.",
+      "gee_counterpart_recorded": [
+        "projects/sat-io/open-datasets/GDW/GDW_BARRIERS_V1_0",
+        "projects/sat-io/open-datasets/GDW/GDW_RESERVOIRS_V1_0"
+      ],
+      "counterpart_scope": "Catalog-declared final consensus v1.0 barriers and reservoirs only.",
+      "gee_comparison": {
+        "status": "not_run",
+        "scope": "No selected local release or GEE comparison."
+      },
+      "source_fidelity_separate_from_gee": {
+        "status": "not_available",
+        "scope": "No producer archive acquired; partial AquaScope barrier table is incomplete and was not substituted."
+      },
+      "evidence": [
+        {
+          "path": "datasets/gdw/dataset.yaml",
+          "sha256": "554261950710add0a8381b5b285b2dda04b2c26d0cc37283e65df82567417e99"
+        },
+        {
+          "path": "research/gee-community-audit-20261029/families.json",
+          "sha256": "9ebe949d06952448a810135744270ef5e229422a56d4ebce9a788a985392f53f"
+        }
+      ],
+      "dataset_id": "gdw",
+      "selected_release": null,
+      "gee_status": "not_run_no_release",
+      "gee_summary": "No prepared release or GEE comparison; source archive acquisition is blocked."
+    },
+    {
+      "id": "swot_prior_lake_database",
+      "current_release": null,
+      "release_status": "No converted release. Metadata identifies 61 scientific v2.03 SQLite tiles; only a tiny range read was made, and full tile/schema validation and conversion remain pending.",
+      "gee_counterpart_recorded": [],
+      "counterpart_scope": "No GEE counterpart recorded in selected canonical metadata or frozen GEE community audit evidence reviewed.",
+      "gee_comparison": {
+        "status": "not_run",
+        "scope": "No selected local release or recorded counterpart."
+      },
+      "source_fidelity_separate_from_gee": {
+        "status": "metadata_only",
+        "scope": "Provider inventory and 16-byte range probe are not full source validation."
+      },
+      "evidence": [
+        {
+          "path": "datasets/swot_prior_lake_database/dataset.yaml",
+          "sha256": "b0a6957f973912177f0f9ae79d38bde61bfb877119f525e90f1736a01b80c07d"
+        },
+        {
+          "path": "research/gee-community-audit-20261029/summary.json",
+          "sha256": "250dc676dbd83746b84b063abd0ef8a20011e9215e1a699acb1631488c8831c8"
+        }
+      ],
+      "dataset_id": "swot_prior_lake_database",
+      "selected_release": null,
+      "gee_status": "not_run_no_release_or_counterpart",
+      "gee_summary": "No converted release and no GEE counterpart recorded in reviewed evidence."
+    }
+  ],
+  "historical_evidence_policy": "Conclusions are tied to the currently selected releases. Older source-fidelity reports are named as historical where relevant and are not current-release GEE proof. Plastic comparison is bound to r2 GeoParquet SHA above; evidence is recorded historical capture, not a fresh audit-time validation.",
+  "checks_run": [
+    "Read AGENTS.md and criteria.json; confirmed commit 78dd09b.",
+    "Read all seven canonical dataset records and selected release/status fields.",
+    "Searched existing research/dataset evidence for GEE IDs and reports; inspected frozen catalog counterpart metadata.",
+    "Parsed plastic r2 comparison, strict replay, geodesic and coincident-group diagnostics, capture metadata and source validation; checked r2 content SHA binding.",
+    "Computed SHA-256 for cited canonical records, manifests, reports and counterpart metadata. No tests or live GEE calls were run."
+  ],
+  "assumptions_and_unresolved_questions": [
+    "Counterparts are frozen catalog/canonical metadata; asset existence and current contents were not refreshed live.",
+    "GDW cannot be compared until producer archive becomes available.",
+    "No SWOT GEE counterpart was found in reviewed evidence; that is not proof no external copy exists.",
+    "Plastic content matches after geometry-aware matching, but GEE source-version provenance is absent, so exact Figshare v6 edition identity cannot be claimed."
+  ]
+}

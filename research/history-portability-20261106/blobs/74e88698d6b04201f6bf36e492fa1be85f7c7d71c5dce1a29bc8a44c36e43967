@@ -1,0 +1,19 @@
+# HydroLAKES v1 local release criteria
+
+The pre-build contract is `research/hydro-releases-20261031/contract.json`.
+Preserve every decoded attribute type/value/null and original GDAL WKB. Require
+1,427,688 unique contiguous Hylak_id values from 1 to 1,427,688. Preserve the
+native geographic CRS and every geometry without repair or simplification.
+
+The retained FRC11 converter is copied from Folia commit 100d1d061b00b4a427db6bd891d7c05ff20f4056.
+It sorts by Hylak_id and uses per-feature digests plus complete output reread.
+Independently reread the original source after conversion for the standalone
+release. A clean committed-code build must reproduce analytic bytes. The
+historical output hash is comparison evidence; an environment-dependent difference
+must be documented and cannot be silently equated with the old artifact.
+
+Validate GeoParquet metadata, actual STAC/Portolan schemas, manifest identities,
+local HTTP range/CORS reads and a subset query. Mutation tests must reject dropped
+or duplicated records, value/null edits and geometry edits. No GEE parity or
+scientific accuracy claim follows from source fidelity. Display derivatives are
+optional and excluded from this analytic-only release.

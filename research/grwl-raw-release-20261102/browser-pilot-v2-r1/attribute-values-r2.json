@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "scope": "All displayed analytical attributes for the same five frozen browser cases compared against exact source Arrow values. Decimal expectations use fixed-point text, matching the declared SQL CAST-to-VARCHAR viewer contract.",
+  "source_sha256": "1c7177cc55b732dc7e609ed22ae50c46d677548da98c4b39e4f1ab76996ca509",
+  "browser_report_sha256": "44d7625b4e11b7adbbdaee467b00cce9e76f1346c94618d2798656dc7c0aa676",
+  "supersedes_diagnostic": "attribute-values.json expected Python Decimal zero as 0E-18; DuckDB displayed its equivalent fixed-point 0.000000000000000000. The input data and observed browser report are unchanged.",
+  "cases": [
+    {
+      "feature_id": 149950193246821,
+      "checked_fields": 14,
+      "mismatches": {},
+      "status": "passed"
+    },
+    {
+      "feature_id": 148674587975197,
+      "checked_fields": 14,
+      "mismatches": {},
+      "status": "passed"
+    },
+    {
+      "feature_id": 149086904780549,
+      "checked_fields": 14,
+      "mismatches": {},
+      "status": "passed"
+    },
+    {
+      "feature_id": 149941603317417,
+      "checked_fields": 14,
+      "mismatches": {},
+      "status": "passed"
+    },
+    {
+      "feature_id": 149941603284494,
+      "checked_fields": 14,
+      "mismatches": {},
+      "status": "passed"
+    }
+  ]
+}

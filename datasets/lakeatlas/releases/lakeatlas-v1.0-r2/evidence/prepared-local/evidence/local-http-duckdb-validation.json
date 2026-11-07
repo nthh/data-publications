@@ -1,0 +1,126 @@
+{
+  "checks": [
+    "GeoParquet metadata",
+    "asset checksums",
+    "HTTP 206/CORS and range cap",
+    "DuckDB local/HTTP subset match"
+  ],
+  "http_and_subset": {
+    "base_url": "http://127.0.0.1:57616",
+    "cors_preflight": "OPTIONS 204; wildcard origin; GET/HEAD/OPTIONS and Range permitted",
+    "duckdb_subsets": [
+      {
+        "asset_id": "lakeatlas-polygons",
+        "bbox": [
+          5.0,
+          45.0,
+          15.0,
+          55.0
+        ],
+        "duckdb_http_bytes_served": 12517544,
+        "http_probe_bytes": 8388656,
+        "identifier_wkb_sha256_multiset_sum": "c65fcd4645e6ec9218bfc3bc6cbffdb8f908ef9d03cbcae340f35383c72a3897",
+        "local_remote_equal": true,
+        "nonempty_geometry_rows": 5262,
+        "query_engine": "DuckDB 1.5.2",
+        "rows": 5262
+      },
+      {
+        "asset_id": "lakeatlas-pour-points",
+        "bbox": [
+          5.0,
+          45.0,
+          15.0,
+          55.0
+        ],
+        "duckdb_http_bytes_served": 5366428,
+        "http_probe_bytes": 8388656,
+        "identifier_wkb_sha256_multiset_sum": "e3f683cefd526df57e37e4b70e8e85e23f689ca1bd734fd2726779405322f6b6",
+        "local_remote_equal": true,
+        "nonempty_geometry_rows": 5252,
+        "query_engine": "DuckDB 1.5.2",
+        "rows": 5252
+      }
+    ],
+    "max_probe_response_bytes": 8388608,
+    "ranges": [
+      {
+        "asset_id": "lakeatlas-polygons",
+        "cors": "*",
+        "range": "bytes=0-31",
+        "response_bytes": 32,
+        "status": 206
+      },
+      {
+        "asset_id": "lakeatlas-polygons",
+        "cors": "*",
+        "range": "bytes=-16",
+        "response_bytes": 16,
+        "status": 206
+      },
+      {
+        "asset_id": "lakeatlas-polygons",
+        "cors": "*",
+        "range": "bytes=1143992868-1143992931",
+        "response_bytes": 0,
+        "status": 416
+      },
+      {
+        "asset_id": "lakeatlas-polygons",
+        "cors": "*",
+        "range": "bytes=0-8388607",
+        "response_bytes": 8388608,
+        "status": 206
+      },
+      {
+        "asset_id": "lakeatlas-polygons",
+        "cors": "*",
+        "range": "bytes=0-134217728",
+        "response_bytes": 0,
+        "status": 416
+      },
+      {
+        "asset_id": "lakeatlas-pour-points",
+        "cors": "*",
+        "range": "bytes=0-31",
+        "response_bytes": 32,
+        "status": 206
+      },
+      {
+        "asset_id": "lakeatlas-pour-points",
+        "cors": "*",
+        "range": "bytes=-16",
+        "response_bytes": 16,
+        "status": 206
+      },
+      {
+        "asset_id": "lakeatlas-pour-points",
+        "cors": "*",
+        "range": "bytes=283780051-283780114",
+        "response_bytes": 0,
+        "status": 416
+      },
+      {
+        "asset_id": "lakeatlas-pour-points",
+        "cors": "*",
+        "range": "bytes=0-8388607",
+        "response_bytes": 8388608,
+        "status": 206
+      },
+      {
+        "asset_id": "lakeatlas-pour-points",
+        "cors": "*",
+        "range": "bytes=0-134217728",
+        "response_bytes": 0,
+        "status": 416
+      }
+    ],
+    "status": "passed"
+  },
+  "release_manifest_sha256": "32b4877b8809cabd3e2caca8da175115e8ff8317402058846ed0db06a54d52e9",
+  "status": "passed",
+  "validated_asset_ids": [
+    "lakeatlas-polygons",
+    "lakeatlas-pour-points"
+  ]
+}

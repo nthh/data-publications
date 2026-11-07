@@ -1,0 +1,125 @@
+{
+  "reviewed_on": "2026-11-01",
+  "scope": "Exact-scope GDW overlap and source access; current SWOT scientific v2.03 inventory and bounded qualification. Existing release integrity is reported separately.",
+  "criteria_commit": "62ece82",
+  "audit_tools_commit": "5ada6a2",
+  "inputs": [
+    {
+      "path": "research/gdw-swot-preparation-20261101/gdw-datacite-v1.json",
+      "sha256": "4739f95f5f2c0c3721b0cf6cbe6fd291d885f2a057184b18aa609000266993f4"
+    },
+    {
+      "path": "research/gdw-swot-preparation-20261101/gdw-source-access.json",
+      "sha256": "9428f8f559941c66297ac035d6b257d3b18f50183a7f409ee1ff50c8943f1dba"
+    },
+    {
+      "path": "research/gdw-swot-preparation-20261101/gdw-direct-file-probes.json",
+      "sha256": "9e834d527b1981813c27dbcac60975ddb7b8d16faeb639465e80dcd16fe1f603"
+    },
+    {
+      "path": "research/gdw-swot-preparation-20261101/aquascope-file-tree.json",
+      "sha256": "8296d25dbeadbc83ebafd3dd9809128cbc705239cb39071da19462233f08d7d4"
+    },
+    {
+      "path": "research/gdw-swot-preparation-20261101/aquascope-parquet-footer.json",
+      "sha256": "80cba684bc21e83465c8b07bc6dab8eef3ea4a2543fd0ea02356965fb398c54e"
+    },
+    {
+      "path": "research/gdw-swot-preparation-20261101/hydroweb-collection.json",
+      "sha256": "18605a93288caa78f7d15f3dd4a033efb2a2f23e5f9afd839b24332fea1da5a1"
+    },
+    {
+      "path": "research/gdw-swot-preparation-20261101/swot-v203-inventory.json",
+      "sha256": "67128ed2b6d4cc2c09bdad1a3b2de77f2efe035953629d98f065b93a8a21a2e4"
+    },
+    {
+      "path": "research/gdw-swot-preparation-20261101/swot-au55-inspection.json",
+      "sha256": "fe57bf68de5c710af6d6dd728f0a8d0d5a0fa2480cce5c26405178af4712e1cf"
+    }
+  ],
+  "candidates": [
+    {
+      "evidence_key": "gdw",
+      "selected_doi": "10.6084/m9.figshare.25988293.v1",
+      "selected_filename": "GDW_v1_0_shp.zip",
+      "selected_url": "https://ndownloader.figshare.com/files/47913754",
+      "selected_file_bytes": null,
+      "registered_release_total_bytes": 127938795,
+      "registered_total_scope": "DataCite release aggregate; includes alternative ZIP representations, not measured size of selected Shapefile ZIP.",
+      "license": "CC-BY-4.0",
+      "expected_source_features": {
+        "barriers": 41145,
+        "reservoirs": 35295
+      },
+      "acquisition": "Official article, API, article bundle and direct file requests returned HTTP 403. User also reported the release fails in their browser. No full GDW source downloaded.",
+      "direct_file_url_evidence": "https://github.com/Rekin226/aquascope/blob/main/aquascope/archive/context_mirror.py",
+      "overture": {
+        "relationship": "alternative_for_generic_mapping",
+        "sources": [
+          "https://docs.overturemaps.org/guides/base/",
+          "https://docs.overturemaps.org/schema/reference/base/infrastructure/",
+          "https://docs.overturemaps.org/schema/reference/base/water/"
+        ],
+        "finding": "Documented OSM-derived infrastructure/water features overlap mapped objects, but do not establish GDW source inclusion, complete paired layers or its scientific attributes/IDs. No global feature-level join was run."
+      },
+      "aquascope": {
+        "relationship": "derived_subset",
+        "url": "https://huggingface.co/datasets/Rekin226/aquascope-gauges/blob/main/context/dams/gdw_barriers.parquet",
+        "observed_footer_rows": 41145,
+        "observed_columns": [
+          "gdw_id",
+          "name",
+          "reservoir",
+          "river",
+          "country",
+          "year",
+          "height_m",
+          "capacity_mcm",
+          "area_km2",
+          "main_use",
+          "dor_pc",
+          "catchment_km2",
+          "lat",
+          "lon",
+          "grand_id",
+          "cell"
+        ],
+        "observed_row_groups": 1,
+        "observed_geo_metadata": null,
+        "source_size_bytes": 1514458,
+        "scope": "All declared barrier rows but selected columns, no geometry column or GeoParquet metadata; directory lists no reservoir file. Two successful bounded HTTP206 footer reads, not full source equivalence."
+      }
+    },
+    {
+      "evidence_key": "swot_prior_lake_database",
+      "release": "2.03 Sci",
+      "license": "ETALAB 2.0",
+      "format": "SQLite",
+      "source_item_count": 61,
+      "source_bytes_provider_declared": 29990277120,
+      "collection_total_items": 122,
+      "older_v202_items": 61,
+      "regions": {
+        "AF": 8,
+        "AR": 6,
+        "AS": 9,
+        "AU": 7,
+        "EU": 9,
+        "GR": 1,
+        "NA": 8,
+        "SA": 7,
+        "SI": 6
+      },
+      "access": "Unauthenticated HTTP206 for first16 bytes of smallest v2.03 asset; SQLite header observed. HEAD404 did not establish download denial. No authentication was required for successful metadata/range requests.",
+      "sample_attempt_status": "failed",
+      "sample_downloaded_product_files": 0,
+      "sample_blocker": [
+        {
+          "message": "free disk space is below the required 40 GiB before sample download",
+          "type": "OSError"
+        }
+      ],
+      "scope_limit": "No full tile or global data downloaded; SQLite schema remains uninspected. Complete original scope is29.99GB and exceeds current8GiB retained task storage budget. Do not sum old and new editions or substitute Light/Geometries variants."
+    }
+  ]
+}

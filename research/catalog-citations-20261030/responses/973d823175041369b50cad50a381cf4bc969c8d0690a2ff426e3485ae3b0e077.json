@@ -1,0 +1,80 @@
+{
+  "request_url": "https://api.openalex.org/works?search=Global+maps+of+travel+time+to+healthcare%3A+A+novel+approach+to+modelling+accessibility+using+open-source+data&corpus=all&per_page=5&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date",
+  "retrieved_at": "2026-10-30T22:07:48.310135+00:00",
+  "response_path": "responses/973d823175041369b50cad50a381cf4bc969c8d0690a2ff426e3485ae3b0e077.json",
+  "status": 200,
+  "response_sha256": "bfee4d92761a973fd648537fd46d819bc641da3142f52214c810e73f3c57b214",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 26534,
+      "db_response_time_ms": 314,
+      "page": 1,
+      "per_page": 5,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where full text has (Global maps of travel time to healthcare: A novel approach to modelling accessibility using open-source data)",
+        "x_new_oql": "get works (all corpora) where full text has (Global maps of travel time to healthcare: A novel approach to modelling accessibility using open-source data)",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "Global maps of travel time to healthcare: A novel approach to modelling accessibility using open-source data",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:Global maps of travel time to healthcare: A novel approach to modelling accessibility using open-source data&corpus=all&per_page=5",
+        "order": "best matches first",
+        "order_default": true
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W3197089640",
+        "doi": "https://doi.org/10.1080/15230406.2021.1960609",
+        "title": "Impact of travel time uncertainties on modeling of spatial accessibility: a comparison of street data sources",
+        "type": "article",
+        "publication_year": 2021,
+        "publication_date": "2021-09-01"
+      },
+      {
+        "id": "https://openalex.org/W4408224484",
+        "doi": "https://doi.org/10.1016/j.compenvurbsys.2025.102270",
+        "title": "Modelling active travel accessibility at the micro-scale using multi-source built environment data",
+        "type": "article",
+        "publication_year": 2025,
+        "publication_date": "2025-03-07"
+      },
+      {
+        "id": "https://openalex.org/W1557043012",
+        "doi": null,
+        "title": "Analysing spatial accessibility patterns with travel time and distance measures: novel approaches for rural and urban contexts",
+        "type": "dissertation",
+        "publication_year": 2014,
+        "publication_date": "2014-11-07"
+      },
+      {
+        "id": "https://openalex.org/W4293817059",
+        "doi": "https://doi.org/10.3390/su141610280",
+        "title": "A Refined Evaluation Analysis of Global Healthcare Accessibility Based on the Healthcare Accessibility Index Model and Coupling Coordination Degree Model",
+        "type": "article",
+        "publication_year": 2022,
+        "publication_date": "2022-08-18"
+      },
+      {
+        "id": "https://openalex.org/W3118729270",
+        "doi": "https://doi.org/10.9781/ijimai.2020.12.004",
+        "title": "A Novel Fog Computing Approach for Minimization of Latency in Healthcare using Machine Learning.",
+        "type": "article",
+        "publication_year": 2021,
+        "publication_date": "2021-01-12"
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "aff5615fac4bb55d0ab89d43f249754585aeced9827a044578f08853df7aa792"
+}

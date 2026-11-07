@@ -1,0 +1,88 @@
+{
+  "analytic_release": "v1-local-r3",
+  "assets": [
+    {
+      "attribute_fields": [
+        "Lake_area",
+        "Lake_name",
+        "Country",
+        "Continent",
+        "_src_xmin",
+        "_src_ymin",
+        "_src_xmax",
+        "_src_ymax"
+      ],
+      "geometry_type": "polygon",
+      "id": "hydrolakes-1",
+      "id_encoding": "mvt_feature_id",
+      "id_field": "Hylak_id",
+      "max_zoom": 12,
+      "maxzoom_id_accounting": {
+        "accounted_ids": 1427688,
+        "missing_ids": 0,
+        "missing_ids_path": "hydrolakes-polygons.maxzoom-missing-ids.txt",
+        "source_ids": 1427688
+      },
+      "min_zoom": 0,
+      "path": "assets/hydrolakes-polygons.pmtiles",
+      "sha256": "2fc61a8257322bed3c71f86e3be92ed4835023bbb23f80bc9b2bb5167cb19d46",
+      "size_bytes": 1122881121,
+      "source_asset": {
+        "path": "assets/hydrolakes-polygons.parquet",
+        "sha256": "6f588d97c14651eb23bea2d74fdf2a85f218a00ff11519c81efa5512b916b7f8",
+        "size_bytes": 949598607
+      },
+      "source_layer": "hydrolakes-polygons",
+      "source_rows": 1427688,
+      "style_path": "styles/hydrolakes-polygons.json",
+      "title": "Hydrolakes Polygons"
+    }
+  ],
+  "attribution": "HydroLAKES v1.0, Lehner and Messager / HydroSHEDS; CC BY 4.0; Tippecanoe v2.79.0",
+  "dataset_id": "hydrolakes",
+  "display_release": "display-v1",
+  "files": {
+    "README.md": {
+      "sha256": "4907619e679ae9020f5b3774fc18975cc3cd997946c2f96bd7520e7796b60e38",
+      "size_bytes": 2296
+    },
+    "assets/hydrolakes-polygons.pmtiles": {
+      "sha256": "2fc61a8257322bed3c71f86e3be92ed4835023bbb23f80bc9b2bb5167cb19d46",
+      "size_bytes": 1122881121
+    },
+    "hydrolakes-polygons.maxzoom-missing-ids.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "reports/build-provenance-retrospective.json": {
+      "sha256": "7861368ef1d862bf98942985c68f0a760bc719f87f309ce30fb49c32fe2c20e1",
+      "size_bytes": 3880
+    },
+    "reports/finalization/browser-validation.json": {
+      "sha256": "a2dd496536bf4d233d77ed03c3d02746393153721a681d09ff65b7a9d0918e24",
+      "size_bytes": 20662
+    },
+    "reports/finalization/geometry/hydrolakes-1.json": {
+      "sha256": "88e0c04ce2ab5a0378cbbeba72072960d5194ea60d8f5d6b6a3d8e7b2d25ba6a",
+      "size_bytes": 22201
+    },
+    "reports/finalization/pmtiles-verify/hydrolakes-1.json": {
+      "sha256": "bf51d67535ecb9b4b638abfdce3edc04d443c5b30ead8130c9c850c030cb96a4",
+      "size_bytes": 571
+    },
+    "reports/hydrolakes-polygons.build-report.json": {
+      "sha256": "62f927143ac983d4229e7ed325e991e8abf3caff350bad7202c9de9144abd815",
+      "size_bytes": 3319
+    },
+    "reports/provisional-manifest-before-finalization.json": {
+      "sha256": "d122b64b6510562613898d4e0df158c0367b3bb06ee53459ee64fd92cace971f",
+      "size_bytes": 2220
+    },
+    "styles/hydrolakes-polygons.json": {
+      "sha256": "5dd4e20786faa65e46fb249bec0bb15f362f503c44267c2f1fc02525bb4f2d31",
+      "size_bytes": 454
+    }
+  },
+  "schema_version": 1,
+  "status": "prepared"
+}

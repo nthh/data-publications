@@ -1,0 +1,71 @@
+schema_version: 1
+id: glc10
+title: Finer Resolution Observation and Monitoring of Global Land Cover 10m (FROM-GLC10)
+community_url: https://gee-community-catalog.org/projects/glc10
+audit:
+  snapshot: gee-community-audit-20261029
+  family_key: glc10
+  unique_gee_asset_count: 1
+  initial_queue: research_original_source
+  folia_registry_status: not_identified
+  folia_registry_ids: []
+  source_coop_urls: []
+  source_coop_scope: null
+  external_native_urls: []
+  external_native_scope: null
+triage:
+  decision: pending
+  priority: normal
+review:
+  citation_assessment:
+    as_of: '2026-10-29'
+    provider: OpenAlex
+    evidence_path: research/citations/rankings.json
+    evidence_key: glc10
+    geographic_scope: global
+    paper_count_status: matched
+    max_paper_citations: 1289
+    max_data_doi_citations: null
+    top_paper_doi: https://doi.org/10.1016/j.scib.2019.03.002
+    top_paper_openalex_id: https://openalex.org/W2920254659
+    citation_scope: associated_dataset_publication
+    citation_scope_note: Pinned citation and Science Bulletin publisher identify the
+      2017 FROM-GLC10 paper; the original review missed its non-DOI citation.
+
+# Cross-catalog discovery: global-candidates-20261031
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'citations: Global Existing catalog identity.'
+  sources:
+  - provider: gee_community
+    entry_id: glc10
+    url: https://gee-community-catalog.org/projects/glc10
+    relationship: same_family
+  access:
+  - provider: literature
+    status: unknown
+    formats: []
+    summary: GEE catalog entries are available through Earth Engine; frozen metadata does not establish
+      an independently downloadable native bulk copy or its format. Existing catalog identity.
+    license_summary: Not inferred from citation records. Verify producer terms for the exact edition before
+      conversion or redistribution.
+    proposed_outputs: []
+    rationale: 'Candidate discovery only: global/near-global scope and associated-paper citation signal
+      justify source-format and licensing review. Citation rank does not establish conversion priority
+      or exact-release use.'
+    evidence_urls:
+    - https://gee-community-catalog.org/projects/glc10
+    - https://doi.org/10.1016/j.scib.2019.03.002
+  citations:
+  - provider: OpenAlex
+    paper_doi: 10.1016/j.scib.2019.03.002
+    work_id: https://openalex.org/W2920254659
+    cited_by_count: 1289
+    observed_on: '2026-10-30'
+    scope: associated_dataset_publication
+  evidence:
+  - path: research/global-candidates-20261031/citations/reviewed.json
+    sha256: 572140255cd3b41a1ec8ecca0139e64d38899cda7fdd55756f399a0dca57a467
+    key: glc10

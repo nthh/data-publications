@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "status": "review_complete_with_recorded_limits",
+  "scope": "Analytical source choices, conversion code and validation boundaries of four prepared datasets. Additional gates do not replace immutable historical source/GEE/Portolan reports.",
+  "datasets": [
+    {
+      "dataset_id": "hydrolakes",
+      "finding": "Directory source input bypassed archive-pin verification while the report could repeat default archive pins.",
+      "resolution": "Validator now requires a file and checks its size/SHA before source decoding or Parquet reads.",
+      "tests": 3,
+      "retained_data_affected": "No evidence; recorded validation used the pinned ZIP.",
+      "live_check": "Not rerun: the original download cache was evicted after verification, as recorded in datasets/hydrolakes/evidence/source-cache-eviction.json. Synthetic rejection and pinned-file controls pass.",
+      "current_validator_sha256": "d8da55558b6dfa41db7a34f7c7ae8b317d0341a36c70313ba5dcb317a9d9255b"
+    },
+    {
+      "dataset_id": "lakeatlas",
+      "finding": "Both layers preserve the complete GDAL/OpenFileGDB-decoded source; no analogous omission found.",
+      "resolution": "Documented shared decoder and sampled secondary-reader limitations.",
+      "retained_data_affected": "No omission found; FileGDB ring encoding and independent scientific truth are outside the existing check.",
+      "current_validator_sha256": "00442cd21cfc9993d140bdf5ac337dcd754bb9c1041aa2ecb0132fe7979046d9"
+    },
+    {
+      "dataset_id": "free-flowing-rivers",
+      "finding": "Validator did not fully check row-group ranges and scalar statistics against values.",
+      "resolution": "Require contiguous source_row min/max, bounded groups, null counts and scalar extrema matching each batch.",
+      "tests": 5,
+      "retained_data_affected": "Additional full Parquet scan passed on all 8,477,883 retained r2 rows.",
+      "live_report": "ffr-extra-statistics-checks-r1.json",
+      "live_report_sha256": "f95b4a08866880578ebc1c55aa4f39aaaa7f1c0b34c2da439cfd57eca21185bf",
+      "current_validator_sha256": "ef4ca0fa57ee1c1449a968af04f7b6fb7e45ea9ee0ea1933945158e806da634d"
+    },
+    {
+      "dataset_id": "river-plastic-inputs",
+      "finding": "Exact values/scale were checked but declared decimal precision and configured tile zooms were not asserted.",
+      "resolution": "Require descriptor-derived decimal128 type and frozen PMTiles zooms.",
+      "tests": 4,
+      "retained_data_affected": "All 53 fields and zooms0\u20138 pass the added checks on checksum-bound retained assets.",
+      "live_report": "plastic-extra-contract-checks-r1.json",
+      "live_report_sha256": "05a66f86647e4876951429680d221a48c4a4998d4571d24a9a3fa40d56ada02a",
+      "current_validator_sha256": "f220ee8a0673279f27ed7c2aef8e1da2d541fe12d3b47b529370715ec73364d1"
+    }
+  ],
+  "test_environment": {
+    "project": "datasets/river-plastic-inputs",
+    "python": "3.12.12",
+    "pyarrow": "23.0.1",
+    "pyproj": "3.8.0",
+    "shapely": "2.1.2"
+  },
+  "focused_tests_passed": 12,
+  "no_data_files_changed": true,
+  "no_gee_or_network_used": true
+}

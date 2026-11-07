@@ -1,0 +1,56 @@
+schema_version: 1
+id: noaa_global_temperature_anomaly
+title: NOAA global surface-temperature anomalies and Esri archive
+intake:
+  kind: official_catalog
+  reference_url: https://www.arcgis.com/home/item.html?id=1cfb0f94bcb042178b262d5ec1714d3c
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'esri: The Esri layer describes global land and ocean temperature anomalies relative
+    to a 1971-2000 climatology, with archive values beginning in 1880 and ending in 2025. NOAA''s current
+    NOAAGlobalTemp producer product offers global 5-degree monthly grids and time series from 1850 to
+    present; these are related but not identical vintages or temporal extents. Esri 1880–2025 archive
+    and current NOAA NOAAGlobalTemp since 1850 differ in vintage and extent.'
+  sources:
+  - provider: esri_public
+    entry_id: 1cfb0f94bcb042178b262d5ec1714d3c
+    url: https://www.arcgis.com/home/item.html?id=1cfb0f94bcb042178b262d5ec1714d3c
+    relationship: related_release
+  - provider: producer
+    entry_id: NOAAGlobalTemp
+    url: https://www.ncei.noaa.gov/products/land-based-station/noaa-global-temp
+    relationship: related_release
+  access:
+  - provider: esri_public
+    status: download_available
+    formats:
+    - raster
+    - time-series
+    summary: Use NOAA NCEI producer downloads for native data. The Esri item is a mature-support service
+      as of April 2026, says no future values after 2025, and is not a substitute for current NCEI files.
+      Esri 1880–2025 archive and current NOAA NOAAGlobalTemp since 1850 differ in vintage and extent.
+    license_summary: The Esri item declares the Esri Master License Agreement. NOAA's NCEI page provides
+      data access and citation guidance; confirm the applicable producer reuse terms and attribution before
+      redistribution.
+    proposed_outputs: []
+    rationale: Further review as a climate grid/time-series family, but source selection must distinguish
+      NOAA releases, baselines, land/ocean inputs, and uncertainty. No output format is recommended until
+      the exact native files and intended use are reviewed.
+    evidence_urls:
+    - https://www.ncei.noaa.gov/products/land-based-station/noaa-global-temp
+    - https://www.arcgis.com/home/item.html?id=1cfb0f94bcb042178b262d5ec1714d3c
+  citations: []
+  evidence:
+  - path: research/global-candidates-20261031/esri/reviewed.json
+    sha256: e02bd2202c3026ccd7564155bfa69b5e8bc666f65698da6bacce91ab7327d5be
+    key: noaa-global-temperature-anomaly-esri

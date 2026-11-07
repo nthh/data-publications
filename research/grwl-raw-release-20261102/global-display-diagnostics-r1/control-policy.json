@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "purpose": "Correct two demonstrated display-oracle model errors; preserve original failed evidence and strengthen source-selected seam coverage before the next global run.",
+  "unchanged": {
+    "source_and_display_asset_bytes": true,
+    "display_geometry_maximum_mercator_metres": 30,
+    "first_records_per_tile": 8,
+    "longest_parts_per_tile": 8,
+    "require_complete_maxzoom_id_and_attribute_accounting": true,
+    "unexpected_missing_ids_allowed": 0
+  },
+  "periodic_frame": {
+    "anchor": "first source vertex",
+    "operation": "translate each already core-clipped component by an integer number of Web Mercator world widths; retain points, lines, and component shapes",
+    "compactness_guard": "Refuse a reference whose framed longitude extent spans half a world or more; do not silently accept geographically extensive records with an ambiguous frame."
+  },
+  "dateline_supplement": {
+    "selection": "Original crossing-bbox candidates plus all source bboxes intersecting a 30 Mercator metre strip along either +/-180 degree seam. Select from source geometry bounds, independent of display results.",
+    "seam_margin_mercator_metres": 30,
+    "source_bbox_longitude_rule": "xmax-xmin > 180 OR xmin <= -180 + margin_degrees OR xmax >= 180 - margin_degrees",
+    "margin_degrees_formula": "30 / 20037508.342789244 * 180",
+    "preserve_original_frozen_sample_ids": true,
+    "report_crossing_and_near_seam_id_sets_separately": true
+  },
+  "native_collapse_classifier": {
+    "native_version": "2.79.0",
+    "source_commit": "68ab8dcc229f95b8b25877697d5e8d66783af503",
+    "rule": "Use the pinned native zoom-32 projection and tile-local std::round no-op quantizer, including ties away from zero. Preserve zero-length/source-empty categories and reject any unexplained loss. No length-only exception.",
+    "evidence_path": "research/grwl-raw-release-20261102/global-display-diagnostics-r1/native-quantization-diagnostic.json",
+    "evidence_sha256": "a01e837972500c9188dde188e90e358383f244a3653ea080664f1ef3babd11b4"
+  },
+  "acceptance_controls": [
+    "Both seam signs and both vertex orders",
+    "A source beginning just inside a seam and quantizing to it",
+    "Keep opposite-edge core Points",
+    "Missing real line and remote multipart loss still fail",
+    "A genuine central-world chord still fails after component framing",
+    "Ambiguous half-world or wider multipart frames fail closed",
+    "Native half-tie target plus shorter/longer and phase-shifted surviving/omitted controls"
+  ],
+  "next_gate": "Commit corrected verifier and focused tests, then rerun the complete global oracle from a clean checkout. No output geometry or tolerance changes are implied."
+}

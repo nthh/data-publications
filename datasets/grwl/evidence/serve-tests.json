@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "handler": "datasets/grwl/serve.py",
+  "fixture_bytes": 64,
+  "cases": [
+    {
+      "case": "first",
+      "range": "bytes=0-7",
+      "status": 206,
+      "bytes": 8,
+      "content_range": "bytes 0-7/64",
+      "cors": "*"
+    },
+    {
+      "case": "middle",
+      "range": "bytes=20-27",
+      "status": 206,
+      "bytes": 8,
+      "content_range": "bytes 20-27/64",
+      "cors": "*"
+    },
+    {
+      "case": "suffix",
+      "range": "bytes=-8",
+      "status": 206,
+      "bytes": 8,
+      "content_range": "bytes 56-63/64",
+      "cors": "*"
+    },
+    {
+      "case": "invalid",
+      "range": "bytes=64-72",
+      "status": 416,
+      "bytes": 0,
+      "content_range": "bytes */64",
+      "cors": "*"
+    }
+  ]
+}

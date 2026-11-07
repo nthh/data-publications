@@ -1,0 +1,33 @@
+schema_version: 1
+id: snow_cover
+title: Global snow cover monthly long-term (2000–2012) P90
+community_url: https://gee-community-catalog.org/projects/snow_cover
+audit:
+  snapshot: gee-community-audit-20261029
+  family_key: snow_cover
+  unique_gee_asset_count: 5
+  initial_queue: review_external_native_counterpart
+  folia_registry_status: not_identified
+  folia_registry_ids: []
+  source_coop_urls: []
+  source_coop_scope: null
+  external_native_urls:
+  - https://zenodo.org/records/5774954
+  external_native_scope: Exact Hengl monthly snow products; Zenodo API metadata explicitly
+    declares all files COG. Antarctica excluded. Snapshot in snow_cover_zenodo.json.
+triage:
+  decision: pending
+  priority: normal
+review:
+  citation_assessment:
+    as_of: '2026-10-29'
+    provider: OpenAlex
+    evidence_path: research/citations/rankings.json
+    evidence_key: snow_cover
+    geographic_scope: global
+    paper_count_status: unknown
+    max_paper_citations: null
+    max_data_doi_citations: null
+    top_paper_doi: null
+    top_paper_openalex_id: null
+    citation_scope: associated_dataset_publication

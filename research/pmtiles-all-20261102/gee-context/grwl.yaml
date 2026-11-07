@@ -1,0 +1,267 @@
+schema_version: 1
+id: grwl
+title: Global River Width from Landsat — simplified global river network V01.02
+community_url: https://gee-community-catalog.org/projects/grwl
+audit:
+  snapshot: gee-community-audit-20261029
+  family_key: grwl
+  unique_gee_asset_count: 5
+  initial_queue: research_original_source
+  folia_registry_status: not_identified
+  folia_registry_ids: []
+  source_coop_urls: []
+  source_coop_scope: null
+  external_native_urls: []
+  external_native_scope: null
+triage:
+  decision: publish_conversion
+  priority: pilot_review
+  rationale: Selected for its global summary coverage, associated-paper citations, pinned producer archive
+    and no exact native copy identified in the bounded host review. Local conversion and validation are
+    complete; publication remains pending.
+review:
+  citation_assessment:
+    as_of: '2026-10-29'
+    provider: OpenAlex
+    evidence_path: research/citations/rankings.json
+    evidence_key: grwl
+    geographic_scope: global
+    paper_count_status: matched
+    max_paper_citations: 869
+    max_data_doi_citations: null
+    top_paper_doi: https://doi.org/10.1126/science.aat0636
+    top_paper_openalex_id: https://openalex.org/W2811310577
+    citation_scope: associated_dataset_publication
+  selection:
+    as_of: '2026-10-30'
+    criteria_path: research/local-next-two-20261030/criteria.md
+    source_inspection_path: research/local-next-two-20261030/source-inspection-v0102.json
+    existing_host_review_path: research/local-next-two-20261030/existing-hosts.json
+    citation_count_basis: Frozen OpenAlex 2026-10-29 associated-publication count; not exact-release use
+      or refreshed live citations.
+    existing_native_status: No exact-name/DOI match identified in a 747-record Source Cooperative public
+      metadata snapshot and targeted searches; absence is not proven.
+  publication_assessment:
+    as_of: '2026-10-30'
+    route: selected_global_summary_conversion
+    scope: Complete global simplified-summary polyline product only; 42,077 source records. Excludes raw
+      vector, masks, tile index and RSSA basin components.
+    catalog_gee_asset: projects/sat-io/open-datasets/GRWL/grwl_SummaryStats_v01_01
+    gee_correspondence: Catalog names V01.01; selected current producer summary file is V01.02. Do not
+      claim identical GEE version or parity.
+    version_note: Current Zenodo record metadata still says V01.01 while its summary archive is named
+      V01.02; exact DOI, filename and checksums identify the selected bytes.
+    version_review_path: research/local-next-two-20261030/grwl-version-review.json
+    source_license_evidence_path: research/local-next-two-20261030/upstream/grwl-latest-zenodo.json
+    source_size_bytes: 43282861
+    source_uncompressed_bytes: 59357373
+    source_quality_note: Only the SHP header exceeds longitude 180 by about 1e-10 degrees; all actual
+      source vertices are in range and preserved exactly. Repeated producer IDs are retained with unique
+      source-row identifiers.
+    evidence_urls:
+    - https://gee-community-catalog.org/projects/grwl/
+    - https://zenodo.org/records/18624542
+  version_review_path: research/hydro-releases-20261031/version-review/producer-version-review.md
+  availability:
+    shortlist_id: native-publication-gaps-20261031
+    rank: 7
+    reviewed_on: '2026-11-01'
+    label: GRWL summary V01.02
+    scope: Complete simplified global summary polyline product; excludes raw vectors, masks, tile index
+      and basin supplement.
+    geographic_scope: global
+    download:
+      bytes: 43282861
+      precision: exact
+      reported_size: null
+      format: Shapefile ZIP
+      file_count: 1
+      basis: validated_download
+      note: Exact selected archive size from the previously downloaded, checksum-validated source pin. Excludes
+        optional formats, separate layers and documentation.
+      evidence_urls:
+      - https://zenodo.org/records/18624542
+      - https://zenodo.org/api/records/18624542/files/GRWL_summaryStats_V01.02.zip/content
+    locations:
+    - service_id: zenodo
+      label: Zenodo
+      platform: external
+      relationship: matching_scope
+      access: download
+      formats:
+      - Shapefile ZIP
+      urls:
+      - https://zenodo.org/records/18624542
+      - https://zenodo.org/api/records/18624542/files/GRWL_summaryStats_V01.02.zip/content
+      asset_ids: []
+      note: Producer landing page, DOI and repository/CDN download links identify one distribution service;
+        they are not separate hosts.
+    - service_id: earth_engine
+      label: GEE community
+      platform: gee
+      relationship: other_version_or_subset
+      access: gee_collection
+      formats:
+      - Earth Engine FeatureCollection
+      urls:
+      - https://gee-community-catalog.org/projects/grwl/
+      asset_ids:
+      - projects/sat-io/open-datasets/GRWL/grwl_SummaryStats_v01_01
+      note: GEE summary is V01.01; selected producer file and prepared release are V01.02. It is not an
+        exact-edition counterpart.
+    output_manifest:
+      path: datasets/grwl/releases/summary-v01.02-local-r1/manifest.json
+      sha256: a6eb5095a56461e45c57069886e9a04f0b85a5e8edc1bc9f971ac6560f1b4f4b
+    evidence:
+    - path: research/availability-sizes-20261101/observations.json
+      sha256: a7c4fd21000b497faf92810420cde5cc4ee80ae533721dd13c69cb7e692fcd7b
+      key: grwl
+    source_size_key: source_size
+  publication_readiness:
+    reviewed_on: '2026-11-01'
+    stage: prepared_for_upload_review
+    asset_integrity: passed_fresh_sha256_audit
+    integrity_evidence:
+      path: research/gdw-swot-preparation-20261101/prepared-packages.json
+      sha256: 712a71ca57f472cd1121941e132958f745e4468bfdb267b217466eccf49eaf1e
+    scientific_validation_rerun: false
+    local_followup: []
+    public_followup:
+    - Confirm Source Cooperative owner/product and immutable destination.
+    - Upload only under separately authorized publication scope.
+    - Verify public anonymous access, ranges, CORS, hosted checksums, subset queries, catalog links and
+      browser rendering.
+    - Deploy and verify generated catalog before registry submission.
+    published: false
+source:
+  source_doi: 10.5281/zenodo.18624542
+  source_version: summary-v01.02
+  source_url: https://zenodo.org/api/records/18624542/files/GRWL_summaryStats_V01.02.zip/content
+  source_name: GRWL_summaryStats_V01.02.zip
+  source_size: 43282861
+  source_md5: cac403c1a59bce7a74432085d3f5bd3a
+  source_sha256: 78aa43a7104d24b1696e9b1547347eec13ba5d660aa990c1e7cea98e7ae70e4a
+  license: CC-BY-4.0
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  expected_rows: 42077
+  archive_metadata_version_label: V01.01
+  archive_filename_version_label: V01.02
+  source_verification: Full source ZIP size, MD5, SHA-256 and ZIP CRC checked; DBF header/schema inspected.
+  version_checked_on: '2026-10-31'
+build:
+  status: local_release_prepared
+  planned_outputs:
+  - geoparquet
+  - pmtiles
+  validation_plan_path: datasets/grwl/VALIDATION.md
+  release_id: summary-v01.02-local-r1
+publication:
+  status: prepared
+  local_processing_order: 1
+  source_cooperative:
+    status: proposed_not_created
+    url: null
+    owner: folia
+    product: grwl-summary
+  portolan:
+    status: not_submitted
+    url: null
+  release: summary-v01.02-local-r1
+  conversion_git_commit: 9e2239d517d8d79fea701953e2697588b5d446ff
+  manifest_path: datasets/grwl/releases/summary-v01.02-local-r1/manifest.json
+  validation_path: datasets/grwl/releases/summary-v01.02-local-r1/validation.json
+  release_receipt_path: datasets/grwl/releases/summary-v01.02-local-r1/package-receipt.json
+  local_bundle_directory: .local/grwl/summary-v01.02-local-r1
+  local_archive:
+    path: .local/grwl/grwl-summary-v0102-local-r1.zip
+    size_bytes: 166428467
+    sha256: 0a372be7fb32b3b116f95b6f34b21e766859f5885cd5f7b3014e57f432149e79
+  validation:
+    source_rows: 42077
+    numeric_cells: 420770
+    parts: 42117
+    vertices: 3129821
+    assets_rebuilt_identically: 13
+    fault_cases_detected: 8
+    pmtiles_maxzoom_unique_ids: 42077
+    stac: passed
+    portolan: passed
+    http: passed_loopback
+    gee: not_run_version_mismatch
+    remote_host: not_tested
+  limits:
+  - No public code remote, data upload, or registry submission.
+  - Catalog GEE V01.01 differs from pinned producer file V01.02; no GEE request or parity claim.
+  - Display geometry diagnostic was added after development inspection and is sampled, not a continuous
+    guarantee.
+  - Same-machine reproducibility; no independent observational research validation.
+  manifest_sha256: a6eb5095a56461e45c57069886e9a04f0b85a5e8edc1bc9f971ac6560f1b4f4b
+  catalog:
+    snapshot_path: datasets/grwl/releases/summary-v01.02-local-r1/catalog-input-r1/snapshot.json
+    snapshot_sha256: bab3e13d8f4ad9315400ddd57bf7f2f721d328118965402a7e81bf3c1d4b6c7e
+    package_base_url: null
+    hosting_report_path: null
+    hosting_report_sha256: null
+  source_coop:
+    owner: nthh
+    owner_status: confirmed
+    account_verification: null
+    product_id: grwl
+    title: Global River Width from Landsat — summary network V01.02
+    summary: Global simplified river network with width and summary attributes from GRWL, prepared as GeoParquet
+      for analysis and PMTiles for display.
+    tags:
+    - hydrology
+    - rivers
+    - global
+    - geoparquet
+    - pmtiles
+    license_note: CC BY 4.0. Retain Allen and Pavelsky attribution and the source data and paper citations.
+    attribution: Allen and Pavelsky; Global River Width from Landsat. Original processing and conversion
+      evidence retain Folia attribution.
+    temporal_note: Static Landsat-derived research product. The conversion date is not the observation date;
+      no single observation interval is asserted.
+    limitations:
+    - The scope is the simplified summary network only; raw vectors, raster masks, tile indexes and RSSA
+      basin products are excluded.
+    - The selected producer filename is V01.02 while its record metadata and GEE counterpart name V01.01.
+      Exact source DOI, filename and checksums identify this release.
+    - PMTiles geometry is a display derivative; use GeoParquet for analysis.
+    supplements: []
+# Cross-catalog discovery: global-candidates-20261031
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'citations: Global Existing catalog identity.'
+  sources:
+  - provider: gee_community
+    entry_id: grwl
+    url: https://gee-community-catalog.org/projects/grwl
+    relationship: same_family
+  access:
+  - provider: literature
+    status: unknown
+    formats: []
+    summary: GEE catalog entries are available through Earth Engine; frozen metadata does not establish
+      an independently downloadable native bulk copy or its format. Existing catalog identity.
+    license_summary: Not inferred from citation records. Verify producer terms for the exact edition before
+      conversion or redistribution.
+    proposed_outputs: []
+    rationale: 'Candidate discovery only: global/near-global scope and associated-paper citation signal
+      justify source-format and licensing review. Citation rank does not establish conversion priority
+      or exact-release use.'
+    evidence_urls:
+    - https://gee-community-catalog.org/projects/grwl
+    - https://doi.org/10.1126/science.aat0636
+  citations:
+  - provider: OpenAlex
+    paper_doi: 10.1126/science.aat0636
+    work_id: https://openalex.org/W2811310577
+    cited_by_count: 869
+    observed_on: '2026-10-30'
+    scope: associated_dataset_publication
+  evidence:
+  - path: research/global-candidates-20261031/citations/reviewed.json
+    sha256: 572140255cd3b41a1ec8ecca0139e64d38899cda7fdd55756f399a0dca57a467
+    key: grwl

@@ -1,0 +1,56 @@
+schema_version: 1
+id: natural-earth-admin0-countries-10m
+title: Natural Earth Admin 0 Countries, 1:10m
+intake:
+  kind: official_catalog
+  reference_url: https://www.arcgis.com/home/item.html?id=078c2c6ba4d2441d8c821826edadc87c
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'esri: Global country and territory polygons at 1:10m cartographic scale. The producer
+    describes 258 countries; boundaries are generally de facto, and dependent map units are represented
+    according to the selected Natural Earth theme. This is a cartographic boundary product, not authoritative
+    legal demarcation. Distinct named producer product; retain exact source edition and footprint.'
+  sources:
+  - provider: esri_public
+    entry_id: 078c2c6ba4d2441d8c821826edadc87c
+    url: https://www.arcgis.com/home/item.html?id=078c2c6ba4d2441d8c821826edadc87c
+    relationship: related_release
+  - provider: producer
+    entry_id: 10m Cultural Vectors / Admin 0 - Countries
+    url: https://www.naturalearthdata.com/downloads/10m-cultural-vectors/
+    relationship: exact_dataset
+  access:
+  - provider: esri_public
+    status: download_available
+    formats:
+    - vector
+    summary: The Esri item is a FeatureServer mirror. Natural Earth directly offers bulk vector themes
+      and lists Shapefile, SQLite, and GeoPackage packages. No service export was queried or needed for
+      the native-source route. Distinct named producer product; retain exact source edition and footprint.
+    license_summary: Natural Earth states that its raster and vector data are public domain and free for
+      any type of project. The Esri item also declares Natural Earth public-domain terms. Check that any
+      separately included thematic fields retain their own attribution and terms.
+    proposed_outputs:
+    - GeoParquet
+    rationale: 'Strong reuse candidate: stable global polygon geometry, clear scale and public-domain
+      terms, and a native bulk source. GeoParquet is a reasonable analytical output after pinning the
+      exact Natural Earth release and preserving boundary interpretation and source attributes.'
+    evidence_urls:
+    - https://www.naturalearthdata.com/downloads/
+    - https://www.arcgis.com/home/item.html?id=078c2c6ba4d2441d8c821826edadc87c
+    - https://www.naturalearthdata.com/downloads/10m-cultural-vectors/
+  citations: []
+  evidence:
+  - path: research/global-candidates-20261031/esri/reviewed.json
+    sha256: e02bd2202c3026ccd7564155bfa69b5e8bc666f65698da6bacce91ab7327d5be
+    key: natural-earth-admin0-countries-10m

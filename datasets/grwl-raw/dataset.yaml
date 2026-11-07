@@ -1,0 +1,502 @@
+schema_version: 1
+id: grwl-raw
+title: Global River Width from Landsat — raw vector observations V01.01
+intake:
+  kind: producer
+  reference_url: https://zenodo.org/records/18624542
+  added_on: '2026-11-02'
+  related_family: grwl
+triage:
+  decision: publish_conversion
+  priority: pilot_review
+  rationale: The complete 64,572,998-record raw source is preserved in independently validated GeoParquet.
+    One 3.19 GB PMTiles archive shows selected original widths at zooms 0–7 and preserves all 588,355
+    detailed tiles at zooms 8–12 byte-for-byte. Full-source selection, all overview tiles, clean regional
+    reproduction and all 20 global browser cases passed.
+source:
+  producer: Allen and Pavelsky / GRWL
+  product: Global River Width from Landsat raw vector component
+  version: V01.01
+  doi: 10.5281/zenodo.18624542
+  source_url: https://zenodo.org/api/records/18624542/files/GRWL_vector_V01.01.zip/content
+  source_name: GRWL_vector_V01.01.zip
+  source_size_bytes: 3104998836
+  source_md5: 40171f15c0fccd470db32446dda0480e
+  source_sha256: 78072f67991b0cf9eb3373c7a9c314c0da826857c698dd03d20421b2d0d3bbec
+  source_sha256_status: Complete archive received; exact size and provider MD5 passed, SHA-256 computed
+    locally.
+  license: CC-BY-4.0
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  expected_tiles: 829
+  expected_rows: 64572998
+  expected_rows_basis: Frozen SHX inventory expectation; now independently confirmed by the complete source-to-GeoParquet
+    comparison.
+  source_components_in_scope:
+  - 'GRWL_vector_V01.01 raw tiled shapefiles: SHP, SHX, DBF, and PRJ'
+  source_components_out_of_scope:
+  - GRWL_mask_V01.01 raster masks
+  - Optional tile index and RSSA basin supplement
+  - Simplified SummaryStats product and its segment-level aggregate statistics
+  source_fields:
+  - utm_east
+  - utm_north
+  - width_m
+  - nchannels
+  - segmentID
+  - segmentInd
+  - lakeFlag
+  - lon
+  - lat
+  - elev_m
+  numeric_preservation: Preserve all DBF numeric values as exact Decimal-derived or integer values, retaining
+    blanks and all-asterisk values as null. Do not coerce source numbers through binary floating point.
+  geometry_preservation: Preserve source record multiplicity, tile identity, original 1-based record ordinal,
+    part boundaries, part/vertex order, and every source XY float64 bit pattern. Convert each source PolyLine
+    record directly to WKB MultiLineString; never join records by segmentID or segmentInd.
+  width_semantics: Preserve width_m value 1 as the producer unknown-width sentinel. Add width_valid separately;
+    do not replace sentinel values with estimates or means.
+  citation: Allen, G.H. and Pavelsky, T.M. (2018), Global extent of rivers and streams. Science 361(6402),
+    585–588. https://doi.org/10.1126/science.aat0636
+  temporal_scope: Static producer release derived from Landsat observations; source observation dates
+    vary. This is not a current river-width observation or a time series.
+build:
+  status: local_release_and_display_prepared
+  complete_global_build: true
+  planned_outputs:
+  - lossless GeoParquet analytical vector
+  - one PMTiles display derivative, selected original width observations at zooms 0–7 and detailed source
+    observations at zooms 8–12
+  workflow_files:
+    acquire: datasets/grwl-raw/acquire.py
+    global_conversion: datasets/grwl-raw/build_global.py
+    source_validation: datasets/grwl-raw/validate.py
+    display_conversion: datasets/grwl-raw/combine_width_display.py
+    display_validation: datasets/grwl-raw/combine_width_display.py
+    display_finalization: datasets/grwl-raw/finalize_width_display.py
+    preview_preparation: datasets/grwl-raw/prepare_width_preview.py
+    overview_conversion: datasets/grwl-raw/build_width_overview.py
+    overview_validation: datasets/grwl-raw/validate_width_overview.py
+    baseline_display_conversion: datasets/grwl-raw/build_display.py
+    baseline_display_validation: datasets/grwl-raw/validate_display.py
+    baseline_display_finalization: datasets/grwl-raw/finalize_display.py
+    clean_display_replay: research/grwl-width-overview-20261106/run_width_replay.py
+  validation_plan_path: research/grwl-raw-release-20261102/criteria.json
+  display_policy_path: research/grwl-width-overview-20261106/criteria.json
+  display_policy_sha256: 6ecf011b55a72ec2219f3f7991fcb292360b29a42cd9a925a69f95106a856791
+  global_inventory_path: research/grwl-raw-audit-20261102/vector-inventory-r1.json
+  global_inventory_sha256: 54deb7b6a7119c052d55d6bad819cedd5c5b271ec3ea8cf5aa6baf8cc855434b
+  global_inventory_claim: All 829 tiles and 64,572,998 source records were independently compared; all
+    3,316 source member SHA-256 checks passed.
+  related_summary_quality_evidence_path: research/grwl-raw-audit-20261102/findings.json
+  related_summary_quality_evidence_sha256: e648862ff6eb1d314f86e262e34923e14463e2cd9ce424423cd17e5da8cabeec
+  pilot:
+    status: passed_source_display_and_browser_checks
+    tile_count: 9
+    tiles:
+    - NI15
+    - NI16
+    - NJ12
+    - NK12
+    - NL10
+    - NL11
+    - NL12
+    - NL13
+    - NM11
+    rows: 919832
+    geoparquet_bytes: 78903097
+    report_path: research/grwl-raw-release-20261102/pilot-v2-source-validation-r1.json
+    report_sha256: a51179e866338b92de7a1512415202c9b307abd53aef78f0b26ee79ca05f4eab
+    manifest_sha256: a817a649959dc38eca80bac9e6f7f50eb2676e8bd7ddeeca018ff4fe0660ae0b
+    scope_note: All records in these nine supplied source tiles passed the recorded comparison. Pilot
+      evidence does not establish global completion, full-archive checksum verification, global scientific
+      accuracy, or GEE parity.
+    pmtiles_bytes: 163886604
+    display_report_path: research/grwl-raw-release-20261102/pilot-v2-display-validation-r1.json
+    browser_report_path: research/grwl-raw-release-20261102/browser-pilot-v2-r1/report.json
+    historical_report_path: research/grwl-raw-release-20261102/pilot-source-validation-r2.json
+    historical_geoparquet_bytes: 73203604
+    browser_attribute_values_path: research/grwl-raw-release-20261102/browser-pilot-v2-r1/attribute-values-r2.json
+    source_member_sha256_checks: 36
+    schema: Four int64 DBF fields and six decimal128(38,18) DBF fields, including UTM east/north.
+  fidelity_contract:
+    feature_id: Deterministic JSON-safe numeric ID encoded from source tile and original 1-based row ordinal;
+      segmentID is not a globally unique feature key.
+    display_derivative: Dateline splitting is display-only. Analytical GeoParquet retains source XY bytes
+      and original part boundaries.
+    publication_state: The unchanged analytical release and width-bearing zoom 0–12 display r3 are prepared
+      locally. All original records remain in GeoParquet; the same 304 explicitly enumerated native grid
+      collapses remain in detail PMTiles. No public hosting is claimed.
+  gates_pending:
+  - Confirm the Source Cooperative account route, create the product and upload only within separately
+    authorized publication scope.
+  - Verify public anonymous access, HTTP ranges, CORS, hosted checksums and browser queries before catalog
+    publication and registry submission.
+  global_acquisition:
+    path: research/grwl-raw-release-20261102/global-source-acquisition.json
+    sha256: edbef674c64aac667fd67d4481da0d1c8e63a886b7030a697afac9324e196126
+    whole_archive_checksum_verified: true
+  numeric_schema_note: All 829 DBF headers were inspected. UTM east/north use a common decimal128(38,18)
+    type because NN29 declares decimal fields; width_m, segmentID, segmentInd and elev_m remain int64.
+    The historical first pilot uses integer UTM columns; pilot-v2 and the global release use the final
+    schema. No numeric rounding is permitted.
+  global_schema_inspection:
+    path: research/grwl-raw-release-20261102/global-dbf-schema-inspection.json
+    sha256: 9d7392ec68d2b789dfb9cfc4f230f69b76041ddaedd01d16662aaebd65cae205
+  global_preflight_failure:
+    path: research/grwl-raw-release-20261102/global-preflight-failure-r1.json
+    sha256: ba55f38a39f89c34445088e7160a3d859bb97dc54353d31feceb0dbdfbaa5ba8
+  global_analytical:
+    status: source_and_clean_rebuild_passed
+    rows: 64572998
+    tiles: 829
+    geoparquet_bytes: 5529859809
+    geoparquet_sha256: d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb
+    width_sentinel_1_count: 435987
+    source_comparison: All original numeric values/nulls, source identities, part boundaries, vertex order
+      and XY float64 bits; independent source parser.
+    clean_rebuild:
+      path: research/grwl-raw-release-20261102/global-clean-rebuild-r1.json
+      sha256: 5499f3fbfcb0342ba8e535c641b4147dfe82f018d96ac6795e33bbe58a320396
+    source_validation:
+      path: research/grwl-raw-release-20261102/global-source-validation-r1.json
+      sha256: eb225411b335fcd5c968bb70337738fcb8bcc2ed31d8f48c4e02e7948da2fd0a
+    conversion_manifest:
+      path: research/grwl-raw-release-20261102/global-conversion-manifest-r1.json
+      sha256: 160dfaf91ede202da57172ff16492601ca349d43e0b629819a7e4eb82222acda
+  global_display:
+    status: passed_all_source_winners_overview_tiles_detail_bytes_replay_browser_and_finalization
+    pmtiles_bytes: 3190539066
+    pmtiles_sha256: 8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60
+    min_zoom: 0
+    max_zoom: 12
+    detail_min_zoom: 8
+    reduction_from_r1_percent: 72.25151806269984
+    overview:
+      source_layer: grwl_width_overview
+      mode: width_samples
+      geometry_type: point
+      min_zoom: 0
+      max_zoom: 7
+      tiles: 4439
+      cells_per_tile: 1024
+      meaning: Selected observations; widest valid original width per screen-scale cell. Retains original
+        ID, width and source-geometry anchor; ties use smallest ID. No averaging or invented connections.
+      selected_by_zoom:
+        '0': 64787
+        '1': 147247
+        '2': 322111
+        '3': 695071
+        '4': 1485157
+        '5': 3130522
+        '6': 6456388
+        '7': 12929465
+      encoded_point_placements: 26060623
+      maximum_gzip_tile_bytes: 823771
+      source_records_checked: 64572998
+      maximum_normalization_projection_error_m: 0.10554557640821727
+      projection_scope: Error of the 28-bit normalization lattice, before MVT display quantization; not
+        a visual positional-accuracy claim.
+      source_and_archive_oracle:
+        path: research/grwl-width-overview-20261106/global-r2/oracle.json
+        sha256: 6736e7f063d348c4d3acf60f34c884444cd9418533f39dac841d4a1f9d81bfa0
+    build_manifest:
+      path: research/grwl-width-overview-20261106/global-r2/build.json
+      sha256: 982333d471dc9208caffd2c442e6540212befbba8d6997829bebc692c821476c
+    detail_tiles_checked: 588355
+    detail_payloads_byte_identical_to_r2: true
+    inherited_verified_detail_occurrences: 345749975
+    detail_maximum_gzip_tile_bytes: 572212
+    detail_comparison:
+      path: research/grwl-width-overview-20261106/global-r2/combine-report.json
+      sha256: e7ed55fa230d4a46c0b4749e9b3af9883fc72026a9cb439813725a729bc457ae
+    visible_source_ids_z12: 64572694
+    explicit_quantization_collapses_z12: 304
+    new_detail_omissions: 0
+    clean_replay:
+      path: research/grwl-width-overview-20261106/clean-replay-r2/report.json
+      sha256: f2e05fb0c542981f029c5baa3e7f59be3e64a040832b974455aa82165346db20
+    reproducibility_scope: A clean committed checkout reproduced all eight regional selected-observation
+      tables, overview and combined PMTiles, and every served viewer file byte-for-byte. One successful
+      global display build followed a retained memory-limit failure; no second successful global display
+      byte rebuild is claimed.
+    browser_all_zoom:
+      path: research/grwl-width-overview-20261106/browser-global-r1/report.json
+      sha256: b4e73f4ae52d4b9d9dd5a126f6fa96be9fc1f619f27d79ee17a1ff2bcb910cd5
+    browser_cases: 20
+    browser_exact_id_attribute_lookup_cases: 1
+    browser_exact_id_attributes_checked: 14
+    maximum_cold_object_bytes: 20941975
+    visual_review:
+      path: research/grwl-width-overview-20261106/visual-review-r1.json
+      sha256: ae4793b3129f7350758a8e8b5d2b1aef1a873bc6288770a9f9a9304514b7a420
+    finalization:
+      path: datasets/grwl-raw/display/raw-v01.01-display-r3/reports/width-overview/finalization.json
+      sha256: 965b0d7f275a948aa33e919d79795be482ade80cffe8a21430b2c7e625b29366
+  release_id: raw-v01.01-local-r1
+  historical_display_r1:
+    status: passed_global_oracle_browser_and_finalization
+    pmtiles_bytes: 11498067077
+    pmtiles_sha256: a1a7787c7ba28ffc271819bddc54339f9bc741aa9ed44ca619d93e809cbad4f5
+    min_zoom: 8
+    max_zoom: 12
+    build_manifest:
+      path: research/grwl-raw-release-20261102/global-display-build-r1/manifest.json
+      sha256: c9c21e1a6137d3f2cfa60e5a54c69fd44a7ab22a91278b5857d2a99f6ef27ec8
+    reproducibility_scope: Pilot and native fixture PMTiles were rebuilt byte-identically. The global
+      PMTiles has one build; no global display byte-rebuild claim is made.
+    visible_source_ids_z12: 64572694
+    explicit_quantization_collapses_z12: 304
+    maxzoom_tiles_checked: 333538
+    attribute_occurrences_checked: 70155474
+    geometry_samples:
+      total: 13061
+      passed: 13053
+      quantization_exceptions: 8
+      original_sample_ids_retained: 13006
+      additional_source_selected_unique_ids: 55
+      max_observed_passed_hausdorff_metres: 2.037189275986706
+    oracle:
+      path: research/grwl-raw-release-20261102/global-display-validation-r2/display-validation-r2.json
+      sha256: 14ea16e6d493847a8d813166f09214f323564b568e0e1f8021d895389136a7f9
+    oracle_review:
+      path: research/grwl-raw-release-20261102/global-display-validation-r2/run-review.json
+      sha256: 3ac091093dbe2d41e88793470a03341992431156b7e94916c3127d1de7ccd334
+    browser:
+      path: research/grwl-raw-release-20261102/browser-global-r1/report.json
+      sha256: 4316a2e538d270996fe01895cc1a081ced29aca967b4bc93c900da38fb36dae0
+    browser_review:
+      path: research/grwl-raw-release-20261102/browser-global-r1/review.json
+      sha256: 910461b3f5d54a2860a22c29f74c71f791c9ed823b6d9ff39014d0cf09da4dda
+    finalization:
+      path: datasets/grwl-raw/display/raw-v01.01-display-r1/reports/finalization/report.json
+      sha256: 9d84cf5369722fe7729d48617821dca6ebca62c5898283c11e99f34ba5030986
+  baseline_display_policy:
+    path: research/grwl-raw-release-20261102/display-policy.json
+    sha256: 084684c6b47701645b08b8ed42ba0818061c0b2d36959aebce8026b6401060f7
+  historical_display_r2:
+    status: passed_multiscale_source_archive_replay_browser_and_finalization
+    pmtiles_bytes: 3005034172
+    pmtiles_sha256: 79389270fef94a8a6359f0b7a98b3505a82ee090a7827bd13280bf1f1c178830
+    min_zoom: 0
+    max_zoom: 12
+    detail_min_zoom: 8
+    reduction_from_r1_percent: 73.8648752709829
+    overview:
+      source_layer: grwl_overview
+      min_zoom: 0
+      max_zoom: 7
+      tiles: 4419
+      cells_per_tile: 512
+      meaning: Source observation coverage; no width measurement, source identity or invented connecting
+        geometry.
+      maximum_gzip_tile_bytes: 39813
+      source_control_records: 1158798
+      source_controls:
+        path: research/grwl-multiscale-20261103/global-overview-r1/source-validation-r1.json
+        sha256: 03b447f1af16823d5b8afd598de2527802df3e3f2072d28bbc652a736950bf36
+      archive_oracle:
+        path: research/grwl-multiscale-20261103/global-combined-r1/overview-validation-r1.json
+        sha256: c6c2191692c6a5cfeb2b2b6bef2c9df175f793bbb4c8c9b52965f9ed69438cb8
+    detail_tiles_checked: 588355
+    detail_occurrences_checked: 345749975
+    detail_maximum_gzip_tile_bytes: 572212
+    detail_comparison:
+      path: research/grwl-multiscale-20261103/global-combined-r1/detail-comparison-r1.json
+      sha256: 8a95be59b269ab7363b4636b2aa0c72c2d4a9f4b5a87c130af23d228c84cb607
+    visible_source_ids_z12: 64572694
+    explicit_quantization_collapses_z12: 304
+    new_detail_omissions: 0
+    clean_replay:
+      path: research/grwl-multiscale-20261103/clean-replay-r2.json
+      sha256: 64360007223907e2b45034972a12e7fc9511648c62c63297c27112f62b15873b
+    reproducibility_scope: A clean committed checkout reproduced all eight regional masks, overview and
+      combined PMTiles, and served viewer files byte-for-byte. The full global display has one build;
+      no second global display rebuild is claimed.
+    browser_detail:
+      path: research/grwl-multiscale-20261103/browser-detail-r3/report.json
+      sha256: 1b4c9b09fbeb4f9d90ee3ec07da25cf53502bee0fa95369d13a6b44ced9f49d2
+    browser_multiscale:
+      path: research/grwl-multiscale-20261103/browser-multiscale-r2/report.json
+      sha256: 1708d480ed17b5d1666df7992def8a0d4df3f80205d1a2415e6e2c22bf7184c5
+    browser_camera_switch:
+      path: research/grwl-multiscale-20261103/browser-camera-r1/report.json
+      sha256: 71e55da0980688f57e5313d2d05b883653b2ec5d6d015c802ac6add196898b07
+    browser_detail_cases: 11
+    browser_detail_attribute_values_checked: 154
+    browser_multiscale_cases: 5
+    browser_camera_switch_cases: 3
+    maximum_cold_detail_object_bytes: 21138336
+    maximum_cold_multiscale_object_bytes: 469789
+    finalization:
+      path: datasets/grwl-raw/display/raw-v01.01-display-r2/reports/multiscale/finalization.json
+      sha256: 748240ae3dd399b6e0e05bac56e666b02c89898bb961de7396ff3e460b9da78c
+    display_policy:
+      path: research/grwl-multiscale-20261103/criteria.json
+      sha256: 4f40b5868bf30e41ce6d2db977c36f3c8b4b3705a2c82008c33648abeb74ed43
+    workflow_files:
+      acquire: datasets/grwl-raw/acquire.py
+      global_conversion: datasets/grwl-raw/build_global.py
+      source_validation: datasets/grwl-raw/validate.py
+      display_conversion: datasets/grwl-raw/repack_detail.py
+      display_validation: datasets/grwl-raw/compare_detail_fast.py
+      display_finalization: datasets/grwl-raw/finalize_multiscale.py
+      preview_preparation: datasets/grwl-raw/prepare_multiscale_preview.py
+      overview_conversion: datasets/grwl-raw/build_overview.py
+      overview_validation: datasets/grwl-raw/validate_overview.py
+      baseline_display_conversion: datasets/grwl-raw/build_display.py
+      baseline_display_validation: datasets/grwl-raw/validate_display.py
+      baseline_display_finalization: datasets/grwl-raw/finalize_display.py
+      clean_display_replay: research/grwl-multiscale-20261103/run_clean_replay.py
+publication:
+  status: published
+  source_coop:
+    owner: nthh
+    owner_status: confirmed
+    product_id: grwl-raw
+    account_verification:
+      status: confirmed
+      owner: nthh
+      evidence_path: research/source-publication-20261106/account-verification.json
+      evidence_sha256: 5515f007abc95b38131ac42d95f358a07d4b6f8d950e38d1a202916635460cdc
+    tags:
+    - global
+    - hydrology
+    - landsat
+    - rivers
+    - river-width
+    - geoparquet
+    - pmtiles
+    limitations:
+    - All 64,572,998 source records passed exact independent source comparison and a byte-identical clean
+      analytical rebuild. Complete uploaded bytes and anonymous hosting, range, CORS, subset-query and
+      browser checks passed.
+    - Raw observations are separate source records and short parts, not a connected river centerline network.
+      Records are never joined by segmentID or segmentInd.
+    - width_m value 1 is an unknown-width sentinel; width_valid indicates usable width without altering
+      width_m.
+    - The release excludes masks, tile index, and RSSA basin supplement.
+    - PMTiles is a quantized display derivative. Zooms 0–7 select the widest valid original observation
+      per screen-scale cell, retaining its source ID and anchor. Symbols are exaggerated and capped, not
+      averages or riverbanks. Zooms 8–12 retain the original detailed tile payloads.
+    - All 64,572,998 source records were independently checked for overview winner selection; every selected
+      table row and all 26,060,623 encoded point placements in 4,439 overview tiles passed. All 588,355
+      detailed compressed tiles exactly match r2. The same 304 enumerated 0.0013–2.93 m source fragments
+      collapse at z12 and remain preserved in GeoParquet, with no new detail omissions.
+    - Twenty fixed browser cases cover Mississippi z0–12, Amazon and the dateline, including one exact-ID
+      lookup of all fourteen source attributes at z7. The clean byte replay is regional. The viewer retains
+      its existing non-wrapping world edge; global scientific accuracy is not established. Hosted browser
+      checks cover the same twenty fixed views.
+    - Live raw-V01.01 GEE count and all 512 sampled compound keys match; all 5,120 source attribute cells
+      are exact. Selected mixed geometry diagnostics are below 0.340 m, but strict geometry parity fails.
+      No exhaustive GEE, topology-preservation or independent scientific-accuracy claim.
+    - The Parquet metadata footer is 19,783,655 bytes. The tested cold exact-ID browser lookup transferred
+      20,941,975 bytes, including that footer; this is one fixed-view measurement, not a universal query-cost
+      guarantee.
+    supplements: []
+    title: Global River Width from Landsat — raw vector observations V01.01
+    summary: Complete GRWL V01.01 raw vector observations in lossless GeoParquet, with one separately
+      versioned zoom 0–12 PMTiles display. Zooms 0–7 show selected widest original width observations
+      with source IDs; zooms 8–12 preserve detailed source geometry and widths. All 64,572,998 observations
+      and ten original DBF fields remain in GeoParquet. Complete source comparison, analytical rebuild,
+      full global overview validation, exact detailed-tile preservation, clean regional replay and all
+      20 browser cases passed.
+    license_note: 'Producer license: CC BY 4.0. Preserve producer attribution and cite Allen and Pavelsky
+      (2018), DOI 10.1126/science.aat0636.'
+    attribution: Allen and Pavelsky (2018), Global extent of rivers and streams, Science 361(6402), 585–588,
+      DOI 10.1126/science.aat0636; source product GRWL_vector_V01.01.
+    temporal_note: Static producer release derived from Landsat observations with varying source dates;
+      not current river conditions or a time series.
+  release: raw-v01.01-local-r1
+  manifest_path: datasets/grwl-raw/releases/raw-v01.01-local-r1/manifest.json
+  manifest_sha256: ef2a063cb54327b50d47e8ad17c735cadde87fb9ba3136d6b39fe43126863c8c
+  release_receipt_path: datasets/grwl-raw/releases/raw-v01.01-local-r1/package-receipt.json
+  analytic_package_status: hosted_verified
+  last_package_status: passed_analytical_display_and_hosted_gates
+  catalog:
+    snapshot_path: datasets/grwl-raw/releases/raw-v01.01-local-r1/catalog-input-r1/snapshot.json
+    snapshot_sha256: 9e824a00465ba25d411dbeff0321b14053e22177eeccc9dabf89390b9825f5a8
+    package_base_url: https://data.source.coop/nthh/grwl-raw/releases/raw-v01.01-local-r1/
+    hosting_report_path: research/source-publication-20261106/hosted-results/grwl-raw/hosted-validation.json
+    hosting_report_sha256: 7643d25a00403634a0bac6e6c9e3ee8a3ed28f11708ac265cbb31e4d4fc6a105
+  local_bundle_directory: .local/grwl-raw/release-inputs-r1-package
+  validation_path: datasets/grwl-raw/releases/raw-v01.01-local-r1/evidence/final-package-verification.json
+  validation:
+    source_rows: 64572998
+    source_tiles: 829
+    source_values_nulls_xy_bits: passed_complete_independent_source_parser_comparison
+    clean_rebuild: byte_identical
+    local_http_and_duckdb: passed_4821_row_local_remote_subset_fingerprint
+    stac_node: passed_2.0.0
+    portolan: passed_rashid_0.3.0_local_data
+    stac_check_advisory: incomplete_retained
+    display: passed_all_source_winner_selection_all_overview_tiles_exact_detail_payloads_clean_replay_and_twenty_browser_cases
+    gee: completed_sampled_with_documented_differences
+    remote_host: passed
+  display:
+    release: raw-v01.01-display-r3
+    manifest_path: datasets/grwl-raw/display/raw-v01.01-display-r3/manifest.json
+    manifest_sha256: 0910adf27da9265a9f02fb2c71f2d5b4a6e90f55330ae6d4a2d24c782d231915
+    package_base_url: https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/
+    hosting_report_path: research/source-publication-20261106/hosted-results/grwl-raw/hosted-validation.json
+    hosting_report_sha256: 7643d25a00403634a0bac6e6c9e3ee8a3ed28f11708ac265cbb31e4d4fc6a105
+  local_display_bundle_directory: .local/grwl-width-overview/raw-v01.01-display-r3
+  source_cooperative:
+    status: hosted_verified_public
+    url: https://source.coop/nthh/grwl-raw
+    owner: nthh
+    product: grwl-raw
+    visibility: public
+related_datasets:
+- id: grwl
+  record_id: grwl
+  title: Global River Width from Landsat — simplified global river network V01.02
+  relationship: derived_product
+  url: https://gee-community-catalog.org/projects/grwl/
+  use_case: The summary retains historical segment-level aggregate statistics. Its inspected geometry
+    contains erroneous connectors and is withheld from publication; use the raw record for detailed per-observation
+    geometry and original DBF fields.
+  comparison: The summary product has 42,077 generalized records and segment-level statistics, unlike
+    the raw component's many tiled source records and per-record widths. Nine-tile comparison confirmed
+    straight summary connectors absent from raw vectors at source rows 11839, 13164, 15394, 15397, and
+    15450. Those findings establish known sampled discrepancies, not a global accuracy result. The raw
+    conversion does not invent summary statistics such as width_mean.
+  spatial_coverage: Global simplified network with 42,077 generalized records; the separate raw component
+    has 829 tiles and 64,572,998 source observations.
+  temporal_coverage: Static Landsat-derived producer release V01.01; underlying observation dates vary.
+  resolution: Individual source observations nominally represent approximately 30 m Landsat-derived river-width
+    segments; this description does not assert uniform positional accuracy.
+  formats:
+  - Producer simplified-vector Shapefile source
+  - Historical summary GeoParquet and PMTiles; publication withheld after geometry review
+  access: Producer raw vectors are available from the Zenodo record. The related summary product is a
+    separate canonical record and scope.
+  reviewed_on: '2026-11-03'
+  evidence:
+  - title: Producer GRWL V01.01 Zenodo record
+    url: https://zenodo.org/records/18624542
+  - title: Frozen raw-versus-summary discrepancy findings
+    url: https://gee-community-catalog.org/projects/grwl/
+review:
+  publication_readiness:
+    reviewed_on: '2026-11-07'
+    stage: hosted_verified_pending_catalog_deployment
+    asset_integrity: passed_source_rebuild_full_width_overview_detail_payload_equality_replay_browser_and_finalization
+    scientific_validation_rerun: false
+    local_followup: []
+    public_followup:
+    - Deploy the aggregate GitHub Pages catalog and verify live browser access.
+  gee_validation:
+    reviewed_on: '2026-11-06'
+    status: completed_sampled_with_documented_differences
+    strict_parity: failed_retained
+    evidence:
+      path: research/gee-release-validation-20261106/summary.json
+      sha256: 673dc8c3c4bc426aca44a11d0a54a826b868440faecddb50e226dd5990a106c8
+      dataset_id: grwl-raw
+    layers:
+    - grwl-raw
+    finding: Live raw-V01.01 GEE count and all 512 sampled compound keys match; all 5,120 source attribute
+      cells are exact. Selected mixed geometry diagnostics are below 0.340 m, but strict geometry parity
+      fails. No exhaustive GEE, topology-preservation or independent scientific-accuracy claim.
+    scientific_accuracy_independently_revalidated: false
+    data_modified: false

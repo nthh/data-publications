@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "cases": [
+    {
+      "mutation": "remove a source row",
+      "status": "rejected",
+      "reason": "row count changed"
+    },
+    {
+      "mutation": "duplicate a source row",
+      "status": "rejected",
+      "reason": "source field mismatch"
+    },
+    {
+      "mutation": "change GOID value",
+      "status": "rejected",
+      "reason": "source field GOID mismatch"
+    },
+    {
+      "mutation": "change GOID to null",
+      "status": "rejected",
+      "reason": "source field GOID mismatch"
+    },
+    {
+      "mutation": "flip a WKB geometry byte",
+      "status": "rejected",
+      "reason": "geometry WKB differs"
+    }
+  ]
+}

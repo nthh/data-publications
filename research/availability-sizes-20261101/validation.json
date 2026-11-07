@@ -1,0 +1,149 @@
+{
+  "reviewed_on": "2026-11-01",
+  "criteria_commit": "58f3706",
+  "implementation_base": "bb89adf",
+  "initial_failures": [
+    {
+      "command": "python -m unittest tests.test_dataset_availability tests.test_candidate_discovery tests.test_catalog_citations -v",
+      "exit_code": 1,
+      "detail": "Availability test lacked the scripts import path when invoked directly from repository root. The other 25 tests passed. Fixed to use the same explicit ROOT/scripts path as existing tests; did not mask or discard the failure."
+    },
+    {
+      "command": "git diff --cached --check",
+      "exit_code": 2,
+      "detail": "First staged review exposed an extra blank line at the end of generated SHORTLIST.md; unstaged checks had not included that new file. Fixed the renderer to emit one terminal newline. Implementation commit preceded this formatting correction; final/rehearsal checks cover the correction."
+    }
+  ],
+  "checks": [
+    {
+      "name": "focused_unit_tests",
+      "command": "python -m unittest tests.test_dataset_availability tests.test_candidate_discovery tests.test_catalog_citations -v",
+      "exit_code": 0,
+      "tests_run": 39
+    },
+    {
+      "name": "canonical_and_generated_catalog",
+      "command": "python scripts/catalog.py --check",
+      "exit_code": 0,
+      "records_checked": 452,
+      "supplemental_records_checked": 89,
+      "frozen_families_checked": 363
+    },
+    {
+      "name": "publication_catalog",
+      "command": "python scripts/publication_catalog.py check",
+      "exit_code": 0,
+      "published_collections": 0
+    },
+    {
+      "name": "existing_record_preservation",
+      "result": "All eight previously present records parse identically to bb89adf after removal of the new review.availability block. No source pins, release manifests or prior dataset fields were changed."
+    },
+    {
+      "name": "whitespace",
+      "command": "git diff --check",
+      "exit_code": 0
+    },
+    {
+      "name": "final_availability_tests",
+      "command": "python -m unittest tests.test_dataset_availability -v",
+      "exit_code": 0,
+      "tests_run": 14
+    },
+    {
+      "name": "capture_overwrite_refusal",
+      "command": "python research/availability-sizes-20261101/capture_sizes.py --output research/availability-sizes-20261101/source-size-headers.json",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "result": "Refused before any network request; prior capture preserved."
+    },
+    {
+      "name": "python_syntax",
+      "result": "AST parsing passed for all new Python files."
+    }
+  ],
+  "clean_checkout_rehearsal": {
+    "status": "passed",
+    "commit": "12c960faef91d6620d1cdcfa713728e6b0313fdf",
+    "worktree": "/Users/nathan/.folia-fleets/availability-rehearsal-20261101/tree",
+    "environment": "Existing locked Python environment reused; PYTHONPATH unset; no dependency changes.",
+    "checks": [
+      {
+        "name": "generate",
+        "command": [
+          "scripts/catalog.py",
+          "--write"
+        ],
+        "exit_code": 0,
+        "output": "{\n  \"records_checked\": 452,\n  \"supplemental_records_checked\": 89,\n  \"family_keys_checked\": 363,\n  \"citations_checked\": 363,\n  \"decisions\": {\n    \"defer\": 1,\n    \"pending\": 445,\n    \"publish_conversion\": 5,\n    \"reuse_existing\": 1\n  }\n}"
+      },
+      {
+        "name": "generated_diff",
+        "command": [
+          "git",
+          "diff",
+          "--exit-code"
+        ],
+        "exit_code": 0,
+        "output": ""
+      },
+      {
+        "name": "catalog_check",
+        "command": [
+          "scripts/catalog.py",
+          "--check"
+        ],
+        "exit_code": 0,
+        "output": "{\n  \"records_checked\": 452,\n  \"supplemental_records_checked\": 89,\n  \"family_keys_checked\": 363,\n  \"citations_checked\": 363,\n  \"decisions\": {\n    \"defer\": 1,\n    \"pending\": 445,\n    \"publish_conversion\": 5,\n    \"reuse_existing\": 1\n  }\n}"
+      },
+      {
+        "name": "publication_catalog_check",
+        "command": [
+          "scripts/publication_catalog.py",
+          "check"
+        ],
+        "exit_code": 0,
+        "output": "Catalog check passed; 0 published collections."
+      },
+      {
+        "name": "focused_tests",
+        "command": [
+          "-m",
+          "unittest",
+          "tests.test_dataset_availability",
+          "tests.test_candidate_discovery",
+          "tests.test_catalog_citations"
+        ],
+        "exit_code": 0,
+        "output": ".......................................\n----------------------------------------------------------------------\nRan 39 tests in 0.088s\n\nOK"
+      },
+      {
+        "name": "commit_whitespace",
+        "command": [
+          "git",
+          "diff",
+          "bb89adf",
+          "HEAD",
+          "--check"
+        ],
+        "exit_code": 0,
+        "output": ""
+      }
+    ],
+    "working_tree_clean": true
+  },
+  "totals": {
+    "reviewed_scopes": 10,
+    "prepared_releases": 5,
+    "prepared_analytic_and_display_bytes": 3407413375
+  },
+  "measurement_limits": [
+    "Prepared data bytes are derived from pinned existing manifests; no bulk file rehash or scientific comparison was repeated.",
+    "CRU transfer size is measured by ten successful HEADs, not downloaded checksums.",
+    "TerraClimate total uses rounded listing sizes, qualified with one HEAD.",
+    "RiverATLAS exact bytes, GDW size and SWOT v2.03 size remain unresolved; HTTP failures are retained.",
+    "GEE availability is catalog evidence, not new live GEE execution or exact-content equivalence.",
+    "Distinct-service counts cover reviewed public distributions only and do not establish exhaustive absence."
+  ],
+  "publication_changes": false
+}

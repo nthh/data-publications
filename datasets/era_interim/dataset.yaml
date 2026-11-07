@@ -1,0 +1,60 @@
+schema_version: 1
+id: era_interim
+title: ECMWF ERA-Interim (historical; superseded by ERA5)
+intake:
+  kind: producer
+  reference_url: https://rmets.onlinelibrary.wiley.com/doi/10.1002/qj.828
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'literature: Global atmospheric reanalysis with related land, wave and surface products;
+    ERA-Interim ended 2019-08-31. Candidate scope is the atmospheric reanalysis family, not each variable/level.
+    ERA-Interim, 1979-August 2019; discontinued and superseded by ERA5. Keep separate from ERA5 (selected
+    citation top-50 group 1). Exact paper is ERA-Interim-specific; do not substitute the ERA5 paper or
+    counts. Related canonical records, with distinct scope: era5.'
+  sources:
+  - provider: producer
+    entry_id: ECMWF ERA-Interim global atmospheric reanalysis
+    url: https://rmets.onlinelibrary.wiley.com/doi/10.1002/qj.828
+    relationship: same_family
+  access:
+  - provider: literature
+    status: download_available
+    formats:
+    - raster
+    - time-series
+    summary: ECMWF lists the archived 1979–August 2019 reanalysis and advises migration to ERA5; access
+      conditions may apply. ERA-Interim, 1979-August 2019; discontinued and superseded by ERA5. Keep separate
+      from ERA5 (selected citation top-50 group 1). Exact paper is ERA-Interim-specific; do not substitute
+      the ERA5 paper or counts.
+    license_summary: Exact release terms need product-specific review; no redistribution permission is
+      inferred from literature or access pages.
+    proposed_outputs:
+    - Zarr
+    rationale: Supplementary literature discovery only. A high associated-paper count is evidence of a
+      documented product family, not exact-edition usage, conversion priority, or native-format readiness.
+      Review producer bytes, terms and existing record component coverage before promotion.
+    evidence_urls:
+    - https://rmets.onlinelibrary.wiley.com/doi/10.1002/qj.828
+    - https://www.ecmwf.int/en/forecasts/datasets/browse-reanalysis-datasets
+    - https://www.ecmwf.int/en/forecasts/dataset/ecmwf-reanalysis-v5
+  citations:
+  - provider: OpenAlex
+    paper_doi: 10.1002/qj.828
+    work_id: https://openalex.org/W2121745948
+    cited_by_count: 24480
+    observed_on: '2026-11-01'
+    scope: associated_dataset_publication_base_family
+  evidence:
+  - path: research/global-candidates-20261031/literature/reviewed.json
+    sha256: eef4edb7f4a59e399d3670b9f2aace33bd24083f46d260a7859163c673fabbb6
+    key: era_interim

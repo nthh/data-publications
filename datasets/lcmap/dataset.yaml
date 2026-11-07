@@ -1,0 +1,32 @@
+schema_version: 1
+id: lcmap
+title: 'LCMAP v1.3: LCACHG'
+community_url: https://gee-community-catalog.org/projects/lcmap
+audit:
+  snapshot: gee-community-audit-20261029
+  family_key: lcmap
+  unique_gee_asset_count: 11
+  initial_queue: review_external_native_counterpart
+  folia_registry_status: not_identified
+  folia_registry_ids: []
+  source_coop_urls: []
+  source_coop_scope: null
+  external_native_urls:
+  - https://planetarycomputer.microsoft.com/api/stac/v1/collections/usgs-lcmap-conus-v13
+  external_native_scope: LCMAP CONUS v1.3 1985-2021; same product, PC modified nodata/packaging.
+triage:
+  decision: pending
+  priority: normal
+review:
+  citation_assessment:
+    as_of: '2026-10-29'
+    provider: OpenAlex
+    evidence_path: research/citations/rankings.json
+    evidence_key: lcmap
+    geographic_scope: regional
+    paper_count_status: matched
+    max_paper_citations: 235
+    max_data_doi_citations: null
+    top_paper_doi: https://doi.org/10.1016/j.rse.2019.111356
+    top_paper_openalex_id: https://openalex.org/W2967165937
+    citation_scope: associated_dataset_publication

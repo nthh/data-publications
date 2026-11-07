@@ -1,0 +1,80 @@
+{
+  "request_url": "https://api.openalex.org/works?search=The+Version+2+Global+Precipitation+Climatology+Project+%28GPCP%29+Monthly+Precipitation+Analysis+%281979-Present%29&corpus=all&per_page=5&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date",
+  "retrieved_at": "2026-10-30T22:08:00.620235+00:00",
+  "response_path": "responses/b1f7333675c07d154a0e8052a3bfc211021655ca42b11c958e9e8e9ec31a2689.json",
+  "status": 200,
+  "response_sha256": "f7a76db78d5375bec02fcbbcb0d9a1f3f5831919a0166bf4f2a499dfc9a5e041",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 4142,
+      "db_response_time_ms": 202,
+      "page": 1,
+      "per_page": 5,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where full text has (The Version 2 Global Precipitation Climatology Project GPCP Monthly Precipitation Analysis 1979-Present)",
+        "x_new_oql": "get works (all corpora) where full text has (The Version 2 Global Precipitation Climatology Project GPCP Monthly Precipitation Analysis 1979-Present)",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "The Version 2 Global Precipitation Climatology Project (GPCP) Monthly Precipitation Analysis (1979-Present)",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:The Version 2 Global Precipitation Climatology Project %28GPCP%29 Monthly Precipitation Analysis %281979-Present%29&corpus=all&per_page=5",
+        "order": "best matches first",
+        "order_default": true
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W2022548072",
+        "doi": "https://doi.org/10.1175/1525-7541(2003)004<1147:tvgpcp>2.0.co;2",
+        "title": "The Version-2 Global Precipitation Climatology Project (GPCP) Monthly Precipitation Analysis (1979–Present)",
+        "type": "article",
+        "publication_year": 2003,
+        "publication_date": "2003-12-01"
+      },
+      {
+        "id": "https://openalex.org/W7098227405",
+        "doi": null,
+        "title": "t t The Version 2 Global Precipitation Climatology Project (GPCP) Monthly Precipitation Analysis (1979-Present)",
+        "type": "article",
+        "publication_year": 2014,
+        "publication_date": "2014-12-11"
+      },
+      {
+        "id": "https://openalex.org/W2072844554",
+        "doi": "https://doi.org/10.1029/2009gl040000",
+        "title": "Improving the global precipitation record: GPCP Version 2.1",
+        "type": "article",
+        "publication_year": 2009,
+        "publication_date": "2009-09-01"
+      },
+      {
+        "id": "https://openalex.org/W141415389",
+        "doi": null,
+        "title": "The New 20-Year Global Precipitation Climatology Project (GPCP) Merged Satellite and Rainguage Monthly Analysis",
+        "type": "article",
+        "publication_year": 1999,
+        "publication_date": "1999-01-01"
+      },
+      {
+        "id": "https://openalex.org/W2051473126",
+        "doi": "https://doi.org/10.1175/jhm601.1",
+        "title": "Precipitation Extremes Estimated by GPCP and TRMM: ENSO Relationships",
+        "type": "article",
+        "publication_year": 2007,
+        "publication_date": "2007-08-01"
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "2ec982373eeac08db4ffdea3953941fa190b38165bf9eeffa2936d133036d372"
+}

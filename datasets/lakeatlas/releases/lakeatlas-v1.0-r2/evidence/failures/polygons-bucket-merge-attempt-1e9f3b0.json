@@ -1,0 +1,266 @@
+{
+  "asset": "lakeatlas-polygons-spatial",
+  "error": "peak RSS 1002766336 bytes reached configured cap 1000000000 in phase bucket_merge",
+  "error_type": "SpatialOrderError",
+  "failed_report_path": "local:lakes/releases/lakeatlas-v1.0-r2-spatial-primary-attempt2/reports/lakeatlas-polygons-spatial.json",
+  "failed_report_sha256": "cff0fc4381f6de00a4a61fbd2e1a62cbd16fd0898bff3cc4c9efe1d5b20af2f0",
+  "failure_phase": "bucket_merge",
+  "observed_peak_rss_bytes": 1002766336,
+  "raw_source_changed": false,
+  "requested_parameters": {
+    "batch_rows": 512,
+    "buckets": 64,
+    "buffer_rows": 256,
+    "geometry_column": "geometry",
+    "identifier_column": "OBJECTID",
+    "memory_cap_bytes": 1000000000,
+    "minimum_remaining_free_bytes": 10000000000,
+    "minimum_start_free_bytes": 40000000000,
+    "row_group_size": 4096,
+    "task_disk_limit_bytes": 8000000000,
+    "task_owned_baseline_bytes": 1965500000
+  },
+  "retained_partial_artifacts": [
+    {
+      "allocated_bytes": 520638464,
+      "path": "data/lakeatlas-polygons-spatial.parquet.partial-50048",
+      "sha256": "f92b05bf98a4fd7e432241cf09f07ab3c0deb7ea0592e2244ade99c370f5d5c0",
+      "size_bytes": 508873707
+    },
+    {
+      "allocated_bytes": 28205056,
+      "path": "data/lakeatlas-polygons-spatial.parquet.work-50048/spatial-buckets/bucket-027.arrow",
+      "sha256": "27fa31dd1df03fe883fc89708ec958ffb32c6755fcb3aa991f247262bf353a29",
+      "size_bytes": 27749890
+    },
+    {
+      "allocated_bytes": 30855168,
+      "path": "data/lakeatlas-polygons-spatial.parquet.work-50048/spatial-buckets/bucket-028.arrow",
+      "sha256": "9a0c14b10126efd81c7b8949d6f91559cf6cddc0fb0d5fa442a93b6713211e90",
+      "size_bytes": 30304770
+    },
+    {
+      "allocated_bytes": 27553792,
+      "path": "data/lakeatlas-polygons-spatial.parquet.work-50048/spatial-buckets/bucket-029.arrow",
+      "sha256": "7b5a85e52cd02939be792dbdbb23a86a35424fb933c338ae8cd252201b48d3d0",
+      "size_bytes": 27179282
+    },
+    {
+      "allocated_bytes": 24133632,
+      "path": "data/lakeatlas-polygons-spatial.parquet.work-50048/spatial-buckets/bucket-030.arrow",
+      "sha256": "a36650bcd200e66061b80a41bc666bcd49d98fc740bdcfa6533b08a04e1617b2",
+      "size_bytes": 23520610
+    },
+    {
+      "allocated_bytes": 25473024,
+      "path": "data/lakeatlas-polygons-spatial.parquet.work-50048/spatial-buckets/bucket-031.arrow",
+      "sha256": "b5cdfbbb0e1e30636380cabb1acda70d6927c622ddf75e89d8892607ca9eec4e",
+      "size_bytes": 24541162
+    },
+    {
+      "allocated_bytes": 27488256,
+      "path": "data/lakeatlas-polygons-spatial.parquet.work-50048/spatial-buckets/bucket-032.arrow",
+      "sha256": "6d3ba306ce1c135a73290690b9d6195bb1fa7b38285782d9a8b99f64f6ffd1fd",
+      "size_bytes": 27136650
+    },
+    {
+      "allocated_bytes": 35946496,
+      "path": "data/lakeatlas-polygons-spatial.parquet.work-50048/spatial-buckets/bucket-033.arrow",
+      "sha256": "8cb5adf5909b7f5f8eae8c0cb0f2ba248b1d4018df8648bbab9ec2c04127784c",
+      "size_bytes": 35305058
+    },
+    {
+      "allocated_bytes": 26914816,
+      "path": "data/lakeatlas-polygons-spatial.parquet.work-50048/spatial-buckets/bucket-034.arrow",
+      "sha256": "69fccffe4d52f28a03f5d1865436ebe189db3acaf75e3d27416e6b926216aeec",
+      "size_bytes": 26043418
+    },
+    {
+      "allocated_bytes": 29556736,
+      "path": "data/lakeatlas-polygons-spatial.parquet.work-50048/spatial-buckets/bucket-035.arrow",
+      "sha256": "c376df4e22bbd9290f9826f4648e3a2bd2abb1d918a95b6db8f39d54a38ab790",
+      "size_bytes": 28909546
+    },
+    {
+      "allocated_bytes": 26394624,
+      "path": "data/lakeatlas-polygons-spatial.parquet.work-50048/spatial-buckets/bucket-036.arrow",
+      "sha256": "9de0238e87ffb3e0894b2e872b9aee5d49110d962263c9530516f95ea3dac230",
+      "size_bytes": 25586570
+    },
+    {
+      "allocated_bytes": 24088576,
+      "path": "data/lakeatlas-polygons-spatial.parquet.work-50048/spatial-buckets/bucket-037.arrow",
+      "sha256": "4a4ca6b181e96f76118fd16c3a5d8140ac20f6e5dc315936156326d492ff2211",
+      "size_bytes": 23940874
+    },
+    {
+      "allocated_bytes": 31440896,
+      "path": "data/lakeatlas-polygons-spatial.parquet.work-50048/spatial-buckets/bucket-038.arrow",
+      "sha256": "eb07ec258fb67090fe7b4a85de9a80661fa2292407f17458d0a595ffd3141c7b",
+      "size_bytes": 31027714
+    },
+    {
+      "allocated_bytes": 27066368,
+      "path": "data/lakeatlas-polygons-spatial.parquet.work-50048/spatial-buckets/bucket-039.arrow",
+      "sha256": "7dd8a5034781d913a246333e0335144bd1d519f349750d7b37c6281b6b6cccf2",
+      "size_bytes": 26237666
+    },
+    {
+      "allocated_bytes": 22900736,
+      "path": "data/lakeatlas-polygons-spatial.parquet.work-50048/spatial-buckets/bucket-040.arrow",
+      "sha256": "65cf3eb71ea1cc06248813ea2a90e719c592e64444d8c56449faf82e8a97aecb",
+      "size_bytes": 22563866
+    },
+    {
+      "allocated_bytes": 26664960,
+      "path": "data/lakeatlas-polygons-spatial.parquet.work-50048/spatial-buckets/bucket-041.arrow",
+      "sha256": "a60e6839185b83945e74725f20374c575ad9dae7788dbd4f6c9e9753677321de",
+      "size_bytes": 26417018
+    },
+    {
+      "allocated_bytes": 29421568,
+      "path": "data/lakeatlas-polygons-spatial.parquet.work-50048/spatial-buckets/bucket-042.arrow",
+      "sha256": "3b6398439e6ca9ea75b80ed4cdaaf86b9859c694dd6f4e19ffb37509a9218f10",
+      "size_bytes": 28483090
+    },
+    {
+      "allocated_bytes": 23404544,
+      "path": "data/lakeatlas-polygons-spatial.parquet.work-50048/spatial-buckets/bucket-043.arrow",
+      "sha256": "a878315783d89c9c5685cdb3bc5069ec306a26fa3afd49405441fa0fb06bfff3",
+      "size_bytes": 23303066
+    },
+    {
+      "allocated_bytes": 22228992,
+      "path": "data/lakeatlas-polygons-spatial.parquet.work-50048/spatial-buckets/bucket-044.arrow",
+      "sha256": "5ebfa20697df25f7e03200729e6440960f0cb9158abccfb09cbfd279787e35aa",
+      "size_bytes": 21379874
+    },
+    {
+      "allocated_bytes": 21446656,
+      "path": "data/lakeatlas-polygons-spatial.parquet.work-50048/spatial-buckets/bucket-045.arrow",
+      "sha256": "d16c7274445a65290fbf3addab57c0e750652361466d39c96ecb04619d76dd4a",
+      "size_bytes": 21247978
+    },
+    {
+      "allocated_bytes": 23748608,
+      "path": "data/lakeatlas-polygons-spatial.parquet.work-50048/spatial-buckets/bucket-046.arrow",
+      "sha256": "02e5ba225c37271879c653d290949a39865af56e509fcc6d091be827966c9ad1",
+      "size_bytes": 23563922
+    },
+    {
+      "allocated_bytes": 20709376,
+      "path": "data/lakeatlas-polygons-spatial.parquet.work-50048/spatial-buckets/bucket-047.arrow",
+      "sha256": "4bd2ef553a985cfe016e29d68d9fd8e71856d38412b8e319c9f91eb4f326bff7",
+      "size_bytes": 20633162
+    },
+    {
+      "allocated_bytes": 22675456,
+      "path": "data/lakeatlas-polygons-spatial.parquet.work-50048/spatial-buckets/bucket-048.arrow",
+      "sha256": "ab4754e590493c65c79b52f6fde40ece37297cfd7e21986900eb6b0aa5def2e4",
+      "size_bytes": 22248530
+    },
+    {
+      "allocated_bytes": 21532672,
+      "path": "data/lakeatlas-polygons-spatial.parquet.work-50048/spatial-buckets/bucket-049.arrow",
+      "sha256": "70e5305d8932af634a5191e15dd46df11ab426273aa394ce5e0ed178c432d88e",
+      "size_bytes": 20569722
+    },
+    {
+      "allocated_bytes": 20758528,
+      "path": "data/lakeatlas-polygons-spatial.parquet.work-50048/spatial-buckets/bucket-050.arrow",
+      "sha256": "c0d88b344e0b64b86e87846b272d9ddec80877fea5416d496be7173a69da59bc",
+      "size_bytes": 20571082
+    },
+    {
+      "allocated_bytes": 22142976,
+      "path": "data/lakeatlas-polygons-spatial.parquet.work-50048/spatial-buckets/bucket-051.arrow",
+      "sha256": "7d665cfaf5bcea26761fc133ebc443fc08fcac8956a0a6d74cbaac1f3ec42563",
+      "size_bytes": 22005490
+    },
+    {
+      "allocated_bytes": 18300928,
+      "path": "data/lakeatlas-polygons-spatial.parquet.work-50048/spatial-buckets/bucket-052.arrow",
+      "sha256": "131b669cd5118b5bc62258a7c493efc08db6e203efe02f6ff6a63ec6b32c3e94",
+      "size_bytes": 17430898
+    },
+    {
+      "allocated_bytes": 10313728,
+      "path": "data/lakeatlas-polygons-spatial.parquet.work-50048/spatial-buckets/bucket-053.arrow",
+      "sha256": "51d30364d04f79e0d05382b92e7cc71265b6ddd981ae866718195733f92dd4a9",
+      "size_bytes": 10010706
+    },
+    {
+      "allocated_bytes": 11591680,
+      "path": "data/lakeatlas-polygons-spatial.parquet.work-50048/spatial-buckets/bucket-054.arrow",
+      "sha256": "4047af2542e2a6ed721536cf06bef04d79e60708d2976d50536308a589edc56f",
+      "size_bytes": 11416234
+    },
+    {
+      "allocated_bytes": 15208448,
+      "path": "data/lakeatlas-polygons-spatial.parquet.work-50048/spatial-buckets/bucket-055.arrow",
+      "sha256": "322d81d360af867c185176d6ec007df340fa1d8eeac2c4960a32f5af8d7dd3a9",
+      "size_bytes": 14176946
+    },
+    {
+      "allocated_bytes": 19836928,
+      "path": "data/lakeatlas-polygons-spatial.parquet.work-50048/spatial-buckets/bucket-056.arrow",
+      "sha256": "8f9d5b6c567550979c2bb17357585164d558dca279747241cce729f578dd41c7",
+      "size_bytes": 18909018
+    },
+    {
+      "allocated_bytes": 12812288,
+      "path": "data/lakeatlas-polygons-spatial.parquet.work-50048/spatial-buckets/bucket-057.arrow",
+      "sha256": "b9fac70973fe84795988b7df301327af5ddb5f775613d5e967bb6b0f5e4afe81",
+      "size_bytes": 11784530
+    },
+    {
+      "allocated_bytes": 10321920,
+      "path": "data/lakeatlas-polygons-spatial.parquet.work-50048/spatial-buckets/bucket-058.arrow",
+      "sha256": "e56f5672864e3881ad40ad34f81c53be31ead9918808e5e927bea583b115a112",
+      "size_bytes": 9909826
+    },
+    {
+      "allocated_bytes": 11276288,
+      "path": "data/lakeatlas-polygons-spatial.parquet.work-50048/spatial-buckets/bucket-059.arrow",
+      "sha256": "1abcaa8e6509d841c6cddf836b3820da05fd696a506b5a8a897b28413a55f583",
+      "size_bytes": 10306370
+    },
+    {
+      "allocated_bytes": 10498048,
+      "path": "data/lakeatlas-polygons-spatial.parquet.work-50048/spatial-buckets/bucket-060.arrow",
+      "sha256": "6401deb3a9f1fa0b17efe559d1b92f4d0dd9a26aa9ccdae60bd688bab479c5a5",
+      "size_bytes": 10398298
+    },
+    {
+      "allocated_bytes": 16297984,
+      "path": "data/lakeatlas-polygons-spatial.parquet.work-50048/spatial-buckets/bucket-061.arrow",
+      "sha256": "81e2dc62957ac4a1316291813ce408732563cd2aa7462cddaf6d033e740aca22",
+      "size_bytes": 15968058
+    },
+    {
+      "allocated_bytes": 21704704,
+      "path": "data/lakeatlas-polygons-spatial.parquet.work-50048/spatial-buckets/bucket-062.arrow",
+      "sha256": "7f5483bdf4671effc740c761aba429c8ec8757eeb04368a3c3a090a765303735",
+      "size_bytes": 20819586
+    },
+    {
+      "allocated_bytes": 22044672,
+      "path": "data/lakeatlas-polygons-spatial.parquet.work-50048/spatial-buckets/bucket-063.arrow",
+      "sha256": "7300c16a7048dc086cf75e0c65d5d97d8093cc18b1df0ed96bdadd0985ab2976",
+      "size_bytes": 21062474
+    }
+  ],
+  "retained_partial_totals": {
+    "allocated_bytes": 1343598592,
+    "files": 38,
+    "size_bytes": 1311536661
+  },
+  "source": {
+    "asset": "lakeatlas-polygons",
+    "sha256": "f1e69b9db782314151bb496d0d7b613e015e59bf628c9100f998c2b67eda77e2",
+    "size_bytes": 1238572245
+  },
+  "stage_output_created": true,
+  "status": "failed",
+  "workflow_revision": "1e9f3b0"
+}

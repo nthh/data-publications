@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "task": "Add PMTiles display products for all prepared datasets and data-driven GRWL width visualization",
+  "authorizations": "User explicitly requested PMTiles for all current prepared products; local work only.",
+  "inputs": {
+    "grwl": "summary-v01.02-local-r1",
+    "river-plastic-inputs": "figshare-v6-r2",
+    "hydrolakes": "v1-local-r3",
+    "free-flowing-rivers": "figshare-v1-local-r2",
+    "lakeatlas": "lakeatlas-v1.0-r2"
+  },
+  "outputs": [
+    "Reuse existing GRWL and river-plastic PMTiles bytes",
+    "New HydroLAKES polygons PMTiles",
+    "New Free-Flowing Rivers reaches PMTiles",
+    "New LakeATLAS polygons and pour-points PMTiles",
+    "GRWL line thickness and legend driven by width_mean in metres"
+  ],
+  "immutability": [
+    "Never modify existing analytical release bytes or historical evidence.",
+    "Add publication.display reference to versioned display manifest in each canonical dataset.yaml; do not add a separate editable dataset inventory.",
+    "New display files live under product/display/display-v1; no invented public-hosting status."
+  ],
+  "validation": [
+    "Validate pinned input hashes, exact source row counts, schema, ID uniqueness and field semantics before conversion.",
+    "All eligible source IDs must be accounted for at maximum zoom; empty/zero-length/quantization-collapse exceptions must be identified explicitly and never hidden as complete coverage.",
+    "Validate selected tile attributes against source by ID, including null omissions. Decode all maxzoom IDs; test fixed regions and stable source-ID samples for geometry fidelity with a predeclared 30 m maximum zoom display tolerance in Web Mercator. Quantization and simplification affect tiles only.",
+    "Run actual pmtiles verify, validate layer IDs, zoom metadata, bounds, source IDs and exact output hashes. Do not relabel failed attempts as passing.",
+    "Fixture rebuilds must be byte-identical from a clean checkout. Production build/rebuild scope must be stated honestly.",
+    "All six default map layers must use PMTiles, render nonzero features in fresh Chrome contexts, and use cross-origin HTTP206 ranges without full-file GETs. Evaluate global and regional controls; 128 MiB data-body ceiling per case.",
+    "GRWL style must produce different visible widths for 50 m, 200 m and 1000 m at the same zoom, with explicit missing-value handling, units, and notice of cartographic exaggeration. Browser test must establish active paint expression uses width_mean.",
+    "PMTiles feature inspection retains unique source identity; the existing all-attributes action continues to query GeoParquet for new tile layers. Test click/lookup after switching layers.",
+    "Publication preparation and viewer mapping reject missing or modified display files, source-release mismatches and unsafe paths; canonical/index/catalog checks remain clean."
+  ],
+  "geographic_controls": {
+    "global": [
+      -170,
+      -55,
+      175,
+      80
+    ],
+    "southwest_europe": [
+      5,
+      45,
+      7.5,
+      47.5
+    ],
+    "north_america": [
+      -93,
+      47,
+      -87,
+      50
+    ],
+    "south_america": [
+      -65,
+      -5,
+      -60,
+      0
+    ],
+    "asia": [
+      100,
+      25,
+      110,
+      35
+    ],
+    "oceania": [
+      140,
+      -40,
+      150,
+      -30
+    ]
+  },
+  "cartography": {
+    "max_zoom": 12,
+    "tile_extent": 4096,
+    "simplification": 1,
+    "lake_minzoom_by_area_km2": [
+      [
+        10000,
+        0
+      ],
+      [
+        1000,
+        2
+      ],
+      [
+        100,
+        4
+      ],
+      [
+        10,
+        6
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        0.1,
+        10
+      ],
+      [
+        0,
+        12
+      ]
+    ],
+    "ffr_minzoom_by_discharge_m3_s": [
+      [
+        10000,
+        0
+      ],
+      [
+        1000,
+        2
+      ],
+      [
+        100,
+        4
+      ],
+      [
+        10,
+        6
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        0.1,
+        10
+      ],
+      [
+        0,
+        12
+      ]
+    ],
+    "unknown_metric_minzoom": 12,
+    "drop_policy": "Explicit per-feature minimum zoom only; no arbitrary feature/tile-size dropping; disable tiny-polygon area aggregation. Report quantization collapse explicitly."
+  },
+  "cost_guardrails": {
+    "builds_at_once": 1,
+    "tippecanoe_threads": 2,
+    "min_free_start_gib": 40,
+    "stop_below_free_gib": 15,
+    "max_task_storage_gib": 12,
+    "network": "Small pinned dependencies only; reuse all dataset bytes; no GEE, uploads, cloud compute or bulk downloads."
+  },
+  "design_intent": {
+    "human": "Nathan reviewing global hydrology products for publication",
+    "action": "Browse all datasets globally and see how measured river width differs along GRWL segments",
+    "feel": "Existing compact paper-and-river map workbench",
+    "domain": [
+      "river width",
+      "flow",
+      "lake area",
+      "source IDs",
+      "zoom scales",
+      "connectivity"
+    ],
+    "colors": [
+      "river blue",
+      "lake blue",
+      "survey-paper ivory",
+      "slate",
+      "silt gray"
+    ],
+    "signature": "Measured mean-width legend tied to active paint and clicked source values",
+    "defaults_replaced": [
+      "Uniform river stroke becomes width_mean-driven symbols",
+      "Fixed-count Parquet preview becomes zoom-dependent PMTiles",
+      "Raw unlabeled widths become metres with an explicit screen-scale caveat"
+    ],
+    "palette": "Retain current CSS primitives",
+    "depth": "Existing fine borders",
+    "typography": "Existing system sans and tabular IDs",
+    "spacing": "Existing 4 px grid"
+  }
+}

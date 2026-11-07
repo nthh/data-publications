@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "study_id": "global-candidates-20261031",
+  "created_at": "2026-11-01T00:22:54.869287+00:00",
+  "objective": "Expand the Git-backed candidate backlog across citation-led discovery, official GEE, Planetary Computer and Esri public datasets, prioritizing global coverage and existing native access.",
+  "prior_information": "The prior 2026-10-29/30 citation rankings, GEE inventory and previous conversion decisions have already been reviewed. This is an expansion, not a blinded independent citation study.",
+  "scope": {
+    "citation_lane": "Review the first 50 global shared-paper groups in the frozen combined official/community ranking with deprecated official entries excluded; retain exact entry/version distinctions. Supplemental producer papers may be reviewed separately; do not call this all geospatial literature.",
+    "gee_lane": "Reuse the complete 2026-10-30 official metadata snapshot (1,165 entries) and reviewed paper identities; inspect primary catalog pages for shortlisted families as needed. No live GEE requests or exports.",
+    "planetary_lane": "Capture the current public STAC collections inventory, retain every collection in the discovery snapshot, and review documented global/near-global dataset families for canonical promotion.",
+    "esri_lane": "Search the public Living Atlas/ArcGIS catalog for worldwide feature services and relevant global raster products. Preserve exact queries, pages, counts and owner/authority checks. This bounded search is not an exhaustive census of ArcGIS Online.",
+    "geography": "Global, global land/ocean and near-global latitude-limited products are eligible with explicit coverage notes. Regional products stay in research inventory unless already canonical; no promotion based solely on a world-sized display extent."
+  },
+  "selection_and_identity_rules": [
+    "Use one canonical dataset.yaml per reviewed dataset family. Link provider editions/components explicitly; a shared title, paper DOI or bbox alone never proves equivalence.",
+    "Citation metric remains maximum associated-dataset-paper cited_by_count, not a sum. Data DOI counts remain separate, unknown is null, and each count retains provider and observation date.",
+    "Keep frozen 2026-10-29/30 citation values and evidence unchanged. Do not silently mix later observations into that ranking.",
+    "Existing COG, GeoParquet, Zarr or PMTiles access is a reuse signal; API/map/feature-service access is not proof of a downloadable cloud-native bulk release.",
+    "License and metadata declarations are evidence for review, not verified redistribution permission or byte-level data validation.",
+    "New candidates stay pending/candidate; existing triage and prepared/deferred statuses remain unchanged. Publication/hosting choices require subsequent dataset review."
+  ],
+  "acceptance_checks": [
+    "Every promoted candidate has an authoritative source URL, explicit global/near-global coverage evidence, origin catalog IDs and a traceable research observation.",
+    "Store deterministic normalized provider snapshots and reproducible metadata capture commands; report failures, truncation and unreviewed coverage.",
+    "All 363 frozen community records remain and the three existing supplemental records retain identity, triage, source/build and immutable release evidence.",
+    "Generated index and readable candidate backlog reproduce offline from canonical records; the published STAC catalog remains at zero collections.",
+    "Reject invalid provider URLs, duplicate catalog references within a record, unsupported scope/status values and inconsistent cross-record exact matches.",
+    "Run focused schema/generator tests, existing record/provenance checks and a clean-checkout rehearsal for changed build inputs. Preserve material failed checks and corrected followups."
+  ],
+  "cost_guardrails": {
+    "metadata_only": true,
+    "dataset_asset_downloads": 0,
+    "live_gee_jobs": 0,
+    "data_uploads": 0,
+    "paid_requests": 0,
+    "per_provider_max_requests": 120,
+    "per_provider_max_bytes": 30000000,
+    "esri_max_search_results": 2000,
+    "network_concurrency": 4
+  },
+  "input_sha256": {
+    "research/catalog-citations-20261030/official-entries.json": "67f0886a5c58f412b681b0fb530e3c1c86068c446435bb5bc00710c6f786d9db",
+    "research/catalog-citations-20261030/combined-rankings.json": "5cac7baf951fa9c61d7de9fcf931c1ffc3b3c06825d5fa675588d815015c423d",
+    "research/catalog-citations-20261030/openalex-works.json": "995bdbab01c22692c9bb907f86ad6059d94a83d59a96290250c8ed28516fbf5f",
+    "index.json": "da4034d088bf1aa6301ff148ff99136ba1243c4acf40d18631bb5e03889d7e65"
+  },
+  "limitations": [
+    "Selection is limited to the named catalogs and reviewed literature; citation prominence does not establish conversion value.",
+    "A metadata-only native-format observation is not a successful bulk download, COG/GeoParquet validation or hosting verification."
+  ]
+}

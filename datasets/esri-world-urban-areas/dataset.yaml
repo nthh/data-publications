@@ -1,0 +1,49 @@
+schema_version: 1
+id: esri-world-urban-areas
+title: Esri World Urban Areas cartographic polygons
+intake:
+  kind: official_catalog
+  reference_url: https://www.arcgis.com/home/item.html?id=2853306e11b2467ba0458bf667e1c584
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: near_global
+  spatial_coverage: 'esri: Many major urban areas across the world, but the item explicitly says not all
+    major cities are represented. The item is intended for cartographic display, not analysis. Cartographic
+    selection explicitly misses some major cities.'
+  sources:
+  - provider: esri_public
+    entry_id: 2853306e11b2467ba0458bf667e1c584
+    url: https://www.arcgis.com/home/item.html?id=2853306e11b2467ba0458bf667e1c584
+    relationship: exact_dataset
+  - provider: esri_public
+    entry_id: source attribution in item
+    url: https://www.arcgis.com/home/item.html?id=2853306e11b2467ba0458bf667e1c584
+    relationship: related_release
+  access:
+  - provider: esri_public
+    status: service_only
+    formats:
+    - vector
+    summary: FeatureServer service observed. No native bulk file or export permission established. Cartographic
+      selection explicitly misses some major cities.
+    license_summary: Esri Master License Agreement declared; data source credits include Esri and Garmin.
+      No offline redistribution right was verified.
+    proposed_outputs: []
+    rationale: Keep as a reference-layer lead only; the source description disclaims complete city coverage
+      and analytic intent. Prefer a purpose-built settlement product for analysis.
+    evidence_urls:
+    - https://www.arcgis.com/home/item.html?id=2853306e11b2467ba0458bf667e1c584
+  citations: []
+  evidence:
+  - path: research/global-candidates-20261031/esri/reviewed.json
+    sha256: e02bd2202c3026ccd7564155bfa69b5e8bc666f65698da6bacce91ab7327d5be
+    key: esri-world-urban-areas

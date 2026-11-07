@@ -1,0 +1,296 @@
+{
+  "phase": "post_score_validation",
+  "criteria_source": "methodology.json (pre-scoring commit b2f393a)",
+  "draft_evidence": "draft-top15-before-final-reference-review.json",
+  "findings": [
+    {
+      "finding": "Generic SPEI index paper incorrectly ranked some SPEIbase versions at draft rank 6, while another version correctly excluded it.",
+      "resolution": "Apply the same exclusion to every version and add the two actual gridded SPEIbase dataset papers; acquire their counts only after identity review.",
+      "identity_evidence": "post-review-identities.json"
+    },
+    {
+      "finding": "Narrative JRC reports were inconsistently classified as data-release DOIs.",
+      "resolution": "Reclassify all identified report DOIs consistently; retain actual data DOI/PID attribution separately."
+    },
+    {
+      "finding": "A generic MAP gap-fill method and GRACE postprocessing references had inconsistent inclusion across sibling products.",
+      "resolution": "Apply the predeclared generic-method exclusion consistently; preserve unmatched or absent data-paper counts as unknown."
+    },
+    {
+      "finding": "Some MOD13 vegetation-index entries were labeled ocean/water-body coverage.",
+      "resolution": "Correct all 16 reviewed MOD13 entries to Global land; normalize synonymous geographic labels for ERA5, NCEP and GLDAS."
+    }
+  ],
+  "applied_corrections": [
+    {
+      "entry_ids": [
+        "CSIC/SPEI/2_8",
+        "CSIC/SPEI/2_9",
+        "CSIC/SPEI/2_10",
+        "CSIC/SPEI/2_11"
+      ],
+      "remove_paper_dois": [
+        "10.1175/2009jcli2909.1"
+      ],
+      "add_paper_dois": [
+        "10.1175/2010bams2988.1",
+        "10.1175/2010jhm1224.1"
+      ],
+      "citation_scope": "base_dataset_family",
+      "reason": "The removed paper introduces the SPEI index; AMS publishes two distinct articles explicitly describing the 0.5-degree gridded SPEIbase dataset. Both concern the original family, not exact v2.8–2.11 processing or release. Preserve each version data DOI separately and correct source-field version mismatches before claiming exact release attribution.",
+      "evidence_urls": [
+        "https://journals.ametsoc.org/abstract/journals/bams/91/10/2010bams2988_1.xml",
+        "https://journals.ametsoc.org/abstract/journals/hydr/11/4/2010jhm1224_1.xml",
+        "https://developers.google.com/earth-engine/datasets/catalog/CSIC_SPEI_2_11"
+      ],
+      "evidence_catalog_paths": [
+        "reference-groups.json#refs-b95e9fad14bb",
+        "reference-groups.json#refs-b9a88a2b4894",
+        "reference-groups.json#refs-0f21c0c34cc4"
+      ],
+      "review_phase": "post_score_validation",
+      "citation_scope_note": "The removed paper introduces the SPEI index; AMS publishes two distinct articles explicitly describing the 0.5-degree gridded SPEIbase dataset. Both concern the original family, not exact v2.8–2.11 processing or release. Preserve each version data DOI separately and correct source-field version mismatches before claiming exact release attribution.",
+      "evidence_review": "leaders-review.json"
+    },
+    {
+      "entry_ids": [
+        "JRC/GFC2020/V4",
+        "JRC/GFC2020_subtypes/V1"
+      ],
+      "citation_scope": "base_dataset_family",
+      "reason": "The JRC DOI identifies a narrative Methodology, Accuracy Assessment and Comparison report about GFC2020 V3 and GFT2020 V1, not a data-release DOI. It is direct for subtype V1 and a broader family proxy for GFC2020 V4. V3 already types it as paper.",
+      "evidence_catalog_paths": [
+        "reference-groups.json#refs-287e0bb0ba1f",
+        "reference-groups.json#refs-c505077b078b",
+        "reference-groups.json#refs-39645ace9635"
+      ],
+      "remove_data_dois": [
+        "10.2760/9982436"
+      ],
+      "add_paper_dois": [
+        "10.2760/9982436"
+      ],
+      "review_phase": "post_score_validation",
+      "citation_scope_note": "The JRC DOI identifies a narrative Methodology, Accuracy Assessment and Comparison report about GFC2020 V3 and GFT2020 V1, not a data-release DOI. It is direct for subtype V1 and a broader family proxy for GFC2020 V4. V3 already types it as paper.",
+      "evidence_review": "leaders-review.json"
+    },
+    {
+      "entry_ids": [
+        "projects/malariaatlasproject/assets/TCB_v061/1km/8-Daily",
+        "projects/malariaatlasproject/assets/TCB_v061/1km/Annual",
+        "projects/malariaatlasproject/assets/TCB_v061/1km/Monthly",
+        "projects/malariaatlasproject/assets/TCW_v061/1km/8-Daily",
+        "projects/malariaatlasproject/assets/TCW_v061/1km/Annual",
+        "projects/malariaatlasproject/assets/TCW_v061/1km/Monthly"
+      ],
+      "remove_paper_dois": [
+        "10.1016/j.isprsjprs.2014.10.001"
+      ],
+      "reason": "Weiss et al. is a generic continental time-series gap-filling method. The sibling EVI/MAP group already excludes the same DOI, and the paper does not publish the tasseled-cap TCB/TCW products.",
+      "evidence_catalog_paths": [
+        "reference-groups.json#refs-b4c937639868",
+        "reference-groups.json#refs-8f8439fc7a3b"
+      ],
+      "review_phase": "post_score_validation",
+      "citation_scope_note": "Weiss et al. is a generic continental time-series gap-filling method. The sibling EVI/MAP group already excludes the same DOI, and the paper does not publish the tasseled-cap TCB/TCW products.",
+      "evidence_review": "leaders-review.json"
+    },
+    {
+      "entry_ids": [
+        "NASA/GRACE/MASS_GRIDS/LAND"
+      ],
+      "remove_paper_dois": [
+        "10.1029/2005gl025285",
+        "10.1029/2011wr011453"
+      ],
+      "reason": "Swenson and Wahr is generic correlated-error postprocessing; Landerer and Swenson assesses scaled terrestrial-water-storage estimates after applying scaling. Neither publishes the GRACE monthly land grid release. The newer V04/LAND review already excludes both; retain the release data DOI.",
+      "evidence_catalog_paths": [
+        "reference-groups.json#refs-e546e18e22f9",
+        "reference-groups.json#refs-59f4b1bda914"
+      ],
+      "review_phase": "post_score_validation",
+      "citation_scope_note": "Swenson and Wahr is generic correlated-error postprocessing; Landerer and Swenson assesses scaled terrestrial-water-storage estimates after applying scaling. Neither publishes the GRACE monthly land grid release. The newer V04/LAND review already excludes both; retain the release data DOI.",
+      "evidence_review": "leaders-review.json"
+    },
+    {
+      "entry_ids": [
+        "JRC/GFC2020/V4"
+      ],
+      "remove_data_dois": [
+        "10.2760/1975879",
+        "10.2760/262532",
+        "10.2760/7632707"
+      ],
+      "add_paper_dois": [
+        "10.2760/1975879",
+        "10.2760/262532",
+        "10.2760/7632707"
+      ],
+      "citation_scope": "base_dataset_family",
+      "citation_scope_note": "These 10.2760 DOIs identify narrative JRC methodology or accuracy reports in sci:publications. They concern the GFC/GFT product family and are not exact-release data DOIs; the catalog dataset DOI/PID stays separate.",
+      "evidence_review": "leaders-review.json; parent follow-up on all narrative JRC report DOIs",
+      "evidence_catalog_paths": [
+        "official-entries.json#JRC/GFC2020/V4"
+      ],
+      "review_phase": "post_score_validation"
+    },
+    {
+      "entry_ids": [
+        "JRC/GFC2020/V2"
+      ],
+      "remove_data_dois": [
+        "10.2760/1975879",
+        "10.2760/7632707"
+      ],
+      "add_paper_dois": [
+        "10.2760/1975879",
+        "10.2760/7632707"
+      ],
+      "citation_scope": "base_dataset_family",
+      "citation_scope_note": "These 10.2760 DOIs identify narrative JRC methodology or accuracy reports in sci:publications. They concern the GFC/GFT product family and are not exact-release data DOIs; the catalog dataset DOI/PID stays separate.",
+      "evidence_review": "leaders-review.json; parent follow-up on all narrative JRC report DOIs",
+      "evidence_catalog_paths": [
+        "official-entries.json#JRC/GFC2020/V2"
+      ],
+      "review_phase": "post_score_validation"
+    },
+    {
+      "entry_ids": [
+        "JRC/GFC2020_subtypes/V1",
+        "JRC/GFC2020_subtypes/V0"
+      ],
+      "remove_data_dois": [
+        "10.2760/1975879"
+      ],
+      "add_paper_dois": [
+        "10.2760/1975879"
+      ],
+      "citation_scope": "base_dataset_family",
+      "citation_scope_note": "These 10.2760 DOIs identify narrative JRC methodology or accuracy reports in sci:publications. They concern the GFC/GFT product family and are not exact-release data DOIs; the catalog dataset DOI/PID stays separate.",
+      "evidence_review": "leaders-review.json; parent follow-up on all narrative JRC report DOIs",
+      "evidence_catalog_paths": [
+        "official-entries.json#JRC/GFC2020_subtypes/V1",
+        "official-entries.json#JRC/GFC2020_subtypes/V0"
+      ],
+      "review_phase": "post_score_validation"
+    },
+    {
+      "entry_ids": [
+        "JRC/GFC2020/V1"
+      ],
+      "remove_data_dois": [
+        "10.2760/262532"
+      ],
+      "add_paper_dois": [
+        "10.2760/262532"
+      ],
+      "citation_scope": "base_dataset_family",
+      "citation_scope_note": "These 10.2760 DOIs identify narrative JRC methodology or accuracy reports in sci:publications. They concern the GFC/GFT product family and are not exact-release data DOIs; the catalog dataset DOI/PID stays separate.",
+      "evidence_review": "leaders-review.json; parent follow-up on all narrative JRC report DOIs",
+      "evidence_catalog_paths": [
+        "official-entries.json#JRC/GFC2020/V1"
+      ],
+      "review_phase": "post_score_validation"
+    },
+    {
+      "entry_ids": [
+        "MODIS/061/MOD13A1",
+        "MODIS/061/MOD13A2",
+        "MODIS/061/MOD13A3",
+        "MODIS/061/MOD13C1",
+        "MODIS/061/MOD13Q1",
+        "MODIS/061/MYD13A1",
+        "MODIS/061/MYD13A2",
+        "MODIS/061/MYD13A3",
+        "MODIS/061/MYD13C1",
+        "MODIS/061/MYD13Q1",
+        "MODIS/006/MOD13A1",
+        "MODIS/006/MOD13A2",
+        "MODIS/006/MOD13Q1",
+        "MODIS/006/MYD13A1",
+        "MODIS/006/MYD13A2",
+        "MODIS/006/MYD13Q1"
+      ],
+      "geographic_scope": "global",
+      "region": "Global land",
+      "scope_note": "MOD13/MYD13 vegetation-index products cover land; ocean/water-body labels in some initial scope reviews were incorrect.",
+      "review_phase": "post_score_validation",
+      "evidence_catalog_paths": [
+        "official-entries.json#MODIS/061/MOD13A1",
+        "official-entries.json#MODIS/061/MOD13A2",
+        "official-entries.json#MODIS/061/MOD13A3",
+        "official-entries.json#MODIS/061/MOD13C1",
+        "official-entries.json#MODIS/061/MOD13Q1",
+        "official-entries.json#MODIS/061/MYD13A1",
+        "official-entries.json#MODIS/061/MYD13A2",
+        "official-entries.json#MODIS/061/MYD13A3",
+        "official-entries.json#MODIS/061/MYD13C1",
+        "official-entries.json#MODIS/061/MYD13Q1",
+        "official-entries.json#MODIS/006/MOD13A1",
+        "official-entries.json#MODIS/006/MOD13A2",
+        "official-entries.json#MODIS/006/MOD13Q1",
+        "official-entries.json#MODIS/006/MYD13A1",
+        "official-entries.json#MODIS/006/MYD13A2",
+        "official-entries.json#MODIS/006/MYD13Q1"
+      ],
+      "evidence_urls": [
+        "https://modis-land.gsfc.nasa.gov/vi.html"
+      ]
+    },
+    {
+      "entry_ids": [
+        "ECMWF/ERA5/DAILY",
+        "ECMWF/ERA5/HOURLY",
+        "ECMWF/ERA5/HOURLY_PRESSURE_LEVELS",
+        "ECMWF/ERA5/MONTHLY"
+      ],
+      "geographic_scope": "global",
+      "region": "Global",
+      "scope_note": "ERA5 reanalysis covers the global atmosphere and surface; temporal aggregations retain the same geographic scope.",
+      "review_phase": "post_score_validation",
+      "evidence_catalog_paths": [
+        "official-entries.json#ECMWF/ERA5/DAILY",
+        "official-entries.json#ECMWF/ERA5/HOURLY",
+        "official-entries.json#ECMWF/ERA5/HOURLY_PRESSURE_LEVELS",
+        "official-entries.json#ECMWF/ERA5/MONTHLY"
+      ]
+    },
+    {
+      "entry_ids": [
+        "NCEP_RE/sea_level_pressure",
+        "NCEP_RE/surface_temp",
+        "NCEP_RE/surface_wv"
+      ],
+      "geographic_scope": "global",
+      "region": "Global",
+      "scope_note": "NCEP/NCAR Reanalysis variables cover the globe.",
+      "review_phase": "post_score_validation",
+      "evidence_catalog_paths": [
+        "official-entries.json#NCEP_RE/sea_level_pressure",
+        "official-entries.json#NCEP_RE/surface_temp",
+        "official-entries.json#NCEP_RE/surface_wv"
+      ]
+    },
+    {
+      "entry_ids": [
+        "NASA/GLDAS/V021/NOAH/G025/T3H",
+        "NASA/GLDAS/V022/CLSM/G025/DA1D",
+        "NASA/GLDAS/V20/NOAH/G025/T3H"
+      ],
+      "geographic_scope": "global",
+      "region": "Global land",
+      "scope_note": "Global Land Data Assimilation System products model land surfaces; model/version bounds are described on the individual catalog entries.",
+      "review_phase": "post_score_validation",
+      "evidence_catalog_paths": [
+        "official-entries.json#NASA/GLDAS/V021/NOAH/G025/T3H",
+        "official-entries.json#NASA/GLDAS/V022/CLSM/G025/DA1D",
+        "official-entries.json#NASA/GLDAS/V20/NOAH/G025/T3H"
+      ]
+    }
+  ],
+  "remaining_caveats": [
+    "SPEIbase v2.9 and v2.10 share catalog group refs-b9a88a2b4894, whose sci:citation names v2.9 while sci:doi points to v2.8; v2.11 sci:citation names v2.10. The catalog cannot prove exact-release DOI attribution from those fields alone.",
+    "SRTMGL1_003 uses the broad SRTM mission/DEM paper; its filled Version 3 processing is not established by Farr et al. alone."
+  ],
+  "interpretation": "These corrections follow the predeclared semantic criteria after scores were visible. Original reviews and the rejected draft ranking remain available; this phase is not described as count-blind."
+}

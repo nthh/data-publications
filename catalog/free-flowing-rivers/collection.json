@@ -1,0 +1,505 @@
+{
+  "assets": {
+    "ffr-reach-network-v1": {
+      "file:checksum": "122062130e4999ba449bd2768bcdd9346bc2ba8fa4c4f06d39597e5227cd496a1a63",
+      "file:size": 887132886,
+      "href": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+      "roles": [
+        "data"
+      ],
+      "title": "Free flowing river reaches, figshare v1",
+      "type": "application/vnd.apache.parquet"
+    },
+    "ffr-reach-network-v1_fields": {
+      "file:checksum": "1220fba7dd8d801f22b659b384f11b630ef703365f0a15e54830552d608cf64580ff",
+      "file:size": 12273,
+      "href": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/metadata/ffr-reach-network-v1-field-dictionary.json",
+      "roles": [
+        "metadata"
+      ],
+      "title": "ffr-reach-network-v1 field dictionary",
+      "type": "application/json"
+    },
+    "support-1": {
+      "file:checksum": "1220125a2fc527145cb90cd1ae1d946df9c3a85a60dbfe5da041ececec3a1d0cc146",
+      "file:size": 5162,
+      "href": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/source/source-metadata.json",
+      "roles": [
+        "metadata"
+      ],
+      "title": "Pinned figshare article metadata",
+      "type": "application/json"
+    },
+    "support-2": {
+      "file:checksum": "1220cbe200b7ced3d627e2adc5b2ff043ebb97b68a75dd54ba3b33516127bd4635bb",
+      "file:size": 16323,
+      "href": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/source/source-inspection.json",
+      "roles": [
+        "metadata"
+      ],
+      "title": "Source archive and layer inspection",
+      "type": "application/json"
+    },
+    "support-3": {
+      "file:checksum": "1220399562161c85a577bdf495e2343dabbae3e6540adad1815b952d463808bd7133",
+      "file:size": 11616,
+      "href": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/source/source-field-dictionary.json",
+      "roles": [
+        "metadata"
+      ],
+      "title": "Producer field dictionary",
+      "type": "application/json"
+    },
+    "thumbnail": {
+      "file:checksum": "1220c2d265154f06ccb02dced33bfa1c2f9a1ed708dc39e0caef315a96472f23532f",
+      "file:size": 2842,
+      "href": "display/thumbnail.png",
+      "roles": [
+        "thumbnail"
+      ],
+      "title": "Sampled display-only overview; not an analytic asset",
+      "type": "image/png"
+    },
+    "display_tiles_free-flowing-rivers-1": {
+      "href": "https://data.source.coop/nthh/free-flowing-rivers/display/display-v1/assets/ffr-reaches.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "roles": [
+        "visual"
+      ],
+      "title": "Ffr Reaches",
+      "file:size": 3570445458,
+      "file:checksum": "12206e248eba5ecdf58ee28705a8f567be9497836f0a1c6c078b50327a1599ecdce3"
+    },
+    "display_style_free-flowing-rivers-1": {
+      "href": "display/display-v1/styles/ffr-reaches.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "style",
+        "default"
+      ],
+      "title": "Ffr Reaches display style",
+      "file:size": 474,
+      "file:checksum": "122022b9f0025153f847dadd94780ebcbf60eaf27552ac61489ce83e58ec0d0f8e53"
+    }
+  },
+  "created": "2026-10-31T00:00:00Z",
+  "description": "Analytic GeoParquet conversion of the full global free-flowing river reach network from the pinned 2019 figshare v1 source. Original source fields and WKB geometries, nulls, row order, and record multiplicity are preserved. Added columns expose the producer-stream row ordinal and per-feature EPSG:4326 bounds. This release does not assess scientific validity or update the source assessment.",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -179.99791666699997,
+          -55.87708333299997,
+          179.99791666700003,
+          83.58958333300006
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  "id": "free-flowing-rivers",
+  "license": "CC-BY-4.0",
+  "links": [
+    {
+      "href": "display/thumbnail.png",
+      "rel": "thumbnail",
+      "type": "image/png"
+    },
+    {
+      "href": "https://figshare.com/articles/dataset/Mapping_the_world_s_free-flowing_rivers_data_set_and_technical_documentation/7688801",
+      "rel": "via",
+      "title": "Mapping the world's free-flowing rivers: data set and technical documentation (figshare v1)",
+      "type": "text/html"
+    },
+    {
+      "href": "https://creativecommons.org/licenses/by/4.0/",
+      "rel": "license",
+      "type": "text/html"
+    },
+    {
+      "rel": "root",
+      "href": "../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "describedby",
+      "href": "./README.md",
+      "type": "text/markdown"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "https://data.source.coop/nthh/free-flowing-rivers/display/display-v1/assets/ffr-reaches.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "Ffr Reaches",
+      "pmtiles:layers": [
+        "ffr-reaches"
+      ]
+    },
+    {
+      "rel": "style",
+      "href": "display/display-v1/styles/ffr-reaches.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Ffr Reaches display style"
+    },
+    {
+      "rel": "vcs",
+      "href": "https://github.com/nthh/data-publications",
+      "title": "Repository",
+      "type": "text/html"
+    },
+    {
+      "rel": "issues",
+      "href": "https://github.com/nthh/data-publications/issues",
+      "title": "Issues",
+      "type": "text/html"
+    },
+    {
+      "rel": "about",
+      "href": "https://source.coop/nthh",
+      "title": "Hosting",
+      "type": "text/html"
+    },
+    {
+      "rel": "alternate",
+      "href": "https://browser.portolan-sdi.org/#/external/nthh.github.io/data-publications/free-flowing-rivers/collection.json",
+      "title": "Browser view",
+      "type": "text/html"
+    }
+  ],
+  "providers": [
+    {
+      "name": "Günther Grill",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://orcid.org/0000-0003-4860-3575"
+    },
+    {
+      "name": "Bernhard Lehner",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://orcid.org/0000-0003-3712-2581"
+    },
+    {
+      "description": "Local candidate package only; public hosting has not occurred.",
+      "name": "Folia",
+      "roles": [
+        "processor"
+      ],
+      "url": "https://folia.sh"
+    },
+    {
+      "name": "nthh",
+      "roles": [
+        "host"
+      ],
+      "url": "https://source.coop/nthh/free-flowing-rivers"
+    }
+  ],
+  "sci:citation": "Grill, G., Lehner, B., Thieme, M. et al. (2019). Mapping the world's free-flowing rivers. Nature 569, 215–221. https://doi.org/10.1038/s41586-019-1111-9. Source data: Grill, G.; Lehner, B. (2019), Mapping the world's free-flowing rivers: data set and technical documentation, figshare, version 1. https://doi.org/10.6084/m9.figshare.7688801.v1.",
+  "sci:doi": "10.6084/m9.figshare.7688801.v1",
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/scientific/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/version/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
+  ],
+  "stac_version": "1.1.0",
+  "table:columns": [
+    {
+      "asset": "ffr-reach-network-v1",
+      "description": "Esri-generated feature identifier; unique row identifier within this release.",
+      "name": "OBJECTID",
+      "type": "int64"
+    },
+    {
+      "asset": "ffr-reach-network-v1",
+      "description": "River reach identifier used to link to HydroATLAS.",
+      "name": "REACH_ID",
+      "type": "double"
+    },
+    {
+      "asset": "ffr-reach-network-v1",
+      "description": "Global object identifier used to identify a reach across free-flowing-river assessments and link dams to reaches.",
+      "name": "GOID",
+      "type": "int32"
+    },
+    {
+      "asset": "ffr-reach-network-v1",
+      "description": "Network object identifier; same purpose as GOID.",
+      "name": "NOID",
+      "type": "int32"
+    },
+    {
+      "asset": "ffr-reach-network-v1",
+      "description": "One or more upstream NOIDs separated by underscores; an empty value identifies a headwater reach.",
+      "name": "NUOID",
+      "type": "string"
+    },
+    {
+      "asset": "ffr-reach-network-v1",
+      "description": "Next downstream NOID; zero denotes a terminal reach.",
+      "name": "NDOID",
+      "type": "int32"
+    },
+    {
+      "asset": "ffr-reach-network-v1",
+      "description": "Continent identifier: 1 North America, 2 South America, 3 Europe, 4 Africa, 5 Asia, 6 Australia.",
+      "name": "CON_ID",
+      "type": "int16"
+    },
+    {
+      "asset": "ffr-reach-network-v1",
+      "description": "Continent name; boundaries are delineated from HydroBASINS.",
+      "name": "CONTINENT",
+      "type": "string"
+    },
+    {
+      "asset": "ffr-reach-network-v1",
+      "description": "Country name.",
+      "name": "COUNTRY",
+      "type": "string"
+    },
+    {
+      "asset": "ffr-reach-network-v1",
+      "description": "HydroSHEDS hydrological river basin identifier.",
+      "name": "BAS_ID",
+      "type": "int32"
+    },
+    {
+      "asset": "ffr-reach-network-v1",
+      "description": "Hydrological basin name when available.",
+      "name": "BAS_NAME",
+      "type": "string"
+    },
+    {
+      "asset": "ffr-reach-network-v1",
+      "description": "Length of the river reach.",
+      "name": "LENGTH_KM",
+      "type": "double",
+      "unit": "km"
+    },
+    {
+      "asset": "ffr-reach-network-v1",
+      "description": "Volume of the reach channel, calculated from width, length, and depth.",
+      "name": "VOLUME_TCM",
+      "type": "double",
+      "unit": "thousand cubic metres"
+    },
+    {
+      "asset": "ffr-reach-network-v1",
+      "description": "Upstream watershed area of the river reach.",
+      "name": "UPLAND_SKM",
+      "type": "double",
+      "unit": "km²"
+    },
+    {
+      "asset": "ffr-reach-network-v1",
+      "description": "Average long-term (1971–2000) naturalized discharge.",
+      "name": "DIS_AV_CMS",
+      "type": "double",
+      "unit": "m³/s"
+    },
+    {
+      "asset": "ffr-reach-network-v1",
+      "description": "River order calculated from long-term average discharge using logarithmic classes.",
+      "name": "RIV_ORD",
+      "type": "int32"
+    },
+    {
+      "asset": "ffr-reach-network-v1",
+      "description": "Erosion yield summed within the river reach catchment; not accumulated along the network.",
+      "name": "ERO_YLD_TON",
+      "type": "double",
+      "unit": "tonnes/year"
+    },
+    {
+      "asset": "ffr-reach-network-v1",
+      "description": "Presence (1) or absence (0) of one or more waterfalls along the reach.",
+      "name": "HYFALL",
+      "type": "int16"
+    },
+    {
+      "asset": "ffr-reach-network-v1",
+      "description": "Backbone river identifier for a contiguous source-to-terminus flow path.",
+      "name": "BB_ID",
+      "type": "int32"
+    },
+    {
+      "asset": "ffr-reach-network-v1",
+      "description": "Backbone river name.",
+      "name": "BB_NAME",
+      "type": "string"
+    },
+    {
+      "asset": "ffr-reach-network-v1",
+      "description": "Backbone river length, the sum of its reach lengths.",
+      "name": "BB_LEN_KM",
+      "type": "double",
+      "unit": "km"
+    },
+    {
+      "asset": "ffr-reach-network-v1",
+      "description": "Discharge order of the most downstream reach in the backbone river.",
+      "name": "BB_DIS_ORD",
+      "type": "int32"
+    },
+    {
+      "asset": "ffr-reach-network-v1",
+      "description": "Backbone river volume, the sum of its reach volumes.",
+      "name": "BB_VOL_TCM",
+      "type": "double",
+      "unit": "thousand cubic metres"
+    },
+    {
+      "asset": "ffr-reach-network-v1",
+      "description": "Indicates whether the backbone river is directly connected to the ocean (1) or not (0).",
+      "name": "BB_OCEAN",
+      "type": "int16"
+    },
+    {
+      "asset": "ffr-reach-network-v1",
+      "description": "Analysis filter: Grill et al. (2019) included reaches with value 1 in analysis results.",
+      "name": "INC",
+      "type": "int16"
+    },
+    {
+      "asset": "ffr-reach-network-v1",
+      "description": "Degree of fragmentation pressure index (0–100%).",
+      "name": "DOF",
+      "type": "double",
+      "unit": "%"
+    },
+    {
+      "asset": "ffr-reach-network-v1",
+      "description": "Degree of regulation pressure index (0–100%).",
+      "name": "DOR",
+      "type": "double",
+      "unit": "%"
+    },
+    {
+      "asset": "ffr-reach-network-v1",
+      "description": "Sediment trapping pressure index (0–100%).",
+      "name": "SED",
+      "type": "double",
+      "unit": "%"
+    },
+    {
+      "asset": "ffr-reach-network-v1",
+      "description": "Water consumption pressure index (0–100%).",
+      "name": "USE",
+      "type": "double",
+      "unit": "%"
+    },
+    {
+      "asset": "ffr-reach-network-v1",
+      "description": "Urbanization pressure index (0–100%).",
+      "name": "URB",
+      "type": "double",
+      "unit": "%"
+    },
+    {
+      "asset": "ffr-reach-network-v1",
+      "description": "Road construction pressure index (0–100%).",
+      "name": "RDD",
+      "type": "double",
+      "unit": "%"
+    },
+    {
+      "asset": "ffr-reach-network-v1",
+      "description": "Inundation (floodplain) extent in the river reach catchment (%).",
+      "name": "FLD",
+      "type": "double",
+      "unit": "%"
+    },
+    {
+      "asset": "ffr-reach-network-v1",
+      "description": "Connectivity Status Index (0–100%); 100% is full connectivity.",
+      "name": "CSI",
+      "type": "double",
+      "unit": "%"
+    },
+    {
+      "asset": "ffr-reach-network-v1",
+      "description": "Dominant pressure factor; documented values include DOF, DOR, SED, USE, RDD, and URB.",
+      "name": "CSI_D",
+      "type": "string"
+    },
+    {
+      "asset": "ffr-reach-network-v1",
+      "description": "Indicates whether CSI is below (0) or above (1) the 95% free-flowing threshold.",
+      "name": "CSI_FF",
+      "type": "int32"
+    },
+    {
+      "asset": "ffr-reach-network-v1",
+      "description": "Two-category free-flowing status: free-flowing (1) or non-free-flowing (3).",
+      "name": "CSI_FF1",
+      "type": "int32"
+    },
+    {
+      "asset": "ffr-reach-network-v1",
+      "description": "Three-category status: free-flowing (1), good connectivity (2), or impacted (3).",
+      "name": "CSI_FF2",
+      "type": "int32"
+    },
+    {
+      "asset": "ffr-reach-network-v1",
+      "description": "Identifier for contiguous river stretches.",
+      "name": "CSI_FFID",
+      "type": "int32"
+    },
+    {
+      "asset": "ffr-reach-network-v1",
+      "description": "Length value maintained by the ESRI File Geodatabase; see LENGTH_KM for reach length.",
+      "name": "Shape_Length",
+      "type": "double"
+    },
+    {
+      "asset": "ffr-reach-network-v1",
+      "description": "Source MultiLineString reach geometry, stored as WKB without coordinate transformation.",
+      "name": "Shape",
+      "type": "binary"
+    },
+    {
+      "asset": "ffr-reach-network-v1",
+      "description": "One-based ordinal of this feature in the producer's source layer stream, retained to make source order explicit.",
+      "name": "source_row",
+      "type": "int64",
+      "unit": "1"
+    },
+    {
+      "asset": "ffr-reach-network-v1",
+      "description": "Derived per-feature bounding box computed from the unchanged Shape WKB in the source CRS EPSG:4326. Child coordinates are longitude/latitude degrees; bounds are [xmin, ymin, xmax, ymax].",
+      "name": "bbox",
+      "type": "struct<xmin: double, ymin: double, xmax: double, ymax: double>",
+      "unit": "degrees"
+    }
+  ],
+  "title": "Mapping the world's free-flowing rivers — global river reach connectivity assessment",
+  "type": "Collection",
+  "updated": "2026-10-31T00:00:00Z",
+  "version": "1.0.1"
+}

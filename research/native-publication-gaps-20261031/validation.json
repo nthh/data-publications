@@ -1,0 +1,84 @@
+{
+  "checked_at": "2026-11-01T02:01:23.913995+00:00",
+  "checks": {
+    "offline_snapshot_replay": "passed; byte-identical output against declared input hash, length and 747 records",
+    "same_size_modified_snapshot_refused": {
+      "passed": true,
+      "exit_code": 1,
+      "diagnostic": "Snapshot bytes/hash differ from the declared input; create a new capture instead."
+    },
+    "json_parse": "passed",
+    "python_syntax": "passed for both standalone research scripts",
+    "shortlist_ranks": "passed; ten unique ranks 1 through 10",
+    "bounded_tiff_probe": "completed; 64 KiB, HTTP 206, first IFD striped; not a full COG or archive validation",
+    "catalog_check": {
+      "command": "scripts/catalog.py --check",
+      "exit_code": 0,
+      "records_checked": 450
+    },
+    "publication_catalog_check": {
+      "command": "scripts/publication_catalog.py check",
+      "exit_code": 0,
+      "published_collections": 0
+    },
+    "git_diff_check": "passed before final evidence write; repeated before commit"
+  },
+  "historical_failures": [
+    {
+      "check": "initial snapshot scan",
+      "result": "KeyError: id",
+      "cause": "175 of 747 input records omit STAC id; account_id/product_id identify them",
+      "resolution": "Use the producer account/product identity when STAC id is absent; search all records."
+    },
+    {
+      "check": "initial full SoilGrids VRT parse",
+      "result": "VRT exceeds 1 MB bound",
+      "resolution": "Read only the bounded VRT prefix to locate a tile; inspect one bounded TIFF header."
+    }
+  ],
+  "access_limits": [
+    {
+      "url": "https://data.source.coop/source/metadata-catalog/catalog.jsonl",
+      "result": "HTTP 403 on live refresh; used pinned 2026-10-30 snapshot explicitly"
+    },
+    {
+      "url": "https://cpdataeuwest.blob.core.windows.net/cpdata/terraclimate.zarr/.zmetadata",
+      "result": "HTTP 409 on unsigned request; collection metadata checked, arrays not read"
+    },
+    {
+      "url": "https://api.figshare.com/v2/articles/25988293",
+      "result": "HTTP 403; GDW remains conditional, producer page reviewed"
+    }
+  ],
+  "scope": "Research evidence and two standalone inspection scripts only. No build inputs/runtime paths of existing dataset workflows changed; no bulk tests or conversions rerun.",
+  "artifacts": {
+    "criteria.json": {
+      "bytes": 2655,
+      "sha256": "0062bfaff64da2f1f52f4b8f704fbc2a1931eefb426154d4825a243716cd2b35"
+    },
+    "source-coop-snapshot-matches.json": {
+      "bytes": 4263,
+      "sha256": "ef6931045b7662d4ef96ef91e08ca23050bb0ef624717bef12c0ae148b4222cf"
+    },
+    "probe_tiff_header.py": {
+      "bytes": 2922,
+      "sha256": "983ebde6fbd17826c9da60ac4088473b8cfb804dfa4fd2c63435ea0bb5ca1b04"
+    },
+    "README.md": {
+      "bytes": 12329,
+      "sha256": "d5f2e3031ba2c0c2112bb083d74a055464fc3ec5fc259c67fdb999b214482378"
+    },
+    "check_source_snapshot.py": {
+      "bytes": 3550,
+      "sha256": "58f81408a3858d34659f76d464a4165bea41a6583efaaef5e93e56317ee391c6"
+    },
+    "soilgrids-quantile-header.json": {
+      "bytes": 802,
+      "sha256": "9e5312c0b434f9b7b80b61ae07b51abd580284e18d7dbaee0bd820d7bcf5f243"
+    },
+    "primary-metadata.json": {
+      "bytes": 4354,
+      "sha256": "dcaee6842a42e00df8f1059685f9205227e0246eff9ad58d72d8f984106e87ef"
+    }
+  }
+}

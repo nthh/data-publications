@@ -1,0 +1,204 @@
+{
+  "status": "local_prepared_not_published",
+  "dataset": "river-plastic-inputs",
+  "source": {
+    "id": "river-plastic-inputs",
+    "title": "Global river plastic inputs — Lebreton et al. (2017)",
+    "source_doi": "10.6084/m9.figshare.4725541.v6",
+    "paper_doi": "10.1038/ncomms15611",
+    "source_url": "https://ndownloader.figshare.com/files/7714864",
+    "source_name": "PlasticRiverInputs.zip",
+    "source_size": 5764810,
+    "source_md5": "4b3167c75df6b1227839e6b1674d3cda",
+    "source_sha256": "c24a1ccdfbdc44c59954ab9796a522a3271b7c91ca31898526a93bccaeabd4f4",
+    "source_version": "figshare-v6",
+    "expected_rows": 40760,
+    "model_year": 2010,
+    "license": "CC-BY-4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "metadata_timestamp": "2026-10-30T00:30:27Z",
+    "tippecanoe_version": "tippecanoe v2.79.0",
+    "portolan_schema": "https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json",
+    "row_group_size": 4096,
+    "pmtiles_maxzoom": 8,
+    "pmtiles_fields": [
+      "source_row",
+      "i_low",
+      "i_mid",
+      "i_high",
+      "mpw",
+      "area"
+    ],
+    "expected_missing_estimate_rows": [
+      22271,
+      36248,
+      36262,
+      36276
+    ]
+  },
+  "conversion_git_commit": "21f14552cd80dc4e93d28c889faae841fc182c48",
+  "build_input_sha256": {
+    "build.py": "83452106125e3ad54deebdc50c8c8453ca5de86ce5dbb54610eacb1665b3bd2b",
+    "catalog.py": "2ee91e41e380899a90986e2351426d5050cead64f125e8e86409f49360f709ec",
+    "validate.py": "1e529b180ec863b95ace2ad7b179bca3b799f2d86052fe0a46cc62b8e5e8598a",
+    "serve.py": "e55a48f8702a5b093f48a16d67c01039ca188aba0fdcb1c8ee5d365a010ed015",
+    "source.json": "d8bef0bf8b6f873331b8fdcd98c2c41d6cb3bb0c56071cfbb659b6710bde353c",
+    "pyproject.toml": "a232b620aa7f441281c983dbf34c3255528a342e8276d87848409642647c9323",
+    "uv.lock": "8ad5895cdb74eb45ed203aa5cb34dee4ddcae1fa4a76b4ee66f7e8ba3da45d70",
+    "package.json": "3b68e75eb52b61f7bce0416eb346e6ea4a4854d0341dfa369a387a4a8f66f1d5",
+    "package-lock.json": "83092848670ab1b7c381d2dab9d8f0ccfb0a71924af5fa6629f23b90c229e83a"
+  },
+  "environment": {
+    "python": "3.12.12",
+    "packages": {
+      "pyarrow": "23.0.1",
+      "geopandas": "1.1.3",
+      "shapely": "2.1.2",
+      "numpy": "2.5.4",
+      "pyproj": "3.8.0",
+      "matplotlib": "3.10.8",
+      "pmtiles": "3.8.1",
+      "mapbox-vector-tile": "2.2.0",
+      "rashid": "0.1.8"
+    },
+    "tippecanoe_version": "tippecanoe v2.79.0",
+    "tippecanoe_sha256": "c504719334e5335d60c66a01491707bdbfb773ebbfe3efc7c1c8239eb18d58d1",
+    "tippecanoe_max_threads": 2
+  },
+  "records": 40760,
+  "source_quality": {
+    "missing_estimate_source_rows": [
+      22271,
+      36248,
+      36262,
+      36276
+    ],
+    "null_counts": {
+      "i_mid": 4,
+      "i_low": 4,
+      "i_high": 4,
+      "i_mid_jan": 4,
+      "i_low_jan": 4,
+      "i_high_jan": 4,
+      "i_mid_feb": 4,
+      "i_low_feb": 4,
+      "i_high_feb": 4,
+      "i_mid_mar": 4,
+      "i_low_mar": 4,
+      "i_high_mar": 4,
+      "i_mid_apr": 4,
+      "i_low_apr": 4,
+      "i_high_apr": 4,
+      "i_mid_may": 4,
+      "i_low_may": 4,
+      "i_high_may": 4,
+      "i_mid_jun": 4,
+      "i_low_jun": 4,
+      "i_high_jun": 4,
+      "i_mid_jul": 4,
+      "i_low_jul": 4,
+      "i_high_jul": 4,
+      "i_mid_aug": 4,
+      "i_low_aug": 4,
+      "i_high_aug": 4,
+      "i_mid_sep": 4,
+      "i_low_sep": 4,
+      "i_high_sep": 4,
+      "i_mid_oct": 4,
+      "i_low_oct": 4,
+      "i_high_oct": 4,
+      "i_mid_nov": 4,
+      "i_low_nov": 4,
+      "i_high_nov": 4,
+      "i_mid_dec": 4,
+      "i_low_dec": 4,
+      "i_high_dec": 4,
+      "runoff_jan": 4,
+      "runoff_feb": 4,
+      "runoff_mar": 4,
+      "runoff_apr": 4,
+      "runoff_may": 4,
+      "runoff_jun": 4,
+      "runoff_jul": 4,
+      "runoff_aug": 4,
+      "runoff_sep": 4,
+      "runoff_oct": 4,
+      "runoff_nov": 4,
+      "runoff_dec": 4
+    },
+    "source_null_encoding": "Numeric DBF fields filled with asterisks are preserved as null, not zero.",
+    "independent_check": "GDAL/pyogrio reads the same four rows as null; catchment area, waste production and geometry remain populated.",
+    "encoding_reference": "https://github.com/OSGeo/shapelib/blob/master/dbfopen.c"
+  },
+  "original_numeric_fields": 53,
+  "bbox": [
+    -137.9375,
+    -55.62083333,
+    179.8791667,
+    60.4125
+  ],
+  "annual_input_totals_tonnes": {
+    "i_low": "1149724.175239",
+    "i_mid": "1412158.416612",
+    "i_high": "2407866.149084"
+  },
+  "assets": {
+    "AGENTS.md": {
+      "size_bytes": 1320,
+      "sha256": "2e07b95212563ef30a2b96deeb007cbd84c7eac26bfa8ec2a8f3d6c5db4c14b2"
+    },
+    "LICENSE.txt": {
+      "size_bytes": 517,
+      "sha256": "7cad97bff02dbe7dc7f3449d29bf320dc6b5a4d525791f0415167fdb4327e38b"
+    },
+    "README.md": {
+      "size_bytes": 1500,
+      "sha256": "7b5db04ba9d9e7a2a65438b17107e1832cb7ad3c777e2f2dc20f2fe1b813974c"
+    },
+    "catalog.json": {
+      "size_bytes": 1464,
+      "sha256": "00ef7a3ffc6c1eb9f58799d87fdcb1743e45d12f64318f327eb7f1d03565da4f"
+    },
+    "river-plastic-inputs/AGENTS.md": {
+      "size_bytes": 1320,
+      "sha256": "2e07b95212563ef30a2b96deeb007cbd84c7eac26bfa8ec2a8f3d6c5db4c14b2"
+    },
+    "river-plastic-inputs/README.md": {
+      "size_bytes": 8659,
+      "sha256": "4d11c4b18af9590c9d59a4d25b0b953eab8142ff21ba6e5565e08b513ea3c52c"
+    },
+    "river-plastic-inputs/collection.json": {
+      "size_bytes": 13899,
+      "sha256": "a9e6324ac9a7e96bb995c7d6ddf134fe8b4cacf6256e9a4652a093603616ad1a"
+    },
+    "river-plastic-inputs/quality.json": {
+      "size_bytes": 1466,
+      "sha256": "fcd6d41c57f8b5cd8bf9a89860c727ff626a42d04a5030479c805a59ebfc70c2"
+    },
+    "river-plastic-inputs/river-plastic-inputs.parquet": {
+      "size_bytes": 6360991,
+      "sha256": "de35bd69b144565af1fcd33f915e8521a1af502e3ac50235560990f6c441e8c9"
+    },
+    "river-plastic-inputs/river-plastic-inputs.pmtiles": {
+      "size_bytes": 3705340,
+      "sha256": "ca412601ea905a43bf55d5251f27e2c2d9b1403b2eb93adea1525c4fa7bc05fe"
+    },
+    "river-plastic-inputs/schema.json": {
+      "size_bytes": 9542,
+      "sha256": "7858a6c3b596e9d9b322f5aa9896209e7cc2c0750de267293cef4f6befb1f828"
+    },
+    "river-plastic-inputs/styles/annual-input.json": {
+      "size_bytes": 2118,
+      "sha256": "ae46644a56751e87743cb5f3e6fdb4fd32074919678158bcb858f95722431c22"
+    },
+    "river-plastic-inputs/thumbnail.png": {
+      "size_bytes": 198924,
+      "sha256": "ff0e30b5c3768605f41b75c0bce515d82eeffa9d2422a4d408b8efbad46034c1"
+    }
+  },
+  "limitations": [
+    "Local preparation only; no remote publication or registry acceptance.",
+    "Decimal values and coordinates are preserved from the source; this does not establish scientific accuracy of the model.",
+    "PMTiles quantizes positions, stores display attributes as doubles, and thins lower zooms. Use GeoParquet for analysis."
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/terraclimate",
+  "retrieved_at": "2026-10-31T03:05:47.273156+00:00",
+  "method": "GET",
+  "limit_bytes": 1048576,
+  "status": 200,
+  "response_bytes": 9850,
+  "response_sha256": "12d9c19c69ae3881a114f11c1aeb4a4b3d285959b792bdde3931898ad1c6fb19",
+  "projection": {
+    "id": "terraclimate",
+    "title": "TerraClimate",
+    "description": "[TerraClimate](http://www.climatologylab.org/terraclimate.html) is a dataset of monthly climate and climatic water balance for global terrestrial surfaces from 1958 to the present. These data provide important inputs for ecological and hydrological studies at global scales that require high spatial resolution and time-varying data. All data have monthly temporal resolution and a ~4-km (1/24th degree) spatial resolution. This dataset is provided in [Zarr](https://zarr.readthedocs.io/) format.\n",
+    "license": "CC0-1.0",
+    "extent": {
+      "spatial": {
+        "bbox": [
+          [
+            -180,
+            -90,
+            180,
+            90
+          ]
+        ]
+      },
+      "temporal": {
+        "interval": [
+          [
+            "1958-01-01T00:00:00Z",
+            "2021-12-01T00:00:00Z"
+          ]
+        ]
+      }
+    },
+    "cube:dimensions": {
+      "lat": {
+        "axis": "y",
+        "type": "spatial",
+        "extent": [
+          -89.97916666666664,
+          89.97916666666667
+        ],
+        "description": "latitude",
+        "reference_system": 4326
+      },
+      "lon": {
+        "axis": "x",
+        "type": "spatial",
+        "extent": [
+          -179.97916666666666,
+          179.97916666666666
+        ],
+        "description": "longitude",
+        "reference_system": 4326
+      },
+      "time": {
+        "type": "temporal",
+        "extent": [
+          "1958-01-01T00:00:00Z",
+          "2021-12-01T00:00:00Z"
+        ],
+        "description": "time"
+      }
+    },
+    "assets": {
+      "thumbnail": {
+        "href": "https://ai4edatasetspublicassets.blob.core.windows.net/assets/pc_thumbnails/terraclimate.png",
+        "role": [
+          "thumbnail"
+        ],
+        "type": "image/png",
+        "title": "TerraClimate thumbnail"
+      },
+      "zarr-abfs": {
+        "href": "az://cpdata/terraclimate.zarr",
+        "type": "application/vnd+zarr",
+        "roles": [
+          "data",
+          "zarr",
+          "abfs"
+        ],
+        "title": "TerraClimate Azure Blob File System Zarr root",
+        "description": "Azure Blob File System URI of the TerraClimate Zarr Group on Azure Blob Storage for use with adlfs.",
+        "xarray:open_kwargs": {
+          "chunks": {},
+          "engine": "zarr",
+          "consolidated": true,
+          "storage_options": {
+            "account_name": "cpdataeuwest"
+          }
+        }
+      },
+      "zarr-https": {
+        "href": "https://cpdataeuwest.blob.core.windows.net/cpdata/terraclimate.zarr",
+        "type": "application/vnd+zarr",
+        "roles": [
+          "data",
+          "zarr",
+          "https"
+        ],
+        "title": "TerraClimate HTTPS Zarr root",
+        "description": "HTTPS URI of the TerraClimate Zarr Group on Azure Blob Storage.",
+        "xarray:open_kwargs": {
+          "chunks": {},
+          "engine": "zarr",
+          "consolidated": true
+        }
+      },
+      "geoparquet-items": {
+        "href": "abfs://items/terraclimate.parquet",
+        "type": "application/x-parquet",
+        "roles": [
+          "stac-items"
+        ],
+        "title": "GeoParquet STAC items",
+        "description": "Snapshot of the collection's STAC items exported to GeoParquet format.",
+        "table:storage_options": {
+          "account_name": "pcstacitems"
+        }
+      }
+    },
+    "providers": [
+      {
+        "url": "https://planetarycomputer.microsoft.com",
+        "name": "Microsoft",
+        "roles": [
+          "host",
+          "processor"
+        ]
+      },
+      {
+        "url": "http://www.climatologylab.org/terraclimate.html",
+        "name": "Climatology Lab",
+        "roles": [
+          "producer"
+        ]
+      },
+      {
+        "url": "https://www.nature.com/articles/sdata2017191",
+        "name": "Abatzoglou, J.T., S.Z. Dobrowski, S.A. Parks, K.C. Hegewisch",
+        "roles": [
+          "producer"
+        ]
+      }
+    ]
+  }
+}

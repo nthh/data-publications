@@ -1,0 +1,886 @@
+{
+  "request_url": "https://api.openalex.org/works?filter=doi%3A10.5067%2Fterra%2Fmodis%2Fl3m%2Fflh%2F2018%7C10.5067%2Fterra%2Fmodis%2Fl3m%2Fpoc%2F2018%7C10.5067%2Fterra%2Fmodis%2Fl3m%2Frrs%2F2018%7C10.5067%2Fviirs%2Faerdb_d3_viirs_noaa20.002%7C10.5067%2Fviirs%2Faerdb_d3_viirs_snpp.002%7C10.5067%2Fviirs%2Fvnp09ga.001%7C10.5067%2Fviirs%2Fvnp09ga.002%7C10.5067%2Fviirs%2Fvnp09h1.001%7C10.5067%2Fviirs%2Fvnp09h1.002%7C10.5067%2Fviirs%2Fvnp13a1.001%7C10.5067%2Fviirs%2Fvnp13a1.002%7C10.5067%2Fviirs%2Fvnp14a1.001%7C10.5067%2Fviirs%2Fvnp14a1.002%7C10.5067%2Fviirs%2Fvnp15a2h.001%7C10.5067%2Fviirs%2Fvnp15a2h.002%7C10.5067%2Fviirs%2Fvnp21a1d.001%7C10.5067%2Fviirs%2Fvnp21a1d.002%7C10.5067%2Fviirs%2Fvnp21a1n.001%7C10.5067%2Fviirs%2Fvnp21a1n.002%7C10.5067%2Fviirs%2Fvnp22q2.001%7C10.5067%2Fviirs%2Fvnp22q2.002%7C10.5067%2Fviirs%2Fvnp43ia1.001%7C10.5067%2Fviirs%2Fvnp43ia2.001%7C10.5067%2Fviirs%2Fvnp43ia3.002%7C10.5067%2Fviirs%2Fvnp43ia4.002%7C10.5067%2Fviirs%2Fvnp43ma3.002%7C10.5067%2Fviirs%2Fvnp46a1.001%7C10.5067%2Fviirs%2Fvnp46a2.001%7C10.5067%2Fviirs%2Fvnp46a2.002%7C10.5067%2Fviirs%2Fvnp64a1.001%7C10.5067%2Fviirs%2Fvnp64a1.002%7C10.5067%2Fvm5dz20myf5c%7C10.5067%2Fzfaemqgsr4xd%7C10.5067%2Fzx7yx2y2lheb%7C10.5069%2Fg95b00pw%7C10.5069%2Fg9dr2spg%7C10.5069%2Fg9jh3jd6%7C10.5194%2Famt-16-5771-2023%7C10.5194%2Famt-17-5429-2024%7C10.5194%2Fegusphere-2023-1962&corpus=all&per_page=100&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date%2Ccited_by_count%2Ccounts_by_year",
+  "retrieved_at": "2026-10-30T22:27:42.638577+00:00",
+  "response_path": "responses/b142a83336d63914ca5d90658458c8bf9a654447817a90da91e245bf62cb938f.json",
+  "status": 200,
+  "response_sha256": "c310390060084dd12fcc9f4a93f8edd3fe1380952f1fb52065726a73398c0d8b",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 39,
+      "db_response_time_ms": 18,
+      "page": 1,
+      "per_page": 100,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where DOI is (\n    10.5067/terra/modis/l3m/flh/2018 or 10.5067/terra/modis/l3m/poc/2018\n    or 10.5067/terra/modis/l3m/rrs/2018\n    or 10.5067/viirs/aerdb_d3_viirs_noaa20.002\n    or 10.5067/viirs/aerdb_d3_viirs_snpp.002 or 10.5067/viirs/vnp09ga.001\n    or 10.5067/viirs/vnp09ga.002 or 10.5067/viirs/vnp09h1.001\n    or 10.5067/viirs/vnp09h1.002 or 10.5067/viirs/vnp13a1.001\n    or 10.5067/viirs/vnp13a1.002 or 10.5067/viirs/vnp14a1.001\n    or 10.5067/viirs/vnp14a1.002 or 10.5067/viirs/vnp15a2h.001\n    or 10.5067/viirs/vnp15a2h.002 or 10.5067/viirs/vnp21a1d.001\n    or 10.5067/viirs/vnp21a1d.002 or 10.5067/viirs/vnp21a1n.001\n    or 10.5067/viirs/vnp21a1n.002 or 10.5067/viirs/vnp22q2.001\n    or 10.5067/viirs/vnp22q2.002 or 10.5067/viirs/vnp43ia1.001\n    or 10.5067/viirs/vnp43ia2.001 or 10.5067/viirs/vnp43ia3.002\n    or 10.5067/viirs/vnp43ia4.002 or 10.5067/viirs/vnp43ma3.002\n    or 10.5067/viirs/vnp46a1.001 or 10.5067/viirs/vnp46a2.001\n    or 10.5067/viirs/vnp46a2.002 or 10.5067/viirs/vnp64a1.001\n    or 10.5067/viirs/vnp64a1.002 or 10.5067/vm5dz20myf5c or 10.5067/zfaemqgsr4xd\n    or 10.5067/zx7yx2y2lheb or 10.5069/g95b00pw or 10.5069/g9dr2spg\n    or 10.5069/g9jh3jd6 or 10.5194/amt-16-5771-2023 or 10.5194/amt-17-5429-2024\n    or 10.5194/egusphere-2023-1962\n  )",
+        "x_new_oql": "get works (all corpora) where DOI is (\n    10.5067/terra/modis/l3m/flh/2018 or 10.5067/terra/modis/l3m/poc/2018\n    or 10.5067/terra/modis/l3m/rrs/2018\n    or 10.5067/viirs/aerdb_d3_viirs_noaa20.002\n    or 10.5067/viirs/aerdb_d3_viirs_snpp.002 or 10.5067/viirs/vnp09ga.001\n    or 10.5067/viirs/vnp09ga.002 or 10.5067/viirs/vnp09h1.001\n    or 10.5067/viirs/vnp09h1.002 or 10.5067/viirs/vnp13a1.001\n    or 10.5067/viirs/vnp13a1.002 or 10.5067/viirs/vnp14a1.001\n    or 10.5067/viirs/vnp14a1.002 or 10.5067/viirs/vnp15a2h.001\n    or 10.5067/viirs/vnp15a2h.002 or 10.5067/viirs/vnp21a1d.001\n    or 10.5067/viirs/vnp21a1d.002 or 10.5067/viirs/vnp21a1n.001\n    or 10.5067/viirs/vnp21a1n.002 or 10.5067/viirs/vnp22q2.001\n    or 10.5067/viirs/vnp22q2.002 or 10.5067/viirs/vnp43ia1.001\n    or 10.5067/viirs/vnp43ia2.001 or 10.5067/viirs/vnp43ia3.002\n    or 10.5067/viirs/vnp43ia4.002 or 10.5067/viirs/vnp43ma3.002\n    or 10.5067/viirs/vnp46a1.001 or 10.5067/viirs/vnp46a2.001\n    or 10.5067/viirs/vnp46a2.002 or 10.5067/viirs/vnp64a1.001\n    or 10.5067/viirs/vnp64a1.002 or 10.5067/vm5dz20myf5c or 10.5067/zfaemqgsr4xd\n    or 10.5067/zx7yx2y2lheb or 10.5069/g95b00pw or 10.5069/g9dr2spg\n    or 10.5069/g9jh3jd6 or 10.5194/amt-16-5771-2023 or 10.5194/amt-17-5429-2024\n    or 10.5194/egusphere-2023-1962\n  )",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "join": "or",
+              "filters": [
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/terra/modis/l3m/flh/2018"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/terra/modis/l3m/poc/2018"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/terra/modis/l3m/rrs/2018"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/viirs/aerdb_d3_viirs_noaa20.002"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/viirs/aerdb_d3_viirs_snpp.002"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/viirs/vnp09ga.001"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/viirs/vnp09ga.002"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/viirs/vnp09h1.001"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/viirs/vnp09h1.002"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/viirs/vnp13a1.001"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/viirs/vnp13a1.002"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/viirs/vnp14a1.001"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/viirs/vnp14a1.002"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/viirs/vnp15a2h.001"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/viirs/vnp15a2h.002"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/viirs/vnp21a1d.001"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/viirs/vnp21a1d.002"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/viirs/vnp21a1n.001"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/viirs/vnp21a1n.002"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/viirs/vnp22q2.001"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/viirs/vnp22q2.002"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/viirs/vnp43ia1.001"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/viirs/vnp43ia2.001"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/viirs/vnp43ia3.002"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/viirs/vnp43ia4.002"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/viirs/vnp43ma3.002"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/viirs/vnp46a1.001"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/viirs/vnp46a2.001"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/viirs/vnp46a2.002"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/viirs/vnp64a1.001"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/viirs/vnp64a1.002"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/vm5dz20myf5c"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/zfaemqgsr4xd"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/zx7yx2y2lheb"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5069/g95b00pw"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5069/g9dr2spg"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5069/g9jh3jd6"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5194/amt-16-5771-2023"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5194/amt-17-5429-2024"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5194/egusphere-2023-1962"
+                }
+              ]
+            }
+          ]
+        },
+        "url": "/works?filter=doi:10.5067%2Fterra%2Fmodis%2Fl3m%2Fflh%2F2018|10.5067%2Fterra%2Fmodis%2Fl3m%2Fpoc%2F2018|10.5067%2Fterra%2Fmodis%2Fl3m%2Frrs%2F2018|10.5067%2Fviirs%2Faerdb_d3_viirs_noaa20.002|10.5067%2Fviirs%2Faerdb_d3_viirs_snpp.002|10.5067%2Fviirs%2Fvnp09ga.001|10.5067%2Fviirs%2Fvnp09ga.002|10.5067%2Fviirs%2Fvnp09h1.001|10.5067%2Fviirs%2Fvnp09h1.002|10.5067%2Fviirs%2Fvnp13a1.001|10.5067%2Fviirs%2Fvnp13a1.002|10.5067%2Fviirs%2Fvnp14a1.001|10.5067%2Fviirs%2Fvnp14a1.002|10.5067%2Fviirs%2Fvnp15a2h.001|10.5067%2Fviirs%2Fvnp15a2h.002|10.5067%2Fviirs%2Fvnp21a1d.001|10.5067%2Fviirs%2Fvnp21a1d.002|10.5067%2Fviirs%2Fvnp21a1n.001|10.5067%2Fviirs%2Fvnp21a1n.002|10.5067%2Fviirs%2Fvnp22q2.001|10.5067%2Fviirs%2Fvnp22q2.002|10.5067%2Fviirs%2Fvnp43ia1.001|10.5067%2Fviirs%2Fvnp43ia2.001|10.5067%2Fviirs%2Fvnp43ia3.002|10.5067%2Fviirs%2Fvnp43ia4.002|10.5067%2Fviirs%2Fvnp43ma3.002|10.5067%2Fviirs%2Fvnp46a1.001|10.5067%2Fviirs%2Fvnp46a2.001|10.5067%2Fviirs%2Fvnp46a2.002|10.5067%2Fviirs%2Fvnp64a1.001|10.5067%2Fviirs%2Fvnp64a1.002|10.5067%2Fvm5dz20myf5c|10.5067%2Fzfaemqgsr4xd|10.5067%2Fzx7yx2y2lheb|10.5069%2Fg95b00pw|10.5069%2Fg9dr2spg|10.5069%2Fg9jh3jd6|10.5194%2Famt-16-5771-2023|10.5194%2Famt-17-5429-2024|10.5194%2Fegusphere-2023-1962&corpus=all&per_page=100",
+        "order": "most cited (age-adjusted) first",
+        "order_default": true
+      },
+      "cost_usd": 0.0001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W4389261605",
+        "doi": "https://doi.org/10.5194/amt-16-5771-2023",
+        "title": "Methane point source quantification using MethaneAIR: a new airborne imaging spectrometer",
+        "type": "article",
+        "publication_year": 2023,
+        "publication_date": "2023-12-01",
+        "cited_by_count": 45,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 15
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 15
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 14
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4402817771",
+        "doi": "https://doi.org/10.5194/amt-17-5429-2024",
+        "title": "Methane retrieval from MethaneAIR using the CO 2 proxy approach: a demonstration for the upcoming MethaneSAT mission",
+        "type": "article",
+        "publication_year": 2024,
+        "publication_date": "2024-09-16",
+        "cited_by_count": 42,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 17
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 22
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 3
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6910909827",
+        "doi": "https://doi.org/10.5067/viirs/vnp15a2h.001",
+        "title": "VIIRS/NPP Leaf Area Index/FPAR 8-Day L4 Global 500m SIN Grid V001",
+        "type": "dataset",
+        "publication_year": 2018,
+        "publication_date": "2018-01-01",
+        "cited_by_count": 11,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 3
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6929465847",
+        "doi": "https://doi.org/10.5067/viirs/vnp13a1.001",
+        "title": "VIIRS/NPP Vegetation Indices 16-Day L3 Global 500m SIN Grid V001",
+        "type": "dataset",
+        "publication_year": 2018,
+        "publication_date": "2018-01-01",
+        "cited_by_count": 10,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 3
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6929929801",
+        "doi": "https://doi.org/10.5067/viirs/vnp22q2.001",
+        "title": "VIIRS/NPP Land Cover Dynamics Yearly L3 Global 500m SIN Grid V001",
+        "type": "dataset",
+        "publication_year": 2020,
+        "publication_date": "2020-01-01",
+        "cited_by_count": 10,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6967093684",
+        "doi": "https://doi.org/10.5067/vm5dz20myf5c",
+        "title": "MEaSUREs Greenland Ice Velocity: Selected Glacier Site Velocity Maps from Optical Images, Version 2",
+        "type": "dataset",
+        "publication_year": 2017,
+        "publication_date": "2017-01-01",
+        "cited_by_count": 10,
+        "counts_by_year": [
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 3
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6911103940",
+        "doi": "https://doi.org/10.5067/zx7yx2y2lheb",
+        "title": "SMAP L3 Radiometer Global Daily 36 km EASE-Grid Soil Moisture, Version 5",
+        "type": "dataset",
+        "publication_year": 2018,
+        "publication_date": "2018-01-01",
+        "cited_by_count": 9,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6892258643",
+        "doi": "https://doi.org/10.5067/zfaemqgsr4xd",
+        "title": "MODIS/Aqua Snow Cover Daily L3 Global 500m SIN Grid, Version 5",
+        "type": "dataset",
+        "publication_year": 2006,
+        "publication_date": "2006-01-01",
+        "cited_by_count": 6,
+        "counts_by_year": [
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6892261546",
+        "doi": "https://doi.org/10.5067/viirs/vnp15a2h.002",
+        "title": "VIIRS/NPP Leaf Area Index/FPAR 8-Day L4 Global 500m SIN Grid V002",
+        "type": "dataset",
+        "publication_year": 2023,
+        "publication_date": "2023-01-01",
+        "cited_by_count": 5,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6911223978",
+        "doi": "https://doi.org/10.5067/viirs/vnp21a1d.001",
+        "title": "VIIRS/NPP Land Surface Temperature and Emissivity Daily L3 Global 1km SIN Grid Day V001",
+        "type": "dataset",
+        "publication_year": 2018,
+        "publication_date": "2018-01-01",
+        "cited_by_count": 5,
+        "counts_by_year": [
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6892125854",
+        "doi": "https://doi.org/10.5067/terra/modis/l3m/poc/2018",
+        "title": "MODIS-TERRA Level 3 Mapped Particulate Organic Carbon Data Version R2018.0",
+        "type": "dataset",
+        "publication_year": 2018,
+        "publication_date": "2018-01-01",
+        "cited_by_count": 3,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6892266089",
+        "doi": "https://doi.org/10.5067/viirs/vnp64a1.002",
+        "title": "VIIRS/NPP Burned Area Monthly L4 Global 500m SIN Grid V002",
+        "type": "dataset",
+        "publication_year": 2024,
+        "publication_date": "2024-01-01",
+        "cited_by_count": 3,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6910856578",
+        "doi": "https://doi.org/10.5067/viirs/vnp09h1.002",
+        "title": "VIIRS/NPP Surface Reflectance 8-Day L3 Global 500m SIN Grid V002",
+        "type": "dataset",
+        "publication_year": 2023,
+        "publication_date": "2023-01-01",
+        "cited_by_count": 3,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6929846965",
+        "doi": "https://doi.org/10.5067/viirs/vnp14a1.001",
+        "title": "VIIRS/NPP Thermal Anomalies/Fire Daily L3 Global 1km SIN Grid V001",
+        "type": "dataset",
+        "publication_year": 2018,
+        "publication_date": "2018-01-01",
+        "cited_by_count": 3,
+        "counts_by_year": [
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6930030215",
+        "doi": "https://doi.org/10.5067/viirs/vnp09ga.002",
+        "title": "VIIRS/NPP Surface Reflectance Daily L2G Global 1km and 500m SIN Grid V002",
+        "type": "dataset",
+        "publication_year": 2023,
+        "publication_date": "2023-01-01",
+        "cited_by_count": 3,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6911131090",
+        "doi": "https://doi.org/10.5067/viirs/vnp21a1n.001",
+        "title": "VIIRS/NPP Land Surface Temperature and Emissivity Daily L3 Global 1km SIN Grid Night V001",
+        "type": "dataset",
+        "publication_year": 2018,
+        "publication_date": "2018-01-01",
+        "cited_by_count": 2,
+        "counts_by_year": [
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6948465849",
+        "doi": "https://doi.org/10.5067/viirs/aerdb_d3_viirs_noaa20.002",
+        "title": "VIIRS/NOAA20 Deep Blue Level 3 daily aerosol data, 1 degree x1 degree grid",
+        "type": "dataset",
+        "publication_year": 2023,
+        "publication_date": "2023-01-01",
+        "cited_by_count": 2,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6948680997",
+        "doi": "https://doi.org/10.5067/viirs/vnp13a1.002",
+        "title": "VIIRS/NPP Vegetation Indices 16-Day L3 Global 500m SIN Grid V002",
+        "type": "dataset",
+        "publication_year": 2023,
+        "publication_date": "2023-01-01",
+        "cited_by_count": 2,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6967447598",
+        "doi": "https://doi.org/10.5067/viirs/vnp46a2.002",
+        "title": "VIIRS/NPP Gap-Filled Lunar BRDF-Adjusted Nighttime Lights Daily L3 Global 500m Linear Lat Lon Grid",
+        "type": "dataset",
+        "publication_year": 2025,
+        "publication_date": "2025-01-01",
+        "cited_by_count": 2,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6892277932",
+        "doi": "https://doi.org/10.5067/viirs/vnp14a1.002",
+        "title": "VIIRS/NPP Thermal Anomalies and Fire Daily L3 Global 1km SIN Grid V002",
+        "type": "dataset",
+        "publication_year": 2023,
+        "publication_date": "2023-01-01",
+        "cited_by_count": 1,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6892294690",
+        "doi": "https://doi.org/10.5069/g9jh3jd6",
+        "title": "Preliminary Digital Elevation Models for Eaton Fire, CA 2025",
+        "type": "other",
+        "publication_year": 2025,
+        "publication_date": "2025-01-01",
+        "cited_by_count": 1,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6929739599",
+        "doi": "https://doi.org/10.5067/viirs/aerdb_d3_viirs_snpp.002",
+        "title": "VIIRS/SNPP Deep Blue Level 3 daily aerosol data, 1 degree x1 degree grid",
+        "type": "dataset",
+        "publication_year": 2023,
+        "publication_date": "2023-01-01",
+        "cited_by_count": 1,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6948300833",
+        "doi": "https://doi.org/10.5067/viirs/vnp46a1.001",
+        "title": "VIIRS/NPP Daily Gridded Day Night Band 500m Linear Lat Lon Grid Night",
+        "type": "dataset",
+        "publication_year": 2019,
+        "publication_date": "2019-01-01",
+        "cited_by_count": 1,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6967535223",
+        "doi": "https://doi.org/10.5067/viirs/vnp09ga.001",
+        "title": "VIIRS/NPP Surface Reflectance Daily L2G Global 1km and 500m SIN Grid V001",
+        "type": "dataset",
+        "publication_year": 2016,
+        "publication_date": "2016-01-01",
+        "cited_by_count": 1,
+        "counts_by_year": [
+          {
+            "year": 2018,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6892182190",
+        "doi": "https://doi.org/10.5067/viirs/vnp43ia3.002",
+        "title": "VIIRS/NPP BRDF/Albedo Albedo Daily L3 Global 500m SIN Grid V002",
+        "type": "dataset",
+        "publication_year": 2024,
+        "publication_date": "2024-01-01",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W6892204571",
+        "doi": "https://doi.org/10.5069/g9dr2spg",
+        "title": "Preliminary Digital Elevation Models for Palisades Fire, CA 2025",
+        "type": "other",
+        "publication_year": 2025,
+        "publication_date": "2025-01-01",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W6892293986",
+        "doi": "https://doi.org/10.5067/viirs/vnp22q2.002",
+        "title": "VIIRS/NPP Land Surface Phenology Yearly L3 Global 500m SIN Grid V002",
+        "type": "dataset",
+        "publication_year": 2024,
+        "publication_date": "2024-01-01",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W6910931560",
+        "doi": "https://doi.org/10.5067/viirs/vnp43ia2.001",
+        "title": "VIIRS/NPP BRDF/Albedo Quality Daily L3 Global 500m SIN Grid V001",
+        "type": "dataset",
+        "publication_year": 2018,
+        "publication_date": "2018-01-01",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W6911050833",
+        "doi": "https://doi.org/10.5067/viirs/vnp64a1.001",
+        "title": "VIIRS/NPP Burned Area Monthly L4 Global 500m SIN Grid V001",
+        "type": "dataset",
+        "publication_year": 2019,
+        "publication_date": "2019-01-01",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W6911121417",
+        "doi": "https://doi.org/10.5067/viirs/vnp43ma3.002",
+        "title": "VIIRS/NPP BRDF/Albedo Albedo Daily L3 Global 1km SIN Grid V002",
+        "type": "dataset",
+        "publication_year": 2024,
+        "publication_date": "2024-01-01",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W6929473689",
+        "doi": "https://doi.org/10.5067/viirs/vnp21a1d.002",
+        "title": "VIIRS/NPP Land Surface Temperature/Emissivity Daily L3 Global 1km SIN Grid Day V002",
+        "type": "dataset",
+        "publication_year": 2023,
+        "publication_date": "2023-01-01",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W6929832699",
+        "doi": "https://doi.org/10.5067/terra/modis/l3m/flh/2018",
+        "title": "MODIS-TERRA Level 3 Mapped Fluorescent Line Height Data Version R2018.0",
+        "type": "dataset",
+        "publication_year": 2018,
+        "publication_date": "2018-01-01",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W6948574144",
+        "doi": "https://doi.org/10.5067/viirs/vnp09h1.001",
+        "title": "VIIRS/NPP Surface Reflectance 8-Day L3 Global 500m SIN Grid V001",
+        "type": "dataset",
+        "publication_year": 2016,
+        "publication_date": "2016-01-01",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W6948651273",
+        "doi": "https://doi.org/10.5067/terra/modis/l3m/rrs/2018",
+        "title": "MODIS-TERRA Level 3 Mapped Remote-Sensing Reflectance Data Version R2018.0",
+        "type": "dataset",
+        "publication_year": 2018,
+        "publication_date": "2018-01-01",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W6966696131",
+        "doi": "https://doi.org/10.5067/viirs/vnp43ia1.001",
+        "title": "VIIRS/NPP BRDF/Albedo Model Parameters Daily L3 Global 500m SIN Grid V001",
+        "type": "dataset",
+        "publication_year": 2018,
+        "publication_date": "2018-01-01",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W6967030466",
+        "doi": "https://doi.org/10.5069/g95b00pw",
+        "title": "Topographic differencing spanning the 2025 Palisades and Eaton Fires, LA",
+        "type": "other",
+        "publication_year": 2025,
+        "publication_date": "2025-01-01",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W6967089779",
+        "doi": "https://doi.org/10.5067/viirs/vnp43ia4.002",
+        "title": "VIIRS/NPP BRDF/Albedo Nadir BRDF-Adjusted Ref Daily L3 Global 500m SIN Grid V002",
+        "type": "dataset",
+        "publication_year": 2024,
+        "publication_date": "2024-01-01",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W6967249454",
+        "doi": "https://doi.org/10.5067/viirs/vnp46a2.001",
+        "title": "VIIRS/NPP Gap-Filled Lunar BRDF-Adjusted Nighttime Lights Daily L3 Global 500m Linear Lat Lon Grid",
+        "type": "dataset",
+        "publication_year": 2019,
+        "publication_date": "2019-01-01",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W6967283444",
+        "doi": "https://doi.org/10.5067/viirs/vnp21a1n.002",
+        "title": "VIIRS/NPP Land Surface Temperature/Emissivity Daily L3 Global 1km SIN Grid Night V002",
+        "type": "dataset",
+        "publication_year": 2023,
+        "publication_date": "2023-01-01",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "7a1204dba278025ca3f63a71a144f9727eda3849153f407309864cff845feb4e"
+}

@@ -1,0 +1,80 @@
+{
+  "request_url": "https://api.openalex.org/works?search=High-Resolution+Global+Maps+of+21st-Century+Forest+Cover+Change&corpus=all&per_page=5&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date",
+  "retrieved_at": "2026-10-30T22:07:51.767904+00:00",
+  "response_path": "responses/320d0ab47a628094c7596647a30e9fd1845a013b777199cb7377187028e5222c.json",
+  "status": 200,
+  "response_sha256": "bdc42327063aa0a4588ab3f3641b439215d79e48e69db35e17bda6eb8cb5712c",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 44726,
+      "db_response_time_ms": 315,
+      "page": 1,
+      "per_page": 5,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where full text has (High-Resolution Global Maps of 21st-Century Forest Cover Change)",
+        "x_new_oql": "get works (all corpora) where full text has (High-Resolution Global Maps of 21st-Century Forest Cover Change)",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "High-Resolution Global Maps of 21st-Century Forest Cover Change",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:High-Resolution Global Maps of 21st-Century Forest Cover Change&corpus=all&per_page=5",
+        "order": "best matches first",
+        "order_default": true
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W1981213426",
+        "doi": "https://doi.org/10.1126/science.1244693",
+        "title": "High-Resolution Global Maps of 21st-Century Forest Cover Change",
+        "type": "article",
+        "publication_year": 2013,
+        "publication_date": "2013-11-14"
+      },
+      {
+        "id": "https://openalex.org/W1977080535",
+        "doi": "https://doi.org/10.1126/science.1248753",
+        "title": "Comment on “High-resolution global maps of 21st-century forest cover change”",
+        "type": "letter",
+        "publication_year": 2014,
+        "publication_date": "2014-05-29"
+      },
+      {
+        "id": "https://openalex.org/W1984067473",
+        "doi": "https://doi.org/10.1126/science.1248817",
+        "title": "Response to Comment on “High-resolution global maps of 21st-century forest cover change”",
+        "type": "article",
+        "publication_year": 2014,
+        "publication_date": "2014-05-29"
+      },
+      {
+        "id": "https://openalex.org/W2493655664",
+        "doi": null,
+        "title": "Supplementary Materials for High-Resolution Global Maps of 21st-Century Forest Cover Change",
+        "type": "supplementary-materials",
+        "publication_year": 2013,
+        "publication_date": "2013-01-01"
+      },
+      {
+        "id": "https://openalex.org/W4254887107",
+        "doi": "https://doi.org/10.3410/f.718174282.793488767",
+        "title": "Faculty Opinions recommendation of High-resolution global maps of 21st-century forest cover change.",
+        "type": "peer-review",
+        "publication_year": 2013,
+        "publication_date": "2013-12-20"
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "40320292df03865a50fd2c9417c5af2b42b7baf611787c3c252cab57216ec6ee"
+}

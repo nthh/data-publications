@@ -1,0 +1,143 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "scope": "Coverage camera constraint and restoration on dataset switches; local browser acceptance only",
+  "inputs": {
+    "viewer_build_sha256": "08759b7ed6674a131617eaff0166bd3e96733414b61aa8555e1932d6909c9250",
+    "checker_sha256": "1ee232ce0b04fb65716789e8928e70cab4ad8b8776694024b9534408f96c0297"
+  },
+  "cases": [
+    {
+      "id": "raw-initial",
+      "dataset": "grwl-raw",
+      "zero": true,
+      "zoom": 0,
+      "center": [
+        0,
+        20
+      ],
+      "phase": "ready",
+      "status": "passed"
+    },
+    {
+      "id": "other-default",
+      "dataset": "hydrolakes",
+      "zero": false,
+      "zoom": 1.2288186904966825,
+      "center": [
+        0,
+        20
+      ],
+      "phase": "ready",
+      "status": "passed"
+    },
+    {
+      "id": "raw-return",
+      "dataset": "grwl-raw",
+      "zero": true,
+      "zoom": 0,
+      "center": [
+        0,
+        20
+      ],
+      "phase": "ready",
+      "status": "passed"
+    }
+  ],
+  "errors": [],
+  "requests": [
+    {
+      "path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+      "status": 206,
+      "bytes": 16384
+    },
+    {
+      "path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+      "status": 206,
+      "bytes": 9119
+    },
+    {
+      "path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+      "status": 206,
+      "bytes": 38541
+    },
+    {
+      "path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+      "status": 206,
+      "bytes": 18312
+    },
+    {
+      "path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+      "status": 206,
+      "bytes": 5076
+    },
+    {
+      "path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+      "status": 206,
+      "bytes": 5133
+    },
+    {
+      "path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+      "status": 206,
+      "bytes": 20803
+    },
+    {
+      "path": "/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles",
+      "status": 206,
+      "bytes": 16384
+    },
+    {
+      "path": "/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles",
+      "status": 206,
+      "bytes": 9188
+    },
+    {
+      "path": "/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles",
+      "status": 206,
+      "bytes": 3385
+    },
+    {
+      "path": "/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles",
+      "status": 206,
+      "bytes": 2751
+    },
+    {
+      "path": "/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles",
+      "status": 206,
+      "bytes": 933
+    },
+    {
+      "path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+      "status": 206,
+      "bytes": 16384
+    },
+    {
+      "path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+      "status": 206,
+      "bytes": 9119
+    },
+    {
+      "path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+      "status": 206,
+      "bytes": 18312
+    },
+    {
+      "path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+      "status": 206,
+      "bytes": 38541
+    },
+    {
+      "path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+      "status": 206,
+      "bytes": 5133
+    },
+    {
+      "path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+      "status": 206,
+      "bytes": 5076
+    }
+  ],
+  "requested_bytes": 259377,
+  "response_bytes": 238574,
+  "ceiling_bytes": 33554432
+}

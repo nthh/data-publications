@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "tested_commit": "76215136bad75453551749b30a3fa23f3f3e62ad",
+  "checkout": "fresh detached durable worktree",
+  "dependency_setup": {
+    "npm": "npm ci --offline --ignore-scripts --no-audit --no-fund; 58 packages from local cache",
+    "runtime_extension": "copied only the 3045039-byte cached extension after verifying its pinned SHA-256; setup verified it without download",
+    "python": "uv run --offline --locked --project scripts/release_tools; new CPython 3.12.12 environment, 24 cached packages"
+  },
+  "python_tests": {
+    "status": "passed",
+    "count": 20
+  },
+  "javascript_tests": {
+    "status": "passed",
+    "count": 7
+  },
+  "ui_build": {
+    "status": "byte_identical",
+    "files": 10,
+    "bytes": 40128223,
+    "reference": "ui-build.json"
+  },
+  "runtime": {
+    "public_metadata": "identical",
+    "object_routes_sizes_checksums": "identical",
+    "objects": 236,
+    "bytes": 3470460522,
+    "all_source_sha256_reverified": true,
+    "bulk_files_copied": 0
+  },
+  "launcher": "documented run.py command, separate loopback ports 8910/8911, detached server",
+  "http_ranges": {
+    "status": "passed",
+    "layers": 6,
+    "evidence": "clean-checkout-ranges.json"
+  },
+  "browser_smoke": {
+    "status": "passed",
+    "layer": "hydrolakes-1",
+    "evidence": "clean-checkout-browser.json",
+    "features": 606,
+    "body_bytes": 5621080
+  },
+  "tracked_checkout_changes": "",
+  "remote_ci": "not_run",
+  "live_gee_requests": 0,
+  "uploads": 0
+}

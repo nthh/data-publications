@@ -1,0 +1,52 @@
+schema_version: 1
+id: ghsl
+title: Global Human Settlement Layer GHS-BUILT-S R2023A 10m
+community_url: https://gee-community-catalog.org/projects/ghsl
+audit:
+  snapshot: gee-community-audit-20261029
+  family_key: ghsl
+  unique_gee_asset_count: 7
+  initial_queue: review_source_coop_counterpart
+  folia_registry_status: not_identified
+  folia_registry_ids: []
+  source_coop_urls:
+  - https://source.coop/wfp/jrc-ghsl-pop
+  source_coop_scope: 'Partial GHSL product family: only GHS-POP is represented in
+    this Source Coop product. It covers a selected 2025 epoch rather than all GHS-POP
+    epochs and does not include the family''s built-up, volume, height, settlement-characteristics,
+    or SMOD layers.'
+  external_native_urls:
+  - https://source.coop/wfp/jrc-ghsl-pop
+  external_native_scope: 'Partial GHSL product family: only GHS-POP is represented
+    in this Source Coop product. It covers a selected 2025 epoch rather than all GHS-POP
+    epochs and does not include the family''s built-up, volume, height, settlement-characteristics,
+    or SMOD layers.'
+triage:
+  decision: pending
+  priority: normal
+review:
+  as_of: '2026-10-29'
+  additional_existing_counterparts:
+  - url: https://source.coop/nlebovits/ghsl
+    git_url: https://github.com/nlebovits/ghsl
+    format: COG
+    scope: Publisher describes GHS-POP R2023A, 100 m Mollweide, twelve five-year epochs
+      1975-2030 and 3,984 tiles. This still does not cover all GHSL components on
+      the GEE documentation page.
+    evidence_kind: publisher_metadata
+    asset_access_verified: false
+  remaining:
+  - Compare requested component, grid and release with each existing product before
+    deciding to reuse or publish.
+  citation_assessment:
+    as_of: '2026-10-29'
+    provider: OpenAlex
+    evidence_path: research/citations/rankings.json
+    evidence_key: ghsl
+    geographic_scope: global
+    paper_count_status: unknown
+    max_paper_citations: null
+    max_data_doi_citations: 77
+    top_paper_doi: null
+    top_paper_openalex_id: null
+    citation_scope: associated_dataset_publication

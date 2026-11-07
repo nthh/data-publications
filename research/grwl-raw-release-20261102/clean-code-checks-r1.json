@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "git_revision": "9cf7e3f0c7652976520a043cd1d06b0a27b1ba6d",
+  "checkout": "clean detached checkout; git status --short was empty before focused tests",
+  "checks": [
+    {
+      "command": "DISPLAY_PY -m unittest discover -s tests -p test_grwl_raw_*.py",
+      "tests_passed": 41,
+      "environment": "scripts/display_tools locked environment"
+    },
+    {
+      "command": "GIS_PY -m unittest discover -s tests -p test_grwl_release_preparation.py -v",
+      "tests_passed": 9,
+      "environment": "datasets/river-plastic-inputs locked environment"
+    }
+  ],
+  "scope": "Focused code contracts; global source/display/package gates are separate."
+}

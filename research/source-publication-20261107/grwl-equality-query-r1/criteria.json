@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-11-07T21:50:14.812309+00:00",
+  "failure_report": "research/source-publication-20261106/hosted-results/grwl-raw/failed-hosted-r3.json",
+  "failure_report_sha256": "c8b2508faf94a1526eb27f90a10c01318a6e738138d47ba2dd1a6b40d3535a56",
+  "failed_stage": "global unfiltered ID multiplicity query with three-ID IN predicate",
+  "observed": {
+    "recorded_proxy_events": 2048,
+    "asset_counts": {
+      "assets/grwl-raw-observations.parquet": {
+        "content_type": "application/vnd.apache.parquet",
+        "get_count": 2055,
+        "head_count": 2,
+        "reserved_bytes": 62128310,
+        "response_body_bytes": 62128310,
+        "size_bytes": 5529859809,
+        "url": "https://data.source.coop/nthh/grwl-raw/releases/raw-v01.01-local-r1/assets/grwl-raw-observations.parquet"
+      }
+    },
+    "errors": [
+      "proxy event ledger ceiling exceeded"
+    ]
+  },
+  "frozen_ids": [
+    145242909048833,
+    151225798516737,
+    206669531324417
+  ],
+  "preexisting_statistics": {
+    "row_groups": [
+      0,
+      4157,
+      8314
+    ],
+    "all_column_chunks_compressed_bytes_upper_bound": 1873596,
+    "path": "research/source-publication-20261106/query-spatial-hints-r1.json",
+    "sha256": "1800adfffc1bd7ecd2fbcafc752ceba9f882146a8098a7eaf7e873cc45f486d6"
+  },
+  "required_strategy": "Use separate exact-equality queries for the same frozen IDs, combining their complete result multisets. Counts remain global without a spatial restriction; optional unchanged bbox predicates apply only to full row retrieval.",
+  "unchanged_requirements": {
+    "footer_rows": 64572998,
+    "global_id_multiplicity": true,
+    "all_columns_and_geometry": true,
+    "complete_multiset_comparison": true,
+    "total_selected_row_cap": 1000,
+    "per_request_bytes": 67108864,
+    "per_asset_bytes": 134217728,
+    "max_ledger_events": 2048,
+    "source_upload_plan_and_bytes": "unchanged",
+    "browser_evidence": "same passed20cases andexactfooterpolicy"
+  },
+  "negative_checks": [
+    "Missing IDs fail.",
+    "Duplicate outside spatial bbox fails.",
+    "Changed attribute or geometry fails.",
+    "Combined rows beyond1000 fail even if each individual query is below1000."
+  ],
+  "next_output": ".local/hosted-validation-grwl-raw-r4.json"
+}

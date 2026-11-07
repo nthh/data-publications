@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "status": "failed_run_retained",
+  "case": "mississippi-z7",
+  "cause": "Automation passed map-relative projected coordinates to Playwright page.mouse.click, which requires page-relative coordinates. Map canvas offsets were omitted.",
+  "correction": "Pick an unobstructed topmost sample and add the canvas bounding-rectangle offset; the browser harness now uses the returned pagePoint.",
+  "data_changed": false,
+  "old_viewer_build_sha256": "9573361f34265d9d9aef1b48fc94e73b847e34355ee4ffcff6987335e0c63dda",
+  "failed_case_had_completed_rendering_and_legend_checks_before_click": true,
+  "followup": "New immutable browser-pilot-r2 run; the original run remains failed.",
+  "cases_passed_before_fix": 12
+}

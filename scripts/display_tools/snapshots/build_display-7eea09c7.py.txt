@@ -1,0 +1,695 @@
+#!/usr/bin/env python3
+"""Build a pinned GeoParquet display layer as a bounded-memory PMTiles archive."""
+from __future__ import annotations
+
+import argparse
+import gzip
+import hashlib
+import importlib.metadata
+import json
+import math
+import os
+import shutil
+import sqlite3
+import struct
+import subprocess
+import sys
+import tempfile
+from collections import Counter
+from pathlib import Path
+from typing import Any, Iterator
+
+import pyarrow.parquet as pq
+import shapely
+import numpy as np
+from pmtiles import reader as pmtiles_reader
+
+MAX_ZOOM = 12
+EXTENT = 4096
+THREADS = 2
+ROOT = Path(__file__).resolve().parents[2]
+SOURCES = {
+    "hydrolakes": ("hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet", "hydrolakes-polygons", "polygon", "Hylak_id", ["Hylak_id", "Lake_area", "Lake_name", "Country", "Continent"]),
+    "free-flowing-rivers": ("free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet", "ffr-reaches", "line", "OBJECTID", ["OBJECTID", "REACH_ID", "GOID", "DIS_AV_CMS", "LENGTH_KM", "CSI", "CSI_FF1", "CSI_D"]),
+    "lakeatlas-polygons": ("lakeatlas/releases/lakeatlas-v1.0-r2-prepared/assets/lakeatlas-polygons.parquet", "lakeatlas-polygons", "polygon", "OBJECTID", ["OBJECTID", "Hylak_id", "Lake_area", "Lake_name", "Country", "Continent"]),
+    "lakeatlas-pour-points": ("lakeatlas/releases/lakeatlas-v1.0-r2-prepared/assets/lakeatlas-pour-points.parquet", "lakeatlas-pour-points", "point", "OBJECTID", ["OBJECTID", "Hylak_id", "Lake_area", "Lake_name", "Country", "Continent"]),
+}
+ANALYTIC_RELEASES = {
+    "hydrolakes": "v1-local-r3",
+    "free-flowing-rivers": "figshare-v1-local-r2",
+    "lakeatlas-polygons": "lakeatlas-v1.0-r2",
+    "lakeatlas-pour-points": "lakeatlas-v1.0-r2",
+}
+SOURCE_ATTRIBUTION = {
+    "hydrolakes": "HydroLAKES v1.0, Lehner and Messager / HydroSHEDS; CC BY 4.0",
+    "free-flowing-rivers": "Source data by Günther Grill and Bernhard Lehner; CC BY 4.0",
+    "lakeatlas-polygons": "HydroSHEDS / HydroATLAS authors; Lehner et al. (2022), DOI 10.1038/s41597-022-01425-z; CC BY 4.0, with some field-level ODbL 1.0 notices",
+    "lakeatlas-pour-points": "HydroSHEDS / HydroATLAS authors; Lehner et al. (2022), DOI 10.1038/s41597-022-01425-z; CC BY 4.0, with some field-level ODbL 1.0 notices",
+}
+# Hashes are copied from immutable prepared release manifests.
+SOURCE_SHA256 = {
+    "hydrolakes": "6f588d97c14651eb23bea2d74fdf2a85f218a00ff11519c81efa5512b916b7f8",
+    "free-flowing-rivers": "62130e4999ba449bd2768bcdd9346bc2ba8fa4c4f06d39597e5227cd496a1a63",
+    "lakeatlas-polygons": "bbef606fd8522b230efc90e2952a67c1e4265e7bf733208fa4cc31395a7277b7",
+    "lakeatlas-pour-points": "ff621c1db763551cdb6ced8958eefcc9da76a73c16e7f7259c238bec3aae5720",
+}
+
+
+def sha256(path: Path) -> str:
+    h = hashlib.sha256()
+    with path.open("rb") as src:
+        for block in iter(lambda: src.read(1024 * 1024), b""):
+            h.update(block)
+    return h.hexdigest()
+
+
+def min_zoom(value: Any) -> int:
+    """Apply the frozen piecewise metric policy; unknown values appear at z12."""
+    try:
+        metric = float(value)
+    except (TypeError, ValueError):
+        return MAX_ZOOM
+    if not math.isfinite(metric) or metric < 0:
+        return MAX_ZOOM
+    for threshold, zoom in ((10000, 0), (1000, 2), (100, 4), (10, 6), (1, 8), (0.1, 10), (0, 12)):
+        if metric >= threshold:
+            return zoom
+    return MAX_ZOOM
+
+
+def _wire(data: bytes) -> Iterator[tuple[int, int, bytes | int]]:
+    """Yield protobuf wire fields (small MVT decoder used for ID accounting)."""
+    pos = 0
+    while pos < len(data):
+        key, pos = _varint(data, pos)
+        field, wire = key >> 3, key & 7
+        if wire == 0:
+            value, pos = _varint(data, pos)
+        elif wire == 1:
+            value, pos = data[pos:pos + 8], pos + 8
+        elif wire == 2:
+            size, pos = _varint(data, pos)
+            value, pos = data[pos:pos + size], pos + size
+        elif wire == 5:
+            value, pos = data[pos:pos + 4], pos + 4
+        else:
+            raise ValueError(f"unsupported protobuf wire type {wire}")
+        if pos > len(data):
+            raise ValueError("truncated protobuf field")
+        yield field, wire, value
+
+
+def _varint(data: bytes, pos: int) -> tuple[int, int]:
+    value = shift = 0
+    while pos < len(data):
+        byte = data[pos]
+        pos += 1
+        value |= (byte & 0x7F) << shift
+        if byte < 0x80:
+            return value, pos
+        shift += 7
+        if shift > 70:
+            raise ValueError("invalid protobuf varint")
+    raise ValueError("truncated protobuf varint")
+
+
+def mvt_ids(tile: bytes) -> set[int]:
+    found: set[int] = set()
+    for field, wire, layer in _wire(tile):
+        if field != 3 or wire != 2:
+            continue
+        for lf, lw, feature in _wire(layer):
+            if lf != 2 or lw != 2:
+                continue
+            for ff, fw, fid in _wire(feature):
+                if ff == 1 and fw == 0:
+                    found.add(int(fid))
+                    break
+    return found
+
+
+def _mvt_value(message: bytes) -> Any:
+    for field, wire, value in _wire(message):
+        if wire == 2 and field == 1:
+            return value.decode("utf-8")
+        if wire == 5 and field == 2:
+            return struct.unpack("<f", value)[0]
+        if wire == 1 and field == 3:
+            return struct.unpack("<d", value)[0]
+        if wire == 0 and field in (4, 5):
+            return int(value)
+        if wire == 0 and field == 6:
+            return (int(value) >> 1) ^ -(int(value) & 1)
+        if wire == 0 and field == 7:
+            return bool(value)
+    return None
+
+
+def decode_features(tile: bytes, layer_name: str) -> Iterator[dict[str, Any]]:
+    if tile[:2] == b"\x1f\x8b":
+        tile = gzip.decompress(tile)
+    for field, wire, layer in _wire(tile):
+        if field != 3 or wire != 2:
+            continue
+        name = None
+        features, keys, values = [], [], []
+        for lf, lw, value in _wire(layer):
+            if lw != 2:
+                continue
+            if lf == 1:
+                name = value.decode("utf-8")
+            elif lf == 2:
+                features.append(value)
+            elif lf == 3:
+                keys.append(value.decode("utf-8"))
+            elif lf == 4:
+                values.append(_mvt_value(value))
+        if name != layer_name:
+            continue
+        for feature in features:
+            fid = None
+            tags: list[int] = []
+            for ff, fw, fv in _wire(feature):
+                if ff == 1 and fw == 0:
+                    fid = int(fv)
+                elif ff == 2 and fw == 2:
+                    pos = 0
+                    while pos < len(fv):
+                        tag, pos = _varint(fv, pos)
+                        tags.append(tag)
+            if fid is None:
+                raise ValueError("maxzoom MVT feature has no source ID")
+            props = {keys[tags[i]]: values[tags[i + 1]] for i in range(0, len(tags), 2)}
+            yield {"id": fid, "properties": props}
+
+
+def _json_value(value: Any) -> Any:
+    if hasattr(value, "as_py"):
+        value = value.as_py()
+    if isinstance(value, float) and not math.isfinite(value):
+        return None
+    return value
+
+
+def _canonical_attribute(value: Any) -> Any:
+    if isinstance(value, dict):
+        return {k: _canonical_attribute(v) for k, v in value.items()}
+    if isinstance(value, list):
+        return [_canonical_attribute(v) for v in value]
+    if isinstance(value, float) and math.isfinite(value) and value.is_integer():
+        return int(value)
+    return value
+
+
+def _fingerprint(properties: dict[str, Any]) -> bytes:
+    clean = {k: _canonical_attribute(v) for k, v in properties.items() if v is not None}
+    return hashlib.sha256(json.dumps(clean, sort_keys=True, separators=(",", ":"), allow_nan=False).encode()).digest()
+
+
+def classify_missing(source: Path, id_field: str, geometry_column: str, missing_db: sqlite3.Connection,
+                     geometry_type: str, output_path: Path, guard: Any = None) -> dict[str, int]:
+    """Classify every maxzoom-absent source feature without retaining source WKB."""
+    if missing_db.execute("SELECT 1 FROM missing_ids LIMIT 1").fetchone() is None:
+        return {}
+    classified_counts: dict[str, int] = {}
+    scale = (1 << MAX_ZOOM) * EXTENT
+    max_lat = 85.0511287798066
+    parquet = pq.ParquetFile(source)
+    with output_path.open("w") as out:
+        for batch in parquet.iter_batches(batch_size=4096, columns=[id_field, geometry_column], use_threads=False):
+            ids = batch.column(0).to_pylist()
+            wkbs = batch.column(1).to_pylist()
+            candidate_ids = [int(v) for v in ids if v is not None]
+            missing_batch: set[int] = set()
+            for start in range(0, len(candidate_ids), 900):
+                group = candidate_ids[start:start + 900]
+                marks = ",".join("?" for _ in group)
+                missing_batch.update(row[0] for row in missing_db.execute(f"SELECT id FROM missing_ids WHERE id IN ({marks})", group))
+            for fid, wkb in zip(ids, wkbs):
+                fid = int(fid)
+                if fid not in missing_batch:
+                    continue
+                if not wkb:
+                    cause = "source_empty"
+                else:
+                    geom = shapely.from_wkb(wkb)
+                    if geom.is_empty:
+                        cause = "source_empty"
+                    elif geometry_type == "line" and geom.length == 0:
+                        cause = "zero_length"
+                    elif geometry_type == "polygon" and geom.area == 0:
+                        cause = "zero_area"
+                    else:
+                        def quantize(coords: np.ndarray) -> np.ndarray:
+                            lon = coords[:, 0]
+                            lat = np.clip(coords[:, 1], -max_lat, max_lat)
+                            x = (lon + 180.0) / 360.0 * scale
+                            y = (1.0 - np.arcsinh(np.tan(np.deg2rad(lat))) / math.pi) / 2.0 * scale
+                            converted = coords.copy()
+                            converted[:, 0] = np.rint(x)
+                            converted[:, 1] = np.rint(y)
+                            return converted
+                        quantized = shapely.transform(geom, quantize)
+                        if quantized.is_empty or (geometry_type == "line" and quantized.length == 0) or (geometry_type == "polygon" and quantized.area == 0) or (geometry_type == "point" and len(shapely.get_coordinates(quantized)) == 0):
+                            cause = "quantization_collapse"
+                        else:
+                            cause = "unexpected_loss"
+                out.write(json.dumps({"id": fid, "cause": cause}, separators=(",", ":")) + "\n")
+                classified_counts[cause] = classified_counts.get(cause, 0) + 1
+            if guard:
+                guard()
+    missing_count = missing_db.execute("SELECT COUNT(*) FROM missing_ids").fetchone()[0]
+    if sum(classified_counts.values()) != missing_count:
+        raise ValueError(f"could not classify every absent maxzoom ID; classified={sum(classified_counts.values())}, missing={missing_count}")
+    return classified_counts
+
+
+def guard_resources(data_root: Path, destination: Path, *, enforce_start: bool = False) -> dict[str, int]:
+    usage = shutil.disk_usage(data_root)
+    free_gib = usage.free / (1024 ** 3)
+    if enforce_start and free_gib < 40:
+        raise RuntimeError(f"production start requires at least 40 GiB free; found {free_gib:.1f} GiB")
+    if free_gib < 15:
+        raise RuntimeError(f"stop threshold reached: only {free_gib:.1f} GiB free")
+    task_bytes = 0
+    for dataset in ("hydrolakes", "free-flowing-rivers", "lakeatlas"):
+        parent = data_root / dataset / "display"
+        if parent.exists():
+            for path in parent.glob("display-v1*"):
+                if path.is_dir():
+                    task_bytes += sum(f.stat().st_size for f in path.rglob("*") if f.is_file())
+    if task_bytes > 12 * 1024 ** 3:
+        raise RuntimeError(f"task output and scratch exceeded 12 GiB: {task_bytes / (1024 ** 3):.2f} GiB")
+    return {"free_bytes": usage.free, "task_output_and_scratch_bytes": task_bytes}
+
+
+def stream_features(source: Path, layer: str, id_field: str, attrs: list[str], metric: str | None,
+                    output: Any, batch_size: int = 256, guard: Any = None,
+                    scratch_dir: Path | None = None) -> dict[str, Any]:
+    pf = pq.ParquetFile(source)
+    names = pf.schema_arrow.names
+    geom_col = "wkb_geometry" if "wkb_geometry" in names else "Shape" if "Shape" in names else "geometry"
+    required = [id_field, geom_col, "bbox", *attrs]
+    missing = sorted(set(required) - set(names))
+    if missing:
+        raise ValueError(f"{source.name} missing required columns: {missing}")
+    if pf.metadata.num_rows < 1:
+        raise ValueError("empty source parquet")
+    # Disk-backed uniqueness table avoids holding millions of IDs in memory.
+    with tempfile.TemporaryDirectory(prefix="display-ids-", dir=scratch_dir) as td:
+        db = sqlite3.connect(Path(td) / "ids.sqlite")
+        db.execute("CREATE TABLE ids (id INTEGER PRIMARY KEY)")
+        records = empty = null_ids = 0
+        zoom_counts: Counter[int] = Counter()
+        for batch in pf.iter_batches(batch_size=batch_size, columns=required, use_threads=False):
+            cols = {n: batch.column(batch.schema.get_field_index(n)) for n in batch.schema.names}
+            ids = cols[id_field].to_pylist()
+            geoms = cols[geom_col].to_pylist()
+            boxes = cols["bbox"].to_pylist()
+            metric_values = cols[metric].to_pylist() if metric else [None] * len(ids)
+            other = {name: cols[name].to_pylist() for name in attrs if name not in {id_field, metric}}
+            for i, feature_id in enumerate(ids):
+                if feature_id is None:
+                    null_ids += 1
+                    raise ValueError(f"null source ID in {id_field} at source row {records + 1}")
+                try:
+                    db.execute("INSERT INTO ids VALUES (?)", (int(feature_id),))
+                except sqlite3.IntegrityError as exc:
+                    raise ValueError(f"duplicate source ID {feature_id}") from exc
+                wkb = geoms[i]
+                zoom = min_zoom(metric_values[i]) if metric else MAX_ZOOM
+                zoom_counts[zoom] += 1
+                if not wkb:
+                    empty += 1
+                    records += 1
+                    continue
+                geometry_json = shapely.to_geojson(shapely.from_wkb(wkb), indent=None)
+                if geometry_json == "null":
+                    empty += 1
+                    records += 1
+                    continue
+                properties = {name: _json_value(cols[name][i]) for name in attrs}
+                bbox = boxes[i]
+                if bbox is not None:
+                    for k in ("xmin", "ymin", "xmax", "ymax"):
+                        properties[f"_src_{k}"] = bbox[k]
+                feature: dict[str, Any] = {"type": "Feature", "id": int(feature_id), "properties": properties, "geometry": json.loads(geometry_json)}
+                feature["tippecanoe"] = {"minzoom": zoom}
+                output.write(json.dumps(feature, separators=(",", ":"), allow_nan=False).encode() + b"\n")
+                records += 1
+                if guard and records % 10000 == 0:
+                    guard()
+        db.commit()
+        unique = db.execute("SELECT COUNT(*) FROM ids").fetchone()[0]
+        db.close()
+    if records != pf.metadata.num_rows or unique != records:
+        raise ValueError(f"row/ID accounting mismatch: rows={pf.metadata.num_rows}, read={records}, unique={unique}")
+    return {"source_rows": records, "unique_ids": unique, "empty_geometry_rows": empty, "null_id_rows": null_ids,
+            "geometry_column": geom_col, "minzoom_feature_counts": {str(k): zoom_counts[k] for k in sorted(zoom_counts)}}
+
+
+def scan_source(source: Path, id_field: str, metric: str, scratch_dir: Path,
+                guard: Any = None, batch_size: int = 8192) -> dict[str, Any]:
+    """Check the pinned source rows and IDs without materializing GeoJSON."""
+    parquet = pq.ParquetFile(source)
+    names = parquet.schema_arrow.names
+    geom_col = "wkb_geometry" if "wkb_geometry" in names else "Shape" if "Shape" in names else "geometry"
+    required = [id_field, geom_col, metric, "bbox"]
+    missing = sorted(set(required) - set(names))
+    if missing:
+        raise ValueError(f"source parquet missing required columns: {missing}")
+    zoom_counts: Counter[int] = Counter()
+    empty = rows = 0
+    with tempfile.TemporaryDirectory(prefix="display-source-scan-", dir=scratch_dir) as td:
+        db = sqlite3.connect(Path(td) / "ids.sqlite")
+        db.execute("CREATE TABLE ids (id INTEGER PRIMARY KEY)")
+        for batch in parquet.iter_batches(batch_size=batch_size, columns=required, use_threads=False):
+            ids = batch.column(batch.schema.get_field_index(id_field)).to_pylist()
+            geoms = batch.column(batch.schema.get_field_index(geom_col)).to_pylist()
+            values = batch.column(batch.schema.get_field_index(metric)).to_pylist()
+            for fid, geom, value in zip(ids, geoms, values):
+                if fid is None:
+                    raise ValueError(f"null source ID in {id_field}")
+                try:
+                    db.execute("INSERT INTO ids VALUES (?)", (int(fid),))
+                except sqlite3.IntegrityError as exc:
+                    raise ValueError(f"duplicate source ID {fid}") from exc
+                empty += int(not geom)
+                zoom_counts[min_zoom(value)] += 1
+                rows += 1
+            if guard:
+                guard()
+        unique = db.execute("SELECT COUNT(*) FROM ids").fetchone()[0]
+        db.close()
+    if rows != parquet.metadata.num_rows or unique != rows:
+        raise ValueError(f"source row/ID count mismatch: {rows}/{unique}/{parquet.metadata.num_rows}")
+    return {"source_rows": rows, "unique_ids": unique, "empty_geometry_rows": empty, "null_id_rows": 0,
+            "geometry_column": geom_col, "minzoom_feature_counts": {str(k): zoom_counts[k] for k in sorted(zoom_counts)}}
+
+
+def preflight_package(destination: Path, key: str) -> None:
+    """Read-only safety gate before creating directories or scratch files."""
+    if key not in SOURCES:
+        raise ValueError(f"unknown display product: {key}")
+    dataset = "hydrolakes" if key == "hydrolakes" else "free-flowing-rivers" if key == "free-flowing-rivers" else "lakeatlas"
+    expected = {
+        "dataset_id": dataset,
+        "analytic_release": ANALYTIC_RELEASES[key],
+        "display_release": "display-v1",
+    }
+    manifest_path = destination / "manifest.json"
+    if manifest_path.exists():
+        try:
+            manifest = json.loads(manifest_path.read_text())
+        except (OSError, json.JSONDecodeError) as exc:
+            raise ValueError(f"existing manifest is unreadable: {manifest_path}") from exc
+        if manifest.get("status") == "prepared":
+            raise FileExistsError(f"refusing to mutate prepared display package: {manifest_path}")
+        for field, value in expected.items():
+            if manifest.get(field) != value:
+                raise ValueError(f"existing manifest {field}={manifest.get(field)!r} does not match {value!r}")
+        product_id = {"hydrolakes": "hydrolakes-1", "free-flowing-rivers": "free-flowing-rivers-1",
+                      "lakeatlas-polygons": "lakeatlas-1", "lakeatlas-pour-points": "lakeatlas-2"}[key]
+        if any(asset.get("id") == product_id for asset in manifest.get("assets", [])):
+            raise FileExistsError(f"display asset is already declared in manifest: {product_id}")
+    _, layer, _, _, _ = SOURCES[key]
+    reserved = [destination / "assets" / f"{layer}.pmtiles", destination / f".{layer}.work.mbtiles"]
+    existing = [path for path in reserved if path.exists()]
+    if existing:
+        raise FileExistsError(f"immutable display build output already exists: {existing[0]}")
+
+
+def build_one(key: str, destination: Path, data_root: Path, source_override: Path | None = None,
+              reuse_archive: Path | None = None) -> dict[str, Any]:
+    source_rel, layer, geometry_type, id_field, attrs = SOURCES[key]
+    source = source_override or data_root / source_rel
+    preflight_package(destination, key)
+    resource_start = guard_resources(data_root, destination, enforce_start=True)
+    packages = {name: importlib.metadata.version(name) for name in ("pyarrow", "shapely", "numpy", "pmtiles")}
+    pinned_packages = {"pyarrow": "23.0.1", "shapely": "2.1.2", "numpy": "2.5.4", "pmtiles": "3.8.1"}
+    if packages != pinned_packages:
+        raise ValueError(f"Python packages do not match the reused GRWL locked environment: {packages}")
+    source_hash = SOURCE_SHA256[key]
+    if not source_hash:
+        raise ValueError(f"no committed source SHA-256 pin for {key}")
+    if sha256(source) != source_hash:
+        raise ValueError(f"pinned source SHA-256 mismatch: {source}")
+    tip = Path("/opt/homebrew/bin/tippecanoe")
+    expected_tip_sha = json.loads((ROOT / "datasets/grwl/tippecanoe.lock.json").read_text())["binary_sha256"]
+    if sha256(tip) != expected_tip_sha:
+        raise ValueError("Tippecanoe binary SHA-256 differs from the committed lock")
+    version = subprocess.run([str(tip), "--version"], text=True, capture_output=True, check=True)
+    if (version.stdout + version.stderr).strip() != "tippecanoe v2.79.0":
+        raise ValueError("unexpected Tippecanoe version")
+    destination.mkdir(parents=True, exist_ok=True)
+    assets_dir = destination / "assets"
+    assets_dir.mkdir(exist_ok=True)
+    mbtiles = destination / f".{layer}.work.mbtiles"
+    pmtiles = assets_dir / f"{layer}.pmtiles"
+    scratch = destination / ".scratch"
+    scratch.mkdir(exist_ok=True)
+    if pmtiles.exists() or mbtiles.exists():
+        raise FileExistsError(f"immutable display asset exists: {pmtiles}")
+    metric = "DIS_AV_CMS" if key == "free-flowing-rivers" else "Lake_area" if key in ("hydrolakes", "lakeatlas-polygons", "lakeatlas-pour-points") else None
+    id_encoding = "mvt_feature_id" if reuse_archive else "mvt_feature_id_and_property"
+    tile_attrs = [name for name in attrs if not (reuse_archive and name == id_field)]
+    if reuse_archive:
+        if not reuse_archive.is_file():
+            raise FileNotFoundError(reuse_archive)
+        # macOS APFS clone avoids an extra full-size task copy where supported.
+        cloned = subprocess.run(["cp", "-c", str(reuse_archive), str(pmtiles)], capture_output=True)
+        if cloned.returncode:
+            shutil.copyfile(reuse_archive, pmtiles)
+        row_report = scan_source(source, id_field, metric, scratch,
+                                 guard=lambda: guard_resources(data_root, destination))
+    else:
+        cmd = [str(tip), "--quiet", "--output", str(mbtiles), "--layer", layer,
+               "--name", layer, "--description", "Display derivative; GeoParquet is the analytic source.",
+               "--attribution", f"{SOURCE_ATTRIBUTION[key]}; Tippecanoe v2.79.0",
+               "--minimum-zoom", "0", "--maximum-zoom", str(MAX_ZOOM), "--base-zoom", str(MAX_ZOOM),
+               "--full-detail", "12", "--low-detail", "12", "--minimum-detail", "12",
+               "--simplification", "1", "--no-feature-limit", "--no-tile-size-limit",
+               "--no-tiny-polygon-reduction", "--no-tiny-polygon-reduction-at-maximum-zoom",
+               "--temporary-directory", str(scratch), "/dev/stdin"]
+        process = subprocess.Popen(cmd, stdin=subprocess.PIPE, env={**os.environ, "TIPPECANOE_MAX_THREADS": str(THREADS)})
+        assert process.stdin is not None
+        try:
+            with process.stdin:
+                row_report = stream_features(source, layer, id_field, attrs, metric, process.stdin,
+                                             guard=lambda: guard_resources(data_root, destination), scratch_dir=scratch)
+            result = process.wait()
+        except BaseException:
+            process.kill()
+            process.wait()
+            raise
+        if result:
+            raise subprocess.CalledProcessError(result, cmd)
+        guard_resources(data_root, destination)
+        subprocess.run(["/opt/homebrew/bin/pmtiles", "convert", str(mbtiles), str(pmtiles)], check=True)
+    if not reuse_archive:
+        guard_resources(data_root, destination)
+    subprocess.run(["/opt/homebrew/bin/pmtiles", "verify", str(pmtiles)], check=True)
+    with pmtiles.open("rb") as archive_file:
+        archive_reader = pmtiles_reader.Reader(pmtiles_reader.MmapSource(archive_file))
+        header = archive_reader.header()
+        metadata = archive_reader.metadata()
+    if header.get("min_zoom") != 0 or header.get("max_zoom") != MAX_ZOOM:
+        raise ValueError(f"unexpected PMTiles zoom metadata: {header}")
+    vector_layers = metadata.get("vector_layers", [])
+    layer_metadata = next((item for item in vector_layers if item.get("id") == layer), None)
+    if layer_metadata is None:
+        raise ValueError(f"PMTiles metadata does not declare vector layer {layer}")
+    if layer_metadata.get("maxzoom") != MAX_ZOOM or layer_metadata.get("minzoom") != 0:
+        raise ValueError(f"unexpected vector-layer zoom metadata: {layer_metadata}")
+    declared_fields = set(layer_metadata.get("fields", {}))
+    if not set(tile_attrs).issubset(declared_fields):
+        raise ValueError(f"PMTiles vector layer is missing selected fields: {sorted(set(tile_attrs) - declared_fields)}")
+    bounds = [header[k] / 1e7 for k in ("min_lon_e7", "min_lat_e7", "max_lon_e7", "max_lat_e7")]
+    if not all(math.isfinite(v) for v in bounds) or not (bounds[0] <= bounds[2] and bounds[1] <= bounds[3]):
+        raise ValueError(f"invalid PMTiles geographic bounds: {bounds}")
+    source_geo = json.loads(pq.ParquetFile(source).schema_arrow.metadata[b"geo"])
+    geom_col = row_report["geometry_column"]
+    source_bounds = source_geo["columns"][geom_col].get("bbox")
+    if source_bounds and any(abs(float(a) - float(b)) > 0.02 for a, b in zip(bounds, source_bounds)):
+        raise ValueError(f"PMTiles bounds {bounds} do not match source bbox {source_bounds}")
+    provisional_report = {"dataset_key": key, "source_path": source.relative_to(data_root).as_posix() if source.is_relative_to(data_root) else source.name,
+                          "source_sha256": source_hash, "source_rows": row_report["source_rows"],
+                          "unique_source_ids": row_report["unique_ids"], "id_field": id_field,
+                          "id_encoding": id_encoding, "attribute_fields": tile_attrs + ["_src_xmin", "_src_ymin", "_src_xmax", "_src_ymax"],
+                          "geometry_type": geometry_type, "layer": layer, "pmtiles_path": f"assets/{pmtiles.name}",
+                          "pmtiles_sha256": sha256(pmtiles), "pmtiles_size_bytes": pmtiles.stat().st_size,
+                          "min_zoom": 0, "max_zoom": MAX_ZOOM, "maxzoom_ids_accounted": None,
+                          "maxzoom_missing_id_count": None, "maxzoom_missing_ids_path": "pending"}
+    update_manifest(destination, key, source, provisional_report)
+    id_db = sqlite3.connect(destination / "id-accounting.sqlite")
+    id_db.execute("CREATE TABLE source_ids (id INTEGER PRIMARY KEY)")
+    id_db.execute("CREATE TABLE tile_ids (id INTEGER PRIMARY KEY)")
+    id_db.execute("CREATE TABLE source_props (id INTEGER PRIMARY KEY, fingerprint BLOB NOT NULL)")
+    id_db.execute("CREATE TABLE checked_ids (id INTEGER PRIMARY KEY)")
+    id_db.execute("CREATE TABLE missing_ids (id INTEGER PRIMARY KEY)")
+    tile_count = 0
+    # IDs remain disk-backed: this is important for the 8.5 million reach layer.
+    pf = pq.ParquetFile(source)
+    for batch in pf.iter_batches(batch_size=16384, columns=[id_field], use_threads=False):
+        id_db.executemany("INSERT INTO source_ids VALUES (?)", ((int(v),) for v in batch.column(0).to_pylist() if v is not None))
+    # Keep selected attributes disk-backed so tile properties can be checked by source ID.
+    required = [id_field, *attrs, "bbox"]
+    for batch in pq.ParquetFile(source).iter_batches(batch_size=4096, columns=required, use_threads=False):
+        columns = {n: batch.column(batch.schema.get_field_index(n)).to_pylist() for n in required}
+        for i, fid in enumerate(columns[id_field]):
+            props = {name: _json_value(columns[name][i]) for name in tile_attrs}
+            box = columns["bbox"][i]
+            if box is not None:
+                props.update({f"_src_{k}": box[k] for k in ("xmin", "ymin", "xmax", "ymax")})
+            props = {name: value for name, value in props.items() if value is not None}
+            fingerprint = _fingerprint(props)
+            id_db.execute("INSERT INTO source_props VALUES (?, ?)", (int(fid), fingerprint))
+        guard_resources(data_root, destination)
+    id_db.commit()
+    with pmtiles.open("rb") as archive_file:
+        get_bytes = pmtiles_reader.MmapSource(archive_file)
+        for (z, x, y), tile_data in pmtiles_reader.all_tiles(get_bytes):
+            if z != MAX_ZOOM:
+                continue
+            for feature in decode_features(tile_data, layer):
+                fid = int(feature["id"])
+                id_db.execute("INSERT OR IGNORE INTO tile_ids VALUES (?)", (fid,))
+                expected_props_hash = id_db.execute("SELECT fingerprint FROM source_props WHERE id=?", (fid,)).fetchone()
+                if expected_props_hash is None:
+                    raise ValueError(f"maxzoom tile contains unknown source ID {fid}")
+                actual_props = feature.get("properties", {})
+                tile_fingerprint = _fingerprint(actual_props)
+                if tile_fingerprint != expected_props_hash[0]:
+                    raise ValueError(f"selected attribute fingerprint mismatch for source ID {fid}")
+                id_db.execute("INSERT OR IGNORE INTO checked_ids VALUES (?)", (fid,))
+            tile_count += 1
+            if tile_count % 1000 == 0:
+                guard_resources(data_root, destination)
+    id_db.commit()
+    unique_tile_ids = id_db.execute("SELECT COUNT(*) FROM tile_ids").fetchone()[0]
+    unique_source_ids = id_db.execute("SELECT COUNT(*) FROM source_ids").fetchone()[0]
+    accounted = id_db.execute("SELECT COUNT(*) FROM source_ids INNER JOIN tile_ids USING(id)").fetchone()[0]
+    checked = id_db.execute("SELECT COUNT(*) FROM checked_ids").fetchone()[0]
+    missing_count = unique_source_ids - accounted
+    id_db.execute("INSERT INTO missing_ids SELECT source_ids.id FROM source_ids LEFT JOIN tile_ids USING(id) WHERE tile_ids.id IS NULL")
+    id_db.commit()
+    missing_hash = hashlib.sha256()
+    for (missing_id,) in id_db.execute("SELECT source_ids.id FROM source_ids LEFT JOIN tile_ids USING(id) WHERE tile_ids.id IS NULL ORDER BY source_ids.id"):
+        missing_hash.update(str(missing_id).encode() + b"\n")
+    missing_path = destination / f"{layer}.maxzoom-missing-ids.txt"
+    with missing_path.open("w") as missing_file:
+        for (missing_id,) in id_db.execute("SELECT source_ids.id FROM source_ids LEFT JOIN tile_ids USING(id) WHERE tile_ids.id IS NULL ORDER BY source_ids.id"):
+            missing_file.write(f"{missing_id}\n")
+    classification_path = destination / f"{layer}.maxzoom-missing-classification.jsonl"
+    classification_counts = classify_missing(source, id_field, row_report["geometry_column"], id_db,
+                                               geometry_type, classification_path,
+                                               guard=lambda: guard_resources(data_root, destination))
+    id_db.close()
+    source_display_path = source.relative_to(data_root).as_posix() if source.is_relative_to(data_root) else source.name
+    report = {"dataset_key": key, "source_path": source_display_path, "source_sha256": source_hash,
+              "source_rows": row_report["source_rows"], "unique_source_ids": row_report["unique_ids"],
+              "id_field": id_field, "id_encoding": id_encoding,
+              "attribute_fields": tile_attrs + ["_src_xmin", "_src_ymin", "_src_xmax", "_src_ymax"],
+              "geometry_type": geometry_type, "layer": layer, "min_zoom": 0, "max_zoom": MAX_ZOOM,
+              "minzoom_policy": "criteria.json piecewise threshold schedule; explicit per-feature tippecanoe.minzoom; unknown metric at z12",
+              "minzoom_metric": {"field": metric, "units": "m3/s" if metric == "DIS_AV_CMS" else "km2" if metric == "Lake_area" else None,
+                                 "thresholds": [[10000, 0], [1000, 2], [100, 4], [10, 6], [1, 8], [0.1, 10], [0, 12]],
+                                 "unknown_metric_minzoom": 12},
+              "maxzoom_tiles": tile_count, "maxzoom_ids_decoded": unique_tile_ids, "maxzoom_ids_accounted": accounted,
+              "maxzoom_ids_attribute_checked": checked,
+              "maxzoom_missing_id_count": missing_count, "maxzoom_missing_ids_sha256": missing_hash.hexdigest(),
+              "maxzoom_missing_ids_path": missing_path.name,
+              "maxzoom_missing_classification_path": classification_path.name,
+              "maxzoom_missing_classification_counts": classification_counts,
+              "coverage_classification": "empty, zero-dimension, quantization-collapse, and unexpected-loss IDs are enumerated by source ID; only explicitly classified collapses are acceptable exceptions",
+              "empty_geometry_rows": row_report["empty_geometry_rows"], "input_mbtiles_removed_after_conversion": True,
+              "minzoom_feature_counts": row_report["minzoom_feature_counts"],
+              "source_geometry_handling": "read WKB from pinned GeoParquet in row order, convert directly to GeoJSON geometry without coordinate rewriting; Tippecanoe projects to Web Mercator and quantizes/simplifies for display only",
+              "source_bounds": source_bounds, "pmtiles_bounds": bounds,
+              "attribution": SOURCE_ATTRIBUTION[key],
+              "python_packages": packages,
+              "source_row_bbox_fields": ["_src_xmin", "_src_ymin", "_src_xmax", "_src_ymax"],
+              "resource_usage_at_start": resource_start,
+              "pmtiles_path": f"assets/{pmtiles.name}", "pmtiles_sha256": sha256(pmtiles), "pmtiles_size_bytes": pmtiles.stat().st_size,
+              "tippecanoe_sha256": expected_tip_sha, "tippecanoe_version": "2.79.0", "threads": THREADS}
+    report_dir = destination / "reports"
+    report_dir.mkdir(exist_ok=True)
+    report["tile_archive_reused"] = bool(reuse_archive)
+    report["tile_archive_reused_from"] = reuse_archive.name if reuse_archive else None
+    report["attribution_embedded"] = not bool(reuse_archive)
+    (report_dir / f"{layer}.build-report.json").write_text(json.dumps(report, indent=2) + "\n")
+    mbtiles.unlink(missing_ok=True)
+    shutil.rmtree(scratch)
+    update_manifest(destination, key, source, report)
+    (destination / "id-accounting.sqlite").unlink()
+    if classification_counts.get("unexpected_loss", 0):
+        raise RuntimeError(f"{classification_counts['unexpected_loss']} IDs are missing at maxzoom without a source-empty or quantization-collapse explanation")
+    return report
+
+
+def update_manifest(destination: Path, key: str, source: Path, report: dict[str, Any]) -> None:
+    layer = report["layer"]
+    dataset = "hydrolakes" if key == "hydrolakes" else "free-flowing-rivers" if key == "free-flowing-rivers" else "lakeatlas"
+    product_id = {"hydrolakes": "hydrolakes-1", "free-flowing-rivers": "free-flowing-rivers-1",
+                  "lakeatlas-polygons": "lakeatlas-1", "lakeatlas-pour-points": "lakeatlas-2"}[key]
+    manifest_path = destination / "manifest.json"
+    manifest = json.loads(manifest_path.read_text()) if manifest_path.exists() else {
+        "schema_version": 1, "dataset_id": dataset, "display_release": "display-v1",
+        "analytic_release": ANALYTIC_RELEASES[key], "status": "provisional", "assets": [], "files": {},
+        "attribution": f"{SOURCE_ATTRIBUTION[key]}; Tippecanoe v2.79.0"
+    }
+    asset = {
+        "id": product_id, "title": layer.replace("-", " ").title(), "path": report["pmtiles_path"],
+        "size_bytes": report["pmtiles_size_bytes"], "sha256": report["pmtiles_sha256"],
+        "source_layer": layer, "geometry_type": report["geometry_type"], "min_zoom": 0,
+        "max_zoom": MAX_ZOOM, "id_field": report["id_field"],
+        "source_rows": report["source_rows"], "attribute_fields": report["attribute_fields"],
+        "id_encoding": report.get("id_encoding", "mvt_feature_id"),
+        "source_asset": {"path": f"assets/{source.name}", "size_bytes": source.stat().st_size, "sha256": report["source_sha256"]},
+        "style_path": f"styles/{layer}.json",
+        "maxzoom_id_accounting": {"source_ids": report["unique_source_ids"], "accounted_ids": report["maxzoom_ids_accounted"],
+                                  "missing_ids": report["maxzoom_missing_id_count"], "missing_ids_path": report["maxzoom_missing_ids_path"]}
+    }
+    manifest["assets"] = [a for a in manifest["assets"] if a["id"] != product_id] + [asset]
+    manifest["attribution"] = f"{SOURCE_ATTRIBUTION[key]}; Tippecanoe v2.79.0"
+    manifest["assets"].sort(key=lambda a: a["id"])
+    styles = destination / "styles"
+    styles.mkdir(exist_ok=True)
+    paint = ({"fill-color": "#4b98ad", "fill-opacity": 0.76, "fill-outline-color": "#276577"}
+             if report["geometry_type"] == "polygon" else
+             {"line-color": "#276d87", "line-width": 1.5, "line-opacity": 0.86}
+             if report["geometry_type"] == "line" else
+             {"circle-color": "#276d87", "circle-radius": 3, "circle-stroke-color": "#f5f0e6", "circle-stroke-width": 0.7})
+    style_type = {"polygon": "fill", "line": "line", "point": "circle"}[report["geometry_type"]]
+    style = {"version": 8, "name": layer,
+             "sources": {"data": {"type": "vector", "url": f"../{report['pmtiles_path']}"}},
+             "layers": [{"id": layer, "type": style_type, "source": "data",
+                         "source-layer": layer, "paint": paint}]}
+    style_path = styles / f"{layer}.json"
+    style_path.write_text(json.dumps(style, indent=2) + "\n")
+    (destination / "README.md").write_text(
+        f"# {layer.replace('-', ' ').title()} display package\n\n{SOURCE_ATTRIBUTION[key]}\n\n"
+        "Display derivative built with Tippecanoe v2.79.0. Use the pinned GeoParquet release for analysis and full attribute lookup. "
+        "This package is provisional until source, maximum-zoom, and geometry validation passes.\n"
+    )
+    files = {}
+    for path in sorted(destination.rglob("*")):
+        if path.is_file() and path.name != "manifest.json" and not path.name.endswith(".mbtiles") and path.name != "id-accounting.sqlite":
+            files[path.relative_to(destination).as_posix()] = {"size_bytes": path.stat().st_size, "sha256": sha256(path)}
+    manifest["files"] = files
+    manifest_path.write_text(json.dumps(manifest, indent=2) + "\n")
+
+
+def main() -> None:
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("key", choices=sorted(SOURCES))
+    ap.add_argument("--output", type=Path, required=True)
+    ap.add_argument("--source", type=Path)
+    ap.add_argument("--data-root", type=Path, required=True, help="Root containing the prepared release products")
+    ap.add_argument("--reuse-archive", type=Path, help="Adopt an existing PMTiles archive and rerun source/archive validation")
+    args = ap.parse_args()
+    print(json.dumps(build_one(args.key, args.output, args.data_root, args.source, args.reuse_archive), indent=2))
+
+
+if __name__ == "__main__":
+    main()

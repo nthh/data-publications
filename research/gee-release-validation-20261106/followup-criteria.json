@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "type": "posthoc_explanatory_diagnostics_not_replacement_parity_gate",
+  "parent_criteria_sha256": "46d82a976f5099e89b52cf3be76924903b7ab0e21640268e4fd5d4e8cb8f2977",
+  "known_results": [
+    "AllsixactualGEEcounts and allrequested sampleidentitiesmatch.",
+    "All5120rawGRWLattribute cells match exactly; allsampledstrictgeometrychecks fail.",
+    "HydroLAKES508Lake_name nulls become emptystrings inGEE; otherattribute cells match.",
+    "FFRERO_YLD_TON is absent whileGEE exposesERO_YLD_TO; numeric differences and a string difference remain.",
+    "LakeATLASnumericprecision differences occur inbothlayers.",
+    "Aligned-vertex diagnostics have false distance interpretations when normalization changes ring starts/order; nine lakecases are incomplete, includingeightlargepolygons andoneGeometryCollection."
+  ],
+  "attribute_diagnostic": {
+    "policy": "Extract all differences without alteringlocalvalues orstrictthresholds. Separate scienceattrs fromsourcegeometry-derivedcolumns.",
+    "field_alias": {
+      "dataset": "free-flowing-rivers",
+      "source": "ERO_YLD_TON",
+      "gee": "ERO_YLD_TO",
+      "reference": "https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_v1_FreeFlowingRivers",
+      "role": "Separately documented field-name normalization; original missing-fieldfailure retained."
+    },
+    "precision_hypotheses": [
+      "FFR differences may match12significant-digit rounding; report eachcasecompatible/notcompatible.",
+      "LakeATLAS deviations may fit6significant-digit decimalprecision; bound0.5*10**(floor(log10(abs(source)))-5), plus floatingserializationroundoff; reportalloutliers."
+    ],
+    "interpretation": "Exploratory compatibility withrounding patterns, not proof ofupstream ingestion method or permission tochangevalues."
+  },
+  "geometry_diagnostic": {
+    "selection": "Everynewcomparison row whose1m diagnostic failed or remainedincomplete; noadditionalGEEreads.",
+    "method": "Normalizefeaturegeometry to independent line/ring coordinatearrays withoutjoiningparts; includeGeometryCollection polygonsandlines. Project locally toWGS84azimuthalequidistantcenter usingcircularmeanlongitude. BuildindependentsegmentSTRtrees. Measurebothdirections ofallvertices andsegmentmidpoints toopposite segments, preservingpartbreaks; include topology/part/vertexcounts.",
+    "threshold_meters": 1.0,
+    "claim": "Discrete vertex-and-midpoint distance diagnostic only; not acontinuousHausdorffcertificate, no strictparity upgrade. Recordmaximumsegmentlength so interpolationgaps remainexplicit.",
+    "cases": "Large lakes, rawGRWL andFFR use identical method. Empty/nonfinite input fails. No geometry repair, simplification, snapping, width-basedmatching orsegmentjoining.",
+    "resource_bounds": {
+      "max_vertices_per_feature": 1000000,
+      "query_points_per_batch": 8192,
+      "concurrency": 1,
+      "maximum_runtime_seconds": 1200
+    }
+  },
+  "output_policy": "Keepstrictcomparison reportsunchanged. Recordnewcode/lock/criteria/source/capture/reporthashes andcommit beforeevaluating diagnostics. Do notpublishdata products."
+}

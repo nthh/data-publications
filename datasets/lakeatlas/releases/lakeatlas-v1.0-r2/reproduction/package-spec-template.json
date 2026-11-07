@@ -1,0 +1,247 @@
+{
+  "dataset_record_path": "__REPO_ROOT__/datasets/lakeatlas/dataset.yaml",
+  "dataset_id": "lakeatlas",
+  "title": "HydroATLAS LakeATLAS v1.0 — global hydro-environmental lake attributes",
+  "release_id": "lakeatlas-v1.0-r2",
+  "release_version": "1.0.2",
+  "output_dir": "__PACKAGE_OUTPUT__",
+  "created": "2026-10-31T00:00:00Z",
+  "source_attribution": {
+    "url": "https://doi.org/10.6084/m9.figshare.19312001.v1",
+    "title": "LakeATLAS v1.0 producer data and documentation",
+    "version": "Figshare article version 1; LakeATLAS v1.0",
+    "attribution": "HydroSHEDS / HydroATLAS authors. LakeATLAS version 1.0. Cite Lehner, B., Messager, M.L., Korver, M.C., and Linke, S. (2022), Global hydro-environmental lake characteristics at high spatial resolution, Scientific Data 9, 351, DOI 10.1038/s41597-022-01425-z. Source archive SHA-256 baa4d760a163350dd6a30c21c82db1e23b150834a8b848885eba6dc9ba1175df.",
+    "license": {
+      "identifier": "CC-BY-4.0",
+      "url": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  },
+  "producers": [
+    {
+      "name": "HydroSHEDS / HydroATLAS authors",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://www.hydrosheds.org/products/hydroatlas"
+    },
+    {
+      "name": "Lehner, Messager, Korver, and Linke",
+      "roles": [
+        "producer"
+      ],
+      "url": "https://doi.org/10.1038/s41597-022-01425-z"
+    }
+  ],
+  "source_fidelity_report_path": "__PORTABLE_EVIDENCE_ROOT__/source-fidelity.json",
+  "clean_rebuild_report_path": "__PORTABLE_EVIDENCE_ROOT__/clean-rebuild.json",
+  "assets": [
+    {
+      "asset_id": "lakeatlas-polygons",
+      "path": "__ARTIFACT_ROOT__/releases/lakeatlas-v1.0-r2-spatial-primary-b657944/data/lakeatlas-polygons-spatial.parquet",
+      "identifier_column": "OBJECTID",
+      "title": "LakeATLAS v1.0 polygons",
+      "description": "Global lake polygon layer from the pinned LakeATLAS v1.0 File Geodatabase. Spatially ordered by deterministic WGS84 bbox-center Hilbert key with producer OBJECTID tie-breaker. Every source attribute, null, native identifier, and source-decoded WKB is preserved; per-row bbox metadata is derived from the unchanged WKB."
+    },
+    {
+      "asset_id": "lakeatlas-pour-points",
+      "path": "__ARTIFACT_ROOT__/releases/lakeatlas-v1.0-r2-spatial-primary-b657944/data/lakeatlas-pour-points-spatial.parquet",
+      "identifier_column": "OBJECTID",
+      "title": "LakeATLAS v1.0 pour points",
+      "description": "Separate producer pour-point layer for the LakeATLAS v1.0 lakes. Spatially ordered by deterministic WGS84 bbox-center Hilbert key with producer OBJECTID tie-breaker. Every source attribute, null, native identifier, and source-decoded WKB is preserved; per-row bbox metadata is derived from the unchanged WKB."
+    }
+  ],
+  "supporting_files": [
+    {
+      "path": "__ARTIFACT_ROOT__/source/HydroATLAS_TechDoc_v10_1.pdf",
+      "package_path": "source/HydroATLAS_TechDoc_v10_1.pdf",
+      "title": "HydroATLAS technical documentation v1.0",
+      "media_type": "application/pdf",
+      "description": "Producer documentation, including source-format and source-license notices."
+    },
+    {
+      "path": "__ARTIFACT_ROOT__/source/LakeATLAS_Catalog_v10.pdf",
+      "package_path": "source/LakeATLAS_Catalog_v10.pdf",
+      "title": "LakeATLAS v1.0 catalog and attribute license dictionary",
+      "media_type": "application/pdf",
+      "description": "Producer catalog mapping attribute columns to CC BY 4.0 or ODbL 1.0 notices."
+    },
+    {
+      "path": "__REPO_ROOT__/datasets/lakeatlas/source-inspection.json",
+      "package_path": "provenance/source-inspection.json",
+      "title": "Pinned source archive and layer inspection",
+      "media_type": "application/json"
+    },
+    {
+      "path": "__PORTABLE_EVIDENCE_ROOT__/rebuild-environment.json",
+      "package_path": "provenance/rebuild-environment.json",
+      "title": "Clean rebuild interpreter, locked environment and workflow revisions",
+      "media_type": "application/json"
+    },
+    {
+      "path": "__REPO_ROOT__/datasets/lakeatlas/ATTRIBUTION.md",
+      "package_path": "source/ATTRIBUTION.md",
+      "title": "Source attribution and field-level licensing notice",
+      "media_type": "text/markdown"
+    },
+    {
+      "path": "__PORTABLE_EVIDENCE_ROOT__/evidence-provenance.json",
+      "package_path": "provenance/evidence-provenance.json",
+      "title": "Original and path-redacted portable report hashes",
+      "media_type": "application/json"
+    },
+    {
+      "path": "__PORTABLE_EVIDENCE_ROOT__/source-fidelity.json",
+      "package_path": "provenance/source-fidelity.json",
+      "title": "Bound source conversion fidelity report",
+      "media_type": "application/json"
+    },
+    {
+      "path": "__PORTABLE_EVIDENCE_ROOT__/clean-rebuild.json",
+      "package_path": "provenance/clean-rebuild.json",
+      "title": "Clean raw and final spatial rebuild report",
+      "media_type": "application/json"
+    },
+    {
+      "path": "__PORTABLE_EVIDENCE_ROOT__/spatial-order-polygons-primary.json",
+      "package_path": "provenance/spatial-order-polygons-primary.json",
+      "title": "Polygon spatial-order full source comparison",
+      "media_type": "application/json"
+    },
+    {
+      "path": "__PORTABLE_EVIDENCE_ROOT__/spatial-order-pour-points-primary.json",
+      "package_path": "provenance/spatial-order-pour-points-primary.json",
+      "title": "Pour-point spatial-order full source comparison",
+      "media_type": "application/json"
+    },
+    {
+      "path": "__PORTABLE_EVIDENCE_ROOT__/spatial-pruning-polygons-primary.json",
+      "package_path": "provenance/spatial-pruning-polygons-primary.json",
+      "title": "Polygon fixed-window bbox pruning validation",
+      "media_type": "application/json"
+    },
+    {
+      "path": "__PORTABLE_EVIDENCE_ROOT__/spatial-pruning-pour-points-primary.json",
+      "package_path": "provenance/spatial-pruning-pour-points-primary.json",
+      "title": "Pour-point fixed-window bbox pruning validation",
+      "media_type": "application/json"
+    },
+    {
+      "path": "__PORTABLE_EVIDENCE_ROOT__/spatial-order-polygons-clean.json",
+      "package_path": "provenance/spatial-order-polygons-clean.json",
+      "title": "Clean polygon spatial rebuild and full fidelity comparison",
+      "media_type": "application/json"
+    },
+    {
+      "path": "__PORTABLE_EVIDENCE_ROOT__/spatial-order-pour-points-clean.json",
+      "package_path": "provenance/spatial-order-pour-points-clean.json",
+      "title": "Clean pour-point spatial rebuild and full fidelity comparison",
+      "media_type": "application/json"
+    },
+    {
+      "path": "__PORTABLE_EVIDENCE_ROOT__/spatial-pruning-polygons-clean.json",
+      "package_path": "provenance/spatial-pruning-polygons-clean.json",
+      "title": "Clean polygon fixed-window bbox pruning validation",
+      "media_type": "application/json"
+    },
+    {
+      "path": "__PORTABLE_EVIDENCE_ROOT__/spatial-pruning-pour-points-clean.json",
+      "package_path": "provenance/spatial-pruning-pour-points-clean.json",
+      "title": "Clean pour-point fixed-window bbox pruning validation",
+      "media_type": "application/json"
+    }
+  ],
+  "data_license": {
+    "license": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "attribution": "HydroSHEDS / HydroATLAS authors; cite Lehner, B., Messager, M.L., Korver, M.C., and Linke, S. (2022), Scientific Data 9, 351, DOI 10.1038/s41597-022-01425-z.",
+    "note": "The producer identifies the collective HydroATLAS database as CC BY 4.0. The bundled producer catalog maps individual attribute columns to CC BY 4.0 or ODbL 1.0; both producer PDFs are retained as supporting files. The technical documentation states that licenses of underpinning source datasets in their original formats are not changed. This package makes no broader license determination.",
+    "stac_license": "other"
+  },
+  "source_license": {
+    "identifier": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "producer_page": "https://www.hydrosheds.org/products/hydroatlas",
+    "article_version": "https://doi.org/10.6084/m9.figshare.19312001.v1",
+    "field_level_notices": "Consult the bundled LakeATLAS_Catalog_v10.pdf for per-column license designations; generated package field inventories describe schema only and do not reproduce or infer these designations. The producer technical documentation says underlying sources retain their original-format licenses."
+  },
+  "stac_license": "other",
+  "citation": "Lehner, B., Messager, M.L., Korver, M.C., and Linke, S. (2022). Global hydro-environmental lake characteristics at high spatial resolution. Scientific Data 9, 351. https://doi.org/10.1038/s41597-022-01425-z. Source data: HydroATLAS LakeATLAS v1.0, Figshare version 1, https://doi.org/10.6084/m9.figshare.19312001.v1.",
+  "description": "Two analytic GeoParquet assets from the pinned LakeATLAS v1.0 producer File Geodatabase: the complete polygon layer and separate pour-point layer. The deterministic spatially ordered representations preserve producer OBJECTID, Hylak_id and all decoded source fields, nulls, and WKB; WGS84 bbox fields support spatial filtering. No geometries are repaired or simplified. Attribute years vary by source and do not represent a 2026 observation.",
+  "temporal_interval": [
+    null,
+    null
+  ],
+  "workflow_paths": [
+    "datasets/lakeatlas/source.py",
+    "datasets/lakeatlas/build.py",
+    "datasets/lakeatlas/validate.py",
+    "datasets/lakeatlas/validate_worker.py",
+    "datasets/lakeatlas/test_faults.py",
+    "datasets/lakeatlas/pyproject.toml",
+    "datasets/lakeatlas/uv.lock",
+    "datasets/lakeatlas/dataset.yaml",
+    "datasets/lakeatlas/source-inspection.json",
+    "datasets/lakeatlas/ATTRIBUTION.md",
+    "datasets/lakeatlas/README.md",
+    "datasets/lakeatlas/validation-plan.md",
+    "research/hydro-releases-20261031/bind_fidelity.py",
+    "research/hydro-releases-20261031/test_bind_fidelity.py",
+    "datasets/lakeatlas/releases/lakeatlas-v1.0-r2/reproduction/prepare_portable_evidence.py",
+    "datasets/lakeatlas/releases/lakeatlas-v1.0-r2/reproduction/test_prepare_portable_evidence.py",
+    "scripts/release_tools/package_release.py",
+    "scripts/release_tools/serve.py",
+    "scripts/release_tools/pyproject.toml",
+    "scripts/release_tools/uv.lock",
+    "scripts/release_tools/package.json",
+    "scripts/release_tools/package-lock.json",
+    "scripts/release_tools/README.md",
+    "scripts/release_tools/AGENTS.md",
+    "scripts/release_tools/test_package_release.py",
+    "scripts/release_tools/spatial_order.py",
+    "scripts/release_tools/test_spatial_order.py",
+    "scripts/release_tools/check_spatial_pruning.py",
+    "scripts/release_tools/test_spatial_pruning.py",
+    "datasets/lakeatlas/releases/lakeatlas-v1.0-r2/README.md",
+    "datasets/lakeatlas/releases/lakeatlas-v1.0-r2/reproduction/README.md",
+    "datasets/lakeatlas/releases/lakeatlas-v1.0-r2/reproduction/package-spec-template.json",
+    "datasets/lakeatlas/releases/lakeatlas-v1.0-r2/reproduction/fidelity-normalizer-template.json",
+    "datasets/lakeatlas/releases/lakeatlas-v1.0-r2/reproduction/materialize_release_inputs.py"
+  ],
+  "workflow_revisions": {
+    "datasets/lakeatlas/source.py": "691fc304a2df25d04c13652d6429ff0e32993be2",
+    "datasets/lakeatlas/build.py": "691fc304a2df25d04c13652d6429ff0e32993be2",
+    "datasets/lakeatlas/validate.py": "691fc304a2df25d04c13652d6429ff0e32993be2",
+    "datasets/lakeatlas/validate_worker.py": "691fc304a2df25d04c13652d6429ff0e32993be2",
+    "datasets/lakeatlas/test_faults.py": "691fc304a2df25d04c13652d6429ff0e32993be2",
+    "datasets/lakeatlas/pyproject.toml": "691fc304a2df25d04c13652d6429ff0e32993be2",
+    "datasets/lakeatlas/uv.lock": "691fc304a2df25d04c13652d6429ff0e32993be2",
+    "datasets/lakeatlas/dataset.yaml": "691fc304a2df25d04c13652d6429ff0e32993be2",
+    "research/hydro-releases-20261031/bind_fidelity.py": "7602b5e5252aec2f26167a7f560eaa7dd65a38a0",
+    "research/hydro-releases-20261031/test_bind_fidelity.py": "7602b5e5252aec2f26167a7f560eaa7dd65a38a0",
+    "scripts/release_tools/spatial_order.py": "b6579442c8a0ba73e38b444f143bb6194ef056e5",
+    "scripts/release_tools/test_spatial_order.py": "b6579442c8a0ba73e38b444f143bb6194ef056e5",
+    "scripts/release_tools/check_spatial_pruning.py": "7602b5e5252aec2f26167a7f560eaa7dd65a38a0",
+    "scripts/release_tools/test_spatial_pruning.py": "7602b5e5252aec2f26167a7f560eaa7dd65a38a0",
+    "datasets/lakeatlas/validation-plan.md": "b6579442c8a0ba73e38b444f143bb6194ef056e5",
+    "datasets/lakeatlas/ATTRIBUTION.md": "4f8ec8854a88b30441a9d5ba13bbdeb4108df3dd",
+    "datasets/lakeatlas/source-inspection.json": "4f8ec8854a88b30441a9d5ba13bbdeb4108df3dd",
+    "scripts/release_tools/package_release.py": "7cc922857065883d1803a6892a5a160ce5a4f722",
+    "scripts/release_tools/serve.py": "c18b96e2f3d631089453459d158c91fc0fa31d87",
+    "scripts/release_tools/add_spatial_bounds.py": "c18b96e2f3d631089453459d158c91fc0fa31d87",
+    "scripts/release_tools/test_spatial_bounds.py": "c18b96e2f3d631089453459d158c91fc0fa31d87",
+    "scripts/release_tools/pyproject.toml": "9964eacc57bfe9b248ea160e39e8a63f904529bb",
+    "scripts/release_tools/uv.lock": "9964eacc57bfe9b248ea160e39e8a63f904529bb",
+    "scripts/release_tools/package.json": "c18b96e2f3d631089453459d158c91fc0fa31d87",
+    "scripts/release_tools/package-lock.json": "c18b96e2f3d631089453459d158c91fc0fa31d87",
+    "scripts/release_tools/README.md": "b6579442c8a0ba73e38b444f143bb6194ef056e5",
+    "scripts/release_tools/AGENTS.md": "c18b96e2f3d631089453459d158c91fc0fa31d87",
+    "scripts/release_tools/test_package_release.py": "7cc922857065883d1803a6892a5a160ce5a4f722"
+  },
+  "validation_bbox": [
+    5,
+    45,
+    15,
+    55
+  ]
+}

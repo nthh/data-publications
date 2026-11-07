@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "code_commit": "d2d782fcc1b9430e1b2fdf043aa567239a3fdf42",
+  "clean_checkout": true,
+  "dependency_setup": "locked offline uv environments and npm ci --offline; cached runtime extension checked against SHA-256 pin",
+  "fixtures_match_task_checkout": {
+    "point": true,
+    "line": true,
+    "polygon": true
+  },
+  "frontend_all_ten_assets_byte_identical": true,
+  "verification": [
+    {
+      "command": "python -m unittest tests.test_validate_display tests.test_finalize_display -v",
+      "tests": 24,
+      "status": "passed"
+    },
+    {
+      "command": "python -m unittest tests.test_source_products tests.test_cloud_viewer_prepare tests.test_cloud_viewer_run tests.test_cloud_viewer_server -v",
+      "tests": 58,
+      "status": "passed"
+    },
+    {
+      "command": "npm --prefix scripts/cloud_viewer test",
+      "tests": 10,
+      "status": "passed"
+    },
+    {
+      "command": "node scripts/cloud_viewer/export-grwl-style.mjs --check",
+      "status": "passed"
+    },
+    {
+      "command": "npm --prefix scripts/cloud_viewer run build",
+      "status": "passed",
+      "bytes": 40133347
+    }
+  ],
+  "scope": "Fixture and frontend reproducibility only; final real-data launcher/browser rehearsal follows after LakeATLAS packaging. Production PMTiles were not rebuilt twice."
+}

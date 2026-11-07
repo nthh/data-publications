@@ -1,0 +1,2259 @@
+[
+  {
+    "entry_ids": [
+      "ECMWF/ERA5/DAILY",
+      "ECMWF/ERA5/HOURLY",
+      "ECMWF/ERA5/HOURLY_PRESSURE_LEVELS",
+      "ECMWF/ERA5/MONTHLY"
+    ],
+    "add_paper_dois": [
+      "10.1002/qj.3803"
+    ],
+    "citation_scope": "base_dataset_family",
+    "citation_scope_note": "Hersbach et al. 2020 is the ERA5 reanalysis paper. The catalog lists this title for hourly data; aggregated releases inherit the broader family proxy.",
+    "evidence_urls": [
+      "https://doi.org/10.1002/qj.3803",
+      "https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_HOURLY"
+    ],
+    "review_phase": "count_blind_supplement"
+  },
+  {
+    "entry_ids": [
+      "ECMWF/ERA5_LAND/DAILY_AGGR",
+      "ECMWF/ERA5_LAND/HOURLY",
+      "ECMWF/ERA5_LAND/MONTHLY",
+      "ECMWF/ERA5_LAND/MONTHLY_AGGR",
+      "ECMWF/ERA5_LAND/MONTHLY_BY_HOUR",
+      "ECMWF/ERA5_LAND/STATIC"
+    ],
+    "add_paper_dois": [
+      "10.5194/essd-13-4349-2021"
+    ],
+    "citation_scope": "base_dataset_family",
+    "citation_scope_note": "Producer documentation recommends the ERA5-Land paper, which explicitly identifies the hourly and monthly data DOIs. Counts are family-level for temporal aggregations; the catalog monthly data DOI remains separate even on hourly/daily entries.",
+    "evidence_urls": [
+      "https://confluence.ecmwf.int/pages/viewpage.action?pageId=355336451",
+      "https://essd.copernicus.org/articles/13/4349/2021/"
+    ],
+    "review_phase": "count_blind_supplement"
+  },
+  {
+    "entry_ids": [
+      "NASA/GSFC/MERRA/aer/2",
+      "NASA/GSFC/MERRA/aer_nv/2",
+      "NASA/GSFC/MERRA/flx/2",
+      "NASA/GSFC/MERRA/lnd/2",
+      "NASA/GSFC/MERRA/rad/2",
+      "NASA/GSFC/MERRA/slv/2"
+    ],
+    "add_paper_dois": [
+      "10.1175/jcli-d-16-0758.1"
+    ],
+    "citation_scope": "base_dataset_family",
+    "citation_scope_note": "NASA identifies Gelaro et al. 2017 as the primary MERRA-2 reference. Catalog entries expose separate variable collections; counts refer to the base reanalysis family.",
+    "evidence_urls": [
+      "https://gmao.gsfc.nasa.gov/gmao-products/merra-2/system-characteristics_merra-2/"
+    ],
+    "review_phase": "count_blind_supplement"
+  },
+  {
+    "entry_ids": [
+      "NASA/GLDAS/V021/NOAH/G025/T3H",
+      "NASA/GLDAS/V022/CLSM/G025/DA1D",
+      "NASA/GLDAS/V20/NOAH/G025/T3H"
+    ],
+    "add_paper_dois": [
+      "10.1175/bams-85-3-381"
+    ],
+    "citation_scope": "base_dataset_family",
+    "citation_scope_note": "NASA labels Rodell et al. 2004 the primary GLDAS reference. This is a family proxy across 2.1 and 2.2; product-specific papers remain separate candidates.",
+    "evidence_urls": [
+      "https://ldas.gsfc.nasa.gov/gldas/publications",
+      "https://doi.org/10.1175/BAMS-85-3-381"
+    ],
+    "review_phase": "count_blind_supplement"
+  },
+  {
+    "entry_ids": [
+      "MODIS/006/MOD13A1",
+      "MODIS/006/MOD13A2",
+      "MODIS/006/MOD13Q1",
+      "MODIS/006/MYD13A1",
+      "MODIS/006/MYD13A2",
+      "MODIS/006/MYD13Q1",
+      "MODIS/061/MOD13A1",
+      "MODIS/061/MOD13A2",
+      "MODIS/061/MOD13A3",
+      "MODIS/061/MOD13C1",
+      "MODIS/061/MOD13Q1",
+      "MODIS/061/MYD13A1",
+      "MODIS/061/MYD13A2",
+      "MODIS/061/MYD13A3",
+      "MODIS/061/MYD13C1",
+      "MODIS/061/MYD13Q1"
+    ],
+    "add_paper_dois": [
+      "10.1016/s0034-4257(02)00096-2"
+    ],
+    "citation_scope": "base_dataset_family",
+    "citation_scope_note": "Huete et al. 2002 describes and evaluates the MODIS NDVI/EVI product family. Producer project documentation and the author manuscript establish the link. Counts are a base-family proxy for collection versions, Terra/Aqua, resolutions and aggregates.",
+    "evidence_urls": [
+      "https://modis-land.gsfc.nasa.gov/vi.html",
+      "https://vip.arizona.edu/documents/review/materials/Overview%20of%20the%20radiometric%20and%20biophysical%20performance%20of%20the%20MODIS%20vegetation%20indices.pdf"
+    ],
+    "identity_evidence": "supplemental-identities.json",
+    "review_phase": "count_blind_supplement"
+  },
+  {
+    "entry_ids": [
+      "MODIS/006/MOD11A1",
+      "MODIS/006/MOD11A2",
+      "MODIS/006/MYD11A1",
+      "MODIS/006/MYD11A2",
+      "MODIS/061/MOD11A1",
+      "MODIS/061/MOD11A2",
+      "MODIS/061/MYD11A1",
+      "MODIS/061/MYD11A2"
+    ],
+    "add_paper_dois": [
+      "10.1016/j.rse.2013.08.027"
+    ],
+    "citation_scope": "base_dataset_family",
+    "citation_scope_note": "Wan2014 explicitly validates Collection6 MOD11 products. The producer user guide recommends this reference; treated as a family proxy for Collection6.1, Terra/Aqua, and temporal aggregates. Not applied to distinct MOD21 products.",
+    "evidence_urls": [
+      "https://modis-land.gsfc.nasa.gov/pdf/MOD11_User_Guide_V6.pdf",
+      "https://modis.gsfc.nasa.gov/sci_team/pubs/abstract_new.php?id=10638"
+    ],
+    "identity_evidence": "supplemental-identities.json",
+    "review_phase": "count_blind_supplement"
+  },
+  {
+    "entry_ids": [
+      "MODIS/006/MOD17A2H",
+      "MODIS/006/MOD17A3H",
+      "MODIS/006/MOD17A3HGF",
+      "MODIS/006/MYD17A2H",
+      "MODIS/006/MYD17A3H",
+      "MODIS/006/MYD17A3HGF",
+      "MODIS/061/MOD17A2H",
+      "MODIS/061/MOD17A2HGF",
+      "MODIS/061/MOD17A3HGF",
+      "MODIS/061/MYD17A2H",
+      "MODIS/061/MYD17A3HGF"
+    ],
+    "add_paper_dois": [
+      "10.1641/0006-3568(2004)054[0547:acsmog]2.0.co;2"
+    ],
+    "citation_scope": "base_dataset_family",
+    "citation_scope_note": "The producer MOD17 project links Running et al. 2004 as the product/algorithm overview. This specific GPP/NPP product-family reference is distinct from generic photosynthetic theory. Family proxy across versions, platforms and gap-filling variants.",
+    "evidence_urls": [
+      "https://www.umt.edu/numerical-terradynamic-simulation-group/project/modis/mod17.php",
+      "https://scholarworks.umt.edu/ntsg_pubs/130/"
+    ],
+    "identity_evidence": "supplemental-identities.json",
+    "review_phase": "count_blind_supplement"
+  },
+  {
+    "group_id": "refs-b39374010cd4",
+    "add_paper_dois": [
+      "10.1038/s41591-020-1059-1"
+    ],
+    "resolved_titles": [
+      "Global maps of travel time to healthcare: A novel approach to modelling accessibility using open-source data"
+    ],
+    "citation_scope_note": "Parent corrected an inaccurate extracted title against the original citation text: Global maps of travel time to healthcare facilities (Weiss et al. 2020).",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41591-020-1059-1"
+    ],
+    "review_phase": "count_blind_identity_correction"
+  },
+  {
+    "group_id": "refs-43ca3fb14888",
+    "add_paper_dois": [],
+    "resolved_titles": [
+      "High-resolution mapping of global population distributions using remotely sensed and geospatial data"
+    ],
+    "citation_scope_note": "Removed an erroneous WorldPop title introduced during review; the source group is Oxford travel-time-to-cities and already supplies DOI10.1038/nature25181.",
+    "evidence_urls": [
+      "https://developers.google.com/earth-engine/datasets/catalog/Oxford_MAP_accessibility_to_cities_2015_v1_0"
+    ],
+    "review_phase": "count_blind_identity_correction"
+  },
+  {
+    "group_id": "refs-3d845b7a24bb",
+    "add_paper_dois": [
+      "10.1175/jhm560.1"
+    ],
+    "resolved_titles": [
+      "Global Precipitation at One-Degree Daily Resolution from Multi-Satellite Observations",
+      "The Global Precipitation Climatology Project (GPCP) Combined Precipitation Dataset",
+      "The TRMM Multi-satellite Precipitation Analysis: Quasi-Global, Multi-Year, Combined-Sensor Precipitation Estimates at Fine Scale",
+      "The Version 2 Global Precipitation Climatology Project (GPCP) Monthly Precipitation Analysis (1979-Present)"
+    ],
+    "citation_scope_note": "The catalog mixes TRMM with GPCP, GPM and general precipitation references. Count only the TMPA2007 product paper; related GPCP products and general error/model papers do not establish TRMM dataset adoption.",
+    "evidence_urls": [
+      "https://gpm.nasa.gov/resources/trmm-publications?page=28&sort_by=field_journal_value&sort_order=ASC&title=",
+      "https://doi.org/10.1175/JHM560.1"
+    ],
+    "review_phase": "count_blind_identity_correction"
+  },
+  {
+    "group_id": "refs-d2826b9136c0",
+    "add_paper_dois": [
+      "10.5194/isprs-archives-xli-b4-157-2016"
+    ],
+    "resolved_titles": [
+      "Initial Validation of the 30 m-mesh Global Digital Surface Model Generated by ALOS PRISM"
+    ],
+    "citation_scope_note": "Resolved Tadono2016 initial AW3D30 validation through the exact publisher volume/page linked by the catalog. Publisher title is Generation of the 30 m-mesh Global Digital Surface Model by ALOS PRISM; authors/year/volume/pages match the catalog link despite its alternate Initial Validation title.",
+    "evidence_urls": [
+      "https://isprs-archives.copernicus.org/articles/XLI-B4/157/2016/"
+    ],
+    "review_phase": "count_blind_identity_correction"
+  },
+  {
+    "group_id": "refs-e42eb117dc7e",
+    "add_paper_dois": [
+      "10.5194/isprs-archives-xli-b4-157-2016"
+    ],
+    "resolved_titles": [
+      "Initial Validation of the 30 m-mesh Global Digital Surface Model Generated by ALOS PRISM"
+    ],
+    "citation_scope_note": "Resolved Tadono2016 initial AW3D30 validation through the exact publisher volume/page linked by the catalog. Publisher title is Generation of the 30 m-mesh Global Digital Surface Model by ALOS PRISM; authors/year/volume/pages match the catalog link despite its alternate Initial Validation title.",
+    "evidence_urls": [
+      "https://isprs-archives.copernicus.org/articles/XLI-B4/157/2016/"
+    ],
+    "review_phase": "count_blind_identity_correction"
+  },
+  {
+    "group_id": "refs-e42eb117dc7e",
+    "add_paper_dois": [],
+    "resolved_titles": [
+      "Updates of 'AW3D30' ALOS Global Digital Surface Model in Antarctica with Other Open Access Datasets"
+    ],
+    "citation_scope_note": "Removed the AW3D2021 Antarctica update from this earlier-version reference group: it was not present in the source citation fields. Later-version group retains the paper where explicitly cited.",
+    "evidence_urls": [],
+    "review_phase": "count_blind_identity_correction"
+  },
+  {
+    "group_id": "refs-8d1bb7c435e4",
+    "add_paper_dois": [],
+    "resolved_titles": [
+      "Perspectives on the nature and definition of ecological regions"
+    ],
+    "citation_scope_note": "Omernik2004 is a conceptual discussion of ecoregions; retain product/map publications separately.",
+    "evidence_urls": [],
+    "review_phase": "count_blind_identity_correction"
+  },
+  {
+    "group_id": "refs-a7b25a20b08a",
+    "add_paper_dois": [],
+    "resolved_titles": [
+      "An effective approach for gap-filling continental scale remotely sensed time-series"
+    ],
+    "citation_scope_note": "Gap-filling method is not a distinct dataset publication; exclude algorithm popularity from dataset rank.",
+    "evidence_urls": [],
+    "review_phase": "count_blind_identity_correction"
+  },
+  {
+    "group_id": "refs-b4c937639868",
+    "add_paper_dois": [],
+    "resolved_titles": [
+      "MODIS tasselled cap: land cover characteristics expressed through transformed MODIS data"
+    ],
+    "citation_scope_note": "Tasseled-cap transform methods paper is not evidence of adoption of this processed MAP dataset; exclude from dataset score.",
+    "evidence_urls": [],
+    "review_phase": "count_blind_identity_correction"
+  },
+  {
+    "group_id": "refs-6729246166aa",
+    "entry_ids": [
+      "NASA/GDDP-CMIP6",
+      "NASA/NEX-GDDP"
+    ],
+    "remove_paper_dois": [
+      "10.5194/hess-16-3309-2012"
+    ],
+    "reason": "The 2012 technical note covers a quantile-mapping bias-correction method; it is not a publication of either NEX-GDDP release. The CMIP6 collection description separately points to Thrasher et al. 2022, so the shared DOI is especially misleading for that version. Resolve a release-specific producer paper or data DOI separately before replacement.",
+    "evidence_urls": [
+      "https://developers.google.com/earth-engine/datasets/catalog/NASA_GDDP-CMIP6",
+      "https://doi.org/10.5194/hess-16-3309-2012"
+    ],
+    "evidence_catalog_paths": [
+      "reference-groups.json#refs-6729246166aa",
+      "official-entries.json#NASA/GDDP-CMIP6"
+    ],
+    "review_phase": "count_blind_independent_audit",
+    "citation_scope_note": "The 2012 technical note covers a quantile-mapping bias-correction method; it is not a publication of either NEX-GDDP release. The CMIP6 collection description separately points to Thrasher et al. 2022, so the shared DOI is especially misleading for that version. Resolve a release-specific producer paper or data DOI separately before replacement."
+  },
+  {
+    "group_ids": [
+      "refs-b1aae2a8df0e",
+      "refs-b809c08d0d9c"
+    ],
+    "entry_ids": [
+      "NASA_USDA/HSL/SMAP_soil_moisture",
+      "NASA_USDA/HSL/soil_moisture"
+    ],
+    "remove_paper_dois": [
+      "10.1029/2012gl053470",
+      "10.1109/jstars.2009.2037163",
+      "10.1109/jstars.2016.2639338",
+      "10.3390/rs10081265"
+    ],
+    "reason": "The four titles in sci:citation/publications concern drought monitoring, vegetation prediction, crop-yield index comparisons, and an Earth Engine drought application. None describes construction or release of the NASA-USDA assimilated soil-moisture grids. These are applications/background under the fixed paper-role policy.",
+    "evidence_catalog_paths": [
+      "reference-groups.json#refs-b1aae2a8df0e",
+      "reference-groups.json#refs-b809c08d0d9c"
+    ],
+    "review_phase": "count_blind_independent_audit",
+    "citation_scope_note": "The four titles in sci:citation/publications concern drought monitoring, vegetation prediction, crop-yield index comparisons, and an Earth Engine drought application. None describes construction or release of the NASA-USDA assimilated soil-moisture grids. These are applications/background under the fixed paper-role policy."
+  },
+  {
+    "group_id": "refs-0673bc072497",
+    "entry_ids": [
+      "NOAA/GOES/16/MCMIPC",
+      "NOAA/GOES/16/MCMIPF",
+      "NOAA/GOES/16/MCMIPM",
+      "NOAA/GOES/17/MCMIPC",
+      "NOAA/GOES/17/MCMIPF",
+      "NOAA/GOES/17/MCMIPM",
+      "NOAA/GOES/18/MCMIPC",
+      "NOAA/GOES/18/MCMIPF",
+      "NOAA/GOES/18/MCMIPM",
+      "NOAA/GOES/19/MCMIPC",
+      "NOAA/GOES/19/MCMIPF",
+      "NOAA/GOES/19/MCMIPM"
+    ],
+    "remove_paper_dois": [
+      "10.1029/2018ea000379",
+      "10.1175/bams-d-15-00230.1"
+    ],
+    "reason": "The first paper is a recipe for generating GOES-16 true-color imagery without a green band, not the multispectral Level-2 Cloud and Moisture Imagery product, and cannot describe GOES-17/18/19. The second is an ABI instrument overview rather than a specific MCMIP data-product publication.",
+    "evidence_urls": [
+      "https://developers.google.com/earth-engine/datasets/catalog/NOAA_GOES_16_MCMIPF"
+    ],
+    "evidence_catalog_paths": [
+      "reference-groups.json#refs-0673bc072497"
+    ],
+    "review_phase": "count_blind_independent_audit",
+    "citation_scope_note": "The first paper is a recipe for generating GOES-16 true-color imagery without a green band, not the multispectral Level-2 Cloud and Moisture Imagery product, and cannot describe GOES-17/18/19. The second is an ABI instrument overview rather than a specific MCMIP data-product publication."
+  },
+  {
+    "group_id": "refs-79f56fc320cc",
+    "remove_paper_dois": [
+      "10.1016/j.agrformet.2021.108775",
+      "10.1016/s0022-1694(98)00253-4",
+      "10.1111/jawr.12056"
+    ],
+    "citation_scope": "base_dataset_family",
+    "reason": "For OpenET geeSEBAL, retain the geeSEBAL implementation paper 10.1016/j.isprsjprs.2021.05.018 as a family proxy. The other papers are a subtropical uncertainty assessment, original generic SEBAL formulation, and METRIC calibration method respectively; the catalog describes these as background inputs to the product.",
+    "evidence_catalog_paths": [
+      "reference-groups.json#refs-79f56fc320cc"
+    ],
+    "review_phase": "count_blind_independent_audit",
+    "citation_scope_note": "For OpenET geeSEBAL, retain the geeSEBAL implementation paper 10.1016/j.isprsjprs.2021.05.018 as a family proxy. The other papers are a subtropical uncertainty assessment, original generic SEBAL formulation, and METRIC calibration method respectively; the catalog describes these as background inputs to the product."
+  },
+  {
+    "group_id": "refs-4397cdb88cd7",
+    "remove_paper_dois": [
+      "10.1016/j.agwat.2020.106197",
+      "10.1111/1752-1688.12956"
+    ],
+    "citation_scope": "base_dataset_family",
+    "reason": "The first paper predicts crop coefficients from cover and height, a method component, while the second describes the OpenET platform broadly. The catalog identifies Melton et al. 2012 (10.1109/jstars.2012.2214474) as the SIMS model framework; retain that as a broader SIMS-family proxy if the policy admits model-specific methods.",
+    "evidence_catalog_paths": [
+      "reference-groups.json#refs-4397cdb88cd7"
+    ],
+    "review_phase": "count_blind_independent_audit",
+    "citation_scope_note": "The first paper predicts crop coefficients from cover and height, a method component, while the second describes the OpenET platform broadly. The catalog identifies Melton et al. 2012 (10.1109/jstars.2012.2214474) as the SIMS model framework; retain that as a broader SIMS-family proxy if the policy admits model-specific methods."
+  },
+  {
+    "group_id": "refs-aac93902d4ff",
+    "remove_paper_dois": [
+      "10.1111/1752-1688.12956"
+    ],
+    "reason": "The sole selected paper describes the OpenET platform for water management, not a publication specifically of the monthly ensemble collection. This follows the explicit exclusion of platform papers; if the team treats an ensemble description within that paper as product-specific, document that narrower rationale first.",
+    "evidence_catalog_paths": [
+      "reference-groups.json#refs-aac93902d4ff"
+    ],
+    "review_phase": "count_blind_independent_audit",
+    "citation_scope_note": "The sole selected paper describes the OpenET platform for water management, not a publication specifically of the monthly ensemble collection. This follows the explicit exclusion of platform papers; if the team treats an ensemble description within that paper as product-specific, document that narrower rationale first."
+  },
+  {
+    "group_id": "refs-883348a112f1",
+    "remove_paper_dois": [
+      "10.3390/rs8070583"
+    ],
+    "reason": "AquaSEBS is a separate open-water energy-balance approach cited as a component of the OpenET PT-JPL implementation, not a PT-JPL product paper. The 2008 Fisher paper is the PT-JPL model foundation and needs a consistent family-versus-generic-method decision across OpenET; do not infer exact OpenET release use from it.",
+    "evidence_catalog_paths": [
+      "reference-groups.json#refs-883348a112f1"
+    ],
+    "review_phase": "count_blind_independent_audit",
+    "citation_scope_note": "AquaSEBS is a separate open-water energy-balance approach cited as a component of the OpenET PT-JPL implementation, not a PT-JPL product paper. The 2008 Fisher paper is the PT-JPL model foundation and needs a consistent family-versus-generic-method decision across OpenET; do not infer exact OpenET release use from it."
+  },
+  {
+    "group_id": "refs-9fcba55b1f8c",
+    "remove_paper_dois": [
+      "10.1016/j.rse.2017.05.005c"
+    ],
+    "reason": "The DOI ending 005c is a malformed copy of the linked DOI ending 005 and must never be resolved as a distinct work. Consider the correctly formed paper separately; the title is a southwestern-US application rather than the CONUS OpenET release.",
+    "evidence_catalog_paths": [
+      "reference-groups.json#refs-9fcba55b1f8c"
+    ],
+    "review_phase": "count_blind_independent_audit",
+    "citation_scope_note": "The DOI ending 005c is a malformed copy of the linked DOI ending 005 and must never be resolved as a distinct work. Consider the correctly formed paper separately; the title is a southwestern-US application rather than the CONUS OpenET release."
+  },
+  {
+    "group_id": "refs-a1cc5a747968",
+    "remove_paper_dois": [
+      "10.5194/egusphere-2023-19623"
+    ],
+    "reason": "The text accidentally appends 3 to the DOI; its own link points to 10.5194/egusphere-2023-1962, which is already separately in paper_dois. Do not treat the typo as a second work.",
+    "evidence_catalog_paths": [
+      "reference-groups.json#refs-a1cc5a747968"
+    ],
+    "review_phase": "count_blind_independent_audit",
+    "citation_scope_note": "The text accidentally appends 3 to the DOI; its own link points to 10.5194/egusphere-2023-1962, which is already separately in paper_dois. Do not treat the typo as a second work."
+  },
+  {
+    "group_id": "refs-4528b065cf64",
+    "entry_ids": [
+      "IDAHO_EPSCOR/MACAv2_METDATA",
+      "IDAHO_EPSCOR/MACAv2_METDATA_MONTHLY"
+    ],
+    "remove_paper_dois": [
+      "10.1002/joc.2312"
+    ],
+    "geographic_scope": "regional",
+    "region": "Conterminous United States",
+    "reason": "The paper compares generic statistical downscaling methods for wildfire applications, not a MACAv2-METDATA release. Both catalog descriptions say the collection covers CONUS, and both bboxes are [-124.9,24.9,-67,49.6], so global is false.",
+    "evidence_catalog_paths": [
+      "reference-groups.json#refs-4528b065cf64"
+    ],
+    "review_phase": "count_blind_independent_audit",
+    "scope_note": "The paper compares generic statistical downscaling methods for wildfire applications, not a MACAv2-METDATA release. Both catalog descriptions say the collection covers CONUS, and both bboxes are [-124.9,24.9,-67,49.6], so global is false.",
+    "citation_scope_note": "The paper compares generic statistical downscaling methods for wildfire applications, not a MACAv2-METDATA release. Both catalog descriptions say the collection covers CONUS, and both bboxes are [-124.9,24.9,-67,49.6], so global is false."
+  },
+  {
+    "group_id": "refs-024688920b4b",
+    "entry_ids": [
+      "projects/ngis-cat/assets/DEA/NIDEM"
+    ],
+    "geographic_scope": "regional",
+    "region": "Australian intertidal zone",
+    "reason": "Description explicitly says Australia's intertidal zone; bbox [108.81,-44.41,157.82,-9.13]. The paper role itself is product-specific.",
+    "evidence_catalog_paths": [
+      "reference-groups.json#refs-024688920b4b"
+    ],
+    "review_phase": "count_blind_independent_audit",
+    "scope_note": "Description explicitly says Australia's intertidal zone; bbox [108.81,-44.41,157.82,-9.13]. The paper role itself is product-specific."
+  },
+  {
+    "entry_ids": [
+      "EDF/MethaneSAT/MethaneAIR/L3concentration",
+      "EDF/MethaneSAT/MethaneAIR/L4area",
+      "EDF/MethaneSAT/MethaneAIR/L4point",
+      "EDF/MethaneSAT/MethaneAIR/methaneair-L4area-2021",
+      "EDF/MethaneSAT/MethaneAIR/methaneair-L4point-2021"
+    ],
+    "geographic_scope": "regional",
+    "region": "Observed North American flight areas, varying by collection",
+    "reason": "These collection bboxes cover limited North American flight/target areas, not the world; descriptions identify individual oil-and-gas basins or MethaneAIR flight observations. The regional label should retain collection-specific area notes.",
+    "evidence_catalog_paths": [
+      "reference-groups.json#refs-1203d157f2eb",
+      "reference-groups.json#refs-a1cc5a747968",
+      "reference-groups.json#refs-44136fa355b3"
+    ],
+    "review_phase": "count_blind_independent_audit",
+    "scope_note": "These collection bboxes cover limited North American flight/target areas, not the world; descriptions identify individual oil-and-gas basins or MethaneAIR flight observations. The regional label should retain collection-specific area notes."
+  },
+  {
+    "group_id": "refs-2eba67fa7742",
+    "entry_ids": [
+      "projects/planet-nicfi/assets/basemaps/africa",
+      "projects/planet-nicfi/assets/basemaps/americas",
+      "projects/planet-nicfi/assets/basemaps/asia"
+    ],
+    "geographic_scope": "regional",
+    "region": "Tropical Africa, Americas, or Asia according to collection ID",
+    "reason": "Each asset is a continental tropical subset. The Asia bbox has global longitude due antimeridian handling but spans only -27.5 to 30.2 latitude; its global classification is still false.",
+    "evidence_catalog_paths": [
+      "reference-groups.json#refs-2eba67fa7742"
+    ],
+    "review_phase": "count_blind_independent_audit",
+    "scope_note": "Each asset is a continental tropical subset. The Asia bbox has global longitude due antimeridian handling but spans only -27.5 to 30.2 latitude; its global classification is still false."
+  },
+  {
+    "group_id": "refs-44148a5a7270",
+    "entry_ids": [
+      "projects/nature-trace/assets/species_distribution_models/australia_mammals/v0"
+    ],
+    "geographic_scope": "regional",
+    "region": "Australia",
+    "reason": "The collection name and bbox [112.9,-43.7,153.7,-10.4] are explicitly Australian.",
+    "evidence_catalog_paths": [
+      "reference-groups.json#refs-44148a5a7270"
+    ],
+    "review_phase": "count_blind_independent_audit",
+    "scope_note": "The collection name and bbox [112.9,-43.7,153.7,-10.4] are explicitly Australian."
+  },
+  {
+    "group_id": "refs-21d6199a84da",
+    "entry_ids": [
+      "projects/forestdatapartnership/assets/cocoa/model_2024a"
+    ],
+    "geographic_scope": "regional",
+    "region": "West Africa",
+    "reason": "The observed 2024a collection bbox [-11.35,0.61,18.17,14.51] covers West Africa only. Do not carry that label over to later cocoa versions whose metadata bounds differ.",
+    "evidence_catalog_paths": [
+      "reference-groups.json#refs-21d6199a84da"
+    ],
+    "review_phase": "count_blind_independent_audit",
+    "scope_note": "The observed 2024a collection bbox [-11.35,0.61,18.17,14.51] covers West Africa only. Do not carry that label over to later cocoa versions whose metadata bounds differ."
+  },
+  {
+    "group_id": "refs-44136fa355b3",
+    "entry_ids": [
+      "DOE/ORNL/LandScan_HD/Ukraine_202201"
+    ],
+    "geographic_scope": "regional",
+    "region": "Ukraine",
+    "reason": "The collection is explicitly Ukraine and has bbox [22.125,44.175,40.225,52.4]. Its global label is a clear classifier error.",
+    "evidence_catalog_paths": [
+      "reference-groups.json#refs-44136fa355b3"
+    ],
+    "review_phase": "count_blind_independent_audit",
+    "scope_note": "The collection is explicitly Ukraine and has bbox [22.125,44.175,40.225,52.4]. Its global label is a clear classifier error."
+  },
+  {
+    "group_id": "refs-79f56fc320cc",
+    "entry_ids": [
+      "OpenET/GEESEBAL/CONUS/GRIDMET/MONTHLY/v2_0",
+      "projects/openet/assets/geesebal/conus/gridmet/monthly/v2_0",
+      "projects/openet/assets/geesebal/conus/gridmet/monthly/v2_0_pre2000",
+      "projects/openet/assets/geesebal/conus/gridmet/monthly/v2_1"
+    ],
+    "geographic_scope": "regional",
+    "region": "Conterminous United States",
+    "reason": "All IDs encode CONUS; bboxes span approximately -126 to -66 longitude and 25 to 50 latitude. The global labels confuse globally applicable method prose with actual collection coverage.",
+    "evidence_urls": [
+      "https://developers.google.com/earth-engine/datasets/catalog/projects_openet_assets_geesebal_conus_gridmet_monthly_v2_0"
+    ],
+    "evidence_catalog_paths": [
+      "reference-groups.json#refs-79f56fc320cc"
+    ],
+    "review_phase": "count_blind_independent_audit",
+    "scope_note": "All IDs encode CONUS; bboxes span approximately -126 to -66 longitude and 25 to 50 latitude. The global labels confuse globally applicable method prose with actual collection coverage."
+  },
+  {
+    "group_ids": [
+      "refs-4397cdb88cd7",
+      "refs-7af18c5f916b",
+      "refs-883348a112f1"
+    ],
+    "entry_ids": [
+      "OpenET/SIMS/CONUS/GRIDMET/MONTHLY/v2_0",
+      "projects/openet/assets/sims/conus/gridmet/monthly/v2_0",
+      "projects/openet/assets/sims/conus/gridmet/monthly/v2_0_pre2000",
+      "OpenET/DISALEXI/CONUS/GRIDMET/MONTHLY/v2_0",
+      "projects/openet/assets/disalexi/conus/gridmet/monthly/v2_0",
+      "OpenET/PTJPL/CONUS/GRIDMET/MONTHLY/v2_0",
+      "projects/openet/assets/ptjpl/conus/gridmet/monthly/v2_0",
+      "projects/openet/assets/ptjpl/conus/gridmet/monthly/v2_0_pre2000"
+    ],
+    "geographic_scope": "regional",
+    "region": "Conterminous United States",
+    "reason": "These are marked unclear despite CONUS IDs and bboxes bounded at roughly [-126,25,-66,50]. The same product families' v2_1 entries are already marked regional.",
+    "evidence_catalog_paths": [
+      "reference-groups.json#refs-4397cdb88cd7",
+      "reference-groups.json#refs-7af18c5f916b",
+      "reference-groups.json#refs-883348a112f1"
+    ],
+    "review_phase": "count_blind_independent_audit",
+    "scope_note": "These are marked unclear despite CONUS IDs and bboxes bounded at roughly [-126,25,-66,50]. The same product families' v2_1 entries are already marked regional."
+  },
+  {
+    "group_id": "refs-0673bc072497",
+    "entry_ids": [
+      "NOAA/GOES/16/MCMIPF",
+      "NOAA/GOES/16/MCMIPM",
+      "NOAA/GOES/17/MCMIPF",
+      "NOAA/GOES/17/MCMIPM",
+      "NOAA/GOES/18/MCMIPF",
+      "NOAA/GOES/18/MCMIPM",
+      "NOAA/GOES/19/MCMIPF",
+      "NOAA/GOES/19/MCMIPM"
+    ],
+    "geographic_scope": "regional",
+    "region": "GOES satellite visible disk or mesoscale sector, varying by satellite and image",
+    "reason": "Full Disk is a geostationary satellite's visible hemisphere, not full-Earth coverage; mesoscale sectors are smaller. The world bbox is a metadata envelope and cannot establish actual global coverage.",
+    "evidence_urls": [
+      "https://developers.google.com/earth-engine/datasets/catalog/NOAA_GOES_16_MCMIPF"
+    ],
+    "evidence_catalog_paths": [
+      "reference-groups.json#refs-0673bc072497"
+    ],
+    "review_phase": "count_blind_independent_audit",
+    "scope_note": "Full Disk is a geostationary satellite's visible hemisphere, not full-Earth coverage; mesoscale sectors are smaller. The world bbox is a metadata envelope and cannot establish actual global coverage."
+  },
+  {
+    "group_id": "refs-42a075bcc8cd",
+    "entry_ids": [
+      "IPCC/AR6/SLP"
+    ],
+    "geographic_scope": "global",
+    "region": "Global ocean and regional projections on a global grid",
+    "reason": "The catalog explicitly says global and regional sea-level projections, including globally averaged and regional projections on a regular global grid. The current 'Antarctica, Arctic' regional note appears to be triggered by process names, not spatial coverage.",
+    "evidence_urls": [
+      "https://developers.google.com/earth-engine/datasets/catalog/IPCC_AR6_SLP"
+    ],
+    "evidence_catalog_paths": [
+      "reference-groups.json#refs-42a075bcc8cd"
+    ],
+    "review_phase": "count_blind_independent_audit",
+    "scope_note": "The catalog explicitly says global and regional sea-level projections, including globally averaged and regional projections on a regular global grid. The current 'Antarctica, Arctic' regional note appears to be triggered by process names, not spatial coverage."
+  },
+  {
+    "entry_ids": [
+      "NASA_USDA/HSL/soil_moisture"
+    ],
+    "geographic_scope": "global",
+    "region": "Global land, approximately 60 S to 90 N",
+    "reason": "The shared catalog description says the NASA-USDA grids provide soil moisture across the globe; bbox is [-180,-60,180,90]. The current CONUS region note for this entry is unsupported. SMAP_soil_moisture is already global but carries the same erroneous CONUS note.",
+    "evidence_catalog_paths": [
+      "reference-groups.json#refs-b809c08d0d9c",
+      "reference-groups.json#refs-b1aae2a8df0e"
+    ],
+    "review_phase": "count_blind_independent_audit",
+    "scope_note": "The shared catalog description says the NASA-USDA grids provide soil moisture across the globe; bbox is [-180,-60,180,90]. The current CONUS region note for this entry is unsupported. SMAP_soil_moisture is already global but carries the same erroneous CONUS note."
+  },
+  {
+    "group_id": "refs-faf43ad5c216",
+    "entry_ids": [
+      "WorldPop/POP"
+    ],
+    "geographic_scope": "mixed",
+    "region": "Multiple countries across Africa, Asia, and Latin America/Caribbean",
+    "citation_scope_note": "The selected Sorichetta et al. paper is a Latin America/Caribbean component publication, not documentation of all WorldPop geographies.",
+    "reason": "The WorldPop catalog cites separate region-specific papers, while the collection bbox spans longitudes globally but only -59.94 to 54.08 latitude. Treat as a multi-region collection; do not describe this one paper as a whole-world product publication.",
+    "evidence_catalog_paths": [
+      "reference-groups.json#refs-faf43ad5c216",
+      "reference-groups.json#refs-54ef679e07c3"
+    ],
+    "review_phase": "count_blind_independent_audit",
+    "scope_note": "The WorldPop catalog cites separate region-specific papers, while the collection bbox spans longitudes globally but only -59.94 to 54.08 latitude. Treat as a multi-region collection; do not describe this one paper as a whole-world product publication."
+  },
+  {
+    "entry_ids": [
+      "NASA/GDDP-CMIP6"
+    ],
+    "add_paper_dois": [
+      "10.1038/s41597-022-01393-4"
+    ],
+    "add_data_dois": [
+      "10.7917/ofsg3345"
+    ],
+    "citation_scope": "associated_dataset_publication",
+    "citation_scope_note": "The release-specific Thrasher2022 data descriptor identifies the same NEX-GDDP-CMIP6 archive/data DOI as the catalog description. It replaces a generic bias-correction method as the dataset publication.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41597-022-01393-4"
+    ],
+    "review_phase": "count_blind_producer_supplement"
+  },
+  {
+    "entry_ids": [
+      "ACA/reef_habitat/v1_0",
+      "ACA/reef_habitat/v2_0"
+    ],
+    "add_paper_dois": [
+      "10.1002/rse2.157"
+    ],
+    "citation_scope": "base_dataset_family",
+    "citation_scope_note": "Allen Coral Atlas global mapping publication; family scope only.",
+    "evidence_catalog_paths": [
+      "official-entries.json#ACA/reef_habitat/v1_0",
+      "official-entries.json#ACA/reef_habitat/v2_0"
+    ],
+    "review_phase": "count_blind_description_audit"
+  },
+  {
+    "entry_ids": [
+      "SNU/ESL/BESS/Rad/v1"
+    ],
+    "add_paper_dois": [
+      "10.1016/j.rse.2017.09.021"
+    ],
+    "citation_scope": "associated_dataset_publication",
+    "citation_scope_note": "Direct BESS radiation and PAR product publication.",
+    "evidence_catalog_paths": [
+      "official-entries.json#SNU/ESL/BESS/Rad/v1"
+    ],
+    "review_phase": "count_blind_description_audit"
+  },
+  {
+    "entry_ids": [
+      "Tsinghua/FROM-GLC/GAIA/v10"
+    ],
+    "add_paper_dois": [
+      "10.1016/j.rse.2019.111510"
+    ],
+    "citation_scope": "associated_dataset_publication",
+    "citation_scope_note": "Direct GAIA annual impervious-area map publication.",
+    "evidence_catalog_paths": [
+      "official-entries.json#Tsinghua/FROM-GLC/GAIA/v10"
+    ],
+    "review_phase": "count_blind_description_audit"
+  },
+  {
+    "entry_ids": [
+      "EDF/MethaneSAT/MethaneAIR/L4point",
+      "projects/edf-methanesat-ee/assets/mair/L4point",
+      "projects/edf-methanesat-ee/assets/public-preview/L4point"
+    ],
+    "add_paper_dois": [
+      "10.1021/acs.est.4c02439"
+    ],
+    "citation_scope": "base_dataset_family",
+    "citation_scope_note": "Controlled-release validation of MethaneAIR L4 point-source quantification.",
+    "evidence_catalog_paths": [
+      "official-entries.json#EDF/MethaneSAT/MethaneAIR/L4point",
+      "official-entries.json#projects/edf-methanesat-ee/assets/mair/L4point",
+      "official-entries.json#projects/edf-methanesat-ee/assets/public-preview/L4point"
+    ],
+    "review_phase": "count_blind_description_audit"
+  },
+  {
+    "entry_ids": [
+      "USGS/SRTMGL1_003"
+    ],
+    "add_paper_dois": [
+      "10.1029/2005rg000183"
+    ],
+    "citation_scope": "base_dataset_family",
+    "citation_scope_note": "SRTM elevation product paper; Wiley /full suffix is not part of DOI.",
+    "evidence_catalog_paths": [
+      "official-entries.json#USGS/SRTMGL1_003"
+    ],
+    "review_phase": "count_blind_description_audit"
+  },
+  {
+    "entry_ids": [
+      "ESA/WorldCereal/AEZ/v100"
+    ],
+    "add_paper_dois": [
+      "10.1080/15481603.2022.2079273"
+    ],
+    "citation_scope": "base_dataset_family",
+    "citation_scope_note": "Global seasonality publication directly underlies the AEZ zones/crop calendars; family scope only.",
+    "evidence_catalog_paths": [
+      "official-entries.json#ESA/WorldCereal/AEZ/v100"
+    ],
+    "review_phase": "count_blind_description_audit"
+  },
+  {
+    "entry_ids": [
+      "USGS/NLCD_RELEASES/2021_REL/NLCD"
+    ],
+    "add_paper_dois": [
+      "10.1080/15481603.2023.2181143"
+    ],
+    "citation_scope": "associated_dataset_publication",
+    "citation_scope_note": "NLCD 2021 operational mapping accuracy assessment, directly product-specific.",
+    "evidence_catalog_paths": [
+      "official-entries.json#USGS/NLCD_RELEASES/2021_REL/NLCD"
+    ],
+    "review_phase": "count_blind_description_audit"
+  },
+  {
+    "entry_ids": [
+      "NOAA/VIIRS/DNB/MONTHLY_V1/VCMSLCFG"
+    ],
+    "add_paper_dois": [
+      "10.1117/12.2023107"
+    ],
+    "citation_scope": "associated_dataset_publication",
+    "citation_scope_note": "Stray-light correction method specific to this VCMSLCFG variant; family method proxy.",
+    "evidence_catalog_paths": [
+      "official-entries.json#NOAA/VIIRS/DNB/MONTHLY_V1/VCMSLCFG"
+    ],
+    "review_phase": "count_blind_description_audit"
+  },
+  {
+    "entry_ids": [
+      "USGS/NLCD_RELEASES/2023_REL/RCMAP/V6/COVER"
+    ],
+    "add_paper_dois": [
+      "10.3390/rs12030412"
+    ],
+    "citation_scope": "associated_dataset_publication",
+    "citation_scope_note": "RCMAP western-US fractional-component paper; base-family proxy.",
+    "evidence_catalog_paths": [
+      "official-entries.json#USGS/NLCD_RELEASES/2023_REL/RCMAP/V6/COVER"
+    ],
+    "review_phase": "count_blind_description_audit"
+  },
+  {
+    "entry_ids": [
+      "USGS/NLCD_RELEASES/2023_REL/RCMAP/V6/COVER"
+    ],
+    "add_paper_dois": [
+      "10.3390/rs13040813"
+    ],
+    "citation_scope": "associated_dataset_publication",
+    "citation_scope_note": "RCMAP 1985–2018 fractional-component map paper; base-family proxy, not 2023 v06.",
+    "evidence_catalog_paths": [
+      "official-entries.json#USGS/NLCD_RELEASES/2023_REL/RCMAP/V6/COVER"
+    ],
+    "review_phase": "count_blind_description_audit"
+  },
+  {
+    "entry_ids": [
+      "projects/edf-methanesat-ee/assets/mair/L3concentration"
+    ],
+    "add_paper_dois": [
+      "10.5194/amt-17-5429-2024"
+    ],
+    "citation_scope": "base_dataset_family",
+    "citation_scope_note": "The published MethaneAIR CO2-proxy retrieval paper directly describes L3 XCH4 concentrations; use the published article identity, not the discussion DOI as a second work.",
+    "evidence_catalog_paths": [
+      "official-entries.json#projects/edf-methanesat-ee/assets/mair/L3concentration"
+    ],
+    "review_phase": "count_blind_description_audit"
+  },
+  {
+    "entry_ids": [
+      "NASA/GDDP-CMIP6"
+    ],
+    "add_data_dois": [
+      "10.7917/ofsg3345"
+    ],
+    "citation_scope": "associated_dataset_publication",
+    "citation_scope_note": "Columbia data-release DOI for NEX-GDDP-CMIP6, not a scholarly article.",
+    "evidence_catalog_paths": [
+      "official-entries.json#NASA/GDDP-CMIP6"
+    ],
+    "review_phase": "count_blind_description_audit"
+  },
+  {
+    "entry_ids": [
+      "projects/pml_evapotranspiration/PML/OUTPUT/PML_V22a",
+      "projects/pml_evapotranspiration/PML/OUTPUT/PML_V22a_VIIRS"
+    ],
+    "add_data_dois": [
+      "10.11888/terre.tpdc.303314"
+    ],
+    "citation_scope_note": "Description points to the TPDC data repository for the PML-V2.2 product suite; retain as a data-release DOI.",
+    "evidence_catalog_paths": [
+      "official-entries.json#projects/pml_evapotranspiration/PML/OUTPUT/PML_V22a",
+      "official-entries.json#projects/pml_evapotranspiration/PML/OUTPUT/PML_V22a_VIIRS"
+    ],
+    "review_phase": "count_blind_description_data_audit"
+  },
+  {
+    "entry_ids": [
+      "projects/global-pasture-watch/assets/gld-1km/v1/livestock-headcount-faostat_m"
+    ],
+    "add_data_dois": [
+      "10.5281/zenodo.17485929"
+    ],
+    "citation_scope_note": "Description lists this Zenodo release for annual buffalo-density output in the broader livestock family.",
+    "evidence_catalog_paths": [
+      "official-entries.json#projects/global-pasture-watch/assets/gld-1km/v1/livestock-headcount-faostat_m"
+    ],
+    "review_phase": "count_blind_description_data_audit"
+  },
+  {
+    "entry_ids": [
+      "projects/global-pasture-watch/assets/gld-1km/v1/livestock-headcount-faostat_m"
+    ],
+    "add_data_dois": [
+      "10.5281/zenodo.17486471"
+    ],
+    "citation_scope_note": "Description lists this Zenodo release for annual cattle-density output in the broader livestock family.",
+    "evidence_catalog_paths": [
+      "official-entries.json#projects/global-pasture-watch/assets/gld-1km/v1/livestock-headcount-faostat_m"
+    ],
+    "review_phase": "count_blind_description_data_audit"
+  },
+  {
+    "entry_ids": [
+      "projects/global-pasture-watch/assets/gld-1km/v1/livestock-headcount-faostat_m"
+    ],
+    "add_data_dois": [
+      "10.5281/zenodo.17490112"
+    ],
+    "citation_scope_note": "Description lists this Zenodo release for annual goat-density output in the broader livestock family.",
+    "evidence_catalog_paths": [
+      "official-entries.json#projects/global-pasture-watch/assets/gld-1km/v1/livestock-headcount-faostat_m"
+    ],
+    "review_phase": "count_blind_description_data_audit"
+  },
+  {
+    "entry_ids": [
+      "projects/global-pasture-watch/assets/gld-1km/v1/livestock-headcount-faostat_m"
+    ],
+    "add_data_dois": [
+      "10.5281/zenodo.17490457"
+    ],
+    "citation_scope_note": "Description lists this Zenodo release for annual horse-density output in the broader livestock family.",
+    "evidence_catalog_paths": [
+      "official-entries.json#projects/global-pasture-watch/assets/gld-1km/v1/livestock-headcount-faostat_m"
+    ],
+    "review_phase": "count_blind_description_data_audit"
+  },
+  {
+    "entry_ids": [
+      "projects/global-pasture-watch/assets/gld-1km/v1/livestock-headcount-faostat_m"
+    ],
+    "add_data_dois": [
+      "10.5281/zenodo.17490692"
+    ],
+    "citation_scope_note": "Description lists this Zenodo release for annual sheep-density output in the broader livestock family.",
+    "evidence_catalog_paths": [
+      "official-entries.json#projects/global-pasture-watch/assets/gld-1km/v1/livestock-headcount-faostat_m"
+    ],
+    "review_phase": "count_blind_description_data_audit"
+  },
+  {
+    "entry_ids": [
+      "UMD/hansen/global_forest_change_2013",
+      "UMD/hansen/global_forest_change_2014",
+      "UMD/hansen/global_forest_change_2015",
+      "UMD/hansen/global_forest_change_2015_v1_3",
+      "UMD/hansen/global_forest_change_2016_v1_4",
+      "UMD/hansen/global_forest_change_2017_v1_5",
+      "UMD/hansen/global_forest_change_2018_v1_6",
+      "UMD/hansen/global_forest_change_2019_v1_7",
+      "UMD/hansen/global_forest_change_2020_v1_8",
+      "UMD/hansen/global_forest_change_2021_v1_9",
+      "UMD/hansen/global_forest_change_2022_v1_10",
+      "UMD/hansen/global_forest_change_2023_v1_11",
+      "UMD/hansen/global_forest_change_2024_v1_12",
+      "UMD/hansen/global_forest_change_2025_v1_13"
+    ],
+    "citation_scope": "base_dataset_family",
+    "citation_scope_note": "The recommended paper describes the underlying product family; its citations are not measured use of this particular variable, aggregation or later release.",
+    "review_phase": "count_blind_version_scope"
+  },
+  {
+    "entry_ids": [
+      "NCEP_RE/sea_level_pressure",
+      "NCEP_RE/surface_temp",
+      "NCEP_RE/surface_wv"
+    ],
+    "citation_scope": "base_dataset_family",
+    "citation_scope_note": "The recommended paper describes the underlying product family; its citations are not measured use of this particular variable, aggregation or later release.",
+    "review_phase": "count_blind_version_scope"
+  },
+  {
+    "entry_ids": [
+      "UCSB-CHG/CHIRPS/DAILY",
+      "UCSB-CHG/CHIRPS/PENTAD"
+    ],
+    "citation_scope": "base_dataset_family",
+    "citation_scope_note": "The recommended paper describes the underlying product family; its citations are not measured use of this particular variable, aggregation or later release.",
+    "review_phase": "count_blind_version_scope"
+  },
+  {
+    "entry_ids": [
+      "USGS/SRTMGL1_003"
+    ],
+    "citation_scope": "base_dataset_family",
+    "citation_scope_note": "The recommended paper describes the underlying product family; its citations are not measured use of this particular variable, aggregation or later release.",
+    "review_phase": "count_blind_version_scope"
+  },
+  {
+    "entry_ids": [
+      "TRMM/3B42",
+      "TRMM/3B43V7"
+    ],
+    "citation_scope": "base_dataset_family",
+    "citation_scope_note": "The recommended paper describes the underlying product family; its citations are not measured use of this particular variable, aggregation or later release.",
+    "review_phase": "count_blind_version_scope"
+  },
+  {
+    "entry_ids": [
+      "LANDSAT/LC08/C02/T1_L2",
+      "LANDSAT/LC08/C02/T2_L2",
+      "LANDSAT/LC09/C02/T1_L2",
+      "LANDSAT/LC09/C02/T2_L2",
+      "LANDSAT/LE07/C02/T1_L2",
+      "LANDSAT/LE07/C02/T2_L2",
+      "LANDSAT/LT04/C02/T1_L2",
+      "LANDSAT/LT04/C02/T2_L2",
+      "LANDSAT/LT05/C02/T1_L2",
+      "LANDSAT/LT05/C02/T2_L2",
+      "LANDSAT/MANGROVE_FORESTS"
+    ],
+    "geographic_scope": "global",
+    "region": "Global Landsat acquisition footprint",
+    "scope_note": "The Landsat Level-2 collection has worldwide scene coverage (individual scenes are acquired swaths, not a wall-to-wall global mosaic); the US/CONUS region label came from incidental citation text.",
+    "evidence_catalog_paths": [
+      "official-entries.json#LANDSAT/LC08/C02/T1_L2",
+      "review-input-c.json#refs-44136fa355b3",
+      "official-entries.json#LANDSAT/LC08/C02/T2_L2",
+      "review-input-c.json#refs-44136fa355b3",
+      "official-entries.json#LANDSAT/LC09/C02/T1_L2",
+      "review-input-c.json#refs-44136fa355b3",
+      "official-entries.json#LANDSAT/LC09/C02/T2_L2",
+      "review-input-c.json#refs-44136fa355b3",
+      "official-entries.json#LANDSAT/LE07/C02/T1_L2",
+      "review-input-c.json#refs-44136fa355b3",
+      "official-entries.json#LANDSAT/LE07/C02/T2_L2",
+      "review-input-c.json#refs-44136fa355b3",
+      "official-entries.json#LANDSAT/LT04/C02/T1_L2",
+      "review-input-c.json#refs-44136fa355b3",
+      "official-entries.json#LANDSAT/LT04/C02/T2_L2",
+      "review-input-c.json#refs-44136fa355b3",
+      "official-entries.json#LANDSAT/LT05/C02/T1_L2",
+      "review-input-c.json#refs-44136fa355b3",
+      "official-entries.json#LANDSAT/LT05/C02/T2_L2",
+      "review-input-c.json#refs-44136fa355b3",
+      "official-entries.json#LANDSAT/MANGROVE_FORESTS",
+      "review-input-c.json#refs-b344df567007"
+    ],
+    "review_phase": "count_blind_geography_audit"
+  },
+  {
+    "entry_ids": [
+      "ECMWF/ERA5/MONTHLY"
+    ],
+    "geographic_scope": "global",
+    "region": "Global atmosphere",
+    "scope_note": "ERA5 is a global atmospheric reanalysis; Europe is an incidental source/example mention.",
+    "evidence_catalog_paths": [
+      "official-entries.json#ECMWF/ERA5/MONTHLY",
+      "review-input-a.json#refs-3a2ebe27c282"
+    ],
+    "review_phase": "count_blind_geography_audit"
+  },
+  {
+    "entry_ids": [
+      "NASA/GEOS-CF/v1/fcst/htf",
+      "NASA/GEOS-CF/v1/fcst/tavg1hr",
+      "NASA/GEOS-CF/v1/rpl/htf",
+      "NASA/GEOS-CF/v1/rpl/tavg1hr"
+    ],
+    "geographic_scope": "global",
+    "region": "Global atmosphere",
+    "scope_note": "GEOS-CF is the global atmospheric composition forecast/reanalysis system; North America is an incidental citation or example region.",
+    "evidence_catalog_paths": [
+      "official-entries.json#NASA/GEOS-CF/v1/fcst/htf",
+      "review-input-a.json#refs-4235d6372b5d",
+      "official-entries.json#NASA/GEOS-CF/v1/fcst/tavg1hr",
+      "review-input-a.json#refs-4235d6372b5d",
+      "official-entries.json#NASA/GEOS-CF/v1/rpl/htf",
+      "review-input-a.json#refs-4235d6372b5d",
+      "official-entries.json#NASA/GEOS-CF/v1/rpl/tavg1hr",
+      "review-input-a.json#refs-4235d6372b5d"
+    ],
+    "review_phase": "count_blind_geography_audit"
+  },
+  {
+    "entry_ids": [
+      "NOAA/CFSR",
+      "NOAA/CFSR_HARMONIZED",
+      "NOAA/CFSV2/FOR6H",
+      "NOAA/CFSV2/FOR6H_HARMONIZED"
+    ],
+    "geographic_scope": "global",
+    "region": "Global coupled atmosphere, ocean, land, and sea-ice model fields",
+    "scope_note": "Catalog describes the CFS as a global coupled system spanning atmosphere, oceans, land, and sea ice; an oceans-only label is too narrow.",
+    "evidence_catalog_paths": [
+      "official-entries.json#NOAA/CFSR",
+      "review-input-a.json#refs-832655453d25",
+      "official-entries.json#NOAA/CFSR_HARMONIZED",
+      "review-input-a.json#refs-832655453d25",
+      "official-entries.json#NOAA/CFSV2/FOR6H",
+      "review-input-a.json#refs-33f4b7dfd186",
+      "official-entries.json#NOAA/CFSV2/FOR6H_HARMONIZED",
+      "review-input-a.json#refs-33f4b7dfd186"
+    ],
+    "review_phase": "count_blind_geography_audit"
+  },
+  {
+    "entry_ids": [
+      "NASA/MEASURES/GFCC/TC/v3"
+    ],
+    "geographic_scope": "global",
+    "region": "Global forest/tree-cover areas",
+    "scope_note": "The catalog describes a global forest change/tree-cover product; US/CONUS is not the coverage.",
+    "evidence_catalog_paths": [
+      "official-entries.json#NASA/MEASURES/GFCC/TC/v3",
+      "review-input-c.json#refs-6d306d9ff0e8"
+    ],
+    "review_phase": "count_blind_geography_audit"
+  },
+  {
+    "entry_ids": [
+      "UMD/GLAD/PRIMARY_HUMID_TROPICAL_FORESTS/v1"
+    ],
+    "geographic_scope": "global",
+    "region": "Global humid tropical forest areas",
+    "scope_note": "Catalog describes a global layer of primary humid tropical forests; the tropical restriction is part of the global product definition, not a regional study area.",
+    "evidence_catalog_paths": [
+      "official-entries.json#UMD/GLAD/PRIMARY_HUMID_TROPICAL_FORESTS/v1",
+      "review-input-a.json#refs-63ff15da31cb"
+    ],
+    "review_phase": "count_blind_geography_audit"
+  },
+  {
+    "entry_ids": [
+      "FORMA/FORMA_500m"
+    ],
+    "geographic_scope": "global",
+    "region": "Global humid tropical forests",
+    "scope_note": "Catalog describes a global tropical-forest alert product; coverage is restricted to humid tropical forest areas worldwide.",
+    "evidence_catalog_paths": [
+      "official-entries.json#FORMA/FORMA_500m",
+      "review-input-b.json#refs-e143d490ca98"
+    ],
+    "review_phase": "count_blind_geography_audit"
+  },
+  {
+    "entry_ids": [
+      "NOAA/CPC/Precipitation"
+    ],
+    "geographic_scope": "global",
+    "region": "Global land",
+    "scope_note": "Catalog title/description explicitly say global gauge-based daily precipitation over land; Africa/tropical wording is incidental.",
+    "evidence_catalog_paths": [
+      "official-entries.json#NOAA/CPC/Precipitation",
+      "review-input-a.json#refs-a939b3503da7"
+    ],
+    "review_phase": "count_blind_geography_audit"
+  },
+  {
+    "entry_ids": [
+      "MODIS/006/MCD15A3H",
+      "MODIS/006/MOD14A1",
+      "MODIS/006/MOD44B",
+      "MODIS/006/MYD11A1",
+      "MODIS/006/MYD11A2",
+      "MODIS/055/MOD17A3",
+      "MODIS/061/MCD18A1",
+      "MODIS/061/MCD64A1",
+      "MODIS/061/MOD09A1",
+      "MODIS/061/MOD09CMG",
+      "MODIS/061/MOD09GA",
+      "MODIS/061/MOD11A1",
+      "MODIS/061/MOD11A2",
+      "MODIS/061/MOD13A3",
+      "MODIS/061/MOD13Q1",
+      "MODIS/061/MOD15A2H",
+      "MODIS/061/MOD21C1",
+      "MODIS/061/MOD21C3",
+      "MODIS/061/MOD44B",
+      "MODIS/061/MYD09GA",
+      "MODIS/061/MYD09GQ",
+      "MODIS/061/MYD09Q1",
+      "MODIS/061/MYD13A2",
+      "MODIS/061/MYD16A2",
+      "MODIS/061/MYD17A2H",
+      "MODIS/061/MYD21C3",
+      "MODIS/MCD43A1",
+      "MODIS/MCD43A2",
+      "MODIS/MCD43A4",
+      "MODIS/MOD09A1",
+      "MODIS/MOD09GA",
+      "MODIS/MOD09GQ",
+      "MODIS/MOD09Q1",
+      "MODIS/MOD11A1",
+      "MODIS/MOD11A2",
+      "MODIS/MOD13A1",
+      "MODIS/MOD13Q1",
+      "MODIS/MYD09A1",
+      "MODIS/MYD09GA",
+      "MODIS/MYD09GQ",
+      "MODIS/MYD09Q1",
+      "MODIS/MYD11A1",
+      "MODIS/MYD11A2",
+      "MODIS/MYD13A1",
+      "MODIS/MYD13Q1",
+      "NASA/VIIRS/002/VNP43IA4",
+      "NASA/VIIRS/002/VNP43MA3",
+      "NOAA/VIIRS/001/VNP09H1",
+      "NOAA/VIIRS/001/VNP14A1",
+      "NOAA/VIIRS/001/VNP15A2H",
+      "NOAA/VIIRS/001/VNP22Q2",
+      "NOAA/VIIRS/001/VNP43IA2",
+      "NOAA/VIIRS/001/VNP64A1",
+      "OPERA/DIST/L3_DIST-ANN-HLS/V1"
+    ],
+    "geographic_scope": "global",
+    "region": "Global land",
+    "scope_note": "Catalog title/description identifies a global terrestrial product; the United States/CONUS phrase is an incidental provider, study, or example mention. The catalog bbox and product description support worldwide land coverage.",
+    "evidence_catalog_paths": [
+      "official-entries.json#MODIS/006/MCD15A3H",
+      "review-input-c.json#refs-33176525b09e",
+      "official-entries.json#MODIS/006/MOD14A1",
+      "review-input-c.json#refs-c07f397b990e",
+      "official-entries.json#MODIS/006/MOD44B",
+      "review-input-c.json#refs-d6aa6b0c1027",
+      "official-entries.json#MODIS/006/MYD11A1",
+      "review-input-c.json#refs-220bb6b1418b",
+      "official-entries.json#MODIS/006/MYD11A2",
+      "review-input-c.json#refs-59895d114529",
+      "official-entries.json#MODIS/055/MOD17A3",
+      "review-input-c.json#refs-d6aa6b0c1027",
+      "official-entries.json#MODIS/061/MCD18A1",
+      "review-input-c.json#refs-a923a25f65ee",
+      "official-entries.json#MODIS/061/MCD64A1",
+      "review-input-c.json#refs-aa38ccd7f4c8",
+      "official-entries.json#MODIS/061/MOD09A1",
+      "review-input-c.json#refs-f81a71dc8956",
+      "official-entries.json#MODIS/061/MOD09CMG",
+      "review-input-c.json#refs-e70f586d99b7",
+      "official-entries.json#MODIS/061/MOD09GA",
+      "review-input-c.json#refs-dd3fd5528f5b",
+      "official-entries.json#MODIS/061/MOD11A1",
+      "review-input-c.json#refs-5d64f7a6c923",
+      "official-entries.json#MODIS/061/MOD11A2",
+      "review-input-c.json#refs-d9ab702c2f66",
+      "official-entries.json#MODIS/061/MOD13A3",
+      "review-input-c.json#refs-195b9281c1ff",
+      "official-entries.json#MODIS/061/MOD13Q1",
+      "review-input-c.json#refs-01eb570b2492",
+      "official-entries.json#MODIS/061/MOD15A2H",
+      "review-input-c.json#refs-678c8bd301e0",
+      "official-entries.json#MODIS/061/MOD21C1",
+      "review-input-c.json#refs-947aa4d0f4fa",
+      "official-entries.json#MODIS/061/MOD21C3",
+      "review-input-c.json#refs-76c0f137d560",
+      "official-entries.json#MODIS/061/MOD44B",
+      "review-input-c.json#refs-d6aa6b0c1027",
+      "official-entries.json#MODIS/061/MYD09GA",
+      "review-input-c.json#refs-ecda19fb5427",
+      "official-entries.json#MODIS/061/MYD09GQ",
+      "review-input-c.json#refs-1a9ffa1e414e",
+      "official-entries.json#MODIS/061/MYD09Q1",
+      "review-input-c.json#refs-a02159afd0b4",
+      "official-entries.json#MODIS/061/MYD13A2",
+      "review-input-c.json#refs-96fdde3b7a31",
+      "official-entries.json#MODIS/061/MYD16A2",
+      "review-input-c.json#refs-79bec9932e7c",
+      "official-entries.json#MODIS/061/MYD17A2H",
+      "review-input-c.json#refs-84ae84b97f4e",
+      "official-entries.json#MODIS/061/MYD21C3",
+      "review-input-c.json#refs-514bfa7e9efe",
+      "official-entries.json#MODIS/MCD43A1",
+      "review-input-c.json#refs-44136fa355b3",
+      "official-entries.json#MODIS/MCD43A2",
+      "review-input-c.json#refs-44136fa355b3",
+      "official-entries.json#MODIS/MCD43A4",
+      "review-input-c.json#refs-44136fa355b3",
+      "official-entries.json#MODIS/MOD09A1",
+      "review-input-c.json#refs-44136fa355b3",
+      "official-entries.json#MODIS/MOD09GA",
+      "review-input-c.json#refs-44136fa355b3",
+      "official-entries.json#MODIS/MOD09GQ",
+      "review-input-c.json#refs-44136fa355b3",
+      "official-entries.json#MODIS/MOD09Q1",
+      "review-input-c.json#refs-44136fa355b3",
+      "official-entries.json#MODIS/MOD11A1",
+      "review-input-c.json#refs-44136fa355b3",
+      "official-entries.json#MODIS/MOD11A2",
+      "review-input-c.json#refs-44136fa355b3",
+      "official-entries.json#MODIS/MOD13A1",
+      "review-input-c.json#refs-44136fa355b3",
+      "official-entries.json#MODIS/MOD13Q1",
+      "review-input-c.json#refs-44136fa355b3",
+      "official-entries.json#MODIS/MYD09A1",
+      "review-input-c.json#refs-44136fa355b3",
+      "official-entries.json#MODIS/MYD09GA",
+      "review-input-c.json#refs-44136fa355b3",
+      "official-entries.json#MODIS/MYD09GQ",
+      "review-input-c.json#refs-44136fa355b3",
+      "official-entries.json#MODIS/MYD09Q1",
+      "review-input-c.json#refs-44136fa355b3",
+      "official-entries.json#MODIS/MYD11A1",
+      "review-input-c.json#refs-44136fa355b3",
+      "official-entries.json#MODIS/MYD11A2",
+      "review-input-c.json#refs-44136fa355b3",
+      "official-entries.json#MODIS/MYD13A1",
+      "review-input-c.json#refs-44136fa355b3",
+      "official-entries.json#MODIS/MYD13Q1",
+      "review-input-c.json#refs-44136fa355b3",
+      "official-entries.json#NASA/VIIRS/002/VNP43IA4",
+      "review-input-c.json#refs-23aee6adad52",
+      "official-entries.json#NASA/VIIRS/002/VNP43MA3",
+      "review-input-c.json#refs-8be50cfaa64d",
+      "official-entries.json#NOAA/VIIRS/001/VNP09H1",
+      "review-input-c.json#refs-24be429d24ce",
+      "official-entries.json#NOAA/VIIRS/001/VNP14A1",
+      "review-input-c.json#refs-c5db44280ee0",
+      "official-entries.json#NOAA/VIIRS/001/VNP15A2H",
+      "review-input-c.json#refs-10e074c58011",
+      "official-entries.json#NOAA/VIIRS/001/VNP22Q2",
+      "review-input-c.json#refs-35e9011d6239",
+      "official-entries.json#NOAA/VIIRS/001/VNP43IA2",
+      "review-input-c.json#refs-fb40d513ebc5",
+      "official-entries.json#NOAA/VIIRS/001/VNP64A1",
+      "review-input-c.json#refs-ef2692d6999c",
+      "official-entries.json#OPERA/DIST/L3_DIST-ANN-HLS/V1",
+      "review-input-c.json#refs-1b0e7aaec21c"
+    ],
+    "review_phase": "count_blind_geography_audit"
+  },
+  {
+    "entry_ids": [
+      "COPERNICUS/DEM/GLO30",
+      "COPERNICUS/DEM/GLO30_2024_1"
+    ],
+    "geographic_scope": "global",
+    "region": "Global land",
+    "scope_note": "Copernicus GLO-30 is a global land elevation model; Europe/EU is an incidental source or use-case mention.",
+    "evidence_catalog_paths": [
+      "official-entries.json#COPERNICUS/DEM/GLO30",
+      "review-input-c.json#refs-44136fa355b3",
+      "official-entries.json#COPERNICUS/DEM/GLO30_2024_1",
+      "review-input-c.json#refs-44136fa355b3"
+    ],
+    "review_phase": "count_blind_geography_audit"
+  },
+  {
+    "entry_ids": [
+      "GLCF/GLS_TCC"
+    ],
+    "geographic_scope": "global",
+    "region": "Global land",
+    "scope_note": "GLS continuous tree-cover product is described as a global land-survey product; US/CONUS is incidental.",
+    "evidence_catalog_paths": [
+      "official-entries.json#GLCF/GLS_TCC",
+      "review-input-c.json#refs-c6cbd4e71b84"
+    ],
+    "review_phase": "count_blind_geography_audit"
+  },
+  {
+    "entry_ids": [
+      "USGS/GTOPO30"
+    ],
+    "geographic_scope": "global",
+    "region": "Global land",
+    "scope_note": "GTOPO30 is a global elevation dataset; North America is an incidental reference.",
+    "evidence_catalog_paths": [
+      "official-entries.json#USGS/GTOPO30",
+      "review-input-a.json#refs-df9ad9057b4f"
+    ],
+    "review_phase": "count_blind_geography_audit"
+  },
+  {
+    "entry_ids": [
+      "OpenLandMap/PNV/PNV_BIOME-TYPE_BIOME00K_C/v01"
+    ],
+    "geographic_scope": "global",
+    "region": "Global land",
+    "scope_note": "OpenLandMap describes global land-surface coverage; Europe is incidental.",
+    "evidence_catalog_paths": [
+      "official-entries.json#OpenLandMap/PNV/PNV_BIOME-TYPE_BIOME00K_C/v01",
+      "review-input-a.json#refs-94a55b875858"
+    ],
+    "review_phase": "count_blind_geography_audit"
+  },
+  {
+    "entry_ids": [
+      "IDAHO_EPSCOR/TERRACLIMATE"
+    ],
+    "geographic_scope": "global",
+    "region": "Global land",
+    "scope_note": "TerraClimate is a global terrestrial climate dataset; Africa and South America are examples, not the coverage extent.",
+    "evidence_catalog_paths": [
+      "official-entries.json#IDAHO_EPSCOR/TERRACLIMATE",
+      "review-input-a.json#refs-1071bb8d2581"
+    ],
+    "review_phase": "count_blind_geography_audit"
+  },
+  {
+    "entry_ids": [
+      "WCMC/biomass_carbon_density/v1_0"
+    ],
+    "geographic_scope": "global",
+    "region": "Global land",
+    "scope_note": "The catalog describes global above/below-ground biomass carbon density; Africa refers to an input dataset, not the product coverage.",
+    "evidence_catalog_paths": [
+      "official-entries.json#WCMC/biomass_carbon_density/v1_0",
+      "review-input-a.json#refs-b28ce7919745"
+    ],
+    "review_phase": "count_blind_geography_audit"
+  },
+  {
+    "entry_ids": [
+      "JRC/GFC2020/V1",
+      "JRC/GFC2020/V4",
+      "JRC/GFC2020_subtypes/V0",
+      "JRC/GHSL/P2016/SMOD_POP_GLOBE_V1",
+      "JRC/GHSL/P2023A/GHS_BUILT_C",
+      "JRC/GHSL/P2023A/GHS_POP"
+    ],
+    "geographic_scope": "global",
+    "region": "Global land",
+    "scope_note": "The catalog identifies a global human-settlement / forest-cover product; European policy is a use case, not a coverage restriction.",
+    "evidence_catalog_paths": [
+      "official-entries.json#JRC/GFC2020/V1",
+      "review-input-a.json#refs-e71d31649863",
+      "official-entries.json#JRC/GFC2020/V4",
+      "review-input-a.json#refs-287e0bb0ba1f",
+      "official-entries.json#JRC/GFC2020_subtypes/V0",
+      "review-input-a.json#refs-d46eaee46787",
+      "official-entries.json#JRC/GHSL/P2016/SMOD_POP_GLOBE_V1",
+      "review-input-a.json#refs-2dfd53ba823e",
+      "official-entries.json#JRC/GHSL/P2023A/GHS_BUILT_C",
+      "review-input-a.json#refs-e03bcc0e4778",
+      "official-entries.json#JRC/GHSL/P2023A/GHS_POP",
+      "review-input-a.json#refs-bae6ecf6fa2c"
+    ],
+    "review_phase": "count_blind_geography_audit"
+  },
+  {
+    "entry_ids": [
+      "FAO/GHG/1/DROSA_A",
+      "FAO/GHG/1/DROSE_A"
+    ],
+    "geographic_scope": "global",
+    "region": "Global land",
+    "scope_note": "The catalog identifies global greenhouse-gas emissions data; tropical wording is not a coverage restriction.",
+    "evidence_catalog_paths": [
+      "official-entries.json#FAO/GHG/1/DROSA_A",
+      "review-input-b.json#refs-36970327a655",
+      "official-entries.json#FAO/GHG/1/DROSE_A",
+      "review-input-a.json#refs-595e0ee33742"
+    ],
+    "review_phase": "count_blind_geography_audit"
+  },
+  {
+    "entry_ids": [
+      "NASA/HLS/HLSL30/v002",
+      "NASA/HLS/HLSS30/v002"
+    ],
+    "geographic_scope": "global",
+    "region": "Global land (Harmonized Landsat/Sentinel-2 coverage)",
+    "scope_note": "HLS is a global land-surface product; Europe is an incidental producer/example mention.",
+    "evidence_catalog_paths": [
+      "official-entries.json#NASA/HLS/HLSL30/v002",
+      "review-input-a.json#refs-0a1b0e81f996",
+      "official-entries.json#NASA/HLS/HLSS30/v002",
+      "review-input-a.json#refs-0a1b0e81f996"
+    ],
+    "review_phase": "count_blind_geography_audit"
+  },
+  {
+    "entry_ids": [
+      "projects/nature-trace/assets/forest_typology/forest_typology_2020_v1_0_collection",
+      "projects/nature-trace/assets/forest_typology/natural_forest_2020_v1_0_collection"
+    ],
+    "geographic_scope": "global",
+    "region": "Global land (forest-typology coverage approximately 65°S–84°N where cataloged)",
+    "scope_note": "Catalog title/description identify a global forest typology; European wording describes a use case or incidental reference.",
+    "evidence_catalog_paths": [
+      "official-entries.json#projects/nature-trace/assets/forest_typology/forest_typology_2020_v1_0_collection",
+      "review-input-c.json#refs-72a7e0e4314b",
+      "official-entries.json#projects/nature-trace/assets/forest_typology/natural_forest_2020_v1_0_collection",
+      "review-input-a.json#refs-72b293efe890"
+    ],
+    "review_phase": "count_blind_geography_audit"
+  },
+  {
+    "entry_ids": [
+      "WM/geoLab/geoBoundaries/600/ADM0",
+      "WM/geoLab/geoBoundaries/600/ADM1",
+      "WM/geoLab/geoBoundaries/600/ADM2"
+    ],
+    "geographic_scope": "global",
+    "region": "Global land administrative boundaries",
+    "scope_note": "geoBoundaries ADM0–ADM2 are worldwide administrative boundary datasets; Arctic is an incidental reference/example.",
+    "evidence_catalog_paths": [
+      "official-entries.json#WM/geoLab/geoBoundaries/600/ADM0",
+      "review-input-c.json#refs-44136fa355b3",
+      "official-entries.json#WM/geoLab/geoBoundaries/600/ADM1",
+      "review-input-c.json#refs-44136fa355b3",
+      "official-entries.json#WM/geoLab/geoBoundaries/600/ADM2",
+      "review-input-c.json#refs-44136fa355b3"
+    ],
+    "review_phase": "count_blind_geography_audit"
+  },
+  {
+    "entry_ids": [
+      "FAO/GAUL_SIMPLIFIED_500m/2015/level2"
+    ],
+    "geographic_scope": "global",
+    "region": "Global land administrative units",
+    "scope_note": "The title and description identify GAUL administrative units for all countries; US/CONUS is incidental.",
+    "evidence_catalog_paths": [
+      "official-entries.json#FAO/GAUL_SIMPLIFIED_500m/2015/level2",
+      "review-input-c.json#refs-44136fa355b3"
+    ],
+    "review_phase": "count_blind_geography_audit"
+  },
+  {
+    "entry_ids": [
+      "NASA/VIIRS/002/AERDB_D3_VIIRS_SNPP"
+    ],
+    "geographic_scope": "global",
+    "region": "Global land and ocean aerosol retrievals",
+    "scope_note": "Catalog description says Deep Blue is applied over land and SOAR over ocean; the current oceans-only region label is too narrow.",
+    "evidence_catalog_paths": [
+      "official-entries.json#NASA/VIIRS/002/AERDB_D3_VIIRS_SNPP",
+      "review-input-a.json#refs-9bc6478c74f2"
+    ],
+    "review_phase": "count_blind_geography_audit"
+  },
+  {
+    "entry_ids": [
+      "LARSE/GEDI/GEDI04_A_002",
+      "LARSE/GEDI/GEDI04_A_002_MONTHLY"
+    ],
+    "geographic_scope": "global",
+    "region": "Global land between 51.6°N and 51.6°S",
+    "scope_note": "GEDI biomass products sample global land within the instrument orbital latitude band (about 51.6°N–51.6°S); South America is only an incidental source/example mention.",
+    "evidence_catalog_paths": [
+      "official-entries.json#LARSE/GEDI/GEDI04_A_002",
+      "review-input-c.json#refs-14e4bccba040",
+      "official-entries.json#LARSE/GEDI/GEDI04_A_002_MONTHLY",
+      "review-input-c.json#refs-44136fa355b3"
+    ],
+    "review_phase": "count_blind_geography_audit"
+  },
+  {
+    "entry_ids": [
+      "LARSE/GEDI/GEDI02_A_002_MONTHLY",
+      "LARSE/GEDI/GEDI02_B_002_INDEX",
+      "LARSE/GEDI/GEDI02_B_002_MONTHLY"
+    ],
+    "geographic_scope": "global",
+    "region": "Global land between 51.6°N and 51.6°S",
+    "scope_note": "GEDI catalog extents/descriptions show global sampling within its orbital latitude band, approximately 51.6°N–51.6°S; it is a sampling product, not wall-to-wall coverage. US/CONUS is only a source/example mention.",
+    "evidence_catalog_paths": [
+      "official-entries.json#LARSE/GEDI/GEDI02_A_002_MONTHLY",
+      "review-input-c.json#refs-44136fa355b3",
+      "official-entries.json#LARSE/GEDI/GEDI02_B_002_INDEX",
+      "review-input-c.json#refs-40098ca4b1a5",
+      "official-entries.json#LARSE/GEDI/GEDI02_B_002_MONTHLY",
+      "review-input-c.json#refs-44136fa355b3"
+    ],
+    "review_phase": "count_blind_geography_audit"
+  },
+  {
+    "entry_ids": [
+      "Oxford/MAP/accessibility_to_healthcare_2019",
+      "Oxford/MAP/friction_surface_2019",
+      "projects/malariaatlasproject/assets/accessibility/accessibility_to_healthcare/2019",
+      "projects/malariaatlasproject/assets/accessibility/accessibility_to_healthcare/2019_walking_only",
+      "projects/malariaatlasproject/assets/accessibility/friction_surface/2019_v5_1",
+      "projects/malariaatlasproject/assets/accessibility/friction_surface/2019_v5_1_walking_only"
+    ],
+    "geographic_scope": "global",
+    "region": "Global land between approximately 60°S and 85°N",
+    "scope_note": "The catalog describes a global land-based accessibility/friction product; Australia/Africa are incidental examples. The bounding box excludes polar latitudes.",
+    "evidence_catalog_paths": [
+      "official-entries.json#Oxford/MAP/accessibility_to_healthcare_2019",
+      "review-input-a.json#refs-b39374010cd4",
+      "official-entries.json#Oxford/MAP/friction_surface_2019",
+      "review-input-a.json#refs-b39374010cd4",
+      "official-entries.json#projects/malariaatlasproject/assets/accessibility/accessibility_to_healthcare/2019",
+      "review-input-a.json#refs-b39374010cd4",
+      "official-entries.json#projects/malariaatlasproject/assets/accessibility/accessibility_to_healthcare/2019_walking_only",
+      "review-input-a.json#refs-b39374010cd4",
+      "official-entries.json#projects/malariaatlasproject/assets/accessibility/friction_surface/2019_v5_1",
+      "review-input-a.json#refs-b39374010cd4",
+      "official-entries.json#projects/malariaatlasproject/assets/accessibility/friction_surface/2019_v5_1_walking_only",
+      "review-input-a.json#refs-b39374010cd4"
+    ],
+    "review_phase": "count_blind_geography_audit"
+  },
+  {
+    "entry_ids": [
+      "WWF/HydroSHEDS/v1/Basins/hybas_1",
+      "WWF/HydroSHEDS/v1/Basins/hybas_10",
+      "WWF/HydroSHEDS/v1/Basins/hybas_11",
+      "WWF/HydroSHEDS/v1/Basins/hybas_12",
+      "WWF/HydroSHEDS/v1/Basins/hybas_2",
+      "WWF/HydroSHEDS/v1/Basins/hybas_3",
+      "WWF/HydroSHEDS/v1/Basins/hybas_4",
+      "WWF/HydroSHEDS/v1/Basins/hybas_5",
+      "WWF/HydroSHEDS/v1/Basins/hybas_6",
+      "WWF/HydroSHEDS/v1/Basins/hybas_7",
+      "WWF/HydroSHEDS/v1/Basins/hybas_8",
+      "WWF/HydroSHEDS/v1/Basins/hybas_9"
+    ],
+    "geographic_scope": "global",
+    "region": "Global land drainage basins",
+    "scope_note": "HydroSHEDS/HydroATLAS entries are global hydrologic basin products; the United States/CONUS wording is an incidental citation or example, not the product extent.",
+    "evidence_catalog_paths": [
+      "official-entries.json#WWF/HydroSHEDS/v1/Basins/hybas_1",
+      "review-input-c.json#refs-12eb7e5633d9",
+      "official-entries.json#WWF/HydroSHEDS/v1/Basins/hybas_10",
+      "review-input-c.json#refs-12eb7e5633d9",
+      "official-entries.json#WWF/HydroSHEDS/v1/Basins/hybas_11",
+      "review-input-c.json#refs-12eb7e5633d9",
+      "official-entries.json#WWF/HydroSHEDS/v1/Basins/hybas_12",
+      "review-input-c.json#refs-12eb7e5633d9",
+      "official-entries.json#WWF/HydroSHEDS/v1/Basins/hybas_2",
+      "review-input-c.json#refs-12eb7e5633d9",
+      "official-entries.json#WWF/HydroSHEDS/v1/Basins/hybas_3",
+      "review-input-c.json#refs-12eb7e5633d9",
+      "official-entries.json#WWF/HydroSHEDS/v1/Basins/hybas_4",
+      "review-input-c.json#refs-12eb7e5633d9",
+      "official-entries.json#WWF/HydroSHEDS/v1/Basins/hybas_5",
+      "review-input-c.json#refs-12eb7e5633d9",
+      "official-entries.json#WWF/HydroSHEDS/v1/Basins/hybas_6",
+      "review-input-c.json#refs-12eb7e5633d9",
+      "official-entries.json#WWF/HydroSHEDS/v1/Basins/hybas_7",
+      "review-input-c.json#refs-12eb7e5633d9",
+      "official-entries.json#WWF/HydroSHEDS/v1/Basins/hybas_8",
+      "review-input-c.json#refs-12eb7e5633d9",
+      "official-entries.json#WWF/HydroSHEDS/v1/Basins/hybas_9",
+      "review-input-c.json#refs-12eb7e5633d9"
+    ],
+    "review_phase": "count_blind_geography_audit"
+  },
+  {
+    "entry_ids": [
+      "NASA/ECOSTRESS/L2T_LSTE/V2"
+    ],
+    "geographic_scope": "global",
+    "region": "Global land observations",
+    "scope_note": "The catalog title explicitly calls this a global land-surface-temperature product. The dataset consists of ECOSTRESS observations rather than a continuous wall-to-wall raster; US/CONUS is not its coverage.",
+    "evidence_catalog_paths": [
+      "official-entries.json#NASA/ECOSTRESS/L2T_LSTE/V2",
+      "review-input-c.json#refs-1189537d5abc"
+    ],
+    "review_phase": "count_blind_geography_audit"
+  },
+  {
+    "entry_ids": [
+      "MODIS/006/MODOCGA",
+      "MODIS/006/MYDOCGA"
+    ],
+    "geographic_scope": "global",
+    "region": "Global land tiles",
+    "scope_note": "The catalog description explicitly says these ocean-reflectance products are not ocean products: the supplied tiles cover land. Retain the distinction from ocean-domain MODIS records.",
+    "evidence_catalog_paths": [
+      "official-entries.json#MODIS/006/MODOCGA",
+      "review-input-a.json#refs-a430b3fdbf58",
+      "official-entries.json#MODIS/006/MYDOCGA",
+      "review-input-a.json#refs-e667734038b0"
+    ],
+    "review_phase": "count_blind_geography_audit"
+  },
+  {
+    "entry_ids": [
+      "MERIT/DEM/v1_0_3"
+    ],
+    "geographic_scope": "global",
+    "region": "Global land, approximately 60°S–90°N",
+    "scope_note": "Catalog description identifies MERIT DEM as a global land DEM; bbox is −60° to 90° latitude. US/CONUS is incidental.",
+    "evidence_catalog_paths": [
+      "official-entries.json#MERIT/DEM/v1_0_3",
+      "review-input-c.json#refs-f4127b18e1bf"
+    ],
+    "review_phase": "count_blind_geography_audit"
+  },
+  {
+    "entry_ids": [
+      "NASA/GRACE/MASS_GRIDS_V03/MASCON_CRI",
+      "NASA/GRACE/MASS_GRIDS_V04/MASCON",
+      "NASA/GRACE/MASS_GRIDS_V04/MASCON_CRI"
+    ],
+    "geographic_scope": "global",
+    "region": "Global land, ocean, and ice water-storage fields",
+    "scope_note": "GRACE global mass grids describe water-storage/height anomalies over land, ocean, and ice, not only oceans.",
+    "evidence_catalog_paths": [
+      "official-entries.json#NASA/GRACE/MASS_GRIDS_V03/MASCON_CRI",
+      "review-input-a.json#refs-8e8d52e8ed6e",
+      "official-entries.json#NASA/GRACE/MASS_GRIDS_V04/MASCON",
+      "review-input-a.json#refs-56ab9f497d37",
+      "official-entries.json#NASA/GRACE/MASS_GRIDS_V04/MASCON_CRI",
+      "review-input-a.json#refs-7c2c5e30f1b3"
+    ],
+    "review_phase": "count_blind_geography_audit"
+  },
+  {
+    "entry_ids": [
+      "COPERNICUS/MARINE/GLOBAL_SEA_SURFACE/NRT_DAILY",
+      "COPERNICUS/MARINE/GLOBAL_SEA_SURFACE/REP_DAILY",
+      "COPERNICUS/MARINE/SATELLITE_OCEAN_COLOR/V6"
+    ],
+    "geographic_scope": "global",
+    "region": "Global oceans",
+    "scope_note": "The catalog identifies global marine/ocean products; Europe is an incidental producer location.",
+    "evidence_catalog_paths": [
+      "official-entries.json#COPERNICUS/MARINE/GLOBAL_SEA_SURFACE/NRT_DAILY",
+      "review-input-a.json#refs-87abf02caa23",
+      "official-entries.json#COPERNICUS/MARINE/GLOBAL_SEA_SURFACE/REP_DAILY",
+      "review-input-a.json#refs-87abf02caa23",
+      "official-entries.json#COPERNICUS/MARINE/SATELLITE_OCEAN_COLOR/V6",
+      "review-input-a.json#refs-264390eae5e6"
+    ],
+    "review_phase": "count_blind_geography_audit"
+  },
+  {
+    "entry_ids": [
+      "JAXA/GCOM-C/L3/OCEAN/SST/V1"
+    ],
+    "geographic_scope": "global",
+    "region": "Global oceans",
+    "scope_note": "The product is global sea-surface temperature; Asia/tropics is incidental.",
+    "evidence_catalog_paths": [
+      "official-entries.json#JAXA/GCOM-C/L3/OCEAN/SST/V1",
+      "review-input-c.json#refs-7fb23a36520a"
+    ],
+    "review_phase": "count_blind_geography_audit"
+  },
+  {
+    "entry_ids": [
+      "HYCOM/GLBu0_08/sea_surface_elevation",
+      "HYCOM/GLBu0_08/sea_temp_salinity",
+      "HYCOM/GLBu0_08/sea_water_velocity",
+      "HYCOM/sea_surface_elevation",
+      "HYCOM/sea_temp_salinity",
+      "HYCOM/sea_water_velocity"
+    ],
+    "geographic_scope": "global",
+    "region": "Global oceans",
+    "scope_note": "These HYCOM products are global ocean model fields; North America is an incidental mention.",
+    "evidence_catalog_paths": [
+      "official-entries.json#HYCOM/GLBu0_08/sea_surface_elevation",
+      "review-input-a.json#refs-ef0272b0585f",
+      "official-entries.json#HYCOM/GLBu0_08/sea_temp_salinity",
+      "review-input-a.json#refs-ef0272b0585f",
+      "official-entries.json#HYCOM/GLBu0_08/sea_water_velocity",
+      "review-input-a.json#refs-ef0272b0585f",
+      "official-entries.json#HYCOM/sea_surface_elevation",
+      "review-input-a.json#refs-ef0272b0585f",
+      "official-entries.json#HYCOM/sea_temp_salinity",
+      "review-input-a.json#refs-ef0272b0585f",
+      "official-entries.json#HYCOM/sea_water_velocity",
+      "review-input-a.json#refs-ef0272b0585f"
+    ],
+    "review_phase": "count_blind_geography_audit"
+  },
+  {
+    "entry_ids": [
+      "NOAA/CDR/AVHRR/AOT/V3",
+      "NOAA/CDR/AVHRR/AOT/V4"
+    ],
+    "geographic_scope": "global",
+    "region": "Global oceans (ice-free ocean daytime aerosol retrievals)",
+    "scope_note": "Catalog description explicitly limits AVHRR AOT retrievals to daytime cloud-free ocean pixels; this existing scope is correct at ocean scale, with the retrieval mask made explicit.",
+    "evidence_catalog_paths": [
+      "official-entries.json#NOAA/CDR/AVHRR/AOT/V3",
+      "review-input-c.json#refs-5c444380eb2d",
+      "official-entries.json#NOAA/CDR/AVHRR/AOT/V4",
+      "review-input-a.json#refs-2183dd435f8b"
+    ],
+    "review_phase": "count_blind_geography_audit"
+  },
+  {
+    "entry_ids": [
+      "projects/forestdatapartnership/assets/cocoa/model_2026a",
+      "projects/forestdatapartnership/assets/coffee/model_2026a",
+      "projects/forestdatapartnership/assets/palm/model_2026a",
+      "projects/forestdatapartnership/assets/rubber/model_2026a"
+    ],
+    "geographic_scope": "global",
+    "region": "Global pan-tropical crop-growing regions (approximately 24°S–24°N)",
+    "scope_note": "The catalog describes this Forest Data Partnership model as pan-tropical; its crop-specific maps cover target growing areas within the tropical belt, not the whole planet.",
+    "evidence_catalog_paths": [
+      "official-entries.json#projects/forestdatapartnership/assets/cocoa/model_2026a",
+      "review-input-a.json#refs-545c0f9035bc",
+      "official-entries.json#projects/forestdatapartnership/assets/coffee/model_2026a",
+      "review-input-a.json#refs-545c0f9035bc",
+      "official-entries.json#projects/forestdatapartnership/assets/palm/model_2026a",
+      "review-input-a.json#refs-545c0f9035bc",
+      "official-entries.json#projects/forestdatapartnership/assets/rubber/model_2026a",
+      "review-input-a.json#refs-545c0f9035bc"
+    ],
+    "review_phase": "count_blind_geography_audit"
+  },
+  {
+    "entry_ids": [
+      "JRC/CEMS_GLOFAS/FloodHazard/v1",
+      "JRC/CEMS_GLOFAS/FloodHazard/v2_1"
+    ],
+    "geographic_scope": "global",
+    "region": "Global river-floodplain areas",
+    "scope_note": "The catalog identifies global river flood hazard maps; Greenland is only a regional example, not the coverage.",
+    "evidence_catalog_paths": [
+      "official-entries.json#JRC/CEMS_GLOFAS/FloodHazard/v1",
+      "review-input-a.json#refs-a73d56d31e32",
+      "official-entries.json#JRC/CEMS_GLOFAS/FloodHazard/v2_1",
+      "review-input-a.json#refs-a73d56d31e32"
+    ],
+    "review_phase": "count_blind_geography_audit"
+  },
+  {
+    "entry_ids": [
+      "ACA/reef_habitat/v1_0",
+      "ACA/reef_habitat/v2_0"
+    ],
+    "geographic_scope": "global",
+    "region": "Global shallow coral reef areas",
+    "scope_note": "Catalog describes global reef-habitat mapping; this applies only to mapped shallow reef areas, not all ocean pixels.",
+    "evidence_catalog_paths": [
+      "official-entries.json#ACA/reef_habitat/v1_0",
+      "review-input-a.json#refs-3d1dfeda8192",
+      "official-entries.json#ACA/reef_habitat/v2_0",
+      "review-input-a.json#refs-3d1dfeda8192"
+    ],
+    "review_phase": "count_blind_geography_audit"
+  },
+  {
+    "entry_ids": [
+      "projects/ee-kbas-in-gee/assets/current"
+    ],
+    "geographic_scope": "global",
+    "region": "Global terrestrial, freshwater, and marine biodiversity sites",
+    "scope_note": "The catalog defines Key Biodiversity Areas across terrestrial, freshwater, and marine ecosystems; the oceans-only region label is inaccurate.",
+    "evidence_catalog_paths": [
+      "official-entries.json#projects/ee-kbas-in-gee/assets/current",
+      "review-input-a.json#refs-152d68a5a32b"
+    ],
+    "review_phase": "count_blind_geography_audit"
+  },
+  {
+    "entry_ids": [
+      "NASA/EMIT/L2B/CH4ENH"
+    ],
+    "geographic_scope": "mixed",
+    "region": "Selected global ISS orbital scenes",
+    "scope_note": "EMIT is an ISS-mounted imaging spectrometer and this layer contains methane-enhancement detections in selected orbital swaths; the full-world bbox is only an envelope, not wall-to-wall coverage.",
+    "evidence_catalog_paths": [
+      "official-entries.json#NASA/EMIT/L2B/CH4ENH",
+      "review-input-c.json#refs-8da176d92cd8"
+    ],
+    "review_phase": "count_blind_geography_audit"
+  },
+  {
+    "entry_ids": [
+      "projects/edf-methanesat-ee/assets/public-preview/L4area_v2"
+    ],
+    "geographic_scope": "mixed",
+    "region": "Selected global methane area-source survey scenes",
+    "scope_note": "The world bbox is an envelope; this preview maps selected methane survey scenes, not continuous worldwide coverage.",
+    "evidence_catalog_paths": [
+      "official-entries.json#projects/edf-methanesat-ee/assets/public-preview/L4area_v2",
+      "review-input-c.json#refs-44136fa355b3"
+    ],
+    "review_phase": "count_blind_geography_audit"
+  },
+  {
+    "entry_ids": [
+      "projects/edf-methanesat-ee/assets/public-preview/L4point"
+    ],
+    "geographic_scope": "mixed",
+    "region": "Selected global methane point-source survey scenes",
+    "scope_note": "The world bbox is an envelope; this product reports detections in surveyed scenes, not a wall-to-wall global point-source census.",
+    "evidence_catalog_paths": [
+      "official-entries.json#projects/edf-methanesat-ee/assets/public-preview/L4point",
+      "review-input-a.json#refs-1203d157f2eb"
+    ],
+    "review_phase": "count_blind_geography_audit"
+  },
+  {
+    "entry_ids": [
+      "projects/edf-methanesat-ee/assets/public-preview/L3concentration"
+    ],
+    "geographic_scope": "mixed",
+    "region": "Selected global satellite survey scenes",
+    "scope_note": "The world bbox is an envelope. The public-preview concentration product contains MethaneSAT target-scene soundings, not complete wall-to-wall global coverage.",
+    "evidence_catalog_paths": [
+      "official-entries.json#projects/edf-methanesat-ee/assets/public-preview/L3concentration",
+      "review-input-a.json#refs-1203d157f2eb"
+    ],
+    "review_phase": "count_blind_geography_audit"
+  },
+  {
+    "entry_ids": [
+      "projects/edf-methanesat-ee/assets/public-preview/L4area"
+    ],
+    "geographic_scope": "mixed",
+    "region": "Surveyed basins in the United States, Turkmenistan, and Venezuela",
+    "scope_note": "Catalog description names selected Appalachian, Permian, Uinta, Amu Darya, South Caspian, and Maturin basins; despite a world bbox, coverage is a multisite survey.",
+    "evidence_catalog_paths": [
+      "official-entries.json#projects/edf-methanesat-ee/assets/public-preview/L4area",
+      "review-input-a.json#refs-1203d157f2eb"
+    ],
+    "review_phase": "count_blind_geography_audit"
+  },
+  {
+    "entry_ids": [
+      "UMN/PGC/ArcticDEM/V2/2m",
+      "UMN/PGC/ArcticDEM/V2/5m"
+    ],
+    "geographic_scope": "regional",
+    "region": "Arctic (cataloged bbox 50°N–90°N)",
+    "scope_note": "The product is explicitly ArcticDEM; its bbox spans 50°N–90°N. It is not global coverage.",
+    "evidence_catalog_paths": [
+      "official-entries.json#UMN/PGC/ArcticDEM/V2/2m",
+      "review-input-a.json#refs-b0b585c6d370",
+      "official-entries.json#UMN/PGC/ArcticDEM/V2/5m",
+      "review-input-a.json#refs-b0b585c6d370"
+    ],
+    "review_phase": "count_blind_geography_audit"
+  },
+  {
+    "entry_ids": [
+      "GOOGLE/AirView/California_Unified_2015_2019"
+    ],
+    "geographic_scope": "regional",
+    "region": "California (San Francisco Bay Area, Los Angeles, and northern San Joaquin Valley)",
+    "scope_note": "The catalog description explicitly limits this mobile air-quality mapping dataset to California; the world bbox is only an envelope.",
+    "evidence_catalog_paths": [
+      "official-entries.json#GOOGLE/AirView/California_Unified_2015_2019",
+      "review-input-a.json#refs-9a111a7ddeec"
+    ],
+    "review_phase": "count_blind_geography_audit"
+  },
+  {
+    "entry_ids": [
+      "HU_BERLIN/EPFD/V2/points",
+      "HU_BERLIN/EPFD/V2/polygons"
+    ],
+    "geographic_scope": "regional",
+    "region": "Europe (33 countries)",
+    "scope_note": "The catalog description explicitly says European primary forest patches across 33 countries; the world bbox is only an envelope.",
+    "evidence_catalog_paths": [
+      "official-entries.json#HU_BERLIN/EPFD/V2/points",
+      "review-input-c.json#refs-44136fa355b3",
+      "official-entries.json#HU_BERLIN/EPFD/V2/polygons",
+      "review-input-c.json#refs-44136fa355b3"
+    ],
+    "review_phase": "count_blind_geography_audit"
+  },
+  {
+    "entry_ids": [
+      "USGS/WBD/2017/HUC02",
+      "USGS/WBD/2017/HUC04",
+      "USGS/WBD/2017/HUC06",
+      "USGS/WBD/2017/HUC08",
+      "USGS/WBD/2017/HUC10",
+      "USGS/WBD/2017/HUC12"
+    ],
+    "geographic_scope": "regional",
+    "region": "United States (including Alaska, Hawaii, and mapped Caribbean/territories)",
+    "scope_note": "The official catalog describes the Watershed Boundary Dataset as the US national hydrologic-unit dataset; its world-spanning bbox is a metadata envelope. This is a regional US subset, not a global product.",
+    "evidence_catalog_paths": [
+      "official-entries.json#USGS/WBD/2017/HUC02",
+      "review-input-a.json#refs-c702a5cecb0b",
+      "official-entries.json#USGS/WBD/2017/HUC04",
+      "review-input-a.json#refs-c702a5cecb0b",
+      "official-entries.json#USGS/WBD/2017/HUC06",
+      "review-input-a.json#refs-c702a5cecb0b",
+      "official-entries.json#USGS/WBD/2017/HUC08",
+      "review-input-a.json#refs-c702a5cecb0b",
+      "official-entries.json#USGS/WBD/2017/HUC10",
+      "review-input-a.json#refs-c702a5cecb0b",
+      "official-entries.json#USGS/WBD/2017/HUC12",
+      "review-input-a.json#refs-c702a5cecb0b"
+    ],
+    "review_phase": "count_blind_geography_audit"
+  },
+  {
+    "entry_ids": [
+      "UTOKYO/WTLAB/KBDI/v1"
+    ],
+    "geographic_scope": "unclear",
+    "region": "Catalog bbox only: 60°E–180°E, 60°S–60°N",
+    "scope_note": "The world label is not supported by the official catalog description or its restricted bbox (60°E to 180°E); retain uncertainty rather than infer a regional study area or global coverage.",
+    "evidence_catalog_paths": [
+      "official-entries.json#UTOKYO/WTLAB/KBDI/v1",
+      "review-input-c.json#refs-1dafda9c27ca"
+    ],
+    "review_phase": "count_blind_geography_audit"
+  },
+  {
+    "entry_ids": [
+      "USGS/SRTMGL1_003"
+    ],
+    "geographic_scope": "global",
+    "region": "Near-global land, 60°N–56°S",
+    "scope_note": "Worldwide longitude coverage with the latitude limits given by the product and catalog spatial extent; global category includes near-global products.",
+    "review_phase": "count_blind_coverage_note"
+  },
+  {
+    "entry_ids": [
+      "UCSB-CHG/CHIRPS/DAILY",
+      "UCSB-CHG/CHIRPS/PENTAD"
+    ],
+    "geographic_scope": "global",
+    "region": "Near-global land, 50°N–50°S",
+    "scope_note": "Worldwide longitude coverage with the latitude limits given by the product and catalog spatial extent; global category includes near-global products.",
+    "review_phase": "count_blind_coverage_note"
+  },
+  {
+    "entry_ids": [
+      "TRMM/3B42",
+      "TRMM/3B43V7"
+    ],
+    "geographic_scope": "global",
+    "region": "Near-global precipitation, 50°N–50°S",
+    "scope_note": "Worldwide longitude coverage with the latitude limits given by the product and catalog spatial extent; global category includes near-global products.",
+    "review_phase": "count_blind_coverage_note"
+  },
+  {
+    "entry_ids": [
+      "CSIC/SPEI/2_8",
+      "CSIC/SPEI/2_9",
+      "CSIC/SPEI/2_10",
+      "CSIC/SPEI/2_11"
+    ],
+    "remove_paper_dois": [
+      "10.1175/2009jcli2909.1"
+    ],
+    "add_paper_dois": [
+      "10.1175/2010bams2988.1",
+      "10.1175/2010jhm1224.1"
+    ],
+    "citation_scope": "base_dataset_family",
+    "reason": "The removed paper introduces the SPEI index; AMS publishes two distinct articles explicitly describing the 0.5-degree gridded SPEIbase dataset. Both concern the original family, not exact v2.8–2.11 processing or release. Preserve each version data DOI separately and correct source-field version mismatches before claiming exact release attribution.",
+    "evidence_urls": [
+      "https://journals.ametsoc.org/abstract/journals/bams/91/10/2010bams2988_1.xml",
+      "https://journals.ametsoc.org/abstract/journals/hydr/11/4/2010jhm1224_1.xml",
+      "https://developers.google.com/earth-engine/datasets/catalog/CSIC_SPEI_2_11"
+    ],
+    "evidence_catalog_paths": [
+      "reference-groups.json#refs-b95e9fad14bb",
+      "reference-groups.json#refs-b9a88a2b4894",
+      "reference-groups.json#refs-0f21c0c34cc4"
+    ],
+    "review_phase": "post_score_validation",
+    "citation_scope_note": "The removed paper introduces the SPEI index; AMS publishes two distinct articles explicitly describing the 0.5-degree gridded SPEIbase dataset. Both concern the original family, not exact v2.8–2.11 processing or release. Preserve each version data DOI separately and correct source-field version mismatches before claiming exact release attribution.",
+    "evidence_review": "leaders-review.json"
+  },
+  {
+    "entry_ids": [
+      "JRC/GFC2020/V4",
+      "JRC/GFC2020_subtypes/V1"
+    ],
+    "citation_scope": "base_dataset_family",
+    "reason": "The JRC DOI identifies a narrative Methodology, Accuracy Assessment and Comparison report about GFC2020 V3 and GFT2020 V1, not a data-release DOI. It is direct for subtype V1 and a broader family proxy for GFC2020 V4. V3 already types it as paper.",
+    "evidence_catalog_paths": [
+      "reference-groups.json#refs-287e0bb0ba1f",
+      "reference-groups.json#refs-c505077b078b",
+      "reference-groups.json#refs-39645ace9635"
+    ],
+    "remove_data_dois": [
+      "10.2760/9982436"
+    ],
+    "add_paper_dois": [
+      "10.2760/9982436"
+    ],
+    "review_phase": "post_score_validation",
+    "citation_scope_note": "The JRC DOI identifies a narrative Methodology, Accuracy Assessment and Comparison report about GFC2020 V3 and GFT2020 V1, not a data-release DOI. It is direct for subtype V1 and a broader family proxy for GFC2020 V4. V3 already types it as paper.",
+    "evidence_review": "leaders-review.json"
+  },
+  {
+    "entry_ids": [
+      "projects/malariaatlasproject/assets/TCB_v061/1km/8-Daily",
+      "projects/malariaatlasproject/assets/TCB_v061/1km/Annual",
+      "projects/malariaatlasproject/assets/TCB_v061/1km/Monthly",
+      "projects/malariaatlasproject/assets/TCW_v061/1km/8-Daily",
+      "projects/malariaatlasproject/assets/TCW_v061/1km/Annual",
+      "projects/malariaatlasproject/assets/TCW_v061/1km/Monthly"
+    ],
+    "remove_paper_dois": [
+      "10.1016/j.isprsjprs.2014.10.001"
+    ],
+    "reason": "Weiss et al. is a generic continental time-series gap-filling method. The sibling EVI/MAP group already excludes the same DOI, and the paper does not publish the tasseled-cap TCB/TCW products.",
+    "evidence_catalog_paths": [
+      "reference-groups.json#refs-b4c937639868",
+      "reference-groups.json#refs-8f8439fc7a3b"
+    ],
+    "review_phase": "post_score_validation",
+    "citation_scope_note": "Weiss et al. is a generic continental time-series gap-filling method. The sibling EVI/MAP group already excludes the same DOI, and the paper does not publish the tasseled-cap TCB/TCW products.",
+    "evidence_review": "leaders-review.json"
+  },
+  {
+    "entry_ids": [
+      "NASA/GRACE/MASS_GRIDS/LAND"
+    ],
+    "remove_paper_dois": [
+      "10.1029/2005gl025285",
+      "10.1029/2011wr011453"
+    ],
+    "reason": "Swenson and Wahr is generic correlated-error postprocessing; Landerer and Swenson assesses scaled terrestrial-water-storage estimates after applying scaling. Neither publishes the GRACE monthly land grid release. The newer V04/LAND review already excludes both; retain the release data DOI.",
+    "evidence_catalog_paths": [
+      "reference-groups.json#refs-e546e18e22f9",
+      "reference-groups.json#refs-59f4b1bda914"
+    ],
+    "review_phase": "post_score_validation",
+    "citation_scope_note": "Swenson and Wahr is generic correlated-error postprocessing; Landerer and Swenson assesses scaled terrestrial-water-storage estimates after applying scaling. Neither publishes the GRACE monthly land grid release. The newer V04/LAND review already excludes both; retain the release data DOI.",
+    "evidence_review": "leaders-review.json"
+  },
+  {
+    "entry_ids": [
+      "JRC/GFC2020/V4"
+    ],
+    "remove_data_dois": [
+      "10.2760/1975879",
+      "10.2760/262532",
+      "10.2760/7632707"
+    ],
+    "add_paper_dois": [
+      "10.2760/1975879",
+      "10.2760/262532",
+      "10.2760/7632707"
+    ],
+    "citation_scope": "base_dataset_family",
+    "citation_scope_note": "These 10.2760 DOIs identify narrative JRC methodology or accuracy reports in sci:publications. They concern the GFC/GFT product family and are not exact-release data DOIs; the catalog dataset DOI/PID stays separate.",
+    "evidence_review": "leaders-review.json; parent follow-up on all narrative JRC report DOIs",
+    "evidence_catalog_paths": [
+      "official-entries.json#JRC/GFC2020/V4"
+    ],
+    "review_phase": "post_score_validation"
+  },
+  {
+    "entry_ids": [
+      "JRC/GFC2020/V2"
+    ],
+    "remove_data_dois": [
+      "10.2760/1975879",
+      "10.2760/7632707"
+    ],
+    "add_paper_dois": [
+      "10.2760/1975879",
+      "10.2760/7632707"
+    ],
+    "citation_scope": "base_dataset_family",
+    "citation_scope_note": "These 10.2760 DOIs identify narrative JRC methodology or accuracy reports in sci:publications. They concern the GFC/GFT product family and are not exact-release data DOIs; the catalog dataset DOI/PID stays separate.",
+    "evidence_review": "leaders-review.json; parent follow-up on all narrative JRC report DOIs",
+    "evidence_catalog_paths": [
+      "official-entries.json#JRC/GFC2020/V2"
+    ],
+    "review_phase": "post_score_validation"
+  },
+  {
+    "entry_ids": [
+      "JRC/GFC2020_subtypes/V1",
+      "JRC/GFC2020_subtypes/V0"
+    ],
+    "remove_data_dois": [
+      "10.2760/1975879"
+    ],
+    "add_paper_dois": [
+      "10.2760/1975879"
+    ],
+    "citation_scope": "base_dataset_family",
+    "citation_scope_note": "These 10.2760 DOIs identify narrative JRC methodology or accuracy reports in sci:publications. They concern the GFC/GFT product family and are not exact-release data DOIs; the catalog dataset DOI/PID stays separate.",
+    "evidence_review": "leaders-review.json; parent follow-up on all narrative JRC report DOIs",
+    "evidence_catalog_paths": [
+      "official-entries.json#JRC/GFC2020_subtypes/V1",
+      "official-entries.json#JRC/GFC2020_subtypes/V0"
+    ],
+    "review_phase": "post_score_validation"
+  },
+  {
+    "entry_ids": [
+      "JRC/GFC2020/V1"
+    ],
+    "remove_data_dois": [
+      "10.2760/262532"
+    ],
+    "add_paper_dois": [
+      "10.2760/262532"
+    ],
+    "citation_scope": "base_dataset_family",
+    "citation_scope_note": "These 10.2760 DOIs identify narrative JRC methodology or accuracy reports in sci:publications. They concern the GFC/GFT product family and are not exact-release data DOIs; the catalog dataset DOI/PID stays separate.",
+    "evidence_review": "leaders-review.json; parent follow-up on all narrative JRC report DOIs",
+    "evidence_catalog_paths": [
+      "official-entries.json#JRC/GFC2020/V1"
+    ],
+    "review_phase": "post_score_validation"
+  },
+  {
+    "entry_ids": [
+      "MODIS/061/MOD13A1",
+      "MODIS/061/MOD13A2",
+      "MODIS/061/MOD13A3",
+      "MODIS/061/MOD13C1",
+      "MODIS/061/MOD13Q1",
+      "MODIS/061/MYD13A1",
+      "MODIS/061/MYD13A2",
+      "MODIS/061/MYD13A3",
+      "MODIS/061/MYD13C1",
+      "MODIS/061/MYD13Q1",
+      "MODIS/006/MOD13A1",
+      "MODIS/006/MOD13A2",
+      "MODIS/006/MOD13Q1",
+      "MODIS/006/MYD13A1",
+      "MODIS/006/MYD13A2",
+      "MODIS/006/MYD13Q1"
+    ],
+    "geographic_scope": "global",
+    "region": "Global land",
+    "scope_note": "MOD13/MYD13 vegetation-index products cover land; ocean/water-body labels in some initial scope reviews were incorrect.",
+    "review_phase": "post_score_validation",
+    "evidence_catalog_paths": [
+      "official-entries.json#MODIS/061/MOD13A1",
+      "official-entries.json#MODIS/061/MOD13A2",
+      "official-entries.json#MODIS/061/MOD13A3",
+      "official-entries.json#MODIS/061/MOD13C1",
+      "official-entries.json#MODIS/061/MOD13Q1",
+      "official-entries.json#MODIS/061/MYD13A1",
+      "official-entries.json#MODIS/061/MYD13A2",
+      "official-entries.json#MODIS/061/MYD13A3",
+      "official-entries.json#MODIS/061/MYD13C1",
+      "official-entries.json#MODIS/061/MYD13Q1",
+      "official-entries.json#MODIS/006/MOD13A1",
+      "official-entries.json#MODIS/006/MOD13A2",
+      "official-entries.json#MODIS/006/MOD13Q1",
+      "official-entries.json#MODIS/006/MYD13A1",
+      "official-entries.json#MODIS/006/MYD13A2",
+      "official-entries.json#MODIS/006/MYD13Q1"
+    ],
+    "evidence_urls": [
+      "https://modis-land.gsfc.nasa.gov/vi.html"
+    ]
+  },
+  {
+    "entry_ids": [
+      "ECMWF/ERA5/DAILY",
+      "ECMWF/ERA5/HOURLY",
+      "ECMWF/ERA5/HOURLY_PRESSURE_LEVELS",
+      "ECMWF/ERA5/MONTHLY"
+    ],
+    "geographic_scope": "global",
+    "region": "Global",
+    "scope_note": "ERA5 reanalysis covers the global atmosphere and surface; temporal aggregations retain the same geographic scope.",
+    "review_phase": "post_score_validation",
+    "evidence_catalog_paths": [
+      "official-entries.json#ECMWF/ERA5/DAILY",
+      "official-entries.json#ECMWF/ERA5/HOURLY",
+      "official-entries.json#ECMWF/ERA5/HOURLY_PRESSURE_LEVELS",
+      "official-entries.json#ECMWF/ERA5/MONTHLY"
+    ]
+  },
+  {
+    "entry_ids": [
+      "NCEP_RE/sea_level_pressure",
+      "NCEP_RE/surface_temp",
+      "NCEP_RE/surface_wv"
+    ],
+    "geographic_scope": "global",
+    "region": "Global",
+    "scope_note": "NCEP/NCAR Reanalysis variables cover the globe.",
+    "review_phase": "post_score_validation",
+    "evidence_catalog_paths": [
+      "official-entries.json#NCEP_RE/sea_level_pressure",
+      "official-entries.json#NCEP_RE/surface_temp",
+      "official-entries.json#NCEP_RE/surface_wv"
+    ]
+  },
+  {
+    "entry_ids": [
+      "NASA/GLDAS/V021/NOAH/G025/T3H",
+      "NASA/GLDAS/V022/CLSM/G025/DA1D",
+      "NASA/GLDAS/V20/NOAH/G025/T3H"
+    ],
+    "geographic_scope": "global",
+    "region": "Global land",
+    "scope_note": "Global Land Data Assimilation System products model land surfaces; model/version bounds are described on the individual catalog entries.",
+    "review_phase": "post_score_validation",
+    "evidence_catalog_paths": [
+      "official-entries.json#NASA/GLDAS/V021/NOAH/G025/T3H",
+      "official-entries.json#NASA/GLDAS/V022/CLSM/G025/DA1D",
+      "official-entries.json#NASA/GLDAS/V20/NOAH/G025/T3H"
+    ]
+  }
+]

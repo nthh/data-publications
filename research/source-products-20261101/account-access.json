@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-11-01",
+  "recorded_at_utc": "2026-11-02T00:21:43.785359+00:00",
+  "scope": "Read-only local CLI authentication check and public account routes; no product mutation or credential values retained.",
+  "local_authentication": {
+    "command": "source-coop creds (stdout captured privately and never displayed/stored)",
+    "exit_code": 1,
+    "credentials_available": false,
+    "login_needed": true
+  },
+  "public_probes": [
+    {
+      "url": "https://source.coop/nthh",
+      "http_status": 200,
+      "meaning": "Public page responds; this does not establish authenticated ownership or product creation permission."
+    },
+    {
+      "url": "https://source.coop/api/v1/accounts/nthh",
+      "http_status": 401
+    },
+    {
+      "url": "https://source.coop/api/v1/repositories/nthh",
+      "http_status": 404
+    }
+  ],
+  "owner": "nthh",
+  "owner_status": "proposed",
+  "account_verification": "not_established",
+  "products_created": 0,
+  "uploads": 0,
+  "cli_capabilities": "Installed CLI provides login and creds; it does not create products.",
+  "consulted_skills": {
+    "repository": "https://github.com/portolan-sdi/portolan-skills",
+    "commit": "1714d9ab672e6a1bbc56ca12458e41b14484d426",
+    "names": [
+      "git-backed-catalog",
+      "portolan-bootstrap",
+      "sourcecoop"
+    ],
+    "sourcecoop_skill_sha256": "7fd81a79a690fe9a0a4a8e3daeea2597969dffc6bebbe6e77eed4dac4605a105"
+  },
+  "primary_documentation": [
+    "https://docs.source.coop/create-an-account",
+    "https://docs.source.coop/automated-access",
+    "https://github.com/source-cooperative/source-coop-cli"
+  ],
+  "next_step": "Confirm the owner and sign in before verifying product creation access. Product drafts and exact local file plans can be completed without credentials."
+}

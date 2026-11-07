@@ -1,0 +1,97 @@
+{
+  "assets": [
+    {
+      "asset_id": "hydrolakes-polygons",
+      "sha256": "6f588d97c14651eb23bea2d74fdf2a85f218a00ff11519c81efa5512b916b7f8",
+      "size_bytes": 949598607
+    }
+  ],
+  "evidence": {
+    "clean_checkout_evidence": {
+      "checked_by": "datasets/hydrolakes/releases/v1-local-r3/reproduction/materialize_release_inputs.py",
+      "commit": "100eaadad0e42a6f12d61c08de7d061eb5bac499",
+      "detached_checkout": true,
+      "git_status_porcelain_empty": true
+    },
+    "clean_checkout_independently_verified": false,
+    "code_revisions": {
+      "raw": "442460af45f424f6669ba3ddd1d2d777e871c208",
+      "spatial": "100eaadad0e42a6f12d61c08de7d061eb5bac499"
+    },
+    "dataset_id": "hydrolakes",
+    "dataset_record": {
+      "path": "datasets/hydrolakes/dataset.yaml",
+      "pinned_source_sha256": "9ef63498569dd7ccd0b8d8852da026e009a75f42d293f00e483f3b9fcfe8e1f9",
+      "sha256": "87a37c4285b669bff5ee58095e7aa470800618d3edb0d24ca54eb3e3a5cfdf5f"
+    },
+    "final_assets": [
+      {
+        "asset_id": "hydrolakes-polygons",
+        "clean_rebuild_sha256_equal": true,
+        "sha256": "6f588d97c14651eb23bea2d74fdf2a85f218a00ff11519c81efa5512b916b7f8",
+        "size_bytes": 949598607
+      }
+    ],
+    "normalizer": "research/hydro-releases-20261031/bind_fidelity.py",
+    "raw_assets": [
+      {
+        "asset_id": "hydrolakes-polygons",
+        "rebuilt_sha256_equal": true,
+        "sha256": "4c7c83b0a91e4cbd1e31583ab89eee9721ba22250272640591f4795d186a6a76",
+        "size_bytes": 945383282
+      }
+    ],
+    "source_validation_report_sha256": "93ded008d2df7b5e04de6f5e34658e94c8a2fc081d3f6a62815e4e837233f7d2",
+    "spatial_augmentation": {
+      "hydrolakes-polygons": {
+        "clean_rebuild": {
+          "derived_bbox_values_recomputed_and_compared": true,
+          "geometry_types": {
+            "Polygon": 1427688
+          },
+          "global_bbox": [
+            -179.9999999999999,
+            -55.86513888888899,
+            179.99999999999903,
+            83.57595062255876
+          ],
+          "input_sha256": "4c7c83b0a91e4cbd1e31583ab89eee9721ba22250272640591f4795d186a6a76",
+          "input_size_bytes": 945383282,
+          "output_sha256": "6f588d97c14651eb23bea2d74fdf2a85f218a00ff11519c81efa5512b916b7f8",
+          "output_size_bytes": 949598607,
+          "path": "spatial-order-validation.json",
+          "sha256": "ea96f00907c5b9c91c9c1d8ee365adcb835c0d068d248f329f3555f2efc8fe22",
+          "source_order_reconstructed_and_compared": true,
+          "source_rows": 1427688,
+          "source_values_nulls_and_raw_wkb_compared": true,
+          "status": "passed",
+          "transformation": "spatial_order"
+        },
+        "original": {
+          "derived_bbox_values_recomputed_and_compared": true,
+          "geometry_types": {
+            "Polygon": 1427688
+          },
+          "global_bbox": [
+            -179.9999999999999,
+            -55.86513888888899,
+            179.99999999999903,
+            83.57595062255876
+          ],
+          "input_sha256": "4c7c83b0a91e4cbd1e31583ab89eee9721ba22250272640591f4795d186a6a76",
+          "input_size_bytes": 945383282,
+          "output_sha256": "6f588d97c14651eb23bea2d74fdf2a85f218a00ff11519c81efa5512b916b7f8",
+          "output_size_bytes": 949598607,
+          "path": "spatial-order-validation.json",
+          "sha256": "a6c9ac34403f2762b695863725537c31d4348855ff8091638d099f0645ff7f20",
+          "source_order_reconstructed_and_compared": true,
+          "source_rows": 1427688,
+          "source_values_nulls_and_raw_wkb_compared": true,
+          "status": "passed",
+          "transformation": "spatial_order"
+        }
+      }
+    }
+  },
+  "status": "passed"
+}

@@ -1,0 +1,115 @@
+{
+  "dataset_id": "free-flowing-rivers",
+  "title": "Mapping the world's free-flowing rivers — global river reach connectivity assessment",
+  "dataset_record_path": "../../../dataset.yaml",
+  "release_id": "figshare-v1-local-r1",
+  "release_version": "1.0.0",
+  "created": "2026-10-31T00:00:00Z",
+  "output_dir": "REPLACE_WITH_NEW_ABSOLUTE_LOCAL_OUTPUT_DIRECTORY",
+  "source_attribution": {
+    "url": "https://figshare.com/articles/dataset/Mapping_the_world_s_free-flowing_rivers_data_set_and_technical_documentation/7688801",
+    "title": "Mapping the world's free-flowing rivers: data set and technical documentation (figshare v1)",
+    "attribution": "Source data by Günther Grill and Bernhard Lehner. Funding acknowledgements: McGill University, World Wildlife Fund, and NSERC. Original source citation: Grill, G., Lehner, B., Thieme, M. et al. (2019), Mapping the world's free-flowing rivers, Nature 569, 215–221, https://doi.org/10.1038/s41586-019-1111-9.",
+    "license": {
+      "identifier": "CC-BY-4.0",
+      "url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "version": "figshare article v1",
+    "doi": "https://doi.org/10.6084/m9.figshare.7688801.v1"
+  },
+  "producers": [
+    {
+      "name": "Günther Grill",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://orcid.org/0000-0003-4860-3575"
+    },
+    {
+      "name": "Bernhard Lehner",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://orcid.org/0000-0003-3712-2581"
+    }
+  ],
+  "source_fidelity_report_path": "source-fidelity.json",
+  "clean_rebuild_report_path": "clean-rebuild.json",
+  "assets": [
+    {
+      "asset_id": "ffr-reach-network-v1",
+      "path": "../../../../../.local/free-flowing-rivers/spatial-r1/free-flowing-rivers.parquet",
+      "identifier_column": "OBJECTID",
+      "title": "Free flowing river reaches, figshare v1",
+      "description": "Global river reach network and source attributes from the pinned figshare v1 File Geodatabase, converted to GeoParquet and augmented with derived per-feature spatial bounds.",
+      "field_dictionary_path": "field-dictionary.json"
+    }
+  ],
+  "supporting_files": [
+    {
+      "path": "../../../source-metadata.json",
+      "package_path": "source/source-metadata.json",
+      "title": "Pinned figshare article metadata",
+      "media_type": "application/json",
+      "description": "Producer API metadata snapshot used to verify the exact article version and source archive pin."
+    },
+    {
+      "path": "../../../source-inspection.json",
+      "package_path": "source/source-inspection.json",
+      "title": "Source archive and layer inspection",
+      "media_type": "application/json",
+      "description": "Checksum-bound inspection of archive members, layer schema, feature count, geometry, CRS, and source extent."
+    },
+    {
+      "path": "source-field-dictionary.json",
+      "package_path": "source/source-field-dictionary.json",
+      "title": "Producer field dictionary",
+      "media_type": "application/json",
+      "description": "Original field dictionary generated from the producer File Geodatabase schema, before adding derived output fields."
+    }
+  ],
+  "data_license": {
+    "license": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "attribution": "Source data by Günther Grill and Bernhard Lehner; funding acknowledged to McGill University, World Wildlife Fund, and NSERC. Derived GeoParquet release retains the upstream CC BY 4.0 license."
+  },
+  "source_license": {
+    "identifier": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "source_doi": "https://doi.org/10.6084/m9.figshare.7688801.v1"
+  },
+  "stac_license": "CC-BY-4.0",
+  "doi": "10.6084/m9.figshare.7688801.v1",
+  "citation": "Grill, G., Lehner, B., Thieme, M. et al. (2019). Mapping the world's free-flowing rivers. Nature 569, 215–221. https://doi.org/10.1038/s41586-019-1111-9. Source data: Grill, G.; Lehner, B. (2019), Mapping the world's free-flowing rivers: data set and technical documentation, figshare, version 1. https://doi.org/10.6084/m9.figshare.7688801.v1.",
+  "description": "Analytic GeoParquet conversion of the full global free-flowing river reach network from the pinned 2019 figshare v1 source. Original source fields and WKB geometries, nulls, row order, and record multiplicity are preserved. Added columns expose the producer-stream row ordinal and per-feature EPSG:4326 bounds. This release does not assess scientific validity or update the source assessment.",
+  "bbox": [
+    -179.99791666699997,
+    -55.87708333299997,
+    179.99791666700003,
+    83.58958333300006
+  ],
+  "temporal_interval": [
+    null,
+    null
+  ],
+  "code_revision": "c18b96e2f3d631089453459d158c91fc0fa31d87",
+  "workflow_paths": [
+    "datasets/free-flowing-rivers/acquire.py",
+    "datasets/free-flowing-rivers/inspect_source.py",
+    "datasets/free-flowing-rivers/source_schema.py",
+    "datasets/free-flowing-rivers/build.py",
+    "datasets/free-flowing-rivers/validate.py",
+    "datasets/free-flowing-rivers/fault_tests.py",
+    "datasets/free-flowing-rivers/pyproject.toml",
+    "datasets/free-flowing-rivers/uv.lock",
+    "datasets/free-flowing-rivers/dataset.yaml",
+    "datasets/free-flowing-rivers/source-metadata.json",
+    "datasets/free-flowing-rivers/source-inspection.json",
+    "datasets/free-flowing-rivers/VALIDATION.md",
+    "datasets/free-flowing-rivers/README.md",
+    "research/hydro-releases-20261031/bind_fidelity.py",
+    "research/hydro-releases-20261031/test_bind_fidelity.py"
+  ]
+}

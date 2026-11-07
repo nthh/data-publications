@@ -1,0 +1,32 @@
+{
+  "asset": "lakeatlas-polygons-spatial",
+  "error": "peak RSS 1006239744 bytes reached configured cap 1000000000 in phase bucket_write",
+  "error_type": "SpatialOrderError",
+  "failed_report_path": "local:lakes/releases/lakeatlas-v1.0-r2-spatial-primary-attempt3/reports/lakeatlas-polygons-spatial.json",
+  "failed_report_sha256": "02c3df16413df43216eff205bc96ff88d1604fde8c3238d7d74ab034ecde54ed",
+  "failure_phase": "bucket_write",
+  "observed_peak_rss_bytes": 1006239744,
+  "raw_source_changed": false,
+  "requested_parameters": {
+    "batch_rows": 512,
+    "buckets": 128,
+    "buffer_rows": 256,
+    "geometry_column": "geometry",
+    "identifier_column": "OBJECTID",
+    "memory_cap_bytes": 1000000000,
+    "minimum_remaining_free_bytes": 10000000000,
+    "minimum_start_free_bytes": 40000000000,
+    "row_group_size": 16384,
+    "task_disk_limit_bytes": 8000000000,
+    "task_owned_baseline_bytes": 3204053918
+  },
+  "retained_partial_artifacts": [],
+  "source": {
+    "asset": "lakeatlas-polygons",
+    "sha256": "f1e69b9db782314151bb496d0d7b613e015e59bf628c9100f998c2b67eda77e2",
+    "size_bytes": 1238572245
+  },
+  "stage_output_created": false,
+  "status": "failed",
+  "workflow_revision": "3b9f79edf004d1b33c56f0f9762078560a53b3ef"
+}

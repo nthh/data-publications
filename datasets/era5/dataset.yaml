@@ -1,0 +1,95 @@
+schema_version: 1
+id: era5
+title: ERA5 global reanalysis
+intake:
+  kind: official_catalog
+  reference_url: https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_DAILY
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'citations: Global Distinct named producer product; retain exact source edition and
+    footprint. planetary: review_note: Global atmospheric reanalysis from 1950 onward; STAC bbox global.;
+    stac_bbox: [-180, -90, 180, 90]; temporal_interval: [["1979-01-01T00:00:00Z", null]] Join ECMWF ERA5
+    source family; PC PDS/Zarr and GEE aggregates retain distinct processing.'
+  sources:
+  - provider: gee_official
+    entry_id: ECMWF/ERA5/DAILY
+    url: https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_DAILY
+    relationship: same_family
+  - provider: gee_official
+    entry_id: ECMWF/ERA5/HOURLY
+    url: https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_HOURLY
+    relationship: same_family
+  - provider: gee_official
+    entry_id: ECMWF/ERA5/HOURLY_PRESSURE_LEVELS
+    url: https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_HOURLY_PRESSURE_LEVELS
+    relationship: same_family
+  - provider: gee_official
+    entry_id: ECMWF/ERA5/MONTHLY
+    url: https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_MONTHLY
+    relationship: same_family
+  - provider: planetary_computer
+    entry_id: era5-pds
+    url: https://planetarycomputer.microsoft.com/api/stac/v1/collections/era5-pds
+    relationship: component
+  access:
+  - provider: literature
+    status: unknown
+    formats: []
+    summary: GEE catalog entries are available through Earth Engine; frozen metadata does not establish
+      an independently downloadable native bulk copy or its format. Distinct named producer product; retain
+      exact source edition and footprint.
+    license_summary: Not inferred from citation records. Verify producer terms for the exact edition before
+      conversion or redistribution.
+    proposed_outputs: []
+    rationale: 'Candidate discovery only: global/near-global scope and associated-paper citation signal
+      justify source-format and licensing review. Citation rank does not establish conversion priority
+      or exact-release use.'
+    evidence_urls:
+    - https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_DAILY
+    - https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_HOURLY
+    - https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_HOURLY_PRESSURE_LEVELS
+    - https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_MONTHLY
+    - https://doi.org/10.1002/qj.3803
+  - provider: planetary_computer
+    status: native_available
+    formats:
+    - NetCDF
+    - Zarr
+    summary: 'Collection metadata declares per-item data assets / provider storage roots in the listed
+      native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain
+      unvalidated. Join ECMWF ERA5 source family; PC PDS/Zarr and GEE aggregates retain distinct processing.'
+    license_summary: 'note: Do not treat this metadata label as legal clearance.; review_status: provider
+      declaration captured; terms and redistribution permission not independently reviewed; stac_license:
+      other'
+    proposed_outputs:
+    - NetCDF
+    - Zarr
+    rationale: Reuse native Zarr variables and static NetCDF asset; inspect variable/coordinate conventions
+      and access paths.
+    evidence_urls:
+    - https://planetarycomputer.microsoft.com/api/stac/v1/collections/era5-pds
+    - https://planetarycomputer.microsoft.com/dataset/era5-pds
+  citations:
+  - provider: OpenAlex
+    paper_doi: 10.1002/qj.3803
+    work_id: https://openalex.org/W3025949386
+    cited_by_count: 31882
+    observed_on: '2026-10-30'
+    scope: base_dataset_family
+  evidence:
+  - path: research/global-candidates-20261031/citations/reviewed.json
+    sha256: 572140255cd3b41a1ec8ecca0139e64d38899cda7fdd55756f399a0dca57a467
+    key: era5
+  - path: research/global-candidates-20261031/planetary/reviewed.json
+    sha256: 07da016851a07f3e3e0937e120ce46442785f4e9096e563d92c1a3c0ce9e616a
+    key: era5_reanalysis

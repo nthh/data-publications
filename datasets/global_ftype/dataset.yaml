@@ -1,0 +1,35 @@
+schema_version: 1
+id: global_ftype
+title: Global Natural and Planted Forests
+community_url: https://gee-community-catalog.org/projects/global_ftype
+audit:
+  snapshot: gee-community-audit-20261029
+  family_key: global_ftype
+  unique_gee_asset_count: 1
+  initial_queue: review_source_coop_counterpart
+  folia_registry_status: not_identified
+  folia_registry_ids: []
+  source_coop_urls:
+  - https://source.coop/epoch/global-natural-planted-forests
+  source_coop_scope: Same Xiao et al. 2024 global 30m natural/planted forest classification.
+    Source re-encodes RGB classes losslessly to single band; some source tiles absent.
+  external_native_urls:
+  - https://source.coop/epoch/global-natural-planted-forests
+  external_native_scope: Same Xiao et al. 2024 global 30m natural/planted forest classification.
+    Source re-encodes RGB classes losslessly to single band; some source tiles absent.
+triage:
+  decision: pending
+  priority: normal
+review:
+  citation_assessment:
+    as_of: '2026-10-29'
+    provider: OpenAlex
+    evidence_path: research/citations/rankings.json
+    evidence_key: global_ftype
+    geographic_scope: global
+    paper_count_status: matched
+    max_paper_citations: 48
+    max_data_doi_citations: null
+    top_paper_doi: https://doi.org/10.34133/remotesensing.0204
+    top_paper_openalex_id: https://openalex.org/W4400458831
+    citation_scope: associated_dataset_publication

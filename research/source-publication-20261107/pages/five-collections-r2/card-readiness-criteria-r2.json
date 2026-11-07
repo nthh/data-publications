@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-11-07T22:46:02.893963+00:00",
+  "failed_report_sha256": "37224138f6402815d973d162186a7bbc7fd696b0ebc4d9ea74c3c40f36914412",
+  "observed_failure": "GRWL target link detached while Playwright scrollIntoViewIfNeeded waited for geometry stability, before readiness polling or activation. FFR completed.",
+  "source_evidence": {
+    "Catalogs.vue": "https://github.com/portolan-sdi/portolan-browser/blob/15af01335da62a60d209911c9bde994981fd29be/src/components/Catalogs.vue",
+    "Catalog.vue": "https://github.com/portolan-sdi/portolan-browser/blob/15af01335da62a60d209911c9bde994981fd29be/src/components/Catalog.vue",
+    "finding": "Visible cards queue metadata asynchronously with a 400ms visibility delay and can rerender after the root loading indicator disappears."
+  },
+  "followup": "Scroll the current matched target in one DOM evaluation, without retaining a node across the scroll geometry wait. This changes only pre-activation preparation; the existing bounded metadata/link-list readiness and same connected activation node remain.",
+  "fixed_readiness": {
+    "scroll_target_into_view": "Locator evaluation of native element.scrollIntoView({block: nearest, inline: nearest}); no navigation or focus change.",
+    "target_metadata_response_sha_verified": true,
+    "wait_for_currently_requested_child_metadata": true,
+    "force_loading_unrequested_children": false,
+    "unchanged_card_title_href_signature_ms": 500,
+    "maximum_wait_ms": 30000,
+    "activation_node": "Focus, verify and press Enter on the same connected ElementHandle; no selector re-resolution between validation and activation."
+  },
+  "unchanged": "Exact title/href, active focus, normal Enter, expected route, cross-product refusal, all five collections/six PMTiles, metadata hashes, transport limits, maps and manual review. A changed/detached anchor or wrong route still fails; no post-activation retry.",
+  "prior_criteria": "card-readiness-criteria-r1.json"
+}

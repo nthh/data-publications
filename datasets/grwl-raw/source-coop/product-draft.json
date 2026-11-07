@@ -1,0 +1,272 @@
+{
+  "assets": [
+    {
+      "asset_id": "grwl-raw-observations",
+      "checksum": "1220d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+      "href": "assets/grwl-raw-observations.parquet",
+      "media_type": "application/vnd.apache.parquet",
+      "roles": [
+        "data"
+      ],
+      "size_bytes": 5529859809,
+      "title": "Global River Width from Landsat — raw vector observations V01.01"
+    },
+    {
+      "asset_id": "grwl-raw-observations_fields",
+      "checksum": "1220c63c946029f0dc306180eebd105cf063ac21a253d946f6a5bd42080817f8dffb",
+      "href": "metadata/grwl-raw-observations-field-dictionary.json",
+      "media_type": "application/json",
+      "roles": [
+        "metadata"
+      ],
+      "size_bytes": 1271,
+      "title": "grwl-raw-observations field dictionary"
+    },
+    {
+      "asset_id": "thumbnail",
+      "checksum": "1220689a7c232287133509fe4005d73912c97f26828328c4ece3811b06e3e6eaec42",
+      "href": "display/thumbnail.png",
+      "media_type": "image/png",
+      "roles": [
+        "thumbnail"
+      ],
+      "size_bytes": 2710,
+      "title": "Sampled display-only overview; not an analytic asset"
+    }
+  ],
+  "attribution": "Allen and Pavelsky (2018), Global extent of rivers and streams, Science 361(6402), 585–588, DOI 10.1126/science.aat0636; source product GRWL_vector_V01.01.",
+  "blockers": [],
+  "created": true,
+  "creation_ready": true,
+  "dataset_id": "grwl-raw",
+  "dataset_title": "Global River Width from Landsat — raw vector observations V01.01",
+  "display_publication": {
+    "assets": [
+      {
+        "href": "display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+        "id": "grwl-raw-display",
+        "path": "assets/grwl-raw.pmtiles",
+        "sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+        "size_bytes": 3190539066,
+        "style_href": "display/raw-v01.01-display-r3/styles/width.json",
+        "style_path": "styles/width.json",
+        "title": "GRWL raw width observations at every zoom"
+      }
+    ],
+    "manifest_href": "display/raw-v01.01-display-r3/manifest.json",
+    "manifest_path": "datasets/grwl-raw/display/raw-v01.01-display-r3/manifest.json",
+    "manifest_sha256": "0910adf27da9265a9f02fb2c71f2d5b4a6e90f55330ae6d4a2d24c782d231915",
+    "release": "raw-v01.01-display-r3"
+  },
+  "draft_type": "source_coop_product_draft",
+  "hosted": true,
+  "independent_maintainer_proposal": {
+    "owner": "nthh",
+    "relationship": "new Source Cooperative product proposal; immutable package metadata is unchanged",
+    "status": "confirmed"
+  },
+  "license_note": "Producer license: CC BY 4.0. Preserve producer attribution and cite Allen and Pavelsky (2018), DOI 10.1126/science.aat0636.",
+  "limitations": [
+    "All 64,572,998 source records passed exact independent source comparison and a byte-identical clean analytical rebuild. Complete uploaded bytes and anonymous hosting, range, CORS, subset-query and browser checks passed.",
+    "Raw observations are separate source records and short parts, not a connected river centerline network. Records are never joined by segmentID or segmentInd.",
+    "width_m value 1 is an unknown-width sentinel; width_valid indicates usable width without altering width_m.",
+    "The release excludes masks, tile index, and RSSA basin supplement.",
+    "PMTiles is a quantized display derivative. Zooms 0–7 select the widest valid original observation per screen-scale cell, retaining its source ID and anchor. Symbols are exaggerated and capped, not averages or riverbanks. Zooms 8–12 retain the original detailed tile payloads.",
+    "All 64,572,998 source records were independently checked for overview winner selection; every selected table row and all 26,060,623 encoded point placements in 4,439 overview tiles passed. All 588,355 detailed compressed tiles exactly match r2. The same 304 enumerated 0.0013–2.93 m source fragments collapse at z12 and remain preserved in GeoParquet, with no new detail omissions.",
+    "Twenty fixed browser cases cover Mississippi z0–12, Amazon and the dateline, including one exact-ID lookup of all fourteen source attributes at z7. The clean byte replay is regional. The viewer retains its existing non-wrapping world edge; global scientific accuracy is not established. Hosted browser checks cover the same twenty fixed views.",
+    "Live raw-V01.01 GEE count and all 512 sampled compound keys match; all 5,120 source attribute cells are exact. Selected mixed geometry diagnostics are below 0.340 m, but strict geometry parity fails. No exhaustive GEE, topology-preservation or independent scientific-accuracy claim.",
+    "The Parquet metadata footer is 19,783,655 bytes. The tested cold exact-ID browser lookup transferred 20,941,975 bytes, including that footer; this is one fixed-view measurement, not a universal query-cost guarantee."
+  ],
+  "local_readiness": "hosted_verified_pending_catalog_deployment",
+  "owner": "nthh",
+  "owner_status": "confirmed",
+  "product_id": "grwl-raw",
+  "proposed_source_proxy": {
+    "status": "hosted",
+    "uri": "s3://nthh/grwl-raw"
+  },
+  "publication_status": "published",
+  "ready_for_creation": true,
+  "ready_for_review": true,
+  "related_dataset_links": [
+    {
+      "title": "Global River Width from Landsat — simplified global river network V01.02",
+      "url": "https://gee-community-catalog.org/projects/grwl/"
+    },
+    {
+      "title": "Producer source",
+      "url": "https://zenodo.org/records/18624542"
+    }
+  ],
+  "release": "raw-v01.01-local-r1",
+  "release_files": [
+    {
+      "kind": "asset",
+      "path": "assets/grwl-raw-observations.parquet",
+      "size_bytes": 5529859809
+    },
+    {
+      "kind": "display_derivatives",
+      "path": "display/thumbnail.png",
+      "size_bytes": 2710
+    },
+    {
+      "kind": "data_license",
+      "path": "licenses/data-license.json",
+      "size_bytes": null
+    },
+    {
+      "kind": "source_license",
+      "path": "licenses/source-license.json",
+      "size_bytes": null
+    },
+    {
+      "kind": "field_dictionary",
+      "path": "metadata/grwl-raw-observations-field-dictionary.json",
+      "size_bytes": null
+    },
+    {
+      "kind": "source_attribution",
+      "path": "source/attribution.json",
+      "size_bytes": null
+    }
+  ],
+  "review_context": {
+    "asset_integrity": "passed_source_rebuild_full_width_overview_detail_payload_equality_replay_browser_and_finalization",
+    "local_followup": [],
+    "public_followup": [
+      "Deploy the aggregate GitHub Pages catalog and verify live browser access."
+    ],
+    "stage": "hosted_verified_pending_catalog_deployment",
+    "status_basis": "canonical publication status plus local manifest/snapshot hashes; this tool does not rerun scientific or public-host validation"
+  },
+  "schema_version": 1,
+  "snapshot_binding": {
+    "bound_file_count": 6,
+    "hosted_package_base_url": "https://data.source.coop/nthh/grwl-raw/releases/raw-v01.01-local-r1/",
+    "local_metadata_integrity": "passed",
+    "manifest_path": "datasets/grwl-raw/releases/raw-v01.01-local-r1/manifest.json",
+    "manifest_sha256": "ef2a063cb54327b50d47e8ad17c735cadde87fb9ba3136d6b39fe43126863c8c",
+    "package_binding_sha256": "e3f7e342c380d9891b99c82dfc92d40c8ab3f38bf33e2c95e43897e55d70f707",
+    "package_binding_status": "verified",
+    "release": "raw-v01.01-local-r1",
+    "snapshot_file_count": 4,
+    "snapshot_path": "datasets/grwl-raw/releases/raw-v01.01-local-r1/catalog-input-r1/snapshot.json",
+    "snapshot_sha256": "9e824a00465ba25d411dbeff0321b14053e22177eeccc9dabf89390b9825f5a8"
+  },
+  "snapshot_collection": {
+    "assets": [
+      {
+        "asset_id": "grwl-raw-observations",
+        "checksum": "1220d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+        "href": "assets/grwl-raw-observations.parquet",
+        "media_type": "application/vnd.apache.parquet",
+        "roles": [
+          "data"
+        ],
+        "size_bytes": 5529859809,
+        "title": "Global River Width from Landsat — raw vector observations V01.01"
+      },
+      {
+        "asset_id": "grwl-raw-observations_fields",
+        "checksum": "1220c63c946029f0dc306180eebd105cf063ac21a253d946f6a5bd42080817f8dffb",
+        "href": "metadata/grwl-raw-observations-field-dictionary.json",
+        "media_type": "application/json",
+        "roles": [
+          "metadata"
+        ],
+        "size_bytes": 1271,
+        "title": "grwl-raw-observations field dictionary"
+      },
+      {
+        "asset_id": "thumbnail",
+        "checksum": "1220689a7c232287133509fe4005d73912c97f26828328c4ece3811b06e3e6eaec42",
+        "href": "display/thumbnail.png",
+        "media_type": "image/png",
+        "roles": [
+          "thumbnail"
+        ],
+        "size_bytes": 2710,
+        "title": "Sampled display-only overview; not an analytic asset"
+      }
+    ],
+    "description": "Detailed producer GRWL vector observations with each source record, part and coordinate retained. Records are kept separate; segmentID is tile-local. width_m=1 means unknown width, and width_valid marks usable measurements. Static producer release derived from Landsat observations; source observation dates vary. This is not a current river-width observation or a time series.",
+    "extent": {
+      "spatial": {
+        "bbox": [
+          [
+            -180.0,
+            -54.31039221809525,
+            180.0,
+            82.31075059469364
+          ]
+        ]
+      },
+      "temporal": {
+        "interval": [
+          [
+            null,
+            null
+          ]
+        ]
+      }
+    },
+    "id": "grwl-raw",
+    "license": "CC-BY-4.0",
+    "providers": [
+      {
+        "name": "Allen and Pavelsky / GRWL",
+        "roles": [
+          "producer",
+          "licensor"
+        ],
+        "url": "https://zenodo.org/records/18624542"
+      },
+      {
+        "description": "Independent format conversion and local package host; not publicly hosted.",
+        "name": "nthh",
+        "roles": [
+          "host",
+          "processor"
+        ],
+        "url": "https://github.com/nthh"
+      }
+    ],
+    "title": "Global River Width from Landsat — raw vector observations V01.01"
+  },
+  "source_links": [
+    {
+      "title": "License terms",
+      "url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "title": "Dataset release",
+      "url": "https://doi.org/10.5281/zenodo.18624542"
+    },
+    {
+      "title": "Folia host",
+      "url": "https://github.com/nthh"
+    },
+    {
+      "title": "Original download",
+      "url": "https://zenodo.org/api/records/18624542/files/GRWL_vector_V01.01.zip/content"
+    },
+    {
+      "title": "Dataset release",
+      "url": "https://zenodo.org/records/18624542"
+    }
+  ],
+  "summary": "Complete GRWL V01.01 raw vector observations in lossless GeoParquet, with one separately versioned zoom 0–12 PMTiles display. Zooms 0–7 show selected widest original width observations with source IDs; zooms 8–12 preserve detailed source geometry and widths. All 64,572,998 observations and ten original DBF fields remain in GeoParquet. Complete source comparison, analytical rebuild, full global overview validation, exact detailed-tile preservation, clean regional replay and all 20 browser cases passed.",
+  "supplements": [],
+  "tags": [
+    "global",
+    "hydrology",
+    "landsat",
+    "rivers",
+    "river-width",
+    "geoparquet",
+    "pmtiles"
+  ],
+  "temporal_note": "Static producer release derived from Landsat observations with varying source dates; not current river conditions or a time series.",
+  "title": "Global River Width from Landsat — raw vector observations V01.01"
+}

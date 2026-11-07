@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-11-02T23:22:19.168211+00:00",
+  "scope": "Independent read-only review by grwl_raw_oracle; separate UTM projection and five-position raw-geometry checks for 11839 and15450, plus native-mask spot checks.",
+  "raw_examples": [
+    {
+      "source_row": 11839,
+      "tile_pair": [
+        "NI15",
+        "NI16"
+      ],
+      "raw_records": 355834,
+      "metric_epsg": 32615,
+      "fractions": [
+        0,
+        0.25,
+        0.5,
+        0.75,
+        1
+      ],
+      "nearest_raw_distance_m_rounded": [
+        0.03,
+        1040.9,
+        929.46,
+        293.57,
+        0.04
+      ],
+      "endpoint_raw_records": [
+        56861,
+        56878
+      ],
+      "endpoint_line_lengths_m_rounded": [
+        5.1,
+        20.47
+      ],
+      "endpoint_width_m": [
+        595,
+        1536
+      ]
+    },
+    {
+      "source_row": 15450,
+      "tile_pair": [
+        "NL12",
+        "NL13"
+      ],
+      "raw_records": 174412,
+      "metric_epsg": 32612,
+      "fractions": [
+        0,
+        0.25,
+        0.5,
+        0.75,
+        1
+      ],
+      "nearest_raw_distance_m_rounded": [
+        0.39,
+        15789.06,
+        13389.58,
+        5281.6,
+        0.03
+      ],
+      "endpoint_raw_records": [
+        41573,
+        41586
+      ],
+      "endpoint_line_lengths_m_rounded": [
+        28.09,
+        4.09
+      ],
+      "endpoint_width_m": [
+        507,
+        169
+      ]
+    }
+  ],
+  "mask_spot_checks": "At25%and50%, both cases have center code0 and only code0 within90m. At75%,11839 has code255 nearby inNI16;15450 remains code0 in both tiles.",
+  "endpoint_midpoints": "Raw lon/lat measurements match the short-line midpoint within3e-10 degrees; all four primary-case endpoints round to summary coordinates.",
+  "initial_check_limitation": "An initial ROI-clipped nearest-distance check omitted farther raw lines for15450. Those distances are excluded from final results; the corrected independent check uses all records in both tiles.",
+  "review_notes": [
+    "Main AEQD measurements agree with independent full-tile UTM calculations within projection differences.",
+    "Nearest raw segment keys are not topological component counts.",
+    "Projected mask footprints overlap; aggregate water checks use any matching tile.",
+    "Zero missing raster coverage does not prove exhaustive water classification.",
+    "Code0 is no connected-water class, not independently proven land.",
+    "The exact producer software operation remains unidentified."
+  ],
+  "external_operations": [],
+  "files_modified_by_reviewer": []
+}

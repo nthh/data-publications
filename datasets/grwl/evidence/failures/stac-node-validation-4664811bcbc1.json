@@ -1,0 +1,16 @@
+{
+  "status": "failed",
+  "validator": "stac-node-validator 2.0.0",
+  "exit_code": 1,
+  "release_manifest_sha256": "876c848046d966a07da169d6651b864ba294de5ce5d295e35df5083c83815399",
+  "validated_documents": [
+    "catalog.json",
+    "grwl/collection.json"
+  ],
+  "counts": {
+    "Passed": 0,
+    "Invalid": 2,
+    "Skipped": 0
+  },
+  "output": "STAC Node/JS Validator v2.0.0\n\nReport\n  /Users/nathan/.folia-fleets/data-publications-build-two-20261030/tree/.local/grwl/releases/v0102-local-r1-final-20261030/release/catalog.json\n    Catalog\n      1. /links/0/href must match format \"iri\" (format: iri)\n    Extensions\n      https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json: passed\n  /Users/nathan/.folia-fleets/data-publications-build-two-20261030/tree/.local/grwl/releases/v0102-local-r1-final-20261030/release/grwl/collection.json\n    Collection\n      1. /links/0/href must match format \"iri\" (format: iri)\n    Extensions\n      https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json: passed\n      file (2.1.0): passed\n      table (1.2.0): passed\n      scientific (1.0.0): passed\n      version (1.2.0): passed\n      web-map-links (1.3.0): passed\n\nSummary (2)\n  Passed: 0\n  Invalid: 2\n  Skipped: 0\nWarning: Schema-based STAC validation may be incomplete and should only be considered as a first indicator of validity.\n\n"
+}

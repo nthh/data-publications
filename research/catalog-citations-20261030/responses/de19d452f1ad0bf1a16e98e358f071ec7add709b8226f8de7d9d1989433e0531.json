@@ -1,0 +1,1310 @@
+{
+  "request_url": "https://api.openalex.org/works?filter=doi%3A10.5066%2Fp9ouvuui%7C10.5066%2Fp9sjxui1%7C10.5067%2F4dq54ouij9dl%7C10.5067%2F4rntrre4jcyd%7C10.5067%2F5nhc22t9375g%7C10.5067%2F63nqasrdpdb0%7C10.5067%2Faqua%2Fmodis%2Fl3m%2Fchl%2F2018%7C10.5067%2Faqua%2Fmodis%2Fl3m%2Fflh%2F2018%7C10.5067%2Faqua%2Fmodis%2Fl3m%2Fpoc%2F2018%7C10.5067%2Faqua%2Fmodis%2Fl3m%2Frrs%2F2018%7C10.5067%2Faster%2Fast_l1t.003%7C10.5067%2Faster%2Fastgtm.003%7C10.5067%2Fb8x58mqbfupa%7C10.5067%2Fcommunity%2Faster_ged%2Fag100.003%7C10.5067%2Fcommunity%2Flgrip%2Flgrip30.001%7C10.5067%2Fcommunity%2Fmusli%2Fmslsp30na.011%7C10.5067%2Fecostress%2Feco_l2t_lste.002%7C10.5067%2Fecostress%2Feco_l2t_stars.002%7C10.5067%2Femit%2Femitl1brad.001%7C10.5067%2Femit%2Femitl2arfl.001%7C10.5067%2Femit%2Femitl2bch4enh.001%7C10.5067%2Femit%2Femitl2bch4plm.001%7C10.5067%2Fevkpqz4afc4d%7C10.5067%2Ff6jmovy5navz%7C10.5067%2Ffirms%2Fmodis%2Fmcd14dl.nrt.006%7C10.5067%2Ffirms%2Fmodis%2Fmcd14dl.nrt.0061%7C10.5067%2Ffirms%2Fmodis%2Fmcd14ml%7C10.5067%2Ffirms%2Fviirs%2Fvj114imgt_nrt.002%7C10.5067%2Ffirms%2Fviirs%2Fvnp14imgt_nrt.002%7C10.5067%2Fgedi%2Fgedi02_a.002%7C10.5067%2Fgedi%2Fgedi02_b.002%7C10.5067%2Fgedi%2Fgedi04_a.002%7C10.5067%2Fghmda-2pj19%7C10.5067%2Fghmdt-2pj19%7C10.5067%2Fgpm%2Fimerg%2F3b-hh-l%2F06%7C10.5067%2Fgpm%2Fimerg%2F3b-hh-l%2F07%7C10.5067%2Fgpm%2Fimerg%2F3b-hh%2F06%7C10.5067%2Fgpm%2Fimerg%2F3b-hh%2F07%7C10.5067%2Fgpm%2Fimerg%2F3b-month%2F06%7C10.5067%2Fgpm%2Fimerg%2F3b-month%2F07&corpus=all&per_page=100&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date%2Ccited_by_count%2Ccounts_by_year",
+  "retrieved_at": "2026-10-30T22:19:50.448515+00:00",
+  "response_path": "responses/de19d452f1ad0bf1a16e98e358f071ec7add709b8226f8de7d9d1989433e0531.json",
+  "status": 200,
+  "response_sha256": "a5b93c874be6b0b587689c32024f504c87be4c9c769019167271ac8f613fa2ee",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 39,
+      "db_response_time_ms": 16,
+      "page": 1,
+      "per_page": 100,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where DOI is (\n    10.5066/p9ouvuui or 10.5066/p9sjxui1 or 10.5067/4dq54ouij9dl\n    or 10.5067/4rntrre4jcyd or 10.5067/5nhc22t9375g or 10.5067/63nqasrdpdb0\n    or 10.5067/aqua/modis/l3m/chl/2018 or 10.5067/aqua/modis/l3m/flh/2018\n    or 10.5067/aqua/modis/l3m/poc/2018 or 10.5067/aqua/modis/l3m/rrs/2018\n    or 10.5067/aster/ast_l1t.003 or 10.5067/aster/astgtm.003\n    or 10.5067/b8x58mqbfupa or 10.5067/community/aster_ged/ag100.003\n    or 10.5067/community/lgrip/lgrip30.001\n    or 10.5067/community/musli/mslsp30na.011\n    or 10.5067/ecostress/eco_l2t_lste.002 or 10.5067/ecostress/eco_l2t_stars.002\n    or 10.5067/emit/emitl1brad.001 or 10.5067/emit/emitl2arfl.001\n    or 10.5067/emit/emitl2bch4enh.001 or 10.5067/emit/emitl2bch4plm.001\n    or 10.5067/evkpqz4afc4d or 10.5067/f6jmovy5navz\n    or 10.5067/firms/modis/mcd14dl.nrt.006\n    or 10.5067/firms/modis/mcd14dl.nrt.0061 or 10.5067/firms/modis/mcd14ml\n    or 10.5067/firms/viirs/vj114imgt_nrt.002\n    or 10.5067/firms/viirs/vnp14imgt_nrt.002 or 10.5067/gedi/gedi02_a.002\n    or 10.5067/gedi/gedi02_b.002 or 10.5067/gedi/gedi04_a.002\n    or 10.5067/ghmda-2pj19 or 10.5067/ghmdt-2pj19\n    or 10.5067/gpm/imerg/3b-hh-l/06 or 10.5067/gpm/imerg/3b-hh-l/07\n    or 10.5067/gpm/imerg/3b-hh/06 or 10.5067/gpm/imerg/3b-hh/07\n    or 10.5067/gpm/imerg/3b-month/06 or 10.5067/gpm/imerg/3b-month/07\n  )",
+        "x_new_oql": "get works (all corpora) where DOI is (\n    10.5066/p9ouvuui or 10.5066/p9sjxui1 or 10.5067/4dq54ouij9dl\n    or 10.5067/4rntrre4jcyd or 10.5067/5nhc22t9375g or 10.5067/63nqasrdpdb0\n    or 10.5067/aqua/modis/l3m/chl/2018 or 10.5067/aqua/modis/l3m/flh/2018\n    or 10.5067/aqua/modis/l3m/poc/2018 or 10.5067/aqua/modis/l3m/rrs/2018\n    or 10.5067/aster/ast_l1t.003 or 10.5067/aster/astgtm.003\n    or 10.5067/b8x58mqbfupa or 10.5067/community/aster_ged/ag100.003\n    or 10.5067/community/lgrip/lgrip30.001\n    or 10.5067/community/musli/mslsp30na.011\n    or 10.5067/ecostress/eco_l2t_lste.002 or 10.5067/ecostress/eco_l2t_stars.002\n    or 10.5067/emit/emitl1brad.001 or 10.5067/emit/emitl2arfl.001\n    or 10.5067/emit/emitl2bch4enh.001 or 10.5067/emit/emitl2bch4plm.001\n    or 10.5067/evkpqz4afc4d or 10.5067/f6jmovy5navz\n    or 10.5067/firms/modis/mcd14dl.nrt.006\n    or 10.5067/firms/modis/mcd14dl.nrt.0061 or 10.5067/firms/modis/mcd14ml\n    or 10.5067/firms/viirs/vj114imgt_nrt.002\n    or 10.5067/firms/viirs/vnp14imgt_nrt.002 or 10.5067/gedi/gedi02_a.002\n    or 10.5067/gedi/gedi02_b.002 or 10.5067/gedi/gedi04_a.002\n    or 10.5067/ghmda-2pj19 or 10.5067/ghmdt-2pj19\n    or 10.5067/gpm/imerg/3b-hh-l/06 or 10.5067/gpm/imerg/3b-hh-l/07\n    or 10.5067/gpm/imerg/3b-hh/06 or 10.5067/gpm/imerg/3b-hh/07\n    or 10.5067/gpm/imerg/3b-month/06 or 10.5067/gpm/imerg/3b-month/07\n  )",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "join": "or",
+              "filters": [
+                {
+                  "column_id": "doi",
+                  "value": "10.5066/p9ouvuui"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5066/p9sjxui1"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/4dq54ouij9dl"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/4rntrre4jcyd"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/5nhc22t9375g"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/63nqasrdpdb0"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/aqua/modis/l3m/chl/2018"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/aqua/modis/l3m/flh/2018"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/aqua/modis/l3m/poc/2018"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/aqua/modis/l3m/rrs/2018"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/aster/ast_l1t.003"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/aster/astgtm.003"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/b8x58mqbfupa"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/community/aster_ged/ag100.003"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/community/lgrip/lgrip30.001"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/community/musli/mslsp30na.011"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/ecostress/eco_l2t_lste.002"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/ecostress/eco_l2t_stars.002"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/emit/emitl1brad.001"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/emit/emitl2arfl.001"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/emit/emitl2bch4enh.001"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/emit/emitl2bch4plm.001"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/evkpqz4afc4d"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/f6jmovy5navz"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/firms/modis/mcd14dl.nrt.006"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/firms/modis/mcd14dl.nrt.0061"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/firms/modis/mcd14ml"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/firms/viirs/vj114imgt_nrt.002"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/firms/viirs/vnp14imgt_nrt.002"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/gedi/gedi02_a.002"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/gedi/gedi02_b.002"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/gedi/gedi04_a.002"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/ghmda-2pj19"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/ghmdt-2pj19"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/gpm/imerg/3b-hh-l/06"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/gpm/imerg/3b-hh-l/07"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/gpm/imerg/3b-hh/06"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/gpm/imerg/3b-hh/07"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/gpm/imerg/3b-month/06"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/gpm/imerg/3b-month/07"
+                }
+              ]
+            }
+          ]
+        },
+        "url": "/works?filter=doi:10.5066%2Fp9ouvuui|10.5066%2Fp9sjxui1|10.5067%2F4dq54ouij9dl|10.5067%2F4rntrre4jcyd|10.5067%2F5nhc22t9375g|10.5067%2F63nqasrdpdb0|10.5067%2Faqua%2Fmodis%2Fl3m%2Fchl%2F2018|10.5067%2Faqua%2Fmodis%2Fl3m%2Fflh%2F2018|10.5067%2Faqua%2Fmodis%2Fl3m%2Fpoc%2F2018|10.5067%2Faqua%2Fmodis%2Fl3m%2Frrs%2F2018|10.5067%2Faster%2Fast_l1t.003|10.5067%2Faster%2Fastgtm.003|10.5067%2Fb8x58mqbfupa|10.5067%2Fcommunity%2Faster_ged%2Fag100.003|10.5067%2Fcommunity%2Flgrip%2Flgrip30.001|10.5067%2Fcommunity%2Fmusli%2Fmslsp30na.011|10.5067%2Fecostress%2Feco_l2t_lste.002|10.5067%2Fecostress%2Feco_l2t_stars.002|10.5067%2Femit%2Femitl1brad.001|10.5067%2Femit%2Femitl2arfl.001|10.5067%2Femit%2Femitl2bch4enh.001|10.5067%2Femit%2Femitl2bch4plm.001|10.5067%2Fevkpqz4afc4d|10.5067%2Ff6jmovy5navz|10.5067%2Ffirms%2Fmodis%2Fmcd14dl.nrt.006|10.5067%2Ffirms%2Fmodis%2Fmcd14dl.nrt.0061|10.5067%2Ffirms%2Fmodis%2Fmcd14ml|10.5067%2Ffirms%2Fviirs%2Fvj114imgt_nrt.002|10.5067%2Ffirms%2Fviirs%2Fvnp14imgt_nrt.002|10.5067%2Fgedi%2Fgedi02_a.002|10.5067%2Fgedi%2Fgedi02_b.002|10.5067%2Fgedi%2Fgedi04_a.002|10.5067%2Fghmda-2pj19|10.5067%2Fghmdt-2pj19|10.5067%2Fgpm%2Fimerg%2F3b-hh-l%2F06|10.5067%2Fgpm%2Fimerg%2F3b-hh-l%2F07|10.5067%2Fgpm%2Fimerg%2F3b-hh%2F06|10.5067%2Fgpm%2Fimerg%2F3b-hh%2F07|10.5067%2Fgpm%2Fimerg%2F3b-month%2F06|10.5067%2Fgpm%2Fimerg%2F3b-month%2F07&corpus=all&per_page=100",
+        "order": "most cited (age-adjusted) first",
+        "order_default": true
+      },
+      "cost_usd": 0.0001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W6892134231",
+        "doi": "https://doi.org/10.5067/aster/astgtm.003",
+        "title": "ASTER Global Digital Elevation Model V003",
+        "type": "dataset",
+        "publication_year": 2019,
+        "publication_date": "2019-01-01",
+        "cited_by_count": 249,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 24
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 44
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 43
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 45
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 39
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 39
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 12
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6967177088",
+        "doi": "https://doi.org/10.5067/gpm/imerg/3b-hh/06",
+        "title": "GPM IMERG Final Precipitation L3 Half Hourly 0.1 degree x 0.1 degree V06",
+        "type": "dataset",
+        "publication_year": 2019,
+        "publication_date": "2019-04-04",
+        "cited_by_count": 204,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 18
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 33
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 74
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 38
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 23
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 3
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6892275970",
+        "doi": "https://doi.org/10.5067/f6jmovy5navz",
+        "title": "Randolph Glacier Inventory - A Dataset of Global Glacier Outlines, Version 7",
+        "type": "dataset",
+        "publication_year": 2023,
+        "publication_date": "2023-01-01",
+        "cited_by_count": 120,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 34
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 47
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 19
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 8
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6948427573",
+        "doi": "https://doi.org/10.5067/gpm/imerg/3b-month/06",
+        "title": "GPM IMERG Final Precipitation L3 1 month 0.1 degree x 0.1 degree V06",
+        "type": "dataset",
+        "publication_year": 2019,
+        "publication_date": "2019-04-04",
+        "cited_by_count": 61,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 13
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 13
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 9
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6929557390",
+        "doi": "https://doi.org/10.5067/gedi/gedi02_a.002",
+        "title": "GEDI L2A Elevation and Height Metrics Data Global Footprint Level V002",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 58,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 14
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 18
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 12
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6966857331",
+        "doi": "https://doi.org/10.5067/gpm/imerg/3b-hh/07",
+        "title": "GPM IMERG Final Precipitation L3 Half Hourly 0.1 degree x 0.1 degree V07",
+        "type": "dataset",
+        "publication_year": 2023,
+        "publication_date": "2023-07-13",
+        "cited_by_count": 58,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 19
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 27
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 12
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6892211805",
+        "doi": "https://doi.org/10.5067/aqua/modis/l3m/chl/2018",
+        "title": "MODIS-Aqua Level 3 Mapped Chlorophyll Data Version R2018.0",
+        "type": "dataset",
+        "publication_year": 2017,
+        "publication_date": "2017-01-01",
+        "cited_by_count": 50,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 12
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6948378254",
+        "doi": "https://doi.org/10.5067/5nhc22t9375g",
+        "title": "FLDAS Noah Land Surface Model L4 Global Monthly 0.1 x 0.1 degree (MERRA-2 and CHIRPS) V001",
+        "type": "dataset",
+        "publication_year": 2018,
+        "publication_date": "2018-11-16",
+        "cited_by_count": 48,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6892225370",
+        "doi": "https://doi.org/10.5067/gedi/gedi02_b.002",
+        "title": "GEDI L2B Canopy Cover and Vertical Profile Metrics Data Global Footprint Level V002",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 39,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 12
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 13
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6911009868",
+        "doi": "https://doi.org/10.5067/4dq54ouij9dl",
+        "title": "SMAP Enhanced L3 Radiometer Global and Polar Grid Daily 9 km EASE-Grid Soil Moisture, Version 5",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 34,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6967058918",
+        "doi": "https://doi.org/10.5067/firms/modis/mcd14ml",
+        "title": "MODIS Thermal Anomalies/Fire Products",
+        "type": "dataset",
+        "publication_year": 2000,
+        "publication_date": "2000-01-01",
+        "cited_by_count": 29,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 3
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6911035910",
+        "doi": "https://doi.org/10.5067/aster/ast_l1t.003",
+        "title": "ASTER Level 1 Precision Terrain Corrected Registered At-Sensor Radiance V003",
+        "type": "dataset",
+        "publication_year": 2015,
+        "publication_date": "2015-01-01",
+        "cited_by_count": 27,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 3
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6966700189",
+        "doi": "https://doi.org/10.5067/firms/modis/mcd14dl.nrt.006",
+        "title": "MODIS Aqua & Terra 1 km Thermal Anomalies and Fire Locations V006 NRT",
+        "type": "dataset",
+        "publication_year": 2016,
+        "publication_date": "2016-01-01",
+        "cited_by_count": 26,
+        "counts_by_year": [
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 3
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6910718418",
+        "doi": "https://doi.org/10.5067/community/lgrip/lgrip30.001",
+        "title": "Landsat-Derived Global Rainfed and Irrigated-Cropland Product 30 m V001",
+        "type": "dataset",
+        "publication_year": 2023,
+        "publication_date": "2023-02-07",
+        "cited_by_count": 25,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 4
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6910965433",
+        "doi": "https://doi.org/10.5067/b8x58mqbfupa",
+        "title": "MEaSUREs Greenland Ice Mapping Project (GIMP) Land Ice and Ocean Classification Mask, Version 1",
+        "type": "dataset",
+        "publication_year": 2017,
+        "publication_date": "2017-01-01",
+        "cited_by_count": 25,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 5
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6948593423",
+        "doi": "https://doi.org/10.5067/firms/viirs/vnp14imgt_nrt.002",
+        "title": "VIIRS (S-NPP) I Band 375 m Active Fire Product NRT (Vector data)",
+        "type": "dataset",
+        "publication_year": 2020,
+        "publication_date": "2020-01-01",
+        "cited_by_count": 24,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6948153209",
+        "doi": "https://doi.org/10.5067/firms/modis/mcd14dl.nrt.0061",
+        "title": "VIIRS (NOAA-21/JPSS-2) I Band 375 m Active Fire Product NRT (Vector data)",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 20,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6910825171",
+        "doi": "https://doi.org/10.5067/evkpqz4afc4d",
+        "title": "SMAP L4 Global 3-hourly 9 km EASE-Grid Surface and Root Zone Soil Moisture Geophysical Data, Version 7",
+        "type": "dataset",
+        "publication_year": 2022,
+        "publication_date": "2022-01-01",
+        "cited_by_count": 17,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6929266197",
+        "doi": "https://doi.org/10.5067/gpm/imerg/3b-month/07",
+        "title": "GPM IMERG Final Precipitation L3 1 month 0.1 degree x 0.1 degree V07",
+        "type": "dataset",
+        "publication_year": 2023,
+        "publication_date": "2023-07-13",
+        "cited_by_count": 16,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 3
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6967522191",
+        "doi": "https://doi.org/10.5067/gpm/imerg/3b-hh-l/06",
+        "title": "GPM IMERG Late Precipitation L3 Half Hourly 0.1 degree x 0.1 degree V06",
+        "type": "dataset",
+        "publication_year": 2019,
+        "publication_date": "2019-05-03",
+        "cited_by_count": 15,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6892308405",
+        "doi": "https://doi.org/10.5067/63nqasrdpdb0",
+        "title": "MODIS/Terra Snow Cover Daily L3 Global 500m SIN Grid, Version 5",
+        "type": "dataset",
+        "publication_year": 2006,
+        "publication_date": "2006-01-01",
+        "cited_by_count": 14,
+        "counts_by_year": [
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6967231688",
+        "doi": "https://doi.org/10.5067/firms/viirs/vj114imgt_nrt.002",
+        "title": "VIIRS NOAA-20 (JPSS-1) 375m, I-Band Active Fire Product NRT (Vector Data)",
+        "type": "dataset",
+        "publication_year": 2020,
+        "publication_date": "2020-01-01",
+        "cited_by_count": 14,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6948931641",
+        "doi": "https://doi.org/10.5066/p9sjxui1",
+        "title": "Rangeland Condition Monitoring Assessment and Projection (RCMAP) Fractional Component Time-Series Across Western North America from 1985-2023",
+        "type": "dataset",
+        "publication_year": 2024,
+        "publication_date": "2024-01-17",
+        "cited_by_count": 7,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6910778504",
+        "doi": "https://doi.org/10.5067/ghmda-2pj19",
+        "title": "GHRSST Level 2P Global Sea Surface Skin Temperature from the Moderate Resolution Imaging Spectroradiometer (MODIS) on the NASA Aqua satellite (GDS2)",
+        "type": "dataset",
+        "publication_year": 2020,
+        "publication_date": "2020-01-01",
+        "cited_by_count": 6,
+        "counts_by_year": [
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6948341994",
+        "doi": "https://doi.org/10.5067/emit/emitl1brad.001",
+        "title": "EMIT L1B At-Sensor Calibrated Radiance and Geolocation Data 60 m V001",
+        "type": "dataset",
+        "publication_year": 2022,
+        "publication_date": "2022-01-01",
+        "cited_by_count": 6,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 5
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6948662766",
+        "doi": "https://doi.org/10.5067/community/aster_ged/ag100.003",
+        "title": "ASTER Global Emissivity Dataset, 100-meter, HDF5",
+        "type": "dataset",
+        "publication_year": 2014,
+        "publication_date": "2014-01-01",
+        "cited_by_count": 6,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6967026220",
+        "doi": "https://doi.org/10.5067/gpm/imerg/3b-hh-l/07",
+        "title": "GPM IMERG Late Precipitation L3 Half Hourly 0.1 degree x 0.1 degree V07",
+        "type": "dataset",
+        "publication_year": 2024,
+        "publication_date": "2024-06-06",
+        "cited_by_count": 6,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6892131387",
+        "doi": "https://doi.org/10.5067/emit/emitl2arfl.001",
+        "title": "EMIT L2A Estimated Surface Reflectance and Uncertainty and Masks 60 m V001",
+        "type": "dataset",
+        "publication_year": 2022,
+        "publication_date": "2022-01-01",
+        "cited_by_count": 5,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6892223887",
+        "doi": "https://doi.org/10.5067/aqua/modis/l3m/poc/2018",
+        "title": "MODIS-Aqua Level 3 Mapped Particulate Organic Carbon Data Version R2018.0",
+        "type": "dataset",
+        "publication_year": 2017,
+        "publication_date": "2017-01-01",
+        "cited_by_count": 5,
+        "counts_by_year": [
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6892243534",
+        "doi": "https://doi.org/10.5067/4rntrre4jcyd",
+        "title": "MEaSUREs Greenland Ice Mapping Project (GIMP) 2000 Image Mosaic, Version 1",
+        "type": "dataset",
+        "publication_year": 2017,
+        "publication_date": "2017-01-01",
+        "cited_by_count": 4,
+        "counts_by_year": [
+          {
+            "year": 2022,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6929524643",
+        "doi": "https://doi.org/10.5067/aqua/modis/l3m/rrs/2018",
+        "title": "MODIS-Aqua Level 3 Mapped Remote-Sensing Reflectance Data Version R2018.0",
+        "type": "dataset",
+        "publication_year": 2017,
+        "publication_date": "2017-01-01",
+        "cited_by_count": 3,
+        "counts_by_year": [
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6892162191",
+        "doi": "https://doi.org/10.5066/p9ouvuui",
+        "title": "Operational Global Actual Evapotranspiration using the SSEBop model",
+        "type": "dataset",
+        "publication_year": 2020,
+        "publication_date": "2020-01-01",
+        "cited_by_count": 2,
+        "counts_by_year": [
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6967621797",
+        "doi": "https://doi.org/10.5067/emit/emitl2bch4plm.001",
+        "title": "EMIT L2B Estimated Methane Plume Complexes 60 m V001",
+        "type": "dataset",
+        "publication_year": 2023,
+        "publication_date": "2023-01-01",
+        "cited_by_count": 2,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6892169865",
+        "doi": "https://doi.org/10.5067/emit/emitl2bch4enh.001",
+        "title": "EMIT L2B Methane Enhancement Data 60 m V001",
+        "type": "dataset",
+        "publication_year": 2023,
+        "publication_date": "2023-01-01",
+        "cited_by_count": 1,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6892288025",
+        "doi": "https://doi.org/10.5067/ecostress/eco_l2t_lste.002",
+        "title": "ECOSTRESS Tiled Land Surface Temperature and Emissivity Instantaneous L2 Global 70 m v002",
+        "type": "dataset",
+        "publication_year": 2022,
+        "publication_date": "2022-01-01",
+        "cited_by_count": 1,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6929678041",
+        "doi": "https://doi.org/10.5067/community/musli/mslsp30na.011",
+        "title": "MuSLI Multi-Source Land Surface Phenology Yearly North America 30 m V011",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-08-24",
+        "cited_by_count": 1,
+        "counts_by_year": [
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6892262145",
+        "doi": "https://doi.org/10.5067/ghmdt-2pj19",
+        "title": "GHRSST Level 2P Global Sea Surface Skin Temperature from the Moderate Resolution Imaging Spectroradiometer (MODIS) on the NASA Terra satellite (GDS2)",
+        "type": "dataset",
+        "publication_year": 2020,
+        "publication_date": "2020-01-01",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W6910976911",
+        "doi": "https://doi.org/10.5067/ecostress/eco_l2t_stars.002",
+        "title": "ECOSTRESS Tiled Ancillary NDVI and Albedo L2 Global 70 m v002",
+        "type": "dataset",
+        "publication_year": 2023,
+        "publication_date": "2023-01-01",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W6967138638",
+        "doi": "https://doi.org/10.5067/aqua/modis/l3m/flh/2018",
+        "title": "MODIS-Aqua Level 3 Mapped Fluorescent Line Height Data Version R2018.0",
+        "type": "dataset",
+        "publication_year": 2017,
+        "publication_date": "2017-01-01",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "e09284b69e1ac93dd41bb84f5689efe2354de89d4887d958794860a8458d6345"
+}

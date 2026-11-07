@@ -1,0 +1,464 @@
+{
+  "type": "Collection",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/scientific/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/version/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
+  ],
+  "id": "river-plastic-inputs",
+  "title": "Global river plastic inputs — Lebreton et al. (2017)",
+  "description": "A global model of plastic inputs from rivers into the ocean, published by Lebreton et al. in 2017. This static release preserves the 40,760 river input locations and all 53 numeric attributes in the original Figshare v6 shapefile. Estimates represent the 2010 model baseline; they are not current measurements. This is distinct from the later Meijer et al. 2021 model.",
+  "license": "CC-BY-4.0",
+  "version": "figshare-v6-r2",
+  "created": "2026-10-30T00:30:27Z",
+  "updated": "2026-10-30T00:30:27Z",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -137.9375,
+          -55.62083333,
+          179.8791667,
+          60.4125
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2010-01-01T00:00:00Z",
+          "2010-12-31T23:59:59Z"
+        ]
+      ]
+    }
+  },
+  "providers": [
+    {
+      "name": "Lebreton et al.",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://doi.org/10.1038/ncomms15611"
+    },
+    {
+      "name": "Folia",
+      "roles": [
+        "processor",
+        "host"
+      ],
+      "url": "https://folia.sh",
+      "description": "Processor and designated publisher for this prepared catalog. Public hosting remains pending."
+    }
+  ],
+  "sci:doi": "10.6084/m9.figshare.4725541.v6",
+  "sci:citation": "Lebreton, L. C. M., van der Zwet, J., Damsteeg, J.-W., Slat, B., Andrady, A. & Reisser, J. (2017). River plastic emissions to the world's oceans. Nature Communications 8, 15611. https://doi.org/10.1038/ncomms15611",
+  "keywords": [
+    "river",
+    "plastic",
+    "ocean",
+    "pollution",
+    "global",
+    "2010",
+    "Lebreton"
+  ],
+  "table:columns": [
+    {
+      "name": "source_row",
+      "type": "int32",
+      "description": "One-based original shapefile/DBF row number; stable within the pinned source archive."
+    },
+    {
+      "name": "i_mid",
+      "type": "decimal128(13, 6)",
+      "description": "Annual modeled plastic input, midpoint estimate (tonnes/year)."
+    },
+    {
+      "name": "i_low",
+      "type": "decimal128(13, 6)",
+      "description": "Annual modeled plastic input, lower estimate (tonnes/year)."
+    },
+    {
+      "name": "i_high",
+      "type": "decimal128(13, 6)",
+      "description": "Annual modeled plastic input, upper estimate (tonnes/year)."
+    },
+    {
+      "name": "i_mid_jan",
+      "type": "decimal128(11, 6)",
+      "description": "Modeled plastic input for jan, mid estimate (tonnes/month)."
+    },
+    {
+      "name": "i_low_jan",
+      "type": "decimal128(11, 6)",
+      "description": "Modeled plastic input for jan, low estimate (tonnes/month)."
+    },
+    {
+      "name": "i_high_jan",
+      "type": "decimal128(12, 6)",
+      "description": "Modeled plastic input for jan, high estimate (tonnes/month)."
+    },
+    {
+      "name": "i_mid_feb",
+      "type": "decimal128(11, 6)",
+      "description": "Modeled plastic input for feb, mid estimate (tonnes/month)."
+    },
+    {
+      "name": "i_low_feb",
+      "type": "decimal128(11, 6)",
+      "description": "Modeled plastic input for feb, low estimate (tonnes/month)."
+    },
+    {
+      "name": "i_high_feb",
+      "type": "decimal128(12, 6)",
+      "description": "Modeled plastic input for feb, high estimate (tonnes/month)."
+    },
+    {
+      "name": "i_mid_mar",
+      "type": "decimal128(12, 6)",
+      "description": "Modeled plastic input for mar, mid estimate (tonnes/month)."
+    },
+    {
+      "name": "i_low_mar",
+      "type": "decimal128(11, 6)",
+      "description": "Modeled plastic input for mar, low estimate (tonnes/month)."
+    },
+    {
+      "name": "i_high_mar",
+      "type": "decimal128(12, 6)",
+      "description": "Modeled plastic input for mar, high estimate (tonnes/month)."
+    },
+    {
+      "name": "i_mid_apr",
+      "type": "decimal128(12, 6)",
+      "description": "Modeled plastic input for apr, mid estimate (tonnes/month)."
+    },
+    {
+      "name": "i_low_apr",
+      "type": "decimal128(12, 6)",
+      "description": "Modeled plastic input for apr, low estimate (tonnes/month)."
+    },
+    {
+      "name": "i_high_apr",
+      "type": "decimal128(12, 6)",
+      "description": "Modeled plastic input for apr, high estimate (tonnes/month)."
+    },
+    {
+      "name": "i_mid_may",
+      "type": "decimal128(12, 6)",
+      "description": "Modeled plastic input for may, mid estimate (tonnes/month)."
+    },
+    {
+      "name": "i_low_may",
+      "type": "decimal128(12, 6)",
+      "description": "Modeled plastic input for may, low estimate (tonnes/month)."
+    },
+    {
+      "name": "i_high_may",
+      "type": "decimal128(12, 6)",
+      "description": "Modeled plastic input for may, high estimate (tonnes/month)."
+    },
+    {
+      "name": "i_mid_jun",
+      "type": "decimal128(12, 6)",
+      "description": "Modeled plastic input for jun, mid estimate (tonnes/month)."
+    },
+    {
+      "name": "i_low_jun",
+      "type": "decimal128(12, 6)",
+      "description": "Modeled plastic input for jun, low estimate (tonnes/month)."
+    },
+    {
+      "name": "i_high_jun",
+      "type": "decimal128(12, 6)",
+      "description": "Modeled plastic input for jun, high estimate (tonnes/month)."
+    },
+    {
+      "name": "i_mid_jul",
+      "type": "decimal128(12, 6)",
+      "description": "Modeled plastic input for jul, mid estimate (tonnes/month)."
+    },
+    {
+      "name": "i_low_jul",
+      "type": "decimal128(12, 6)",
+      "description": "Modeled plastic input for jul, low estimate (tonnes/month)."
+    },
+    {
+      "name": "i_high_jul",
+      "type": "decimal128(13, 6)",
+      "description": "Modeled plastic input for jul, high estimate (tonnes/month)."
+    },
+    {
+      "name": "i_mid_aug",
+      "type": "decimal128(12, 6)",
+      "description": "Modeled plastic input for aug, mid estimate (tonnes/month)."
+    },
+    {
+      "name": "i_low_aug",
+      "type": "decimal128(12, 6)",
+      "description": "Modeled plastic input for aug, low estimate (tonnes/month)."
+    },
+    {
+      "name": "i_high_aug",
+      "type": "decimal128(12, 6)",
+      "description": "Modeled plastic input for aug, high estimate (tonnes/month)."
+    },
+    {
+      "name": "i_mid_sep",
+      "type": "decimal128(12, 6)",
+      "description": "Modeled plastic input for sep, mid estimate (tonnes/month)."
+    },
+    {
+      "name": "i_low_sep",
+      "type": "decimal128(12, 6)",
+      "description": "Modeled plastic input for sep, low estimate (tonnes/month)."
+    },
+    {
+      "name": "i_high_sep",
+      "type": "decimal128(12, 6)",
+      "description": "Modeled plastic input for sep, high estimate (tonnes/month)."
+    },
+    {
+      "name": "i_mid_oct",
+      "type": "decimal128(12, 6)",
+      "description": "Modeled plastic input for oct, mid estimate (tonnes/month)."
+    },
+    {
+      "name": "i_low_oct",
+      "type": "decimal128(12, 6)",
+      "description": "Modeled plastic input for oct, low estimate (tonnes/month)."
+    },
+    {
+      "name": "i_high_oct",
+      "type": "decimal128(12, 6)",
+      "description": "Modeled plastic input for oct, high estimate (tonnes/month)."
+    },
+    {
+      "name": "i_mid_nov",
+      "type": "decimal128(12, 6)",
+      "description": "Modeled plastic input for nov, mid estimate (tonnes/month)."
+    },
+    {
+      "name": "i_low_nov",
+      "type": "decimal128(11, 6)",
+      "description": "Modeled plastic input for nov, low estimate (tonnes/month)."
+    },
+    {
+      "name": "i_high_nov",
+      "type": "decimal128(12, 6)",
+      "description": "Modeled plastic input for nov, high estimate (tonnes/month)."
+    },
+    {
+      "name": "i_mid_dec",
+      "type": "decimal128(11, 6)",
+      "description": "Modeled plastic input for dec, mid estimate (tonnes/month)."
+    },
+    {
+      "name": "i_low_dec",
+      "type": "decimal128(11, 6)",
+      "description": "Modeled plastic input for dec, low estimate (tonnes/month)."
+    },
+    {
+      "name": "i_high_dec",
+      "type": "decimal128(11, 6)",
+      "description": "Modeled plastic input for dec, high estimate (tonnes/month)."
+    },
+    {
+      "name": "runoff_jan",
+      "type": "decimal128(9, 6)",
+      "description": "Mean catchment runoff for jan (mm/day)."
+    },
+    {
+      "name": "runoff_feb",
+      "type": "decimal128(9, 6)",
+      "description": "Mean catchment runoff for feb (mm/day)."
+    },
+    {
+      "name": "runoff_mar",
+      "type": "decimal128(9, 6)",
+      "description": "Mean catchment runoff for mar (mm/day)."
+    },
+    {
+      "name": "runoff_apr",
+      "type": "decimal128(9, 6)",
+      "description": "Mean catchment runoff for apr (mm/day)."
+    },
+    {
+      "name": "runoff_may",
+      "type": "decimal128(9, 6)",
+      "description": "Mean catchment runoff for may (mm/day)."
+    },
+    {
+      "name": "runoff_jun",
+      "type": "decimal128(9, 6)",
+      "description": "Mean catchment runoff for jun (mm/day)."
+    },
+    {
+      "name": "runoff_jul",
+      "type": "decimal128(9, 6)",
+      "description": "Mean catchment runoff for jul (mm/day)."
+    },
+    {
+      "name": "runoff_aug",
+      "type": "decimal128(9, 6)",
+      "description": "Mean catchment runoff for aug (mm/day)."
+    },
+    {
+      "name": "runoff_sep",
+      "type": "decimal128(9, 6)",
+      "description": "Mean catchment runoff for sep (mm/day)."
+    },
+    {
+      "name": "runoff_oct",
+      "type": "decimal128(9, 6)",
+      "description": "Mean catchment runoff for oct (mm/day)."
+    },
+    {
+      "name": "runoff_nov",
+      "type": "decimal128(9, 6)",
+      "description": "Mean catchment runoff for nov (mm/day)."
+    },
+    {
+      "name": "runoff_dec",
+      "type": "decimal128(9, 6)",
+      "description": "Mean catchment runoff for dec (mm/day)."
+    },
+    {
+      "name": "mpw",
+      "type": "decimal128(17, 6)",
+      "description": "Mismanaged plastic waste produced in the catchment (kg/year)."
+    },
+    {
+      "name": "area",
+      "type": "decimal128(20, 6)",
+      "description": "Upstream catchment area (m²)."
+    },
+    {
+      "name": "geometry",
+      "type": "binary",
+      "description": "River input point; WKB Point, WGS84 longitude/latitude (OGC:CRS84)."
+    },
+    {
+      "name": "bbox",
+      "type": "struct<xmin: double, ymin: double, xmax: double, ymax: double>",
+      "description": "Per-feature xmin, ymin, xmax, ymax covering bounds in longitude/latitude."
+    }
+  ],
+  "links": [
+    {
+      "rel": "root",
+      "href": "../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "describedby",
+      "href": "README.md",
+      "type": "text/markdown"
+    },
+    {
+      "rel": "agents",
+      "href": "AGENTS.md",
+      "type": "text/markdown"
+    },
+    {
+      "rel": "via",
+      "href": "https://doi.org/10.6084/m9.figshare.4725541.v6",
+      "type": "text/html"
+    },
+    {
+      "rel": "license",
+      "href": "https://creativecommons.org/licenses/by/4.0/",
+      "type": "text/html"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "river-plastic-inputs.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "pmtiles:layers": [
+        "river_inputs"
+      ]
+    }
+  ],
+  "assets": {
+    "data": {
+      "href": "river-plastic-inputs.parquet",
+      "type": "application/vnd.apache.parquet",
+      "roles": [
+        "data"
+      ],
+      "title": "Complete analytic data, GeoParquet 1.1",
+      "file:size": 6360991,
+      "file:checksum": "1220de35bd69b144565af1fcd33f915e8521a1af502e3ac50235560990f6c441e8c9"
+    },
+    "tiles": {
+      "href": "river-plastic-inputs.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "roles": [
+        "visual"
+      ],
+      "title": "River input display tiles",
+      "file:size": 3705340,
+      "file:checksum": "1220ca412601ea905a43bf55d5251f27e2c2d9b1403b2eb93adea1525c4fa7bc05fe"
+    },
+    "style-annual-input": {
+      "href": "styles/annual-input.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "style",
+        "default"
+      ],
+      "title": "Annual midpoint input style",
+      "file:size": 2118,
+      "file:checksum": "1220ae46644a56751e87743cb5f3e6fdb4fd32074919678158bcb858f95722431c22"
+    },
+    "thumbnail": {
+      "href": "thumbnail.png",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ],
+      "title": "Annual midpoint input map",
+      "file:size": 198924,
+      "file:checksum": "1220ff0e30b5c3768605f41b75c0bce515d82eeffa9d2422a4d408b8efbad46034c1"
+    },
+    "schema": {
+      "href": "schema.json",
+      "type": "application/json",
+      "roles": [
+        "metadata"
+      ],
+      "title": "Field dictionary",
+      "file:size": 9542,
+      "file:checksum": "12207858a6c3b596e9d9b322f5aa9896209e7cc2c0750de267293cef4f6befb1f828"
+    },
+    "quality": {
+      "href": "quality.json",
+      "type": "application/json",
+      "roles": [
+        "metadata"
+      ],
+      "title": "Original missing values and encoding",
+      "file:size": 2420,
+      "file:checksum": "1220938199ee9cb0f9ef8522b2dbd1d6d32eb70c562ff816fc3d3849b11d74dcb643"
+    },
+    "original": {
+      "href": "https://ndownloader.figshare.com/files/7714864",
+      "type": "application/zip",
+      "roles": [
+        "source"
+      ],
+      "title": "Original Figshare v6 shapefile archive",
+      "file:size": 5764810,
+      "file:checksum": "1220c24a1ccdfbdc44c59954ab9796a522a3271b7c91ca31898526a93bccaeabd4f4"
+    }
+  }
+}

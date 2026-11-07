@@ -1,0 +1,188 @@
+{
+  "classifier_correction_proposal": "For the known native-collapse classifier only, reproduce Tippecanoe EPSG:4326 zoom-32 integer projection followed by its z12 line_detail12 std::round-to-grid rule (not NumPy rint). Predict a collapse only when each vertex in that part maps to the previous point after both operations. Keep geometric length/tolerance checks unchanged; do not convert nonmatching/uncertain cases into allowed loss.",
+  "commands": [
+    "TIPPECANOE_MAX_THREADS=2 /opt/homebrew/Cellar/tippecanoe/2.79.0/bin/tippecanoe --quiet --output native-quantization-controls.pmtiles --layer grwl_raw --name \"GRWL native quantization diagnostic\" --minimum-zoom 12 --maximum-zoom 12 --base-zoom 12 --full-detail 12 --low-detail 12 --minimum-detail 12 --simplification 1 --no-feature-limit --no-tile-size-limit --temporary-directory \"$PWD/native-tmp\" native-quantization-controls.geojson",
+    "TIPPECANOE_MAX_THREADS=2 /opt/homebrew/Cellar/tippecanoe/2.79.0/bin/tippecanoe --quiet --output native-threshold-controls.pmtiles --layer grwl_raw --name \"GRWL native threshold diagnostic\" --minimum-zoom 12 --maximum-zoom 12 --base-zoom 12 --full-detail 12 --low-detail 12 --minimum-detail 12 --simplification 1 --no-feature-limit --no-tile-size-limit --temporary-directory \"$PWD/native-threshold-tmp\" native-threshold-controls.geojson",
+    "Decode: DISPLAY_PY + pmtiles.reader.Reader(MmapSource), gzip.decompress, mapbox_vector_tile.decode; inspected only z12 tile x=2184,y=1236."
+  ],
+  "diagnostic_files": {
+    "native-quantization-controls.geojson": {
+      "path": "research/grwl-raw-release-20261102/global-display-diagnostics-r1/native-quantization-controls.geojson",
+      "sha256": "ccf7048d4e72ea41f79a27775f91179f8134c37f5c74c571b74ef5b144eef1e4",
+      "size_bytes": 1712
+    },
+    "native-quantization-controls.pmtiles": {
+      "path": "research/grwl-raw-release-20261102/global-display-diagnostics-r1/native-quantization-controls.pmtiles",
+      "sha256": "f1b2ffbc133c4c0a60db3fb23648308d302cd8eef6eb732bb9d93a4108dbff85",
+      "size_bytes": 984
+    },
+    "native-threshold-controls.geojson": {
+      "path": "research/grwl-raw-release-20261102/global-display-diagnostics-r1/native-threshold-controls.geojson",
+      "sha256": "4ae5c10a9ea925c17fda7f9c4738d6def9686bed9063fae9561f8e4d83172af6",
+      "size_bytes": 3860
+    },
+    "native-threshold-controls.pmtiles": {
+      "path": "research/grwl-raw-release-20261102/global-display-diagnostics-r1/native-threshold-controls.pmtiles",
+      "sha256": "db6b0bad190dab4585ccab6fcd54ad9eb26e477d5a5e9d8c3e926af68860289a",
+      "size_bytes": 977
+    }
+  },
+  "limits": [
+    "Small synthetic z12 fixtures establish the rounding behavior for this geometry and controls; they do not independently prove all source geometry cases.",
+    "The full global PMTiles and original oracle failure were read-only and remain unchanged.",
+    "Diagnostic builds were z12-only and use small GeoJSON fixtures; no full data rebuild or browser validation was run.",
+    "Displayed x32/y32 calculations reproduce the upstream projection formula in Python; the pinned native binary itself is the output oracle for fixture survival."
+  ],
+  "native_observation": {
+    "length_and_phase_controls": {
+      "interpretation": "0.03524-grid-span half-crossing collapses after 2^32 projection; 0.036 span survives. A target-length line shifted -0.03 grid units survives while center/+0.03 cases collapse, as predicted by the projection-then-tie-away rounding.",
+      "omitted_ids": [
+        151320287794045,
+        91001,
+        91002,
+        91003,
+        91004,
+        91005,
+        91006,
+        92001,
+        92003,
+        92004,
+        92005
+      ],
+      "output_ids": [
+        91007,
+        91008,
+        91009,
+        91010,
+        91011,
+        91012,
+        92002
+      ],
+      "surviving_control_geometry": {
+        "coordinates": [
+          [
+            2185,
+            2781
+          ],
+          [
+            2184,
+            2781
+          ]
+        ],
+        "type": "LineString"
+      }
+    },
+    "quantization_controls": {
+      "omitted_ids": [
+        151320287794045,
+        90001,
+        90002,
+        90006
+      ],
+      "output_ids": [
+        90003,
+        90004,
+        90005
+      ],
+      "surviving_control_geometry": {
+        "coordinates": [
+          [
+            2185,
+            2781
+          ],
+          [
+            2184,
+            2781
+          ]
+        ],
+        "type": "LineString"
+      }
+    }
+  },
+  "native_tool": {
+    "max_threads": 2,
+    "path": "/opt/homebrew/Cellar/tippecanoe/2.79.0/bin/tippecanoe",
+    "sha256": "c504719334e5335d60c66a01491707bdbfb773ebbfe3efc7c1c8239eb18d58d1",
+    "source_ref": "2.79.0 / 68ab8dcc229f95b8b25877697d5e8d66783af503",
+    "source_repository": "https://github.com/felt/tippecanoe",
+    "version": "tippecanoe v2.79.0"
+  },
+  "production_inputs": {
+    "original_oracle_failure_preserved": true,
+    "production_global_maxzoom_pmtiles": {
+      "bytes": 11498067077,
+      "sha256": "a1a7787c7ba28ffc271819bddc54339f9bc741aa9ed44ca619d93e809cbad4f5"
+    },
+    "production_source_parquet": {
+      "sha256": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+      "size_bytes": 5529859809
+    },
+    "source_feature": {
+      "feature_id": 151320287794045,
+      "geodesic_length_m": 0.044892587792624415,
+      "geometry": "MULTILINESTRING((12 57.85976955918039,11.999999244516006 57.859769577051296))",
+      "source_geometry_sha256": "f745f07118a753045d2a896e4cdcc646e1e292449f75dd146a5d3fffe28b0b23",
+      "source_row": 21373,
+      "source_tile": "NO32"
+    }
+  },
+  "purpose": "Bounded diagnostic for unexpected native omission of NO32 source row 21373. Not a production validation report and not a release artifact.",
+  "schema_version": 1,
+  "source_semantics": [
+    {
+      "fact": "EPSG:4326 lon/lat coordinates are projected with std::round onto integer world coordinates at zoom 32.",
+      "file": "projection.cpp",
+      "path": "https://github.com/felt/tippecanoe/blob/68ab8dcc229f95b8b25877697d5e8d66783af503/projection.cpp",
+      "source_lines": "53-59"
+    },
+    {
+      "fact": "Before line simplification at z, remove_noop is called with shift=32-z-line_detail; here z=12,line_detail=12, so shift=8.",
+      "file": "tile.cpp",
+      "path": "https://github.com/felt/tippecanoe/blob/68ab8dcc229f95b8b25877697d5e8d66783af503/tile.cpp",
+      "source_lines": "3191-3196"
+    },
+    {
+      "fact": "remove_noop groups each coordinate by std::round(coord / 2^shift), dropping a LINETO equal to the previous rounded coordinate. C++ std::round rounds exact half ties away from zero.",
+      "file": "clip.cpp",
+      "path": "https://github.com/felt/tippecanoe/blob/68ab8dcc229f95b8b25877697d5e8d66783af503/clip.cpp",
+      "source_lines": "495-515"
+    },
+    {
+      "fact": "Tile assembly requires a nonzero LINETO for a line and omits empty geometry.",
+      "file": "tile.cpp",
+      "path": "https://github.com/felt/tippecanoe/blob/68ab8dcc229f95b8b25877697d5e8d66783af503/tile.cpp",
+      "source_lines": "2313-2328,2350-2357"
+    }
+  ],
+  "target_coordinate_calculation": {
+    "computed_vertices": [
+      {
+        "lat": 57.85976955918039,
+        "lon": 12.0,
+        "tippecanoe_rounded_z12": [
+          8947849,
+          5065437
+        ],
+        "x32": 2290649225,
+        "x32_div_256": 8947848.53515625,
+        "y32": 1296751776,
+        "y32_div_256": 5065436.625
+      },
+      {
+        "lat": 57.859769577051296,
+        "lon": 11.999999244516006,
+        "tippecanoe_rounded_z12": [
+          8947849,
+          5065437
+        ],
+        "x32": 2290649216,
+        "x32_div_256": 8947848.5,
+        "y32": 1296751776,
+        "y32_div_256": 5065436.625
+      }
+    ],
+    "projection_formula": "x32=round(2^32*(lon+180)/360); y32=round(2^32*(1-log(tan(lat*pi/180)+sec(lat*pi/180))/pi)/2)",
+    "result": "Both vertices map to the same z12 world pixel [8947849,5065437] and local tile pixel [2185,2781]; Tippecanoe removes the part as a no-op. NumPy rint instead ties the x=8947848.5 endpoint to even 8947848, predicting a surviving one-pixel segment."
+  },
+  "task_checkout_commit": "fe736732cbdd1dfcb75215284a9b53a913c4cfc6"
+}

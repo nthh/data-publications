@@ -1,0 +1,77 @@
+{
+  "recorded_before_next_bulk_attempt": true,
+  "date": "2026-10-31",
+  "observed_failures": [
+    {
+      "dataset": "hydrolakes",
+      "code_revision": "5c031def6214b29fa85e54452043c3ef79fe12d7",
+      "peak_rss_bytes": 1000325120,
+      "limit_bytes": 998579896,
+      "note": "Caller supplied 0.93 GiB instead of the decimal 1 GB default; later attempts use the unchanged intended 1 GB default."
+    },
+    {
+      "dataset": "lakeatlas",
+      "code_revision": "1e9f3b030e1175603fa2b67c801add2ce024237b",
+      "phase": "bucket_merge",
+      "peak_rss_bytes": 1002766336,
+      "limit_bytes": 1000000000
+    },
+    {
+      "dataset": "hydrolakes",
+      "code_revision": "3b9f79edf004d1b33c56f0f9762078560a53b3ef",
+      "phase": "restore_reorder",
+      "peak_rss_bytes": 1249017856,
+      "limit_bytes": 1000000000,
+      "evidence": "datasets/hydrolakes/evidence/spatial-order-r3-attempt-01.json"
+    },
+    {
+      "dataset": "lakeatlas",
+      "code_revision": "3b9f79edf004d1b33c56f0f9762078560a53b3ef",
+      "phase": "bucket_write",
+      "peak_rss_bytes": 1006239744,
+      "limit_bytes": 1000000000,
+      "evidence": "datasets/lakeatlas/releases/lakeatlas-v1.0-r2/evidence/failures/polygons-bucket-write-attempt-3b9f79e.json"
+    }
+  ],
+  "diagnosis": "HydroLAKES finished writing but restoring the first native-ID bucket loaded unusually large geometries together. LakeATLAS exceeded the cap during wide-table bucket staging. The follow-up removes complete geometry restore buckets, compares attributes one column at a time, checks every WKB by native-ID SHA-256/length/null state, and reduces staging batch/buffer sizes. Full runs must establish the memory bound; no gate is waived.",
+  "changes": {
+    "buckets": 128,
+    "batch_rows": 128,
+    "buffer_rows": 32,
+    "row_group_size": 16384,
+    "geometry_batch_max": 128,
+    "arrow_cpu_threads": 2,
+    "arrow_io_threads": 2,
+    "ipc_threaded_compression": false,
+    "release_unsorted_table_before_write_or_source_comparison": true,
+    "full_geometry_restore_buckets": false,
+    "attribute_comparison": "Exact complete column equality after native-ID restoration",
+    "wkb_comparison": "Complete per-native-ID SHA-256, byte length and null state; every byte independently hashed in both files"
+  },
+  "unchanged_gates": {
+    "max_rss_bytes": 1000000000,
+    "task_disk_limit_bytes": 8000000000,
+    "minimum_free_start_bytes": 40000000000,
+    "minimum_free_during_write_bytes": 10000000000,
+    "exact_full_source_restoration": true,
+    "clean_rebuild_byte_identity": true,
+    "fixed_geographic_pruning_windows": true
+  },
+  "validator_constraint": {
+    "validator": "rashid 0.1.8",
+    "source": "rashid/data/checks.py",
+    "sha256": "c15c54ca9281b7cbe88c6d4c68b05ec84e3a1a2463b9249f1f936cd8fa29f4ef",
+    "rule": "PTL-DAT-008",
+    "maximum_rows_per_group": 150000,
+    "note": "This installed rule has a row-count ceiling, not a compressed/uncompressed byte-size ceiling. Actual full Portolan validation remains mandatory."
+  },
+  "cleanup": "User approved 103 inventoried temporary files and subsequent failed-run staging cleanup for these HydroLAKES/LakeATLAS builds after preserving checksums and failure reports. The 103-file cleanup is complete; each subsequent cleanup gets its own inventory and receipt. Validated originals, completed datasets, scripts and reports are preserved.",
+  "focused_fault_tests": [
+    "attribute value",
+    "attribute null state",
+    "WKB replacement",
+    "duplicate native ID",
+    "bbox child mutation",
+    "missing feature"
+  ]
+}

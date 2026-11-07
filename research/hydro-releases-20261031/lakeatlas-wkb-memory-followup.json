@@ -1,0 +1,30 @@
+{
+  "recorded_before_next_bulk_attempt": true,
+  "failed_revision": "100eaadad0e42a6f12d61c08de7d061eb5bac499",
+  "failure_phase": "source_wkb_hashing",
+  "peak_rss_bytes": 1173078016,
+  "failure_evidence": "datasets/lakeatlas/releases/lakeatlas-v1.0-r2/evidence/failures/polygons-source-wkb-hashing-attempt-100eaad.json",
+  "completed_stages": [
+    "key scan",
+    "spatial bucket write",
+    "bucket merge",
+    "complete original attribute comparison"
+  ],
+  "changes": [
+    "Close and release both attribute Parquet readers before reopening the raw geometry stream",
+    "Hash Arrow scalar byte buffers directly rather than copying all WKBs to a Python list",
+    "Use 32-row WKB validation/decode batches, retaining all per-ID/null/length/hash/bbox checks"
+  ],
+  "unchanged_gates": {
+    "max_peak_rss_bytes": 1000000000,
+    "task_disk_limit_bytes": 8000000000,
+    "full_source_fidelity": true,
+    "byte_identical_clean_rebuild": true,
+    "actual_package_validators": true
+  },
+  "scope": "LakeATLAS retries only. HydroLAKES already passed complete first/clean transforms at100eaad; its immutable code pin and evidence stay unchanged.",
+  "focused_tests": {
+    "command": "uv run --locked --project scripts/release_tools python -m unittest discover -s scripts/release_tools -p test_spatial_order.py -v",
+    "tests_passed": 10
+  }
+}

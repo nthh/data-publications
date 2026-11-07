@@ -1,0 +1,80 @@
+{
+  "request_url": "https://api.openalex.org/works?search=MODIS+tasselled+cap%3A+land+cover+characteristics+expressed+through+transformed+MODIS+data&corpus=all&per_page=5&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date",
+  "retrieved_at": "2026-10-30T22:07:53.647792+00:00",
+  "response_path": "responses/4982439251f73203ff21ce121749645d6a2797bf685f2fa4244b9e48ef9933ea.json",
+  "status": 200,
+  "response_sha256": "ca096218674f26d75bdae8921c33f770c847349910d0e28d1dcfaf657ab91a86",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 500,
+      "db_response_time_ms": 140,
+      "page": 1,
+      "per_page": 5,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where full text has (MODIS tasselled cap: land cover characteristics expressed through transformed MODIS data)",
+        "x_new_oql": "get works (all corpora) where full text has (MODIS tasselled cap: land cover characteristics expressed through transformed MODIS data)",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "MODIS tasselled cap: land cover characteristics expressed through transformed MODIS data",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:MODIS tasselled cap: land cover characteristics expressed through transformed MODIS data&corpus=all&per_page=5",
+        "order": "best matches first",
+        "order_default": true
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W2115651081",
+        "doi": "https://doi.org/10.1080/01431160701253303",
+        "title": "MODIS tasselled cap: land cover characteristics expressed through transformed MODIS data",
+        "type": "article",
+        "publication_year": 2007,
+        "publication_date": "2007-10-23"
+      },
+      {
+        "id": "https://openalex.org/W2170418104",
+        "doi": "https://doi.org/10.1080/17538947.2011.565080",
+        "title": "Land cover mapping applications with MODIS: a literature review",
+        "type": "article",
+        "publication_year": 2011,
+        "publication_date": "2011-04-14"
+      },
+      {
+        "id": "https://openalex.org/W2995250782",
+        "doi": "https://doi.org/10.1080/22797254.2019.1701560",
+        "title": "Multi-temporal RapidEye Tasselled Cap data for land cover classification",
+        "type": "article",
+        "publication_year": 2019,
+        "publication_date": "2019-01-01"
+      },
+      {
+        "id": "https://openalex.org/W3134051392",
+        "doi": null,
+        "title": "Time Series Generation and Classification of MODIS Data for Land Cover Mapping",
+        "type": "dissertation",
+        "publication_year": 2007,
+        "publication_date": "2007-01-01"
+      },
+      {
+        "id": "https://openalex.org/W7146187516",
+        "doi": null,
+        "title": "Land over change detection using multi-temporal MODIS data",
+        "type": "conference-paper",
+        "publication_year": 2012,
+        "publication_date": "2012-10-24"
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "8d4dc0642fffd1b1b53a8212fcec3019be8013f64a9f8b505eac472647b67768"
+}

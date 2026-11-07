@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "kind": "hosted_validation_execution",
+  "dataset_id": "lakeatlas",
+  "status": "passed",
+  "cwd": "<repository-root>",
+  "validator_code_commit": "8b87ca0",
+  "argv": [
+    "scripts/source_publish/.venv/bin/python",
+    "scripts/source_publish/validate_hosted.py",
+    "--plan",
+    "research/source-publication-20261106/staging-r2/immutable-upload-plan.json",
+    "--dataset",
+    "lakeatlas",
+    "--receipt",
+    "research/source-publication-20261106/upload-receipts/lakeatlas",
+    "--package",
+    "/Users/nathan/projects/data-publications/.local/lakeatlas/releases/lakeatlas-v1.0-r2-prepared",
+    "--package-manifest-sha256",
+    "32b4877b8809cabd3e2caca8da175115e8ff8317402058846ed0db06a54d52e9",
+    "--display-package",
+    "/Users/nathan/projects/data-publications/.local/lakeatlas/display/display-v1",
+    "--query-controls",
+    "research/source-publication-20261106/controls-r1.json",
+    "--controls-sha256",
+    "9fab1ab0408ac437ed7b3161be79beccef167556297010780fb746205473f749",
+    "--query-spatial-hints",
+    "research/source-publication-20261106/query-spatial-hints-r1.json",
+    "--query-spatial-hints-sha256",
+    "1800adfffc1bd7ecd2fbcafc752ceba9f882146a8098a7eaf7e873cc45f486d6",
+    "--browser-evidence",
+    "research/source-publication-20261106/browser-lakeatlas-r1/hosted-browser-evidence.json",
+    "--browser-controls",
+    "research/source-publication-20261106/browser-controls-r1.json",
+    "--browser-controls-sha256",
+    "6ff14a9c438cdee14af4ea21876ca32876883f7b676c16596b4ddfc924b6aa10",
+    "--output",
+    ".local/hosted-validation-lakeatlas-spatial-r1.json"
+  ],
+  "replay_note": "Use a new output path; rebind local package roots to the same pinned immutable releases if this checkout moves. No credentials are used by hosted validation.",
+  "runtime": {
+    "python_version": "3.12.12",
+    "duckdb_version": "1.5.2",
+    "uv_lock": {
+      "path": "scripts/source_publish/uv.lock",
+      "sha256": "123042892fe9a9d53d4af65961e2ce509cb491530aa3c466bb2f830792dee415"
+    }
+  },
+  "code_files": [
+    {
+      "path": "scripts/source_publish/validate_hosted.py",
+      "sha256": "ec598ac2f755100c5e31232274acc65bcc18c53620d3b002c4ba83a5f6dab078"
+    },
+    {
+      "path": "scripts/source_publish/upload.py",
+      "sha256": "c0a1c185c2bcd667f0617fccea50f4fa268d607ffd7e3c5a1f42bcc81b885e4a"
+    },
+    {
+      "path": "scripts/source_publish/bounded_http.py",
+      "sha256": "3f0e105510de8b1b276caf10ba60a39e97dac1781eceb284ae9547ad36f24dd9"
+    }
+  ],
+  "inputs": [
+    {
+      "path": "research/source-publication-20261106/staging-r2/immutable-upload-plan.json",
+      "sha256": "754c02dde3cf258263619599f893558d3348c7fb51c07f8fa700efa1900ac610"
+    },
+    {
+      "path": "research/source-publication-20261106/controls-r1.json",
+      "sha256": "9fab1ab0408ac437ed7b3161be79beccef167556297010780fb746205473f749"
+    },
+    {
+      "path": "research/source-publication-20261106/query-spatial-hints-r1.json",
+      "sha256": "1800adfffc1bd7ecd2fbcafc752ceba9f882146a8098a7eaf7e873cc45f486d6"
+    },
+    {
+      "path": "research/source-publication-20261106/query-followup-criteria-r1.json",
+      "sha256": "47295bd0aec0d0ae4799f6cc83df3198eea9397165117670f7be0ead6aeb9e3a"
+    },
+    {
+      "path": "research/source-publication-20261106/browser-controls-r1.json",
+      "sha256": "6ff14a9c438cdee14af4ea21876ca32876883f7b676c16596b4ddfc924b6aa10"
+    },
+    {
+      "path": "research/source-publication-20261106/browser-lakeatlas-r1/hosted-browser-evidence.json",
+      "sha256": "91e3038f220019dd0fca438d0d045b014e9205eb08b8dd4a29815e34a0a8af06"
+    },
+    {
+      "path": "datasets/lakeatlas/releases/lakeatlas-v1.0-r2/evidence/prepared-local/manifest.json",
+      "sha256": "32b4877b8809cabd3e2caca8da175115e8ff8317402058846ed0db06a54d52e9"
+    },
+    {
+      "path": "datasets/lakeatlas/display/display-v1/manifest.json",
+      "sha256": "ed70989525111682a294b6aadf1118a1ebfaefff863d645c6c805c5e8eafb70f"
+    },
+    {
+      "path": "research/source-publication-20261106/upload-receipts/lakeatlas/summary.json",
+      "sha256": "4d925531ea872650d4823bfa2499fe555ade798fd9be13546c05064d6c91509c"
+    }
+  ],
+  "receipt_object_records": {
+    "path": "research/source-publication-20261106/upload-receipts/lakeatlas/objects",
+    "object_count": 101,
+    "algorithm": "sha256 of sorted UTF-8 lines: filename SPACE file_sha256 NEWLINE",
+    "sha256": "234ed853ac5271aeb6bf84f7450a15c244d39fed0abaf8afb133a4bd8c1e2198"
+  },
+  "output": {
+    "path": "research/source-publication-20261106/hosted-results/lakeatlas/hosted-validation.json",
+    "sha256": "d69b19dd84119a196102a7d675ef5a79a1024fdda832874bf1a3c4bd0810eb27",
+    "local_original_path": ".local/hosted-validation-lakeatlas-spatial-r1.json"
+  }
+}

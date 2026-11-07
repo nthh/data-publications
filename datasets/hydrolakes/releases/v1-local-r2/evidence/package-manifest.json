@@ -1,0 +1,328 @@
+{
+  "assets": [
+    {
+      "asset_id": "hydrolakes-polygons",
+      "description": "Complete global lake polygon layer; native identifiers and source attributes retained; raw WKB unchanged; bbox covering appended from WKB.",
+      "field_dictionary": "metadata/hydrolakes-polygons-field-dictionary.json",
+      "field_dictionary_sha256": "3adab03f28cd479056d918270e95c7f87516fc21cf150a06dd43631ad5bc9e05",
+      "geo_metadata_version": "1.1.0",
+      "geometry_column": "wkb_geometry",
+      "geometry_types": [
+        "Polygon"
+      ],
+      "href": "assets/hydrolakes-polygons.parquet",
+      "identifier_column": "Hylak_id",
+      "media_type": "application/vnd.apache.parquet",
+      "row_count": 1427688,
+      "sha256": "273f66aa591f575616e731e6f31111ddf8ecfb39c0c05eacf0e903b6ddd6944d",
+      "size_bytes": 1001702072,
+      "source_path": "hydrolakes.parquet",
+      "title": "HydroLAKES v1.0 polygons"
+    }
+  ],
+  "clean_rebuild_report": {
+    "path": "evidence/clean-rebuild.json",
+    "sha256": "78ba11c0494090ea2e2aa060cf1fc9ac2f2eb876cbb4263d0e14edbdb70ef873"
+  },
+  "code_revision": "442460af45f424f6669ba3ddd1d2d777e871c208",
+  "copied_data_modes": {
+    "hydrolakes-polygons": "apfs_clone"
+  },
+  "created": "2026-10-31T00:00:00Z",
+  "data_license": {
+    "path": "licenses/data-license.json",
+    "sha256": "739c6e14c06333e0860c8fd612fd2c930a270219d944580a2e3a26ca87d92741"
+  },
+  "dataset_id": "hydrolakes",
+  "dataset_record": {
+    "path": "dataset.yaml",
+    "sha256": "f18883494c14d1d2287d0bab9acb8984b8c10ae1884e1c0546f5167b81ec2126"
+  },
+  "display_derivatives": [
+    {
+      "display_only": true,
+      "format": "PNG",
+      "path": "display/thumbnail.png",
+      "role": "thumbnail",
+      "sampled_features": 20,
+      "sampled_vertices": 553231,
+      "sampling_limit": {
+        "max_features": 50000,
+        "max_vertices": 500000
+      },
+      "sha256": "fcd2c020f9eecac7f4fa7a8a55d4c986a592bb5e1b410c84d14dd46b1a892df1",
+      "size_bytes": 3768
+    }
+  ],
+  "manifest_version": "1.0",
+  "publicly_published": false,
+  "release_id": "v1-local-r2",
+  "release_version": "1.0.1",
+  "scope_note": "Local package only; not uploaded, publicly hosted, or submitted to a registry.",
+  "source_attribution": {
+    "path": "source/attribution.json",
+    "sha256": "ed6d6c3f1123dd57e2a680f964acbfa861bfdcacf32807cdba82fa828c7df052"
+  },
+  "source_fidelity_report": {
+    "path": "evidence/source-fidelity.json",
+    "sha256": "9267f711a81e10d64a8209e8e4d9174583f9d15bbd78955ed4865d7cf7692f1b"
+  },
+  "source_license": {
+    "path": "licenses/source-license.json",
+    "sha256": "ee91ec2cf3ffc5af6b841a3ddaff205400eb0070c6d02343d1d2a97ac07ac99e"
+  },
+  "spatial_bbox": [
+    -179.9999999999999,
+    -55.86513888888899,
+    179.99999999999903,
+    83.57595062255876
+  ],
+  "status": "local-candidate",
+  "supporting_files": [
+    {
+      "copy_mode": "apfs_clone",
+      "description": "Producer field semantics, source limitations and original-format redistribution request.",
+      "media_type": "application/pdf",
+      "path": "source/HydroLAKES_TechDoc_v10.pdf",
+      "sha256": "3d1e30abb0691750127fd8e2ff6a149c83f36b93619fb44774476663e0f01f47",
+      "size_bytes": 989557,
+      "source_basename": "HydroLAKES_TechDoc_v10.pdf",
+      "title": "HydroLAKES Technical Documentation v1.0"
+    },
+    {
+      "copy_mode": "apfs_clone",
+      "description": null,
+      "media_type": "application/json",
+      "path": "provenance/source-document.json",
+      "sha256": "a88381fc802f5e8b2d45f9a0271656806d97336893268445d0f7f64fbee89c12",
+      "size_bytes": 402,
+      "source_basename": "source-document.json",
+      "title": "Producer technical document identity"
+    },
+    {
+      "copy_mode": "apfs_clone",
+      "description": null,
+      "media_type": "application/json",
+      "path": "provenance/source-validation.json",
+      "sha256": "a0421cae7c83446007540a96afcbd39a609135ed82461c612b79db31fe1948c1",
+      "size_bytes": 969,
+      "source_basename": "source-validation.json",
+      "title": "Complete independent source fidelity report"
+    },
+    {
+      "copy_mode": "apfs_clone",
+      "description": null,
+      "media_type": "application/json",
+      "path": "provenance/clean-rebuild-raw.json",
+      "sha256": "711630170213a5aca4b1456de32b2a4363d910e9b31bda5f8f3820740461a376",
+      "size_bytes": 632,
+      "source_basename": "clean-rebuild-raw.json",
+      "title": "Clean raw conversion rebuild report"
+    },
+    {
+      "copy_mode": "apfs_clone",
+      "description": null,
+      "media_type": "application/json",
+      "path": "provenance/spatial-validation-retained.json",
+      "sha256": "7a6686bcf273c5fb55cb4f5af2a4602777565e20c1593aa64307d565a29bba90",
+      "size_bytes": 2129,
+      "source_basename": "spatial-validation-retained.json",
+      "title": "Retained asset spatial augmentation validation"
+    },
+    {
+      "copy_mode": "apfs_clone",
+      "description": null,
+      "media_type": "application/json",
+      "path": "provenance/spatial-validation-clean-rebuild.json",
+      "sha256": "fef41b4a83f023838100999803c550f5172e9f3142832b53326f2414e072aa3c",
+      "size_bytes": 2148,
+      "source_basename": "spatial-validation-clean-rebuild.json",
+      "title": "Clean rebuild spatial augmentation validation"
+    },
+    {
+      "copy_mode": "apfs_clone",
+      "description": null,
+      "media_type": "application/json",
+      "path": "provenance/source-cache-eviction.json",
+      "sha256": "08acd00da4b7056b175ec845976a8f990e50fa276c929864579be9cb9620d813",
+      "size_bytes": 604,
+      "source_basename": "source-cache-eviction.json",
+      "title": "Source archive cache eviction receipt"
+    },
+    {
+      "copy_mode": "apfs_clone",
+      "description": null,
+      "media_type": "application/json",
+      "path": "provenance/evidence-provenance.json",
+      "sha256": "72cf3124a0fc648d0eed4e750692c62e137da2e1933f578d35cfb5e686085d4f",
+      "size_bytes": 2038,
+      "source_basename": "evidence-provenance.json",
+      "title": "Evidence original hashes and portable copy hashes"
+    }
+  ],
+  "temporal_interval": [
+    null,
+    null
+  ],
+  "title": "HydroLAKES v1.0: Polygons",
+  "workflow_files": {
+    "datasets/hydrolakes/README.md": {
+      "bytes": 2916,
+      "git_revision": "e2f3ed8e3b092b681f1631e2d2834e1f51c98296",
+      "package_path": "verification/workflow/datasets/hydrolakes/README.md",
+      "sha256": "44611853fbe0300866ba5a5c7b56ed93db0dba4625b5f10e8552af6f49263371"
+    },
+    "datasets/hydrolakes/VALIDATION.md": {
+      "bytes": 1211,
+      "git_revision": "e2f3ed8e3b092b681f1631e2d2834e1f51c98296",
+      "package_path": "verification/workflow/datasets/hydrolakes/VALIDATION.md",
+      "sha256": "74e88698d6b04201f6bf36e492fa1be85f7c7d71c5dce1a29bc8a44c36e43967"
+    },
+    "datasets/hydrolakes/acquire.py": {
+      "bytes": 1705,
+      "git_revision": "442460af45f424f6669ba3ddd1d2d777e871c208",
+      "package_path": "verification/workflow/datasets/hydrolakes/acquire.py",
+      "sha256": "ea436454c070d2e57545e3aa50ef58cea3775cef3bde9b1861f1d7070ecaae27"
+    },
+    "datasets/hydrolakes/convert.py": {
+      "bytes": 29484,
+      "git_revision": "442460af45f424f6669ba3ddd1d2d777e871c208",
+      "package_path": "verification/workflow/datasets/hydrolakes/convert.py",
+      "sha256": "4227f2484a3dd3454fe1f97b78b155e5dcfd6c33410b77dfbaa253afecb26f14"
+    },
+    "datasets/hydrolakes/field-dictionary.json": {
+      "bytes": 4056,
+      "git_revision": "e2f3ed8e3b092b681f1631e2d2834e1f51c98296",
+      "package_path": "verification/workflow/datasets/hydrolakes/field-dictionary.json",
+      "sha256": "3adab03f28cd479056d918270e95c7f87516fc21cf150a06dd43631ad5bc9e05"
+    },
+    "datasets/hydrolakes/pyproject.toml": {
+      "bytes": 317,
+      "git_revision": "442460af45f424f6669ba3ddd1d2d777e871c208",
+      "package_path": "verification/workflow/datasets/hydrolakes/pyproject.toml",
+      "sha256": "2b48d2be68275465b1c787419be1d3a3a8fbd6b68fb7ccc554f7e75abaf3bb96"
+    },
+    "datasets/hydrolakes/releases/v1-local-r2/README.md": {
+      "bytes": 4602,
+      "package_path": "verification/workflow/datasets/hydrolakes/releases/v1-local-r2/README.md",
+      "sha256": "569d18d3fb57964f1b2ca7fe2102077a5a87374c386587d5a813cee11ebc7786"
+    },
+    "datasets/hydrolakes/releases/v1-local-r2/evidence/fidelity-normalizer-template.json": {
+      "bytes": 1102,
+      "package_path": "verification/workflow/datasets/hydrolakes/releases/v1-local-r2/evidence/fidelity-normalizer-template.json",
+      "sha256": "bba3bf1d83f4295c93cac106ea056745e01590c207ffd24290040f14acf260c1"
+    },
+    "datasets/hydrolakes/releases/v1-local-r2/evidence/materialize_release_inputs.py": {
+      "bytes": 4583,
+      "package_path": "verification/workflow/datasets/hydrolakes/releases/v1-local-r2/evidence/materialize_release_inputs.py",
+      "sha256": "ce1387d70ab515fc1a51ee638dce4d6e2a6a2706d06c7511cc54cb2687464044"
+    },
+    "datasets/hydrolakes/releases/v1-local-r2/evidence/package-spec-template.json": {
+      "bytes": 8362,
+      "package_path": "verification/workflow/datasets/hydrolakes/releases/v1-local-r2/evidence/package-spec-template.json",
+      "sha256": "16874c584c5bd5e13d85186b318c17ceaf42a1e0e35e7d7cd594e0df6d2c8a84"
+    },
+    "datasets/hydrolakes/test_convert.py": {
+      "bytes": 8474,
+      "git_revision": "442460af45f424f6669ba3ddd1d2d777e871c208",
+      "package_path": "verification/workflow/datasets/hydrolakes/test_convert.py",
+      "sha256": "85766f57ad151b392dbf39c37b600b23f7e9a57894cd1195fc9ccea01577ddf0"
+    },
+    "datasets/hydrolakes/test_validation.py": {
+      "bytes": 1980,
+      "git_revision": "442460af45f424f6669ba3ddd1d2d777e871c208",
+      "package_path": "verification/workflow/datasets/hydrolakes/test_validation.py",
+      "sha256": "7211089ef887b951196b166cb7356064f6f3f2b3889eea0bb847063f370c45c8"
+    },
+    "datasets/hydrolakes/uv.lock": {
+      "bytes": 124944,
+      "git_revision": "442460af45f424f6669ba3ddd1d2d777e871c208",
+      "package_path": "verification/workflow/datasets/hydrolakes/uv.lock",
+      "sha256": "57e9efd934418661e7e0781340a47beb6f517f88ff44dd4237a555b6a11824cc"
+    },
+    "datasets/hydrolakes/validate.py": {
+      "bytes": 4605,
+      "git_revision": "442460af45f424f6669ba3ddd1d2d777e871c208",
+      "package_path": "verification/workflow/datasets/hydrolakes/validate.py",
+      "sha256": "e047ef33506d8c1ad1efcc3525267c0b9f6d2c2452fbe0557ad51f61dca5284e"
+    },
+    "research/hydro-releases-20261031/bind_fidelity.py": {
+      "bytes": 21835,
+      "git_revision": "e2f3ed8e3b092b681f1631e2d2834e1f51c98296",
+      "package_path": "verification/workflow/research/hydro-releases-20261031/bind_fidelity.py",
+      "sha256": "e0fad0ff331e726abffe724a47ac9c611a2e7b9dec768b5ed6bffa8121da1fc2"
+    },
+    "research/hydro-releases-20261031/test_bind_fidelity.py": {
+      "bytes": 9312,
+      "git_revision": "e2f3ed8e3b092b681f1631e2d2834e1f51c98296",
+      "package_path": "verification/workflow/research/hydro-releases-20261031/test_bind_fidelity.py",
+      "sha256": "a3349b9e827813044afd2aab6aecc8da3a56efa7c155a160df45baadcd673d98"
+    },
+    "scripts/release_tools/AGENTS.md": {
+      "bytes": 857,
+      "git_revision": "7cc922857065883d1803a6892a5a160ce5a4f722",
+      "package_path": "verification/workflow/scripts/release_tools/AGENTS.md",
+      "sha256": "4aa3ee027c7ad8f56209e5c948ab30ad126cd0dfd8e80408590df060db03dc3b"
+    },
+    "scripts/release_tools/README.md": {
+      "bytes": 10462,
+      "git_revision": "7cc922857065883d1803a6892a5a160ce5a4f722",
+      "package_path": "verification/workflow/scripts/release_tools/README.md",
+      "sha256": "e011e2353dd27d78159321fd63ab4d032fc84c2101f5f8882ef83416d4e4f3c3"
+    },
+    "scripts/release_tools/add_spatial_bounds.py": {
+      "bytes": 21945,
+      "git_revision": "e2f3ed8e3b092b681f1631e2d2834e1f51c98296",
+      "package_path": "verification/workflow/scripts/release_tools/add_spatial_bounds.py",
+      "sha256": "035fc480d2a5f7d09b190d65d734c3d5ae18495314f2a01834b8438f302a23e6"
+    },
+    "scripts/release_tools/package-lock.json": {
+      "bytes": 54306,
+      "git_revision": "7cc922857065883d1803a6892a5a160ce5a4f722",
+      "package_path": "verification/workflow/scripts/release_tools/package-lock.json",
+      "sha256": "8f19898156a139859a49d15238a92a5204a7d61b909ee5ac54080e8110a2cc3c"
+    },
+    "scripts/release_tools/package.json": {
+      "bytes": 142,
+      "git_revision": "7cc922857065883d1803a6892a5a160ce5a4f722",
+      "package_path": "verification/workflow/scripts/release_tools/package.json",
+      "sha256": "8eebc2fd826cf22f6008ee889293d7880952ea19ddac557ae905821489108470"
+    },
+    "scripts/release_tools/package_release.py": {
+      "bytes": 62862,
+      "git_revision": "7cc922857065883d1803a6892a5a160ce5a4f722",
+      "package_path": "verification/workflow/scripts/release_tools/package_release.py",
+      "sha256": "7985c0ae0b06e028f2f9466a88dde592bfbb6095cb2ab1a4e2892269629c676b"
+    },
+    "scripts/release_tools/pyproject.toml": {
+      "bytes": 259,
+      "git_revision": "7cc922857065883d1803a6892a5a160ce5a4f722",
+      "package_path": "verification/workflow/scripts/release_tools/pyproject.toml",
+      "sha256": "a6d5a4c17612a98645ce60b3b581caf316707f2b92265e5a3c1ca9a319f6da3c"
+    },
+    "scripts/release_tools/serve.py": {
+      "bytes": 2789,
+      "git_revision": "7cc922857065883d1803a6892a5a160ce5a4f722",
+      "package_path": "verification/workflow/scripts/release_tools/serve.py",
+      "sha256": "dab2eef0199f839aac9a14d9802cb7b339e9732573bd659d5837867f1f5da175"
+    },
+    "scripts/release_tools/test_package_release.py": {
+      "bytes": 9275,
+      "git_revision": "7cc922857065883d1803a6892a5a160ce5a4f722",
+      "package_path": "verification/workflow/scripts/release_tools/test_package_release.py",
+      "sha256": "f1245988e4c45e26bce2b3e07766949d9054c9ba1774a0e84e457062571c89cb"
+    },
+    "scripts/release_tools/test_spatial_bounds.py": {
+      "bytes": 8062,
+      "git_revision": "e2f3ed8e3b092b681f1631e2d2834e1f51c98296",
+      "package_path": "verification/workflow/scripts/release_tools/test_spatial_bounds.py",
+      "sha256": "ed403df9cbe89adfe2766f5e14610affd34b2a35f4968c647852e0606b9ce30f"
+    },
+    "scripts/release_tools/uv.lock": {
+      "bytes": 134378,
+      "git_revision": "7cc922857065883d1803a6892a5a160ce5a4f722",
+      "package_path": "verification/workflow/scripts/release_tools/uv.lock",
+      "sha256": "fe1b9d58a17429f2649a24fbd8299b5d616ca4ab68806e768cd2caac31b8ec1b"
+    }
+  }
+}

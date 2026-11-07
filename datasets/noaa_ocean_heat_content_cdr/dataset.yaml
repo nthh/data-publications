@@ -1,0 +1,48 @@
+schema_version: 1
+id: noaa_ocean_heat_content_cdr
+title: Global Ocean Heat Content CDR
+intake:
+  kind: official_catalog
+  reference_url: https://planetarycomputer.microsoft.com/api/stac/v1/collections/noaa-cdr-ocean-heat-content
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'planetary: review_note: Global ocean heat-content CDR, 1972–2022; STAC bbox all-world.;
+    stac_bbox: [-180, -90, 180, 90]; temporal_interval: [["1972-03-01T00:00:00Z", "2022-03-31T23:59:59Z"]]
+    Distinct named producer product; retain exact source edition and footprint.'
+  sources:
+  - provider: planetary_computer
+    entry_id: noaa-cdr-ocean-heat-content
+    url: https://planetarycomputer.microsoft.com/api/stac/v1/collections/noaa-cdr-ocean-heat-content
+    relationship: exact_dataset
+  access:
+  - provider: planetary_computer
+    status: native_available
+    formats:
+    - COG
+    summary: 'Collection metadata declares per-item data assets / provider storage roots in the listed
+      native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain
+      unvalidated. Distinct named producer product; retain exact source edition and footprint.'
+    license_summary: 'note: Do not treat this metadata label as legal clearance.; review_status: provider
+      declaration captured; terms and redistribution permission not independently reviewed; stac_license:
+      other'
+    proposed_outputs:
+    - COG
+    rationale: Reuse declared COG product; check ocean mask, vertical integration and CDR version.
+    evidence_urls:
+    - https://planetarycomputer.microsoft.com/api/stac/v1/collections/noaa-cdr-ocean-heat-content
+    - https://planetarycomputer.microsoft.com/dataset/noaa-cdr-ocean-heat-content
+  citations: []
+  evidence:
+  - path: research/global-candidates-20261031/planetary/reviewed.json
+    sha256: 07da016851a07f3e3e0937e120ce46442785f4e9096e563d92c1a3c0ce9e616a
+    key: noaa_ocean_heat_content_cdr

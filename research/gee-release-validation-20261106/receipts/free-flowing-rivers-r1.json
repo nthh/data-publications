@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "status": "incomplete",
+  "started_at": "2026-11-06T22:14:01.385235+00:00",
+  "git_commit": "4032d8a3e68fa2a95c870e6a421528ea800089a7",
+  "script_sha256": "a255f19a5e41b4cc0cc21c3a40a279f6a130a2f6cfa14694fff6de082f689711",
+  "plan_sha256": "8339fc517f72aa71188b927342bf9753155f157562d766212c03e31df7b1ecc9",
+  "lock_sha256": "2cf752aac36445732b59e0db89088aa3f421238fecf4693b27da4dacf89c7335",
+  "quota_project": "mtnmap-f75ec",
+  "scope": "Existing metadata/feature GET and bounded synchronous Collection.size only; no exports, batch tasks, writes or publication.",
+  "environment": {
+    "python": "3.12.12",
+    "google-auth": "2.53.0",
+    "requests": "2.32.5"
+  },
+  "requests": [
+    {
+      "query": "free-flowing-rivers-before",
+      "method": "GET",
+      "resource": "projects/earthengine-public/assets/WWF/HydroSHEDS/v1/FreeFlowingRivers",
+      "params": {},
+      "started_at": "2026-11-06T22:14:02.261932+00:00",
+      "response_path": "free-flowing-rivers-before-001.json",
+      "http_status": 200,
+      "finished_at": "2026-11-06T22:14:03.609781+00:00",
+      "response_bytes": 229,
+      "response_sha256": "a2da2cac8b2b2a6bbf8dad2b4a7f1cea4daa1b717fe851ac8571d651b67d5d2f",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 22:14:03 GMT",
+        "Content-Type": "application/json; charset=UTF-8"
+      }
+    },
+    {
+      "query": "free-flowing-rivers-count",
+      "method": "POST",
+      "resource": "projects/earthengine-public/assets/WWF/HydroSHEDS/v1/FreeFlowingRivers",
+      "params": {},
+      "started_at": "2026-11-06T22:14:03.609868+00:00",
+      "response_path": "free-flowing-rivers-count-001.json",
+      "body": {
+        "expression": {
+          "result": "0",
+          "values": {
+            "0": {
+              "functionInvocationValue": {
+                "functionName": "Collection.size",
+                "arguments": {
+                  "collection": {
+                    "functionInvocationValue": {
+                      "functionName": "Collection.loadTable",
+                      "arguments": {
+                        "tableId": {
+                          "constantValue": "projects/earthengine-public/assets/WWF/HydroSHEDS/v1/FreeFlowingRivers"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "endpoint_resource": "projects/mtnmap-f75ec/value:compute"
+    }
+  ],
+  "total_bytes": 229,
+  "queries": [
+    {
+      "id": "free-flowing-rivers-before",
+      "rows": 0,
+      "pages": 1,
+      "pagination_terminated": true,
+      "complete_enumeration": false
+    }
+  ],
+  "errors": [
+    {
+      "type": "ReadTimeout"
+    }
+  ],
+  "finished_at": "2026-11-06T22:14:48.636007+00:00",
+  "elapsed_seconds": 47.209
+}

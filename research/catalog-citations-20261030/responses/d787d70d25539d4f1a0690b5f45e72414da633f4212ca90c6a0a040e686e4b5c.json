@@ -1,0 +1,80 @@
+{
+  "request_url": "https://api.openalex.org/works?search=New+global+hydrography+derived+from+spaceborne+elevation+data&corpus=all&per_page=5&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date",
+  "retrieved_at": "2026-10-30T22:07:54.768441+00:00",
+  "response_path": "responses/d787d70d25539d4f1a0690b5f45e72414da633f4212ca90c6a0a040e686e4b5c.json",
+  "status": 200,
+  "response_sha256": "c2bfd5037d8ba576765e773cb9b850b08d40a9ac3f90ef8a0889c392d3460f1e",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 1781,
+      "db_response_time_ms": 95,
+      "page": 1,
+      "per_page": 5,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where full text has (New global hydrography derived from spaceborne elevation data)",
+        "x_new_oql": "get works (all corpora) where full text has (New global hydrography derived from spaceborne elevation data)",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "New global hydrography derived from spaceborne elevation data",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:New global hydrography derived from spaceborne elevation data&corpus=all&per_page=5",
+        "order": "best matches first",
+        "order_default": true
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W2171675471",
+        "doi": "https://doi.org/10.1029/2008eo100001",
+        "title": "New Global Hydrography Derived From Spaceborne Elevation Data",
+        "type": "article",
+        "publication_year": 2008,
+        "publication_date": "2008-03-04"
+      },
+      {
+        "id": "https://openalex.org/W2946882019",
+        "doi": "https://doi.org/10.1029/2019wr024873",
+        "title": "MERIT Hydro: A High‐Resolution Global Hydrography Map Based on Latest Topography Dataset",
+        "type": "article",
+        "publication_year": 2019,
+        "publication_date": "2019-05-28"
+      },
+      {
+        "id": "https://openalex.org/W6949306537",
+        "doi": "https://doi.org/10.5281/zenodo.14002241",
+        "title": "Data underlying submission \"Tracing stream flow in confluent rivers – a journey from chaos to order\"",
+        "type": "dataset",
+        "publication_year": 2024,
+        "publication_date": "2024-10-28"
+      },
+      {
+        "id": "https://openalex.org/W2912067546",
+        "doi": "https://doi.org/10.3390/rs11030235",
+        "title": "Pixel-Based Geometric Assessment of Channel Networks/Orders Derived from Global Spaceborne Digital Elevation Models",
+        "type": "article",
+        "publication_year": 2019,
+        "publication_date": "2019-01-23"
+      },
+      {
+        "id": "https://openalex.org/W3129075462",
+        "doi": "https://doi.org/10.5194/hess-14-1-2010",
+        "title": "Reconstructing 20th century global hydrography: a contribution to the Global Terrestrial Network- Hydrology (GTN-H)",
+        "type": "article",
+        "publication_year": 2010,
+        "publication_date": "2010-01-06"
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "582d62e60e09570072037edee3193f870359dbc56e49a6d7899ecf30c464e56b"
+}

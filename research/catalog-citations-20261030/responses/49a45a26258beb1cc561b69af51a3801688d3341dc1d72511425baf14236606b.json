@@ -1,0 +1,1051 @@
+{
+  "request_url": "https://api.openalex.org/works?filter=openalex%3AW4394153080%7CW4394295824%7CW4394302083%7CW4394320078%7CW4394380313%7CW4394469886%7CW4394779519%7CW4398193556%7CW4398526830%7CW4398642597%7CW4399069464%7CW4399258081%7CW4399881503%7CW4400458831%7CW4400730472%7CW4400970010%7CW4401107366%7CW4401618682%7CW4401757902%7CW4402038071%7CW4402508824%7CW4403156041%7CW4403228728%7CW4403308435%7CW4403322972%7CW4403793012%7CW4403889512%7CW4404116165%7CW4405516567%7CW4405885075%7CW4406060151%7CW4406960879%7CW4407605294%7CW4407880365%7CW4408658263%7CW4408796099%7CW4409185689%7CW4409317076%7CW4411031901%7CW4411535854&corpus=all&per_page=100&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date%2Ccited_by_count%2Ccounts_by_year",
+  "retrieved_at": "2026-10-30T22:19:43.058531+00:00",
+  "response_path": "responses/49a45a26258beb1cc561b69af51a3801688d3341dc1d72511425baf14236606b.json",
+  "status": 200,
+  "response_sha256": "908f024b7f5e4099c00fc8810e9f49925f91a4003f78f8774684b78aa446929a",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 40,
+      "db_response_time_ms": 18,
+      "page": 1,
+      "per_page": 100,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where openalex id is (\n    W4394153080 or W4394295824 or W4394302083 or W4394320078 or W4394380313\n    or W4394469886 or W4394779519 or W4398193556 or W4398526830 or W4398642597\n    or W4399069464 or W4399258081 or W4399881503 or W4400458831 or W4400730472\n    or W4400970010 or W4401107366 or W4401618682 or W4401757902 or W4402038071\n    or W4402508824 or W4403156041 or W4403228728 or W4403308435 or W4403322972\n    or W4403793012 or W4403889512 or W4404116165 or W4405516567 or W4405885075\n    or W4406060151 or W4406960879 or W4407605294 or W4407880365 or W4408658263\n    or W4408796099 or W4409185689 or W4409317076 or W4411031901 or W4411535854\n  )",
+        "x_new_oql": "get works (all corpora) where openalex id is (\n    W4394153080 or W4394295824 or W4394302083 or W4394320078 or W4394380313\n    or W4394469886 or W4394779519 or W4398193556 or W4398526830 or W4398642597\n    or W4399069464 or W4399258081 or W4399881503 or W4400458831 or W4400730472\n    or W4400970010 or W4401107366 or W4401618682 or W4401757902 or W4402038071\n    or W4402508824 or W4403156041 or W4403228728 or W4403308435 or W4403322972\n    or W4403793012 or W4403889512 or W4404116165 or W4405516567 or W4405885075\n    or W4406060151 or W4406960879 or W4407605294 or W4407880365 or W4408658263\n    or W4408796099 or W4409185689 or W4409317076 or W4411031901 or W4411535854\n  )",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "join": "or",
+              "filters": [
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W4394153080"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W4394295824"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W4394302083"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W4394320078"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W4394380313"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W4394469886"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W4394779519"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W4398193556"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W4398526830"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W4398642597"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W4399069464"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W4399258081"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W4399881503"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W4400458831"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W4400730472"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W4400970010"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W4401107366"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W4401618682"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W4401757902"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W4402038071"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W4402508824"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W4403156041"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W4403228728"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W4403308435"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W4403322972"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W4403793012"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W4403889512"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W4404116165"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W4405516567"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W4405885075"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W4406060151"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W4406960879"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W4407605294"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W4407880365"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W4408658263"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W4408796099"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W4409185689"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W4409317076"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W4411031901"
+                },
+                {
+                  "column_id": "ids.openalex",
+                  "value": "W4411535854"
+                }
+              ]
+            }
+          ]
+        },
+        "url": "/works?filter=ids.openalex:W4394153080|W4394295824|W4394302083|W4394320078|W4394380313|W4394469886|W4394779519|W4398193556|W4398526830|W4398642597|W4399069464|W4399258081|W4399881503|W4400458831|W4400730472|W4400970010|W4401107366|W4401618682|W4401757902|W4402038071|W4402508824|W4403156041|W4403228728|W4403308435|W4403322972|W4403793012|W4403889512|W4404116165|W4405516567|W4405885075|W4406060151|W4406960879|W4407605294|W4407880365|W4408658263|W4408796099|W4409185689|W4409317076|W4411031901|W4411535854&corpus=all&per_page=100",
+        "order": "most cited (age-adjusted) first",
+        "order_default": true
+      },
+      "cost_usd": 0.0001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W4400730472",
+        "doi": "https://doi.org/10.1038/s41586-024-07702-8",
+        "title": "Groundwater-dependent ecosystem map exposes global dryland protection needs",
+        "type": "article",
+        "publication_year": 2024,
+        "publication_date": "2024-07-17",
+        "cited_by_count": 203,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 107
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 88
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 8
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4411031901",
+        "doi": "https://doi.org/10.5194/essd-17-2277-2025",
+        "title": "Mapping the world's inland surface waters: an upgrade to the Global Lakes and Wetlands Database (GLWD v2)",
+        "type": "article",
+        "publication_year": 2025,
+        "publication_date": "2025-06-04",
+        "cited_by_count": 76,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 42
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 32
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4401107366",
+        "doi": "https://doi.org/10.1016/j.rse.2024.114343",
+        "title": "A global urban heat island intensity dataset: Generation, comparison, and analysis",
+        "type": "article",
+        "publication_year": 2024,
+        "publication_date": "2024-07-30",
+        "cited_by_count": 67,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 39
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 27
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4400458831",
+        "doi": "https://doi.org/10.34133/remotesensing.0204",
+        "title": "Global Natural and Planted Forests Mapping at Fine Spatial Resolution of 30 m",
+        "type": "article",
+        "publication_year": 2024,
+        "publication_date": "2024-01-01",
+        "cited_by_count": 48,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 30
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 17
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4398193556",
+        "doi": "https://doi.org/10.5194/essd-16-2407-2024",
+        "title": "GloUTCI-M: a global monthly 1 km Universal Thermal Climate Index dataset from 2000 to 2022",
+        "type": "article",
+        "publication_year": 2024,
+        "publication_date": "2024-05-22",
+        "cited_by_count": 47,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 18
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 23
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 6
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4402508824",
+        "doi": "https://doi.org/10.1016/j.rse.2024.114427",
+        "title": "Subfield-level crop yield mapping without ground truth data: A scale transfer framework",
+        "type": "article",
+        "publication_year": 2024,
+        "publication_date": "2024-09-13",
+        "cited_by_count": 47,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 27
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 20
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4404116165",
+        "doi": "https://doi.org/10.5194/essd-16-5111-2024",
+        "title": "Global mapping of oil palm planting year from 1990 to 2021",
+        "type": "article",
+        "publication_year": 2024,
+        "publication_date": "2024-11-06",
+        "cited_by_count": 46,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 24
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 20
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4403308435",
+        "doi": "https://doi.org/10.5194/essd-16-4573-2024",
+        "title": "VODCA v2: multi-sensor, multi-frequency vegetation optical depth data for long-term canopy dynamics and biomass monitoring",
+        "type": "article",
+        "publication_year": 2024,
+        "publication_date": "2024-10-10",
+        "cited_by_count": 42,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 19
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 20
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 3
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4399069464",
+        "doi": "https://doi.org/10.1016/j.rse.2024.114226",
+        "title": "Mapping vegetation canopy height across the contiguous United States using ICESat-2 and ancillary datasets",
+        "type": "article",
+        "publication_year": 2024,
+        "publication_date": "2024-05-28",
+        "cited_by_count": 39,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 19
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 17
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 3
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4399881503",
+        "doi": "https://doi.org/10.1016/j.srs.2024.100145",
+        "title": "Revisiting the 2023 wildfire season in Canada",
+        "type": "article",
+        "publication_year": 2024,
+        "publication_date": "2024-06-21",
+        "cited_by_count": 35,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 15
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 14
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 6
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4403156041",
+        "doi": "https://doi.org/10.1016/j.foreco.2024.122313",
+        "title": "Characterizing long-term tree species dynamics in Canada’s forested ecosystems using annual time series remote sensing data",
+        "type": "article",
+        "publication_year": 2024,
+        "publication_date": "2024-10-05",
+        "cited_by_count": 30,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 15
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 15
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4403322972",
+        "doi": "https://doi.org/10.1016/j.rse.2024.114380",
+        "title": "Monitoring road development in Congo Basin forests with multi-sensor satellite imagery and deep learning",
+        "type": "article",
+        "publication_year": 2024,
+        "publication_date": "2024-09-15",
+        "cited_by_count": 28,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 17
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 11
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4403793012",
+        "doi": "https://doi.org/10.1002/saj2.20769",
+        "title": "Soil landscapes of the United States (SOLUS): Developing predictive soil property maps of the conterminous United States using hybrid training sets",
+        "type": "article",
+        "publication_year": 2024,
+        "publication_date": "2024-10-25",
+        "cited_by_count": 26,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 18
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 8
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4402038071",
+        "doi": "https://doi.org/10.1016/j.rse.2024.114383",
+        "title": "High-resolution population maps derived from Sentinel-1 and Sentinel-2",
+        "type": "article",
+        "publication_year": 2024,
+        "publication_date": "2024-08-30",
+        "cited_by_count": 21,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4394779519",
+        "doi": "https://doi.org/10.5194/hess-28-1653-2024",
+        "title": "Increasing seasonal variation in the extent of rivers and lakes from 1984 to 2022",
+        "type": "article",
+        "publication_year": 2024,
+        "publication_date": "2024-04-11",
+        "cited_by_count": 20,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 14
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 6
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4400970010",
+        "doi": "https://doi.org/10.1088/1748-9326/ad677b",
+        "title": "A new data-driven map predicts substantial undocumented peatland areas in Amazonia",
+        "type": "article",
+        "publication_year": 2024,
+        "publication_date": "2024-07-25",
+        "cited_by_count": 20,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 9
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4405885075",
+        "doi": "https://doi.org/10.1016/j.isprsjprs.2024.12.023",
+        "title": "Improving 30-meter global impervious surface area (GISA) mapping: New method and dataset",
+        "type": "article",
+        "publication_year": 2024,
+        "publication_date": "2024-12-30",
+        "cited_by_count": 20,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 15
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 5
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4411535854",
+        "doi": "https://doi.org/10.1016/j.catena.2025.109243",
+        "title": "Digital mapping of peat thickness and carbon stock of global peatlands",
+        "type": "article",
+        "publication_year": 2025,
+        "publication_date": "2025-06-23",
+        "cited_by_count": 17,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 12
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 5
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4407880365",
+        "doi": "https://doi.org/10.5194/gmd-18-1067-2025",
+        "title": "CropSuite v1.0 – a comprehensive open-source crop suitability model considering climate variability for climate impact assessment",
+        "type": "article",
+        "publication_year": 2025,
+        "publication_date": "2025-02-24",
+        "cited_by_count": 12,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 4
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4408658263",
+        "doi": "https://doi.org/10.4060/cd4262en",
+        "title": "The Global Administrative Unit Layers (GAUL) 2024",
+        "type": "book",
+        "publication_year": 2025,
+        "publication_date": "2025-03-19",
+        "cited_by_count": 30,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2014,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4399258081",
+        "doi": "https://doi.org/10.1016/j.rsase.2024.101263",
+        "title": "Generation of monthly VIIRS nighttime lights time-series (1992–2013) images using deep learning (cGAN) technique",
+        "type": "article",
+        "publication_year": 2024,
+        "publication_date": "2024-06-01",
+        "cited_by_count": 5,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 3
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4406960879",
+        "doi": "https://doi.org/10.1038/s41597-025-04487-x",
+        "title": "Downscaled gridded global dataset for gross domestic product (GDP) per capita PPP over 1990–2022",
+        "type": "data-paper",
+        "publication_year": 2025,
+        "publication_date": "2025-01-30",
+        "cited_by_count": 137,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 104
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 33
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4403228728",
+        "doi": "https://doi.org/10.1038/s41597-024-03752-9",
+        "title": "The Global Dam Watch database of river barrier and reservoir information for large-scale applications",
+        "type": "data-paper",
+        "publication_year": 2024,
+        "publication_date": "2024-10-08",
+        "cited_by_count": 120,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 67
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 49
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 4
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4405516567",
+        "doi": "https://doi.org/10.1038/s41597-024-04228-6",
+        "title": "A global annual simulated VIIRS nighttime light dataset from 1992 to 2023",
+        "type": "data-paper",
+        "publication_year": 2024,
+        "publication_date": "2024-12-18",
+        "cited_by_count": 63,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 44
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 19
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4401618682",
+        "doi": "https://doi.org/10.1038/s41597-024-03719-w",
+        "title": "GLObal Building heights for Urban Studies (UT-GLOBUS) for city- and street- scale urban simulations: Development and first applications",
+        "type": "data-paper",
+        "publication_year": 2024,
+        "publication_date": "2024-08-15",
+        "cited_by_count": 56,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 34
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 17
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 5
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4409317076",
+        "doi": "https://doi.org/10.1038/s41597-025-04892-2",
+        "title": "Global extent and change in human modification of terrestrial ecosystems from 1990 to 2022",
+        "type": "data-paper",
+        "publication_year": 2025,
+        "publication_date": "2025-04-10",
+        "cited_by_count": 47,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 40
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 7
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4403889512",
+        "doi": "https://doi.org/10.1038/s41597-024-04030-4",
+        "title": "NPKGRIDS: a global georeferenced dataset of N, P2O5, and K2O fertilizer application rates for 173 crops",
+        "type": "data-paper",
+        "publication_year": 2024,
+        "publication_date": "2024-10-30",
+        "cited_by_count": 29,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 22
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 7
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4406060151",
+        "doi": "https://doi.org/10.1038/s41597-024-04213-z",
+        "title": "A New Global Mangrove Height Map with a 12 meter spatial resolution",
+        "type": "data-paper",
+        "publication_year": 2025,
+        "publication_date": "2025-01-04",
+        "cited_by_count": 29,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 17
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 12
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4398642597",
+        "doi": "https://doi.org/10.7910/dvn/86m4po",
+        "title": "GCI30: Global Cropping Intensity at 30m resolution",
+        "type": "dataset",
+        "publication_year": 2020,
+        "publication_date": "2020-11-19",
+        "cited_by_count": 17,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 10
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4408796099",
+        "doi": "https://doi.org/10.1038/s41597-025-04816-0",
+        "title": "An enhanced national-scale urban tree canopy cover dataset for the United States",
+        "type": "data-paper",
+        "publication_year": 2025,
+        "publication_date": "2025-03-24",
+        "cited_by_count": 17,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 15
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4407605294",
+        "doi": "https://doi.org/10.1038/s41597-025-04604-w",
+        "title": "Mapping 10-m Industrial Lands across 1000+ Global Large Cities, 2017–2023",
+        "type": "data-paper",
+        "publication_year": 2025,
+        "publication_date": "2025-02-16",
+        "cited_by_count": 11,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 5
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4409185689",
+        "doi": "https://doi.org/10.1038/s41597-025-04868-2",
+        "title": "An open-access database of nature-based carbon offset project boundaries",
+        "type": "data-paper",
+        "publication_year": 2025,
+        "publication_date": "2025-04-05",
+        "cited_by_count": 11,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4394320078",
+        "doi": "https://doi.org/10.6084/m9.figshare.11310269",
+        "title": "Harmonised global datasets of wind and solar farm locations and power",
+        "type": "dataset",
+        "publication_year": 2020,
+        "publication_date": "2020-01-01",
+        "cited_by_count": 5,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4394295824",
+        "doi": "https://doi.org/10.6084/m9.figshare.4725541",
+        "title": "River plastic emissions to the world's oceans",
+        "type": "supplementary-materials",
+        "publication_year": 2017,
+        "publication_date": "2017-01-01",
+        "cited_by_count": 4,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4398526830",
+        "doi": "https://doi.org/10.7910/dvn/3ctmkp",
+        "title": "30 m Resolution Global Annual Burned Area Product",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-04-16",
+        "cited_by_count": 3,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4394153080",
+        "doi": "https://doi.org/10.6084/m9.figshare.24616050",
+        "title": "NPKGRIDS",
+        "type": "dataset",
+        "publication_year": 2023,
+        "publication_date": "2023-01-01",
+        "cited_by_count": 2,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4394302083",
+        "doi": "https://doi.org/10.6084/m9.figshare.9696218",
+        "title": "High resolution mapping of global urban extents from 1870 to 2100 by integrating data and model driven approaches",
+        "type": "dataset",
+        "publication_year": 2019,
+        "publication_date": "2019-08-20",
+        "cited_by_count": 2,
+        "counts_by_year": [
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4394469886",
+        "doi": "https://doi.org/10.6084/m9.figshare.23528232",
+        "title": "Gridded livestock density database and spatial trends for Kazakhstan",
+        "type": "dataset",
+        "publication_year": 2023,
+        "publication_date": "2023-01-01",
+        "cited_by_count": 1,
+        "counts_by_year": [
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4401757902",
+        "doi": "https://doi.org/10.1038/s41597-024-03710-5",
+        "title": "A multi-decadal 1 km gridded database of continental-scale spring onset products",
+        "type": "data-paper",
+        "publication_year": 2024,
+        "publication_date": "2024-08-21",
+        "cited_by_count": 1,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4394380313",
+        "doi": "https://doi.org/10.6084/m9.figshare.24821538",
+        "title": "Global Urban Heat Island Intensity Dataset",
+        "type": "dataset",
+        "publication_year": 2023,
+        "publication_date": "2023-01-01",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "82ec933e51b4cc92792a01043fa72127cf883cdbc1ae02a8f331f255ab8051aa"
+}

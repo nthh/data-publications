@@ -1,0 +1,58 @@
+schema_version: 1
+id: map_accessibility_2015
+title: Malaria Atlas Project Accessibility to Cities 2015
+intake:
+  kind: official_catalog
+  reference_url: https://developers.google.com/earth-engine/datasets/catalog/projects_malariaatlasproject_assets_accessibility_accessibility_to_cities_2015_v1_0
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: near_global
+  spatial_coverage: 'citations: Global land between 85°N and 60°S; Global oceans / water bodies; official
+    GEE catalog extent latitude envelope -60° to 85° (extent is not a completeness/no-data guarantee).
+    Distinct named producer product; retain exact source edition and footprint.'
+  sources:
+  - provider: gee_official
+    entry_id: projects/malariaatlasproject/assets/accessibility/accessibility_to_cities/2015_v1_0
+    url: https://developers.google.com/earth-engine/datasets/catalog/projects_malariaatlasproject_assets_accessibility_accessibility_to_cities_2015_v1_0
+    relationship: component
+  - provider: gee_official
+    entry_id: projects/malariaatlasproject/assets/accessibility/friction_surface/2015_v1_0
+    url: https://developers.google.com/earth-engine/datasets/catalog/projects_malariaatlasproject_assets_accessibility_friction_surface_2015_v1_0
+    relationship: component
+  access:
+  - provider: literature
+    status: unknown
+    formats: []
+    summary: GEE catalog entries are available through Earth Engine; frozen metadata does not establish
+      an independently downloadable native bulk copy or its format. Distinct named producer product; retain
+      exact source edition and footprint.
+    license_summary: Not inferred from citation records. Verify producer terms for the exact edition before
+      conversion or redistribution.
+    proposed_outputs: []
+    rationale: 'Candidate discovery only: global/near-global scope and associated-paper citation signal
+      justify source-format and licensing review. Citation rank does not establish conversion priority
+      or exact-release use.'
+    evidence_urls:
+    - https://developers.google.com/earth-engine/datasets/catalog/projects_malariaatlasproject_assets_accessibility_accessibility_to_cities_2015_v1_0
+    - https://developers.google.com/earth-engine/datasets/catalog/projects_malariaatlasproject_assets_accessibility_friction_surface_2015_v1_0
+    - https://doi.org/10.1038/nature25181
+  citations:
+  - provider: OpenAlex
+    paper_doi: 10.1038/nature25181
+    work_id: https://openalex.org/W2783065878
+    cited_by_count: 1176
+    observed_on: '2026-10-30'
+    scope: associated_dataset_publication
+  evidence:
+  - path: research/global-candidates-20261031/citations/reviewed.json
+    sha256: 572140255cd3b41a1ec8ecca0139e64d38899cda7fdd55756f399a0dca57a467
+    key: map_accessibility_2015

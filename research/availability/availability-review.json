@@ -1,0 +1,86 @@
+{
+  "merrav2": {
+    "as_of": "2026-10-29",
+    "route": "research_derived_product_provenance",
+    "citation_priority": 1,
+    "scope": "The GEE asset is Climate Engine daily MERRA-2 fields and derived ET; NASA base-reanalysis citations are a family proxy.",
+    "existing_native": "No exact-scope public COG/Zarr mirror established; NASA source NetCDF collections require Earthdata access.",
+    "next_step": "Identify canonical source and processing for the daily Climate Engine bands; separate any new NASA-derived product from an exact mirror.",
+    "evidence_urls": [
+      "https://www.climateengine.org/datasets/climatehydrology/merra2_daily_50000/",
+      "https://registry.opendata.aws/nasa-merra-2/",
+      "https://gmao.gsfc.nasa.gov/gmao-products/merra-2/citing-merra-2-data_merra-2/"
+    ]
+  },
+  "plastic": {
+    "as_of": "2026-10-29",
+    "route": "prepare_global_vector_conversion",
+    "conversion_priority": 1,
+    "scope": "Lebreton et al. 2017 model; Figshare v6, 40,760 river input locations worldwide, 2010 estimates. Not the different Meijer 2021 dataset.",
+    "source_license": "CC-BY-4.0 confirmed by original Figshare API metadata",
+    "source_release": "10.6084/m9.figshare.4725541.v6",
+    "source_size_bytes": 5764810,
+    "outputs": [
+      "GeoParquet",
+      "PMTiles"
+    ],
+    "existing_native": "No exact counterpart found in targeted Source Coop search or local indexed products; absence is not proven.",
+    "next_step": "Prepare GeoParquet and PMTiles from the checksum-verified original archive, preserving estimates and units; validate outputs before publication.",
+    "evidence_urls": [
+      "https://api.figshare.com/v2/articles/4725541",
+      "https://www.nature.com/articles/ncomms15611"
+    ],
+    "local_evidence": "figshare-plastic-metadata.json",
+    "source_inspection": "plastic-source-inspection.json",
+    "source_sha256": "c24a1ccdfbdc44c59954ab9796a522a3271b7c91ca31898526a93bccaeabd4f4"
+  },
+  "terraclim": {
+    "as_of": "2026-10-29",
+    "route": "review_current_global_scenario_release",
+    "scope": "GEE family is legacy CMIP5 +2C/+4C (1985-2015); current producer v1.1 uses CMIP6 and 1950-2025. Base TerraClimate citation counts do not measure exact-scenario usage.",
+    "existing_native": "Planetary Computer Zarr is historical TerraClimate, not these future scenarios. No exact future counterpart established.",
+    "next_step": "Prefer a clearly named v1.1 scenario publication after source verification; keep the legacy and current releases distinct.",
+    "evidence_urls": [
+      "https://www.climatologylab.org/terraclimate.html",
+      "https://www.reacchpna.org/thredds/dodsC/TERRACLIMATE_ALL/data_plus4C/TerraClimate_plus4C_def_2017.nc.html",
+      "https://planetarycomputer.microsoft.com/api/stac/v1/collections/terraclimate"
+    ]
+  },
+  "isric": {
+    "as_of": "2026-10-29",
+    "route": "review_existing_source_coop_product",
+    "scope": "SoilGrids 2.0 mean predictions in native-grid Icechunk/Zarr; quantiles, uncertainty and WRB class probabilities not included.",
+    "source_coop_url": "https://source.coop/chill/soilgrids",
+    "format": "Icechunk/Zarr v3",
+    "evidence_kind": "publisher_metadata",
+    "asset_access_verified": false,
+    "next_step": "Evaluate existing mean-prediction product for registry reuse; inspect missing components before proposing another publication.",
+    "evidence_urls": [
+      "https://source.coop/chill/soilgrids",
+      "https://github.com/colinahill/soilgrids_data"
+    ]
+  },
+  "hydrolakes": {
+    "as_of": "2026-10-29",
+    "route": "review_global_vector_conversion_terms",
+    "scope": "Global v1.0 polygons and points; existing Folia identity covers the original product.",
+    "existing_native": "Official FGDB (763 MB) and shapefile (820 MB) ZIPs; no original native copy established in this review. WaterNet is a derived dataset, not a HydroLAKES mirror.",
+    "license_note": "Producer page states CC BY 4.0; technical document also requests permission for redistribution of the complete database in its original format. Clarify how that wording applies to the intended transformed publication; do not infer a blanket ban on derivatives.",
+    "evidence_urls": [
+      "https://www.hydrosheds.org/products/hydrolakes",
+      "https://data.hydrosheds.org/file/technical-documentation/HydroLAKES_TechDoc_v10.pdf"
+    ]
+  },
+  "grip": {
+    "as_of": "2026-10-29",
+    "route": "review_global_vector_conversion",
+    "scope": "GRIP4 global road network, seven regional partitions; existing Folia identity only covers Africa.",
+    "source_size_description": "Producer lists global FGDB ZIP at 2.2 GB.",
+    "existing_native": "No exact GeoParquet/PMTiles/FlatGeobuf Source Coop copy established.",
+    "license_note": "PBL and Zenodo state CC0; reconcile differing catalog descriptions and preserve producer attribution.",
+    "evidence_urls": [
+      "https://dataportaal.pbl.nl/GRIP4",
+      "https://zenodo.org/records/6420961"
+    ]
+  }
+}

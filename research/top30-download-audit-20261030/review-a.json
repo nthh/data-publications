@@ -1,0 +1,599 @@
+[
+  {
+    "rank": 1,
+    "label": "ERA5",
+    "selected_scope": "ERA5 single-level hourly 2 m temperature, global, calendar year 2024; one variable in hourly family, not a total across the four distinct GEE products.",
+    "native_formats": [
+      "GRIB/GRIB2; NetCDF4 offered experimentally by CDS"
+    ],
+    "download_size": {
+      "display": "36.55 GB raw array payload (calculated uncompressed)",
+      "status": "calculated_uncompressed",
+      "bytes": 36548505600,
+      "scope": "One regular 0.25\u00b0 global single-level variable, 8,784 hourly records for 2024.",
+      "basis": "1440 longitude \u00d7 721 latitude \u00d7 8,784 hours \u00d7 4 bytes/value = 36,548,505,600 bytes. Dense float32 payload only; not transfer/compressed bytes; excludes metadata, packing and coordinates. Native ERA5 grid differs (reduced Gaussian), so exact request output bytes depend on selected request representation."
+    },
+    "alternative_sizes": [
+      {
+        "display": "About 5 PB",
+        "status": "publisher_stated",
+        "scope": "Google Research ARCO-ERA5 cloud-native mirror holdings; not the four GEE entries or this subset.",
+        "basis": "Publisher approximation in README; do not treat as GEE family size."
+      }
+    ],
+    "desired_formats": [
+      "Zarr"
+    ],
+    "rationale": "Multidimensional hourly series suit chunked Zarr. Reference the maintained ARCO Zarr mirror when product/periods match; otherwise publish versioned Zarr preserving grid, units and metadata.",
+    "existing_cloud_native": "Google Cloud ARCO-ERA5 Zarr v3 at gs://gcp-public-data-arco-era5; evaluate coverage/identity before duplicating.",
+    "caveats": [
+      "Input combines daily, hourly, pressure-level and monthly products. This annual single-variable subset is a sizing unit, not an archive total.",
+      "Raw array payload is not compressed download size."
+    ],
+    "sources": [
+      {
+        "url": "https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=download",
+        "supports": "Single-level data request; GRIB and experimental NetCDF4 formats.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://cds.climate.copernicus.eu/datasets/reanalysis-era5-complete?tab=overview",
+        "supports": "ERA5 native coverage, temporal scope, native grid and formats.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://github.com/google-research/arco-era5/blob/main/README.md?plain=1",
+        "supports": "ARCO-ERA5 Zarr v3 mirror and approximate 5 PB publisher statement.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_HOURLY",
+        "supports": "GEE hourly collection identity and representation.",
+        "accessed": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "rank": 2,
+    "label": "NCEP/NCAR Reanalysis",
+    "selected_scope": "NOAA PSL NCEP/NCAR Reanalysis 1 surface air temperature at sigma 0.995, full global daily-averaged calendar-year file 2024 (air.sig995.2024.nc); a complete annual source file corresponding to the GEE surface-temperature family, not a full NCEP archive total.",
+    "native_formats": [
+      "NetCDF4 (NOAA PSL public distribution); original archive GRIB"
+    ],
+    "download_size": {
+      "display": "7,004,162 bytes (NOAA HTTP Content-Length)",
+      "status": "measured",
+      "bytes": 7004162,
+      "scope": "One complete global NetCDF annual air.sig995 daily-average file for 2024.",
+      "basis": "Metadata-only HTTP HEAD to NOAA PSL THREDDS fileServer returned Content-Length: 7,004,162 for the exact annual file URL; THREDDS catalog metadata lists the same exact dataSize. No file body was read."
+    },
+    "alternative_sizes": [
+      {
+        "display": "0.505 MB raw array payload (calculated uncompressed)",
+        "status": "calculated_uncompressed",
+        "scope": "12 monthly SLP grids at 144\u00d773 cells, 4-byte values.",
+        "basis": "144 \u00d7 73 \u00d7 12 \u00d7 4 = 504,576 bytes (0.505 decimal MB). Dense payload only, excludes NetCDF metadata/compression. NOAA documents this 2.5\u00b0 grid; actual files vary with compression."
+      }
+    ],
+    "desired_formats": [
+      "Zarr"
+    ],
+    "rationale": "Gridded reanalysis time series suit Zarr while preserving monthly coordinates, CF metadata, source grid and missing values.",
+    "existing_cloud_native": "Not checked for a maintained cloud-native mirror; NOAA PSL provides public NetCDF access.",
+    "caveats": [
+      "This scope is one full global annual surface-temperature file, not all NCEP variables or the other two GEE entries.",
+      "The prior raw monthly-SLP payload estimate is retained as an alternative and is not an observed download size.",
+      "NOAA PSL stopped NCEP/NCAR production 2026-03-17; 2024 is complete."
+    ],
+    "sources": [
+      {
+        "url": "https://psl.noaa.gov/thredds/fileServer/Datasets/ncep.reanalysis.dailyavgs/surface/air.sig995.2024.nc",
+        "supports": "Metadata-only HEAD Content-Length=7,004,162 bytes for complete annual global NetCDF file; no body downloaded.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://psl.noaa.gov/thredds/catalog/Datasets/ncep.reanalysis.dailyavgs/surface/catalog.html?dataset=Datasets/ncep.reanalysis.dailyavgs/surface/air.sig995.2024.nc",
+        "supports": "TDS catalog records exact dataSize=7004162 for air.sig995.2024.nc.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://psl.noaa.gov/data/gridded/data.ncep.reanalysis.html",
+        "supports": "NetCDF4 distribution, 2.5\u00b0 global 144\u00d773 grid and dataset coverage.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://psl.noaa.gov/data/reanalysis/",
+        "supports": "PSL source collection, access and production-stop notice.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/NCEP_RE_sea_level_pressure",
+        "supports": "Deprecated GEE SLP entry.",
+        "accessed": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "rank": 3,
+    "label": "WorldClim v1",
+    "selected_scope": "WorldClim v1.4 BIO, global land, 30-arc-second (~1 km) release as represented by the GEE WORLDCLIM/V1/BIO catalog; all 19 bioclimatic variables in the worldwide ESRI-grid ZIP package.",
+    "native_formats": [
+      "ZIP-compressed ESRI grid package (selected global release); generic BIL/HDR ZIP distribution; 30-second tiled GeoTIFF is also documented for tiled data"
+    ],
+    "download_size": {
+      "display": "1,862,513,222 bytes (measured Content-Length; 1.86 decimal GB)",
+      "status": "measured",
+      "bytes": 1862513222,
+      "scope": "One complete global 30-arc-second WorldClim v1.4 BIO ESRI ZIP containing all 19 BIO layers.",
+      "basis": "Metadata-only HTTP HEAD to the producer-hosted UC Davis geodata file bio_30s_esri.zip returned Content-Length: 1,862,513,222 bytes. Archive body was not downloaded."
+    },
+    "alternative_sizes": [
+      {
+        "display": "35.46 GB raw array payload (calculated uncompressed at selected 30-second grid)",
+        "status": "calculated_uncompressed",
+        "bytes": 35458560000,
+        "scope": "Dense rectangular 30-arc-second global array for all 19 BIO bands, including ocean no-data cells.",
+        "basis": "43200 longitude \u00d7 21600 latitude \u00d7 19 layers \u00d7 2 bytes/int16 = 35,458,560,000 bytes (35.46 decimal GB). This is an uncompressed payload calculation, not a source ZIP size."
+      },
+      {
+        "display": "88.65 MB raw array payload (calculated uncompressed)",
+        "status": "calculated_uncompressed",
+        "scope": "19 10-minute rasters over rectangular 360\u00b0\u00d7180\u00b0 grid; includes ocean nodata cells; int16 values.",
+        "basis": "2160 rows \u00d7 1080 cols \u00d7 19 layers \u00d7 2 bytes = 88,646,400 bytes. Raw payload only, not ZIP size; excludes headers/compression."
+      }
+    ],
+    "desired_formats": [
+      "COG"
+    ],
+    "rationale": "Static climate rasters suit COG; preserve integer precision, scaling/units, CRS and nodata; retain native grids for provenance.",
+    "existing_cloud_native": "GEE has hosted collections; no public downloadable cloud-native COG/Zarr mirror verified.",
+    "caveats": [
+      "This is the full 30-arc-second BIO ESRI package corresponding to GEE pixel scale, not the earlier 10-minute lower-resolution proxy; that raw payload calculation is retained only as a separate alternative.",
+      "ZIP bytes include the producer package and compression; unpacked grid size is larger. Preserve units/scaling and nodata."
+    ],
+    "sources": [
+      {
+        "url": "https://geodata.ucdavis.edu/climate/worldclim/1_4/grid/cur/bio_30s_esri.zip",
+        "supports": "Producer-hosted full BIO v1.4 30s ESRI package; HEAD returned exact Content-Length 1,862,513,222 bytes.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://geodata.ucdavis.edu/climate/worldclim/1_4/grid/cur/",
+        "supports": "Producer directory index lists bio_30s_esri.zip (1.7G), bio1-9 and bio10-19 30s BIL packages (1.1G each), and lower-resolution alternatives.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://worldclim.org/data/v1.4/formats.html",
+        "supports": "V1 resolutions, 19 BIO layers, zip package layout, BIL/HDR and ESRI grids, cell type and GeoTIFF availability.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/WORLDCLIM_V1_MONTHLY",
+        "supports": "Separate monthly collection in same group.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/WORLDCLIM_V1_BIO",
+        "supports": "GEE WORLDCLIM/V1/BIO is at 927.67 m (~30 arc seconds) and includes 19 bands.",
+        "accessed": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "rank": 4,
+    "label": "Hansen Global Forest Change",
+    "selected_scope": "GFC v1.13 treecover2000 layer, complete global layer across 10\u00d710\u00b0 GeoTIFF granules; one static thematic layer, not all GFC layers or historic releases.",
+    "native_formats": [
+      "GeoTIFF tiles (.tif)"
+    ],
+    "download_size": {
+      "display": "Less than 50 GB compressed, publisher-stated bound",
+      "status": "publisher_stated",
+      "bytes": null,
+      "scope": "Complete global GFC-2025-v1.13 treecover2000 layer, as producer-distributed TIFF granules (producer notes ocean tiles are included for completeness).",
+      "basis": "Producer states treecover2000 compresses fairly well and totals less than 50 GB globally; this is a bound, not a measured exact byte count. Complete layer is offered through a URL list."
+    },
+    "alternative_sizes": [
+      {
+        "display": "Less than 10 GB each",
+        "status": "publisher_stated",
+        "scope": "Separate global gain, lossyear and datamask layers.",
+        "basis": "Producer-stated compressed size bounds."
+      },
+      {
+        "display": "Over 600 GB each",
+        "status": "publisher_stated",
+        "scope": "Separate first and last multispectral layers.",
+        "basis": "Producer-stated global sizes."
+      }
+    ],
+    "desired_formats": [
+      "COG"
+    ],
+    "rationale": "Already tile-based GeoTIFF; index/reference in place where possible. A necessary mirror should preserve granules and integer values, masks and grid as validated COGs.",
+    "existing_cloud_native": "Public producer GeoTIFF granules on GCS plus layer URL-list manifests; also hosted in GEE. Prefer referencing/indexing producer files.",
+    "caveats": [
+      "Input contains 14 GEE annual versions; estimate scopes only newest v1.13 treecover2000.",
+      "Band totals differ greatly; do not sum the separate size statements as one layer."
+    ],
+    "sources": [
+      {
+        "url": "https://storage.googleapis.com/earthenginepartners-hansen/GFC-2025-v1.13/download.html",
+        "supports": "Producer 10\u00d710\u00b0 granules, global URL lists, v1.13 identity and size bounds (<50 GB treecover2000, <10 GB gain/lossyear/datamask each, >600 GB first/last each).",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/UMD_hansen_global_forest_change_2025_v1_13",
+        "supports": "GEE current collection, bands and scale.",
+        "accessed": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "rank": 5,
+    "label": "MODIS vegetation indices (NDVI/EVI)",
+    "selected_scope": "MOD13C1.061 global 0.05-degree Terra vegetation-index collection, all 23 16-day global composite granules whose acquisition dates are in calendar year 2024; full native granules (including science and QA SDS), not an arbitrary tile/variable slice.",
+    "native_formats": [
+      "HDF-EOS MODIS granule files"
+    ],
+    "download_size": {
+      "display": "About 2,191.46 MB (sum of NASA CMR granule size metadata)",
+      "status": "publisher_stated",
+      "bytes": null,
+      "scope": "23 MOD13C1.061 2024-start-date global 0.05-degree composites; the 2023 day-353 overlap is excluded. Sum includes all data/SDS in granules as represented in CMR size metadata.",
+      "basis": "NASA CMR granules.umm_json query for MOD13C1, version 061, 2024 returned 24 records overlapping the year; selecting the 23 producer granule IDs A2024001 through A2024353 and summing ArchiveAndDistributionInformation.Size yields 2,191.460275 reported MB. CMR sizes have decimal precision and MB units, so display the summed publisher unit without converting to an asserted exact byte count."
+    },
+    "alternative_sizes": [
+      {
+        "display": "2.88 MB raw array payload (calculated uncompressed)",
+        "status": "calculated_uncompressed",
+        "scope": "One 1200\u00d71200 tile, one 16-bit NDVI science layer.",
+        "basis": "1200 \u00d7 1200 \u00d7 2 bytes = 2,880,000 bytes. Excludes QA, EVI, ancillary SDS, HDF metadata and compression; actual file size is unknown."
+      }
+    ],
+    "desired_formats": [
+      "Zarr"
+    ],
+    "rationale": "MOD13C1 consists of global 16-day composites, so publish/index a time-chunked Zarr preserving native 0.05-degree grid, all science and QA SDS, scale factors and dates. Retain original HDF-EOS granules as provenance; COG can be a per-date map derivative.",
+    "existing_cloud_native": "GEE image collections verified; no separate open COG/Zarr mirror verified.",
+    "caveats": [
+      "The input groups 16 catalog products across Terra/Aqua, resolutions and versions. This size is one listed product, MOD13C1.061, for one complete annual set of global composite granules.",
+      "CMR records report file sizes in MB rounded to varying decimal precision; total preserves that unit and is not HEAD-verified object Content-Length.",
+      "Prior single-NDVI-tile raw-array calculation is retained as an alternate illustrative payload, not a family download size."
+    ],
+    "sources": [
+      {
+        "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?short_name=MOD13C1&version=061&temporal=2024-01-01T00%3A00%3A00Z%2C2024-12-31T23%3A59%3A59Z&page_size=30",
+        "supports": "NASA CMR public granule manifest and each 2024 MOD13C1.061 granule ArchiveAndDistributionInformation.Size; 23 acquisition-year files sum to about 2,191.46 MB.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://lpdaac.usgs.gov/documents/103/MOD13_User_Guide_V6.pdf",
+        "supports": "MOD13 HDF-EOS format and fixed 10\u00d710\u00b0 granules.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MOD13A2",
+        "supports": "Selected product, band, scale and 16-day cadence.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MOD13C1",
+        "supports": "GEE listed MOD13C1.061 global 0.05-degree 16-day product, NDVI/EVI and QA bands.",
+        "accessed": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "rank": 6,
+    "label": "MERRA-2",
+    "selected_scope": "MERRA-2 M2T1NXSLV (tavg1_2d_slv_Nx), full global hourly single-level source product for calendar year 2024, all variables in each daily NetCDF granule; one of the listed official family products.",
+    "native_formats": [
+      "NetCDF (NASA GES DISC); hosted GEE collections"
+    ],
+    "download_size": {
+      "display": "About 146,400 MB (146.4 decimal GB; publisher average summed for 366 daily files)",
+      "status": "publisher_stated",
+      "bytes": 146400000000,
+      "scope": "All 366 MERRA-2 M2T1NXSLV daily files for leap year 2024, global 0.5\u00b0\u00d70.625\u00b0, all fields, 24 hourly records per file.",
+      "basis": "NASA CMR collection metadata reports Native NetCDF AverageFileSize=400 MB per file. Product is hourly and source files are daily. 366 \u00d7 400 MB = 146,400 MB (decimal conversion shown); this is a publisher-average estimate, not an exact sum of granule Content-Lengths."
+    },
+    "alternative_sizes": [
+      {
+        "display": "1.2 GB per monthly file",
+        "status": "publisher_stated",
+        "scope": "Distinct MERRA-2 instM_3d_asm_Np 42-pressure-level monthly product, not SLV subset.",
+        "basis": "NASA GES DISC size for the separate monthly multidimensional product; shown to demonstrate family products cannot be conflated."
+      },
+      {
+        "display": "7.34 GB raw array payload (calculated uncompressed)",
+        "status": "calculated_uncompressed",
+        "scope": "One 0.5\u00b0\u00d70.625\u00b0 global T2M field, 8,784 hourly records, 4-byte values.",
+        "basis": "576 longitude \u00d7 361 latitude \u00d7 8,784 hours \u00d7 4 = 7,335,728,640 bytes (7.34 decimal GB). Dense payload only; no metadata or compression; not source-file bytes."
+      },
+      {
+        "display": "1.2 GB per monthly file",
+        "status": "publisher_stated",
+        "scope": "A distinct 42-pressure-level MERRA-2 monthly collection, not M2T1NXSLV.",
+        "basis": "GES DISC summary size; retained only to distinguish prior comparison."
+      }
+    ],
+    "desired_formats": [
+      "Zarr"
+    ],
+    "rationale": "Hourly model fields suit chunked Zarr, preserving native grid, time, units, model version and variables.",
+    "existing_cloud_native": "NASA GES DISC has cloud-enabled access and GEE has hosted collections; no public analysis-ready Zarr mirror verified.",
+    "caveats": [
+      "GEE entries represent distinct aerosol, flux, land, radiation and state-variable collections; community member is separate. This selected M2T1NXSLV product-wide annual size is not a sum across the GEE family.",
+      "400 MB is an average source granule size. Total is estimated from 366 daily granules and can vary.",
+      "The earlier single-variable raw array estimate is retained as alternative."
+    ],
+    "sources": [
+      {
+        "url": "https://cmr.earthdata.nasa.gov/search/collections.umm_json?short_name=M2T1NXSLV&page_size=1",
+        "supports": "NASA CMR metadata identifies M2T1NXSLV and Native NetCDF average file size of 400 MB; direct S3 distribution prefix recorded in metadata (protected).",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://disc.gsfc.nasa.gov/datasets?keywords=MERRA2&page=1&sort=timeRes",
+        "supports": "GES DISC hourly product families, 0.5\u00b0\u00d70.625\u00b0 resolution and temporal coverage.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://disc.gsfc.nasa.gov/datasets/M2IMNPASM_5.12.4/summary?keywords=MERRA-2",
+        "supports": "NetCDF format and distinct 1.2 GB/month pressure-level product size.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/NASA_GSFC_MERRA_slv_2",
+        "supports": "GEE SLV product bands, dates and spatial scale.",
+        "accessed": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "rank": 7,
+    "label": "SRTM elevation",
+    "selected_scope": "SRTMGL1 V3, one 1\u00b0\u00d71\u00b0 tile, one elevation band; representative granule, not global collection.",
+    "native_formats": [
+      "HGT distributed as compressed ZIP tile files (NASA CMR); GeoTIFF product variants also exist in USGS/LP DAAC distribution"
+    ],
+    "download_size": {
+      "display": "99,883.2 MB (~99.9 decimal GB), publisher-stated full collection size",
+      "status": "publisher_stated",
+      "bytes": 99883200000,
+      "scope": "Entire SRTMGL1 version 003 global collection (all available 1-arc-second tiles).",
+      "basis": "NASA CMR UMM collection metadata TotalCollectionFileSize=99,883.2 MB. Byte equivalent uses decimal MB (1 MB=1,000,000 bytes); the preserved publisher display is authoritative. Not a current remeasurement."
+    },
+    "alternative_sizes": [
+      {
+        "display": "99,883.2 MB (~99.9 GB)",
+        "status": "publisher_stated",
+        "scope": "Entire SRTMGL1 version 003 collection, according to NASA CMR TotalCollectionFileSize metadata.",
+        "basis": "Public CMR UMM collection metadata field TotalCollectionFileSize=99883.2 MB; publisher-stated collection size, not sum recalculated by this audit."
+      },
+      {
+        "display": "About 7 MB per tile (publisher-stated average)",
+        "status": "publisher_stated",
+        "scope": "One SRTMGL1 V003 1\u00b0\u00d71\u00b0 HGT tile; NASA CMR metadata reports 7 MB average file size for this collection.",
+        "basis": "Public NASA CMR UMM metadata for short_name=SRTMGL1, version=003 reports Format HGT, compressed ZIP download and AverageFileSize=7 MB. This is a rounded mean across files, not the exact size of a particular tile."
+      },
+      {
+        "display": "7 MB average per file",
+        "status": "publisher_stated",
+        "scope": "One SRTMGL1 V003 HGT tile in compressed ZIP distribution.",
+        "basis": "NASA CMR reports AverageFileSize=7 MB. This is a collection average, not a particular tile size."
+      }
+    ],
+    "desired_formats": [
+      "COG"
+    ],
+    "rationale": "Static elevation raster suits COG; preserve 1-arc-second postings, geoid reference, integer elevations and void/water values.",
+    "existing_cloud_native": "GEE asset is hosted; no openly downloadable cloud-native mirror checked.",
+    "caveats": [
+      "CMR collection total is a producer metadata archive size; individual tile sizes vary.",
+      "Keep release and void-fill provenance separate."
+    ],
+    "sources": [
+      {
+        "url": "https://cmr.earthdata.nasa.gov/search/collections.umm_json?short_name=SRTMGL1&version=003&page_size=5",
+        "supports": "NASA CMR collection metadata: format HGT, ZIP compression, 7 MB average file size and 99,883.2 MB total collection size.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://lpdaac.usgs.gov/documents/179/SRTM_User_Guide_V3.pdf",
+        "supports": "1\u00b0\u00d71\u00b0 SRTM tiles and SRTMGL1 3601\u00d73601 grid.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://lpdaac.usgs.gov/documents/13/SRTM_Quick_Guide.pdf",
+        "supports": "Product versions and global data access points.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/USGS_SRTMGL1_003",
+        "supports": "GEE asset identity and band.",
+        "accessed": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "rank": 8,
+    "label": "TRMM TMPA precipitation",
+    "selected_scope": "TRMM TMPA 3B43 V7 global monthly precipitation rate, year 2019 (12 monthly granules); not separate 3-hourly 3B42.",
+    "native_formats": [
+      "HDF4, one file per monthly 3B43 granule; NASA services also offer subset output formats"
+    ],
+    "download_size": {
+      "display": "About 58.8 MB (publisher average 4.9 MB \u00d7 12 monthly files)",
+      "status": "publisher_stated",
+      "bytes": 58800000,
+      "scope": "TRMM_3B43 V7 global monthly files for calendar year 2019, 12 granules, native HDF product.",
+      "basis": "NASA CMR collection metadata reports Native HDF AverageFileSize=4.9 MB. 12 \u00d7 4.9 MB = 58.8 MB (decimal MB), a publisher-average annual estimate; exact per-granule Content-Lengths not queried."
+    },
+    "alternative_sizes": [
+      {
+        "display": "About 11 MB uncompressed per granule",
+        "status": "publisher_stated",
+        "scope": "Different 3-hourly 3B42 product.",
+        "basis": "NASA documentation per-file amount; do not conflate with 3B43."
+      },
+      {
+        "display": "Approximately 60 MB uncompressed (calculated from publisher-stated per-file size)",
+        "status": "calculated_uncompressed",
+        "scope": "12 monthly 3B43 V7 files in 2019.",
+        "basis": "NASA says approximately 5 MB uncompressed per 3B43 file; 12 \u00d7 approx. 5 MB = approx. 60 MB. This is rounded uncompressed size, not measured transfer bytes."
+      }
+    ],
+    "desired_formats": [
+      "Zarr"
+    ],
+    "rationale": "Monthly gridded rainfall series suit Zarr; preserve 0.25\u00b0 cells, units, error fields and time.",
+    "existing_cloud_native": "NASA GES DISC cloud-enabled service; no public Zarr mirror verified.",
+    "caveats": [
+      "Input has both 3B42 and 3B43 with different timesteps and sizes. Scope is 3B43 only.",
+      "5 MB is producer's approximate uncompressed size; exact transfer bytes may differ."
+    ],
+    "sources": [
+      {
+        "url": "https://cmr.earthdata.nasa.gov/search/collections.umm_json?short_name=TRMM_3B43&version=7&page_size=1",
+        "supports": "NASA CMR identifies TRMM 3B43 V7 and reports Native HDF average file size of 4.9 MB per granule.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://gpm.nasa.gov/sites/default/files/document_files/3B42_3B43_doc_V7.pdf",
+        "supports": "NASA HDF archive; separate files per timestep; approximate uncompressed 11 MB 3B42 and 5 MB 3B43 sizes.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/TRMM_3B43V7",
+        "supports": "GEE 3B43 V7 monthly product and cadence.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/TRMM_3B42",
+        "supports": "Distinct 3-hourly member.",
+        "accessed": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "rank": 9,
+    "label": "CHIRPS precipitation",
+    "selected_scope": "CHIRPS v2 daily, global 50\u00b0S\u201350\u00b0N at 0.05\u00b0, 2024; one daily field, not pentad collection or full archive.",
+    "native_formats": [
+      "GeoTIFF, BIL, NetCDF"
+    ],
+    "download_size": {
+      "display": "1,359,386,943 bytes (NOAA ERDDAP file-list metadata for annual NetCDF mirror)",
+      "status": "measured",
+      "bytes": 1359386943,
+      "scope": "One full global CHIRPS v2 daily 0.05-degree annual NetCDF file, chirps-v2.0.2024.days_p05.nc, covering 2024.",
+      "basis": "NOAA CoastWatch ERDDAP file listing for its CHIRPS20GlobalDailyP05_Lon0360 mirror reports exact file length 1,359,386,943 bytes for this annual file. This is the mirror copy size, not a direct CHC Content-Length."
+    },
+    "alternative_sizes": [
+      {
+        "display": "21.02 GB raw array payload (calculated uncompressed)",
+        "status": "calculated_uncompressed",
+        "scope": "365 daily grids at 7200\u00d72000 cells, 32-bit values.",
+        "basis": "7200 \u00d7 2000 \u00d7 365 \u00d7 4 bytes = 21,024,000,000 bytes. Raw dense payload only; excludes compression/metadata and is not transfer size."
+      }
+    ],
+    "desired_formats": [
+      "Zarr"
+    ],
+    "rationale": "Daily precipitation series suit chunked Zarr; preserve 0.05\u00b0 grid, daily total units, nodata, version and provenance.",
+    "existing_cloud_native": "CHC provides public bulk-download archives; no maintained public Zarr verified. GEE collection is separately hosted.",
+    "caveats": [
+      "CHIRPS v2 production is scheduled to end after December 2026; this scope follows v2 GEE catalog entries.",
+      "Direct CHC metadata access attempts failed (HTTP 429 for the annual NetCDF HEAD and web directory fetch 404); the exact size is from NOAA CoastWatch ERDDAP mirror listing. Treat source-copy byte identity as unverified.",
+      "The prior 21.02 GB dense raw-array figure is retained as an alternative and is not an observed compressed download size."
+    ],
+    "sources": [
+      {
+        "url": "https://coastwatch.pfeg.noaa.gov/erddap/pt/files/chirps20GlobalDailyP05_Lon0360/",
+        "supports": "NOAA CoastWatch ERDDAP file-list metadata gives chirps-v2.0.2024.days_p05.nc length 1,359,386,943 bytes; mirrored CHIRPS file, not direct producer listing.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://chc.ucsb.edu/data/chirps/",
+        "supports": "Producer v2 coverage/status and archive links.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://wiki.chc.ucsb.edu/index.php?title=CHIRPS2_FAQ",
+        "supports": "Producer grid domain/dimensions 7200\u00d72000, 0.05\u00b0 resolution, daily cadence and TIF/BIL/NetCDF formats.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+        "supports": "GEE daily product identity and cadence.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_PENTAD",
+        "supports": "Separate pentad product.",
+        "accessed": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "rank": 10,
+    "label": "GLDAS",
+    "selected_scope": "GLDAS-2.1 Noah 0.25\u00b0 3-hourly, full global-land leap year 2020, all eight 3-hour steps/day and all source fields; distinct from CLSM daily and legacy Noah v2.0 entries.",
+    "native_formats": [
+      "NetCDF"
+    ],
+    "download_size": {
+      "display": "About 55,632 MB (55.63 decimal GB; 2,928 files \u00d7 19 MB/file)",
+      "status": "publisher_stated",
+      "bytes": 55632000000,
+      "scope": "All 366 days \u00d7 eight 3-hourly global-land files/day for GLDAS Noah V2.1 0.25\u00b0 (all source fields).",
+      "basis": "NASA GES DISC reports 19 MB per file and 3-hour cadence. Leap-year 2020 has 366 \u00d7 8 = 2,928 files; 2,928 \u00d7 19 MB = 55,632 MB (decimal conversion shown). This is a publisher average per-file estimate, not exact Content-Length for all granules."
+    },
+    "alternative_sizes": [
+      {
+        "display": "About 152 MB publisher-stated (8 files \u00d7 19 MB/file)",
+        "status": "publisher_stated",
+        "scope": "Eight GLDAS Noah v2.1 3-hourly files for one day, all included fields.",
+        "basis": "NASA GES DISC states 19 MB per file; eight 3-hour files/day \u00d7 19 MB = about 152 MB. Rounded publisher file size summed across daily granules, not measured exact transfer bytes."
+      }
+    ],
+    "desired_formats": [
+      "Zarr"
+    ],
+    "rationale": "Land-model fields form multidimensional time series; Zarr suits time/variable chunking while preserving model version, grid, timestep bounds, units and all fields.",
+    "existing_cloud_native": "NASA GES DISC publicly distributes NetCDF/cloud-enabled data; no maintained Zarr mirror verified.",
+    "caveats": [
+      "Input also includes separate CLSM daily and legacy Noah datasets; this estimate covers only GLDAS Noah V2.1 3-hourly.",
+      "19 MB/file is rounded; yearly total is an estimate. Earlier one-day estimate is retained in alternatives."
+    ],
+    "sources": [
+      {
+        "url": "https://cmr.earthdata.nasa.gov/search/collections.umm_json?short_name=GLDAS_NOAH025_3H&version=2.1&page_size=1",
+        "supports": "NASA CMR Native NetCDF average granule size of 19 MB for GLDAS_NOAH025_3H V2.1.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://disc.gsfc.nasa.gov/datasets/GLDAS_NOAH025_3H_2.1/summary?keywords=GLDAS",
+        "supports": "NASA NetCDF, 0.25\u00b0/3-hourly coverage, 36 fields and 19 MB per file.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/NASA_GLDAS_V021_NOAH_G025_T3H",
+        "supports": "GEE Noah 2.1 3-hour collection identity, dates and bands.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/NASA_GLDAS_V022_CLSM_G025_DA1D",
+        "supports": "Separate daily CLSM product.",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/NASA_GLDAS_V20_NOAH_G025_T3H",
+        "supports": "Separate legacy Noah product.",
+        "accessed": "2026-10-30"
+      }
+    ]
+  }
+]

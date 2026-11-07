@@ -1,0 +1,3111 @@
+{
+  "url": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily/items?limit=31&datetime=2020-08-01T00:00:00Z/2020-08-31T23:59:59Z",
+  "method": "GET",
+  "retrieved_at": "2026-10-30T23:17:52.110111+00:00",
+  "status": 200,
+  "final_url": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily/items?limit=31&datetime=2020-08-01T00:00:00Z/2020-08-31T23:59:59Z",
+  "headers": {
+    "Content-Type": "application/geo+json",
+    "Content-Length": "44693"
+  },
+  "response_bytes": 44693,
+  "response_sha256": "ee2b0ceac7f5cd4548bcf5f789c9c65cac34278625e3694d49bc3b76f0676960",
+  "body": {
+    "type": "FeatureCollection",
+    "links": [
+      {
+        "rel": "collection",
+        "type": "application/json",
+        "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+      },
+      {
+        "rel": "parent",
+        "type": "application/json",
+        "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+      },
+      {
+        "rel": "root",
+        "type": "application/json",
+        "href": "https://api.earthobservation.vam.wfp.org/stac/"
+      },
+      {
+        "rel": "self",
+        "type": "application/geo+json",
+        "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily/items"
+      }
+    ],
+    "features": [
+      {
+        "id": "chirps_rnl_daily-20200831",
+        "bbox": [
+          -180,
+          -60,
+          180,
+          60
+        ],
+        "type": "Feature",
+        "links": [
+          {
+            "rel": "collection",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "parent",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "root",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/"
+          },
+          {
+            "rel": "self",
+            "type": "application/geo+json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily/items/chirps_rnl_daily-20200831"
+          }
+        ],
+        "assets": {
+          "band": {
+            "href": "s3://eu-central-1.opendata.source.coop/wfp/chirps-rnl-daily/v3.0/2020/08/31/chirps-v3.0.rnl.2020.08.31.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+              "data"
+            ],
+            "raster:bands": [
+              {
+                "unit": "1",
+                "nodata": -9999,
+                "data_type": "float32"
+              }
+            ]
+          }
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -180,
+                60
+              ],
+              [
+                -180,
+                -60
+              ],
+              [
+                180,
+                -60
+              ],
+              [
+                180,
+                60
+              ],
+              [
+                -180,
+                60
+              ]
+            ]
+          ]
+        },
+        "collection": "chirps_rnl_daily",
+        "properties": {
+          "datetime": "2020-08-31T00:00:00Z",
+          "proj:code": "EPSG:4326",
+          "proj:shape": [
+            2400,
+            7200
+          ],
+          "end_datetime": "2020-08-31T23:59:59.999999Z",
+          "proj:transform": [
+            0.05,
+            0.0,
+            -180.0,
+            0.0,
+            -0.05,
+            60.0
+          ],
+          "start_datetime": "2020-08-31T00:00:00Z"
+        },
+        "stac_version": "1.1.0",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+          "https://stac-extensions.github.io/raster/v1.1.0/schema.json"
+        ]
+      },
+      {
+        "id": "chirps_rnl_daily-20200830",
+        "bbox": [
+          -180,
+          -60,
+          180,
+          60
+        ],
+        "type": "Feature",
+        "links": [
+          {
+            "rel": "collection",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "parent",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "root",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/"
+          },
+          {
+            "rel": "self",
+            "type": "application/geo+json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily/items/chirps_rnl_daily-20200830"
+          }
+        ],
+        "assets": {
+          "band": {
+            "href": "s3://eu-central-1.opendata.source.coop/wfp/chirps-rnl-daily/v3.0/2020/08/30/chirps-v3.0.rnl.2020.08.30.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+              "data"
+            ],
+            "raster:bands": [
+              {
+                "unit": "1",
+                "nodata": -9999,
+                "data_type": "float32"
+              }
+            ]
+          }
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -180,
+                60
+              ],
+              [
+                -180,
+                -60
+              ],
+              [
+                180,
+                -60
+              ],
+              [
+                180,
+                60
+              ],
+              [
+                -180,
+                60
+              ]
+            ]
+          ]
+        },
+        "collection": "chirps_rnl_daily",
+        "properties": {
+          "datetime": "2020-08-30T00:00:00Z",
+          "proj:code": "EPSG:4326",
+          "proj:shape": [
+            2400,
+            7200
+          ],
+          "end_datetime": "2020-08-30T23:59:59.999999Z",
+          "proj:transform": [
+            0.05,
+            0.0,
+            -180.0,
+            0.0,
+            -0.05,
+            60.0
+          ],
+          "start_datetime": "2020-08-30T00:00:00Z"
+        },
+        "stac_version": "1.1.0",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+          "https://stac-extensions.github.io/raster/v1.1.0/schema.json"
+        ]
+      },
+      {
+        "id": "chirps_rnl_daily-20200829",
+        "bbox": [
+          -180,
+          -60,
+          180,
+          60
+        ],
+        "type": "Feature",
+        "links": [
+          {
+            "rel": "collection",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "parent",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "root",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/"
+          },
+          {
+            "rel": "self",
+            "type": "application/geo+json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily/items/chirps_rnl_daily-20200829"
+          }
+        ],
+        "assets": {
+          "band": {
+            "href": "s3://eu-central-1.opendata.source.coop/wfp/chirps-rnl-daily/v3.0/2020/08/29/chirps-v3.0.rnl.2020.08.29.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+              "data"
+            ],
+            "raster:bands": [
+              {
+                "unit": "1",
+                "nodata": -9999,
+                "data_type": "float32"
+              }
+            ]
+          }
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -180,
+                60
+              ],
+              [
+                -180,
+                -60
+              ],
+              [
+                180,
+                -60
+              ],
+              [
+                180,
+                60
+              ],
+              [
+                -180,
+                60
+              ]
+            ]
+          ]
+        },
+        "collection": "chirps_rnl_daily",
+        "properties": {
+          "datetime": "2020-08-29T00:00:00Z",
+          "proj:code": "EPSG:4326",
+          "proj:shape": [
+            2400,
+            7200
+          ],
+          "end_datetime": "2020-08-29T23:59:59.999999Z",
+          "proj:transform": [
+            0.05,
+            0.0,
+            -180.0,
+            0.0,
+            -0.05,
+            60.0
+          ],
+          "start_datetime": "2020-08-29T00:00:00Z"
+        },
+        "stac_version": "1.1.0",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+          "https://stac-extensions.github.io/raster/v1.1.0/schema.json"
+        ]
+      },
+      {
+        "id": "chirps_rnl_daily-20200828",
+        "bbox": [
+          -180,
+          -60,
+          180,
+          60
+        ],
+        "type": "Feature",
+        "links": [
+          {
+            "rel": "collection",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "parent",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "root",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/"
+          },
+          {
+            "rel": "self",
+            "type": "application/geo+json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily/items/chirps_rnl_daily-20200828"
+          }
+        ],
+        "assets": {
+          "band": {
+            "href": "s3://eu-central-1.opendata.source.coop/wfp/chirps-rnl-daily/v3.0/2020/08/28/chirps-v3.0.rnl.2020.08.28.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+              "data"
+            ],
+            "raster:bands": [
+              {
+                "unit": "1",
+                "nodata": -9999,
+                "data_type": "float32"
+              }
+            ]
+          }
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -180,
+                60
+              ],
+              [
+                -180,
+                -60
+              ],
+              [
+                180,
+                -60
+              ],
+              [
+                180,
+                60
+              ],
+              [
+                -180,
+                60
+              ]
+            ]
+          ]
+        },
+        "collection": "chirps_rnl_daily",
+        "properties": {
+          "datetime": "2020-08-28T00:00:00Z",
+          "proj:code": "EPSG:4326",
+          "proj:shape": [
+            2400,
+            7200
+          ],
+          "end_datetime": "2020-08-28T23:59:59.999999Z",
+          "proj:transform": [
+            0.05,
+            0.0,
+            -180.0,
+            0.0,
+            -0.05,
+            60.0
+          ],
+          "start_datetime": "2020-08-28T00:00:00Z"
+        },
+        "stac_version": "1.1.0",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+          "https://stac-extensions.github.io/raster/v1.1.0/schema.json"
+        ]
+      },
+      {
+        "id": "chirps_rnl_daily-20200827",
+        "bbox": [
+          -180,
+          -60,
+          180,
+          60
+        ],
+        "type": "Feature",
+        "links": [
+          {
+            "rel": "collection",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "parent",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "root",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/"
+          },
+          {
+            "rel": "self",
+            "type": "application/geo+json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily/items/chirps_rnl_daily-20200827"
+          }
+        ],
+        "assets": {
+          "band": {
+            "href": "s3://eu-central-1.opendata.source.coop/wfp/chirps-rnl-daily/v3.0/2020/08/27/chirps-v3.0.rnl.2020.08.27.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+              "data"
+            ],
+            "raster:bands": [
+              {
+                "unit": "1",
+                "nodata": -9999,
+                "data_type": "float32"
+              }
+            ]
+          }
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -180,
+                60
+              ],
+              [
+                -180,
+                -60
+              ],
+              [
+                180,
+                -60
+              ],
+              [
+                180,
+                60
+              ],
+              [
+                -180,
+                60
+              ]
+            ]
+          ]
+        },
+        "collection": "chirps_rnl_daily",
+        "properties": {
+          "datetime": "2020-08-27T00:00:00Z",
+          "proj:code": "EPSG:4326",
+          "proj:shape": [
+            2400,
+            7200
+          ],
+          "end_datetime": "2020-08-27T23:59:59.999999Z",
+          "proj:transform": [
+            0.05,
+            0.0,
+            -180.0,
+            0.0,
+            -0.05,
+            60.0
+          ],
+          "start_datetime": "2020-08-27T00:00:00Z"
+        },
+        "stac_version": "1.1.0",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+          "https://stac-extensions.github.io/raster/v1.1.0/schema.json"
+        ]
+      },
+      {
+        "id": "chirps_rnl_daily-20200826",
+        "bbox": [
+          -180,
+          -60,
+          180,
+          60
+        ],
+        "type": "Feature",
+        "links": [
+          {
+            "rel": "collection",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "parent",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "root",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/"
+          },
+          {
+            "rel": "self",
+            "type": "application/geo+json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily/items/chirps_rnl_daily-20200826"
+          }
+        ],
+        "assets": {
+          "band": {
+            "href": "s3://eu-central-1.opendata.source.coop/wfp/chirps-rnl-daily/v3.0/2020/08/26/chirps-v3.0.rnl.2020.08.26.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+              "data"
+            ],
+            "raster:bands": [
+              {
+                "unit": "1",
+                "nodata": -9999,
+                "data_type": "float32"
+              }
+            ]
+          }
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -180,
+                60
+              ],
+              [
+                -180,
+                -60
+              ],
+              [
+                180,
+                -60
+              ],
+              [
+                180,
+                60
+              ],
+              [
+                -180,
+                60
+              ]
+            ]
+          ]
+        },
+        "collection": "chirps_rnl_daily",
+        "properties": {
+          "datetime": "2020-08-26T00:00:00Z",
+          "proj:code": "EPSG:4326",
+          "proj:shape": [
+            2400,
+            7200
+          ],
+          "end_datetime": "2020-08-26T23:59:59.999999Z",
+          "proj:transform": [
+            0.05,
+            0.0,
+            -180.0,
+            0.0,
+            -0.05,
+            60.0
+          ],
+          "start_datetime": "2020-08-26T00:00:00Z"
+        },
+        "stac_version": "1.1.0",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+          "https://stac-extensions.github.io/raster/v1.1.0/schema.json"
+        ]
+      },
+      {
+        "id": "chirps_rnl_daily-20200825",
+        "bbox": [
+          -180,
+          -60,
+          180,
+          60
+        ],
+        "type": "Feature",
+        "links": [
+          {
+            "rel": "collection",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "parent",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "root",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/"
+          },
+          {
+            "rel": "self",
+            "type": "application/geo+json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily/items/chirps_rnl_daily-20200825"
+          }
+        ],
+        "assets": {
+          "band": {
+            "href": "s3://eu-central-1.opendata.source.coop/wfp/chirps-rnl-daily/v3.0/2020/08/25/chirps-v3.0.rnl.2020.08.25.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+              "data"
+            ],
+            "raster:bands": [
+              {
+                "unit": "1",
+                "nodata": -9999,
+                "data_type": "float32"
+              }
+            ]
+          }
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -180,
+                60
+              ],
+              [
+                -180,
+                -60
+              ],
+              [
+                180,
+                -60
+              ],
+              [
+                180,
+                60
+              ],
+              [
+                -180,
+                60
+              ]
+            ]
+          ]
+        },
+        "collection": "chirps_rnl_daily",
+        "properties": {
+          "datetime": "2020-08-25T00:00:00Z",
+          "proj:code": "EPSG:4326",
+          "proj:shape": [
+            2400,
+            7200
+          ],
+          "end_datetime": "2020-08-25T23:59:59.999999Z",
+          "proj:transform": [
+            0.05,
+            0.0,
+            -180.0,
+            0.0,
+            -0.05,
+            60.0
+          ],
+          "start_datetime": "2020-08-25T00:00:00Z"
+        },
+        "stac_version": "1.1.0",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+          "https://stac-extensions.github.io/raster/v1.1.0/schema.json"
+        ]
+      },
+      {
+        "id": "chirps_rnl_daily-20200824",
+        "bbox": [
+          -180,
+          -60,
+          180,
+          60
+        ],
+        "type": "Feature",
+        "links": [
+          {
+            "rel": "collection",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "parent",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "root",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/"
+          },
+          {
+            "rel": "self",
+            "type": "application/geo+json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily/items/chirps_rnl_daily-20200824"
+          }
+        ],
+        "assets": {
+          "band": {
+            "href": "s3://eu-central-1.opendata.source.coop/wfp/chirps-rnl-daily/v3.0/2020/08/24/chirps-v3.0.rnl.2020.08.24.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+              "data"
+            ],
+            "raster:bands": [
+              {
+                "unit": "1",
+                "nodata": -9999,
+                "data_type": "float32"
+              }
+            ]
+          }
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -180,
+                60
+              ],
+              [
+                -180,
+                -60
+              ],
+              [
+                180,
+                -60
+              ],
+              [
+                180,
+                60
+              ],
+              [
+                -180,
+                60
+              ]
+            ]
+          ]
+        },
+        "collection": "chirps_rnl_daily",
+        "properties": {
+          "datetime": "2020-08-24T00:00:00Z",
+          "proj:code": "EPSG:4326",
+          "proj:shape": [
+            2400,
+            7200
+          ],
+          "end_datetime": "2020-08-24T23:59:59.999999Z",
+          "proj:transform": [
+            0.05,
+            0.0,
+            -180.0,
+            0.0,
+            -0.05,
+            60.0
+          ],
+          "start_datetime": "2020-08-24T00:00:00Z"
+        },
+        "stac_version": "1.1.0",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+          "https://stac-extensions.github.io/raster/v1.1.0/schema.json"
+        ]
+      },
+      {
+        "id": "chirps_rnl_daily-20200823",
+        "bbox": [
+          -180,
+          -60,
+          180,
+          60
+        ],
+        "type": "Feature",
+        "links": [
+          {
+            "rel": "collection",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "parent",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "root",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/"
+          },
+          {
+            "rel": "self",
+            "type": "application/geo+json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily/items/chirps_rnl_daily-20200823"
+          }
+        ],
+        "assets": {
+          "band": {
+            "href": "s3://eu-central-1.opendata.source.coop/wfp/chirps-rnl-daily/v3.0/2020/08/23/chirps-v3.0.rnl.2020.08.23.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+              "data"
+            ],
+            "raster:bands": [
+              {
+                "unit": "1",
+                "nodata": -9999,
+                "data_type": "float32"
+              }
+            ]
+          }
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -180,
+                60
+              ],
+              [
+                -180,
+                -60
+              ],
+              [
+                180,
+                -60
+              ],
+              [
+                180,
+                60
+              ],
+              [
+                -180,
+                60
+              ]
+            ]
+          ]
+        },
+        "collection": "chirps_rnl_daily",
+        "properties": {
+          "datetime": "2020-08-23T00:00:00Z",
+          "proj:code": "EPSG:4326",
+          "proj:shape": [
+            2400,
+            7200
+          ],
+          "end_datetime": "2020-08-23T23:59:59.999999Z",
+          "proj:transform": [
+            0.05,
+            0.0,
+            -180.0,
+            0.0,
+            -0.05,
+            60.0
+          ],
+          "start_datetime": "2020-08-23T00:00:00Z"
+        },
+        "stac_version": "1.1.0",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+          "https://stac-extensions.github.io/raster/v1.1.0/schema.json"
+        ]
+      },
+      {
+        "id": "chirps_rnl_daily-20200822",
+        "bbox": [
+          -180,
+          -60,
+          180,
+          60
+        ],
+        "type": "Feature",
+        "links": [
+          {
+            "rel": "collection",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "parent",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "root",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/"
+          },
+          {
+            "rel": "self",
+            "type": "application/geo+json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily/items/chirps_rnl_daily-20200822"
+          }
+        ],
+        "assets": {
+          "band": {
+            "href": "s3://eu-central-1.opendata.source.coop/wfp/chirps-rnl-daily/v3.0/2020/08/22/chirps-v3.0.rnl.2020.08.22.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+              "data"
+            ],
+            "raster:bands": [
+              {
+                "unit": "1",
+                "nodata": -9999,
+                "data_type": "float32"
+              }
+            ]
+          }
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -180,
+                60
+              ],
+              [
+                -180,
+                -60
+              ],
+              [
+                180,
+                -60
+              ],
+              [
+                180,
+                60
+              ],
+              [
+                -180,
+                60
+              ]
+            ]
+          ]
+        },
+        "collection": "chirps_rnl_daily",
+        "properties": {
+          "datetime": "2020-08-22T00:00:00Z",
+          "proj:code": "EPSG:4326",
+          "proj:shape": [
+            2400,
+            7200
+          ],
+          "end_datetime": "2020-08-22T23:59:59.999999Z",
+          "proj:transform": [
+            0.05,
+            0.0,
+            -180.0,
+            0.0,
+            -0.05,
+            60.0
+          ],
+          "start_datetime": "2020-08-22T00:00:00Z"
+        },
+        "stac_version": "1.1.0",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+          "https://stac-extensions.github.io/raster/v1.1.0/schema.json"
+        ]
+      },
+      {
+        "id": "chirps_rnl_daily-20200821",
+        "bbox": [
+          -180,
+          -60,
+          180,
+          60
+        ],
+        "type": "Feature",
+        "links": [
+          {
+            "rel": "collection",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "parent",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "root",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/"
+          },
+          {
+            "rel": "self",
+            "type": "application/geo+json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily/items/chirps_rnl_daily-20200821"
+          }
+        ],
+        "assets": {
+          "band": {
+            "href": "s3://eu-central-1.opendata.source.coop/wfp/chirps-rnl-daily/v3.0/2020/08/21/chirps-v3.0.rnl.2020.08.21.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+              "data"
+            ],
+            "raster:bands": [
+              {
+                "unit": "1",
+                "nodata": -9999,
+                "data_type": "float32"
+              }
+            ]
+          }
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -180,
+                60
+              ],
+              [
+                -180,
+                -60
+              ],
+              [
+                180,
+                -60
+              ],
+              [
+                180,
+                60
+              ],
+              [
+                -180,
+                60
+              ]
+            ]
+          ]
+        },
+        "collection": "chirps_rnl_daily",
+        "properties": {
+          "datetime": "2020-08-21T00:00:00Z",
+          "proj:code": "EPSG:4326",
+          "proj:shape": [
+            2400,
+            7200
+          ],
+          "end_datetime": "2020-08-21T23:59:59.999999Z",
+          "proj:transform": [
+            0.05,
+            0.0,
+            -180.0,
+            0.0,
+            -0.05,
+            60.0
+          ],
+          "start_datetime": "2020-08-21T00:00:00Z"
+        },
+        "stac_version": "1.1.0",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+          "https://stac-extensions.github.io/raster/v1.1.0/schema.json"
+        ]
+      },
+      {
+        "id": "chirps_rnl_daily-20200820",
+        "bbox": [
+          -180,
+          -60,
+          180,
+          60
+        ],
+        "type": "Feature",
+        "links": [
+          {
+            "rel": "collection",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "parent",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "root",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/"
+          },
+          {
+            "rel": "self",
+            "type": "application/geo+json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily/items/chirps_rnl_daily-20200820"
+          }
+        ],
+        "assets": {
+          "band": {
+            "href": "s3://eu-central-1.opendata.source.coop/wfp/chirps-rnl-daily/v3.0/2020/08/20/chirps-v3.0.rnl.2020.08.20.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+              "data"
+            ],
+            "raster:bands": [
+              {
+                "unit": "1",
+                "nodata": -9999,
+                "data_type": "float32"
+              }
+            ]
+          }
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -180,
+                60
+              ],
+              [
+                -180,
+                -60
+              ],
+              [
+                180,
+                -60
+              ],
+              [
+                180,
+                60
+              ],
+              [
+                -180,
+                60
+              ]
+            ]
+          ]
+        },
+        "collection": "chirps_rnl_daily",
+        "properties": {
+          "datetime": "2020-08-20T00:00:00Z",
+          "proj:code": "EPSG:4326",
+          "proj:shape": [
+            2400,
+            7200
+          ],
+          "end_datetime": "2020-08-20T23:59:59.999999Z",
+          "proj:transform": [
+            0.05,
+            0.0,
+            -180.0,
+            0.0,
+            -0.05,
+            60.0
+          ],
+          "start_datetime": "2020-08-20T00:00:00Z"
+        },
+        "stac_version": "1.1.0",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+          "https://stac-extensions.github.io/raster/v1.1.0/schema.json"
+        ]
+      },
+      {
+        "id": "chirps_rnl_daily-20200819",
+        "bbox": [
+          -180,
+          -60,
+          180,
+          60
+        ],
+        "type": "Feature",
+        "links": [
+          {
+            "rel": "collection",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "parent",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "root",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/"
+          },
+          {
+            "rel": "self",
+            "type": "application/geo+json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily/items/chirps_rnl_daily-20200819"
+          }
+        ],
+        "assets": {
+          "band": {
+            "href": "s3://eu-central-1.opendata.source.coop/wfp/chirps-rnl-daily/v3.0/2020/08/19/chirps-v3.0.rnl.2020.08.19.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+              "data"
+            ],
+            "raster:bands": [
+              {
+                "unit": "1",
+                "nodata": -9999,
+                "data_type": "float32"
+              }
+            ]
+          }
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -180,
+                60
+              ],
+              [
+                -180,
+                -60
+              ],
+              [
+                180,
+                -60
+              ],
+              [
+                180,
+                60
+              ],
+              [
+                -180,
+                60
+              ]
+            ]
+          ]
+        },
+        "collection": "chirps_rnl_daily",
+        "properties": {
+          "datetime": "2020-08-19T00:00:00Z",
+          "proj:code": "EPSG:4326",
+          "proj:shape": [
+            2400,
+            7200
+          ],
+          "end_datetime": "2020-08-19T23:59:59.999999Z",
+          "proj:transform": [
+            0.05,
+            0.0,
+            -180.0,
+            0.0,
+            -0.05,
+            60.0
+          ],
+          "start_datetime": "2020-08-19T00:00:00Z"
+        },
+        "stac_version": "1.1.0",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+          "https://stac-extensions.github.io/raster/v1.1.0/schema.json"
+        ]
+      },
+      {
+        "id": "chirps_rnl_daily-20200818",
+        "bbox": [
+          -180,
+          -60,
+          180,
+          60
+        ],
+        "type": "Feature",
+        "links": [
+          {
+            "rel": "collection",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "parent",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "root",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/"
+          },
+          {
+            "rel": "self",
+            "type": "application/geo+json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily/items/chirps_rnl_daily-20200818"
+          }
+        ],
+        "assets": {
+          "band": {
+            "href": "s3://eu-central-1.opendata.source.coop/wfp/chirps-rnl-daily/v3.0/2020/08/18/chirps-v3.0.rnl.2020.08.18.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+              "data"
+            ],
+            "raster:bands": [
+              {
+                "unit": "1",
+                "nodata": -9999,
+                "data_type": "float32"
+              }
+            ]
+          }
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -180,
+                60
+              ],
+              [
+                -180,
+                -60
+              ],
+              [
+                180,
+                -60
+              ],
+              [
+                180,
+                60
+              ],
+              [
+                -180,
+                60
+              ]
+            ]
+          ]
+        },
+        "collection": "chirps_rnl_daily",
+        "properties": {
+          "datetime": "2020-08-18T00:00:00Z",
+          "proj:code": "EPSG:4326",
+          "proj:shape": [
+            2400,
+            7200
+          ],
+          "end_datetime": "2020-08-18T23:59:59.999999Z",
+          "proj:transform": [
+            0.05,
+            0.0,
+            -180.0,
+            0.0,
+            -0.05,
+            60.0
+          ],
+          "start_datetime": "2020-08-18T00:00:00Z"
+        },
+        "stac_version": "1.1.0",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+          "https://stac-extensions.github.io/raster/v1.1.0/schema.json"
+        ]
+      },
+      {
+        "id": "chirps_rnl_daily-20200817",
+        "bbox": [
+          -180,
+          -60,
+          180,
+          60
+        ],
+        "type": "Feature",
+        "links": [
+          {
+            "rel": "collection",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "parent",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "root",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/"
+          },
+          {
+            "rel": "self",
+            "type": "application/geo+json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily/items/chirps_rnl_daily-20200817"
+          }
+        ],
+        "assets": {
+          "band": {
+            "href": "s3://eu-central-1.opendata.source.coop/wfp/chirps-rnl-daily/v3.0/2020/08/17/chirps-v3.0.rnl.2020.08.17.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+              "data"
+            ],
+            "raster:bands": [
+              {
+                "unit": "1",
+                "nodata": -9999,
+                "data_type": "float32"
+              }
+            ]
+          }
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -180,
+                60
+              ],
+              [
+                -180,
+                -60
+              ],
+              [
+                180,
+                -60
+              ],
+              [
+                180,
+                60
+              ],
+              [
+                -180,
+                60
+              ]
+            ]
+          ]
+        },
+        "collection": "chirps_rnl_daily",
+        "properties": {
+          "datetime": "2020-08-17T00:00:00Z",
+          "proj:code": "EPSG:4326",
+          "proj:shape": [
+            2400,
+            7200
+          ],
+          "end_datetime": "2020-08-17T23:59:59.999999Z",
+          "proj:transform": [
+            0.05,
+            0.0,
+            -180.0,
+            0.0,
+            -0.05,
+            60.0
+          ],
+          "start_datetime": "2020-08-17T00:00:00Z"
+        },
+        "stac_version": "1.1.0",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+          "https://stac-extensions.github.io/raster/v1.1.0/schema.json"
+        ]
+      },
+      {
+        "id": "chirps_rnl_daily-20200816",
+        "bbox": [
+          -180,
+          -60,
+          180,
+          60
+        ],
+        "type": "Feature",
+        "links": [
+          {
+            "rel": "collection",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "parent",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "root",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/"
+          },
+          {
+            "rel": "self",
+            "type": "application/geo+json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily/items/chirps_rnl_daily-20200816"
+          }
+        ],
+        "assets": {
+          "band": {
+            "href": "s3://eu-central-1.opendata.source.coop/wfp/chirps-rnl-daily/v3.0/2020/08/16/chirps-v3.0.rnl.2020.08.16.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+              "data"
+            ],
+            "raster:bands": [
+              {
+                "unit": "1",
+                "nodata": -9999,
+                "data_type": "float32"
+              }
+            ]
+          }
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -180,
+                60
+              ],
+              [
+                -180,
+                -60
+              ],
+              [
+                180,
+                -60
+              ],
+              [
+                180,
+                60
+              ],
+              [
+                -180,
+                60
+              ]
+            ]
+          ]
+        },
+        "collection": "chirps_rnl_daily",
+        "properties": {
+          "datetime": "2020-08-16T00:00:00Z",
+          "proj:code": "EPSG:4326",
+          "proj:shape": [
+            2400,
+            7200
+          ],
+          "end_datetime": "2020-08-16T23:59:59.999999Z",
+          "proj:transform": [
+            0.05,
+            0.0,
+            -180.0,
+            0.0,
+            -0.05,
+            60.0
+          ],
+          "start_datetime": "2020-08-16T00:00:00Z"
+        },
+        "stac_version": "1.1.0",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+          "https://stac-extensions.github.io/raster/v1.1.0/schema.json"
+        ]
+      },
+      {
+        "id": "chirps_rnl_daily-20200815",
+        "bbox": [
+          -180,
+          -60,
+          180,
+          60
+        ],
+        "type": "Feature",
+        "links": [
+          {
+            "rel": "collection",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "parent",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "root",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/"
+          },
+          {
+            "rel": "self",
+            "type": "application/geo+json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily/items/chirps_rnl_daily-20200815"
+          }
+        ],
+        "assets": {
+          "band": {
+            "href": "s3://eu-central-1.opendata.source.coop/wfp/chirps-rnl-daily/v3.0/2020/08/15/chirps-v3.0.rnl.2020.08.15.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+              "data"
+            ],
+            "raster:bands": [
+              {
+                "unit": "1",
+                "nodata": -9999,
+                "data_type": "float32"
+              }
+            ]
+          }
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -180,
+                60
+              ],
+              [
+                -180,
+                -60
+              ],
+              [
+                180,
+                -60
+              ],
+              [
+                180,
+                60
+              ],
+              [
+                -180,
+                60
+              ]
+            ]
+          ]
+        },
+        "collection": "chirps_rnl_daily",
+        "properties": {
+          "datetime": "2020-08-15T00:00:00Z",
+          "proj:code": "EPSG:4326",
+          "proj:shape": [
+            2400,
+            7200
+          ],
+          "end_datetime": "2020-08-15T23:59:59.999999Z",
+          "proj:transform": [
+            0.05,
+            0.0,
+            -180.0,
+            0.0,
+            -0.05,
+            60.0
+          ],
+          "start_datetime": "2020-08-15T00:00:00Z"
+        },
+        "stac_version": "1.1.0",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+          "https://stac-extensions.github.io/raster/v1.1.0/schema.json"
+        ]
+      },
+      {
+        "id": "chirps_rnl_daily-20200814",
+        "bbox": [
+          -180,
+          -60,
+          180,
+          60
+        ],
+        "type": "Feature",
+        "links": [
+          {
+            "rel": "collection",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "parent",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "root",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/"
+          },
+          {
+            "rel": "self",
+            "type": "application/geo+json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily/items/chirps_rnl_daily-20200814"
+          }
+        ],
+        "assets": {
+          "band": {
+            "href": "s3://eu-central-1.opendata.source.coop/wfp/chirps-rnl-daily/v3.0/2020/08/14/chirps-v3.0.rnl.2020.08.14.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+              "data"
+            ],
+            "raster:bands": [
+              {
+                "unit": "1",
+                "nodata": -9999,
+                "data_type": "float32"
+              }
+            ]
+          }
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -180,
+                60
+              ],
+              [
+                -180,
+                -60
+              ],
+              [
+                180,
+                -60
+              ],
+              [
+                180,
+                60
+              ],
+              [
+                -180,
+                60
+              ]
+            ]
+          ]
+        },
+        "collection": "chirps_rnl_daily",
+        "properties": {
+          "datetime": "2020-08-14T00:00:00Z",
+          "proj:code": "EPSG:4326",
+          "proj:shape": [
+            2400,
+            7200
+          ],
+          "end_datetime": "2020-08-14T23:59:59.999999Z",
+          "proj:transform": [
+            0.05,
+            0.0,
+            -180.0,
+            0.0,
+            -0.05,
+            60.0
+          ],
+          "start_datetime": "2020-08-14T00:00:00Z"
+        },
+        "stac_version": "1.1.0",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+          "https://stac-extensions.github.io/raster/v1.1.0/schema.json"
+        ]
+      },
+      {
+        "id": "chirps_rnl_daily-20200813",
+        "bbox": [
+          -180,
+          -60,
+          180,
+          60
+        ],
+        "type": "Feature",
+        "links": [
+          {
+            "rel": "collection",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "parent",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "root",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/"
+          },
+          {
+            "rel": "self",
+            "type": "application/geo+json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily/items/chirps_rnl_daily-20200813"
+          }
+        ],
+        "assets": {
+          "band": {
+            "href": "s3://eu-central-1.opendata.source.coop/wfp/chirps-rnl-daily/v3.0/2020/08/13/chirps-v3.0.rnl.2020.08.13.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+              "data"
+            ],
+            "raster:bands": [
+              {
+                "unit": "1",
+                "nodata": -9999,
+                "data_type": "float32"
+              }
+            ]
+          }
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -180,
+                60
+              ],
+              [
+                -180,
+                -60
+              ],
+              [
+                180,
+                -60
+              ],
+              [
+                180,
+                60
+              ],
+              [
+                -180,
+                60
+              ]
+            ]
+          ]
+        },
+        "collection": "chirps_rnl_daily",
+        "properties": {
+          "datetime": "2020-08-13T00:00:00Z",
+          "proj:code": "EPSG:4326",
+          "proj:shape": [
+            2400,
+            7200
+          ],
+          "end_datetime": "2020-08-13T23:59:59.999999Z",
+          "proj:transform": [
+            0.05,
+            0.0,
+            -180.0,
+            0.0,
+            -0.05,
+            60.0
+          ],
+          "start_datetime": "2020-08-13T00:00:00Z"
+        },
+        "stac_version": "1.1.0",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+          "https://stac-extensions.github.io/raster/v1.1.0/schema.json"
+        ]
+      },
+      {
+        "id": "chirps_rnl_daily-20200812",
+        "bbox": [
+          -180,
+          -60,
+          180,
+          60
+        ],
+        "type": "Feature",
+        "links": [
+          {
+            "rel": "collection",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "parent",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "root",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/"
+          },
+          {
+            "rel": "self",
+            "type": "application/geo+json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily/items/chirps_rnl_daily-20200812"
+          }
+        ],
+        "assets": {
+          "band": {
+            "href": "s3://eu-central-1.opendata.source.coop/wfp/chirps-rnl-daily/v3.0/2020/08/12/chirps-v3.0.rnl.2020.08.12.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+              "data"
+            ],
+            "raster:bands": [
+              {
+                "unit": "1",
+                "nodata": -9999,
+                "data_type": "float32"
+              }
+            ]
+          }
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -180,
+                60
+              ],
+              [
+                -180,
+                -60
+              ],
+              [
+                180,
+                -60
+              ],
+              [
+                180,
+                60
+              ],
+              [
+                -180,
+                60
+              ]
+            ]
+          ]
+        },
+        "collection": "chirps_rnl_daily",
+        "properties": {
+          "datetime": "2020-08-12T00:00:00Z",
+          "proj:code": "EPSG:4326",
+          "proj:shape": [
+            2400,
+            7200
+          ],
+          "end_datetime": "2020-08-12T23:59:59.999999Z",
+          "proj:transform": [
+            0.05,
+            0.0,
+            -180.0,
+            0.0,
+            -0.05,
+            60.0
+          ],
+          "start_datetime": "2020-08-12T00:00:00Z"
+        },
+        "stac_version": "1.1.0",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+          "https://stac-extensions.github.io/raster/v1.1.0/schema.json"
+        ]
+      },
+      {
+        "id": "chirps_rnl_daily-20200811",
+        "bbox": [
+          -180,
+          -60,
+          180,
+          60
+        ],
+        "type": "Feature",
+        "links": [
+          {
+            "rel": "collection",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "parent",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "root",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/"
+          },
+          {
+            "rel": "self",
+            "type": "application/geo+json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily/items/chirps_rnl_daily-20200811"
+          }
+        ],
+        "assets": {
+          "band": {
+            "href": "s3://eu-central-1.opendata.source.coop/wfp/chirps-rnl-daily/v3.0/2020/08/11/chirps-v3.0.rnl.2020.08.11.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+              "data"
+            ],
+            "raster:bands": [
+              {
+                "unit": "1",
+                "nodata": -9999,
+                "data_type": "float32"
+              }
+            ]
+          }
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -180,
+                60
+              ],
+              [
+                -180,
+                -60
+              ],
+              [
+                180,
+                -60
+              ],
+              [
+                180,
+                60
+              ],
+              [
+                -180,
+                60
+              ]
+            ]
+          ]
+        },
+        "collection": "chirps_rnl_daily",
+        "properties": {
+          "datetime": "2020-08-11T00:00:00Z",
+          "proj:code": "EPSG:4326",
+          "proj:shape": [
+            2400,
+            7200
+          ],
+          "end_datetime": "2020-08-11T23:59:59.999999Z",
+          "proj:transform": [
+            0.05,
+            0.0,
+            -180.0,
+            0.0,
+            -0.05,
+            60.0
+          ],
+          "start_datetime": "2020-08-11T00:00:00Z"
+        },
+        "stac_version": "1.1.0",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+          "https://stac-extensions.github.io/raster/v1.1.0/schema.json"
+        ]
+      },
+      {
+        "id": "chirps_rnl_daily-20200810",
+        "bbox": [
+          -180,
+          -60,
+          180,
+          60
+        ],
+        "type": "Feature",
+        "links": [
+          {
+            "rel": "collection",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "parent",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "root",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/"
+          },
+          {
+            "rel": "self",
+            "type": "application/geo+json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily/items/chirps_rnl_daily-20200810"
+          }
+        ],
+        "assets": {
+          "band": {
+            "href": "s3://eu-central-1.opendata.source.coop/wfp/chirps-rnl-daily/v3.0/2020/08/10/chirps-v3.0.rnl.2020.08.10.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+              "data"
+            ],
+            "raster:bands": [
+              {
+                "unit": "1",
+                "nodata": -9999,
+                "data_type": "float32"
+              }
+            ]
+          }
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -180,
+                60
+              ],
+              [
+                -180,
+                -60
+              ],
+              [
+                180,
+                -60
+              ],
+              [
+                180,
+                60
+              ],
+              [
+                -180,
+                60
+              ]
+            ]
+          ]
+        },
+        "collection": "chirps_rnl_daily",
+        "properties": {
+          "datetime": "2020-08-10T00:00:00Z",
+          "proj:code": "EPSG:4326",
+          "proj:shape": [
+            2400,
+            7200
+          ],
+          "end_datetime": "2020-08-10T23:59:59.999999Z",
+          "proj:transform": [
+            0.05,
+            0.0,
+            -180.0,
+            0.0,
+            -0.05,
+            60.0
+          ],
+          "start_datetime": "2020-08-10T00:00:00Z"
+        },
+        "stac_version": "1.1.0",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+          "https://stac-extensions.github.io/raster/v1.1.0/schema.json"
+        ]
+      },
+      {
+        "id": "chirps_rnl_daily-20200809",
+        "bbox": [
+          -180,
+          -60,
+          180,
+          60
+        ],
+        "type": "Feature",
+        "links": [
+          {
+            "rel": "collection",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "parent",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "root",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/"
+          },
+          {
+            "rel": "self",
+            "type": "application/geo+json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily/items/chirps_rnl_daily-20200809"
+          }
+        ],
+        "assets": {
+          "band": {
+            "href": "s3://eu-central-1.opendata.source.coop/wfp/chirps-rnl-daily/v3.0/2020/08/09/chirps-v3.0.rnl.2020.08.09.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+              "data"
+            ],
+            "raster:bands": [
+              {
+                "unit": "1",
+                "nodata": -9999,
+                "data_type": "float32"
+              }
+            ]
+          }
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -180,
+                60
+              ],
+              [
+                -180,
+                -60
+              ],
+              [
+                180,
+                -60
+              ],
+              [
+                180,
+                60
+              ],
+              [
+                -180,
+                60
+              ]
+            ]
+          ]
+        },
+        "collection": "chirps_rnl_daily",
+        "properties": {
+          "datetime": "2020-08-09T00:00:00Z",
+          "proj:code": "EPSG:4326",
+          "proj:shape": [
+            2400,
+            7200
+          ],
+          "end_datetime": "2020-08-09T23:59:59.999999Z",
+          "proj:transform": [
+            0.05,
+            0.0,
+            -180.0,
+            0.0,
+            -0.05,
+            60.0
+          ],
+          "start_datetime": "2020-08-09T00:00:00Z"
+        },
+        "stac_version": "1.1.0",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+          "https://stac-extensions.github.io/raster/v1.1.0/schema.json"
+        ]
+      },
+      {
+        "id": "chirps_rnl_daily-20200808",
+        "bbox": [
+          -180,
+          -60,
+          180,
+          60
+        ],
+        "type": "Feature",
+        "links": [
+          {
+            "rel": "collection",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "parent",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "root",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/"
+          },
+          {
+            "rel": "self",
+            "type": "application/geo+json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily/items/chirps_rnl_daily-20200808"
+          }
+        ],
+        "assets": {
+          "band": {
+            "href": "s3://eu-central-1.opendata.source.coop/wfp/chirps-rnl-daily/v3.0/2020/08/08/chirps-v3.0.rnl.2020.08.08.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+              "data"
+            ],
+            "raster:bands": [
+              {
+                "unit": "1",
+                "nodata": -9999,
+                "data_type": "float32"
+              }
+            ]
+          }
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -180,
+                60
+              ],
+              [
+                -180,
+                -60
+              ],
+              [
+                180,
+                -60
+              ],
+              [
+                180,
+                60
+              ],
+              [
+                -180,
+                60
+              ]
+            ]
+          ]
+        },
+        "collection": "chirps_rnl_daily",
+        "properties": {
+          "datetime": "2020-08-08T00:00:00Z",
+          "proj:code": "EPSG:4326",
+          "proj:shape": [
+            2400,
+            7200
+          ],
+          "end_datetime": "2020-08-08T23:59:59.999999Z",
+          "proj:transform": [
+            0.05,
+            0.0,
+            -180.0,
+            0.0,
+            -0.05,
+            60.0
+          ],
+          "start_datetime": "2020-08-08T00:00:00Z"
+        },
+        "stac_version": "1.1.0",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+          "https://stac-extensions.github.io/raster/v1.1.0/schema.json"
+        ]
+      },
+      {
+        "id": "chirps_rnl_daily-20200807",
+        "bbox": [
+          -180,
+          -60,
+          180,
+          60
+        ],
+        "type": "Feature",
+        "links": [
+          {
+            "rel": "collection",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "parent",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "root",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/"
+          },
+          {
+            "rel": "self",
+            "type": "application/geo+json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily/items/chirps_rnl_daily-20200807"
+          }
+        ],
+        "assets": {
+          "band": {
+            "href": "s3://eu-central-1.opendata.source.coop/wfp/chirps-rnl-daily/v3.0/2020/08/07/chirps-v3.0.rnl.2020.08.07.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+              "data"
+            ],
+            "raster:bands": [
+              {
+                "unit": "1",
+                "nodata": -9999,
+                "data_type": "float32"
+              }
+            ]
+          }
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -180,
+                60
+              ],
+              [
+                -180,
+                -60
+              ],
+              [
+                180,
+                -60
+              ],
+              [
+                180,
+                60
+              ],
+              [
+                -180,
+                60
+              ]
+            ]
+          ]
+        },
+        "collection": "chirps_rnl_daily",
+        "properties": {
+          "datetime": "2020-08-07T00:00:00Z",
+          "proj:code": "EPSG:4326",
+          "proj:shape": [
+            2400,
+            7200
+          ],
+          "end_datetime": "2020-08-07T23:59:59.999999Z",
+          "proj:transform": [
+            0.05,
+            0.0,
+            -180.0,
+            0.0,
+            -0.05,
+            60.0
+          ],
+          "start_datetime": "2020-08-07T00:00:00Z"
+        },
+        "stac_version": "1.1.0",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+          "https://stac-extensions.github.io/raster/v1.1.0/schema.json"
+        ]
+      },
+      {
+        "id": "chirps_rnl_daily-20200806",
+        "bbox": [
+          -180,
+          -60,
+          180,
+          60
+        ],
+        "type": "Feature",
+        "links": [
+          {
+            "rel": "collection",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "parent",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "root",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/"
+          },
+          {
+            "rel": "self",
+            "type": "application/geo+json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily/items/chirps_rnl_daily-20200806"
+          }
+        ],
+        "assets": {
+          "band": {
+            "href": "s3://eu-central-1.opendata.source.coop/wfp/chirps-rnl-daily/v3.0/2020/08/06/chirps-v3.0.rnl.2020.08.06.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+              "data"
+            ],
+            "raster:bands": [
+              {
+                "unit": "1",
+                "nodata": -9999,
+                "data_type": "float32"
+              }
+            ]
+          }
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -180,
+                60
+              ],
+              [
+                -180,
+                -60
+              ],
+              [
+                180,
+                -60
+              ],
+              [
+                180,
+                60
+              ],
+              [
+                -180,
+                60
+              ]
+            ]
+          ]
+        },
+        "collection": "chirps_rnl_daily",
+        "properties": {
+          "datetime": "2020-08-06T00:00:00Z",
+          "proj:code": "EPSG:4326",
+          "proj:shape": [
+            2400,
+            7200
+          ],
+          "end_datetime": "2020-08-06T23:59:59.999999Z",
+          "proj:transform": [
+            0.05,
+            0.0,
+            -180.0,
+            0.0,
+            -0.05,
+            60.0
+          ],
+          "start_datetime": "2020-08-06T00:00:00Z"
+        },
+        "stac_version": "1.1.0",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+          "https://stac-extensions.github.io/raster/v1.1.0/schema.json"
+        ]
+      },
+      {
+        "id": "chirps_rnl_daily-20200805",
+        "bbox": [
+          -180,
+          -60,
+          180,
+          60
+        ],
+        "type": "Feature",
+        "links": [
+          {
+            "rel": "collection",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "parent",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "root",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/"
+          },
+          {
+            "rel": "self",
+            "type": "application/geo+json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily/items/chirps_rnl_daily-20200805"
+          }
+        ],
+        "assets": {
+          "band": {
+            "href": "s3://eu-central-1.opendata.source.coop/wfp/chirps-rnl-daily/v3.0/2020/08/05/chirps-v3.0.rnl.2020.08.05.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+              "data"
+            ],
+            "raster:bands": [
+              {
+                "unit": "1",
+                "nodata": -9999,
+                "data_type": "float32"
+              }
+            ]
+          }
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -180,
+                60
+              ],
+              [
+                -180,
+                -60
+              ],
+              [
+                180,
+                -60
+              ],
+              [
+                180,
+                60
+              ],
+              [
+                -180,
+                60
+              ]
+            ]
+          ]
+        },
+        "collection": "chirps_rnl_daily",
+        "properties": {
+          "datetime": "2020-08-05T00:00:00Z",
+          "proj:code": "EPSG:4326",
+          "proj:shape": [
+            2400,
+            7200
+          ],
+          "end_datetime": "2020-08-05T23:59:59.999999Z",
+          "proj:transform": [
+            0.05,
+            0.0,
+            -180.0,
+            0.0,
+            -0.05,
+            60.0
+          ],
+          "start_datetime": "2020-08-05T00:00:00Z"
+        },
+        "stac_version": "1.1.0",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+          "https://stac-extensions.github.io/raster/v1.1.0/schema.json"
+        ]
+      },
+      {
+        "id": "chirps_rnl_daily-20200804",
+        "bbox": [
+          -180,
+          -60,
+          180,
+          60
+        ],
+        "type": "Feature",
+        "links": [
+          {
+            "rel": "collection",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "parent",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "root",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/"
+          },
+          {
+            "rel": "self",
+            "type": "application/geo+json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily/items/chirps_rnl_daily-20200804"
+          }
+        ],
+        "assets": {
+          "band": {
+            "href": "s3://eu-central-1.opendata.source.coop/wfp/chirps-rnl-daily/v3.0/2020/08/04/chirps-v3.0.rnl.2020.08.04.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+              "data"
+            ],
+            "raster:bands": [
+              {
+                "unit": "1",
+                "nodata": -9999,
+                "data_type": "float32"
+              }
+            ]
+          }
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -180,
+                60
+              ],
+              [
+                -180,
+                -60
+              ],
+              [
+                180,
+                -60
+              ],
+              [
+                180,
+                60
+              ],
+              [
+                -180,
+                60
+              ]
+            ]
+          ]
+        },
+        "collection": "chirps_rnl_daily",
+        "properties": {
+          "datetime": "2020-08-04T00:00:00Z",
+          "proj:code": "EPSG:4326",
+          "proj:shape": [
+            2400,
+            7200
+          ],
+          "end_datetime": "2020-08-04T23:59:59.999999Z",
+          "proj:transform": [
+            0.05,
+            0.0,
+            -180.0,
+            0.0,
+            -0.05,
+            60.0
+          ],
+          "start_datetime": "2020-08-04T00:00:00Z"
+        },
+        "stac_version": "1.1.0",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+          "https://stac-extensions.github.io/raster/v1.1.0/schema.json"
+        ]
+      },
+      {
+        "id": "chirps_rnl_daily-20200803",
+        "bbox": [
+          -180,
+          -60,
+          180,
+          60
+        ],
+        "type": "Feature",
+        "links": [
+          {
+            "rel": "collection",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "parent",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "root",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/"
+          },
+          {
+            "rel": "self",
+            "type": "application/geo+json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily/items/chirps_rnl_daily-20200803"
+          }
+        ],
+        "assets": {
+          "band": {
+            "href": "s3://eu-central-1.opendata.source.coop/wfp/chirps-rnl-daily/v3.0/2020/08/03/chirps-v3.0.rnl.2020.08.03.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+              "data"
+            ],
+            "raster:bands": [
+              {
+                "unit": "1",
+                "nodata": -9999,
+                "data_type": "float32"
+              }
+            ]
+          }
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -180,
+                60
+              ],
+              [
+                -180,
+                -60
+              ],
+              [
+                180,
+                -60
+              ],
+              [
+                180,
+                60
+              ],
+              [
+                -180,
+                60
+              ]
+            ]
+          ]
+        },
+        "collection": "chirps_rnl_daily",
+        "properties": {
+          "datetime": "2020-08-03T00:00:00Z",
+          "proj:code": "EPSG:4326",
+          "proj:shape": [
+            2400,
+            7200
+          ],
+          "end_datetime": "2020-08-03T23:59:59.999999Z",
+          "proj:transform": [
+            0.05,
+            0.0,
+            -180.0,
+            0.0,
+            -0.05,
+            60.0
+          ],
+          "start_datetime": "2020-08-03T00:00:00Z"
+        },
+        "stac_version": "1.1.0",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+          "https://stac-extensions.github.io/raster/v1.1.0/schema.json"
+        ]
+      },
+      {
+        "id": "chirps_rnl_daily-20200802",
+        "bbox": [
+          -180,
+          -60,
+          180,
+          60
+        ],
+        "type": "Feature",
+        "links": [
+          {
+            "rel": "collection",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "parent",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "root",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/"
+          },
+          {
+            "rel": "self",
+            "type": "application/geo+json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily/items/chirps_rnl_daily-20200802"
+          }
+        ],
+        "assets": {
+          "band": {
+            "href": "s3://eu-central-1.opendata.source.coop/wfp/chirps-rnl-daily/v3.0/2020/08/02/chirps-v3.0.rnl.2020.08.02.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+              "data"
+            ],
+            "raster:bands": [
+              {
+                "unit": "1",
+                "nodata": -9999,
+                "data_type": "float32"
+              }
+            ]
+          }
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -180,
+                60
+              ],
+              [
+                -180,
+                -60
+              ],
+              [
+                180,
+                -60
+              ],
+              [
+                180,
+                60
+              ],
+              [
+                -180,
+                60
+              ]
+            ]
+          ]
+        },
+        "collection": "chirps_rnl_daily",
+        "properties": {
+          "datetime": "2020-08-02T00:00:00Z",
+          "proj:code": "EPSG:4326",
+          "proj:shape": [
+            2400,
+            7200
+          ],
+          "end_datetime": "2020-08-02T23:59:59.999999Z",
+          "proj:transform": [
+            0.05,
+            0.0,
+            -180.0,
+            0.0,
+            -0.05,
+            60.0
+          ],
+          "start_datetime": "2020-08-02T00:00:00Z"
+        },
+        "stac_version": "1.1.0",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+          "https://stac-extensions.github.io/raster/v1.1.0/schema.json"
+        ]
+      },
+      {
+        "id": "chirps_rnl_daily-20200801",
+        "bbox": [
+          -180,
+          -60,
+          180,
+          60
+        ],
+        "type": "Feature",
+        "links": [
+          {
+            "rel": "collection",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "parent",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+          },
+          {
+            "rel": "root",
+            "type": "application/json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/"
+          },
+          {
+            "rel": "self",
+            "type": "application/geo+json",
+            "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily/items/chirps_rnl_daily-20200801"
+          }
+        ],
+        "assets": {
+          "band": {
+            "href": "s3://eu-central-1.opendata.source.coop/wfp/chirps-rnl-daily/v3.0/2020/08/01/chirps-v3.0.rnl.2020.08.01.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+              "data"
+            ],
+            "raster:bands": [
+              {
+                "unit": "1",
+                "nodata": -9999,
+                "data_type": "float32"
+              }
+            ]
+          }
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -180,
+                60
+              ],
+              [
+                -180,
+                -60
+              ],
+              [
+                180,
+                -60
+              ],
+              [
+                180,
+                60
+              ],
+              [
+                -180,
+                60
+              ]
+            ]
+          ]
+        },
+        "collection": "chirps_rnl_daily",
+        "properties": {
+          "datetime": "2020-08-01T00:00:00Z",
+          "proj:code": "EPSG:4326",
+          "proj:shape": [
+            2400,
+            7200
+          ],
+          "end_datetime": "2020-08-01T23:59:59.999999Z",
+          "proj:transform": [
+            0.05,
+            0.0,
+            -180.0,
+            0.0,
+            -0.05,
+            60.0
+          ],
+          "start_datetime": "2020-08-01T00:00:00Z"
+        },
+        "stac_version": "1.1.0",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+          "https://stac-extensions.github.io/raster/v1.1.0/schema.json"
+        ]
+      }
+    ],
+    "numberMatched": 31,
+    "numberReturned": 31
+  }
+}

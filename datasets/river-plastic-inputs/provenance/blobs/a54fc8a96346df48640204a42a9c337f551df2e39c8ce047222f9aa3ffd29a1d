@@ -1,0 +1,82 @@
+{
+  "id": "river-plastic-publication-benchmarks-v1",
+  "scope": "Consistency of the pinned Figshare v6 model output with published summaries; not independent validation of environmental accuracy.",
+  "source_doi": "10.6084/m9.figshare.4725541.v6",
+  "paper_doi": "10.1038/ncomms15611",
+  "reference_urls": [
+    "https://www.nature.com/articles/ncomms15611",
+    "https://doi.org/10.6084/m9.figshare.4725541.v6"
+  ],
+  "known_before_registration": "Annual totals were already present in the conversion manifest. Their acceptance intervals below follow the precision of the published abstract; this is not a blind prediction exercise.",
+  "dataset_scope": "All 40,760 source points, with null estimates excluded from sums and counted separately. No geographical holdout or model fitting.",
+  "checks": [
+    {
+      "id": "global_lower_annual",
+      "field": "i_low",
+      "unit": "tonnes/year",
+      "operation": "sum",
+      "minimum_inclusive": "1145000",
+      "maximum_exclusive": "1155000",
+      "basis": "Published 1.15 million tonnes/year rounded to two decimal places in millions."
+    },
+    {
+      "id": "global_upper_annual",
+      "field": "i_high",
+      "unit": "tonnes/year",
+      "operation": "sum",
+      "minimum_inclusive": "2405000",
+      "maximum_exclusive": "2415000",
+      "basis": "Published 2.41 million tonnes/year rounded to two decimal places in millions."
+    },
+    {
+      "id": "may_october_midpoint_share",
+      "operation": "seasonal_share",
+      "prefix": "i_mid_",
+      "months": [
+        "may",
+        "jun",
+        "jul",
+        "aug",
+        "sep",
+        "oct"
+      ],
+      "denominator": "sum of all twelve monthly midpoint fields",
+      "minimum_exclusive": "0.74",
+      "maximum_inclusive": "1",
+      "basis": "Published abstract: over 74% of emissions between May and October. Use midpoint monthly values for both numerator and denominator."
+    },
+    {
+      "id": "nonnegative_estimates",
+      "operation": "nonnegative",
+      "basis": "Physical-domain consistency of non-null annual and monthly emissions, runoff, catchment waste and area; failures must be reported without altering source values."
+    },
+    {
+      "id": "ordered_uncertainty",
+      "operation": "ordered_uncertainty",
+      "basis": "For every non-null annual and monthly triplet, lower <= midpoint <= upper. Null triplets must stay entirely null."
+    }
+  ],
+  "pending": [
+    {
+      "check": "GEE parity",
+      "status": "not_run",
+      "asset": "projects/sat-io/open-datasets/open-ocean/river_plastic_emissions",
+      "reason": "Local-only preparation. Live GEE execution requires explicit per-task authorization under docs/AGENT_PLAYBOOK.md."
+    },
+    {
+      "check": "Top 20 named rivers and regional shares",
+      "status": "not_run",
+      "reason": "The source points lack river names and watershed identifiers. A verified spatial/catchment crosswalk is needed; do not equate the top 20 point rows with the top 20 named rivers."
+    },
+    {
+      "check": "Independent observational validation",
+      "status": "not_run",
+      "reason": "Requires harmonized independent measurements, collection dates, units, sampling protocols and a declared holdout excluding calibration observations."
+    },
+    {
+      "check": "Source Cooperative delivery",
+      "status": "not_run",
+      "reason": "Local-only release; remote publication is deferred."
+    }
+  ]
+}

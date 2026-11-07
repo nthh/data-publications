@@ -1,0 +1,72 @@
+#!/usr/bin/env python3
+"""Package an already verified local release and bind its verification receipts."""
+import argparse
+import datetime as dt
+import hashlib
+import json
+from pathlib import Path
+import zipfile
+
+
+def digest(payload):
+    return hashlib.sha256(payload).hexdigest()
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("directory", type=Path)
+    parser.add_argument("--validation", type=Path, required=True)
+    parser.add_argument("--stac-validation", type=Path, required=True)
+    parser.add_argument("--reproducibility", type=Path, required=True)
+    parser.add_argument("--output", type=Path, required=True)
+    args = parser.parse_args()
+    if args.output.exists():
+        raise SystemExit("Archive already exists; choose a new output")
+    manifest_bytes = (args.directory / "manifest.json").read_bytes()
+    manifest = json.loads(manifest_bytes)
+    validation = json.loads(args.validation.read_text())
+    stac = json.loads(args.stac_validation.read_text())
+    reproduction = json.loads(args.reproducibility.read_text())
+    if not (validation["status"] == "passed" and validation["http"]["status"] == "passed"
+            and validation["source_rows"] == manifest["records"] and stac["exit_code"] == 0
+            and reproduction["status"] == "passed" and reproduction["manifest_equal"]
+            and reproduction["conversion_git_commit"] == manifest["conversion_git_commit"]):
+        raise SystemExit("Required verification evidence is incomplete or inconsistent")
+    entries = {"manifest.json": manifest_bytes}
+    for name, expected in manifest["assets"].items():
+        path = (args.directory / name).resolve()
+        if not path.is_relative_to(args.directory.resolve()):
+            raise SystemExit("Manifest path escapes the bundle")
+        payload = path.read_bytes()
+        if len(payload) != expected["size_bytes"] or digest(payload) != expected["sha256"] or digest(payload) != reproduction["hashes"][name]:
+            raise SystemExit(f"Asset changed after verification: {name}")
+        entries[name] = payload
+    for name, path in (("validation.json", args.validation), ("stac-validation.json", args.stac_validation), ("reproducibility.json", args.reproducibility)):
+        entries["verification/" + name] = path.read_bytes()
+    binding = {"status": "locally_verified_not_published", "conversion_git_commit": manifest["conversion_git_commit"],
+               "manifest_sha256": digest(manifest_bytes), "packaging_script_sha256": digest(Path(__file__).read_bytes()),
+               "verification_sha256": {name: digest(data) for name, data in entries.items() if name.startswith("verification/")},
+               "limits": "No Source Cooperative upload or registry submission. HTTP validation used a loopback server; remote hosting remains untested."}
+    entries["verification/receipt.json"] = (json.dumps(binding, indent=2) + "\n").encode()
+    timestamp = dt.datetime.fromisoformat(manifest["source"]["metadata_timestamp"].replace("Z", "+00:00")).timetuple()[:6]
+    with zipfile.ZipFile(args.output, "x", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
+        for name, data in sorted(entries.items()):
+            entry = zipfile.ZipInfo(name, timestamp)
+            entry.compress_type = zipfile.ZIP_DEFLATED
+            entry.create_system = 3
+            entry.external_attr = 0o100644 << 16
+            archive.writestr(entry, data, compresslevel=9)
+    with zipfile.ZipFile(args.output) as archive:
+        if archive.testzip() is not None:
+            raise SystemExit("Archive CRC validation failed")
+        for name, data in entries.items():
+            if digest(archive.read(name)) != digest(data):
+                raise SystemExit(f"Archive content mismatch: {name}")
+    receipt = {**binding, "archive": {"path": str(args.output), "size_bytes": args.output.stat().st_size,
+                                     "sha256": digest(args.output.read_bytes()), "members_verified": len(entries)}}
+    args.output.with_suffix(".receipt.json").write_text(json.dumps(receipt, indent=2) + "\n")
+    print(json.dumps(receipt["archive"], indent=2))
+
+
+if __name__ == "__main__":
+    main()

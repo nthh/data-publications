@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-11-02T23:25:18.164099+00:00",
+  "status": "completed_local_raw_source_diagnostic",
+  "branch": "investigate/grwl-raw-audit-20261102",
+  "worktree": "/Users/nathan/.folia-fleets/grwl-raw-audit-20261102/tree",
+  "source_parity_records": [
+    11839,
+    13164,
+    15394,
+    15397,
+    15450
+  ],
+  "all_qualifying_edges_selected": true,
+  "raw_and_mask_tiles": 9,
+  "members_crc_and_sha_checked": 90,
+  "http_body_bytes_including_index": 47280134,
+  "sampled_edges": 5,
+  "samples_per_edge": 101,
+  "independent_review_primary_ids": [
+    11839,
+    15450
+  ],
+  "original_summary_parquet_and_display_hashes_unchanged": true,
+  "checks": [
+    "Complete source selected-record coordinate/part and numeric-field parity",
+    "All selected input member SHA-256 verified before comparison",
+    "All qualifying >=5km edges in the five records accounted for",
+    "Ten rounded raw measurement endpoint identities",
+    "Main full-tile AEQD and independent full-tile UTM diagnostic",
+    "Native-mask sampling and five reviewed source plots",
+    "scripts/catalog.py --check (452 records)",
+    "scripts/source_products.py check",
+    "scripts/publication_catalog.py check (zero published collections)",
+    "Python AST parse of new scripts",
+    "git diff --check"
+  ],
+  "remaining": [
+    "No global raw-network accuracy claim",
+    "Exact producer software operation remains unidentified",
+    "No independent optical validation or GEE parity",
+    "No repaired dataset or new upload plan built"
+  ],
+  "artifacts": [
+    {
+      "path": "research/grwl-raw-audit-20261102/criteria.json",
+      "size_bytes": 2975,
+      "sha256": "fc3afa7ff3846e58274cefbd25ea3589562483c289789f09661b6b11fc6860ab"
+    },
+    {
+      "path": "research/grwl-raw-audit-20261102/summary-selection.json",
+      "size_bytes": 41559,
+      "sha256": "c00fd89b3e6b020d206a972c7bf56a4f90cd201a8c7ba5757cea347d68dca806"
+    },
+    {
+      "path": "research/grwl-raw-audit-20261102/selection/selection.json",
+      "size_bytes": 3175,
+      "sha256": "854a2e1622bea1a7f225e76a4cd4f60140a1b78bd144508dc8444c4b4740b9b2"
+    },
+    {
+      "path": "research/grwl-raw-audit-20261102/comparison-r1/failure.json",
+      "size_bytes": 657,
+      "sha256": "e90ba8f1edcf2d3638125e54c5b5045059ab374b59e5da00430a117a4043dfae"
+    },
+    {
+      "path": "research/grwl-raw-audit-20261102/mask-projection-followup.json",
+      "size_bytes": 880,
+      "sha256": "10d18e015ab6d5dfa52603001074edabdcfd8f79c89a1b617c079da6e3621b7c"
+    },
+    {
+      "path": "research/grwl-raw-audit-20261102/comparison-r2/comparison.json",
+      "size_bytes": 413159,
+      "sha256": "8f2b0df05cf05421c5d6a062455807487df0b34212fd18c59003dc1fab3a584a"
+    },
+    {
+      "path": "research/grwl-raw-audit-20261102/endpoint-identity.json",
+      "size_bytes": 2672,
+      "sha256": "f9a76114b91287ab0b6ce1320128e3115f5adfaa478b71b4a9b3c2858af30a88"
+    },
+    {
+      "path": "research/grwl-raw-audit-20261102/findings.json",
+      "size_bytes": 2973,
+      "sha256": "e648862ff6eb1d314f86e262e34923e14463e2cd9ce424423cd17e5da8cabeec"
+    },
+    {
+      "path": "research/grwl-raw-audit-20261102/independent-review.json",
+      "size_bytes": 2597,
+      "sha256": "06628f81e53d8e16d5be9169cd1556e7e196cf601ecc030664dc965a7fb9c7a7"
+    },
+    {
+      "path": "research/grwl-raw-audit-20261102/comparison-r2/feature-11839.png",
+      "size_bytes": 115067,
+      "sha256": "97b42d2535af174f000d61b8aca91cdafaaba412210b6499639f09b5f5ebdc44"
+    },
+    {
+      "path": "research/grwl-raw-audit-20261102/comparison-r2/feature-13164.png",
+      "size_bytes": 123567,
+      "sha256": "2b476ac9387292db908bd8c3e57115822577780e5999069c508a477dbf32aaba"
+    },
+    {
+      "path": "research/grwl-raw-audit-20261102/comparison-r2/feature-15394.png",
+      "size_bytes": 94969,
+      "sha256": "3ddd2d0b7d3ba22d65deca563fee561160c86b0c3ca6bf7dec922ef4d691d398"
+    },
+    {
+      "path": "research/grwl-raw-audit-20261102/comparison-r2/feature-15397.png",
+      "size_bytes": 109113,
+      "sha256": "20ea22d75d0d5fa2d4a26bed2201c4cc79dfaf5a452b46dbcd3f3753f932d536"
+    },
+    {
+      "path": "research/grwl-raw-audit-20261102/comparison-r2/feature-15450.png",
+      "size_bytes": 97708,
+      "sha256": "8dfbcf17bb01b9e7c77a24c7a22ee7854dfa4cb4ba39b81c5f2c0d68b762bcd0"
+    },
+    {
+      "path": "datasets/grwl/acquire_raw_tiles.py",
+      "size_bytes": 8381,
+      "sha256": "97ba25911d14b7f80ac09295a7ad1baaeadbeb25bd8fc92f050308e226b08ae8"
+    },
+    {
+      "path": "datasets/grwl/select_raw_tiles.py",
+      "size_bytes": 2826,
+      "sha256": "d2df2e17a5299ff2b5fa32991e436b24fa87e91a2f5e97ba6e5e774b9e014367"
+    },
+    {
+      "path": "datasets/grwl/compare_raw_tiles.py",
+      "size_bytes": 12896,
+      "sha256": "2582c60332c46ae87db5603eae6363fb3e57d7261b58bfed037b109b561aeed5"
+    },
+    {
+      "path": "datasets/river-plastic-inputs/uv.lock",
+      "size_bytes": 246086,
+      "sha256": "5ab3657aafe140bf19e3f86afb29e125eb15bdb49662b593819e920b08905e93"
+    }
+  ],
+  "remote_writes": []
+}

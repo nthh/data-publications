@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-11-02T22:29:19.006138+00:00",
+  "question": "Trace new viewer feature 15397 and explain persistence or visibility of the previously reported 40 N edge in 13164.",
+  "selection": {
+    "user_selected_source_rows": [
+      15397,
+      13164
+    ],
+    "prior_fixed_dateline_control": 28938,
+    "not_random_or_representative": true
+  },
+  "pins": {
+    "source_zip_sha256": "78aa43a7104d24b1696e9b1547347eec13ba5d660aa990c1e7cea98e7ae70e4a",
+    "analytical_parquet_sha256": "82ac4eeac2168b1aad6e5c9ae53c0c228ffcc7c8cd3f8d795493d939e626fa9c",
+    "current_pmtiles_sha256": "7b56696bc08daa4ed512a02fd35017f913827d60f9dc1d8fba94b1f726ba5343",
+    "original_pmtiles_sha256": "382b0da7d0a879f3b74c0f32a92427b51a58600aa22f703098a0d08c819eaafe"
+  },
+  "criteria": [
+    "Compare original SHP parts and every float64 coordinate bit with GeoParquet for the user-selected rows; compare all ten DBF numeric fields.",
+    "Report longest WGS84 geodesic edges, their part/vertex positions, endpoints and proximity to integer latitude/longitude.",
+    "Exploratory complete-source screen: geodesic edge >= 1000 metres, smaller absolute coordinate delta <= 0.0001 degrees, longitude jump <= 180 degrees. Count features and edges, not confirmed errors.",
+    "Test an explicitly provisional grid hypothesis: horizontal edges within 0.0001 degrees of latitude multiples of four; vertical edges within 0.0001 degrees of longitude multiples of six. Confirm the producer grid from source documentation separately.",
+    "Decode original and current PMTiles at zooms 0 through 10 over the selected source bboxes. For source-screened edges, sample 101 points and report distance to each reconstructed tile geometry; at z10 use the previous 30 metre Web Mercator bound.",
+    "Check live viewer archive identity and, when practical, capture both selected locations using the unchanged viewer. Distinguish geometry retained in the archive from the current browser viewport.",
+    "Read producer metadata and methods for processing lineage; distinguish documented cause from inferred tile-boundary artifacts.",
+    "Do not delete or repair source edges from this screen. Retain source geometry and immutable releases."
+  ],
+  "exclusions": [
+    "No new GEE request",
+    "No upload or push",
+    "No production rebuild unless a new display defect is established"
+  ]
+}

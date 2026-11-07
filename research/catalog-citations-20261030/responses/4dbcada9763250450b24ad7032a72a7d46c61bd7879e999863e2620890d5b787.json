@@ -1,0 +1,1125 @@
+{
+  "request_url": "https://api.openalex.org/works?filter=doi%3A10.6084%2Fm9.figshare.12155553%7C10.6084%2Fm9.figshare.13280252.v5%7C10.6084%2Fm9.figshare.13404635.v1%7C10.6084%2Fm9.figshare.13520141.v1%7C10.6084%2Fm9.figshare.14847786.v1%7C10.6084%2Fm9.figshare.17004523.v1%7C10.6084%2Fm9.figshare.22262545.v8%7C10.6084%2Fm9.figshare.23528232%7C10.6084%2Fm9.figshare.23528232.v3%7C10.6084%2Fm9.figshare.24616050%7C10.6084%2Fm9.figshare.24616050.v4%7C10.6084%2Fm9.figshare.24821538%7C10.6084%2Fm9.figshare.25988293%7C10.6084%2Fm9.figshare.25988293.v1%7C10.6084%2Fm9.figshare.29773169.v1%7C10.6084%2Fm9.figshare.4725541%7C10.6084%2Fm9.figshare.6665165.v1%7C10.6084%2Fm9.figshare.7504448.v6%7C10.6084%2Fm9.figshare.8044184.v6%7C10.6084%2Fm9.figshare.9696218%7C10.6084%2Fm9.figshare.9747686.v1%7C10.6084%2Fm9.figshare.9828827.v5%7C10.6084%2Fm9.figshare.9890531%7C10.6084%2Fm9.figshare.c.4718003.v1%7C10.6084%2Fm9.figshare.c.5196296%7C10.6084%2Fm9.figshare.c.5243309.v1%7C10.6084%2Fm9.figshare.c.5633182.v3%7C10.6096%2F13%7C10.64898%2F2025.12.12.694075%7C10.7265%2Fn5v98602%7C10.7287%2Fpeerj.preprints.26811v1%7C10.7287%2Fpeerj.preprints.26811v5%7C10.7289%2Fv51v5bwq%7C10.7289%2Fv52j68xx%7C10.7289%2Fv5348hck%7C10.7289%2Fv53776z4%7C10.7289%2Fv55t3hh0%7C10.7289%2Fv56w982j%7C10.7289%2Fv59k4885%7C10.7289%2Fv59p2zkr&corpus=all&per_page=100&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date%2Ccited_by_count%2Ccounts_by_year",
+  "retrieved_at": "2026-10-30T22:19:55.574090+00:00",
+  "response_path": "responses/4dbcada9763250450b24ad7032a72a7d46c61bd7879e999863e2620890d5b787.json",
+  "status": 200,
+  "response_sha256": "1d5da425053131c6bb7d27dc9f8ef5faab9033dcbe286d2e4083baf8afba0c07",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 36,
+      "db_response_time_ms": 57,
+      "page": 1,
+      "per_page": 100,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where DOI is (\n    10.6084/m9.figshare.12155553 or 10.6084/m9.figshare.13280252.v5\n    or 10.6084/m9.figshare.13404635.v1 or 10.6084/m9.figshare.13520141.v1\n    or 10.6084/m9.figshare.14847786.v1 or 10.6084/m9.figshare.17004523.v1\n    or 10.6084/m9.figshare.22262545.v8 or 10.6084/m9.figshare.23528232\n    or 10.6084/m9.figshare.23528232.v3 or 10.6084/m9.figshare.24616050\n    or 10.6084/m9.figshare.24616050.v4 or 10.6084/m9.figshare.24821538\n    or 10.6084/m9.figshare.25988293 or 10.6084/m9.figshare.25988293.v1\n    or 10.6084/m9.figshare.29773169.v1 or 10.6084/m9.figshare.4725541\n    or 10.6084/m9.figshare.6665165.v1 or 10.6084/m9.figshare.7504448.v6\n    or 10.6084/m9.figshare.8044184.v6 or 10.6084/m9.figshare.9696218\n    or 10.6084/m9.figshare.9747686.v1 or 10.6084/m9.figshare.9828827.v5\n    or 10.6084/m9.figshare.9890531 or 10.6084/m9.figshare.c.4718003.v1\n    or 10.6084/m9.figshare.c.5196296 or 10.6084/m9.figshare.c.5243309.v1\n    or 10.6084/m9.figshare.c.5633182.v3 or 10.6096/13\n    or 10.64898/2025.12.12.694075 or 10.7265/n5v98602\n    or 10.7287/peerj.preprints.26811v1 or 10.7287/peerj.preprints.26811v5\n    or 10.7289/v51v5bwq or 10.7289/v52j68xx or 10.7289/v5348hck\n    or 10.7289/v53776z4 or 10.7289/v55t3hh0 or 10.7289/v56w982j\n    or 10.7289/v59k4885 or 10.7289/v59p2zkr\n  )",
+        "x_new_oql": "get works (all corpora) where DOI is (\n    10.6084/m9.figshare.12155553 or 10.6084/m9.figshare.13280252.v5\n    or 10.6084/m9.figshare.13404635.v1 or 10.6084/m9.figshare.13520141.v1\n    or 10.6084/m9.figshare.14847786.v1 or 10.6084/m9.figshare.17004523.v1\n    or 10.6084/m9.figshare.22262545.v8 or 10.6084/m9.figshare.23528232\n    or 10.6084/m9.figshare.23528232.v3 or 10.6084/m9.figshare.24616050\n    or 10.6084/m9.figshare.24616050.v4 or 10.6084/m9.figshare.24821538\n    or 10.6084/m9.figshare.25988293 or 10.6084/m9.figshare.25988293.v1\n    or 10.6084/m9.figshare.29773169.v1 or 10.6084/m9.figshare.4725541\n    or 10.6084/m9.figshare.6665165.v1 or 10.6084/m9.figshare.7504448.v6\n    or 10.6084/m9.figshare.8044184.v6 or 10.6084/m9.figshare.9696218\n    or 10.6084/m9.figshare.9747686.v1 or 10.6084/m9.figshare.9828827.v5\n    or 10.6084/m9.figshare.9890531 or 10.6084/m9.figshare.c.4718003.v1\n    or 10.6084/m9.figshare.c.5196296 or 10.6084/m9.figshare.c.5243309.v1\n    or 10.6084/m9.figshare.c.5633182.v3 or 10.6096/13\n    or 10.64898/2025.12.12.694075 or 10.7265/n5v98602\n    or 10.7287/peerj.preprints.26811v1 or 10.7287/peerj.preprints.26811v5\n    or 10.7289/v51v5bwq or 10.7289/v52j68xx or 10.7289/v5348hck\n    or 10.7289/v53776z4 or 10.7289/v55t3hh0 or 10.7289/v56w982j\n    or 10.7289/v59k4885 or 10.7289/v59p2zkr\n  )",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "join": "or",
+              "filters": [
+                {
+                  "column_id": "doi",
+                  "value": "10.6084/m9.figshare.12155553"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.6084/m9.figshare.13280252.v5"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.6084/m9.figshare.13404635.v1"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.6084/m9.figshare.13520141.v1"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.6084/m9.figshare.14847786.v1"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.6084/m9.figshare.17004523.v1"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.6084/m9.figshare.22262545.v8"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.6084/m9.figshare.23528232"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.6084/m9.figshare.23528232.v3"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.6084/m9.figshare.24616050"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.6084/m9.figshare.24616050.v4"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.6084/m9.figshare.24821538"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.6084/m9.figshare.25988293"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.6084/m9.figshare.25988293.v1"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.6084/m9.figshare.29773169.v1"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.6084/m9.figshare.4725541"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.6084/m9.figshare.6665165.v1"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.6084/m9.figshare.7504448.v6"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.6084/m9.figshare.8044184.v6"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.6084/m9.figshare.9696218"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.6084/m9.figshare.9747686.v1"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.6084/m9.figshare.9828827.v5"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.6084/m9.figshare.9890531"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.6084/m9.figshare.c.4718003.v1"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.6084/m9.figshare.c.5196296"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.6084/m9.figshare.c.5243309.v1"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.6084/m9.figshare.c.5633182.v3"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.6096/13"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.64898/2025.12.12.694075"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.7265/n5v98602"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.7287/peerj.preprints.26811v1"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.7287/peerj.preprints.26811v5"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.7289/v51v5bwq"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.7289/v52j68xx"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.7289/v5348hck"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.7289/v53776z4"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.7289/v55t3hh0"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.7289/v56w982j"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.7289/v59k4885"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.7289/v59p2zkr"
+                }
+              ]
+            }
+          ]
+        },
+        "url": "/works?filter=doi:10.6084%2Fm9.figshare.12155553|10.6084%2Fm9.figshare.13280252.v5|10.6084%2Fm9.figshare.13404635.v1|10.6084%2Fm9.figshare.13520141.v1|10.6084%2Fm9.figshare.14847786.v1|10.6084%2Fm9.figshare.17004523.v1|10.6084%2Fm9.figshare.22262545.v8|10.6084%2Fm9.figshare.23528232|10.6084%2Fm9.figshare.23528232.v3|10.6084%2Fm9.figshare.24616050|10.6084%2Fm9.figshare.24616050.v4|10.6084%2Fm9.figshare.24821538|10.6084%2Fm9.figshare.25988293|10.6084%2Fm9.figshare.25988293.v1|10.6084%2Fm9.figshare.29773169.v1|10.6084%2Fm9.figshare.4725541|10.6084%2Fm9.figshare.6665165.v1|10.6084%2Fm9.figshare.7504448.v6|10.6084%2Fm9.figshare.8044184.v6|10.6084%2Fm9.figshare.9696218|10.6084%2Fm9.figshare.9747686.v1|10.6084%2Fm9.figshare.9828827.v5|10.6084%2Fm9.figshare.9890531|10.6084%2Fm9.figshare.c.4718003.v1|10.6084%2Fm9.figshare.c.5196296|10.6084%2Fm9.figshare.c.5243309.v1|10.6084%2Fm9.figshare.c.5633182.v3|10.6096%2F13|10.64898%2F2025.12.12.694075|10.7265%2Fn5v98602|10.7287%2Fpeerj.preprints.26811v1|10.7287%2Fpeerj.preprints.26811v5|10.7289%2Fv51v5bwq|10.7289%2Fv52j68xx|10.7289%2Fv5348hck|10.7289%2Fv53776z4|10.7289%2Fv55t3hh0|10.7289%2Fv56w982j|10.7289%2Fv59k4885|10.7289%2Fv59p2zkr&corpus=all&per_page=100",
+        "order": "most cited (age-adjusted) first",
+        "order_default": true
+      },
+      "cost_usd": 0.0001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W4287445155",
+        "doi": "https://doi.org/10.6084/m9.figshare.12155553",
+        "title": "A global dataset for crop production under conventional tillage and conservation agriculture",
+        "type": "article",
+        "publication_year": 2020,
+        "publication_date": "2020-01-01",
+        "cited_by_count": 3,
+        "counts_by_year": [
+          {
+            "year": 2021,
+            "cited_by_count": 3
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4394512457",
+        "doi": "https://doi.org/10.6084/m9.figshare.7504448",
+        "title": "Global Aridity Index and Potential Evapotranspiration (ET0) Climate Database v2",
+        "type": "dataset",
+        "publication_year": 2018,
+        "publication_date": "2018-01-01",
+        "cited_by_count": 533,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 31
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 70
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 78
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 103
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 97
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 103
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 43
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 6
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6959008551",
+        "doi": "https://doi.org/10.7265/n5v98602",
+        "title": "GLIMS Glacier Database, Version 1",
+        "type": "dataset",
+        "publication_year": null,
+        "publication_date": null,
+        "cited_by_count": 131,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 16
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 19
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 13
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 13
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 13
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2014,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2013,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6977650117",
+        "doi": "https://doi.org/10.7289/v51v5bwq",
+        "title": "NOAA Climate Data Record (CDR) of Precipitation Estimation from Remotely Sensed Information using Artificial Neural Networks (PERSIANN-CDR), Version 1 Revision 1",
+        "type": "dataset",
+        "publication_year": 2014,
+        "publication_date": "2014-01-01",
+        "cited_by_count": 60,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 13
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4394252378",
+        "doi": "https://doi.org/10.6084/m9.figshare.9828827",
+        "title": "Harmonization of DMSP and VIIRS nighttime light data from 1992-2018 at the global scale",
+        "type": "dataset",
+        "publication_year": 2020,
+        "publication_date": "2020-01-01",
+        "cited_by_count": 38,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6959013893",
+        "doi": "https://doi.org/10.7289/v52j68xx",
+        "title": "AVHRR Pathfinder version 5.3 level 3 collated (L3C) global 4km sea surface temperature for 1981-2023",
+        "type": "dataset",
+        "publication_year": 2016,
+        "publication_date": "2016-01-01",
+        "cited_by_count": 36,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 12
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6977890311",
+        "doi": "https://doi.org/10.7289/v59p2zkr",
+        "title": "NOAA Climate Data Record (CDR) of Gridded Satellite Data from ISCCP B1 (GridSat-B1) Infrared Channel Brightness Temperature, Version 2",
+        "type": "dataset",
+        "publication_year": 2014,
+        "publication_date": "2014-01-01",
+        "cited_by_count": 16,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4394112239",
+        "doi": "https://doi.org/10.6084/m9.figshare.17004523",
+        "title": "Global 1 km × 1 km gridded revised real gross domestic product and electricity consumption during 1992-2019 based on calibrated nighttime light data",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 15,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6959121721",
+        "doi": "https://doi.org/10.7289/v53776z4",
+        "title": "NOAA Climate Data Record (CDR) of AVHRR Surface Reflectance, Version 5",
+        "type": "dataset",
+        "publication_year": 2018,
+        "publication_date": "2018-01-01",
+        "cited_by_count": 12,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4394255765",
+        "doi": "https://doi.org/10.6084/m9.figshare.9890531",
+        "title": "HydroATLAS version 1.0",
+        "type": "dataset",
+        "publication_year": 2019,
+        "publication_date": "2019-01-01",
+        "cited_by_count": 8,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6902676547",
+        "doi": "https://doi.org/10.7289/v5348hck",
+        "title": "NOAA Climate Data Record (CDR) of Cloud Properties from AVHRR Pathfinder Atmospheres - Extended (PATMOS-x), Version 5.3 (Version Superseded)",
+        "type": "dataset",
+        "publication_year": 2014,
+        "publication_date": "2014-01-01",
+        "cited_by_count": 8,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6921407026",
+        "doi": "https://doi.org/10.6096/13",
+        "title": "Accelerated global glacier mass loss in the early twenty-first century - Dataset.",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-04-06",
+        "cited_by_count": 7,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6959103786",
+        "doi": "https://doi.org/10.7289/v59k4885",
+        "title": "NOAA Climate Data Record (CDR) of Ocean Heat Fluxes, Version 2",
+        "type": "dataset",
+        "publication_year": 2016,
+        "publication_date": "2016-01-01",
+        "cited_by_count": 7,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 3
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4394078521",
+        "doi": "https://doi.org/10.6084/m9.figshare.8044184",
+        "title": "A data set of global river networks and corresponding water resources zones divisions",
+        "type": "dataset",
+        "publication_year": 2019,
+        "publication_date": "2019-01-01",
+        "cited_by_count": 6,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4240879909",
+        "doi": "https://doi.org/10.7287/peerj.preprints.26811v1",
+        "title": "Global mapping of potential natural vegetation: an assessment of Machine Learning algorithms for estimating land potential",
+        "type": "preprint",
+        "publication_year": 2018,
+        "publication_date": "2018-03-30",
+        "cited_by_count": 5,
+        "counts_by_year": [
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6902671794",
+        "doi": "https://doi.org/10.7289/v55t3hh0",
+        "title": "NOAA Climate Data Record (CDR) of Ocean Near Surface Atmospheric Properties, Version 2",
+        "type": "dataset",
+        "publication_year": 2016,
+        "publication_date": "2016-01-01",
+        "cited_by_count": 5,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4394176110",
+        "doi": "https://doi.org/10.6084/m9.figshare.6665165",
+        "title": "GFPLAIN250m",
+        "type": "dataset",
+        "publication_year": 2018,
+        "publication_date": "2018-01-01",
+        "cited_by_count": 4,
+        "counts_by_year": [
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4394295824",
+        "doi": "https://doi.org/10.6084/m9.figshare.4725541",
+        "title": "River plastic emissions to the world's oceans",
+        "type": "supplementary-materials",
+        "publication_year": 2017,
+        "publication_date": "2017-01-01",
+        "cited_by_count": 4,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6958533383",
+        "doi": "https://doi.org/10.6084/m9.figshare.c.5196296",
+        "title": "A High-spatial-resolution Dataset of Human Thermal Stress Indices over South and East Asia",
+        "type": "supplementary-materials",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 4,
+        "counts_by_year": [
+          {
+            "year": 2024,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4394394512",
+        "doi": "https://doi.org/10.6084/m9.figshare.14847786",
+        "title": "HydroWASTE version 1.0",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 3,
+        "counts_by_year": [
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6902035273",
+        "doi": "https://doi.org/10.6084/m9.figshare.25988293",
+        "title": "Global Dam Watch database version 1.0",
+        "type": "dataset",
+        "publication_year": 2024,
+        "publication_date": "2024-01-01",
+        "cited_by_count": 3,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4394153080",
+        "doi": "https://doi.org/10.6084/m9.figshare.24616050",
+        "title": "NPKGRIDS",
+        "type": "dataset",
+        "publication_year": 2023,
+        "publication_date": "2023-01-01",
+        "cited_by_count": 2,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4394197418",
+        "doi": "https://doi.org/10.6084/m9.figshare.22262545",
+        "title": "A history reconstructed time series (1992-2011) of annual global NPP-VIIRS-V2-like nighttime light data through Super-resolution U-Net model",
+        "type": "dataset",
+        "publication_year": 2023,
+        "publication_date": "2023-01-01",
+        "cited_by_count": 2,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4394302083",
+        "doi": "https://doi.org/10.6084/m9.figshare.9696218",
+        "title": "High resolution mapping of global urban extents from 1870 to 2100 by integrating data and model driven approaches",
+        "type": "dataset",
+        "publication_year": 2019,
+        "publication_date": "2019-08-20",
+        "cited_by_count": 2,
+        "counts_by_year": [
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4394484435",
+        "doi": "https://doi.org/10.6084/m9.figshare.13404635",
+        "title": "GLOBathy Bathymetry Rasters",
+        "type": "dataset",
+        "publication_year": 2022,
+        "publication_date": "2022-01-01",
+        "cited_by_count": 2,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6977469183",
+        "doi": "https://doi.org/10.6084/m9.figshare.c.5243309",
+        "title": "GLOBathy, the Global Lakes Bathymetry Dataset",
+        "type": "supplementary-materials",
+        "publication_year": 2022,
+        "publication_date": "2022-01-01",
+        "cited_by_count": 2,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4394159343",
+        "doi": "https://doi.org/10.6084/m9.figshare.9747686",
+        "title": "GOODD global dam dataset",
+        "type": "dataset",
+        "publication_year": 2019,
+        "publication_date": "2019-08-29",
+        "cited_by_count": 1,
+        "counts_by_year": [
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4394469886",
+        "doi": "https://doi.org/10.6084/m9.figshare.23528232",
+        "title": "Gridded livestock density database and spatial trends for Kazakhstan",
+        "type": "dataset",
+        "publication_year": 2023,
+        "publication_date": "2023-01-01",
+        "cited_by_count": 1,
+        "counts_by_year": [
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4394489075",
+        "doi": "https://doi.org/10.6084/m9.figshare.13280252",
+        "title": "Global offshore wind farm dataset",
+        "type": "dataset",
+        "publication_year": 2020,
+        "publication_date": "2020-01-01",
+        "cited_by_count": 1,
+        "counts_by_year": [
+          {
+            "year": 2021,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4394490515",
+        "doi": "https://doi.org/10.6084/m9.figshare.13520141",
+        "title": "A 30m African Cropland Layer for 2016 by Integrating Multiple Remote sensing, Crowdsource, and Auxiliary Datasets.",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 1,
+        "counts_by_year": [
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4417402401",
+        "doi": "https://doi.org/10.1038/s41597-026-07549-w",
+        "title": "A 0.6-meter resolution canopy height model for the contiguous United States",
+        "type": "data-paper",
+        "publication_year": 2026,
+        "publication_date": "2026-06-05",
+        "cited_by_count": 1,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6939736189",
+        "doi": "https://doi.org/10.6084/m9.figshare.c.5633182",
+        "title": "A reference evapotranspiration gridded database based on FAO Penman-Monteith in Peru during 1981-2016",
+        "type": "supplementary-materials",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 1,
+        "counts_by_year": [
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W7084596178",
+        "doi": "https://doi.org/10.6084/m9.figshare.29773169",
+        "title": "Data and R code for: A place-based assessment of Sub-Saharan Africa’s biodiversity intactness",
+        "type": "dataset",
+        "publication_year": 2025,
+        "publication_date": "2025-01-01",
+        "cited_by_count": 1,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4394380313",
+        "doi": "https://doi.org/10.6084/m9.figshare.24821538",
+        "title": "Global Urban Heat Island Intensity Dataset",
+        "type": "dataset",
+        "publication_year": 2023,
+        "publication_date": "2023-01-01",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W6939964284",
+        "doi": "https://doi.org/10.6084/m9.figshare.c.4718003.v1",
+        "title": "A global database of soil nematode abundance and functional group composition",
+        "type": "article",
+        "publication_year": 2020,
+        "publication_date": "2020-01-01",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W6977472898",
+        "doi": "https://doi.org/10.7289/v56w982j",
+        "title": "NOAA Climate Data Record (CDR) of Reflectance and Brightness Temperatures from AVHRR Pathfinder Atmospheres - Extended (PATMOS-x), Version 5.3 (Version Superseded)",
+        "type": "dataset",
+        "publication_year": 2014,
+        "publication_date": "2014-01-01",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "e25c5634f97452bcfe1ab9a8cfa8b80f8e520b6fecf20b2730c3680cb3f362af"
+}

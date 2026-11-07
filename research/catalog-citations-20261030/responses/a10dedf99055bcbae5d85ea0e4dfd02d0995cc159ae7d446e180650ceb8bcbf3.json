@@ -1,0 +1,80 @@
+{
+  "request_url": "https://api.openalex.org/works?search=Completion+of+the+2011+National+Land+Cover+Database+for+the+conterminous+United+States%E2%80%94Representing+a+decade+of+land+cover+change+information&corpus=all&per_page=5&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date",
+  "retrieved_at": "2026-10-30T22:07:42.445905+00:00",
+  "response_path": "responses/a10dedf99055bcbae5d85ea0e4dfd02d0995cc159ae7d446e180650ceb8bcbf3.json",
+  "status": 200,
+  "response_sha256": "269be9521a67801961418a05611cf972e3514dddb99917a6f80f802e36e8cddf",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 2337,
+      "db_response_time_ms": 236,
+      "page": 1,
+      "per_page": 5,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where full text has (Completion of the 2011 National Land Cover Database for the conterminous United States—Representing a decade of land cover change information)",
+        "x_new_oql": "get works (all corpora) where full text has (Completion of the 2011 National Land Cover Database for the conterminous United States—Representing a decade of land cover change information)",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "Completion of the 2011 National Land Cover Database for the conterminous United States—Representing a decade of land cover change information",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:Completion of the 2011 National Land Cover Database for the conterminous United States%E2%80%94Representing a decade of land cover change information&corpus=all&per_page=5",
+        "order": "best matches first",
+        "order_default": true
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W2199321793",
+        "doi": "https://doi.org/10.1016/s0099-1112(15)30100-2",
+        "title": "Completion of the 2011 National Land Cover Database for the Conterminous United States – Representing a Decade of Land Cover Change Information",
+        "type": "article",
+        "publication_year": 2015,
+        "publication_date": "2015-05-01"
+      },
+      {
+        "id": "https://openalex.org/W2159966478",
+        "doi": "https://doi.org/10.1016/j.gloenvcha.2013.03.006",
+        "title": "Land-cover change in the conterminous United States from 1973 to 2000",
+        "type": "article",
+        "publication_year": 2013,
+        "publication_date": "2013-04-18"
+      },
+      {
+        "id": "https://openalex.org/W3003421670",
+        "doi": "https://doi.org/10.3390/rs11242971",
+        "title": "Overall Methodology Design for the United States National Land Cover Database 2016 Products",
+        "type": "article",
+        "publication_year": 2019,
+        "publication_date": "2019-12-11"
+      },
+      {
+        "id": "https://openalex.org/W3036971279",
+        "doi": "https://doi.org/10.1016/j.gloplacha.2020.103262",
+        "title": "Climate sensitivity to decadal land cover and land use change across the conterminous United States",
+        "type": "article",
+        "publication_year": 2020,
+        "publication_date": "2020-06-16"
+      },
+      {
+        "id": "https://openalex.org/W1980918351",
+        "doi": "https://doi.org/10.1016/j.gloenvcha.2012.03.008",
+        "title": "Scenarios of land use and land cover change in the conterminous United States: Utilizing the special report on emission scenarios at ecoregional scales",
+        "type": "article",
+        "publication_year": 2012,
+        "publication_date": "2012-04-23"
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "f6dcbb82878aed998cb3c53cbefbb850d54e82861b0d8722eda6e08119c18e30"
+}

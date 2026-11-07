@@ -1,0 +1,212 @@
+schema_version: 1
+id: jrc-gsw-occurrence
+title: JRC Global Surface Water Occurrence v1.5 (1984–2024)
+intake:
+  kind: producer
+  reference_url: https://global-surface-water.appspot.com/download
+  added_on: '2026-10-31'
+triage:
+  decision: reuse_existing
+  priority: pilot_review
+  rationale: Complete producer-hosted scope exists; eight bounded TIFF probes support direct range access
+    and COG-like layout. No demonstrated need for a second 14.45 GB copy.
+source:
+  producer: European Commission Joint Research Centre / Google
+  version: '1.5'
+  product: Occurrence
+  temporal_coverage: 1984–2024
+  format: tiled GeoTIFF with overviews; sampled layout consistent with COG
+  object_count: 504
+  size_bytes: 14453956859
+  inventory_path: datasets/jrc-gsw-occurrence/source-inventory.json
+  source_listing_sha256: 338037170377b21953074a9163d68498048764532642ef0f44ee82c1b72e7410
+  per_object_sha256: not_available_from_listing_and_not_computed
+  license: Copernicus terms as linked by JRC
+  license_url: https://global-surface-water.appspot.com/download
+  attribution: 'Source: EC JRC/Google'
+  citation: Pekel et al. (2016), High-resolution mapping of global surface water and its long-term changes.
+    Nature 540, 418–422. https://doi.org/10.1038/nature20584
+  processing_caveat: Aggregate combines Landsat Collection 1 for 1984–2021 and Collection 2 for 2022–2024;
+    residual co-registration offsets may occur. v1.5 corrects prior occurrence calculations.
+build:
+  status: external_source_qualified_by_sample
+  planned_outputs: []
+  payload_downloaded: false
+publication:
+  status: candidate
+  source_cooperative:
+    status: not_planned_duplicate_mirror
+    url: null
+  portolan:
+    status: not_submitted
+    url: null
+review:
+  version_checked_on: '2026-10-31'
+  qualification_path: research/hydro-releases-20261031/jrc/qualification.md
+  sample_tiles: 8
+  sampled_response_bytes: 280640
+  exhaustive_cog_validation: not_run
+  scientific_pixel_validation: not_run
+related_datasets:
+- id: opera-dswx-hls
+  title: OPERA DSWx-HLS v1
+  relationship: complement
+  url: https://podaac.jpl.nasa.gov/dataset/OPERA_L3_DSWX-HLS_V1
+  use_case: Recent surface-water extent and change monitoring from optical observations.
+  spatial_coverage: Near-global land coverage, excluding Antarctica
+  resolution: 30 m
+  temporal_coverage: Validated observations begin April 2023; production is ongoing. The catalog also
+    lists an earlier start date; historical completeness was not checked here.
+  formats:
+  - COG
+  access: NASA PO.DAAC; Earthdata Login is required for the documented direct S3 data access in us-west-2.
+    Anonymous asset access was not tested.
+  comparison: Per-observation water classifications and confidence/cloud layers serve a different purpose
+    from JRC 1984–2024 occurrence. Clouds limit optical observations; a long-term occurrence composite
+    would require an explicit method and validation.
+  reviewed_on: '2026-10-31'
+  evidence:
+  - title: NASA PO.DAAC product and access documentation
+    url: https://podaac.jpl.nasa.gov/dataset/OPERA_L3_DSWX-HLS_V1
+  - title: JPL OPERA product coverage
+    url: https://www.jpl.nasa.gov/go/opera/products/
+- id: opera-dswx-s1
+  title: OPERA DSWx-S1 v1
+  relationship: complement
+  url: https://podaac.jpl.nasa.gov/dataset/OPERA_L3_DSWX-S1_V1
+  use_case: Recent open-water mapping under cloud cover and at night using Sentinel-1 radar.
+  spatial_coverage: Near-global land coverage, excluding Antarctica
+  resolution: 30 m
+  temporal_coverage: Forward production began September 2024 and is ongoing; the catalog includes earlier
+    dates. Coverage for a particular region and date remains to be qualified.
+  formats:
+  - COG
+  access: NASA PO.DAAC distribution; no file-level access or conformance checks performed in this comparison.
+  comparison: The producer targets open inland water bodies greater than 3 hectares and 200 m in width.
+    It is a recent radar extent product, not JRC historical occurrence; OPERA products are not harmonized
+    across sensors. Use reprocessed replacements for the documented 2025 processing anomaly.
+  reviewed_on: '2026-10-31'
+  evidence:
+  - title: NASA PO.DAAC product documentation and reprocessing notice
+    url: https://podaac.jpl.nasa.gov/dataset/OPERA_L3_DSWX-S1_V1
+  - title: JPL DSWx suite and sensor differences
+    url: https://www.jpl.nasa.gov/go/opera/products/dswx-product-suite/
+  - title: NASA DSWx fact sheet and COG format
+    url: https://www.earthdata.nasa.gov/s3fs-public/2024-04/OPERA-DSWx_Fact_Sheet.pdf
+- id: dynamic-world
+  title: Dynamic World v1
+  relationship: complement
+  url: https://developers.google.com/earth-engine/datasets/catalog/GOOGLE_DYNAMICWORLD_V1
+  use_case: Recent water and flooded-vegetation context alongside other land-cover classes.
+  spatial_coverage: Global Sentinel-2 observation coverage
+  resolution: 10 m
+  temporal_coverage: June 2015 onward; near-real-time image-level predictions
+  access: Official Earth Engine image collection. Independent bulk hosting and anonymous cloud-native
+    asset access were not qualified here.
+  comparison: The water band is a model class probability, not an observed multi-decade water-occurrence
+    percentage. Cloud masking, probability thresholds and temporal aggregation must be specified before
+    deriving a water product.
+  reviewed_on: '2026-10-31'
+  evidence:
+  - title: Official Dynamic World catalog and terms
+    url: https://developers.google.com/earth-engine/datasets/catalog/GOOGLE_DYNAMICWORLD_V1
+- id: copernicus-water-bodies-100m
+  title: Copernicus Water Bodies 100 m monthly v1
+  relationship: complement
+  url: https://land.copernicus.eu/en/products/water-bodies/water-bodies-global-v1-0-100m
+  use_case: Regular global monthly inland-water monitoring at coarser resolution.
+  spatial_coverage: Global
+  resolution: 100 m
+  temporal_coverage: 2020 onward; monthly composites
+  formats:
+  - COG (CDSE catalog listing)
+  access: Copernicus Data Space Ecosystem lists a COG collection; individual objects, current completeness
+    and access requirements were not tested here.
+  comparison: Coarser than JRC and uses JRC maximum water extent in its masking, so it is not an independent
+    reference for validating JRC. Its monthly detections and occurrence categories differ from the JRC
+    long-term occurrence statistic.
+  reviewed_on: '2026-10-31'
+  evidence:
+  - title: CLMS product description and algorithm
+    url: https://land.copernicus.eu/en/products/water-bodies/water-bodies-global-v1-0-100m
+  - title: CDSE COG collection listing
+    url: https://browser.stac.dataspace.copernicus.eu/collections/clms_wb_global_100m_monthly_v1_cog
+
+# Cross-catalog discovery: global-candidates-20261031
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'reuse: The v1.5 Occurrence release inventory contains 504 public .tif tiles totaling
+    14,453,956,859 bytes for 1984–2024; per-object listing hashes are opaque source metadata, not verified
+    SHA-256. Eight geographically varied tiles received bounded range probes (HTTP 206), with matching
+    Content-Range and tiled pyramids consistent with COG layout. No image payloads were fetched; no all-object
+    COG certification or local mirror is established. Processing combines Landsat C1 (1984–2021) and C2
+    (2022–2024); v1.5 corrects prior Occurrence calculations. Prior observation dated 2026-10-31; no new
+    remote access check. Exact same v1.5 1984–2024 Occurrence product as the canonical producer-source
+    record; sample qualification is not exhaustive validation. reuse: A prior public README request returned
+    HTTP 200 and the frozen report describes this mirror as MonthlyHistory 2017–2024; its STAC index covers
+    only an older 2017–2021 portion. No object bytes or current asset access were checked in that review.
+    This is not the long-term v1.5 Occurrence release and must not be counted as its mirror. Prior observation
+    dated 2026-10-30; no new remote access check. Monthly-history time slices differ scientifically and
+    temporally from 1984–2024 occurrence frequency.'
+  sources:
+  - provider: producer
+    entry_id: Occurrence v1.5, download2024/Aggregated/VER1-5/occurrence
+    url: https://global-surface-water.appspot.com/download
+    relationship: exact_dataset
+  - provider: producer
+    entry_id: global-surface-water/download2024/Aggregated/VER1-5/occurrence
+    url: https://s3.waw4-1.cloudferro.com/swift/v1/global-surface-water/
+    relationship: exact_dataset
+  - provider: source_coop
+    entry_id: jrc-global-surface-water-monthly
+    url: https://data.source.coop/epoch/jrc-global-surface-water-monthly/README.md
+    relationship: related_product
+  access:
+  - provider: producer
+    status: download_available
+    formats:
+    - GeoTIFF (tiled, overviews; sampled COG-like layout)
+    summary: The v1.5 Occurrence release inventory contains 504 public .tif tiles totaling 14,453,956,859
+      bytes for 1984–2024; per-object listing hashes are opaque source metadata, not verified SHA-256.
+      Eight geographically varied tiles received bounded range probes (HTTP 206), with matching Content-Range
+      and tiled pyramids consistent with COG layout. No image payloads were fetched; no all-object COG
+      certification or local mirror is established. Processing combines Landsat C1 (1984–2021) and C2
+      (2022–2024); v1.5 corrects prior Occurrence calculations. Prior observation dated 2026-10-31; no
+      new remote access check. Exact same v1.5 1984–2024 Occurrence product as the canonical producer-source
+      record; sample qualification is not exhaustive validation.
+    observed_on: '2026-10-31'
+    license_summary: 'JRC access page links Copernicus terms; exact attribution/redistribution obligations
+      remain for release review. Existing record states attribution `Source: EC JRC/Google`.'
+    proposed_outputs: []
+    rationale: Existing public producer tiles already support direct access; retain the source inventory
+      and sample qualification. No second mirror or conversion was proposed without an analytic need.
+    evidence_urls:
+    - https://global-surface-water.appspot.com/download
+    - https://s3.waw4-1.cloudferro.com/swift/v1/global-surface-water/
+  - provider: source_coop
+    status: unknown
+    formats: []
+    summary: A prior public README request returned HTTP 200 and the frozen report describes this mirror
+      as MonthlyHistory 2017–2024; its STAC index covers only an older 2017–2021 portion. No object bytes
+      or current asset access were checked in that review. This is not the long-term v1.5 Occurrence release
+      and must not be counted as its mirror. Prior observation dated 2026-10-30; no new remote access
+      check. Monthly-history time slices differ scientifically and temporally from 1984–2024 occurrence
+      frequency.
+    observed_on: '2026-10-30'
+    license_summary: No independent mirror redistribution clearance established; retain producer terms/attribution
+      and review publisher terms per release.
+    proposed_outputs: []
+    rationale: Record as a related, non-equivalent host observation to prevent duplicate-work assumptions.
+      It does not replace or validate JRC Occurrence v1.5.
+    evidence_urls:
+    - https://data.source.coop/epoch/jrc-global-surface-water-monthly/README.md
+  citations: []
+  evidence:
+  - path: research/global-candidates-20261031/reuse/reviewed.json
+    sha256: 936d932d9ec3305e1499934f4cdc530b00e5e518b08e647671356646dbd85de8
+    key: jrc_gsw_v15_occurrence_producer_tiles
+  - path: research/global-candidates-20261031/reuse/reviewed.json
+    sha256: 936d932d9ec3305e1499934f4cdc530b00e5e518b08e647671356646dbd85de8
+    key: jrc_sourcecoop_monthlyhistory_counterpart

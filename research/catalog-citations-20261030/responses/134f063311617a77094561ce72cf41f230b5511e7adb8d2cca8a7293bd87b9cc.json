@@ -1,0 +1,80 @@
+{
+  "request_url": "https://api.openalex.org/works?search=BigEarthNet%3A+A+Large-Scale+Benchmark+Archive+for+Remote+Sensing+Image+Understanding&corpus=all&per_page=5&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date",
+  "retrieved_at": "2026-10-30T22:07:42.005284+00:00",
+  "response_path": "responses/134f063311617a77094561ce72cf41f230b5511e7adb8d2cca8a7293bd87b9cc.json",
+  "status": 200,
+  "response_sha256": "884f2696a85be5e8ab5034eca4d069bdb62e517c6bc5a578566c6a556e2f376a",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 442,
+      "db_response_time_ms": 91,
+      "page": 1,
+      "per_page": 5,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where full text has (BigEarthNet: A Large-Scale Benchmark Archive for Remote Sensing Image Understanding)",
+        "x_new_oql": "get works (all corpora) where full text has (BigEarthNet: A Large-Scale Benchmark Archive for Remote Sensing Image Understanding)",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "BigEarthNet: A Large-Scale Benchmark Archive for Remote Sensing Image Understanding",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:BigEarthNet: A Large-Scale Benchmark Archive for Remote Sensing Image Understanding&corpus=all&per_page=5",
+        "order": "best matches first",
+        "order_default": true
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W2986943971",
+        "doi": "https://doi.org/10.1109/igarss.2019.8900532",
+        "title": "Bigearthnet: A Large-Scale Benchmark Archive for Remote Sensing Image Understanding",
+        "type": "conference-paper",
+        "publication_year": 2019,
+        "publication_date": "2019-07-01"
+      },
+      {
+        "id": "https://openalex.org/W6904833958",
+        "doi": "https://doi.org/10.14279/depositonce-10149",
+        "title": "BigEarthNet: A Large-Scale Benchmark Archive for Remote Sensing Image Understanding",
+        "type": "other",
+        "publication_year": 2019,
+        "publication_date": "2019-01-01"
+      },
+      {
+        "id": "https://openalex.org/W6904743651",
+        "doi": "https://doi.org/10.14279/depositonce-9346",
+        "title": "Bigearthnet: A Large-Scale Benchmark Archive for Remote Sensing Image Understanding",
+        "type": "conference-paper",
+        "publication_year": 2019,
+        "publication_date": "2019-11-14"
+      },
+      {
+        "id": "https://openalex.org/W3165730205",
+        "doi": "https://doi.org/10.1109/mgrs.2021.3089174",
+        "title": "BigEarthNet-MM: A Large-Scale, Multimodal, Multilabel Benchmark Archive for Remote Sensing Image Classification and Retrieval [Software and Data Sets]",
+        "type": "article",
+        "publication_year": 2021,
+        "publication_date": "2021-09-01"
+      },
+      {
+        "id": "https://openalex.org/W3206799531",
+        "doi": "https://doi.org/10.1109/igarss47720.2021.9553307",
+        "title": "RSVQA Meets Bigearthnet: A New, Large-Scale, Visual Question Answering Dataset for Remote Sensing",
+        "type": "conference-paper",
+        "publication_year": 2021,
+        "publication_date": "2021-07-11"
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "edc1fa037199d54d39c9cb8509e467471da9a235d7dc6a2dcdf5b7bf9d3d1369"
+}

@@ -1,0 +1,31 @@
+{
+  "status": "failed",
+  "asset": "lakeatlas-polygons-spatial",
+  "workflow_revision": "5c031def6214b29fa85e54452043c3ef79fe12d7",
+  "source": {
+    "asset": "lakeatlas-polygons",
+    "sha256": "f1e69b9db782314151bb496d0d7b613e015e59bf628c9100f998c2b67eda77e2",
+    "size_bytes": 1238572245
+  },
+  "requested_parameters": {
+    "identifier_column": "OBJECTID",
+    "geometry_column": "geometry",
+    "buckets": 64,
+    "batch_rows": 512,
+    "buffer_rows": 256,
+    "row_group_size": 4096,
+    "memory_cap_bytes": 1000000000,
+    "task_owned_baseline_bytes": 1965481673,
+    "task_disk_limit_bytes": 8000000000,
+    "minimum_start_free_bytes": 40000000000,
+    "minimum_remaining_free_bytes": 10000000000
+  },
+  "error_type": "SpatialOrderError",
+  "error": "peak RSS 1000275968 bytes reached configured cap 1000000000",
+  "observed_peak_rss_bytes": 1000275968,
+  "stage_output_created": false,
+  "raw_source_changed": false,
+  "failed_report_sha256": "6cc061768606c9f4c334c3984ceedd03bcab92eed980ff691a868b8f95408ff2",
+  "failed_report_path": "local:lakes/releases/lakeatlas-v1.0-r2-spatial-primary/reports/lakeatlas-polygons-spatial.json",
+  "phase": "The helper did not record a phase label. It created an empty work directory and no Parquet stage file."
+}

@@ -1,0 +1,92 @@
+schema_version: 1
+id: merrav2
+title: Modern-Era Retrospective analysis for Research and Applications, Version 2
+  (MERRA2)
+community_url: https://gee-community-catalog.org/projects/merrav2
+audit:
+  snapshot: gee-community-audit-20261029
+  family_key: merrav2
+  unique_gee_asset_count: 1
+  initial_queue: research_original_source
+  folia_registry_status: related_only
+  folia_registry_ids:
+  - '@nasa/merra-2/m2t1nxslv/v5.12.4'
+  source_coop_urls: []
+  source_coop_scope: null
+  external_native_urls: []
+  external_native_scope: null
+triage:
+  decision: pending
+  priority: pilot_review
+review:
+  citation_assessment:
+    as_of: '2026-10-29'
+    provider: OpenAlex
+    evidence_path: research/citations/rankings.json
+    evidence_key: merrav2
+    geographic_scope: global
+    paper_count_status: matched
+    max_paper_citations: 9044
+    max_data_doi_citations: null
+    top_paper_doi: https://doi.org/10.1175/jcli-d-16-0758.1
+    top_paper_openalex_id: https://openalex.org/W2611772571
+    citation_scope: base_dataset_family
+    citation_scope_note: Gelaro et al. 2017 describes NASA MERRA-2. The GEE entry
+      is Climate Engine daily/derived fields; citations are a family-demand proxy,
+      not measured citations to that processed release.
+  publication_assessment:
+    as_of: '2026-10-29'
+    route: research_derived_product_provenance
+    citation_priority: 1
+    scope: The GEE asset is Climate Engine daily MERRA-2 fields and derived ET; NASA
+      base-reanalysis citations are a family proxy.
+    existing_native: No exact-scope public COG/Zarr mirror established; NASA source
+      NetCDF collections require Earthdata access.
+    next_step: Identify canonical source and processing for the daily Climate Engine
+      bands; separate any new NASA-derived product from an exact mirror.
+    evidence_urls:
+    - https://www.climateengine.org/datasets/climatehydrology/merra2_daily_50000/
+    - https://registry.opendata.aws/nasa-merra-2/
+    - https://gmao.gsfc.nasa.gov/gmao-products/merra-2/citing-merra-2-data_merra-2/
+  priority_reason: Among the six most cited resolved global families in the 2026-10-29
+    OpenAlex snapshot; publication readiness is assessed separately.
+
+# Cross-catalog discovery: global-candidates-20261031
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'citations: Global Existing Climate Engine daily/derived MERRA-2 differs from NASA
+    original component collections.'
+  sources:
+  - provider: gee_community
+    entry_id: merrav2
+    url: https://gee-community-catalog.org/projects/merrav2
+    relationship: component
+  access:
+  - provider: literature
+    status: unknown
+    formats: []
+    summary: GEE catalog entries are available through Earth Engine; frozen metadata does not establish
+      an independently downloadable native bulk copy or its format. Existing Climate Engine daily/derived
+      MERRA-2 differs from NASA original component collections.
+    license_summary: Not inferred from citation records. Verify producer terms for the exact edition before
+      conversion or redistribution.
+    proposed_outputs: []
+    rationale: 'Candidate discovery only: global/near-global scope and associated-paper citation signal
+      justify source-format and licensing review. Citation rank does not establish conversion priority
+      or exact-release use.'
+    evidence_urls:
+    - https://gee-community-catalog.org/projects/merrav2
+    - https://doi.org/10.1175/jcli-d-16-0758.1
+  citations:
+  - provider: OpenAlex
+    paper_doi: 10.1175/jcli-d-16-0758.1
+    work_id: https://openalex.org/W2611772571
+    cited_by_count: 9045
+    observed_on: '2026-10-30'
+    scope: base_dataset_family
+  evidence:
+  - path: research/global-candidates-20261031/citations/reviewed.json
+    sha256: 572140255cd3b41a1ec8ecca0139e64d38899cda7fdd55756f399a0dca57a467
+    key: merrav2

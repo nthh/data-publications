@@ -1,0 +1,40 @@
+{
+  "clean_checkout": {
+    "commit": "b6579442c8a0ba73e38b444f143bb6194ef056e5",
+    "detached": true,
+    "status_porcelain_empty": true
+  },
+  "locked_environment": {
+    "files": {
+      "datasets/lakeatlas/uv.lock": {
+        "repository_clean_checkout_bytes_equal": true,
+        "sha256": "e1624bf69dd0d01e563f24d0b7f1ddcd4cde273a2c8659f4061c029f45381e71"
+      },
+      "scripts/release_tools/uv.lock": {
+        "repository_clean_checkout_bytes_equal": true,
+        "sha256": "fe1b9d58a17429f2649a24fbd8299b5d616ca4ab68806e768cd2caac31b8ec1b"
+      }
+    },
+    "repository_and_clean_bytes_identical": true
+  },
+  "runtime": {
+    "capture_scope": "runtime observed while preparing portable evidence; not an independent historical-runtime attestation for the raw conversion",
+    "distributions": {
+      "numpy": "2.5.4",
+      "pyarrow": "23.0.1",
+      "pyproj": "3.8.0",
+      "shapely": "2.2.0"
+    },
+    "environment_source": "Shared release-tools virtual environment synchronized from the pinned project with uv sync --locked; the runner used this same environment for the spatial clean writer and completion process.",
+    "interpreter_command": "${SHARED_LOCKED_RELEASE_TOOLS_ENV}/bin/python",
+    "platform": "macOS-15.1.1-arm64-arm-64bit",
+    "python": "3.12.12"
+  },
+  "scope": "spatial_order clean rebuild and evidence-capture environment; raw conversion ran separately at the pinned raw-code revision",
+  "workflow_revisions": {
+    "package_helper": "7cc922857065883d1803a6892a5a160ce5a4f722",
+    "raw_conversion": "691fc304a2df25d04c13652d6429ff0e32993be2",
+    "spatial_order": "b6579442c8a0ba73e38b444f143bb6194ef056e5",
+    "spatial_pruning_and_fidelity_binding": "7602b5e5252aec2f26167a7f560eaa7dd65a38a0"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "version": 8,
+  "name": "GRWL river widths",
+  "metadata": {
+    "folia:display_notice": "PMTiles is a display derivative; use GeoParquet for analysis."
+  },
+  "sources": {
+    "grwl": {
+      "type": "vector",
+      "url": "../grwl-display.pmtiles",
+      "attribution": "Allen and Pavelsky, CC BY 4.0; conversion by Folia"
+    }
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "background",
+      "paint": {
+        "background-color": "#f5f8f9"
+      }
+    },
+    {
+      "id": "river-network",
+      "type": "line",
+      "source": "grwl",
+      "source-layer": "grwl",
+      "paint": {
+        "line-color": "#1a7087",
+        "line-opacity": 0.72,
+        "line-width": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          0,
+          0.35,
+          10,
+          1.4
+        ]
+      }
+    }
+  ]
+}

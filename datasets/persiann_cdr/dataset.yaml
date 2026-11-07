@@ -1,0 +1,53 @@
+schema_version: 1
+id: persiann_cdr
+title: 'PERSIANN-CDR: Precipitation Estimation From Remotely Sensed Information Using Artificial Neural
+  Networks-Climate Data Record'
+intake:
+  kind: official_catalog
+  reference_url: https://developers.google.com/earth-engine/datasets/catalog/NOAA_PERSIANN-CDR
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: near_global
+  spatial_coverage: 'citations: Global; official GEE catalog extent latitude envelope -60° to 60° (extent
+    is not a completeness/no-data guarantee). Latitude-limited roughly 60°S–60°N despite global label.'
+  sources:
+  - provider: gee_official
+    entry_id: NOAA/PERSIANN-CDR
+    url: https://developers.google.com/earth-engine/datasets/catalog/NOAA_PERSIANN-CDR
+    relationship: same_family
+  access:
+  - provider: literature
+    status: unknown
+    formats: []
+    summary: GEE catalog entries are available through Earth Engine; frozen metadata does not establish
+      an independently downloadable native bulk copy or its format. Latitude-limited roughly 60°S–60°N
+      despite global label.
+    license_summary: Not inferred from citation records. Verify producer terms for the exact edition before
+      conversion or redistribution.
+    proposed_outputs: []
+    rationale: 'Candidate discovery only: global/near-global scope and associated-paper citation signal
+      justify source-format and licensing review. Citation rank does not establish conversion priority
+      or exact-release use.'
+    evidence_urls:
+    - https://developers.google.com/earth-engine/datasets/catalog/NOAA_PERSIANN-CDR
+    - https://doi.org/10.1175/bams-d-13-00068.1
+  citations:
+  - provider: OpenAlex
+    paper_doi: 10.1175/bams-d-13-00068.1
+    work_id: https://openalex.org/W2170280355
+    cited_by_count: 1387
+    observed_on: '2026-10-30'
+    scope: associated_dataset_publication
+  evidence:
+  - path: research/global-candidates-20261031/citations/reviewed.json
+    sha256: 572140255cd3b41a1ec8ecca0139e64d38899cda7fdd55756f399a0dca57a467
+    key: persiann_cdr

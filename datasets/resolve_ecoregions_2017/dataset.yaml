@@ -1,0 +1,83 @@
+schema_version: 1
+id: resolve_ecoregions_2017
+title: RESOLVE Ecoregions 2017
+intake:
+  kind: official_catalog
+  reference_url: https://developers.google.com/earth-engine/datasets/catalog/RESOLVE_ECOREGIONS_2017
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: near_global
+  spatial_coverage: 'citations: Global coverage Distinct named producer product; retain exact source edition
+    and footprint. esri: Global terrestrial ecoregions grouped into 14 biomes and 8 realms. This is a
+    land classification, not ocean coverage; the 2017 producer release maps 846 terrestrial ecoregions.
+    Join GEE RESOLVE/ECOREGIONS/2017; Esri FeatureServer is a related mirror.'
+  sources:
+  - provider: esri_public
+    entry_id: 37ea320eebb647c6838c23f72abae5ef
+    url: https://www.arcgis.com/home/item.html?id=37ea320eebb647c6838c23f72abae5ef
+    relationship: related_release
+  - provider: gee_official
+    entry_id: RESOLVE/ECOREGIONS/2017
+    url: https://developers.google.com/earth-engine/datasets/catalog/RESOLVE_ECOREGIONS_2017
+    relationship: same_family
+  - provider: producer
+    entry_id: Ecoregions 2017
+    url: https://ecoregions.world/
+    relationship: exact_dataset
+  access:
+  - provider: literature
+    status: unknown
+    formats: []
+    summary: GEE catalog entries are available through Earth Engine; frozen metadata does not establish
+      an independently downloadable native bulk copy or its format. Distinct named producer product; retain
+      exact source edition and footprint.
+    license_summary: Not inferred from citation records. Verify producer terms for the exact edition before
+      conversion or redistribution.
+    proposed_outputs: []
+    rationale: 'Candidate discovery only: global/near-global scope and associated-paper citation signal
+      justify source-format and licensing review. Citation rank does not establish conversion priority
+      or exact-release use.'
+    evidence_urls:
+    - https://developers.google.com/earth-engine/datasets/catalog/RESOLVE_ECOREGIONS_2017
+    - https://doi.org/10.1093/biosci/bix014
+  - provider: esri_public
+    status: download_available
+    formats:
+    - vector
+    summary: The producer site offers a Shapefile zip; the Esri item is a feature service. The Esri service
+      was not queried for export. Join GEE RESOLVE/ECOREGIONS/2017; Esri FeatureServer is a related mirror.
+    license_summary: The RESOLVE producer page states CC BY 4.0. The selected Esri service copy also declares
+      CC BY 4.0. Retain attribution and identify the 2017 vintage; do not treat this historical ecological
+      classification as current land cover.
+    proposed_outputs:
+    - GeoParquet
+    rationale: Good global terrestrial vector candidate with a producer-linked bulk format and stated
+      CC BY 4.0 terms. GeoParquet is appropriate to assess after pinning the exact shapefile release and
+      preserving ecoregion IDs, biome, realm, and source geometry.
+    evidence_urls:
+    - https://ecoregions.world/
+    - https://developers.google.com/earth-engine/datasets/catalog/RESOLVE_ECOREGIONS_2017
+    - https://www.arcgis.com/home/item.html?id=37ea320eebb647c6838c23f72abae5ef
+  citations:
+  - provider: OpenAlex
+    paper_doi: 10.1093/biosci/bix014
+    work_id: https://openalex.org/W2605932719
+    cited_by_count: 2459
+    observed_on: '2026-10-30'
+    scope: associated_dataset_publication
+  evidence:
+  - path: research/global-candidates-20261031/citations/reviewed.json
+    sha256: 572140255cd3b41a1ec8ecca0139e64d38899cda7fdd55756f399a0dca57a467
+    key: resolve_ecoregions_2017
+  - path: research/global-candidates-20261031/esri/reviewed.json
+    sha256: e02bd2202c3026ccd7564155bfa69b5e8bc666f65698da6bacce91ab7327d5be
+    key: resolve-terrestrial-ecoregions-2017

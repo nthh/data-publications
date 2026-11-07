@@ -1,0 +1,133 @@
+{
+  "url": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily",
+  "method": "GET",
+  "retrieved_at": "2026-10-30T23:17:07.799405+00:00",
+  "status": 200,
+  "final_url": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily",
+  "headers": {
+    "Content-Type": "application/json",
+    "Content-Length": "3241"
+  },
+  "response_bytes": 3241,
+  "response_sha256": "ac8209df85d13e98cd8e5b810980903ba73c3b8fca861025680b5f7a169651b0",
+  "body": {
+    "id": "chirps_rnl_daily",
+    "type": "Collection",
+    "links": [
+      {
+        "rel": "items",
+        "type": "application/geo+json",
+        "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily/items"
+      },
+      {
+        "rel": "parent",
+        "type": "application/json",
+        "href": "https://api.earthobservation.vam.wfp.org/stac/"
+      },
+      {
+        "rel": "root",
+        "type": "application/json",
+        "href": "https://api.earthobservation.vam.wfp.org/stac/"
+      },
+      {
+        "rel": "self",
+        "type": "application/json",
+        "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily"
+      },
+      {
+        "rel": "http://www.opengis.net/def/rel/ogc/1.0/queryables",
+        "type": "application/schema+json",
+        "title": "Queryables",
+        "href": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily/queryables"
+      }
+    ],
+    "title": "CHIRPS Daily Version 3 RNL",
+    "assets": {
+      "thumbnail": {
+        "href": "https://api.earthobservation.vam.wfp.org/stac/thumbnails/collections/rfh_daily.png",
+        "type": "image/png",
+        "roles": [
+          "thumbnail"
+        ]
+      }
+    },
+    "extent": {
+      "spatial": {
+        "bbox": [
+          [
+            -180,
+            -60,
+            180,
+            60
+          ]
+        ]
+      },
+      "temporal": {
+        "interval": [
+          [
+            "1981-01-01T00:00:00Z",
+            null
+          ]
+        ]
+      }
+    },
+    "license": "CC-BY-4.0",
+    "keywords": [
+      "rainfall",
+      "climate",
+      "daily",
+      "era5",
+      "reanalysis",
+      "open-access"
+    ],
+    "providers": [
+      {
+        "url": "https://www.chc.ucsb.edu/about",
+        "name": "Climate Hazards Center (CHC)",
+        "roles": [
+          "producer",
+          "licensor"
+        ],
+        "description": "Climate Hazards Center, University of California Santa Barbara"
+      },
+      {
+        "url": "https://www.wfp.org/",
+        "name": "WFP Food Security and Nutrition Analysis Service (VAM)",
+        "roles": [
+          "processor"
+        ],
+        "description": "The Food Security and Nutrition Analysis Service (VAM) is a global network of analysts, specialists and technical experts dedicated to understanding the drivers, dynamics and impacts of food insecurity and malnutrition."
+      },
+      {
+        "url": "https://source.coop/",
+        "name": "Source Cooperative",
+        "roles": [
+          "host"
+        ],
+        "description": "Source Cooperative is a data publishing utility that provides trusted organizations with a low-cost, standards-compliant way to share data."
+      }
+    ],
+    "description": "\nThe Climate Hazards Center Infrared Precipitation with Stations (CHIRPS v3) is a 40+ year,\nhigh-resolution quasi-global rainfall dataset. It spans 60\u00b0N to 60\u00b0S and covers all longitudes,\nproviding data from 1981 to near-present.\nCHIRPS v3 combines satellite-based thermal infrared rainfall estimates with in-situ station observations to produce a 0.05\u00b0 gridded rainfall time series over land.\n\nThe RNL version uses daily precipitation from the ECMWF ERA Reanalysis v5 (ERA5) data product\nto partition pentadal CHIRPS-v3 precipitation totals into daily amounts.\nFor more information please see [this readme](https://data.chc.ucsb.edu/products/CHIRPS/v3.0/daily/readme.txt).\n\n---\n\n_Climate Hazards Center Infrared Precipitation with Stations version 3 (CHIRPS3) Data Repository: https://doi.org/10.15780/G2JQ0P (2025)._\n\n_Storage for this dataset is generously provided by [Source Cooperative](https://source.coop/), a [Radiant Earth](https://radiant.earth/) project._\n",
+    "item_assets": {
+      "band": {
+        "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+        "roles": [
+          "data"
+        ],
+        "title": "band",
+        "description": "Primary band",
+        "raster:bands": [
+          {
+            "unit": "1",
+            "nodata": -9999,
+            "data_type": "float32"
+          }
+        ]
+      }
+    },
+    "stac_version": "1.0.0",
+    "stac_extensions": [
+      "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"
+    ]
+  }
+}

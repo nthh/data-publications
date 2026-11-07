@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "authorization": "User approved repository review, merging and finalizing releases, the river-plastic pilot and publication of the remaining four datasets under nthh. After all products are on Source Cooperative, test the aggregate in Portolan Browser. Main registry registration is only potential, not yet authorized. Squash history and make GitHub public after publication/viewer work, preserving provenance and a local backup first.",
+  "allowed_products": [
+    "river-plastic-inputs",
+    "hydrolakes",
+    "free-flowing-rivers",
+    "lakeatlas",
+    "grwl-raw"
+  ],
+  "owner": "nthh",
+  "publication_order": [
+    "river-plastic-inputs",
+    "hydrolakes",
+    "lakeatlas",
+    "free-flowing-rivers",
+    "grwl-raw"
+  ],
+  "data_endpoint": "https://data.source.coop",
+  "product_api": "https://source.coop/api/v1",
+  "data_scope": "Only the exact current immutable analytical packages, selected display manifests, declared metadata supplements and generated product READMEs. Original source ZIPs, raw GEE captures, local environments, scratch outputs and credentials are excluded.",
+  "limits": {
+    "maximum_immutable_bytes": 25000000000,
+    "maximum_parallel_transfers": 4,
+    "maximum_in_memory_part_bytes": 67108864
+  },
+  "immutable_policy": "Never overwrite an existing different object. A matching object may be resumed only after checking actual content integrity. Record each attempt and result. Do not delete existing remote objects.",
+  "hosting_checks": {
+    "anonymous_access": "Anonymous actual HTTP GET succeeds for selected public data and metadata URLs.",
+    "range_requests": "Actual ranged GET on every GeoParquet and PMTiles returns 206 with correct Content-Range, length and exact matching local bytes; HEAD alone is insufficient.",
+    "cors": "Requests from the viewer origin allow required range access and expose range/size headers. Record actual response/preflight headers.",
+    "asset_checksums": "Verify immutable remote objects against the staged sizes and SHA-256 using actual downloaded bytes or a documented server-verified full-object checksum. A self-declared metadata hash alone is insufficient. Stream without saving a second bulk copy.",
+    "subset_query": "Anonymous DuckDB footer/count and fixed spatial/identifier subset matches the unchanged local analytical file, preserving multiplicity and exact values; use bounded query windows/selected IDs.",
+    "catalog_links": "Resolve actual deployed catalog, collections, assets, styles and documentation; record status and checksum scope.",
+    "browser_render": "Render each analytical layer from hosted PMTiles using the local review viewer, record ranges/errors and representative screenshots. Then test all five collections in the actual Portolan Browser after aggregate deployment."
+  },
+  "claims": "GEE strict failures and all source/display limitations remain disclosed. Hosting checks do not increase scientific validation claims. Prepared or uploaded is not published/verified until applicable actual checks pass.",
+  "git_finalization": "Preserve historical source/code/lock blobs required by verification, retain a durable local Git bundle, rehearse with no old Git objects, and only then perform the authorized single-commit reset and public visibility change. Do not submit the catalog to a third-party registry without a decision.",
+  "metadata_catalog_product": "data-publications",
+  "metadata_catalog_scope": "Aggregate catalog metadata only, linking the five data products. No additional dataset conversion."
+}

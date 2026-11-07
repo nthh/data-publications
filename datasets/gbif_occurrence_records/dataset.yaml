@@ -1,0 +1,76 @@
+schema_version: 1
+id: gbif_occurrence_records
+title: GBIF biodiversity occurrence data and hosted snapshots
+intake:
+  kind: official_catalog
+  reference_url: https://planetarycomputer.microsoft.com/api/stac/v1/collections/gbif
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'planetary: review_note: Global occurrence database; world bbox and description identifies
+    global species occurrences. Point records are clustered, not wall-to-wall coverage.; stac_bbox: [-180,
+    -90, 180, 90]; temporal_interval: [["2021-04-13T00:00:00Z", null]] Distinct named producer product;
+    retain exact source edition and footprint. supplemental: Global network of publisher datasets; taxonomic
+    and geographic coverage is uneven and each download is a distinct filtered snapshot. Supplemental
+    producer discovery; no citation count inferred.'
+  sources:
+  - provider: planetary_computer
+    entry_id: gbif
+    url: https://planetarycomputer.microsoft.com/api/stac/v1/collections/gbif
+    relationship: exact_dataset
+  - provider: producer
+    entry_id: GBIF data and occurrence downloads
+    url: https://www.gbif.org/occurrence/download
+    relationship: same_family
+  access:
+  - provider: planetary_computer
+    status: native_available
+    formats:
+    - Parquet
+    summary: 'Collection metadata declares per-item data assets / provider storage roots in the listed
+      native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain
+      unvalidated. Distinct named producer product; retain exact source edition and footprint.'
+    license_summary: 'note: Do not treat this metadata label as legal clearance.; review_status: provider
+      declaration captured; terms and redistribution permission not independently reviewed; stac_license:
+      other'
+    proposed_outputs:
+    - Parquet
+    rationale: Reuse declared GeoParquet root as a tabular point-data source; retain dataset occurrence
+      IDs, licensing and observation quality.
+    evidence_urls:
+    - https://planetarycomputer.microsoft.com/api/stac/v1/collections/gbif
+    - https://planetarycomputer.microsoft.com/dataset/gbif
+  - provider: producer
+    status: download_available
+    formats:
+    - Darwin Core Archive
+    - tabular download formats
+    summary: User-filtered occurrence downloads receive unique DOI identifiers; cite the exact download
+      rather than treating the changing network as a static dataset. Supplemental producer discovery;
+      no citation count inferred.
+    license_summary: Per-record and publisher dataset licenses vary; inspect the license information attached
+      to each occurrence/dataset.
+    proposed_outputs: []
+    rationale: Review exact source, existing native hosts and redistribution terms before selecting a
+      conversion.
+    evidence_urls:
+    - https://www.gbif.org/citation-guidelines
+    - https://www.gbif.org/data-use
+    - https://www.gbif.org/occurrence/download
+  citations: []
+  evidence:
+  - path: research/global-candidates-20261031/planetary/reviewed.json
+    sha256: 07da016851a07f3e3e0937e120ce46442785f4e9096e563d92c1a3c0ce9e616a
+    key: gbif_occurrence_records
+  - path: research/global-candidates-20261031/citations/supplemental-global.json
+    sha256: 8eecd1b6859f60c355df02ed5f4f4bea5bcdfe69f156abafa95e9c622b975202
+    key: gbif_occurrence_network

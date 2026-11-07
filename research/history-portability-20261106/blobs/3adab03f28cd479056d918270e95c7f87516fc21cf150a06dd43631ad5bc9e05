@@ -1,0 +1,174 @@
+{
+  "source": "https://data.hydrosheds.org/file/technical-documentation/HydroLAKES_TechDoc_v10.pdf",
+  "source_pages": "12–14",
+  "fields": [
+    {
+      "name": "Hylak_id",
+      "nullable": true,
+      "type": "int32",
+      "description": "Native unique lake key."
+    },
+    {
+      "name": "Lake_name",
+      "nullable": true,
+      "type": "string",
+      "description": "Producer lake name."
+    },
+    {
+      "name": "Country",
+      "nullable": true,
+      "type": "string",
+      "description": "Country assigned through pour point."
+    },
+    {
+      "name": "Continent",
+      "nullable": true,
+      "type": "string",
+      "description": "Producer continent."
+    },
+    {
+      "name": "Poly_src",
+      "nullable": true,
+      "type": "string",
+      "description": "Shoreline source code."
+    },
+    {
+      "name": "Lake_type",
+      "nullable": true,
+      "type": "int32",
+      "description": "Waterbody category."
+    },
+    {
+      "name": "Grand_id",
+      "nullable": true,
+      "type": "int32",
+      "description": "GRanD join key; zero means unlinked."
+    },
+    {
+      "name": "Lake_area",
+      "nullable": true,
+      "type": "double",
+      "description": "Lake area.",
+      "unit": "km2"
+    },
+    {
+      "name": "Shore_len",
+      "nullable": true,
+      "type": "double",
+      "description": "Shoreline length.",
+      "unit": "km"
+    },
+    {
+      "name": "Shore_dev",
+      "nullable": true,
+      "type": "double",
+      "description": "Outline complexity ratio.",
+      "unit": "1"
+    },
+    {
+      "name": "Vol_total",
+      "nullable": true,
+      "type": "double",
+      "description": "Estimated or reported total volume.",
+      "unit": "10^6 m3"
+    },
+    {
+      "name": "Vol_res",
+      "nullable": true,
+      "type": "double",
+      "description": "Reservoir storage.",
+      "unit": "10^6 m3"
+    },
+    {
+      "name": "Vol_src",
+      "nullable": true,
+      "type": "int32",
+      "description": "Volume provenance code."
+    },
+    {
+      "name": "Depth_avg",
+      "nullable": true,
+      "type": "double",
+      "description": "Mean depth.",
+      "unit": "m"
+    },
+    {
+      "name": "Dis_avg",
+      "nullable": true,
+      "type": "double",
+      "description": "Modelled discharge.",
+      "unit": "m3/s"
+    },
+    {
+      "name": "Res_time",
+      "nullable": true,
+      "type": "double",
+      "description": "Water residence time.",
+      "unit": "day"
+    },
+    {
+      "name": "Elevation",
+      "nullable": true,
+      "type": "int32",
+      "description": "Water-surface elevation.",
+      "unit": "m above sea level"
+    },
+    {
+      "name": "Slope_100",
+      "nullable": true,
+      "type": "double",
+      "description": "Surrounding terrain slope.",
+      "unit": "degree"
+    },
+    {
+      "name": "Wshd_area",
+      "nullable": true,
+      "type": "double",
+      "description": "Contributing catchment area.",
+      "unit": "km2"
+    },
+    {
+      "name": "Pour_long",
+      "nullable": true,
+      "type": "double",
+      "description": "Outlet longitude.",
+      "unit": "degree"
+    },
+    {
+      "name": "Pour_lat",
+      "nullable": true,
+      "type": "double",
+      "description": "Outlet latitude.",
+      "unit": "degree"
+    },
+    {
+      "name": "wkb_geometry",
+      "nullable": true,
+      "type": "binary",
+      "description": "Unchanged source WKB."
+    },
+    {
+      "name": "bbox",
+      "type": "struct<xmin: double, ymin: double, xmax: double, ymax: double>",
+      "description": "Derived WKB bounds for spatial pruning.",
+      "unit": "degree",
+      "derived": true
+    }
+  ],
+  "sentinels_preserved": {
+    "Dis_avg": {
+      "-9999": "missing"
+    },
+    "Res_time": {
+      "-1": "zero discharge",
+      "-9999": "missing"
+    },
+    "Slope_100": {
+      "-1": "not computed for large lakes"
+    },
+    "Wshd_area": {
+      "-9999": "missing"
+    }
+  },
+  "note": "Producer sentinels remain numeric; nulls and uncertainty are not reinterpreted. Consult bundled producer documentation for all categories and limitations."
+}

@@ -1,0 +1,511 @@
+[
+  {
+    "rank": 11,
+    "label": "ERA5-Land",
+    "selected_scope": "Global ERA5-Land hourly reanalysis, 1950-present, as referenced by GEE hourly, daily aggregate, monthly aggregate, monthly-by-hour and static entries. Multi-product family, not one archive.",
+    "native_formats": [
+      "GRIB (full gridded CDS product)",
+      "NetCDF4 (experimental CDS download option)",
+      "Zarr (subset/ARCO time-series service)",
+      "NetCDF/CSV (single-point time-series service)"
+    ],
+    "download_size": {
+      "display": "unknown",
+      "status": "unknown",
+      "bytes": null,
+      "scope": "No total selected for the ERA5-Land family; CDS requires user-selected variables, times and area.",
+      "basis": "Producer download interface exposes GRIB and experimental NetCDF4 and selectable dates/variables, but no fixed all-family archive byte total. No request submitted."
+    },
+    "alternative_sizes": [
+      {
+        "display": "227,185,344,000 bytes (~227 GB decimal), raw float32 array payload",
+        "status": "calculated_uncompressed",
+        "bytes": 227185344000,
+        "scope": "Illustrative one-variable global 0.1\u00b0 grid for one complete 365-day hourly year (3600 longitude cells \u00d7 1801 latitude cells \u00d7 8760 hours). Not a compressed download estimate and not whole ERA5-Land archive size.",
+        "basis": "3600 \u00d7 1801 \u00d7 8760 \u00d7 4 bytes per float32 value; grid spacing/global coverage/hourly cadence from producer product documentation. Assumes every grid/time cell is stored as a four-byte value; excludes masks, metadata, compression, packing and any missing-point optimizations."
+      }
+    ],
+    "desired_formats": [
+      "Zarr"
+    ],
+    "rationale": "Chunked Zarr fits the full grid/time dimensions where a cloud-native publication is needed; use/reference the producer ARCO Zarr for its point/limited-area scope. Preserve source units, coordinates and variable metadata.",
+    "existing_cloud_native": "CDS publishes a maintained ARCO Zarr subset for point/limited-area long time series; the full gridded product remains distributed separately. Prefer referencing ARCO where its subset scope matches.",
+    "caveats": [
+      "GEE contains several temporal aggregations and a static image; these are not interchangeable with the hourly archive.",
+      "Full archive size varies with requested variables, period, area and encoding."
+    ],
+    "sources": [
+      {
+        "url": "https://cds.climate.copernicus.eu/datasets/reanalysis-era5-land?tab=download",
+        "supports": "ERA5-Land producer download interface; GRIB/NetCDF4 and configurable selection",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_LAND_HOURLY",
+        "supports": "GEE hourly product identity and cadence",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_LAND_DAILY_AGGR",
+        "supports": "GEE daily aggregated product identity",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://cds.climate.copernicus.eu/datasets/reanalysis-era5-land",
+        "supports": "Producer global coverage, regular lat-lon 0.1\u00b0 grid, hourly temporal resolution, GRIB full-product format",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://confluence.ecmwf.int/pages/viewpage.action?pageId=627854121",
+        "supports": "Producer documentation for 0.1\u00b0 hourly single-point time series and ARCO Zarr storage",
+        "accessed": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "rank": 12,
+    "label": "JRC Global Surface Water",
+    "selected_scope": "Exact size-bearing subset: JRC GSW v1.4 global Occurrence layer (1984-2021), 504 GeoTIFF tiles; other GSW products (metadata, yearly history, monthly history and recurrence) are separate and excluded from this total.",
+    "native_formats": [
+      "GeoTIFF tiles (10\u00b0 x 10\u00b0)"
+    ],
+    "download_size": {
+      "display": "15,972,544,704 bytes (15.97 GB decimal)",
+      "status": "measured",
+      "bytes": 15972544704,
+      "scope": "All 504 producer objects under downloads2021/occurrence/ matching occurrence_*_v1_4_2021.tif; occurrence layer only, not total GSW v1.4 portfolio.",
+      "basis": "Summed exact object size metadata from the public Google Cloud Storage JSON API listing (504 items, no nextPageToken; response 56,671 bytes). No TIFF bodies downloaded."
+    },
+    "alternative_sizes": [],
+    "desired_formats": [
+      "COG",
+      "Zarr"
+    ],
+    "rationale": "Use COG for discrete global summary layers and chunked Zarr for monthly history/recurrence time dimensions, preserving class codes and masks.",
+    "existing_cloud_native": "Google Earth Engine asset collection; JRC also serves WMS tiles. No cloud-native analytic archive verified.",
+    "caveats": [
+      "This is only the v1.4 global Occurrence layer; monthly history, metadata, yearly history, recurrence and other summary layers add separate volumes.",
+      "The total applies to the v1.4 1984-2021 object names, not current GSW v1.5 products through 2024.",
+      "Tile GeoTIFF compression/COG status was not inferred from the file suffix."
+    ],
+    "sources": [
+      {
+        "url": "https://global-surface-water.appspot.com/download",
+        "supports": "JRC download mechanisms, GeoTIFF tile delivery, available product types and v1.4 period through 2021",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/JRC_GSW1_4_MonthlyHistory",
+        "supports": "GEE monthly-history v1.4 product identity",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://storage.googleapis.com/storage/v1/b/global-surface-water/o?prefix=downloads2021%2Foccurrence%2F&fields=items(name%2Csize)%2CnextPageToken&maxResults=1000",
+        "supports": "Complete public object listing for all 504 2021 v1.4 occurrence GeoTIFF tiles and exact sizes; summed to 15,972,544,704 bytes",
+        "accessed": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "rank": 13,
+    "label": "CFSR: Climate Forecast System Reanalysis Harmonized",
+    "selected_scope": "NOAA/NCEP CFSR January 1979-December 2010 monthly products as an explicit size-bearing subset of the harmonized CFSR family. Separate UCAR monthly product volume is not the complete hourly or 6-hourly archive.",
+    "native_formats": [
+      "WMO GRIB2 (UCAR monthly-product archive)",
+      "GRIB2 and BUFR (selected NOAA CFSR products)"
+    ],
+    "download_size": {
+      "display": "5.05 TB (UCAR-published total volume)",
+      "status": "publisher_stated",
+      "bytes": null,
+      "scope": "NCAR Research Data Archive d093002 monthly CFSR products, January 1979-December 2010; not the entire CFSR collection or GEE harmonized image collection.",
+      "basis": "NCAR RDA reports total volume 5.05 TB and WMO GRIB2 for dataset d093002. Publisher unit retained; no byte conversion inferred."
+    },
+    "alternative_sizes": [],
+    "desired_formats": [
+      "Zarr"
+    ],
+    "rationale": "For a curated variable/time subset, chunked Zarr supports multidimensional reanalysis queries while keeping source grid, time, vertical levels and metadata.",
+    "existing_cloud_native": "NOAA/NCEP and NCAR RDA provide public download services; cloud-native distribution not verified.",
+    "caveats": [
+      "5.05 TB applies specifically to UCAR monthly-products archive; hourly and 6-hourly products are separate, so it is not a total-family estimate.",
+      "NOAA states CFSR spans Jan 1979-Mar 2011; the measured-subset producer record ends Dec 2010."
+    ],
+    "sources": [
+      {
+        "url": "https://rda.ucar.edu/datasets/d093002/detailed_metadata/",
+        "supports": "CFSR monthly product period, GRIB2 format and published 5.05 TB volume",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://www.ncei.noaa.gov/products/weather-climate-models/climate-forecast-system",
+        "supports": "NOAA CFSR period and GRIB2/BUFR distribution formats",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/NOAA_CFSR_HARMONIZED",
+        "supports": "GEE harmonized catalog product identity",
+        "accessed": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "rank": 14,
+    "label": "River plastic inputs (Lebreton et al. 2017)",
+    "selected_scope": "Figshare v6 PlasticRiverInputs.zip: worldwide modeled 2010 river plastic inputs, 40,760 point records. Distinct from the Meijer et al. 2021 river-plastic model.",
+    "native_formats": [
+      "ZIP archive containing ESRI Shapefile components"
+    ],
+    "download_size": {
+      "display": "5,764,810 bytes (5.76 MB decimal)",
+      "status": "measured",
+      "bytes": 5764810,
+      "scope": "Original Figshare v6 source archive PlasticRiverInputs.zip only.",
+      "basis": "Exact producer file size recorded in local source inventory/release manifest; Figshare article API metadata is primary remote source. Local prepared GeoParquet (6,360,991 bytes) and PMTiles (3,705,340 bytes) are separate unpublished derivatives and are not source download volume."
+    },
+    "alternative_sizes": [
+      {
+        "display": "GeoParquet 6,360,991 bytes",
+        "status": "measured",
+        "bytes": 6360991,
+        "scope": "Locally prepared unpublished derivative only; not a public producer download.",
+        "basis": "Local releases/figshare-v6-r2/manifest.json asset size; not included in source download size."
+      },
+      {
+        "display": "PMTiles 3,705,340 bytes",
+        "status": "measured",
+        "bytes": 3705340,
+        "scope": "Locally prepared unpublished derivative only; not a public producer download.",
+        "basis": "Local releases/figshare-v6-r2/manifest.json asset size; not included in source download size."
+      }
+    ],
+    "desired_formats": [
+      "GeoParquet",
+      "PMTiles (optional display derivative)"
+    ],
+    "rationale": "GeoParquet retains point attributes and nulls for analytic filtering; PMTiles supports compact map display. Keep full-resolution analytical records separate from generalized display tiles.",
+    "existing_cloud_native": "No exact native cloud-native counterpart established in targeted inventory; locally prepared outputs are not published.",
+    "caveats": [
+      "Source estimate is for 2010; model values are not an annually updated time series.",
+      "Four source rows contain null emission estimates; preserve null rather than replacing with zero.",
+      "Local derivatives have not been uploaded and are not public downloads."
+    ],
+    "sources": [
+      {
+        "url": "https://api.figshare.com/v2/articles/4725541",
+        "supports": "Figshare v6 article metadata, file inventory, file size and license",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://ndownloader.figshare.com/files/7714864",
+        "supports": "Original PlasticRiverInputs.zip producer file",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://gee-community-catalog.org/projects/plastic",
+        "supports": "Community catalog source identity",
+        "accessed": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "rank": 15,
+    "label": "TerraClimate",
+    "selected_scope": "Current producer TerraClimate v1.1, one global monthly variable-year file: vapor pressure (vap), 2024 (12 monthly slices). The original paper\u2019s full 1958-2015 multi-variable archive is retained as a separate uncompressed-size alternative, not confused with current compressed file downloads.",
+    "native_formats": [
+      "NetCDF4 (.nc annual file per variable; producer says NetCDF4)"
+    ],
+    "download_size": {
+      "display": "135.6 Mbytes (THREDDS-published file size)",
+      "status": "publisher_stated",
+      "bytes": null,
+      "scope": "TerraClimate v1.1 global vap 2024 NetCDF file, monthly annual series for one variable only.",
+      "basis": "NKN/THREDDS producer catalog lists TerraClimate_vap_2024.nc at 135.6 Mbytes. Catalog reports rounded Mbytes; no conversion to exact bytes inferred."
+    },
+    "alternative_sizes": [
+      {
+        "display": "about 800 GB uncompressed (original 1958-2015 all-variable archive)",
+        "status": "calculated_uncompressed",
+        "bytes": null,
+        "scope": "Historical TerraClimate v1.0 original dataset paper\u2019s full global multi-variable archive for 1958-2015, not current v1.1 compressed distribution.",
+        "basis": "2018 producer paper states approx. 800 GB after uncompressing the original all-variable archive. This is not a compressed download total."
+      }
+    ],
+    "desired_formats": [
+      "Zarr"
+    ],
+    "rationale": "Monthly global variables across years fit chunked multidimensional Zarr; preserve scale/offset, CF metadata, time axis, variable units and masks.",
+    "existing_cloud_native": "THREDDS serves current v1.1 annual NetCDF files and aggregated NetCDF; GEE hosts a TerraClimate collection, but v1.1/current-vintage parity was not verified.",
+    "caveats": [
+      "The chosen 135.6 Mbytes is one current v1.1 variable-year file only, not all variables or years.",
+      "Original-paper ~800 GB is uncompressed v1.0 1958-2015, not current v1.1 compressed transfer size.",
+      "Producer warns not to mix TerraClimate v1.0 and v1.1; community scenarios (+2C/+4C/counterfactual) are separate products."
+    ],
+    "sources": [
+      {
+        "url": "https://www.climatologylab.org/terraclimate.html",
+        "supports": "Current monthly global coverage, variables and annual NetCDF availability",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/IDAHO_EPSCOR_TERRACLIMATE",
+        "supports": "Official GEE collection identity",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://tds-proxy.nkn.uidaho.edu/thredds/catalog/TERRACLIMATE_ALL/data/catalog.html",
+        "supports": "Producer THREDDS v1.1 catalog listing TerraClimate_vap_2024.nc at 135.6 Mbytes",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://www.climatologylab.org/terraclimate.html",
+        "supports": "Current v1.1, current temporal period and NetCDF4 update; warning against mixing v1.0/v1.1",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://doi.org/10.1038/sdata.2017.191",
+        "supports": "Original TerraClimate 1958-2015 archive and ~800 GB uncompressed alternative scope",
+        "accessed": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "rank": 16,
+    "label": "Global Mangrove Forests Distribution, v1 (2000)",
+    "selected_scope": "Complete producer tile release for the global 30 m Global Mangrove Forests Distribution 2000 map: all 111 CMR granules, each a ZIP file whose data-link description identifies GeoTIFF format. Distinct from Global Mangrove Watch epochs.",
+    "native_formats": [
+      "ZIP containing GeoTIFF tile"
+    ],
+    "download_size": {
+      "display": "59.39 MB (sum of 111 rounded CMR granule_size values)",
+      "status": "publisher_stated",
+      "bytes": null,
+      "scope": "All 111 unique global year-2000 SEDAC granule records returned for CMR collection C3550194192-ESDIS; one ZIP tile per record.",
+      "basis": "CMR public granule metadata lists 111 records with unique granule IDs/titles, each data-link description states GeoTIFF format, and per-granule granule_size values sum to 59.39 MB. CMR sizes are rounded per granule; no exact bytes are inferred. Parent evidence response saved at evidence-parent/mangrove-granules.json."
+    },
+    "alternative_sizes": [],
+    "desired_formats": [
+      "COG"
+    ],
+    "rationale": "A single categorical global raster is suited to COG for range reads, preserving 30 m grid, class value and NoData semantics.",
+    "existing_cloud_native": "GEE asset; NASA metadata identifies WMS access. No COG-hosted source verified.",
+    "caveats": [
+      "CMR records identify 111 unique grid tile ZIPs for this global year-2000 product; size is rounded per-granule metadata, not exact byte sum.",
+      "This is the Giri et al. year-2000 product, not later Global Mangrove Watch time series.",
+      "Do not infer COG tiling or internal TIFF compression from .zip/.tif names."
+    ],
+    "sources": [
+      {
+        "url": "https://cmr.earthdata.nasa.gov/search/granules.json?collection_concept_id=C3550194192-ESDIS&page_size=200",
+        "supports": "All 111 CMR granule metadata records, unique tile IDs/titles, per-granule size fields and GeoTIFF data-link descriptions",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/LANDSAT_MANGROVE_FORESTS",
+        "supports": "GEE baseline map identity and 2000 time span",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://data.nasa.gov/dataset/global-mangrove-forests-distribution-2000",
+        "supports": "NASA/SEDAC dataset record and global 30 m extent",
+        "accessed": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "rank": 17,
+    "label": "PRISM climate",
+    "selected_scope": "For a size-bearing current producer example: CONUS 800 m monthly PRISM VPD maximum, all 12 months of 2024 (one variable-year), using PRISM time-series source. Distinct from older official GEE PRISM collection at 4,638.3 m pixel size (1981-present) and community 800 m catalog entries.",
+    "native_formats": [
+      "ZIP of raster grid(s) in legacy bulk distribution",
+      "Cloud Optimized GeoTIFF for current one-grid web service",
+      "NetCDF/ASCII/BIL available as alternate web-service formats"
+    ],
+    "download_size": {
+      "display": "49M (PRISM listing; rounded publisher display) for one variable-year",
+      "status": "publisher_stated",
+      "bytes": null,
+      "scope": "CONUS, 800 m, vpdmax monthly data for all of 2024 only; not all variables, daily history, or PRISM family.",
+      "basis": "PRISM producer directory listing gives 49M for prism_vpdmax_us_30s_2024.zip. Listing is rounded, so bytes are not inferred."
+    },
+    "alternative_sizes": [],
+    "desired_formats": [
+      "COG",
+      "Zarr"
+    ],
+    "rationale": "COG suits independent monthly grid access; Zarr is useful for full monthly/daily series across variables. Retain PRISM release/stability metadata because grids may be re-modeled.",
+    "existing_cloud_native": "Current PRISM web service explicitly serves COG; GEE also hosts an older 4 km collection.",
+    "caveats": [
+      "Chosen current source is PRISM 800 m; official GEE collection has ~4.64 km pixels and contains AN81/AN91 data. These are different resolutions/vintages.",
+      "49M listing describes only vpdmax 2024 monthly data and is rounded; not an archive total.",
+      "PRISM states time series products are re-modeled within a six-month stability window."
+    ],
+    "sources": [
+      {
+        "url": "https://data.prism.oregonstate.edu/time_series/us/lt/800m/vpdmax/monthly/2024/",
+        "supports": "Producer listing for 2024 vpdmax monthly ZIP and rounded 49M file size",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://prism.nacse.org/documents/PRISM_downloads_web_service.pdf",
+        "supports": "Current PRISM web service COG output and alternate formats",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/OREGONSTATE_PRISM_ANd",
+        "supports": "GEE PRISM pixel size, 1981-present span and AN81/AN91 distinction",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://prism.oregonstate.edu/data/",
+        "supports": "PRISM daily/monthly/annual availability and stability notes",
+        "accessed": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "rank": 18,
+    "label": "EPA ecoregions (Omernik framework)",
+    "selected_scope": "US EPA Level III ecoregions shapefile covering continental United States, with state boundaries, as native vector analogue to GEE EPA/Ecoregions/2013/L3 feature collection.",
+    "native_formats": [
+      "ESRI Shapefile ZIP",
+      "PDF map products"
+    ],
+    "download_size": {
+      "display": "35 MB (EPA publisher-stated) for Level III shapefile with state boundaries",
+      "status": "publisher_stated",
+      "bytes": null,
+      "scope": "US Level III ecoregions shapefile with state boundaries; not separate 28 MB version without boundaries or Level IV coverage.",
+      "basis": "EPA producer page labels shapefile size as 35 mb; publisher unit preserved and not converted to exact byte count."
+    },
+    "alternative_sizes": [],
+    "desired_formats": [
+      "GeoParquet",
+      "PMTiles (optional display derivative)"
+    ],
+    "rationale": "GeoParquet preserves polygon attributes and supports spatial filtering; PMTiles is useful for map display. Preserve ecoregion identifiers, boundaries and source geometry.",
+    "existing_cloud_native": "GEE feature collection; EPA page also distributes shapefile and metadata/symbology. No cloud-native vector archive verified.",
+    "caveats": [
+      "EPA page cautions that maps and GIS files may differ and recommends GIS shapefiles for current data.",
+      "35 MB published value is for with-state-boundaries package, not necessarily byte-exact compressed transfer size."
+    ],
+    "sources": [
+      {
+        "url": "https://www.epa.gov/eco-research/level-iii-and-iv-ecoregions-continental-united-states",
+        "supports": "EPA Level III shapefile format, with/without state-boundary package sizes and scope",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/EPA_Ecoregions_2013_L3",
+        "supports": "GEE 2013 Level III collection identity",
+        "accessed": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "rank": 19,
+    "label": "USGS GAP CONUS 2011",
+    "selected_scope": "Exact size-bearing source package: USGS GAP/LANDFIRE National Terrestrial Ecosystems 2011 CONUS package (GAP/LANDFIRE 2011 raster; 30 m, 2011 imagery basis). This is GAP, not an NLCD volume.",
+    "native_formats": [
+      "ZIP package containing the 30 m CONUS raster; internal raster encoding not asserted"
+    ],
+    "download_size": {
+      "display": "1,998,043,721 bytes (1.998 GB decimal)",
+      "status": "measured",
+      "bytes": 1998043721,
+      "scope": "The CONUS producer ZIP gap_landfire_nationalterrestrialecosystems2011.zip listed on USGS ScienceBase item 573cc51be4b0dae0d5e4b0c5.",
+      "basis": "Exact producer item-file size from the public ScienceBase item metadata JSON; only the metadata response was retrieved (24,144 bytes). The archive body was not downloaded."
+    },
+    "alternative_sizes": [],
+    "desired_formats": [
+      "COG"
+    ],
+    "rationale": "A categorical 30 m national raster is suited to tiled COG access; retain GAP class codes, native grid, masks and metadata.",
+    "existing_cloud_native": "GEE image asset; USGS offers land-cover downloads by CONUS, state and LCC. No cloud-native download archive verified.",
+    "caveats": [
+      "The size covers the CONUS GAP/LANDFIRE 2011 package only, not state or LCC subsets and not NLCD as a separate product.",
+      "The package is a ZIP containing the raster and associated files; the package byte count is compressed transfer size and does not describe uncompressed raster size."
+    ],
+    "sources": [
+      {
+        "url": "https://www.usgs.gov/programs/gap-analysis-project/science/land-cover-data-download",
+        "supports": "GAP/LANDFIRE 2011 download choices and 2011 CONUS imagery scope",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://www.usgs.gov/programs/gap-analysis-project/science/land-cover-data-overview",
+        "supports": "30 m raster resolution and download by state, territory or LCC",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/USGS_GAP_CONUS_2011",
+        "supports": "GEE GAP CONUS 2011 product identity",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://catalog.data.gov/dataset/gap-landfire-national-terrestrial-ecosystems-2011",
+        "supports": "USGS original metadata and dataset landing page; raster dimensions/scope and landing page, but no byte-size field",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://www.sciencebase.gov/catalog/item/573cc51be4b0dae0d5e4b0c5?format=json",
+        "supports": "USGS ScienceBase item metadata names gap_landfire_nationalterrestrialecosystems2011.zip with exact size 1,998,043,721 bytes",
+        "accessed": "2026-10-30"
+      }
+    ]
+  },
+  {
+    "rank": 20,
+    "label": "MODIS GPP/NPP (MOD17)",
+    "selected_scope": "MODIS/061 Terra MOD17A3HGF (gap-filled annual NPP with annual GPP output), complete global annual year 2024 across 290 unique CMR HDF granules, including science and QA layers. Other 8-day GPP and Aqua siblings are excluded.",
+    "native_formats": [
+      "HDF-EOS2/HDF4 .hdf granules"
+    ],
+    "download_size": {
+      "display": "2,044.3589506149292 MB (sum of CMR-reported sizes; 290 granules)",
+      "status": "measured",
+      "bytes": null,
+      "scope": "All 290 unique MOD17A3HGF.061 granules for annual 2024; every granule metadata record covers 2024-01-01 to 2024-12-31.",
+      "basis": "Summed CMR UMM DataGranule.ArchiveAndDistributionInformation Size values for all 290 unique global 2024 granules. CMR reports size unit MB; unit retained without converting to bytes or assuming decimal vs binary. Parent evidence contains three complete CMR pages and a size summary in evidence-parent/mod17-2024-*.json and mod17-2024-size-summary.json."
+    },
+    "alternative_sizes": [],
+    "desired_formats": [
+      "COG",
+      "Zarr"
+    ],
+    "rationale": "COG can serve individual spatial composites; Zarr suits multi-year 8-day and annual product time axes. Preserve GPP/NPP units, QA, scale factors, projection and fill values.",
+    "existing_cloud_native": "LP DAAC public granules are listed in CMR and LP DAAC data cloud; no maintained cloud-native analytical array distribution verified.",
+    "caveats": [
+      "This is one full annual Terra product/version/year, not the summed volume of all MOD17 products. MOD17A2H/HGF are separate 8-day GPP products; Aqua MYD17 products are separate.",
+      "CMR lists granule sizes in MB; unit retained and no exact-byte conversion inferred.",
+      "Preserve NPP and annual GPP science layers, QA, fill values, scale factors and native sinusoidal tiling."
+    ],
+    "sources": [
+      {
+        "url": "https://cmr.earthdata.nasa.gov/search/collections.umm_json?short_name=MOD17A3HGF&version=061&page_size=5",
+        "supports": "Current LP DAAC MOD17A3HGF.061 collection metadata and native HDF-EOS2 collection format",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?collection_concept_id=C2565791034-LPCLOUD&temporal=2024-01-01T00%3A00%3A00Z%2C2024-12-31T23%3A59%3A59Z&page_size=100&page_num=1",
+        "supports": "First 100 of 290 unique global MOD17A3HGF.061 2024 granule metadata records and size fields",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?collection_concept_id=C2565791034-LPCLOUD&temporal=2024-01-01T00%3A00%3A00Z%2C2024-12-31T23%3A59%3A59Z&page_size=100&page_num=2",
+        "supports": "Second 100 granules in the complete 2024 size aggregation",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?collection_concept_id=C2565791034-LPCLOUD&temporal=2024-01-01T00%3A00%3A00Z%2C2024-12-31T23%3A59%3A59Z&page_size=100&page_num=3",
+        "supports": "Final 90 granules in the complete 2024 size aggregation",
+        "accessed": "2026-10-30"
+      },
+      {
+        "url": "https://lpdaac.usgs.gov/documents/972/MOD17_User_Guide_V61.pdf",
+        "supports": "Current V6.1 MOD17 HDF-EOS2 format, annual science layers and QA fields",
+        "accessed": "2026-10-30"
+      }
+    ]
+  }
+]

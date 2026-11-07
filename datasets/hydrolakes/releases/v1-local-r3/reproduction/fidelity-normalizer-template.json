@@ -1,0 +1,25 @@
+{
+  "dataset_id": "hydrolakes",
+  "source_validation_path": "__ARTIFACT_ROOT__/retained/source-validation.json",
+  "rebuild_context": {
+    "raw_code_revision": "442460af45f424f6669ba3ddd1d2d777e871c208",
+    "spatial_code_revision": "100eaadad0e42a6f12d61c08de7d061eb5bac499",
+    "clean_checkout": {
+      "commit": "100eaadad0e42a6f12d61c08de7d061eb5bac499",
+      "raw_build_workflow_commit": "442460af45f424f6669ba3ddd1d2d777e871c208",
+      "evidence": "__ARTIFACT_ROOT__/clean-rebuild-442460a/clean-rebuild.json"
+    }
+  },
+  "final_transform": "spatial_order",
+  "assets": [
+    {
+      "asset_id": "hydrolakes-polygons",
+      "raw_asset_path": "__ARTIFACT_ROOT__/retained/data.parquet",
+      "rebuilt_raw_asset_path": "__ARTIFACT_ROOT__/clean-rebuild-442460a/data.parquet",
+      "final_asset_path": "__ARTIFACT_ROOT__/spatial-order-r4/hydrolakes.parquet",
+      "rebuilt_final_asset_path": "__ARTIFACT_ROOT__/spatial-order-clean-r4/hydrolakes.parquet",
+      "augmentation_report_path": "__ARTIFACT_ROOT__/spatial-order-r4/spatial-order-validation.json",
+      "rebuilt_augmentation_report_path": "__ARTIFACT_ROOT__/spatial-order-clean-r4/spatial-order-validation.json"
+    }
+  ]
+}

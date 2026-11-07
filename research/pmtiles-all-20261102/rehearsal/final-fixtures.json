@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "fixture_scope": "synthetic point, line, and polygon GeoParquet; Tippecanoe/PMTiles build and validation repeated twice; not a production clean-checkout rebuild",
+  "tippecanoe_version": "tippecanoe v2.79.0",
+  "tippecanoe_sha256": "c504719334e5335d60c66a01491707bdbfb773ebbfe3efc7c1c8239eb18d58d1",
+  "tippecanoe_max_threads": 2,
+  "pmtiles_cli_version": "pmtiles dev, commit none, built at unknown",
+  "pmtiles_cli_sha256": "82b16b50ed0c171a10420e840456b8b0c55d79aed2e5c7e40b333587ba7d5553",
+  "python_packages": {
+    "pyarrow": "23.0.1",
+    "shapely": "2.1.2",
+    "numpy": "2.5.4",
+    "pmtiles": "3.8.1"
+  },
+  "builder_sha256": "a53ce63ddd5a420a69a406090dd4faa195c792dcb45e5487e3236daabfef9d8d",
+  "fixtures": {
+    "point": {
+      "source_sha256": "622c5aac816b840e251e591b93bee1c2375675b4d6fe20de2989553ca234a298",
+      "source_ids": [
+        23,
+        24
+      ],
+      "maxzoom_ids": [
+        2,
+        2
+      ],
+      "pmtiles_sha256_rebuild_1": "fd6f1ff6c84654742d5fa4c14a4c85bc0099a005f8b90eb75a617ff8f0cac5e0",
+      "pmtiles_sha256_rebuild_2": "fd6f1ff6c84654742d5fa4c14a4c85bc0099a005f8b90eb75a617ff8f0cac5e0",
+      "byte_identical": true
+    },
+    "line": {
+      "source_sha256": "c8a6994bd023aa723775a23a2a5acc9d42c826ab42d8c4b4c08d583277218adb",
+      "source_ids": [
+        23
+      ],
+      "maxzoom_ids": [
+        1,
+        1
+      ],
+      "pmtiles_sha256_rebuild_1": "237875bb644f840b3bb3678d105401e5ba09ed11f1346398ac2d623cadac826b",
+      "pmtiles_sha256_rebuild_2": "237875bb644f840b3bb3678d105401e5ba09ed11f1346398ac2d623cadac826b",
+      "byte_identical": true
+    },
+    "polygon": {
+      "source_sha256": "f25becef36ac684a59cc843a3295f7299b470d0f95b5ba75f0fef05f1715c165",
+      "source_ids": [
+        23
+      ],
+      "maxzoom_ids": [
+        1,
+        1
+      ],
+      "pmtiles_sha256_rebuild_1": "22b6222812625238d5780f60c35add1d59b911118a6826aaf981eb58175dbd7f",
+      "pmtiles_sha256_rebuild_2": "22b6222812625238d5780f60c35add1d59b911118a6826aaf981eb58175dbd7f",
+      "byte_identical": true
+    }
+  },
+  "all_byte_identical": true
+}

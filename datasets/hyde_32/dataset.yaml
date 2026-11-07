@@ -1,0 +1,58 @@
+schema_version: 1
+id: hyde_32
+title: History Database of the Global Environment (HYDE) 3.2
+intake:
+  kind: producer
+  reference_url: https://essd.copernicus.org/articles/9/927/2017/
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'literature: Global historical population and land-use categories on approximately
+    5 arc-minute grids; modeled allocations, not observations at every cell. HYDE 3.2 historical population
+    and land-use allocation maps, 10,000 BCE-2015 CE; version 3.2 paper is product-specific. Paper and
+    producer portal explicitly identify HYDE 3.2.'
+  sources:
+  - provider: producer
+    entry_id: History Database of the Global Environment (HYDE) 3.2
+    url: https://essd.copernicus.org/articles/9/927/2017/
+    relationship: same_family
+  access:
+  - provider: literature
+    status: download_available
+    formats:
+    - raster
+    - time-series
+    summary: Producer portal provides global-scale HYDE layers and links to the versioned dataset deposit.
+      HYDE 3.2 historical population and land-use allocation maps, 10,000 BCE-2015 CE; version 3.2 paper
+      is product-specific. Paper and producer portal explicitly identify HYDE 3.2.
+    license_summary: Exact release terms need product-specific review; no redistribution permission is
+      inferred from literature or access pages.
+    proposed_outputs:
+    - Zarr
+    rationale: Supplementary literature discovery only. A high associated-paper count is evidence of a
+      documented product family, not exact-edition usage, conversion priority, or native-format readiness.
+      Review producer bytes, terms and existing record component coverage before promotion.
+    evidence_urls:
+    - https://essd.copernicus.org/articles/9/927/2017/
+    - https://hyde-portal.geo.uu.nl/
+    - https://doi.org/10.17026/dans-25g-gez3
+  citations:
+  - provider: OpenAlex
+    paper_doi: 10.5194/essd-9-927-2017
+    work_id: https://openalex.org/W2560200117
+    cited_by_count: 1204
+    observed_on: '2026-11-01'
+    scope: associated_dataset_publication
+  evidence:
+  - path: research/global-candidates-20261031/literature/reviewed.json
+    sha256: eef4edb7f4a59e399d3670b9f2aace33bd24083f46d260a7859163c673fabbb6
+    key: hyde_32

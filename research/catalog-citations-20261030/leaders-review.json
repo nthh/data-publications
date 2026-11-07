@@ -1,0 +1,387 @@
+{
+  "scope": "Post-scoring semantic audit of the leading 15 official shared-paper groups; ordering and counts were visible. No citation API calls during this audit. Shared-paper groups do not assert equivalent products.",
+  "top15": [
+    {
+      "observed_rank": 1,
+      "work_id": "https://openalex.org/W3025949386",
+      "doi": "10.1002/qj.3803",
+      "entry_ids": [
+        "ECMWF/ERA5/DAILY",
+        "ECMWF/ERA5/HOURLY",
+        "ECMWF/ERA5/HOURLY_PRESSURE_LEVELS",
+        "ECMWF/ERA5/MONTHLY"
+      ],
+      "verdict": "valid_family",
+      "reason": "Hersbach et al. is the ERA5 reanalysis paper; daily/monthly/pressure-level entries inherit the ERA5 family rather than an exact-aggregation citation.",
+      "evidence_catalog_paths": [
+        "draft-top15-before-final-reference-review.json#1",
+        "reference-groups.json",
+        "reference-corrections.json"
+      ]
+    },
+    {
+      "observed_rank": 2,
+      "work_id": "https://openalex.org/W2173251738",
+      "doi": "10.1175/1520-0477(1996)077<0437:tnyrp>2.0.co;2",
+      "entry_ids": [
+        "NCEP_RE/sea_level_pressure",
+        "NCEP_RE/surface_temp",
+        "NCEP_RE/surface_wv"
+      ],
+      "verdict": "valid_family",
+      "reason": "Kalnay et al. describes NCEP/NCAR Reanalysis; three listed variables are subsets of that reanalysis.",
+      "evidence_catalog_paths": [
+        "draft-top15-before-final-reference-review.json#2",
+        "reference-groups.json",
+        "reference-corrections.json"
+      ]
+    },
+    {
+      "observed_rank": 3,
+      "work_id": "https://openalex.org/W2112776483",
+      "doi": "10.1002/joc.1276",
+      "entry_ids": [
+        "WORLDCLIM/V1/BIO",
+        "WORLDCLIM/V1/MONTHLY"
+      ],
+      "verdict": "valid_family",
+      "reason": "Hijmans et al. describes WorldClim Version 1 high-resolution climate surfaces underlying BIO and MONTHLY.",
+      "evidence_catalog_paths": [
+        "draft-top15-before-final-reference-review.json#3",
+        "reference-groups.json",
+        "reference-corrections.json"
+      ]
+    },
+    {
+      "observed_rank": 4,
+      "work_id": "https://openalex.org/W1981213426",
+      "doi": "10.1126/science.1244693",
+      "entry_ids": [
+        "UMD/hansen/global_forest_change_2025_v1_13",
+        "UMD/hansen/global_forest_change_2013",
+        "UMD/hansen/global_forest_change_2014",
+        "UMD/hansen/global_forest_change_2015",
+        "UMD/hansen/global_forest_change_2015_v1_3",
+        "UMD/hansen/global_forest_change_2016_v1_4",
+        "UMD/hansen/global_forest_change_2017_v1_5",
+        "UMD/hansen/global_forest_change_2018_v1_6",
+        "UMD/hansen/global_forest_change_2019_v1_7",
+        "UMD/hansen/global_forest_change_2020_v1_8",
+        "UMD/hansen/global_forest_change_2021_v1_9",
+        "UMD/hansen/global_forest_change_2022_v1_10",
+        "UMD/hansen/global_forest_change_2023_v1_11",
+        "UMD/hansen/global_forest_change_2024_v1_12"
+      ],
+      "verdict": "valid_family",
+      "reason": "Hansen et al. publishes the Global Forest Change mapping; 14 GEE yearly/version entries share a paper, not an exact-version identity.",
+      "evidence_catalog_paths": [
+        "draft-top15-before-final-reference-review.json#4",
+        "reference-groups.json",
+        "reference-corrections.json"
+      ]
+    },
+    {
+      "observed_rank": 5,
+      "work_id": "https://openalex.org/W2113410727",
+      "doi": "10.1016/s0034-4257(02)00096-2",
+      "entry_ids": [
+        "MODIS/061/MOD13A1",
+        "MODIS/061/MOD13A2",
+        "MODIS/061/MOD13A3",
+        "MODIS/061/MOD13C1",
+        "MODIS/061/MOD13Q1",
+        "MODIS/061/MYD13A1",
+        "MODIS/061/MYD13A2",
+        "MODIS/061/MYD13A3",
+        "MODIS/061/MYD13C1",
+        "MODIS/061/MYD13Q1",
+        "MODIS/006/MOD13A1",
+        "MODIS/006/MOD13A2",
+        "MODIS/006/MOD13Q1",
+        "MODIS/006/MYD13A1",
+        "MODIS/006/MYD13A2",
+        "MODIS/006/MYD13Q1"
+      ],
+      "verdict": "valid_family",
+      "reason": "Huete et al. evaluates the MODIS vegetation-index products themselves. It is product-family evidence for MOD13, not a generic NDVI-index paper and not exact Collection 6.1 evidence.",
+      "evidence_catalog_paths": [
+        "draft-top15-before-final-reference-review.json#5",
+        "reference-groups.json",
+        "reference-corrections.json"
+      ]
+    },
+    {
+      "observed_rank": 6,
+      "work_id": "https://openalex.org/W2077968790",
+      "doi": "10.1175/2009jcli2909.1",
+      "entry_ids": [
+        "CSIC/SPEI/2_11",
+        "CSIC/SPEI/2_10",
+        "CSIC/SPEI/2_9"
+      ],
+      "verdict": "remove",
+      "reason": "Vicente-Serrano et al. introduces the SPEI drought index; it does not publish the SPEIbase gridded data. Review-b already excluded it for CSIC/SPEI/2_8.",
+      "evidence_catalog_paths": [
+        "draft-top15-before-final-reference-review.json#6",
+        "reference-groups.json",
+        "reference-corrections.json"
+      ]
+    },
+    {
+      "observed_rank": 7,
+      "work_id": "https://openalex.org/W2611772571",
+      "doi": "10.1175/jcli-d-16-0758.1",
+      "entry_ids": [
+        "NASA/GSFC/MERRA/aer/2",
+        "NASA/GSFC/MERRA/aer_nv/2",
+        "NASA/GSFC/MERRA/flx/2",
+        "NASA/GSFC/MERRA/lnd/2",
+        "NASA/GSFC/MERRA/rad/2",
+        "NASA/GSFC/MERRA/slv/2"
+      ],
+      "verdict": "valid_family",
+      "reason": "Gelaro et al. is NASA’s MERRA-2 reanalysis paper; variable collections are product-family subsets.",
+      "evidence_catalog_paths": [
+        "draft-top15-before-final-reference-review.json#7",
+        "reference-groups.json",
+        "reference-corrections.json"
+      ]
+    },
+    {
+      "observed_rank": 8,
+      "work_id": "https://openalex.org/W2084744129",
+      "doi": "10.1029/2005rg000183",
+      "entry_ids": [
+        "USGS/SRTMGL1_003"
+      ],
+      "verdict": "valid_family",
+      "reason": "Farr et al. describes the SRTM mission and resulting DEM; SRTMGL1_003 is a later release and needs a base-family scope label.",
+      "evidence_catalog_paths": [
+        "draft-top15-before-final-reference-review.json#8",
+        "reference-groups.json",
+        "reference-corrections.json"
+      ]
+    },
+    {
+      "observed_rank": 9,
+      "work_id": "https://openalex.org/W1995622703",
+      "doi": "10.1175/jhm560.1",
+      "entry_ids": [
+        "TRMM/3B42",
+        "TRMM/3B43V7"
+      ],
+      "verdict": "valid_family",
+      "reason": "Huffman et al. describes the TRMM Multisatellite Precipitation Analysis (TMPA), the correct 3B42/3B43 product family; GPCP papers are separate.",
+      "evidence_catalog_paths": [
+        "draft-top15-before-final-reference-review.json#9",
+        "reference-groups.json",
+        "reference-corrections.json"
+      ]
+    },
+    {
+      "observed_rank": 10,
+      "work_id": "https://openalex.org/W2261645655",
+      "doi": "10.1038/sdata.2015.66",
+      "entry_ids": [
+        "UCSB-CHG/CHIRPS/DAILY",
+        "UCSB-CHG/CHIRPS/PENTAD"
+      ],
+      "verdict": "valid_family",
+      "reason": "Funk et al. publishes CHIRPS precipitation-with-stations, including the daily/pentad family represented here.",
+      "evidence_catalog_paths": [
+        "draft-top15-before-final-reference-review.json#10",
+        "reference-groups.json",
+        "reference-corrections.json"
+      ]
+    },
+    {
+      "observed_rank": 11,
+      "work_id": "https://openalex.org/W2119132330",
+      "doi": "10.1175/bams-85-3-381",
+      "entry_ids": [
+        "NASA/GLDAS/V021/NOAH/G025/T3H",
+        "NASA/GLDAS/V022/CLSM/G025/DA1D",
+        "NASA/GLDAS/V20/NOAH/G025/T3H"
+      ],
+      "verdict": "valid_family",
+      "reason": "Rodell et al. publishes GLDAS; V20/V021/V022 entries are later model/processing variants, so family scope is essential.",
+      "evidence_catalog_paths": [
+        "draft-top15-before-final-reference-review.json#11",
+        "reference-groups.json",
+        "reference-corrections.json"
+      ]
+    },
+    {
+      "observed_rank": 12,
+      "work_id": "https://openalex.org/W3136179920",
+      "doi": "10.5194/essd-13-4349-2021",
+      "entry_ids": [
+        "ECMWF/ERA5_LAND/DAILY_AGGR",
+        "ECMWF/ERA5_LAND/HOURLY",
+        "ECMWF/ERA5_LAND/MONTHLY_AGGR",
+        "ECMWF/ERA5_LAND/MONTHLY_BY_HOUR",
+        "ECMWF/ERA5_LAND/STATIC",
+        "ECMWF/ERA5_LAND/MONTHLY"
+      ],
+      "verdict": "valid_family",
+      "reason": "Muñoz-Sabater et al. directly publishes ERA5-Land; multiple temporal aggregations share the family paper.",
+      "evidence_catalog_paths": [
+        "draft-top15-before-final-reference-review.json#12",
+        "reference-groups.json",
+        "reference-corrections.json"
+      ]
+    },
+    {
+      "observed_rank": 13,
+      "work_id": "https://openalex.org/W2560167313",
+      "doi": "10.1038/nature20584",
+      "entry_ids": [
+        "JRC/GSW1_4/GlobalSurfaceWater",
+        "JRC/GSW1_4/Metadata",
+        "JRC/GSW1_4/MonthlyHistory",
+        "JRC/GSW1_4/MonthlyRecurrence",
+        "JRC/GSW1_4/YearlyHistory",
+        "JRC/GSW1_0/GlobalSurfaceWater",
+        "JRC/GSW1_0/Metadata",
+        "JRC/GSW1_0/MonthlyHistory",
+        "JRC/GSW1_0/MonthlyRecurrence",
+        "JRC/GSW1_0/YearlyHistory",
+        "JRC/GSW1_1/GlobalSurfaceWater",
+        "JRC/GSW1_1/Metadata",
+        "JRC/GSW1_1/MonthlyHistory",
+        "JRC/GSW1_1/MonthlyRecurrence",
+        "JRC/GSW1_1/YearlyHistory",
+        "JRC/GSW1_2/GlobalSurfaceWater",
+        "JRC/GSW1_2/Metadata",
+        "JRC/GSW1_2/MonthlyHistory",
+        "JRC/GSW1_2/MonthlyRecurrence",
+        "JRC/GSW1_2/YearlyHistory",
+        "JRC/GSW1_3/GlobalSurfaceWater",
+        "JRC/GSW1_3/Metadata",
+        "JRC/GSW1_3/MonthlyHistory",
+        "JRC/GSW1_3/MonthlyRecurrence",
+        "JRC/GSW1_3/YearlyHistory"
+      ],
+      "verdict": "valid_family",
+      "reason": "Pekel et al. publishes Global Surface Water maps and long-term change; 25 collection/version entries share a family paper.",
+      "evidence_catalog_paths": [
+        "draft-top15-before-final-reference-review.json#13",
+        "reference-groups.json",
+        "reference-corrections.json"
+      ]
+    },
+    {
+      "observed_rank": 14,
+      "work_id": "https://openalex.org/W1974038018",
+      "doi": "10.1175/2010bams3001.1",
+      "entry_ids": [
+        "NOAA/CFSR_HARMONIZED",
+        "NOAA/CFSR"
+      ],
+      "verdict": "valid_family",
+      "reason": "Saha et al. publishes NCEP CFSR; harmonized GEE entry is a downstream version of the source family.",
+      "evidence_catalog_paths": [
+        "draft-top15-before-final-reference-review.json#14",
+        "reference-groups.json",
+        "reference-corrections.json"
+      ]
+    },
+    {
+      "observed_rank": 15,
+      "work_id": "https://openalex.org/W2784327149",
+      "doi": "10.1038/sdata.2017.191",
+      "entry_ids": [
+        "IDAHO_EPSCOR/TERRACLIMATE"
+      ],
+      "verdict": "valid_product",
+      "reason": "Abatzoglou et al. directly publishes TerraClimate monthly global climate and water-balance data.",
+      "evidence_catalog_paths": [
+        "draft-top15-before-final-reference-review.json#15",
+        "reference-groups.json",
+        "reference-corrections.json"
+      ]
+    }
+  ],
+  "corrections": [
+    {
+      "entry_ids": [
+        "CSIC/SPEI/2_8",
+        "CSIC/SPEI/2_9",
+        "CSIC/SPEI/2_10",
+        "CSIC/SPEI/2_11"
+      ],
+      "remove_paper_dois": [
+        "10.1175/2009jcli2909.1"
+      ],
+      "add_paper_dois": [
+        "10.1175/2010bams2988.1",
+        "10.1175/2010jhm1224.1"
+      ],
+      "citation_scope": "base_dataset_family",
+      "reason": "The removed paper introduces the SPEI index; AMS publishes two distinct articles explicitly describing the 0.5-degree gridded SPEIbase dataset. Both concern the original family, not exact v2.8–2.11 processing or release. Preserve each version data DOI separately and correct source-field version mismatches before claiming exact release attribution.",
+      "evidence_urls": [
+        "https://journals.ametsoc.org/abstract/journals/bams/91/10/2010bams2988_1.xml",
+        "https://journals.ametsoc.org/abstract/journals/hydr/11/4/2010jhm1224_1.xml",
+        "https://developers.google.com/earth-engine/datasets/catalog/CSIC_SPEI_2_11"
+      ],
+      "evidence_catalog_paths": [
+        "reference-groups.json#refs-b95e9fad14bb",
+        "reference-groups.json#refs-b9a88a2b4894",
+        "reference-groups.json#refs-0f21c0c34cc4"
+      ]
+    },
+    {
+      "entry_ids": [
+        "JRC/GFC2020/V4",
+        "JRC/GFC2020_subtypes/V1"
+      ],
+      "move_data_to_paper_dois": [
+        "10.2760/9982436"
+      ],
+      "citation_scope": "base_dataset_family",
+      "reason": "The JRC DOI identifies a narrative Methodology, Accuracy Assessment and Comparison report about GFC2020 V3 and GFT2020 V1, not a data-release DOI. It is direct for subtype V1 and a broader family proxy for GFC2020 V4. V3 already types it as paper.",
+      "evidence_catalog_paths": [
+        "reference-groups.json#refs-287e0bb0ba1f",
+        "reference-groups.json#refs-c505077b078b",
+        "reference-groups.json#refs-39645ace9635"
+      ]
+    },
+    {
+      "entry_ids": [
+        "projects/malariaatlasproject/assets/TCB_v061/1km/8-Daily",
+        "projects/malariaatlasproject/assets/TCB_v061/1km/Annual",
+        "projects/malariaatlasproject/assets/TCB_v061/1km/Monthly",
+        "projects/malariaatlasproject/assets/TCW_v061/1km/8-Daily",
+        "projects/malariaatlasproject/assets/TCW_v061/1km/Annual",
+        "projects/malariaatlasproject/assets/TCW_v061/1km/Monthly"
+      ],
+      "remove_paper_dois": [
+        "10.1016/j.isprsjprs.2014.10.001"
+      ],
+      "reason": "Weiss et al. is a generic continental time-series gap-filling method. The sibling EVI/MAP group already excludes the same DOI, and the paper does not publish the tasseled-cap TCB/TCW products.",
+      "evidence_catalog_paths": [
+        "reference-groups.json#refs-b4c937639868",
+        "reference-groups.json#refs-8f8439fc7a3b"
+      ]
+    },
+    {
+      "entry_ids": [
+        "NASA/GRACE/MASS_GRIDS/LAND"
+      ],
+      "remove_paper_dois": [
+        "10.1029/2005gl025285",
+        "10.1029/2011wr011453"
+      ],
+      "reason": "Swenson and Wahr is generic correlated-error postprocessing; Landerer and Swenson assesses scaled terrestrial-water-storage estimates after applying scaling. Neither publishes the GRACE monthly land grid release. The newer V04/LAND review already excludes both; retain the release data DOI.",
+      "evidence_catalog_paths": [
+        "reference-groups.json#refs-e546e18e22f9",
+        "reference-groups.json#refs-59f4b1bda914"
+      ]
+    }
+  ],
+  "remaining_unknowns": [
+    "SPEIbase v2.9 and v2.10 share catalog group refs-b9a88a2b4894, whose sci:citation names v2.9 while sci:doi points to v2.8; v2.11 sci:citation names v2.10. The catalog cannot prove exact-release DOI attribution from those fields alone.",
+    "SRTMGL1_003 uses the broad SRTM mission/DEM paper; its filled Version 3 processing is not established by Farr et al. alone.",
+    "Other 10.2760 JRC report DOIs in refs-287e0bb0ba1f and refs-c505077b078b have narrative product/method/accuracy titles. They should receive the same paper-versus-data role check before final output."
+  ]
+}

@@ -1,0 +1,61 @@
+schema_version: 1
+id: esri-world-country-boundaries
+title: Esri World Countries and World Country Boundaries releases
+intake:
+  kind: official_catalog
+  reference_url: https://www.arcgis.com/home/item.html?id=ac80670eb213440ea5899bbf92a04998
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'esri: World country polygons. The detailed, generalized, and 2024 boundary items
+    are related Esri releases with different scale and content; each is designed for world mapping and
+    the Esri description names mixed Esri, Garmin, CIA, ISO, and National Geographic inputs across releases.
+    Distinct named producer product; retain exact source edition and footprint.'
+  sources:
+  - provider: esri_public
+    entry_id: 2b93b06dc0dc4e809d3c8db5cb96ba69
+    url: https://www.arcgis.com/home/item.html?id=2b93b06dc0dc4e809d3c8db5cb96ba69
+    relationship: related_release
+  - provider: esri_public
+    entry_id: ac80670eb213440ea5899bbf92a04998
+    url: https://www.arcgis.com/home/item.html?id=ac80670eb213440ea5899bbf92a04998
+    relationship: same_family
+  - provider: esri_public
+    entry_id: acc8fccf06d74364bffe6a9bd0dfded7
+    url: https://www.arcgis.com/home/item.html?id=acc8fccf06d74364bffe6a9bd0dfded7
+    relationship: related_release
+  access:
+  - provider: esri_public
+    status: service_only
+    formats:
+    - vector
+    summary: Public item pages and FeatureServer URLs were observed. Export permission and a native bulk
+      file were not established. Esri's general export documentation says export depends on the specific
+      hosted-layer settings; service availability is not evidence that this layer can be exported or mirrored.
+      Distinct named producer product; retain exact source edition and footprint.
+    license_summary: The inspected items declare the Esri Master License Agreement and identify third-party
+      source data. Their descriptions refer to varying supplier redistribution rights; the service license
+      declaration is not blanket permission to redistribute source data.
+    proposed_outputs: []
+    rationale: Keep for further review only if a needed Esri-specific boundary definition or attribute
+      schema is required. Natural Earth provides a separate public-domain alternative. Do not derive an
+      offline mirror from these services until Esri and each data supplier's terms permit it.
+    evidence_urls:
+    - https://doc.arcgis.com/en/arcgis-online/manage-data/use-hosted-layers.htm
+    - https://www.arcgis.com/home/item.html?id=ac80670eb213440ea5899bbf92a04998
+    - https://www.arcgis.com/home/item.html?id=acc8fccf06d74364bffe6a9bd0dfded7
+    - https://www.arcgis.com/home/item.html?id=2b93b06dc0dc4e809d3c8db5cb96ba69
+  citations: []
+  evidence:
+  - path: research/global-candidates-20261031/esri/reviewed.json
+    sha256: e02bd2202c3026ccd7564155bfa69b5e8bc666f65698da6bacce91ab7327d5be
+    key: esri-world-country-boundaries

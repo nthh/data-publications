@@ -1,0 +1,50 @@
+{
+  "analytic_asset_bytes_identical": true,
+  "clean_checkout_rebuild": {
+    "asset_path": "free-flowing-rivers/free-flowing-rivers-figshare-v1.parquet",
+    "asset_sha256": "17b7c3da77c9e149b4c8fd9117e4ac82fe583c08b8ca0a39f7d1142790acd431",
+    "asset_size_bytes": 811725336,
+    "checkout": "persistent detached clean checkout",
+    "conversion_commit": "a6c2026768cd21cef5e59c88364dfa3ba04efacc",
+    "fault_report": "datasets/free-flowing-rivers/evidence/raw-r1/clean-rebuild-fault-tests.json",
+    "manifest_sha256": "15b09065208475e4129dcc3dba3b66d1f1f3483c2e003ae85890e3eda4143fba",
+    "relative_output_path": ".local/free-flowing-rivers/figshare-v1-local-r1-clean-rebuild",
+    "validation_report": "datasets/free-flowing-rivers/evidence/raw-r1/clean-rebuild-validation.json"
+  },
+  "conversion_input_sha256": {
+    "README.md": "18e9169bfe9eb4c149493c0eb9a59f3a88e9e36c372322b46f7765a2af63f083",
+    "VALIDATION.md": "3a25e763b97a0599d70d5ca32a0a4c54b7fffae0e3ad1cd52fb572765e8fe882",
+    "acquire.py": "c931823e569355f29cab4dff482ec8bafe749aaa29ca84858660de4819f07b2e",
+    "build.py": "13319840be97220e553d5bc046b5cb175e5def1b18cf4e196dcb8b5a4448db89",
+    "dataset.yaml": "5724f9cec12738bb6d8d050aff023bb51f57b6a92f00372fbdf321aa348fb965",
+    "fault_tests.py": "0042029c0d52e0fa03e1f4bf474fac0198cbb058d93960e3c11bf8f60a38bd01",
+    "inspect_source.py": "2fc534551b9089638a9bcf9fc64cc8a31afb3df26cbc612e2b10a0f0074ae842",
+    "pyproject.toml": "aaa6e3d5582b3a001773d4ccf9998c74a399ad00d3e1db85c7760c4dcee89a96",
+    "source-inspection.json": "cbe200b7ced3d627e2adc5b2ff043ebb97b68a75dd54ba3b33516127bd4635bb",
+    "source-metadata.json": "125a2fc527145cb90cd1ae1d946df9c3a85a60dbfe5da041ececec3a1d0cc146",
+    "source_schema.py": "787f7fea4585173226ed21df3f4b82c0c0b71fe2217227a15ce6b97b1b260e2a",
+    "uv.lock": "a162622f953a6ebcfa630d114122b556024c51cd9674426d7b356ee996bbe78f",
+    "validate.py": "103285aa5610af8d71ac0dbd19a99beec7dfa2cb4068962f605a295c2de27054"
+  },
+  "conversion_inputs_identical": true,
+  "fault_cases": "5 passed in both outputs",
+  "first_build": {
+    "asset_path": "free-flowing-rivers/free-flowing-rivers-figshare-v1.parquet",
+    "asset_sha256": "17b7c3da77c9e149b4c8fd9117e4ac82fe583c08b8ca0a39f7d1142790acd431",
+    "asset_size_bytes": 811725336,
+    "checkout": "assigned hydro-release worktree",
+    "conversion_commit": "4f8ec8854a88b30441a9d5ba13bbdeb4108df3dd",
+    "manifest_sha256": "e0e447de5d5581fd45badaeb80be28c66c9e43b524460d4f88d6606d49d07495",
+    "relative_output_path": ".local/free-flowing-rivers/figshare-v1-local-r1"
+  },
+  "limitations": [
+    "PTL-DAT-007 spatial row-group statistics and shared packaging checks are pending."
+  ],
+  "manifest_bytes_identical": false,
+  "manifest_difference_fields": [
+    "conversion_git_commit"
+  ],
+  "manifest_identical_except_conversion_commit": true,
+  "source_fidelity_validation": "passed for 8,477,883 rows, all 38 attributes, OBJECTID FID, and raw WKB in both outputs",
+  "status": "passed"
+}

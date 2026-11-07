@@ -1,0 +1,57 @@
+{
+  "id": "river-plastic-gee-parity-v1",
+  "authorization": "User requested continue with validation after live GEE comparison was identified as the remaining authorization-dependent check. This authorizes bounded read-only validation; publication and uploads remain deferred.",
+  "asset_id": "projects/sat-io/open-datasets/open-ocean/river_plastic_emissions",
+  "rest_asset_name": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/open-ocean/river_plastic_emissions",
+  "quota_project": "mtnmap-f75ec",
+  "api": "https://earthengine.googleapis.com/v1/",
+  "operations": [
+    "GET asset metadata before and after collection reads",
+    "GET asset:listFeatures with pageSize=1000 and only server-provided pageToken; no region or property filter"
+  ],
+  "request_limits": {
+    "page_size": 1000,
+    "maximum_feature_pages": 60,
+    "maximum_rows": 50000,
+    "maximum_total_response_bytes": 150000000,
+    "timeout_seconds": 45,
+    "retries": 0,
+    "concurrency": 1
+  },
+  "cost_scope": "Read existing public vector table only. No exports, uploads, batch jobs, model computation, new infrastructure or paid compute resources.",
+  "expected_rows": 40760,
+  "expected_fields": 53,
+  "geoparquet_sha256": "de35bd69b144565af1fcd33f915e8521a1af502e3ac50235560990f6c441e8c9",
+  "coverage": "Exhaustive worldwide comparison of every source point and numeric attribute; no geographic or random sampling.",
+  "matching": {
+    "method": "Unique point-geometry match within the per-axis tolerance; inspect neighboring spatial bins, reject ambiguous matches, duplicate assignments and unmatched rows. Never join on source_row, FID or GEE system:index.",
+    "coordinate_absolute_tolerance_degrees": "0.00000001",
+    "geometry_type": "Point",
+    "crs": "WGS84 longitude, latitude; no reprojection or simplification in local comparison"
+  },
+  "numeric_comparison": {
+    "nulls": "Explicit null or absent property must match an original null; missing fields at whole-collection scope fail. Null and zero never agree.",
+    "tolerance": "abs(GEE - source) <= max(0.5 * 10**(-source_decimal_scale), 2 * ulp(float(source))). This covers fixed-point source precision and binary64 serialization only.",
+    "units": "No rescaling allowed; compare original values. Report potential 1000-fold unit patterns as discrepancies.",
+    "types": "Finite JSON numbers only for non-null numeric source values; booleans and numeric strings fail.",
+    "totals": "Compare all 39 annual/monthly emission sums with the sum of their individual cell tolerance bounds; null counts and per-field counts must match exactly."
+  },
+  "provenance": {
+    "requirements": [
+      "Pin raw metadata/pages and request descriptors by SHA-256, retrieval times, script and contract hash, environment versions and Git commit.",
+      "Metadata must be stable between start/end; page token chain must terminate, with no repeated token or missing response.",
+      "Record producer/version evidence separately from measured content parity; undocumented source version cannot be asserted as verified."
+    ],
+    "result_policy": "A comparison may establish exact observed content parity while original producer/ingestion provenance remains undocumented. Report these statuses separately; do not manufacture a source-version identifier."
+  },
+  "known_before_registration": [
+    "Local release has 40,760 points, 53 numeric fields and four original rows with null emission/runoff estimates.",
+    "Source units and published global totals were previously verified. GEE values have not been retrieved or compared.",
+    "Official GEE listFeatures documentation and installed SDK asset-name normalization were inspected."
+  ],
+  "reference_urls": [
+    "https://developers.google.com/earth-engine/reference/rest/v1/projects.assets/listFeatures",
+    "https://gee-community-catalog.org/projects/plastic/",
+    "https://doi.org/10.6084/m9.figshare.4725541.v6"
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-11-06T23:50:54.749960+00:00",
+  "status": "passed",
+  "scope": "Pilot anonymous first/middle/end64-byte exact ranges for analytic GeoParquet and PMTiles; browser and complete hosted gate separate.",
+  "checks": [
+    {
+      "url": "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/river-plastic-inputs.parquet",
+      "range": "bytes=0-63",
+      "status": 206,
+      "matches_local_bytes": true,
+      "response_headers": {
+        "content-range": "bytes 0-63/6360991",
+        "content-length": "64",
+        "content-type": "application/vnd.apache.parquet",
+        "access-control-allow-origin": "*",
+        "access-control-expose-headers": "*",
+        "accept-ranges": "bytes"
+      },
+      "passed": true
+    },
+    {
+      "url": "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/river-plastic-inputs.parquet",
+      "range": "bytes=3180495-3180558",
+      "status": 206,
+      "matches_local_bytes": true,
+      "response_headers": {
+        "content-range": "bytes 3180495-3180558/6360991",
+        "content-length": "64",
+        "content-type": "application/vnd.apache.parquet",
+        "access-control-allow-origin": "*",
+        "access-control-expose-headers": "*",
+        "accept-ranges": "bytes"
+      },
+      "passed": true
+    },
+    {
+      "url": "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/river-plastic-inputs.parquet",
+      "range": "bytes=6360927-6360990",
+      "status": 206,
+      "matches_local_bytes": true,
+      "response_headers": {
+        "content-range": "bytes 6360927-6360990/6360991",
+        "content-length": "64",
+        "content-type": "application/vnd.apache.parquet",
+        "access-control-allow-origin": "*",
+        "access-control-expose-headers": "*",
+        "accept-ranges": "bytes"
+      },
+      "passed": true
+    },
+    {
+      "url": "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/river-plastic-inputs.pmtiles",
+      "range": "bytes=0-63",
+      "status": 206,
+      "matches_local_bytes": true,
+      "response_headers": {
+        "content-range": "bytes 0-63/3705340",
+        "content-length": "64",
+        "content-type": "application/vnd.pmtiles",
+        "access-control-allow-origin": "*",
+        "access-control-expose-headers": "*",
+        "accept-ranges": "bytes"
+      },
+      "passed": true
+    },
+    {
+      "url": "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/river-plastic-inputs.pmtiles",
+      "range": "bytes=1852670-1852733",
+      "status": 206,
+      "matches_local_bytes": true,
+      "response_headers": {
+        "content-range": "bytes 1852670-1852733/3705340",
+        "content-length": "64",
+        "content-type": "application/vnd.pmtiles",
+        "access-control-allow-origin": "*",
+        "access-control-expose-headers": "*",
+        "accept-ranges": "bytes"
+      },
+      "passed": true
+    },
+    {
+      "url": "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/river-plastic-inputs.pmtiles",
+      "range": "bytes=3705276-3705339",
+      "status": 206,
+      "matches_local_bytes": true,
+      "response_headers": {
+        "content-range": "bytes 3705276-3705339/3705340",
+        "content-length": "64",
+        "content-type": "application/vnd.pmtiles",
+        "access-control-allow-origin": "*",
+        "access-control-expose-headers": "*",
+        "accept-ranges": "bytes"
+      },
+      "passed": true
+    }
+  ]
+}

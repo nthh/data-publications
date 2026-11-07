@@ -1,0 +1,80 @@
+{
+  "request_url": "https://api.openalex.org/works?search=The+Hawaii+Gap+Analysis+Project+Final+Report&corpus=all&per_page=5&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date",
+  "retrieved_at": "2026-10-30T22:07:59.123491+00:00",
+  "response_path": "responses/cdd7a52cb080325bb705b5f0fb0dc8dda71fdfc69f60a5fce881298534d6965c.json",
+  "status": 200,
+  "response_sha256": "1d7c829183a5793e897e5f85a8b4d1a9c2a75a2be4602f265a0476edb3e9d14d",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 90167,
+      "db_response_time_ms": 217,
+      "page": 1,
+      "per_page": 5,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where full text has (The Hawaii Gap Analysis Project Final Report)",
+        "x_new_oql": "get works (all corpora) where full text has (The Hawaii Gap Analysis Project Final Report)",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "The Hawaii Gap Analysis Project Final Report",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:The Hawaii Gap Analysis Project Final Report&corpus=all&per_page=5",
+        "order": "best matches first",
+        "order_default": true
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W4238618627",
+        "doi": "https://doi.org/10.2172/6929033",
+        "title": "Report on Hawaii geothermal power plant project",
+        "type": "report",
+        "publication_year": 1983,
+        "publication_date": "1983-06-01"
+      },
+      {
+        "id": "https://openalex.org/W4205885156",
+        "doi": "https://doi.org/10.2172/6563909",
+        "title": "Hawaii Geothermal Project summary report for Phase I",
+        "type": "report",
+        "publication_year": 1975,
+        "publication_date": "1975-05-01"
+      },
+      {
+        "id": "https://openalex.org/W4246521581",
+        "doi": "https://doi.org/10.2172/6849267",
+        "title": "Hawaii Geothermal Project. Summary report for Phase 1",
+        "type": "report",
+        "publication_year": 1975,
+        "publication_date": "1975-05-01"
+      },
+      {
+        "id": "https://openalex.org/W7037924572",
+        "doi": null,
+        "title": "Final report to the Hawaii State Legislature",
+        "type": "report",
+        "publication_year": 2011,
+        "publication_date": "2011-08-17"
+      },
+      {
+        "id": "https://openalex.org/W1980021663",
+        "doi": "https://doi.org/10.1029/1999jb900113",
+        "title": "Geomagnetic field intensity at Hawaii for the last 420 kyr from the Hawaii Scientific Drilling Project core, Big Island, Hawaii",
+        "type": "article",
+        "publication_year": 1999,
+        "publication_date": "1999-07-10"
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "52a8b18f8bbbd9a4b591ae236e9131bc3a7de3a6aa1d32a46b299490b01a09b2"
+}

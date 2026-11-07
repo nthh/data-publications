@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-11-01",
+  "source_commit": "17b8599edcbcdb69d6cc74269c4429019838f858",
+  "source_release": "v1.7.0",
+  "source_urls": {
+    "new_product_page": "https://github.com/source-cooperative/source.coop/blob/17b8599edcbcdb69d6cc74269c4429019838f858/src/app/(app)/products/new/page.tsx",
+    "creation_action": "https://github.com/source-cooperative/source.coop/blob/17b8599edcbcdb69d6cc74269c4429019838f858/src/lib/actions/products.ts",
+    "creation_form": "https://github.com/source-cooperative/source.coop/blob/17b8599edcbcdb69d6cc74269c4429019838f858/src/components/features/products/ProductCreationForm.tsx",
+    "unimplemented_product_api": "https://github.com/source-cooperative/source.coop/blob/17b8599edcbcdb69d6cc74269c4429019838f858/src/app/api/v1/products/[account_id]/route.ts",
+    "api_authentication": "https://github.com/source-cooperative/source.coop/blob/17b8599edcbcdb69d6cc74269c4429019838f858/src/lib/api/utils.ts",
+    "data_connections": "https://github.com/source-cooperative/source.coop/blob/17b8599edcbcdb69d6cc74269c4429019838f858/src/app/api/v1/data-connections/route.ts"
+  },
+  "supported_creation_route": "https://source.coop/products/new",
+  "mechanism": "Authenticated web form and server action; product API POST is marked 501 Not Implemented in the reviewed official source.",
+  "form_fields": [
+    "title",
+    "account_id",
+    "product_id",
+    "description",
+    "data_connection_id",
+    "visibility"
+  ],
+  "proposed_visibility": "unlisted",
+  "creation_permissions": "Personal account requires the create-products flag; organization requires active owner/maintainer membership or platform admin. Connection usability and allowed visibility are checked separately.",
+  "cli_scope": "Source CLI provides login and temporary S3 credentials, not a product-creation command. Valid CLI authentication and a namespace listing do not establish web-form creation permission.",
+  "browser_probe": {
+    "form_opened": true,
+    "form_url": "https://source.coop/products/new",
+    "automation_available": false,
+    "error_number": 12,
+    "error": "Executing JavaScript through AppleScript is turned off.",
+    "setting": "Chrome > View > Developer > Allow JavaScript from Apple Events"
+  },
+  "remote_products_created": 0,
+  "data_uploaded": false,
+  "browser_recheck": {
+    "recorded_at_utc": "2026-11-02T00:52:04.879707+00:00",
+    "result": "no_source_creation_tab",
+    "scope": "No current Chrome tab matched the Source product-creation route; the previously observed disabled automation setting was not changed."
+  }
+}

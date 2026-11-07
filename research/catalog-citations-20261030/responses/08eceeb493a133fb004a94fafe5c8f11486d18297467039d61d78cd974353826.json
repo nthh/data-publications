@@ -1,0 +1,80 @@
+{
+  "request_url": "https://api.openalex.org/works?search=TreeMap+2020%2C+2022%2C+and+2023%3A+Improved+species+range+mapping+in+a+tree-level+forest+dataset+for+the+conterminous+United+States&corpus=all&per_page=5&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date",
+  "retrieved_at": "2026-10-30T22:08:01.638371+00:00",
+  "response_path": "responses/08eceeb493a133fb004a94fafe5c8f11486d18297467039d61d78cd974353826.json",
+  "status": 200,
+  "response_sha256": "f26f70ae7fa19731a7d80d5dac8f6c149dce639ffaa7b9d243abe7748a393646",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 20,
+      "db_response_time_ms": 152,
+      "page": 1,
+      "per_page": 5,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where full text has (TreeMap 2020 2022 \"and\" 2023: Improved species range mapping in a tree-level forest dataset for the conterminous United States)",
+        "x_new_oql": "get works (all corpora) where full text has (TreeMap 2020 2022 \"and\" 2023: Improved species range mapping in a tree-level forest dataset for the conterminous United States)",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "TreeMap 2020 2022 and 2023: Improved species range mapping in a tree-level forest dataset for the conterminous United States",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:TreeMap 2020 2022 and 2023: Improved species range mapping in a tree-level forest dataset for the conterminous United States&corpus=all&per_page=5",
+        "order": "best matches first",
+        "order_default": true
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W7221472141",
+        "doi": "https://doi.org/10.5194/essd-2026-633",
+        "title": "TreeMap 2020, 2022, and 2023: Improved species range mapping in a tree-level forest dataset for the conterminous United States",
+        "type": "preprint",
+        "publication_year": 2026,
+        "publication_date": "2026-10-11"
+      },
+      {
+        "id": "https://openalex.org/W7221457513",
+        "doi": "https://doi.org/10.5194/essd-2026-633-supplement",
+        "title": "Supplementary material to \"TreeMap 2020, 2022, and 2023: Improved species range mapping in a tree-level forest dataset for the conterminous United States\"",
+        "type": "supplementary-materials",
+        "publication_year": 2026,
+        "publication_date": "2026-10-11"
+      },
+      {
+        "id": "https://openalex.org/W4416141868",
+        "doi": "https://doi.org/10.22541/au.176281856.64381389/v1",
+        "title": "Mapping Potential Forest Canopy Top Height over Eastern United States for Aid in Restoration and Silviculture Planning",
+        "type": "preprint",
+        "publication_year": 2025,
+        "publication_date": "2025-11-10"
+      },
+      {
+        "id": "https://openalex.org/W7165366766",
+        "doi": "https://doi.org/10.48550/arxiv.2606.20291",
+        "title": "Integrating national forest inventory, airborne lidar, and satellite imagery for wall-to-wall mapping of forest structure with computer vision",
+        "type": "preprint",
+        "publication_year": 2026,
+        "publication_date": "2026-06-18"
+      },
+      {
+        "id": "https://openalex.org/W7165949418",
+        "doi": "https://doi.org/10.32942/x2n38k",
+        "title": "Geospatial tree species prediction using multi-view drone imagery and computer vision",
+        "type": "preprint",
+        "publication_year": 2026,
+        "publication_date": "2026-06-25"
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "efeac0e0040af00fbd77fec6736e1eb49a2f1666cc847eff796f55dce4f125be"
+}

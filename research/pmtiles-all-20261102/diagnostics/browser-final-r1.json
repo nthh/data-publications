@@ -1,0 +1,3893 @@
+{
+  "schema_version": 1,
+  "started_at": "2026-11-02T20:39:16.050Z",
+  "status": "failed",
+  "scope": "Installed Chrome, fresh browser context for every layer, direct cross-origin object reads; local hosting only.",
+  "transfer_ceiling_bytes": 134217728,
+  "cases": [
+    {
+      "dataset_id": "grwl",
+      "layer_id": "grwl-display",
+      "format": "pmtiles",
+      "source_sha256": "382b0da7d0a879f3b74c0f32a92427b51a58600aa22f703098a0d08c819eaafe",
+      "source_size_bytes": 86545489,
+      "region": "global",
+      "status": "passed",
+      "viewer": {
+        "dataset": "grwl",
+        "layer": "grwl-display",
+        "phase": "ready",
+        "error": null,
+        "feature_count": 40917,
+        "capped": false,
+        "query": null,
+        "bbox": null,
+        "bytes": 2259157,
+        "ranges": 6,
+        "requests": 6,
+        "generation": 1,
+        "selected": null,
+        "traffic": [
+          [
+            "http://127.0.0.1:8911/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-display.pmtiles",
+            {
+              "bytes": 2259157,
+              "ranges": 6,
+              "requests": 6
+            }
+          ]
+        ]
+      },
+      "inspected_property_count": 10,
+      "active_width_expression": [
+        "interpolate",
+        [
+          "linear"
+        ],
+        [
+          "zoom"
+        ],
+        0,
+        [
+          "*",
+          [
+            "case",
+            [
+              ">",
+              [
+                "to-number",
+                [
+                  "get",
+                  "width_mean"
+                ],
+                0
+              ],
+              0
+            ],
+            [
+              "interpolate",
+              [
+                "linear"
+              ],
+              [
+                "to-number",
+                [
+                  "get",
+                  "width_mean"
+                ],
+                0
+              ],
+              1,
+              1.1,
+              50,
+              1.6,
+              200,
+              2.7,
+              1000,
+              6.2
+            ],
+            0.9
+          ],
+          0.65
+        ],
+        8,
+        [
+          "case",
+          [
+            ">",
+            [
+              "to-number",
+              [
+                "get",
+                "width_mean"
+              ],
+              0
+            ],
+            0
+          ],
+          [
+            "interpolate",
+            [
+              "linear"
+            ],
+            [
+              "to-number",
+              [
+                "get",
+                "width_mean"
+              ],
+              0
+            ],
+            1,
+            1.1,
+            50,
+            1.6,
+            200,
+            2.7,
+            1000,
+            6.2
+          ],
+          0.9
+        ],
+        12,
+        [
+          "*",
+          [
+            "case",
+            [
+              ">",
+              [
+                "to-number",
+                [
+                  "get",
+                  "width_mean"
+                ],
+                0
+              ],
+              0
+            ],
+            [
+              "interpolate",
+              [
+                "linear"
+              ],
+              [
+                "to-number",
+                [
+                  "get",
+                  "width_mean"
+                ],
+                0
+              ],
+              1,
+              1.1,
+              50,
+              1.6,
+              200,
+              2.7,
+              1000,
+              6.2
+            ],
+            0.9
+          ],
+          1.4
+        ]
+      ],
+      "clicked_mean_width": "Mean width · 4,466 m",
+      "initial_view_body_bytes": 2259157,
+      "ui_bytes_after_inspection": 2259157,
+      "unavailable_datasets_checked": true,
+      "requests": [
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-display.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/86545489",
+          "content_length": 16384,
+          "cors": "*",
+          "object_size_bytes": 86545489,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-display.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=3717-12981",
+          "content_range": "bytes 3717-12981/86545489",
+          "content_length": 9265,
+          "cors": "*",
+          "object_size_bytes": 86545489,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-display.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=2915332-3109232",
+          "content_range": "bytes 2915332-3109232/86545489",
+          "content_length": 193901,
+          "cors": "*",
+          "object_size_bytes": 86545489,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-display.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=2076778-2619761",
+          "content_range": "bytes 2076778-2619761/86545489",
+          "content_length": 542984,
+          "cors": "*",
+          "object_size_bytes": 86545489,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-display.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=3109233-4310285",
+          "content_range": "bytes 3109233-4310285/86545489",
+          "content_length": 1201053,
+          "cors": "*",
+          "object_size_bytes": 86545489,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-display.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=2619762-2915331",
+          "content_range": "bytes 2619762-2915331/86545489",
+          "content_length": 295570,
+          "cors": "*",
+          "object_size_bytes": 86545489,
+          "completed": true
+        }
+      ],
+      "response_body_bytes": 2259157,
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "dataset_id": "grwl",
+      "layer_id": "grwl-display",
+      "format": "pmtiles",
+      "source_sha256": "382b0da7d0a879f3b74c0f32a92427b51a58600aa22f703098a0d08c819eaafe",
+      "source_size_bytes": 86545489,
+      "region": "north_america",
+      "status": "passed",
+      "viewer": {
+        "dataset": "grwl",
+        "layer": "grwl-display",
+        "phase": "ready",
+        "error": null,
+        "feature_count": 38,
+        "capped": false,
+        "query": null,
+        "bbox": null,
+        "bytes": 47720,
+        "ranges": 6,
+        "requests": 6,
+        "generation": 1,
+        "selected": null,
+        "traffic": [
+          [
+            "http://127.0.0.1:8911/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-display.pmtiles",
+            {
+              "bytes": 47720,
+              "ranges": 6,
+              "requests": 6
+            }
+          ]
+        ]
+      },
+      "inspected_property_count": 10,
+      "active_width_expression": [
+        "interpolate",
+        [
+          "linear"
+        ],
+        [
+          "zoom"
+        ],
+        0,
+        [
+          "*",
+          [
+            "case",
+            [
+              ">",
+              [
+                "to-number",
+                [
+                  "get",
+                  "width_mean"
+                ],
+                0
+              ],
+              0
+            ],
+            [
+              "interpolate",
+              [
+                "linear"
+              ],
+              [
+                "to-number",
+                [
+                  "get",
+                  "width_mean"
+                ],
+                0
+              ],
+              1,
+              1.1,
+              50,
+              1.6,
+              200,
+              2.7,
+              1000,
+              6.2
+            ],
+            0.9
+          ],
+          0.65
+        ],
+        8,
+        [
+          "case",
+          [
+            ">",
+            [
+              "to-number",
+              [
+                "get",
+                "width_mean"
+              ],
+              0
+            ],
+            0
+          ],
+          [
+            "interpolate",
+            [
+              "linear"
+            ],
+            [
+              "to-number",
+              [
+                "get",
+                "width_mean"
+              ],
+              0
+            ],
+            1,
+            1.1,
+            50,
+            1.6,
+            200,
+            2.7,
+            1000,
+            6.2
+          ],
+          0.9
+        ],
+        12,
+        [
+          "*",
+          [
+            "case",
+            [
+              ">",
+              [
+                "to-number",
+                [
+                  "get",
+                  "width_mean"
+                ],
+                0
+              ],
+              0
+            ],
+            [
+              "interpolate",
+              [
+                "linear"
+              ],
+              [
+                "to-number",
+                [
+                  "get",
+                  "width_mean"
+                ],
+                0
+              ],
+              1,
+              1.1,
+              50,
+              1.6,
+              200,
+              2.7,
+              1000,
+              6.2
+            ],
+            0.9
+          ],
+          1.4
+        ]
+      ],
+      "clicked_mean_width": "Mean width · 850 m",
+      "initial_view_body_bytes": 47720,
+      "ui_bytes_after_inspection": 47720,
+      "unavailable_datasets_checked": true,
+      "requests": [
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-display.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/86545489",
+          "content_length": 16384,
+          "cors": "*",
+          "object_size_bytes": 86545489,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-display.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=3717-12981",
+          "content_range": "bytes 3717-12981/86545489",
+          "content_length": 9265,
+          "cors": "*",
+          "object_size_bytes": 86545489,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-display.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=17417073-17424260",
+          "content_range": "bytes 17417073-17424260/86545489",
+          "content_length": 7188,
+          "cors": "*",
+          "object_size_bytes": 86545489,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-display.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=17424261-17428858",
+          "content_range": "bytes 17424261-17428858/86545489",
+          "content_length": 4598,
+          "cors": "*",
+          "object_size_bytes": 86545489,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-display.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=18139597-18143940",
+          "content_range": "bytes 18139597-18143940/86545489",
+          "content_length": 4344,
+          "cors": "*",
+          "object_size_bytes": 86545489,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-display.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=18203926-18209866",
+          "content_range": "bytes 18203926-18209866/86545489",
+          "content_length": 5941,
+          "cors": "*",
+          "object_size_bytes": 86545489,
+          "completed": true
+        }
+      ],
+      "response_body_bytes": 47720,
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "dataset_id": "river-plastic-inputs",
+      "layer_id": "river-plastic-inputs-display",
+      "format": "pmtiles",
+      "source_sha256": "ca412601ea905a43bf55d5251f27e2c2d9b1403b2eb93adea1525c4fa7bc05fe",
+      "source_size_bytes": 3705340,
+      "region": "global",
+      "status": "passed",
+      "viewer": {
+        "dataset": "river-plastic-inputs",
+        "layer": "river-plastic-inputs-display",
+        "phase": "ready",
+        "error": null,
+        "feature_count": 67,
+        "capped": false,
+        "query": null,
+        "bbox": null,
+        "bytes": 20353,
+        "ranges": 5,
+        "requests": 5,
+        "generation": 1,
+        "selected": null,
+        "traffic": [
+          [
+            "http://127.0.0.1:8911/nthh/river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/river-plastic-inputs.pmtiles",
+            {
+              "bytes": 20353,
+              "ranges": 5,
+              "requests": 5
+            }
+          ]
+        ]
+      },
+      "inspected_property_count": 5,
+      "initial_view_body_bytes": 20353,
+      "ui_bytes_after_inspection": 20353,
+      "requests": [
+        {
+          "url": "http://127.0.0.1:8911/nthh/river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/river-plastic-inputs.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/3705340",
+          "content_length": 16384,
+          "cors": "*",
+          "object_size_bytes": 3705340,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/river-plastic-inputs.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=14179-15592",
+          "content_range": "bytes 14179-15592/3705340",
+          "content_length": 1414,
+          "cors": "*",
+          "object_size_bytes": 3705340,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/river-plastic-inputs.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=11624-12629",
+          "content_range": "bytes 11624-12629/3705340",
+          "content_length": 1006,
+          "cors": "*",
+          "object_size_bytes": 3705340,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/river-plastic-inputs.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=12630-13131",
+          "content_range": "bytes 12630-13131/3705340",
+          "content_length": 502,
+          "cors": "*",
+          "object_size_bytes": 3705340,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/river-plastic-inputs.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=13132-14178",
+          "content_range": "bytes 13132-14178/3705340",
+          "content_length": 1047,
+          "cors": "*",
+          "object_size_bytes": 3705340,
+          "completed": true
+        }
+      ],
+      "response_body_bytes": 20353,
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "dataset_id": "river-plastic-inputs",
+      "layer_id": "river-plastic-inputs-display",
+      "format": "pmtiles",
+      "source_sha256": "ca412601ea905a43bf55d5251f27e2c2d9b1403b2eb93adea1525c4fa7bc05fe",
+      "source_size_bytes": 3705340,
+      "region": "north_america",
+      "status": "failed",
+      "failure": "page.waitForFunction: Timeout 60000ms exceeded.",
+      "viewer": {
+        "dataset": "river-plastic-inputs",
+        "layer": "river-plastic-inputs-display",
+        "phase": "ready",
+        "error": null,
+        "feature_count": 0,
+        "capped": false,
+        "query": null,
+        "bbox": null,
+        "bytes": 16384,
+        "ranges": 1,
+        "requests": 1,
+        "generation": 1,
+        "selected": null,
+        "traffic": [
+          [
+            "http://127.0.0.1:8911/nthh/river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/river-plastic-inputs.pmtiles",
+            {
+              "bytes": 16384,
+              "ranges": 1,
+              "requests": 1
+            }
+          ]
+        ]
+      },
+      "requests": [
+        {
+          "url": "http://127.0.0.1:8911/nthh/river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/river-plastic-inputs.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/3705340",
+          "content_length": 16384,
+          "cors": "*",
+          "object_size_bytes": 3705340,
+          "completed": true
+        }
+      ],
+      "response_body_bytes": 16384,
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "dataset_id": "hydrolakes",
+      "layer_id": "hydrolakes-1",
+      "format": "pmtiles",
+      "source_sha256": "2fc61a8257322bed3c71f86e3be92ed4835023bbb23f80bc9b2bb5167cb19d46",
+      "source_size_bytes": 1122881121,
+      "region": "global",
+      "status": "passed",
+      "viewer": {
+        "dataset": "hydrolakes",
+        "layer": "hydrolakes-1",
+        "phase": "ready",
+        "error": null,
+        "feature_count": 38,
+        "capped": false,
+        "query": null,
+        "bbox": null,
+        "bytes": 32641,
+        "ranges": 5,
+        "requests": 5,
+        "generation": 1,
+        "selected": null,
+        "traffic": [
+          [
+            "http://127.0.0.1:8911/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles",
+            {
+              "bytes": 32641,
+              "ranges": 5,
+              "requests": 5
+            }
+          ]
+        ]
+      },
+      "inspected_property_count": 5,
+      "initial_view_body_bytes": 32641,
+      "all_attributes_note": "All source attributes for this ID.",
+      "all_attribute_count": 21,
+      "expected_source_attribute_count": 21,
+      "ui_bytes_after_inspection": 2699172,
+      "requests": [
+        {
+          "url": "http://127.0.0.1:8911/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/1122881121",
+          "content_length": 16384,
+          "cors": "*",
+          "object_size_bytes": 1122881121,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=7332-16519",
+          "content_range": "bytes 7332-16519/1122881121",
+          "content_length": 9188,
+          "cors": "*",
+          "object_size_bytes": 1122881121,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=2255187-2257937",
+          "content_range": "bytes 2255187-2257937/1122881121",
+          "content_length": 2751,
+          "cors": "*",
+          "object_size_bytes": 1122881121,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=2250869-2254253",
+          "content_range": "bytes 2250869-2254253/1122881121",
+          "content_length": 3385,
+          "cors": "*",
+          "object_size_bytes": 1122881121,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=2254254-2255186",
+          "content_range": "bytes 2254254-2255186/1122881121",
+          "content_length": 933,
+          "cors": "*",
+          "object_size_bytes": 1122881121,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "HEAD",
+          "status": 200,
+          "range": null,
+          "content_range": null,
+          "content_length": 949598607,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "HEAD",
+          "status": 206,
+          "range": "bytes=0-",
+          "content_range": "bytes 0-949598606/949598607",
+          "content_length": 949598607,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=949598599-949598606",
+          "content_range": "bytes 949598599-949598606/949598607",
+          "content_length": 8,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=949197963-949598598",
+          "content_range": "bytes 949197963-949598598/949598607",
+          "content_length": 400636,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "HEAD",
+          "status": 206,
+          "range": "bytes=0-",
+          "content_range": "bytes 0-949598606/949598607",
+          "content_length": 949598607,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=804302398-804302653",
+          "content_range": "bytes 804302398-804302653/949598607",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=804302418-804334794",
+          "content_range": "bytes 804302418-804334794/949598607",
+          "content_length": 32377,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=804334795-804464302",
+          "content_range": "bytes 804334795-804464302/949598607",
+          "content_length": 129508,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=811781647-811781902",
+          "content_range": "bytes 811781647-811781902/949598607",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=811781667-811857164",
+          "content_range": "bytes 811781667-811857164/949598607",
+          "content_length": 75498,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=811857165-812159156",
+          "content_range": "bytes 811857165-812159156/949598607",
+          "content_length": 301992,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=804464303-804982334",
+          "content_range": "bytes 804464303-804982334/949598607",
+          "content_length": 518032,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=812159157-813367124",
+          "content_range": "bytes 812159157-813367124/949598607",
+          "content_length": 1207968,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        }
+      ],
+      "response_body_bytes": 2699172,
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "dataset_id": "hydrolakes",
+      "layer_id": "hydrolakes-1",
+      "format": "pmtiles",
+      "source_sha256": "2fc61a8257322bed3c71f86e3be92ed4835023bbb23f80bc9b2bb5167cb19d46",
+      "source_size_bytes": 1122881121,
+      "region": "north_america",
+      "status": "passed",
+      "viewer": {
+        "dataset": "hydrolakes",
+        "layer": "hydrolakes-1",
+        "phase": "ready",
+        "error": null,
+        "feature_count": 481,
+        "capped": false,
+        "query": null,
+        "bbox": null,
+        "bytes": 330940,
+        "ranges": 6,
+        "requests": 6,
+        "generation": 1,
+        "selected": null,
+        "traffic": [
+          [
+            "http://127.0.0.1:8911/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles",
+            {
+              "bytes": 330940,
+              "ranges": 6,
+              "requests": 6
+            }
+          ]
+        ]
+      },
+      "inspected_property_count": 4,
+      "initial_view_body_bytes": 330940,
+      "all_attributes_note": "All source attributes for this ID.",
+      "all_attribute_count": 21,
+      "expected_source_attribute_count": 21,
+      "ui_bytes_after_inspection": 2127405,
+      "requests": [
+        {
+          "url": "http://127.0.0.1:8911/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/1122881121",
+          "content_length": 16384,
+          "cors": "*",
+          "object_size_bytes": 1122881121,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=7332-16519",
+          "content_range": "bytes 7332-16519/1122881121",
+          "content_length": 9188,
+          "cors": "*",
+          "object_size_bytes": 1122881121,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=5879621-5904379",
+          "content_range": "bytes 5879621-5904379/1122881121",
+          "content_length": 24759,
+          "cors": "*",
+          "object_size_bytes": 1122881121,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=5827990-5879620",
+          "content_range": "bytes 5827990-5879620/1122881121",
+          "content_length": 51631,
+          "cors": "*",
+          "object_size_bytes": 1122881121,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=7324717-7377428",
+          "content_range": "bytes 7324717-7377428/1122881121",
+          "content_length": 52712,
+          "cors": "*",
+          "object_size_bytes": 1122881121,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=7655561-7831826",
+          "content_range": "bytes 7655561-7831826/1122881121",
+          "content_length": 176266,
+          "cors": "*",
+          "object_size_bytes": 1122881121,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "HEAD",
+          "status": 200,
+          "range": null,
+          "content_range": null,
+          "content_length": 949598607,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "HEAD",
+          "status": 206,
+          "range": "bytes=0-",
+          "content_range": "bytes 0-949598606/949598607",
+          "content_length": 949598607,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=949598599-949598606",
+          "content_range": "bytes 949598599-949598606/949598607",
+          "content_length": 8,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=949197963-949598598",
+          "content_range": "bytes 949197963-949598598/949598607",
+          "content_length": 400636,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "HEAD",
+          "status": 206,
+          "range": "bytes=0-",
+          "content_range": "bytes 0-949598606/949598607",
+          "content_length": 949598607,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=23268620-23268875",
+          "content_range": "bytes 23268620-23268875/949598607",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=23268640-23300010",
+          "content_range": "bytes 23268640-23300010/949598607",
+          "content_length": 31371,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=23300011-23425494",
+          "content_range": "bytes 23300011-23425494/949598607",
+          "content_length": 125484,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=447189174-447189429",
+          "content_range": "bytes 447189174-447189429/949598607",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=447189194-447221584",
+          "content_range": "bytes 447189194-447221584/949598607",
+          "content_length": 32391,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=447221585-447351148",
+          "content_range": "bytes 447221585-447351148/949598607",
+          "content_length": 129564,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=489223645-489223900",
+          "content_range": "bytes 489223645-489223900/949598607",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=489223665-489256101",
+          "content_range": "bytes 489223665-489256101/949598607",
+          "content_length": 32437,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=489256102-489385849",
+          "content_range": "bytes 489256102-489385849/949598607",
+          "content_length": 129748,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=498519481-498519736",
+          "content_range": "bytes 498519481-498519736/949598607",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=498519501-498598462",
+          "content_range": "bytes 498519501-498598462/949598607",
+          "content_length": 78962,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=498598463-498914310",
+          "content_range": "bytes 498598463-498914310/949598607",
+          "content_length": 315848,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=489385850-489904841",
+          "content_range": "bytes 489385850-489904841/949598607",
+          "content_length": 518992,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        }
+      ],
+      "response_body_bytes": 2127405,
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "dataset_id": "free-flowing-rivers",
+      "layer_id": "free-flowing-rivers-1",
+      "format": "pmtiles",
+      "source_sha256": "6e248eba5ecdf58ee28705a8f567be9497836f0a1c6c078b50327a1599ecdce3",
+      "source_size_bytes": 3570445458,
+      "region": "global",
+      "status": "passed",
+      "viewer": {
+        "dataset": "free-flowing-rivers",
+        "layer": "free-flowing-rivers-1",
+        "phase": "ready",
+        "error": null,
+        "feature_count": 4902,
+        "capped": false,
+        "query": null,
+        "bbox": null,
+        "bytes": 369458,
+        "ranges": 6,
+        "requests": 6,
+        "generation": 1,
+        "selected": null,
+        "traffic": [
+          [
+            "http://127.0.0.1:8911/nthh/free-flowing-rivers/display/display-v1/assets/ffr-reaches.pmtiles",
+            {
+              "bytes": 369458,
+              "ranges": 6,
+              "requests": 6
+            }
+          ]
+        ]
+      },
+      "inspected_property_count": 8,
+      "initial_view_body_bytes": 369458,
+      "all_attributes_note": "All source attributes for this ID.",
+      "all_attribute_count": 40,
+      "expected_source_attribute_count": 40,
+      "ui_bytes_after_inspection": 12540630,
+      "requests": [
+        {
+          "url": "http://127.0.0.1:8911/nthh/free-flowing-rivers/display/display-v1/assets/ffr-reaches.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/3570445458",
+          "content_length": 16384,
+          "cors": "*",
+          "object_size_bytes": 3570445458,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/free-flowing-rivers/display/display-v1/assets/ffr-reaches.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=6444-16883",
+          "content_range": "bytes 6444-16883/3570445458",
+          "content_length": 10440,
+          "cors": "*",
+          "object_size_bytes": 3570445458,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/free-flowing-rivers/display/display-v1/assets/ffr-reaches.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=6702010-6832339",
+          "content_range": "bytes 6702010-6832339/3570445458",
+          "content_length": 130330,
+          "cors": "*",
+          "object_size_bytes": 3570445458,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/free-flowing-rivers/display/display-v1/assets/ffr-reaches.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=6681028-6702009",
+          "content_range": "bytes 6681028-6702009/3570445458",
+          "content_length": 20982,
+          "cors": "*",
+          "object_size_bytes": 3570445458,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/free-flowing-rivers/display/display-v1/assets/ffr-reaches.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=6489706-6567692",
+          "content_range": "bytes 6489706-6567692/3570445458",
+          "content_length": 77987,
+          "cors": "*",
+          "object_size_bytes": 3570445458,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/free-flowing-rivers/display/display-v1/assets/ffr-reaches.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=6567693-6681027",
+          "content_range": "bytes 6567693-6681027/3570445458",
+          "content_length": 113335,
+          "cors": "*",
+          "object_size_bytes": 3570445458,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "HEAD",
+          "status": 200,
+          "range": null,
+          "content_range": null,
+          "content_length": 887132886,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "HEAD",
+          "status": 206,
+          "range": "bytes=0-",
+          "content_range": "bytes 0-887132885/887132886",
+          "content_length": 887132886,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=887132878-887132885",
+          "content_range": "bytes 887132878-887132885/887132886",
+          "content_length": 8,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=875373237-887132877",
+          "content_range": "bytes 875373237-887132877/887132886",
+          "content_length": 11759641,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "HEAD",
+          "status": 206,
+          "range": "bytes=0-",
+          "content_range": "bytes 0-887132885/887132886",
+          "content_length": 887132886,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=571006875-571007130",
+          "content_range": "bytes 571006875-571007130/887132886",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=571006893-571011098",
+          "content_range": "bytes 571006893-571011098/887132886",
+          "content_length": 4206,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=571011099-571027922",
+          "content_range": "bytes 571011099-571027922/887132886",
+          "content_length": 16824,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=571391315-571391570",
+          "content_range": "bytes 571391315-571391570/887132886",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=571391333-571397775",
+          "content_range": "bytes 571391333-571397775/887132886",
+          "content_length": 6443,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=571397776-571423547",
+          "content_range": "bytes 571397776-571423547/887132886",
+          "content_length": 25772,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=571027923-571095218",
+          "content_range": "bytes 571027923-571095218/887132886",
+          "content_length": 67296,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=571095219-571364402",
+          "content_range": "bytes 571095219-571364402/887132886",
+          "content_length": 269184,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=571380861-571381116",
+          "content_range": "bytes 571380861-571381116/887132886",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=571380879-571385084",
+          "content_range": "bytes 571380879-571385084/887132886",
+          "content_length": 4206,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=571385085-571401908",
+          "content_range": "bytes 571385085-571401908/887132886",
+          "content_length": 16824,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        }
+      ],
+      "response_body_bytes": 12540630,
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "dataset_id": "free-flowing-rivers",
+      "layer_id": "free-flowing-rivers-1",
+      "format": "pmtiles",
+      "source_sha256": "6e248eba5ecdf58ee28705a8f567be9497836f0a1c6c078b50327a1599ecdce3",
+      "source_size_bytes": 3570445458,
+      "region": "north_america",
+      "status": "passed",
+      "viewer": {
+        "dataset": "free-flowing-rivers",
+        "layer": "free-flowing-rivers-1",
+        "phase": "ready",
+        "error": null,
+        "feature_count": 2108,
+        "capped": false,
+        "query": null,
+        "bbox": null,
+        "bytes": 340127,
+        "ranges": 6,
+        "requests": 6,
+        "generation": 1,
+        "selected": null,
+        "traffic": [
+          [
+            "http://127.0.0.1:8911/nthh/free-flowing-rivers/display/display-v1/assets/ffr-reaches.pmtiles",
+            {
+              "bytes": 340127,
+              "ranges": 6,
+              "requests": 6
+            }
+          ]
+        ]
+      },
+      "inspected_property_count": 8,
+      "initial_view_body_bytes": 340127,
+      "all_attributes_note": "All source attributes for this ID.",
+      "all_attribute_count": 40,
+      "expected_source_attribute_count": 40,
+      "ui_bytes_after_inspection": 12521859,
+      "requests": [
+        {
+          "url": "http://127.0.0.1:8911/nthh/free-flowing-rivers/display/display-v1/assets/ffr-reaches.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/3570445458",
+          "content_length": 16384,
+          "cors": "*",
+          "object_size_bytes": 3570445458,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/free-flowing-rivers/display/display-v1/assets/ffr-reaches.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=6444-16883",
+          "content_range": "bytes 6444-16883/3570445458",
+          "content_length": 10440,
+          "cors": "*",
+          "object_size_bytes": 3570445458,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/free-flowing-rivers/display/display-v1/assets/ffr-reaches.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=46028329-46154561",
+          "content_range": "bytes 46028329-46154561/3570445458",
+          "content_length": 126233,
+          "cors": "*",
+          "object_size_bytes": 3570445458,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/free-flowing-rivers/display/display-v1/assets/ffr-reaches.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=55366084-55439807",
+          "content_range": "bytes 55366084-55439807/3570445458",
+          "content_length": 73724,
+          "cors": "*",
+          "object_size_bytes": 3570445458,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/free-flowing-rivers/display/display-v1/assets/ffr-reaches.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=45960037-46028328",
+          "content_range": "bytes 45960037-46028328/3570445458",
+          "content_length": 68292,
+          "cors": "*",
+          "object_size_bytes": 3570445458,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/free-flowing-rivers/display/display-v1/assets/ffr-reaches.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=55905171-55950224",
+          "content_range": "bytes 55905171-55950224/3570445458",
+          "content_length": 45054,
+          "cors": "*",
+          "object_size_bytes": 3570445458,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "HEAD",
+          "status": 200,
+          "range": null,
+          "content_range": null,
+          "content_length": 887132886,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "HEAD",
+          "status": 206,
+          "range": "bytes=0-",
+          "content_range": "bytes 0-887132885/887132886",
+          "content_length": 887132886,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=887132878-887132885",
+          "content_range": "bytes 887132878-887132885/887132886",
+          "content_length": 8,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=875373237-887132877",
+          "content_range": "bytes 875373237-887132877/887132886",
+          "content_length": 11759641,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "HEAD",
+          "status": 206,
+          "range": "bytes=0-",
+          "content_range": "bytes 0-887132885/887132886",
+          "content_length": 887132886,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=753591477-753591732",
+          "content_range": "bytes 753591477-753591732/887132886",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=753591495-753595700",
+          "content_range": "bytes 753591495-753595700/887132886",
+          "content_length": 4206,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=753595701-753612524",
+          "content_range": "bytes 753595701-753612524/887132886",
+          "content_length": 16824,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=754002918-754003173",
+          "content_range": "bytes 754002918-754003173/887132886",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=754002937-754011491",
+          "content_range": "bytes 754002937-754011491/887132886",
+          "content_length": 8555,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=754011492-754045711",
+          "content_range": "bytes 754011492-754045711/887132886",
+          "content_length": 34220,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=753612525-753679820",
+          "content_range": "bytes 753612525-753679820/887132886",
+          "content_length": 67296,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=753679821-753949004",
+          "content_range": "bytes 753679821-753949004/887132886",
+          "content_length": 269184,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=753992464-753992719",
+          "content_range": "bytes 753992464-753992719/887132886",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=753992482-753996687",
+          "content_range": "bytes 753992482-753996687/887132886",
+          "content_length": 4206,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=753996688-754013511",
+          "content_range": "bytes 753996688-754013511/887132886",
+          "content_length": 16824,
+          "cors": "*",
+          "object_size_bytes": 887132886,
+          "completed": true
+        }
+      ],
+      "response_body_bytes": 12521859,
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "dataset_id": "lakeatlas",
+      "layer_id": "lakeatlas-1",
+      "format": "pmtiles",
+      "source_sha256": "394594baa10516b5bdea3841cdbbd7f8603412475059f846f5704386a72f71be",
+      "source_size_bytes": 1190009288,
+      "region": "global",
+      "status": "passed",
+      "viewer": {
+        "dataset": "lakeatlas",
+        "layer": "lakeatlas-1",
+        "phase": "ready",
+        "error": null,
+        "feature_count": 38,
+        "capped": false,
+        "query": null,
+        "bbox": null,
+        "bytes": 32781,
+        "ranges": 5,
+        "requests": 5,
+        "generation": 1,
+        "selected": null,
+        "traffic": [
+          [
+            "http://127.0.0.1:8911/nthh/lakeatlas/display/display-v1/assets/lakeatlas-polygons.pmtiles",
+            {
+              "bytes": 32781,
+              "ranges": 5,
+              "requests": 5
+            }
+          ]
+        ]
+      },
+      "inspected_property_count": 6,
+      "initial_view_body_bytes": 32781,
+      "all_attributes_note": "All source attributes for this ID.",
+      "all_attribute_count": 308,
+      "expected_source_attribute_count": 308,
+      "layer_switch_lookup_passed": true,
+      "ui_bytes_after_inspection": 26151359,
+      "requests": [
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/display/display-v1/assets/lakeatlas-polygons.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/1190009288",
+          "content_length": 16384,
+          "cors": "*",
+          "object_size_bytes": 1190009288,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/display/display-v1/assets/lakeatlas-polygons.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=8134-17347",
+          "content_range": "bytes 8134-17347/1190009288",
+          "content_length": 9214,
+          "cors": "*",
+          "object_size_bytes": 1190009288,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/display/display-v1/assets/lakeatlas-polygons.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=2252777-2255570",
+          "content_range": "bytes 2252777-2255570/1190009288",
+          "content_length": 2794,
+          "cors": "*",
+          "object_size_bytes": 1190009288,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/display/display-v1/assets/lakeatlas-polygons.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=2248388-2251813",
+          "content_range": "bytes 2248388-2251813/1190009288",
+          "content_length": 3426,
+          "cors": "*",
+          "object_size_bytes": 1190009288,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/display/display-v1/assets/lakeatlas-polygons.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=2251814-2252776",
+          "content_range": "bytes 2251814-2252776/1190009288",
+          "content_length": 963,
+          "cors": "*",
+          "object_size_bytes": 1190009288,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "HEAD",
+          "status": 200,
+          "range": null,
+          "content_range": null,
+          "content_length": 1143992867,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "HEAD",
+          "status": 206,
+          "range": "bytes=0-",
+          "content_range": "bytes 0-1143992866/1143992867",
+          "content_length": 1143992867,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=1143992859-1143992866",
+          "content_range": "bytes 1143992859-1143992866/1143992867",
+          "content_length": 8,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=1139690062-1143992858",
+          "content_range": "bytes 1139690062-1143992858/1143992867",
+          "content_length": 4302797,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "HEAD",
+          "status": 206,
+          "range": "bytes=0-",
+          "content_range": "bytes 0-1143992866/1143992867",
+          "content_length": 1143992867,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=927989615-927989870",
+          "content_range": "bytes 927989615-927989870/1143992867",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=927989635-928010921",
+          "content_range": "bytes 927989635-928010921/1143992867",
+          "content_length": 21287,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=928010922-928096069",
+          "content_range": "bytes 928010922-928096069/1143992867",
+          "content_length": 85148,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=937767516-937767771",
+          "content_range": "bytes 937767516-937767771/1143992867",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=937767536-937843033",
+          "content_range": "bytes 937767536-937843033/1143992867",
+          "content_length": 75498,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=937843034-938145025",
+          "content_range": "bytes 937843034-938145025/1143992867",
+          "content_length": 301992,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=928096070-928436661",
+          "content_range": "bytes 928096070-928436661/1143992867",
+          "content_length": 340592,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=928436662-929799029",
+          "content_range": "bytes 928436662-929799029/1143992867",
+          "content_length": 1362368,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=929799030-935248501",
+          "content_range": "bytes 929799030-935248501/1143992867",
+          "content_length": 5449472,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=938145026-939352993",
+          "content_range": "bytes 938145026-939352993/1143992867",
+          "content_length": 1207968,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/display/display-v1/assets/lakeatlas-pour-points.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/409205238",
+          "content_length": 16384,
+          "cors": "*",
+          "object_size_bytes": 409205238,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/display/display-v1/assets/lakeatlas-pour-points.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=5805-13552",
+          "content_range": "bytes 5805-13552/409205238",
+          "content_length": 7748,
+          "cors": "*",
+          "object_size_bytes": 409205238,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/display/display-v1/assets/lakeatlas-pour-points.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=1430341-1431045",
+          "content_range": "bytes 1430341-1431045/409205238",
+          "content_length": 705,
+          "cors": "*",
+          "object_size_bytes": 409205238,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/display/display-v1/assets/lakeatlas-pour-points.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=1429284-1429954",
+          "content_range": "bytes 1429284-1429954/409205238",
+          "content_length": 671,
+          "cors": "*",
+          "object_size_bytes": 409205238,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/display/display-v1/assets/lakeatlas-pour-points.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=1429955-1430340",
+          "content_range": "bytes 1429955-1430340/409205238",
+          "content_length": 386,
+          "cors": "*",
+          "object_size_bytes": 409205238,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "HEAD",
+          "status": 200,
+          "range": null,
+          "content_range": null,
+          "content_length": 283780050,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "HEAD",
+          "status": 206,
+          "range": "bytes=0-",
+          "content_range": "bytes 0-283780049/283780050",
+          "content_length": 283780050,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=283780042-283780049",
+          "content_range": "bytes 283780042-283780049/283780050",
+          "content_length": 8,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=279544603-283780041",
+          "content_range": "bytes 279544603-283780041/283780050",
+          "content_length": 4235439,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "HEAD",
+          "status": 206,
+          "range": "bytes=0-",
+          "content_range": "bytes 0-283780049/283780050",
+          "content_length": 283780050,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=187137846-187138101",
+          "content_range": "bytes 187137846-187138101/283780050",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=187137866-187159118",
+          "content_range": "bytes 187137866-187159118/283780050",
+          "content_length": 21253,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=187159119-187244130",
+          "content_range": "bytes 187159119-187244130/283780050",
+          "content_length": 85012,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=189819203-189819458",
+          "content_range": "bytes 189819203-189819458/283780050",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=189819223-189888832",
+          "content_range": "bytes 189819223-189888832/283780050",
+          "content_length": 69610,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=189888833-190167272",
+          "content_range": "bytes 189888833-190167272/283780050",
+          "content_length": 278440,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=190167273-191281032",
+          "content_range": "bytes 190167273-191281032/283780050",
+          "content_length": 1113760,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=187244131-187584178",
+          "content_range": "bytes 187244131-187584178/283780050",
+          "content_length": 340048,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=187584179-188944370",
+          "content_range": "bytes 187584179-188944370/283780050",
+          "content_length": 1360192,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=188944371-194385138",
+          "content_range": "bytes 188944371-194385138/283780050",
+          "content_length": 5440768,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        }
+      ],
+      "response_body_bytes": 26151359,
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "dataset_id": "lakeatlas",
+      "layer_id": "lakeatlas-1",
+      "format": "pmtiles",
+      "source_sha256": "394594baa10516b5bdea3841cdbbd7f8603412475059f846f5704386a72f71be",
+      "source_size_bytes": 1190009288,
+      "region": "north_america",
+      "status": "passed",
+      "viewer": {
+        "dataset": "lakeatlas",
+        "layer": "lakeatlas-1",
+        "phase": "ready",
+        "error": null,
+        "feature_count": 481,
+        "capped": false,
+        "query": null,
+        "bbox": null,
+        "bytes": 336196,
+        "ranges": 6,
+        "requests": 6,
+        "generation": 1,
+        "selected": null,
+        "traffic": [
+          [
+            "http://127.0.0.1:8911/nthh/lakeatlas/display/display-v1/assets/lakeatlas-polygons.pmtiles",
+            {
+              "bytes": 336196,
+              "ranges": 6,
+              "requests": 6
+            }
+          ]
+        ]
+      },
+      "inspected_property_count": 6,
+      "initial_view_body_bytes": 336196,
+      "all_attributes_note": "All source attributes for this ID.",
+      "all_attribute_count": 308,
+      "expected_source_attribute_count": 308,
+      "layer_switch_lookup_passed": true,
+      "ui_bytes_after_inspection": 15146347,
+      "requests": [
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/display/display-v1/assets/lakeatlas-polygons.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/1190009288",
+          "content_length": 16384,
+          "cors": "*",
+          "object_size_bytes": 1190009288,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/display/display-v1/assets/lakeatlas-polygons.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=8134-17347",
+          "content_range": "bytes 8134-17347/1190009288",
+          "content_length": 9214,
+          "cors": "*",
+          "object_size_bytes": 1190009288,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/display/display-v1/assets/lakeatlas-polygons.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=5927890-5953044",
+          "content_range": "bytes 5927890-5953044/1190009288",
+          "content_length": 25155,
+          "cors": "*",
+          "object_size_bytes": 1190009288,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/display/display-v1/assets/lakeatlas-polygons.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=7399321-7453095",
+          "content_range": "bytes 7399321-7453095/1190009288",
+          "content_length": 53775,
+          "cors": "*",
+          "object_size_bytes": 1190009288,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/display/display-v1/assets/lakeatlas-polygons.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=5875218-5927889",
+          "content_range": "bytes 5875218-5927889/1190009288",
+          "content_length": 52672,
+          "cors": "*",
+          "object_size_bytes": 1190009288,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/display/display-v1/assets/lakeatlas-polygons.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=7736338-7915333",
+          "content_range": "bytes 7736338-7915333/1190009288",
+          "content_length": 178996,
+          "cors": "*",
+          "object_size_bytes": 1190009288,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "HEAD",
+          "status": 200,
+          "range": null,
+          "content_range": null,
+          "content_length": 1143992867,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "HEAD",
+          "status": 206,
+          "range": "bytes=0-",
+          "content_range": "bytes 0-1143992866/1143992867",
+          "content_length": 1143992867,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=1143992859-1143992866",
+          "content_range": "bytes 1143992859-1143992866/1143992867",
+          "content_length": 8,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=1139690062-1143992858",
+          "content_range": "bytes 1139690062-1143992858/1143992867",
+          "content_length": 4302797,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "HEAD",
+          "status": 206,
+          "range": "bytes=0-",
+          "content_range": "bytes 0-1143992866/1143992867",
+          "content_length": 1143992867,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=34141892-34142147",
+          "content_range": "bytes 34141892-34142147/1143992867",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=34141912-34163661",
+          "content_range": "bytes 34141912-34163661/1143992867",
+          "content_length": 21750,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=34163662-34250661",
+          "content_range": "bytes 34163662-34250661/1143992867",
+          "content_length": 87000,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=521429592-521429847",
+          "content_range": "bytes 521429592-521429847/1143992867",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=521429612-521454356",
+          "content_range": "bytes 521429612-521454356/1143992867",
+          "content_length": 24745,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=521454357-521553336",
+          "content_range": "bytes 521454357-521553336/1143992867",
+          "content_length": 98980,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=569762468-569762723",
+          "content_range": "bytes 569762468-569762723/1143992867",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=569762488-569787434",
+          "content_range": "bytes 569762488-569787434/1143992867",
+          "content_length": 24947,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=569787435-569887222",
+          "content_range": "bytes 569787435-569887222/1143992867",
+          "content_length": 99788,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=580458827-580459082",
+          "content_range": "bytes 580458827-580459082/1143992867",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=580458847-580537808",
+          "content_range": "bytes 580458847-580537808/1143992867",
+          "content_length": 78962,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=580537809-580853656",
+          "content_range": "bytes 580537809-580853656/1143992867",
+          "content_length": 315848,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=569887223-570286374",
+          "content_range": "bytes 569887223-570286374/1143992867",
+          "content_length": 399152,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=570286375-571882982",
+          "content_range": "bytes 570286375-571882982/1143992867",
+          "content_length": 1596608,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/display/display-v1/assets/lakeatlas-pour-points.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/409205238",
+          "content_length": 16384,
+          "cors": "*",
+          "object_size_bytes": 409205238,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/display/display-v1/assets/lakeatlas-pour-points.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=5805-13552",
+          "content_range": "bytes 5805-13552/409205238",
+          "content_length": 7748,
+          "cors": "*",
+          "object_size_bytes": 409205238,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/display/display-v1/assets/lakeatlas-pour-points.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=2055155-2069931",
+          "content_range": "bytes 2055155-2069931/409205238",
+          "content_length": 14777,
+          "cors": "*",
+          "object_size_bytes": 409205238,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/display/display-v1/assets/lakeatlas-pour-points.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=1837223-1839568",
+          "content_range": "bytes 1837223-1839568/409205238",
+          "content_length": 2346,
+          "cors": "*",
+          "object_size_bytes": 409205238,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/display/display-v1/assets/lakeatlas-pour-points.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=1831446-1837222",
+          "content_range": "bytes 1831446-1837222/409205238",
+          "content_length": 5777,
+          "cors": "*",
+          "object_size_bytes": 409205238,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/display/display-v1/assets/lakeatlas-pour-points.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=2016465-2023018",
+          "content_range": "bytes 2016465-2023018/409205238",
+          "content_length": 6554,
+          "cors": "*",
+          "object_size_bytes": 409205238,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "HEAD",
+          "status": 200,
+          "range": null,
+          "content_range": null,
+          "content_length": 283780050,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "HEAD",
+          "status": 206,
+          "range": "bytes=0-",
+          "content_range": "bytes 0-283780049/283780050",
+          "content_length": 283780050,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=283780042-283780049",
+          "content_range": "bytes 283780042-283780049/283780050",
+          "content_length": 8,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=279544603-283780041",
+          "content_range": "bytes 279544603-283780041/283780050",
+          "content_length": 4235439,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "HEAD",
+          "status": 206,
+          "range": "bytes=0-",
+          "content_range": "bytes 0-283780049/283780050",
+          "content_length": 283780050,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=14582757-14583012",
+          "content_range": "bytes 14582757-14583012/283780050",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=14582777-14604499",
+          "content_range": "bytes 14582777-14604499/283780050",
+          "content_length": 21723,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=14604500-14691391",
+          "content_range": "bytes 14604500-14691391/283780050",
+          "content_length": 86892,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=112943836-112944091",
+          "content_range": "bytes 112943836-112944091/283780050",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=112943856-112968509",
+          "content_range": "bytes 112943856-112968509/283780050",
+          "content_length": 24654,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=112968510-113067125",
+          "content_range": "bytes 112968510-113067125/283780050",
+          "content_length": 98616,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=114699837-114700092",
+          "content_range": "bytes 114699837-114700092/283780050",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=114699857-114760072",
+          "content_range": "bytes 114699857-114760072/283780050",
+          "content_length": 60216,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=114760073-115000936",
+          "content_range": "bytes 114760073-115000936/283780050",
+          "content_length": 240864,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=115000937-115964392",
+          "content_range": "bytes 115000937-115964392/283780050",
+          "content_length": 963456,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=113067126-113461589",
+          "content_range": "bytes 113067126-113461589/283780050",
+          "content_length": 394464,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=113461590-115039445",
+          "content_range": "bytes 113461590-115039445/283780050",
+          "content_length": 1577856,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        }
+      ],
+      "response_body_bytes": 15146347,
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "dataset_id": "lakeatlas",
+      "layer_id": "lakeatlas-2",
+      "format": "pmtiles",
+      "source_sha256": "68c28ecb4585378e0e729a5c72902214e935fa7645a6bef68372f0ec61bc4ffb",
+      "source_size_bytes": 409205238,
+      "region": "global",
+      "status": "passed",
+      "viewer": {
+        "dataset": "lakeatlas",
+        "layer": "lakeatlas-2",
+        "phase": "ready",
+        "error": null,
+        "feature_count": 18,
+        "capped": false,
+        "query": null,
+        "bbox": null,
+        "bytes": 25894,
+        "ranges": 5,
+        "requests": 5,
+        "generation": 1,
+        "selected": null,
+        "traffic": [
+          [
+            "http://127.0.0.1:8911/nthh/lakeatlas/display/display-v1/assets/lakeatlas-pour-points.pmtiles",
+            {
+              "bytes": 25894,
+              "ranges": 5,
+              "requests": 5
+            }
+          ]
+        ]
+      },
+      "inspected_property_count": 6,
+      "initial_view_body_bytes": 25894,
+      "all_attributes_note": "All source attributes for this ID.",
+      "all_attribute_count": 306,
+      "expected_source_attribute_count": 306,
+      "layer_switch_lookup_passed": true,
+      "ui_bytes_after_inspection": 26151359,
+      "requests": [
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/display/display-v1/assets/lakeatlas-pour-points.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/409205238",
+          "content_length": 16384,
+          "cors": "*",
+          "object_size_bytes": 409205238,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/display/display-v1/assets/lakeatlas-pour-points.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=5805-13552",
+          "content_range": "bytes 5805-13552/409205238",
+          "content_length": 7748,
+          "cors": "*",
+          "object_size_bytes": 409205238,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/display/display-v1/assets/lakeatlas-pour-points.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=1430341-1431045",
+          "content_range": "bytes 1430341-1431045/409205238",
+          "content_length": 705,
+          "cors": "*",
+          "object_size_bytes": 409205238,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/display/display-v1/assets/lakeatlas-pour-points.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=1429284-1429954",
+          "content_range": "bytes 1429284-1429954/409205238",
+          "content_length": 671,
+          "cors": "*",
+          "object_size_bytes": 409205238,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/display/display-v1/assets/lakeatlas-pour-points.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=1429955-1430340",
+          "content_range": "bytes 1429955-1430340/409205238",
+          "content_length": 386,
+          "cors": "*",
+          "object_size_bytes": 409205238,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "HEAD",
+          "status": 200,
+          "range": null,
+          "content_range": null,
+          "content_length": 283780050,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "HEAD",
+          "status": 206,
+          "range": "bytes=0-",
+          "content_range": "bytes 0-283780049/283780050",
+          "content_length": 283780050,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=283780042-283780049",
+          "content_range": "bytes 283780042-283780049/283780050",
+          "content_length": 8,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=279544603-283780041",
+          "content_range": "bytes 279544603-283780041/283780050",
+          "content_length": 4235439,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "HEAD",
+          "status": 206,
+          "range": "bytes=0-",
+          "content_range": "bytes 0-283780049/283780050",
+          "content_length": 283780050,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=187137846-187138101",
+          "content_range": "bytes 187137846-187138101/283780050",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=187137866-187159118",
+          "content_range": "bytes 187137866-187159118/283780050",
+          "content_length": 21253,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=187159119-187244130",
+          "content_range": "bytes 187159119-187244130/283780050",
+          "content_length": 85012,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=189819203-189819458",
+          "content_range": "bytes 189819203-189819458/283780050",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=189819223-189888832",
+          "content_range": "bytes 189819223-189888832/283780050",
+          "content_length": 69610,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=189888833-190167272",
+          "content_range": "bytes 189888833-190167272/283780050",
+          "content_length": 278440,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=190167273-191281032",
+          "content_range": "bytes 190167273-191281032/283780050",
+          "content_length": 1113760,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=187244131-187584178",
+          "content_range": "bytes 187244131-187584178/283780050",
+          "content_length": 340048,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=187584179-188944370",
+          "content_range": "bytes 187584179-188944370/283780050",
+          "content_length": 1360192,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=188944371-194385138",
+          "content_range": "bytes 188944371-194385138/283780050",
+          "content_length": 5440768,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/display/display-v1/assets/lakeatlas-polygons.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/1190009288",
+          "content_length": 16384,
+          "cors": "*",
+          "object_size_bytes": 1190009288,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/display/display-v1/assets/lakeatlas-polygons.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=8134-17347",
+          "content_range": "bytes 8134-17347/1190009288",
+          "content_length": 9214,
+          "cors": "*",
+          "object_size_bytes": 1190009288,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/display/display-v1/assets/lakeatlas-polygons.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=2252777-2255570",
+          "content_range": "bytes 2252777-2255570/1190009288",
+          "content_length": 2794,
+          "cors": "*",
+          "object_size_bytes": 1190009288,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/display/display-v1/assets/lakeatlas-polygons.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=2248388-2251813",
+          "content_range": "bytes 2248388-2251813/1190009288",
+          "content_length": 3426,
+          "cors": "*",
+          "object_size_bytes": 1190009288,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/display/display-v1/assets/lakeatlas-polygons.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=2251814-2252776",
+          "content_range": "bytes 2251814-2252776/1190009288",
+          "content_length": 963,
+          "cors": "*",
+          "object_size_bytes": 1190009288,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "HEAD",
+          "status": 200,
+          "range": null,
+          "content_range": null,
+          "content_length": 1143992867,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "HEAD",
+          "status": 206,
+          "range": "bytes=0-",
+          "content_range": "bytes 0-1143992866/1143992867",
+          "content_length": 1143992867,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=1143992859-1143992866",
+          "content_range": "bytes 1143992859-1143992866/1143992867",
+          "content_length": 8,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=1139690062-1143992858",
+          "content_range": "bytes 1139690062-1143992858/1143992867",
+          "content_length": 4302797,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "HEAD",
+          "status": 206,
+          "range": "bytes=0-",
+          "content_range": "bytes 0-1143992866/1143992867",
+          "content_length": 1143992867,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=927989615-927989870",
+          "content_range": "bytes 927989615-927989870/1143992867",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=927989635-928010921",
+          "content_range": "bytes 927989635-928010921/1143992867",
+          "content_length": 21287,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=928010922-928096069",
+          "content_range": "bytes 928010922-928096069/1143992867",
+          "content_length": 85148,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=937767516-937767771",
+          "content_range": "bytes 937767516-937767771/1143992867",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=937767536-937843033",
+          "content_range": "bytes 937767536-937843033/1143992867",
+          "content_length": 75498,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=937843034-938145025",
+          "content_range": "bytes 937843034-938145025/1143992867",
+          "content_length": 301992,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=928096070-928436661",
+          "content_range": "bytes 928096070-928436661/1143992867",
+          "content_length": 340592,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=928436662-929799029",
+          "content_range": "bytes 928436662-929799029/1143992867",
+          "content_length": 1362368,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=929799030-935248501",
+          "content_range": "bytes 929799030-935248501/1143992867",
+          "content_length": 5449472,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=938145026-939352993",
+          "content_range": "bytes 938145026-939352993/1143992867",
+          "content_length": 1207968,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        }
+      ],
+      "response_body_bytes": 26151359,
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "dataset_id": "lakeatlas",
+      "layer_id": "lakeatlas-2",
+      "format": "pmtiles",
+      "source_sha256": "68c28ecb4585378e0e729a5c72902214e935fa7645a6bef68372f0ec61bc4ffb",
+      "source_size_bytes": 409205238,
+      "region": "north_america",
+      "status": "passed",
+      "viewer": {
+        "dataset": "lakeatlas",
+        "layer": "lakeatlas-2",
+        "phase": "ready",
+        "error": null,
+        "feature_count": 213,
+        "capped": false,
+        "query": null,
+        "bbox": null,
+        "bytes": 53586,
+        "ranges": 6,
+        "requests": 6,
+        "generation": 1,
+        "selected": null,
+        "traffic": [
+          [
+            "http://127.0.0.1:8911/nthh/lakeatlas/display/display-v1/assets/lakeatlas-pour-points.pmtiles",
+            {
+              "bytes": 53586,
+              "ranges": 6,
+              "requests": 6
+            }
+          ]
+        ]
+      },
+      "inspected_property_count": 6,
+      "initial_view_body_bytes": 53586,
+      "all_attributes_note": "All source attributes for this ID.",
+      "all_attribute_count": 306,
+      "expected_source_attribute_count": 306,
+      "layer_switch_lookup_passed": true,
+      "ui_bytes_after_inspection": 15146347,
+      "requests": [
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/display/display-v1/assets/lakeatlas-pour-points.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/409205238",
+          "content_length": 16384,
+          "cors": "*",
+          "object_size_bytes": 409205238,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/display/display-v1/assets/lakeatlas-pour-points.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=5805-13552",
+          "content_range": "bytes 5805-13552/409205238",
+          "content_length": 7748,
+          "cors": "*",
+          "object_size_bytes": 409205238,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/display/display-v1/assets/lakeatlas-pour-points.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=1837223-1839568",
+          "content_range": "bytes 1837223-1839568/409205238",
+          "content_length": 2346,
+          "cors": "*",
+          "object_size_bytes": 409205238,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/display/display-v1/assets/lakeatlas-pour-points.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=2016465-2023018",
+          "content_range": "bytes 2016465-2023018/409205238",
+          "content_length": 6554,
+          "cors": "*",
+          "object_size_bytes": 409205238,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/display/display-v1/assets/lakeatlas-pour-points.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=1831446-1837222",
+          "content_range": "bytes 1831446-1837222/409205238",
+          "content_length": 5777,
+          "cors": "*",
+          "object_size_bytes": 409205238,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/display/display-v1/assets/lakeatlas-pour-points.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=2055155-2069931",
+          "content_range": "bytes 2055155-2069931/409205238",
+          "content_length": 14777,
+          "cors": "*",
+          "object_size_bytes": 409205238,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "HEAD",
+          "status": 200,
+          "range": null,
+          "content_range": null,
+          "content_length": 283780050,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "HEAD",
+          "status": 206,
+          "range": "bytes=0-",
+          "content_range": "bytes 0-283780049/283780050",
+          "content_length": 283780050,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=283780042-283780049",
+          "content_range": "bytes 283780042-283780049/283780050",
+          "content_length": 8,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=279544603-283780041",
+          "content_range": "bytes 279544603-283780041/283780050",
+          "content_length": 4235439,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "HEAD",
+          "status": 206,
+          "range": "bytes=0-",
+          "content_range": "bytes 0-283780049/283780050",
+          "content_length": 283780050,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=14582757-14583012",
+          "content_range": "bytes 14582757-14583012/283780050",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=14582777-14604499",
+          "content_range": "bytes 14582777-14604499/283780050",
+          "content_length": 21723,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=14604500-14691391",
+          "content_range": "bytes 14604500-14691391/283780050",
+          "content_length": 86892,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=112943836-112944091",
+          "content_range": "bytes 112943836-112944091/283780050",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=112943856-112968509",
+          "content_range": "bytes 112943856-112968509/283780050",
+          "content_length": 24654,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=112968510-113067125",
+          "content_range": "bytes 112968510-113067125/283780050",
+          "content_length": 98616,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=114699837-114700092",
+          "content_range": "bytes 114699837-114700092/283780050",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=114699857-114760072",
+          "content_range": "bytes 114699857-114760072/283780050",
+          "content_length": 60216,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=114760073-115000936",
+          "content_range": "bytes 114760073-115000936/283780050",
+          "content_length": 240864,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=115000937-115964392",
+          "content_range": "bytes 115000937-115964392/283780050",
+          "content_length": 963456,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=113067126-113461589",
+          "content_range": "bytes 113067126-113461589/283780050",
+          "content_length": 394464,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=113461590-115039445",
+          "content_range": "bytes 113461590-115039445/283780050",
+          "content_length": 1577856,
+          "cors": "*",
+          "object_size_bytes": 283780050,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/display/display-v1/assets/lakeatlas-polygons.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/1190009288",
+          "content_length": 16384,
+          "cors": "*",
+          "object_size_bytes": 1190009288,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/display/display-v1/assets/lakeatlas-polygons.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=8134-17347",
+          "content_range": "bytes 8134-17347/1190009288",
+          "content_length": 9214,
+          "cors": "*",
+          "object_size_bytes": 1190009288,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/display/display-v1/assets/lakeatlas-polygons.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=7399321-7453095",
+          "content_range": "bytes 7399321-7453095/1190009288",
+          "content_length": 53775,
+          "cors": "*",
+          "object_size_bytes": 1190009288,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/display/display-v1/assets/lakeatlas-polygons.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=5875218-5927889",
+          "content_range": "bytes 5875218-5927889/1190009288",
+          "content_length": 52672,
+          "cors": "*",
+          "object_size_bytes": 1190009288,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/display/display-v1/assets/lakeatlas-polygons.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=5927890-5953044",
+          "content_range": "bytes 5927890-5953044/1190009288",
+          "content_length": 25155,
+          "cors": "*",
+          "object_size_bytes": 1190009288,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/display/display-v1/assets/lakeatlas-polygons.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=7736338-7915333",
+          "content_range": "bytes 7736338-7915333/1190009288",
+          "content_length": 178996,
+          "cors": "*",
+          "object_size_bytes": 1190009288,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "HEAD",
+          "status": 200,
+          "range": null,
+          "content_range": null,
+          "content_length": 1143992867,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "HEAD",
+          "status": 206,
+          "range": "bytes=0-",
+          "content_range": "bytes 0-1143992866/1143992867",
+          "content_length": 1143992867,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=1143992859-1143992866",
+          "content_range": "bytes 1143992859-1143992866/1143992867",
+          "content_length": 8,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=1139690062-1143992858",
+          "content_range": "bytes 1139690062-1143992858/1143992867",
+          "content_length": 4302797,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "HEAD",
+          "status": 206,
+          "range": "bytes=0-",
+          "content_range": "bytes 0-1143992866/1143992867",
+          "content_length": 1143992867,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=34141892-34142147",
+          "content_range": "bytes 34141892-34142147/1143992867",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=34141912-34163661",
+          "content_range": "bytes 34141912-34163661/1143992867",
+          "content_length": 21750,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=34163662-34250661",
+          "content_range": "bytes 34163662-34250661/1143992867",
+          "content_length": 87000,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=521429592-521429847",
+          "content_range": "bytes 521429592-521429847/1143992867",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=521429612-521454356",
+          "content_range": "bytes 521429612-521454356/1143992867",
+          "content_length": 24745,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=521454357-521553336",
+          "content_range": "bytes 521454357-521553336/1143992867",
+          "content_length": 98980,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=569762468-569762723",
+          "content_range": "bytes 569762468-569762723/1143992867",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=569762488-569787434",
+          "content_range": "bytes 569762488-569787434/1143992867",
+          "content_length": 24947,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=569787435-569887222",
+          "content_range": "bytes 569787435-569887222/1143992867",
+          "content_length": 99788,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=580458827-580459082",
+          "content_range": "bytes 580458827-580459082/1143992867",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=580458847-580537808",
+          "content_range": "bytes 580458847-580537808/1143992867",
+          "content_length": 78962,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=580537809-580853656",
+          "content_range": "bytes 580537809-580853656/1143992867",
+          "content_length": 315848,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=569887223-570286374",
+          "content_range": "bytes 569887223-570286374/1143992867",
+          "content_length": 399152,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8911/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=570286375-571882982",
+          "content_range": "bytes 570286375-571882982/1143992867",
+          "content_length": 1596608,
+          "cors": "*",
+          "object_size_bytes": 1143992867,
+          "completed": true
+        }
+      ],
+      "response_body_bytes": 15146347,
+      "page_errors": [],
+      "external_requests": []
+    }
+  ],
+  "finished_at": "2026-11-02T20:41:07.889Z",
+  "browser_version": "156.0.8078.79"
+}

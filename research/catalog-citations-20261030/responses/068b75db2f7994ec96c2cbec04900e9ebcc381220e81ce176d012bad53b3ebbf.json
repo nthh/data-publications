@@ -1,0 +1,80 @@
+{
+  "request_url": "https://api.openalex.org/works?search=High+resolution+population+distribution+maps+for+Southeast+Asia+in+2010+and+2015&corpus=all&per_page=5&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date",
+  "retrieved_at": "2026-10-30T22:07:50.382526+00:00",
+  "response_path": "responses/068b75db2f7994ec96c2cbec04900e9ebcc381220e81ce176d012bad53b3ebbf.json",
+  "status": 200,
+  "response_sha256": "62d35249ffd87647ef315107fc6c594e8de75cb84647105b99d748cd00417a07",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 46349,
+      "db_response_time_ms": 432,
+      "page": 1,
+      "per_page": 5,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where full text has (High resolution population distribution maps for Southeast Asia in 2010 \"and\" 2015)",
+        "x_new_oql": "get works (all corpora) where full text has (High resolution population distribution maps for Southeast Asia in 2010 \"and\" 2015)",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "High resolution population distribution maps for Southeast Asia in 2010 and 2015",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:High resolution population distribution maps for Southeast Asia in 2010 and 2015&corpus=all&per_page=5",
+        "order": "best matches first",
+        "order_default": true
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W2021603915",
+        "doi": "https://doi.org/10.1371/journal.pone.0055882",
+        "title": "High Resolution Population Distribution Maps for Southeast Asia in 2010 and 2015",
+        "type": "article",
+        "publication_year": 2013,
+        "publication_date": "2013-02-13"
+      },
+      {
+        "id": "https://openalex.org/W6892483521",
+        "doi": "https://doi.org/10.5258/soton/wp00294",
+        "title": "Vanuatu 100m Population",
+        "type": "dataset",
+        "publication_year": 2013,
+        "publication_date": "2013-01-01"
+      },
+      {
+        "id": "https://openalex.org/W6967386249",
+        "doi": "https://doi.org/10.5258/soton/wp00170",
+        "title": "Micronesia (Federated States of) 100m Population",
+        "type": "dataset",
+        "publication_year": 2013,
+        "publication_date": "2013-01-01"
+      },
+      {
+        "id": "https://openalex.org/W3151788383",
+        "doi": "https://doi.org/10.5258/soton/wp00265",
+        "title": "Tajikistan 100m Population",
+        "type": "dataset",
+        "publication_year": 2013,
+        "publication_date": "2013-01-01"
+      },
+      {
+        "id": "https://openalex.org/W6892280155",
+        "doi": "https://doi.org/10.5258/soton/wp00206",
+        "title": "Pakistan 100m Population",
+        "type": "dataset",
+        "publication_year": 2013,
+        "publication_date": "2013-01-01"
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "8d589ea338f455d7400061c28894786d1239574d8a3c7a3ea9b8cdcacfd103ed"
+}

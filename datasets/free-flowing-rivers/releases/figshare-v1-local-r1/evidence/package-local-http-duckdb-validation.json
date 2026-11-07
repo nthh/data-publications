@@ -1,0 +1,74 @@
+{
+  "checks": [
+    "GeoParquet metadata",
+    "asset checksums",
+    "HTTP 206/CORS and range cap",
+    "DuckDB local/HTTP subset match"
+  ],
+  "http_and_subset": {
+    "base_url": "http://127.0.0.1:61622",
+    "cors_preflight": "OPTIONS 204; wildcard origin; GET/HEAD/OPTIONS and Range permitted",
+    "duckdb_subsets": [
+      {
+        "asset_id": "ffr-reach-network-v1",
+        "bbox": [
+          9.29937916666604,
+          37.188658333334054,
+          10.01937083333404,
+          37.46759166666606
+        ],
+        "duckdb_http_bytes_served": 12084083,
+        "http_probe_bytes": 8388656,
+        "identifier_wkb_sha256_multiset_sum": "ac71b6cecc39b5bd3d4915dfe6a6f415c46d4de3748ef922b6e31af9673deb09",
+        "local_remote_equal": true,
+        "nonempty_geometry_rows": 24,
+        "query_engine": "DuckDB 1.5.2",
+        "rows": 24
+      }
+    ],
+    "max_probe_response_bytes": 8388608,
+    "ranges": [
+      {
+        "asset_id": "ffr-reach-network-v1",
+        "cors": "*",
+        "range": "bytes=0-31",
+        "response_bytes": 32,
+        "status": 206
+      },
+      {
+        "asset_id": "ffr-reach-network-v1",
+        "cors": "*",
+        "range": "bytes=-16",
+        "response_bytes": 16,
+        "status": 206
+      },
+      {
+        "asset_id": "ffr-reach-network-v1",
+        "cors": "*",
+        "range": "bytes=887132887-887132950",
+        "response_bytes": 0,
+        "status": 416
+      },
+      {
+        "asset_id": "ffr-reach-network-v1",
+        "cors": "*",
+        "range": "bytes=0-8388607",
+        "response_bytes": 8388608,
+        "status": 206
+      },
+      {
+        "asset_id": "ffr-reach-network-v1",
+        "cors": "*",
+        "range": "bytes=0-134217728",
+        "response_bytes": 0,
+        "status": 416
+      }
+    ],
+    "status": "passed"
+  },
+  "release_manifest_sha256": "09d5713df59baee88721911a0eef017629f814430b5c84c83eb1a5b92d8960ce",
+  "status": "passed",
+  "validated_asset_ids": [
+    "ffr-reach-network-v1"
+  ]
+}

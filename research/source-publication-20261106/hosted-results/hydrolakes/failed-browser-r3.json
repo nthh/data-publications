@@ -1,0 +1,662 @@
+{
+  "schema_version": 1,
+  "status": "failed",
+  "checked_at": "2026-11-07T00:23:28.183Z",
+  "scope": "Single-dataset hosted pilot: hydrolakes; local UI only",
+  "selected_dataset_id": "hydrolakes",
+  "expected_case_count": 2,
+  "plan_sha256": "754c02dde3cf258263619599f893558d3348c7fb51c07f8fa700efa1900ac610",
+  "browser_cases_sha256": "6ff14a9c438cdee14af4ea21876ca32876883f7b676c16596b4ddfc924b6aa10",
+  "viewer_config_sha256": "87e1d532d23d65ec45b88aac318d13b83c273f140644ba7ec3dd3edd36e198fe",
+  "viewer_build_sha256": "9fb4f4aa6b641363160db0f54610750884ff91bfe02669cb7394f148726b62f6",
+  "origin": "https://data.source.coop",
+  "transfer_ceiling_bytes_per_case": 134217728,
+  "transfer_ceiling_bytes_total": 1073741824,
+  "cases": [
+    {
+      "id": "hydrolakes-hydrolakes-1-global",
+      "dataset_id": "hydrolakes",
+      "product_id": "hydrolakes",
+      "layer_id": "hydrolakes-1",
+      "region": "global",
+      "view": null,
+      "display_object_url": "https://data.source.coop/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles",
+      "display_sha256": "2fc61a8257322bed3c71f86e3be92ed4835023bbb23f80bc9b2bb5167cb19d46",
+      "analytic_object_url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+      "analytic_sha256": "6f588d97c14651eb23bea2d74fdf2a85f218a00ff11519c81efa5512b916b7f8",
+      "status": "passed",
+      "feature_count": 38,
+      "tile_property_count": 5,
+      "viewer_traffic": {
+        "bytes": 0,
+        "bytes_unavailable": true,
+        "ranges": 5,
+        "requests": 5,
+        "remote_resource_timing": [
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          }
+        ]
+      },
+      "screenshot": "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/browser-hydrolakes-r3/hydrolakes-hydrolakes-1-global.png",
+      "transferred_bytes": 32641,
+      "requests": [
+        {
+          "url": "https://data.source.coop/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/1122881121",
+          "content_length": 16384,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "2fc61a8257322bed3c71f86e3be92ed4835023bbb23f80bc9b2bb5167cb19d46",
+          "body_bytes": 16384,
+          "body_sha256": "d1996032b1b4c91067ab199206c972376df9b26b39f11527bf5f29ce5e9e0455",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles",
+          "status": 206,
+          "range": "bytes=7332-16519",
+          "content_range": "bytes 7332-16519/1122881121",
+          "content_length": 9188,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "2fc61a8257322bed3c71f86e3be92ed4835023bbb23f80bc9b2bb5167cb19d46",
+          "body_bytes": 9188,
+          "body_sha256": "0987429701808e118156e355f3e403895073243f49d7792aabe9145afcc298c5",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles",
+          "status": 206,
+          "range": "bytes=2254254-2255186",
+          "content_range": "bytes 2254254-2255186/1122881121",
+          "content_length": 933,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "2fc61a8257322bed3c71f86e3be92ed4835023bbb23f80bc9b2bb5167cb19d46",
+          "body_bytes": 933,
+          "body_sha256": "3c2ed900a036b22da533e0b68df11cf63b70db4a4266b815f9dc53a9a25b6b9f",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles",
+          "status": 206,
+          "range": "bytes=2255187-2257937",
+          "content_range": "bytes 2255187-2257937/1122881121",
+          "content_length": 2751,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "2fc61a8257322bed3c71f86e3be92ed4835023bbb23f80bc9b2bb5167cb19d46",
+          "body_bytes": 2751,
+          "body_sha256": "808d86bb42e78a5cce2c8977a24b27ec911efa64889bc8e92d05c6019dc7e78f",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles",
+          "status": 206,
+          "range": "bytes=2250869-2254253",
+          "content_range": "bytes 2250869-2254253/1122881121",
+          "content_length": 3385,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "2fc61a8257322bed3c71f86e3be92ed4835023bbb23f80bc9b2bb5167cb19d46",
+          "body_bytes": 3385,
+          "body_sha256": "b990f20f938d92173b8606b83d4f7c35f412b8b1e8500f5a0c5c35495609c098",
+          "status_check": "passed"
+        }
+      ],
+      "heads": [],
+      "options": []
+    },
+    {
+      "id": "hydrolakes-hydrolakes-1-north_america",
+      "dataset_id": "hydrolakes",
+      "product_id": "hydrolakes",
+      "layer_id": "hydrolakes-1",
+      "region": "north_america",
+      "view": null,
+      "display_object_url": "https://data.source.coop/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles",
+      "display_sha256": "2fc61a8257322bed3c71f86e3be92ed4835023bbb23f80bc9b2bb5167cb19d46",
+      "analytic_object_url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+      "analytic_sha256": "6f588d97c14651eb23bea2d74fdf2a85f218a00ff11519c81efa5512b916b7f8",
+      "status": "failed",
+      "feature_count": 492,
+      "tile_property_count": 4,
+      "viewer_traffic": {
+        "bytes": 0,
+        "bytes_unavailable": true,
+        "ranges": 6,
+        "requests": 6,
+        "remote_resource_timing": [
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          },
+          {
+            "responseStatus": 206,
+            "transferSize": 0,
+            "encodedBodySize": 0
+          }
+        ]
+      },
+      "attribute_note": "All source attributes for this ID.",
+      "source_attribute_count": 21,
+      "screenshot": "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/browser-hydrolakes-r3/hydrolakes-hydrolakes-1-north_america-failure.png",
+      "failure": "Hosted range/CORS/browser checks failed",
+      "transferred_bytes": 2127405,
+      "requests": [
+        {
+          "url": "https://data.source.coop/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/1122881121",
+          "content_length": 16384,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "2fc61a8257322bed3c71f86e3be92ed4835023bbb23f80bc9b2bb5167cb19d46",
+          "body_bytes": 16384,
+          "body_sha256": "d1996032b1b4c91067ab199206c972376df9b26b39f11527bf5f29ce5e9e0455",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles",
+          "status": 206,
+          "range": "bytes=7332-16519",
+          "content_range": "bytes 7332-16519/1122881121",
+          "content_length": 9188,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "2fc61a8257322bed3c71f86e3be92ed4835023bbb23f80bc9b2bb5167cb19d46",
+          "body_bytes": 9188,
+          "body_sha256": "0987429701808e118156e355f3e403895073243f49d7792aabe9145afcc298c5",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles",
+          "status": 206,
+          "range": "bytes=7655561-7831826",
+          "content_range": "bytes 7655561-7831826/1122881121",
+          "content_length": 176266,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "2fc61a8257322bed3c71f86e3be92ed4835023bbb23f80bc9b2bb5167cb19d46",
+          "body_bytes": 176266,
+          "body_sha256": "e1f9f0a466a2a20085eda4581c1bd3fd13714958654b484344ec6691060ebd1b",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles",
+          "status": 206,
+          "range": "bytes=7324717-7377428",
+          "content_range": "bytes 7324717-7377428/1122881121",
+          "content_length": 52712,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "2fc61a8257322bed3c71f86e3be92ed4835023bbb23f80bc9b2bb5167cb19d46",
+          "body_bytes": 52712,
+          "body_sha256": "e1fc2a9812310332172126828b0c1c28645766bcc98b9c4309a16b1ffd6e9afa",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles",
+          "status": 206,
+          "range": "bytes=5879621-5904379",
+          "content_range": "bytes 5879621-5904379/1122881121",
+          "content_length": 24759,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "2fc61a8257322bed3c71f86e3be92ed4835023bbb23f80bc9b2bb5167cb19d46",
+          "body_bytes": 24759,
+          "body_sha256": "a23c586601d6167b2f5be5fcd0f4724cedfe0c49055f684a2e51b3a0ace9d47a",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles",
+          "status": 206,
+          "range": "bytes=5827990-5879620",
+          "content_range": "bytes 5827990-5879620/1122881121",
+          "content_length": 51631,
+          "content_type": "application/vnd.pmtiles",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "2fc61a8257322bed3c71f86e3be92ed4835023bbb23f80bc9b2bb5167cb19d46",
+          "body_bytes": 51631,
+          "body_sha256": "f7a6fe384be79fa3226b5baec121c9eae79ef6d3c9570592bbf880bd1de91289",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "status": 206,
+          "range": "bytes=949598599-949598606",
+          "content_range": "bytes 949598599-949598606/949598607",
+          "content_length": 8,
+          "content_type": "application/vnd.apache.parquet",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "6f588d97c14651eb23bea2d74fdf2a85f218a00ff11519c81efa5512b916b7f8",
+          "body_bytes": 8,
+          "body_sha256": "cd3533f6ac1f331185ad09e7d9d92978e1c260a476e7eb57a565cf3a98ea5772",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "status": 206,
+          "range": "bytes=949197963-949598598",
+          "content_range": "bytes 949197963-949598598/949598607",
+          "content_length": 400636,
+          "content_type": "application/vnd.apache.parquet",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "6f588d97c14651eb23bea2d74fdf2a85f218a00ff11519c81efa5512b916b7f8",
+          "body_bytes": 400636,
+          "body_sha256": "01280e7c1d02bd1fdc16bdcebb9784150579f7e6d6086dfcdaf6df5a09f2354f",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "status": 206,
+          "range": "bytes=23268620-23268875",
+          "content_range": "bytes 23268620-23268875/949598607",
+          "content_length": 256,
+          "content_type": "application/vnd.apache.parquet",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "6f588d97c14651eb23bea2d74fdf2a85f218a00ff11519c81efa5512b916b7f8",
+          "body_bytes": 256,
+          "body_sha256": "11d6bf21ca7b3491a08712593c1ed0a72fc10ab45515c23ed09bf7949117d467",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "status": 206,
+          "range": "bytes=23268640-23300010",
+          "content_range": "bytes 23268640-23300010/949598607",
+          "content_length": 31371,
+          "content_type": "application/vnd.apache.parquet",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "6f588d97c14651eb23bea2d74fdf2a85f218a00ff11519c81efa5512b916b7f8",
+          "body_bytes": 31371,
+          "body_sha256": "ebc448059c35f763603944b0ec474a471fc864a22ddf1dbdba6833fb3eeca6d3",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "status": 206,
+          "range": "bytes=23300011-23425494",
+          "content_range": "bytes 23300011-23425494/949598607",
+          "content_length": 125484,
+          "content_type": "application/vnd.apache.parquet",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "6f588d97c14651eb23bea2d74fdf2a85f218a00ff11519c81efa5512b916b7f8",
+          "body_bytes": 125484,
+          "body_sha256": "a80b63ac389aaf907fa76eeac3b4465e75a208798baac434f239116fc758deb7",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "status": 206,
+          "range": "bytes=447189174-447189429",
+          "content_range": "bytes 447189174-447189429/949598607",
+          "content_length": 256,
+          "content_type": "application/vnd.apache.parquet",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "6f588d97c14651eb23bea2d74fdf2a85f218a00ff11519c81efa5512b916b7f8",
+          "body_bytes": 256,
+          "body_sha256": "7917a05dd163e7406e93ae5e1efeb936645d28bc20c17ad94a18660f3ff9b453",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "status": 206,
+          "range": "bytes=447189194-447221584",
+          "content_range": "bytes 447189194-447221584/949598607",
+          "content_length": 32391,
+          "content_type": "application/vnd.apache.parquet",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "6f588d97c14651eb23bea2d74fdf2a85f218a00ff11519c81efa5512b916b7f8",
+          "body_bytes": 32391,
+          "body_sha256": "2296433ee939922c775fc8ac52ea3aff64d5034570ed1f0b6877856e675b6680",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "status": 206,
+          "range": "bytes=447221585-447351148",
+          "content_range": "bytes 447221585-447351148/949598607",
+          "content_length": 129564,
+          "content_type": "application/vnd.apache.parquet",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "6f588d97c14651eb23bea2d74fdf2a85f218a00ff11519c81efa5512b916b7f8",
+          "body_bytes": 129564,
+          "body_sha256": "4a818e2e592eb498fa872fa3e33507110085595030727d7f5a9e584dd2f8c1d6",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "status": 206,
+          "range": "bytes=489223645-489223900",
+          "content_range": "bytes 489223645-489223900/949598607",
+          "content_length": 256,
+          "content_type": "application/vnd.apache.parquet",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "6f588d97c14651eb23bea2d74fdf2a85f218a00ff11519c81efa5512b916b7f8",
+          "body_bytes": 256,
+          "body_sha256": "793287d70c51dc8f878fc208c4440278494744f9f964da99469b5d52897a2711",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "status": 206,
+          "range": "bytes=489223665-489256101",
+          "content_range": "bytes 489223665-489256101/949598607",
+          "content_length": 32437,
+          "content_type": "application/vnd.apache.parquet",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "6f588d97c14651eb23bea2d74fdf2a85f218a00ff11519c81efa5512b916b7f8",
+          "body_bytes": 32437,
+          "body_sha256": "7669a71bda151728ff6f39f6570678dd62fee53035b12ab76e859550809fe7d1",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "status": 206,
+          "range": "bytes=489256102-489385849",
+          "content_range": "bytes 489256102-489385849/949598607",
+          "content_length": 129748,
+          "content_type": "application/vnd.apache.parquet",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "6f588d97c14651eb23bea2d74fdf2a85f218a00ff11519c81efa5512b916b7f8",
+          "body_bytes": 129748,
+          "body_sha256": "1be1bc1133324f18f40e097348ed85945de6b78e02f28527927cb9e0ce7d1cc4",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "status": 206,
+          "range": "bytes=498519481-498519736",
+          "content_range": "bytes 498519481-498519736/949598607",
+          "content_length": 256,
+          "content_type": "application/vnd.apache.parquet",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "6f588d97c14651eb23bea2d74fdf2a85f218a00ff11519c81efa5512b916b7f8",
+          "body_bytes": 256,
+          "body_sha256": "24157a1df14aae0ab8d67ced33c5c1db0e200c4b67bed036dea6d6c60a289845",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "status": 206,
+          "range": "bytes=498519501-498598462",
+          "content_range": "bytes 498519501-498598462/949598607",
+          "content_length": 78962,
+          "content_type": "application/vnd.apache.parquet",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "6f588d97c14651eb23bea2d74fdf2a85f218a00ff11519c81efa5512b916b7f8",
+          "body_bytes": 78962,
+          "body_sha256": "198be9d425b7517e0303b8ac74e43095031d6df7654fcc1befd44c9fe9dbd3a7",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "status": 206,
+          "range": "bytes=498598463-498914310",
+          "content_range": "bytes 498598463-498914310/949598607",
+          "content_length": 315848,
+          "content_type": "application/vnd.apache.parquet",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "6f588d97c14651eb23bea2d74fdf2a85f218a00ff11519c81efa5512b916b7f8",
+          "body_bytes": 315848,
+          "body_sha256": "d47a66cda456024384b9d16928743ae363693aff311ddd800266083cfbab6da7",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "status": 206,
+          "range": "bytes=489385850-489904841",
+          "content_range": "bytes 489385850-489904841/949598607",
+          "content_length": 518992,
+          "content_type": "application/vnd.apache.parquet",
+          "cors": "*",
+          "expose_headers": "*",
+          "planned_sha256": "6f588d97c14651eb23bea2d74fdf2a85f218a00ff11519c81efa5512b916b7f8",
+          "body_bytes": 518992,
+          "body_sha256": "2a1fba835d5016b5e6760c6b7f709e52c767fae430a9118487738edb7221d3ee",
+          "status_check": "passed"
+        }
+      ],
+      "heads": [
+        {
+          "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "HEAD",
+          "request_range": null,
+          "planned_sha256": "6f588d97c14651eb23bea2d74fdf2a85f218a00ff11519c81efa5512b916b7f8",
+          "status": 200,
+          "content_length": 949598607,
+          "content_type": "application/vnd.apache.parquet",
+          "cors": "*",
+          "expose_headers": "*",
+          "accept_ranges": "bytes",
+          "status_check": "passed"
+        },
+        {
+          "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "HEAD",
+          "request_range": "bytes=0-",
+          "planned_sha256": "6f588d97c14651eb23bea2d74fdf2a85f218a00ff11519c81efa5512b916b7f8",
+          "status_check": "failed",
+          "failure": "Object HEAD response is not 200"
+        },
+        {
+          "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "HEAD",
+          "request_range": "bytes=0-",
+          "planned_sha256": "6f588d97c14651eb23bea2d74fdf2a85f218a00ff11519c81efa5512b916b7f8",
+          "status_check": "failed",
+          "failure": "Object HEAD response is not 200"
+        }
+      ],
+      "options": [],
+      "errors": [
+        "Object HEAD response is not 200",
+        "Object HEAD response is not 200"
+      ]
+    }
+  ],
+  "datasets": [
+    {
+      "catalog_url": "https://source.coop/nthh/river-plastic-inputs",
+      "dataset_id": "river-plastic-inputs",
+      "display_release": null,
+      "planned_object_prefixes": [
+        "river-plastic-inputs/releases/figshare-v6-r2/"
+      ],
+      "planned_object_url_prefixes": [
+        "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/"
+      ],
+      "product_id": "river-plastic-inputs",
+      "release": "figshare-v6-r2",
+      "status": "not_run",
+      "checked_at": "2026-11-07T00:23:28.183Z",
+      "screenshots": [],
+      "case_ids": [],
+      "plan_sha256": "754c02dde3cf258263619599f893558d3348c7fb51c07f8fa700efa1900ac610",
+      "browser_cases_sha256": "6ff14a9c438cdee14af4ea21876ca32876883f7b676c16596b4ddfc924b6aa10",
+      "viewer_config_sha256": "87e1d532d23d65ec45b88aac318d13b83c273f140644ba7ec3dd3edd36e198fe",
+      "viewer_build_sha256": "9fb4f4aa6b641363160db0f54610750884ff91bfe02669cb7394f148726b62f6",
+      "tested_object_urls": []
+    },
+    {
+      "catalog_url": "https://source.coop/nthh/hydrolakes",
+      "dataset_id": "hydrolakes",
+      "display_release": "display-v1",
+      "planned_object_prefixes": [
+        "hydrolakes/releases/v1-local-r3/",
+        "hydrolakes/display/display-v1/"
+      ],
+      "planned_object_url_prefixes": [
+        "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/",
+        "https://data.source.coop/nthh/hydrolakes/display/display-v1/"
+      ],
+      "product_id": "hydrolakes",
+      "release": "v1-local-r3",
+      "status": "failed",
+      "checked_at": "2026-11-07T00:23:28.183Z",
+      "screenshots": [
+        "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/browser-hydrolakes-r3/hydrolakes-hydrolakes-1-global.png",
+        "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/browser-hydrolakes-r3/hydrolakes-hydrolakes-1-north_america-failure.png"
+      ],
+      "case_ids": [
+        "hydrolakes-hydrolakes-1-global",
+        "hydrolakes-hydrolakes-1-north_america"
+      ],
+      "plan_sha256": "754c02dde3cf258263619599f893558d3348c7fb51c07f8fa700efa1900ac610",
+      "browser_cases_sha256": "6ff14a9c438cdee14af4ea21876ca32876883f7b676c16596b4ddfc924b6aa10",
+      "viewer_config_sha256": "87e1d532d23d65ec45b88aac318d13b83c273f140644ba7ec3dd3edd36e198fe",
+      "viewer_build_sha256": "9fb4f4aa6b641363160db0f54610750884ff91bfe02669cb7394f148726b62f6",
+      "tested_object_urls": [
+        "https://data.source.coop/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles",
+        "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet"
+      ]
+    },
+    {
+      "catalog_url": "https://source.coop/nthh/lakeatlas",
+      "dataset_id": "lakeatlas",
+      "display_release": "display-v1",
+      "planned_object_prefixes": [
+        "lakeatlas/releases/lakeatlas-v1.0-r2/",
+        "lakeatlas/display/display-v1/"
+      ],
+      "planned_object_url_prefixes": [
+        "https://data.source.coop/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/",
+        "https://data.source.coop/nthh/lakeatlas/display/display-v1/"
+      ],
+      "product_id": "lakeatlas",
+      "release": "lakeatlas-v1.0-r2",
+      "status": "not_run",
+      "checked_at": "2026-11-07T00:23:28.183Z",
+      "screenshots": [],
+      "case_ids": [],
+      "plan_sha256": "754c02dde3cf258263619599f893558d3348c7fb51c07f8fa700efa1900ac610",
+      "browser_cases_sha256": "6ff14a9c438cdee14af4ea21876ca32876883f7b676c16596b4ddfc924b6aa10",
+      "viewer_config_sha256": "87e1d532d23d65ec45b88aac318d13b83c273f140644ba7ec3dd3edd36e198fe",
+      "viewer_build_sha256": "9fb4f4aa6b641363160db0f54610750884ff91bfe02669cb7394f148726b62f6",
+      "tested_object_urls": []
+    },
+    {
+      "catalog_url": "https://source.coop/nthh/free-flowing-rivers",
+      "dataset_id": "free-flowing-rivers",
+      "display_release": "display-v1",
+      "planned_object_prefixes": [
+        "free-flowing-rivers/releases/figshare-v1-local-r2/",
+        "free-flowing-rivers/display/display-v1/"
+      ],
+      "planned_object_url_prefixes": [
+        "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/",
+        "https://data.source.coop/nthh/free-flowing-rivers/display/display-v1/"
+      ],
+      "product_id": "free-flowing-rivers",
+      "release": "figshare-v1-local-r2",
+      "status": "not_run",
+      "checked_at": "2026-11-07T00:23:28.183Z",
+      "screenshots": [],
+      "case_ids": [],
+      "plan_sha256": "754c02dde3cf258263619599f893558d3348c7fb51c07f8fa700efa1900ac610",
+      "browser_cases_sha256": "6ff14a9c438cdee14af4ea21876ca32876883f7b676c16596b4ddfc924b6aa10",
+      "viewer_config_sha256": "87e1d532d23d65ec45b88aac318d13b83c273f140644ba7ec3dd3edd36e198fe",
+      "viewer_build_sha256": "9fb4f4aa6b641363160db0f54610750884ff91bfe02669cb7394f148726b62f6",
+      "tested_object_urls": []
+    },
+    {
+      "catalog_url": "https://source.coop/nthh/grwl-raw",
+      "dataset_id": "grwl-raw",
+      "display_release": "raw-v01.01-display-r3",
+      "planned_object_prefixes": [
+        "grwl-raw/releases/raw-v01.01-local-r1/",
+        "grwl-raw/display/raw-v01.01-display-r3/"
+      ],
+      "planned_object_url_prefixes": [
+        "https://data.source.coop/nthh/grwl-raw/releases/raw-v01.01-local-r1/",
+        "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/"
+      ],
+      "product_id": "grwl-raw",
+      "release": "raw-v01.01-local-r1",
+      "status": "not_run",
+      "checked_at": "2026-11-07T00:23:28.183Z",
+      "screenshots": [],
+      "case_ids": [],
+      "plan_sha256": "754c02dde3cf258263619599f893558d3348c7fb51c07f8fa700efa1900ac610",
+      "browser_cases_sha256": "6ff14a9c438cdee14af4ea21876ca32876883f7b676c16596b4ddfc924b6aa10",
+      "viewer_config_sha256": "87e1d532d23d65ec45b88aac318d13b83c273f140644ba7ec3dd3edd36e198fe",
+      "viewer_build_sha256": "9fb4f4aa6b641363160db0f54610750884ff91bfe02669cb7394f148726b62f6",
+      "tested_object_urls": []
+    }
+  ],
+  "browser_version": "156.0.8078.80",
+  "total_transferred_bytes": 2160046
+}

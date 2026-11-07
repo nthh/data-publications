@@ -1,0 +1,80 @@
+{
+  "request_url": "https://api.openalex.org/works?search=Global+GRACE+data+assimilation+for+groundwater+and+drought+monitoring%3A+Advances+and+challenges&corpus=all&per_page=5&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date",
+  "retrieved_at": "2026-10-30T22:07:46.953747+00:00",
+  "response_path": "responses/1acaf3890f0e89bec74c7e3548a4fb90fb63809cdc693db063fc7f9448b96e99.json",
+  "status": 200,
+  "response_sha256": "bee01cd6bd59846c0b4279dba371be20e52abb2cd582a220b27eb3e7fc847be4",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 1557,
+      "db_response_time_ms": 135,
+      "page": 1,
+      "per_page": 5,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where full text has (Global GRACE data assimilation for groundwater \"and\" drought monitoring: Advances \"and\" challenges)",
+        "x_new_oql": "get works (all corpora) where full text has (Global GRACE data assimilation for groundwater \"and\" drought monitoring: Advances \"and\" challenges)",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "Global GRACE data assimilation for groundwater and drought monitoring: Advances and challenges",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:Global GRACE data assimilation for groundwater and drought monitoring: Advances and challenges&corpus=all&per_page=5",
+        "order": "best matches first",
+        "order_default": true
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W2969940692",
+        "doi": "https://doi.org/10.1029/2018wr024618",
+        "title": "Global GRACE Data Assimilation for Groundwater and Drought Monitoring: Advances and Challenges",
+        "type": "article",
+        "publication_year": 2019,
+        "publication_date": "2019-08-22"
+      },
+      {
+        "id": "https://openalex.org/W3118126441",
+        "doi": "https://doi.org/10.3389/fenvs.2020.584690",
+        "title": "Monitoring Droughts From GRACE",
+        "type": "article",
+        "publication_year": 2020,
+        "publication_date": "2020-12-23"
+      },
+      {
+        "id": "https://openalex.org/W4200352309",
+        "doi": "https://doi.org/10.1029/2020wr029500",
+        "title": "Global Groundwater Modeling and Monitoring: Opportunities and Challenges",
+        "type": "article",
+        "publication_year": 2021,
+        "publication_date": "2021-12-01"
+      },
+      {
+        "id": "https://openalex.org/W4391765657",
+        "doi": "https://doi.org/10.1016/j.ejrh.2024.101699",
+        "title": "Is groundwater running out in the Western Cape, South Africa? Evaluating GRACE data to assess groundwater storage during droughts",
+        "type": "article",
+        "publication_year": 2024,
+        "publication_date": "2024-02-12"
+      },
+      {
+        "id": "https://openalex.org/W3096945879",
+        "doi": "https://doi.org/10.1029/2020wr027556",
+        "title": "Comparison of Groundwater Storage Changes From GRACE Satellites With Monitoring and Modeling of Major U.S. Aquifers",
+        "type": "article",
+        "publication_year": 2020,
+        "publication_date": "2020-11-05"
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "6832edd98701eca5dd79c6cdc3be2af97c1037f49c71654c54829f26b4c779ad"
+}

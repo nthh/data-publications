@@ -1,0 +1,101 @@
+schema_version: 1
+id: c3slc
+title: Copernicus Climate Change Service (C3S) Land Cover Classification Gridded Maps
+  (1992 -2022)
+community_url: https://gee-community-catalog.org/projects/c3slc
+audit:
+  snapshot: gee-community-audit-20261029
+  family_key: c3slc
+  unique_gee_asset_count: 1
+  initial_queue: review_external_native_counterpart
+  folia_registry_status: not_identified
+  folia_registry_ids: []
+  source_coop_urls: []
+  source_coop_scope: null
+  external_native_urls:
+  - https://planetarycomputer.microsoft.com/api/stac/v1/collections/esa-cci-lc
+  external_native_scope: Annual ESA CCI/C3S 300m series through 2020; later GEE years
+    not established.
+triage:
+  decision: pending
+  priority: normal
+review:
+  citation_assessment:
+    as_of: '2026-10-29'
+    provider: OpenAlex
+    evidence_path: research/citations/rankings.json
+    evidence_key: c3slc
+    geographic_scope: global
+    paper_count_status: unknown
+    max_paper_citations: null
+    max_data_doi_citations: 100
+    top_paper_doi: null
+    top_paper_openalex_id: null
+    citation_scope: base_dataset_family
+    citation_scope_note: Pinned citation is the 2017 CCI product guide, while the
+      GEE family extends through later C3S updates.
+
+# Cross-catalog discovery: global-candidates-20261031
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'planetary: review_note: Global annual land cover; all-world STAC bbox. This COG collection
+    is the exact catalog source already recorded as c3slc.; stac_bbox: [-180, -90, 180, 90]; temporal_interval:
+    [["1992-01-01T00:00:00Z", "2020-12-31T23:59:59Z"]] Existing C3S record cites PC COG source; PC through
+    2020 versus GEE through 2022, no byte parity. planetary: review_note: Global annual land cover, 1992–2020;
+    same ESA CCI product family as COG collection, distinct NetCDF representation.; stac_bbox: [-180,
+    -90, 180, 90]; temporal_interval: [["1992-01-01T00:00:00Z", "2020-12-31T23:59:59Z"]] NetCDF representation
+    of PC ESA CCI through 2020; later GEE years unproven.'
+  sources:
+  - provider: planetary_computer
+    entry_id: esa-cci-lc
+    url: https://planetarycomputer.microsoft.com/api/stac/v1/collections/esa-cci-lc
+    relationship: related_release
+  - provider: planetary_computer
+    entry_id: esa-cci-lc-netcdf
+    url: https://planetarycomputer.microsoft.com/api/stac/v1/collections/esa-cci-lc-netcdf
+    relationship: related_release
+  access:
+  - provider: planetary_computer
+    status: native_available
+    formats:
+    - COG
+    summary: 'Collection metadata declares per-item data assets / provider storage roots in the listed
+      native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain
+      unvalidated. Existing C3S record cites PC COG source; PC through 2020 versus GEE through 2022, no
+      byte parity.'
+    license_summary: 'note: Do not treat this metadata label as legal clearance.; review_status: provider
+      declaration captured; terms and redistribution permission not independently reviewed; stac_license:
+      other'
+    proposed_outputs:
+    - COG
+    rationale: Reuse existing c3slc candidate and COG access; do not create duplicate canonical family.
+    evidence_urls:
+    - https://planetarycomputer.microsoft.com/api/stac/v1/collections/esa-cci-lc
+    - https://planetarycomputer.microsoft.com/dataset/esa-cci-lc
+  - provider: planetary_computer
+    status: download_available
+    formats:
+    - NetCDF
+    summary: 'Collection metadata declares per-item data assets / provider storage roots in the listed
+      native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain
+      unvalidated. NetCDF representation of PC ESA CCI through 2020; later GEE years unproven.'
+    license_summary: 'note: Do not treat this metadata label as legal clearance.; review_status: provider
+      declaration captured; terms and redistribution permission not independently reviewed; stac_license:
+      other'
+    proposed_outputs:
+    - NetCDF
+    rationale: Review relation to c3slc; preserve native NetCDF as a related representation and compare
+      content/version before merging.
+    evidence_urls:
+    - https://planetarycomputer.microsoft.com/api/stac/v1/collections/esa-cci-lc-netcdf
+    - https://planetarycomputer.microsoft.com/dataset/esa-cci-lc-netcdf
+  citations: []
+  evidence:
+  - path: research/global-candidates-20261031/planetary/reviewed.json
+    sha256: 07da016851a07f3e3e0937e120ce46442785f4e9096e563d92c1a3c0ce9e616a
+    key: esa_cci_land_cover_cog
+  - path: research/global-candidates-20261031/planetary/reviewed.json
+    sha256: 07da016851a07f3e3e0937e120ce46442785f4e9096e563d92c1a3c0ce9e616a
+    key: esa_cci_land_cover_netcdf

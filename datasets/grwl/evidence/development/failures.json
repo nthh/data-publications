@@ -1,0 +1,64 @@
+{
+  "status": "historical_development_evidence_not_release_validation",
+  "recorded_at": "2026-10-30",
+  "source_sha256": "78aa43a7104d24b1696e9b1547347eec13ba5d660aa990c1e7cea98e7ae70e4a",
+  "contract_history": "The initial display criteria draft predated the first successful development tile build but was not committed then. The zoom range, explicit scale factor, no-drop setting and z10 source-row coverage remain the pre-conversion acceptance criteria. The Hausdorff sample was added after development output existed and is explicitly a follow-up diagnostic, not preregistered acceptance.",
+  "events": [
+    {
+      "stage": "initial-build-assumption",
+      "status": "failed_before_output",
+      "artifact_dir": ".local/grwl/dev/build-one",
+      "diagnostic": "Producer ID nulls/duplicates prevent stable tile IDs",
+      "source_observation": {
+        "producer_id_distinct_values": 383,
+        "duplicate_groups": 365,
+        "rows_in_repeated_groups": 42059,
+        "excess_rows": 41694,
+        "max_multiplicity": 802
+      },
+      "correction": "Keep producer ID as an attribute; use unique one-based source_row as the tile ID.",
+      "attempt_output_path": ".local/grwl/dev/build-one (this path was created only on a later corrected attempt; the uniqueness-check failure occurred before the build directory was created)"
+    },
+    {
+      "stage": "dbf-decimal-conversion-probe",
+      "status": "failed_before_output",
+      "diagnostic": "Arrow rejected rescaling Decimal value without data loss: width_sd_m at source row 23108 has 12 decimal places despite declared DBF scale 11; Shape_Leng includes 13-place scientific-notation values.",
+      "correction": "Choose a per-field Arrow Decimal scale equal to the maximum of declared scale and observed source value scale; compare every value to DBF.",
+      "attempt_output_path": "no output directory was created before decimal conversion failed"
+    },
+    {
+      "stage": "first-draft-validator-crs-check",
+      "status": "false_failure",
+      "artifact_dir": ".local/grwl/dev/build-one",
+      "diagnostic": "Validator assumed GeoParquet CRS authority/code at a JSON path incompatible with pyproj PROJJSON output.",
+      "correction": "Check EPSG authority and code from actual metadata."
+    },
+    {
+      "stage": "tool-lock-binding-probe",
+      "status": "failed_after_tiles_and_catalog",
+      "artifact_dir": ".local/grwl/dev/build-probe",
+      "partial_tile_sha256": "9df5790a2b66ed58bd752a87a08d2ee310a6a5e696c6457509323767cc4c4ca9",
+      "diagnostic": "NameError: name tool_lock is not defined while constructing manifest. No manifest or release report was produced.",
+      "correction": "Define and enforce the Tippecanoe version and binary hash before conversion."
+    },
+    {
+      "stage": "initial-node-schema-probe",
+      "status": "failed_schema_unavailable",
+      "artifact_dir": ".local/grwl/dev/build-one",
+      "validator": "stac-node-validator 2.0.0",
+      "summary": {
+        "passed": 0,
+        "invalid": 2,
+        "skipped": 0
+      },
+      "diagnostic": "Validator could not load remote STAC 1.1 and extension JSON schemas in the restricted environment; this was not treated as a schema pass."
+    },
+    {
+      "stage": "source-extent-inspection",
+      "status": "corrected_observation",
+      "diagnostic": "SHP header bbox xmax is 180.00000000010002, while feature vertices stay in-range (feature-coordinate xmax is below 180). The analytic coordinates were unchanged; display longitude clamp is a no-op."
+    }
+  ],
+  "development_success_note": "The ignored build-one prototype passed a draft analytic parity, z10 ID coverage and loopback range/CORS check before later code changes. It is not a release artifact or a validation receipt for the final code.",
+  "final_gate_plan": "Run both the Node validator and bundled-schema Rashid gate in the committed clean-checkout rehearsal; preserve each actual result separately."
+}

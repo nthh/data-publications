@@ -1,0 +1,91 @@
+{
+  "checked_at": "2026-10-31T22:14:46.384887+00:00",
+  "status": "passed_local_preparation",
+  "base_main_commit": "185106ffabb82fca805b9a5b1c586034da4edb8b",
+  "packaging_recipe_commit": "e0d34d47dfd8f00ee78626a84ea702b75450243e",
+  "prepared_dataset_ids": [
+    "river-plastic-inputs",
+    "grwl",
+    "free-flowing-rivers",
+    "hydrolakes",
+    "lakeatlas"
+  ],
+  "new_prepared_releases": [
+    {
+      "dataset": "free-flowing-rivers",
+      "release": "figshare-v1-local-r2",
+      "manifest_sha256": "756286b624de53823a2af2c26344a15dcf02070c048f5d1d02ec3f65a97d5120"
+    },
+    {
+      "dataset": "hydrolakes",
+      "release": "v1-local-r3",
+      "manifest_sha256": "48d1d1061f0785255f14c3d5bb7ce8a1c0b47963c45c0e3b02a70441c0b86fcc"
+    },
+    {
+      "dataset": "lakeatlas",
+      "release": "lakeatlas-v1.0-r2",
+      "manifest_sha256": "32b4877b8809cabd3e2caca8da175115e8ff8317402058846ed0db06a54d52e9"
+    }
+  ],
+  "final_commands": [
+    {
+      "command": "uv run --locked python scripts/catalog.py --write",
+      "exit_code": 0
+    },
+    {
+      "command": "uv run --locked python scripts/catalog.py --check",
+      "exit_code": 0,
+      "records_checked": 366,
+      "frozen_families_checked": 363,
+      "supplemental_records_checked": 3
+    },
+    {
+      "command": "uv run --locked python scripts/rank_citations.py --check",
+      "exit_code": 0,
+      "families": 363
+    },
+    {
+      "command": "python3 scripts/rank_catalog_citations.py --check",
+      "exit_code": 0,
+      "official_entries": 1165,
+      "community_families": 363,
+      "offline_outputs": "match"
+    },
+    {
+      "command": "python3 scripts/check_provenance.py",
+      "exit_code": 0,
+      "historical_entries": 114,
+      "unique_blobs": 44
+    }
+  ],
+  "focused_test_receipts": [
+    "verification-7602b5e.json",
+    "verification-100eaad.json",
+    "verification-5a77efc.json",
+    "verification-b657944.json",
+    "verification-f6e7731.json"
+  ],
+  "independent_parent_checks": [
+    "hydrolakes-parent-verification.json",
+    "lakeatlas-parent-rebuild-verification.json",
+    "lakeatlas-parent-verification.json"
+  ],
+  "public_readiness_review": {
+    "changed_paths_reviewed_before_final_receipts": 305,
+    "files_over_1_MB": 0,
+    "credential_shape_matches": 0,
+    "machine_paths_in_metadata_or_reports": 0,
+    "machine_path_pattern_match_in_code": "Only the portable-evidence script literal prefix denylist matched; it contains no user-specific path.",
+    "bulk_and_environments_gitignored": true,
+    "whitespace_exception": "Six intentional Markdown hard-break lines in two immutable package README copies retain exact package bytes. No other trailing whitespace found."
+  },
+  "limits": [
+    "Prepared locally only; no push, upload, remote product creation, registry submission or fresh GEE work.",
+    "Source fidelity and byte-identical same-machine clean rebuilds do not establish independent scientific accuracy or cross-platform byte identity.",
+    "HTTP range/CORS and DuckDB tests use local loopback; public endpoints remain untested.",
+    "Latest public producer versions checked 2026-10-31 are distinct from observation vintage.",
+    "JRC Occurrence v1.5 reuse is proposed from an inventory of 504 tiles and eight sampled range probes; no complete pixel/COG validation or mirror was produced.",
+    "PMTiles display derivatives remain deferred for these analytic releases."
+  ],
+  "remaining_publication_steps": "Confirm final organization ownership/access, publish code and immutable data only when authorized, test anonymous public endpoints and hosted hashes, then submit Portolan and mark published."
+}

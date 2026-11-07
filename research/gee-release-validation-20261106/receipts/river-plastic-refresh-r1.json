@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "started_at": "2026-11-06T22:24:30.278102+00:00",
+  "git_commit": "910db6c5692f0ea529b010d0bc1c588956c0701b",
+  "script_sha256": "b6fb816d50ebd741835582912161b9d6784ea202536a2a6e5c1df6742e53c9f1",
+  "plan_sha256": "243e27f2d7e5305a32557618b33078d8a165f84ad5eb74185ca50b8c3e1940e6",
+  "lock_sha256": "2cf752aac36445732b59e0db89088aa3f421238fecf4693b27da4dacf89c7335",
+  "quota_project": "mtnmap-f75ec",
+  "scope": "Existing metadata/feature GET and bounded synchronous Collection.size only; no exports, batch tasks, writes or publication.",
+  "environment": {
+    "python": "3.12.12",
+    "google-auth": "2.53.0",
+    "requests": "2.32.5"
+  },
+  "requests": [
+    {
+      "query": "river-plastic-inputs-before",
+      "method": "GET",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/open-ocean/river_plastic_emissions",
+      "params": {},
+      "started_at": "2026-11-06T22:24:31.985548+00:00",
+      "response_path": "river-plastic-inputs-before-001.json",
+      "http_status": 200,
+      "finished_at": "2026-11-06T22:24:32.552753+00:00",
+      "response_bytes": 284,
+      "response_sha256": "50f8cadabbb52c486e5acf4a8bcf2ef8e4edd83ec4285ee32fcd7dff3c95880f",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 22:24:32 GMT",
+        "Content-Type": "application/json; charset=UTF-8"
+      }
+    },
+    {
+      "query": "river-plastic-inputs-count",
+      "method": "POST",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/open-ocean/river_plastic_emissions",
+      "params": {},
+      "started_at": "2026-11-06T22:24:32.552862+00:00",
+      "response_path": "river-plastic-inputs-count-001.json",
+      "body": {
+        "expression": {
+          "result": "0",
+          "values": {
+            "0": {
+              "functionInvocationValue": {
+                "functionName": "Collection.size",
+                "arguments": {
+                  "collection": {
+                    "functionInvocationValue": {
+                      "functionName": "Collection.loadTable",
+                      "arguments": {
+                        "tableId": {
+                          "constantValue": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/open-ocean/river_plastic_emissions"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "endpoint_resource": "projects/mtnmap-f75ec/value:compute",
+      "http_status": 200,
+      "finished_at": "2026-11-06T22:24:32.894209+00:00",
+      "response_bytes": 22,
+      "response_sha256": "9a1193b27300da3972531db8d654df03d05ddd0a8fd04a394e231c47d60fe98a",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 22:24:32 GMT",
+        "Content-Type": "application/json; charset=UTF-8"
+      }
+    },
+    {
+      "query": "river-plastic-inputs-after",
+      "method": "GET",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/open-ocean/river_plastic_emissions",
+      "params": {},
+      "started_at": "2026-11-06T22:24:32.894352+00:00",
+      "response_path": "river-plastic-inputs-after-001.json",
+      "http_status": 200,
+      "finished_at": "2026-11-06T22:24:33.033596+00:00",
+      "response_bytes": 284,
+      "response_sha256": "50f8cadabbb52c486e5acf4a8bcf2ef8e4edd83ec4285ee32fcd7dff3c95880f",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 22:24:33 GMT",
+        "Content-Type": "application/json; charset=UTF-8"
+      }
+    }
+  ],
+  "total_bytes": 590,
+  "queries": [
+    {
+      "id": "river-plastic-inputs-before",
+      "rows": 0,
+      "pages": 1,
+      "pagination_terminated": true,
+      "complete_enumeration": false
+    },
+    {
+      "id": "river-plastic-inputs-count",
+      "rows": 0,
+      "pages": 1,
+      "pagination_terminated": true,
+      "complete_enumeration": false
+    },
+    {
+      "id": "river-plastic-inputs-after",
+      "rows": 0,
+      "pages": 1,
+      "pagination_terminated": true,
+      "complete_enumeration": false
+    }
+  ],
+  "errors": [],
+  "finished_at": "2026-11-06T22:24:33.033709+00:00",
+  "elapsed_seconds": 2.73
+}

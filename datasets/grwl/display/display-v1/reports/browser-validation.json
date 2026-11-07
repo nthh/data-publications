@@ -1,0 +1,1275 @@
+{
+  "schema_version": 1,
+  "started_at": "2026-11-02T22:11:28.178Z",
+  "status": "passed",
+  "scope": "Installed Chrome, fresh browser context for every layer, direct cross-origin object reads; local hosting only.",
+  "transfer_ceiling_bytes": 134217728,
+  "cases": [
+    {
+      "dataset_id": "grwl",
+      "layer_id": "grwl-display",
+      "format": "pmtiles",
+      "source_sha256": "7b56696bc08daa4ed512a02fd35017f913827d60f9dc1d8fba94b1f726ba5343",
+      "source_size_bytes": 115384572,
+      "region": "global",
+      "region_bbox": [
+        -170,
+        -55,
+        175,
+        80
+      ],
+      "status": "passed",
+      "viewer": {
+        "dataset": "grwl",
+        "layer": "grwl-display",
+        "phase": "ready",
+        "error": null,
+        "feature_count": 40917,
+        "capped": false,
+        "query": null,
+        "bbox": null,
+        "bytes": 4070323,
+        "ranges": 6,
+        "requests": 6,
+        "generation": 1,
+        "selected": null,
+        "traffic": [
+          [
+            "http://127.0.0.1:8915/nthh/grwl/display/display-v1/assets/grwl.pmtiles",
+            {
+              "bytes": 4070323,
+              "ranges": 6,
+              "requests": 6
+            }
+          ]
+        ]
+      },
+      "inspected_property_count": 11,
+      "active_width_expression": [
+        "interpolate",
+        [
+          "linear"
+        ],
+        [
+          "zoom"
+        ],
+        0,
+        [
+          "*",
+          [
+            "case",
+            [
+              ">",
+              [
+                "to-number",
+                [
+                  "get",
+                  "width_mean"
+                ],
+                0
+              ],
+              0
+            ],
+            [
+              "interpolate",
+              [
+                "linear"
+              ],
+              [
+                "to-number",
+                [
+                  "get",
+                  "width_mean"
+                ],
+                0
+              ],
+              1,
+              1.1,
+              50,
+              1.6,
+              200,
+              2.7,
+              1000,
+              6.2
+            ],
+            0.9
+          ],
+          0.65
+        ],
+        8,
+        [
+          "case",
+          [
+            ">",
+            [
+              "to-number",
+              [
+                "get",
+                "width_mean"
+              ],
+              0
+            ],
+            0
+          ],
+          [
+            "interpolate",
+            [
+              "linear"
+            ],
+            [
+              "to-number",
+              [
+                "get",
+                "width_mean"
+              ],
+              0
+            ],
+            1,
+            1.1,
+            50,
+            1.6,
+            200,
+            2.7,
+            1000,
+            6.2
+          ],
+          0.9
+        ],
+        12,
+        [
+          "*",
+          [
+            "case",
+            [
+              ">",
+              [
+                "to-number",
+                [
+                  "get",
+                  "width_mean"
+                ],
+                0
+              ],
+              0
+            ],
+            [
+              "interpolate",
+              [
+                "linear"
+              ],
+              [
+                "to-number",
+                [
+                  "get",
+                  "width_mean"
+                ],
+                0
+              ],
+              1,
+              1.1,
+              50,
+              1.6,
+              200,
+              2.7,
+              1000,
+              6.2
+            ],
+            0.9
+          ],
+          1.4
+        ]
+      ],
+      "clicked_mean_width": "Mean width · 4,466 m",
+      "tile_mean_width": 4466,
+      "initial_view_body_bytes": 4070323,
+      "all_attributes_note": "All source attributes for this ID.",
+      "all_attribute_count": 11,
+      "expected_source_attribute_count": 11,
+      "analytic_mean_width": 4466,
+      "decimal_width_matches": true,
+      "ui_bytes_after_inspection": 4825626,
+      "unavailable_datasets_checked": true,
+      "requests": [
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/display/display-v1/assets/grwl.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/115384572",
+          "content_length": 16384,
+          "cors": "*",
+          "object_size_bytes": 115384572,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/display/display-v1/assets/grwl.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=7405-16792",
+          "content_range": "bytes 7405-16792/115384572",
+          "content_length": 9388,
+          "cors": "*",
+          "object_size_bytes": 115384572,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/display/display-v1/assets/grwl.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=5186402-5546472",
+          "content_range": "bytes 5186402-5546472/115384572",
+          "content_length": 360071,
+          "cors": "*",
+          "object_size_bytes": 115384572,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/display/display-v1/assets/grwl.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=5546473-7713595",
+          "content_range": "bytes 5546473-7713595/115384572",
+          "content_length": 2167123,
+          "cors": "*",
+          "object_size_bytes": 115384572,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/display/display-v1/assets/grwl.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=3669045-4649773",
+          "content_range": "bytes 3669045-4649773/115384572",
+          "content_length": 980729,
+          "cors": "*",
+          "object_size_bytes": 115384572,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/display/display-v1/assets/grwl.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=4649774-5186401",
+          "content_range": "bytes 4649774-5186401/115384572",
+          "content_length": 536628,
+          "cors": "*",
+          "object_size_bytes": 115384572,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "method": "HEAD",
+          "status": 200,
+          "range": null,
+          "content_range": null,
+          "content_length": 46297145,
+          "cors": "*",
+          "object_size_bytes": 46297145,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "method": "HEAD",
+          "status": 206,
+          "range": "bytes=0-",
+          "content_range": "bytes 0-46297144/46297145",
+          "content_length": 46297145,
+          "cors": "*",
+          "object_size_bytes": 46297145,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=46297137-46297144",
+          "content_range": "bytes 46297137-46297144/46297145",
+          "content_length": 8,
+          "cors": "*",
+          "object_size_bytes": 46297145,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=46268830-46297136",
+          "content_range": "bytes 46268830-46297136/46297145",
+          "content_length": 28307,
+          "cors": "*",
+          "object_size_bytes": 46297145,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "method": "HEAD",
+          "status": 206,
+          "range": "bytes=0-",
+          "content_range": "bytes 0-46297144/46297145",
+          "content_length": 46297145,
+          "cors": "*",
+          "object_size_bytes": 46297145,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=26756864-26757119",
+          "content_range": "bytes 26756864-26757119/46297145",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 46297145,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=26756883-26762581",
+          "content_range": "bytes 26756883-26762581/46297145",
+          "content_length": 5699,
+          "cors": "*",
+          "object_size_bytes": 46297145,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=26762582-26785377",
+          "content_range": "bytes 26762582-26785377/46297145",
+          "content_length": 22796,
+          "cors": "*",
+          "object_size_bytes": 46297145,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=34737733-34737988",
+          "content_range": "bytes 34737733-34737988/46297145",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 46297145,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=34737752-34797727",
+          "content_range": "bytes 34737752-34797727/46297145",
+          "content_length": 59976,
+          "cors": "*",
+          "object_size_bytes": 46297145,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=34797728-35037631",
+          "content_range": "bytes 34797728-35037631/46297145",
+          "content_length": 239904,
+          "cors": "*",
+          "object_size_bytes": 46297145,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=26724715-26724970",
+          "content_range": "bytes 26724715-26724970/46297145",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 46297145,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=26724735-26743679",
+          "content_range": "bytes 26724735-26743679/46297145",
+          "content_length": 18945,
+          "cors": "*",
+          "object_size_bytes": 46297145,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=26743680-26819459",
+          "content_range": "bytes 26743680-26819459/46297145",
+          "content_length": 75780,
+          "cors": "*",
+          "object_size_bytes": 46297145,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=26819460-27122579",
+          "content_range": "bytes 26819460-27122579/46297145",
+          "content_length": 303120,
+          "cors": "*",
+          "object_size_bytes": 46297145,
+          "completed": true
+        }
+      ],
+      "response_body_bytes": 4825626,
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "dataset_id": "grwl",
+      "layer_id": "grwl-display",
+      "format": "pmtiles",
+      "source_sha256": "7b56696bc08daa4ed512a02fd35017f913827d60f9dc1d8fba94b1f726ba5343",
+      "source_size_bytes": 115384572,
+      "region": "north_america",
+      "region_bbox": [
+        -93,
+        47,
+        -87,
+        50
+      ],
+      "status": "passed",
+      "viewer": {
+        "dataset": "grwl",
+        "layer": "grwl-display",
+        "phase": "ready",
+        "error": null,
+        "feature_count": 38,
+        "capped": false,
+        "query": null,
+        "bbox": null,
+        "bytes": 56706,
+        "ranges": 6,
+        "requests": 6,
+        "generation": 1,
+        "selected": null,
+        "traffic": [
+          [
+            "http://127.0.0.1:8915/nthh/grwl/display/display-v1/assets/grwl.pmtiles",
+            {
+              "bytes": 56706,
+              "ranges": 6,
+              "requests": 6
+            }
+          ]
+        ]
+      },
+      "inspected_property_count": 11,
+      "active_width_expression": [
+        "interpolate",
+        [
+          "linear"
+        ],
+        [
+          "zoom"
+        ],
+        0,
+        [
+          "*",
+          [
+            "case",
+            [
+              ">",
+              [
+                "to-number",
+                [
+                  "get",
+                  "width_mean"
+                ],
+                0
+              ],
+              0
+            ],
+            [
+              "interpolate",
+              [
+                "linear"
+              ],
+              [
+                "to-number",
+                [
+                  "get",
+                  "width_mean"
+                ],
+                0
+              ],
+              1,
+              1.1,
+              50,
+              1.6,
+              200,
+              2.7,
+              1000,
+              6.2
+            ],
+            0.9
+          ],
+          0.65
+        ],
+        8,
+        [
+          "case",
+          [
+            ">",
+            [
+              "to-number",
+              [
+                "get",
+                "width_mean"
+              ],
+              0
+            ],
+            0
+          ],
+          [
+            "interpolate",
+            [
+              "linear"
+            ],
+            [
+              "to-number",
+              [
+                "get",
+                "width_mean"
+              ],
+              0
+            ],
+            1,
+            1.1,
+            50,
+            1.6,
+            200,
+            2.7,
+            1000,
+            6.2
+          ],
+          0.9
+        ],
+        12,
+        [
+          "*",
+          [
+            "case",
+            [
+              ">",
+              [
+                "to-number",
+                [
+                  "get",
+                  "width_mean"
+                ],
+                0
+              ],
+              0
+            ],
+            [
+              "interpolate",
+              [
+                "linear"
+              ],
+              [
+                "to-number",
+                [
+                  "get",
+                  "width_mean"
+                ],
+                0
+              ],
+              1,
+              1.1,
+              50,
+              1.6,
+              200,
+              2.7,
+              1000,
+              6.2
+            ],
+            0.9
+          ],
+          1.4
+        ]
+      ],
+      "clicked_mean_width": "Mean width · 850 m",
+      "tile_mean_width": 850,
+      "initial_view_body_bytes": 56706,
+      "all_attributes_note": "All source attributes for this ID.",
+      "all_attribute_count": 11,
+      "expected_source_attribute_count": 11,
+      "analytic_mean_width": 850,
+      "decimal_width_matches": true,
+      "ui_bytes_after_inspection": 811264,
+      "unavailable_datasets_checked": true,
+      "requests": [
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/display/display-v1/assets/grwl.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/115384572",
+          "content_length": 16384,
+          "cors": "*",
+          "object_size_bytes": 115384572,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/display/display-v1/assets/grwl.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=7405-16792",
+          "content_range": "bytes 7405-16792/115384572",
+          "content_length": 9388,
+          "cors": "*",
+          "object_size_bytes": 115384572,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/display/display-v1/assets/grwl.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=28521953-28528368",
+          "content_range": "bytes 28521953-28528368/115384572",
+          "content_length": 6416,
+          "cors": "*",
+          "object_size_bytes": 115384572,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/display/display-v1/assets/grwl.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=29503820-29509819",
+          "content_range": "bytes 29503820-29509819/115384572",
+          "content_length": 6000,
+          "cors": "*",
+          "object_size_bytes": 115384572,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/display/display-v1/assets/grwl.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=29589211-29598196",
+          "content_range": "bytes 29589211-29598196/115384572",
+          "content_length": 8986,
+          "cors": "*",
+          "object_size_bytes": 115384572,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/display/display-v1/assets/grwl.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=28512421-28521952",
+          "content_range": "bytes 28512421-28521952/115384572",
+          "content_length": 9532,
+          "cors": "*",
+          "object_size_bytes": 115384572,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "method": "HEAD",
+          "status": 200,
+          "range": null,
+          "content_range": null,
+          "content_length": 46297145,
+          "cors": "*",
+          "object_size_bytes": 46297145,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "method": "HEAD",
+          "status": 206,
+          "range": "bytes=0-",
+          "content_range": "bytes 0-46297144/46297145",
+          "content_length": 46297145,
+          "cors": "*",
+          "object_size_bytes": 46297145,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=46297137-46297144",
+          "content_range": "bytes 46297137-46297144/46297145",
+          "content_length": 8,
+          "cors": "*",
+          "object_size_bytes": 46297145,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=46268830-46297136",
+          "content_range": "bytes 46268830-46297136/46297145",
+          "content_length": 28307,
+          "cors": "*",
+          "object_size_bytes": 46297145,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "method": "HEAD",
+          "status": 206,
+          "range": "bytes=0-",
+          "content_range": "bytes 0-46297144/46297145",
+          "content_length": 46297145,
+          "cors": "*",
+          "object_size_bytes": 46297145,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=16447266-16447521",
+          "content_range": "bytes 16447266-16447521/46297145",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 46297145,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=16447285-16452983",
+          "content_range": "bytes 16447285-16452983/46297145",
+          "content_length": 5699,
+          "cors": "*",
+          "object_size_bytes": 46297145,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=16452984-16475779",
+          "content_range": "bytes 16452984-16475779/46297145",
+          "content_length": 22796,
+          "cors": "*",
+          "object_size_bytes": 46297145,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=26439763-26440018",
+          "content_range": "bytes 26439763-26440018/46297145",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 46297145,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=26439782-26499608",
+          "content_range": "bytes 26439782-26499608/46297145",
+          "content_length": 59827,
+          "cors": "*",
+          "object_size_bytes": 46297145,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=26499609-26738916",
+          "content_range": "bytes 26499609-26738916/46297145",
+          "content_length": 239308,
+          "cors": "*",
+          "object_size_bytes": 46297145,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=16415117-16415372",
+          "content_range": "bytes 16415117-16415372/46297145",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 46297145,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=16415137-16434081",
+          "content_range": "bytes 16415137-16434081/46297145",
+          "content_length": 18945,
+          "cors": "*",
+          "object_size_bytes": 46297145,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=16434082-16509861",
+          "content_range": "bytes 16434082-16509861/46297145",
+          "content_length": 75780,
+          "cors": "*",
+          "object_size_bytes": 46297145,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=16509862-16812981",
+          "content_range": "bytes 16509862-16812981/46297145",
+          "content_length": 303120,
+          "cors": "*",
+          "object_size_bytes": 46297145,
+          "completed": true
+        }
+      ],
+      "response_body_bytes": 811264,
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "dataset_id": "grwl",
+      "layer_id": "grwl-display",
+      "format": "pmtiles",
+      "source_sha256": "7b56696bc08daa4ed512a02fd35017f913827d60f9dc1d8fba94b1f726ba5343",
+      "source_size_bytes": 115384572,
+      "region": "dateline",
+      "region_bbox": [
+        178.8,
+        67.85,
+        180,
+        68.01
+      ],
+      "status": "passed",
+      "viewer": {
+        "dataset": "grwl",
+        "layer": "grwl-display",
+        "phase": "ready",
+        "error": null,
+        "feature_count": 10,
+        "capped": false,
+        "query": null,
+        "bbox": null,
+        "bytes": 27059,
+        "ranges": 6,
+        "requests": 6,
+        "generation": 1,
+        "selected": null,
+        "traffic": [
+          [
+            "http://127.0.0.1:8915/nthh/grwl/display/display-v1/assets/grwl.pmtiles",
+            {
+              "bytes": 27059,
+              "ranges": 6,
+              "requests": 6
+            }
+          ]
+        ]
+      },
+      "inspected_source_id": 28938,
+      "inspected_property_count": 11,
+      "active_width_expression": [
+        "interpolate",
+        [
+          "linear"
+        ],
+        [
+          "zoom"
+        ],
+        0,
+        [
+          "*",
+          [
+            "case",
+            [
+              ">",
+              [
+                "to-number",
+                [
+                  "get",
+                  "width_mean"
+                ],
+                0
+              ],
+              0
+            ],
+            [
+              "interpolate",
+              [
+                "linear"
+              ],
+              [
+                "to-number",
+                [
+                  "get",
+                  "width_mean"
+                ],
+                0
+              ],
+              1,
+              1.1,
+              50,
+              1.6,
+              200,
+              2.7,
+              1000,
+              6.2
+            ],
+            0.9
+          ],
+          0.65
+        ],
+        8,
+        [
+          "case",
+          [
+            ">",
+            [
+              "to-number",
+              [
+                "get",
+                "width_mean"
+              ],
+              0
+            ],
+            0
+          ],
+          [
+            "interpolate",
+            [
+              "linear"
+            ],
+            [
+              "to-number",
+              [
+                "get",
+                "width_mean"
+              ],
+              0
+            ],
+            1,
+            1.1,
+            50,
+            1.6,
+            200,
+            2.7,
+            1000,
+            6.2
+          ],
+          0.9
+        ],
+        12,
+        [
+          "*",
+          [
+            "case",
+            [
+              ">",
+              [
+                "to-number",
+                [
+                  "get",
+                  "width_mean"
+                ],
+                0
+              ],
+              0
+            ],
+            [
+              "interpolate",
+              [
+                "linear"
+              ],
+              [
+                "to-number",
+                [
+                  "get",
+                  "width_mean"
+                ],
+                0
+              ],
+              1,
+              1.1,
+              50,
+              1.6,
+              200,
+              2.7,
+              1000,
+              6.2
+            ],
+            0.9
+          ],
+          1.4
+        ]
+      ],
+      "clicked_mean_width": "Mean width · 97 m",
+      "tile_mean_width": 97,
+      "initial_view_body_bytes": 27059,
+      "all_attributes_note": "All source attributes for this ID.",
+      "all_attribute_count": 11,
+      "expected_source_attribute_count": 11,
+      "analytic_mean_width": 97,
+      "decimal_width_matches": true,
+      "ui_bytes_after_inspection": 782362,
+      "unavailable_datasets_checked": true,
+      "requests": [
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/display/display-v1/assets/grwl.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/115384572",
+          "content_length": 16384,
+          "cors": "*",
+          "object_size_bytes": 115384572,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/display/display-v1/assets/grwl.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=81056-88678",
+          "content_range": "bytes 81056-88678/115384572",
+          "content_length": 7623,
+          "cors": "*",
+          "object_size_bytes": 115384572,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/display/display-v1/assets/grwl.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=81833052-81833716",
+          "content_range": "bytes 81833052-81833716/115384572",
+          "content_length": 665,
+          "cors": "*",
+          "object_size_bytes": 115384572,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/display/display-v1/assets/grwl.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=81832526-81833051",
+          "content_range": "bytes 81832526-81833051/115384572",
+          "content_length": 526,
+          "cors": "*",
+          "object_size_bytes": 115384572,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/display/display-v1/assets/grwl.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=81833717-81834553",
+          "content_range": "bytes 81833717-81834553/115384572",
+          "content_length": 837,
+          "cors": "*",
+          "object_size_bytes": 115384572,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/display/display-v1/assets/grwl.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=81834554-81835577",
+          "content_range": "bytes 81834554-81835577/115384572",
+          "content_length": 1024,
+          "cors": "*",
+          "object_size_bytes": 115384572,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "method": "HEAD",
+          "status": 200,
+          "range": null,
+          "content_range": null,
+          "content_length": 46297145,
+          "cors": "*",
+          "object_size_bytes": 46297145,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "method": "HEAD",
+          "status": 206,
+          "range": "bytes=0-",
+          "content_range": "bytes 0-46297144/46297145",
+          "content_length": 46297145,
+          "cors": "*",
+          "object_size_bytes": 46297145,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=46297137-46297144",
+          "content_range": "bytes 46297137-46297144/46297145",
+          "content_length": 8,
+          "cors": "*",
+          "object_size_bytes": 46297145,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=46268830-46297136",
+          "content_range": "bytes 46268830-46297136/46297145",
+          "content_length": 28307,
+          "cors": "*",
+          "object_size_bytes": 46297145,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "method": "HEAD",
+          "status": 206,
+          "range": "bytes=0-",
+          "content_range": "bytes 0-46297144/46297145",
+          "content_length": 46297145,
+          "cors": "*",
+          "object_size_bytes": 46297145,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=26756864-26757119",
+          "content_range": "bytes 26756864-26757119/46297145",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 46297145,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=26756883-26762581",
+          "content_range": "bytes 26756883-26762581/46297145",
+          "content_length": 5699,
+          "cors": "*",
+          "object_size_bytes": 46297145,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=26762582-26785377",
+          "content_range": "bytes 26762582-26785377/46297145",
+          "content_length": 22796,
+          "cors": "*",
+          "object_size_bytes": 46297145,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=34737733-34737988",
+          "content_range": "bytes 34737733-34737988/46297145",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 46297145,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=34737752-34797727",
+          "content_range": "bytes 34737752-34797727/46297145",
+          "content_length": 59976,
+          "cors": "*",
+          "object_size_bytes": 46297145,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=34797728-35037631",
+          "content_range": "bytes 34797728-35037631/46297145",
+          "content_length": 239904,
+          "cors": "*",
+          "object_size_bytes": 46297145,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=26724715-26724970",
+          "content_range": "bytes 26724715-26724970/46297145",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 46297145,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=26724735-26743679",
+          "content_range": "bytes 26724735-26743679/46297145",
+          "content_length": 18945,
+          "cors": "*",
+          "object_size_bytes": 46297145,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=26743680-26819459",
+          "content_range": "bytes 26743680-26819459/46297145",
+          "content_length": 75780,
+          "cors": "*",
+          "object_size_bytes": 46297145,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/grwl/releases/summary-v01.02-local-r1/grwl/grwl-summary-v0102.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=26819460-27122579",
+          "content_range": "bytes 26819460-27122579/46297145",
+          "content_length": 303120,
+          "cors": "*",
+          "object_size_bytes": 46297145,
+          "completed": true
+        }
+      ],
+      "response_body_bytes": 782362,
+      "page_errors": [],
+      "external_requests": []
+    }
+  ],
+  "finished_at": "2026-11-02T22:11:36.954Z",
+  "browser_version": "156.0.8078.79"
+}

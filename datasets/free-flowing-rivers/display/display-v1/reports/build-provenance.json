@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "builder": "scripts/display_tools/build_display.py",
+  "builder_sha256": "ec0b190384de5bfba2c0398bbc0bd0d9faf2f3f3ec995550cf6bf6a123fa4c15",
+  "environment_lock": "datasets/grwl/uv.lock",
+  "python_environment": "datasets/grwl/.venv (locked GRWL build environment)",
+  "python_packages": {
+    "pyarrow": "23.0.1",
+    "shapely": "2.1.2",
+    "numpy": "2.5.4",
+    "pmtiles": "3.8.1"
+  },
+  "tippecanoe": {
+    "version": "2.79.0",
+    "binary_sha256": "c504719334e5335d60c66a01491707bdbfb773ebbfe3efc7c1c8239eb18d58d1",
+    "lock_file": "datasets/grwl/tippecanoe.lock.json",
+    "lock_sha256": "28d3bedda9835f808c3c8303b64ad660654b17a48af529d0b32e0c1b496bbd0d"
+  },
+  "pmtiles_cli_version": "pmtiles dev, commit none, built at unknown",
+  "tippecanoe_max_threads": 2,
+  "command": "python scripts/display_tools/build_display.py free-flowing-rivers --data-root <DATA_ROOT> --output <DATA_ROOT>/free-flowing-rivers/display/display-v1",
+  "source_asset": "free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+  "source_sha256": "62130e4999ba449bd2768bcdd9346bc2ba8fa4c4f06d39597e5227cd496a1a63",
+  "geometry_input": "GeoParquet WKB streamed as GeoJSON Text Sequence to /dev/stdin; no bulk intermediate GeoJSON"
+}

@@ -1,0 +1,403 @@
+{
+  "schema_version": 1,
+  "status": "failed",
+  "checked_at": "2026-11-07T04:10:38.371Z",
+  "mode": "preflight",
+  "scope": "Official remote Browser + local staged Pages metadata + live Source objects",
+  "preflight_metadata_interception_is_hosting_evidence": false,
+  "pages_plan_sha256": "e146b5c9426733156aad099a110db906252ca19f15dab4207349481a3cdcac7b",
+  "source_plan_sha256": "754c02dde3cf258263619599f893558d3348c7fb51c07f8fa700efa1900ac610",
+  "head_render_followup_criteria": {
+    "path": "research/source-publication-20261106/pages/three-collections-r1/head-and-render-followup-criteria-r1.json",
+    "sha256": "0714e3a818bc107ce74c2f6cf936a6c8928ccf1bf4108a89dfef4ffc377e6ed8"
+  },
+  "render_diagnostic": null,
+  "renderer_diagnostic": null,
+  "browser": {
+    "index_url": "https://browser.portolan-sdi.org/",
+    "index_sha256": "f584060cd43837a7353cab94ac3afe4840ed61301459cbe23a5cfe086a1a48c4",
+    "index_bytes": 1684,
+    "entry_script_url": "https://browser.portolan-sdi.org/assets/index-aJ73QkZk.js",
+    "entry_script_bytes": 596822,
+    "entry_script_sha256": "a55a1b5d875cfcd6f4bce71a7f381080b72aa89b7321b6022dd08a3d5d6ee487",
+    "expected_source_commit": "15af01335da62a60d209911c9bde994981fd29be"
+  },
+  "aggregate": {
+    "expected_ids": [
+      "river-plastic-inputs",
+      "hydrolakes",
+      "lakeatlas",
+      "free-flowing-rivers",
+      "grwl-raw"
+    ],
+    "staged_ids": [
+      "free-flowing-rivers",
+      "hydrolakes",
+      "lakeatlas",
+      "river-plastic-inputs"
+    ],
+    "missing_ids": [
+      "grwl-raw"
+    ],
+    "selected_ids": [
+      "river-plastic-inputs",
+      "hydrolakes",
+      "lakeatlas",
+      "free-flowing-rivers"
+    ],
+    "expected_pmtiles_count": 6,
+    "observed_pmtiles_count": 5
+  },
+  "pages_metadata": {
+    "source": "locally fulfilled from exact publish-plan files",
+    "expected_urls": [
+      "https://nthh.github.io/data-publications/catalog.json",
+      "https://nthh.github.io/data-publications/free-flowing-rivers/collection.json",
+      "https://nthh.github.io/data-publications/free-flowing-rivers/display/display-v1/styles/ffr-reaches.json",
+      "https://nthh.github.io/data-publications/hydrolakes/collection.json",
+      "https://nthh.github.io/data-publications/hydrolakes/display/display-v1/styles/hydrolakes-polygons.json",
+      "https://nthh.github.io/data-publications/lakeatlas/collection.json",
+      "https://nthh.github.io/data-publications/lakeatlas/display/display-v1/styles/lakeatlas-polygons.json",
+      "https://nthh.github.io/data-publications/lakeatlas/display/display-v1/styles/lakeatlas-pour-points.json",
+      "https://nthh.github.io/data-publications/river-plastic-inputs/collection.json",
+      "https://nthh.github.io/data-publications/river-plastic-inputs/styles/annual-input.json"
+    ],
+    "observed": [
+      {
+        "url": "https://nthh.github.io/data-publications/catalog.json",
+        "plan_path": "catalog/catalog.json",
+        "method": "GET",
+        "status": 200,
+        "body_bytes": 2234,
+        "expected_sha256": "a7ffeea85f9596c625c553928ead9a08554bb67b13f7bb79c459ac1cb9c5d32c",
+        "observed_sha256": "a7ffeea85f9596c625c553928ead9a08554bb67b13f7bb79c459ac1cb9c5d32c",
+        "source": "locally_fulfilled"
+      },
+      {
+        "url": "https://nthh.github.io/data-publications/free-flowing-rivers/collection.json",
+        "plan_path": "catalog/free-flowing-rivers/collection.json",
+        "method": "GET",
+        "status": 200,
+        "body_bytes": 16750,
+        "expected_sha256": "f61b03c1584940210674f0a43c6424b4f4a843410d26042eef47c3a236da096d",
+        "observed_sha256": "f61b03c1584940210674f0a43c6424b4f4a843410d26042eef47c3a236da096d",
+        "source": "locally_fulfilled"
+      },
+      {
+        "url": "https://nthh.github.io/data-publications/free-flowing-rivers/display/display-v1/styles/ffr-reaches.json",
+        "plan_path": "catalog/free-flowing-rivers/display/display-v1/styles/ffr-reaches.json",
+        "method": "GET",
+        "status": 200,
+        "body_bytes": 474,
+        "expected_sha256": "22b9f0025153f847dadd94780ebcbf60eaf27552ac61489ce83e58ec0d0f8e53",
+        "observed_sha256": "22b9f0025153f847dadd94780ebcbf60eaf27552ac61489ce83e58ec0d0f8e53",
+        "source": "locally_fulfilled"
+      },
+      {
+        "url": "https://nthh.github.io/data-publications/free-flowing-rivers/display/thumbnail.png",
+        "plan_path": "catalog/free-flowing-rivers/display/thumbnail.png",
+        "method": "GET",
+        "status": 200,
+        "body_bytes": 2842,
+        "expected_sha256": "c2d265154f06ccb02dced33bfa1c2f9a1ed708dc39e0caef315a96472f23532f",
+        "observed_sha256": "c2d265154f06ccb02dced33bfa1c2f9a1ed708dc39e0caef315a96472f23532f",
+        "source": "locally_fulfilled"
+      },
+      {
+        "url": "https://nthh.github.io/data-publications/free-flowing-rivers/display/thumbnail.png",
+        "plan_path": "catalog/free-flowing-rivers/display/thumbnail.png",
+        "method": "GET",
+        "status": 200,
+        "body_bytes": 2842,
+        "expected_sha256": "c2d265154f06ccb02dced33bfa1c2f9a1ed708dc39e0caef315a96472f23532f",
+        "observed_sha256": "c2d265154f06ccb02dced33bfa1c2f9a1ed708dc39e0caef315a96472f23532f",
+        "source": "locally_fulfilled"
+      },
+      {
+        "url": "https://nthh.github.io/data-publications/hydrolakes/collection.json",
+        "plan_path": "catalog/hydrolakes/collection.json",
+        "method": "GET",
+        "status": 200,
+        "body_bytes": 14210,
+        "expected_sha256": "f40121c33d2a689207a4cb1d49def9b2fdd148f1042b43fe2bcd640e6df8ed15",
+        "observed_sha256": "f40121c33d2a689207a4cb1d49def9b2fdd148f1042b43fe2bcd640e6df8ed15",
+        "source": "locally_fulfilled"
+      },
+      {
+        "url": "https://nthh.github.io/data-publications/hydrolakes/display/thumbnail.png",
+        "plan_path": "catalog/hydrolakes/display/thumbnail.png",
+        "method": "GET",
+        "status": 200,
+        "body_bytes": 4138,
+        "expected_sha256": "1545b01af18207d60a182fdcc0e4117d83c73eea1db93f48a673138a1cebf15e",
+        "observed_sha256": "1545b01af18207d60a182fdcc0e4117d83c73eea1db93f48a673138a1cebf15e",
+        "source": "locally_fulfilled"
+      },
+      {
+        "url": "https://nthh.github.io/data-publications/lakeatlas/collection.json",
+        "plan_path": "catalog/lakeatlas/collection.json",
+        "method": "GET",
+        "status": 200,
+        "body_bytes": 78543,
+        "expected_sha256": "8ff755453c6069c909015eaec50fada5bfadaed2a80fcc8a3f84411e7161a604",
+        "observed_sha256": "8ff755453c6069c909015eaec50fada5bfadaed2a80fcc8a3f84411e7161a604",
+        "source": "locally_fulfilled"
+      },
+      {
+        "url": "https://nthh.github.io/data-publications/lakeatlas/display/thumbnail.png",
+        "plan_path": "catalog/lakeatlas/display/thumbnail.png",
+        "method": "GET",
+        "status": 200,
+        "body_bytes": 4138,
+        "expected_sha256": "1545b01af18207d60a182fdcc0e4117d83c73eea1db93f48a673138a1cebf15e",
+        "observed_sha256": "1545b01af18207d60a182fdcc0e4117d83c73eea1db93f48a673138a1cebf15e",
+        "source": "locally_fulfilled"
+      },
+      {
+        "url": "https://nthh.github.io/data-publications/river-plastic-inputs/collection.json",
+        "plan_path": "catalog/river-plastic-inputs/collection.json",
+        "method": "GET",
+        "status": 200,
+        "body_bytes": 15577,
+        "expected_sha256": "05d2e89186a8fd8d6776491cf1545fe795128afe683502588c822ba045851312",
+        "observed_sha256": "05d2e89186a8fd8d6776491cf1545fe795128afe683502588c822ba045851312",
+        "source": "locally_fulfilled"
+      },
+      {
+        "url": "https://nthh.github.io/data-publications/river-plastic-inputs/thumbnail.png",
+        "plan_path": "catalog/river-plastic-inputs/thumbnail.png",
+        "method": "GET",
+        "status": 200,
+        "body_bytes": 198924,
+        "expected_sha256": "ff0e30b5c3768605f41b75c0bce515d82eeffa9d2422a4d408b8efbad46034c1",
+        "observed_sha256": "ff0e30b5c3768605f41b75c0bce515d82eeffa9d2422a4d408b8efbad46034c1",
+        "source": "locally_fulfilled"
+      }
+    ],
+    "intercepted": [
+      {
+        "url": "https://nthh.github.io/data-publications/catalog.json",
+        "plan_path": "catalog/catalog.json",
+        "expected_size_bytes": 2234,
+        "expected_sha256": "a7ffeea85f9596c625c553928ead9a08554bb67b13f7bb79c459ac1cb9c5d32c",
+        "fulfilled_size_bytes": 2234,
+        "fulfilled_sha256": "a7ffeea85f9596c625c553928ead9a08554bb67b13f7bb79c459ac1cb9c5d32c"
+      },
+      {
+        "url": "https://nthh.github.io/data-publications/free-flowing-rivers/collection.json",
+        "plan_path": "catalog/free-flowing-rivers/collection.json",
+        "expected_size_bytes": 16750,
+        "expected_sha256": "f61b03c1584940210674f0a43c6424b4f4a843410d26042eef47c3a236da096d",
+        "fulfilled_size_bytes": 16750,
+        "fulfilled_sha256": "f61b03c1584940210674f0a43c6424b4f4a843410d26042eef47c3a236da096d"
+      },
+      {
+        "url": "https://nthh.github.io/data-publications/free-flowing-rivers/display/display-v1/styles/ffr-reaches.json",
+        "plan_path": "catalog/free-flowing-rivers/display/display-v1/styles/ffr-reaches.json",
+        "expected_size_bytes": 474,
+        "expected_sha256": "22b9f0025153f847dadd94780ebcbf60eaf27552ac61489ce83e58ec0d0f8e53",
+        "fulfilled_size_bytes": 474,
+        "fulfilled_sha256": "22b9f0025153f847dadd94780ebcbf60eaf27552ac61489ce83e58ec0d0f8e53"
+      },
+      {
+        "url": "https://nthh.github.io/data-publications/free-flowing-rivers/display/thumbnail.png",
+        "plan_path": "catalog/free-flowing-rivers/display/thumbnail.png",
+        "expected_size_bytes": 2842,
+        "expected_sha256": "c2d265154f06ccb02dced33bfa1c2f9a1ed708dc39e0caef315a96472f23532f",
+        "fulfilled_size_bytes": 2842,
+        "fulfilled_sha256": "c2d265154f06ccb02dced33bfa1c2f9a1ed708dc39e0caef315a96472f23532f"
+      },
+      {
+        "url": "https://nthh.github.io/data-publications/free-flowing-rivers/display/thumbnail.png",
+        "plan_path": "catalog/free-flowing-rivers/display/thumbnail.png",
+        "expected_size_bytes": 2842,
+        "expected_sha256": "c2d265154f06ccb02dced33bfa1c2f9a1ed708dc39e0caef315a96472f23532f",
+        "fulfilled_size_bytes": 2842,
+        "fulfilled_sha256": "c2d265154f06ccb02dced33bfa1c2f9a1ed708dc39e0caef315a96472f23532f"
+      },
+      {
+        "url": "https://nthh.github.io/data-publications/hydrolakes/collection.json",
+        "plan_path": "catalog/hydrolakes/collection.json",
+        "expected_size_bytes": 14210,
+        "expected_sha256": "f40121c33d2a689207a4cb1d49def9b2fdd148f1042b43fe2bcd640e6df8ed15",
+        "fulfilled_size_bytes": 14210,
+        "fulfilled_sha256": "f40121c33d2a689207a4cb1d49def9b2fdd148f1042b43fe2bcd640e6df8ed15"
+      },
+      {
+        "url": "https://nthh.github.io/data-publications/hydrolakes/display/thumbnail.png",
+        "plan_path": "catalog/hydrolakes/display/thumbnail.png",
+        "expected_size_bytes": 4138,
+        "expected_sha256": "1545b01af18207d60a182fdcc0e4117d83c73eea1db93f48a673138a1cebf15e",
+        "fulfilled_size_bytes": 4138,
+        "fulfilled_sha256": "1545b01af18207d60a182fdcc0e4117d83c73eea1db93f48a673138a1cebf15e"
+      },
+      {
+        "url": "https://nthh.github.io/data-publications/lakeatlas/collection.json",
+        "plan_path": "catalog/lakeatlas/collection.json",
+        "expected_size_bytes": 78543,
+        "expected_sha256": "8ff755453c6069c909015eaec50fada5bfadaed2a80fcc8a3f84411e7161a604",
+        "fulfilled_size_bytes": 78543,
+        "fulfilled_sha256": "8ff755453c6069c909015eaec50fada5bfadaed2a80fcc8a3f84411e7161a604"
+      },
+      {
+        "url": "https://nthh.github.io/data-publications/lakeatlas/display/thumbnail.png",
+        "plan_path": "catalog/lakeatlas/display/thumbnail.png",
+        "expected_size_bytes": 4138,
+        "expected_sha256": "1545b01af18207d60a182fdcc0e4117d83c73eea1db93f48a673138a1cebf15e",
+        "fulfilled_size_bytes": 4138,
+        "fulfilled_sha256": "1545b01af18207d60a182fdcc0e4117d83c73eea1db93f48a673138a1cebf15e"
+      },
+      {
+        "url": "https://nthh.github.io/data-publications/river-plastic-inputs/collection.json",
+        "plan_path": "catalog/river-plastic-inputs/collection.json",
+        "expected_size_bytes": 15577,
+        "expected_sha256": "05d2e89186a8fd8d6776491cf1545fe795128afe683502588c822ba045851312",
+        "fulfilled_size_bytes": 15577,
+        "fulfilled_sha256": "05d2e89186a8fd8d6776491cf1545fe795128afe683502588c822ba045851312"
+      },
+      {
+        "url": "https://nthh.github.io/data-publications/river-plastic-inputs/thumbnail.png",
+        "plan_path": "catalog/river-plastic-inputs/thumbnail.png",
+        "expected_size_bytes": 198924,
+        "expected_sha256": "ff0e30b5c3768605f41b75c0bce515d82eeffa9d2422a4d408b8efbad46034c1",
+        "fulfilled_size_bytes": 198924,
+        "fulfilled_sha256": "ff0e30b5c3768605f41b75c0bce515d82eeffa9d2422a4d408b8efbad46034c1"
+      }
+    ]
+  },
+  "source_requests": [
+    {
+      "url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+      "dataset_id": "free-flowing-rivers",
+      "method": "HEAD",
+      "status": null,
+      "request_range": null,
+      "planned_size_bytes": 887132886,
+      "planned_sha256": "62130e4999ba449bd2768bcdd9346bc2ba8fa4c4f06d39597e5227cd496a1a63",
+      "response_body_bytes": 0,
+      "status_check": "request_failed",
+      "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+    },
+    {
+      "url": "https://data.source.coop/nthh/free-flowing-rivers/display/display-v1/assets/ffr-reaches.pmtiles",
+      "dataset_id": "free-flowing-rivers",
+      "method": "GET",
+      "status": null,
+      "request_range": "bytes=0-16383",
+      "planned_size_bytes": 3570445458,
+      "planned_sha256": "6e248eba5ecdf58ee28705a8f567be9497836f0a1c6c078b50327a1599ecdce3",
+      "response_body_bytes": 0,
+      "status_check": "request_failed",
+      "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+    }
+  ],
+  "collections": [
+    {
+      "id": "river-plastic-inputs",
+      "collection_title": "Global river plastic inputs — Lebreton et al. (2017)",
+      "collection_page": "https://nthh.github.io/data-publications/river-plastic-inputs/collection.json",
+      "collection_page_path": "catalog/river-plastic-inputs/collection.json",
+      "status": "running",
+      "pmtiles_layers": [
+        {
+          "key": "tiles",
+          "title": "River input display tiles",
+          "url": "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/river-plastic-inputs.pmtiles",
+          "file_size": 3705340,
+          "roles": [
+            "visual"
+          ],
+          "size_bytes": 3705340,
+          "sha256": "ca412601ea905a43bf55d5251f27e2c2d9b1403b2eb93adea1525c4fa7bc05fe"
+        }
+      ],
+      "style_titles": [
+        "Annual midpoint input style"
+      ],
+      "style_picker_options": [],
+      "style_picker_options_observed": [],
+      "map_ready": false,
+      "map_selector": ".map-container .map",
+      "canvas_selector": ".maplibregl-canvas",
+      "layer_control_text": null,
+      "layer_control": null,
+      "console_messages": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector"
+        },
+        {
+          "type": "error",
+          "text": "ParquetViewer: failed to load TypeError: Failed to fetch\n    at Ui (https://browser.portolan-sdi.org/assets/parquet-71UGI7VW.js:1:19894)\n    at Ri (https://browser.portolan-sdi.org/assets/parquet-71UGI7VW.js:1:20221)\n    at Yn (https://browser.portolan-sdi.org/assets/parquet-71UGI7VW.js:973:10990)\n    at Proxy.loadData (https://browser.portolan-sdi.org/assets/ParquetViewer-Dy2DUZXR.js:2:3898)"
+        },
+        {
+          "type": "warning",
+          "text": "[.WebGL-0x104000ee200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector"
+        },
+        {
+          "type": "warning",
+          "text": "Failed to add tile asset https://data.source.coop/nthh/free-flowing-rivers/display/display-v1/assets/ffr-reaches.pmtiles TypeError: Failed to fetch\n    at FetchSource.<anonymous> (https://browser.portolan-sdi.org/assets/TerrainControl-CJCsOo7Q.js:801:182257)\n    at Generator.next (<anonymous>)\n    at https://browser.portolan-sdi.org/assets/TerrainControl-CJCsOo7Q.js:801:175918\n    at new Promise (<anonymous>)\n    at wi (https://browser.portolan-sdi.org/assets/TerrainControl-CJCsOo7Q.js:801:175719)\n    at FetchSource.getBytes (https://browser.portolan-sdi.org/assets/TerrainControl-CJCsOo7Q.js:801:182012)\n    at https://browser.portolan-sdi.org/assets/TerrainControl-CJCsOo7Q.js:801:184936\n    at Generator.next (<anonymous>)\n    at https://browser.portolan-sdi.org/assets/TerrainControl-CJCsOo7Q.js:801:175918\n    at new Promise (<anonymous>)"
+        },
+        {
+          "type": "warning",
+          "text": "[.WebGL-0x104000ee200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+        },
+        {
+          "type": "warning",
+          "text": "[.WebGL-0x104000ee200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+        },
+        {
+          "type": "warning",
+          "text": "[.WebGL-0x104000ee200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)"
+        },
+        {
+          "type": "warning",
+          "text": "Failed to add tile asset https://data.source.coop/nthh/free-flowing-rivers/display/display-v1/assets/ffr-reaches.pmtiles TypeError: Failed to fetch\n    at FetchSource.<anonymous> (https://browser.portolan-sdi.org/assets/TerrainControl-CJCsOo7Q.js:801:182257)\n    at Generator.next (<anonymous>)\n    at https://browser.portolan-sdi.org/assets/TerrainControl-CJCsOo7Q.js:801:175918\n    at new Promise (<anonymous>)\n    at wi (https://browser.portolan-sdi.org/assets/TerrainControl-CJCsOo7Q.js:801:175719)\n    at FetchSource.getBytes (https://browser.portolan-sdi.org/assets/TerrainControl-CJCsOo7Q.js:801:182012)\n    at https://browser.portolan-sdi.org/assets/TerrainControl-CJCsOo7Q.js:801:184936\n    at Generator.next (<anonymous>)\n    at https://browser.portolan-sdi.org/assets/TerrainControl-CJCsOo7Q.js:801:175918\n    at new Promise (<anonymous>)"
+        }
+      ],
+      "console_messages_truncated": 0,
+      "renderer_state": null,
+      "screenshots": [],
+      "transferred_bytes": 0,
+      "source_request_indexes": [
+        0,
+        1
+      ],
+      "errors": [
+        "Cross-product Source request: https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+        "HEAD https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "console.error: Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "console.error: ParquetViewer: failed to load TypeError: Failed to fetch\n    at Ui (https://browser.portolan-sdi.org/assets/parquet-71UGI7VW.js:1:19894)\n    at Ri (https://browser.portolan-sdi.org/assets/parquet-71UGI7VW.js:1:20221)\n    at Yn (https://browser.portolan-sdi.org/assets/parquet-71UGI7VW.js:973:10990)\n    at Proxy.loadData (https://browser.portolan-sdi.org/assets/ParquetViewer-Dy2DUZXR.js:2:3898)",
+        "Cross-product Source request: https://data.source.coop/nthh/free-flowing-rivers/display/display-v1/assets/ffr-reaches.pmtiles",
+        "GET https://data.source.coop/nthh/free-flowing-rivers/display/display-v1/assets/ffr-reaches.pmtiles: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "console.error: Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector"
+      ],
+      "browser_route": "https://browser.portolan-sdi.org/#/external/nthh.github.io/data-publications/catalog.json"
+    }
+  ],
+  "limits": {
+    "max_range_bytes": 16777216,
+    "max_bytes_per_collection": 134217728,
+    "max_bytes_full_run": 671088640
+  },
+  "manual_visual_review_required": true,
+  "notes": [
+    "Preflight synthetic metadata is not GitHub Pages reachability, deployment, or real Pages CORS evidence.",
+    "Source range-body SHA-256 values identify only those bounded response bytes, not a full-object checksum.",
+    "A map canvas and screenshot require manual visual review before claiming rendered layer acceptance."
+  ],
+  "errors": [
+    "Cross-product Source request: https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+    "river-plastic-inputs: HEAD https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+    "river-plastic-inputs: console.error: Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+    "river-plastic-inputs: console.error: ParquetViewer: failed to load TypeError: Failed to fetch\n    at Ui (https://browser.portolan-sdi.org/assets/parquet-71UGI7VW.js:1:19894)\n    at Ri (https://browser.portolan-sdi.org/assets/parquet-71UGI7VW.js:1:20221)\n    at Yn (https://browser.portolan-sdi.org/assets/parquet-71UGI7VW.js:973:10990)\n    at Proxy.loadData (https://browser.portolan-sdi.org/assets/ParquetViewer-Dy2DUZXR.js:2:3898)",
+    "Cross-product Source request: https://data.source.coop/nthh/free-flowing-rivers/display/display-v1/assets/ffr-reaches.pmtiles",
+    "river-plastic-inputs: GET https://data.source.coop/nthh/free-flowing-rivers/display/display-v1/assets/ffr-reaches.pmtiles: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+    "river-plastic-inputs: console.error: Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+    "locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText('Global river plastic inputs — Lebreton et al. (2017)', { exact: true }).first() to be visible\u001b[22m\n"
+  ]
+}

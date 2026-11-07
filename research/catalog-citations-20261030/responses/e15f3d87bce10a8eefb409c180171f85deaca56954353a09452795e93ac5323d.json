@@ -1,0 +1,80 @@
+{
+  "request_url": "https://api.openalex.org/works?search=Updated+Calibration+Description%3A+Automated+Pixel+Selection+Method+in+eeMETRIC&corpus=all&per_page=5&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date",
+  "retrieved_at": "2026-10-30T22:08:02.492046+00:00",
+  "response_path": "responses/e15f3d87bce10a8eefb409c180171f85deaca56954353a09452795e93ac5323d.json",
+  "status": 200,
+  "response_sha256": "ebddf7596cd58223145b80e753e1dfcbcdbec3b6c32ff867171f34077c19d7d4",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 5,
+      "db_response_time_ms": 54,
+      "page": 1,
+      "per_page": 5,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where full text has (Updated Calibration Description: Automated Pixel Selection Method in eeMETRIC)",
+        "x_new_oql": "get works (all corpora) where full text has (Updated Calibration Description: Automated Pixel Selection Method in eeMETRIC)",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "Updated Calibration Description: Automated Pixel Selection Method in eeMETRIC",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:Updated Calibration Description: Automated Pixel Selection Method in eeMETRIC&corpus=all&per_page=5",
+        "order": "best matches first",
+        "order_default": true
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W7131116091",
+        "doi": "https://doi.org/10.3390/computers15020137",
+        "title": "Agroclimatic Sensing, Communication, and Computational Systems-Based Methods and Technologies for Precision Irrigation Management: Current State and Prospects",
+        "type": "article",
+        "publication_year": 2026,
+        "publication_date": "2026-02-23"
+      },
+      {
+        "id": "https://openalex.org/W4390880545",
+        "doi": "https://doi.org/10.1038/s44221-023-00181-7",
+        "title": "Assessing the accuracy of OpenET satellite-based evapotranspiration data to support water resource and land management applications",
+        "type": "article",
+        "publication_year": 2024,
+        "publication_date": "2024-01-15"
+      },
+      {
+        "id": "https://openalex.org/W4308147675",
+        "doi": "https://doi.org/10.1029/2022wr032800",
+        "title": "A Global Implementation of Single‐ and Dual‐Source Surface Energy Balance Models for Estimating Actual Evapotranspiration at 30‐m Resolution Using Google Earth Engine",
+        "type": "article",
+        "publication_year": 2022,
+        "publication_date": "2022-11-01"
+      },
+      {
+        "id": "https://openalex.org/W7171851853",
+        "doi": "https://doi.org/10.5194/gmd-19-6967-2026",
+        "title": "GEE-DisALEXI: cloud-based implementation of the DisALEXI model for evapotranspiration monitoring using Google Earth Engine",
+        "type": "article",
+        "publication_year": 2026,
+        "publication_date": "2026-07-30"
+      },
+      {
+        "id": "https://openalex.org/W7164951924",
+        "doi": "https://doi.org/10.3133/sir20265139",
+        "title": "Assessing the state of hydrologic science in the Upper Klamath Basin—A comprehensive review of data, tools, and models",
+        "type": "report",
+        "publication_year": 2026,
+        "publication_date": "2026-01-01"
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "4bf6904615e15f044c856504b420357d8bc173b2ab6fde52f40e8f679eef7eb9"
+}

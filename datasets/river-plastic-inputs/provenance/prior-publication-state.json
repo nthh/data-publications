@@ -1,0 +1,111 @@
+{
+  "status": "local_verified_not_published",
+  "user_instruction": "Prepare the release locally for now (2026-10-29).",
+  "product_directory": "datasets/river-plastic-inputs",
+  "local_bundle_directory": ".local/gee-publication/river-plastic-inputs/figshare-v6-r1",
+  "local_archive": {
+    "path": ".local/gee-publication/river-plastic-inputs/river-plastic-inputs-figshare-v6-r1.zip",
+    "size_bytes": 9600980,
+    "sha256": "eae78b08e8df3aa4c0039eca43a0c1f0be6338bf739e0cf2a50bb487e1a39669",
+    "members_verified": 18
+  },
+  "source_version": "10.6084/m9.figshare.4725541.v6",
+  "conversion_git_commit": "21f14552cd80dc4e93d28c889faae841fc182c48",
+  "release_manifest_path": "datasets/river-plastic-inputs/evidence/release-manifest.json",
+  "validation_path": "datasets/river-plastic-inputs/evidence/validation.json",
+  "receipt_path": "datasets/river-plastic-inputs/evidence/release-receipt.json",
+  "reproducibility_path": "datasets/river-plastic-inputs/evidence/reproducibility.json",
+  "records": 40760,
+  "original_numeric_fields": 53,
+  "source_rows_with_missing_estimates": [
+    22271,
+    36248,
+    36262,
+    36276
+  ],
+  "missing_value_handling": "Original numeric DBF asterisk nulls remain null, never zero; all points and catchment attributes are retained.",
+  "outputs": [
+    {
+      "name": "river-plastic-inputs.parquet",
+      "size_bytes": 6360991,
+      "sha256": "de35bd69b144565af1fcd33f915e8521a1af502e3ac50235560990f6c441e8c9"
+    },
+    {
+      "name": "river-plastic-inputs.pmtiles",
+      "size_bytes": 3705340,
+      "sha256": "ca412601ea905a43bf55d5251f27e2c2d9b1403b2eb93adea1525c4fa7bc05fe"
+    },
+    {
+      "name": "thumbnail.png",
+      "size_bytes": 198924,
+      "sha256": "ff0e30b5c3768605f41b75c0bce515d82eeffa9d2422a4d408b8efbad46034c1"
+    }
+  ],
+  "formats": {
+    "analytic": "GeoParquet 1.1, WKB Point, decimal128 source attributes, Hilbert ordering, Zstandard, 10 row groups with bbox statistics",
+    "visual": "PMTiles v3, zooms 0-8; all 40,760 source IDs present at zoom 8; lower zooms thin points"
+  },
+  "validation": {
+    "numeric_cells_compared": 2160280,
+    "geometries_compared": 40760,
+    "pmtiles_unique_ids_at_max_zoom": 40760,
+    "stac_node_validator": "2.0.0: 2 passed, 0 invalid, 0 skipped",
+    "rashid": "0.1.8: metadata, profile, structure and local data passed; 0 errors, 0 warnings",
+    "local_http_subset_rows": 747,
+    "independent_rebuild": "13 generated files and manifest identical by SHA-256"
+  },
+  "registration": {
+    "source_cooperative": "not_uploaded",
+    "portolan": "catalog_validated_locally_not_submitted",
+    "folia": "public_representation_registration_pending"
+  },
+  "limits": [
+    "HTTP verification covers the loopback server only.",
+    "No remote publication or registry acceptance is claimed.",
+    "Reproducibility was tested on this machine with the locked environment, not across platforms."
+  ],
+  "supplementary_validation": {
+    "as_of": "2026-10-30",
+    "scope": "Consistency with published summaries; not independent scientific validation.",
+    "plan_path": "datasets/river-plastic-inputs/VALIDATION.md",
+    "contract_path": "datasets/river-plastic-inputs/publication-benchmarks.json",
+    "report_path": "datasets/river-plastic-inputs/evidence/publication-validation.json",
+    "fault_check_path": "datasets/river-plastic-inputs/evidence/publication-fault-checks.json",
+    "publication_checks": "5 passed: annual lower/upper totals, May-October share, nonnegative values, ordered uncertainty",
+    "deliberate_faults_detected": 5,
+    "may_october_monthly_midpoint_share": 0.7453305619616076,
+    "gee_parity": "passed_with_documented_geometry_difference",
+    "gee_report_path": "datasets/river-plastic-inputs/evidence/gee-validation.json",
+    "gee_strict_coordinate_parity": "failed",
+    "gee_unique_points_matched": 40722,
+    "gee_coincident_groups_verified": 19,
+    "gee_coincident_records_verified": 38,
+    "gee_numeric_values_exact": 2160076,
+    "gee_null_cells_exact": 204,
+    "gee_maximum_displacement_meters": 0.34945638926427325,
+    "gee_median_displacement_meters": 0.1787185995991023,
+    "gee_fault_tests_passed": 19,
+    "gee_upstream_version_provenance": "undocumented_in_asset_metadata",
+    "source_distinct_coordinates": 40741,
+    "source_coincident_pairs": 19,
+    "gee_asset": "projects/sat-io/open-datasets/open-ocean/river_plastic_emissions",
+    "units_discrepancy": "GEE catalog prose says kg/year; original Figshare annual emissions are tonnes/year. All observed GEE attribute values match the original directly, without scaling.",
+    "independent_observational_validation": "not_run",
+    "packaging": "Supplementary Git evidence; existing release archive and receipts remain unchanged."
+  },
+  "workflow_publication": {
+    "status": "prepared_locally_not_published",
+    "pattern_path": "docs/publishing.md",
+    "inventory_path": "datasets/river-plastic-inputs/publication.json",
+    "current_python_scripts": 11,
+    "historical_and_current_snapshots": 4,
+    "inventoried_files": 114,
+    "local_source_archive": ".local/gee-publication/river-plastic-inputs/workflow-source-v1.zip",
+    "source_archive_sha256": "d0f672be8298c5f85e0184f02238e21a7a267ff401d356c232f5c63af5122a3a",
+    "receipt_path": "datasets/river-plastic-inputs/evidence/workflow-source-receipt.json",
+    "tests_path": "datasets/river-plastic-inputs/evidence/workflow-source-tests.json",
+    "public_code_repository": null,
+    "public_source_archive": null,
+    "pending": "Explicit public code license text/scope, public repository and URLs, public-checkout rehearsal, and hosting of the historical validation capture."
+  }
+}

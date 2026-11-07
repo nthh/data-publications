@@ -1,0 +1,374 @@
+{
+  "assets": [
+    {
+      "asset_id": "data",
+      "checksum": "1220de35bd69b144565af1fcd33f915e8521a1af502e3ac50235560990f6c441e8c9",
+      "href": "river-plastic-inputs.parquet",
+      "media_type": "application/vnd.apache.parquet",
+      "roles": [
+        "data"
+      ],
+      "size_bytes": 6360991,
+      "title": "Complete analytic data, GeoParquet 1.1"
+    },
+    {
+      "asset_id": "original",
+      "checksum": "1220c24a1ccdfbdc44c59954ab9796a522a3271b7c91ca31898526a93bccaeabd4f4",
+      "href": "https://ndownloader.figshare.com/files/7714864",
+      "media_type": "application/zip",
+      "roles": [
+        "source"
+      ],
+      "size_bytes": 5764810,
+      "title": "Original Figshare v6 shapefile archive"
+    },
+    {
+      "asset_id": "quality",
+      "checksum": "1220938199ee9cb0f9ef8522b2dbd1d6d32eb70c562ff816fc3d3849b11d74dcb643",
+      "href": "quality.json",
+      "media_type": "application/json",
+      "roles": [
+        "metadata"
+      ],
+      "size_bytes": 2420,
+      "title": "Original missing values and encoding"
+    },
+    {
+      "asset_id": "schema",
+      "checksum": "12207858a6c3b596e9d9b322f5aa9896209e7cc2c0750de267293cef4f6befb1f828",
+      "href": "schema.json",
+      "media_type": "application/json",
+      "roles": [
+        "metadata"
+      ],
+      "size_bytes": 9542,
+      "title": "Field dictionary"
+    },
+    {
+      "asset_id": "style-annual-input",
+      "checksum": "1220ae46644a56751e87743cb5f3e6fdb4fd32074919678158bcb858f95722431c22",
+      "href": "styles/annual-input.json",
+      "media_type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "style",
+        "default"
+      ],
+      "size_bytes": 2118,
+      "title": "Annual midpoint input style"
+    },
+    {
+      "asset_id": "thumbnail",
+      "checksum": "1220ff0e30b5c3768605f41b75c0bce515d82eeffa9d2422a4d408b8efbad46034c1",
+      "href": "thumbnail.png",
+      "media_type": "image/png",
+      "roles": [
+        "thumbnail"
+      ],
+      "size_bytes": 198924,
+      "title": "Annual midpoint input map"
+    },
+    {
+      "asset_id": "tiles",
+      "checksum": "1220ca412601ea905a43bf55d5251f27e2c2d9b1403b2eb93adea1525c4fa7bc05fe",
+      "href": "river-plastic-inputs.pmtiles",
+      "media_type": "application/vnd.pmtiles",
+      "roles": [
+        "visual"
+      ],
+      "size_bytes": 3705340,
+      "title": "River input display tiles"
+    }
+  ],
+  "attribution": "Lebreton et al. (2017), River plastic emissions to the world’s oceans. Original conversion evidence retains Folia attribution.",
+  "blockers": [],
+  "created": true,
+  "creation_ready": true,
+  "dataset_id": "river-plastic-inputs",
+  "dataset_title": "Global river plastic inputs — Lebreton et al. (2017)",
+  "display_publication": null,
+  "draft_type": "source_coop_product_draft",
+  "hosted": true,
+  "independent_maintainer_proposal": {
+    "owner": "nthh",
+    "relationship": "new Source Cooperative product proposal; immutable package metadata is unchanged",
+    "status": "confirmed"
+  },
+  "license_note": "CC BY 4.0. Retain Lebreton et al. attribution and the Figshare v6 source citation.",
+  "limitations": [
+    "This is the Lebreton dataset, not the later Meijer et al. model.",
+    "Preserve null estimates and coincident outlet records; their multiplicity is intentional.",
+    "The historical full GEE capture replay matches all 53 attributes and nulls across 40,760 rows with the documented coincident-group contract; maximum point displacement is 0.3495 m. Fresh metadata/count match, but no fresh exhaustive feature capture was made. Strict coordinate parity remains failed."
+  ],
+  "local_readiness": "hosted_verified_pending_catalog_deployment",
+  "owner": "nthh",
+  "owner_status": "confirmed",
+  "product_id": "river-plastic-inputs",
+  "proposed_source_proxy": {
+    "status": "hosted",
+    "uri": "s3://nthh/river-plastic-inputs"
+  },
+  "publication_status": "published",
+  "ready_for_creation": true,
+  "ready_for_review": true,
+  "related_dataset_links": [],
+  "release": "figshare-v6-r2",
+  "release_files": [
+    {
+      "kind": "asset",
+      "path": "AGENTS.md",
+      "size_bytes": 1586
+    },
+    {
+      "kind": "asset",
+      "path": "LICENSE.txt",
+      "size_bytes": 517
+    },
+    {
+      "kind": "asset",
+      "path": "README.md",
+      "size_bytes": 1679
+    },
+    {
+      "kind": "asset",
+      "path": "catalog.json",
+      "size_bytes": 1464
+    },
+    {
+      "kind": "asset",
+      "path": "dataset.yaml",
+      "size_bytes": 5492
+    },
+    {
+      "kind": "asset",
+      "path": "river-plastic-inputs/AGENTS.md",
+      "size_bytes": 1586
+    },
+    {
+      "kind": "asset",
+      "path": "river-plastic-inputs/README.md",
+      "size_bytes": 9710
+    },
+    {
+      "kind": "asset",
+      "path": "river-plastic-inputs/collection.json",
+      "size_bytes": 14030
+    },
+    {
+      "kind": "asset",
+      "path": "river-plastic-inputs/quality.json",
+      "size_bytes": 2420
+    },
+    {
+      "kind": "asset",
+      "path": "river-plastic-inputs/river-plastic-inputs.parquet",
+      "size_bytes": 6360991
+    },
+    {
+      "kind": "asset",
+      "path": "river-plastic-inputs/river-plastic-inputs.pmtiles",
+      "size_bytes": 3705340
+    },
+    {
+      "kind": "asset",
+      "path": "river-plastic-inputs/schema.json",
+      "size_bytes": 9542
+    },
+    {
+      "kind": "asset",
+      "path": "river-plastic-inputs/styles/annual-input.json",
+      "size_bytes": 2118
+    },
+    {
+      "kind": "asset",
+      "path": "river-plastic-inputs/thumbnail.png",
+      "size_bytes": 198924
+    }
+  ],
+  "review_context": {
+    "asset_integrity": "passed_fresh_sha256_audit",
+    "local_followup": [],
+    "public_followup": [
+      "Deploy and verify the aggregate catalog in Portolan Browser.",
+      "Submit to the main Portolan registry only after a separate decision."
+    ],
+    "stage": "hosted_verified_pending_catalog_deployment",
+    "status_basis": "canonical publication status plus local manifest/snapshot hashes; this tool does not rerun scientific or public-host validation"
+  },
+  "schema_version": 1,
+  "snapshot_binding": {
+    "bound_file_count": 0,
+    "hosted_package_base_url": "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/",
+    "local_metadata_integrity": "passed",
+    "manifest_path": "datasets/river-plastic-inputs/releases/figshare-v6-r2/manifest.json",
+    "manifest_sha256": "ad86186ea962c3c0dfc62feb28aac7a68145ac3c7451f2602812c5b5278c2300",
+    "package_binding_sha256": null,
+    "package_binding_status": "inventory_only_unbound",
+    "release": "figshare-v6-r2",
+    "snapshot_file_count": 5,
+    "snapshot_path": "datasets/river-plastic-inputs/releases/figshare-v6-r2/catalog-input-r1/snapshot.json",
+    "snapshot_sha256": "e00804f782c3f97fed59f2ab5cc90f9dbf916d5265adfb8f6b025c00ede6f64a"
+  },
+  "snapshot_collection": {
+    "assets": [
+      {
+        "asset_id": "data",
+        "checksum": "1220de35bd69b144565af1fcd33f915e8521a1af502e3ac50235560990f6c441e8c9",
+        "href": "river-plastic-inputs.parquet",
+        "media_type": "application/vnd.apache.parquet",
+        "roles": [
+          "data"
+        ],
+        "size_bytes": 6360991,
+        "title": "Complete analytic data, GeoParquet 1.1"
+      },
+      {
+        "asset_id": "original",
+        "checksum": "1220c24a1ccdfbdc44c59954ab9796a522a3271b7c91ca31898526a93bccaeabd4f4",
+        "href": "https://ndownloader.figshare.com/files/7714864",
+        "media_type": "application/zip",
+        "roles": [
+          "source"
+        ],
+        "size_bytes": 5764810,
+        "title": "Original Figshare v6 shapefile archive"
+      },
+      {
+        "asset_id": "quality",
+        "checksum": "1220938199ee9cb0f9ef8522b2dbd1d6d32eb70c562ff816fc3d3849b11d74dcb643",
+        "href": "quality.json",
+        "media_type": "application/json",
+        "roles": [
+          "metadata"
+        ],
+        "size_bytes": 2420,
+        "title": "Original missing values and encoding"
+      },
+      {
+        "asset_id": "schema",
+        "checksum": "12207858a6c3b596e9d9b322f5aa9896209e7cc2c0750de267293cef4f6befb1f828",
+        "href": "schema.json",
+        "media_type": "application/json",
+        "roles": [
+          "metadata"
+        ],
+        "size_bytes": 9542,
+        "title": "Field dictionary"
+      },
+      {
+        "asset_id": "style-annual-input",
+        "checksum": "1220ae46644a56751e87743cb5f3e6fdb4fd32074919678158bcb858f95722431c22",
+        "href": "styles/annual-input.json",
+        "media_type": "application/vnd.mapbox.style+json",
+        "roles": [
+          "style",
+          "default"
+        ],
+        "size_bytes": 2118,
+        "title": "Annual midpoint input style"
+      },
+      {
+        "asset_id": "thumbnail",
+        "checksum": "1220ff0e30b5c3768605f41b75c0bce515d82eeffa9d2422a4d408b8efbad46034c1",
+        "href": "thumbnail.png",
+        "media_type": "image/png",
+        "roles": [
+          "thumbnail"
+        ],
+        "size_bytes": 198924,
+        "title": "Annual midpoint input map"
+      },
+      {
+        "asset_id": "tiles",
+        "checksum": "1220ca412601ea905a43bf55d5251f27e2c2d9b1403b2eb93adea1525c4fa7bc05fe",
+        "href": "river-plastic-inputs.pmtiles",
+        "media_type": "application/vnd.pmtiles",
+        "roles": [
+          "visual"
+        ],
+        "size_bytes": 3705340,
+        "title": "River input display tiles"
+      }
+    ],
+    "description": "A global model of plastic inputs from rivers into the ocean, published by Lebreton et al. in 2017. This static release preserves the 40,760 river input locations and all 53 numeric attributes in the original Figshare v6 shapefile. Estimates represent the 2010 model baseline; they are not current measurements. This is distinct from the later Meijer et al. 2021 model.",
+    "extent": {
+      "spatial": {
+        "bbox": [
+          [
+            -137.9375,
+            -55.62083333,
+            179.8791667,
+            60.4125
+          ]
+        ]
+      },
+      "temporal": {
+        "interval": [
+          [
+            "2010-01-01T00:00:00Z",
+            "2010-12-31T23:59:59Z"
+          ]
+        ]
+      }
+    },
+    "id": "river-plastic-inputs",
+    "license": "CC-BY-4.0",
+    "providers": [
+      {
+        "name": "Lebreton et al.",
+        "roles": [
+          "producer",
+          "licensor"
+        ],
+        "url": "https://doi.org/10.1038/ncomms15611"
+      },
+      {
+        "description": "Processor and designated publisher for this prepared catalog. Public hosting remains pending.",
+        "name": "Folia",
+        "roles": [
+          "processor",
+          "host"
+        ],
+        "url": "https://folia.sh"
+      }
+    ],
+    "title": "Global river plastic inputs — Lebreton et al. (2017)"
+  },
+  "source_links": [
+    {
+      "title": "License terms",
+      "url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "title": "Research paper",
+      "url": "https://doi.org/10.1038/ncomms15611"
+    },
+    {
+      "title": "Dataset release",
+      "url": "https://doi.org/10.6084/m9.figshare.4725541.v6"
+    },
+    {
+      "title": "Folia converter/host",
+      "url": "https://folia.sh"
+    },
+    {
+      "title": "Producer source",
+      "url": "https://gee-community-catalog.org/projects/plastic"
+    },
+    {
+      "title": "Original download",
+      "url": "https://ndownloader.figshare.com/files/7714864"
+    }
+  ],
+  "summary": "Modeled plastic inputs at global river outlets from the Lebreton et al. study, with analytical GeoParquet and a separate PMTiles display layer.",
+  "supplements": [],
+  "tags": [
+    "rivers",
+    "plastic",
+    "pollution",
+    "global",
+    "geoparquet",
+    "pmtiles"
+  ],
+  "temporal_note": "Historical model baseline: 2010; paper published in 2017. These are modeled estimates, not current measurements.",
+  "title": "Global river plastic inputs — Lebreton et al. (2017)"
+}

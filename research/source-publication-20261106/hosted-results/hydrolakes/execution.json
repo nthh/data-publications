@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "kind": "hosted_validation_execution",
+  "dataset_id": "hydrolakes",
+  "status": "passed",
+  "cwd": "<repository-root>",
+  "argv": [
+    "scripts/source_publish/.venv/bin/python",
+    "scripts/source_publish/validate_hosted.py",
+    "--plan",
+    "research/source-publication-20261106/staging-r2/immutable-upload-plan.json",
+    "--dataset",
+    "hydrolakes",
+    "--receipt",
+    "research/source-publication-20261106/upload-receipts/hydrolakes",
+    "--package",
+    "/Users/nathan/projects/data-publications/.local/hydrolakes/releases/v1-local-r3",
+    "--package-manifest-sha256",
+    "48d1d1061f0785255f14c3d5bb7ce8a1c0b47963c45c0e3b02a70441c0b86fcc",
+    "--display-package",
+    "/Users/nathan/projects/data-publications/.local/hydrolakes/display/display-v1",
+    "--query-controls",
+    "research/source-publication-20261106/controls-r1.json",
+    "--controls-sha256",
+    "9fab1ab0408ac437ed7b3161be79beccef167556297010780fb746205473f749",
+    "--browser-evidence",
+    "research/source-publication-20261106/browser-hydrolakes-r4/hosted-browser-evidence.json",
+    "--browser-controls",
+    "research/source-publication-20261106/browser-controls-r1.json",
+    "--browser-controls-sha256",
+    "6ff14a9c438cdee14af4ea21876ca32876883f7b676c16596b4ddfc924b6aa10",
+    "--output",
+    ".local/hosted-validation-hydrolakes-r1.json"
+  ],
+  "replay_note": "The validator refuses to overwrite an output. Supply a new unused --output path when replaying; bind --package and --display-package to the same pinned local release roots if this checkout moves.",
+  "validator_code_commit": "cc2a3ed",
+  "validator_script": {
+    "path": "scripts/source_publish/validate_hosted.py",
+    "sha256": "ed604e776a7837c831eb5aecb02c5a0bbcedc7cb596d64ca80a220019e4439e0"
+  },
+  "upload_dependency": {
+    "path": "scripts/source_publish/upload.py",
+    "sha256": "f4ce558aee236c9e2b82e13aa1dd97cb6c872085e6637db0ebfc018dd333381f"
+  },
+  "runtime": {
+    "python_executable": "scripts/source_publish/.venv/bin/python",
+    "python_version": "3.12.12",
+    "duckdb_version": "1.5.2",
+    "uv_lock": {
+      "path": "scripts/source_publish/uv.lock",
+      "sha256": "123042892fe9a9d53d4af65961e2ce509cb491530aa3c466bb2f830792dee415"
+    }
+  },
+  "local_package_bindings": {
+    "package_root": "/Users/nathan/projects/data-publications/.local/hydrolakes/releases/v1-local-r3",
+    "display_root": "/Users/nathan/projects/data-publications/.local/hydrolakes/display/display-v1"
+  },
+  "inputs": {
+    "plan": {
+      "path": "research/source-publication-20261106/staging-r2/immutable-upload-plan.json",
+      "sha256": "754c02dde3cf258263619599f893558d3348c7fb51c07f8fa700efa1900ac610"
+    },
+    "receipt_summary": {
+      "path": "research/source-publication-20261106/upload-receipts/hydrolakes/summary.json",
+      "sha256": "1230d847a0c5fa7dbc34def4fc211fb54c893ea11aea668b98e80d0c4158a4a4"
+    },
+    "receipt_object_records": {
+      "path": "research/source-publication-20261106/upload-receipts/hydrolakes/objects",
+      "algorithm": "sha256 of sorted UTF-8 lines: filename SPACE file_sha256 NEWLINE",
+      "object_count": 77,
+      "sha256": "c906f80926b73854d41a62de4dac62e01ba59aa28be3c7902eaf03deff933a83"
+    },
+    "package_manifest": {
+      "path": "datasets/hydrolakes/releases/v1-local-r3/evidence/package-manifest.json",
+      "sha256": "48d1d1061f0785255f14c3d5bb7ce8a1c0b47963c45c0e3b02a70441c0b86fcc"
+    },
+    "query_controls": {
+      "path": "research/source-publication-20261106/controls-r1.json",
+      "sha256": "9fab1ab0408ac437ed7b3161be79beccef167556297010780fb746205473f749"
+    },
+    "browser_controls": {
+      "path": "research/source-publication-20261106/browser-controls-r1.json",
+      "sha256": "6ff14a9c438cdee14af4ea21876ca32876883f7b676c16596b4ddfc924b6aa10"
+    },
+    "browser_evidence": {
+      "path": "research/source-publication-20261106/browser-hydrolakes-r4/hosted-browser-evidence.json",
+      "sha256": "38764cff79a12c25549e8d7c6c9e3fcaec6cad9d65c7cfc2861ff3313fcf3c02"
+    },
+    "display_manifest": {
+      "path": "datasets/hydrolakes/display/display-v1/manifest.json",
+      "sha256": "f3dbb0d87553162a6b2a91172626eeecca9985fb8df54685ee64924ca826d841"
+    }
+  },
+  "output": {
+    "path": "research/source-publication-20261106/hosted-results/hydrolakes/hosted-validation.json",
+    "sha256": "f690939ac02af9216af27128331d2136b31893292d0409a0fd54858c2b027a38",
+    "local_original_path": ".local/hosted-validation-hydrolakes-r1.json"
+  }
+}

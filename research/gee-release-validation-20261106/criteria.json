@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "authorization": "Continue GEE validation for the five locally prepared datasets, then user reviews repository before any data product publication. No upload/product creation/registry submission in this task.",
+  "known_before_results": [
+    "Existing exhaustive river-plastic comparison retained, including strict coordinate failure and coincident-point diagnostics.",
+    "Metadata GET established all six analytical GEE layer assets are accessible. Metadata responses omit machine-readable featureCount; synchronous Collection.size will be measured.",
+    "Raw GRWL metadata declares V01.01, 64,572,998 observations,829tiles, and missing-width sentinel1. GEE description license differs from producer/catalog; document provenance separately.",
+    "No feature values from these new captures have been read or compared when these criteria are frozen."
+  ],
+  "coverage": {
+    "hydrolakes": "512 deterministic global spatial-row-group sample rows plus first10 Hylak_ids; all source attributes and geometry; complete collection count",
+    "lakeatlas": "Polygon and pour-point layers independently:512 deterministic spatial-row-group sample rows plus first10 Hylak_ids each; all source attributes and geometry; complete collection counts",
+    "free-flowing-rivers": "512 deterministic spatial-row-group sample rows plus first10 GOIDs; all source attributes and geometry; complete collection count",
+    "grwl-raw": "512 deterministic row-group sample observations across source tiles; spatial queries around original first vertices to avoid matching on width; all ten producer attributes and geometry; complete collection count",
+    "river-plastic-inputs": "Retain and replay full prior40,760feature capture,53fields and documented coordinate diagnostics; refresh count/metadata against historical metadata. If metadata changes, perform separately recorded fresh full capture before renewed content claim."
+  },
+  "sampling": {
+    "method": "Select min(128,total row groups) distinct group indices floor(i*(groups-1)/(n-1)), then offsets0,floor(nrows/3),floor(2*nrows/3),nrows-1 in each group; deduplicate local IDs. Samples selected solely from immutable local release before any GEE feature retrieval.",
+    "local_extra_ids": "Hylak_id1..10 for lake layers and GOID1..10 forFFR; absent local IDs are reported, not substituted.",
+    "grwl_spatial_requests": "Group at most8 small rectangles per MultiPolygon query around first coordinate of each sample source part. Half-size0.0001degree; split longitude wrap at dateline. Pagination must terminate. Extra neighboring GEE features are retained/count-reported but not treated as targeted validation.",
+    "selection_claim": "Systematic global coverage, not statistical random sampling or exhaustive feature parity. Report actual sampled countries/continents/source tiles and coordinate bounds."
+  },
+  "global_counts": {
+    "hydrolakes": 1427688,
+    "lakeatlas-polygons": 1427688,
+    "lakeatlas-points": 1427688,
+    "free-flowing-rivers": 8477883,
+    "grwl-raw": 64572998,
+    "river-plastic-inputs": 40760,
+    "requirement": "Actual synchronous Collection.size result must equal immutable local Parquet row count. Metadata-described counts alone do not pass."
+  },
+  "matching": {
+    "lakes": "Hylak_id; exactly one GEE feature per requested ID; missing/duplicate IDs fail. Never equate GEE system:index with local FGDB OBJECTID.",
+    "free-flowing-rivers": "GOID, exactly one per requested ID.",
+    "grwl-raw": "Original lon,lat rounded only to binary64 plus segmentID and segmentInd, with occurrence multiplicity retained. Never join only onsegmentID. Coincident complete keys require exact attribute/geometry multisets and explicitly disallow individual identity claims. Spatial retrieval is independent of these attribute values.",
+    "extra_properties": "Record GEE extras separately; local derived bbox,source_row,source_tile,feature_id,width_valid and source FGDB OBJECTID are excluded with explicit reasons."
+  },
+  "attributes": {
+    "mapping": "Exact names, unique case-insensitive aliases; additionally explicit producer/GEE aliases for raw elev_m/elev and geometry-derived Shape_Length/Shape_Leng. No heuristic fuzzy matching, scale/unit changes or dropping failing science fields.",
+    "integers": "Finite JSON number with exact integral value; bool or numeric string fails.",
+    "float64": "abs(local-GEE)<=2*max(ulp(local),ulp(GEE)); no relative scientific tolerance.",
+    "float32": "GEE finite number must round to exactly the source binary32 value; report float64 differences separately.",
+    "decimal128": "Compare GEE binary64 to correctly rounded decimal source, tolerance max(0.5e-18,2*max ulp); source decimal precision remains untouched.",
+    "nulls": "Local null agrees only with explicit null or absent per-feature property; zero and empty string never substitute. Every required non-null source cell requires a numeric/string property of correct type.",
+    "strings": "Exact Unicode value; no whitespace normalization.",
+    "geometry_derived_fields": "Compare retained source Shape_Length/Shape_Area when GEE has an unambiguous corresponding property; report absent fields as coverage gaps, never as passed comparisons."
+  },
+  "geometry": {
+    "strict": "Promote singleton Point/LineString/Polygon to equivalent multipart forms, normalize ring direction/start and component order, require equal structure and coordinates within1e-8degrees. Report geometry type changes separately. No repair, simplification, snapping or projection in strict test.",
+    "diagnostic": "Separately measure WGS84 geodesic displacement for aligned normalized coordinate arrays; maximum<=1m. If structure differs, report it and only compute a local AEQD Hausdorff diagnostic for <=5000vertices per geometry. Diagnostic results never erase strict failure.",
+    "fail_closed": "Missing/empty/non-finite geometry fails. Uncomputed large-geometry diagnostics remain incomplete. No geometry result implies independent scientific accuracy."
+  },
+  "provenance": {
+    "required": [
+      "Committed criteria and explicit request plan before feature retrieval",
+      "SHA256 local Parquet and immutable manifest, sample file, script/environment lock/Git commit",
+      "Raw response SHA256 and size/request descriptors; no credentials stored",
+      "Before/after metadata bytes identical for each feature capture",
+      "Complete pagination/unique tokens; duplicate system feature IDs across overlapping spatial queries deduplicated only with identical entire content",
+      "Replay comparator entirely offline; retain all failures and separate diagnostics"
+    ],
+    "publication": "Raw captures remain ignored local files; small sanitized receipts/reports/criteria/scripts are tracked. Immutable release artifacts are unchanged."
+  },
+  "limits": {
+    "concurrency": 1,
+    "requests_per_plan": 256,
+    "bytes_per_plan": 512000000,
+    "timeout_seconds": 45,
+    "retries": 0,
+    "elapsed_seconds_per_plan": 7200,
+    "local_duckdb_threads": 2,
+    "local_duckdb_memory": "1GB",
+    "scope": "Existing public assets and synchronous count only; no exports, batch tasks, cloud deployments or data uploads."
+  },
+  "acceptance": "A sampled comparison passes only with exact global count, every requested sample present with required multiplicity, all required attribute cells within frozen source-representation tolerances, and strict geometry checks. Report attribute and geometry outcomes separately; documented geometry diagnostics can establish bounded difference but cannot make strict parity pass.",
+  "references": [
+    "https://developers.google.com/earth-engine/reference/rest/v1/projects.assets/listFeatures",
+    "https://developers.google.com/earth-engine/reference/rest/v1/projects.value/compute",
+    "https://developers.google.com/earth-engine/guides/table_manifest",
+    "https://gee-community-catalog.org/projects/hydrolakes/",
+    "https://gee-community-catalog.org/projects/hydroatlas/",
+    "https://developers.google.com/earth-engine/datasets/catalog/WWF_HydroSHEDS_v1_FreeFlowingRivers",
+    "https://gee-community-catalog.org/projects/grwl/",
+    "https://gee-community-catalog.org/projects/plastic/"
+  ]
+}

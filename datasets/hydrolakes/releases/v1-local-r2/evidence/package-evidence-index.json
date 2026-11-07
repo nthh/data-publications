@@ -1,0 +1,111 @@
+{
+  "asset_sha256": [
+    {
+      "asset_id": "hydrolakes-polygons",
+      "sha256": "273f66aa591f575616e731e6f31111ddf8ecfb39c0c05eacf0e903b6ddd6944d",
+      "size_bytes": 1001702072
+    }
+  ],
+  "files": [
+    {
+      "byte_identical": true,
+      "package_path": "manifest.json",
+      "portable_copy_sha256": "afbb0abfd166dfe9e30d167faee67993a1f86f1337b41a74b26a1f29e0cbc89d",
+      "portable_path": "evidence/package-manifest.json",
+      "sha256": "afbb0abfd166dfe9e30d167faee67993a1f86f1337b41a74b26a1f29e0cbc89d",
+      "size_bytes": 14522
+    },
+    {
+      "byte_identical": true,
+      "package_path": "catalog.json",
+      "portable_copy_sha256": "0ccfa477221dd8e6396b5bfa6039a0a54e893abe8a60d1e922a4e3b43701b778",
+      "portable_path": "evidence/package-catalog.json",
+      "sha256": "0ccfa477221dd8e6396b5bfa6039a0a54e893abe8a60d1e922a4e3b43701b778",
+      "size_bytes": 1398
+    },
+    {
+      "byte_identical": true,
+      "package_path": "collection.json",
+      "portable_copy_sha256": "b0c952d7e91b42e6999d1709621a732efce377ded3be9bbafb29f5d061e17be9",
+      "portable_path": "evidence/package-collection.json",
+      "sha256": "b0c952d7e91b42e6999d1709621a732efce377ded3be9bbafb29f5d061e17be9",
+      "size_bytes": 10230
+    },
+    {
+      "byte_identical": true,
+      "package_path": "package-receipt.json",
+      "portable_copy_sha256": "26e94f5cedeb221fafa7ad23a448aa0f3ad867486626a834a3a97e70d55da786",
+      "portable_path": "evidence/package-receipt.json",
+      "sha256": "26e94f5cedeb221fafa7ad23a448aa0f3ad867486626a834a3a97e70d55da786",
+      "size_bytes": 718
+    },
+    {
+      "byte_identical": true,
+      "package_path": "evidence/stac-node-validation.json",
+      "portable_copy_sha256": "ee8ba0be13e9fc5c81d40ee19eb852705d8d77cab3604ef7d89737a57a670892",
+      "portable_path": "evidence/package-stac-node-validation.json",
+      "sha256": "ee8ba0be13e9fc5c81d40ee19eb852705d8d77cab3604ef7d89737a57a670892",
+      "size_bytes": 555
+    },
+    {
+      "byte_identical": true,
+      "package_path": "evidence/portolan-validation.json",
+      "portable_copy_sha256": "adc53e891b0cc56ba4a1827929b3783cb97c6805704063cbf2493171e87b39f2",
+      "portable_path": "evidence/package-portolan-validation.json",
+      "sha256": "adc53e891b0cc56ba4a1827929b3783cb97c6805704063cbf2493171e87b39f2",
+      "size_bytes": 3570
+    },
+    {
+      "byte_identical": true,
+      "package_path": "evidence/local-http-duckdb-validation.json",
+      "portable_copy_sha256": "dcd5a00f0b63cc26898dab144c784e9b6a07e6e537cd8b9d44d513e4497426b4",
+      "portable_path": "evidence/package-local-http-duckdb-validation.json",
+      "sha256": "dcd5a00f0b63cc26898dab144c784e9b6a07e6e537cd8b9d44d513e4497426b4",
+      "size_bytes": 1986
+    },
+    {
+      "byte_identical": true,
+      "package_path": "evidence/package-integrity-validation.json",
+      "portable_copy_sha256": "ce85d8153b5415df9fd7890a07af359430f383c3ac87c5ba8a0914e6a65dcb7c",
+      "portable_path": "evidence/package-package-integrity-validation.json",
+      "sha256": "ce85d8153b5415df9fd7890a07af359430f383c3ac87c5ba8a0914e6a65dcb7c",
+      "size_bytes": 436
+    },
+    {
+      "byte_identical": true,
+      "package_path": "evidence/package-binding.json",
+      "portable_copy_sha256": "c75957a53abe046c936b9f7d54088857a7353d4c2e78fdaf2ec87e2acee6a201",
+      "portable_path": "evidence/package-package-binding.json",
+      "sha256": "c75957a53abe046c936b9f7d54088857a7353d4c2e78fdaf2ec87e2acee6a201",
+      "size_bytes": 6621
+    },
+    {
+      "byte_identical": true,
+      "package_path": "evidence/final-package-verification.json",
+      "portable_copy_sha256": "c2134e1fe9bac5b733a314f350a3a049cbac51e9479cb0d383d2058dc04664dc",
+      "portable_path": "evidence/package-final-package-verification.json",
+      "sha256": "c2134e1fe9bac5b733a314f350a3a049cbac51e9479cb0d383d2058dc04664dc",
+      "size_bytes": 132
+    }
+  ],
+  "no_public_upload": true,
+  "package_dir_relative_to_artifact_root": "releases/v1-local-r2",
+  "package_manifest_sha256": "afbb0abfd166dfe9e30d167faee67993a1f86f1337b41a74b26a1f29e0cbc89d",
+  "package_receipt_sha256": "26e94f5cedeb221fafa7ad23a448aa0f3ad867486626a834a3a97e70d55da786",
+  "package_status": "failed-local-validation",
+  "portolan_findings": [
+    {
+      "message": "asset 'hydrolakes-polygons' rows are not spatially ordered: 1427688 rows in 2789 row groups do not cluster spatially, so a reader cannot skip any part of the file",
+      "rule_id": "PTL-DAT-006",
+      "severity": "error"
+    },
+    {
+      "message": "mirror collection has no rel:'canonical' link; add one if the upstream publishes its own STAC catalog",
+      "rule_id": "PTL-PRO-002",
+      "severity": "info"
+    }
+  ],
+  "portolan_status": "failed",
+  "release_id": "v1-local-r2",
+  "release_version": "1.0.1"
+}

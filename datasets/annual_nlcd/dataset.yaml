@@ -1,0 +1,37 @@
+schema_version: 1
+id: annual_nlcd
+title: USGS Annual NLCD Land Cover Dataset
+community_url: https://gee-community-catalog.org/projects/annual_nlcd
+audit:
+  snapshot: gee-community-audit-20261029
+  family_key: annual_nlcd
+  unique_gee_asset_count: 6
+  initial_queue: review_source_coop_counterpart
+  folia_registry_status: direct_or_component
+  folia_registry_ids:
+  - '@usgs/annual-nlcd'
+  - '@usgs/annual-nlcd/land-cover-wgs84'
+  source_coop_urls:
+  - https://source.coop/kylebarron/usgs-landcover
+  source_coop_scope: Partial C1 v1 CONUS mosaic prefix; catalog family contains multiple
+    annual NLCD products and layers.
+  external_native_urls:
+  - https://source.coop/kylebarron/usgs-landcover
+  external_native_scope: Partial C1 v1 CONUS mosaic prefix; catalog family contains
+    multiple annual NLCD products and layers.
+triage:
+  decision: pending
+  priority: normal
+review:
+  citation_assessment:
+    as_of: '2026-10-29'
+    provider: OpenAlex
+    evidence_path: research/citations/rankings.json
+    evidence_key: annual_nlcd
+    geographic_scope: regional
+    paper_count_status: unknown
+    max_paper_citations: null
+    max_data_doi_citations: 65
+    top_paper_doi: null
+    top_paper_openalex_id: null
+    citation_scope: associated_dataset_publication

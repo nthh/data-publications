@@ -1,0 +1,54 @@
+schema_version: 1
+id: esri-world-admin1-divisions
+title: Esri World Administrative Divisions (first-level / Admin 1)
+intake:
+  kind: official_catalog
+  reference_url: https://www.arcgis.com/home/item.html?id=56633b40c1744109a265af1dba673535
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'esri: First-level administrative boundaries worldwide, described as states, provinces,
+    and regions; the Esri item specifies a December 2022 source vintage and October 2023 publication.
+    Coverage of every territory and boundary status should be assessed from the source layer, not inferred
+    from its world extent. Distinct named producer product; retain exact source edition and footprint.'
+  sources:
+  - provider: esri_public
+    entry_id: 56633b40c1744109a265af1dba673535
+    url: https://www.arcgis.com/home/item.html?id=56633b40c1744109a265af1dba673535
+    relationship: exact_dataset
+  - provider: producer
+    entry_id: source named by Esri item
+    url: https://www.garmin.com/
+    relationship: related_release
+  access:
+  - provider: esri_public
+    status: service_only
+    formats:
+    - vector
+    summary: ArcGIS FeatureServer item and public description observed. No service export setting, offline
+      right, or native Garmin bulk download was verified. Distinct named producer product; retain exact
+      source edition and footprint.
+    license_summary: The Esri item declares the Esri Master License Agreement and attributes the source
+      to Garmin. No independent redistribution license for the source geometry was established in this
+      inventory.
+    proposed_outputs: []
+    rationale: Potentially useful global administrative reference, but further review is required for
+      coverage gaps, disputed borders, version pinning, and Garmin/Esri redistribution terms. Keep service-only
+      until authoritative native access is established.
+    evidence_urls:
+    - https://www.arcgis.com/home/item.html?id=56633b40c1744109a265af1dba673535
+    - https://www.garmin.com/
+  citations: []
+  evidence:
+  - path: research/global-candidates-20261031/esri/reviewed.json
+    sha256: e02bd2202c3026ccd7564155bfa69b5e8bc666f65698da6bacce91ab7327d5be
+    key: esri-world-admin1-divisions

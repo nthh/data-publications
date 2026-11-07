@@ -1,0 +1,69 @@
+schema_version: 1
+id: hwsd
+title: Harmonized World Soil Database (HWSD) version 2.0
+community_url: https://gee-community-catalog.org/projects/hwsd
+audit:
+  snapshot: gee-community-audit-20261029
+  family_key: hwsd
+  unique_gee_asset_count: 1
+  initial_queue: research_original_source
+  folia_registry_status: not_identified
+  folia_registry_ids: []
+  source_coop_urls: []
+  source_coop_scope: null
+  external_native_urls: []
+  external_native_scope: null
+triage:
+  decision: pending
+  priority: normal
+review:
+  citation_assessment:
+    as_of: '2026-10-29'
+    provider: OpenAlex
+    evidence_path: research/citations/rankings.json
+    evidence_key: hwsd
+    geographic_scope: global
+    paper_count_status: matched
+    max_paper_citations: 1067
+    max_data_doi_citations: null
+    top_paper_doi: https://doi.org/10.4060/cc3823en
+    top_paper_openalex_id: https://openalex.org/W2151135366
+    citation_scope: associated_dataset_publication
+
+# Cross-catalog discovery: global-candidates-20261031
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'citations: Global Existing catalog identity.'
+  sources:
+  - provider: gee_community
+    entry_id: hwsd
+    url: https://gee-community-catalog.org/projects/hwsd
+    relationship: same_family
+  access:
+  - provider: literature
+    status: unknown
+    formats: []
+    summary: GEE catalog entries are available through Earth Engine; frozen metadata does not establish
+      an independently downloadable native bulk copy or its format. Existing catalog identity.
+    license_summary: Not inferred from citation records. Verify producer terms for the exact edition before
+      conversion or redistribution.
+    proposed_outputs: []
+    rationale: 'Candidate discovery only: global/near-global scope and associated-paper citation signal
+      justify source-format and licensing review. Citation rank does not establish conversion priority
+      or exact-release use.'
+    evidence_urls:
+    - https://gee-community-catalog.org/projects/hwsd
+    - https://doi.org/10.4060/cc3823en
+  citations:
+  - provider: OpenAlex
+    paper_doi: 10.4060/cc3823en
+    work_id: https://openalex.org/W2151135366
+    cited_by_count: 1067
+    observed_on: '2026-10-30'
+    scope: associated_dataset_publication
+  evidence:
+  - path: research/global-candidates-20261031/citations/reviewed.json
+    sha256: 572140255cd3b41a1ec8ecca0139e64d38899cda7fdd55756f399a0dca57a467
+    key: hwsd

@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-11-02T22:37:56.661711+00:00",
+  "status": "passed_local_investigation",
+  "branch": "investigate/grwl-source-chords-20261102",
+  "worktree": "/Users/nathan/.folia-fleets/grwl-source-chords-20261102/tree",
+  "verified": {
+    "exact_source_geometry_and_all_ten_fields": [
+      13164,
+      15394,
+      15397
+    ],
+    "original_and_current_tile_zoom_range": [
+      0,
+      10
+    ],
+    "current_z10_max_sample_distance_mercator_m": 4.757527091903999,
+    "browser_exact_ids": [
+      15397,
+      13164
+    ],
+    "browser_cases_passed": 2,
+    "live_archive_matches_diagnostic_pin": true
+  },
+  "checks": [
+    {
+      "command": "scripts/publication_catalog.py check",
+      "result": "passed; zero published collections"
+    },
+    {
+      "command": "scripts/catalog.py --check",
+      "result": "passed; 452 records"
+    },
+    {
+      "command": "git diff --check",
+      "result": "passed"
+    },
+    {
+      "command": "Python AST parse of both new diagnostic scripts",
+      "result": "passed"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "research/grwl-source-chords-20261102/criteria.json",
+      "size_bytes": 2393,
+      "sha256": "6254b63cb20eb4257d513f413e1d8e5ff3a7514fcef31ba10ac38e5b01a6915b"
+    },
+    {
+      "path": "research/grwl-source-chords-20261102/followup-criteria.json",
+      "size_bytes": 1757,
+      "sha256": "d0d36e4bddeb5ed862a8c32106151e4871f28c19a28d12df2cb2767f574da586"
+    },
+    {
+      "path": "research/grwl-source-chords-20261102/diagnosis.json",
+      "size_bytes": 3824092,
+      "sha256": "f2abcc335f41b3bf10d25f1e2e00ce985b7e24897dda13bf253bb30370c653f9"
+    },
+    {
+      "path": "research/grwl-source-chords-20261102/followup.json",
+      "size_bytes": 47862,
+      "sha256": "6b32008b8781478312f7011893b57b50e949937b02383c2176af76c445d91c04"
+    },
+    {
+      "path": "research/grwl-source-chords-20261102/browser-evidence.mjs",
+      "size_bytes": 5001,
+      "sha256": "cd0c5e2cd37a29510a6c1a105be2a9292ef64ce7d2a1cd275071451ab4610fa9"
+    },
+    {
+      "path": "research/grwl-source-chords-20261102/browser/browser-evidence.json",
+      "size_bytes": 17108,
+      "sha256": "69aeeb7b2eae901753e0c64090e0a4f76a5de3d181d29f27c55d023708fbb675"
+    },
+    {
+      "path": "research/grwl-source-chords-20261102/browser/feature-15397.png",
+      "size_bytes": 186765,
+      "sha256": "2c9da29f81e1f4201d40e94e22a2e1a34f638868f449773925a46dc0ffceac18"
+    },
+    {
+      "path": "research/grwl-source-chords-20261102/browser/feature-13164.png",
+      "size_bytes": 171927,
+      "sha256": "5388c9a28843d1795f2a50cb1528e08127c9222e8487355842a03cecf02d053c"
+    },
+    {
+      "path": "datasets/grwl/trace_source_chords.py",
+      "size_bytes": 10554,
+      "sha256": "d3a1c272d00e08775212afa5ff0b69a1f9b60991e759da05273c442cdd8966c9"
+    },
+    {
+      "path": "datasets/grwl/trace_chord_followup.py",
+      "size_bytes": 4284,
+      "sha256": "9bb5b1cde734a7bff96a6599b2a42c839c27375c8d29f0cecb1dc37fe97db621"
+    }
+  ],
+  "remaining": [
+    "Exact upstream operation is not established; inspect raw GRWL vector tiles and masks before proposing a corrected derivative.",
+    "No new GEE comparison or full production rebuild."
+  ],
+  "unchanged": [
+    "producer source files",
+    "analytical release",
+    "prepared display release",
+    "live viewer code and user session",
+    "upload plan"
+  ],
+  "remote_operations": []
+}

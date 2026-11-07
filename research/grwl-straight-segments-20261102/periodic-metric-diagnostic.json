@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "recorded_before_oracle_correction": true,
+  "trigger_report": "research/grwl-straight-segments-20261102/corrected-validation-r1-failed.json",
+  "trigger_sha256": "4f0fa0008caab8902c92fe54cba0b448077c207b4646e4a7b4f065da765873f6",
+  "observations": {
+    "all_source_ids": 42077,
+    "attribute_comparisons": 1754788,
+    "attribute_failures": 0,
+    "all_11_wrap_cases_pass": true,
+    "ordinary_geometry_samples_pass": 73,
+    "failed_sample": 28938,
+    "west_tail_core_line_length_m": 0,
+    "reported_planar_distance_m": 39949102.61382603
+  },
+  "hypothesis": "A sub-metre western dateline tail quantizes to a boundary point. Comparing that reference at -180 against the surviving equivalent endpoint at +180 measures one world width; evaluate in a common unwrapped frame as intended by the frozen criteria.",
+  "correction_constraints": [
+    "Independently normalize reference and decoded edge pieces into one periodic Mercator frame for dateline-crossing source IDs.",
+    "Retain the 30m displacement tolerance, exact74sampleIDs andall11central-chord checks.",
+    "Preserve this failed report and include the quantized western tail limit explicitly.",
+    "Add a tiny-crossing-tail regression; original world-spanning archive must still fail.",
+    "Do not change candidate PMTiles or analytical data to satisfy the corrected metric."
+  ]
+}

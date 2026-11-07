@@ -1,0 +1,107 @@
+{
+  "status": "rebuild_stopped_by_user",
+  "stopped_at": "2026-10-30T21:39:24.651958+00:00",
+  "reason": "User chose to stop the remaining reproducibility rebuild and retain validated first-build files after reviewing Overture as the preferred current-road source.",
+  "conversion_git_commit": "23197105f3ac45d890330a466594921fe35d8f27",
+  "release_manifest_sha256": "eab3b57b5bd796fa9577fb1b4512b61cc43da9fd5fd3bcf2ab2a69c6a078815d",
+  "first_build": "passed",
+  "source_and_format_validation": "passed",
+  "stac": "passed",
+  "portolan": "passed",
+  "fixture_checks_passed": 10,
+  "negative_fault_cases": 8,
+  "workflow_tests_passed": 19,
+  "rebuild": {
+    "status": "incomplete",
+    "analytic_partitions_identical": 7,
+    "analytic_hashes": {
+      "grip/data/region-1.parquet": {
+        "size_bytes": 793260652,
+        "sha256": "6dadc39ca784a702abc86d1d2ed2d8d03c3eea5cc098cf5f45b272fd38931e3c"
+      },
+      "grip/data/region-2.parquet": {
+        "size_bytes": 483828704,
+        "sha256": "334ace41536cd1122273ab88b0208794cb143e8c2c68a1f379cb9e745005a05d"
+      },
+      "grip/data/region-3.parquet": {
+        "size_bytes": 242213234,
+        "sha256": "098cf3899b91ef4f6447975febd69e474b7eacd64f8b5f92eb1758ba7a7670df"
+      },
+      "grip/data/region-4.parquet": {
+        "size_bytes": 1376824394,
+        "sha256": "bcf93b959a9d75b417382205280ba4abbb51a10315e2e47962f3c00a77f2aacc"
+      },
+      "grip/data/region-5.parquet": {
+        "size_bytes": 145298957,
+        "sha256": "2d40960736957393473845095d6f5ddd9326921dc5cd7727ebefcebbfa0cfbdd"
+      },
+      "grip/data/region-6.parquet": {
+        "size_bytes": 750742137,
+        "sha256": "a39999105bcb5bf6f0aa5afabb0e3567eb3a39329d783818fde6904dd5739246"
+      },
+      "grip/data/region-7.parquet": {
+        "size_bytes": 64213138,
+        "sha256": "dfb5ef6c182c1eb8a9747e44684897469e98a959edacb92bec889c04f63f7d5d"
+      }
+    },
+    "pmtiles": "interrupted; not compared",
+    "complete_manifest": "not_generated"
+  },
+  "package": "not_created",
+  "publication": "deferred",
+  "discarded_intermediate_scope": ".local/grip/run-02/rebuild only; first validated build, source cache, checkout and logs retained",
+  "cancelled_rebuild_inventory": {
+    "dataset.yaml": {
+      "size_bytes": 5702,
+      "sha256": "32bdeff0cba3f75b89f720419563bf0ca3bd8a807e3db2639ed64fe9c9e300c6"
+    },
+    "grip/attribute-codes.json": {
+      "size_bytes": 12658,
+      "sha256": "b3ca522d8ab91a868dc6e1e216b0be1b130d14b75e21c1e5a4f62e18ea537f01"
+    },
+    "grip/data/region-1.parquet": {
+      "size_bytes": 793260652,
+      "sha256": "6dadc39ca784a702abc86d1d2ed2d8d03c3eea5cc098cf5f45b272fd38931e3c"
+    },
+    "grip/data/region-2.parquet": {
+      "size_bytes": 483828704,
+      "sha256": "334ace41536cd1122273ab88b0208794cb143e8c2c68a1f379cb9e745005a05d"
+    },
+    "grip/data/region-3.parquet": {
+      "size_bytes": 242213234,
+      "sha256": "098cf3899b91ef4f6447975febd69e474b7eacd64f8b5f92eb1758ba7a7670df"
+    },
+    "grip/data/region-4.parquet": {
+      "size_bytes": 1376824394,
+      "sha256": "bcf93b959a9d75b417382205280ba4abbb51a10315e2e47962f3c00a77f2aacc"
+    },
+    "grip/data/region-5.parquet": {
+      "size_bytes": 145298957,
+      "sha256": "2d40960736957393473845095d6f5ddd9326921dc5cd7727ebefcebbfa0cfbdd"
+    },
+    "grip/data/region-6.parquet": {
+      "size_bytes": 750742137,
+      "sha256": "a39999105bcb5bf6f0aa5afabb0e3567eb3a39329d783818fde6904dd5739246"
+    },
+    "grip/data/region-7.parquet": {
+      "size_bytes": 64213138,
+      "sha256": "dfb5ef6c182c1eb8a9747e44684897469e98a959edacb92bec889c04f63f7d5d"
+    },
+    "grip/grip.pmtiles": {
+      "size_bytes": 2367488,
+      "sha256": "61db055061884427d61043517d50e94ee10433cb400ecef48fb24895f18a9478"
+    },
+    "grip/grip.pmtiles-journal": {
+      "size_bytes": 32768,
+      "sha256": "79afa65f350edf7d263be84b77e5820298166335682e0d16650fbe6162a51993"
+    },
+    "grip/original-attribute-dictionary.xlsx": {
+      "size_bytes": 23947,
+      "sha256": "38ced93e91000179bd398df7e2d919b234d37c178532a21c12651ecbeb901a51"
+    },
+    "scratch/tiles.geojsonl": {
+      "size_bytes": 14613169218,
+      "sha256": "9e4e0b3b36464e933ab018fd31d5e1940e751000f2fcf7101aa5096852a04d6a"
+    }
+  }
+}

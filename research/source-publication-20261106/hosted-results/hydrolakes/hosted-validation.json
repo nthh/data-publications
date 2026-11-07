@@ -1,0 +1,1314 @@
+{
+  "checked_at": "2026-11-07T00:33:24.195181Z",
+  "checks": {
+    "anonymous_access": "passed",
+    "asset_checksums": "passed",
+    "browser_render": "passed",
+    "catalog_links": "passed",
+    "cors": "passed",
+    "range_requests": "passed",
+    "subset_query": "passed"
+  },
+  "dataset_id": "hydrolakes",
+  "display_manifest_sha256": "f3dbb0d87553162a6b2a91172626eeecca9985fb8df54685ee64924ca826d841",
+  "display_package_base_url": "https://data.source.coop/nthh/hydrolakes/display/display-v1/",
+  "display_release": "display-v1",
+  "evidence": {
+    "asset_checksum_scope": "Full remote bytes were SHA-256 verified during the uploader receipt's actual range-download pass; this hosted run checks plan/receipt binding and samples anonymous ranges afterward, not a second full hash.",
+    "browser_evidence": {
+      "browser_cases_sha256": "6ff14a9c438cdee14af4ea21876ca32876883f7b676c16596b4ddfc924b6aa10",
+      "case_ids": [
+        "hydrolakes-hydrolakes-1-global",
+        "hydrolakes-hydrolakes-1-north_america"
+      ],
+      "catalog_url": "https://source.coop/nthh/hydrolakes",
+      "checked_at": "2026-11-07T00:25:23.382Z",
+      "dataset_id": "hydrolakes",
+      "display_release": "display-v1",
+      "plan_sha256": "754c02dde3cf258263619599f893558d3348c7fb51c07f8fa700efa1900ac610",
+      "planned_object_prefixes": [
+        "hydrolakes/releases/v1-local-r3/",
+        "hydrolakes/display/display-v1/"
+      ],
+      "planned_object_url_prefixes": [
+        "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/",
+        "https://data.source.coop/nthh/hydrolakes/display/display-v1/"
+      ],
+      "product_id": "hydrolakes",
+      "release": "v1-local-r3",
+      "screenshots": [
+        "hydrolakes-hydrolakes-1-global.png",
+        "hydrolakes-hydrolakes-1-north_america.png"
+      ],
+      "status": "passed",
+      "tested_object_urls": [
+        "https://data.source.coop/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles",
+        "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet"
+      ],
+      "viewer_build_sha256": "9fb4f4aa6b641363160db0f54610750884ff91bfe02669cb7394f148726b62f6",
+      "viewer_config_sha256": "87e1d532d23d65ec45b88aac318d13b83c273f140644ba7ec3dd3edd36e198fe"
+    },
+    "catalog_inventory": {
+      "catalog": [
+        "catalog.json"
+      ],
+      "collections": [
+        "collection.json"
+      ],
+      "documentation": [
+        "AGENTS.md",
+        "README.md",
+        "verification/workflow/datasets/hydrolakes/README.md",
+        "verification/workflow/datasets/hydrolakes/releases/v1-local-r3/README.md",
+        "verification/workflow/datasets/hydrolakes/releases/v1-local-r3/reproduction/README.md",
+        "verification/workflow/scripts/release_tools/AGENTS.md",
+        "verification/workflow/scripts/release_tools/README.md"
+      ],
+      "styles": [
+        "styles/hydrolakes-polygons.json"
+      ]
+    },
+    "catalog_link_scope": "Immutable product package catalog/collection/styles/docs only; the aggregate Portolan catalog is not deployed or checked by this per-product run.",
+    "cors": [
+      {
+        "get_headers": {
+          "Accept-Ranges": "bytes",
+          "Access-Control-Allow-Origin": "*",
+          "CF-Cache-Status": "DYNAMIC",
+          "CF-Ray": "a56839a46bdcfb2e-SLC",
+          "Cache-Control": "private, no-cache, no-transform",
+          "Connection": "close",
+          "Content-Length": "1",
+          "Content-Range": "bytes 0-0/1122881121",
+          "Content-Type": "application/vnd.pmtiles",
+          "Date": "Sat, 07 Nov 2026 00:29:42 GMT",
+          "ETag": "\"002ceb80158b9228897fc69e9881788b-17\"",
+          "Last-Modified": "Fri, 06 Nov 2026 23:51:37 GMT",
+          "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+          "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=Ke2qGIm%2FfKoZJE2Jt68oiYj3K%2BH%2Btzyw411z6P0aDf7HeFnqYesBKzMjrQ5yYHqDUrodq6w6BuQLrOcbCVd%2BC6Pvac4JFsTmPAIQSd8eW%2BCPTcuQnX6Uz8WytvK6ZNOf11CL\"}]}",
+          "Server": "cloudflare",
+          "Server-Timing": "cfEdge;dur=3,cfOrigin;dur=0,cfWorker;dur=260",
+          "Speculation-Rules": "\"/cdn-cgi/speculation\"",
+          "access-control-allow-headers": "*",
+          "access-control-allow-methods": "GET, HEAD, PUT, POST, DELETE, OPTIONS",
+          "access-control-expose-headers": "*",
+          "access-control-max-age": "7200",
+          "alt-svc": "h3=\":443\"; ma=86400",
+          "server-timing": "total;dur=253, dispatch;dur=253, backend;dur=243",
+          "x-amz-id-2": "/KVpoCDev+b0gK62ZnTPk9HxZO/16/yqubJQTNYcfweh9MOSrf2cmiTTUTzEg3tPQmo85ahRVJ4=",
+          "x-amz-request-id": "RXDTS6V0AWYKT2Z9",
+          "x-amz-server-side-encryption": "AES256",
+          "x-amz-version-id": ".S.PvqjBmkaoJlg0u3VF50k.yB3S9Zgz",
+          "x-request-id": "a56839a46bdcfb2e"
+        },
+        "get_passed": true,
+        "get_status": 206,
+        "preflight_headers": {
+          "Access-Control-Allow-Origin": "*",
+          "CF-RAY": "a568399daa23fb2e-SLC",
+          "Connection": "close",
+          "Date": "Sat, 07 Nov 2026 00:29:41 GMT",
+          "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+          "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=V00sUQEHFEVz2u6GcFzF7HSgCPJT4wCK3NmwTNxg3Pb2zwmorBOKNe2QCZGSs9RmPeqHUpo5AX58BDy%2FPgobxBGWOszJoC%2F2%2F2rrcyBO5TM0zB%2BMINY%2BCKBjfKxyk5HKAAjj\"}]}",
+          "Server": "cloudflare",
+          "Server-Timing": "cfEdge;dur=5,cfOrigin;dur=0,cfWorker;dur=1",
+          "access-control-allow-headers": "*",
+          "access-control-allow-methods": "GET, HEAD, PUT, POST, DELETE, OPTIONS",
+          "access-control-expose-headers": "*",
+          "access-control-max-age": "7200",
+          "alt-svc": "h3=\":443\"; ma=86400"
+        },
+        "preflight_note": "credentialless request; Fetch wildcard CORS fields apply",
+        "preflight_passed": true,
+        "preflight_status": 204,
+        "url": "https://data.source.coop/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles"
+      },
+      {
+        "get_headers": {
+          "Accept-Ranges": "bytes",
+          "Access-Control-Allow-Origin": "*",
+          "CF-Cache-Status": "DYNAMIC",
+          "CF-Ray": "a56839c94b43fb2e-SLC",
+          "Cache-Control": "private, no-cache, no-transform",
+          "Connection": "close",
+          "Content-Length": "1",
+          "Content-Range": "bytes 0-0/949598607",
+          "Content-Type": "application/vnd.apache.parquet",
+          "Date": "Sat, 07 Nov 2026 00:29:48 GMT",
+          "ETag": "\"937b3363158ca485bdd43521a1c27143-15\"",
+          "Last-Modified": "Sat, 07 Nov 2026 00:01:36 GMT",
+          "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+          "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=AJr1dg3FZ4ZWp8TPGESRP7LxPXQhBrM2KtNCUbISBUdb2HK5NlfgcBqdkeAdhtVG6%2FlDJUeH1ALJVINBYwnWsaEd1Nh09jTBCFsWET7VWMX%2BJVU7Ef94bFBFkhG54AqHe%2F%2F6\"}]}",
+          "Server": "cloudflare",
+          "Server-Timing": "cfEdge;dur=3,cfOrigin;dur=0,cfWorker;dur=275",
+          "Speculation-Rules": "\"/cdn-cgi/speculation\"",
+          "access-control-allow-headers": "*",
+          "access-control-allow-methods": "GET, HEAD, PUT, POST, DELETE, OPTIONS",
+          "access-control-expose-headers": "*",
+          "access-control-max-age": "7200",
+          "alt-svc": "h3=\":443\"; ma=86400",
+          "server-timing": "total;dur=267, dispatch;dur=267, backend;dur=257",
+          "x-amz-id-2": "ZvsbYU+nd8sLXh3aTpUo8CVmqdcD7IuxTq+JxEfz9jffgVwKFrkwgnA5U1ik7nX0XvMEYKz9Du6oXfJV4uc4rxo5iVZ1U7Tm",
+          "x-amz-request-id": "75GT8DGF7XS8XCJ3",
+          "x-amz-server-side-encryption": "AES256",
+          "x-amz-version-id": "V.SfEkwuMTmeu_YWWUSAYWBrfgTkb50q",
+          "x-request-id": "a56839c94b43fb2e"
+        },
+        "get_passed": true,
+        "get_status": 206,
+        "preflight_headers": {
+          "Access-Control-Allow-Origin": "*",
+          "CF-RAY": "a56839b38d33fb2e-SLC",
+          "Connection": "close",
+          "Date": "Sat, 07 Nov 2026 00:29:44 GMT",
+          "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+          "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=ARIgKVmIE0ouL%2BW8X%2BuHI6Jj7%2BdPTuU0WAtizMUrntN%2FGhjqhcwTZPDwJagn6kk3%2FeVRyiDMaKz910sEm6Bw7hH62Wx9rXyQe%2FnXJcHUgaG8YKvsAuMi22P5TobN%2B3OrxUq7\"}]}",
+          "Server": "cloudflare",
+          "Server-Timing": "cfEdge;dur=2,cfOrigin;dur=0,cfWorker;dur=0",
+          "access-control-allow-headers": "*",
+          "access-control-allow-methods": "GET, HEAD, PUT, POST, DELETE, OPTIONS",
+          "access-control-expose-headers": "*",
+          "access-control-max-age": "7200",
+          "alt-svc": "h3=\":443\"; ma=86400"
+        },
+        "preflight_note": "credentialless request; Fetch wildcard CORS fields apply",
+        "preflight_passed": true,
+        "preflight_status": 204,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet"
+      }
+    ],
+    "display_manifest": {
+      "object_key": "hydrolakes/display/display-v1/manifest.json",
+      "sha256": "f3dbb0d87553162a6b2a91172626eeecca9985fb8df54685ee64924ca826d841",
+      "size_bytes": 3089
+    },
+    "duckdb_remote_transfer_bytes_instrumented": false,
+    "json_asset_links": [
+      {
+        "link": "style-source:data",
+        "url": "https://data.source.coop/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles"
+      },
+      {
+        "link": "link:root",
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/catalog.json"
+      },
+      {
+        "link": "link:child",
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/collection.json"
+      },
+      {
+        "link": "link:describedby",
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/README.md"
+      },
+      {
+        "link": "link:agents",
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/AGENTS.md"
+      },
+      {
+        "link": "link:thumbnail",
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/display/thumbnail.png"
+      },
+      {
+        "link": "link:root",
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/catalog.json"
+      },
+      {
+        "link": "link:parent",
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/catalog.json"
+      },
+      {
+        "link": "link:describedby",
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/README.md"
+      },
+      {
+        "link": "link:agents",
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/AGENTS.md"
+      },
+      {
+        "link": "link:thumbnail",
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/display/thumbnail.png"
+      },
+      {
+        "link": "asset:hydrolakes-polygons",
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet"
+      },
+      {
+        "link": "asset:hydrolakes-polygons_fields",
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/metadata/hydrolakes-polygons-field-dictionary.json"
+      },
+      {
+        "link": "asset:support-1",
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/source/HydroLAKES_TechDoc_v10.pdf"
+      },
+      {
+        "link": "asset:support-10",
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/provenance/spatial-pruning-clean-rebuild.json"
+      },
+      {
+        "link": "asset:support-2",
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/provenance/source-document.json"
+      },
+      {
+        "link": "asset:support-3",
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/provenance/source-validation.json"
+      },
+      {
+        "link": "asset:support-4",
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/provenance/clean-rebuild-raw.json"
+      },
+      {
+        "link": "asset:support-5",
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/provenance/source-cache-eviction.json"
+      },
+      {
+        "link": "asset:support-6",
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/provenance/evidence-provenance.json"
+      },
+      {
+        "link": "asset:support-7",
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/provenance/spatial-order-retained.json"
+      },
+      {
+        "link": "asset:support-8",
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/provenance/spatial-order-clean-rebuild.json"
+      },
+      {
+        "link": "asset:support-9",
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/provenance/spatial-pruning-retained.json"
+      },
+      {
+        "link": "asset:thumbnail",
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/display/thumbnail.png"
+      }
+    ],
+    "metadata_gets": [
+      {
+        "content_type": "text/markdown",
+        "sha256": "4907619e679ae9020f5b3774fc18975cc3cd997946c2f96bd7520e7796b60e38",
+        "size_bytes": 2296,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/display/display-v1/README.md"
+      },
+      {
+        "content_type": "text/plain",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_bytes": 0,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/display/display-v1/hydrolakes-polygons.maxzoom-missing-ids.txt"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "f3dbb0d87553162a6b2a91172626eeecca9985fb8df54685ee64924ca826d841",
+        "size_bytes": 3089,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/display/display-v1/manifest.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "7861368ef1d862bf98942985c68f0a760bc719f87f309ce30fb49c32fe2c20e1",
+        "size_bytes": 3880,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/display/display-v1/reports/build-provenance-retrospective.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "a2dd496536bf4d233d77ed03c3d02746393153721a681d09ff65b7a9d0918e24",
+        "size_bytes": 20662,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/display/display-v1/reports/finalization/browser-validation.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "88e0c04ce2ab5a0378cbbeba72072960d5194ea60d8f5d6b6a3d8e7b2d25ba6a",
+        "size_bytes": 22201,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/display/display-v1/reports/finalization/geometry/hydrolakes-1.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "bf51d67535ecb9b4b638abfdce3edc04d443c5b30ead8130c9c850c030cb96a4",
+        "size_bytes": 571,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/display/display-v1/reports/finalization/pmtiles-verify/hydrolakes-1.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "62f927143ac983d4229e7ed325e991e8abf3caff350bad7202c9de9144abd815",
+        "size_bytes": 3319,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/display/display-v1/reports/hydrolakes-polygons.build-report.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "d122b64b6510562613898d4e0df158c0367b3bb06ee53459ee64fd92cace971f",
+        "size_bytes": 2220,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/display/display-v1/reports/provisional-manifest-before-finalization.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "5dd4e20786faa65e46fb249bec0bb15f362f503c44267c2f1fc02525bb4f2d31",
+        "size_bytes": 454,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/display/display-v1/styles/hydrolakes-polygons.json"
+      },
+      {
+        "content_type": "text/markdown",
+        "sha256": "751634ddd1bdf205a3754e97b2d82619efda68aad9408d08c0566c6f32b418e4",
+        "size_bytes": 482,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/AGENTS.md"
+      },
+      {
+        "content_type": "text/markdown",
+        "sha256": "bc350f10ab191958ea52b84276e8dc45d584e03a38d62ff47c54b16dd721e8de",
+        "size_bytes": 1808,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/README.md"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "0caee01dd341a7185be0992de177d74867b7af1246fafa79bb32260229aff576",
+        "size_bytes": 1488,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/catalog.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "0e36e929535734bb60e5346ce21296e12e301dc1f7081a744a29552bac802d32",
+        "size_bytes": 11004,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/collection.json"
+      },
+      {
+        "content_type": "application/yaml",
+        "sha256": "87a37c4285b669bff5ee58095e7aa470800618d3edb0d24ca54eb3e3a5cfdf5f",
+        "size_bytes": 4047,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/dataset.yaml"
+      },
+      {
+        "content_type": "image/png",
+        "sha256": "1545b01af18207d60a182fdcc0e4117d83c73eea1db93f48a673138a1cebf15e",
+        "size_bytes": 4138,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/display/thumbnail.png"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "07745245843ef2ef22cc15ff41b5c8a0d638993807bcdef0b99c945010006b74",
+        "size_bytes": 3704,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/evidence/clean-rebuild.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "128c2d3a9219f3c555b980bc2a1b7c32370566da5dd436c48546767285ed39b7",
+        "size_bytes": 132,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/evidence/final-package-verification.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "d840f7b1a99960a1dae79d14301312f614142a4256cd36e823e083fedf5767b7",
+        "size_bytes": 1932,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/evidence/local-http-duckdb-validation.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "5575983a1697dc4e09f61c65496f5248126a131b1e9fc5f545a40bd0a8b05995",
+        "size_bytes": 7575,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/evidence/package-binding.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "f8a72d757b84f716394ca2ae6e8a0be09769620c529c01a1f26a1ef56be92394",
+        "size_bytes": 436,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/evidence/package-integrity-validation.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "2c1bd193a740e343572ed93e2581b17ff73572590cb7438160df7ae70024c824",
+        "size_bytes": 1312,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/evidence/portolan-validation.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "b4f11219f374350d31f4103af38a5ebb41905fb3e0e5f7f2bafb6e1c7e5fd2f0",
+        "size_bytes": 3475,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/evidence/source-fidelity.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "429b8d43841285615baa52d6206b85c0a10cb991fe789a7b0623cd894486ad02",
+        "size_bytes": 555,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/evidence/stac-node-validation.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "739c6e14c06333e0860c8fd612fd2c930a270219d944580a2e3a26ca87d92741",
+        "size_bytes": 420,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/licenses/data-license.json"
+      },
+      {
+        "content_type": "text/plain",
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "size_bytes": 11358,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/licenses/software/LICENSE"
+      },
+      {
+        "content_type": "text/plain",
+        "sha256": "848d1f5c49036457c3f453dea3ace5849b94bc1fe896abeaad21d45d771636dd",
+        "size_bytes": 794,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/licenses/software/NOTICE"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "ee91ec2cf3ffc5af6b841a3ddaff205400eb0070c6d02343d1d2a97ac07ac99e",
+        "size_bytes": 390,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/licenses/source-license.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "48d1d1061f0785255f14c3d5bb7ce8a1c0b47963c45c0e3b02a70441c0b86fcc",
+        "size_bytes": 16801,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/manifest.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "3adab03f28cd479056d918270e95c7f87516fc21cf150a06dd43631ad5bc9e05",
+        "size_bytes": 4056,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/metadata/hydrolakes-polygons-field-dictionary.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "d6bbf72835ce894263d7bbcba6325f4bc52b9f5e4a988b1c96c60be9e100cf48",
+        "size_bytes": 724,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/package-receipt.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "711630170213a5aca4b1456de32b2a4363d910e9b31bda5f8f3820740461a376",
+        "size_bytes": 632,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/provenance/clean-rebuild-raw.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "72cf3124a0fc648d0eed4e750692c62e137da2e1933f578d35cfb5e686085d4f",
+        "size_bytes": 2038,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/provenance/evidence-provenance.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "08acd00da4b7056b175ec845976a8f990e50fa276c929864579be9cb9620d813",
+        "size_bytes": 604,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/provenance/source-cache-eviction.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "a88381fc802f5e8b2d45f9a0271656806d97336893268445d0f7f64fbee89c12",
+        "size_bytes": 402,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/provenance/source-document.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "a0421cae7c83446007540a96afcbd39a609135ed82461c612b79db31fe1948c1",
+        "size_bytes": 969,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/provenance/source-validation.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "ea96f00907c5b9c91c9c1d8ee365adcb835c0d068d248f329f3555f2efc8fe22",
+        "size_bytes": 4298,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/provenance/spatial-order-clean-rebuild.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "a6c9ac34403f2762b695863725537c31d4348855ff8091638d099f0645ff7f20",
+        "size_bytes": 4279,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/provenance/spatial-order-retained.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "0a53aa165b95fb53a8b292c50691de1d987ff0dd727b7992295d70eec8242b85",
+        "size_bytes": 1287,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/provenance/spatial-pruning-clean-rebuild.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "0a53aa165b95fb53a8b292c50691de1d987ff0dd727b7992295d70eec8242b85",
+        "size_bytes": 1287,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/provenance/spatial-pruning-retained.json"
+      },
+      {
+        "content_type": "application/pdf",
+        "sha256": "3d1e30abb0691750127fd8e2ff6a149c83f36b93619fb44774476663e0f01f47",
+        "size_bytes": 989557,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/source/HydroLAKES_TechDoc_v10.pdf"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "ed6d6c3f1123dd57e2a680f964acbfa861bfdcacf32807cdba82fa828c7df052",
+        "size_bytes": 441,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/source/attribution.json"
+      },
+      {
+        "content_type": "text/markdown",
+        "sha256": "2c6e73047ed3790d3d8bbe6ad48f2fd12c14861018dc25cbb1a76b304a56ba08",
+        "size_bytes": 4239,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/verification/workflow/datasets/hydrolakes/README.md"
+      },
+      {
+        "content_type": "text/markdown",
+        "sha256": "3a5d55b58a4ca2914523924cf1e09ee083f20bfd103c7a53e62ba4944422e6d9",
+        "size_bytes": 4517,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/verification/workflow/datasets/hydrolakes/VALIDATION.md"
+      },
+      {
+        "content_type": "text/x-python",
+        "sha256": "ea436454c070d2e57545e3aa50ef58cea3775cef3bde9b1861f1d7070ecaae27",
+        "size_bytes": 1705,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/verification/workflow/datasets/hydrolakes/acquire.py"
+      },
+      {
+        "content_type": "text/x-python",
+        "sha256": "4227f2484a3dd3454fe1f97b78b155e5dcfd6c33410b77dfbaa253afecb26f14",
+        "size_bytes": 29484,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/verification/workflow/datasets/hydrolakes/convert.py"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "3adab03f28cd479056d918270e95c7f87516fc21cf150a06dd43631ad5bc9e05",
+        "size_bytes": 4056,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/verification/workflow/datasets/hydrolakes/field-dictionary.json"
+      },
+      {
+        "content_type": "application/toml",
+        "sha256": "2b48d2be68275465b1c787419be1d3a3a8fbd6b68fb7ccc554f7e75abaf3bb96",
+        "size_bytes": 317,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/verification/workflow/datasets/hydrolakes/pyproject.toml"
+      },
+      {
+        "content_type": "text/markdown",
+        "sha256": "c2cd3ce85645b34d14845270e8a2fcfc1b8bedd94848a416dd35d3c58666395e",
+        "size_bytes": 7293,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/verification/workflow/datasets/hydrolakes/releases/v1-local-r3/README.md"
+      },
+      {
+        "content_type": "text/markdown",
+        "sha256": "8b2ccfc4724199a35963b27d78d73972c2da09711c6dfd69e0ba7bc6b51696e4",
+        "size_bytes": 746,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/verification/workflow/datasets/hydrolakes/releases/v1-local-r3/reproduction/README.md"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "dbdab6e8411e79abdd85f48e343cef73c6b70670a2fc447fd58801830ebc8c94",
+        "size_bytes": 1194,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/verification/workflow/datasets/hydrolakes/releases/v1-local-r3/reproduction/fidelity-normalizer-template.json"
+      },
+      {
+        "content_type": "text/x-python",
+        "sha256": "eaae2e341ace8ca13972aa83e8d91cab174b767a8a11241ace49538d278b38f4",
+        "size_bytes": 3493,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/verification/workflow/datasets/hydrolakes/releases/v1-local-r3/reproduction/materialize_release_inputs.py"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "a2176f7da5429673e106af03d942dd90e04c7ad12cd206eb5a680e13ce3079e8",
+        "size_bytes": 9783,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/verification/workflow/datasets/hydrolakes/releases/v1-local-r3/reproduction/package-spec-template.json"
+      },
+      {
+        "content_type": "text/x-python",
+        "sha256": "85766f57ad151b392dbf39c37b600b23f7e9a57894cd1195fc9ccea01577ddf0",
+        "size_bytes": 8474,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/verification/workflow/datasets/hydrolakes/test_convert.py"
+      },
+      {
+        "content_type": "text/x-python",
+        "sha256": "7211089ef887b951196b166cb7356064f6f3f2b3889eea0bb847063f370c45c8",
+        "size_bytes": 1980,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/verification/workflow/datasets/hydrolakes/test_validation.py"
+      },
+      {
+        "content_type": "text/plain",
+        "sha256": "57e9efd934418661e7e0781340a47beb6f517f88ff44dd4237a555b6a11824cc",
+        "size_bytes": 124944,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/verification/workflow/datasets/hydrolakes/uv.lock"
+      },
+      {
+        "content_type": "text/x-python",
+        "sha256": "e047ef33506d8c1ad1efcc3525267c0b9f6d2c2452fbe0557ad51f61dca5284e",
+        "size_bytes": 4605,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/verification/workflow/datasets/hydrolakes/validate.py"
+      },
+      {
+        "content_type": "text/x-python",
+        "sha256": "76a828925da815fe264cf3fa03dd929ddbe38cf14ccb444bad1863eb49920c13",
+        "size_bytes": 23208,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/verification/workflow/research/hydro-releases-20261031/bind_fidelity.py"
+      },
+      {
+        "content_type": "text/x-python",
+        "sha256": "5ebe4a9abc251e04259eb0e203b1e596f350c2bd4b98ebf14e6a61e8885efb02",
+        "size_bytes": 11460,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/verification/workflow/research/hydro-releases-20261031/test_bind_fidelity.py"
+      },
+      {
+        "content_type": "text/markdown",
+        "sha256": "4aa3ee027c7ad8f56209e5c948ab30ad126cd0dfd8e80408590df060db03dc3b",
+        "size_bytes": 857,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/verification/workflow/scripts/release_tools/AGENTS.md"
+      },
+      {
+        "content_type": "text/markdown",
+        "sha256": "5567beec97c741e20678d02fcd8f7fbafb2c2a524475e053f119c3b803b24e7a",
+        "size_bytes": 13739,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/verification/workflow/scripts/release_tools/README.md"
+      },
+      {
+        "content_type": "text/x-python",
+        "sha256": "035fc480d2a5f7d09b190d65d734c3d5ae18495314f2a01834b8438f302a23e6",
+        "size_bytes": 21945,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/verification/workflow/scripts/release_tools/add_spatial_bounds.py"
+      },
+      {
+        "content_type": "text/x-python",
+        "sha256": "04c87e2552272003f1f67bfb01b1dcb4b293ad2c094597ee24336235be719413",
+        "size_bytes": 4117,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/verification/workflow/scripts/release_tools/check_spatial_pruning.py"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "8f19898156a139859a49d15238a92a5204a7d61b909ee5ac54080e8110a2cc3c",
+        "size_bytes": 54306,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/verification/workflow/scripts/release_tools/package-lock.json"
+      },
+      {
+        "content_type": "application/json",
+        "sha256": "8eebc2fd826cf22f6008ee889293d7880952ea19ddac557ae905821489108470",
+        "size_bytes": 142,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/verification/workflow/scripts/release_tools/package.json"
+      },
+      {
+        "content_type": "text/x-python",
+        "sha256": "7985c0ae0b06e028f2f9466a88dde592bfbb6095cb2ab1a4e2892269629c676b",
+        "size_bytes": 62862,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/verification/workflow/scripts/release_tools/package_release.py"
+      },
+      {
+        "content_type": "application/toml",
+        "sha256": "a6d5a4c17612a98645ce60b3b581caf316707f2b92265e5a3c1ca9a319f6da3c",
+        "size_bytes": 259,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/verification/workflow/scripts/release_tools/pyproject.toml"
+      },
+      {
+        "content_type": "text/x-python",
+        "sha256": "dab2eef0199f839aac9a14d9802cb7b339e9732573bd659d5837867f1f5da175",
+        "size_bytes": 2789,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/verification/workflow/scripts/release_tools/serve.py"
+      },
+      {
+        "content_type": "text/x-python",
+        "sha256": "37bb23e480291145ad156a23ed2057ac0bdbb1a3a9f8125b8900cc077ac420c2",
+        "size_bytes": 52873,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/verification/workflow/scripts/release_tools/spatial_order.py"
+      },
+      {
+        "content_type": "text/x-python",
+        "sha256": "f1245988e4c45e26bce2b3e07766949d9054c9ba1774a0e84e457062571c89cb",
+        "size_bytes": 9275,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/verification/workflow/scripts/release_tools/test_package_release.py"
+      },
+      {
+        "content_type": "text/x-python",
+        "sha256": "ed403df9cbe89adfe2766f5e14610affd34b2a35f4968c647852e0606b9ce30f",
+        "size_bytes": 8062,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/verification/workflow/scripts/release_tools/test_spatial_bounds.py"
+      },
+      {
+        "content_type": "text/x-python",
+        "sha256": "a4888b7d4d1c193f7c8f4288aaa96fb1a342096a239e9096d6978cfebb5a0581",
+        "size_bytes": 14097,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/verification/workflow/scripts/release_tools/test_spatial_order.py"
+      },
+      {
+        "content_type": "text/x-python",
+        "sha256": "0ba8f0ff758409fd007ea5b03b9bff3b23b3d51704fd22d36d87499d5da5bbb9",
+        "size_bytes": 1989,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/verification/workflow/scripts/release_tools/test_spatial_pruning.py"
+      },
+      {
+        "content_type": "text/plain",
+        "sha256": "fe1b9d58a17429f2649a24fbd8299b5d616ca4ab68806e768cd2caac31b8ec1b",
+        "size_bytes": 134378,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/verification/workflow/scripts/release_tools/uv.lock"
+      },
+      {
+        "content_type": "text/markdown",
+        "sha256": "67c9017f0a4f4936493f20d57178fc77be7aee42b484fc268c7c99730973d98e",
+        "size_bytes": 4736,
+        "status": 200,
+        "url": "https://data.source.coop/nthh/hydrolakes/README.md"
+      }
+    ],
+    "package_manifest": {
+      "object_key": "hydrolakes/releases/v1-local-r3/manifest.json",
+      "sha256": "48d1d1061f0785255f14c3d5bb7ce8a1c0b47963c45c0e3b02a70441c0b86fcc",
+      "size_bytes": 16801
+    },
+    "plan_sha256": "754c02dde3cf258263619599f893558d3348c7fb51c07f8fa700efa1900ac610",
+    "query_controls": [
+      {
+        "id_column": "Hylak_id",
+        "ids": [
+          87,
+          46,
+          16
+        ],
+        "name": "hydrolakes-parquet-1",
+        "path": "assets/hydrolakes-polygons.parquet",
+        "selection": {
+          "row_count": 1427688,
+          "row_group_count": 128,
+          "row_groups": [
+            0,
+            64,
+            127
+          ],
+          "selected_from": "row_group_min_statistics"
+        }
+      }
+    ],
+    "query_controls_sha256": "9fab1ab0408ac437ed7b3161be79beccef167556297010780fb746205473f749",
+    "range_samples": [
+      {
+        "samples": [
+          {
+            "content_range": "bytes 0-65535/1122881121",
+            "content_type": "application/vnd.pmtiles",
+            "end": 65535,
+            "sha256": "03cc21d29939e47d0ddd86a011367f31e233fd7649dd4b3282755ddf14863f84",
+            "start": 0,
+            "status": 206
+          },
+          {
+            "content_range": "bytes 561407792-561473327/1122881121",
+            "content_type": "application/vnd.pmtiles",
+            "end": 561473327,
+            "sha256": "a0b1965d3a1a97a0c61c76860bc8269ea666c2bc44387166c62a6cf43ffe70bb",
+            "start": 561407792,
+            "status": 206
+          },
+          {
+            "content_range": "bytes 1122815585-1122881120/1122881121",
+            "content_type": "application/vnd.pmtiles",
+            "end": 1122881120,
+            "sha256": "8d256a9702467ed403b610c56b5868d0ccb84686dacc2b154681f519af2f470b",
+            "start": 1122815585,
+            "status": 206
+          }
+        ],
+        "url": "https://data.source.coop/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles"
+      },
+      {
+        "samples": [
+          {
+            "content_range": "bytes 0-65535/949598607",
+            "content_type": "application/vnd.apache.parquet",
+            "end": 65535,
+            "sha256": "d9513d87efcb59b67aab0a085e3313739fe5b761d0a6aadcd2ff7daec3573299",
+            "start": 0,
+            "status": 206
+          },
+          {
+            "content_range": "bytes 474766535-474832070/949598607",
+            "content_type": "application/vnd.apache.parquet",
+            "end": 474832070,
+            "sha256": "33ce6459766ed7fe6375ef295318d2508a9a2577fd7bb6747f57f4c1bfffcffb",
+            "start": 474766535,
+            "status": 206
+          },
+          {
+            "content_range": "bytes 949533071-949598606/949598607",
+            "content_type": "application/vnd.apache.parquet",
+            "end": 949598606,
+            "sha256": "a16a3d8e228d881dffc13fa914a4904ecfc51e4c3a3ea6d97a91a49beb858d14",
+            "start": 949533071,
+            "status": 206
+          }
+        ],
+        "url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet"
+      }
+    ],
+    "receipt_checksums": [
+      {
+        "object_key": "hydrolakes/display/display-v1/README.md",
+        "sha256": "4907619e679ae9020f5b3774fc18975cc3cd997946c2f96bd7520e7796b60e38",
+        "size_bytes": 2296
+      },
+      {
+        "object_key": "hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles",
+        "sha256": "2fc61a8257322bed3c71f86e3be92ed4835023bbb23f80bc9b2bb5167cb19d46",
+        "size_bytes": 1122881121
+      },
+      {
+        "object_key": "hydrolakes/display/display-v1/hydrolakes-polygons.maxzoom-missing-ids.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_bytes": 0
+      },
+      {
+        "object_key": "hydrolakes/display/display-v1/manifest.json",
+        "sha256": "f3dbb0d87553162a6b2a91172626eeecca9985fb8df54685ee64924ca826d841",
+        "size_bytes": 3089
+      },
+      {
+        "object_key": "hydrolakes/display/display-v1/reports/build-provenance-retrospective.json",
+        "sha256": "7861368ef1d862bf98942985c68f0a760bc719f87f309ce30fb49c32fe2c20e1",
+        "size_bytes": 3880
+      },
+      {
+        "object_key": "hydrolakes/display/display-v1/reports/finalization/browser-validation.json",
+        "sha256": "a2dd496536bf4d233d77ed03c3d02746393153721a681d09ff65b7a9d0918e24",
+        "size_bytes": 20662
+      },
+      {
+        "object_key": "hydrolakes/display/display-v1/reports/finalization/geometry/hydrolakes-1.json",
+        "sha256": "88e0c04ce2ab5a0378cbbeba72072960d5194ea60d8f5d6b6a3d8e7b2d25ba6a",
+        "size_bytes": 22201
+      },
+      {
+        "object_key": "hydrolakes/display/display-v1/reports/finalization/pmtiles-verify/hydrolakes-1.json",
+        "sha256": "bf51d67535ecb9b4b638abfdce3edc04d443c5b30ead8130c9c850c030cb96a4",
+        "size_bytes": 571
+      },
+      {
+        "object_key": "hydrolakes/display/display-v1/reports/hydrolakes-polygons.build-report.json",
+        "sha256": "62f927143ac983d4229e7ed325e991e8abf3caff350bad7202c9de9144abd815",
+        "size_bytes": 3319
+      },
+      {
+        "object_key": "hydrolakes/display/display-v1/reports/provisional-manifest-before-finalization.json",
+        "sha256": "d122b64b6510562613898d4e0df158c0367b3bb06ee53459ee64fd92cace971f",
+        "size_bytes": 2220
+      },
+      {
+        "object_key": "hydrolakes/display/display-v1/styles/hydrolakes-polygons.json",
+        "sha256": "5dd4e20786faa65e46fb249bec0bb15f362f503c44267c2f1fc02525bb4f2d31",
+        "size_bytes": 454
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/AGENTS.md",
+        "sha256": "751634ddd1bdf205a3754e97b2d82619efda68aad9408d08c0566c6f32b418e4",
+        "size_bytes": 482
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/README.md",
+        "sha256": "bc350f10ab191958ea52b84276e8dc45d584e03a38d62ff47c54b16dd721e8de",
+        "size_bytes": 1808
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+        "sha256": "6f588d97c14651eb23bea2d74fdf2a85f218a00ff11519c81efa5512b916b7f8",
+        "size_bytes": 949598607
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/catalog.json",
+        "sha256": "0caee01dd341a7185be0992de177d74867b7af1246fafa79bb32260229aff576",
+        "size_bytes": 1488
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/collection.json",
+        "sha256": "0e36e929535734bb60e5346ce21296e12e301dc1f7081a744a29552bac802d32",
+        "size_bytes": 11004
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/dataset.yaml",
+        "sha256": "87a37c4285b669bff5ee58095e7aa470800618d3edb0d24ca54eb3e3a5cfdf5f",
+        "size_bytes": 4047
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/display/thumbnail.png",
+        "sha256": "1545b01af18207d60a182fdcc0e4117d83c73eea1db93f48a673138a1cebf15e",
+        "size_bytes": 4138
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/evidence/clean-rebuild.json",
+        "sha256": "07745245843ef2ef22cc15ff41b5c8a0d638993807bcdef0b99c945010006b74",
+        "size_bytes": 3704
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/evidence/final-package-verification.json",
+        "sha256": "128c2d3a9219f3c555b980bc2a1b7c32370566da5dd436c48546767285ed39b7",
+        "size_bytes": 132
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/evidence/local-http-duckdb-validation.json",
+        "sha256": "d840f7b1a99960a1dae79d14301312f614142a4256cd36e823e083fedf5767b7",
+        "size_bytes": 1932
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/evidence/package-binding.json",
+        "sha256": "5575983a1697dc4e09f61c65496f5248126a131b1e9fc5f545a40bd0a8b05995",
+        "size_bytes": 7575
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/evidence/package-integrity-validation.json",
+        "sha256": "f8a72d757b84f716394ca2ae6e8a0be09769620c529c01a1f26a1ef56be92394",
+        "size_bytes": 436
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/evidence/portolan-validation.json",
+        "sha256": "2c1bd193a740e343572ed93e2581b17ff73572590cb7438160df7ae70024c824",
+        "size_bytes": 1312
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/evidence/source-fidelity.json",
+        "sha256": "b4f11219f374350d31f4103af38a5ebb41905fb3e0e5f7f2bafb6e1c7e5fd2f0",
+        "size_bytes": 3475
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/evidence/stac-node-validation.json",
+        "sha256": "429b8d43841285615baa52d6206b85c0a10cb991fe789a7b0623cd894486ad02",
+        "size_bytes": 555
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/licenses/data-license.json",
+        "sha256": "739c6e14c06333e0860c8fd612fd2c930a270219d944580a2e3a26ca87d92741",
+        "size_bytes": 420
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/licenses/software/LICENSE",
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "size_bytes": 11358
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/licenses/software/NOTICE",
+        "sha256": "848d1f5c49036457c3f453dea3ace5849b94bc1fe896abeaad21d45d771636dd",
+        "size_bytes": 794
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/licenses/source-license.json",
+        "sha256": "ee91ec2cf3ffc5af6b841a3ddaff205400eb0070c6d02343d1d2a97ac07ac99e",
+        "size_bytes": 390
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/manifest.json",
+        "sha256": "48d1d1061f0785255f14c3d5bb7ce8a1c0b47963c45c0e3b02a70441c0b86fcc",
+        "size_bytes": 16801
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/metadata/hydrolakes-polygons-field-dictionary.json",
+        "sha256": "3adab03f28cd479056d918270e95c7f87516fc21cf150a06dd43631ad5bc9e05",
+        "size_bytes": 4056
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/package-receipt.json",
+        "sha256": "d6bbf72835ce894263d7bbcba6325f4bc52b9f5e4a988b1c96c60be9e100cf48",
+        "size_bytes": 724
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/provenance/clean-rebuild-raw.json",
+        "sha256": "711630170213a5aca4b1456de32b2a4363d910e9b31bda5f8f3820740461a376",
+        "size_bytes": 632
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/provenance/evidence-provenance.json",
+        "sha256": "72cf3124a0fc648d0eed4e750692c62e137da2e1933f578d35cfb5e686085d4f",
+        "size_bytes": 2038
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/provenance/source-cache-eviction.json",
+        "sha256": "08acd00da4b7056b175ec845976a8f990e50fa276c929864579be9cb9620d813",
+        "size_bytes": 604
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/provenance/source-document.json",
+        "sha256": "a88381fc802f5e8b2d45f9a0271656806d97336893268445d0f7f64fbee89c12",
+        "size_bytes": 402
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/provenance/source-validation.json",
+        "sha256": "a0421cae7c83446007540a96afcbd39a609135ed82461c612b79db31fe1948c1",
+        "size_bytes": 969
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/provenance/spatial-order-clean-rebuild.json",
+        "sha256": "ea96f00907c5b9c91c9c1d8ee365adcb835c0d068d248f329f3555f2efc8fe22",
+        "size_bytes": 4298
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/provenance/spatial-order-retained.json",
+        "sha256": "a6c9ac34403f2762b695863725537c31d4348855ff8091638d099f0645ff7f20",
+        "size_bytes": 4279
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/provenance/spatial-pruning-clean-rebuild.json",
+        "sha256": "0a53aa165b95fb53a8b292c50691de1d987ff0dd727b7992295d70eec8242b85",
+        "size_bytes": 1287
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/provenance/spatial-pruning-retained.json",
+        "sha256": "0a53aa165b95fb53a8b292c50691de1d987ff0dd727b7992295d70eec8242b85",
+        "size_bytes": 1287
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/source/HydroLAKES_TechDoc_v10.pdf",
+        "sha256": "3d1e30abb0691750127fd8e2ff6a149c83f36b93619fb44774476663e0f01f47",
+        "size_bytes": 989557
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/source/attribution.json",
+        "sha256": "ed6d6c3f1123dd57e2a680f964acbfa861bfdcacf32807cdba82fa828c7df052",
+        "size_bytes": 441
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/verification/workflow/datasets/hydrolakes/README.md",
+        "sha256": "2c6e73047ed3790d3d8bbe6ad48f2fd12c14861018dc25cbb1a76b304a56ba08",
+        "size_bytes": 4239
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/verification/workflow/datasets/hydrolakes/VALIDATION.md",
+        "sha256": "3a5d55b58a4ca2914523924cf1e09ee083f20bfd103c7a53e62ba4944422e6d9",
+        "size_bytes": 4517
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/verification/workflow/datasets/hydrolakes/acquire.py",
+        "sha256": "ea436454c070d2e57545e3aa50ef58cea3775cef3bde9b1861f1d7070ecaae27",
+        "size_bytes": 1705
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/verification/workflow/datasets/hydrolakes/convert.py",
+        "sha256": "4227f2484a3dd3454fe1f97b78b155e5dcfd6c33410b77dfbaa253afecb26f14",
+        "size_bytes": 29484
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/verification/workflow/datasets/hydrolakes/field-dictionary.json",
+        "sha256": "3adab03f28cd479056d918270e95c7f87516fc21cf150a06dd43631ad5bc9e05",
+        "size_bytes": 4056
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/verification/workflow/datasets/hydrolakes/pyproject.toml",
+        "sha256": "2b48d2be68275465b1c787419be1d3a3a8fbd6b68fb7ccc554f7e75abaf3bb96",
+        "size_bytes": 317
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/verification/workflow/datasets/hydrolakes/releases/v1-local-r3/README.md",
+        "sha256": "c2cd3ce85645b34d14845270e8a2fcfc1b8bedd94848a416dd35d3c58666395e",
+        "size_bytes": 7293
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/verification/workflow/datasets/hydrolakes/releases/v1-local-r3/reproduction/README.md",
+        "sha256": "8b2ccfc4724199a35963b27d78d73972c2da09711c6dfd69e0ba7bc6b51696e4",
+        "size_bytes": 746
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/verification/workflow/datasets/hydrolakes/releases/v1-local-r3/reproduction/fidelity-normalizer-template.json",
+        "sha256": "dbdab6e8411e79abdd85f48e343cef73c6b70670a2fc447fd58801830ebc8c94",
+        "size_bytes": 1194
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/verification/workflow/datasets/hydrolakes/releases/v1-local-r3/reproduction/materialize_release_inputs.py",
+        "sha256": "eaae2e341ace8ca13972aa83e8d91cab174b767a8a11241ace49538d278b38f4",
+        "size_bytes": 3493
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/verification/workflow/datasets/hydrolakes/releases/v1-local-r3/reproduction/package-spec-template.json",
+        "sha256": "a2176f7da5429673e106af03d942dd90e04c7ad12cd206eb5a680e13ce3079e8",
+        "size_bytes": 9783
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/verification/workflow/datasets/hydrolakes/test_convert.py",
+        "sha256": "85766f57ad151b392dbf39c37b600b23f7e9a57894cd1195fc9ccea01577ddf0",
+        "size_bytes": 8474
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/verification/workflow/datasets/hydrolakes/test_validation.py",
+        "sha256": "7211089ef887b951196b166cb7356064f6f3f2b3889eea0bb847063f370c45c8",
+        "size_bytes": 1980
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/verification/workflow/datasets/hydrolakes/uv.lock",
+        "sha256": "57e9efd934418661e7e0781340a47beb6f517f88ff44dd4237a555b6a11824cc",
+        "size_bytes": 124944
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/verification/workflow/datasets/hydrolakes/validate.py",
+        "sha256": "e047ef33506d8c1ad1efcc3525267c0b9f6d2c2452fbe0557ad51f61dca5284e",
+        "size_bytes": 4605
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/verification/workflow/research/hydro-releases-20261031/bind_fidelity.py",
+        "sha256": "76a828925da815fe264cf3fa03dd929ddbe38cf14ccb444bad1863eb49920c13",
+        "size_bytes": 23208
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/verification/workflow/research/hydro-releases-20261031/test_bind_fidelity.py",
+        "sha256": "5ebe4a9abc251e04259eb0e203b1e596f350c2bd4b98ebf14e6a61e8885efb02",
+        "size_bytes": 11460
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/verification/workflow/scripts/release_tools/AGENTS.md",
+        "sha256": "4aa3ee027c7ad8f56209e5c948ab30ad126cd0dfd8e80408590df060db03dc3b",
+        "size_bytes": 857
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/verification/workflow/scripts/release_tools/README.md",
+        "sha256": "5567beec97c741e20678d02fcd8f7fbafb2c2a524475e053f119c3b803b24e7a",
+        "size_bytes": 13739
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/verification/workflow/scripts/release_tools/add_spatial_bounds.py",
+        "sha256": "035fc480d2a5f7d09b190d65d734c3d5ae18495314f2a01834b8438f302a23e6",
+        "size_bytes": 21945
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/verification/workflow/scripts/release_tools/check_spatial_pruning.py",
+        "sha256": "04c87e2552272003f1f67bfb01b1dcb4b293ad2c094597ee24336235be719413",
+        "size_bytes": 4117
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/verification/workflow/scripts/release_tools/package-lock.json",
+        "sha256": "8f19898156a139859a49d15238a92a5204a7d61b909ee5ac54080e8110a2cc3c",
+        "size_bytes": 54306
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/verification/workflow/scripts/release_tools/package.json",
+        "sha256": "8eebc2fd826cf22f6008ee889293d7880952ea19ddac557ae905821489108470",
+        "size_bytes": 142
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/verification/workflow/scripts/release_tools/package_release.py",
+        "sha256": "7985c0ae0b06e028f2f9466a88dde592bfbb6095cb2ab1a4e2892269629c676b",
+        "size_bytes": 62862
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/verification/workflow/scripts/release_tools/pyproject.toml",
+        "sha256": "a6d5a4c17612a98645ce60b3b581caf316707f2b92265e5a3c1ca9a319f6da3c",
+        "size_bytes": 259
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/verification/workflow/scripts/release_tools/serve.py",
+        "sha256": "dab2eef0199f839aac9a14d9802cb7b339e9732573bd659d5837867f1f5da175",
+        "size_bytes": 2789
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/verification/workflow/scripts/release_tools/spatial_order.py",
+        "sha256": "37bb23e480291145ad156a23ed2057ac0bdbb1a3a9f8125b8900cc077ac420c2",
+        "size_bytes": 52873
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/verification/workflow/scripts/release_tools/test_package_release.py",
+        "sha256": "f1245988e4c45e26bce2b3e07766949d9054c9ba1774a0e84e457062571c89cb",
+        "size_bytes": 9275
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/verification/workflow/scripts/release_tools/test_spatial_bounds.py",
+        "sha256": "ed403df9cbe89adfe2766f5e14610affd34b2a35f4968c647852e0606b9ce30f",
+        "size_bytes": 8062
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/verification/workflow/scripts/release_tools/test_spatial_order.py",
+        "sha256": "a4888b7d4d1c193f7c8f4288aaa96fb1a342096a239e9096d6978cfebb5a0581",
+        "size_bytes": 14097
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/verification/workflow/scripts/release_tools/test_spatial_pruning.py",
+        "sha256": "0ba8f0ff758409fd007ea5b03b9bff3b23b3d51704fd22d36d87499d5da5bbb9",
+        "size_bytes": 1989
+      },
+      {
+        "object_key": "hydrolakes/releases/v1-local-r3/verification/workflow/scripts/release_tools/uv.lock",
+        "sha256": "fe1b9d58a17429f2649a24fbd8299b5d616ca4ab68806e768cd2caac31b8ec1b",
+        "size_bytes": 134378
+      },
+      {
+        "object_key": "hydrolakes/README.md",
+        "sha256": "67c9017f0a4f4936493f20d57178fc77be7aee42b484fc268c7c99730973d98e",
+        "size_bytes": 4736
+      }
+    ],
+    "receipt_object_count": 77,
+    "subset_queries": [
+      {
+        "footer_rows": 1427688,
+        "id_multiplicity": {
+          "16": 1,
+          "46": 1,
+          "87": 1
+        },
+        "ids": [
+          87,
+          46,
+          16
+        ],
+        "name": "hydrolakes-parquet-1",
+        "path": "assets/hydrolakes-polygons.parquet",
+        "result_sha256": "fb72efbab92540f4466afe53101c22754b2f8848f21eba4703c75c608fd349be",
+        "rows": 3
+      }
+    ]
+  },
+  "failures": [],
+  "package_base_url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/",
+  "package_manifest_sha256": "48d1d1061f0785255f14c3d5bb7ce8a1c0b47963c45c0e3b02a70441c0b86fcc",
+  "release": "v1-local-r3",
+  "schema_version": 1,
+  "status": "passed"
+}

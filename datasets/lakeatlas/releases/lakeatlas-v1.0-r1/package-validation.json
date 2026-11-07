@@ -1,0 +1,58 @@
+{
+  "status": "failed",
+  "reason": "Rashid 0.1.8 Portolan v0.2 validation rejected non-spatial row ordering in both source-order assets.",
+  "package_manifest_sha256": "5dcdc2a1ef02990339be2c9f5335751f593f67b3dcf2a152dd272576ecd91f0f",
+  "package_receipt": "package-receipt.json",
+  "validators": {
+    "stac_node_validator_2_0_0": {
+      "status": "passed",
+      "documents_passed": 2,
+      "documents_invalid": 0
+    },
+    "package_integrity": {
+      "status": "passed"
+    },
+    "local_http_and_duckdb_subset": {
+      "status": "passed",
+      "polygons": {
+        "rows": 1,
+        "local_remote_equal": true
+      },
+      "pour_points": {
+        "rows": 48,
+        "local_remote_equal": true
+      }
+    },
+    "rashid_0_1_8_portolan_v0_2": {
+      "status": "failed",
+      "error_count": 2,
+      "findings": [
+        {
+          "rule_id": "PTL-DAT-006",
+          "asset_id": "lakeatlas-polygons",
+          "rows": 1427688,
+          "row_groups": 349,
+          "message": "Rows are not spatially ordered; a reader cannot skip any part of the file."
+        },
+        {
+          "rule_id": "PTL-DAT-006",
+          "asset_id": "lakeatlas-pour-points",
+          "rows": 1427688,
+          "row_groups": 349,
+          "message": "Rows are not spatially ordered; a reader cannot skip any part of the file."
+        }
+      ]
+    },
+    "final_manifest_verification": {
+      "status": "passed",
+      "failures": []
+    }
+  },
+  "preservation_constraint": "The validated source-order Parquets remain unchanged. A separate spatially ordered companion may be evaluated, with the current OBJECTID field as reversible source order; this package remains failed and is not marked prepared until such a derivative passes its own full fidelity and Portolan checks.",
+  "source_documents_in_package": [
+    "licenses/source/LakeATLAS_Catalog_v10.pdf",
+    "licenses/source/HydroATLAS_TechDoc_v10_1.pdf"
+  ],
+  "publicly_published": false,
+  "registry_submitted": false
+}

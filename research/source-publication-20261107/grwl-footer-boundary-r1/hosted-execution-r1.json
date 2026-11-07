@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "status": "frozen_before_hosted_validation",
+  "prepared_at_utc": "2026-11-07T21:24:23.379335+00:00",
+  "commit": "ce4ede904980904fb911c3dc15524359da555fda",
+  "code": {
+    "scripts/source_publish/validate_hosted.py": "90e1f45936d5c7da8a1fd80c00efa6a84402de212e1f76ad61976e0cffaecde2",
+    "scripts/source_publish/browser_range_evidence.py": "b12c742a04c0d23a3b0077aa7d9f5613a40366f7c43e4dd6da6341291764f94d",
+    "scripts/source_publish/bounded_http.py": "3f0e105510de8b1b276caf10ba60a39e97dac1781eceb284ae9547ad36f24dd9",
+    "scripts/source_publish/upload.py": "4c418a065e41ea14a4c5841bd77a95b725f35b81dff59f5f0ca4fc7f39aa6559",
+    "scripts/cloud_viewer/hosted-browser-check.mjs": "a0c0efe80e840bdfc6ee9db71ef578c552318440209069fbbf8e6cdbe7e51970",
+    "scripts/cloud_viewer/hosted-range-policy.mjs": "84fc4f61564c4850dbcf81495af77d204836c309744048e7e8520e10788b01ca"
+  },
+  "dataset": "grwl-raw",
+  "browser_report": "research/source-publication-20261107/browser-grwl-raw-r3/hosted-browser-evidence.json",
+  "browser_report_sha256": "bae7144847fb574eeb2c99677aedf9942a1e3ea7b6828a33158e6634896c3a06",
+  "metadata_policy_sha256": "42ae5ed4939bc4658a3de31233767111a33a765e00e56cce376c3876d3f462e2",
+  "required_checks": [
+    "anonymous_access",
+    "range_requests",
+    "cors",
+    "asset_checksums",
+    "subset_query",
+    "catalog_links",
+    "browser_render"
+  ],
+  "focused_checks": {
+    "python_tests": 95,
+    "node_range_tests": 11,
+    "four_prior_browser_reports_compatible": true
+  },
+  "validation_output": ".local/hosted-validation-grwl-raw-r1.json"
+}

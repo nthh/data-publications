@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "task": "Audit existing GEE comparisons and build a browser viewer over static HTTP object storage",
+  "datasets": [
+    "grwl",
+    "river-plastic-inputs",
+    "hydrolakes",
+    "free-flowing-rivers",
+    "lakeatlas",
+    "gdw",
+    "swot_prior_lake_database"
+  ],
+  "gee_audit": [
+    "Report only existing evidence; no new live GEE requests or exports.",
+    "Distinguish full feature/attribute parity, sampled diagnostics, failed strict checks, source fidelity, and untested counterparts.",
+    "Bind conclusions to the currently selected release and exact evidence paths/hashes."
+  ],
+  "viewer": [
+    "Five prepared products must display real release data; LakeATLAS polygons and pour points remain separate layers.",
+    "Browser reads PMTiles and GeoParquet directly over HTTP byte ranges; no server-side feature or SQL query endpoint.",
+    "Use separate loopback UI and object origins to exercise CORS; support GET/HEAD/OPTIONS and correct 206/416 range semantics.",
+    "Object URLs mirror the proposed nthh/product/releases layout; only explicit plan files may be served. No directory listing, credentials, arbitrary path access, mutation, upload, or publication.",
+    "GDW and SWOT are visibly unavailable, with actual blockers rather than mock data.",
+    "Include pan/zoom, dataset/layer selection, feature properties, edition/validation notes, loading/empty/error states, and byte-transfer information.",
+    "At least one browser view per ready product and both LakeATLAS layers must show nonzero features with successful range responses; use fixed geographic controls.",
+    "Fresh-context tests must demonstrate partial reads for each large analytical file, with a 128 MiB per-layer evaluation transfer ceiling; no whole-dataset download. Preserve failures and precommit any revised diagnostic.",
+    "Focused range/security/client tests and clean-checkout generation must pass."
+  ],
+  "geographic_controls": {
+    "global": [
+      -170,
+      -55,
+      175,
+      80
+    ],
+    "north_america": [
+      -93,
+      47,
+      -87,
+      50
+    ],
+    "europe": [
+      5,
+      45,
+      15,
+      55
+    ],
+    "southwest_europe": [
+      5,
+      45,
+      7.5,
+      47.5
+    ],
+    "south_america": [
+      -65,
+      -5,
+      -60,
+      0
+    ],
+    "asia": [
+      100,
+      25,
+      110,
+      35
+    ],
+    "oceania": [
+      140,
+      -40,
+      150,
+      -30
+    ]
+  },
+  "cost_scope": "Reuse existing packages; small pinned browser dependencies permitted. No bulk source downloads, GEE jobs, remote writes or new data conversions.",
+  "design_intent": {
+    "human": "Nathan reviewing retained hydrology releases before Source Cooperative publication",
+    "action": "Browse each real release, inspect a feature and see whether remote-style partial reads work",
+    "feel": "A compact map workbench with quiet controls and clear data provenance",
+    "domain": [
+      "rivers",
+      "lakes",
+      "catchments",
+      "flow",
+      "coordinates",
+      "source editions",
+      "byte ranges"
+    ],
+    "color_world": [
+      "deep river blue",
+      "pale lake blue",
+      "slate labels",
+      "survey-paper ivory",
+      "silt-gray boundaries"
+    ],
+    "signature": "Each selected layer connects its map, exact release URL, GEE check status and bytes fetched",
+    "defaults_replaced": [
+      "Metric-card dashboard replaced with a map and compact dataset rail",
+      "Decorative basemap replaced with subdued geographic context",
+      "Global loading spinner replaced with per-layer loading and transfer state"
+    ],
+    "palette": "Paper/gray surfaces, river-blue selection and data; amber reserved for unavailable/incomplete states",
+    "depth": "Fine borders and surface shifts; no decorative shadows",
+    "spacing": "4px base with 8/12/16/24px steps",
+    "typography": "System sans-serif for labels, tabular/monospace for bytes, IDs and coordinates"
+  }
+}

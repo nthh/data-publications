@@ -1,0 +1,57 @@
+schema_version: 1
+id: global_fishing_watch
+title: GFW (Global Fishing Watch) Daily Fishing Hours
+intake:
+  kind: official_catalog
+  reference_url: https://developers.google.com/earth-engine/datasets/catalog/GFW_GFF_V1_fishing_hours
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'citations: Global oceans / water bodies Distinct named producer product; retain exact
+    source edition and footprint.'
+  sources:
+  - provider: gee_official
+    entry_id: GFW/GFF/V1/fishing_hours
+    url: https://developers.google.com/earth-engine/datasets/catalog/GFW_GFF_V1_fishing_hours
+    relationship: component
+  - provider: gee_official
+    entry_id: GFW/GFF/V1/vessel_hours
+    url: https://developers.google.com/earth-engine/datasets/catalog/GFW_GFF_V1_vessel_hours
+    relationship: component
+  access:
+  - provider: literature
+    status: unknown
+    formats: []
+    summary: GEE catalog entries are available through Earth Engine; frozen metadata does not establish
+      an independently downloadable native bulk copy or its format. Distinct named producer product; retain
+      exact source edition and footprint.
+    license_summary: Not inferred from citation records. Verify producer terms for the exact edition before
+      conversion or redistribution.
+    proposed_outputs: []
+    rationale: 'Candidate discovery only: global/near-global scope and associated-paper citation signal
+      justify source-format and licensing review. Citation rank does not establish conversion priority
+      or exact-release use.'
+    evidence_urls:
+    - https://developers.google.com/earth-engine/datasets/catalog/GFW_GFF_V1_fishing_hours
+    - https://developers.google.com/earth-engine/datasets/catalog/GFW_GFF_V1_vessel_hours
+    - https://doi.org/10.1126/science.aao5646
+  citations:
+  - provider: OpenAlex
+    paper_doi: 10.1126/science.aao5646
+    work_id: https://openalex.org/W2788078249
+    cited_by_count: 1101
+    observed_on: '2026-10-30'
+    scope: associated_dataset_publication
+  evidence:
+  - path: research/global-candidates-20261031/citations/reviewed.json
+    sha256: 572140255cd3b41a1ec8ecca0139e64d38899cda7fdd55756f399a0dca57a467
+    key: global_fishing_watch

@@ -1,0 +1,407 @@
+{
+  "schema_version": 1,
+  "audit_id": "hydrolakes-lakeatlas-source-selection-20261102",
+  "scope": "Read-only source-selection and conversion-fidelity audit of HydroLAKES and LakeATLAS local prepared releases. This does not assess producer scientific accuracy or rerun producer workflows.",
+  "repository": "nthh/data-publications",
+  "source_pin_check": {
+    "method": "Compared source names, sizes, URLs or article/file identifiers, and recorded checksums across dataset records and retained source-inspection/fidelity evidence. Large source archives and data assets were not rehashed during this audit.",
+    "bulk_source_rehashed": false,
+    "analytics_assets_rehashed": false,
+    "evidence_files_rehashed": true
+  },
+  "producer_documentation": [
+    {
+      "dataset": "hydrolakes",
+      "url": "https://www.hydrosheds.org/products/hydrolakes",
+      "claims_checked": [
+        "HydroLAKES v1 is the producer shoreline-polygon inventory for global lakes of at least 10 ha.",
+        "The producer lists polygon and pour-point downloads as separate layers and offers both geodatabase and shapefile formats.",
+        "HydroATLAS is described as a distinct, attribute-enriched product containing the HydroLAKES lake set."
+      ]
+    },
+    {
+      "dataset": "hydrolakes",
+      "url": "https://data.hydrosheds.org/file/technical-documentation/HydroLAKES_TechDoc_v10.pdf",
+      "claims_checked": [
+        "The v1.0 technical document describes polygon and point attribute layers and producer fields/semantics."
+      ]
+    },
+    {
+      "dataset": "lakeatlas",
+      "url": "https://www.hydrosheds.org/hydroatlas",
+      "claims_checked": [
+        "HydroATLAS v1 includes LakeATLAS, the lake-polygon attribute product, and describes its hydro-environmental variables and relationship to HydroLAKES."
+      ]
+    },
+    {
+      "dataset": "lakeatlas",
+      "url": "https://data.hydrosheds.org/file/technical-documentation/HydroATLAS_TechDoc_v10_1.pdf",
+      "claims_checked": [
+        "The technical documentation identifies LakeATLAS v1 as the HydroLAKES-derived lake unit enriched with HydroATLAS attributes, with variable/source documentation in the companion catalog."
+      ]
+    },
+    {
+      "dataset": "lakeatlas",
+      "url": "https://doi.org/10.6084/m9.figshare.19312001.v1",
+      "claims_checked": [
+        "The pinned LakeATLAS v1.0 source record; local acquisition code binds the article version, DOI, license, file IDs, sizes, and provider MD5 values."
+      ]
+    }
+  ],
+  "datasets": [
+    {
+      "id": "hydrolakes",
+      "assessment": {
+        "severity": "scope-gap-disclosed",
+        "summary": "No GRWL-style geometry simplification or summary substitution is evident in the analytical polygon package. It converts the official HydroLAKES v1 polygon layer. The official pour-point layer is omitted, and that omission is explicit in the product scope and metadata.",
+        "concrete_followups": [
+          "Keep product naming and claims scoped to HydroLAKES v1 polygons. If claiming the full HydroLAKES layer set, add the producer's separately distributed pour-point layer as a separate asset and validate it against its pinned source.",
+          "Retain the producer technical-document redistribution notice and review it for the intended transformed publication, as the dataset record already requires."
+        ]
+      },
+      "authoritative_product": {
+        "name": "HydroLAKES v1.0 global lake polygons",
+        "producer": "Lehner and Messager / HydroSHEDS",
+        "product_version": "v1.0 (producer archive filename uses v10)",
+        "geography": "Global inventory; source release describes lakes at least 10 ha.",
+        "temporal_scope": "Static research release compiled from legacy/composite shoreline sources; not a 2026 observation or time series.",
+        "source_files": [
+          {
+            "name": "HydroLAKES_polys_v10_shp.zip",
+            "url": "https://data.hydrosheds.org/file/hydrolakes/HydroLAKES_polys_v10_shp.zip",
+            "source_size_bytes": 820295132,
+            "source_sha256_recorded": "9ef63498569dd7ccd0b8d8852da026e009a75f42d293f00e483f3b9fcfe8e1f9",
+            "source_pin_path": "datasets/hydrolakes/dataset.yaml",
+            "source_pin_evidence_sha256": "9ad3044efc4e1df5d00f3a464fe0cb264fdea412c34187b1a8abcff7d4119558",
+            "selection": "Official producer polygon Shapefile ZIP; it is the matching native-format product for the polygon-only release, not a simplified summary or a HydroLAKES overview raster."
+          },
+          {
+            "name": "HydroLAKES_TechDoc_v10.pdf",
+            "url": "https://data.hydrosheds.org/file/technical-documentation/HydroLAKES_TechDoc_v10.pdf",
+            "source_size_bytes": 989557,
+            "source_sha256_recorded": "3d1e30abb0691750127fd8e2ff6a149c83f36b93619fb44774476663e0f01f47",
+            "retained_identity_path": "datasets/hydrolakes/releases/v1-local-r3/provenance/source-document.json",
+            "role": "Producer field semantics, source limitations, and attribution/redistribution notices."
+          }
+        ],
+        "related_richer_or_companion_products": [
+          {
+            "product": "HydroLAKES pour points",
+            "relationship": "Separate official HydroLAKES source layer, not included in this polygon-only package.",
+            "producer_downloads": "https://www.hydrosheds.org/products/hydrolakes"
+          },
+          {
+            "product": "LakeATLAS / HydroATLAS",
+            "relationship": "Distinct derived product that uses HydroLAKES lake units and adds extensive hydro-environmental attributes; it is not the raw/native HydroLAKES polygon source and is separately audited below.",
+            "producer_page": "https://www.hydrosheds.org/hydroatlas"
+          }
+        ]
+      },
+      "package_scope_and_completeness": {
+        "release": "v1-local-r3",
+        "publicly_published": false,
+        "manifest_status": "local-candidate",
+        "included_layers": [
+          {
+            "layer": "polygon",
+            "rows": 1427688,
+            "source_fields": 22,
+            "source_identifier": "Hylak_id",
+            "source_crs": "EPSG:4326",
+            "final_asset": "hydrolakes-polygons.parquet",
+            "final_asset_bytes": 949598607,
+            "final_asset_sha256": "6f588d97c14651eb23bea2d74fdf2a85f218a00ff11519c81efa5512b916b7f8"
+          }
+        ],
+        "omitted_layers_or_detail": [
+          {
+            "item": "Separate HydroLAKES pour-point layer",
+            "severity": "scope-gap-disclosed",
+            "evidence": "Official product page distributes pour points separately. Dataset record and release text state that this package contains polygons only and excludes the separate pour-point layer."
+          },
+          {
+            "item": "HydroATLAS/LakeATLAS enriched attributes",
+            "severity": "distinct-product-not-in-scope",
+            "evidence": "The producer identifies HydroATLAS as a distinct enriched product; it is not a missing field subset of the HydroLAKES polygon source. LakeATLAS is covered separately in this report."
+          }
+        ],
+        "time_coverage": "Static compiled product; no temporal observations are added or claimed."
+      },
+      "conversion_and_display": {
+        "analytical_asset_transforms": [
+          "The r3 output is spatially ordered by a 16-bit Hilbert key of WGS84 bbox centers with Hylak_id tie-breaker.",
+          "GeoParquet 1.1 bbox covering is appended and recomputed from WKB.",
+          "Source-decoded original fields, nulls, and WKB are preserved; no reprojection, repair, simplification, deduplication, or WKB rewrite is reported."
+        ],
+        "display_only_transforms": [
+          "The separate PMTiles display derivative uses projection/quantization/generalization for map display and selected attributes; the manifest points to the unchanged analytic GeoParquet asset for full field lookup.",
+          "Maximum-zoom display evidence accounts for all 1,427,688 source IDs, with no missing IDs reported. This is display ID accounting, not proof of analytic or scientific correctness."
+        ]
+      },
+      "validation_and_limitations": {
+        "conversion_fidelity": "Retained source-validation report says complete independent source/output reread through the same GDAL decoder, exact ID coverage, 1,427,688 rows, 31,409,136 compared cells, and per-feature typed digest/WKB binding. Spatial companion checks compare source values/nulls and per-ID WKB and independently recompute bbox values. Retained and clean candidate hashes match.",
+        "clean_rebuild": {
+          "reported_status": "passed",
+          "raw_and_final_assets_reported_hash_equal": true,
+          "clean_checkout_commit": "100eaadad0e42a6f12d61c08de7d061eb5bac499",
+          "detached_checkout_and_empty_status_recorded": true,
+          "clean_checkout_independently_verified": false,
+          "interpretation": "The retained report records byte-equal raw and spatial artifacts and helper-recorded detached-checkout evidence. Because independent verification is explicitly false, this report does not assert an independently audited clean-checkout rebuild, nor a new end-to-end rebuild from the producer archive."
+        },
+        "scientific_validation": "Not established. Reports state GEE parity was not run and source fidelity is not independent observational/scientific accuracy validation.",
+        "known_validation_limits": [
+          "Same GDAL decoder is used for conversion and source reread; validation establishes decoded-source fidelity, not equivalence to raw DBF text encodings or independent decoding.",
+          "No fresh GEE comparison.",
+          "No producer model/observation reanalysis."
+        ]
+      },
+      "evidence_inventory": [
+        {
+          "path": "datasets/hydrolakes/dataset.yaml",
+          "sha256": "9ad3044efc4e1df5d00f3a464fe0cb264fdea412c34187b1a8abcff7d4119558",
+          "role": "Source pin, polygon-only scope, licensing note, release and validation claims."
+        },
+        {
+          "path": "datasets/hydrolakes/convert.py",
+          "sha256": "4227f2484a3dd3454fe1f97b78b155e5dcfd6c33410b77dfbaa253afecb26f14",
+          "role": "Pinned polygon conversion workflow and native field/geometry handling."
+        },
+        {
+          "path": "datasets/hydrolakes/VALIDATION.md",
+          "sha256": "3a5d55b58a4ca2914523924cf1e09ee083f20bfd103c7a53e62ba4944422e6d9",
+          "role": "Validation contract and explicit boundaries."
+        },
+        {
+          "path": "datasets/hydrolakes/releases/v1-local-r3/provenance/source-validation.json",
+          "sha256": "a0421cae7c83446007540a96afcbd39a609135ed82461c612b79db31fe1948c1",
+          "role": "Complete source reread fidelity summary."
+        },
+        {
+          "path": "datasets/hydrolakes/releases/v1-local-r3/evidence/package-source-fidelity.json",
+          "sha256": "b4f11219f374350d31f4103af38a5ebb41905fb3e0e5f7f2bafb6e1c7e5fd2f0",
+          "role": "Raw and spatial asset binding, per-feature source comparison summary."
+        },
+        {
+          "path": "datasets/hydrolakes/releases/v1-local-r3/evidence/package-clean-rebuild.json",
+          "sha256": "07745245843ef2ef22cc15ff41b5c8a0d638993807bcdef0b99c945010006b74",
+          "role": "Clean artifact hash equality and explicit false independent-verification flag."
+        },
+        {
+          "path": "datasets/hydrolakes/releases/v1-local-r3/evidence/package-manifest.json",
+          "sha256": "48d1d1061f0785255f14c3d5bb7ce8a1c0b47963c45c0e3b02a70441c0b86fcc",
+          "role": "Release asset, manifest status, source scope, and display derivative inventory."
+        },
+        {
+          "path": "datasets/hydrolakes/releases/v1-local-r3/evidence/package-final-package-verification.json",
+          "sha256": "128c2d3a9219f3c555b980bc2a1b7c32370566da5dd436c48546767285ed39b7",
+          "role": "Final local package verification status."
+        },
+        {
+          "path": "datasets/hydrolakes/display/display-v1/manifest.json",
+          "sha256": "f3dbb0d87553162a6b2a91172626eeecca9985fb8df54685ee64924ca826d841",
+          "role": "Display-only derivative source binding and max-zoom ID accounting."
+        }
+      ]
+    },
+    {
+      "id": "lakeatlas",
+      "assessment": {
+        "severity": "no-source-shortcut-found",
+        "summary": "The package selects the official LakeATLAS v1.0 enriched File Geodatabase and converts both expected vector layers. The polygon and pour-point layers, all decoded source fields, and source-decoded geometry are represented. No lower-detail summary substituted for the source vectors was found.",
+        "concrete_followups": [
+          "Keep the OpenFileGDB warning and same-decoder limitation attached to source-fidelity claims; do not describe byte parity as raw FileGDB ring-record parity or scientific validation.",
+          "Before making an independently verified clean-checkout reproducibility claim, resolve the recorded clean_checkout_independently_verified=false status with independent verification evidence.",
+          "Continue field-level license attribution for the source catalog's CC BY 4.0 and ODbL 1.0 attributes."
+        ]
+      },
+      "authoritative_product": {
+        "name": "LakeATLAS v1.0, HydroATLAS version 1",
+        "producer": "HydroSHEDS / HydroATLAS authors",
+        "product_version": "LakeATLAS v1.0; Figshare article version 1; DOI 10.6084/m9.figshare.19312001.v1",
+        "geography": "Global lakes represented by the HydroLAKES lake units.",
+        "temporal_scope": "Static attribute compendium; attribute years vary by underlying source and are cataloged per field. Not a current-time observation layer.",
+        "source_files": [
+          {
+            "name": "LakeATLAS_Data_v10.gdb.zip",
+            "figshare_article_url": "https://api.figshare.com/v2/articles/19312001",
+            "doi_url": "https://doi.org/10.6084/m9.figshare.19312001.v1",
+            "figshare_file_id": 35959544,
+            "source_size_bytes": 1530962499,
+            "producer_md5": "952e0724afc96d3a5899f08935d4a094",
+            "source_sha256_recorded": "baa4d760a163350dd6a30c21c82db1e23b150834a8b848885eba6dc9ba1175df",
+            "source_pin_path": "datasets/lakeatlas/source.py",
+            "source_pin_evidence_sha256": "d8cb6d255c96e1f9039008c08f96b558a86baa6441a9a0c4e44ad0a2252327f6",
+            "selection": "Pinned official producer File Geodatabase, not a visualization or summary export. Source inspection verifies exact layer inventory."
+          },
+          {
+            "name": "LakeATLAS_Catalog_v10.pdf",
+            "figshare_file_id": 35959535,
+            "source_size_bytes": 54055742,
+            "producer_md5": "dfb3501640ed034360486a8304d00d8b",
+            "source_sha256_recorded": "e736eedbbe32cdeb498348696b9d085b1caddd937a19c7c669501deaffe670e1",
+            "role": "Field descriptions, underlying sources, units, methods, and field-level licensing."
+          },
+          {
+            "name": "HydroATLAS_TechDoc_v10_1.pdf",
+            "figshare_file_id": 35959532,
+            "source_size_bytes": 3656999,
+            "producer_md5": "f37085c99a987752a37d8327c0a96922",
+            "source_sha256_recorded": "0ad77c88140d8a0b569d79d5cceadf727b558a7e422a36b9c394cc593db2ccab",
+            "role": "Product methodology and source documentation."
+          }
+        ],
+        "relationship_to_hydrolakes": "LakeATLAS uses HydroLAKES lake polygons as its spatial units and adds many hydro-environmental attributes, including information derived from external datasets and a surrounding lake-vicinity buffer. It is a distinct derived scientific data product; auditing its conversion does not mean rebuilding those producer derivations from every upstream observation/model input."
+      },
+      "package_scope_and_completeness": {
+        "release": "lakeatlas-v1.0-r2",
+        "publicly_published": false,
+        "manifest_status": "local-candidate",
+        "archive_inventory": {
+          "members": 52,
+          "total_uncompressed_bytes": 3061068949,
+          "inspection_evidence": "datasets/lakeatlas/releases/lakeatlas-v1.0-r2/evidence/prepared-local/provenance/source-inspection.json"
+        },
+        "included_layers": [
+          {
+            "layer": "LakeATLAS_v10_pol",
+            "geometry": "MultiPolygon",
+            "rows": 1427688,
+            "attribute_fields": 307,
+            "output_source_fields_including_OBJECTID": 308,
+            "native_fid": "OBJECTID",
+            "crs": "EPSG:4326",
+            "final_asset": "lakeatlas-polygons.parquet",
+            "final_asset_bytes": 1143992867,
+            "final_asset_sha256": "bbef606fd8522b230efc90e2952a67c1e4265e7bf733208fa4cc31395a7277b7"
+          },
+          {
+            "layer": "LakeATLAS_v10_pnt",
+            "geometry": "Point",
+            "rows": 1427688,
+            "attribute_fields": 305,
+            "output_source_fields_including_OBJECTID": 306,
+            "native_fid": "OBJECTID",
+            "crs": "EPSG:4326",
+            "final_asset": "lakeatlas-pour-points.parquet",
+            "final_asset_bytes": 283780050,
+            "final_asset_sha256": "ff621c1db763551cdb6ced8958eefcc9da76a73c16e7f7259c238bec3aae5720"
+          }
+        ],
+        "ignored_companion_layers": [],
+        "field_note": "The counts above are the field counts recorded by the builder/source inspection; the native OBJECTID is retained separately as the feature ID. The source inspection inventory contains both expected layers and the builder rejects an unexpected layer inventory."
+      },
+      "conversion_and_display": {
+        "analytical_asset_transforms": [
+          "Both complete layer tables are streamed from the pinned File Geodatabase through GDAL/OpenFileGDB into GeoParquet.",
+          "Native identifiers and all decoded source columns/nulls are retained. The final candidate uses deterministic spatial order with OBJECTID as tie-breaker and appends bbox covering recomputed from unchanged source-decoded WKB.",
+          "No geometry repair, simplification, reprojection, or deduplication is reported."
+        ],
+        "decoder_caveat": "GDAL/OpenFileGDB applies its default organizePolygons() ring classification. One polygon with more than 100 parts emits a warning. The resulting decoded WKB is retained; validation compares against the same native-layer decoder, so it does not prove identity to raw FileGDB ring-record encoding.",
+        "display_only_transforms": [
+          "The separate PMTiles polygon and point layers project, quantize, and simplify geometries for display; they carry selected display attributes and source IDs.",
+          "Display manifests report all 1,427,688 source IDs accounted at maximum zoom for each layer. The complete analytical attributes and geometries remain in GeoParquet."
+        ]
+      },
+      "validation_and_limitations": {
+        "conversion_fidelity": "Source-fidelity evidence reports exact source-order column-array equality for all rows in both layers, then source-order reconstruction, source values/nulls/WKB comparison, and recomputed bbox checks for both spatial assets. Primary and clean spatial outputs are byte-identical. Package evidence also records STAC Node, Portolan, integrity, bounded HTTP/CORS, DuckDB subset, and final package verification passes.",
+        "clean_rebuild": {
+          "reported_status": "passed",
+          "raw_and_final_assets_reported_hash_equal": true,
+          "clean_checkout_commit": "b6579442c8a0ba73e38b444f143bb6194ef056e5",
+          "detached_checkout_and_empty_status_recorded": true,
+          "clean_checkout_independently_verified": false,
+          "interpretation": "The record reports exact raw and spatial asset hash equality and helper-recorded detached-checkout evidence. The explicit false flag means the evidence should not be elevated to an independently verified clean-checkout claim. It is not an assertion that the producer's entire science pipeline was rebuilt from original observations."
+        },
+        "scientific_validation": "Not established by conversion fidelity, package checks, or display checks. This audit found no independent scientific accuracy validation or reconstruction of all producer models and original input datasets.",
+        "known_validation_limits": [
+          "Source reads for conversion and fidelity use GDAL/OpenFileGDB; raw FileGDB ring-record identity is not tested.",
+          "Same-decoder parity cannot independently establish producer scientific correctness.",
+          "Attribute observation years vary by upstream variable; the package preserves the v1 product's values and does not make them contemporaneous."
+        ],
+        "retained_failures": [
+          {
+            "path": "datasets/lakeatlas/releases/lakeatlas-v1.0-r2/evidence/failures/polygons-first-attempt-5c031de.json",
+            "sha256": "7d879f8f77f70ddc0d2d353f6e992975961a24c266b028ef92ab9aa75b4decba",
+            "finding": "Early spatial-order attempt exceeded the 1 GB RSS cap before creating a stage output; source was unchanged."
+          },
+          {
+            "path": "datasets/lakeatlas/releases/lakeatlas-v1.0-r2/evidence/failures/polygons-source-wkb-hashing-attempt-100eaad.json",
+            "sha256": "aa4e82142d62d6a1eaa0f43ba1751b11530dccd540fa8b76403a5b11fd067930",
+            "finding": "Another early attempt exceeded the RSS cap during source WKB hashing and retained a partial artifact. Later r2 prepared evidence passed; failure evidence remains disclosed."
+          }
+        ]
+      },
+      "evidence_inventory": [
+        {
+          "path": "datasets/lakeatlas/dataset.yaml",
+          "sha256": "abfe68f3a3fa804dbfe3ed4d04ff659c291ef51540785434061b96b20bd1e2eb",
+          "role": "Product/version/source pin, field licensing, and release scope."
+        },
+        {
+          "path": "datasets/lakeatlas/source.py",
+          "sha256": "d8cb6d255c96e1f9039008c08f96b558a86baa6441a9a0c4e44ad0a2252327f6",
+          "role": "Figshare article/file pins and exact expected layer definitions."
+        },
+        {
+          "path": "datasets/lakeatlas/build.py",
+          "sha256": "2902cdf3d8c241b2abc2b62571602e1cb1f4f3403f369e23f1bb8981922f97e6",
+          "role": "Layer inventory assertion and conversion workflow."
+        },
+        {
+          "path": "datasets/lakeatlas/releases/lakeatlas-v1.0-r2/evidence/prepared-local/provenance/source-inspection.json",
+          "sha256": "f32db5453f6705c6930a2e724d923033ec8115355c6d58a78bf2a021edc4b7cc",
+          "role": "Archive identity/inventory, source layer counts, fields, geometry types, CRS, and extents."
+        },
+        {
+          "path": "datasets/lakeatlas/releases/lakeatlas-v1.0-r2/evidence/prepared-local/evidence/source-fidelity.json",
+          "sha256": "7fc9ae400a02de3d878dff3b541a920445e93aa49535699d7b54c47ecbd1b16f",
+          "role": "All-row source comparison and primary/clean spatial augmentation fidelity summaries."
+        },
+        {
+          "path": "datasets/lakeatlas/releases/lakeatlas-v1.0-r2/evidence/prepared-local/evidence/clean-rebuild.json",
+          "sha256": "bd3c46ec6ee9f28c2b64d49d56610dd93213485630ba1c56b5b27c432ee9abf2",
+          "role": "Raw/final asset hash equality and explicit false independent-verification flag."
+        },
+        {
+          "path": "datasets/lakeatlas/releases/lakeatlas-v1.0-r2/evidence/prepared-local/manifest.json",
+          "sha256": "32b4877b8809cabd3e2caca8da175115e8ff8317402058846ed0db06a54d52e9",
+          "role": "Final analytical assets, hashes, field dictionaries, and local-candidate status."
+        },
+        {
+          "path": "datasets/lakeatlas/releases/lakeatlas-v1.0-r2/evidence/prepared-local/evidence/final-package-verification.json",
+          "sha256": "aa052d84822625bed5887555c5746bd7489c88e62304c28bbb819dcf706924e3",
+          "role": "Independent package integrity verification status (not independent scientific validation)."
+        },
+        {
+          "path": "datasets/lakeatlas/releases/lakeatlas-v1.0-r2/evidence/failures/polygons-first-attempt-5c031de.json",
+          "sha256": "7d879f8f77f70ddc0d2d353f6e992975961a24c266b028ef92ab9aa75b4decba",
+          "role": "Retained first spatial-order failure."
+        },
+        {
+          "path": "datasets/lakeatlas/releases/lakeatlas-v1.0-r2/evidence/failures/polygons-source-wkb-hashing-attempt-100eaad.json",
+          "sha256": "aa4e82142d62d6a1eaa0f43ba1751b11530dccd540fa8b76403a5b11fd067930",
+          "role": "Retained WKB-hashing RSS failure and partial artifact record."
+        },
+        {
+          "path": "datasets/lakeatlas/display/display-v1/manifest.json",
+          "sha256": "ed70989525111682a294b6aadf1118a1ebfaefff863d645c6c805c5e8eafb70f",
+          "role": "Display-only asset binding and maximum-zoom ID accounting."
+        }
+      ]
+    }
+  ],
+  "audit_commands": [
+    "Read-only inspection of criteria.json, dataset.yaml files, README/VALIDATION documents, converter/source code, release manifests, source-fidelity and clean-rebuild reports, display manifests, and retained failure reports.",
+    "Python JSON reads compared source pins, reported product layers, release statuses, and clean_checkout_independently_verified flags.",
+    "Python hashlib SHA-256 was run on the small tracked text/JSON evidence files listed in evidence_inventory; no bulk source archive or analytic asset was read for hashing."
+  ],
+  "audit_result": "HydroLAKES uses its authoritative full polygon layer but intentionally omits the separately published pour-point layer; this is disclosed and should remain in scope language. LakeATLAS uses the authoritative enriched v1 File Geodatabase and includes both expected polygon and point layers. Neither audit found a GRWL-like substitution of a simplified summary for the analytical vector source. Both datasets preserve conversion-fidelity evidence while explicitly lacking independent scientific validation; both clean-rebuild records explicitly set clean_checkout_independently_verified to false.",
+  "evidence_git_revision": "711e281ddd945dfdbbcb8fb9e1980d1faf21cf9f",
+  "evidence_method": "Evidence hashes refer to files at this Git revision; canonical records may be updated by this audit follow-up.",
+  "parent_review_of_rebuild_flag": {
+    "finding": "The normalizer writes clean_checkout_independently_verified=false unconditionally (bind_fidelity.py line351). Matching rebuilt asset hashes and saved clean-checkout observations are present. This flag is a conservative normalizer limitation, not evidence of a failed rebuild; it does not independently re-establish the saved checkout provenance.",
+    "path": "research/hydro-releases-20261031/bind_fidelity.py",
+    "sha256": "76a828925da815fe264cf3fa03dd929ddbe38cf14ccb444bad1863eb49920c13",
+    "source_line": 351
+  }
+}

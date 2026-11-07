@@ -1,0 +1,29 @@
+{
+  "independent_review": "download_scope_oracle; read-only full30row review with targeted primary-source checks",
+  "membership": {
+    "official_only": 22,
+    "community_only": 4,
+    "both": 4
+  },
+  "must_fix_resolved": [
+    "PRISM49M annual grid was mislabeled12monthly files; corrected to654M monthly total.",
+    "CHIRPS alternative raw array used365instead of366days for2024; corrected.",
+    "CMRMB aggregate was typedmeasured and displayed with excessiveprecision; corrected to publisher-stated.",
+    "SRTM selectedscope stillsaidone tile while sizecoveredfullcollection; corrected.",
+    "Hansen <50GBtreecover statement was stale; actualobjecttotal58.875GB. Fullimagerymanifest completeness failed224lastobjects; coremaps verified separately."
+  ],
+  "retained_unresolved": [
+    "ERA5-Land request-dependent transfer size",
+    "SoilGrids global six-depth mean-tile total",
+    "WHRC original standalone format and file size",
+    "MapBiomas C9 whole-country downloads unavailable via reviewedproducerroute",
+    "MERIT archive requires registration; originalredistributionpermission required"
+  ],
+  "automatic_review": "Direct ScienceBase file endpoint for an XML metadata document was rejected due to possible data-body download. No retry through that endpoint. Used already saved catalog-item metadata; ZIP innerformat remains unverified.",
+  "clean_rehearsal_failure": {
+    "commit": "f06d496",
+    "exit_code": 1,
+    "cause": "runpy supplied a relative __file__; the script manifest required an absolute path for relative_to(ROOT).",
+    "resolution": "Resolve the script path before making its repository-relative manifest key. Original failing commit and local rehearsal log are retained."
+  }
+}

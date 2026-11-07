@@ -1,0 +1,83 @@
+schema_version: 1
+id: overture_global_maps
+title: Overture Maps global releases
+intake:
+  kind: producer
+  reference_url: https://stac.overturemaps.org/
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'supplemental: Global map-data themes, with theme-specific feature coverage and monthly
+    release editions. Supplemental producer discovery; no citation count inferred. reuse: The current
+    candidate record retains producer documentation describing monthly global map releases in S3 and Azure
+    and GeoParquet plus PMTiles formats, linked through the producer STAC catalog. This is documented
+    access, not per-theme completeness, version parity, object access, or byte validation; feature coverage
+    is theme-specific. Prior observation dated 2026-10-31; no new remote access check. Global monthly
+    family access; exact product/theme and release must be pinned before matching any canonical record.'
+  sources:
+  - provider: producer
+    entry_id: Overture STAC catalog
+    url: https://stac.overturemaps.org/
+    relationship: exact_dataset
+  - provider: producer
+    entry_id: cloud sources documentation
+    url: https://docs.overturemaps.org/getting-data/cloud-sources/
+    relationship: same_family
+  - provider: producer
+    entry_id: global release STAC catalog
+    url: https://stac.overturemaps.org/
+    relationship: same_family
+  access:
+  - provider: producer
+    status: native_available
+    formats:
+    - GeoParquet
+    - PMTiles
+    summary: Producer documentation describes cloud-hosted monthly global releases in S3 and Azure and
+      links through its STAC catalog. Supplemental producer discovery; no citation count inferred.
+    license_summary: Check terms and attribution for each Overture theme/release before redistribution.
+    proposed_outputs: []
+    rationale: Review exact source, existing native hosts and redistribution terms before selecting a
+      conversion.
+    evidence_urls:
+    - https://docs.overturemaps.org/getting-data/cloud-sources/
+    - https://overturemaps.org/
+    - https://stac.overturemaps.org/
+  - provider: producer
+    status: native_available
+    formats:
+    - GeoParquet
+    - PMTiles
+    summary: The current candidate record retains producer documentation describing monthly global map
+      releases in S3 and Azure and GeoParquet plus PMTiles formats, linked through the producer STAC catalog.
+      This is documented access, not per-theme completeness, version parity, object access, or byte validation;
+      feature coverage is theme-specific. Prior observation dated 2026-10-31; no new remote access check.
+      Global monthly family access; exact product/theme and release must be pinned before matching any
+      canonical record.
+    observed_on: '2026-10-31'
+    license_summary: Review terms and attribution for each Overture theme and release; no universal license
+      clearance inferred.
+    proposed_outputs: []
+    rationale: Reuse documented producer cloud copies for matching themes/releases. Do not mirror or convert
+      without confirming exact release, theme scope, asset path and use case.
+    evidence_urls:
+    - https://docs.overturemaps.org/getting-data/cloud-sources/
+    - https://overturemaps.org/
+    - https://stac.overturemaps.org/
+  citations: []
+  evidence:
+  - path: research/global-candidates-20261031/citations/supplemental-global.json
+    sha256: 8eecd1b6859f60c355df02ed5f4f4bea5bcdfe69f156abafa95e9c622b975202
+    key: overture_global_maps
+  - path: research/global-candidates-20261031/reuse/reviewed.json
+    sha256: 936d932d9ec3305e1499934f4cdc530b00e5e518b08e647671356646dbd85de8
+    key: overture_global_native_cloud_access_docs

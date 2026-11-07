@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "status": "failed_metadata_draft_generation",
+  "command": [
+    "python",
+    "scripts/source_products.py",
+    "write"
+  ],
+  "exit_code": 1,
+  "error": "grwl-raw: grwl-raw: publication.display pin is invalid",
+  "display_release": "raw-v01.01-display-r1",
+  "display_manifest_sha256": "0c241cd3e955ca5431380f86cd1a6ffe274c91073e10c919b60c8e5e3d220524",
+  "cause": "Shared product/viewer version-slug validators allow hyphens but reject internal dots used by the finalized release version.",
+  "data_changed": false,
+  "publication_attempted": false,
+  "followup": "Permit single internal dot or hyphen separators between alphanumeric components across the three shared consumers; preserve path-safety and length guards; exercise product staging and viewer fixtures before retrying."
+}

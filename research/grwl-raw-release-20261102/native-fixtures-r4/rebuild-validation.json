@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "scope": "Six synthetic controls rebuilt in distinct output directories, one from clean checkout 46aa1f2. Both real native outputs passed source and display oracles. This proves native fixture byte reproducibility, not yet a full global rebuild.",
+  "runs": [
+    {
+      "run": "native-fixtures-r3",
+      "analytical_sha256": "1357b97a3442a56f6c638b15d1290cdd26b623f1f6d5f5976824f8737d3a602b",
+      "pmtiles_sha256": "7f4c138a8802d58d522a578c97a9c6835b18d2103ca5a2d5830365b4d893e621",
+      "source_validation_sha256": "1c67f0643393cfaf8c82d223c5931ec478885468b9570f9348f3eeb2bf038ee7",
+      "display_validation_sha256": "99ee952de07219fdac9b85fe1ec007944bb2b6e8cf2270d67e194c2b248bc12e"
+    },
+    {
+      "run": "native-fixtures-r4",
+      "analytical_sha256": "1357b97a3442a56f6c638b15d1290cdd26b623f1f6d5f5976824f8737d3a602b",
+      "pmtiles_sha256": "7f4c138a8802d58d522a578c97a9c6835b18d2103ca5a2d5830365b4d893e621",
+      "source_validation_sha256": "1c67f0643393cfaf8c82d223c5931ec478885468b9570f9348f3eeb2bf038ee7",
+      "display_validation_sha256": "99ee952de07219fdac9b85fe1ec007944bb2b6e8cf2270d67e194c2b248bc12e"
+    }
+  ],
+  "analytical_bytes_identical": true,
+  "pmtiles_bytes_identical": true,
+  "clean_checkout_revision": "46aa1f2e8853ac4e409b79f7b45abe958cbeaa1d",
+  "preserved_prior_runs": "r1/r2 had output paths in generator_options; r3/r4 use fixed relative paths. No geometry/attribute change inferred from prior byte differences."
+}

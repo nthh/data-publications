@@ -1,0 +1,210 @@
+{
+  "completed_at": "2026-10-31T18:52:16.337240+00:00",
+  "scope": "Expanded action shortlist from the previous top five and alternative reviews. It is not a fresh citation ranking, ten independent inventories, ten confirmed hosting gaps, or ten authorized builds.",
+  "recommendation": "Prepare HydroLAKES, then Free-Flowing Rivers, then LakeATLAS. Keep other candidates behind their stated qualification checks and reuse maintained existing publications.",
+  "ranked_candidates": [
+    {
+      "rank": 1,
+      "id": "hydrolakes",
+      "dataset": "HydroLAKES v1 polygons",
+      "action": "package_existing",
+      "decision": "Strong near-term candidate",
+      "outputs": [
+        "GeoParquet",
+        "PMTiles optional"
+      ],
+      "incremental_value": "Complete conversion already validated; package the reproducible public release and preserve its source identity.",
+      "next_check": "Port existing scripts/checks and confirm retained artifact hashes. Preserve the producer attribution and original-format redistribution request; the task concerns transformed GeoParquet, not republishing the original ZIP.",
+      "scoped_size": "945,383,282 bytes existing validated GeoParquet; source ZIP 820,295,132 bytes.",
+      "sources": [
+        "https://www.hydrosheds.org/products/hydrolakes",
+        "https://data.hydrosheds.org/file/technical-documentation/HydroLAKES_TechDoc_v10.pdf"
+      ]
+    },
+    {
+      "rank": 2,
+      "id": "free-flowing-rivers",
+      "dataset": "WWF Free-Flowing Rivers v1",
+      "action": "convert_candidate",
+      "decision": "Strong near-term candidate",
+      "outputs": [
+        "GeoParquet",
+        "PMTiles optional"
+      ],
+      "incremental_value": "Publishes connectivity/free-flowing assessment attributes that a generic newer river network does not replace.",
+      "next_check": "Check exact existing hosting, preserve reach IDs, geometry and all released attributes, and validate against the author release. This does not reproduce the research from licensed dam inputs.",
+      "scoped_size": "954,710,486 bytes FileGDB ZIP; current Figshare metadata reconfirmed CC-BY-4.0.",
+      "sources": [
+        "https://figshare.com/articles/dataset/Mapping_the_world_s_free-flowing_rivers_data_set_and_technical_documentation/7688801",
+        "https://api.figshare.com/v2/articles/7688801"
+      ]
+    },
+    {
+      "rank": 3,
+      "id": "lakeatlas",
+      "dataset": "LakeATLAS v1",
+      "action": "convert_candidate",
+      "decision": "Strong enrichment candidate",
+      "outputs": [
+        "GeoParquet",
+        "PMTiles optional"
+      ],
+      "incremental_value": "Adds environmental attributes to the HydroLAKES features and reuses the same geometry-validation approach.",
+      "next_check": "Pin exact archive; verify corresponding IDs/geometries and attribute definitions, units, nulls and provenance. Keep a separate product identity but count shared geometry work once.",
+      "scoped_size": "Producer-rounded 1.43 GB FileGDB ZIP or 1.5 GB Shapefile ZIP.",
+      "sources": [
+        "https://www.hydrosheds.org/hydroatlas"
+      ]
+    },
+    {
+      "rank": 4,
+      "id": "soilgrids",
+      "dataset": "SoilGrids v2: reuse means and scope quantiles",
+      "action": "qualify_gap",
+      "decision": "Promising, conditional",
+      "outputs": [
+        "Existing Icechunk/Zarr means",
+        "Native COG or Zarr quantiles if justified"
+      ],
+      "incremental_value": "Existing Source Cooperative store omits Q05/Q50/Q95 and relative uncertainty. One-property quantile publication could add scientific value.",
+      "next_check": "Test existing Icechunk access, then inventory a full global SOC quantile scope with all native depths; pin runs, grid, units and uncertainty definitions and check other hosts.",
+      "scoped_size": "Quantile scope not inventoried. Existing means size is not an estimate of this gap.",
+      "sources": [
+        "https://source.coop/chill/soilgrids",
+        "https://docs.isric.org/globaldata/soilgrids/SoilGrids_faqs_01.html"
+      ]
+    },
+    {
+      "rank": 5,
+      "id": "terraclimate-v11",
+      "dataset": "TerraClimate v1.1 base archive",
+      "action": "qualify_gap",
+      "decision": "Promising, conditional",
+      "outputs": [
+        "Zarr if current-version gap is confirmed"
+      ],
+      "incremental_value": "A complete v1.1 time series may fill a coverage/version gap; a TerraClimate Zarr publication already exists on Planetary Computer.",
+      "next_check": "Compare current source release and Planetary Computer store version/coverage. Its STAC declares 1958–2021; the scoped producer archive is 1950–2025. Start with one complete variable only if an unmet requirement remains. Measure point/time-series and regional reads; do not mix v1.0 and v1.1.",
+      "scoped_size": "Prior producer listing approximately 116–121 GB, 1,064 annual NetCDF files for all 14 variables; one-variable pilot size unmeasured.",
+      "sources": [
+        "https://www.climatologylab.org/terraclimate.html",
+        "https://planetarycomputer.microsoft.com/api/stac/v1/collections/terraclimate"
+      ]
+    },
+    {
+      "rank": 6,
+      "id": "swot-pld",
+      "dataset": "SWOT Prior Lake Database scientific release",
+      "action": "qualify_gap",
+      "decision": "Promising, conditional",
+      "outputs": [
+        "GeoParquet",
+        "PMTiles optional"
+      ],
+      "incremental_value": "A distinct smaller-lake inventory and SWOT identifiers can serve different needs from HydroLAKES.",
+      "next_check": "Confirm current downloadable release, size, schema, rights and exact existing hosting. Prior producer catalog identifies 2.02 Sci in SQLite; direct catalog retrieval timed out this turn. Do not transfer paper-era counts to current artifacts.",
+      "scoped_size": "Current release download bytes unknown.",
+      "sources": [
+        "https://hydroweb.next.theia-land.fr/catalog/details/SWOT_PRIOR_LAKE_DATABASE",
+        "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2023WR036896"
+      ]
+    },
+    {
+      "rank": 7,
+      "id": "jrc-occurrence-v15",
+      "dataset": "JRC GSW v1.5 Occurrence, 1984–2024",
+      "action": "qualify_gap",
+      "decision": "Useful product; conversion may be unnecessary",
+      "outputs": [
+        "Producer COGs if conforming, otherwise COG",
+        "STAC index"
+      ],
+      "incremental_value": "Long-term occurrence differs from current water maps and existing MonthlyHistory mirrors.",
+      "next_check": "Check actual source TIFF layout, range access and existing indexes before conversion. If original tiles satisfy the need, register them. Preserve v1.5 identity and the Landsat collection seam.",
+      "scoped_size": "14,453,956,859 bytes across 504 tiles in prior v1.5 metadata inventory.",
+      "sources": [
+        "https://global-surface-water.appspot.com/download"
+      ]
+    },
+    {
+      "rank": 8,
+      "id": "chirps-v3-rnl",
+      "dataset": "CHIRPS v3 daily RNL",
+      "action": "reuse",
+      "decision": "High-value registry work",
+      "outputs": [
+        "Existing COGs and STAC discovery"
+      ],
+      "incremental_value": "WFP already publishes the desired daily-v3 distribution; a duplicate mirror has little demonstrated added value.",
+      "next_check": "Resolve the saved unit/update-status metadata conflicts and qualify completeness, source identity and sample pixels. Keep the prior v2 pentad benchmark separate.",
+      "scoped_size": "No new mirror or new full-history byte inventory proposed.",
+      "sources": [
+        "https://source.coop/wfp/chirps-rnl-daily"
+      ]
+    },
+    {
+      "rank": 9,
+      "id": "openlandmap-soildb",
+      "dataset": "OpenLandMap-soildb new global release",
+      "action": "reuse",
+      "decision": "High-value registry qualification",
+      "outputs": [
+        "Existing producer COGs"
+      ],
+      "incremental_value": "New global soil predictions already have producer COG URLs. The useful work is source qualification and explicit scientific metadata.",
+      "next_check": "Check actual object accessibility, COG conformance and version pins. Keep 30 m means and 120 m uncertainty, depths and periods distinct; do not infer superior accuracy from grid size.",
+      "scoped_size": "Prior metadata index lists 1,082 asset URLs; full bytes unknown.",
+      "sources": [
+        "https://github.com/openlandmap/soildb",
+        "https://essd.copernicus.org/articles/18/989/2026/"
+      ]
+    },
+    {
+      "rank": 10,
+      "id": "hwsd-v201",
+      "dataset": "HWSD v2.01",
+      "action": "qualify_gap",
+      "decision": "Lower-priority conditional candidate",
+      "outputs": [
+        "COG mapping-unit raster",
+        "Parquet attribute tables"
+      ],
+      "incremental_value": "Could make the global soil mapping-unit database easier to join and query while preserving component semantics.",
+      "next_check": "Confirm a concrete need for HWSD attributes, exact files, rights and existing hosting before investing. Retain component proportions and one-to-many records; it is not an upgrade to SoilGrids pixel predictions.",
+      "scoped_size": "Current artifact bytes not inventoried.",
+      "sources": [
+        "https://www.fao.org/land-water/resources/tools/databases/hwsd/en"
+      ]
+    }
+  ],
+  "counts": {
+    "strong_publication_candidates": 3,
+    "conditional_candidates": 5,
+    "reuse_candidates": 2,
+    "total": 10
+  },
+  "overlap_note": "HydroLAKES and LakeATLAS remain distinct product identities but share underlying geometry. SoilGrids means and uncertainty are one candidate with separate access scopes, not two counted opportunities.",
+  "important_new_evidence": {
+    "terraclimate": "Current Planetary Computer STAC advertises a Zarr store, 1958–2021. The source version and actual array coverage were not inspected; metadata does not establish full v1.1 coverage. Corrects the earlier lack of an identified Zarr distribution.",
+    "hydrolakes": "Producer page/PDF state CC-BY-4.0. PDF asks users not to redistribute the entire original-format database without written permission. Preserve that specific request; it is not evidence of a blanket ban on transformed outputs."
+  },
+  "deferred": [
+    {
+      "dataset": "Hugonnet glacier change",
+      "reason": "Exact data redistribution terms unresolved in the existing review; hold public release until qualified."
+    },
+    {
+      "dataset": "GlaMBIE",
+      "reason": "Small existing CSV release; Parquet conversion alone has limited incremental access value absent a specific query/join need."
+    },
+    {
+      "dataset": "iSDAsoil",
+      "reason": "Useful existing COG/STAC product for Africa; retain as regional reuse candidate while prioritizing global datasets."
+    },
+    {
+      "dataset": "WaterNet",
+      "reason": "Useful additional registry reference already on Source Cooperative; no new conversion justified. It does not replace FFR assessment attributes."
+    }
+  ],
+  "source_limits": "Targeted hosting searches do not prove absence. No numerical accuracy/performance tests, new dataset conversions, data-body downloads, GEE/cloud jobs, registry submissions or uploads ran."
+}

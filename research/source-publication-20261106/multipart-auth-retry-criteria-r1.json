@@ -1,0 +1,67 @@
+{
+  "application_state": "code awaiting root review and live r4 run",
+  "frozen_retry_contract": {
+    "conditional_complete": "IfNoneMatch=* unchanged",
+    "eligible_local_error": "CredentialTooNearExpiry raised when official helper expiration has under 60 seconds remaining",
+    "eligible_remote_error": "botocore ClientError with operation_name UploadPart and Error.Code ExpiredToken",
+    "full_fresh_local_sha_and_remote_readback": "unchanged",
+    "journal_fields": [
+      "operation",
+      "timestamp_utc",
+      "attempt",
+      "reason"
+    ],
+    "max_attempts_per_part": 3,
+    "max_cumulative_auth_wait_seconds": 90,
+    "max_retries_per_part": 2,
+    "max_sleep_step_seconds": 5,
+    "no_auto_abort": true,
+    "no_new_upload_id": true,
+    "no_retry_for": [
+      "NoSuchUpload",
+      "AccessDenied",
+      "InvalidToken",
+      "other remote codes",
+      "transport/data errors",
+      "other operations"
+    ],
+    "on_local_near_expiry": "wait until cached expiration if within cumulative budget, then obtain a new client and replay the same bytes",
+    "on_remote_expired_token": "wait until cached helper expiration if within cumulative budget, then obtain a new client and replay the same bytes",
+    "part_journal": "append ETag and transferred bytes only after successful UploadPart",
+    "scope": "only _resume_existing_multipart UploadPart against the same plan-bound original upload ID",
+    "target_absent_head_guard": "unchanged"
+  },
+  "offline_verification": "54 focused tests passed in tests/test_source_upload.py; no live upload from this implementation task",
+  "prepared_at_utc": "2026-11-07T03:45:26.930545+00:00",
+  "purpose": "Bounded authentication-only retry of the exact same UploadPart inside existing-ID GRWL multipart replay",
+  "safe_helper_observation": {
+    "credential_values": "omitted",
+    "new_expiration_utc": "2026-11-07T04:37:35Z",
+    "probe_at_utc": "2026-11-07T03:37:35Z",
+    "probe_result": "official Source CLI 0.3 credential-process succeeded automatically",
+    "ttl_seconds": 3600
+  },
+  "schema_version": 1,
+  "source_failure": {
+    "bytes_transferred": 402653184,
+    "completed_prior_objects": 299,
+    "error_code": "ExpiredToken",
+    "error_http_status": 403,
+    "error_operation": "UploadPart",
+    "failed_record_sha256": "4a71b5bc7cd7ed39bf179d21e3cf5b8401e1d51ecee8a80266a5f62e2db12e9f",
+    "multipart_state": "open",
+    "part_numbers_recorded": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "receipt_dir": ".local/source-upload-grwl-raw-r3",
+    "status": "failed",
+    "summary_sha256": "547390fd98a544edb2156a5a7b17ed333280b6f44e144418c2b5bc27427f704c",
+    "upload_id_matches_original_r1": true,
+    "upload_id_value": "omitted"
+  }
+}

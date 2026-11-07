@@ -1,0 +1,25 @@
+{
+  "reviewed_revision": "100eaadad0e42a6f12d61c08de7d061eb5bac499",
+  "review_mode": "Independent read-only source review and small Arrow/numpy floating equality probes; no bulk work or edits by reviewer.",
+  "findings": [
+    {
+      "boundary": "memory",
+      "finding": "Attribute comparison materializes an entire source column, output column and restored copy; batch size does not bound this phase. Hash arrays scale with row count.",
+      "disposition": "Documented scope and scaling. The selected full datasets must pass measured peak-RSS checks; no general constant-memory claim, no cap increase or waiver. A failure or OOM cannot yield passing fidelity evidence."
+    },
+    {
+      "boundary": "floating values",
+      "finding": "Arrow and numpy value equality equate +0 and -0; unchanged NaNs can be rejected.",
+      "disposition": "Documented numeric-value semantics. Acceptance requires decoded attribute values/types/nulls, not bitwise floating-buffer identity. WKB has independent full per-feature SHA-256, length and null comparisons. Signed-zero bits are not certified."
+    }
+  ],
+  "otherwise_checked": [
+    "complete one-based native ID range and multiplicity",
+    "original field types and metadata",
+    "attribute values/nulls after restoring ID order",
+    "per-ID WKB hashes/lengths/nulls",
+    "derived bbox values and nulls",
+    "geometry types and global extent"
+  ],
+  "required_followup": "Complete full first/clean transforms under the unchanged 1GB peak gate and exact file-hash reproducibility before promotion."
+}

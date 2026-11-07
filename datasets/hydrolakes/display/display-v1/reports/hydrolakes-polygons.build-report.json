@@ -1,0 +1,118 @@
+{
+  "dataset_key": "hydrolakes",
+  "source_path": "hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+  "source_sha256": "6f588d97c14651eb23bea2d74fdf2a85f218a00ff11519c81efa5512b916b7f8",
+  "source_rows": 1427688,
+  "unique_source_ids": 1427688,
+  "id_field": "Hylak_id",
+  "id_encoding": "mvt_feature_id",
+  "attribute_fields": [
+    "Lake_area",
+    "Lake_name",
+    "Country",
+    "Continent",
+    "_src_xmin",
+    "_src_ymin",
+    "_src_xmax",
+    "_src_ymax"
+  ],
+  "geometry_type": "polygon",
+  "layer": "hydrolakes-polygons",
+  "min_zoom": 0,
+  "max_zoom": 12,
+  "minzoom_policy": "criteria.json piecewise threshold schedule; explicit per-feature tippecanoe.minzoom; unknown metric at z12",
+  "minzoom_metric": {
+    "field": "Lake_area",
+    "units": "km2",
+    "thresholds": [
+      [
+        10000,
+        0
+      ],
+      [
+        1000,
+        2
+      ],
+      [
+        100,
+        4
+      ],
+      [
+        10,
+        6
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        0.1,
+        10
+      ],
+      [
+        0,
+        12
+      ]
+    ],
+    "unknown_metric_minzoom": 12
+  },
+  "maxzoom_tiles": 747127,
+  "maxzoom_ids_decoded": 1427688,
+  "maxzoom_ids_accounted": 1427688,
+  "maxzoom_ids_attribute_checked": 1427688,
+  "maxzoom_missing_id_count": 0,
+  "maxzoom_missing_ids_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "maxzoom_missing_ids_path": "hydrolakes-polygons.maxzoom-missing-ids.txt",
+  "maxzoom_missing_classification_path": "hydrolakes-polygons.maxzoom-missing-classification.jsonl",
+  "maxzoom_missing_classification_counts": {},
+  "coverage_classification": "empty, zero-dimension, quantization-collapse, and unexpected-loss IDs are enumerated by source ID; only explicitly classified collapses are acceptable exceptions",
+  "empty_geometry_rows": 0,
+  "input_mbtiles_removed_after_conversion": true,
+  "minzoom_feature_counts": {
+    "0": 18,
+    "2": 160,
+    "4": 1530,
+    "6": 14981,
+    "8": 168492,
+    "10": 1242507
+  },
+  "source_geometry_handling": "read WKB from pinned GeoParquet in row order, convert directly to GeoJSON geometry without coordinate rewriting; Tippecanoe projects to Web Mercator and quantizes/simplifies for display only",
+  "source_bounds": [
+    -179.9999999999999,
+    -55.86513888888899,
+    179.99999999999903,
+    83.57595062255876
+  ],
+  "pmtiles_bounds": [
+    -180.0,
+    -55.865139,
+    180.0,
+    83.575951
+  ],
+  "attribution": "HydroLAKES v1.0, Lehner and Messager / HydroSHEDS; CC BY 4.0",
+  "python_packages": {
+    "pyarrow": "23.0.1",
+    "shapely": "2.1.2",
+    "numpy": "2.5.4",
+    "pmtiles": "3.8.1"
+  },
+  "source_row_bbox_fields": [
+    "_src_xmin",
+    "_src_ymin",
+    "_src_xmax",
+    "_src_ymax"
+  ],
+  "resource_usage_at_start": {
+    "free_bytes": 53221056512,
+    "task_output_and_scratch_bytes": 1122948447
+  },
+  "pmtiles_path": "assets/hydrolakes-polygons.pmtiles",
+  "pmtiles_sha256": "2fc61a8257322bed3c71f86e3be92ed4835023bbb23f80bc9b2bb5167cb19d46",
+  "pmtiles_size_bytes": 1122881121,
+  "tippecanoe_sha256": "c504719334e5335d60c66a01491707bdbfb773ebbfe3efc7c1c8239eb18d58d1",
+  "tippecanoe_version": "2.79.0",
+  "threads": 2,
+  "tile_archive_reused": true,
+  "tile_archive_reused_from": "hydrolakes-polygons.pmtiles",
+  "attribution_embedded": false
+}

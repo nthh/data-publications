@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "kind": "query_hint_reproduction",
+  "status": "byte_identical",
+  "source_script": {
+    "path": "scripts/source_publish/prepare_query_hints.py",
+    "sha256": "65084e910b3285019573ced8b3173ded6d222b4308161109fbabd7329fa3bba7"
+  },
+  "output": {
+    "path": "research/source-publication-20261106/query-spatial-hints-r1.json",
+    "sha256": "1800adfffc1bd7ecd2fbcafc752ceba9f882146a8098a7eaf7e873cc45f486d6",
+    "size_bytes": 282027
+  },
+  "scope": "Six pinned local Parquet files rehashed and read; no remote requests or data modification. The frozen IDs, covering boxes and row-group byte estimates reproduced exactly.",
+  "verification": [
+    "7 focused exporter tests passed.",
+    "Full local regeneration compared byte for byte with the committed supplement."
+  ],
+  "environment_lock": {
+    "path": "scripts/source_publish/uv.lock",
+    "sha256": "123042892fe9a9d53d4af65961e2ce509cb491530aa3c466bb2f830792dee415"
+  }
+}

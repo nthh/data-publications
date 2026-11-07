@@ -1,0 +1,973 @@
+{
+  "schema_version": 1,
+  "status": "failed",
+  "started_at": "2026-11-04T00:35:58.115Z",
+  "scope": "Local installed-Chrome acceptance of GRWL overview coverage and zoom-8 detail rendering; local HTTP range/CORS only.",
+  "runtime": {
+    "viewer_build_sha256": "e0a750543b95263daeb314198d4c85880ccff87a864dfc482dbc85e0771a51b6",
+    "url": "http://127.0.0.1:8916",
+    "dataset_id": "grwl-raw",
+    "layer_id": "grwl-raw-display",
+    "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+    "sha256": "79389270fef94a8a6359f0b7a98b3505a82ee090a7827bd13280bf1f1c178830",
+    "size_bytes": 3005034172,
+    "overview_source_layer": "grwl_overview",
+    "detail_min_zoom": 8
+  },
+  "source_anchor": {
+    "path": "research/grwl-raw-release-20261102/global-source-validation-r1.json",
+    "sha256": "eb225411b335fcd5c968bb70337738fcb8bcc2ed31d8f48c4e02e7948da2fd0a",
+    "parquet_sha256": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+    "tile": "NR01",
+    "source_row": 1,
+    "feature_id": 152475633975297,
+    "bbox": [
+      -180,
+      71.19728974037749,
+      -179.99929548238572,
+      71.1973010125156
+    ],
+    "center": [
+      -179.99964774119286,
+      71.19729537644653
+    ]
+  },
+  "transfer_policy": {
+    "bytes_per_case": 33554432,
+    "enforced": true,
+    "requested_range_bytes": true,
+    "response_body_bytes": true
+  },
+  "cases": [
+    {
+      "case_id": "global-z0",
+      "kind": "overview",
+      "center": [
+        0,
+        20
+      ],
+      "zoom": 0,
+      "status": "failed",
+      "checkpoints": [],
+      "error": "page.waitForFunction: Timeout 60000ms exceeded.",
+      "requests": [
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=0-16383",
+          "status": 206,
+          "content_range": "bytes 0-16383/3005034172",
+          "cors": "*",
+          "body_bytes": 16384,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=1847-10965",
+          "status": 206,
+          "content_range": "bytes 1847-10965/3005034172",
+          "cors": "*",
+          "body_bytes": 9119,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=1461821-1500361",
+          "status": 206,
+          "content_range": "bytes 1461821-1500361/3005034172",
+          "cors": "*",
+          "body_bytes": 38541,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=1433300-1451611",
+          "status": 206,
+          "content_range": "bytes 1433300-1451611/3005034172",
+          "cors": "*",
+          "body_bytes": 18312,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=1456745-1461820",
+          "status": 206,
+          "content_range": "bytes 1456745-1461820/3005034172",
+          "cors": "*",
+          "body_bytes": 5076,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=1451612-1456744",
+          "status": 206,
+          "content_range": "bytes 1451612-1456744/3005034172",
+          "cors": "*",
+          "body_bytes": 5133,
+          "completed": true
+        }
+      ],
+      "requested_range_bytes": 92565,
+      "response_body_bytes": 92565,
+      "external_requests": []
+    },
+    {
+      "case_id": "amazon-z3",
+      "kind": "overview",
+      "center": [
+        -60,
+        -3
+      ],
+      "zoom": 3,
+      "status": "passed",
+      "checkpoints": [
+        {
+          "view": "overview",
+          "center": [
+            -60,
+            -3
+          ],
+          "zoom": 3,
+          "rendered_layers": [
+            "grwl_overview"
+          ],
+          "width_legend_hidden": true,
+          "map_status": "20,785 visible tile features · observation coverage; zoom for widths",
+          "screenshot": "amazon-z3.png"
+        }
+      ],
+      "requests": [
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=0-16383",
+          "status": 206,
+          "content_range": "bytes 0-16383/3005034172",
+          "cors": "*",
+          "body_bytes": 16384,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=1847-10965",
+          "status": 206,
+          "content_range": "bytes 1847-10965/3005034172",
+          "cors": "*",
+          "body_bytes": 9119,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=1461821-1500361",
+          "status": 206,
+          "content_range": "bytes 1461821-1500361/3005034172",
+          "cors": "*",
+          "body_bytes": 38541,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=1433300-1451611",
+          "status": 206,
+          "content_range": "bytes 1433300-1451611/3005034172",
+          "cors": "*",
+          "body_bytes": 18312,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=1456745-1461820",
+          "status": 206,
+          "content_range": "bytes 1456745-1461820/3005034172",
+          "cors": "*",
+          "body_bytes": 5076,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=1451612-1456744",
+          "status": 206,
+          "content_range": "bytes 1451612-1456744/3005034172",
+          "cors": "*",
+          "body_bytes": 5133,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=1718933-1723715",
+          "status": 206,
+          "content_range": "bytes 1718933-1723715/3005034172",
+          "cors": "*",
+          "body_bytes": 4783,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=1723716-1739925",
+          "status": 206,
+          "content_range": "bytes 1723716-1739925/3005034172",
+          "cors": "*",
+          "body_bytes": 16210,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=1785148-1816955",
+          "status": 206,
+          "content_range": "bytes 1785148-1816955/3005034172",
+          "cors": "*",
+          "body_bytes": 31808,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=1816956-1819784",
+          "status": 206,
+          "content_range": "bytes 1816956-1819784/3005034172",
+          "cors": "*",
+          "body_bytes": 2829,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=1739926-1748628",
+          "status": 206,
+          "content_range": "bytes 1739926-1748628/3005034172",
+          "cors": "*",
+          "body_bytes": 8703,
+          "completed": true
+        }
+      ],
+      "requested_range_bytes": 156898,
+      "response_body_bytes": 156898,
+      "transfer_ceiling_bytes": 33554432
+    },
+    {
+      "case_id": "known-raw-15450-z7",
+      "kind": "overview",
+      "center": [
+        -108,
+        44.8
+      ],
+      "zoom": 7,
+      "status": "passed",
+      "checkpoints": [
+        {
+          "view": "overview",
+          "center": [
+            -108,
+            44.8
+          ],
+          "zoom": 7,
+          "rendered_layers": [
+            "grwl_overview"
+          ],
+          "width_legend_hidden": true,
+          "map_status": "3,032 visible tile features · observation coverage; zoom for widths",
+          "screenshot": "known-raw-15450-z7.png"
+        }
+      ],
+      "requests": [
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=0-16383",
+          "status": 206,
+          "content_range": "bytes 0-16383/3005034172",
+          "cors": "*",
+          "body_bytes": 16384,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=1847-10965",
+          "status": 206,
+          "content_range": "bytes 1847-10965/3005034172",
+          "cors": "*",
+          "body_bytes": 9119,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=1461821-1500361",
+          "status": 206,
+          "content_range": "bytes 1461821-1500361/3005034172",
+          "cors": "*",
+          "body_bytes": 38541,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=1433300-1451611",
+          "status": 206,
+          "content_range": "bytes 1433300-1451611/3005034172",
+          "cors": "*",
+          "body_bytes": 18312,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=1456745-1461820",
+          "status": 206,
+          "content_range": "bytes 1456745-1461820/3005034172",
+          "cors": "*",
+          "body_bytes": 5076,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=1451612-1456744",
+          "status": 206,
+          "content_range": "bytes 1451612-1456744/3005034172",
+          "cors": "*",
+          "body_bytes": 5133,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=11572469-11575030",
+          "status": 206,
+          "content_range": "bytes 11572469-11575030/3005034172",
+          "cors": "*",
+          "body_bytes": 2562,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=11575031-11577914",
+          "status": 206,
+          "content_range": "bytes 11575031-11577914/3005034172",
+          "cors": "*",
+          "body_bytes": 2884,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=11560700-11562164",
+          "status": 206,
+          "content_range": "bytes 11560700-11562164/3005034172",
+          "cors": "*",
+          "body_bytes": 1465,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=11567857-11572468",
+          "status": 206,
+          "content_range": "bytes 11567857-11572468/3005034172",
+          "cors": "*",
+          "body_bytes": 4612,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=11592320-11595084",
+          "status": 206,
+          "content_range": "bytes 11592320-11595084/3005034172",
+          "cors": "*",
+          "body_bytes": 2765,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=11577915-11581201",
+          "status": 206,
+          "content_range": "bytes 11577915-11581201/3005034172",
+          "cors": "*",
+          "body_bytes": 3287,
+          "completed": true
+        }
+      ],
+      "requested_range_bytes": 110140,
+      "response_body_bytes": 110140,
+      "transfer_ceiling_bytes": 33554432
+    },
+    {
+      "case_id": "overview-to-detail",
+      "kind": "transition",
+      "center": [
+        -108,
+        44.8
+      ],
+      "zoom": 7,
+      "status": "passed",
+      "checkpoints": [
+        {
+          "view": "overview",
+          "center": [
+            -108,
+            44.8
+          ],
+          "zoom": 7,
+          "rendered_layers": [
+            "grwl_overview"
+          ],
+          "width_legend_hidden": true,
+          "map_status": "20,785 visible tile features · observation coverage; zoom for widths",
+          "screenshot": "overview-to-detail-z7.png"
+        },
+        {
+          "view": "detail",
+          "center": [
+            -108,
+            44.8
+          ],
+          "zoom": 8,
+          "rendered_layers": [
+            "grwl_raw"
+          ],
+          "width_legend_hidden": false,
+          "width_expression": [
+            "interpolate",
+            [
+              "linear"
+            ],
+            [
+              "zoom"
+            ],
+            0,
+            [
+              "*",
+              [
+                "case",
+                [
+                  "all",
+                  [
+                    ">",
+                    [
+                      "to-number",
+                      [
+                        "get",
+                        "width_m"
+                      ],
+                      0
+                    ],
+                    0
+                  ],
+                  [
+                    "!=",
+                    [
+                      "to-number",
+                      [
+                        "get",
+                        "width_m"
+                      ],
+                      0
+                    ],
+                    1
+                  ]
+                ],
+                [
+                  "interpolate",
+                  [
+                    "linear"
+                  ],
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  1,
+                  1.1,
+                  50,
+                  1.6,
+                  200,
+                  2.7,
+                  1000,
+                  6.2
+                ],
+                0.9
+              ],
+              0.65
+            ],
+            8,
+            [
+              "case",
+              [
+                "all",
+                [
+                  ">",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  0
+                ],
+                [
+                  "!=",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  1
+                ]
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "width_m"
+                  ],
+                  0
+                ],
+                1,
+                1.1,
+                50,
+                1.6,
+                200,
+                2.7,
+                1000,
+                6.2
+              ],
+              0.9
+            ],
+            12,
+            [
+              "*",
+              [
+                "case",
+                [
+                  "all",
+                  [
+                    ">",
+                    [
+                      "to-number",
+                      [
+                        "get",
+                        "width_m"
+                      ],
+                      0
+                    ],
+                    0
+                  ],
+                  [
+                    "!=",
+                    [
+                      "to-number",
+                      [
+                        "get",
+                        "width_m"
+                      ],
+                      0
+                    ],
+                    1
+                  ]
+                ],
+                [
+                  "interpolate",
+                  [
+                    "linear"
+                  ],
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  1,
+                  1.1,
+                  50,
+                  1.6,
+                  200,
+                  2.7,
+                  1000,
+                  6.2
+                ],
+                0.9
+              ],
+              1.4
+            ]
+          ],
+          "screenshot": "overview-to-detail-z8.png"
+        }
+      ],
+      "requests": [
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=0-16383",
+          "status": 206,
+          "content_range": "bytes 0-16383/3005034172",
+          "cors": "*",
+          "body_bytes": 16384,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=1847-10965",
+          "status": 206,
+          "content_range": "bytes 1847-10965/3005034172",
+          "cors": "*",
+          "body_bytes": 9119,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=1461821-1500361",
+          "status": 206,
+          "content_range": "bytes 1461821-1500361/3005034172",
+          "cors": "*",
+          "body_bytes": 38541,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=1433300-1451611",
+          "status": 206,
+          "content_range": "bytes 1433300-1451611/3005034172",
+          "cors": "*",
+          "body_bytes": 18312,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=1451612-1456744",
+          "status": 206,
+          "content_range": "bytes 1451612-1456744/3005034172",
+          "cors": "*",
+          "body_bytes": 5133,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=1456745-1461820",
+          "status": 206,
+          "content_range": "bytes 1456745-1461820/3005034172",
+          "cors": "*",
+          "body_bytes": 5076,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=11572469-11575030",
+          "status": 206,
+          "content_range": "bytes 11572469-11575030/3005034172",
+          "cors": "*",
+          "body_bytes": 2562,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=11575031-11577914",
+          "status": 206,
+          "content_range": "bytes 11575031-11577914/3005034172",
+          "cors": "*",
+          "body_bytes": 2884,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=11577915-11581201",
+          "status": 206,
+          "content_range": "bytes 11577915-11581201/3005034172",
+          "cors": "*",
+          "body_bytes": 3287,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=11567857-11572468",
+          "status": 206,
+          "content_range": "bytes 11567857-11572468/3005034172",
+          "cors": "*",
+          "body_bytes": 4612,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=11560700-11562164",
+          "status": 206,
+          "content_range": "bytes 11560700-11562164/3005034172",
+          "cors": "*",
+          "body_bytes": 1465,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=11592320-11595084",
+          "status": 206,
+          "content_range": "bytes 11592320-11595084/3005034172",
+          "cors": "*",
+          "body_bytes": 2765,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=10966-22267",
+          "status": 206,
+          "content_range": "bytes 10966-22267/3005034172",
+          "cors": "*",
+          "body_bytes": 11302,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=104782732-104823891",
+          "status": 206,
+          "content_range": "bytes 104782732-104823891/3005034172",
+          "cors": "*",
+          "body_bytes": 41160,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=104744287-104782731",
+          "status": 206,
+          "content_range": "bytes 104744287-104782731/3005034172",
+          "cors": "*",
+          "body_bytes": 38445,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=104696479-104709450",
+          "status": 206,
+          "content_range": "bytes 104696479-104709450/3005034172",
+          "cors": "*",
+          "body_bytes": 12972,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=104913780-104985269",
+          "status": 206,
+          "content_range": "bytes 104913780-104985269/3005034172",
+          "cors": "*",
+          "body_bytes": 71490,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=104047045-104089747",
+          "status": 206,
+          "content_range": "bytes 104047045-104089747/3005034172",
+          "cors": "*",
+          "body_bytes": 42703,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=104823892-104883055",
+          "status": 206,
+          "content_range": "bytes 104823892-104883055/3005034172",
+          "cors": "*",
+          "body_bytes": 59164,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=104709451-104744286",
+          "status": 206,
+          "content_range": "bytes 104709451-104744286/3005034172",
+          "cors": "*",
+          "body_bytes": 34836,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=104089748-104118840",
+          "status": 206,
+          "content_range": "bytes 104089748-104118840/3005034172",
+          "cors": "*",
+          "body_bytes": 29093,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=105835194-105853677",
+          "status": 206,
+          "content_range": "bytes 105835194-105853677/3005034172",
+          "cors": "*",
+          "body_bytes": 18484,
+          "completed": true
+        }
+      ],
+      "requested_range_bytes": 469789,
+      "response_body_bytes": 469789,
+      "transfer_ceiling_bytes": 33554432
+    },
+    {
+      "case_id": "nr01-first-record-z7",
+      "kind": "overview",
+      "center": [
+        -179.99964774119286,
+        71.19729537644653
+      ],
+      "zoom": 7,
+      "status": "passed",
+      "checkpoints": [
+        {
+          "view": "overview",
+          "center": [
+            -179.99964774119286,
+            71.19729537644653
+          ],
+          "zoom": 7,
+          "rendered_layers": [
+            "grwl_overview"
+          ],
+          "width_legend_hidden": true,
+          "map_status": "20,785 visible tile features · observation coverage; zoom for widths",
+          "screenshot": "nr01-first-record-z7.png"
+        }
+      ],
+      "source_tile": "NR01",
+      "source_row": 1,
+      "feature_id": 152475633975297,
+      "requests": [
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=0-16383",
+          "status": 206,
+          "content_range": "bytes 0-16383/3005034172",
+          "cors": "*",
+          "body_bytes": 16384,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=1847-10965",
+          "status": 206,
+          "content_range": "bytes 1847-10965/3005034172",
+          "cors": "*",
+          "body_bytes": 9119,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=1461821-1500361",
+          "status": 206,
+          "content_range": "bytes 1461821-1500361/3005034172",
+          "cors": "*",
+          "body_bytes": 38541,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=1433300-1451611",
+          "status": 206,
+          "content_range": "bytes 1433300-1451611/3005034172",
+          "cors": "*",
+          "body_bytes": 18312,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=1456745-1461820",
+          "status": 206,
+          "content_range": "bytes 1456745-1461820/3005034172",
+          "cors": "*",
+          "body_bytes": 5076,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=1451612-1456744",
+          "status": 206,
+          "content_range": "bytes 1451612-1456744/3005034172",
+          "cors": "*",
+          "body_bytes": 5133,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=9863382-9866322",
+          "status": 206,
+          "content_range": "bytes 9863382-9866322/3005034172",
+          "cors": "*",
+          "body_bytes": 2941,
+          "completed": true
+        },
+        {
+          "object_path": "/nthh/grwl-raw/local-preview/global-combined-r1/grwl-multiscale.pmtiles",
+          "method": "GET",
+          "range": "bytes=9863153-9863381",
+          "status": 206,
+          "content_range": "bytes 9863153-9863381/3005034172",
+          "cors": "*",
+          "body_bytes": 229,
+          "completed": true
+        }
+      ],
+      "requested_range_bytes": 95735,
+      "response_body_bytes": 95735,
+      "transfer_ceiling_bytes": 33554432
+    }
+  ],
+  "errors": [
+    "global-z0: page.waitForFunction: Timeout 60000ms exceeded."
+  ],
+  "finished_at": "2026-11-04T00:37:51.829Z"
+}

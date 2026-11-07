@@ -1,0 +1,563 @@
+{
+  "schema_version": 1,
+  "started_at": "2026-11-02T19:32:01.402Z",
+  "status": "passed",
+  "scope": "Installed Chrome, fresh browser context for every layer, direct cross-origin object reads; local hosting only.",
+  "transfer_ceiling_bytes": 134217728,
+  "cases": [
+    {
+      "dataset_id": "hydrolakes",
+      "layer_id": "hydrolakes-1",
+      "format": "pmtiles",
+      "source_sha256": "2fc61a8257322bed3c71f86e3be92ed4835023bbb23f80bc9b2bb5167cb19d46",
+      "source_size_bytes": 1122881121,
+      "region": "global",
+      "status": "passed",
+      "viewer": {
+        "dataset": "hydrolakes",
+        "layer": "hydrolakes-1",
+        "phase": "ready",
+        "error": null,
+        "feature_count": 38,
+        "capped": false,
+        "query": null,
+        "bbox": null,
+        "bytes": 32641,
+        "ranges": 5,
+        "requests": 5,
+        "generation": 1,
+        "selected": null,
+        "traffic": [
+          [
+            "http://127.0.0.1:8915/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles",
+            {
+              "bytes": 32641,
+              "ranges": 5,
+              "requests": 5
+            }
+          ]
+        ]
+      },
+      "inspected_property_count": 5,
+      "initial_view_body_bytes": 32641,
+      "all_attributes_note": "All source attributes for this ID.",
+      "all_attribute_count": 21,
+      "expected_source_attribute_count": 21,
+      "ui_bytes_after_inspection": 2699172,
+      "requests": [
+        {
+          "url": "http://127.0.0.1:8915/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/1122881121",
+          "content_length": 16384,
+          "cors": "*",
+          "object_size_bytes": 1122881121,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=7332-16519",
+          "content_range": "bytes 7332-16519/1122881121",
+          "content_length": 9188,
+          "cors": "*",
+          "object_size_bytes": 1122881121,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=2255187-2257937",
+          "content_range": "bytes 2255187-2257937/1122881121",
+          "content_length": 2751,
+          "cors": "*",
+          "object_size_bytes": 1122881121,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=2254254-2255186",
+          "content_range": "bytes 2254254-2255186/1122881121",
+          "content_length": 933,
+          "cors": "*",
+          "object_size_bytes": 1122881121,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=2250869-2254253",
+          "content_range": "bytes 2250869-2254253/1122881121",
+          "content_length": 3385,
+          "cors": "*",
+          "object_size_bytes": 1122881121,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "HEAD",
+          "status": 200,
+          "range": null,
+          "content_range": null,
+          "content_length": 949598607,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "HEAD",
+          "status": 206,
+          "range": "bytes=0-",
+          "content_range": "bytes 0-949598606/949598607",
+          "content_length": 949598607,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=949598599-949598606",
+          "content_range": "bytes 949598599-949598606/949598607",
+          "content_length": 8,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=949197963-949598598",
+          "content_range": "bytes 949197963-949598598/949598607",
+          "content_length": 400636,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "HEAD",
+          "status": 206,
+          "range": "bytes=0-",
+          "content_range": "bytes 0-949598606/949598607",
+          "content_length": 949598607,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=804302398-804302653",
+          "content_range": "bytes 804302398-804302653/949598607",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=804302418-804334794",
+          "content_range": "bytes 804302418-804334794/949598607",
+          "content_length": 32377,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=804334795-804464302",
+          "content_range": "bytes 804334795-804464302/949598607",
+          "content_length": 129508,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=811781647-811781902",
+          "content_range": "bytes 811781647-811781902/949598607",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=811781667-811857164",
+          "content_range": "bytes 811781667-811857164/949598607",
+          "content_length": 75498,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=811857165-812159156",
+          "content_range": "bytes 811857165-812159156/949598607",
+          "content_length": 301992,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=804464303-804982334",
+          "content_range": "bytes 804464303-804982334/949598607",
+          "content_length": 518032,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=812159157-813367124",
+          "content_range": "bytes 812159157-813367124/949598607",
+          "content_length": 1207968,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        }
+      ],
+      "response_body_bytes": 2699172,
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "dataset_id": "hydrolakes",
+      "layer_id": "hydrolakes-1",
+      "format": "pmtiles",
+      "source_sha256": "2fc61a8257322bed3c71f86e3be92ed4835023bbb23f80bc9b2bb5167cb19d46",
+      "source_size_bytes": 1122881121,
+      "region": "north_america",
+      "status": "passed",
+      "viewer": {
+        "dataset": "hydrolakes",
+        "layer": "hydrolakes-1",
+        "phase": "ready",
+        "error": null,
+        "feature_count": 481,
+        "capped": false,
+        "query": null,
+        "bbox": null,
+        "bytes": 330940,
+        "ranges": 6,
+        "requests": 6,
+        "generation": 1,
+        "selected": null,
+        "traffic": [
+          [
+            "http://127.0.0.1:8915/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles",
+            {
+              "bytes": 330940,
+              "ranges": 6,
+              "requests": 6
+            }
+          ]
+        ]
+      },
+      "inspected_property_count": 4,
+      "initial_view_body_bytes": 330940,
+      "all_attributes_note": "All source attributes for this ID.",
+      "all_attribute_count": 21,
+      "expected_source_attribute_count": 21,
+      "ui_bytes_after_inspection": 2127405,
+      "requests": [
+        {
+          "url": "http://127.0.0.1:8915/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/1122881121",
+          "content_length": 16384,
+          "cors": "*",
+          "object_size_bytes": 1122881121,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=7332-16519",
+          "content_range": "bytes 7332-16519/1122881121",
+          "content_length": 9188,
+          "cors": "*",
+          "object_size_bytes": 1122881121,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=5879621-5904379",
+          "content_range": "bytes 5879621-5904379/1122881121",
+          "content_length": 24759,
+          "cors": "*",
+          "object_size_bytes": 1122881121,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=7655561-7831826",
+          "content_range": "bytes 7655561-7831826/1122881121",
+          "content_length": 176266,
+          "cors": "*",
+          "object_size_bytes": 1122881121,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=5827990-5879620",
+          "content_range": "bytes 5827990-5879620/1122881121",
+          "content_length": 51631,
+          "cors": "*",
+          "object_size_bytes": 1122881121,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=7324717-7377428",
+          "content_range": "bytes 7324717-7377428/1122881121",
+          "content_length": 52712,
+          "cors": "*",
+          "object_size_bytes": 1122881121,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "HEAD",
+          "status": 200,
+          "range": null,
+          "content_range": null,
+          "content_length": 949598607,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "HEAD",
+          "status": 206,
+          "range": "bytes=0-",
+          "content_range": "bytes 0-949598606/949598607",
+          "content_length": 949598607,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=949598599-949598606",
+          "content_range": "bytes 949598599-949598606/949598607",
+          "content_length": 8,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=949197963-949598598",
+          "content_range": "bytes 949197963-949598598/949598607",
+          "content_length": 400636,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "HEAD",
+          "status": 206,
+          "range": "bytes=0-",
+          "content_range": "bytes 0-949598606/949598607",
+          "content_length": 949598607,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=23268620-23268875",
+          "content_range": "bytes 23268620-23268875/949598607",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=23268640-23300010",
+          "content_range": "bytes 23268640-23300010/949598607",
+          "content_length": 31371,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=23300011-23425494",
+          "content_range": "bytes 23300011-23425494/949598607",
+          "content_length": 125484,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=447189174-447189429",
+          "content_range": "bytes 447189174-447189429/949598607",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=447189194-447221584",
+          "content_range": "bytes 447189194-447221584/949598607",
+          "content_length": 32391,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=447221585-447351148",
+          "content_range": "bytes 447221585-447351148/949598607",
+          "content_length": 129564,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=489223645-489223900",
+          "content_range": "bytes 489223645-489223900/949598607",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=489223665-489256101",
+          "content_range": "bytes 489223665-489256101/949598607",
+          "content_length": 32437,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=489256102-489385849",
+          "content_range": "bytes 489256102-489385849/949598607",
+          "content_length": 129748,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=498519481-498519736",
+          "content_range": "bytes 498519481-498519736/949598607",
+          "content_length": 256,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=498519501-498598462",
+          "content_range": "bytes 498519501-498598462/949598607",
+          "content_length": 78962,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=498598463-498914310",
+          "content_range": "bytes 498598463-498914310/949598607",
+          "content_length": 315848,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8915/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=489385850-489904841",
+          "content_range": "bytes 489385850-489904841/949598607",
+          "content_length": 518992,
+          "cors": "*",
+          "object_size_bytes": 949598607,
+          "completed": true
+        }
+      ],
+      "response_body_bytes": 2127405,
+      "page_errors": [],
+      "external_requests": []
+    }
+  ],
+  "finished_at": "2026-11-02T19:32:08.554Z",
+  "browser_version": "156.0.8078.79"
+}

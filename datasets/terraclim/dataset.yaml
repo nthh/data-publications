@@ -1,0 +1,88 @@
+schema_version: 1
+id: terraclim
+title: 'TerraClimate layer commensurate with global mean temperatures +2C : aet'
+community_url: https://gee-community-catalog.org/projects/terraclim
+audit:
+  snapshot: gee-community-audit-20261029
+  family_key: terraclim
+  unique_gee_asset_count: 20
+  initial_queue: research_original_source
+  folia_registry_status: not_identified
+  folia_registry_ids: []
+  source_coop_urls: []
+  source_coop_scope: null
+  external_native_urls: []
+  external_native_scope: null
+triage:
+  decision: pending
+  priority: pilot_review
+review:
+  citation_assessment:
+    as_of: '2026-10-29'
+    provider: OpenAlex
+    evidence_path: research/citations/rankings.json
+    evidence_key: terraclim
+    geographic_scope: global
+    paper_count_status: matched
+    max_paper_citations: 3474
+    max_data_doi_citations: null
+    top_paper_doi: https://doi.org/10.1038/sdata.2017.191
+    top_paper_openalex_id: https://openalex.org/W2784327149
+    citation_scope: base_dataset_family
+    citation_scope_note: Abatzoglou et al. 2018 describes historical TerraClimate;
+      the GEE entry is legacy CMIP5 +2C/+4C scenarios. The family citation count does
+      not measure use of those exact scenarios.
+  publication_assessment:
+    as_of: '2026-10-29'
+    route: review_current_global_scenario_release
+    scope: GEE family is legacy CMIP5 +2C/+4C (1985-2015); current producer v1.1 uses
+      CMIP6 and 1950-2025. Base TerraClimate citation counts do not measure exact-scenario
+      usage.
+    existing_native: Planetary Computer Zarr is historical TerraClimate, not these
+      future scenarios. No exact future counterpart established.
+    next_step: Prefer a clearly named v1.1 scenario publication after source verification;
+      keep the legacy and current releases distinct.
+    evidence_urls:
+    - https://www.climatologylab.org/terraclimate.html
+    - https://www.reacchpna.org/thredds/dodsC/TERRACLIMATE_ALL/data_plus4C/TerraClimate_plus4C_def_2017.nc.html
+    - https://planetarycomputer.microsoft.com/api/stac/v1/collections/terraclimate
+  priority_reason: Among the six most cited resolved global families in the 2026-10-29
+    OpenAlex snapshot; publication readiness is assessed separately.
+
+# Cross-catalog discovery: global-candidates-20261031
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'citations: Global; Global land Existing catalog identity.'
+  sources:
+  - provider: gee_community
+    entry_id: terraclim
+    url: https://gee-community-catalog.org/projects/terraclim
+    relationship: same_family
+  access:
+  - provider: literature
+    status: unknown
+    formats: []
+    summary: GEE catalog entries are available through Earth Engine; frozen metadata does not establish
+      an independently downloadable native bulk copy or its format. Existing catalog identity.
+    license_summary: Not inferred from citation records. Verify producer terms for the exact edition before
+      conversion or redistribution.
+    proposed_outputs: []
+    rationale: 'Candidate discovery only: global/near-global scope and associated-paper citation signal
+      justify source-format and licensing review. Citation rank does not establish conversion priority
+      or exact-release use.'
+    evidence_urls:
+    - https://gee-community-catalog.org/projects/terraclim
+    - https://doi.org/10.1038/sdata.2017.191
+  citations:
+  - provider: OpenAlex
+    paper_doi: 10.1038/sdata.2017.191
+    work_id: https://openalex.org/W2784327149
+    cited_by_count: 3477
+    observed_on: '2026-10-30'
+    scope: associated_dataset_publication,base_dataset_family
+  evidence:
+  - path: research/global-candidates-20261031/citations/reviewed.json
+    sha256: 572140255cd3b41a1ec8ecca0139e64d38899cda7fdd55756f399a0dca57a467
+    key: terraclim

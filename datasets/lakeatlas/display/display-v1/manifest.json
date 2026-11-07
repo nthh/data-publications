@@ -1,0 +1,164 @@
+{
+  "analytic_release": "lakeatlas-v1.0-r2",
+  "assets": [
+    {
+      "attribute_fields": [
+        "OBJECTID",
+        "Hylak_id",
+        "Lake_area",
+        "Lake_name",
+        "Country",
+        "Continent",
+        "_src_xmin",
+        "_src_ymin",
+        "_src_xmax",
+        "_src_ymax"
+      ],
+      "geometry_type": "polygon",
+      "id": "lakeatlas-1",
+      "id_encoding": "mvt_feature_id_and_property",
+      "id_field": "OBJECTID",
+      "max_zoom": 12,
+      "maxzoom_id_accounting": {
+        "accounted_ids": 1427688,
+        "missing_ids": 0,
+        "missing_ids_path": "lakeatlas-polygons.maxzoom-missing-ids.txt",
+        "source_ids": 1427688
+      },
+      "min_zoom": 0,
+      "path": "assets/lakeatlas-polygons.pmtiles",
+      "sha256": "394594baa10516b5bdea3841cdbbd7f8603412475059f846f5704386a72f71be",
+      "size_bytes": 1190009288,
+      "source_asset": {
+        "path": "assets/lakeatlas-polygons.parquet",
+        "sha256": "bbef606fd8522b230efc90e2952a67c1e4265e7bf733208fa4cc31395a7277b7",
+        "size_bytes": 1143992867
+      },
+      "source_layer": "lakeatlas-polygons",
+      "source_rows": 1427688,
+      "style_path": "styles/lakeatlas-polygons.json",
+      "title": "Lakeatlas Polygons"
+    },
+    {
+      "attribute_fields": [
+        "OBJECTID",
+        "Hylak_id",
+        "Lake_area",
+        "Lake_name",
+        "Country",
+        "Continent",
+        "_src_xmin",
+        "_src_ymin",
+        "_src_xmax",
+        "_src_ymax"
+      ],
+      "geometry_type": "point",
+      "id": "lakeatlas-2",
+      "id_encoding": "mvt_feature_id_and_property",
+      "id_field": "OBJECTID",
+      "max_zoom": 12,
+      "maxzoom_id_accounting": {
+        "accounted_ids": 1427688,
+        "missing_ids": 0,
+        "missing_ids_path": "lakeatlas-pour-points.maxzoom-missing-ids.txt",
+        "source_ids": 1427688
+      },
+      "min_zoom": 0,
+      "path": "assets/lakeatlas-pour-points.pmtiles",
+      "sha256": "68c28ecb4585378e0e729a5c72902214e935fa7645a6bef68372f0ec61bc4ffb",
+      "size_bytes": 409205238,
+      "source_asset": {
+        "path": "assets/lakeatlas-pour-points.parquet",
+        "sha256": "ff621c1db763551cdb6ced8958eefcc9da76a73c16e7f7259c238bec3aae5720",
+        "size_bytes": 283780050
+      },
+      "source_layer": "lakeatlas-pour-points",
+      "source_rows": 1427688,
+      "style_path": "styles/lakeatlas-pour-points.json",
+      "title": "Lakeatlas Pour Points"
+    }
+  ],
+  "attribution": "HydroSHEDS / HydroATLAS authors; Lehner et al. (2022), DOI 10.1038/s41597-022-01425-z; CC BY 4.0, with some field-level ODbL 1.0 notices; Tippecanoe v2.79.0",
+  "dataset_id": "lakeatlas",
+  "display_release": "display-v1",
+  "files": {
+    "README.md": {
+      "sha256": "5ebd3350d3b35ece529e1ae95c90dfcfb73888b7d8e4b239a56f189dae2b5e56",
+      "size_bytes": 3366
+    },
+    "assets/lakeatlas-polygons.pmtiles": {
+      "sha256": "394594baa10516b5bdea3841cdbbd7f8603412475059f846f5704386a72f71be",
+      "size_bytes": 1190009288
+    },
+    "assets/lakeatlas-pour-points.pmtiles": {
+      "sha256": "68c28ecb4585378e0e729a5c72902214e935fa7645a6bef68372f0ec61bc4ffb",
+      "size_bytes": 409205238
+    },
+    "lakeatlas-polygons.maxzoom-missing-ids.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "lakeatlas-pour-points.maxzoom-missing-ids.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "reports/build-provenance.json": {
+      "sha256": "149b6031e0b19bf8031c63fc13d1a914495630d04b0c2b655cf048b9074c7073",
+      "size_bytes": 1601
+    },
+    "reports/finalization/browser-validation.json": {
+      "sha256": "d71525c48e549a6100556e4b706cddb948a19e25ed9a1af8d1c357777e4e27bb",
+      "size_bytes": 80751
+    },
+    "reports/finalization/geometry/lakeatlas-1.json": {
+      "sha256": "d3859211d5b0e913b83341553fafadfe698c82b5ae4a427bbe2f1cb5ffa96bf7",
+      "size_bytes": 22212
+    },
+    "reports/finalization/geometry/lakeatlas-2.json": {
+      "sha256": "f186802e66ae4801c5438d4c88b2dcb8c6c2eb165a8f721b6d402895923d5962",
+      "size_bytes": 22066
+    },
+    "reports/finalization/pmtiles-verify/lakeatlas-1.json": {
+      "sha256": "9c3cf7a3d37ed3fa5fd8f0fbd47e574a1a32ad7f3cd3a12e4b9fb4ae3ca3a081",
+      "size_bytes": 568
+    },
+    "reports/finalization/pmtiles-verify/lakeatlas-2.json": {
+      "sha256": "afaaa9f3f92e5e7d23c989fc339e1bf045a79e307fa7a6530186262b07277844",
+      "size_bytes": 574
+    },
+    "reports/lakeatlas-polygons.build-report.json": {
+      "sha256": "63defdf43eee21af2d879843956fdbc18c95404d27b5463da36c1e7187e8774d",
+      "size_bytes": 3432
+    },
+    "reports/lakeatlas-pour-points.build-report.json": {
+      "sha256": "884b11ea8e3719ead7488ac67ceddd081a9dcef519ab495f33d3545b132c2810",
+      "size_bytes": 3456
+    },
+    "reports/lakeatlas-pour-points.input-provenance.json": {
+      "sha256": "ec06f3dc29f1f1ccfc31d345d1b3db6a0a073e9e8b164f45e4208e1023612cee",
+      "size_bytes": 3616
+    },
+    "styles/lakeatlas-polygons.json": {
+      "sha256": "7f01ae2478f3f04ac0dbb94ffcbfac4319e1d29d79960edac0c16dc6d266538a",
+      "size_bytes": 450
+    },
+    "styles/lakeatlas-pour-points.json": {
+      "sha256": "c812014ea9a3a7923070a1490312f42d5b06e9af35112def52f96787b9fa6d20",
+      "size_bytes": 501
+    },
+    "workflow/build_display-a53ce63ddd5a.py.txt": {
+      "sha256": "a53ce63ddd5a420a69a406090dd4faa195c792dcb45e5487e3236daabfef9d8d",
+      "size_bytes": 47168
+    },
+    "workflow/environment-lock-edc334d3dddf.uv.lock.txt": {
+      "sha256": "edc334d3dddf7c50b08f5b8db0ad4e1cafaa8964de487940a7e8e4924a9bc385",
+      "size_bytes": 70097
+    },
+    "workflow/tippecanoe-lock-28d3bedda983.json.txt": {
+      "sha256": "28d3bedda9835f808c3c8303b64ad660654b17a48af529d0b32e0c1b496bbd0d",
+      "size_bytes": 390
+    }
+  },
+  "schema_version": 1,
+  "status": "prepared"
+}

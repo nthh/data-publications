@@ -1,0 +1,75 @@
+schema_version: 1
+id: copernicus_dem
+title: Copernicus DEM GLO-30 and GLO-90
+intake:
+  kind: official_catalog
+  reference_url: https://planetarycomputer.microsoft.com/api/stac/v1/collections/cop-dem-glo-30
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'planetary: review_note: Global land digital surface model; STAC bbox is world-wide
+    but oceans are not terrain coverage.; stac_bbox: [-180, -90, 180, 90]; temporal_interval: [["2021-04-22T00:00:00Z",
+    "2021-04-22T00:00:00Z"]] GLO-30 DSM resolution component; preserve exact source ID. planetary: review_note:
+    Global land digital surface model at 90 m; same producer family as GLO-30 but a separate resolution
+    product.; stac_bbox: [-180, -90, 180, 90]; temporal_interval: [["2021-04-22T00:00:00Z", "2021-04-22T00:00:00Z"]]
+    GLO-90 DSM resolution component; preserve exact source ID and 90 m resolution.'
+  sources:
+  - provider: planetary_computer
+    entry_id: cop-dem-glo-30
+    url: https://planetarycomputer.microsoft.com/api/stac/v1/collections/cop-dem-glo-30
+    relationship: component
+  - provider: planetary_computer
+    entry_id: cop-dem-glo-90
+    url: https://planetarycomputer.microsoft.com/api/stac/v1/collections/cop-dem-glo-90
+    relationship: component
+  access:
+  - provider: planetary_computer
+    status: native_available
+    formats:
+    - COG
+    summary: 'Collection metadata declares per-item data assets / provider storage roots in the listed
+      native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain
+      unvalidated. GLO-30 DSM resolution component; preserve exact source ID.'
+    license_summary: 'note: Do not treat this metadata label as legal clearance.; review_status: provider
+      declaration captured; terms and redistribution permission not independently reviewed; stac_license:
+      other'
+    proposed_outputs:
+    - COG
+    rationale: Reuse declared COGs; retain DSM meaning and source license uncertainty for review.
+    evidence_urls:
+    - https://planetarycomputer.microsoft.com/api/stac/v1/collections/cop-dem-glo-30
+    - https://planetarycomputer.microsoft.com/dataset/cop-dem-glo-30
+  - provider: planetary_computer
+    status: native_available
+    formats:
+    - COG
+    summary: 'Collection metadata declares per-item data assets / provider storage roots in the listed
+      native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain
+      unvalidated. GLO-90 DSM resolution component; preserve exact source ID and 90 m resolution.'
+    license_summary: 'note: Do not treat this metadata label as legal clearance.; review_status: provider
+      declaration captured; terms and redistribution permission not independently reviewed; stac_license:
+      other'
+    proposed_outputs:
+    - COG
+    rationale: Reuse declared COGs; preserve resolution as separate product, compare source pins before
+      family merge.
+    evidence_urls:
+    - https://planetarycomputer.microsoft.com/api/stac/v1/collections/cop-dem-glo-90
+    - https://planetarycomputer.microsoft.com/dataset/cop-dem-glo-90
+  citations: []
+  evidence:
+  - path: research/global-candidates-20261031/planetary/reviewed.json
+    sha256: 07da016851a07f3e3e0937e120ce46442785f4e9096e563d92c1a3c0ce9e616a
+    key: copernicus_dem_glo_30
+  - path: research/global-candidates-20261031/planetary/reviewed.json
+    sha256: 07da016851a07f3e3e0937e120ce46442785f4e9096e563d92c1a3c0ce9e616a
+    key: copernicus_dem_glo_90

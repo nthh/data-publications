@@ -1,0 +1,50 @@
+# River plastic inputs — local publication build
+
+This directory builds a reproducible local release of the Lebreton et al. (2017) global river-plastic model from Figshare v6. The user requested local preparation only. Uploads, Source Cooperative account/product creation, Portolan registration and Git pushes are not part of this run.
+
+The local release is complete at `.local/gee-publication/river-plastic-inputs/figshare-v6-r1/`, with a 9,600,980-byte archive at `.local/gee-publication/river-plastic-inputs/river-plastic-inputs-figshare-v6-r1.zip`. The [release receipt](evidence/release-receipt.json) records its SHA-256. GeoParquet is 6,360,991 bytes and PMTiles is 3,705,340 bytes. The [manifest](evidence/release-manifest.json) pins source and output bytes, tool versions and conversion commit.
+
+[Validation](evidence/validation.json) compared 2,160,280 source attribute cells and every coordinate, preserved all 40,760 maximum-zoom tile identifiers, and passed a 747-row HTTP subset query. STAC and Portolan validators passed. An [independent rebuild](evidence/reproducibility.json) produced identical hashes for all 13 generated files and an identical manifest. Portolan emits one informational note about adding an upstream canonical STAC link if one exists; the Figshare source does not provide one in the verified record. No error or warning remains in the local Portolan report.
+
+The [validation plan](VALIDATION.md) separates source fidelity, published-result consistency, GEE parity and scientific accuracy. Supplementary [publication checks](evidence/publication-validation.json) reproduce the annual 1.15–2.41 million tonne range and the May–October seasonal share (74.53%); nonnegativity and uncertainty ordering also pass. The live [GEE comparison](evidence/gee-validation.json) now verifies every value and null, with documented coordinate differences; independent observational validation remains unrun. These later checks are separate from the unchanged release archive.
+
+The source has four points with null emission/runoff estimates (source rows 22271, 36248, 36262, 36276). These remain null, with their geometries and catchment attributes retained. The default style marks them gray.
+
+GEE validation covers all 40,760 records and all 53 scientific fields: 2,160,076 numeric values and 204 nulls match exactly. GEE coordinates differ from the original by a median 0.179 m and maximum 0.350 m. The original strict coordinate check remains failed; a separately registered one-metre geodesic comparison accounts for the difference. The source contains 19 coincident-coordinate pairs (38 records), so those records were verified as exact multisets within their original locations, preserving multiplicity. All 19 fault tests passed. See [validation details](VALIDATION.md) and [reproduction commands](gee/README.md).
+
+The analytic GeoParquet preserves all 40,760 source points and 53 fixed-point numeric attributes. It adds a one-based source_row identifier and bbox covering columns, and sorts by Hilbert distance. PMTiles provides annual estimates and selected catchment attributes for visualization; lower zooms thin points and tile geometry is quantized. The full model estimates and uncertainty bounds remain in GeoParquet. The data license is CC BY 4.0, with attribution to Lebreton et al. and the original Figshare data release.
+
+The release bundle has a STAC 1.1.0 / Portolan v0.2.0 catalog, one Collection, README and AGENTS files, a field dictionary, a MapLibre style, a thumbnail and a checksum manifest. All owned data links are relative. No unverified future hosting URLs are registered.
+
+From the repository root:
+
+```sh
+uv sync --frozen --project commons/publish/gee-community/products/river-plastic-inputs
+npm ci --prefix commons/publish/gee-community/products/river-plastic-inputs
+uv run --frozen --project commons/publish/gee-community/products/river-plastic-inputs python commons/publish/gee-community/products/river-plastic-inputs/build.py --output .local/gee-publication/river-plastic-inputs/figshare-v6-r1
+uv run --frozen --project commons/publish/gee-community/products/river-plastic-inputs python commons/publish/gee-community/products/river-plastic-inputs/validate.py .local/gee-publication/river-plastic-inputs/figshare-v6-r1 --http --report .local/gee-publication/river-plastic-inputs/validation.json
+```
+
+The builder requires committed product inputs and refuses to overwrite an existing output directory. The default source archive is the cached `.local/gee-publication/plastic/PlasticRiverInputs.zip`; `--source` selects another copy. Download the exact archive from https://ndownloader.figshare.com/files/7714864 if needed; the builder verifies its size, MD5 and SHA-256 against source.json. Python dependencies are locked in uv.lock; the native builder requires tippecanoe v2.79.0 and records its binary hash. The Python PMTiles reader is locked; the native pmtiles CLI verifies the archive structure.
+
+The validator independently compares every numeric field and coordinate against the original archive, decodes every maximum-zoom tile, verifies identifiers and display attributes, and runs rashid with the profile schema and local data checks. `--http` starts a temporary loopback server and exercises range/CORS responses and a DuckDB HTTP subset query. DuckDB's matching signed httpfs extension must be installed first if it is not already cached (`INSTALL httpfs`). The loopback test does not certify any future remote host.
+
+Run the second STAC validator against only the STAC documents:
+
+```sh
+commons/publish/gee-community/products/river-plastic-inputs/node_modules/.bin/stac-node-validator .local/gee-publication/river-plastic-inputs/figshare-v6-r1/catalog.json .local/gee-publication/river-plastic-inputs/figshare-v6-r1/river-plastic-inputs/collection.json
+```
+
+That validator may fetch the declared published schemas. Do not use its formatting flags on a built release because they change manifest-pinned bytes.
+
+For local serving:
+
+```sh
+uv run --frozen --project commons/publish/gee-community/products/river-plastic-inputs python commons/publish/gee-community/products/river-plastic-inputs/serve.py .local/gee-publication/river-plastic-inputs/figshare-v6-r1
+```
+
+Open http://127.0.0.1:8765/catalog.json with a STAC client. The standalone MapLibre style uses the Portolan relative-PMTiles convention; a PMTiles-aware viewer must resolve that URL and install its PMTiles protocol.
+
+Before a later publication, confirm the owner/product and publishing access, upload into an immutable version/build prefix, verify real anonymous range reads and CORS plus a remote subset query, and then submit the public catalog root to Portolan. Add actual public distribution endpoints to Folia only after they exist. A registry submission needs a public contact email. Those actions remain pending under the user's local-only instruction.
+
+To package a verified build with its evidence, use `package.py` with the build directory, `--validation`, `--stac-validation`, `--reproducibility`, and `--output` paths. It verifies each asset against the manifest and reproducibility record, requires successful local HTTP/STAC checks, embeds the receipts, and validates every ZIP member. It refuses to overwrite an archive. The archive receipt also pins the packaging script's SHA-256.

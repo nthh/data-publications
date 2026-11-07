@@ -1,0 +1,4891 @@
+{
+  "schema_version": 1,
+  "started_at": "2026-11-06T20:17:06.255Z",
+  "status": "failed",
+  "scope": "regional-pilot-only-mississippi-z0-to-z12",
+  "transfer_ceiling_bytes": 33554432,
+  "viewer_build_sha256": "9573361f34265d9d9aef1b48fc94e73b847e34355ee4ffcff6987335e0c63dda",
+  "app_js_sha256": "5b3d87d4c9c13c53de8664ea849a9592ab72321fb7aa3c41ff18017e047b070d",
+  "archive_sha256": "8497aea081dbe603ceae2da92adf7f171f2b71d0eafb8a7fc70383b8a9bd62e0",
+  "source_sha256": "1c7177cc55b732dc7e609ed22ae50c46d677548da98c4b39e4f1ab76996ca509",
+  "source_pins": {
+    "source_sha256": "1c7177cc55b732dc7e609ed22ae50c46d677548da98c4b39e4f1ab76996ca509"
+  },
+  "cases": [
+    {
+      "view": "mississippi",
+      "requested_zoom": 0,
+      "requested_center": [
+        -90,
+        35.51628964037926
+      ],
+      "dataset_id": "grwl-raw",
+      "layer_id": "grwl-raw-display",
+      "source_layer": "grwl_width_overview",
+      "archive_sha256": "8497aea081dbe603ceae2da92adf7f171f2b71d0eafb8a7fc70383b8a9bd62e0",
+      "source_pins": {
+        "source_sha256": "1c7177cc55b732dc7e609ed22ae50c46d677548da98c4b39e4f1ab76996ca509"
+      },
+      "status": "passed",
+      "actual_zoom": 0,
+      "actual_center": [
+        -90,
+        35.51628964037926
+      ],
+      "viewer_state": {
+        "phase": "ready",
+        "feature_count": 917,
+        "error": null
+      },
+      "style_layers": [
+        "release-width-samples"
+      ],
+      "rendered_source_layers": [
+        "grwl_width_overview"
+      ],
+      "width_sample_paint": {
+        "radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          0,
+          [
+            "*",
+            [
+              "case",
+              [
+                "all",
+                [
+                  ">",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  0
+                ],
+                [
+                  "!=",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  1
+                ]
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "width_m"
+                  ],
+                  0
+                ],
+                1,
+                1.1,
+                50,
+                1.6,
+                200,
+                2.7,
+                1000,
+                6.2
+              ],
+              0.9
+            ],
+            0.325
+          ],
+          8,
+          [
+            "*",
+            [
+              "case",
+              [
+                "all",
+                [
+                  ">",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  0
+                ],
+                [
+                  "!=",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  1
+                ]
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "width_m"
+                  ],
+                  0
+                ],
+                1,
+                1.1,
+                50,
+                1.6,
+                200,
+                2.7,
+                1000,
+                6.2
+              ],
+              0.9
+            ],
+            0.5
+          ],
+          12,
+          [
+            "*",
+            [
+              "case",
+              [
+                "all",
+                [
+                  ">",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  0
+                ],
+                [
+                  "!=",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  1
+                ]
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "width_m"
+                  ],
+                  0
+                ],
+                1,
+                1.1,
+                50,
+                1.6,
+                200,
+                2.7,
+                1000,
+                6.2
+              ],
+              0.9
+            ],
+            0.7
+          ]
+        ],
+        "color": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "width_valid"
+            ],
+            true
+          ],
+          "#216d85",
+          "#71858a"
+        ],
+        "opacity": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "width_valid"
+            ],
+            true
+          ],
+          0.82,
+          0.58
+        ],
+        "sortKey": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "width_valid"
+            ],
+            true
+          ],
+          [
+            "to-number",
+            [
+              "get",
+              "width_m"
+            ],
+            0
+          ],
+          -1
+        ]
+      },
+      "legend_widths": [
+        {
+          "metres": 50,
+          "pixels": 1.04
+        },
+        {
+          "metres": 200,
+          "pixels": 1.755
+        },
+        {
+          "metres": 1000,
+          "pixels": 4.03
+        }
+      ],
+      "legend_visible": true,
+      "expected_layer": "release-width-samples",
+      "sample": {
+        "featureID": 149950193284645,
+        "properties": {
+          "width_m": 20200,
+          "width_valid": true
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -106.435546875,
+            47.931066347509784
+          ]
+        },
+        "sourceLayer": "grwl_width_overview",
+        "diameter_px": 4.03,
+        "expected_diameter_px": 4.03
+      },
+      "transferred_bytes": 36784,
+      "requests": [
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/46150639",
+          "content_length": 16384,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 16384,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=1210-11782",
+          "content_range": "bytes 1210-11782/46150639",
+          "content_length": 10573,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 10573,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=21059-30885",
+          "content_range": "bytes 21059-30885/46150639",
+          "content_length": 9827,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 9827,
+          "completed": true
+        }
+      ],
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "view": "mississippi",
+      "requested_zoom": 1,
+      "requested_center": [
+        -90,
+        35.51628964037926
+      ],
+      "dataset_id": "grwl-raw",
+      "layer_id": "grwl-raw-display",
+      "source_layer": "grwl_width_overview",
+      "archive_sha256": "8497aea081dbe603ceae2da92adf7f171f2b71d0eafb8a7fc70383b8a9bd62e0",
+      "source_pins": {
+        "source_sha256": "1c7177cc55b732dc7e609ed22ae50c46d677548da98c4b39e4f1ab76996ca509"
+      },
+      "status": "passed",
+      "actual_zoom": 1,
+      "actual_center": [
+        -90,
+        35.51628964037926
+      ],
+      "viewer_state": {
+        "phase": "ready",
+        "feature_count": 1967,
+        "error": null
+      },
+      "style_layers": [
+        "release-width-samples"
+      ],
+      "rendered_source_layers": [
+        "grwl_width_overview"
+      ],
+      "width_sample_paint": {
+        "radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          0,
+          [
+            "*",
+            [
+              "case",
+              [
+                "all",
+                [
+                  ">",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  0
+                ],
+                [
+                  "!=",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  1
+                ]
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "width_m"
+                  ],
+                  0
+                ],
+                1,
+                1.1,
+                50,
+                1.6,
+                200,
+                2.7,
+                1000,
+                6.2
+              ],
+              0.9
+            ],
+            0.325
+          ],
+          8,
+          [
+            "*",
+            [
+              "case",
+              [
+                "all",
+                [
+                  ">",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  0
+                ],
+                [
+                  "!=",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  1
+                ]
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "width_m"
+                  ],
+                  0
+                ],
+                1,
+                1.1,
+                50,
+                1.6,
+                200,
+                2.7,
+                1000,
+                6.2
+              ],
+              0.9
+            ],
+            0.5
+          ],
+          12,
+          [
+            "*",
+            [
+              "case",
+              [
+                "all",
+                [
+                  ">",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  0
+                ],
+                [
+                  "!=",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  1
+                ]
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "width_m"
+                  ],
+                  0
+                ],
+                1,
+                1.1,
+                50,
+                1.6,
+                200,
+                2.7,
+                1000,
+                6.2
+              ],
+              0.9
+            ],
+            0.7
+          ]
+        ],
+        "color": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "width_valid"
+            ],
+            true
+          ],
+          "#216d85",
+          "#71858a"
+        ],
+        "opacity": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "width_valid"
+            ],
+            true
+          ],
+          0.82,
+          0.58
+        ],
+        "sortKey": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "width_valid"
+            ],
+            true
+          ],
+          [
+            "to-number",
+            [
+              "get",
+              "width_m"
+            ],
+            0
+          ],
+          -1
+        ]
+      },
+      "legend_widths": [
+        {
+          "metres": 50,
+          "pixels": 1.11
+        },
+        {
+          "metres": 200,
+          "pixels": 1.87312
+        },
+        {
+          "metres": 1000,
+          "pixels": 4.30125
+        }
+      ],
+      "legend_visible": true,
+      "expected_layer": "release-width-samples",
+      "sample": {
+        "featureID": 149950193284645,
+        "properties": {
+          "width_m": 20200,
+          "width_valid": true
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -106.435546875,
+            47.931066347509784
+          ]
+        },
+        "sourceLayer": "grwl_width_overview",
+        "diameter_px": 4.3012500000000005,
+        "expected_diameter_px": 4.30125
+      },
+      "transferred_bytes": 46988,
+      "requests": [
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/46150639",
+          "content_length": 16384,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 16384,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=1210-11782",
+          "content_range": "bytes 1210-11782/46150639",
+          "content_length": 10573,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 10573,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=30886-50916",
+          "content_range": "bytes 30886-50916/46150639",
+          "content_length": 20031,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 20031,
+          "completed": true
+        }
+      ],
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "view": "mississippi",
+      "requested_zoom": 2,
+      "requested_center": [
+        -90,
+        35.51628964037926
+      ],
+      "dataset_id": "grwl-raw",
+      "layer_id": "grwl-raw-display",
+      "source_layer": "grwl_width_overview",
+      "archive_sha256": "8497aea081dbe603ceae2da92adf7f171f2b71d0eafb8a7fc70383b8a9bd62e0",
+      "source_pins": {
+        "source_sha256": "1c7177cc55b732dc7e609ed22ae50c46d677548da98c4b39e4f1ab76996ca509"
+      },
+      "status": "passed",
+      "actual_zoom": 2,
+      "actual_center": [
+        -90,
+        35.51628964037926
+      ],
+      "viewer_state": {
+        "phase": "ready",
+        "feature_count": 4224,
+        "error": null
+      },
+      "style_layers": [
+        "release-width-samples"
+      ],
+      "rendered_source_layers": [
+        "grwl_width_overview"
+      ],
+      "width_sample_paint": {
+        "radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          0,
+          [
+            "*",
+            [
+              "case",
+              [
+                "all",
+                [
+                  ">",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  0
+                ],
+                [
+                  "!=",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  1
+                ]
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "width_m"
+                  ],
+                  0
+                ],
+                1,
+                1.1,
+                50,
+                1.6,
+                200,
+                2.7,
+                1000,
+                6.2
+              ],
+              0.9
+            ],
+            0.325
+          ],
+          8,
+          [
+            "*",
+            [
+              "case",
+              [
+                "all",
+                [
+                  ">",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  0
+                ],
+                [
+                  "!=",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  1
+                ]
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "width_m"
+                  ],
+                  0
+                ],
+                1,
+                1.1,
+                50,
+                1.6,
+                200,
+                2.7,
+                1000,
+                6.2
+              ],
+              0.9
+            ],
+            0.5
+          ],
+          12,
+          [
+            "*",
+            [
+              "case",
+              [
+                "all",
+                [
+                  ">",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  0
+                ],
+                [
+                  "!=",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  1
+                ]
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "width_m"
+                  ],
+                  0
+                ],
+                1,
+                1.1,
+                50,
+                1.6,
+                200,
+                2.7,
+                1000,
+                6.2
+              ],
+              0.9
+            ],
+            0.7
+          ]
+        ],
+        "color": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "width_valid"
+            ],
+            true
+          ],
+          "#216d85",
+          "#71858a"
+        ],
+        "opacity": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "width_valid"
+            ],
+            true
+          ],
+          0.82,
+          0.58
+        ],
+        "sortKey": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "width_valid"
+            ],
+            true
+          ],
+          [
+            "to-number",
+            [
+              "get",
+              "width_m"
+            ],
+            0
+          ],
+          -1
+        ]
+      },
+      "legend_widths": [
+        {
+          "metres": 50,
+          "pixels": 1.18
+        },
+        {
+          "metres": 200,
+          "pixels": 1.99125
+        },
+        {
+          "metres": 1000,
+          "pixels": 4.5725
+        }
+      ],
+      "legend_visible": true,
+      "expected_layer": "release-width-samples",
+      "sample": {
+        "featureID": 149950193284645,
+        "properties": {
+          "width_m": 20200,
+          "width_valid": true
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -106.45751953125,
+            47.9457864636872
+          ]
+        },
+        "sourceLayer": "grwl_width_overview",
+        "diameter_px": 4.5725,
+        "expected_diameter_px": 4.572500000000001
+      },
+      "transferred_bytes": 69491,
+      "requests": [
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/46150639",
+          "content_length": 16384,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 16384,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=1210-11782",
+          "content_range": "bytes 1210-11782/46150639",
+          "content_length": 10573,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 10573,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=50917-59064",
+          "content_range": "bytes 50917-59064/46150639",
+          "content_length": 8148,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 8148,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=59065-93450",
+          "content_range": "bytes 59065-93450/46150639",
+          "content_length": 34386,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 34386,
+          "completed": true
+        }
+      ],
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "view": "mississippi",
+      "requested_zoom": 3,
+      "requested_center": [
+        -90,
+        35.51628964037926
+      ],
+      "dataset_id": "grwl-raw",
+      "layer_id": "grwl-raw-display",
+      "source_layer": "grwl_width_overview",
+      "archive_sha256": "8497aea081dbe603ceae2da92adf7f171f2b71d0eafb8a7fc70383b8a9bd62e0",
+      "source_pins": {
+        "source_sha256": "1c7177cc55b732dc7e609ed22ae50c46d677548da98c4b39e4f1ab76996ca509"
+      },
+      "status": "passed",
+      "actual_zoom": 3,
+      "actual_center": [
+        -90,
+        35.51628964037926
+      ],
+      "viewer_state": {
+        "phase": "ready",
+        "feature_count": 9002,
+        "error": null
+      },
+      "style_layers": [
+        "release-width-samples"
+      ],
+      "rendered_source_layers": [
+        "grwl_width_overview"
+      ],
+      "width_sample_paint": {
+        "radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          0,
+          [
+            "*",
+            [
+              "case",
+              [
+                "all",
+                [
+                  ">",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  0
+                ],
+                [
+                  "!=",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  1
+                ]
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "width_m"
+                  ],
+                  0
+                ],
+                1,
+                1.1,
+                50,
+                1.6,
+                200,
+                2.7,
+                1000,
+                6.2
+              ],
+              0.9
+            ],
+            0.325
+          ],
+          8,
+          [
+            "*",
+            [
+              "case",
+              [
+                "all",
+                [
+                  ">",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  0
+                ],
+                [
+                  "!=",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  1
+                ]
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "width_m"
+                  ],
+                  0
+                ],
+                1,
+                1.1,
+                50,
+                1.6,
+                200,
+                2.7,
+                1000,
+                6.2
+              ],
+              0.9
+            ],
+            0.5
+          ],
+          12,
+          [
+            "*",
+            [
+              "case",
+              [
+                "all",
+                [
+                  ">",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  0
+                ],
+                [
+                  "!=",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  1
+                ]
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "width_m"
+                  ],
+                  0
+                ],
+                1,
+                1.1,
+                50,
+                1.6,
+                200,
+                2.7,
+                1000,
+                6.2
+              ],
+              0.9
+            ],
+            0.7
+          ]
+        ],
+        "color": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "width_valid"
+            ],
+            true
+          ],
+          "#216d85",
+          "#71858a"
+        ],
+        "opacity": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "width_valid"
+            ],
+            true
+          ],
+          0.82,
+          0.58
+        ],
+        "sortKey": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "width_valid"
+            ],
+            true
+          ],
+          [
+            "to-number",
+            [
+              "get",
+              "width_m"
+            ],
+            0
+          ],
+          -1
+        ]
+      },
+      "legend_widths": [
+        {
+          "metres": 50,
+          "pixels": 1.25
+        },
+        {
+          "metres": 200,
+          "pixels": 2.10938
+        },
+        {
+          "metres": 1000,
+          "pixels": 4.84375
+        }
+      ],
+      "legend_visible": true,
+      "expected_layer": "release-width-samples",
+      "sample": {
+        "featureID": 149950193284645,
+        "properties": {
+          "width_m": 20200,
+          "width_valid": true
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -106.446533203125,
+            47.9457864636872
+          ]
+        },
+        "sourceLayer": "grwl_width_overview",
+        "diameter_px": 4.84375,
+        "expected_diameter_px": 4.84375
+      },
+      "transferred_bytes": 112519,
+      "requests": [
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/46150639",
+          "content_length": 16384,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 16384,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=1210-11782",
+          "content_range": "bytes 1210-11782/46150639",
+          "content_length": 10573,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 10573,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=93451-108916",
+          "content_range": "bytes 93451-108916/46150639",
+          "content_length": 15466,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 15466,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=131470-179012",
+          "content_range": "bytes 131470-179012/46150639",
+          "content_length": 47543,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 47543,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=108917-131469",
+          "content_range": "bytes 108917-131469/46150639",
+          "content_length": 22553,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 22553,
+          "completed": true
+        }
+      ],
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "view": "mississippi",
+      "requested_zoom": 4,
+      "requested_center": [
+        -90,
+        35.51628964037926
+      ],
+      "dataset_id": "grwl-raw",
+      "layer_id": "grwl-raw-display",
+      "source_layer": "grwl_width_overview",
+      "archive_sha256": "8497aea081dbe603ceae2da92adf7f171f2b71d0eafb8a7fc70383b8a9bd62e0",
+      "source_pins": {
+        "source_sha256": "1c7177cc55b732dc7e609ed22ae50c46d677548da98c4b39e4f1ab76996ca509"
+      },
+      "status": "passed",
+      "actual_zoom": 4,
+      "actual_center": [
+        -90,
+        35.51628964037926
+      ],
+      "viewer_state": {
+        "phase": "ready",
+        "feature_count": 11626,
+        "error": null
+      },
+      "style_layers": [
+        "release-width-samples"
+      ],
+      "rendered_source_layers": [
+        "grwl_width_overview"
+      ],
+      "width_sample_paint": {
+        "radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          0,
+          [
+            "*",
+            [
+              "case",
+              [
+                "all",
+                [
+                  ">",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  0
+                ],
+                [
+                  "!=",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  1
+                ]
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "width_m"
+                  ],
+                  0
+                ],
+                1,
+                1.1,
+                50,
+                1.6,
+                200,
+                2.7,
+                1000,
+                6.2
+              ],
+              0.9
+            ],
+            0.325
+          ],
+          8,
+          [
+            "*",
+            [
+              "case",
+              [
+                "all",
+                [
+                  ">",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  0
+                ],
+                [
+                  "!=",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  1
+                ]
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "width_m"
+                  ],
+                  0
+                ],
+                1,
+                1.1,
+                50,
+                1.6,
+                200,
+                2.7,
+                1000,
+                6.2
+              ],
+              0.9
+            ],
+            0.5
+          ],
+          12,
+          [
+            "*",
+            [
+              "case",
+              [
+                "all",
+                [
+                  ">",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  0
+                ],
+                [
+                  "!=",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  1
+                ]
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "width_m"
+                  ],
+                  0
+                ],
+                1,
+                1.1,
+                50,
+                1.6,
+                200,
+                2.7,
+                1000,
+                6.2
+              ],
+              0.9
+            ],
+            0.7
+          ]
+        ],
+        "color": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "width_valid"
+            ],
+            true
+          ],
+          "#216d85",
+          "#71858a"
+        ],
+        "opacity": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "width_valid"
+            ],
+            true
+          ],
+          0.82,
+          0.58
+        ],
+        "sortKey": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "width_valid"
+            ],
+            true
+          ],
+          [
+            "to-number",
+            [
+              "get",
+              "width_m"
+            ],
+            0
+          ],
+          -1
+        ]
+      },
+      "legend_widths": [
+        {
+          "metres": 50,
+          "pixels": 1.32
+        },
+        {
+          "metres": 200,
+          "pixels": 2.2275
+        },
+        {
+          "metres": 1000,
+          "pixels": 5.115
+        }
+      ],
+      "legend_visible": true,
+      "expected_layer": "release-width-samples",
+      "sample": {
+        "featureID": 149516401570370,
+        "properties": {
+          "width_m": 15484,
+          "width_valid": true
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -112.6812744140625,
+            42.97652069810553
+          ]
+        },
+        "sourceLayer": "grwl_width_overview",
+        "diameter_px": 5.115,
+        "expected_diameter_px": 5.115
+      },
+      "transferred_bytes": 197207,
+      "requests": [
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/46150639",
+          "content_length": 16384,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 16384,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=1210-11782",
+          "content_range": "bytes 1210-11782/46150639",
+          "content_length": 10573,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 10573,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=179013-208936",
+          "content_range": "bytes 179013-208936/46150639",
+          "content_length": 29924,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 29924,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=210171-254350",
+          "content_range": "bytes 210171-254350/46150639",
+          "content_length": 44180,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 44180,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=254351-290975",
+          "content_range": "bytes 254351-290975/46150639",
+          "content_length": 36625,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 36625,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=290976-349262",
+          "content_range": "bytes 290976-349262/46150639",
+          "content_length": 58287,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 58287,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=208937-210170",
+          "content_range": "bytes 208937-210170/46150639",
+          "content_length": 1234,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 1234,
+          "completed": true
+        }
+      ],
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "view": "mississippi",
+      "requested_zoom": 5,
+      "requested_center": [
+        -90,
+        35.51628964037926
+      ],
+      "dataset_id": "grwl-raw",
+      "layer_id": "grwl-raw-display",
+      "source_layer": "grwl_width_overview",
+      "archive_sha256": "8497aea081dbe603ceae2da92adf7f171f2b71d0eafb8a7fc70383b8a9bd62e0",
+      "source_pins": {
+        "source_sha256": "1c7177cc55b732dc7e609ed22ae50c46d677548da98c4b39e4f1ab76996ca509"
+      },
+      "status": "passed",
+      "actual_zoom": 5,
+      "actual_center": [
+        -90,
+        35.51628964037926
+      ],
+      "viewer_state": {
+        "phase": "ready",
+        "feature_count": 13910,
+        "error": null
+      },
+      "style_layers": [
+        "release-width-samples"
+      ],
+      "rendered_source_layers": [
+        "grwl_width_overview"
+      ],
+      "width_sample_paint": {
+        "radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          0,
+          [
+            "*",
+            [
+              "case",
+              [
+                "all",
+                [
+                  ">",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  0
+                ],
+                [
+                  "!=",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  1
+                ]
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "width_m"
+                  ],
+                  0
+                ],
+                1,
+                1.1,
+                50,
+                1.6,
+                200,
+                2.7,
+                1000,
+                6.2
+              ],
+              0.9
+            ],
+            0.325
+          ],
+          8,
+          [
+            "*",
+            [
+              "case",
+              [
+                "all",
+                [
+                  ">",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  0
+                ],
+                [
+                  "!=",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  1
+                ]
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "width_m"
+                  ],
+                  0
+                ],
+                1,
+                1.1,
+                50,
+                1.6,
+                200,
+                2.7,
+                1000,
+                6.2
+              ],
+              0.9
+            ],
+            0.5
+          ],
+          12,
+          [
+            "*",
+            [
+              "case",
+              [
+                "all",
+                [
+                  ">",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  0
+                ],
+                [
+                  "!=",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  1
+                ]
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "width_m"
+                  ],
+                  0
+                ],
+                1,
+                1.1,
+                50,
+                1.6,
+                200,
+                2.7,
+                1000,
+                6.2
+              ],
+              0.9
+            ],
+            0.7
+          ]
+        ],
+        "color": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "width_valid"
+            ],
+            true
+          ],
+          "#216d85",
+          "#71858a"
+        ],
+        "opacity": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "width_valid"
+            ],
+            true
+          ],
+          0.82,
+          0.58
+        ],
+        "sortKey": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "width_valid"
+            ],
+            true
+          ],
+          [
+            "to-number",
+            [
+              "get",
+              "width_m"
+            ],
+            0
+          ],
+          -1
+        ]
+      },
+      "legend_widths": [
+        {
+          "metres": 50,
+          "pixels": 1.39
+        },
+        {
+          "metres": 200,
+          "pixels": 2.34563
+        },
+        {
+          "metres": 1000,
+          "pixels": 5.38625
+        }
+      ],
+      "legend_visible": true,
+      "expected_layer": "release-width-samples",
+      "sample": {
+        "featureID": 148670293123994,
+        "properties": {
+          "width_m": 8321,
+          "width_valid": true
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -95.60577392578125,
+            35.34201475584807
+          ]
+        },
+        "sourceLayer": "grwl_width_overview",
+        "diameter_px": 5.38625,
+        "expected_diameter_px": 5.38625
+      },
+      "transferred_bytes": 246303,
+      "requests": [
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/46150639",
+          "content_length": 16384,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 16384,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=1210-11782",
+          "content_range": "bytes 1210-11782/46150639",
+          "content_length": 10573,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 10573,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=439001-498975",
+          "content_range": "bytes 439001-498975/46150639",
+          "content_length": 59975,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 59975,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=410248-438322",
+          "content_range": "bytes 410248-438322/46150639",
+          "content_length": 28075,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 28075,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=407760-408158",
+          "content_range": "bytes 407760-408158/46150639",
+          "content_length": 399,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 399,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=438323-439000",
+          "content_range": "bytes 438323-439000/46150639",
+          "content_length": 678,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 678,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=349263-407759",
+          "content_range": "bytes 349263-407759/46150639",
+          "content_length": 58497,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 58497,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=498976-570697",
+          "content_range": "bytes 498976-570697/46150639",
+          "content_length": 71722,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 71722,
+          "completed": true
+        }
+      ],
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "view": "mississippi",
+      "requested_zoom": 6,
+      "requested_center": [
+        -90,
+        35.51628964037926
+      ],
+      "dataset_id": "grwl-raw",
+      "layer_id": "grwl-raw-display",
+      "source_layer": "grwl_width_overview",
+      "archive_sha256": "8497aea081dbe603ceae2da92adf7f171f2b71d0eafb8a7fc70383b8a9bd62e0",
+      "source_pins": {
+        "source_sha256": "1c7177cc55b732dc7e609ed22ae50c46d677548da98c4b39e4f1ab76996ca509"
+      },
+      "status": "passed",
+      "actual_zoom": 6,
+      "actual_center": [
+        -90,
+        35.51628964037926
+      ],
+      "viewer_state": {
+        "phase": "ready",
+        "feature_count": 26563,
+        "error": null
+      },
+      "style_layers": [
+        "release-width-samples"
+      ],
+      "rendered_source_layers": [
+        "grwl_width_overview"
+      ],
+      "width_sample_paint": {
+        "radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          0,
+          [
+            "*",
+            [
+              "case",
+              [
+                "all",
+                [
+                  ">",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  0
+                ],
+                [
+                  "!=",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  1
+                ]
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "width_m"
+                  ],
+                  0
+                ],
+                1,
+                1.1,
+                50,
+                1.6,
+                200,
+                2.7,
+                1000,
+                6.2
+              ],
+              0.9
+            ],
+            0.325
+          ],
+          8,
+          [
+            "*",
+            [
+              "case",
+              [
+                "all",
+                [
+                  ">",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  0
+                ],
+                [
+                  "!=",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  1
+                ]
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "width_m"
+                  ],
+                  0
+                ],
+                1,
+                1.1,
+                50,
+                1.6,
+                200,
+                2.7,
+                1000,
+                6.2
+              ],
+              0.9
+            ],
+            0.5
+          ],
+          12,
+          [
+            "*",
+            [
+              "case",
+              [
+                "all",
+                [
+                  ">",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  0
+                ],
+                [
+                  "!=",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  1
+                ]
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "width_m"
+                  ],
+                  0
+                ],
+                1,
+                1.1,
+                50,
+                1.6,
+                200,
+                2.7,
+                1000,
+                6.2
+              ],
+              0.9
+            ],
+            0.7
+          ]
+        ],
+        "color": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "width_valid"
+            ],
+            true
+          ],
+          "#216d85",
+          "#71858a"
+        ],
+        "opacity": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "width_valid"
+            ],
+            true
+          ],
+          0.82,
+          0.58
+        ],
+        "sortKey": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "width_valid"
+            ],
+            true
+          ],
+          [
+            "to-number",
+            [
+              "get",
+              "width_m"
+            ],
+            0
+          ],
+          -1
+        ]
+      },
+      "legend_widths": [
+        {
+          "metres": 50,
+          "pixels": 1.46
+        },
+        {
+          "metres": 200,
+          "pixels": 2.46375
+        },
+        {
+          "metres": 1000,
+          "pixels": 5.6575
+        }
+      ],
+      "legend_visible": true,
+      "expected_layer": "release-width-samples",
+      "sample": {
+        "featureID": 148670293131775,
+        "properties": {
+          "width_m": 6045,
+          "width_valid": true
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -95.6689453125,
+            35.08845057036537
+          ]
+        },
+        "sourceLayer": "grwl_width_overview",
+        "diameter_px": 5.657500000000001,
+        "expected_diameter_px": 5.6575
+      },
+      "transferred_bytes": 263136,
+      "requests": [
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/46150639",
+          "content_length": 16384,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 16384,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=1210-11782",
+          "content_range": "bytes 1210-11782/46150639",
+          "content_length": 10573,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 10573,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=699262-805210",
+          "content_range": "bytes 699262-805210/46150639",
+          "content_length": 105949,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 105949,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=688498-699261",
+          "content_range": "bytes 688498-699261/46150639",
+          "content_length": 10764,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 10764,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=977654-983931",
+          "content_range": "bytes 977654-983931/46150639",
+          "content_length": 6278,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 6278,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=864466-977653",
+          "content_range": "bytes 864466-977653/46150639",
+          "content_length": 113188,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 113188,
+          "completed": true
+        }
+      ],
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "view": "mississippi",
+      "requested_zoom": 7,
+      "requested_center": [
+        -90,
+        35.51628964037926
+      ],
+      "dataset_id": "grwl-raw",
+      "layer_id": "grwl-raw-display",
+      "source_layer": "grwl_width_overview",
+      "archive_sha256": "8497aea081dbe603ceae2da92adf7f171f2b71d0eafb8a7fc70383b8a9bd62e0",
+      "source_pins": {
+        "source_sha256": "1c7177cc55b732dc7e609ed22ae50c46d677548da98c4b39e4f1ab76996ca509"
+      },
+      "status": "failed",
+      "actual_zoom": 7,
+      "actual_center": [
+        -90,
+        35.51628964037926
+      ],
+      "viewer_state": {
+        "phase": "ready",
+        "feature_count": 16825,
+        "error": null
+      },
+      "style_layers": [
+        "release-width-samples"
+      ],
+      "rendered_source_layers": [
+        "grwl_width_overview"
+      ],
+      "width_sample_paint": {
+        "radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          0,
+          [
+            "*",
+            [
+              "case",
+              [
+                "all",
+                [
+                  ">",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  0
+                ],
+                [
+                  "!=",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  1
+                ]
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "width_m"
+                  ],
+                  0
+                ],
+                1,
+                1.1,
+                50,
+                1.6,
+                200,
+                2.7,
+                1000,
+                6.2
+              ],
+              0.9
+            ],
+            0.325
+          ],
+          8,
+          [
+            "*",
+            [
+              "case",
+              [
+                "all",
+                [
+                  ">",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  0
+                ],
+                [
+                  "!=",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  1
+                ]
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "width_m"
+                  ],
+                  0
+                ],
+                1,
+                1.1,
+                50,
+                1.6,
+                200,
+                2.7,
+                1000,
+                6.2
+              ],
+              0.9
+            ],
+            0.5
+          ],
+          12,
+          [
+            "*",
+            [
+              "case",
+              [
+                "all",
+                [
+                  ">",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  0
+                ],
+                [
+                  "!=",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  1
+                ]
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "width_m"
+                  ],
+                  0
+                ],
+                1,
+                1.1,
+                50,
+                1.6,
+                200,
+                2.7,
+                1000,
+                6.2
+              ],
+              0.9
+            ],
+            0.7
+          ]
+        ],
+        "color": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "width_valid"
+            ],
+            true
+          ],
+          "#216d85",
+          "#71858a"
+        ],
+        "opacity": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "width_valid"
+            ],
+            true
+          ],
+          0.82,
+          0.58
+        ],
+        "sortKey": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "width_valid"
+            ],
+            true
+          ],
+          [
+            "to-number",
+            [
+              "get",
+              "width_m"
+            ],
+            0
+          ],
+          -1
+        ]
+      },
+      "legend_widths": [
+        {
+          "metres": 50,
+          "pixels": 1.53
+        },
+        {
+          "metres": 200,
+          "pixels": 2.58188
+        },
+        {
+          "metres": 1000,
+          "pixels": 5.92875
+        }
+      ],
+      "legend_visible": true,
+      "expected_layer": "release-width-samples",
+      "sample": {
+        "featureID": 148670293081180,
+        "properties": {
+          "width_m": 2361,
+          "width_valid": true
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -93.06381225585938,
+            34.43126619807117
+          ]
+        },
+        "sourceLayer": "grwl_width_overview",
+        "diameter_px": 5.92875,
+        "expected_diameter_px": 5.928750000000001
+      },
+      "failure": "page.waitForFunction: Timeout 10000ms exceeded.",
+      "transferred_bytes": 463207,
+      "requests": [
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/46150639",
+          "content_length": 16384,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 16384,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=1210-11782",
+          "content_range": "bytes 1210-11782/46150639",
+          "content_length": 10573,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 10573,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=1713720-1789355",
+          "content_range": "bytes 1713720-1789355/46150639",
+          "content_length": 75636,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 75636,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=1554841-1596298",
+          "content_range": "bytes 1554841-1596298/46150639",
+          "content_length": 41458,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 41458,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=1384531-1421992",
+          "content_range": "bytes 1384531-1421992/46150639",
+          "content_length": 37462,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 37462,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=1789356-1848126",
+          "content_range": "bytes 1789356-1848126/46150639",
+          "content_length": 58771,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 58771,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=1891226-1938201",
+          "content_range": "bytes 1891226-1938201/46150639",
+          "content_length": 46976,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 46976,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=1848127-1891225",
+          "content_range": "bytes 1848127-1891225/46150639",
+          "content_length": 43099,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 43099,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=1421993-1477066",
+          "content_range": "bytes 1421993-1477066/46150639",
+          "content_length": 55074,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 55074,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=1477067-1554840",
+          "content_range": "bytes 1477067-1554840/46150639",
+          "content_length": 77774,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 77774,
+          "completed": true
+        }
+      ],
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "view": "mississippi",
+      "requested_zoom": 8,
+      "requested_center": [
+        -90,
+        35.51628964037926
+      ],
+      "dataset_id": "grwl-raw",
+      "layer_id": "grwl-raw-display",
+      "source_layer": "grwl_width_overview",
+      "archive_sha256": "8497aea081dbe603ceae2da92adf7f171f2b71d0eafb8a7fc70383b8a9bd62e0",
+      "source_pins": {
+        "source_sha256": "1c7177cc55b732dc7e609ed22ae50c46d677548da98c4b39e4f1ab76996ca509"
+      },
+      "status": "passed",
+      "actual_zoom": 8,
+      "actual_center": [
+        -90,
+        35.51628964037926
+      ],
+      "viewer_state": {
+        "phase": "ready",
+        "feature_count": 28332,
+        "error": null
+      },
+      "style_layers": [
+        "release-lines"
+      ],
+      "rendered_source_layers": [
+        "grwl_raw"
+      ],
+      "width_sample_paint": {
+        "radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          0,
+          [
+            "*",
+            [
+              "case",
+              [
+                "all",
+                [
+                  ">",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  0
+                ],
+                [
+                  "!=",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  1
+                ]
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "width_m"
+                  ],
+                  0
+                ],
+                1,
+                1.1,
+                50,
+                1.6,
+                200,
+                2.7,
+                1000,
+                6.2
+              ],
+              0.9
+            ],
+            0.325
+          ],
+          8,
+          [
+            "*",
+            [
+              "case",
+              [
+                "all",
+                [
+                  ">",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  0
+                ],
+                [
+                  "!=",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  1
+                ]
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "width_m"
+                  ],
+                  0
+                ],
+                1,
+                1.1,
+                50,
+                1.6,
+                200,
+                2.7,
+                1000,
+                6.2
+              ],
+              0.9
+            ],
+            0.5
+          ],
+          12,
+          [
+            "*",
+            [
+              "case",
+              [
+                "all",
+                [
+                  ">",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  0
+                ],
+                [
+                  "!=",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  1
+                ]
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "width_m"
+                  ],
+                  0
+                ],
+                1,
+                1.1,
+                50,
+                1.6,
+                200,
+                2.7,
+                1000,
+                6.2
+              ],
+              0.9
+            ],
+            0.7
+          ]
+        ],
+        "color": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "width_valid"
+            ],
+            true
+          ],
+          "#216d85",
+          "#71858a"
+        ],
+        "opacity": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "width_valid"
+            ],
+            true
+          ],
+          0.82,
+          0.58
+        ],
+        "sortKey": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "width_valid"
+            ],
+            true
+          ],
+          [
+            "to-number",
+            [
+              "get",
+              "width_m"
+            ],
+            0
+          ],
+          -1
+        ]
+      },
+      "legend_widths": [
+        {
+          "metres": 50,
+          "pixels": 1.6
+        },
+        {
+          "metres": 200,
+          "pixels": 2.7
+        },
+        {
+          "metres": 1000,
+          "pixels": 6.2
+        }
+      ],
+      "legend_visible": true,
+      "expected_layer": "release-lines",
+      "transferred_bytes": 624488,
+      "requests": [
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/46150639",
+          "content_length": 16384,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 16384,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=1210-11782",
+          "content_range": "bytes 1210-11782/46150639",
+          "content_length": 10573,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 10573,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=2833864-2851435",
+          "content_range": "bytes 2833864-2851435/46150639",
+          "content_length": 17572,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 17572,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=2805852-2833863",
+          "content_range": "bytes 2805852-2833863/46150639",
+          "content_length": 28012,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 28012,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=5334796-5382419",
+          "content_range": "bytes 5334796-5382419/46150639",
+          "content_length": 47624,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 47624,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=2951351-3025303",
+          "content_range": "bytes 2951351-3025303/46150639",
+          "content_length": 73953,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 73953,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=2851436-2951350",
+          "content_range": "bytes 2851436-2951350/46150639",
+          "content_length": 99915,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 99915,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=5382420-5442515",
+          "content_range": "bytes 5382420-5442515/46150639",
+          "content_length": 60096,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 60096,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=5164040-5334795",
+          "content_range": "bytes 5164040-5334795/46150639",
+          "content_length": 170756,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 170756,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=5442516-5542118",
+          "content_range": "bytes 5442516-5542118/46150639",
+          "content_length": 99603,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 99603,
+          "completed": true
+        }
+      ],
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "view": "mississippi",
+      "requested_zoom": 9,
+      "requested_center": [
+        -90,
+        35.51628964037926
+      ],
+      "dataset_id": "grwl-raw",
+      "layer_id": "grwl-raw-display",
+      "source_layer": "grwl_width_overview",
+      "archive_sha256": "8497aea081dbe603ceae2da92adf7f171f2b71d0eafb8a7fc70383b8a9bd62e0",
+      "source_pins": {
+        "source_sha256": "1c7177cc55b732dc7e609ed22ae50c46d677548da98c4b39e4f1ab76996ca509"
+      },
+      "status": "passed",
+      "actual_zoom": 9,
+      "actual_center": [
+        -90,
+        35.51628964037926
+      ],
+      "viewer_state": {
+        "phase": "ready",
+        "feature_count": 9378,
+        "error": null
+      },
+      "style_layers": [
+        "release-lines"
+      ],
+      "rendered_source_layers": [
+        "grwl_raw"
+      ],
+      "width_sample_paint": {
+        "radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          0,
+          [
+            "*",
+            [
+              "case",
+              [
+                "all",
+                [
+                  ">",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  0
+                ],
+                [
+                  "!=",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  1
+                ]
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "width_m"
+                  ],
+                  0
+                ],
+                1,
+                1.1,
+                50,
+                1.6,
+                200,
+                2.7,
+                1000,
+                6.2
+              ],
+              0.9
+            ],
+            0.325
+          ],
+          8,
+          [
+            "*",
+            [
+              "case",
+              [
+                "all",
+                [
+                  ">",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  0
+                ],
+                [
+                  "!=",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  1
+                ]
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "width_m"
+                  ],
+                  0
+                ],
+                1,
+                1.1,
+                50,
+                1.6,
+                200,
+                2.7,
+                1000,
+                6.2
+              ],
+              0.9
+            ],
+            0.5
+          ],
+          12,
+          [
+            "*",
+            [
+              "case",
+              [
+                "all",
+                [
+                  ">",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  0
+                ],
+                [
+                  "!=",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  1
+                ]
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "width_m"
+                  ],
+                  0
+                ],
+                1,
+                1.1,
+                50,
+                1.6,
+                200,
+                2.7,
+                1000,
+                6.2
+              ],
+              0.9
+            ],
+            0.7
+          ]
+        ],
+        "color": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "width_valid"
+            ],
+            true
+          ],
+          "#216d85",
+          "#71858a"
+        ],
+        "opacity": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "width_valid"
+            ],
+            true
+          ],
+          0.82,
+          0.58
+        ],
+        "sortKey": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "width_valid"
+            ],
+            true
+          ],
+          [
+            "to-number",
+            [
+              "get",
+              "width_m"
+            ],
+            0
+          ],
+          -1
+        ]
+      },
+      "legend_widths": [
+        {
+          "metres": 50,
+          "pixels": 1.76
+        },
+        {
+          "metres": 200,
+          "pixels": 2.97
+        },
+        {
+          "metres": 1000,
+          "pixels": 6.82
+        }
+      ],
+      "legend_visible": true,
+      "expected_layer": "release-lines",
+      "transferred_bytes": 203888,
+      "requests": [
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/46150639",
+          "content_length": 16384,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 16384,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=1210-11782",
+          "content_range": "bytes 1210-11782/46150639",
+          "content_length": 10573,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 10573,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=13129167-13143687",
+          "content_range": "bytes 13129167-13143687/46150639",
+          "content_length": 14521,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 14521,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=10348283-10349933",
+          "content_range": "bytes 10348283-10349933/46150639",
+          "content_length": 1651,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 1651,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=10318777-10348282",
+          "content_range": "bytes 10318777-10348282/46150639",
+          "content_length": 29506,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 29506,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=13143688-13176339",
+          "content_range": "bytes 13143688-13176339/46150639",
+          "content_length": 32652,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 32652,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=13052057-13129166",
+          "content_range": "bytes 13052057-13129166/46150639",
+          "content_length": 77110,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 77110,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=13030566-13052056",
+          "content_range": "bytes 13030566-13052056/46150639",
+          "content_length": 21491,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 21491,
+          "completed": true
+        }
+      ],
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "view": "mississippi",
+      "requested_zoom": 10,
+      "requested_center": [
+        -90,
+        35.51628964037926
+      ],
+      "dataset_id": "grwl-raw",
+      "layer_id": "grwl-raw-display",
+      "source_layer": "grwl_width_overview",
+      "archive_sha256": "8497aea081dbe603ceae2da92adf7f171f2b71d0eafb8a7fc70383b8a9bd62e0",
+      "source_pins": {
+        "source_sha256": "1c7177cc55b732dc7e609ed22ae50c46d677548da98c4b39e4f1ab76996ca509"
+      },
+      "status": "passed",
+      "actual_zoom": 10,
+      "actual_center": [
+        -90,
+        35.51628964037926
+      ],
+      "viewer_state": {
+        "phase": "ready",
+        "feature_count": 1860,
+        "error": null
+      },
+      "style_layers": [
+        "release-lines"
+      ],
+      "rendered_source_layers": [
+        "grwl_raw"
+      ],
+      "width_sample_paint": {
+        "radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          0,
+          [
+            "*",
+            [
+              "case",
+              [
+                "all",
+                [
+                  ">",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  0
+                ],
+                [
+                  "!=",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  1
+                ]
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "width_m"
+                  ],
+                  0
+                ],
+                1,
+                1.1,
+                50,
+                1.6,
+                200,
+                2.7,
+                1000,
+                6.2
+              ],
+              0.9
+            ],
+            0.325
+          ],
+          8,
+          [
+            "*",
+            [
+              "case",
+              [
+                "all",
+                [
+                  ">",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  0
+                ],
+                [
+                  "!=",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  1
+                ]
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "width_m"
+                  ],
+                  0
+                ],
+                1,
+                1.1,
+                50,
+                1.6,
+                200,
+                2.7,
+                1000,
+                6.2
+              ],
+              0.9
+            ],
+            0.5
+          ],
+          12,
+          [
+            "*",
+            [
+              "case",
+              [
+                "all",
+                [
+                  ">",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  0
+                ],
+                [
+                  "!=",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  1
+                ]
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "width_m"
+                  ],
+                  0
+                ],
+                1,
+                1.1,
+                50,
+                1.6,
+                200,
+                2.7,
+                1000,
+                6.2
+              ],
+              0.9
+            ],
+            0.7
+          ]
+        ],
+        "color": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "width_valid"
+            ],
+            true
+          ],
+          "#216d85",
+          "#71858a"
+        ],
+        "opacity": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "width_valid"
+            ],
+            true
+          ],
+          0.82,
+          0.58
+        ],
+        "sortKey": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "width_valid"
+            ],
+            true
+          ],
+          [
+            "to-number",
+            [
+              "get",
+              "width_m"
+            ],
+            0
+          ],
+          -1
+        ]
+      },
+      "legend_widths": [
+        {
+          "metres": 50,
+          "pixels": 1.92
+        },
+        {
+          "metres": 200,
+          "pixels": 3.24
+        },
+        {
+          "metres": 1000,
+          "pixels": 7.44
+        }
+      ],
+      "legend_visible": true,
+      "expected_layer": "release-lines",
+      "transferred_bytes": 98352,
+      "requests": [
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/46150639",
+          "content_length": 16384,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 16384,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=1210-11782",
+          "content_range": "bytes 1210-11782/46150639",
+          "content_length": 10573,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 10573,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=18498708-18514247",
+          "content_range": "bytes 18498708-18514247/46150639",
+          "content_length": 15540,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 15540,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=21485936-21488730",
+          "content_range": "bytes 21485936-21488730/46150639",
+          "content_length": 2795,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 2795,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=18514248-18515269",
+          "content_range": "bytes 18514248-18515269/46150639",
+          "content_length": 1022,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 1022,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=21474843-21485935",
+          "content_range": "bytes 21474843-21485935/46150639",
+          "content_length": 11093,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 11093,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=21488731-21499952",
+          "content_range": "bytes 21488731-21499952/46150639",
+          "content_length": 11222,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 11222,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=21404678-21434400",
+          "content_range": "bytes 21404678-21434400/46150639",
+          "content_length": 29723,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 29723,
+          "completed": true
+        }
+      ],
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "view": "mississippi",
+      "requested_zoom": 11,
+      "requested_center": [
+        -90,
+        35.51628964037926
+      ],
+      "dataset_id": "grwl-raw",
+      "layer_id": "grwl-raw-display",
+      "source_layer": "grwl_width_overview",
+      "archive_sha256": "8497aea081dbe603ceae2da92adf7f171f2b71d0eafb8a7fc70383b8a9bd62e0",
+      "source_pins": {
+        "source_sha256": "1c7177cc55b732dc7e609ed22ae50c46d677548da98c4b39e4f1ab76996ca509"
+      },
+      "status": "passed",
+      "actual_zoom": 11,
+      "actual_center": [
+        -90,
+        35.51628964037926
+      ],
+      "viewer_state": {
+        "phase": "ready",
+        "feature_count": 1022,
+        "error": null
+      },
+      "style_layers": [
+        "release-lines"
+      ],
+      "rendered_source_layers": [
+        "grwl_raw"
+      ],
+      "width_sample_paint": {
+        "radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          0,
+          [
+            "*",
+            [
+              "case",
+              [
+                "all",
+                [
+                  ">",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  0
+                ],
+                [
+                  "!=",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  1
+                ]
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "width_m"
+                  ],
+                  0
+                ],
+                1,
+                1.1,
+                50,
+                1.6,
+                200,
+                2.7,
+                1000,
+                6.2
+              ],
+              0.9
+            ],
+            0.325
+          ],
+          8,
+          [
+            "*",
+            [
+              "case",
+              [
+                "all",
+                [
+                  ">",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  0
+                ],
+                [
+                  "!=",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  1
+                ]
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "width_m"
+                  ],
+                  0
+                ],
+                1,
+                1.1,
+                50,
+                1.6,
+                200,
+                2.7,
+                1000,
+                6.2
+              ],
+              0.9
+            ],
+            0.5
+          ],
+          12,
+          [
+            "*",
+            [
+              "case",
+              [
+                "all",
+                [
+                  ">",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  0
+                ],
+                [
+                  "!=",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  1
+                ]
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "width_m"
+                  ],
+                  0
+                ],
+                1,
+                1.1,
+                50,
+                1.6,
+                200,
+                2.7,
+                1000,
+                6.2
+              ],
+              0.9
+            ],
+            0.7
+          ]
+        ],
+        "color": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "width_valid"
+            ],
+            true
+          ],
+          "#216d85",
+          "#71858a"
+        ],
+        "opacity": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "width_valid"
+            ],
+            true
+          ],
+          0.82,
+          0.58
+        ],
+        "sortKey": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "width_valid"
+            ],
+            true
+          ],
+          [
+            "to-number",
+            [
+              "get",
+              "width_m"
+            ],
+            0
+          ],
+          -1
+        ]
+      },
+      "legend_widths": [
+        {
+          "metres": 50,
+          "pixels": 2.08
+        },
+        {
+          "metres": 200,
+          "pixels": 3.51
+        },
+        {
+          "metres": 1000,
+          "pixels": 8.06
+        }
+      ],
+      "legend_visible": true,
+      "expected_layer": "release-lines",
+      "transferred_bytes": 54005,
+      "requests": [
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/46150639",
+          "content_length": 16384,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 16384,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=1210-11782",
+          "content_range": "bytes 1210-11782/46150639",
+          "content_length": 10573,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 10573,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=27142700-27150116",
+          "content_range": "bytes 27142700-27150116/46150639",
+          "content_length": 7417,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 7417,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=30365398-30368089",
+          "content_range": "bytes 30365398-30368089/46150639",
+          "content_length": 2692,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 2692,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=27150117-27150737",
+          "content_range": "bytes 27150117-27150737/46150639",
+          "content_length": 621,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 621,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=27133047-27142152",
+          "content_range": "bytes 27133047-27142152/46150639",
+          "content_length": 9106,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 9106,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=27142153-27142699",
+          "content_range": "bytes 27142153-27142699/46150639",
+          "content_length": 547,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 547,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=30358733-30365397",
+          "content_range": "bytes 30358733-30365397/46150639",
+          "content_length": 6665,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 6665,
+          "completed": true
+        }
+      ],
+      "page_errors": [],
+      "external_requests": []
+    },
+    {
+      "view": "mississippi",
+      "requested_zoom": 12,
+      "requested_center": [
+        -90,
+        35.51628964037926
+      ],
+      "dataset_id": "grwl-raw",
+      "layer_id": "grwl-raw-display",
+      "source_layer": "grwl_width_overview",
+      "archive_sha256": "8497aea081dbe603ceae2da92adf7f171f2b71d0eafb8a7fc70383b8a9bd62e0",
+      "source_pins": {
+        "source_sha256": "1c7177cc55b732dc7e609ed22ae50c46d677548da98c4b39e4f1ab76996ca509"
+      },
+      "status": "passed",
+      "actual_zoom": 12,
+      "actual_center": [
+        -90,
+        35.51628964037926
+      ],
+      "viewer_state": {
+        "phase": "ready",
+        "feature_count": 558,
+        "error": null
+      },
+      "style_layers": [
+        "release-lines"
+      ],
+      "rendered_source_layers": [
+        "grwl_raw"
+      ],
+      "width_sample_paint": {
+        "radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          0,
+          [
+            "*",
+            [
+              "case",
+              [
+                "all",
+                [
+                  ">",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  0
+                ],
+                [
+                  "!=",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  1
+                ]
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "width_m"
+                  ],
+                  0
+                ],
+                1,
+                1.1,
+                50,
+                1.6,
+                200,
+                2.7,
+                1000,
+                6.2
+              ],
+              0.9
+            ],
+            0.325
+          ],
+          8,
+          [
+            "*",
+            [
+              "case",
+              [
+                "all",
+                [
+                  ">",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  0
+                ],
+                [
+                  "!=",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  1
+                ]
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "width_m"
+                  ],
+                  0
+                ],
+                1,
+                1.1,
+                50,
+                1.6,
+                200,
+                2.7,
+                1000,
+                6.2
+              ],
+              0.9
+            ],
+            0.5
+          ],
+          12,
+          [
+            "*",
+            [
+              "case",
+              [
+                "all",
+                [
+                  ">",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  0
+                ],
+                [
+                  "!=",
+                  [
+                    "to-number",
+                    [
+                      "get",
+                      "width_m"
+                    ],
+                    0
+                  ],
+                  1
+                ]
+              ],
+              [
+                "interpolate",
+                [
+                  "linear"
+                ],
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "width_m"
+                  ],
+                  0
+                ],
+                1,
+                1.1,
+                50,
+                1.6,
+                200,
+                2.7,
+                1000,
+                6.2
+              ],
+              0.9
+            ],
+            0.7
+          ]
+        ],
+        "color": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "width_valid"
+            ],
+            true
+          ],
+          "#216d85",
+          "#71858a"
+        ],
+        "opacity": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "width_valid"
+            ],
+            true
+          ],
+          0.82,
+          0.58
+        ],
+        "sortKey": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "width_valid"
+            ],
+            true
+          ],
+          [
+            "to-number",
+            [
+              "get",
+              "width_m"
+            ],
+            0
+          ],
+          -1
+        ]
+      },
+      "legend_widths": [
+        {
+          "metres": 50,
+          "pixels": 2.24
+        },
+        {
+          "metres": 200,
+          "pixels": 3.78
+        },
+        {
+          "metres": 1000,
+          "pixels": 8.68
+        }
+      ],
+      "legend_visible": true,
+      "expected_layer": "release-lines",
+      "transferred_bytes": 46918,
+      "requests": [
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=0-16383",
+          "content_range": "bytes 0-16383/46150639",
+          "content_length": 16384,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 16384,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=1210-11782",
+          "content_range": "bytes 1210-11782/46150639",
+          "content_length": 10573,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 10573,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=11783-21058",
+          "content_range": "bytes 11783-21058/46150639",
+          "content_length": 9276,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 9276,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=36335570-36339520",
+          "content_range": "bytes 36335570-36339520/46150639",
+          "content_length": 3951,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 3951,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=36331533-36332549",
+          "content_range": "bytes 36331533-36332549/46150639",
+          "content_length": 1017,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 1017,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=39809073-39811769",
+          "content_range": "bytes 39809073-39811769/46150639",
+          "content_length": 2697,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 2697,
+          "completed": true
+        },
+        {
+          "url": "http://127.0.0.1:8919/nthh/grwl-raw/local-preview/8497aea081db/widths.pmtiles",
+          "method": "GET",
+          "status": 206,
+          "range": "bytes=36332550-36335569",
+          "content_range": "bytes 36332550-36335569/46150639",
+          "content_length": 3020,
+          "cors": "*",
+          "object_size_bytes": 46150639,
+          "body_bytes": 3020,
+          "completed": true
+        }
+      ],
+      "page_errors": [],
+      "external_requests": []
+    }
+  ],
+  "finished_at": "2026-11-06T20:18:15.895Z",
+  "browser_version": "156.0.8078.80"
+}

@@ -1,0 +1,49 @@
+{
+  "frozen_original": {
+    "allowed_parent_multipart_states": [
+      "open",
+      "abort_failed"
+    ],
+    "expected_sha256": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+    "expected_size_bytes": 5529859809,
+    "failed_record_name": "0299-ef3e6214f3dde8c4.json",
+    "failed_record_sha256": "6a35e9594016ad9f99ef62f8ed7331b951a4f749f020528046af2c054f663c7f",
+    "object_key": "grwl-raw/releases/raw-v01.01-local-r1/assets/grwl-raw-observations.parquet",
+    "owner_bucket": "nthh",
+    "parent_status": "failed",
+    "plan_sha256": "754c02dde3cf258263619599f893558d3348c7fb51c07f8fa700efa1900ac610",
+    "product_id": "grwl-raw",
+    "summary_sha256": "de78ceff5522dc8646b0fb6c793776f82f29b153c9a726ab9728278ff5adae6c",
+    "upload_id_value": "omitted"
+  },
+  "kind": "multipart_same_id_hosted_parent_proof_gate",
+  "prepared_at_utc": "2026-11-07T03:56:37.936870+00:00",
+  "refusals": [
+    "missing failed parent record",
+    "changed failed parent record bytes",
+    "wrong parent summary SHA",
+    "wrong target identity or expected checksum",
+    "wrong or missing upload ID",
+    "parent not failed or wrong multipart state",
+    "current multipart not completed",
+    "missing fresh remote readback scope",
+    "zero or multiple resumed targets",
+    "wrong summary counts"
+  ],
+  "required_child": {
+    "exactly_one_multipart_resume_record": true,
+    "prior_full_byte_reuse_proofs": "preserved independently",
+    "summary_mode": "execute",
+    "summary_parent_summary_sha256_matches": true,
+    "summary_resume_mode": "existing_multipart",
+    "summary_resumed_multipart": 1,
+    "summary_status": "complete",
+    "target_multipart_state": "completed",
+    "target_plan_bucket_key_size_sha_match_parent_and_plan": true,
+    "target_remote_sha256_scope": "current_attempt_full_remote_readback",
+    "target_status": "uploaded_verified",
+    "target_upload_id_matches_parent": true
+  },
+  "schema_version": 1,
+  "scope": "Validator-only audit of the original failed multipart parent after full remote verification; no remote or uploader operation"
+}

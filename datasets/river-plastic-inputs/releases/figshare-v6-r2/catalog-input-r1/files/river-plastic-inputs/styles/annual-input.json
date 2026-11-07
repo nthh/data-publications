@@ -1,0 +1,111 @@
+{
+  "version": 8,
+  "name": "Annual river plastic input — midpoint estimate",
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "../river-plastic-inputs.pmtiles",
+      "attribution": "Lebreton et al. (2017), CC BY 4.0; conversion by Folia"
+    }
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "background",
+      "paint": {
+        "background-color": "#f1f5f7"
+      }
+    },
+    {
+      "id": "river-inputs",
+      "type": "circle",
+      "source": "data",
+      "source-layer": "river_inputs",
+      "paint": {
+        "circle-color": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "i_mid"
+            ],
+            null
+          ],
+          "#7d8994",
+          [
+            "interpolate",
+            [
+              "linear"
+            ],
+            [
+              "log10",
+              [
+                "+",
+                1,
+                [
+                  "coalesce",
+                  [
+                    "get",
+                    "i_mid"
+                  ],
+                  0
+                ]
+              ]
+            ],
+            0,
+            "#4da6c8",
+            1,
+            "#76c7c0",
+            2,
+            "#f5cf72",
+            3,
+            "#e97d41",
+            4,
+            "#bd3838",
+            5,
+            "#751e39"
+          ]
+        ],
+        "circle-radius": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "i_mid"
+            ],
+            null
+          ],
+          3,
+          [
+            "interpolate",
+            [
+              "linear"
+            ],
+            [
+              "log10",
+              [
+                "+",
+                1,
+                [
+                  "coalesce",
+                  [
+                    "get",
+                    "i_mid"
+                  ],
+                  0
+                ]
+              ]
+            ],
+            0,
+            1.2,
+            5,
+            6.2
+          ]
+        ],
+        "circle-opacity": 0.8
+      }
+    }
+  ]
+}

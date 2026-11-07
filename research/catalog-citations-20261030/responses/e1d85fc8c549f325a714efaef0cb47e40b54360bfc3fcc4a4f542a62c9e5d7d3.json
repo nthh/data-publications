@@ -1,0 +1,80 @@
+{
+  "request_url": "https://api.openalex.org/works?search=High-resolution+mapping+of+global+population+distributions+using+remotely+sensed+and+geospatial+data&corpus=all&per_page=5&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date",
+  "retrieved_at": "2026-10-30T22:07:52.424797+00:00",
+  "response_path": "responses/e1d85fc8c549f325a714efaef0cb47e40b54360bfc3fcc4a4f542a62c9e5d7d3.json",
+  "status": 200,
+  "response_sha256": "2e33949b5fe069f0183e8ec984ec43d59445c5a2aa9975e836521258375bb57f",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 15324,
+      "db_response_time_ms": 255,
+      "page": 1,
+      "per_page": 5,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where full text has (High-resolution mapping of global population distributions using remotely sensed \"and\" geospatial data)",
+        "x_new_oql": "get works (all corpora) where full text has (High-resolution mapping of global population distributions using remotely sensed \"and\" geospatial data)",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "High-resolution mapping of global population distributions using remotely sensed and geospatial data",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:High-resolution mapping of global population distributions using remotely sensed and geospatial data&corpus=all&per_page=5",
+        "order": "best matches first",
+        "order_default": true
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W2057442840",
+        "doi": "https://doi.org/10.1371/journal.pone.0107042",
+        "title": "Disaggregating Census Data for Population Mapping Using Random Forests with Remotely-Sensed and Ancillary Data",
+        "type": "article",
+        "publication_year": 2015,
+        "publication_date": "2015-02-17"
+      },
+      {
+        "id": "https://openalex.org/W2890140875",
+        "doi": "https://doi.org/10.3390/rs10091409",
+        "title": "Mapping Population Distribution from High Resolution Remotely Sensed Imagery in a Data Poor Setting",
+        "type": "article",
+        "publication_year": 2018,
+        "publication_date": "2018-09-05"
+      },
+      {
+        "id": "https://openalex.org/W2580095392",
+        "doi": "https://doi.org/10.1038/sdata.2017.1",
+        "title": "High resolution global gridded data for use in population studies",
+        "type": "data-paper",
+        "publication_year": 2017,
+        "publication_date": "2017-01-30"
+      },
+      {
+        "id": "https://openalex.org/W3197958969",
+        "doi": "https://doi.org/10.1016/j.jag.2021.102514",
+        "title": "Integrating remote sensing and geospatial big data for urban land use mapping: A review",
+        "type": "article",
+        "publication_year": 2021,
+        "publication_date": "2021-08-29"
+      },
+      {
+        "id": "https://openalex.org/W2951768252",
+        "doi": "https://doi.org/10.1080/20964471.2019.1625151",
+        "title": "Global spatio-temporally harmonised datasets for producing high-resolution gridded population distribution datasets",
+        "type": "article",
+        "publication_year": 2019,
+        "publication_date": "2019-04-03"
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "3ef6529a0441d6ceb509c8ab48fbe41b6662cf15950e56f715eeaacd75891bac"
+}

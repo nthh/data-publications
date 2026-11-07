@@ -1,0 +1,80 @@
+{
+  "request_url": "https://api.openalex.org/works?search=Population+distribution%2C+settlement+patterns+and+accessibility+across+Africa+in+2010&corpus=all&per_page=5&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date",
+  "retrieved_at": "2026-10-30T22:07:56.647836+00:00",
+  "response_path": "responses/3eff57b515545d483ced0d425f374ed74d45ce86e551f1c152ce3cbcca9f52d0.json",
+  "status": 200,
+  "response_sha256": "507bfd7402aadd102c948c5ec2aba82b50e0aace706a0d53db6400b1af3a587e",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 60878,
+      "db_response_time_ms": 281,
+      "page": 1,
+      "per_page": 5,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where full text has (Population distribution settlement patterns \"and\" accessibility across Africa in 2010)",
+        "x_new_oql": "get works (all corpora) where full text has (Population distribution settlement patterns \"and\" accessibility across Africa in 2010)",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "Population distribution settlement patterns and accessibility across Africa in 2010",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:Population distribution settlement patterns and accessibility across Africa in 2010&corpus=all&per_page=5",
+        "order": "best matches first",
+        "order_default": true
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W2052458288",
+        "doi": "https://doi.org/10.1371/journal.pone.0031743",
+        "title": "Population Distribution, Settlement Patterns and Accessibility across Africa in 2010",
+        "type": "article",
+        "publication_year": 2012,
+        "publication_date": "2012-02-21"
+      },
+      {
+        "id": "https://openalex.org/W7097951273",
+        "doi": null,
+        "title": "Population distribution, settlement patterns and accessibility across Africa in 2010. PLoS",
+        "type": "article",
+        "publication_year": 2012,
+        "publication_date": "2012-01-01"
+      },
+      {
+        "id": "https://openalex.org/W3180077601",
+        "doi": "https://doi.org/10.5258/soton/wp00246",
+        "title": "South Africa 100m Population",
+        "type": "dataset",
+        "publication_year": 2013,
+        "publication_date": "2013-01-01"
+      },
+      {
+        "id": "https://openalex.org/W6967537588",
+        "doi": "https://doi.org/10.5258/soton/wp00049",
+        "title": "Central African Republic 100m Population",
+        "type": "dataset",
+        "publication_year": 2013,
+        "publication_date": "2013-01-01"
+      },
+      {
+        "id": "https://openalex.org/W6929609945",
+        "doi": "https://doi.org/10.5258/soton/wp00075",
+        "title": "Djibouti 100m Population",
+        "type": "dataset",
+        "publication_year": 2013,
+        "publication_date": "2013-01-01"
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "d553015a9ac928901f9e5080483062251b878195f68f90e106965574844461e5"
+}

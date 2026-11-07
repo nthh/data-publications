@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-11-07T00:35:12.620850+00:00",
+  "dataset_id": "hydrolakes",
+  "scope": "Browser harness correction for anonymous GeoParquet metadata HEAD requests; upload bytes, GET range policy, source attributes, and scientific criteria unchanged.",
+  "frozen_plan_sha256": "754c02dde3cf258263619599f893558d3348c7fb51c07f8fa700efa1900ac610",
+  "frozen_browser_controls_sha256": "6ff14a9c438cdee14af4ea21876ca32876883f7b676c16596b4ddfc924b6aa10",
+  "retained_failed_browser_attempts": [
+    {
+      "revision": 1,
+      "path": "failed-browser-r1.json",
+      "sha256": "5d0ab698517a49287d548f0ed26dd73a0f03c67ddacbd4f82b29f1fc443f83ee",
+      "failure": "Source attribute lookup did not return all declared fields"
+    },
+    {
+      "revision": 2,
+      "path": "failed-browser-r2.json",
+      "sha256": "e0a10027e7b391e26d9bc4d42aa48132820df52fb8ff224070454a504d74269b",
+      "failure": "Source attribute lookup did not return all declared fields"
+    },
+    {
+      "revision": 3,
+      "path": "failed-browser-r3.json",
+      "sha256": "0953fa4ba150374b0901e61b81549aafd755d0b75aa91b4fc78b317b63f4d917",
+      "failure": "Hosted range/CORS/browser checks failed"
+    }
+  ],
+  "correction": {
+    "ordinary_head": "Permit only exact planned product URLs; require HTTP 200, planned full Content-Length, MIME and CORS.",
+    "range_head": "DuckDB sends Range: bytes=0- on HEAD. Source replies HTTP 206 with full-object Content-Range and Content-Length. Require exactly that range, status, planned size, MIME and CORS.",
+    "data_get_boundary": "HEAD responses are recorded separately and never satisfy the required bounded 206 GET or transferred-byte checks."
+  },
+  "passed_browser": {
+    "normalized_report_path": "../../browser-hydrolakes-r4/hosted-browser-evidence.json",
+    "normalized_report_sha256": "38764cff79a12c25549e8d7c6c9e3fcaec6cad9d65c7cfc2861ff3313fcf3c02",
+    "original_report_path": "../../browser-hydrolakes-r4/hosted-browser-evidence-original.json",
+    "original_report_sha256": "6942f74b42b3efe956df9b0edbb4921885ac8af502140a910fafac6f1030b2ea",
+    "head_statuses": [
+      200,
+      206,
+      206
+    ],
+    "get_response_count": 26,
+    "get_transferred_bytes": 2160046,
+    "regional_source_attribute_count": 21
+  },
+  "passed_hosted": {
+    "path": "hosted-validation.json",
+    "sha256": "f690939ac02af9216af27128331d2136b31893292d0409a0fd54858c2b027a38",
+    "checks": {
+      "anonymous_access": "passed",
+      "asset_checksums": "passed",
+      "browser_render": "passed",
+      "catalog_links": "passed",
+      "cors": "passed",
+      "range_requests": "passed",
+      "subset_query": "passed"
+    }
+  }
+}

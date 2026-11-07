@@ -1,0 +1,270 @@
+{
+  "analytic_release": "raw-v01.01-local-r1",
+  "browser": {
+    "aggregate_requested_range_bytes": 240931307,
+    "aggregate_response_body_bytes": 240931307,
+    "browser_policy_sha256": "9a686487409e3fe62231e3c7bc2b8e4dc7b27e844b6534c350fd91f8f9cecba2",
+    "case_count": 11,
+    "controls_sha256": "c0c3aa549f2e8dfd138a916ba51da94446436f9628a3ec7aaf91324e682f64cc",
+    "pmtiles_sha256": "a1a7787c7ba28ffc271819bddc54339f9bc741aa9ed44ca619d93e809cbad4f5",
+    "source_manifest_sha256": "160dfaf91ede202da57172ff16492601ca349d43e0b629819a7e4eb82222acda",
+    "source_sha256": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+    "source_validation_sha256": "eb225411b335fcd5c968bb70337738fcb8bcc2ed31d8f48c4e02e7948da2fd0a"
+  },
+  "browser_controls_sha256": "c0c3aa549f2e8dfd138a916ba51da94446436f9628a3ec7aaf91324e682f64cc",
+  "browser_report_sha256": "4316a2e538d270996fe01895cc1a081ced29aca967b4bc93c900da38fb36dae0",
+  "data_license": {
+    "attribution": "Allen, G.H. and Pavelsky, T.M. (2018), Global extent of rivers and streams. Science 361(6402), 585–588. https://doi.org/10.1126/science.aat0636",
+    "license": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "dataset_id": "grwl-raw",
+  "display_input_provenance_sha256": "60a1398be000f2efbfcac4947b5bbb5f5eb267729439bf9a719949819ecee17c",
+  "display_release": "raw-v01.01-display-r1",
+  "hosted": false,
+  "missing_ids_sha256": "580d716dad9d2a310f24bbd7efe75e1162bd246a4d991d557307100d393a3324",
+  "oracle": {
+    "attribute_occurrences_checked": 70155474,
+    "missing_classification": {
+      "quantization_collapse": 304
+    },
+    "missing_ids": 304,
+    "missing_ids_sha256": "580d716dad9d2a310f24bbd7efe75e1162bd246a4d991d557307100d393a3324",
+    "occurrences": 70155474,
+    "visible_ids": 64572694
+  },
+  "pmtiles": {
+    "sha256": "a1a7787c7ba28ffc271819bddc54339f9bc741aa9ed44ca619d93e809cbad4f5",
+    "size_bytes": 11498067077
+  },
+  "pmtiles_copy_mode": "apfs_clone",
+  "pmtiles_verification_binary_sha256": "82b16b50ed0c171a10420e840456b8b0c55d79aed2e5c7e40b333587ba7d5553",
+  "pmtiles_verification_sha256": "23ba1c667d801125a57a3f11d91b01bbd5f646d3264e565e820e1fcef8701fb0",
+  "provisional_display_manifest_sha256": "c9c21e1a6137d3f2cfa60e5a54c69fd44a7ab22a91278b5857d2a99f6ef27ec8",
+  "provisional_display_run_id": "global-display-v1",
+  "publicly_published": false,
+  "raw_display_oracle_sha256": "14ea16e6d493847a8d813166f09214f323564b568e0e1f8021d895389136a7f9",
+  "schema_version": 1,
+  "source_attribution": {
+    "attribution": "Allen, G.H. and Pavelsky, T.M. (2018), Global extent of rivers and streams. Science 361(6402), 585–588. https://doi.org/10.1126/science.aat0636",
+    "doi": "https://doi.org/10.5281/zenodo.18624542",
+    "license": {
+      "identifier": "CC-BY-4.0",
+      "url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "title": "Global River Width from Landsat raw vector component V01.01",
+    "url": "https://zenodo.org/records/18624542",
+    "version": "V01.01"
+  },
+  "source_fidelity_sha256": "1069df50a17e13fc55b26065dd2aa438a2e09a178d444dc3700186f4f01285ca",
+  "source_license": {
+    "identifier": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "source_manifest_sha256": "160dfaf91ede202da57172ff16492601ca349d43e0b629819a7e4eb82222acda",
+  "source_parquet": {
+    "sha256": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+    "size_bytes": 5529859809
+  },
+  "source_rows": 64572998,
+  "source_tiles": 829,
+  "status": "passed",
+  "verification_workflow": {
+    "files": {
+      "datasets/grwl-raw/finalize_display.py": {
+        "path": "reports/finalization/verification-workflow/datasets/grwl-raw/finalize_display.py",
+        "sha256": "583c49f7b1e8985ee12a6db2d5a47896ddc5b922ee907118f23f714391b7fd95",
+        "size_bytes": 83220
+      },
+      "datasets/grwl-raw/native_quantization.py": {
+        "path": "reports/finalization/verification-workflow/datasets/grwl-raw/native_quantization.py",
+        "sha256": "ba0f76b356aa5813b50bde0803c0bc2d477f3452ba664d2ed0eccc1a773bed44",
+        "size_bytes": 6467
+      },
+      "datasets/grwl-raw/prepare_preview.py": {
+        "path": "reports/finalization/verification-workflow/datasets/grwl-raw/prepare_preview.py",
+        "sha256": "bda95cfa59fa0716a7671ef84ac96bf3241be29166781ec3fb037b709e898d25",
+        "size_bytes": 6328
+      },
+      "datasets/grwl-raw/validate_display.py": {
+        "path": "reports/finalization/verification-workflow/datasets/grwl-raw/validate_display.py",
+        "sha256": "a21937f071d728902b8eb721376d3e2e22c138acd6eba747a131ee7f6ddbc9f8",
+        "size_bytes": 34816
+      },
+      "datasets/grwl/validate_display_wrap.py": {
+        "path": "reports/finalization/verification-workflow/datasets/grwl/validate_display_wrap.py",
+        "sha256": "6818ad35b96d343150d4a94a78f0d98507f3eb491c7b7c0107780056d98c3286",
+        "size_bytes": 18462
+      },
+      "research/grwl-raw-release-20261102/criteria.json": {
+        "path": "reports/finalization/verification-workflow/research/grwl-raw-release-20261102/criteria.json",
+        "sha256": "c90939aeef5351170d267bbdb1c51ff0b38a80c5ba8e1582622d9bdb64f69196",
+        "size_bytes": 4460
+      },
+      "research/grwl-raw-release-20261102/display-policy.json": {
+        "path": "reports/finalization/verification-workflow/research/grwl-raw-release-20261102/display-policy.json",
+        "sha256": "084684c6b47701645b08b8ed42ba0818061c0b2d36959aebce8026b6401060f7",
+        "size_bytes": 948
+      },
+      "research/grwl-raw-release-20261102/global-browser-policy.json": {
+        "path": "reports/finalization/verification-workflow/research/grwl-raw-release-20261102/global-browser-policy.json",
+        "sha256": "9a686487409e3fe62231e3c7bc2b8e4dc7b27e844b6534c350fd91f8f9cecba2",
+        "size_bytes": 2314
+      },
+      "research/grwl-raw-release-20261102/global-criteria.json": {
+        "path": "reports/finalization/verification-workflow/research/grwl-raw-release-20261102/global-criteria.json",
+        "sha256": "03ea3bc45b8bc2ce7fd1e66835244408da32a5ac59c00bb908c375720f1ae481",
+        "size_bytes": 5439
+      },
+      "research/grwl-raw-release-20261102/global-display-diagnostics-r1/control-policy-r2.json": {
+        "path": "reports/finalization/verification-workflow/research/grwl-raw-release-20261102/global-display-diagnostics-r1/control-policy-r2.json",
+        "sha256": "6c12ad5328cb84f7aa00373041ecfbdc26e688fde0c997a0984b9ca427c47b2a",
+        "size_bytes": 3258
+      },
+      "research/grwl-raw-release-20261102/global-display-diagnostics-r1/control-policy.json": {
+        "path": "reports/finalization/verification-workflow/research/grwl-raw-release-20261102/global-display-diagnostics-r1/control-policy.json",
+        "sha256": "b54afc441f0d9775b78862d1d44db25dac1665b7d41f90bfe72e59a7dc009398",
+        "size_bytes": 2720
+      },
+      "research/grwl-raw-release-20261102/global-display-diagnostics-r1/native-quantization-controls.geojson": {
+        "path": "reports/finalization/verification-workflow/research/grwl-raw-release-20261102/global-display-diagnostics-r1/native-quantization-controls.geojson",
+        "sha256": "ccf7048d4e72ea41f79a27775f91179f8134c37f5c74c571b74ef5b144eef1e4",
+        "size_bytes": 1712
+      },
+      "research/grwl-raw-release-20261102/global-display-diagnostics-r1/native-quantization-controls.pmtiles": {
+        "path": "reports/finalization/verification-workflow/research/grwl-raw-release-20261102/global-display-diagnostics-r1/native-quantization-controls.pmtiles",
+        "sha256": "f1b2ffbc133c4c0a60db3fb23648308d302cd8eef6eb732bb9d93a4108dbff85",
+        "size_bytes": 984
+      },
+      "research/grwl-raw-release-20261102/global-display-diagnostics-r1/native-quantization-diagnostic.json": {
+        "path": "reports/finalization/verification-workflow/research/grwl-raw-release-20261102/global-display-diagnostics-r1/native-quantization-diagnostic.json",
+        "sha256": "a01e837972500c9188dde188e90e358383f244a3653ea080664f1ef3babd11b4",
+        "size_bytes": 8277
+      },
+      "research/grwl-raw-release-20261102/global-display-diagnostics-r1/native-threshold-controls.geojson": {
+        "path": "reports/finalization/verification-workflow/research/grwl-raw-release-20261102/global-display-diagnostics-r1/native-threshold-controls.geojson",
+        "sha256": "4ae5c10a9ea925c17fda7f9c4738d6def9686bed9063fae9561f8e4d83172af6",
+        "size_bytes": 3860
+      },
+      "research/grwl-raw-release-20261102/global-display-diagnostics-r1/native-threshold-controls.pmtiles": {
+        "path": "reports/finalization/verification-workflow/research/grwl-raw-release-20261102/global-display-diagnostics-r1/native-threshold-controls.pmtiles",
+        "sha256": "db6b0bad190dab4585ccab6fcd54ad9eb26e477d5a5e9d8c3e926af68860289a",
+        "size_bytes": 977
+      },
+      "research/grwl-raw-release-20261102/global-display-diagnostics-r1/source-compactness-r1.json": {
+        "path": "reports/finalization/verification-workflow/research/grwl-raw-release-20261102/global-display-diagnostics-r1/source-compactness-r1.json",
+        "sha256": "7a7a3d986ee9b0cbd47fa03152c8c4b308156274a6973297546316ca68a3c1e3",
+        "size_bytes": 724
+      },
+      "research/grwl-raw-release-20261102/prepare_global_browser_controls.py": {
+        "path": "reports/finalization/verification-workflow/research/grwl-raw-release-20261102/prepare_global_browser_controls.py",
+        "sha256": "2c7f155a83a6aa838064c043ef6e077c1630583710594969d2c880e21837be85",
+        "size_bytes": 9423
+      },
+      "research/pmtiles-all-20261102/criteria.json": {
+        "path": "reports/finalization/verification-workflow/research/pmtiles-all-20261102/criteria.json",
+        "sha256": "680756f3fc44d01364c788d99ab3e14fb44039ea00b22927842eaadd68640785",
+        "size_bytes": 5648
+      },
+      "scripts/cloud_viewer/build.mjs": {
+        "path": "reports/finalization/verification-workflow/scripts/cloud_viewer/build.mjs",
+        "sha256": "35068274eb8076d7e98a0207d4d515e1f3ffadadb222d92a6391885df0c8b32d",
+        "size_bytes": 2367
+      },
+      "scripts/cloud_viewer/fetch-assets.mjs": {
+        "path": "reports/finalization/verification-workflow/scripts/cloud_viewer/fetch-assets.mjs",
+        "sha256": "4a1df932e20688b7d6d1fbd1368b365ec9c34f75ee9a67c7aea2c6677fe5c27c",
+        "size_bytes": 2133
+      },
+      "scripts/cloud_viewer/package-lock.json": {
+        "path": "reports/finalization/verification-workflow/scripts/cloud_viewer/package-lock.json",
+        "sha256": "2719495eaa1f7bcbdcf768957b823c444251a746c342ed2ea86789d27abb110d",
+        "size_bytes": 36604
+      },
+      "scripts/cloud_viewer/package.json": {
+        "path": "reports/finalization/verification-workflow/scripts/cloud_viewer/package.json",
+        "sha256": "ee29c6bfb41edd383aa3ca43736d5a564a9323c1e8bdd846216e80a1b1c3b034",
+        "size_bytes": 518
+      },
+      "scripts/cloud_viewer/prepare.py": {
+        "path": "reports/finalization/verification-workflow/scripts/cloud_viewer/prepare.py",
+        "sha256": "4902cd7c1f33dc2f46f1dcaefbbf9406e9ffc924b9fa6f581804463d90a1354a",
+        "size_bytes": 43384
+      },
+      "scripts/cloud_viewer/raw-browser-check.mjs": {
+        "path": "reports/finalization/verification-workflow/scripts/cloud_viewer/raw-browser-check.mjs",
+        "sha256": "46579f2da13e20c6d63be1b8977a246b6e2cb8cc9eedbc8f0d4cc976012219e8",
+        "size_bytes": 12285
+      },
+      "scripts/cloud_viewer/run.py": {
+        "path": "reports/finalization/verification-workflow/scripts/cloud_viewer/run.py",
+        "sha256": "56b45a0e77f1c27fdde91050e3e2f60f3023d82b7ff20344107cf3b03ace0ef6",
+        "size_bytes": 17605
+      },
+      "scripts/cloud_viewer/runtime-assets.json": {
+        "path": "reports/finalization/verification-workflow/scripts/cloud_viewer/runtime-assets.json",
+        "sha256": "9781e250385bf9032ada8181fe99bb4494be4870857bb5ae34bf6dd75f75c128",
+        "size_bytes": 505
+      },
+      "scripts/cloud_viewer/serve.py": {
+        "path": "reports/finalization/verification-workflow/scripts/cloud_viewer/serve.py",
+        "sha256": "d76411f3c3af3c02eae861233e91d227b88d049dc15f6be99e5ff989a0c299ef",
+        "size_bytes": 17746
+      },
+      "scripts/cloud_viewer/src/app.js": {
+        "path": "reports/finalization/verification-workflow/scripts/cloud_viewer/src/app.js",
+        "sha256": "fa21c2341775a912c4b23a73f88ebc38ad9d9a6a45c503563d2dfd0664665a36",
+        "size_bytes": 25753
+      },
+      "scripts/cloud_viewer/src/core.js": {
+        "path": "reports/finalization/verification-workflow/scripts/cloud_viewer/src/core.js",
+        "sha256": "bee0510716702f098f6d7820a0b201980b512a580dae666ff46bb038692a38ac",
+        "size_bytes": 10606
+      },
+      "scripts/cloud_viewer/src/index.html": {
+        "path": "reports/finalization/verification-workflow/scripts/cloud_viewer/src/index.html",
+        "sha256": "27d80ce7ae2e87d535ebd7b8d806c284328fe7cee94b298d99d1d0ea071630e7",
+        "size_bytes": 4173
+      },
+      "scripts/cloud_viewer/src/land-source.json": {
+        "path": "reports/finalization/verification-workflow/scripts/cloud_viewer/src/land-source.json",
+        "sha256": "e6dff2c8df1f96c612390e9fceb3df8a3916b3c47e22b8c60fef639ba18eeab9",
+        "size_bytes": 484
+      },
+      "scripts/cloud_viewer/src/land.geojson": {
+        "path": "reports/finalization/verification-workflow/scripts/cloud_viewer/src/land.geojson",
+        "sha256": "9e0729ee253ca7d7a5c4ae9395fb1902264c5377c52e224d13dd85010e2835d9",
+        "size_bytes": 138160
+      },
+      "scripts/cloud_viewer/src/parquet.worker.js": {
+        "path": "reports/finalization/verification-workflow/scripts/cloud_viewer/src/parquet.worker.js",
+        "sha256": "fde2f7a51b767fe6243433316fccbe8b4b990c89378fd372a843d4c344d7d88f",
+        "size_bytes": 814
+      },
+      "scripts/cloud_viewer/src/style.css": {
+        "path": "reports/finalization/verification-workflow/scripts/cloud_viewer/src/style.css",
+        "sha256": "18d0c47efb47db8754ba3e81eb4a5db24d2629b2854120795f5bf94062adae84",
+        "size_bytes": 10450
+      },
+      "scripts/display_tools/pyproject.toml": {
+        "path": "reports/finalization/verification-workflow/scripts/display_tools/pyproject.toml",
+        "sha256": "f9c3a3441ebfa23fbaefe7c7bdb81501be4f85c16ed2be718f9b1806cec301c9",
+        "size_bytes": 284
+      },
+      "scripts/display_tools/uv.lock": {
+        "path": "reports/finalization/verification-workflow/scripts/display_tools/uv.lock",
+        "sha256": "edc334d3dddf7c50b08f5b8db0ad4e1cafaa8964de487940a7e8e4924a9bc385",
+        "size_bytes": 70097
+      }
+    },
+    "oracle_pins": {
+      "control_policy_sha256": "6c12ad5328cb84f7aa00373041ecfbdc26e688fde0c997a0984b9ca427c47b2a",
+      "environment_lock_sha256": "edc334d3dddf7c50b08f5b8db0ad4e1cafaa8964de487940a7e8e4924a9bc385",
+      "native_quantizer_sha256": "ba0f76b356aa5813b50bde0803c0bc2d477f3452ba664d2ed0eccc1a773bed44",
+      "validator_sha256": "a21937f071d728902b8eb721376d3e2e22c138acd6eba747a131ee7f6ddbc9f8",
+      "wrap_validator_sha256": "6818ad35b96d343150d4a94a78f0d98507f3eb491c7b7c0107780056d98c3286"
+    },
+    "repository_head": "b4983998f55663bdab094ce4e11734c73c066ca1",
+    "working_tree_changes": []
+  }
+}

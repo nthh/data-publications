@@ -1,0 +1,231 @@
+{
+  "study_id": "official-and-community-20261030",
+  "validated_at_utc": "2026-10-30T22:32:08.294972+00:00",
+  "research_commit": "9ca1aa0dce7bcb4e55d48882f613e498dfd79a44",
+  "criteria_commit": "b2f393a",
+  "pre_count_review_commits": [
+    "0737c8b",
+    "80b8d1a",
+    "dd06950"
+  ],
+  "catalog": {
+    "requests": 1299,
+    "http_status_counts": {
+      "200": 1299
+    },
+    "bytes": 30806870,
+    "collections": 1165,
+    "reference_groups_reviewed": 565,
+    "description_doi_rows_reviewed": 81,
+    "description_entry_doi_pairs_reviewed": 222
+  },
+  "openalex": {
+    "requests": 96,
+    "search_requests": 45,
+    "list_requests": 51,
+    "http_status_counts": {
+      "200": 96
+    },
+    "doi_queries": 956,
+    "doi_matches": 815,
+    "work_id_queries": 375,
+    "observed_works": 988,
+    "first_count_request_utc": "2026-10-30T22:19:39.794495+00:00",
+    "last_count_request_utc": "2026-10-30T22:27:45.503489+00:00",
+    "canonical_observation_policy": "Earliest captured count per work ID; verified against every saved count response. Supplemental SPEIbase lookups do not replace earlier observations."
+  },
+  "coverage": {
+    "official": {
+      "entries": 1165,
+      "paper_count": 430,
+      "data_doi_count": 368,
+      "no_count": 476,
+      "paper_status": {
+        "matched": 420,
+        "partial": 10,
+        "unknown": 735
+      },
+      "scope": {
+        "global": 747,
+        "mixed": 15,
+        "regional": 354,
+        "unclear": 49
+      },
+      "deprecated": 270
+    },
+    "community": {
+      "entries": 363,
+      "paper_count": 237,
+      "data_doi_count": 81,
+      "no_count": 92,
+      "paper_status": {
+        "matched": 234,
+        "partial": 3,
+        "unknown": 126
+      },
+      "scope": {
+        "global": 206,
+        "mixed": 12,
+        "regional": 140,
+        "unclear": 5
+      },
+      "deprecated": 0
+    },
+    "combined": {
+      "entries": 1528,
+      "paper_count": 667,
+      "data_doi_count": 449,
+      "no_count": 568,
+      "paper_status": {
+        "matched": 654,
+        "partial": 13,
+        "unknown": 861
+      },
+      "scope": {
+        "global": 953,
+        "mixed": 27,
+        "regional": 494,
+        "unclear": 54
+      },
+      "deprecated": 270
+    }
+  },
+  "checks": [
+    {
+      "name": "Focused scientific identity/scoring tests",
+      "command": "python3 -m unittest discover -s tests -p test_catalog_citations.py",
+      "tests": 13,
+      "status": "passed"
+    },
+    {
+      "name": "Offline output equality",
+      "command": "python3 scripts/rank_catalog_citations.py --check",
+      "outputs": 41,
+      "status": "passed"
+    },
+    {
+      "name": "Compilation of capture, fetch and ranking scripts",
+      "status": "passed"
+    },
+    {
+      "name": "Earliest-observation consistency across all saved count responses",
+      "works": 988,
+      "status": "passed"
+    },
+    {
+      "name": "Full collection/reference review coverage and unique assignment",
+      "collections": 1165,
+      "groups": 565,
+      "status": "passed"
+    },
+    {
+      "name": "Original canonical records, index, community citation snapshot and reports unchanged from 8ed4131",
+      "status": "passed"
+    },
+    {
+      "name": "Existing canonical catalog validation",
+      "command": "python scripts/catalog.py --check",
+      "records": 363,
+      "status": "passed"
+    },
+    {
+      "name": "Existing historical provenance validation",
+      "command": "python scripts/check_provenance.py",
+      "historical_entries": 114,
+      "unique_blobs": 44,
+      "status": "passed"
+    }
+  ],
+  "clean_rehearsal": {
+    "commit": "9ca1aa0dce7bcb4e55d48882f613e498dfd79a44",
+    "timestamp_utc": "2026-10-30T22:30:59.220165+00:00",
+    "python": "3.14.6 (main, Jun 10 2026, 10:03:53) [Clang 17.0.0 (clang-1700.6.4.2)]",
+    "export_method": "git archive of committed HEAD, no untracked files or ignored caches",
+    "directory": "/Users/nathan/.folia-fleets/official-gee-citations-20261030/tree/.local/offline-citation-rehearsal-9ca1aa0/tree",
+    "network_guard": "socket connections disabled for rebuild and tests",
+    "checks": [
+      {
+        "check": "byte-identical offline ranking rebuild",
+        "exit_code": 0,
+        "log": ".local/offline-citation-rehearsal-9ca1aa0/check-0.log"
+      },
+      {
+        "check": "13 focused citation tests",
+        "exit_code": 0,
+        "log": ".local/offline-citation-rehearsal-9ca1aa0/check-1.log"
+      },
+      {
+        "check": "standard-library script compilation",
+        "exit_code": 0,
+        "log": ".local/offline-citation-rehearsal-9ca1aa0/check-2.log"
+      }
+    ]
+  },
+  "output_sha256": {
+    "README.md": "3b9e2cb622875b5529c74ece443733e61fcd48e346c2f2f0386a92945e158d51",
+    "combined-rankings.json": "5cac7baf951fa9c61d7de9fcf931c1ffc3b3c06825d5fa675588d815015c423d",
+    "community-rankings.json": "95b34cadabc9d8c972eb863409995a8002c51f2c9325734c8d3de9acece6cf39",
+    "groups-combined-active-global.csv": "c5731c7146ce5499da2e1aea0fae18146221afdce8130b223f5e4e0087ff7d75",
+    "groups-combined-active-global.json": "915c28e1cc7c3c45712cd5b4ce9f17bd8633f00a0ff9e7c9e48f271f66a61090",
+    "groups-combined-active.csv": "2f8c8cc8f74192e84d88e8ccec5a573b2d2db69b3e7b128c39ef48dbfa8721bf",
+    "groups-combined-active.json": "4ecd19ae1f9357a4366f273ea58fc379eeb87fcbdfecce7a3d80f976d6be3a1b",
+    "groups-combined-all.csv": "a38c504ec1281f09bfc2c9ba724c66daed22133a7939e37f3bdce3d36686f4d2",
+    "groups-combined-all.json": "e0d0c3bf8273fc34fd5676e60af9aeacad46abdbf3083272cc0642410d876af0",
+    "groups-combined-global.csv": "838cb261dd01b848f9575b7760e2506373c806431942266e1c9e78a062e52d2f",
+    "groups-combined-global.json": "be1b0c06260597904e560e40eb86e64cd27540f1fa3ddefc40be5403a4cc46c4",
+    "groups-community-all.csv": "984b667705424a7bdbad989a3c915aa146e7295adabff69612ebfb7550c37820",
+    "groups-community-all.json": "477d1362ee65677a359ac141a6611e29f80d9293cccc1adf257357367134ff52",
+    "groups-community-global.csv": "afe163febdba7e7a56b52abf4e7eba254557bee298d007feb9161b9a46700fcf",
+    "groups-community-global.json": "9a47000a6c0902d2945b32d9390249d46df33758f8f11c4b5188c5e31fb32117",
+    "groups-official-active-global.csv": "693b7dd3b1b1322cf89b20c306e4ecad27496a08471721d189bf7064a109a1a8",
+    "groups-official-active-global.json": "0f8bced315c374990bbe23766067e76679c8d1067493e89a89184121da740643",
+    "groups-official-active.csv": "2c9c18a15329de4fd5627c14885276b215fc142987d1dee9c8df07fa954d372d",
+    "groups-official-active.json": "abe9864dc26b9fbd6d67823c8d6d117205f5e86c6280ed30c604c83d2a0f2449",
+    "groups-official-all.csv": "8753b518e025784bc9d85e5fe0c9acc0a313a928d431f645629b235919bba10d",
+    "groups-official-all.json": "1fa0e42dc6c394af40f6f5f2e4ff5ad380eb77fde1608c167e4dbdb53968c379",
+    "groups-official-global.csv": "20566c9cb22346640d8617a8da31e6a093f318271dcd12155a63f9656056e601",
+    "groups-official-global.json": "12cb711b86623bb09a5fd9b79a64068307cd0f96a0dbd9cd8a39f46e92041104",
+    "input-manifest.json": "15a04cffb6f78e6d424c1e570611e3d12c427269157d01912be422ac51420cd9",
+    "official-rankings.json": "b694fea428e7088abad1508d63c064e660870553968b9b62169ba98f4086eb65",
+    "overlap-candidates.csv": "d8f64ee1b0d620570203995afe474986feb66da5ca23d17b305d086c30911fbf",
+    "overlap-candidates.json": "26f48f77bbf5f6cb5e2d89d0d2d0704e3ec4e0fab05db42ab1a3a59c88221a34",
+    "ranking-combined-active-global.csv": "ff3553a680aeeea15a80bdb219476ad0ae195d7e35610f3ef246b9f2e236f175",
+    "ranking-combined-active.csv": "3a26afaabb077f7f1122d713ff64bb8e5fefe9acb9b73c5624b2dd4bfcdac04c",
+    "ranking-combined-all.csv": "c0ac6a822dfdf2f8a64c8cc6b189ee91222524755c82c999c2ebb16f4588228c",
+    "ranking-combined-data-dois.csv": "26de7d991e38e804c5b1914667290de017e9e23d88bb54d1f4d1d6376fd6a60d",
+    "ranking-combined-global.csv": "ff0aafd9075ce26d8aad0e8284c76542009c8cf9c73bdca693bd954b0ff20067",
+    "ranking-community-all.csv": "8453f911f9f33af642521015147ef3ebde88136d14b1ba1c3a709f59ce9fefef",
+    "ranking-community-data-dois.csv": "a61a646e95ea81d8275723f410913fe3d2e3d4c01a35c33089bccac884b7672d",
+    "ranking-community-global.csv": "ae7072d3469a35c2aa05ff94015b4b03e75abde5934b6c46c9551e54549469c4",
+    "ranking-official-active-global.csv": "f4f7787dd4391e7b53c422747e7f2a36c8cf8fb0718ad5faf38105617ee51685",
+    "ranking-official-active.csv": "6f068bbcd150cb13fca83d0fd5c145b86db992a0c3a071df3adedc7c18317106",
+    "ranking-official-all.csv": "ae2e4fdd4f2209f18e2b4dd0fd46016087e75abce6c3e5213defa090c798d541",
+    "ranking-official-data-dois.csv": "75baac407570c1572597958226f791cfceea83a00fc34a489d4064dadaf0139a",
+    "ranking-official-global.csv": "c682fc14a92a5c3f883e9df51c3787d515847aac9d17c6b50f6f724c2236ba25",
+    "summary.json": "26600c52a8d454cdbc4b98172837c688b561b8a04c5d70911ea4b8df0106f1aa"
+  },
+  "retained_findings": [
+    {
+      "phase": "pre_count_tests",
+      "finding": "Legacy Running 2004 DOI containing square brackets initially failed the DOI-parser test.",
+      "resolution": "Corrected bracket handling and retained the regression test before citation scoring."
+    },
+    {
+      "phase": "post_score_validation",
+      "evidence": "final-validation-findings.json",
+      "draft": "draft-top15-before-final-reference-review.json",
+      "resolution": "Excluded the generic SPEI index paper, added actual SPEIbase dataset papers, made narrative-report/method roles consistent, and corrected region labels. Original review files and draft are preserved."
+    }
+  ],
+  "limitations": [
+    "Citation totals favor older publications and do not measure current quality, exact-release usage, cloud-native availability or conversion need.",
+    "Official collection entries and community documentation families have different granularity.",
+    "Unresolved references can change the leading order; results rank resolved reviewed references only.",
+    "A fresh cloud-host/registry/licensing audit remains a separate step before choosing conversions.",
+    "735 official entries have no matched reviewed paper count; this is not evidence of zero citations.",
+    "Some SPEI catalog release/data-DOI fields disagree about version. Paper counts are family proxies; exact-release attribution remains unresolved.",
+    "Shared-paper groups and the 49 overlap candidates do not establish identical datasets.",
+    "Validation covered bibliographic identity, metadata and offline reproducibility. No scientific comparison against GEE pixels/features was part of this citation study."
+  ],
+  "remaining_work": "Separate exact-release, license, maintained-host and registry checks before selecting any conversions."
+}

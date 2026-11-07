@@ -1,0 +1,84 @@
+schema_version: 1
+id: ai0
+title: Global Aridity Index Yearly
+community_url: https://gee-community-catalog.org/projects/ai0
+audit:
+  snapshot: gee-community-audit-20261029
+  family_key: ai0
+  unique_gee_asset_count: 2
+  initial_queue: research_original_source
+  folia_registry_status: not_identified
+  folia_registry_ids: []
+  source_coop_urls: []
+  source_coop_scope: null
+  external_native_urls: []
+  external_native_scope: null
+triage:
+  decision: pending
+  priority: normal
+review:
+  citation_assessment:
+    as_of: '2026-10-29'
+    provider: OpenAlex
+    evidence_path: research/citations/rankings.json
+    evidence_key: ai0
+    geographic_scope: global
+    paper_count_status: matched
+    max_paper_citations: 1299
+    max_data_doi_citations: null
+    top_paper_doi: https://doi.org/10.1038/s41597-022-01493-1
+    top_paper_openalex_id: https://openalex.org/W4285590095
+    citation_scope: associated_dataset_publication
+  publication_assessment:
+    as_of: '2026-10-30'
+    route: hold_legacy_version_review_corrected_release
+    scope: GEE catalog cites the v3.0/Figshare-v6 family. Producer now distributes corrected v3.1/Figshare-v7
+      and recommends discontinuing v3.0.
+    reason_not_in_next_local_batch: Producer describes a net-longwave-radiation implementation error affecting
+      v3.0 ET0 and aridity values. Do not prepare the deprecated bytes as a current release.
+    license_note: Current Figshare license field is CC BY 4.0, but its description still says non-commercial
+      use. Resolve that wording for the intended public derivative.
+    next_step: Review corrected v3.1 as a separately identified version, confirm terms and format availability;
+      do not assert parity with legacy GEE assets.
+    evidence_path: research/local-next-two-20261030/upstream/aridity-figshare.json
+    evidence_urls:
+    - https://doi.org/10.6084/m9.figshare.7504448.v7
+    - https://api.figshare.com/v2/articles/7504448
+
+# Cross-catalog discovery: global-candidates-20261031
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'citations: Global Existing catalog identity.'
+  sources:
+  - provider: gee_community
+    entry_id: ai0
+    url: https://gee-community-catalog.org/projects/ai0
+    relationship: exact_dataset
+  access:
+  - provider: literature
+    status: unknown
+    formats: []
+    summary: GEE catalog entries are available through Earth Engine; frozen metadata does not establish
+      an independently downloadable native bulk copy or its format. Existing catalog identity.
+    license_summary: Not inferred from citation records. Verify producer terms for the exact edition before
+      conversion or redistribution.
+    proposed_outputs: []
+    rationale: 'Candidate discovery only: global/near-global scope and associated-paper citation signal
+      justify source-format and licensing review. Citation rank does not establish conversion priority
+      or exact-release use.'
+    evidence_urls:
+    - https://gee-community-catalog.org/projects/ai0
+    - https://doi.org/10.1038/s41597-022-01493-1
+  citations:
+  - provider: OpenAlex
+    paper_doi: 10.1038/s41597-022-01493-1
+    work_id: https://openalex.org/W4285590095
+    cited_by_count: 1300
+    observed_on: '2026-10-30'
+    scope: associated_dataset_publication
+  evidence:
+  - path: research/global-candidates-20261031/citations/reviewed.json
+    sha256: 572140255cd3b41a1ec8ecca0139e64d38899cda7fdd55756f399a0dca57a467
+    key: ai0

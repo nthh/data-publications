@@ -1,0 +1,29 @@
+{
+  "status": "failed_memory_limit",
+  "attempt": "lakeatlas-v1.0-r1-first-full-build",
+  "started_from_commit": "4f8ec8854a88b30441a9d5ba13bbdeb4108df3dd",
+  "source": {
+    "figshare_doi": "10.6084/m9.figshare.19312001.v1",
+    "sha256": "baa4d760a163350dd6a30c21c82db1e23b150834a8b848885eba6dc9ba1175df"
+  },
+  "observed_peak_process_memory_bytes": 1947320320,
+  "limit_bytes": 1000000000,
+  "result": "Both Parquet assets were written, but the builder stopped before creating build-manifest.json because the peak RSS guard failed. Source fidelity validation did not run. Preserve this failure; these assets are not a validated release.",
+  "assets": [
+    {
+      "path": "lakeatlas/data/lakeatlas-polygons.parquet",
+      "size_bytes": 1347406999,
+      "sha256": "d34763a55c9004c97c2f03373e64e8ec25a83c96e9c5d0e18ceda893469d2386",
+      "row_groups": 1395,
+      "footer_bytes": 47502990
+    },
+    {
+      "path": "lakeatlas/data/lakeatlas-pour-points.parquet",
+      "size_bytes": 467118395,
+      "sha256": "e4b87b7154147deb0f682e12c9fa32462d0d453aa774c27a17901119763adccb",
+      "row_groups": 1395,
+      "footer_bytes": 44631376
+    }
+  ],
+  "source_archive_and_producer_documents_retained": true
+}

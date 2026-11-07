@@ -1,0 +1,80 @@
+{
+  "request_url": "https://api.openalex.org/works?search=The+Landsat+Image+Mosaic+of+Antarctica&corpus=all&per_page=5&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date",
+  "retrieved_at": "2026-10-30T22:07:59.674127+00:00",
+  "response_path": "responses/3675484195c9398c9d70f6c913ab5391a026f42d4e2c6cde6d561dd67ee0dd4b.json",
+  "status": 200,
+  "response_sha256": "f7d4e9db2cbbd3b977f79b087f36cc4bf2a735d46d560b8215e41464133f72a4",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 1922,
+      "db_response_time_ms": 92,
+      "page": 1,
+      "per_page": 5,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where full text has (The Landsat Image Mosaic of Antarctica)",
+        "x_new_oql": "get works (all corpora) where full text has (The Landsat Image Mosaic of Antarctica)",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "The Landsat Image Mosaic of Antarctica",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:The Landsat Image Mosaic of Antarctica&corpus=all&per_page=5",
+        "order": "best matches first",
+        "order_default": true
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W2164131390",
+        "doi": "https://doi.org/10.1016/j.rse.2008.07.006",
+        "title": "The Landsat Image Mosaic of Antarctica",
+        "type": "article",
+        "publication_year": 2008,
+        "publication_date": "2008-08-29"
+      },
+      {
+        "id": "https://openalex.org/W2176641567",
+        "doi": "https://doi.org/10.1007/s11430-012-4481-5",
+        "title": "An improved Landsat Image Mosaic of Antarctica",
+        "type": "article",
+        "publication_year": 2012,
+        "publication_date": "2012-08-06"
+      },
+      {
+        "id": "https://openalex.org/W3042390637",
+        "doi": "https://doi.org/10.3133/fs20073016",
+        "title": "Landsat Image Mosaic of Antarctica",
+        "type": "report",
+        "publication_year": 2007,
+        "publication_date": "2007-01-01"
+      },
+      {
+        "id": "https://openalex.org/W2887850970",
+        "doi": "https://doi.org/10.3133/fs20073116",
+        "title": "Landsat Image Mosaic of Antarctica (LIMA)",
+        "type": "report",
+        "publication_year": 2007,
+        "publication_date": "2007-01-01"
+      },
+      {
+        "id": "https://openalex.org/W6967182840",
+        "doi": "https://doi.org/10.5066/p9teiu3h",
+        "title": "Landsat Image Mosaic Of Antarctica (LIMA)",
+        "type": "dataset",
+        "publication_year": 2018,
+        "publication_date": "2018-11-15"
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "bb275e00b16898f1b13b91e95036c025605d1c31683ea0dd54a6cd0e9d9f9455"
+}

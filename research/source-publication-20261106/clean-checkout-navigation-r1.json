@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "status": "passed_focused_archive_only_navigation_follow_up",
+  "source_commit": "2bbbf58e812ce365d60f92ebfba6ad7c4f827199",
+  "source_tree_sha1": "a9963277683ad4eae9bcece59ebb3f829f2f85c1",
+  "checkout": "/Users/nathan/.folia-fleets/source-publication-clean-20261107-r4/tree",
+  "clean_snapshot_commit": "d8d62a8bbb5d23ad0cf8b0fde3bb0ec816a24894",
+  "clean_snapshot_tree_sha1": "a9963277683ad4eae9bcece59ebb3f829f2f85c1",
+  "archive_method": "New durable standalone git archive of exact source commit, git init -b main, git add -f -A including two intentional tracked PMTiles, one synthetic root commit; earlier snapshots left untouched.",
+  "tracked_tree_matches_source": true,
+  "history_commit_count": 1,
+  "old_source_commit_available": false,
+  "git_fsck_full_passed": true,
+  "checkout_git_status_clean": true,
+  "local_bulk_data_present": false,
+  "borrowed_locked_environments": true,
+  "fresh_dependency_install": false,
+  "browser_self_test_scope": "The r4 self-test ran the committed harness and loaded the real frozen Browser, River renderer-inspection, and new navigation-followup criteria. The two other harness criteria paths were separately parsed as JSON; this was not a live Browser or Source request.",
+  "browser_harness_sha256": "396a7007c98b85e7915bdab24d6441bd149a8374f1fe005b9f98e165394b21c2",
+  "criteria_sha256": {
+    "research/source-publication-20261106/portolan-browser-criteria-r1.json": "0e136a04d3e74e97df69b4b65e7f8214d3b5efd8ab8e17f4d19c7d756fa8d60b",
+    "research/source-publication-20261106/pages/three-collections-r1/head-and-render-followup-criteria-r1.json": "0714e3a818bc107ce74c2f6cf936a6c8928ccf1bf4108a89dfef4ffc377e6ed8",
+    "research/source-publication-20261106/pages/four-collections-r1/navigation-followup-criteria-r1.json": "15043e7440c92e583516a603ee72c0e71f5909979fca882d8142d63937c0278d",
+    "research/source-publication-20261106/pages/river-render-diagnostic-r1.json": "c47f13ec34bcf97bd61c4fa0a51869da831a81c1253718e5e363d7ab013f7d9b",
+    "research/source-publication-20261106/pages/river-renderer-inspection-r3.json": "cadf15db3e3bd41b9d667691ba69d23ff030ae086917dfedeb946efc11ba8f1f"
+  },
+  "unchanged_from_r3": {
+    "prior_report": "research/source-publication-20261106/clean-checkout-publication-r3.json",
+    "prior_report_sha256": "9c410243a1c5548388f9f1310a7b9348592b9fb84af25940edee98c80ea7b700",
+    "all_byte_identical": true,
+    "files_sha256": {
+      "scripts/source_publish/upload.py": "4c418a065e41ea14a4c5841bd77a95b725f35b81dff59f5f0ca4fc7f39aa6559",
+      "scripts/source_publish/validate_hosted.py": "3f1b36710101aac17e98ee077374991e9e8622a640064c14d90e649625ffb0f9",
+      "tests/test_source_upload.py": "f70f99f928e4e4566fa3c0566ca362650b6439e5231f93bb9ae261c2eca73118",
+      "tests/test_source_api.py": "915db35c38602a56aeeecae8ddf9c020008e5022b5d5e334f73e6d3675a57a3e",
+      "tests/test_hosted_validation.py": "032049d45e6641ed9b365c4c0ef8d8386d70f1bda607431961621b22a60210f4",
+      "tests/test_bounded_http.py": "c735dbdab16912b5b60d425a72c599a701963be09f25915f8ecc954d3b3642f9",
+      "tests/test_query_hints.py": "a81cb6e0eb86b0ddb3ac0a8090b1f514bc83ff500ab231ac2a359336b5f780df",
+      "tests/test_hosted_viewer.py": "22ee789f916b5964ec31b4357cca47fe3b85e58317eff3276676600418997f98"
+    },
+    "python_tests_repeated": false,
+    "reason": "All six focused publication test files and both runtime boundaries were byte-identical to the r3 archive. R3 recorded 139 passing publication tests, one original sandbox skip, and a passing targeted local-loopback follow-up."
+  },
+  "results": [
+    {
+      "name": "browser_self_test",
+      "command": "node scripts/cloud_viewer/portolan-browser-check.mjs --self-test",
+      "cwd": "/Users/nathan/.folia-fleets/source-publication-clean-20261107-r4/tree",
+      "exit_code": 0,
+      "output": "offline predicates passed: bounded ranges, Source product binding, verified HEAD classification, PMTiles tile-data proof, exact Browser style-title normalization, read-only renderer inspection, and external route construction\n",
+      "wall_time_seconds": 1.768403541
+    },
+    {
+      "name": "catalog",
+      "command": "/Users/nathan/projects/data-publications/.venv/bin/python scripts/catalog.py --check",
+      "cwd": "/Users/nathan/.folia-fleets/source-publication-clean-20261107-r4/tree",
+      "exit_code": 0,
+      "output": "{\n  \"records_checked\": 453,\n  \"supplemental_records_checked\": 90,\n  \"family_keys_checked\": 363,\n  \"citations_checked\": 363,\n  \"decisions\": {\n    \"defer\": 3,\n    \"pending\": 443,\n    \"publish_conversion\": 6,\n    \"reuse_existing\": 1\n  }\n}\n",
+      "wall_time_seconds": 9.57339075
+    },
+    {
+      "name": "source_products",
+      "command": "/Users/nathan/projects/data-publications/.venv/bin/python scripts/source_products.py check",
+      "cwd": "/Users/nathan/.folia-fleets/source-publication-clean-20261107-r4/tree",
+      "exit_code": 0,
+      "output": "",
+      "wall_time_seconds": 2.833541917
+    },
+    {
+      "name": "publication_catalog",
+      "command": "/Users/nathan/projects/data-publications/.venv/bin/python scripts/publication_catalog.py check",
+      "cwd": "/Users/nathan/.folia-fleets/source-publication-clean-20261107-r4/tree",
+      "exit_code": 0,
+      "output": "Catalog check passed; 4 published collections.\n",
+      "wall_time_seconds": 5.632693625
+    },
+    {
+      "name": "provenance",
+      "command": "/Users/nathan/projects/data-publications/.venv/bin/python scripts/check_provenance.py",
+      "cwd": "/Users/nathan/.folia-fleets/source-publication-clean-20261107-r4/tree",
+      "exit_code": 0,
+      "output": "{\n  \"status\": \"passed\",\n  \"historical_entries\": 186,\n  \"unique_blobs\": 104\n}\n",
+      "wall_time_seconds": 1.788763334
+    }
+  ],
+  "summary": {
+    "required_checks_passed": 5,
+    "required_checks_failed": 0,
+    "current_published_collections": 4,
+    "provenance_historical_entries": 186,
+    "provenance_unique_blobs": 104
+  },
+  "gaps": [
+    "Four published collections remain in this committed snapshot; the final five-collection catalog and official live Browser/Pages gates remain pending.",
+    "Borrowed the existing locked catalog Python environment; no fresh dependency installation was tested.",
+    "No Python test suite was rerun because the relevant committed files exactly match the r3 rehearsal.",
+    "No data downloads, live browser run, Source request, or remote mutation occurred."
+  ]
+}

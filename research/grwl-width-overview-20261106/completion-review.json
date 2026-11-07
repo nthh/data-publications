@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "status": "passed_local_release_prepared",
+  "dataset_id": "grwl-raw",
+  "analytic_release": "raw-v01.01-local-r1",
+  "display_release": "raw-v01.01-display-r3",
+  "production_commit": "79e9b1e1fbb04520740218432955a59dab44b76b",
+  "publisher_commit": "df14b489bb68f4e4851f425e5593db1210f1bea1",
+  "checks": {
+    "grwl_focused_tests": 24,
+    "viewer_focused_tests": 20,
+    "source_products_focused_tests": 40,
+    "canonical_records_checked": 453,
+    "published_catalog_collections": 0,
+    "full_source_observations": 64572998,
+    "overview_tiles": 4439,
+    "overview_point_placements": 26060623,
+    "unchanged_detailed_tiles": 588355,
+    "global_browser_cases": 20,
+    "maximum_cold_object_bytes": 20941975,
+    "clean_regional_replay": "byte_identical",
+    "native_pmtiles_verify": "passed"
+  },
+  "evidence": {
+    "oracle": {
+      "path": "research/grwl-width-overview-20261106/global-r2/oracle.json",
+      "sha256": "6736e7f063d348c4d3acf60f34c884444cd9418533f39dac841d4a1f9d81bfa0"
+    },
+    "combine": {
+      "path": "research/grwl-width-overview-20261106/global-r2/combine-report.json",
+      "sha256": "e7ed55fa230d4a46c0b4749e9b3af9883fc72026a9cb439813725a729bc457ae"
+    },
+    "browser": {
+      "path": "research/grwl-width-overview-20261106/browser-global-r1/report.json",
+      "sha256": "b4e73f4ae52d4b9d9dd5a126f6fa96be9fc1f619f27d79ee17a1ff2bcb910cd5"
+    },
+    "visual": {
+      "path": "research/grwl-width-overview-20261106/visual-review-r1.json",
+      "sha256": "ae4793b3129f7350758a8e8b5d2b1aef1a873bc6288770a9f9a9304514b7a420"
+    },
+    "replay": {
+      "path": "research/grwl-width-overview-20261106/clean-replay-r2/report.json",
+      "sha256": "f2e05fb0c542981f029c5baa3e7f59be3e64a040832b974455aa82165346db20"
+    },
+    "finalization": {
+      "path": "datasets/grwl-raw/display/raw-v01.01-display-r3/reports/width-overview/finalization.json",
+      "sha256": "965b0d7f275a948aa33e919d79795be482ade80cffe8a21430b2c7e625b29366"
+    },
+    "staging": {
+      "path": "research/grwl-width-overview-20261106/source-coop-plan-r1/stage-review.json",
+      "sha256": "4c46ecaef925eaf3f930dda8be6df0850e8c78e38fd9312415fab7c0ad1f74d6"
+    },
+    "viewer_endpoint": {
+      "path": "research/grwl-width-overview-20261106/viewer-release-r3-check.json",
+      "sha256": "40dfe840705a77afce23ec184964209899e861e3c75692479cf4bd06effe7a32"
+    }
+  },
+  "preserved": {
+    "analytical_bytes_and_metadata": true,
+    "historical_r1_and_r2_packages": true,
+    "failed_runs_and_diagnoses": true,
+    "unknown_width_sentinel": true
+  },
+  "public_actions_performed": false,
+  "gee_comparison": "not_run",
+  "pending": [
+    "Record confirmed Source Cooperative account access and product route before remote publication.",
+    "Create product and upload the exact reviewed plan within authorized publication scope.",
+    "Verify public ranges, CORS, checksums and browser queries before catalog publication and Portolan registry submission."
+  ]
+}

@@ -1,0 +1,333 @@
+{
+  "application_state": "not_applied",
+  "hosted_report_gate": {
+    "must_recheck_before_application": "Read and verify each product hosted-validation.json is passed and checksum-bound to its expected release; stop if any is absent, failed or changed unexpectedly.",
+    "reports_at_plan_time": [
+      {
+        "path": "research/source-publication-20261106/hosted-results/river-plastic-inputs/hosted-validation.json",
+        "product_id": "river-plastic-inputs",
+        "sha256_at_plan_time": "c90823bf59524204eaed82fbe2b98d9fe6daccd61f1d9bbc48e77387efee0f28",
+        "status_at_plan_time": "passed"
+      },
+      {
+        "path": "research/source-publication-20261106/hosted-results/hydrolakes/hosted-validation.json",
+        "product_id": "hydrolakes",
+        "sha256_at_plan_time": "f690939ac02af9216af27128331d2136b31893292d0409a0fd54858c2b027a38",
+        "status_at_plan_time": "passed"
+      },
+      {
+        "path": "research/source-publication-20261106/hosted-results/lakeatlas/hosted-validation.json",
+        "product_id": "lakeatlas",
+        "sha256_at_plan_time": "d69b19dd84119a196102a7d675ef5a79a1024fdda832874bf1a3c4bd0810eb27",
+        "status_at_plan_time": "passed"
+      },
+      {
+        "path": "research/source-publication-20261106/hosted-results/free-flowing-rivers/hosted-validation.json",
+        "product_id": "free-flowing-rivers",
+        "sha256_at_plan_time": "ad4823afe7009ea14f13baa0a7918a8375dc1349443aac1ed2762eb8baeb62a6",
+        "status_at_plan_time": "passed"
+      },
+      {
+        "path": "research/source-publication-20261106/hosted-results/grwl-raw/hosted-validation.json",
+        "product_id": "grwl-raw",
+        "sha256_at_plan_time": null,
+        "status_at_plan_time": "missing"
+      }
+    ],
+    "require_all_five_status": "passed"
+  },
+  "plan_type": "source_cooperative_five_product_public_listing_proposal",
+  "prepared_at_utc": "2026-11-07T03:32:41.871658+00:00",
+  "products": [
+    {
+      "anonymous_get_http_status": 200,
+      "anonymous_get_sha256": "7214f50a3d5296aee6ae9133108559884490ae04e180d31651b31f3f4b676b59",
+      "anonymous_metadata_url": "https://source.coop/api/v1/products/nthh/river-plastic-inputs",
+      "before": {
+        "description": "Modeled plastic inputs at global river outlets from the Lebreton et al. study, with analytical GeoParquet and a separate PMTiles display layer.",
+        "disabled": false,
+        "featured": 0,
+        "metadata": {
+          "mirrors": {
+            "aws-opendata-us-west-2": {
+              "connection_id": "aws-opendata-us-west-2",
+              "is_primary": true,
+              "prefix": "nthh/river-plastic-inputs/"
+            }
+          },
+          "primary_mirror": "aws-opendata-us-west-2",
+          "tags": []
+        },
+        "storage_connection_id": "aws-opendata-us-west-2",
+        "storage_prefix": "nthh/river-plastic-inputs/",
+        "title": "Global river plastic inputs — Lebreton et al. (2017)",
+        "updated_at": "2026-11-06T23:42:05.890Z",
+        "visibility": "unlisted"
+      },
+      "canonical_source_path": "datasets/river-plastic-inputs/dataset.yaml",
+      "canonical_source_sha256": "8c43d11311ea1c7d7e44b9a50dc3228e30788b6dd236c7634b2df278215ad6a3",
+      "changed_fields": {
+        "visibility": {
+          "before": "unlisted",
+          "proposed": "public"
+        }
+      },
+      "edit_form_url": "https://source.coop/edit/product/nthh/river-plastic-inputs/details",
+      "grwl_description_edit": null,
+      "leave_unchanged": [
+        "metadata.mirrors",
+        "metadata.primary_mirror",
+        "metadata.tags",
+        "disabled",
+        "featured",
+        "memberships"
+      ],
+      "membership_visibility": "not included in anonymous product GET; do not edit",
+      "owner": "nthh",
+      "product_id": "river-plastic-inputs",
+      "proposed_form_fields": {
+        "description": "Modeled plastic inputs at global river outlets from the Lebreton et al. study, with analytical GeoParquet and a separate PMTiles display layer.",
+        "title": "Global river plastic inputs — Lebreton et al. (2017)",
+        "visibility": "public"
+      }
+    },
+    {
+      "anonymous_get_http_status": 200,
+      "anonymous_get_sha256": "53338fb5da3d010eb3046e72dd0f181a1ebe604fba62c0aabc2cfeb2149d61f2",
+      "anonymous_metadata_url": "https://source.coop/api/v1/products/nthh/hydrolakes",
+      "before": {
+        "description": "The complete HydroLAKES v1.0 polygon layer in spatially ordered GeoParquet, preserving producer fields and geometry for lake analysis and joins. A separately versioned PMTiles layer provides generalized map display and source-ID attribute lookup.",
+        "disabled": false,
+        "featured": 0,
+        "metadata": {
+          "mirrors": {
+            "aws-opendata-us-west-2": {
+              "connection_id": "aws-opendata-us-west-2",
+              "is_primary": true,
+              "prefix": "nthh/hydrolakes/"
+            }
+          },
+          "primary_mirror": "aws-opendata-us-west-2",
+          "tags": []
+        },
+        "storage_connection_id": "aws-opendata-us-west-2",
+        "storage_prefix": "nthh/hydrolakes/",
+        "title": "HydroLAKES v1.0 — global lake polygons",
+        "updated_at": "2026-11-06T23:43:09.231Z",
+        "visibility": "unlisted"
+      },
+      "canonical_source_path": "datasets/hydrolakes/dataset.yaml",
+      "canonical_source_sha256": "42649e2da435288542b1fa9c0d04032e95332d550c46ac21264ca8a81bbf6960",
+      "changed_fields": {
+        "visibility": {
+          "before": "unlisted",
+          "proposed": "public"
+        }
+      },
+      "edit_form_url": "https://source.coop/edit/product/nthh/hydrolakes/details",
+      "grwl_description_edit": null,
+      "leave_unchanged": [
+        "metadata.mirrors",
+        "metadata.primary_mirror",
+        "metadata.tags",
+        "disabled",
+        "featured",
+        "memberships"
+      ],
+      "membership_visibility": "not included in anonymous product GET; do not edit",
+      "owner": "nthh",
+      "product_id": "hydrolakes",
+      "proposed_form_fields": {
+        "description": "The complete HydroLAKES v1.0 polygon layer in spatially ordered GeoParquet, preserving producer fields and geometry for lake analysis and joins. A separately versioned PMTiles layer provides generalized map display and source-ID attribute lookup.",
+        "title": "HydroLAKES v1.0 — global lake polygons",
+        "visibility": "public"
+      }
+    },
+    {
+      "anonymous_get_http_status": 200,
+      "anonymous_get_sha256": "7b928f196c1699408b5f9a8830414fb7bc75b540d34cb8c3d01cf37ae444dd0b",
+      "anonymous_metadata_url": "https://source.coop/api/v1/products/nthh/lakeatlas",
+      "before": {
+        "description": "LakeATLAS lake polygons and pour points with hydro-environmental attributes in separate spatially ordered GeoParquet files, with a versioned field-semantics supplement. Separately versioned PMTiles provide map display for both layers and source-ID attribute lookup.",
+        "disabled": false,
+        "featured": 0,
+        "metadata": {
+          "mirrors": {
+            "aws-opendata-us-west-2": {
+              "connection_id": "aws-opendata-us-west-2",
+              "is_primary": true,
+              "prefix": "nthh/lakeatlas/"
+            }
+          },
+          "primary_mirror": "aws-opendata-us-west-2",
+          "tags": []
+        },
+        "storage_connection_id": "aws-opendata-us-west-2",
+        "storage_prefix": "nthh/lakeatlas/",
+        "title": "LakeATLAS v1.0 — global lake attributes and pour points",
+        "updated_at": "2026-11-06T23:43:47.646Z",
+        "visibility": "unlisted"
+      },
+      "canonical_source_path": "datasets/lakeatlas/dataset.yaml",
+      "canonical_source_sha256": "76001e40791831cff56b9e673a37b4531b634735e756d063cf8405ff00e4bad7",
+      "changed_fields": {
+        "visibility": {
+          "before": "unlisted",
+          "proposed": "public"
+        }
+      },
+      "edit_form_url": "https://source.coop/edit/product/nthh/lakeatlas/details",
+      "grwl_description_edit": null,
+      "leave_unchanged": [
+        "metadata.mirrors",
+        "metadata.primary_mirror",
+        "metadata.tags",
+        "disabled",
+        "featured",
+        "memberships"
+      ],
+      "membership_visibility": "not included in anonymous product GET; do not edit",
+      "owner": "nthh",
+      "product_id": "lakeatlas",
+      "proposed_form_fields": {
+        "description": "LakeATLAS lake polygons and pour points with hydro-environmental attributes in separate spatially ordered GeoParquet files, with a versioned field-semantics supplement. Separately versioned PMTiles provide map display for both layers and source-ID attribute lookup.",
+        "title": "LakeATLAS v1.0 — global lake attributes and pour points",
+        "visibility": "public"
+      }
+    },
+    {
+      "anonymous_get_http_status": 200,
+      "anonymous_get_sha256": "f6631fc5dc5a86affde05a02740ac3601fdacb0699e5071a83e7f1a13bb7e920",
+      "anonymous_metadata_url": "https://source.coop/api/v1/products/nthh/free-flowing-rivers",
+      "before": {
+        "description": "The complete river-reach network from Mapping the world’s free-flowing rivers, prepared as spatially ordered GeoParquet with its connectivity attributes. A separately versioned PMTiles layer provides zoom-dependent map display and source-ID attribute lookup.",
+        "disabled": false,
+        "featured": 0,
+        "metadata": {
+          "mirrors": {
+            "aws-opendata-us-west-2": {
+              "connection_id": "aws-opendata-us-west-2",
+              "is_primary": true,
+              "prefix": "nthh/free-flowing-rivers/"
+            }
+          },
+          "primary_mirror": "aws-opendata-us-west-2",
+          "tags": []
+        },
+        "storage_connection_id": "aws-opendata-us-west-2",
+        "storage_prefix": "nthh/free-flowing-rivers/",
+        "title": "Global free-flowing rivers — connectivity assessment",
+        "updated_at": "2026-11-06T23:43:54.766Z",
+        "visibility": "unlisted"
+      },
+      "canonical_source_path": "datasets/free-flowing-rivers/dataset.yaml",
+      "canonical_source_sha256": "01fc98a2f15145bca1ca64da80e1d7dc8ea78c4e8541229ee48cf24aaf6febd6",
+      "changed_fields": {
+        "description": {
+          "before": "The complete river-reach network from Mapping the world’s free-flowing rivers, prepared as spatially ordered GeoParquet with its connectivity attributes. A separately versioned PMTiles layer provides zoom-dependent map display and source-ID attribute lookup.",
+          "proposed": "The complete river-reach network from Mapping the world’s free-flowing rivers, preserved in GeoParquet with all producer fields and source geometry. A separately versioned PMTiles layer provides zoom-dependent map display and source-ID attribute lookup."
+        },
+        "visibility": {
+          "before": "unlisted",
+          "proposed": "public"
+        }
+      },
+      "edit_form_url": "https://source.coop/edit/product/nthh/free-flowing-rivers/details",
+      "grwl_description_edit": null,
+      "leave_unchanged": [
+        "metadata.mirrors",
+        "metadata.primary_mirror",
+        "metadata.tags",
+        "disabled",
+        "featured",
+        "memberships"
+      ],
+      "membership_visibility": "not included in anonymous product GET; do not edit",
+      "owner": "nthh",
+      "product_id": "free-flowing-rivers",
+      "proposed_form_fields": {
+        "description": "The complete river-reach network from Mapping the world’s free-flowing rivers, preserved in GeoParquet with all producer fields and source geometry. A separately versioned PMTiles layer provides zoom-dependent map display and source-ID attribute lookup.",
+        "title": "Global free-flowing rivers — connectivity assessment",
+        "visibility": "public"
+      }
+    },
+    {
+      "anonymous_get_http_status": 200,
+      "anonymous_get_sha256": "b9b8b921aaff91bef66171cef6ea943fd4e472c256463d8c2c01867fde687469",
+      "anonymous_metadata_url": "https://source.coop/api/v1/products/nthh/grwl-raw",
+      "before": {
+        "description": "Complete GRWL V01.01 raw vector observations in lossless GeoParquet, with one separately versioned zoom 0–12 PMTiles display. Zooms 0–7 show selected widest original width observations with source IDs; zooms 8–12 preserve detailed source geometry and widths. All 64,572,998 observations and ten original DBF fields remain in GeoParquet. Complete source comparison, analytical rebuild, full global overview validation, exact detailed-tile preservation, clean regional replay and all 20 browser cases passed. These releases are prepared locally; no product has been created or uploaded.",
+        "disabled": false,
+        "featured": 0,
+        "metadata": {
+          "mirrors": {
+            "aws-opendata-us-west-2": {
+              "connection_id": "aws-opendata-us-west-2",
+              "is_primary": true,
+              "prefix": "nthh/grwl-raw/"
+            }
+          },
+          "primary_mirror": "aws-opendata-us-west-2",
+          "tags": []
+        },
+        "storage_connection_id": "aws-opendata-us-west-2",
+        "storage_prefix": "nthh/grwl-raw/",
+        "title": "Global River Width from Landsat — raw vector observations V01.01",
+        "updated_at": "2026-11-06T23:44:01.699Z",
+        "visibility": "unlisted"
+      },
+      "canonical_source_path": "datasets/grwl-raw/dataset.yaml",
+      "canonical_source_sha256": "e6d7ec91f0c7dc2f2e2fe2ba38c6590918e6cee3fc04440c1749a6d3d6df4a69",
+      "changed_fields": {
+        "description": {
+          "before": "Complete GRWL V01.01 raw vector observations in lossless GeoParquet, with one separately versioned zoom 0–12 PMTiles display. Zooms 0–7 show selected widest original width observations with source IDs; zooms 8–12 preserve detailed source geometry and widths. All 64,572,998 observations and ten original DBF fields remain in GeoParquet. Complete source comparison, analytical rebuild, full global overview validation, exact detailed-tile preservation, clean regional replay and all 20 browser cases passed. These releases are prepared locally; no product has been created or uploaded.",
+          "proposed": "Complete GRWL V01.01 raw vector observations in lossless GeoParquet, with one separately versioned zoom 0–12 PMTiles display. Zooms 0–7 show selected widest original width observations with source IDs; zooms 8–12 preserve detailed source geometry and widths. All 64,572,998 observations and ten original DBF fields remain in GeoParquet. Complete source comparison, analytical rebuild, full global overview validation, exact detailed-tile preservation, clean regional replay and all 20 browser cases passed."
+        },
+        "visibility": {
+          "before": "unlisted",
+          "proposed": "public"
+        }
+      },
+      "edit_form_url": "https://source.coop/edit/product/nthh/grwl-raw/details",
+      "grwl_description_edit": {
+        "remove_final_sentence_exactly": "These releases are prepared locally; no product has been created or uploaded."
+      },
+      "leave_unchanged": [
+        "metadata.mirrors",
+        "metadata.primary_mirror",
+        "metadata.tags",
+        "disabled",
+        "featured",
+        "memberships"
+      ],
+      "membership_visibility": "not included in anonymous product GET; do not edit",
+      "owner": "nthh",
+      "product_id": "grwl-raw",
+      "proposed_form_fields": {
+        "description": "Complete GRWL V01.01 raw vector observations in lossless GeoParquet, with one separately versioned zoom 0–12 PMTiles display. Zooms 0–7 show selected widest original width observations with source IDs; zooms 8–12 preserve detailed source geometry and widths. All 64,572,998 observations and ten original DBF fields remain in GeoParquet. Complete source comparison, analytical rebuild, full global overview validation, exact detailed-tile preservation, clean regional replay and all 20 browser cases passed.",
+        "title": "Global River Width from Landsat — raw vector observations V01.01",
+        "visibility": "public"
+      }
+    }
+  ],
+  "remote_preconditions": [
+    "Before editing each product, fresh anonymous GET must match this plan before.title, before.description, before.visibility, before.metadata, before.storage_connection_id, before.storage_prefix, before.disabled, before.featured and before.updated_at; otherwise stop and re-review.",
+    "Use only the supported signed-in product details form; do not send PATCH to the deployed v1.7.0 product API.",
+    "Submit only the proposed title, description and visibility fields; leave storage connection, mirror prefix, tags, memberships, disabled and featured unchanged.",
+    "After each form submission, fresh anonymous GET must return the proposed title, description and public visibility with unchanged storage metadata, disabled and featured."
+  ],
+  "schema_version": 1,
+  "scope": "Edit only title, description and visibility in the five existing nthh Source product details forms after the hosted gates pass.",
+  "source_evidence": {
+    "anonymous_get_checked_at_utc": "2026-11-07T03:32:41.871669+00:00",
+    "anonymous_options_allow": "DELETE, GET, HEAD, OPTIONS",
+    "anonymous_options_http_status": 204,
+    "anonymous_options_url": "https://source.coop/api/v1/products/nthh/river-plastic-inputs",
+    "anonymous_product_get_template": "https://source.coop/api/v1/products/nthh/{product_id}",
+    "creation_receipt_dir": "research/source-publication-20261106/product-creation/",
+    "deployed_api": "v1.7.0; product edit PATCH not advertised by OPTIONS; product creation earlier returned 501",
+    "supported_form_route_template": "https://source.coop/edit/product/nthh/{product_id}/details"
+  },
+  "status": "proposal_only_no_remote_change",
+  "tool_limitation": "Root observed Chrome JavaScript via Apple Events disabled and System Events assistive access denied. No browser settings or cookies were changed or inspected. Browser access is still needed to apply the signed-in form changes."
+}

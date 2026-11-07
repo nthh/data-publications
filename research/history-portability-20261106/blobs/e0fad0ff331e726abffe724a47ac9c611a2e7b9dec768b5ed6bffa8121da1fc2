@@ -1,0 +1,369 @@
+#!/usr/bin/env python3
+"""Normalize checked source/rebuild evidence for the local release packager.
+
+Input JSON paths resolve relative to the input file. This utility performs only
+bounded file hashing and small report parsing; it never opens large data bodies
+other than sequential SHA-256 reads.
+"""
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+import re
+import sys
+from pathlib import Path
+from typing import Any
+
+DATASETS = {"hydrolakes", "free-flowing-rivers", "lakeatlas"}
+ROOT = Path(__file__).resolve().parents[2]
+HEX256 = re.compile(r"^[0-9a-f]{64}$")
+ABS_PATH = re.compile(r"(?<![A-Za-z0-9])/(?:Users|private|tmp|Volumes|home|root)/[^\s,\"']+")
+
+
+class FidelityError(ValueError):
+    pass
+
+
+def sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as stream:
+        while chunk := stream.read(4 * 1024 * 1024):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def file_fingerprint(path: Path, label: str) -> dict[str, Any]:
+    if not path.is_file():
+        raise FidelityError(f"{label} file is missing: {path.name}")
+    return {"sha256": sha256(path), "size_bytes": path.stat().st_size}
+
+
+def require_sha(value: Any, label: str) -> str:
+    if not isinstance(value, str) or not HEX256.fullmatch(value.lower()):
+        raise FidelityError(f"{label} must be a 64-character SHA-256")
+    return value.lower()
+
+
+def resolve_path(value: Any, spec_dir: Path, label: str) -> Path:
+    if not isinstance(value, str) or not value.strip():
+        raise FidelityError(f"{label} must be a non-empty path")
+    path = Path(value).expanduser()
+    return (path if path.is_absolute() else spec_dir / path).resolve()
+
+
+def sanitize(value: Any) -> Any:
+    """Return portable evidence values with absolute local paths redacted."""
+    if isinstance(value, dict):
+        return {str(k): sanitize(v) for k, v in value.items()}
+    if isinstance(value, list):
+        return [sanitize(v) for v in value]
+    if isinstance(value, tuple):
+        return [sanitize(v) for v in value]
+    if isinstance(value, str):
+        if "://" not in value and Path(value).is_absolute():
+            return f"<local-path>/{Path(value).name}"
+        return ABS_PATH.sub(lambda match: "<local-path>/" + Path(match.group(0)).name, value)
+    return value
+
+
+def read_json(path: Path, label: str) -> dict[str, Any]:
+    if not path.is_file():
+        raise FidelityError(f"{label} report is missing: {path.name}")
+    try:
+        value = json.loads(path.read_text(encoding="utf-8"))
+    except Exception as error:
+        raise FidelityError(f"{label} report is not valid JSON: {error}") from error
+    if not isinstance(value, dict):
+        raise FidelityError(f"{label} report must be a JSON object")
+    return value
+
+
+def canonical_source(dataset_id: str) -> tuple[Path, dict[str, Any], str]:
+    record_path = ROOT / "datasets" / dataset_id / "dataset.yaml"
+    if not record_path.is_file():
+        raise FidelityError(f"canonical dataset record is missing: datasets/{dataset_id}/dataset.yaml")
+    try:
+        import yaml
+        record = yaml.safe_load(record_path.read_text(encoding="utf-8"))
+    except Exception as error:
+        raise FidelityError(f"cannot parse canonical dataset record: {error}") from error
+    if not isinstance(record, dict) or not isinstance(record.get("source"), dict):
+        raise FidelityError("canonical dataset record has no source object")
+    source = record["source"]
+    key = "sha256" if dataset_id == "lakeatlas" else "source_sha256"
+    pinned = require_sha(source.get(key), f"canonical source.{key}")
+    return record_path, record, pinned
+
+
+def layer_role(asset_id: str) -> str:
+    value = asset_id.lower().replace("_", "-")
+    if "polygon" in value or "polygons" in value or value.endswith("-pol"):
+        return "pol"
+    if "pour" in value or "point" in value or value.endswith("-pnt"):
+        return "pnt"
+    raise FidelityError(f"cannot identify LakeATLAS polygon/pour-point role from asset_id {asset_id!r}")
+
+
+def verify_source_report(dataset_id: str, report: dict[str, Any], report_path: Path,
+                         report_sha: str, record: dict[str, Any], pinned_source_sha: str,
+                         assets: list[dict[str, Any]], raw_fingerprints: dict[str, dict[str, Any]]) -> dict[str, Any]:
+    source = record["source"]
+    if dataset_id == "hydrolakes":
+        if report.get("status") != "passed":
+            raise FidelityError("HydroLAKES source validation status must be 'passed'")
+        if len(assets) != 1:
+            raise FidelityError("HydroLAKES source validation must cover exactly its one raw asset")
+        report_source_sha = require_sha(report.get("source_sha256"), "HydroLAKES validation source_sha256")
+        if report_source_sha != pinned_source_sha:
+            raise FidelityError("HydroLAKES source validation source SHA differs from canonical dataset record")
+        if report.get("source_bytes") != source.get("source_size"):
+            raise FidelityError("HydroLAKES source validation source size differs from canonical dataset record")
+        asset = assets[0]
+        raw = raw_fingerprints[asset["asset_id"]]
+        if require_sha(report.get("output_sha256"), "HydroLAKES validation output_sha256") != raw["sha256"]:
+            raise FidelityError("HydroLAKES source validation output SHA does not match the raw asset")
+        if report.get("output_bytes") != raw["size_bytes"]:
+            raise FidelityError("HydroLAKES source validation output size does not match the raw asset")
+        if report.get("rows") != source.get("expected_rows") or report.get("wkb") != "all original decoded bytes bound":
+            raise FidelityError("HydroLAKES source validation lacks expected complete-row/WKB evidence")
+        summary = {"status": report["status"], "source_sha256": report_source_sha,
+                   "output_sha256": raw["sha256"], "output_bytes": raw["size_bytes"],
+                   "rows": report.get("rows"), "method": report.get("method")}
+    elif dataset_id == "free-flowing-rivers":
+        if report.get("status") != "passed":
+            raise FidelityError("Free-Flowing Rivers source validation status must be 'passed'")
+        if len(assets) != 1:
+            raise FidelityError("Free-Flowing Rivers validation must cover exactly its one raw asset")
+        report_source_sha = require_sha(report.get("source_sha256"), "FFR validation source_sha256")
+        if report_source_sha != pinned_source_sha:
+            raise FidelityError("FFR source validation source SHA differs from canonical dataset record")
+        asset = assets[0]
+        raw = raw_fingerprints[asset["asset_id"]]
+        if require_sha(report.get("geoparquet_sha256"), "FFR validation geoparquet_sha256") != raw["sha256"]:
+            raise FidelityError("FFR validation GeoParquet SHA does not match the raw asset")
+        expected_records = source.get("source_record_count")
+        if (report.get("records") != expected_records or
+                report.get("source_fid_records_compared") != expected_records or
+                report.get("geometry_wkb_records_compared") != expected_records):
+            raise FidelityError("FFR source validation lacks expected complete record/ID/WKB evidence")
+        summary = {"status": report["status"], "source_sha256": report_source_sha,
+                   "geoparquet_sha256": raw["sha256"], "records": report.get("records"),
+                   "source_attribute_fields": report.get("source_attribute_fields")}
+    else:
+        if report.get("status") != "passed_source_fidelity":
+            raise FidelityError("LakeATLAS source validation status must be 'passed_source_fidelity'")
+        expected_layers = source.get("source_layers")
+        layers = report.get("layers")
+        if not isinstance(expected_layers, list) or not expected_layers or not isinstance(layers, dict):
+            raise FidelityError("LakeATLAS report/canonical record is missing exact source layers")
+        expected_names = [layer.get("name") for layer in expected_layers]
+        if any(not isinstance(name, str) for name in expected_names) or set(layers) != set(expected_names) or len(layers) != len(expected_names):
+            raise FidelityError("LakeATLAS source report does not cover exactly the canonical source layers")
+        report_source = report.get("source")
+        if not isinstance(report_source, dict) or require_sha(report_source.get("sha256"), "LakeATLAS validation source.sha256") != pinned_source_sha:
+            raise FidelityError("LakeATLAS source validation source SHA differs from canonical dataset record")
+        if report_source.get("size_bytes") != source.get("size_bytes"):
+            raise FidelityError("LakeATLAS source validation source size differs from canonical dataset record")
+        roles: dict[str, dict[str, Any]] = {}
+        for asset in assets:
+            role = layer_role(asset["asset_id"])
+            if role in roles:
+                raise FidelityError(f"duplicate LakeATLAS asset role: {role}")
+            roles[role] = asset
+        if set(roles) != {"pol", "pnt"} or len(assets) != len(expected_layers):
+            raise FidelityError("LakeATLAS raw assets must cover exactly polygons and pour points")
+        summary_layers = {}
+        role_layer = {"pol": next((n for n in expected_names if n.lower().endswith("_pol")), None),
+                      "pnt": next((n for n in expected_names if n.lower().endswith("_pnt")), None)}
+        if any(value is None for value in role_layer.values()):
+            raise FidelityError("canonical LakeATLAS source layer names do not identify _pol and _pnt")
+        canonical_layer = {layer["name"]: layer for layer in expected_layers}
+        for role, asset in roles.items():
+            layer_name = role_layer[role]
+            expected_layer = canonical_layer[layer_name]
+            item = layers[layer_name]
+            raw = raw_fingerprints[asset["asset_id"]]
+            if require_sha(item.get("asset_sha256"), f"LakeATLAS {layer_name} asset_sha256") != raw["sha256"]:
+                raise FidelityError(f"LakeATLAS source report hash does not match raw asset {asset['asset_id']}")
+            if item.get("asset_bytes") != raw["size_bytes"]:
+                raise FidelityError(f"LakeATLAS source report size does not match raw asset {asset['asset_id']}")
+            expected_rows = expected_layer.get("expected_rows")
+            if (item.get("source_equal_rows") != expected_rows or
+                    item.get("source_equal_wkb_rows") != expected_rows or
+                    item.get("source_reread") != "passed_exact_column_arrays_in_source_order" or
+                    item.get("source_equal_native_fields") != expected_layer.get("output_source_fields")):
+                raise FidelityError(f"LakeATLAS source report lacks complete row/field/WKB evidence for {layer_name}")
+            summary_layers[layer_name] = {"asset_id": asset["asset_id"], "asset_sha256": raw["sha256"],
+                                          "asset_bytes": raw["size_bytes"],
+                                          "source_equal_rows": item.get("source_equal_rows"),
+                                          "source_reread": item.get("source_reread")}
+        summary = {"status": report["status"], "source_sha256": pinned_source_sha,
+                   "layers": summary_layers}
+    return {"path": report_path.name, "sha256": report_sha, "summary": sanitize(summary)}
+
+
+def check_augmentation(path: Path, label: str, raw: dict[str, Any], final: dict[str, Any]) -> dict[str, Any]:
+    report = read_json(path, label)
+    if report.get("status") != "passed":
+        raise FidelityError(f"{label} status must be 'passed'")
+    input_info = report.get("input")
+    output_info = report.get("output")
+    if not isinstance(input_info, dict) or not isinstance(output_info, dict):
+        raise FidelityError(f"{label} must contain input and output checksum objects")
+    if require_sha(input_info.get("sha256"), f"{label} input SHA") != raw["sha256"]:
+        raise FidelityError(f"{label} input SHA does not match raw Parquet")
+    if input_info.get("size_bytes") != raw["size_bytes"]:
+        raise FidelityError(f"{label} input size does not match raw Parquet")
+    if require_sha(output_info.get("sha256"), f"{label} output SHA") != final["sha256"]:
+        raise FidelityError(f"{label} output SHA does not match final Parquet")
+    if output_info.get("size_bytes") != final["size_bytes"]:
+        raise FidelityError(f"{label} output size does not match final Parquet")
+    if report.get("source_values_nulls_and_raw_wkb_compared") is not True:
+        raise FidelityError(f"{label} did not affirm exact source field/null/raw-WKB comparison")
+    if report.get("derived_bbox_values_recomputed_and_compared") is not True:
+        raise FidelityError(f"{label} did not affirm independent derived bbox comparison")
+    return {"path": path.name, "sha256": sha256(path), "status": "passed",
+            "input_sha256": raw["sha256"], "input_size_bytes": raw["size_bytes"],
+            "output_sha256": final["sha256"], "output_size_bytes": final["size_bytes"],
+            "source_values_nulls_and_raw_wkb_compared": True,
+            "derived_bbox_values_recomputed_and_compared": True,
+            "source_rows": report.get("source_rows"), "geometry_types": sanitize(report.get("geometry_types")),
+            "global_bbox": report.get("global_bbox")}
+
+
+def normalize(spec_path: Path, output_dir: Path) -> dict[str, Any]:
+    spec_path = spec_path.resolve()
+    spec_dir = spec_path.parent
+    output_dir = (output_dir if output_dir.is_absolute() else spec_dir / output_dir).resolve()
+    if output_dir.exists():
+        raise FidelityError(f"refuse existing output directory: {output_dir.name}")
+    try:
+        spec = json.loads(spec_path.read_text(encoding="utf-8"))
+    except Exception as error:
+        raise FidelityError(f"cannot read input JSON: {error}") from error
+    if not isinstance(spec, dict):
+        raise FidelityError("input JSON must be an object")
+    dataset_id = spec.get("dataset_id")
+    if dataset_id not in DATASETS:
+        raise FidelityError(f"dataset_id must be one of {sorted(DATASETS)}")
+    assets = spec.get("assets")
+    if not isinstance(assets, list) or not assets:
+        raise FidelityError("assets must be a non-empty array")
+    seen: set[str] = set()
+    asset_paths = []
+    raw_fingerprints = {}
+    final_fingerprints = {}
+    for item in assets:
+        if not isinstance(item, dict):
+            raise FidelityError("each assets entry must be an object")
+        asset_id = item.get("asset_id")
+        if not isinstance(asset_id, str) or not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]{0,99}", asset_id):
+            raise FidelityError(f"invalid asset_id: {asset_id!r}")
+        if asset_id in seen:
+            raise FidelityError(f"duplicate asset_id: {asset_id}")
+        seen.add(asset_id)
+        required = ["raw_asset_path", "rebuilt_raw_asset_path", "final_asset_path", "rebuilt_final_asset_path"]
+        paths = {key: resolve_path(item.get(key), spec_dir, f"{asset_id}.{key}") for key in required}
+        raw = file_fingerprint(paths["raw_asset_path"], f"{asset_id} raw asset")
+        rebuilt_raw = file_fingerprint(paths["rebuilt_raw_asset_path"], f"{asset_id} rebuilt raw asset")
+        final = file_fingerprint(paths["final_asset_path"], f"{asset_id} final asset")
+        rebuilt_final = file_fingerprint(paths["rebuilt_final_asset_path"], f"{asset_id} rebuilt final asset")
+        if raw != rebuilt_raw:
+            raise FidelityError(f"{asset_id} clean rebuild raw asset SHA/size differs")
+        if final != rebuilt_final:
+            raise FidelityError(f"{asset_id} clean rebuild final asset SHA/size differs")
+        raw_fingerprints[asset_id] = raw
+        final_fingerprints[asset_id] = final
+        asset_paths.append((item, paths))
+
+    record_path, record, pinned_source_sha = canonical_source(dataset_id)
+    source_report_path = resolve_path(spec.get("source_validation_path"), spec_dir, "source_validation_path")
+    source_report = read_json(source_report_path, "source-validation")
+    source_report_sha = sha256(source_report_path)
+    source_evidence = verify_source_report(dataset_id, source_report, source_report_path,
+        source_report_sha, record, pinned_source_sha, assets, raw_fingerprints)
+
+    rebuild_context = spec.get("rebuild_context")
+    if not isinstance(rebuild_context, dict):
+        raise FidelityError("rebuild_context must be an object")
+    raw_revision = rebuild_context.get("raw_code_revision")
+    if not isinstance(raw_revision, str) or not raw_revision.strip():
+        raise FidelityError("rebuild_context.raw_code_revision is required")
+    clean_checkout = rebuild_context.get("clean_checkout")
+    if not isinstance(clean_checkout, dict) or not clean_checkout:
+        raise FidelityError("rebuild_context.clean_checkout must contain explicit evidence")
+    augmented = dataset_id in {"hydrolakes", "free-flowing-rivers"}
+    spatial_revision = rebuild_context.get("spatial_code_revision")
+    if augmented and (not isinstance(spatial_revision, str) or not spatial_revision.strip()):
+        raise FidelityError("rebuild_context.spatial_code_revision is required for augmented products")
+
+    augmentation = {}
+    for item, paths in asset_paths:
+        asset_id = item["asset_id"]
+        raw, final = raw_fingerprints[asset_id], final_fingerprints[asset_id]
+        aug_path_value = item.get("augmentation_report_path")
+        rebuilt_aug_value = item.get("rebuilt_augmentation_report_path")
+        if augmented:
+            if not aug_path_value or not rebuilt_aug_value:
+                raise FidelityError(f"{asset_id} requires original and rebuilt augmentation reports")
+            aug_path = resolve_path(aug_path_value, spec_dir, f"{asset_id}.augmentation_report_path")
+            rebuilt_aug_path = resolve_path(rebuilt_aug_value, spec_dir, f"{asset_id}.rebuilt_augmentation_report_path")
+            first = check_augmentation(aug_path, f"{asset_id} augmentation", raw, final)
+            second = check_augmentation(rebuilt_aug_path, f"{asset_id} rebuilt augmentation", raw, final)
+            augmentation[asset_id] = {"original": first, "clean_rebuild": second}
+        else:
+            if aug_path_value or rebuilt_aug_value:
+                raise FidelityError("LakeATLAS final assets are the source-validated raw Parquet; augmentation reports are not accepted")
+            if raw != final:
+                raise FidelityError(f"{asset_id} LakeATLAS final asset must be byte-identical to source-validated raw Parquet")
+
+    normalized_assets = [{"asset_id": item["asset_id"], "sha256": final_fingerprints[item["asset_id"]]["sha256"],
+                          "size_bytes": final_fingerprints[item["asset_id"]]["size_bytes"]} for item in assets]
+    source_report_out = {"status": "passed", "assets": normalized_assets,
+        "evidence": {"normalizer": "research/hydro-releases-20261031/bind_fidelity.py",
+            "dataset_id": dataset_id, "dataset_record": {"path": f"datasets/{dataset_id}/dataset.yaml",
+                "sha256": sha256(record_path), "pinned_source_sha256": pinned_source_sha},
+            "source_validation": source_evidence,
+            "raw_assets": [{"asset_id": item["asset_id"], **raw_fingerprints[item["asset_id"]]} for item in assets]}}
+    rebuild_report_out = {"status": "passed", "assets": normalized_assets,
+        "evidence": {"normalizer": "research/hydro-releases-20261031/bind_fidelity.py",
+            "dataset_id": dataset_id, "dataset_record": {"path": f"datasets/{dataset_id}/dataset.yaml",
+                "sha256": sha256(record_path), "pinned_source_sha256": pinned_source_sha},
+            "source_validation_report_sha256": source_report_sha,
+            "code_revisions": {"raw": raw_revision, "spatial": spatial_revision if augmented else None},
+            "clean_checkout_evidence": sanitize(clean_checkout),
+            "clean_checkout_independently_verified": False,
+            "raw_assets": [{"asset_id": item["asset_id"], **raw_fingerprints[item["asset_id"]],
+                            "rebuilt_sha256_equal": True} for item in assets],
+            "final_assets": [{"asset_id": item["asset_id"], **final_fingerprints[item["asset_id"]],
+                              "clean_rebuild_sha256_equal": True} for item in assets],
+            "spatial_augmentation": augmentation}}
+    output_dir.parent.mkdir(parents=True, exist_ok=True)
+    output_dir.mkdir()
+    with (output_dir / "source-fidelity.json").open("x", encoding="utf-8") as stream:
+        json.dump(source_report_out, stream, indent=2, ensure_ascii=False, sort_keys=True)
+        stream.write("\n")
+    with (output_dir / "clean-rebuild.json").open("x", encoding="utf-8") as stream:
+        json.dump(rebuild_report_out, stream, indent=2, ensure_ascii=False, sort_keys=True)
+        stream.write("\n")
+    return {"status": "passed", "output_dir": output_dir.name,
+            "source_fidelity": "source-fidelity.json", "clean_rebuild": "clean-rebuild.json",
+            "assets": normalized_assets}
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("input_json", type=Path, help="Normalizer input; relative paths resolve from this file")
+    parser.add_argument("--output-dir", type=Path, required=True, help="New directory for normalized reports")
+    args = parser.parse_args()
+    try:
+        print(json.dumps(normalize(args.input_json, args.output_dir), indent=2))
+        return 0
+    except Exception as error:
+        print(f"fidelity normalization failed: {type(error).__name__}: {error}", file=sys.stderr)
+        return 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

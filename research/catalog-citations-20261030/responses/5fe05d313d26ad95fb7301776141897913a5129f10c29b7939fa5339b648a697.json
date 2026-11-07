@@ -1,0 +1,80 @@
+{
+  "request_url": "https://api.openalex.org/works?search=Ecoregions+of+the+conterminous+United+States&corpus=all&per_page=5&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date",
+  "retrieved_at": "2026-10-30T22:07:44.198531+00:00",
+  "response_path": "responses/5fe05d313d26ad95fb7301776141897913a5129f10c29b7939fa5339b648a697.json",
+  "status": 200,
+  "response_sha256": "c22a90eb6e5299224d2752d9c018235a65b425f4b50849824415718810c28025",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 5417,
+      "db_response_time_ms": 96,
+      "page": 1,
+      "per_page": 5,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where full text has (Ecoregions of the conterminous United States)",
+        "x_new_oql": "get works (all corpora) where full text has (Ecoregions of the conterminous United States)",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "Ecoregions of the conterminous United States",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:Ecoregions of the conterminous United States&corpus=all&per_page=5",
+        "order": "best matches first",
+        "order_default": true
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W2075845155",
+        "doi": "https://doi.org/10.1111/j.1467-8306.1987.tb00149.x",
+        "title": "Ecoregions of the Conterminous United States",
+        "type": "article",
+        "publication_year": 1987,
+        "publication_date": "1987-03-01"
+      },
+      {
+        "id": "https://openalex.org/W2138102892",
+        "doi": "https://doi.org/10.1007/s00267-014-0364-1",
+        "title": "Ecoregions of the Conterminous United States: Evolution of a Hierarchical Spatial Framework",
+        "type": "article",
+        "publication_year": 2014,
+        "publication_date": "2014-09-15"
+      },
+      {
+        "id": "https://openalex.org/W132185810",
+        "doi": "https://doi.org/10.3133/70046266",
+        "title": "Aquatic ecoregions of the conterminous United States",
+        "type": "report",
+        "publication_year": 1987,
+        "publication_date": "1987-01-01"
+      },
+      {
+        "id": "https://openalex.org/W2910249776",
+        "doi": null,
+        "title": "Level IV Ecoregions of the Conterminous United States",
+        "type": "dataset",
+        "publication_year": 2018,
+        "publication_date": "2018-01-01"
+      },
+      {
+        "id": "https://openalex.org/W6892262117",
+        "doi": "https://doi.org/10.5066/p9c4a45h",
+        "title": "Aquatic ecoregions of the conterminous United States",
+        "type": "dataset",
+        "publication_year": 2023,
+        "publication_date": "2023-01-01"
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "54bd63ab016e63fc094edb9730ac1dc074166c95cef3227c2af2da6fd27b22bd"
+}

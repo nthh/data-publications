@@ -1,0 +1,21 @@
+{
+  "checked_at": "2026-10-31T21:27:50.005260+00:00",
+  "revision": "b6579442c8a0ba73e38b444f143bb6194ef056e5",
+  "checkout": "isolated detached clean checkout; git status --porcelain empty before and after",
+  "command": "uv run --locked --project scripts/release_tools python -m unittest discover -s scripts/release_tools -p test_spatial_order.py -v",
+  "exit_code": 0,
+  "tests_passed": 14,
+  "files": {
+    "scripts/release_tools/spatial_order.py": "9c4acaf198dc46433c61200fb1f15c1c4c14075860e81434fd05c04883b59a63",
+    "scripts/release_tools/test_spatial_order.py": "3d376e8db683f7f4e221c552a89d8b5678e5df6c11c429e7d35054203f4e739e"
+  },
+  "additional_boundaries": [
+    "deferred writer does not promote or claim passed",
+    "fresh CLI completion matches default output bytes",
+    "input/stage/helper/schema tampering refuses",
+    "sort peak cap violation refuses",
+    "completion refuses overwrite and every build override",
+    "file and canonical-payload checkpoint hashes distinguished"
+  ],
+  "scope": "Focused clean-checkout verification; complete LakeATLAS original/clean builds and packaging are still running at this checkpoint."
+}

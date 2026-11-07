@@ -1,0 +1,54 @@
+schema_version: 1
+id: esri-global-hexbins-100km
+title: Esri Global Hexbins 100 km (DGGS-derived reference grid)
+intake:
+  kind: official_catalog
+  reference_url: https://www.arcgis.com/home/item.html?id=5d1dde8444da4c869b48499dae2eb527
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'esri: A global mesh whose hexagon center spacing is 100 km, created by Esri in 2015
+    in an authalic WGS84 sphere projection. It is an aggregation grid, not a thematic observation dataset.
+    Distinct named producer product; retain exact source edition and footprint.'
+  sources:
+  - provider: esri_public
+    entry_id: 5d1dde8444da4c869b48499dae2eb527
+    url: https://www.arcgis.com/home/item.html?id=5d1dde8444da4c869b48499dae2eb527
+    relationship: exact_dataset
+  - provider: producer
+    entry_id: DGGRID v6.1 generator named in item description
+    url: https://discreteglobalgrids.org/software/
+    relationship: related_release
+  access:
+  - provider: esri_public
+    status: service_only
+    formats:
+    - grid
+    - vector
+    summary: ArcGIS feature service observed. The item credits DGGRID v6.1 as its generator but no native
+      grid file or Esri service export permission was established. Distinct named producer product; retain
+      exact source edition and footprint.
+    license_summary: The hosted item declares the Esri Master License Agreement. The item cites an open
+      grid-generation method, but that does not establish redistribution rights for the published Esri
+      geometry.
+    proposed_outputs: []
+    rationale: A low-priority candidate for repeatable global aggregation workflows. Prefer regenerating
+      an explicitly versioned grid from DGGRID if its output exactly matches the needed projection and
+      indexing; do not mirror the Esri service without permission.
+    evidence_urls:
+    - https://www.arcgis.com/home/item.html?id=5d1dde8444da4c869b48499dae2eb527
+    - https://discreteglobalgrids.org/software/
+  citations: []
+  evidence:
+  - path: research/global-candidates-20261031/esri/reviewed.json
+    sha256: e02bd2202c3026ccd7564155bfa69b5e8bc666f65698da6bacce91ab7327d5be
+    key: esri-global-hexbins-100km

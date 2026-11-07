@@ -1,0 +1,129 @@
+{
+  "reviewed_on": "2026-11-01",
+  "status": "review_complete_with_open_source_preparation_gates",
+  "criteria_commit": "62ece82",
+  "source_qualification_code_commit": "5ada6a2",
+  "checks": [
+    {
+      "name": "focused_tests",
+      "command": "python -m unittest tests.test_audit_prepared tests.test_swot_inventory tests.test_swot_sample tests.test_dataset_availability tests.test_candidate_discovery tests.test_catalog_citations -v",
+      "exit_code": 0,
+      "tests_run": 60
+    },
+    {
+      "name": "catalog",
+      "command": "python scripts/catalog.py --check",
+      "exit_code": 0,
+      "records": 452,
+      "frozen_families": 363,
+      "supplemental_records": 89
+    },
+    {
+      "name": "publication_catalog",
+      "command": "python scripts/publication_catalog.py check",
+      "exit_code": 0,
+      "published_collections": 0
+    },
+    {
+      "name": "retained_provenance",
+      "command": "python scripts/check_provenance.py",
+      "exit_code": 0,
+      "historical_entries": 114,
+      "unique_blobs": 44
+    },
+    {
+      "name": "preservation",
+      "result": "All 8 edited records retain identical audit/source/build/citation fields from 86fde54; all 5 selected prepared release/publication objects are unchanged."
+    },
+    {
+      "name": "saved_swot_inventory",
+      "result": "61 unique v2.03 item IDs and tile IDs; all filenames declare v203, all explicit MD5s agree with raw multihash tails; provider sizes sum to 29,990,277,120 bytes. No global data-body validation claimed."
+    },
+    {
+      "name": "local_integrity",
+      "report": "prepared-packages.json",
+      "status": "passed",
+      "packages": 5,
+      "declared_asset_bytes_sha256_verified": 3407719487,
+      "scope": "Declared data/display assets; modern supporting files excluded. Earlier scientific/rebuild reports retained, not rerun."
+    },
+    {
+      "name": "whitespace",
+      "command": "git diff --check",
+      "exit_code": 0
+    }
+  ],
+  "failed_or_incomplete_preparation": [
+    {
+      "name": "gdw_source_access",
+      "status": "blocked",
+      "reason": "Official article/API/bundle and direct-file requests returned HTTP 403; user reports the same browser failure.",
+      "report": "gdw-direct-file-probes.json",
+      "downloaded_files": 0
+    },
+    {
+      "name": "swot_sample",
+      "status": "failed_preflight",
+      "reason": "Free disk space was 42,286,661,632 bytes, below the recorded 40 GiB (42,949,672,960 bytes) threshold. No product request or SQLite inspection occurred.",
+      "report": "swot-au55-inspection.json",
+      "downloaded_files": 0
+    },
+    {
+      "name": "swot_global",
+      "status": "not_started",
+      "reason": "The 61-tile original scope is 29.99 GB, above the current 8 GiB retained task budget; a streaming/storage plan and source/schema qualification are required."
+    },
+    {
+      "name": "public_publication",
+      "status": "not_started",
+      "reason": "No uploads, public-host verification, catalog deployment or registry submission authorized/executed in this local-preparation task."
+    }
+  ],
+  "clean_checkout_rehearsal": {
+    "status": "passed",
+    "commit": "9fa937881ab270c542a8e7cbbe070317abe27175",
+    "worktree": "/Users/nathan/.folia-fleets/gdw-swot-rehearsal-20261101/tree",
+    "python_environment": "Existing repository dependency environment reused; no dependency installation in this rehearsal.",
+    "network_used": false,
+    "local_bulk_data_present": false,
+    "checks": [
+      {
+        "command": "python scripts/catalog.py --write",
+        "exit_code": 0,
+        "result": "Generated output byte-identical; clean git status."
+      },
+      {
+        "command": "python -m unittest tests.test_audit_prepared tests.test_swot_inventory tests.test_swot_sample tests.test_dataset_availability tests.test_candidate_discovery tests.test_catalog_citations",
+        "exit_code": 0,
+        "tests_run": 60
+      },
+      {
+        "command": "python scripts/catalog.py --check",
+        "exit_code": 0,
+        "records": 452
+      },
+      {
+        "command": "python scripts/publication_catalog.py check",
+        "exit_code": 0,
+        "published_collections": 0
+      },
+      {
+        "command": "python scripts/check_provenance.py",
+        "exit_code": 0,
+        "historical_entries": 114,
+        "unique_blobs": 44
+      },
+      {
+        "command": "git diff --exit-code",
+        "exit_code": 0
+      }
+    ],
+    "scope": "Offline tooling, evidence and catalog reproduction. No full dataset conversions, upstream probes or public-host checks rerun."
+  },
+  "limitations": [
+    "Overture comparison is documented schema/provenance, not a global feature join.",
+    "AquaScope inspection reads its footer and manifest; original GDW value equivalence is untested.",
+    "SWOT file-size total is provider metadata, not downloaded size/checksums for 61 files. The successful 16-byte SQLite range does not validate a full tile.",
+    "The retained packages are local and prepared; registry/catalog publication requires separately completed public checks."
+  ]
+}

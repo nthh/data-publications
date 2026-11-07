@@ -1,0 +1,162 @@
+{
+  "development_tiles": [
+    "NI15",
+    "NI16",
+    "NJ12",
+    "NK12",
+    "NL10",
+    "NL11",
+    "NL12",
+    "NL13",
+    "NM11"
+  ],
+  "gates": {
+    "all_detail_compressed_payloads_byte_identical": true,
+    "all_overview_tiles_decoded_and_checked": true,
+    "all_selected_ids_widths_anchors_verified": true,
+    "all_source_records_checked_for_winner_priority": true,
+    "browser_all_integer_zooms": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "browser_cold_object_byte_ceiling": 33554432,
+    "browser_fixed_views": [
+      {
+        "center": [
+          -90,
+          35.51628964037926
+        ],
+        "name": "mississippi",
+        "zooms": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "center": [
+          -60,
+          -3
+        ],
+        "name": "amazon",
+        "zooms": [
+          0,
+          3,
+          7,
+          8
+        ]
+      },
+      {
+        "center": [
+          -179.99965,
+          71.197295
+        ],
+        "name": "dateline",
+        "zooms": [
+          3,
+          7,
+          8
+        ]
+      }
+    ],
+    "browser_requirements": [
+      "legend visible at all zooms",
+      "overview points use width_m and width_valid",
+      "no coverage-only layer in new overview",
+      "wide symbols larger than narrow symbols",
+      "exact source attribute lookup from overview ID",
+      "no nonlocal requests",
+      "bounded HTTP 206 and CORS",
+      "visual review of Mississippi, world, Amazon, dateline and z7 to z8"
+    ],
+    "clean_regional_replay_byte_equality": true,
+    "independent_anchor_projection_tolerance_m": 0.3,
+    "maximum_combined_archive_bytes": 5529859809,
+    "maximum_compressed_overview_tile_bytes": 2097152,
+    "preserve_prior_evidence_and_packages": true
+  },
+  "heldout_tiles": [
+    "NH11",
+    "NA18",
+    "NA32",
+    "NI37",
+    "NA47",
+    "SA49",
+    "NR01",
+    "SB54"
+  ],
+  "overview": {
+    "anchor": "First vertex of the first nonempty original part of each source record. No new line connections.",
+    "buffer_mvt_units": 32,
+    "buffer_rule": "Duplicate winners into neighboring tile buffers after selection; wrap x, bound y; retain ID and attributes.",
+    "cells_per_tile": 1024,
+    "coarsening": "Exact maximum-priority winner of each 2x2 cell block, through zoom 0.",
+    "feature_id": "Original source feature_id in the MVT feature ID.",
+    "geometry": "Point anchored on original geometry; quantized only for display.",
+    "label": "Selected observations; widest measured width per screen-scale cell.",
+    "maxzoom": 7,
+    "minzoom": 0,
+    "mvt_extent": 4096,
+    "normalized_coordinate_bits": 28,
+    "projection": "Spherical Web Mercator, clamp latitude to atan(sinh(pi)); x periodic, y bounded. Normalized coordinates rounded half-up to 2^28 integer lattice; bin by high bits, southern edge assigned last cell.",
+    "properties": [
+      "width_m",
+      "width_valid"
+    ],
+    "selection": [
+      "valid width first (nonnull, >0, !=1)",
+      "largest valid original width_m",
+      "smallest feature_id for ties and all-unknown cells"
+    ],
+    "source_layer": "grwl_width_overview",
+    "symbol": "Circle diameter equals detailed width stroke; unknown sentinel muted; same capped width legend at every zoom."
+  },
+  "publication": {
+    "analytic_release_unchanged": "raw-v01.01-local-r1",
+    "local_only": true,
+    "new_display_release": "raw-v01.01-display-r3",
+    "no_upload_push_or_gee": true,
+    "owner": "nthh"
+  },
+  "purpose": "Show source width differences at all map zooms while preserving the validated analytical data and detailed tile payloads.",
+  "resources": {
+    "maximum_duckdb_memory": "1GB",
+    "maximum_new_artifacts_gib": 12,
+    "maximum_pilot_artifacts_gib": 2,
+    "maximum_workers": 2,
+    "minimum_running_free_gib": 15,
+    "minimum_start_free_gib": 40,
+    "one_heavy_pipeline_at_a_time": true,
+    "shared_lock": ".local/grwl-raw/.native-build.lock"
+  },
+  "schema_version": 1,
+  "source": {
+    "baseline_detail_tiles": 588355,
+    "baseline_pmtiles_sha256": "79389270fef94a8a6359f0b7a98b3505a82ee090a7827bd13280bf1f1c178830",
+    "path": ".local/grwl-raw/global-v1/grwl-raw.parquet",
+    "rows": 64572998,
+    "sha256": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb"
+  },
+  "status": "frozen_before_build"
+}

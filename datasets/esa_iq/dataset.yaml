@@ -1,0 +1,36 @@
+schema_version: 1
+id: esa_iq
+title: ESA WorldCover 10 m 2020 V100 InputQuality
+community_url: https://gee-community-catalog.org/projects/esa_iq
+audit:
+  snapshot: gee-community-audit-20261029
+  family_key: esa_iq
+  unique_gee_asset_count: 1
+  initial_queue: review_external_native_counterpart
+  folia_registry_status: not_identified
+  folia_registry_ids: []
+  source_coop_urls: []
+  source_coop_scope: null
+  external_native_urls:
+  - https://esa-worldcover.org/en/data-access
+  external_native_scope: InputQuality specifically included in official tiled-COG
+    layer list. Access through viewer/Terrascope login; NOT anonymous AWS map-layer
+    access.
+triage:
+  decision: pending
+  priority: normal
+review:
+  citation_assessment:
+    as_of: '2026-10-29'
+    provider: OpenAlex
+    evidence_path: research/citations/rankings.json
+    evidence_key: esa_iq
+    geographic_scope: global
+    paper_count_status: unknown
+    max_paper_citations: null
+    max_data_doi_citations: null
+    top_paper_doi: null
+    top_paper_openalex_id: null
+    citation_scope: associated_dataset_publication
+    citation_scope_note: 'Role correction: this is a direct data-release DOI, not
+      a research paper, even though the initial review put it in paper_dois.'

@@ -1,0 +1,124 @@
+schema_version: 1
+id: S2TSLULC
+title: ESRI 10m Annual Land Use Land Cover (2017-2025)
+community_url: https://gee-community-catalog.org/projects/S2TSLULC
+audit:
+  snapshot: gee-community-audit-20261029
+  family_key: S2TSLULC
+  unique_gee_asset_count: 1
+  initial_queue: review_external_native_counterpart
+  folia_registry_status: not_identified
+  folia_registry_ids: []
+  source_coop_urls: []
+  source_coop_scope: null
+  external_native_urls:
+  - https://planetarycomputer.microsoft.com/api/stac/v1/collections/io-lulc-annual-v02
+  external_native_scope: Earlier v2 annual land-cover series through 2023, whereas
+    community page describes v3 and later years. Related release, not byte-equivalent.
+triage:
+  decision: pending
+  priority: normal
+review:
+  citation_assessment:
+    as_of: '2026-10-29'
+    provider: OpenAlex
+    evidence_path: research/citations/rankings.json
+    evidence_key: S2TSLULC
+    geographic_scope: global
+    paper_count_status: matched
+    max_paper_citations: 1346
+    max_data_doi_citations: null
+    top_paper_doi: https://doi.org/10.1109/igarss47720.2021.9553499
+    top_paper_openalex_id: https://openalex.org/W3207200417
+    citation_scope: associated_dataset_publication
+
+# Cross-catalog discovery: global-candidates-20261031
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'citations: Global Existing catalog identity. planetary: review_note: Annual global
+    maps; STAC extent global; described as 2017–2023 Sentinel-2 10 m composite. Existing record cites
+    this exact collection.; stac_bbox: [-180, -90, 180, 90]; temporal_interval: [["2017-01-01T00:00:00Z",
+    "2024-01-01T00:00:00Z"]] PC V2 2017–2023 versus existing annual V3 2017–2025; not identical pixels.
+    planetary: review_note: Annual 9-class maps with world bbox; confirm actual land coverage and extent
+    by release documentation.; stac_bbox: [-180, -90, 180, 90]; temporal_interval: [["2017-01-01T00:00:00Z",
+    "2023-01-01T00:00:00Z"]] V1 annual 9-class release; preserve version and class schema separately.'
+  sources:
+  - provider: gee_community
+    entry_id: S2TSLULC
+    url: https://gee-community-catalog.org/projects/S2TSLULC
+    relationship: exact_dataset
+  - provider: planetary_computer
+    entry_id: io-lulc-9-class
+    url: https://planetarycomputer.microsoft.com/api/stac/v1/collections/io-lulc-9-class
+    relationship: related_release
+  - provider: planetary_computer
+    entry_id: io-lulc-annual-v02
+    url: https://planetarycomputer.microsoft.com/api/stac/v1/collections/io-lulc-annual-v02
+    relationship: related_release
+  access:
+  - provider: literature
+    status: unknown
+    formats: []
+    summary: GEE catalog entries are available through Earth Engine; frozen metadata does not establish
+      an independently downloadable native bulk copy or its format. Existing catalog identity.
+    license_summary: Not inferred from citation records. Verify producer terms for the exact edition before
+      conversion or redistribution.
+    proposed_outputs: []
+    rationale: 'Candidate discovery only: global/near-global scope and associated-paper citation signal
+      justify source-format and licensing review. Citation rank does not establish conversion priority
+      or exact-release use.'
+    evidence_urls:
+    - https://gee-community-catalog.org/projects/S2TSLULC
+    - https://doi.org/10.1109/igarss47720.2021.9553499
+  - provider: planetary_computer
+    status: native_available
+    formats:
+    - COG
+    summary: 'Collection metadata declares per-item data assets / provider storage roots in the listed
+      native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain
+      unvalidated. PC V2 2017–2023 versus existing annual V3 2017–2025; not identical pixels.'
+    license_summary: 'note: Do not treat this metadata label as legal clearance.; review_status: provider
+      declaration captured; terms and redistribution permission not independently reviewed; stac_license:
+      CC-BY-4.0'
+    proposed_outputs:
+    - COG
+    rationale: Reuse existing record and native COG; retain exact V2 identity and years.
+    evidence_urls:
+    - https://planetarycomputer.microsoft.com/api/stac/v1/collections/io-lulc-annual-v02
+    - https://planetarycomputer.microsoft.com/dataset/io-lulc-annual-v02
+  - provider: planetary_computer
+    status: native_available
+    formats:
+    - COG
+    summary: 'Collection metadata declares per-item data assets / provider storage roots in the listed
+      native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain
+      unvalidated. V1 annual 9-class release; preserve version and class schema separately.'
+    license_summary: 'note: Do not treat this metadata label as legal clearance.; review_status: provider
+      declaration captured; terms and redistribution permission not independently reviewed; stac_license:
+      CC-BY-4.0'
+    proposed_outputs:
+    - COG
+    rationale: Related V1 release to V2 catalog family; compare source IDs, dates and class schema before
+      combining.
+    evidence_urls:
+    - https://planetarycomputer.microsoft.com/api/stac/v1/collections/io-lulc-9-class
+    - https://planetarycomputer.microsoft.com/dataset/io-lulc-9-class
+  citations:
+  - provider: OpenAlex
+    paper_doi: 10.1109/igarss47720.2021.9553499
+    work_id: https://openalex.org/W3207200417
+    cited_by_count: 1346
+    observed_on: '2026-10-30'
+    scope: associated_dataset_publication
+  evidence:
+  - path: research/global-candidates-20261031/citations/reviewed.json
+    sha256: 572140255cd3b41a1ec8ecca0139e64d38899cda7fdd55756f399a0dca57a467
+    key: s2tslulc
+  - path: research/global-candidates-20261031/planetary/reviewed.json
+    sha256: 07da016851a07f3e3e0937e120ce46442785f4e9096e563d92c1a3c0ce9e616a
+    key: impact_observatory_annual_lulc_v2
+  - path: research/global-candidates-20261031/planetary/reviewed.json
+    sha256: 07da016851a07f3e3e0937e120ce46442785f4e9096e563d92c1a3c0ce9e616a
+    key: impact_observatory_annual_lulc_v1

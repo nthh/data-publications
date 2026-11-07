@@ -1,0 +1,208 @@
+{
+  "schema_version": 1,
+  "status": "reviewed_plan_not_executed",
+  "repository": "nthh/data-publications",
+  "authorization_scope": "The user authorized five Source Cooperative products, the aggregate Portolan viewer, and a fresh public Git history after the data and viewer gates. Registry submission remains a separate potential action.",
+  "invariants": [
+    "Keep /Users/nathan/projects/data-publications as the primary checkout and main branch working directory.",
+    "Preserve all existing task worktrees, local branches and ignored bulk .local data. A new standalone snapshot uses a separate .git directory; importing its root commit into the primary repository does not remove the old local object store.",
+    "Do not make the repository public, rewrite a remote ref or deploy Pages until all five hosted product checks and the official five-collection Browser preflight have passed their own gates.",
+    "Keep the strict GEE sampled_fail results and their limitations; successful hosting does not assert GEE scientific parity.",
+    "Do not submit the aggregate catalog to the Portolan registry in this sequence."
+  ],
+  "current_read_only_inventory": {
+    "scope": "Observed with local Git and GitHub CLI before final publication; repeat immediately before remote changes.",
+    "local_primary_main": "0316a6a6bbad7d01afb52c32ae8f00a87d4955fb",
+    "local_primary_status": "clean",
+    "task_branch": "feat/source-publication-20261106",
+    "task_branch_head_at_review": "be9812b35da3cf17da769712fb4c992636dfd624",
+    "main_is_ancestor_of_task_branch": true,
+    "remote_visibility": "PRIVATE",
+    "remote_default_branch": "main",
+    "remote_heads": {
+      "refs/heads/main": "0316a6a6bbad7d01afb52c32ae8f00a87d4955fb",
+      "refs/heads/feat/gee-release-validation-20261106": "52fbb177556ffe6f0c60ec5f753602fe313acf23"
+    },
+    "remote_tags": [],
+    "pull_requests_all_states": [],
+    "actions_runs": [
+      42332932082,
+      42311291148,
+      41259466152,
+      41254273744
+    ],
+    "actions_artifacts": [
+      13558108368,
+      13548452553,
+      13064532074,
+      13061768741
+    ],
+    "deployments": [],
+    "pages_get": "HTTP 404; no Pages site configured",
+    "main_branch_protection_get": "HTTP 403: current private-repository plan cannot expose this feature; do not infer whether equivalent rules or settings will apply after visibility changes"
+  },
+  "command_context": {
+    "PRIMARY": "/Users/nathan/projects/data-publications",
+    "TASK_WORKTREE": "/Users/nathan/.folia-fleets/source-publication-20261106/tree",
+    "TASK_BRANCH": "feat/source-publication-20261106",
+    "POST_RELEASE_BRANCH": "Choose a new unique local branch name for Pages and live-viewer evidence, rooted at PUBLIC_ROOT.",
+    "FINAL_COMMIT": "Set to the final verified commit after local integration; record its full SHA-1 and tree SHA-1.",
+    "DURABLE_ROOT": "A new persistent directory under /Users/nathan/.folia-fleets/source-publication-final-<date>, outside every repository and outside /tmp.",
+    "BUNDLE": "${DURABLE_ROOT}/pre-rewrite-all-refs.bundle",
+    "RESTORE": "${DURABLE_ROOT}/bundle-restore.git",
+    "SNAPSHOT": "${DURABLE_ROOT}/public-one-commit/tree",
+    "PUBLIC_ROOT": "The sole commit SHA created in SNAPSHOT after tree equality passes.",
+    "REMOTE_OLD_MAIN": "Freshly read exact refs/heads/main object ID immediately before the guarded push.",
+    "REMOTE_OLD_GEE": "Freshly read exact refs/heads/feat/gee-release-validation-20261106 object ID, if that stale branch still exists."
+  },
+  "ordered_gates": [
+    {
+      "id": "G1_five_hosted_products",
+      "required": [
+        "Five exact Source products have complete upload receipts, including GRWL recovery with full-byte remote SHA verification; no failed or unfinished object is promoted.",
+        "Each of river-plastic-inputs, hydrolakes, lakeatlas, free-flowing-rivers and grwl-raw has a retained passed hosted-validation report tied to the immutable plan, current receipt chain, package/display manifests and frozen controls.",
+        "Each report passes anonymous_access, range_requests, cors, asset_checksums, subset_query, catalog_links and browser_render; preserve earlier failed reports. Sampled queries and browser ranges retain their stated scope."
+      ]
+    },
+    {
+      "id": "G2_five_collection_browser_preflight",
+      "required": [
+        "Commit exact five-collection generated catalog and a SHA-256-bound metadata-only Pages stage/publish-plan before Browser execution.",
+        "Run the frozen official Portolan Browser harness in preflight mode with only exact staged Pages metadata substituted; Source objects remain live. Require all five collections, six PMTiles, bounded HTTP 206 range proofs and screenshots.",
+        "Resolve and record the River visual-rendering issue; obtain required manual visual review for every collection. A four-collection or selected-dataset report is insufficient.",
+        "Label this a local Pages metadata preflight, not evidence of live GitHub Pages serving."
+      ]
+    },
+    {
+      "id": "G3_local_integration_and_checks",
+      "required": [
+        "Commit the task branch, verify the primary main checkout is clean, and verify main is an ancestor of the task branch before a fast-forward merge in the existing primary checkout.",
+        "Recheck catalog.py --check, source_products.py check, publication_catalog.py check showing exactly five published collections, check_provenance.py, pinned Rashid checks on tracked and staged catalog, relevant publication tests, and the final five-collection Browser report.",
+        "Inventory staged Pages files and ensure only metadata enters the artifact; no bulk assets, caches, credentials or publish-plan.json are served. Record exact final commit, tree, command outputs and limitations."
+      ],
+      "commands_after_preconditions": [
+        "git -C \"$PRIMARY\" status --porcelain=v1 --untracked-files=all",
+        "git -C \"$PRIMARY\" merge-base --is-ancestor main \"$TASK_BRANCH\"",
+        "git -C \"$PRIMARY\" merge --ff-only \"$TASK_BRANCH\"",
+        "git -C \"$PRIMARY\" status --porcelain=v1 --untracked-files=all",
+        "git -C \"$PRIMARY\" rev-parse HEAD HEAD^{tree}"
+      ]
+    },
+    {
+      "id": "G4_durable_full_history_backup",
+      "required": [
+        "Choose an existing durable parent and a new unique DURABLE_ROOT; do not use /tmp, rename the primary checkout, or delete worktrees.",
+        "Create an --all bundle after FINAL_COMMIT is integrated; retain its SHA-256, byte count, full local ref inventory and location outside the repo. Bundle must include the pre-rewrite main and active task/worktree refs.",
+        "Verify the bundle, restore it into a new empty bare repository and run full fsck; compare the restored named refs and commit/tree IDs with the recorded inventory before any remote rewrite."
+      ],
+      "commands_after_preconditions": [
+        "mkdir -p \"$DURABLE_ROOT\"",
+        "git -C \"$PRIMARY\" for-each-ref --format='%(refname) %(objectname)' > \"$DURABLE_ROOT/local-refs-before.txt\"",
+        "git -C \"$PRIMARY\" bundle create \"$BUNDLE\" --all",
+        "git -C \"$PRIMARY\" bundle verify \"$BUNDLE\"",
+        "python3 -c 'import hashlib, sys; f=open(sys.argv[1], \"rb\"); print(hashlib.file_digest(f, \"sha256\").hexdigest()); f.close()' \"$BUNDLE\"",
+        "git clone --mirror \"$BUNDLE\" \"$RESTORE\"",
+        "git -C \"$RESTORE\" fsck --full --no-reflogs",
+        "git -C \"$RESTORE\" for-each-ref --format='%(refname) %(objectname)'"
+      ]
+    },
+    {
+      "id": "G5_standalone_one_commit_public_tree",
+      "required": [
+        "SNAPSHOT is a new empty durable directory with an independent .git, built only from git archive FINAL_COMMIT. Exclude .local and all bulk data.",
+        "Force-stage every archived tracked path because two tiny intentional tracked PMTiles match the generic *.pmtiles ignore rule in a fresh repository.",
+        "Before and after committing, prove SNAPSHOT tree SHA-1 equals FINAL_COMMIT tree SHA-1; exactly one root commit is reachable; the old FINAL_COMMIT object is absent from the standalone object store; fsck and clean status pass.",
+        "Run fresh-checkout catalog/source-products/publication-catalog/provenance and focused publication checks again. Verify the portable historical archive still resolves 186 entries, 104 blobs and the 100 package-template workflow pins, without claiming old Git history is present."
+      ],
+      "commands_after_preconditions": [
+        "mkdir -p \"$SNAPSHOT\"",
+        "git -C \"$PRIMARY\" archive \"$FINAL_COMMIT\" | tar -x -C \"$SNAPSHOT\"",
+        "git -C \"$SNAPSHOT\" init -b main",
+        "git -C \"$SNAPSHOT\" add -f -A",
+        "test \"$(git -C \"$SNAPSHOT\" write-tree)\" = \"$(git -C \"$PRIMARY\" rev-parse \"$FINAL_COMMIT^{tree}\")\"",
+        "git -C \"$SNAPSHOT\" commit -m 'Publish verified five-product catalog and portable provenance'",
+        "test \"$(git -C \"$SNAPSHOT\" rev-list --all --count)\" = 1",
+        "test \"$(git -C \"$SNAPSHOT\" rev-parse HEAD^{tree})\" = \"$(git -C \"$PRIMARY\" rev-parse \"$FINAL_COMMIT^{tree}\")\"",
+        "! git -C \"$SNAPSHOT\" cat-file -e \"$FINAL_COMMIT^{commit}\"",
+        "git -C \"$SNAPSHOT\" fsck --full --no-reflogs",
+        "git -C \"$SNAPSHOT\" status --porcelain=v1 --untracked-files=all"
+      ]
+    },
+    {
+      "id": "G6_remote_inventory_and_private_rewrite",
+      "required": [
+        "While private, refresh exact GitHub heads/tags, default branch, pull requests including closed, releases, Actions runs/logs/artifacts, deployments, Pages status and applicable branch rules. Review logs/artifacts for material that would become public; repository visibility exposes retained GitHub records beyond advertised refs.",
+        "Resolve any new ref or branch-rule change before acting. Record old main and every stale remote ref SHA; do not mirror push. An advertised stale GEE branch currently still points to old history and must be retired with an exact old-SHA lease if it remains.",
+        "Import PUBLIC_ROOT from the independent snapshot into the existing primary repository under a new temporary local branch. After clean-status and exact tree-equality checks, move primary main with reset --soft so the existing checkout and ignored .local remain in place; old local refs, objects and worktrees are retained under the durable bundle.",
+        "Push only refs/heads/main with --force-with-lease bound to the freshly inventoried old SHA; refuse a lease mismatch. Remove each stale advertised remote branch by exact old-SHA lease while private, then reread all remote heads/tags and require only the intended new main. Remote caches, PR refs, forks and old Actions records may still retain old objects; never claim forensic erasure."
+      ],
+      "read_only_inventory_commands": [
+        "gh repo view nthh/data-publications --json nameWithOwner,visibility,defaultBranchRef,isPrivate,url",
+        "gh api repos/nthh/data-publications/git/matching-refs/heads --paginate",
+        "gh api repos/nthh/data-publications/git/matching-refs/tags --paginate",
+        "gh pr list --repo nthh/data-publications --state all --limit 100 --json number,state,headRefName,baseRefName,headRefOid",
+        "gh api repos/nthh/data-publications/actions/runs --paginate",
+        "gh api repos/nthh/data-publications/actions/artifacts --paginate",
+        "gh api repos/nthh/data-publications/deployments --paginate",
+        "gh api repos/nthh/data-publications/pages",
+        "gh api repos/nthh/data-publications/branches/main/protection"
+      ],
+      "local_and_remote_commands_after_preconditions": [
+        "git -C \"$PRIMARY\" fetch \"$SNAPSHOT\" main:refs/heads/publication-root-local",
+        "test \"$(git -C \"$PRIMARY\" rev-parse HEAD^{tree})\" = \"$(git -C \"$PRIMARY\" rev-parse publication-root-local^{tree})\"",
+        "git -C \"$PRIMARY\" status --porcelain=v1 --untracked-files=all",
+        "git -C \"$PRIMARY\" reset --soft publication-root-local",
+        "git -C \"$PRIMARY\" push --force-with-lease=refs/heads/main:$REMOTE_OLD_MAIN origin refs/heads/main:refs/heads/main",
+        "git -C \"$PRIMARY\" push --force-with-lease=refs/heads/feat/gee-release-validation-20261106:$REMOTE_OLD_GEE origin :refs/heads/feat/gee-release-validation-20261106"
+      ]
+    },
+    {
+      "id": "G7_post_rewrite_continuation_branch",
+      "required": [
+        "After the private remote rewrite, preserve TASK_BRANCH as an old-history local backup and in the durable bundle. Do not merge TASK_BRANCH or any other old-history branch into the new public main.",
+        "Require a clean task worktree, then switch that same durable worktree to a new unique POST_RELEASE_BRANCH starting exactly at PUBLIC_ROOT. Existing ignored .local data stay in place.",
+        "Prove the new branch has PUBLIC_ROOT as its ancestor and one root commit. Make subsequent live Pages/viewer evidence commits normally on this new branch, then fast-forward them into primary main after checks; never merge old history."
+      ],
+      "commands_after_preconditions": [
+        "git -C \"$PRIMARY\" show-ref --verify refs/heads/feat/source-publication-20261106",
+        "test -z \"$(git -C \"$TASK_WORKTREE\" status --porcelain=v1 --untracked-files=all)\"",
+        "git -C \"$TASK_WORKTREE\" switch -c \"$POST_RELEASE_BRANCH\" \"$PUBLIC_ROOT\"",
+        "git -C \"$TASK_WORKTREE\" merge-base --is-ancestor \"$PUBLIC_ROOT\" HEAD",
+        "test \"$(git -C \"$TASK_WORKTREE\" rev-list --max-parents=0 --count HEAD)\" = 1",
+        "git -C \"$PRIMARY\" show-ref --verify refs/heads/feat/source-publication-20261106"
+      ]
+    },
+    {
+      "id": "G8_public_visibility_pages_and_live_browser",
+      "required": [
+        "Only after G1-G7 and a fresh remote-ref/Actions review, switch nthh/data-publications to public and confirm main still points to PUBLIC_ROOT. Review public tree for credentials and private material before visibility change.",
+        "Current GitHub plan rejected private Pages configuration with HTTP 422 and GET returned 404. After the public switch, configure Pages for GitHub Actions workflow builds; verify exact settings and the github-pages environment.",
+        "Dispatch only .github/workflows/publish-catalog-pages.yml on public main. Require the locked build, tracked and staged Rashid checks, metadata-only artifact and deployment job to pass; record run/deployment IDs and deployed SHA.",
+        "Fetch https://nthh.github.io/data-publications/catalog.json and exact planned metadata asset URLs; compare live bytes and SHA-256 to the staged publish-plan. Run the official Portolan Browser harness in live mode without Pages interception against all five collections/six PMTiles and obtain manual visual review.",
+        "Do not describe preflight as live Pages evidence. A failed live gate remains a failure and does not trigger registry submission.",
+        "Record passing live Pages and Browser evidence as normal new commits on POST_RELEASE_BRANCH; after verification, fast-forward primary main and push normally, without a force option. This post-release history is expected and descends from PUBLIC_ROOT."
+      ],
+      "commands_after_preconditions": [
+        "gh repo edit nthh/data-publications --visibility public --accept-visibility-change-consequences",
+        "gh api --method POST repos/nthh/data-publications/pages -f build_type=workflow",
+        "gh api repos/nthh/data-publications/pages",
+        "gh workflow run publish-catalog-pages.yml --repo nthh/data-publications --ref main",
+        "gh run list --repo nthh/data-publications --workflow publish-catalog-pages.yml --limit 5",
+        "gh api repos/nthh/data-publications/pages/builds/latest"
+      ],
+      "commands_after_live_evidence_commit_and_checks": [
+        "git -C \"$PRIMARY\" merge-base --is-ancestor main \"$POST_RELEASE_BRANCH\"",
+        "git -C \"$PRIMARY\" merge --ff-only \"$POST_RELEASE_BRANCH\"",
+        "git -C \"$PRIMARY\" push origin refs/heads/main:refs/heads/main"
+      ]
+    }
+  ],
+  "review_notes": [
+    "The earlier clean-checkout rehearsal at b1208b6 proved a matching standalone tree and 102 passing publication tests with one sandbox-only skip later passed separately; it predates the final five-product tree and must be repeated at FINAL_COMMIT.",
+    "The earlier history rehearsal proved 186 portable entries, 104 blobs, 100 historical workflow pins and byte-identical retained strict GEE failures; the final snapshot must repeat provenance checks after the history cut.",
+    "The Pages workflow source guard checks nthh/data-publications and main; GitHub eligibility and Pages settings are separate gates. The workflow currently performs no repository-visibility assertion.",
+    "Branch-protection API returned 403 on the private plan, so a fresh post-visibility settings/rules review is required if GitHub refuses the private lease-protected rewrite.",
+    "After the root rewrite, the retained pre-release TASK_BRANCH and old worktrees are backup history only. New evidence commits must descend from PUBLIC_ROOT; ordinary merges from those old branches would reintroduce the squashed commits.",
+    "Publishing a new root commit changes advertised history, but GitHub Actions records, artifacts, pull-request refs, forks, clones and local worktrees may continue to contain old commits. This plan promises a clean public main tree and one reachable commit there, not universal deletion of historical objects."
+  ]
+}

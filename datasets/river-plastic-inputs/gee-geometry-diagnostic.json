@@ -1,0 +1,21 @@
+{
+  "id": "river-plastic-gee-geometry-diagnostic-v1",
+  "scope": "Follow-up to the failed strict coordinate comparison; unique spatial association and attribute validation at the documented one-metre GEE ingestion allowance. Does not replace the original failure.",
+  "parent_contract_sha256": "1f6cce811873e9919215e5c74aca5a044506d5d535e8542ecd3dfa41b3e0ed7a",
+  "strict_report_sha256": "9171d9147643892d054713485a2576c604e1b85f7622ede2f59e8ce9ea7d8c45",
+  "capture_receipt_sha256": "eafc9374be0bb47c605a3a15ed8078a36ee7cf788209687971f2a835dc739d6d",
+  "matching_radius_meters": 1,
+  "distance_method": "pyproj.Geod.inv on WGS84 ellipsoid, using the existing locked release environment. No coordinate rounding or source changes.",
+  "candidate_lookup": {
+    "bin_width_degrees": "0.0001",
+    "maximum_absolute_latitude": 61,
+    "method": "Search the point bin and its eight neighbors, then keep only points within the geodesic radius. This lookup is conservative for a one-metre radius throughout the enforced extent. Reject ambiguity and duplicate assignment."
+  },
+  "numeric_tolerances": "Unchanged from the parent contract; compare all 53 fields, null masks and emission totals.",
+  "acceptance": "All 40,760 points must have a unique one-to-one match at <=1 metre. Every original value and null must satisfy the existing parent contract. Summarize displacement minimum, median, 95th/99th percentiles and maximum, and count original strict-tolerance violations.",
+  "result_policy": "The original strict failure remains failed. A successful follow-up is passed_with_documented_geometry_difference, not exact coordinate parity. Ingestion cause and source-version provenance remain undocumented.",
+  "basis_url": "https://developers.google.com/earth-engine/guides/table_manifest",
+  "basis": "Google documents maxErrorMeters=1 by default for geometry transformations during table ingestion. The asset ingestion manifest is unavailable; this is a plausible explanation, not established cause.",
+  "known_before_registration": "The strict run found all 40,760 points outside 1e-8 degree tolerance. Three inspected point offsets and the global bounds differ by about 1e-6 degrees. All 39 emission sums and per-field null counts match exactly. Full geodesic displacement and spatially joined attribute comparisons have not yet been computed.",
+  "independent_review": "Read-only reviewer agreed to separate geodesic association from strict fidelity, enforce uniqueness/coverage, and avoid causal claims without ingestion provenance."
+}

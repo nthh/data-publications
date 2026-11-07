@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "dataset_id": "hydrolakes",
+  "sample_sha256": "161c4ebf5552ca11aedcf20dd89107d9086f5c2644366212b777628649dd877a",
+  "sample_filename": "hydrolakes-sample.json",
+  "criteria_sha256": "46d82a976f5099e89b52cf3be76924903b7ab0e21640268e4fd5d4e8cb8f2977",
+  "quota_project": "mtnmap-f75ec",
+  "limits": {
+    "maximum_requests": 256,
+    "maximum_total_bytes": 512000000,
+    "maximum_response_bytes": 64000000,
+    "timeout_seconds": 45,
+    "maximum_elapsed_seconds": 7200
+  },
+  "requests": [
+    {
+      "id": "hydrolakes-before",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroLakes/lake_poly_v10"
+    },
+    {
+      "id": "hydrolakes-count",
+      "operation": "count",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroLakes/lake_poly_v10"
+    },
+    {
+      "id": "hydrolakes-features-000",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroLakes/lake_poly_v10:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 1 OR Hylak_id = 2 OR Hylak_id = 3 OR Hylak_id = 4 OR Hylak_id = 5 OR Hylak_id = 6 OR Hylak_id = 7 OR Hylak_id = 8 OR Hylak_id = 9 OR Hylak_id = 10 OR Hylak_id = 1867 OR Hylak_id = 2200 OR Hylak_id = 2394 OR Hylak_id = 5383 OR Hylak_id = 7975 OR Hylak_id = 9810 OR Hylak_id = 12834 OR Hylak_id = 14056 OR Hylak_id = 14846 OR Hylak_id = 20123 OR Hylak_id = 21889 OR Hylak_id = 25091 OR Hylak_id = 31812 OR Hylak_id = 37944 OR Hylak_id = 45222 OR Hylak_id = 49418 OR Hylak_id = 53194 OR Hylak_id = 55623 OR Hylak_id = 56486 OR Hylak_id = 59050 OR Hylak_id = 63971 OR Hylak_id = 65238"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "hydrolakes-features-001",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroLakes/lake_poly_v10:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 70268 OR Hylak_id = 75382 OR Hylak_id = 79440 OR Hylak_id = 79700 OR Hylak_id = 83543 OR Hylak_id = 84117 OR Hylak_id = 85221 OR Hylak_id = 85281 OR Hylak_id = 91046 OR Hylak_id = 92900 OR Hylak_id = 93022 OR Hylak_id = 96581 OR Hylak_id = 104966 OR Hylak_id = 106826 OR Hylak_id = 107022 OR Hylak_id = 109222 OR Hylak_id = 109688 OR Hylak_id = 111869 OR Hylak_id = 113557 OR Hylak_id = 113720 OR Hylak_id = 114915 OR Hylak_id = 118767 OR Hylak_id = 120899 OR Hylak_id = 124154 OR Hylak_id = 127392 OR Hylak_id = 128812 OR Hylak_id = 135437 OR Hylak_id = 138102 OR Hylak_id = 139327 OR Hylak_id = 142854 OR Hylak_id = 143688 OR Hylak_id = 147282"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "hydrolakes-features-002",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroLakes/lake_poly_v10:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 147339 OR Hylak_id = 150166 OR Hylak_id = 151843 OR Hylak_id = 154645 OR Hylak_id = 158100 OR Hylak_id = 159931 OR Hylak_id = 162467 OR Hylak_id = 167560 OR Hylak_id = 171129 OR Hylak_id = 174925 OR Hylak_id = 174940 OR Hylak_id = 178141 OR Hylak_id = 178147 OR Hylak_id = 179304 OR Hylak_id = 186634 OR Hylak_id = 188272 OR Hylak_id = 190832 OR Hylak_id = 202380 OR Hylak_id = 203556 OR Hylak_id = 203723 OR Hylak_id = 205680 OR Hylak_id = 205780 OR Hylak_id = 212220 OR Hylak_id = 212479 OR Hylak_id = 214822 OR Hylak_id = 215708 OR Hylak_id = 217159 OR Hylak_id = 219412 OR Hylak_id = 219838 OR Hylak_id = 220063 OR Hylak_id = 230003 OR Hylak_id = 231982"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "hydrolakes-features-003",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroLakes/lake_poly_v10:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 236759 OR Hylak_id = 236971 OR Hylak_id = 239360 OR Hylak_id = 239428 OR Hylak_id = 240146 OR Hylak_id = 240748 OR Hylak_id = 240798 OR Hylak_id = 245968 OR Hylak_id = 254165 OR Hylak_id = 258662 OR Hylak_id = 258900 OR Hylak_id = 259134 OR Hylak_id = 269669 OR Hylak_id = 274253 OR Hylak_id = 276558 OR Hylak_id = 283491 OR Hylak_id = 286725 OR Hylak_id = 288633 OR Hylak_id = 297022 OR Hylak_id = 297191 OR Hylak_id = 306586 OR Hylak_id = 308046 OR Hylak_id = 309401 OR Hylak_id = 309692 OR Hylak_id = 312257 OR Hylak_id = 315432 OR Hylak_id = 315650 OR Hylak_id = 316444 OR Hylak_id = 317160 OR Hylak_id = 317906 OR Hylak_id = 318963 OR Hylak_id = 326427"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "hydrolakes-features-004",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroLakes/lake_poly_v10:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 326683 OR Hylak_id = 333202 OR Hylak_id = 333509 OR Hylak_id = 334277 OR Hylak_id = 336329 OR Hylak_id = 342063 OR Hylak_id = 344922 OR Hylak_id = 345398 OR Hylak_id = 352425 OR Hylak_id = 354638 OR Hylak_id = 359824 OR Hylak_id = 360461 OR Hylak_id = 360480 OR Hylak_id = 360618 OR Hylak_id = 361609 OR Hylak_id = 362958 OR Hylak_id = 364989 OR Hylak_id = 373570 OR Hylak_id = 374948 OR Hylak_id = 375271 OR Hylak_id = 375465 OR Hylak_id = 376027 OR Hylak_id = 390424 OR Hylak_id = 401669 OR Hylak_id = 403056 OR Hylak_id = 405365 OR Hylak_id = 406102 OR Hylak_id = 406844 OR Hylak_id = 406883 OR Hylak_id = 406922 OR Hylak_id = 411851 OR Hylak_id = 413091"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "hydrolakes-features-005",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroLakes/lake_poly_v10:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 413149 OR Hylak_id = 413441 OR Hylak_id = 417179 OR Hylak_id = 417377 OR Hylak_id = 419352 OR Hylak_id = 419376 OR Hylak_id = 423337 OR Hylak_id = 423359 OR Hylak_id = 429351 OR Hylak_id = 430979 OR Hylak_id = 442018 OR Hylak_id = 449724 OR Hylak_id = 449760 OR Hylak_id = 452056 OR Hylak_id = 456425 OR Hylak_id = 459463 OR Hylak_id = 462068 OR Hylak_id = 462769 OR Hylak_id = 463277 OR Hylak_id = 464966 OR Hylak_id = 467734 OR Hylak_id = 471233 OR Hylak_id = 471874 OR Hylak_id = 478722 OR Hylak_id = 482387 OR Hylak_id = 482591 OR Hylak_id = 484237 OR Hylak_id = 484819 OR Hylak_id = 486026 OR Hylak_id = 486092 OR Hylak_id = 488067 OR Hylak_id = 492229"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "hydrolakes-features-006",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroLakes/lake_poly_v10:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 493337 OR Hylak_id = 494110 OR Hylak_id = 498515 OR Hylak_id = 498979 OR Hylak_id = 500475 OR Hylak_id = 504442 OR Hylak_id = 504838 OR Hylak_id = 508944 OR Hylak_id = 509344 OR Hylak_id = 523032 OR Hylak_id = 525855 OR Hylak_id = 530220 OR Hylak_id = 530784 OR Hylak_id = 531502 OR Hylak_id = 542604 OR Hylak_id = 548704 OR Hylak_id = 548755 OR Hylak_id = 548917 OR Hylak_id = 552099 OR Hylak_id = 552435 OR Hylak_id = 558985 OR Hylak_id = 561170 OR Hylak_id = 562680 OR Hylak_id = 565690 OR Hylak_id = 566398 OR Hylak_id = 566543 OR Hylak_id = 569015 OR Hylak_id = 579714 OR Hylak_id = 587348 OR Hylak_id = 588335 OR Hylak_id = 588388 OR Hylak_id = 591329"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "hydrolakes-features-007",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroLakes/lake_poly_v10:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 598064 OR Hylak_id = 601579 OR Hylak_id = 601674 OR Hylak_id = 602305 OR Hylak_id = 610938 OR Hylak_id = 615715 OR Hylak_id = 616149 OR Hylak_id = 618066 OR Hylak_id = 619050 OR Hylak_id = 620165 OR Hylak_id = 622033 OR Hylak_id = 623331 OR Hylak_id = 625038 OR Hylak_id = 628214 OR Hylak_id = 628895 OR Hylak_id = 629396 OR Hylak_id = 638649 OR Hylak_id = 639090 OR Hylak_id = 644070 OR Hylak_id = 644321 OR Hylak_id = 644771 OR Hylak_id = 647400 OR Hylak_id = 647514 OR Hylak_id = 652561 OR Hylak_id = 658780 OR Hylak_id = 660350 OR Hylak_id = 660795 OR Hylak_id = 667112 OR Hylak_id = 667729 OR Hylak_id = 667748 OR Hylak_id = 668011 OR Hylak_id = 668012"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "hydrolakes-features-008",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroLakes/lake_poly_v10:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 671483 OR Hylak_id = 671528 OR Hylak_id = 671595 OR Hylak_id = 682152 OR Hylak_id = 686743 OR Hylak_id = 689004 OR Hylak_id = 689327 OR Hylak_id = 698392 OR Hylak_id = 700494 OR Hylak_id = 705847 OR Hylak_id = 705910 OR Hylak_id = 713395 OR Hylak_id = 713407 OR Hylak_id = 715610 OR Hylak_id = 716420 OR Hylak_id = 722659 OR Hylak_id = 722706 OR Hylak_id = 722861 OR Hylak_id = 723711 OR Hylak_id = 725505 OR Hylak_id = 726872 OR Hylak_id = 729810 OR Hylak_id = 734669 OR Hylak_id = 735063 OR Hylak_id = 741677 OR Hylak_id = 746314 OR Hylak_id = 746524 OR Hylak_id = 747292 OR Hylak_id = 749306 OR Hylak_id = 752851 OR Hylak_id = 759290 OR Hylak_id = 759324"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "hydrolakes-features-009",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroLakes/lake_poly_v10:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 761926 OR Hylak_id = 767563 OR Hylak_id = 768256 OR Hylak_id = 772488 OR Hylak_id = 778203 OR Hylak_id = 778251 OR Hylak_id = 780118 OR Hylak_id = 780197 OR Hylak_id = 780291 OR Hylak_id = 785697 OR Hylak_id = 786604 OR Hylak_id = 787585 OR Hylak_id = 789598 OR Hylak_id = 790422 OR Hylak_id = 791683 OR Hylak_id = 791712 OR Hylak_id = 793638 OR Hylak_id = 794158 OR Hylak_id = 796571 OR Hylak_id = 809744 OR Hylak_id = 814710 OR Hylak_id = 818179 OR Hylak_id = 818372 OR Hylak_id = 819776 OR Hylak_id = 819821 OR Hylak_id = 824847 OR Hylak_id = 835170 OR Hylak_id = 846273 OR Hylak_id = 846812 OR Hylak_id = 847345 OR Hylak_id = 847358 OR Hylak_id = 848216"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "hydrolakes-features-010",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroLakes/lake_poly_v10:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 848376 OR Hylak_id = 851819 OR Hylak_id = 858265 OR Hylak_id = 860325 OR Hylak_id = 863752 OR Hylak_id = 867227 OR Hylak_id = 867489 OR Hylak_id = 868299 OR Hylak_id = 868526 OR Hylak_id = 871795 OR Hylak_id = 872012 OR Hylak_id = 872973 OR Hylak_id = 874022 OR Hylak_id = 886352 OR Hylak_id = 886399 OR Hylak_id = 886895 OR Hylak_id = 889678 OR Hylak_id = 890859 OR Hylak_id = 894170 OR Hylak_id = 895333 OR Hylak_id = 904657 OR Hylak_id = 905237 OR Hylak_id = 914301 OR Hylak_id = 914562 OR Hylak_id = 916007 OR Hylak_id = 920958 OR Hylak_id = 920994 OR Hylak_id = 923047 OR Hylak_id = 923511 OR Hylak_id = 929184 OR Hylak_id = 929535 OR Hylak_id = 935728"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "hydrolakes-features-011",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroLakes/lake_poly_v10:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 935843 OR Hylak_id = 938065 OR Hylak_id = 940913 OR Hylak_id = 941484 OR Hylak_id = 951002 OR Hylak_id = 954196 OR Hylak_id = 955498 OR Hylak_id = 956561 OR Hylak_id = 957214 OR Hylak_id = 964371 OR Hylak_id = 965517 OR Hylak_id = 972468 OR Hylak_id = 973395 OR Hylak_id = 973807 OR Hylak_id = 974121 OR Hylak_id = 975828 OR Hylak_id = 978372 OR Hylak_id = 978786 OR Hylak_id = 985429 OR Hylak_id = 990563 OR Hylak_id = 991889 OR Hylak_id = 995093 OR Hylak_id = 999113 OR Hylak_id = 999285 OR Hylak_id = 1006325 OR Hylak_id = 1007250 OR Hylak_id = 1007491 OR Hylak_id = 1016066 OR Hylak_id = 1016208 OR Hylak_id = 1016384 OR Hylak_id = 1020172 OR Hylak_id = 1020978"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "hydrolakes-features-012",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroLakes/lake_poly_v10:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 1027930 OR Hylak_id = 1033027 OR Hylak_id = 1033495 OR Hylak_id = 1038548 OR Hylak_id = 1042252 OR Hylak_id = 1047180 OR Hylak_id = 1055102 OR Hylak_id = 1056158 OR Hylak_id = 1056635 OR Hylak_id = 1064626 OR Hylak_id = 1069208 OR Hylak_id = 1070514 OR Hylak_id = 1076716 OR Hylak_id = 1076804 OR Hylak_id = 1079941 OR Hylak_id = 1087025 OR Hylak_id = 1087038 OR Hylak_id = 1093796 OR Hylak_id = 1097232 OR Hylak_id = 1097238 OR Hylak_id = 1099026 OR Hylak_id = 1102299 OR Hylak_id = 1102368 OR Hylak_id = 1108956 OR Hylak_id = 1109078 OR Hylak_id = 1112894 OR Hylak_id = 1112922 OR Hylak_id = 1116558 OR Hylak_id = 1118865 OR Hylak_id = 1124147 OR Hylak_id = 1125735 OR Hylak_id = 1125770"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "hydrolakes-features-013",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroLakes/lake_poly_v10:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 1126753 OR Hylak_id = 1126833 OR Hylak_id = 1134538 OR Hylak_id = 1135254 OR Hylak_id = 1138084 OR Hylak_id = 1140949 OR Hylak_id = 1143990 OR Hylak_id = 1144163 OR Hylak_id = 1148222 OR Hylak_id = 1148459 OR Hylak_id = 1150273 OR Hylak_id = 1153648 OR Hylak_id = 1160326 OR Hylak_id = 1160618 OR Hylak_id = 1161031 OR Hylak_id = 1169026 OR Hylak_id = 1170133 OR Hylak_id = 1186688 OR Hylak_id = 1188396 OR Hylak_id = 1189124 OR Hylak_id = 1190889 OR Hylak_id = 1194080 OR Hylak_id = 1194262 OR Hylak_id = 1196034 OR Hylak_id = 1197351 OR Hylak_id = 1200867 OR Hylak_id = 1201087 OR Hylak_id = 1204358 OR Hylak_id = 1206458 OR Hylak_id = 1210272 OR Hylak_id = 1223565 OR Hylak_id = 1224142"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "hydrolakes-features-014",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroLakes/lake_poly_v10:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 1224454 OR Hylak_id = 1224848 OR Hylak_id = 1225989 OR Hylak_id = 1226242 OR Hylak_id = 1226508 OR Hylak_id = 1235483 OR Hylak_id = 1235690 OR Hylak_id = 1235788 OR Hylak_id = 1235868 OR Hylak_id = 1236099 OR Hylak_id = 1239213 OR Hylak_id = 1245438 OR Hylak_id = 1251666 OR Hylak_id = 1252053 OR Hylak_id = 1260702 OR Hylak_id = 1262084 OR Hylak_id = 1270040 OR Hylak_id = 1278542 OR Hylak_id = 1281555 OR Hylak_id = 1282323 OR Hylak_id = 1282588 OR Hylak_id = 1290725 OR Hylak_id = 1290820 OR Hylak_id = 1293186 OR Hylak_id = 1296504 OR Hylak_id = 1299773 OR Hylak_id = 1306383 OR Hylak_id = 1307478 OR Hylak_id = 1307847 OR Hylak_id = 1307971 OR Hylak_id = 1310728 OR Hylak_id = 1312022"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "hydrolakes-features-015",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroLakes/lake_poly_v10:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 1316015 OR Hylak_id = 1316691 OR Hylak_id = 1319656 OR Hylak_id = 1319660 OR Hylak_id = 1320012 OR Hylak_id = 1322804 OR Hylak_id = 1323422 OR Hylak_id = 1325844 OR Hylak_id = 1326523 OR Hylak_id = 1326533 OR Hylak_id = 1336059 OR Hylak_id = 1336355 OR Hylak_id = 1341386 OR Hylak_id = 1341392 OR Hylak_id = 1346005 OR Hylak_id = 1349781 OR Hylak_id = 1353745 OR Hylak_id = 1357753 OR Hylak_id = 1357800 OR Hylak_id = 1360568 OR Hylak_id = 1362514 OR Hylak_id = 1362520 OR Hylak_id = 1369231 OR Hylak_id = 1375934 OR Hylak_id = 1375984 OR Hylak_id = 1378389 OR Hylak_id = 1386222 OR Hylak_id = 1386699 OR Hylak_id = 1394175 OR Hylak_id = 1402154 OR Hylak_id = 1402868 OR Hylak_id = 1403248"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "hydrolakes-features-016",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroLakes/lake_poly_v10:listFeatures",
+      "params": {
+        "pageSize": 100,
+        "filter": "Hylak_id = 1407258 OR Hylak_id = 1407491 OR Hylak_id = 1409623 OR Hylak_id = 1411187 OR Hylak_id = 1417030 OR Hylak_id = 1420723 OR Hylak_id = 1423615 OR Hylak_id = 1426598 OR Hylak_id = 1426601 OR Hylak_id = 1427684"
+      },
+      "paginate": true,
+      "maximum_pages": 8,
+      "maximum_rows": 800
+    },
+    {
+      "id": "hydrolakes-after",
+      "resource": "projects/earthengine-legacy/assets/projects/sat-io/open-datasets/HydroLakes/lake_poly_v10"
+    }
+  ]
+}

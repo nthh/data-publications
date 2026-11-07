@@ -1,0 +1,62 @@
+{
+  "checks": [
+    "Portolan v0.2.0 bundled schema",
+    "STAC 1.1 structural schema",
+    "local asset bytes"
+  ],
+  "exit_code": 0,
+  "output": null,
+  "release_manifest_sha256": "ef2a063cb54327b50d47e8ad17c735cadde87fb9ba3136d6b39fe43126863c8c",
+  "result": {
+    "error_count": 0,
+    "files_checked": 2,
+    "findings": [
+      {
+        "fix_hint": "add {\"rel\": \"canonical\", \"href\": <the upstream collection.json>, \"type\": \"application/json\"} to links when the upstream publishes STAC",
+        "json_pointer": "/links",
+        "message": "mirror collection has no rel:'canonical' link; add one if the upstream publishes its own STAC catalog",
+        "object_id": "grwl-raw",
+        "path": "collection.json",
+        "rule_id": "PTL-PRO-002",
+        "severity": "info"
+      },
+      {
+        "fix_hint": "publish a PMTiles derivative with a MapLibre style",
+        "json_pointer": "/assets",
+        "message": "vector data asset 'grwl-raw-observations' is 5529859809 bytes with no visual derivative; rendering from source is unlikely to be viable",
+        "object_id": "grwl-raw",
+        "path": "collection.json",
+        "rule_id": "PTL-VIZ-004",
+        "severity": "info"
+      }
+    ],
+    "info_count": 2,
+    "passed": true,
+    "summary": {
+      "by_rule": [
+        {
+          "count": 1,
+          "description": "a mirror should link the upstream STAC with rel:'canonical' when one exists",
+          "file_count": 1,
+          "rule_id": "PTL-PRO-002",
+          "severity": "info"
+        },
+        {
+          "count": 1,
+          "description": "large vector collections likely need a visual derivative (PMTiles)",
+          "file_count": 1,
+          "rule_id": "PTL-VIZ-004",
+          "severity": "info"
+        }
+      ],
+      "by_severity": {
+        "error": 0,
+        "info": 2,
+        "warning": 0
+      }
+    },
+    "warning_count": 0
+  },
+  "status": "passed",
+  "validator": "rashid 0.1.8"
+}

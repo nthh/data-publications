@@ -1,0 +1,61 @@
+schema_version: 1
+id: modis_mcd12q1_land_cover_c061
+title: MODIS Terra/Aqua annual global land cover type MCD12Q1
+intake:
+  kind: producer
+  reference_url: https://www.sciencedirect.com/science/article/pii/S0034425709002673
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'literature: Annual thematic land-cover classifications for global land at 500 m,
+    with multiple legends/classes; no ocean coverage claim. Current producer product MCD12Q1 Collection
+    6.1 at 500 m annual resolution; primary associated paper describes Collection 5, so count is a base
+    product-family proxy, not a v6.1 exact-release usage count. Paper documents Collection 5; candidate
+    product edition is Collection 6.1 and remains version-distinct.'
+  sources:
+  - provider: producer
+    entry_id: MODIS Terra/Aqua annual global land cover type MCD12Q1
+    url: https://www.sciencedirect.com/science/article/pii/S0034425709002673
+    relationship: same_family
+  access:
+  - provider: literature
+    status: download_available
+    formats:
+    - raster
+    - time-series
+    summary: NASA DAAC product documentation describes the global annual MCD12Q1 family; current candidate
+      edition differs from the Collection 5 paper. Current producer product MCD12Q1 Collection 6.1 at
+      500 m annual resolution; primary associated paper describes Collection 5, so count is a base product-family
+      proxy, not a v6.1 exact-release usage count. Paper documents Collection 5; candidate product edition
+      is Collection 6.1 and remains version-distinct.
+    license_summary: Exact release terms need product-specific review; no redistribution permission is
+      inferred from literature or access pages.
+    proposed_outputs:
+    - COG
+    rationale: Supplementary literature discovery only. A high associated-paper count is evidence of a
+      documented product family, not exact-edition usage, conversion priority, or native-format readiness.
+      Review producer bytes, terms and existing record component coverage before promotion.
+    evidence_urls:
+    - https://www.sciencedirect.com/science/article/pii/S0034425709002673
+    - https://modis-land.gsfc.nasa.gov/pdf/MCD12Q1_C6_Userguide04042018.pdf
+    - https://modis.gsfc.nasa.gov/data/dataprod/mod12.php
+  citations:
+  - provider: OpenAlex
+    paper_doi: 10.1016/j.rse.2009.08.016
+    work_id: https://openalex.org/W2042692910
+    cited_by_count: 3489
+    observed_on: '2026-11-01'
+    scope: associated_dataset_publication_base_family
+  evidence:
+  - path: research/global-candidates-20261031/literature/reviewed.json
+    sha256: eef4edb7f4a59e399d3670b9f2aace33bd24083f46d260a7859163c673fabbb6
+    key: modis_mcd12q1_land_cover_c061

@@ -1,0 +1,170 @@
+{
+  "scope": "Projected public API metadata; full response hashes retained, no array reads or artifact downloads.",
+  "observations": {
+    "grwl": {
+      "url": "https://zenodo.org/api/records/18624542",
+      "retrieved_at": "2026-11-01T01:59:27.468796+00:00",
+      "http_status": 200,
+      "response_bytes": 9585,
+      "response_sha256": "10dd0a26ec2c182202692a13bea1846f2e579bb20fb0fd60c6a6ab525b3fe96a",
+      "projection": {
+        "id": 18624542,
+        "title": "Global River Widths from Landsat (GRWL) Database",
+        "version": "V01.01",
+        "license": {
+          "id": "cc-by-4.0"
+        },
+        "files": [
+          {
+            "name": "GRWL_vector_V01.01.zip",
+            "size_bytes": 3104998836,
+            "checksum": "md5:40171f15c0fccd470db32446dda0480e"
+          },
+          {
+            "name": "GRWL_mask_V01.01.zip",
+            "size_bytes": 393801516,
+            "checksum": "md5:4bd15bcd9cdcce7b620cd02f776749fa"
+          },
+          {
+            "name": "GRWL_summaryStats_V01.02.zip",
+            "size_bytes": 43282861,
+            "checksum": "md5:cac403c1a59bce7a74432085d3f5bd3a"
+          }
+        ]
+      }
+    },
+    "grod": {
+      "url": "https://zenodo.org/api/records/5793918",
+      "retrieved_at": "2026-11-01T01:59:27.469052+00:00",
+      "http_status": 200,
+      "response_bytes": 8262,
+      "response_sha256": "0738ae02035e173d22b578dbf7e855c5c2d9a188bc05673812620be9a3613e01",
+      "projection": {
+        "id": 5793918,
+        "title": "Global River Obstruction Database v1.1",
+        "version": "v1.1",
+        "license": {
+          "id": "cc-by-4.0"
+        },
+        "files": [
+          {
+            "name": "grod_v1.0.csv",
+            "size_bytes": 2534554,
+            "checksum": "md5:a1fdd5ba0e709858b4c02beb3c0fdb50"
+          },
+          {
+            "name": "GROD_v1.1.csv",
+            "size_bytes": 2536955,
+            "checksum": "md5:3187c2b260f2ab03b1367a3152de6021"
+          }
+        ]
+      }
+    },
+    "terraclimate_pc": {
+      "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/terraclimate",
+      "retrieved_at": "2026-11-01T01:59:27.469176+00:00",
+      "http_status": 200,
+      "response_bytes": 9850,
+      "response_sha256": "12d9c19c69ae3881a114f11c1aeb4a4b3d285959b792bdde3931898ad1c6fb19",
+      "projection": {
+        "id": "terraclimate",
+        "temporal_extent": {
+          "interval": [
+            [
+              "1958-01-01T00:00:00Z",
+              "2021-12-01T00:00:00Z"
+            ]
+          ]
+        },
+        "license": "CC0-1.0",
+        "data_assets": {
+          "zarr-abfs": {
+            "href": "az://cpdata/terraclimate.zarr",
+            "type": "application/vnd+zarr"
+          },
+          "zarr-https": {
+            "href": "https://cpdataeuwest.blob.core.windows.net/cpdata/terraclimate.zarr",
+            "type": "application/vnd+zarr"
+          }
+        },
+        "variable_shapes": {
+          "q": [
+            768,
+            4320,
+            8640
+          ],
+          "ws": [
+            768,
+            4320,
+            8640
+          ],
+          "aet": [
+            768,
+            4320,
+            8640
+          ],
+          "def": [
+            768,
+            4320,
+            8640
+          ],
+          "pet": [
+            768,
+            4320,
+            8640
+          ],
+          "ppt": [
+            768,
+            4320,
+            8640
+          ],
+          "swe": [
+            768,
+            4320,
+            8640
+          ],
+          "vap": [
+            768,
+            4320,
+            8640
+          ],
+          "vpd": [
+            768,
+            4320,
+            8640
+          ],
+          "pdsi": [
+            768,
+            4320,
+            8640
+          ],
+          "soil": [
+            768,
+            4320,
+            8640
+          ],
+          "srad": [
+            768,
+            4320,
+            8640
+          ],
+          "tmax": [
+            768,
+            4320,
+            8640
+          ],
+          "tmin": [
+            768,
+            4320,
+            8640
+          ]
+        }
+      }
+    },
+    "gdw": {
+      "url": "https://api.figshare.com/v2/articles/25988293",
+      "retrieved_at": "2026-11-01T01:59:28.243401+00:00",
+      "error": "HTTP Error 403: Forbidden"
+    }
+  }
+}

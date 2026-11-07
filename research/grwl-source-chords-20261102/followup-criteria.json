@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-11-02T22:32:52.938992+00:00",
+  "reason": "The 15397 longest edge differs in latitude by 0.000100000114898 degrees, just outside the frozen 0.0001 degree axis screen. Preserve the original screen unchanged and explicitly trace selected longest edges independently of that classification.",
+  "selected_edges": [
+    {
+      "source_row": 15397,
+      "part": 0,
+      "edge": 3
+    },
+    {
+      "source_row": 13164,
+      "part": 0,
+      "edge": 117
+    }
+  ],
+  "nearby_source_search": {
+    "bbox": [
+      -120.6,
+      46.5,
+      -118,
+      48.5
+    ],
+    "minimum_geodesic_edge_metres": 10000,
+    "purpose": "Identify neighboring long edges in the reported Washington view; report all orientations and do not revise global thresholds."
+  },
+  "tile_checks": "Repeat zoom 0-10 original/current checks for explicitly selected edges, retaining 30 metre z10 bound and 101 source-edge samples.",
+  "browser": "Unchanged live viewer code; intercept only viewer-config in a private test browser to add two frozen regions. Read current served PMTiles, inspect exact IDs, and save screenshots. Block external network and whole-file data GETs.",
+  "browser_regions": [
+    {
+      "id": "source_15397",
+      "label": "Feature 15397 at 48 N",
+      "bbox": [
+        -120.6,
+        46.5,
+        -118,
+        48.5
+      ],
+      "feature_id": 15397
+    },
+    {
+      "id": "source_13164",
+      "label": "Feature 13164 at 40 N",
+      "bbox": [
+        -110.05,
+        39.75,
+        -109.15,
+        40.25
+      ],
+      "feature_id": 13164
+    }
+  ],
+  "interpretation": "Prior 493 near-grid candidate edges are a screen, not 493 proven errors. An exact upstream processing stage remains unproven."
+}

@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "status": "publisher_content_type_gap",
+  "prepared_display_release": "raw-v01.01-display-r2",
+  "manifest_sha256": "bce857fafd55c848f3d3738fc4f86e72825cb0c048a4d3e84df1cf4ea4d94988",
+  "producer_and_verifier_checkout": "8d0f4fe",
+  "failed_stage_checkout": "6e51046",
+  "missing_types": [
+    ".log",
+    ".cpp",
+    ".wasm",
+    "extensionless compiled checker under workflow/native-oracle/"
+  ],
+  "correction_scope": "Upload-plan MIME classification only. Unknown analytic extensions still fail; every packaged byte remains bound by the immutable manifest. The prepared r2 package and its code snapshots remain unchanged. The corrected publisher is separately pinned in the later staging review.",
+  "requires_data_rebuild": false,
+  "new_data_or_browser_validation_claim": false
+}

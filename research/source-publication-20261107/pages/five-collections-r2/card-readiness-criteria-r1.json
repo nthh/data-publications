@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-11-07T22:39:59.657406+00:00",
+  "failed_report_sha256": "bffabb7416c3af7dab9647b7bbcf5297b377592946454cd1f26bdc4d81c73860",
+  "observed_failure": "River-plastic input anchor was correct and visible, but it did not retain keyboard focus after focus(). No Enter was sent. Four other collections and five styles rendered.",
+  "source_evidence": {
+    "Catalogs.vue": "https://github.com/portolan-sdi/portolan-browser/blob/15af01335da62a60d209911c9bde994981fd29be/src/components/Catalogs.vue",
+    "Catalog.vue": "https://github.com/portolan-sdi/portolan-browser/blob/15af01335da62a60d209911c9bde994981fd29be/src/components/Catalog.vue",
+    "finding": "Visible cards queue metadata asynchronously with a 400ms visibility delay and can rerender after the root loading indicator disappears."
+  },
+  "followup": "Wait for target-card readiness before selecting and focusing the activation node. This is an automation readiness change; the earlier Lake wrong-route cause remains unproven.",
+  "fixed_readiness": {
+    "scroll_target_into_view": true,
+    "target_metadata_response_sha_verified": true,
+    "wait_for_currently_requested_child_metadata": true,
+    "force_loading_unrequested_children": false,
+    "unchanged_card_title_href_signature_ms": 500,
+    "maximum_wait_ms": 30000,
+    "activation_node": "Focus, verify and press Enter on the same connected ElementHandle; no selector re-resolution between validation and activation."
+  },
+  "unchanged": "Exact title/href, active focus, normal Enter, expected route, cross-product refusal, all five collections/six PMTiles, metadata hashes, transport limits, maps and manual review. A changed/detached anchor or wrong route still fails; no post-activation retry."
+}

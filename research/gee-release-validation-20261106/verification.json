@@ -1,0 +1,202 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-11-06T23:01:26.877975+00:00",
+  "status": "passed_tooling_and_reproducibility_checks_strict_gee_parity_remains_failed",
+  "review_summary_sha256": "673dc8c3c4bc426aca44a11d0a54a826b868440faecddb50e226dd5990a106c8",
+  "code_and_findings_commit": "175b75ae535308c5b0baa1678232c026d689fcf2",
+  "focused_tests": {
+    "gee_fault_tests": 25,
+    "catalog_contract_tests": 19,
+    "source_product_and_publication_catalog_tests": 44,
+    "total_distinct_tests": 88,
+    "status": "passed"
+  },
+  "metadata_checks": {
+    "canonical_records_checked": 453,
+    "historical_provenance_entries_checked": 114,
+    "historical_unique_blobs_checked": 44,
+    "catalog_py_check": "passed",
+    "source_products_check": "passed",
+    "publication_catalog_check": "passed",
+    "published_collections": 0,
+    "summary_regeneration_check": "passed"
+  },
+  "clean_checkout_rehearsal_source_sha256": "d9c8837b13d358390b852ffe3408239cd000a5e11b0326e347194cdd4162f9fe",
+  "clean_checkout_rehearsal": {
+    "schema_version": 1,
+    "status": "passed_reproducibility_of_retained_strict_failures",
+    "clean_checkout_observed": true,
+    "git_commit": "175b75ae535308c5b0baa1678232c026d689fcf2",
+    "python": "3.12.12",
+    "code_sha256": {
+      "scripts/gee_validation/compare.py": "4725b94cd0968908626e2c6ff629b4b07cb1909fb70e9450807650089678ce82",
+      "scripts/gee_validation/provenance.py": "1acfb2d0dd728ee9982c3793484c97e8b4fa9ff7b182740d3673e215f537a590",
+      "scripts/gee_validation/uv.lock": "2cf752aac36445732b59e0db89088aa3f421238fecf4693b27da4dacf89c7335",
+      "research/gee-release-validation-20261106/rehearse.py": "53f6e5e65b663a753f3da77e5cad9ec4176eaad82002ad3e2915aca2f0e3cb48"
+    },
+    "offline": true,
+    "source_data_modified": false,
+    "comparisons": [
+      {
+        "layer_id": "hydrolakes",
+        "command": [
+          "/Users/nathan/.folia-fleets/gee-release-validation-clean-20261106/tree/scripts/gee_validation/.venv/bin/python",
+          "/Users/nathan/.folia-fleets/gee-release-validation-clean-20261106/tree/scripts/gee_validation/compare.py",
+          "--sample",
+          "/Users/nathan/projects/data-publications/.local/gee-release-validation-20261106/samples-r1/hydrolakes-sample.json",
+          "--capture",
+          "/Users/nathan/projects/data-publications/.local/gee-release-validation-20261106/hydrolakes-r1",
+          "--plan",
+          "/Users/nathan/.folia-fleets/gee-release-validation-clean-20261106/tree/research/gee-release-validation-20261106/plans/hydrolakes-plan.json",
+          "--criteria",
+          "/Users/nathan/.folia-fleets/gee-release-validation-clean-20261106/tree/research/gee-release-validation-20261106/criteria.json",
+          "--report",
+          ".local/gee-rehearsal-r1/hydrolakes.json"
+        ],
+        "returncode": 1,
+        "status": "sampled_fail",
+        "expected_sha256": "8aee13775af793279f2d92abd9dd3741e7992f9fb8f9f771d4b5fdff397eabdc",
+        "actual_sha256": "8aee13775af793279f2d92abd9dd3741e7992f9fb8f9f771d4b5fdff397eabdc",
+        "capture_integrity_pass": true,
+        "provenance_status": "passed",
+        "byte_identical": true
+      },
+      {
+        "layer_id": "lakeatlas-polygons",
+        "command": [
+          "/Users/nathan/.folia-fleets/gee-release-validation-clean-20261106/tree/scripts/gee_validation/.venv/bin/python",
+          "/Users/nathan/.folia-fleets/gee-release-validation-clean-20261106/tree/scripts/gee_validation/compare.py",
+          "--sample",
+          "/Users/nathan/projects/data-publications/.local/gee-release-validation-20261106/samples-r1/lakeatlas-polygons-sample.json",
+          "--capture",
+          "/Users/nathan/projects/data-publications/.local/gee-release-validation-20261106/lakeatlas-polygons-r1",
+          "--plan",
+          "/Users/nathan/.folia-fleets/gee-release-validation-clean-20261106/tree/research/gee-release-validation-20261106/plans/lakeatlas-polygons-plan.json",
+          "--criteria",
+          "/Users/nathan/.folia-fleets/gee-release-validation-clean-20261106/tree/research/gee-release-validation-20261106/criteria.json",
+          "--report",
+          ".local/gee-rehearsal-r1/lakeatlas-polygons.json"
+        ],
+        "returncode": 1,
+        "status": "sampled_fail",
+        "expected_sha256": "f0b07901c4bb43e28345292599cb4ebb04233b8dc2e17f2ec863f3274adfdb5c",
+        "actual_sha256": "f0b07901c4bb43e28345292599cb4ebb04233b8dc2e17f2ec863f3274adfdb5c",
+        "capture_integrity_pass": true,
+        "provenance_status": "passed",
+        "byte_identical": true
+      },
+      {
+        "layer_id": "lakeatlas-points",
+        "command": [
+          "/Users/nathan/.folia-fleets/gee-release-validation-clean-20261106/tree/scripts/gee_validation/.venv/bin/python",
+          "/Users/nathan/.folia-fleets/gee-release-validation-clean-20261106/tree/scripts/gee_validation/compare.py",
+          "--sample",
+          "/Users/nathan/projects/data-publications/.local/gee-release-validation-20261106/samples-r1/lakeatlas-points-sample.json",
+          "--capture",
+          "/Users/nathan/projects/data-publications/.local/gee-release-validation-20261106/lakeatlas-points-r1",
+          "--plan",
+          "/Users/nathan/.folia-fleets/gee-release-validation-clean-20261106/tree/research/gee-release-validation-20261106/plans/lakeatlas-points-plan.json",
+          "--criteria",
+          "/Users/nathan/.folia-fleets/gee-release-validation-clean-20261106/tree/research/gee-release-validation-20261106/criteria.json",
+          "--report",
+          ".local/gee-rehearsal-r1/lakeatlas-points.json"
+        ],
+        "returncode": 1,
+        "status": "sampled_fail",
+        "expected_sha256": "45de05e735eba875b671f9381206e19217dbba9aad286f33b5eb5f4c8df9dd21",
+        "actual_sha256": "45de05e735eba875b671f9381206e19217dbba9aad286f33b5eb5f4c8df9dd21",
+        "capture_integrity_pass": true,
+        "provenance_status": "passed",
+        "byte_identical": true
+      },
+      {
+        "layer_id": "free-flowing-rivers",
+        "command": [
+          "/Users/nathan/.folia-fleets/gee-release-validation-clean-20261106/tree/scripts/gee_validation/.venv/bin/python",
+          "/Users/nathan/.folia-fleets/gee-release-validation-clean-20261106/tree/scripts/gee_validation/compare.py",
+          "--sample",
+          "/Users/nathan/projects/data-publications/.local/gee-release-validation-20261106/samples-r1/free-flowing-rivers-sample.json",
+          "--capture",
+          "/Users/nathan/projects/data-publications/.local/gee-release-validation-20261106/free-flowing-rivers-r2",
+          "--plan",
+          "/Users/nathan/.folia-fleets/gee-release-validation-clean-20261106/tree/research/gee-release-validation-20261106/plans/free-flowing-rivers-plan-r2.json",
+          "--criteria",
+          "/Users/nathan/.folia-fleets/gee-release-validation-clean-20261106/tree/research/gee-release-validation-20261106/criteria.json",
+          "--report",
+          ".local/gee-rehearsal-r1/free-flowing-rivers.json"
+        ],
+        "returncode": 1,
+        "status": "sampled_fail",
+        "expected_sha256": "3f4ddd874aae723ea02fb5f9d6bb90a5cef1fe4633930edd7d9350a412178421",
+        "actual_sha256": "3f4ddd874aae723ea02fb5f9d6bb90a5cef1fe4633930edd7d9350a412178421",
+        "capture_integrity_pass": true,
+        "provenance_status": "passed",
+        "byte_identical": true
+      },
+      {
+        "layer_id": "grwl-raw",
+        "command": [
+          "/Users/nathan/.folia-fleets/gee-release-validation-clean-20261106/tree/scripts/gee_validation/.venv/bin/python",
+          "/Users/nathan/.folia-fleets/gee-release-validation-clean-20261106/tree/scripts/gee_validation/compare.py",
+          "--sample",
+          "/Users/nathan/projects/data-publications/.local/gee-release-validation-20261106/samples-r1/grwl-raw-sample.json",
+          "--capture",
+          "/Users/nathan/projects/data-publications/.local/gee-release-validation-20261106/grwl-raw-r2",
+          "--plan",
+          "/Users/nathan/.folia-fleets/gee-release-validation-clean-20261106/tree/research/gee-release-validation-20261106/plans/grwl-raw-plan-r2.json",
+          "--criteria",
+          "/Users/nathan/.folia-fleets/gee-release-validation-clean-20261106/tree/research/gee-release-validation-20261106/criteria.json",
+          "--report",
+          ".local/gee-rehearsal-r1/grwl-raw.json"
+        ],
+        "returncode": 1,
+        "status": "sampled_fail",
+        "expected_sha256": "e6fefb572c865af88d93d8f7e9fbdedcbb03f0c1ee7d480c56d45ca273ff2dc3",
+        "actual_sha256": "e6fefb572c865af88d93d8f7e9fbdedcbb03f0c1ee7d480c56d45ca273ff2dc3",
+        "capture_integrity_pass": true,
+        "provenance_status": "passed",
+        "byte_identical": true
+      }
+    ],
+    "tests": {
+      "command": [
+        "/Users/nathan/.folia-fleets/gee-release-validation-clean-20261106/tree/scripts/gee_validation/.venv/bin/python",
+        "-m",
+        "unittest",
+        "tests.test_gee_request_contract",
+        "tests.test_gee_release_comparison",
+        "tests.test_gee_provenance",
+        "tests.test_gee_geometry_diagnostic",
+        "tests.test_gee_attribute_diagnostics",
+        "-v"
+      ],
+      "returncode": 0,
+      "count": 25,
+      "log_sha256": "0a3b7590e6e0fe5b4eb4d731dfc59664f1fc14cd1323063b8c8fc01cda532519"
+    },
+    "summary_check": {
+      "returncode": 0,
+      "stdout": "GEE review summary: six layers, five datasets; retained strict differences, no publication.\n",
+      "stderr": ""
+    }
+  },
+  "review_scope": {
+    "source_data_or_pmtiles_modified": false,
+    "live_requests_in_rehearsal": false,
+    "remote_ci_run": false,
+    "public_host_checks": "not_run_before_upload",
+    "data_products_published": false
+  },
+  "git_review_checks": {
+    "main_worktree_unchanged": true,
+    "unexpected_large_data_files": false,
+    "largest_new_blob_bytes": 5455118,
+    "credential_signature_candidates": 0,
+    "small_existing_diagnostic_pmtiles_fixtures_bytes": [
+      977,
+      984
+    ],
+    "new_readme_local_links": "resolved"
+  },
+  "independent_review": "Read-only review of attribute/geometry reports and code confirmed sampling boundaries, strict failures, narrow source tips, GDP exceptions, topology differences and historical plastic capture scope. No claim of parity or scientific accuracy."
+}

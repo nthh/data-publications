@@ -1,0 +1,1363 @@
+{
+  "request_url": "https://api.openalex.org/works?filter=doi%3A10.15780%2Fg2jq0p%7C10.1594%2Fpangaea.787668%7C10.1594%2Fpangaea.910894%7C10.1594%2Fpangaea.913939%7C10.1594%2Fpangaea.913939%3Fformat%3Dhtml%23download%7C10.1641%2F0006-3568%282004%29054%5B0547%3Aacsmog%5D2.0.co%3B2%7C10.17027%2Fisric-soilgrids.713396fa-1687-11ea-a7c0-a0481ca9e724%7C10.17882%2F42182%7C10.17882%2F42182%2376230%7C10.1890%2F13-1245.1%7C10.20350%2Fdigitalcsic%2F15121%7C10.20350%2Fdigitalcsic%2F15470%7C10.20350%2Fdigitalcsic%2F16497%7C10.2111%2Frem-d-13-00074.1%7C10.2172%2F3015559%7C10.21957%2Fopen-data%7C10.23687%2F18e6a919-53fd-41ce-b4e2-44a9707c52dc%7C10.24381%2Fcds.006f2c9a%7C10.24381%2Fcds.0e89c522%7C10.24381%2Fcds.553b7518%7C10.24381%2Fcds.68d2bb30%7C10.24381%2Fcds.6c68c9bb%7C10.24381%2Fcds.f85b319d%7C10.25380%2Fiastate.c.5078492.v1%7C10.25380%2Fiastate.c.6005185.v1%7C10.25919%2F3aka-y730%7C10.25921%2F9x3m-0e02%7C10.25921%2Fgakh-st76%7C10.25921%2Fw3zj-4y48%7C10.25921%2Fw9va-q159%7C10.26186%2F116268%7C10.2737%2Frds-2001-fiadb%7C10.2737%2Frds-2015-0012%7C10.2737%2Frds-2015-0012-2%7C10.2737%2Frds-2015-0012-3%7C10.2737%2Frds-2015-0012-4%7C10.2737%2Frds-2020-0016-2%7C10.2737%2Frds-2021-0074%7C10.2737%2Frds-2025-0031%7C10.2737%2Frds-2025-0032&corpus=all&per_page=100&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date%2Ccited_by_count%2Ccounts_by_year",
+  "retrieved_at": "2026-10-30T22:19:48.611523+00:00",
+  "response_path": "responses/eb80195a0001a91327444a31612ecc01bbed862942f8447c31340015ed5153e5.json",
+  "status": 200,
+  "response_sha256": "1540c6e4ab2844e3dd357379d13e146577deade7af64b2609c6c2087559fe483",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 38,
+      "db_response_time_ms": 84,
+      "page": 1,
+      "per_page": 100,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where DOI is (\n    10.15780/g2jq0p or 10.1594/pangaea.787668 or 10.1594/pangaea.910894\n    or 10.1594/pangaea.913939 or 10.1594/pangaea.913939?format=html#download\n    or \"10.1641/0006-3568(2004)054[0547:acsmog]2.0.co;2\"\n    or 10.17027/isric-soilgrids.713396fa-1687-11ea-a7c0-a0481ca9e724\n    or 10.17882/42182 or 10.17882/42182#76230 or 10.1890/13-1245.1\n    or 10.20350/digitalcsic/15121 or 10.20350/digitalcsic/15470\n    or 10.20350/digitalcsic/16497 or 10.2111/rem-d-13-00074.1 or 10.2172/3015559\n    or 10.21957/open-data or 10.23687/18e6a919-53fd-41ce-b4e2-44a9707c52dc\n    or 10.24381/cds.006f2c9a or 10.24381/cds.0e89c522 or 10.24381/cds.553b7518\n    or 10.24381/cds.68d2bb30 or 10.24381/cds.6c68c9bb or 10.24381/cds.f85b319d\n    or 10.25380/iastate.c.5078492.v1 or 10.25380/iastate.c.6005185.v1\n    or 10.25919/3aka-y730 or 10.25921/9x3m-0e02 or 10.25921/gakh-st76\n    or 10.25921/w3zj-4y48 or 10.25921/w9va-q159 or 10.26186/116268\n    or 10.2737/rds-2001-fiadb or 10.2737/rds-2015-0012\n    or 10.2737/rds-2015-0012-2 or 10.2737/rds-2015-0012-3\n    or 10.2737/rds-2015-0012-4 or 10.2737/rds-2020-0016-2\n    or 10.2737/rds-2021-0074 or 10.2737/rds-2025-0031 or 10.2737/rds-2025-0032\n  )",
+        "x_new_oql": "get works (all corpora) where DOI is (\n    10.15780/g2jq0p or 10.1594/pangaea.787668 or 10.1594/pangaea.910894\n    or 10.1594/pangaea.913939 or 10.1594/pangaea.913939?format=html#download\n    or \"10.1641/0006-3568(2004)054[0547:acsmog]2.0.co;2\"\n    or 10.17027/isric-soilgrids.713396fa-1687-11ea-a7c0-a0481ca9e724\n    or 10.17882/42182 or 10.17882/42182#76230 or 10.1890/13-1245.1\n    or 10.20350/digitalcsic/15121 or 10.20350/digitalcsic/15470\n    or 10.20350/digitalcsic/16497 or 10.2111/rem-d-13-00074.1 or 10.2172/3015559\n    or 10.21957/open-data or 10.23687/18e6a919-53fd-41ce-b4e2-44a9707c52dc\n    or 10.24381/cds.006f2c9a or 10.24381/cds.0e89c522 or 10.24381/cds.553b7518\n    or 10.24381/cds.68d2bb30 or 10.24381/cds.6c68c9bb or 10.24381/cds.f85b319d\n    or 10.25380/iastate.c.5078492.v1 or 10.25380/iastate.c.6005185.v1\n    or 10.25919/3aka-y730 or 10.25921/9x3m-0e02 or 10.25921/gakh-st76\n    or 10.25921/w3zj-4y48 or 10.25921/w9va-q159 or 10.26186/116268\n    or 10.2737/rds-2001-fiadb or 10.2737/rds-2015-0012\n    or 10.2737/rds-2015-0012-2 or 10.2737/rds-2015-0012-3\n    or 10.2737/rds-2015-0012-4 or 10.2737/rds-2020-0016-2\n    or 10.2737/rds-2021-0074 or 10.2737/rds-2025-0031 or 10.2737/rds-2025-0032\n  )",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "join": "or",
+              "filters": [
+                {
+                  "column_id": "doi",
+                  "value": "10.15780/g2jq0p"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.1594/pangaea.787668"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.1594/pangaea.910894"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.1594/pangaea.913939"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.1594/pangaea.913939?format=html#download"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.1641/0006-3568(2004)054[0547:acsmog]2.0.co;2"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.17027/isric-soilgrids.713396fa-1687-11ea-a7c0-a0481ca9e724"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.17882/42182"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.17882/42182#76230"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.1890/13-1245.1"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.20350/digitalcsic/15121"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.20350/digitalcsic/15470"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.20350/digitalcsic/16497"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.2111/rem-d-13-00074.1"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.2172/3015559"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.21957/open-data"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.23687/18e6a919-53fd-41ce-b4e2-44a9707c52dc"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.24381/cds.006f2c9a"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.24381/cds.0e89c522"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.24381/cds.553b7518"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.24381/cds.68d2bb30"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.24381/cds.6c68c9bb"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.24381/cds.f85b319d"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.25380/iastate.c.5078492.v1"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.25380/iastate.c.6005185.v1"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.25919/3aka-y730"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.25921/9x3m-0e02"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.25921/gakh-st76"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.25921/w3zj-4y48"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.25921/w9va-q159"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.26186/116268"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.2737/rds-2001-fiadb"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.2737/rds-2015-0012"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.2737/rds-2015-0012-2"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.2737/rds-2015-0012-3"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.2737/rds-2015-0012-4"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.2737/rds-2020-0016-2"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.2737/rds-2021-0074"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.2737/rds-2025-0031"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.2737/rds-2025-0032"
+                }
+              ]
+            }
+          ]
+        },
+        "url": "/works?filter=doi:10.15780%2Fg2jq0p|10.1594%2Fpangaea.787668|10.1594%2Fpangaea.910894|10.1594%2Fpangaea.913939|10.1594%2Fpangaea.913939%3Fformat%3Dhtml%23download|10.1641%2F0006-3568%282004%29054%5B0547:acsmog%5D2.0.co%3B2|10.17027%2Fisric-soilgrids.713396fa-1687-11ea-a7c0-a0481ca9e724|10.17882%2F42182|10.17882%2F42182%2376230|10.1890%2F13-1245.1|10.20350%2Fdigitalcsic%2F15121|10.20350%2Fdigitalcsic%2F15470|10.20350%2Fdigitalcsic%2F16497|10.2111%2Frem-d-13-00074.1|10.2172%2F3015559|10.21957%2Fopen-data|10.23687%2F18e6a919-53fd-41ce-b4e2-44a9707c52dc|10.24381%2Fcds.006f2c9a|10.24381%2Fcds.0e89c522|10.24381%2Fcds.553b7518|10.24381%2Fcds.68d2bb30|10.24381%2Fcds.6c68c9bb|10.24381%2Fcds.f85b319d|10.25380%2Fiastate.c.5078492.v1|10.25380%2Fiastate.c.6005185.v1|10.25919%2F3aka-y730|10.25921%2F9x3m-0e02|10.25921%2Fgakh-st76|10.25921%2Fw3zj-4y48|10.25921%2Fw9va-q159|10.26186%2F116268|10.2737%2Frds-2001-fiadb|10.2737%2Frds-2015-0012|10.2737%2Frds-2015-0012-2|10.2737%2Frds-2015-0012-3|10.2737%2Frds-2015-0012-4|10.2737%2Frds-2020-0016-2|10.2737%2Frds-2021-0074|10.2737%2Frds-2025-0031|10.2737%2Frds-2025-0032&corpus=all&per_page=100",
+        "order": "most cited (age-adjusted) first",
+        "order_default": true
+      },
+      "cost_usd": 0.0001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W2147423506",
+        "doi": "https://doi.org/10.1641/0006-3568(2004)054[0547:acsmog]2.0.co;2",
+        "title": "A Continuous Satellite-Derived Measure of Global Terrestrial Primary Production",
+        "type": "article",
+        "publication_year": 2004,
+        "publication_date": "2004-01-01",
+        "cited_by_count": 2477,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 207
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 161
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 153
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 127
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 155
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 168
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 131
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 165
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 124
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 120
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 120
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 123
+          },
+          {
+            "year": 2014,
+            "cited_by_count": 116
+          },
+          {
+            "year": 2013,
+            "cited_by_count": 112
+          },
+          {
+            "year": 2012,
+            "cited_by_count": 71
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W2099580584",
+        "doi": "https://doi.org/10.2111/rem-d-13-00074.1",
+        "title": "Resilience and Resistance of Sagebrush Ecosystems: Implications for State and Transition Models and Management Treatments",
+        "type": "article",
+        "publication_year": 2014,
+        "publication_date": "2014-09-01",
+        "cited_by_count": 249,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 15
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 14
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 25
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 29
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 23
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 15
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 28
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 23
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 18
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 31
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2014,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2013,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W2032887514",
+        "doi": "https://doi.org/10.1890/13-1245.1",
+        "title": "Spatially explicit modeling of 1992–2100 land cover and forest stand age for the conterminous United States",
+        "type": "article",
+        "publication_year": 2013,
+        "publication_date": "2013-12-19",
+        "cited_by_count": 152,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 15
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 27
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 15
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2014,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2013,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6888676233",
+        "doi": "https://doi.org/10.21957/open-data",
+        "title": "Open data",
+        "type": "article",
+        "publication_year": 2022,
+        "publication_date": "2022-03-08",
+        "cited_by_count": 2,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6963601256",
+        "doi": "https://doi.org/10.17882/42182",
+        "title": "Argo float data and metadata from Global Data Assembly Centre (Argo GDAC)",
+        "type": "dataset",
+        "publication_year": 2016,
+        "publication_date": "2016-03-03",
+        "cited_by_count": 502,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 69
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 62
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 69
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 64
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 48
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 62
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 40
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 29
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 31
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 23
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 5
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6963959162",
+        "doi": "https://doi.org/10.24381/cds.68d2bb30",
+        "title": "ERA5-Land monthly averaged data from 1950 to present",
+        "type": "dataset",
+        "publication_year": 2019,
+        "publication_date": "2019-01-01",
+        "cited_by_count": 497,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 94
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 173
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 110
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 62
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 38
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 20
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W103239796",
+        "doi": "https://doi.org/10.1594/pangaea.787668",
+        "title": "Global Land Cover Map for 2009 (GlobCover 2009)",
+        "type": "dataset",
+        "publication_year": 2012,
+        "publication_date": "2012-01-01",
+        "cited_by_count": 261,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 14
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 15
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 25
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 22
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 31
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 27
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 32
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 22
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 26
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 25
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 12
+          },
+          {
+            "year": 2014,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2013,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6888792338",
+        "doi": "https://doi.org/10.24381/cds.006f2c9a",
+        "title": "Land cover classification gridded maps from 1992 to present derived from satellite observations",
+        "type": "dataset",
+        "publication_year": 2019,
+        "publication_date": "2019-01-01",
+        "cited_by_count": 100,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 24
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 36
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 23
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 16
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W3209676059",
+        "doi": "https://doi.org/10.24381/cds.6c68c9bb",
+        "title": "Agrometeorological indicators from 1979 up to 2019 derived from reanalysis",
+        "type": "dataset",
+        "publication_year": 2019,
+        "publication_date": "2019-01-01",
+        "cited_by_count": 96,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 15
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 35
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 29
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6889605424",
+        "doi": "https://doi.org/10.25921/w9va-q159",
+        "title": "NOAA Climate Data Record (CDR) of CPC Morphing Technique (CMORPH) High Resolution Global Precipitation Estimates, Version 1",
+        "type": "dataset",
+        "publication_year": 2018,
+        "publication_date": "2018-01-01",
+        "cited_by_count": 48,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 7
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W2908828901",
+        "doi": "https://doi.org/10.2737/rds-2001-fiadb",
+        "title": "Forest Inventory and Analysis database",
+        "type": "dataset",
+        "publication_year": 2019,
+        "publication_date": "2019-07-18",
+        "cited_by_count": 43,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2013,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6964007341",
+        "doi": "https://doi.org/10.24381/cds.0e89c522",
+        "title": "Fire danger indices historical data from the Copernicus Emergency Management Service",
+        "type": "dataset",
+        "publication_year": 2019,
+        "publication_date": "2019-01-01",
+        "cited_by_count": 39,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 13
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6926242915",
+        "doi": "https://doi.org/10.24381/cds.553b7518",
+        "title": "Thermal comfort indices derived from ERA5 reanalysis",
+        "type": "dataset",
+        "publication_year": 2020,
+        "publication_date": "2020-01-01",
+        "cited_by_count": 34,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 4
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4206259865",
+        "doi": "https://doi.org/10.2737/rds-2015-0012-2",
+        "title": "The 1990-2010 wildland-urban interface of the conterminous United States - geospatial data (2nd Edition)",
+        "type": "dataset",
+        "publication_year": 2017,
+        "publication_date": "2017-11-08",
+        "cited_by_count": 30,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4206627676",
+        "doi": "https://doi.org/10.2737/rds-2015-0012",
+        "title": "The 2010 wildland-urban interface of the conterminous United States - geospatial data",
+        "type": "dataset",
+        "publication_year": 2015,
+        "publication_date": "2015-04-15",
+        "cited_by_count": 17,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4283696734",
+        "doi": "https://doi.org/10.2737/rds-2015-0012-3",
+        "title": "The 1990-2020 wildland-urban interface of the conterminous United States - geospatial data",
+        "type": "dataset",
+        "publication_year": 2022,
+        "publication_date": "2022-06-29",
+        "cited_by_count": 16,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6944425730",
+        "doi": "https://doi.org/10.20350/digitalcsic/15470",
+        "title": "SPEIbase v.2.9 [Dataset]",
+        "type": "dataset",
+        "publication_year": 2023,
+        "publication_date": "2023-07-01",
+        "cited_by_count": 16,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W3084291719",
+        "doi": "https://doi.org/10.1594/pangaea.910894",
+        "title": "Global-scale mining polygons (Version 1)",
+        "type": "dataset",
+        "publication_year": 2020,
+        "publication_date": "2020-01-01",
+        "cited_by_count": 11,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4231628981",
+        "doi": "https://doi.org/10.2737/rds-2021-0074",
+        "title": "TreeMap 2016: A tree-level model of the forests of the conterminous United States circa 2016",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-08-26",
+        "cited_by_count": 11,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4385689313",
+        "doi": "https://doi.org/10.2737/rds-2015-0012-4",
+        "title": "The 1990-2020 wildland-urban interface of the conterminous United States - geospatial data (4th Edition)",
+        "type": "dataset",
+        "publication_year": 2023,
+        "publication_date": "2023-08-09",
+        "cited_by_count": 10,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 3
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6907576410",
+        "doi": "https://doi.org/10.25380/iastate.c.5078492",
+        "title": "A global seamless 1 km resolution daily land surface temperature dataset (2003 – 2020)",
+        "type": "other",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 10,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6943655205",
+        "doi": "https://doi.org/10.15780/g2jq0p",
+        "title": "CHIRPS: Rainfall Estimates from Rain Gauge and Satellite Observations",
+        "type": "dataset",
+        "publication_year": 2025,
+        "publication_date": "2025-01-01",
+        "cited_by_count": 10,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 3
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6888454576",
+        "doi": "https://doi.org/10.20350/digitalcsic/15121",
+        "title": "SPEIbase v.2.8 [Dataset]",
+        "type": "dataset",
+        "publication_year": 2023,
+        "publication_date": "2023-02-01",
+        "cited_by_count": 9,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6888520357",
+        "doi": "https://doi.org/10.20350/digitalcsic/16497",
+        "title": "SPEIbase v.2.10 [Dataset]",
+        "type": "dataset",
+        "publication_year": 2024,
+        "publication_date": "2024-07-01",
+        "cited_by_count": 9,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 7
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6945888698",
+        "doi": "https://doi.org/10.25921/gakh-st76",
+        "title": "NOAA Climate Data Record (CDR) of VIIRS Normalized Difference Vegetation Index (NDVI), Version 1",
+        "type": "dataset",
+        "publication_year": 2022,
+        "publication_date": "2022-01-01",
+        "cited_by_count": 7,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6945182980",
+        "doi": "https://doi.org/10.25380/iastate.c.6005185",
+        "title": "A global 1 km resolution daily near-surface air temperature dataset (2003 – 2020)",
+        "type": "other",
+        "publication_year": 2022,
+        "publication_date": "2022-07-01",
+        "cited_by_count": 6,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 3
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4394601341",
+        "doi": "https://doi.org/10.2737/rds-2020-0016-2",
+        "title": "Wildfire Risk to Communities: Spatial datasets of landscape-wide wildfire risk components for the United States (2nd Edition)",
+        "type": "dataset",
+        "publication_year": 2024,
+        "publication_date": "2024-04-09",
+        "cited_by_count": 5,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 3
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W3100981341",
+        "doi": "https://doi.org/10.1594/pangaea.913939",
+        "title": "A global salinity dataset of surface water and groundwater measurements from 1980-2019",
+        "type": "dataset",
+        "publication_year": 2020,
+        "publication_date": "2020-01-01",
+        "cited_by_count": 2,
+        "counts_by_year": [
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6888870691",
+        "doi": "https://doi.org/10.23687/18e6a919-53fd-41ce-b4e2-44a9707c52dc",
+        "title": "SCANFI: the Spatialized CAnadian National Forest Inventory data product",
+        "type": "dataset",
+        "publication_year": 2024,
+        "publication_date": "2024-02-26",
+        "cited_by_count": 2,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6888916002",
+        "doi": "https://doi.org/10.24381/cds.f85b319d",
+        "title": "Ocean colour from 1997 to present derived from satellite observations",
+        "type": "dataset",
+        "publication_year": 2019,
+        "publication_date": "2019-01-01",
+        "cited_by_count": 2,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6906237244",
+        "doi": "https://doi.org/10.17027/isric-soilgrids.713396fa-1687-11ea-a7c0-a0481ca9e724",
+        "title": "SoilGrids250m 2.0 - Sand content",
+        "type": "dataset",
+        "publication_year": 2020,
+        "publication_date": "2020-01-01",
+        "cited_by_count": 2,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6927243024",
+        "doi": "https://doi.org/10.25921/w3zj-4y48",
+        "title": "NOAA Climate Data Record (CDR) of AVHRR Daily and Monthly Aerosol Optical Thickness (AOT) over Global Oceans, Version 4.0",
+        "type": "dataset",
+        "publication_year": 2022,
+        "publication_date": "2022-06-24",
+        "cited_by_count": 2,
+        "counts_by_year": [
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6964936202",
+        "doi": "https://doi.org/10.26186/116268",
+        "title": "Digital Earth Australia Coastlines",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-04-08",
+        "cited_by_count": 2,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4411485539",
+        "doi": "https://doi.org/10.2737/rds-2025-0031",
+        "title": "TreeMap 2020 CONUS: A tree-level model of the forests of the conterminous United States circa 2020",
+        "type": "dataset",
+        "publication_year": 2025,
+        "publication_date": "2025-06-20",
+        "cited_by_count": 1,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W4411542808",
+        "doi": "https://doi.org/10.2737/rds-2025-0032",
+        "title": "TreeMap 2022 CONUS: A tree-level model of the forests of the conterminous United States circa 2022",
+        "type": "dataset",
+        "publication_year": 2025,
+        "publication_date": "2025-06-23",
+        "cited_by_count": 1,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6908394080",
+        "doi": "https://doi.org/10.25921/9x3m-0e02",
+        "title": "NOAA Climate Data Record (CDR) of VIIRS Leaf Area Index (LAI) and Fraction of Absorbed Photosynthetically Active Radiation (FAPAR), Version 1",
+        "type": "dataset",
+        "publication_year": 2023,
+        "publication_date": "2023-12-15",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W7126411228",
+        "doi": "https://doi.org/10.2172/3015559",
+        "title": "LandCast Mosaic: Reconstructing Global Population Distributions, 1975-2025",
+        "type": "report",
+        "publication_year": 2026,
+        "publication_date": "2026-01-01",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W7139914488",
+        "doi": "https://doi.org/10.25919/3aka-y730",
+        "title": "Global biodiversity indicator data for BHI, BERI, PARC-representativeness, PARC-connectedness and ecosystem condition (2000-2024)",
+        "type": "dataset",
+        "publication_year": 2026,
+        "publication_date": "2026-01-01",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "0ab6c8be0c7a5e93b766b2cf7bc596751774023a9a731048256bc30d4adc97a9"
+}

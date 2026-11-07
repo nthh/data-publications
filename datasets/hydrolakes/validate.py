@@ -1,0 +1,65 @@
+#!/usr/bin/env python3
+"""Reread the complete source and GeoParquet, binding typed values and WKB."""
+from __future__ import annotations
+import argparse, hashlib, json
+from pathlib import Path
+import pyarrow as pa
+import pyarrow.parquet as pq
+import pyogrio
+from pyproj import CRS
+import convert
+from acquire import SHA, SIZE, identity
+
+
+def fingerprint(batches, expected_count, *, ordered):
+    total=0; checksum=0; schema=None; seen=bytearray(expected_count+1)
+    for batch in batches:
+        if schema is None: schema=batch.schema
+        id_index=batch.schema.get_field_index('Hylak_id')
+        geom_index=batch.schema.get_field_index('wkb_geometry')
+        if id_index<0 or geom_index<0: raise ValueError('Required ID/geometry column missing')
+        columns=[batch.column(i).to_pylist() for i in range(batch.num_columns)]
+        for values in zip(*columns,strict=True):
+            fid=values[id_index]
+            if not isinstance(fid,int) or not 1<=fid<=expected_count: raise ValueError('ID outside expected range')
+            if seen[fid]: raise ValueError('Duplicate Hylak_id')
+            seen[fid]=1; total+=1
+            if ordered and fid!=total: raise ValueError('Output IDs are not in contiguous ascending order')
+            checksum=(checksum+int.from_bytes(convert.feature_digest(batch.schema,values,geom_index),'big'))%(1<<256)
+    if total!=expected_count or sum(seen)!=expected_count: raise ValueError('Record count or ID coverage mismatch')
+    return checksum, schema
+
+
+def validate(source, output, *, expected_count=convert.EXPECTED_COUNT, source_sha=SHA, source_bytes=SIZE):
+    source=Path(source).expanduser().resolve();output=Path(output).expanduser().resolve()
+    if not source.is_file():
+        raise ValueError('source must be the pinned archive file; directories and extracted members are not accepted')
+    if identity(source)!=(source_bytes,source_sha):raise ValueError('Pinned source bytes changed')
+    file=pq.ParquetFile(output)
+    meta=json.loads(file.schema_arrow.metadata[b'geo'])
+    if meta.get('version')!='1.1.0' or meta.get('primary_column')!='wkb_geometry':raise ValueError('GeoParquet metadata mismatch')
+    column=meta['columns']['wkb_geometry']
+    if column.get('encoding')!='WKB':raise ValueError('Geometry encoding changed')
+    if not CRS.from_json_dict(column['crs']).equals(CRS.from_epsg(4326),ignore_axis_order=True):raise ValueError('Output CRS changed')
+    if not column.get('geometry_types'):raise ValueError('Geometry types missing')
+    with pyogrio.open_arrow(convert.resolve_layer(source),use_pyarrow=True,batch_size=8192) as (source_meta,reader):
+        if not CRS.from_user_input(source_meta['crs']).equals(CRS.from_epsg(4326),ignore_axis_order=True):raise ValueError('Source CRS mismatch')
+        source_sum,source_schema=fingerprint(reader,expected_count,ordered=False)
+    output_sum,output_schema=fingerprint(file.iter_batches(batch_size=8192),expected_count,ordered=True)
+    lhs=[(f.name,str(f.type),f.nullable) for f in source_schema]
+    rhs=[(f.name,str(f.type),f.nullable) for f in output_schema]
+    if lhs!=rhs:raise ValueError('Decoded attribute schema changed')
+    if source_sum!=output_sum:raise ValueError('Typed source values, nulls or WKB differ')
+    return {'status':'passed','method':'Complete independent source/output reread; per-feature typed SHA-256 sums with exact ID coverage; same GDAL source decoder as converter',
+            'source_sha256':source_sha,'source_bytes':source_bytes,'output_sha256':convert._hash_file(output),'output_bytes':output.stat().st_size,
+            'rows':expected_count,'attribute_columns':len(lhs)-1,'compared_cells':expected_count*len(lhs),'feature_digest_sum_mod_2_256':f'{source_sum:064x}',
+            'id_coverage':'unique contiguous IDs, output sorted','wkb':'all original decoded bytes bound','gee':'not_run','scientific_accuracy':'not_established',
+            'limitations':['GDAL-decoded values are preserved; this does not assert decimal-text DBF equivalence beyond the producer reader.','ID-sorted layout is retained; bbox spatial pruning is not claimed.']}
+
+if __name__=='__main__':
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--source',type=Path,required=True);p.add_argument('--data',type=Path,required=True);p.add_argument('--report',type=Path,required=True);a=p.parse_args()
+    if a.report.exists():raise FileExistsError('Refuse to overwrite validation evidence')
+    try:r=validate(a.source,a.data)
+    except Exception as e:
+        a.report.parent.mkdir(parents=True,exist_ok=True);a.report.write_text(json.dumps({'status':'failed','error':str(e)},indent=2)+'\n');raise
+    a.report.parent.mkdir(parents=True,exist_ok=True);a.report.write_text(json.dumps(r,indent=2)+'\n');print(json.dumps(r))

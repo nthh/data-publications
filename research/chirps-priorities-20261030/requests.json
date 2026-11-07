@@ -1,0 +1,86 @@
+{
+  "max_response_bytes": 2000000,
+  "timeout_seconds": 25,
+  "requests": [
+    {
+      "name": "ecoregion-stac",
+      "url": "https://data.source.coop/cboettig/ecoregion/wwf-ecoregions-2017/stac-collection.json",
+      "projection": "json"
+    },
+    {
+      "name": "glacier-datacite",
+      "url": "https://api.datacite.org/dois/10.6096/13",
+      "projection": "json"
+    },
+    {
+      "name": "glacier-publisher-page",
+      "url": "https://www.sedoo.fr/theia-publication-products?uuid=c428c5b9-df8f-4f86-9b75-e04c778e29b9",
+      "projection": "receipt_only"
+    },
+    {
+      "name": "hydrobasins-page",
+      "url": "https://www.hydrosheds.org/products/hydrobasins",
+      "projection": "hydrobasins_links"
+    },
+    {
+      "name": "jrc-sourcecoop-readme",
+      "url": "https://data.source.coop/epoch/jrc-global-surface-water-monthly/README.md",
+      "projection": "receipt_only"
+    },
+    {
+      "name": "jrc-v15-aggregated-list",
+      "url": "https://s3.waw4-1.cloudferro.com/swift/v1/global-surface-water/?format=json&prefix=download2024/Aggregated/&limit=10000",
+      "projection": "jrc_occurrence"
+    },
+    {
+      "name": "jrc-v15-download-prefixes",
+      "url": "https://s3.waw4-1.cloudferro.com/swift/v1/global-surface-water/?format=json&prefix=download2024/&delimiter=/&limit=100",
+      "projection": "json"
+    },
+    {
+      "name": "jrc-v15-prefixes",
+      "url": "https://s3.waw4-1.cloudferro.com/swift/v1/global-surface-water/?format=json&delimiter=/&limit=100",
+      "projection": "json"
+    },
+    {
+      "name": "terraclimate-v11-attributes",
+      "url": "https://www.reacchpna.org/thredds/dodsC/TERRACLIMATE_ALL/data/TerraClimate_vap_1958.nc.das",
+      "projection": "terraclimate_attributes"
+    },
+    {
+      "name": "wfp-collection",
+      "url": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily",
+      "projection": "json"
+    },
+    {
+      "name": "wfp-items-1981-01-01",
+      "url": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily/items?limit=1&datetime=1981-01-01T00:00:00Z/1981-01-01T23:59:59Z",
+      "projection": "json"
+    },
+    {
+      "name": "wfp-items-2020-08-01",
+      "url": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily/items?limit=1&datetime=2020-08-01T00:00:00Z/2020-08-01T23:59:59Z",
+      "projection": "json"
+    },
+    {
+      "name": "wfp-items-august-2020",
+      "url": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily/items?limit=31&datetime=2020-08-01T00:00:00Z/2020-08-31T23:59:59Z",
+      "projection": "json"
+    },
+    {
+      "name": "wfp-items-earliest",
+      "url": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily/items?limit=1&sortby=%2Bdatetime",
+      "projection": "json"
+    },
+    {
+      "name": "wfp-items-latest",
+      "url": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily/items?limit=1&sortby=-datetime",
+      "projection": "json"
+    },
+    {
+      "name": "wfp-items-october",
+      "url": "https://api.earthobservation.vam.wfp.org/stac/collections/chirps_rnl_daily/items?limit=1&datetime=2026-10-01T00:00:00Z/2026-10-30T23:59:59Z",
+      "projection": "json"
+    }
+  ]
+}

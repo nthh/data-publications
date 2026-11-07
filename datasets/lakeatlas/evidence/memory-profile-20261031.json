@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-31",
+  "status": "targeted_partial_profile",
+  "source_sha256": "baa4d760a163350dd6a30c21c82db1e23b150834a8b848885eba6dc9ba1175df",
+  "source_inspection_peak_rss_bytes": 204668928,
+  "profile_scope": {
+    "layer": "LakeATLAS_v10_pol",
+    "features_written_per_case": 100096,
+    "limitations": "This bounded profile informs the row-group and geometry-batch choice. It is not a full build or a substitute for full-run memory and fidelity validation."
+  },
+  "cases": [
+    {
+      "source_batch_size": 128,
+      "geometry_batch_size": 128,
+      "parquet_row_group_size": 128,
+      "row_groups": 782,
+      "file_bytes": 446875207,
+      "footer_bytes": 25656174,
+      "peak_rss_after_writer_close_bytes": 819757056,
+      "peak_rss_after_metadata_open_bytes": 894582784
+    },
+    {
+      "source_batch_size": 1024,
+      "geometry_batch_size": 128,
+      "parquet_row_group_size": 4096,
+      "row_groups": 25,
+      "file_bytes": 387805751,
+      "footer_bytes": 870466,
+      "peak_rss_during_write_bytes": 617398272,
+      "peak_rss_after_metadata_open_bytes": 617398272
+    }
+  ],
+  "selected_configuration": {
+    "source_batch_size": 1024,
+    "geometry_batch_size": 128,
+    "parquet_row_group_size": 4096,
+    "reason": "The measured buffered configuration keeps bounded geometry processing while cutting row-group/footer growth substantially; the next full run still enforces the 1 GB RSS ceiling."
+  }
+}

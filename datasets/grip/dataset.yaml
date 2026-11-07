@@ -1,0 +1,237 @@
+schema_version: 1
+id: grip
+title: GRIP4 global roads — 2018
+community_url: https://gee-community-catalog.org/projects/grip
+audit:
+  snapshot: gee-community-audit-20261029
+  family_key: grip
+  unique_gee_asset_count: 7
+  initial_queue: research_original_source
+  folia_registry_status: direct_or_component
+  folia_registry_ids:
+  - '@pbl/grip4/africa'
+  source_coop_urls: []
+  source_coop_scope: null
+  external_native_urls: []
+  external_native_scope: null
+triage:
+  decision: defer
+  priority: normal
+  rationale: Retain the validated local GRIP4 (2018) conversion as historical research work. The user
+    stopped the remaining rebuild after reviewing Overture as the preferred current-road source, already
+    cloud-native and represented in Folia. Citation count alone did not justify this publication priority;
+    no release was packaged or published.
+review:
+  citation_assessment:
+    as_of: '2026-10-29'
+    provider: OpenAlex
+    evidence_path: research/citations/rankings.json
+    evidence_key: grip
+    geographic_scope: global
+    paper_count_status: matched
+    max_paper_citations: 817
+    max_data_doi_citations: null
+    top_paper_doi: https://doi.org/10.1088/1748-9326/aabd42
+    top_paper_openalex_id: https://openalex.org/W2804520636
+    citation_scope: associated_dataset_publication
+  publication_assessment:
+    as_of: '2026-10-30'
+    route: archival_conversion_retained_publication_deferred
+    scope: Complete GRIP4 global roads File Geodatabase; cover all seven regions, rather than the existing
+      Africa-only Folia identity.
+    catalog_gee_assets:
+    - projects/sat-io/open-datasets/GRIP4/Africa
+    - projects/sat-io/open-datasets/GRIP4/Central-South-America
+    - projects/sat-io/open-datasets/GRIP4/Europe
+    - projects/sat-io/open-datasets/GRIP4/North-America
+    - projects/sat-io/open-datasets/GRIP4/Oceania
+    - projects/sat-io/open-datasets/GRIP4/South-East-Asia
+    - projects/sat-io/open-datasets/GRIP4/Middle-East-Central-Asia
+    catalog_reported_features: 25758453
+    source_feature_count_verified: true
+    source_size_bytes: 2334355294
+    source_uncompressed_bytes: 4168256157
+    inspection_bytes_transferred: 6447
+    license_note: The selected Zenodo archive metadata states CC BY 4.0. PBL website states CC0. Follow
+      the selected archive attribution terms and preserve producer credit. This corrects the earlier note
+      that grouped Zenodo with PBL as CC0.
+    source_license_evidence_path: research/local-next-two-20261030/upstream/grip-zenodo.json
+    producer_page_evidence_path: research/local-next-two-20261030/retrieval.json
+    processing_note: Use a streaming/partitioned conversion and staged validation; do not load approximately
+      25.8 million road features into one in-memory GeoDataFrame. Compressed plus extracted source is
+      about 6.5 GB before outputs.
+    evidence_urls:
+    - https://gee-community-catalog.org/projects/grip/
+    - https://zenodo.org/records/6420961
+    - https://dataportaal.pbl.nl/GRIP4
+    source_feature_count: 25758453
+    source_inspection_path: research/local-build-two-20261030/grip-source-inspection.json
+    source_quality_note: Source maximum longitude 180.0000000000001 is preserved analytically. Only the
+      catalog envelope is normalized to 180 within a preregistered 1e-8 degree metadata tolerance.
+  selection:
+    as_of: '2026-10-30'
+    criteria_path: research/local-next-two-20261030/criteria.md
+    source_inspection_path: research/local-next-two-20261030/source-inspection-v0102.json
+    existing_host_review_path: research/local-next-two-20261030/existing-hosts.json
+    citation_count_basis: Frozen OpenAlex 2026-10-29 associated-publication count; not exact-release use
+      or refreshed live citations.
+    existing_native_status: No exact-name/DOI match identified in a 747-record Source Cooperative public
+      metadata snapshot and targeted searches; absence is not proven.
+  source_chronology:
+    as_of: '2026-10-30'
+    source_publication_date: '2018-05-23'
+    source_version_label: Version 4 - 2018
+    archive_record_created: '2022-04-07'
+    archive_record_updated: '2022-04-07'
+    latest_version_record_verified: 6420961
+    evidence_path: research/local-build-two-20261030/grip-version-date-review.json
+    note: The archive deposit date and local conversion date are not newer road-observation releases.
+  current_alternative:
+    as_of: '2026-10-30'
+    dataset: Overture Maps transportation
+    relationship: current-road alternative; not an exact GRIP4 mirror or proved superset
+    folia_registry_id: '@overture/maps/transportation'
+    upstream_catalog: https://stac.overturemaps.org/catalog.json
+    formats:
+    - GeoParquet
+    - PMTiles (inspection only)
+    source_coop_product: https://source.coop/fused/overture
+    mirror_latest_release_or_asset_bytes_verified: false
+    use_for: Current roads; preserve GRIP4 only when the historical research input is needed.
+    retention_note: Official public Overture releases remain available for at most 60 days; a version
+      pin alone does not ensure durable retrieval.
+    evidence_path: research/local-build-two-20261030/grip-overture-review.md
+    registry_evidence_path: research/local-build-two-20261030/overture-folia-registry.json
+source:
+  source_doi: 10.5281/zenodo.6420961
+  source_version: GRIP4-2018
+  source_url: https://zenodo.org/api/records/6420961/files/GRIP4_global_vector_fgdb.zip/content
+  source_name: GRIP4_global_vector_fgdb.zip
+  source_size: 2334355294
+  source_md5: 526db5eb478f4c990e27fcbc471abf4b
+  source_sha256: 851c26a530950f24252465bc67d18fc10ce735d10a1a3d11a06ebfff45c4c8cc
+  license: CC-BY-4.0
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  source_verification: Whole archive size, producer MD5, SHA-256 and all ZIP CRCs verified; layer, schema,
+    CRS and feature count inspected.
+  expected_rows: 25758453
+  attribute_dictionary_url: https://zenodo.org/api/records/6420961/files/GRIP4_AttributeDescription.xlsx/content
+  attribute_dictionary_sha256: 38ced93e91000179bd398df7e2d919b234d37c178532a21c12651ecbeb901a51
+build:
+  status: implemented_local
+  release: grip4-2018-r1
+  metadata_timestamp: '2026-10-30T00:00:00Z'
+  paper_doi: 10.1088/1748-9326/aabd42
+  portolan_schema: https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json
+  tippecanoe_version: tippecanoe v2.79.0
+  batch_size: 65536
+  pmtiles_maxzoom: 10
+  source_layer: GRIP4_GlobalRoads
+  fid_column: OBJECTID
+  region_field: gp_gripreg
+  road_type_field: GP_RTP
+  source_columns:
+  - OBJECTID
+  - GP_RTP
+  - GP_REX
+  - GP_RAV
+  - GP_RRG
+  - GP_RCY
+  - GP_RSE
+  - GP_RSI
+  - GP_RSY
+  - Shape_Length
+  - gp_gripreg
+  - Shape
+  source_arrow_types:
+  - int64
+  - int32
+  - int32
+  - int32
+  - int32
+  - int32
+  - int32
+  - int32
+  - int32
+  - double
+  - int16
+  - binary
+  validation_plan_path: datasets/grip/CONTRACT.md
+publication:
+  status: deferred_after_local_validation
+  local_processing_order: 2
+  release: null
+  source_cooperative:
+    status: deferred_not_created
+    url: null
+  portolan:
+    status: not_submitted
+    url: null
+  conversion_git_commit: 23197105f3ac45d890330a466594921fe35d8f27
+  local_artifacts:
+    status: validated_not_packaged
+    directory: .local/grip/grip4-2018-r1-validated
+    manifest_path: datasets/grip/evidence/validated-run-02/manifest.json
+    validation_path: datasets/grip/evidence/validated-run-02/validation.json
+    cancellation_path: datasets/grip/evidence/validated-run-02/cancellation.json
+  validation:
+    source_rows: 25758453
+    exact_cells_including_fid_and_wkb: 309101436
+    vertices: 286775634
+    regional_partitions: 7
+    first_build_assets: 22
+    stac: passed
+    portolan: passed
+    http: passed_loopback
+    fixture_checks: 10
+    negative_fault_cases: 8
+    workflow_tests: 19
+    pmtiles_maxzoom_unique_ids: 18344569
+    rebuild: stopped_by_user; seven analytic partitions matched, complete rebuild not verified
+    package: not_created
+    gee: not_run
+    remote_host: not_tested
+  limits:
+  - Historical GRIP4 release; use the existing Overture identity for current roads.
+  - No complete rebuild or package; not a prepared publication.
+  - Build and source validator share the GDAL OpenFileGDB decoder.
+  - Display tiles retain 71.22% of source IDs at zoom 10; use complete GeoParquet for analysis.
+  - No live GEE, independent observational validation, upload or registry submission.
+
+# Cross-catalog discovery: global-candidates-20261031
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'citations: Global Existing catalog identity.'
+  sources:
+  - provider: gee_community
+    entry_id: grip
+    url: https://gee-community-catalog.org/projects/grip
+    relationship: same_family
+  access:
+  - provider: literature
+    status: unknown
+    formats: []
+    summary: GEE catalog entries are available through Earth Engine; frozen metadata does not establish
+      an independently downloadable native bulk copy or its format. Existing catalog identity.
+    license_summary: Not inferred from citation records. Verify producer terms for the exact edition before
+      conversion or redistribution.
+    proposed_outputs: []
+    rationale: 'Candidate discovery only: global/near-global scope and associated-paper citation signal
+      justify source-format and licensing review. Citation rank does not establish conversion priority
+      or exact-release use.'
+    evidence_urls:
+    - https://gee-community-catalog.org/projects/grip
+    - https://doi.org/10.1088/1748-9326/aabd42
+  citations:
+  - provider: OpenAlex
+    paper_doi: 10.1088/1748-9326/aabd42
+    work_id: https://openalex.org/W2804520636
+    cited_by_count: 817
+    observed_on: '2026-10-30'
+    scope: associated_dataset_publication
+  evidence:
+  - path: research/global-candidates-20261031/citations/reviewed.json
+    sha256: 572140255cd3b41a1ec8ecca0139e64d38899cda7fdd55756f399a0dca57a467
+    key: grip

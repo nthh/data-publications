@@ -1,0 +1,76 @@
+name: Publish catalog metadata to GitHub Pages
+
+"on":
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: catalog-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Require the authorized repository and main branch
+        run: |
+          test "$GITHUB_REPOSITORY" = "nthh/data-publications"
+          test "$GITHUB_REF" = "refs/heads/main"
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          version: "0.9.27"
+          python-version: "3.12.12"
+          enable-cache: true
+          cache-dependency-glob: |
+            uv.lock
+            tools/portolan/uv.lock
+      - name: Install locked catalog and Rashid environments
+        run: |
+          uv sync --locked --no-build
+          uv sync --locked --project tools/portolan --no-build
+      - name: Require the exact GitHub Pages publication configuration
+        run: |
+          uv run --locked python - <<'PY'
+          from pathlib import Path
+          from scripts.publication_catalog import load_config, PAGES_DESTINATION, PAGES_PUBLIC_BASE
+          publish = load_config(Path.cwd())["publish"]
+          if (publish.get("destination") != PAGES_DESTINATION
+                  or publish.get("public_base") != PAGES_PUBLIC_BASE
+                  or publish.get("region") is not None):
+              raise SystemExit("GitHub Pages publication configuration is not confirmed")
+          PY
+      - name: Verify records and tracked catalog
+        run: |
+          uv run --locked python scripts/catalog.py --check
+          uv run --locked python scripts/publication_catalog.py check
+      - name: Validate tracked catalog with Rashid
+        run: uv run --locked --project tools/portolan python scripts/check_portolan.py --catalog catalog --report .local/pages-checks/tracked.json
+      - name: Stage exact metadata-only catalog
+        run: uv run --locked python scripts/publication_catalog.py stage .local/publication-stage
+      - name: Validate staged catalog with Rashid
+        run: uv run --locked --project tools/portolan python scripts/check_portolan.py --catalog .local/publication-stage/catalog --report .local/pages-checks/staged.json
+      - name: Upload only the staged catalog directory
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: .local/publication-stage/catalog
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy staged catalog to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1

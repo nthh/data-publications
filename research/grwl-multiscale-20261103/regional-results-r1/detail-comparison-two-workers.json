@@ -1,0 +1,109 @@
+{
+  "candidate": {
+    "bytes": 43732687,
+    "path": "/Users/nathan/projects/data-publications/.local/grwl-multiscale/pilot-combined-r1/assets/grwl-raw.pmtiles",
+    "sha256": "662aae13f02ba0766f832d8c2f48c36d846383a6a4d71271258629276ccc6a64"
+  },
+  "comparator": {
+    "bytes": 14791,
+    "path": "/Users/nathan/.folia-fleets/grwl-multiscale-clean-20261103/tree/datasets/grwl-raw/compare_detail_fast.py",
+    "sha256": "38e2051d4ec1bd48c5dbfb57c49fecb733500de414972166b85d741864931dd2"
+  },
+  "counts": {
+    "by_zoom": {
+      "10": 942,
+      "11": 2030,
+      "12": 4381,
+      "8": 161,
+      "9": 402
+    },
+    "detail_features": 4959998,
+    "detail_tiles": 7916,
+    "detail_tiles_over_byte_limit": 0,
+    "maximum_gzip_tile_bytes": 170756,
+    "overview_tiles": 91
+  },
+  "criteria": {
+    "bytes": 5483,
+    "path": "/Users/nathan/.folia-fleets/grwl-multiscale-clean-20261103/tree/research/grwl-multiscale-20261103/criteria.json",
+    "sha256": "4f40b5868bf30e41ce6d2db977c36f3c8b4b3705a2c82008c33648abeb74ed43"
+  },
+  "directory_reader": {
+    "bytes": 10709,
+    "path": "/Users/nathan/.folia-fleets/grwl-multiscale-clean-20261103/tree/datasets/grwl-raw/compare_detail.py",
+    "sha256": "6defc9b8392dc974fea1919f16a0c7d2906db021ccd163558eb38d8654fadece"
+  },
+  "elapsed_seconds": 6.178,
+  "native_oracle": {
+    "binary": {
+      "bytes": 58048,
+      "path": "/Users/nathan/projects/data-publications/.local/grwl-multiscale/native-oracle-r1/detail-oracle",
+      "sha256": "a4fbb5a338292dc81b845008664a2f9d7f442bef97374b91ad035af1e5829692"
+    },
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++",
+      "-isysroot",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk",
+      "-isystem",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1",
+      "-std=c++17",
+      "-O3",
+      "-DNDEBUG",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "/Users/nathan/projects/data-publications/.local/grwl-multiscale/native-oracle-r1/detail_oracle.cpp",
+      "-lz",
+      "-o",
+      "/Users/nathan/projects/data-publications/.local/grwl-multiscale/native-oracle-r1/detail-oracle"
+    ],
+    "comparison": "exact vectors of ID/type/integer geometry/typed width/valid; sort fallback preserves multiplicity",
+    "compiler": {
+      "bytes": 257149376,
+      "path": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang",
+      "sha256": "60468f3efd513d53f6ce581ec8d00595855ebf5a31a496d685b91c104aee1ca0"
+    },
+    "compiler_version": "Apple clang version 16.0.0 (clang-1600.0.26.6)\nTarget: arm64-apple-darwin24.1.0\nThread model: posix\nInstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin\n",
+    "runtime_version": "grwl-detail-wire-oracle-v1 zlib-runtime=1.2.12 zlib-headers=1.2.12",
+    "schema_version": 1,
+    "sdk": {
+      "bytes": 6806,
+      "path": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/SDKSettings.json",
+      "sha256": "2fa5c0ce1bbcd261b132b572b1a9eece3b5905b04640a44deae1a6a8812928fb"
+    },
+    "source": {
+      "bytes": 13237,
+      "path": "/Users/nathan/.folia-fleets/grwl-multiscale-20261103/tree/datasets/grwl-raw/detail_oracle.cpp",
+      "sha256": "3761588beebe8302cfedb1afaf7fff8ab3389423ac5ce2396a8ba7f69d265699"
+    },
+    "source_snapshot": {
+      "bytes": 13237,
+      "path": "/Users/nathan/projects/data-publications/.local/grwl-multiscale/native-oracle-r1/detail_oracle.cpp",
+      "sha256": "3761588beebe8302cfedb1afaf7fff8ab3389423ac5ce2396a8ba7f69d265699"
+    },
+    "workers": 1
+  },
+  "packages": {
+    "mapbox-vector-tile": "2.2.0",
+    "pmtiles": "3.8.1",
+    "protobuf": "6.33.6"
+  },
+  "pipeline": {
+    "batch_tiles": 8,
+    "maximum_outstanding_batches": 2,
+    "maximum_outstanding_tile_pairs": 16,
+    "pipe_ownership": "one dedicated thread per native process",
+    "result_order": "submission"
+  },
+  "protobuf_implementation": "independent_cpp_wire_v1",
+  "schema_version": 1,
+  "semantic_preservation": true,
+  "source": {
+    "bytes": 163886604,
+    "path": "/Users/nathan/projects/data-publications/.local/grwl-raw/pilot-display-v3/assets/grwl-raw.pmtiles",
+    "sha256": "c3867e547ada2877405993569b7ae4f3553777d063408cb9b45c8a59c6a028d9"
+  },
+  "status": "passed",
+  "tile_byte_gate": true,
+  "workers": 2
+}

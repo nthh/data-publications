@@ -1,0 +1,77 @@
+schema_version: 1
+id: merra2_nasa_reanalysis
+title: NASA MERRA-2 global reanalysis source products
+intake:
+  kind: official_catalog
+  reference_url: https://developers.google.com/earth-engine/datasets/catalog/NASA_GSFC_MERRA_aer_2
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'citations: Global Existing Climate Engine daily/derived MERRA-2 differs from NASA
+    original component collections.'
+  sources:
+  - provider: gee_official
+    entry_id: NASA/GSFC/MERRA/aer/2
+    url: https://developers.google.com/earth-engine/datasets/catalog/NASA_GSFC_MERRA_aer_2
+    relationship: component
+  - provider: gee_official
+    entry_id: NASA/GSFC/MERRA/aer_nv/2
+    url: https://developers.google.com/earth-engine/datasets/catalog/NASA_GSFC_MERRA_aer_nv_2
+    relationship: component
+  - provider: gee_official
+    entry_id: NASA/GSFC/MERRA/flx/2
+    url: https://developers.google.com/earth-engine/datasets/catalog/NASA_GSFC_MERRA_flx_2
+    relationship: component
+  - provider: gee_official
+    entry_id: NASA/GSFC/MERRA/lnd/2
+    url: https://developers.google.com/earth-engine/datasets/catalog/NASA_GSFC_MERRA_lnd_2
+    relationship: component
+  - provider: gee_official
+    entry_id: NASA/GSFC/MERRA/rad/2
+    url: https://developers.google.com/earth-engine/datasets/catalog/NASA_GSFC_MERRA_rad_2
+    relationship: component
+  - provider: gee_official
+    entry_id: NASA/GSFC/MERRA/slv/2
+    url: https://developers.google.com/earth-engine/datasets/catalog/NASA_GSFC_MERRA_slv_2
+    relationship: component
+  access:
+  - provider: literature
+    status: unknown
+    formats: []
+    summary: GEE catalog entries are available through Earth Engine; frozen metadata does not establish
+      an independently downloadable native bulk copy or its format. Existing Climate Engine daily/derived
+      MERRA-2 differs from NASA original component collections.
+    license_summary: Not inferred from citation records. Verify producer terms for the exact edition before
+      conversion or redistribution.
+    proposed_outputs: []
+    rationale: 'Candidate discovery only: global/near-global scope and associated-paper citation signal
+      justify source-format and licensing review. Citation rank does not establish conversion priority
+      or exact-release use.'
+    evidence_urls:
+    - https://developers.google.com/earth-engine/datasets/catalog/NASA_GSFC_MERRA_aer_2
+    - https://developers.google.com/earth-engine/datasets/catalog/NASA_GSFC_MERRA_aer_nv_2
+    - https://developers.google.com/earth-engine/datasets/catalog/NASA_GSFC_MERRA_flx_2
+    - https://developers.google.com/earth-engine/datasets/catalog/NASA_GSFC_MERRA_lnd_2
+    - https://developers.google.com/earth-engine/datasets/catalog/NASA_GSFC_MERRA_rad_2
+    - https://developers.google.com/earth-engine/datasets/catalog/NASA_GSFC_MERRA_slv_2
+    - https://doi.org/10.1175/jcli-d-16-0758.1
+  citations:
+  - provider: OpenAlex
+    paper_doi: 10.1175/jcli-d-16-0758.1
+    work_id: https://openalex.org/W2611772571
+    cited_by_count: 9045
+    observed_on: '2026-10-30'
+    scope: base_dataset_family
+  evidence:
+  - path: research/global-candidates-20261031/citations/reviewed.json
+    sha256: 572140255cd3b41a1ec8ecca0139e64d38899cda7fdd55756f399a0dca57a467
+    key: merrav2

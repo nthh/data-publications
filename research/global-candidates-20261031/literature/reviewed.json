@@ -1,0 +1,722 @@
+{
+  "schema_version": 1,
+  "provider": "OpenAlex public API DOI-resolved work counts",
+  "observed_at": "2026-11-01T00:46:56.511427+00:00",
+  "lane": "supplementary_global_literature_sample",
+  "selection_note": "Ten documented global producer dataset families absent from the frozen top-50 shared-paper group set. Bounded purposive sample; not a universal top-cited geospatial-dataset ranking.",
+  "paper_identity_path": "research/global-candidates-20261031/literature/paper-identities.json",
+  "count_evidence_path": "research/global-candidates-20261031/literature/openalex-responses-20261101.json",
+  "request_count": 12,
+  "candidate_count": 10,
+  "candidates": [
+    {
+      "suggested_id": "worldclim_v2",
+      "existing_record_id": null,
+      "related_record_id": "worldclim_v1",
+      "title": "WorldClim v2 global land climate surfaces",
+      "geographic_scope": "global",
+      "spatial_coverage": "Global land surfaces; resolutions from 30 arc-seconds to 10 arc-minutes. Land cells only; no claimed ocean coverage.",
+      "sources": [
+        {
+          "provider": "WorldClim",
+          "entry_id": "WorldClim v2 global land climate surfaces",
+          "url": "https://www.worldclim.org/data/worldclim21.html",
+          "relationship": "related_release",
+          "edition": "WorldClim v2.1 historical climate data, released 2020; 1970-2000 normals. v1 is a separate edition and has its own 2005 associated paper."
+        },
+        {
+          "provider": "Primary paper/publisher",
+          "entry_id": "10.1002/joc.5086",
+          "url": "https://doi.org/10.1002/joc.5086",
+          "relationship": "associated_dataset_publication"
+        }
+      ],
+      "observed_formats": [
+        "GeoTIFF"
+      ],
+      "format_labels": [
+        "raster"
+      ],
+      "recommended_formats": [
+        "COG"
+      ],
+      "format_observation_note": "Producer documentation identifies formats listed in observed_formats.",
+      "format_recommendation_note": "Recommended format is a proposed future access derivative based on the product’s grid/temporal or vector structure; it was not observed in a producer download and is not a format-validation claim.",
+      "hosting_status": "download_available",
+      "access_summary": "Producer page provides downloadable resolution-specific archives. Exact release remains separate from WorldClim v1.",
+      "conversion_rationale": "Supplementary literature discovery only. A high associated-paper count is evidence of a documented product family, not exact-edition usage, conversion priority, or native-format readiness. Review producer bytes, terms and existing record component coverage before promotion.",
+      "license_summary": "Exact release terms need product-specific review; no redistribution permission is inferred from literature or access pages.",
+      "evidence_urls": [
+        "https://doi.org/10.1002/joc.5086",
+        "https://www.worldclim.org/data/worldclim21.html",
+        "https://www.worldclim.org/data/index.html"
+      ],
+      "proposed_outputs": [
+        "Confirm exact product edition, component scope, native data format, access and license; compare against any existing canonical record before proposing conversion."
+      ],
+      "citation": {
+        "doi": "10.1002/joc.5086",
+        "work_id": "https://openalex.org/W2614464134",
+        "work_title": "WorldClim 2: new 1‐km spatial resolution climate surfaces for global land areas",
+        "count": 17262,
+        "count_date": "2026-11-01",
+        "count_observed_at": "2026-11-01T00:46:49.086346+00:00",
+        "count_provider": "OpenAlex public API",
+        "count_scope": "associated_dataset_publication_base_family",
+        "lookup_status": "matched",
+        "api_http_status": 200,
+        "evidence_path": "research/global-candidates-20261031/literature/openalex-responses-20261101.json",
+        "evidence_key": "worldclim_v2",
+        "count_is_exact_edition": false
+      },
+      "product_edition": "WorldClim v2.1 historical climate data, released 2020; 1970-2000 normals. v1 is a separate edition and has its own 2005 associated paper.",
+      "data_doi": null,
+      "identity_review_path": "research/global-candidates-20261031/literature/paper-identities.json",
+      "related_record_relationship": "related_release",
+      "identity_notes": "Paper describes WorldClim v2; producer's current v2.1 is a later data release within that product family.",
+      "related_paper_counts": []
+    },
+    {
+      "suggested_id": "cru_ts_v4",
+      "existing_record_id": null,
+      "related_record_id": null,
+      "title": "CRU TS monthly high-resolution gridded multivariate climate dataset",
+      "geographic_scope": "global",
+      "spatial_coverage": "Global land gridded monthly climate variables; station support varies spatially and some cells may use inserted climatology. Producer grids are 0.5 degree.",
+      "sources": [
+        {
+          "provider": "CRU",
+          "entry_id": "CRU TS monthly high-resolution gridded multivariate climate dataset",
+          "url": "https://www.nature.com/articles/s41597-020-0453-3",
+          "relationship": "same_family",
+          "edition": "CRU TS v4.10, current producer release observed 2026-10-31; global land time series 1901-2025. Paper describes the v4 family and initial v4.03 release; CRU TS v3.26 paper DOI 10.1002/joc.3711 is a distinct earlier edition and is not used for this count."
+        },
+        {
+          "provider": "Primary paper/publisher",
+          "entry_id": "10.1038/s41597-020-0453-3",
+          "url": "https://doi.org/10.1038/s41597-020-0453-3",
+          "relationship": "associated_dataset_publication"
+        }
+      ],
+      "observed_formats": [
+        "NetCDF",
+        "space-separated ASCII"
+      ],
+      "format_labels": [
+        "raster",
+        "time-series"
+      ],
+      "recommended_formats": [
+        "Zarr"
+      ],
+      "format_observation_note": "Producer documentation identifies formats listed in observed_formats.",
+      "format_recommendation_note": "Recommended format is a proposed future access derivative based on the product’s grid/temporal or vector structure; it was not observed in a producer download and is not a format-validation claim.",
+      "hosting_status": "download_available",
+      "access_summary": "CRU producer/CRU website and CEDA archive offer gridded releases; station support varies by cell.",
+      "conversion_rationale": "Supplementary literature discovery only. A high associated-paper count is evidence of a documented product family, not exact-edition usage, conversion priority, or native-format readiness. Review producer bytes, terms and existing record component coverage before promotion.",
+      "license_summary": "Exact release terms need product-specific review; no redistribution permission is inferred from literature or access pages.",
+      "evidence_urls": [
+        "https://doi.org/10.1038/s41597-020-0453-3",
+        "https://www.nature.com/articles/s41597-020-0453-3",
+        "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.10/"
+      ],
+      "proposed_outputs": [
+        "Confirm exact product edition, component scope, native data format, access and license; compare against any existing canonical record before proposing conversion."
+      ],
+      "citation": {
+        "doi": "10.1038/s41597-020-0453-3",
+        "work_id": "https://openalex.org/W3014125413",
+        "work_title": "Version 4 of the CRU TS monthly high-resolution gridded multivariate climate dataset",
+        "count": 4909,
+        "count_date": "2026-11-01",
+        "count_observed_at": "2026-11-01T00:46:49.885137+00:00",
+        "count_provider": "OpenAlex public API",
+        "count_scope": "associated_dataset_publication_base_family",
+        "lookup_status": "matched",
+        "api_http_status": 200,
+        "evidence_path": "research/global-candidates-20261031/literature/openalex-responses-20261101.json",
+        "evidence_key": "cru_ts_v4",
+        "count_is_exact_edition": false
+      },
+      "product_edition": "CRU TS v4.10, current producer release observed 2026-10-31; global land time series 1901-2025. Paper describes the v4 family and initial v4.03 release; CRU TS v3.26 paper DOI 10.1002/joc.3711 is a distinct earlier edition and is not used for this count.",
+      "data_doi": null,
+      "identity_review_path": "research/global-candidates-20261031/literature/paper-identities.json",
+      "related_record_relationship": "new_family",
+      "identity_notes": "The 2020 paper documents CRU TS v4.03; v4.10 is a later continuation of the v4 family.",
+      "related_paper_counts": [
+        {
+          "doi": "10.1002/joc.3711",
+          "title": null,
+          "work_id": "https://openalex.org/W1867005924",
+          "count": 6101,
+          "observed_at": "2026-11-01T00:46:50.498083+00:00",
+          "provider": "OpenAlex",
+          "identity_note": "CRU TS v3 paper, a separate discontinued edition; not counted for the v4.10 candidate.",
+          "used_for_candidate_count": false,
+          "lookup_status": "matched"
+        }
+      ]
+    },
+    {
+      "suggested_id": "chelsa_climatologies",
+      "existing_record_id": null,
+      "related_record_id": null,
+      "title": "CHELSA global high-resolution climate climatologies",
+      "geographic_scope": "near_global",
+      "spatial_coverage": "Land grid extent approximately 180W-180E and 90S-84N; 30 arc-seconds / about 1 km. Current family has multiple historical, present and projection products; no single time span implied for the family.",
+      "sources": [
+        {
+          "provider": "CHELSA",
+          "entry_id": "CHELSA global high-resolution climate climatologies",
+          "url": "https://www.nature.com/articles/sdata2017122",
+          "relationship": "same_family",
+          "edition": "Current producer family page identifies CHELSA v2.1; the dataset paper is the 2017 foundational CHELSA climatology paper and describes the earlier 1979-2013 release. Keep edition distinction explicit."
+        },
+        {
+          "provider": "Primary paper/publisher",
+          "entry_id": "10.1038/sdata.2017.122",
+          "url": "https://doi.org/10.1038/sdata.2017.122",
+          "relationship": "associated_dataset_publication"
+        }
+      ],
+      "observed_formats": [
+        "GeoTIFF"
+      ],
+      "format_labels": [
+        "raster"
+      ],
+      "recommended_formats": [
+        "COG"
+      ],
+      "format_observation_note": "Producer documentation identifies formats listed in observed_formats.",
+      "format_recommendation_note": "Recommended format is a proposed future access derivative based on the product’s grid/temporal or vector structure; it was not observed in a producer download and is not a format-validation claim.",
+      "hosting_status": "download_available",
+      "access_summary": "Producer lists direct downloads; v2.1 is a later release than the 2017 paper’s v1 dataset.",
+      "conversion_rationale": "Supplementary literature discovery only. A high associated-paper count is evidence of a documented product family, not exact-edition usage, conversion priority, or native-format readiness. Review producer bytes, terms and existing record component coverage before promotion.",
+      "license_summary": "Exact release terms need product-specific review; no redistribution permission is inferred from literature or access pages.",
+      "evidence_urls": [
+        "https://doi.org/10.1038/sdata.2017.122",
+        "https://www.nature.com/articles/sdata2017122",
+        "https://www.chelsa-climate.org/datasets/chelsa_climatologies"
+      ],
+      "proposed_outputs": [
+        "Confirm exact product edition, component scope, native data format, access and license; compare against any existing canonical record before proposing conversion."
+      ],
+      "citation": {
+        "doi": "10.1038/sdata.2017.122",
+        "work_id": "https://openalex.org/W2463201722",
+        "work_title": "Climatologies at high resolution for the earth’s land surface areas",
+        "count": 4199,
+        "count_date": "2026-11-01",
+        "count_observed_at": "2026-11-01T00:46:51.240297+00:00",
+        "count_provider": "OpenAlex public API",
+        "count_scope": "associated_dataset_publication_base_family",
+        "lookup_status": "matched",
+        "api_http_status": 200,
+        "evidence_path": "research/global-candidates-20261031/literature/openalex-responses-20261101.json",
+        "evidence_key": "chelsa_climatologies",
+        "count_is_exact_edition": false
+      },
+      "product_edition": "Current producer family page identifies CHELSA v2.1; the dataset paper is the 2017 foundational CHELSA climatology paper and describes the earlier 1979-2013 release. Keep edition distinction explicit.",
+      "data_doi": null,
+      "identity_review_path": "research/global-candidates-20261031/literature/paper-identities.json",
+      "related_record_relationship": "new_family",
+      "identity_notes": "Paper documents initial CHELSA climatologies v1; current v2.1 uses later inputs and should not be treated as identical data.",
+      "related_paper_counts": []
+    },
+    {
+      "suggested_id": "gpcc_full_data_monthly_v2022",
+      "existing_record_id": null,
+      "related_record_id": null,
+      "title": "Global Precipitation Climatology Centre Full Data Monthly precipitation product",
+      "geographic_scope": "global",
+      "spatial_coverage": "Gauge-based gridded precipitation over global land; Antarctica is not represented as a complete surface product. Resolutions are product variants; cited GPCC paper describes the broader GPCC family.",
+      "sources": [
+        {
+          "provider": "Global",
+          "entry_id": "Global Precipitation Climatology Centre Full Data Monthly precipitation product",
+          "url": "https://opendata.dwd.de/climate_environment/GPCC/html/download_gate.html",
+          "relationship": "same_family",
+          "edition": "GPCC Full Data Monthly Product Version 2022, covering 1891-2020; product-specific DOI at 0.25-degree resolution. Other GPCC analysis products (Monitoring, First Guess, climatology and daily) are separate products."
+        },
+        {
+          "provider": "Primary paper/publisher",
+          "entry_id": "10.5194/essd-5-71-2013",
+          "url": "https://doi.org/10.5194/essd-5-71-2013",
+          "relationship": "associated_dataset_publication"
+        }
+      ],
+      "observed_formats": [
+        "gzip-compressed NetCDF"
+      ],
+      "format_labels": [
+        "raster",
+        "time-series"
+      ],
+      "recommended_formats": [
+        "Zarr"
+      ],
+      "format_observation_note": "Producer documentation identifies formats listed in observed_formats.",
+      "format_recommendation_note": "Recommended format is a proposed future access derivative based on the product’s grid/temporal or vector structure; it was not observed in a producer download and is not a format-validation claim.",
+      "hosting_status": "download_available",
+      "access_summary": "DWD GPCC download gate offers versioned precipitation products; the full-data monthly product is an offline analysis release.",
+      "conversion_rationale": "Supplementary literature discovery only. A high associated-paper count is evidence of a documented product family, not exact-edition usage, conversion priority, or native-format readiness. Review producer bytes, terms and existing record component coverage before promotion.",
+      "license_summary": "Exact release terms need product-specific review; no redistribution permission is inferred from literature or access pages.",
+      "evidence_urls": [
+        "https://doi.org/10.5194/essd-5-71-2013",
+        "https://doi.org/10.5676/DWD_GPCC/FD_M_V2022_250",
+        "https://opendata.dwd.de/climate_environment/GPCC/html/download_gate.html"
+      ],
+      "proposed_outputs": [
+        "Confirm exact product edition, component scope, native data format, access and license; compare against any existing canonical record before proposing conversion."
+      ],
+      "citation": {
+        "doi": "10.5194/essd-5-71-2013",
+        "work_id": "https://openalex.org/W2150516764",
+        "work_title": "A description of the global land-surface precipitation data products of the Global Precipitation Climatology Centre with sample applications including centennial (trend) analysis from 1901–present",
+        "count": 919,
+        "count_date": "2026-11-01",
+        "count_observed_at": "2026-11-01T00:46:51.882641+00:00",
+        "count_provider": "OpenAlex public API",
+        "count_scope": "associated_dataset_publication_base_family",
+        "lookup_status": "matched",
+        "api_http_status": 200,
+        "evidence_path": "research/global-candidates-20261031/literature/openalex-responses-20261101.json",
+        "evidence_key": "gpcc_full_data_monthly_v2022",
+        "count_is_exact_edition": false
+      },
+      "product_edition": "GPCC Full Data Monthly Product Version 2022, covering 1891-2020; product-specific DOI at 0.25-degree resolution. Other GPCC analysis products (Monitoring, First Guess, climatology and daily) are separate products.",
+      "data_doi": "10.5676/DWD_GPCC/FD_M_V2022_250",
+      "identity_review_path": "research/global-candidates-20261031/literature/paper-identities.json",
+      "related_record_relationship": "new_family",
+      "identity_notes": "Paper describes GPCC product family; it predates Full Data Monthly v2022.",
+      "related_paper_counts": []
+    },
+    {
+      "suggested_id": "earthstat_monfreda_crop_maps_2000",
+      "existing_record_id": null,
+      "related_record_id": null,
+      "title": "EarthStat harvested area and yield maps for 175 crops circa 2000",
+      "geographic_scope": "global",
+      "spatial_coverage": "Crop-specific gridded agricultural area and yield distributed over global croplands; thematic agricultural cells, not wall-to-wall land cover.",
+      "sources": [
+        {
+          "provider": "EarthStat",
+          "entry_id": "EarthStat harvested area and yield maps for 175 crops circa 2000",
+          "url": "https://www.earthstat.org/",
+          "relationship": "same_family",
+          "edition": "Monfreda, Ramankutty and Foley 2008 crop-area, crop-yield, physiological-type and NPP maps; circa 2000 at 5 arc-minute resolution."
+        },
+        {
+          "provider": "Primary paper/publisher",
+          "entry_id": "10.1029/2007GB002947",
+          "url": "https://doi.org/10.1029/2007GB002947",
+          "relationship": "associated_dataset_publication"
+        }
+      ],
+      "observed_formats": [
+        "GeoTIFF"
+      ],
+      "format_labels": [
+        "raster"
+      ],
+      "recommended_formats": [
+        "COG"
+      ],
+      "format_observation_note": "Producer documentation identifies formats listed in observed_formats.",
+      "format_recommendation_note": "Recommended format is a proposed future access derivative based on the product’s grid/temporal or vector structure; it was not observed in a producer download and is not a format-validation claim.",
+      "hosting_status": "download_available",
+      "access_summary": "EarthStat provides direct global crop-area/yield raster downloads.",
+      "conversion_rationale": "Supplementary literature discovery only. A high associated-paper count is evidence of a documented product family, not exact-edition usage, conversion priority, or native-format readiness. Review producer bytes, terms and existing record component coverage before promotion.",
+      "license_summary": "Exact release terms need product-specific review; no redistribution permission is inferred from literature or access pages.",
+      "evidence_urls": [
+        "https://doi.org/10.1029/2007GB002947",
+        "https://www.earthstat.org/"
+      ],
+      "proposed_outputs": [
+        "Confirm exact product edition, component scope, native data format, access and license; compare against any existing canonical record before proposing conversion."
+      ],
+      "citation": {
+        "doi": "10.1029/2007GB002947",
+        "work_id": "https://openalex.org/W1885078460",
+        "work_title": "Farming the planet: 2. Geographic distribution of crop areas, yields, physiological types, and net primary production in the year 2000",
+        "count": 1895,
+        "count_date": "2026-11-01",
+        "count_observed_at": "2026-11-01T00:46:52.497951+00:00",
+        "count_provider": "OpenAlex public API",
+        "count_scope": "associated_dataset_publication",
+        "lookup_status": "matched",
+        "api_http_status": 200,
+        "evidence_path": "research/global-candidates-20261031/literature/openalex-responses-20261101.json",
+        "evidence_key": "earthstat_monfreda_crop_maps_2000",
+        "count_is_exact_edition": true
+      },
+      "product_edition": "Monfreda, Ramankutty and Foley 2008 crop-area, crop-yield, physiological-type and NPP maps; circa 2000 at 5 arc-minute resolution.",
+      "data_doi": null,
+      "identity_review_path": "research/global-candidates-20261031/literature/paper-identities.json",
+      "related_record_relationship": "new_family",
+      "identity_notes": "The paper describes the circa-2000 maps; later EarthStat crop products are separate releases.",
+      "related_paper_counts": []
+    },
+    {
+      "suggested_id": "glim_global_lithological_map_v1",
+      "existing_record_id": null,
+      "related_record_id": null,
+      "title": "Global Lithological Map Database (GLiM) v1.0",
+      "geographic_scope": "global",
+      "spatial_coverage": "Global lithological classification of exposed continental surface geology; thematic mapping and source-map detail are heterogeneous, not a uniform geology survey.",
+      "sources": [
+        {
+          "provider": "Global",
+          "entry_id": "Global Lithological Map Database (GLiM) v1.0",
+          "url": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2012GC004370",
+          "relationship": "same_family",
+          "edition": "GLiM v1.0; gridded derivative at 0.5-degree resolution with a companion harmonized global vector map."
+        },
+        {
+          "provider": "Primary paper/publisher",
+          "entry_id": "10.1029/2012GC004370",
+          "url": "https://doi.org/10.1029/2012GC004370",
+          "relationship": "associated_dataset_publication"
+        }
+      ],
+      "observed_formats": [],
+      "format_labels": [
+        "raster",
+        "vector"
+      ],
+      "recommended_formats": [
+        "COG",
+        "GeoParquet"
+      ],
+      "format_observation_note": "Reviewed producer/publisher metadata established spatial structure but did not identify a downloadable file format; observed_formats is intentionally empty.",
+      "format_recommendation_note": "Recommended format is a proposed future access derivative based on the product’s grid/temporal or vector structure; it was not observed in a producer download and is not a format-validation claim.",
+      "hosting_status": "download_available",
+      "access_summary": "PANGAEA dataset record provides the gridded release; companion map and rasterized grid are distinct representations.",
+      "conversion_rationale": "Supplementary literature discovery only. A high associated-paper count is evidence of a documented product family, not exact-edition usage, conversion priority, or native-format readiness. Review producer bytes, terms and existing record component coverage before promotion.",
+      "license_summary": "Exact release terms need product-specific review; no redistribution permission is inferred from literature or access pages.",
+      "evidence_urls": [
+        "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2012GC004370",
+        "https://doi.pangaea.de/10.1594/PANGAEA.788537",
+        "https://projekte.cen.uni-hamburg.de/lithomap/",
+        "https://doi.org/10.1594/PANGAEA.788537"
+      ],
+      "proposed_outputs": [
+        "Confirm exact product edition, component scope, native data format, access and license; compare against any existing canonical record before proposing conversion."
+      ],
+      "citation": {
+        "doi": "10.1029/2012GC004370",
+        "work_id": "https://openalex.org/W2133505387",
+        "work_title": "The new global lithological map database GLiM: A representation of rock properties at the Earth surface",
+        "count": 1168,
+        "count_date": "2026-11-01",
+        "count_observed_at": "2026-11-01T00:46:53.104493+00:00",
+        "count_provider": "OpenAlex public API",
+        "count_scope": "associated_dataset_publication",
+        "lookup_status": "matched",
+        "api_http_status": 200,
+        "evidence_path": "research/global-candidates-20261031/literature/openalex-responses-20261101.json",
+        "evidence_key": "glim_global_lithological_map_v1",
+        "count_is_exact_edition": true
+      },
+      "product_edition": "GLiM v1.0; gridded derivative at 0.5-degree resolution with a companion harmonized global vector map.",
+      "data_doi": "10.1594/PANGAEA.788537",
+      "identity_review_path": "research/global-candidates-20261031/literature/paper-identities.json",
+      "related_record_relationship": "new_family",
+      "identity_notes": "Paper describes the GLiM v1 map database.",
+      "related_paper_counts": []
+    },
+    {
+      "suggested_id": "era_interim",
+      "existing_record_id": null,
+      "related_record_id": "era5",
+      "title": "ECMWF ERA-Interim global atmospheric reanalysis",
+      "geographic_scope": "global",
+      "spatial_coverage": "Global atmospheric reanalysis with related land, wave and surface products; ERA-Interim ended 2019-08-31. Candidate scope is the atmospheric reanalysis family, not each variable/level.",
+      "sources": [
+        {
+          "provider": "ECMWF",
+          "entry_id": "ECMWF ERA-Interim global atmospheric reanalysis",
+          "url": "https://rmets.onlinelibrary.wiley.com/doi/10.1002/qj.828",
+          "relationship": "related_release",
+          "edition": "ERA-Interim, 1979-August 2019; discontinued and superseded by ERA5. Keep separate from ERA5 (selected citation top-50 group 1)."
+        },
+        {
+          "provider": "Primary paper/publisher",
+          "entry_id": "10.1002/qj.828",
+          "url": "https://doi.org/10.1002/qj.828",
+          "relationship": "associated_dataset_publication"
+        }
+      ],
+      "observed_formats": [
+        "GRIB",
+        "NetCDF (ECMWF converted output)"
+      ],
+      "format_labels": [
+        "raster",
+        "time-series"
+      ],
+      "recommended_formats": [
+        "Zarr"
+      ],
+      "format_observation_note": "Producer documentation identifies formats listed in observed_formats.",
+      "format_recommendation_note": "Recommended format is a proposed future access derivative based on the product’s grid/temporal or vector structure; it was not observed in a producer download and is not a format-validation claim.",
+      "hosting_status": "download_available",
+      "access_summary": "ECMWF lists the archived 1979–August 2019 reanalysis and advises migration to ERA5; access conditions may apply.",
+      "conversion_rationale": "Supplementary literature discovery only. A high associated-paper count is evidence of a documented product family, not exact-edition usage, conversion priority, or native-format readiness. Review producer bytes, terms and existing record component coverage before promotion.",
+      "license_summary": "Exact release terms need product-specific review; no redistribution permission is inferred from literature or access pages.",
+      "evidence_urls": [
+        "https://rmets.onlinelibrary.wiley.com/doi/10.1002/qj.828",
+        "https://www.ecmwf.int/en/forecasts/datasets/browse-reanalysis-datasets",
+        "https://www.ecmwf.int/en/forecasts/dataset/ecmwf-reanalysis-v5"
+      ],
+      "proposed_outputs": [
+        "Confirm exact product edition, component scope, native data format, access and license; compare against any existing canonical record before proposing conversion."
+      ],
+      "citation": {
+        "doi": "10.1002/qj.828",
+        "work_id": "https://openalex.org/W2121745948",
+        "work_title": "The ERA‐Interim reanalysis: configuration and performance of the data assimilation system",
+        "count": 24480,
+        "count_date": "2026-11-01",
+        "count_observed_at": "2026-11-01T00:46:53.689313+00:00",
+        "count_provider": "OpenAlex public API",
+        "count_scope": "associated_dataset_publication_base_family",
+        "lookup_status": "matched",
+        "api_http_status": 200,
+        "evidence_path": "research/global-candidates-20261031/literature/openalex-responses-20261101.json",
+        "evidence_key": "era_interim",
+        "count_is_exact_edition": true
+      },
+      "product_edition": "ERA-Interim, 1979-August 2019; discontinued and superseded by ERA5. Keep separate from ERA5 (selected citation top-50 group 1).",
+      "data_doi": null,
+      "identity_review_path": "research/global-candidates-20261031/literature/paper-identities.json",
+      "related_record_relationship": "superseded_related_product",
+      "identity_notes": "Exact paper is ERA-Interim-specific; do not substitute the ERA5 paper or counts.",
+      "related_paper_counts": []
+    },
+    {
+      "suggested_id": "modis_mcd12q1_land_cover_c061",
+      "existing_record_id": null,
+      "related_record_id": null,
+      "title": "MODIS Terra/Aqua annual global land cover type MCD12Q1",
+      "geographic_scope": "global",
+      "spatial_coverage": "Annual thematic land-cover classifications for global land at 500 m, with multiple legends/classes; no ocean coverage claim.",
+      "sources": [
+        {
+          "provider": "MODIS",
+          "entry_id": "MODIS Terra/Aqua annual global land cover type MCD12Q1",
+          "url": "https://www.sciencedirect.com/science/article/pii/S0034425709002673",
+          "relationship": "same_family",
+          "edition": "Current producer product MCD12Q1 Collection 6.1 at 500 m annual resolution; primary associated paper describes Collection 5, so count is a base product-family proxy, not a v6.1 exact-release usage count."
+        },
+        {
+          "provider": "Primary paper/publisher",
+          "entry_id": "10.1016/j.rse.2009.08.016",
+          "url": "https://doi.org/10.1016/j.rse.2009.08.016",
+          "relationship": "associated_dataset_publication"
+        }
+      ],
+      "observed_formats": [
+        "HDF-EOS"
+      ],
+      "format_labels": [
+        "raster",
+        "time-series"
+      ],
+      "recommended_formats": [
+        "COG"
+      ],
+      "format_observation_note": "Producer documentation identifies formats listed in observed_formats.",
+      "format_recommendation_note": "Recommended format is a proposed future access derivative based on the product’s grid/temporal or vector structure; it was not observed in a producer download and is not a format-validation claim.",
+      "hosting_status": "download_available",
+      "access_summary": "NASA DAAC product documentation describes the global annual MCD12Q1 family; current candidate edition differs from the Collection 5 paper.",
+      "conversion_rationale": "Supplementary literature discovery only. A high associated-paper count is evidence of a documented product family, not exact-edition usage, conversion priority, or native-format readiness. Review producer bytes, terms and existing record component coverage before promotion.",
+      "license_summary": "Exact release terms need product-specific review; no redistribution permission is inferred from literature or access pages.",
+      "evidence_urls": [
+        "https://www.sciencedirect.com/science/article/pii/S0034425709002673",
+        "https://modis-land.gsfc.nasa.gov/pdf/MCD12Q1_C6_Userguide04042018.pdf",
+        "https://modis.gsfc.nasa.gov/data/dataprod/mod12.php"
+      ],
+      "proposed_outputs": [
+        "Confirm exact product edition, component scope, native data format, access and license; compare against any existing canonical record before proposing conversion."
+      ],
+      "citation": {
+        "doi": "10.1016/j.rse.2009.08.016",
+        "work_id": "https://openalex.org/W2042692910",
+        "work_title": "MODIS Collection 5 global land cover: Algorithm refinements and characterization of new datasets",
+        "count": 3489,
+        "count_date": "2026-11-01",
+        "count_observed_at": "2026-11-01T00:46:54.394332+00:00",
+        "count_provider": "OpenAlex public API",
+        "count_scope": "associated_dataset_publication_base_family",
+        "lookup_status": "matched",
+        "api_http_status": 200,
+        "evidence_path": "research/global-candidates-20261031/literature/openalex-responses-20261101.json",
+        "evidence_key": "modis_mcd12q1_land_cover_c061",
+        "count_is_exact_edition": false
+      },
+      "product_edition": "Current producer product MCD12Q1 Collection 6.1 at 500 m annual resolution; primary associated paper describes Collection 5, so count is a base product-family proxy, not a v6.1 exact-release usage count.",
+      "data_doi": null,
+      "identity_review_path": "research/global-candidates-20261031/literature/paper-identities.json",
+      "related_record_relationship": "new_family",
+      "identity_notes": "Paper documents Collection 5; candidate product edition is Collection 6.1 and remains version-distinct.",
+      "related_paper_counts": []
+    },
+    {
+      "suggested_id": "hyde_32",
+      "existing_record_id": null,
+      "related_record_id": null,
+      "title": "History Database of the Global Environment (HYDE) 3.2",
+      "geographic_scope": "global",
+      "spatial_coverage": "Global historical population and land-use categories on approximately 5 arc-minute grids; modeled allocations, not observations at every cell.",
+      "sources": [
+        {
+          "provider": "History",
+          "entry_id": "History Database of the Global Environment (HYDE) 3.2",
+          "url": "https://essd.copernicus.org/articles/9/927/2017/",
+          "relationship": "same_family",
+          "edition": "HYDE 3.2 historical population and land-use allocation maps, 10,000 BCE-2015 CE; version 3.2 paper is product-specific."
+        },
+        {
+          "provider": "Primary paper/publisher",
+          "entry_id": "10.5194/essd-9-927-2017",
+          "url": "https://doi.org/10.5194/essd-9-927-2017",
+          "relationship": "associated_dataset_publication"
+        }
+      ],
+      "observed_formats": [],
+      "format_labels": [
+        "raster",
+        "time-series"
+      ],
+      "recommended_formats": [
+        "Zarr"
+      ],
+      "format_observation_note": "Reviewed producer/publisher metadata established spatial structure but did not identify a downloadable file format; observed_formats is intentionally empty.",
+      "format_recommendation_note": "Recommended format is a proposed future access derivative based on the product’s grid/temporal or vector structure; it was not observed in a producer download and is not a format-validation claim.",
+      "hosting_status": "download_available",
+      "access_summary": "Producer portal provides global-scale HYDE layers and links to the versioned dataset deposit.",
+      "conversion_rationale": "Supplementary literature discovery only. A high associated-paper count is evidence of a documented product family, not exact-edition usage, conversion priority, or native-format readiness. Review producer bytes, terms and existing record component coverage before promotion.",
+      "license_summary": "Exact release terms need product-specific review; no redistribution permission is inferred from literature or access pages.",
+      "evidence_urls": [
+        "https://essd.copernicus.org/articles/9/927/2017/",
+        "https://hyde-portal.geo.uu.nl/",
+        "https://doi.org/10.17026/dans-25g-gez3"
+      ],
+      "proposed_outputs": [
+        "Confirm exact product edition, component scope, native data format, access and license; compare against any existing canonical record before proposing conversion."
+      ],
+      "citation": {
+        "doi": "10.5194/essd-9-927-2017",
+        "work_id": "https://openalex.org/W2560200117",
+        "work_title": "Anthropogenic land use estimates for the Holocene – HYDE 3.2",
+        "count": 1204,
+        "count_date": "2026-11-01",
+        "count_observed_at": "2026-11-01T00:46:55.052906+00:00",
+        "count_provider": "OpenAlex public API",
+        "count_scope": "associated_dataset_publication",
+        "lookup_status": "matched",
+        "api_http_status": 200,
+        "evidence_path": "research/global-candidates-20261031/literature/openalex-responses-20261101.json",
+        "evidence_key": "hyde_32",
+        "count_is_exact_edition": true
+      },
+      "product_edition": "HYDE 3.2 historical population and land-use allocation maps, 10,000 BCE-2015 CE; version 3.2 paper is product-specific.",
+      "data_doi": "10.17026/dans-25g-gez3",
+      "identity_review_path": "research/global-candidates-20261031/literature/paper-identities.json",
+      "related_record_relationship": "new_family",
+      "identity_notes": "Paper and producer portal explicitly identify HYDE 3.2.",
+      "related_paper_counts": []
+    },
+    {
+      "suggested_id": "gmia_v5",
+      "existing_record_id": null,
+      "related_record_id": "global_irrigation",
+      "title": "FAO/University of Bonn Global Map of Irrigation Areas (GMIA) v5",
+      "geographic_scope": "near_global",
+      "spatial_coverage": "Area equipped for irrigation globally over land; reported grid extent -180,-60 to 180,90. Does not mean actual irrigated area for every cell; v5 also includes actual-irrigation and water-source percentage layers.",
+      "sources": [
+        {
+          "provider": "FAO/University",
+          "entry_id": "FAO/University of Bonn Global Map of Irrigation Areas (GMIA) v5",
+          "url": "https://www.fao.org/aquastat/en/resources/publications/reports/",
+          "relationship": "related_release",
+          "edition": "GMIA v5, circa 2005 static map at 5 arc-minutes; v5 technical report is DOI 10.13140/2.1.2660.6728. The older peer-reviewed 2005 development paper describes the original GMIA family and is retained as a separate related paper, not silently substituted for the v5 report count."
+        },
+        {
+          "provider": "Primary paper/publisher",
+          "entry_id": "10.13140/2.1.2660.6728",
+          "url": "https://doi.org/10.13140/2.1.2660.6728",
+          "relationship": "associated_dataset_publication"
+        }
+      ],
+      "observed_formats": [
+        "zipped ASCII grid",
+        "Esri Shapefile"
+      ],
+      "format_labels": [
+        "raster",
+        "vector"
+      ],
+      "recommended_formats": [
+        "COG"
+      ],
+      "format_observation_note": "Producer documentation identifies formats listed in observed_formats.",
+      "format_recommendation_note": "Recommended format is a proposed future access derivative based on the product’s grid/temporal or vector structure; it was not observed in a producer download and is not a format-validation claim.",
+      "hosting_status": "download_available",
+      "access_summary": "FAO AQUASTAT links to the producer GMIA v5 report/data; do not confuse area equipped with actual irrigated area.",
+      "conversion_rationale": "Supplementary literature discovery only. A high associated-paper count is evidence of a documented product family, not exact-edition usage, conversion priority, or native-format readiness. Review producer bytes, terms and existing record component coverage before promotion.",
+      "license_summary": "Exact release terms need product-specific review; no redistribution permission is inferred from literature or access pages.",
+      "evidence_urls": [
+        "https://www.fao.org/aquastat/en/resources/publications/reports/",
+        "https://www.fao.org/aquastat/en/geospatial-information/global-maps-irrigated-areas/latest-version/",
+        "https://doi.org/10.5194/hess-9-535-2005",
+        "https://doi.org/10.13140/2.1.2660.6728"
+      ],
+      "proposed_outputs": [
+        "Confirm exact product edition, component scope, native data format, access and license; compare against any existing canonical record before proposing conversion."
+      ],
+      "citation": {
+        "doi": "10.13140/2.1.2660.6728",
+        "work_id": "https://openalex.org/W6922407130",
+        "work_title": "Update of the digital global map of irrigation areas to version 5.",
+        "count": 89,
+        "count_date": "2026-11-01",
+        "count_observed_at": "2026-11-01T00:46:55.640411+00:00",
+        "count_provider": "OpenAlex public API",
+        "count_scope": "producer_dataset_update_report",
+        "lookup_status": "matched",
+        "api_http_status": 200,
+        "evidence_path": "research/global-candidates-20261031/literature/openalex-responses-20261101.json",
+        "evidence_key": "gmia_v5",
+        "count_is_exact_edition": true
+      },
+      "product_edition": "GMIA v5, circa 2005 static map at 5 arc-minutes; v5 technical report is DOI 10.13140/2.1.2660.6728. The older peer-reviewed 2005 development paper describes the original GMIA family and is retained as a separate related paper, not silently substituted for the v5 report count.",
+      "data_doi": null,
+      "identity_review_path": "research/global-candidates-20261031/literature/paper-identities.json",
+      "related_record_relationship": "related_release_different_product",
+      "identity_notes": "FAO/Bonn report directly describes v5; it is a technical report DOI and may not resolve as a Crossref/OpenAlex work.",
+      "related_paper_counts": [
+        {
+          "doi": "10.5194/hess-9-535-2005",
+          "title": "Development and validation of the global map of irrigation areas",
+          "work_id": "https://openalex.org/W2074288000",
+          "count": 620,
+          "observed_at": "2026-11-01T00:46:56.161361+00:00",
+          "provider": "OpenAlex",
+          "identity_note": "Peer-reviewed paper for original map development; kept distinct from the direct v5 report identity.",
+          "used_for_candidate_count": false,
+          "lookup_status": "matched"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "This supplementary sample was purposively selected from known producer dataset papers; it is not a literature-wide search or exhaustive citation leaderboard.",
+    "OpenAlex cited_by_count is observed on each request timestamp. It is separate from the frozen 2026-10-30 catalog study and must not be mixed into its ranking.",
+    "Paper citations may describe a product family or older release. Per-edition limitations appear in identity notes; citation count does not establish exact-release use.",
+    "Primary DOI lookup failures or DOI/title mismatches remain null/unresolved. Data release DOI citations are not queried or combined with paper counts.",
+    "No data assets were requested or downloaded; access and license notes are metadata observations, not validation of contents or legal rights."
+  ]
+}

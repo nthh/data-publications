@@ -1,0 +1,155 @@
+{
+  "dataset_record_path": "__REPO_ROOT__/datasets/hydrolakes/dataset.yaml",
+  "dataset_id": "hydrolakes",
+  "title": "HydroLAKES v1.0: Polygons",
+  "release_id": "v1-local-r2",
+  "release_version": "1.0.1",
+  "output_dir": "__PACKAGE_OUTPUT__",
+  "source_attribution": {
+    "url": "https://data.hydrosheds.org/file/hydrolakes/HydroLAKES_polys_v10_shp.zip",
+    "title": "HydroLAKES v1 polygon dataset",
+    "attribution": "HydroLAKES v1.0, Lehner and Messager / HydroSHEDS; source archive SHA-256 9ef63498569dd7ccd0b8d8852da026e009a75f42d293f00e483f3b9fcfe8e1f9.",
+    "version": "v1 (producer filename v10)",
+    "license": {
+      "license": "CC-BY-4.0",
+      "url": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  },
+  "producers": [
+    {
+      "name": "Lehner and Messager / HydroSHEDS",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://www.hydrosheds.org/products/hydrolakes"
+    }
+  ],
+  "source_fidelity_report_path": "__FIDELITY_ROOT__/source-fidelity.json",
+  "clean_rebuild_report_path": "__FIDELITY_ROOT__/clean-rebuild.json",
+  "assets": [
+    {
+      "asset_id": "hydrolakes-polygons",
+      "path": "__ARTIFACT_ROOT__/spatial-r3/hydrolakes.parquet",
+      "identifier_column": "Hylak_id",
+      "title": "HydroLAKES v1.0 polygons",
+      "description": "Complete global lake polygon layer; native identifiers and source attributes retained; raw WKB unchanged; bbox covering appended from WKB.",
+      "field_dictionary_path": "__REPO_ROOT__/datasets/hydrolakes/field-dictionary.json"
+    }
+  ],
+  "supporting_files": [
+    {
+      "path": "__ARTIFACT_ROOT__/source/HydroLAKES_TechDoc_v10.pdf",
+      "package_path": "source/HydroLAKES_TechDoc_v10.pdf",
+      "title": "HydroLAKES Technical Documentation v1.0",
+      "media_type": "application/pdf",
+      "description": "Producer field semantics, source limitations and original-format redistribution request."
+    },
+    {
+      "path": "__REPO_ROOT__/datasets/hydrolakes/releases/v1-local-r2/evidence/source-document.json",
+      "package_path": "provenance/source-document.json",
+      "title": "Producer technical document identity",
+      "media_type": "application/json"
+    },
+    {
+      "path": "__REPO_ROOT__/datasets/hydrolakes/releases/v1-local-r2/evidence/source-validation.json",
+      "package_path": "provenance/source-validation.json",
+      "title": "Complete independent source fidelity report",
+      "media_type": "application/json"
+    },
+    {
+      "path": "__REPO_ROOT__/datasets/hydrolakes/releases/v1-local-r2/evidence/clean-rebuild-raw.json",
+      "package_path": "provenance/clean-rebuild-raw.json",
+      "title": "Clean raw conversion rebuild report",
+      "media_type": "application/json"
+    },
+    {
+      "path": "__REPO_ROOT__/datasets/hydrolakes/releases/v1-local-r2/evidence/spatial-validation-retained.json",
+      "package_path": "provenance/spatial-validation-retained.json",
+      "title": "Retained asset spatial augmentation validation",
+      "media_type": "application/json"
+    },
+    {
+      "path": "__REPO_ROOT__/datasets/hydrolakes/releases/v1-local-r2/evidence/spatial-validation-clean-rebuild.json",
+      "package_path": "provenance/spatial-validation-clean-rebuild.json",
+      "title": "Clean rebuild spatial augmentation validation",
+      "media_type": "application/json"
+    },
+    {
+      "path": "__REPO_ROOT__/datasets/hydrolakes/releases/v1-local-r2/evidence/source-cache-eviction.json",
+      "package_path": "provenance/source-cache-eviction.json",
+      "title": "Source archive cache eviction receipt",
+      "media_type": "application/json"
+    },
+    {
+      "path": "__REPO_ROOT__/datasets/hydrolakes/releases/v1-local-r2/evidence/evidence-provenance.json",
+      "package_path": "provenance/evidence-provenance.json",
+      "title": "Evidence original hashes and portable copy hashes",
+      "media_type": "application/json"
+    }
+  ],
+  "data_license": {
+    "license": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "attribution": "HydroLAKES v1.0, Lehner and Messager / HydroSHEDS.",
+    "note": "The producer page states CC BY 4.0. The technical document also requests permission for redistribution of the complete database in its original format; this release is a transformed GeoParquet derivative. No broader legal determination is made here."
+  },
+  "source_license": {
+    "license": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "source_page": "https://www.hydrosheds.org/products/hydrolakes",
+    "technical_document_note": "The producer technical documentation requests permission for redistribution of the complete original-format database. This package distributes transformed GeoParquet and preserves that wording for review."
+  },
+  "stac_license": "CC-BY-4.0",
+  "citation": "Messager, M.L., Lehner, B., Grill, G., Nedeva, I., Schmitt, O. (2016). Estimating the volume and age of water stored in global lakes using a geo-statistical approach. Nature Communications 7, 13603. https://doi.org/10.1038/ncomms13603.",
+  "description": "Static global lake polygons derived from composite legacy shoreline sources. This is not a 2026 shoreline observation; no GEE parity or independent scientific-accuracy claim is made.",
+  "temporal_interval": [
+    null,
+    null
+  ],
+  "created": "2026-10-31T00:00:00Z",
+  "code_revision": "442460af45f424f6669ba3ddd1d2d777e871c208",
+  "workflow_paths": [
+    "datasets/hydrolakes/acquire.py",
+    "datasets/hydrolakes/convert.py",
+    "datasets/hydrolakes/validate.py",
+    "datasets/hydrolakes/test_convert.py",
+    "datasets/hydrolakes/test_validation.py",
+    "datasets/hydrolakes/pyproject.toml",
+    "datasets/hydrolakes/uv.lock",
+    "datasets/hydrolakes/field-dictionary.json",
+    "datasets/hydrolakes/VALIDATION.md",
+    "datasets/hydrolakes/README.md",
+    "research/hydro-releases-20261031/bind_fidelity.py",
+    "research/hydro-releases-20261031/test_bind_fidelity.py",
+    "datasets/hydrolakes/releases/v1-local-r2/evidence/materialize_release_inputs.py",
+    "datasets/hydrolakes/releases/v1-local-r2/evidence/fidelity-normalizer-template.json",
+    "datasets/hydrolakes/releases/v1-local-r2/evidence/package-spec-template.json",
+    "datasets/hydrolakes/releases/v1-local-r2/README.md"
+  ],
+  "workflow_revisions": {
+    "datasets/hydrolakes/acquire.py": "442460af45f424f6669ba3ddd1d2d777e871c208",
+    "datasets/hydrolakes/convert.py": "442460af45f424f6669ba3ddd1d2d777e871c208",
+    "datasets/hydrolakes/validate.py": "442460af45f424f6669ba3ddd1d2d777e871c208",
+    "datasets/hydrolakes/test_convert.py": "442460af45f424f6669ba3ddd1d2d777e871c208",
+    "datasets/hydrolakes/test_validation.py": "442460af45f424f6669ba3ddd1d2d777e871c208",
+    "datasets/hydrolakes/pyproject.toml": "442460af45f424f6669ba3ddd1d2d777e871c208",
+    "datasets/hydrolakes/uv.lock": "442460af45f424f6669ba3ddd1d2d777e871c208",
+    "datasets/hydrolakes/field-dictionary.json": "e2f3ed8e3b092b681f1631e2d2834e1f51c98296",
+    "datasets/hydrolakes/VALIDATION.md": "e2f3ed8e3b092b681f1631e2d2834e1f51c98296",
+    "datasets/hydrolakes/README.md": "e2f3ed8e3b092b681f1631e2d2834e1f51c98296",
+    "research/hydro-releases-20261031/bind_fidelity.py": "e2f3ed8e3b092b681f1631e2d2834e1f51c98296",
+    "research/hydro-releases-20261031/test_bind_fidelity.py": "e2f3ed8e3b092b681f1631e2d2834e1f51c98296",
+    "scripts/release_tools/package_release.py": "7cc922857065883d1803a6892a5a160ce5a4f722",
+    "scripts/release_tools/serve.py": "7cc922857065883d1803a6892a5a160ce5a4f722",
+    "scripts/release_tools/pyproject.toml": "7cc922857065883d1803a6892a5a160ce5a4f722",
+    "scripts/release_tools/uv.lock": "7cc922857065883d1803a6892a5a160ce5a4f722",
+    "scripts/release_tools/package.json": "7cc922857065883d1803a6892a5a160ce5a4f722",
+    "scripts/release_tools/package-lock.json": "7cc922857065883d1803a6892a5a160ce5a4f722",
+    "scripts/release_tools/README.md": "7cc922857065883d1803a6892a5a160ce5a4f722",
+    "scripts/release_tools/AGENTS.md": "7cc922857065883d1803a6892a5a160ce5a4f722",
+    "scripts/release_tools/test_package_release.py": "7cc922857065883d1803a6892a5a160ce5a4f722",
+    "scripts/release_tools/add_spatial_bounds.py": "e2f3ed8e3b092b681f1631e2d2834e1f51c98296",
+    "scripts/release_tools/test_spatial_bounds.py": "e2f3ed8e3b092b681f1631e2d2834e1f51c98296"
+  }
+}

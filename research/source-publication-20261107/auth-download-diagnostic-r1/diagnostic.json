@@ -1,0 +1,86 @@
+{
+  "authorization_probe": {
+    "body_bytes": 0,
+    "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "checked_at_utc": "2026-11-07T19:55:18.104432Z",
+    "endpoint": "https://auth.source.coop/oauth2/auth",
+    "headers": {
+      "CF-Ray": "a56ee50d8f6d5305-SLC",
+      "Content-Disposition": null,
+      "Content-Length": "0",
+      "Content-Type": null,
+      "Retry-After": null,
+      "Server": "cloudflare",
+      "Via": "1.1 google",
+      "X-RateLimit-Limit": "375, 38;w=1, 375;w=60",
+      "X-RateLimit-Remaining": "0",
+      "X-RateLimit-Reset": "42"
+    },
+    "http_status": 429,
+    "method": "GET",
+    "request_scope": "Anonymous request with public official CLI client ID, response_type=code, openid offline_access, unused loopback callback, fresh random PKCE challenge and state; no cookies, no token exchange, no redirects followed."
+  },
+  "cli_comparison": {
+    "auth_command_note": "auth login/status/logout was added on main October 14, after v0.3.0. auth is not supported by either installed release; this explains the command mismatch, not the empty download.",
+    "callback_response": "Both v0.2.0 and v0.3.0, and inspected main, explicitly send HTTP 200 and Content-Type: text/html with the Authentication Successful page from localhost /callback.",
+    "latest_tagged_release": "0.3.0",
+    "latest_tagged_release_date": "2026-09-24T21:42:20Z",
+    "local_default": "0.2.0",
+    "main_auth_command_change": "https://github.com/source-cooperative/source-coop-cli/commit/f31ae440c0b86080368844018eb7e3049a26c317",
+    "uploader": "0.3.0",
+    "v030_source": "https://github.com/source-cooperative/source-coop-cli/blob/v0.3.0/src/oidc.rs#L198"
+  },
+  "conclusion": {
+    "established": "The valid CLI authorization request is rate-limited upstream, before any redirect to the localhost callback. Credential refresh independently returned HTTP 429 in earlier retained diagnostics.",
+    "inference": "The empty auth download is consistent with this zero-byte authorization response, whose path ends in auth and lacks a Content-Type. The exact browser network response has not been independently captured.",
+    "not_established": [
+      "Which tenant, application, IP or account shares the exhausted limit.",
+      "Which requests exhausted it.",
+      "That the website hotfix caused the rate limit.",
+      "That changing the CLI version resolves this server-side response."
+    ]
+  },
+  "discovery_probe": {
+    "authorization_endpoint": "https://auth.source.coop/oauth2/auth",
+    "checked_at_utc": "2026-11-07T19:54:02.498601Z",
+    "content_type": "application/json; charset=utf-8",
+    "credential_material": "none",
+    "http_status": 200,
+    "token_endpoint": "https://auth.source.coop/oauth2/token",
+    "url": "https://auth.source.coop/.well-known/openid-configuration"
+  },
+  "download": {
+    "file_basename": "auth",
+    "origin_metadata": "No WhereFroms xattr; matching Chrome download record unavailable; Safari Downloads metadata denied by OS privacy protection. Exact browser response headers were not captured.",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "followup_criteria": {
+    "classifications": [
+      "429: rate limit remains active; no further login/token retries in this diagnostic.",
+      "Other response: report exact status and headers; do not treat it as proof of completed login."
+    ],
+    "cookies": "none",
+    "maximum_additional_authorization_requests": 1,
+    "maximum_body_bytes": 65537,
+    "minimum_wait_seconds_after_probe": 60,
+    "prepared_before_followup": true,
+    "publication_effect": "None; leave listings and repository visibility unchanged.",
+    "redirects_followed": 0,
+    "same_public_client_and_scope": true,
+    "token_requests": 0
+  },
+  "public_source_website_release": {
+    "production_deploy_conclusion": "success",
+    "production_deploy_finished_at_utc": "2026-11-07T01:23:20Z",
+    "production_deploy_run": "https://github.com/source-cooperative/source.coop/actions/runs/42323605786",
+    "production_deploy_sha": "2e4623c92170ac63382d80920789f3d5d6062ecb",
+    "published_at_utc": "2026-11-07T01:21:11Z",
+    "release_url": "https://github.com/source-cooperative/source.coop/releases/tag/v1.7.1",
+    "scope": "Account public-view fixes backported from PR 737 in PR 738, plus PR 739. These release changes do not alter the CLI callback HTTP response. No causal link to the authentication rate limit established.",
+    "tag": "v1.7.1"
+  },
+  "purpose": "Explain the empty auth download during Source CLI login. No credentials, cookies, authorization codes or OAuth URL query values are retained.",
+  "recorded_at_utc": "2026-11-07T19:56:48.084644+00:00",
+  "schema_version": 1
+}

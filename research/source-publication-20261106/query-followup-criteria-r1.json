@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "kind": "hosted_query_transport_followup_criteria",
+  "reason": "The original LakeATLAS hosted gate failed during the full-column subset query with opaque DuckDB diagnostics. Browser rendering and field lookup passed independently. Local Parquet statistics show the frozen ID-only query can touch 52 polygon row groups (536490482 compressed column bytes); exact local bbox predicates reduce the candidate groups to 4 (35223182 compressed column bytes). These estimates do not identify the original failure cause or guarantee actual HTTP bytes.",
+  "original_query_controls": {
+    "path": "research/source-publication-20261106/controls-r1.json",
+    "sha256": "9fab1ab0408ac437ed7b3161be79beccef167556297010780fb746205473f749"
+  },
+  "upload_plan_sha256": "754c02dde3cf258263619599f893558d3348c7fb51c07f8fa700efa1900ac610",
+  "spatial_hints": {
+    "path": "research/source-publication-20261106/query-spatial-hints-r1.json",
+    "sha256": "1800adfffc1bd7ecd2fbcafc752ceba9f882146a8098a7eaf7e873cc45f486d6"
+  },
+  "unchanged_acceptance": [
+    "Same dataset editions, immutable Parquet bytes, fixed IDs and all source columns including geometry/WKB.",
+    "Remote footer row count and unfiltered ID multiplicities must match the pinned local release.",
+    "Validate every spatial hint against the actual local covering bbox; retain all selected rows and full-row multiset equality.",
+    "No conversion, geometry correction, new sample selection or relaxed value comparison."
+  ],
+  "transport": {
+    "upstream": "Anonymous HTTPS to exact planned Source Parquet URLs only. No local data responses.",
+    "mechanism": "Instrumented loopback forwarding proxy for DuckDB, with exact allowlist, HEAD checks, bounded Range GETs and redirect refusal.",
+    "per_request_maximum_bytes": 67108864,
+    "per_asset_maximum_reserved_and_response_body_bytes": 134217728,
+    "failure_policy": "Fail before a full GET, unapproved URL, malformed/out-of-bounds range or over-budget upstream request. Record transfer ledger and every failure.",
+    "scope": "Proxy measures and caps subset-query HTTP reads. Separate metadata and fixed range checks retain their existing bounded behavior."
+  },
+  "evidence_policy": "Preserve earlier failed reports and distinguish compressed row-group estimates from measured HTTP response bytes. Passing these checks establishes hosted read equivalence, not scientific accuracy or strict GEE parity."
+}

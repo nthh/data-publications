@@ -1,0 +1,33 @@
+schema_version: 1
+id: mangrove_ht_tandemx
+title: Global Mangrove Canopy Height Raster Derived from TanDEM-X
+community_url: https://gee-community-catalog.org/projects/mangrove_ht_tandemx
+audit:
+  snapshot: gee-community-audit-20261029
+  family_key: mangrove_ht_tandemx
+  unique_gee_asset_count: 2
+  initial_queue: review_external_native_counterpart
+  folia_registry_status: not_identified
+  folia_registry_ids: []
+  source_coop_urls: []
+  source_coop_scope: null
+  external_native_urls:
+  - https://daac.ornl.gov/CMS/guides/CMS_Global_Mangrove_Forest_Ht.html
+  external_native_scope: 2015 canopy-height raster only; excludes GEDI shot table.
+    Provider guide declares 1,443 COGs; guide indexed, direct open returned 403.
+triage:
+  decision: pending
+  priority: normal
+review:
+  citation_assessment:
+    as_of: '2026-10-29'
+    provider: OpenAlex
+    evidence_path: research/citations/rankings.json
+    evidence_key: mangrove_ht_tandemx
+    geographic_scope: global
+    paper_count_status: matched
+    max_paper_citations: 29
+    max_data_doi_citations: 2
+    top_paper_doi: https://doi.org/10.1038/s41597-024-04213-z
+    top_paper_openalex_id: https://openalex.org/W4406060151
+    citation_scope: associated_dataset_publication

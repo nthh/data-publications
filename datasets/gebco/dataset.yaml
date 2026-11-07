@@ -1,0 +1,79 @@
+schema_version: 1
+id: gebco
+title: GEBCO 2023 Grid
+community_url: https://gee-community-catalog.org/projects/gebco
+audit:
+  snapshot: gee-community-audit-20261029
+  family_key: gebco
+  unique_gee_asset_count: 3
+  initial_queue: review_source_coop_counterpart
+  folia_registry_status: related_only
+  folia_registry_ids:
+  - '@gebco/gebco-2024'
+  source_coop_urls:
+  - https://source.coop/ausantarctic/gebco
+  - https://source.coop/giswqs/gebco-bathymetry
+  source_coop_scope: Same GEBCO grid/TID/sub-ice product family, but Source Coop versions
+    are 2024-2026 while the GEE family is GEBCO 2023. Do not imply the 2023 raster
+    itself is mirrored. | GEBCO 2026 edition, newer than the catalog's 2023 assets;
+    format is explicitly COG.
+  external_native_urls:
+  - https://source.coop/ausantarctic/gebco
+  - https://source.coop/giswqs/gebco-bathymetry
+  external_native_scope: Same GEBCO grid/TID/sub-ice product family, but Source Coop
+    versions are 2024-2026 while the GEE family is GEBCO 2023. Do not imply the 2023
+    raster itself is mirrored. | GEBCO 2026 edition, newer than the catalog's 2023
+    assets; format is explicitly COG.
+triage:
+  decision: pending
+  priority: normal
+review:
+  citation_assessment:
+    as_of: '2026-10-29'
+    provider: OpenAlex
+    evidence_path: research/citations/rankings.json
+    evidence_key: gebco
+    geographic_scope: global
+    paper_count_status: unknown
+    max_paper_citations: null
+    max_data_doi_citations: 139
+    top_paper_doi: null
+    top_paper_openalex_id: null
+    citation_scope: associated_dataset_publication
+
+# Cross-catalog discovery: global-candidates-20261031
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'supplemental: Current GEBCO_2026 grid spans 89°59′52.5″N to 89°59′52.5″S on a 15
+    arc-second grid, with ocean bathymetry and land elevation. Supplemental producer discovery; no citation
+    count inferred.'
+  sources:
+  - provider: producer
+    entry_id: GEBCO_2026 Grid
+    url: https://www.gebco.net/data-products-gridded-bathymetry-data/gebco2026-grid
+    relationship: related_release
+  access:
+  - provider: producer
+    status: download_available
+    formats:
+    - Esri ASCII raster
+    - GeoTIFF
+    - NetCDF-4
+    summary: Producer provides global files, tiled downloads and OPeNDAP access; annual editions and Type
+      Identifier/sub-ice products remain distinct components. Supplemental producer discovery; no citation
+      count inferred.
+    license_summary: Producer states GEBCO grids are public domain with source acknowledgement and safety-use
+      disclaimer.
+    proposed_outputs: []
+    rationale: Review exact source, existing native hosts and redistribution terms before selecting a
+      conversion.
+    evidence_urls:
+    - https://www.gebco.net/data-products-gridded-bathymetry-data/gebco2026-grid
+    - https://www.gebco.net/data-products/gridded-bathymetry-data
+  citations: []
+  evidence:
+  - path: research/global-candidates-20261031/citations/supplemental-global.json
+    sha256: 8eecd1b6859f60c355df02ed5f4f4bea5bcdfe69f156abafa95e9c622b975202
+    key: gebco_global_grid

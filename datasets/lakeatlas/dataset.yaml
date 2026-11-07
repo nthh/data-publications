@@ -1,0 +1,355 @@
+schema_version: 1
+id: lakeatlas
+title: HydroATLAS LakeATLAS v1.0 — global hydro-environmental lake attributes
+intake:
+  kind: producer
+  reference_url: https://www.hydrosheds.org/hydroatlas
+  added_on: '2026-10-31'
+  related_family: hydroatlas
+triage:
+  decision: publish_conversion
+  priority: pilot_review
+source:
+  producer: HydroSHEDS / HydroATLAS authors
+  release: LakeATLAS version 1.0
+  version: '1.0'
+  observation_vintage: Varies by contributing attribute; see producer catalog and technical documentation.
+  figshare_article_id: 19312001
+  doi: 10.6084/m9.figshare.19312001.v1
+  paper: Lehner, B., Messager, M.L., Korver, M.C., Linke, S. (2022). Global hydro-environmental lake characteristics
+    at high spatial resolution. Scientific Data 9, 351.
+  paper_doi: 10.1038/s41597-022-01425-z
+  url: https://ndownloader.figshare.com/files/35959544
+  filename: LakeATLAS_Data_v10.gdb.zip
+  size_bytes: 1530962499
+  provider_md5: 952e0724afc96d3a5899f08935d4a094
+  sha256: baa4d760a163350dd6a30c21c82db1e23b150834a8b848885eba6dc9ba1175df
+  source_layers:
+  - name: LakeATLAS_v10_pol
+    geometry: MultiPolygon
+    expected_rows: 1427688
+    source_fields: 307
+    fid_column: OBJECTID
+    output_source_fields: 308
+  - name: LakeATLAS_v10_pnt
+    geometry: Point
+    expected_rows: 1427688
+    source_fields: 305
+    fid_column: OBJECTID
+    output_source_fields: 306
+  crs: EPSG:4326
+  archive_uncompressed_bytes: 3061068949
+  field_catalog:
+    url: https://ndownloader.figshare.com/files/35959535
+    filename: LakeATLAS_Catalog_v10.pdf
+    size_bytes: 54055742
+    provider_md5: dfb3501640ed034360486a8304d00d8b
+    sha256: e736eedbbe32cdeb498348696b9d085b1caddd937a19c7c669501deaffe670e1
+  technical_documentation:
+    url: https://ndownloader.figshare.com/files/35959532
+    filename: HydroATLAS_TechDoc_v10_1.pdf
+    size_bytes: 3656999
+    provider_md5: f37085c99a987752a37d8327c0a96922
+    sha256: 0ad77c88140d8a0b569d79d5cceadf727b558a7e422a36b9c394cc593db2ccab
+  license:
+    id: CC-BY-4.0
+    url: https://creativecommons.org/licenses/by/4.0/
+    evidence: HydroSHEDS product page and Figshare v1 article metadata; the producer states that column-level
+      content is licensed CC-BY-4.0 or ODbL-1.0 as listed per attribute in LakeATLAS_Catalog_v10.pdf.
+  version_checked_on: '2026-10-31'
+review:
+  as_of: '2026-10-31'
+  source_release: LakeATLAS version 1.0 (Figshare article version 1)
+  proposed_scope: Complete global polygon and pour-point layers; both contain 1,427,688 lake records.
+  proposed_outputs:
+  - geoparquet
+  paper_citation: Lehner, B., Messager, M.L., Korver, M.C., Linke, S. (2022). Global hydro-environmental
+    lake characteristics at high spatial resolution. Scientific Data 9, 351.
+  paper_doi: 10.1038/s41597-022-01425-z
+  source_license:
+    id: CC-BY-4.0
+    url: https://creativecommons.org/licenses/by/4.0/
+    evidence: The collective HydroATLAS database is CC-BY-4.0. Individual attribute columns are CC-BY-4.0
+      or ODbL-1.0 per LakeATLAS_Catalog_v10.pdf; see the bundled field catalog for column-specific notices.
+  spatial:
+    extent: Global; exact per-layer extent is pinned in the source/build manifests.
+    crs: EPSG:4326 (WGS 84 geographic)
+    geometry: Lake polygon footprints and separate pour-point locations.
+  temporal:
+    extent: Static publication; observation years/periods vary by attribute.
+    resolution: Variable by source attribute; consult the producer field catalog.
+  field_units: Retained in the bundled LakeATLAS catalog PDF and schema inventory.
+  nulls: Source nulls are preserved without imputation; full per-field null counts are reported.
+  uncertainty: Source-specific uncertainty and provenance are described in the producer catalog; no harmonized
+    uncertainty field is inferred.
+  multiplicity: Keep every record in each native layer. Polygon and pour-point layers are separate assets
+    and share native Hylak_id values by design.
+  acceptance_criteria:
+    path: validation-plan.md
+    recorded_before_evaluation: true
+  version_review_path: research/hydro-releases-20261031/version-review/producer-version-review.md
+  availability:
+    shortlist_id: native-publication-gaps-20261031
+    rank: 1
+    reviewed_on: '2026-11-01'
+    label: LakeATLAS v1.0
+    scope: Global lake polygons AND pour points with all producer attributes; selected FileGDB representation.
+    geographic_scope: global
+    download:
+      bytes: 1530962499
+      precision: exact
+      reported_size: null
+      format: FileGDB ZIP
+      file_count: 1
+      basis: validated_download
+      note: Exact selected archive size from the previously downloaded, checksum-validated source pin.
+        Excludes optional formats, separate layers and documentation.
+      evidence_urls:
+      - https://doi.org/10.6084/m9.figshare.19312001.v1
+      - https://ndownloader.figshare.com/files/35959544
+    locations:
+    - service_id: figshare
+      label: Figshare
+      platform: external
+      relationship: matching_scope
+      access: download
+      formats:
+      - FileGDB ZIP
+      urls:
+      - https://doi.org/10.6084/m9.figshare.19312001.v1
+      - https://ndownloader.figshare.com/files/35959544
+      asset_ids: []
+      note: Producer landing page, DOI and repository/CDN download links identify one distribution service;
+        they are not separate hosts.
+    - service_id: earth_engine
+      label: GEE community
+      platform: gee
+      relationship: matching_scope
+      access: gee_collection
+      formats:
+      - Earth Engine FeatureCollection
+      urls:
+      - https://gee-community-catalog.org/projects/hydroatlas/
+      asset_ids:
+      - projects/sat-io/open-datasets/HydroAtlas/LakeAtlas/LakeAtlas_v10_polygon
+      - projects/sat-io/open-datasets/HydroAtlas/LakeAtlas/LakeAtlas_v10_point
+      note: Catalog-declared edition and scope; no new live GEE requests or full content comparison in
+        this review.
+    output_manifest:
+      path: datasets/lakeatlas/releases/lakeatlas-v1.0-r2/evidence/prepared-local/manifest.json
+      sha256: 32b4877b8809cabd3e2caca8da175115e8ff8317402058846ed0db06a54d52e9
+    evidence:
+    - path: research/availability-sizes-20261101/observations.json
+      sha256: a7c4fd21000b497faf92810420cde5cc4ee80ae533721dd13c69cb7e692fcd7b
+      key: lakeatlas
+    source_size_key: size_bytes
+  publication_readiness:
+    reviewed_on: '2026-11-07'
+    stage: hosted_verified_pending_catalog_deployment
+    asset_integrity: passed_fresh_sha256_audit
+    integrity_evidence:
+      path: research/gdw-swot-preparation-20261101/prepared-packages.json
+      sha256: 712a71ca57f472cd1121941e132958f745e4468bfdb267b217466eccf49eaf1e
+    scientific_validation_rerun: false
+    local_followup: []
+    public_followup:
+    - Deploy and verify the aggregate catalog in Portolan Browser.
+    - Submit to the main Portolan registry only after a separate decision.
+    published: true
+    local_render:
+      status: passed_bounded_local_browser_demonstration
+      evidence_path: research/source-products-20261101/render/render-evidence.json
+      evidence_sha256: cdead48b6ed51777a9e2fd6fa95ac0577f41f177874dbca1bf9a466031cbb64c
+      scope: Four analytical layers across five fixed regions; up to 1,000 source IDs per layer/window
+        with clipped and simplified display geometry. A fixed narrower HydroLAKES control returned all
+        295 matches. Requires local query server; no public browser or global visual-completeness claim.
+    field_semantics:
+      status: documented_in_versioned_supplement
+      path: datasets/lakeatlas/metadata-enhancements/v1/field-semantics.json
+      sha256: 1ea75124f2943c480002ec02e132d1ae5a15e6d4c423fd4cf98c0fdad3fbf277
+      producer_fields_per_layer: 305
+      catalog_attributes_per_layer: 281
+      inherited_hydrolakes_attributes_per_layer: 24
+      analytic_assets_changed: false
+      source_notes: Inherited HydroLAKES source-product license and LakeATLAS per-attribute catalog terms
+        are separately represented; geodatabase defaults and package fields are labeled.
+    hosting_evidence:
+      path: research/source-publication-20261106/hosted-results/lakeatlas/hosted-validation.json
+      sha256: d69b19dd84119a196102a7d675ef5a79a1024fdda832874bf1a3c4bd0810eb27
+  source_selection_audit:
+    reviewed_on: '2026-11-02'
+    path: research/grwl-raw-release-20261102/source-audit/hydro-audit.json
+    sha256: 7b1a1ad5332f1a03bf2551a5bd3a55dad00e73a8a50b9ced1e5b70a8f1fcd30b
+    finding: Both official FileGDB layers and all decoded fields retained. No lower-detail source substitution
+      found; decoded geometry comparisons share GDAL/OpenFileGDB.
+    scientific_accuracy_independently_revalidated: false
+  validation_gate_followup:
+    path: research/grwl-raw-release-20261102/source-audit/validation-gate-followup-r1.json
+    sha256: b8e4ff61664bb6d285403b475282c2d59c9efebbdc9887608c235d411a2f1c86
+    dataset_id: lakeatlas
+    finding: Both layers preserve the complete GDAL/OpenFileGDB-decoded source; no analogous omission
+      found.
+    resolution: Documented shared decoder and sampled secondary-reader limitations.
+    retained_data_affected: No omission found; FileGDB ring encoding and independent scientific truth
+      are outside the existing check.
+  gee_validation:
+    reviewed_on: '2026-11-06'
+    status: completed_sampled_with_documented_differences
+    strict_parity: failed_retained
+    evidence:
+      path: research/gee-release-validation-20261106/summary.json
+      sha256: 673dc8c3c4bc426aca44a11d0a54a826b868440faecddb50e226dd5990a106c8
+      dataset_id: lakeatlas
+    layers:
+    - lakeatlas-polygons
+    - lakeatlas-points
+    finding: Live GEE counts and 522 sampled IDs per layer match. Both layers have numeric differences
+      including integral GEE GDP values; the polygon layer also has three narrow source spikes absent
+      spatially from GEE. Strict parity fails. No exhaustive GEE or independent scientific-accuracy claim.
+    scientific_accuracy_independently_revalidated: false
+    data_modified: false
+build:
+  status: local_release_prepared
+  format: GeoParquet
+  analytic_only: true
+  entrypoint: build.py
+  environment: uv.lock
+  validation_plan: validation-plan.md
+  batch_size: 1024
+  geometry_batch_size: 128
+  parquet_row_group_size: 4096
+  release_id: lakeatlas-v1.0-r2
+  spatial_order:
+    entrypoint: scripts/release_tools/spatial_order.py
+    code_revision: b6579442c8a0ba73e38b444f143bb6194ef056e5
+    method: Hilbert16 bbox-center order with native OBJECTID tie-break; complete source-column and per-ID
+      WKB validation
+    bucket_count: 128
+    max_row_group_size: 16384
+    validation: Fresh process completes the immutable staged checkpoint; both phases retain the 1,000,000,000-byte
+      peak RSS limit.
+publication:
+  display:
+    release: display-v1
+    manifest_path: datasets/lakeatlas/display/display-v1/manifest.json
+    manifest_sha256: ed70989525111682a294b6aadf1118a1ebfaefff863d645c6c805c5e8eafb70f
+    package_base_url: https://data.source.coop/nthh/lakeatlas/display/display-v1/
+    hosting_report_path: research/source-publication-20261106/hosted-results/lakeatlas/hosted-validation.json
+    hosting_report_sha256: d69b19dd84119a196102a7d675ef5a79a1024fdda832874bf1a3c4bd0810eb27
+  status: published
+  release: lakeatlas-v1.0-r2
+  immutable_prefix: null
+  local_artifacts:
+    status: passed_all_local_gates
+    directory: .local/lakeatlas/releases/lakeatlas-v1.0-r2-prepared
+    source_order_directory: .local/lakeatlas/releases/lakeatlas-v1.0-r1-rowgroup4096
+  source_cooperative:
+    status: hosted_verified_public
+    url: https://source.coop/nthh/lakeatlas
+    owner: nthh
+    product: lakeatlas
+    visibility: public
+  portolan:
+    status: not_submitted
+    url: null
+  validation_evidence:
+  - datasets/lakeatlas/releases/lakeatlas-v1.0-r1/source-fidelity.json
+  - datasets/lakeatlas/releases/lakeatlas-v1.0-r1/clean-rebuild.json
+  - datasets/lakeatlas/releases/lakeatlas-v1.0-r2/evidence/prepared-local/evidence/source-fidelity.json
+  - datasets/lakeatlas/releases/lakeatlas-v1.0-r2/evidence/prepared-local/evidence/clean-rebuild.json
+  - datasets/lakeatlas/releases/lakeatlas-v1.0-r2/evidence/prepared-local/evidence/portolan-validation.json
+  - datasets/lakeatlas/releases/lakeatlas-v1.0-r2/evidence/prepared-local/evidence/local-http-duckdb-validation.json
+  - datasets/lakeatlas/releases/lakeatlas-v1.0-r2/evidence/prepared-local/evidence/final-package-verification.json
+  - research/hydro-releases-20261031/lakeatlas-parent-rebuild-verification.json
+  - research/hydro-releases-20261031/lakeatlas-parent-verification.json
+  limitations:
+  - Source fidelity does not establish scientific accuracy of the contributing attributes.
+  - Attribute observation vintage varies; this release is not a single-year observation.
+  - PMTiles display-v1 is published separately for polygons and pour points; use GeoParquet for analysis.
+  - Source polygon WKB is decoded using GDAL OpenFileGDB ring organization; a source feature with more
+    than 100 parts emits a warning. No later geometry repair or simplification is applied.
+  - The aggregate catalog deployment and registry decision remain pending; hosted validation is recorded
+    separately from historical loopback checks.
+  - Live GEE counts and 522 sampled IDs per layer match. Both layers have numeric differences including
+    integral GEE GDP values; the polygon layer also has three narrow source spikes absent spatially from
+    GEE. Strict parity fails. No exhaustive GEE or independent scientific-accuracy claim.
+  last_package_status: passed_all_local_gates
+  cleanup_approval: approved_completed
+  cleanup_plan_path: research/hydro-releases-20261031/cleanup-approval-plan.json
+  local_processing_order: 5
+  conversion_git_commit: e0d34d47dfd8f00ee78626a84ea702b75450243e
+  raw_code_revision: 691fc304a2df25d04c13652d6429ff0e32993be2
+  spatial_code_revision: b6579442c8a0ba73e38b444f143bb6194ef056e5
+  manifest_path: datasets/lakeatlas/releases/lakeatlas-v1.0-r2/evidence/prepared-local/manifest.json
+  manifest_sha256: 32b4877b8809cabd3e2caca8da175115e8ff8317402058846ed0db06a54d52e9
+  release_receipt_path: datasets/lakeatlas/releases/lakeatlas-v1.0-r2/evidence/prepared-local/package-receipt.json
+  validation_path: datasets/lakeatlas/releases/lakeatlas-v1.0-r2/evidence/prepared-local/evidence/final-package-verification.json
+  local_bundle_directory: .local/lakeatlas/releases/lakeatlas-v1.0-r2-prepared
+  previous_failed_releases:
+  - lakeatlas-v1.0-r1
+  validation:
+    source_rows_per_layer: 1427688
+    raw_clean_rebuild: byte_identical
+    spatial_clean_rebuild: byte_identical
+    source_values_nulls_wkb: passed_complete_source_reread_and_per_ID_spatial_comparison
+    final_columns:
+      lakeatlas-polygons: 310
+      lakeatlas-pour-points: 308
+    final_row_groups_per_asset: 128
+    fixed_geographic_pruning: passed_all_four_windows_for_both_assets
+    stac: passed
+    portolan: passed
+    http: passed_loopback
+    gee: completed_sampled_with_documented_differences
+    remote_host: passed
+  catalog:
+    snapshot_path: datasets/lakeatlas/releases/lakeatlas-v1.0-r2/catalog-input-r1/snapshot.json
+    snapshot_sha256: 3fa5701ff342a55daa1a0eda0e38070cd945bc902ff12bf0488c5d4ce302078b
+    package_base_url: https://data.source.coop/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/
+    hosting_report_path: research/source-publication-20261106/hosted-results/lakeatlas/hosted-validation.json
+    hosting_report_sha256: d69b19dd84119a196102a7d675ef5a79a1024fdda832874bf1a3c4bd0810eb27
+  source_coop:
+    owner: nthh
+    owner_status: confirmed
+    account_verification:
+      status: confirmed
+      owner: nthh
+      evidence_path: research/source-publication-20261106/account-verification.json
+      evidence_sha256: 5515f007abc95b38131ac42d95f358a07d4b6f8d950e38d1a202916635460cdc
+    product_id: lakeatlas
+    title: LakeATLAS v1.0 — global lake attributes and pour points
+    summary: LakeATLAS lake polygons and pour points with hydro-environmental attributes in separate spatially
+      ordered GeoParquet files, with a versioned field-semantics supplement. Separately versioned PMTiles
+      provide map display for both layers and source-ID attribute lookup.
+    tags:
+    - hydrology
+    - lakes
+    - catchments
+    - global
+    - geoparquet
+    - pmtiles
+    license_note: 'Mixed field-level terms: the producer catalog identifies CC BY 4.0 and ODbL 1.0 attributes.
+      Retain the catalog, source attribution and original-source notices; do not describe the entire attribute
+      table as uniformly CC BY 4.0.'
+    attribution: HydroSHEDS / HydroATLAS authors; Lehner, Messager, Korver and Linke (2022), DOI 10.1038/s41597-022-01425-z.
+      Original conversion evidence retains Folia attribution.
+    temporal_note: Observation and model-input dates vary by contributing attribute; use the producer
+      catalog and field supplement for interpretation.
+    limitations:
+    - Polygons and pour points are distinct producer layers, each retained separately.
+    - Attribute codes, scaling, spatial extent and aggregation rules must be interpreted using the versioned
+      field-semantics supplement and producer documentation.
+    - The metadata supplement is separate from the unchanged immutable r2 analytical package.
+    - Live GEE counts and 522 sampled IDs per layer match. Both layers have numeric differences including
+      integral GEE GDP values; the polygon layer also has three narrow source spikes absent spatially
+      from GEE. Strict parity fails. No exhaustive GEE or independent scientific-accuracy claim.
+    supplements:
+    - path: datasets/lakeatlas/metadata-enhancements/v1/field-semantics.json
+      sha256: 1ea75124f2943c480002ec02e132d1ae5a15e6d4c423fd4cf98c0fdad3fbf277
+      destination: metadata/field-semantics-v1/field-semantics.json
+    - path: datasets/lakeatlas/metadata-enhancements/v1/README.md
+      sha256: deed60afba2efdd7ec64cb72177b3774e8a8f32cf4210008b97db0dc8697be3f
+      destination: metadata/field-semantics-v1/README.md
+    - path: datasets/lakeatlas/metadata-enhancements/v1/build_semantics.py
+      sha256: 4791c79466b34ae8aa42e96e2eb6cba59404d06a59384ce60dcbdb36de4e06f8
+      destination: metadata/field-semantics-v1/build_semantics.py

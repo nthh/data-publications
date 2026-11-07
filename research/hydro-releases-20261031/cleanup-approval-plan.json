@@ -1,0 +1,141 @@
+{
+  "status": "completed_user_authorized",
+  "date": "2026-10-31",
+  "root": "<data-publications checkout>",
+  "purpose": "Remove superseded layouts and duplicate failed-package payloads to stay within the predeclared 8 GB per-dataset processing budget.",
+  "proposed_deletions": [
+    {
+      "path": ".local/hydrolakes/spatial-clean-r3/hydrolakes.parquet",
+      "size_bytes": 1001702072,
+      "sha256": "273f66aa591f575616e731e6f31111ddf8ecfb39c0c05eacf0e903b6ddd6944d"
+    },
+    {
+      "path": ".local/hydrolakes/spatial-r3/hydrolakes.parquet",
+      "size_bytes": 1001702072,
+      "sha256": "273f66aa591f575616e731e6f31111ddf8ecfb39c0c05eacf0e903b6ddd6944d"
+    },
+    {
+      "path": ".local/hydrolakes/releases/v1-local-r1/assets/hydrolakes-polygons.parquet",
+      "size_bytes": 1001702072,
+      "sha256": "273f66aa591f575616e731e6f31111ddf8ecfb39c0c05eacf0e903b6ddd6944d"
+    },
+    {
+      "path": ".local/hydrolakes/releases/v1-local-r1-attempt2/assets/hydrolakes-polygons.parquet",
+      "size_bytes": 1001702072,
+      "sha256": "273f66aa591f575616e731e6f31111ddf8ecfb39c0c05eacf0e903b6ddd6944d"
+    },
+    {
+      "path": ".local/hydrolakes/releases/v1-local-r2/assets/hydrolakes-polygons.parquet",
+      "size_bytes": 1001702072,
+      "sha256": "273f66aa591f575616e731e6f31111ddf8ecfb39c0c05eacf0e903b6ddd6944d"
+    },
+    {
+      "path": ".local/hydrolakes/releases/v1-local-r2-workflow-failure/assets/hydrolakes-polygons.parquet",
+      "size_bytes": 1001702072,
+      "sha256": "273f66aa591f575616e731e6f31111ddf8ecfb39c0c05eacf0e903b6ddd6944d"
+    },
+    {
+      "path": ".local/lakeatlas/releases/lakeatlas-v1.0-r1-prepared/assets/lakeatlas-polygons.parquet",
+      "size_bytes": 1238572245,
+      "sha256": "f1e69b9db782314151bb496d0d7b613e015e59bf628c9100f998c2b67eda77e2"
+    },
+    {
+      "path": ".local/lakeatlas/releases/lakeatlas-v1.0-r1-prepared/assets/lakeatlas-pour-points.parquet",
+      "size_bytes": 363454714,
+      "sha256": "37980188afec72952fb7e75866f1f9e6b5f1dc560125211eae013437e3d34364"
+    }
+  ],
+  "logical_bytes": 7612239391,
+  "preserved_raw_assets": [
+    {
+      "path": ".local/hydrolakes/retained/data.parquet",
+      "size_bytes": 945383282,
+      "sha256": "4c7c83b0a91e4cbd1e31583ab89eee9721ba22250272640591f4795d186a6a76"
+    },
+    {
+      "path": ".local/hydrolakes/clean-rebuild-442460a/data.parquet",
+      "size_bytes": 945383282,
+      "sha256": "4c7c83b0a91e4cbd1e31583ab89eee9721ba22250272640591f4795d186a6a76"
+    },
+    {
+      "path": ".local/lakeatlas/releases/lakeatlas-v1.0-r1-rowgroup4096/lakeatlas/data/lakeatlas-polygons.parquet",
+      "size_bytes": 1238572245,
+      "sha256": "f1e69b9db782314151bb496d0d7b613e015e59bf628c9100f998c2b67eda77e2"
+    },
+    {
+      "path": ".local/lakeatlas/releases/lakeatlas-v1.0-r1-rowgroup4096/lakeatlas/data/lakeatlas-pour-points.parquet",
+      "size_bytes": 363454714,
+      "sha256": "37980188afec72952fb7e75866f1f9e6b5f1dc560125211eae013437e3d34364"
+    },
+    {
+      "path": ".local/lakeatlas/releases/lakeatlas-v1.0-r1-rowgroup4096-clean691fc30/lakeatlas/data/lakeatlas-polygons.parquet",
+      "size_bytes": 1238572245,
+      "sha256": "f1e69b9db782314151bb496d0d7b613e015e59bf628c9100f998c2b67eda77e2"
+    },
+    {
+      "path": ".local/lakeatlas/releases/lakeatlas-v1.0-r1-rowgroup4096-clean691fc30/lakeatlas/data/lakeatlas-pour-points.parquet",
+      "size_bytes": 363454714,
+      "sha256": "37980188afec72952fb7e75866f1f9e6b5f1dc560125211eae013437e3d34364"
+    }
+  ],
+  "preserved_other_files": "All source pins, Python workflows, source/rebuild/failure reports, manifests, field dictionaries, licenses and producer documentation.",
+  "verification": "All eight proposed payloads and all six retained raw assets were fully SHA-256 hashed. Lake failed-package copies match the retained originals exactly. Hydro superseded bbox-only files are reproducible from the retained source-validated raw pair; their identical layout SHA and evidence are preserved.",
+  "physical_space_note": "APFS clones share storage; physical bytes reclaimed may be less than the logical sum.",
+  "approval_review": "Initial automatic review rejected deletion without direct user authorization. The user then explicitly approved this exact eight-file proposal; only those eight files were removed.",
+  "after_cleanup": "Historical failed-package checks remain preserved; full re-verification of their removed data payloads will be unavailable until reconstructed.",
+  "user_authorization": "User explicitly selected Delete these obsolete copies (Recommended) for the exact eight-file proposal.",
+  "completed_at": "2026-10-31T20:22:12.531523+00:00",
+  "removal_receipt": [
+    {
+      "path": ".local/hydrolakes/spatial-clean-r3/hydrolakes.parquet",
+      "size_bytes": 1001702072,
+      "sha256": "273f66aa591f575616e731e6f31111ddf8ecfb39c0c05eacf0e903b6ddd6944d",
+      "removed": true
+    },
+    {
+      "path": ".local/hydrolakes/spatial-r3/hydrolakes.parquet",
+      "size_bytes": 1001702072,
+      "sha256": "273f66aa591f575616e731e6f31111ddf8ecfb39c0c05eacf0e903b6ddd6944d",
+      "removed": true
+    },
+    {
+      "path": ".local/hydrolakes/releases/v1-local-r1/assets/hydrolakes-polygons.parquet",
+      "size_bytes": 1001702072,
+      "sha256": "273f66aa591f575616e731e6f31111ddf8ecfb39c0c05eacf0e903b6ddd6944d",
+      "removed": true
+    },
+    {
+      "path": ".local/hydrolakes/releases/v1-local-r1-attempt2/assets/hydrolakes-polygons.parquet",
+      "size_bytes": 1001702072,
+      "sha256": "273f66aa591f575616e731e6f31111ddf8ecfb39c0c05eacf0e903b6ddd6944d",
+      "removed": true
+    },
+    {
+      "path": ".local/hydrolakes/releases/v1-local-r2/assets/hydrolakes-polygons.parquet",
+      "size_bytes": 1001702072,
+      "sha256": "273f66aa591f575616e731e6f31111ddf8ecfb39c0c05eacf0e903b6ddd6944d",
+      "removed": true
+    },
+    {
+      "path": ".local/hydrolakes/releases/v1-local-r2-workflow-failure/assets/hydrolakes-polygons.parquet",
+      "size_bytes": 1001702072,
+      "sha256": "273f66aa591f575616e731e6f31111ddf8ecfb39c0c05eacf0e903b6ddd6944d",
+      "removed": true
+    },
+    {
+      "path": ".local/lakeatlas/releases/lakeatlas-v1.0-r1-prepared/assets/lakeatlas-polygons.parquet",
+      "size_bytes": 1238572245,
+      "sha256": "f1e69b9db782314151bb496d0d7b613e015e59bf628c9100f998c2b67eda77e2",
+      "removed": true
+    },
+    {
+      "path": ".local/lakeatlas/releases/lakeatlas-v1.0-r1-prepared/assets/lakeatlas-pour-points.parquet",
+      "size_bytes": 363454714,
+      "sha256": "37980188afec72952fb7e75866f1f9e6b5f1dc560125211eae013437e3d34364",
+      "removed": true
+    }
+  ],
+  "preserved_raw_assets_rehashed_after_removal": true,
+  "free_bytes_before": 77265637376,
+  "free_bytes_after": 79246946304
+}

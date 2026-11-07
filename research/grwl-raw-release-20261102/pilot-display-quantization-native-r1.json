@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "purpose": "Independent pinned Tippecanoe fixture for the four pilot z12 quantization-collapse exceptions",
+  "source_parquet_sha256": "d77d287e3ab894a2711d99b7ae244c2279df6df495fa31babe0518397f6c2e82",
+  "source_manifest_sha256": "aa0f86687f19e433eb50dbf142bcce5b995645a79c63ed7be3ae3d7a12e1d384",
+  "source_geometry_evidence_path": "pilot-display-validation-r3.maxzoom-missing.jsonl",
+  "tippecanoe_binary_sha256": "c504719334e5335d60c66a01491707bdbfb773ebbfe3efc7c1c8239eb18d58d1",
+  "fixture_input_geojsonl_sha256": "9e09e5f219d228eca5e305f2de5e78ccfce631160c1f85a649328af0282f5d5b",
+  "fixture_pmtiles_sha256": "1ad99ee61a941044a18d2f8170d7598b235e2c7334b1c35db551a014bea65971",
+  "fixture_inputs": {
+    "collapsed_ids": [148674587948473, 149086904778753, 149516401558393, 149950193275586],
+    "positive_control_id": 148670292951041,
+    "source_rows": "Read directly from the SHA-bound pilot GeoParquet and passed individually through display_feature"
+  },
+  "tippecanoe_options": [
+    "--layer", "grwl_raw", "--minimum-zoom", "8", "--maximum-zoom", "12",
+    "--base-zoom", "12", "--full-detail", "12", "--low-detail", "12",
+    "--minimum-detail", "12", "--simplification", "1", "--no-feature-limit",
+    "--no-tile-size-limit"
+  ],
+  "tippecanoe_returncode": 0,
+  "decoded_z12_feature_occurrences": 1,
+  "decoded_z12_ids": [148670292951041],
+  "note": "The positive control survives under the same pinned native options; all four classified collapsed records do not. Fixture input and archive were temporary and are retained here by SHA and observed result, not as durable bulk assets."
+}

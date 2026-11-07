@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "capture_status": "pre-launch",
+  "builder": "scripts/display_tools/build_display.py",
+  "builder_sha256": "7eea09c741c6ca3c4a35d3a9eac4b027766d0debe28f807ed8dcea4be667957d",
+  "builder_snapshot": "scripts/display_tools/snapshots/build_display-7eea09c7.py.txt",
+  "environment_lock": "datasets/grwl/uv.lock",
+  "environment_lock_sha256": "5e898925ed922c153402fed631ad4d9e1b6e9b14dbebd0aee9c2d962644be6fb",
+  "python_environment": "datasets/grwl/.venv (locked GRWL build environment)",
+  "python_packages": {
+    "pyarrow": "23.0.1",
+    "shapely": "2.1.2",
+    "numpy": "2.5.4",
+    "pmtiles": "3.8.1"
+  },
+  "tippecanoe": {
+    "version": "2.79.0",
+    "binary_sha256": "c504719334e5335d60c66a01491707bdbfb773ebbfe3efc7c1c8239eb18d58d1",
+    "lock_file": "datasets/grwl/tippecanoe.lock.json",
+    "lock_sha256": "28d3bedda9835f808c3c8303b64ad660654b17a48af529d0b32e0c1b496bbd0d"
+  },
+  "pmtiles_cli_version": "pmtiles dev, commit none, built at unknown",
+  "pmtiles_cli_sha256": "82b16b50ed0c171a10420e840456b8b0c55d79aed2e5c7e40b333587ba7d5553",
+  "tippecanoe_max_threads": 2,
+  "command": "python scripts/display_tools/build_display.py lakeatlas-polygons --data-root <DATA_ROOT> --output <DATA_ROOT>/lakeatlas/display/display-v1",
+  "source_asset": "lakeatlas/releases/lakeatlas-v1.0-r2-prepared/assets/lakeatlas-polygons.parquet",
+  "source_sha256": "bbef606fd8522b230efc90e2952a67c1e4265e7bf733208fa4cc31395a7277b7",
+  "source_size_bytes": 1143992867,
+  "geometry_input": "GeoParquet WKB streamed as GeoJSON Text Sequence to /dev/stdin; no bulk intermediate GeoJSON"
+}

@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-11-07T00:06:58.893556+00:00",
+  "kind": "validator_correction_before_hosted_rerun",
+  "retained_initial_failure": {
+    "path": "research/source-publication-20261106/hosted-attempts/river-plastic-inputs-r1.json",
+    "sha256": "5e1f6331e4790c2102b4109358888a5af4dd3164f3c903a32bb1c425620f94b1"
+  },
+  "diagnosis": "The validator required literal range and exposed-header names, rejecting legal wildcard CORS responses for anonymous requests. The actual Source OPTIONS probe succeeds. This is a validator implementation correction, not removal of a required browser check.",
+  "primary_sources": [
+    "https://fetch.spec.whatwg.org/#http-new-header-syntax",
+    "https://fetch.spec.whatwg.org/#cors-safelisted-request-header"
+  ],
+  "interpretation": "For requests without credentials, wildcard allow/expose headers have wildcard semantics. A bounded single Range is CORS-safelisted; nonetheless retain the explicit OPTIONS diagnostic and require any actual browser preflight to succeed. Actual Origin GET and readable range headers remain required.",
+  "actual_probe": {
+    "url": "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/river-plastic-inputs.parquet",
+    "method": "OPTIONS",
+    "status": 204,
+    "response_headers": {
+      "access-control-allow-origin": "*",
+      "access-control-allow-headers": "*",
+      "access-control-allow-methods": "GET, HEAD, PUT, POST, DELETE, OPTIONS",
+      "access-control-expose-headers": "*",
+      "access-control-max-age": "7200"
+    }
+  },
+  "frozen_controls": {
+    "query_path": "research/source-publication-20261106/controls-r1.json",
+    "query_sha256": "9fab1ab0408ac437ed7b3161be79beccef167556297010780fb746205473f749",
+    "browser_path": "research/source-publication-20261106/browser-controls-r1.json",
+    "browser_sha256": "6ff14a9c438cdee14af4ea21876ca32876883f7b676c16596b4ddfc924b6aa10"
+  },
+  "unchanged_gates": [
+    "Exact plan and package/display manifest hashes",
+    "All six analytical files covered by fixed query controls",
+    "All frozen browser cases for each claimed dataset",
+    "Actual remote byte hash proof recorded during upload; no self-declared hash-only proof",
+    "Actual anonymous ranges and source bytes unchanged"
+  ],
+  "scope_note": "Product catalog-links checks concern deployed immutable package catalogs and styles. Aggregate catalog deployment and Portolan Browser checks are a separate later gate."
+}

@@ -1,0 +1,61 @@
+schema_version: 1
+id: chelsa_climatologies
+title: CHELSA global high-resolution climate climatologies
+intake:
+  kind: producer
+  reference_url: https://www.nature.com/articles/sdata2017122
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: near_global
+  spatial_coverage: 'literature: Land grid extent approximately 180W-180E and 90S-84N; 30 arc-seconds
+    / about 1 km. Current family has multiple historical, present and projection products; no single time
+    span implied for the family. Current producer family page identifies CHELSA v2.1; the dataset paper
+    is the 2017 foundational CHELSA climatology paper and describes the earlier 1979-2013 release. Keep
+    edition distinction explicit. Paper documents initial CHELSA climatologies v1; current v2.1 uses later
+    inputs and should not be treated as identical data.'
+  sources:
+  - provider: producer
+    entry_id: CHELSA global high-resolution climate climatologies
+    url: https://www.nature.com/articles/sdata2017122
+    relationship: same_family
+  access:
+  - provider: literature
+    status: download_available
+    formats:
+    - raster
+    summary: Producer lists direct downloads; v2.1 is a later release than the 2017 paper’s v1 dataset.
+      Current producer family page identifies CHELSA v2.1; the dataset paper is the 2017 foundational
+      CHELSA climatology paper and describes the earlier 1979-2013 release. Keep edition distinction explicit.
+      Paper documents initial CHELSA climatologies v1; current v2.1 uses later inputs and should not be
+      treated as identical data.
+    license_summary: Exact release terms need product-specific review; no redistribution permission is
+      inferred from literature or access pages.
+    proposed_outputs:
+    - COG
+    rationale: Supplementary literature discovery only. A high associated-paper count is evidence of a
+      documented product family, not exact-edition usage, conversion priority, or native-format readiness.
+      Review producer bytes, terms and existing record component coverage before promotion.
+    evidence_urls:
+    - https://doi.org/10.1038/sdata.2017.122
+    - https://www.nature.com/articles/sdata2017122
+    - https://www.chelsa-climate.org/datasets/chelsa_climatologies
+  citations:
+  - provider: OpenAlex
+    paper_doi: 10.1038/sdata.2017.122
+    work_id: https://openalex.org/W2463201722
+    cited_by_count: 4199
+    observed_on: '2026-11-01'
+    scope: associated_dataset_publication_base_family
+  evidence:
+  - path: research/global-candidates-20261031/literature/reviewed.json
+    sha256: eef4edb7f4a59e399d3670b9f2aace33bd24083f46d260a7859163c673fabbb6
+    key: chelsa_climatologies

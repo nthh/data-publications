@@ -1,0 +1,111 @@
+{
+  "purpose": "synthetic regression controls, not producer records",
+  "cases": [
+    {
+      "name": "eastward crossing",
+      "width_m": 90,
+      "parts": [
+        [
+          [
+            179.999,
+            0
+          ],
+          [
+            -179.999,
+            0.0001
+          ]
+        ]
+      ]
+    },
+    {
+      "name": "westward crossing and unknown width",
+      "width_m": 1,
+      "parts": [
+        [
+          [
+            -179.999,
+            0.1
+          ],
+          [
+            179.999,
+            0.1001
+          ]
+        ]
+      ]
+    },
+    {
+      "name": "east tiny tail",
+      "width_m": 200,
+      "parts": [
+        [
+          [
+            179.999,
+            0.2
+          ],
+          [
+            -179.9999999,
+            0.2001
+          ]
+        ]
+      ]
+    },
+    {
+      "name": "west tiny tail",
+      "width_m": 500,
+      "parts": [
+        [
+          [
+            -179.999,
+            0.3
+          ],
+          [
+            179.9999999,
+            0.3001
+          ]
+        ]
+      ]
+    },
+    {
+      "name": "separate same-segment record A",
+      "width_m": 50,
+      "parts": [
+        [
+          [
+            10,
+            0
+          ],
+          [
+            10.001,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "name": "separate same-segment record B and multipart",
+      "width_m": 1000,
+      "parts": [
+        [
+          [
+            10.01,
+            0
+          ],
+          [
+            10.011,
+            0
+          ]
+        ],
+        [
+          [
+            10.02,
+            0
+          ],
+          [
+            10.021,
+            0
+          ]
+        ]
+      ]
+    }
+  ]
+}

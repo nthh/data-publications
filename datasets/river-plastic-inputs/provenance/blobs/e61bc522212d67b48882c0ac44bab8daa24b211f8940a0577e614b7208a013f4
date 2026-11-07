@@ -1,0 +1,28 @@
+# Reproducing GEE validation
+
+This directory captures an existing public GEE table through read-only GET requests and checks the responses offline. The user's instruction to continue validation authorized this task. The local-only publication instruction remains in force.
+
+Use the separate `gee/uv.lock` environment for capture (google-auth, requests, PyArrow). Use the existing product environment for comparison/fault tests; it pins PyArrow and pyproj/PROJ. Neither environment change modifies the release's build inputs. Existing Google application-default credentials and the configured `mtnmap-f75ec` quota project provided access; credentials are never stored in the capture or Git.
+
+From the repository root, after committing capture code/environment/contracts:
+
+```sh
+uv sync --frozen --project commons/publish/gee-community/products/river-plastic-inputs/gee
+commons/publish/gee-community/products/river-plastic-inputs/gee/.venv/bin/python commons/publish/gee-community/products/river-plastic-inputs/gee/fetch.py --output .local/gee-publication/river-plastic-inputs/gee-new-capture
+```
+
+The collector refuses an existing output directory, caps pages/rows/bytes and follows only returned page tokens. It performs metadata reads before and after capture, with no export, upload or model computation. A partial capture remains incomplete and cannot pass validation. A future live run needs authorization appropriate to that task; cached comparisons below are entirely offline.
+
+For the completed capture:
+
+```sh
+commons/publish/gee-community/products/river-plastic-inputs/.venv/bin/python commons/publish/gee-community/products/river-plastic-inputs/gee/compare.py .local/gee-publication/river-plastic-inputs/figshare-v6-r1 .local/gee-publication/river-plastic-inputs/gee-20261030-r1 --report .local/gee-publication/river-plastic-inputs/gee-strict-repeat.json --details .local/gee-publication/river-plastic-inputs/gee-strict-repeat.jsonl
+commons/publish/gee-community/products/river-plastic-inputs/.venv/bin/python commons/publish/gee-community/products/river-plastic-inputs/gee/diagnose_geometry.py .local/gee-publication/river-plastic-inputs/figshare-v6-r1 .local/gee-publication/river-plastic-inputs/gee-20261030-r1 --coincident-groups --report .local/gee-publication/river-plastic-inputs/gee-diagnostic-repeat.json --details .local/gee-publication/river-plastic-inputs/gee-diagnostic-repeat.jsonl
+commons/publish/gee-community/products/river-plastic-inputs/.venv/bin/python commons/publish/gee-community/products/river-plastic-inputs/gee/test_compare.py --report .local/gee-publication/river-plastic-inputs/gee-fault-tests-repeat.json
+```
+
+The first command intentionally exits nonzero: the strict coordinate criterion fails. Omitting `--coincident-groups` from the diagnostic also exits nonzero because unique geometry cannot identify the source's 19 coincident pairs. The final diagnostic preserves both earlier failures and validates those groups as exact multisets. It pins the original capture and prior reports, so another capture requires a separately reviewed diagnostic contract.
+
+The final result verifies 40,722 unique records and 38 records in 19 coincident groups. Every numeric value and null matches exactly. GEE coordinates are displaced by at most 0.350 m. The original source coordinates and multiplicity remain intact. No individual GEE row identity is asserted within coincident groups, and the asset's ingestion provenance remains undocumented.
+
+The tracked strict report is a summary with the full local report's hash and a sample of unmatched IDs. The original strict implementation is in commit 74f6b47959; the unique-only geodesic implementation/report is in 27a0bc1ea8. Current code adds group handling and fault tests while preserving those contracts and reports. See the parent [validation notes](../VALIDATION.md) for thresholds, observed differences and outstanding publication checks.

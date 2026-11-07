@@ -1,0 +1,58 @@
+schema_version: 1
+id: pml_evapotranspiration
+title: 'PML_V2.2a: Coupled Evapotranspiration and Gross Primary Product (MODIS Edition)'
+intake:
+  kind: official_catalog
+  reference_url: https://developers.google.com/earth-engine/datasets/catalog/projects_pml_evapotranspiration_PML_OUTPUT_PML_V22a
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: near_global
+  spatial_coverage: 'citations: Global land; official GEE catalog extent latitude envelope -60° to 90°
+    (extent is not a completeness/no-data guarantee). Distinct named producer product; retain exact source
+    edition and footprint.'
+  sources:
+  - provider: gee_official
+    entry_id: projects/pml_evapotranspiration/PML/OUTPUT/PML_V22a
+    url: https://developers.google.com/earth-engine/datasets/catalog/projects_pml_evapotranspiration_PML_OUTPUT_PML_V22a
+    relationship: component
+  - provider: gee_official
+    entry_id: projects/pml_evapotranspiration/PML/OUTPUT/PML_V22a_VIIRS
+    url: https://developers.google.com/earth-engine/datasets/catalog/projects_pml_evapotranspiration_PML_OUTPUT_PML_V22a_VIIRS
+    relationship: component
+  access:
+  - provider: literature
+    status: unknown
+    formats: []
+    summary: GEE catalog entries are available through Earth Engine; frozen metadata does not establish
+      an independently downloadable native bulk copy or its format. Distinct named producer product; retain
+      exact source edition and footprint.
+    license_summary: Not inferred from citation records. Verify producer terms for the exact edition before
+      conversion or redistribution.
+    proposed_outputs: []
+    rationale: 'Candidate discovery only: global/near-global scope and associated-paper citation signal
+      justify source-format and licensing review. Citation rank does not establish conversion priority
+      or exact-release use.'
+    evidence_urls:
+    - https://developers.google.com/earth-engine/datasets/catalog/projects_pml_evapotranspiration_PML_OUTPUT_PML_V22a
+    - https://developers.google.com/earth-engine/datasets/catalog/projects_pml_evapotranspiration_PML_OUTPUT_PML_V22a_VIIRS
+    - https://doi.org/10.1016/j.rse.2018.12.031
+  citations:
+  - provider: OpenAlex
+    paper_doi: 10.1016/j.rse.2018.12.031
+    work_id: https://openalex.org/W2907203129
+    cited_by_count: 976
+    observed_on: '2026-10-30'
+    scope: base_dataset_family
+  evidence:
+  - path: research/global-candidates-20261031/citations/reviewed.json
+    sha256: 572140255cd3b41a1ec8ecca0139e64d38899cda7fdd55756f399a0dca57a467
+    key: pml_evapotranspiration

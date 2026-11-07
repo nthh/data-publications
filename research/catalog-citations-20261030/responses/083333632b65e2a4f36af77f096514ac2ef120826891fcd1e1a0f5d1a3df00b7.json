@@ -1,0 +1,80 @@
+{
+  "request_url": "https://api.openalex.org/works?search=Perspectives+on+the+nature+and+definition+of+ecological+regions&corpus=all&per_page=5&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date",
+  "retrieved_at": "2026-10-30T22:07:55.301680+00:00",
+  "response_path": "responses/083333632b65e2a4f36af77f096514ac2ef120826891fcd1e1a0f5d1a3df00b7.json",
+  "status": 200,
+  "response_sha256": "7e27ebc22585ea0c14511abc9d17566c617caa55fec0bde3113f84a172f877db",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 328489,
+      "db_response_time_ms": 338,
+      "page": 1,
+      "per_page": 5,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where full text has (Perspectives on the nature \"and\" definition of ecological regions)",
+        "x_new_oql": "get works (all corpora) where full text has (Perspectives on the nature \"and\" definition of ecological regions)",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "Perspectives on the nature and definition of ecological regions",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:Perspectives on the nature and definition of ecological regions&corpus=all&per_page=5",
+        "order": "best matches first",
+        "order_default": true
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W2094035601",
+        "doi": "https://doi.org/10.1007/s00267-003-5197-2",
+        "title": "Perspectives on the Nature and Definition of Ecological Regions",
+        "type": "article",
+        "publication_year": 2004,
+        "publication_date": "2004-04-01"
+      },
+      {
+        "id": "https://openalex.org/W3126018057",
+        "doi": "https://doi.org/10.1111/rec.13346",
+        "title": "Barriers to ecological restoration in Europe: expert perspectives",
+        "type": "article",
+        "publication_year": 2021,
+        "publication_date": "2021-01-15"
+      },
+      {
+        "id": "https://openalex.org/W2017675229",
+        "doi": "https://doi.org/10.5751/es-05476-180217",
+        "title": "A Policy Analysis Perspective on Ecological Restoration",
+        "type": "article",
+        "publication_year": 2013,
+        "publication_date": "2013-01-01"
+      },
+      {
+        "id": "https://openalex.org/W2049665340",
+        "doi": "https://doi.org/10.1080/00221686.2014.968887",
+        "title": "Aquatic interfaces: a hydrodynamic and ecological perspective",
+        "type": "article",
+        "publication_year": 2014,
+        "publication_date": "2014-11-02"
+      },
+      {
+        "id": "https://openalex.org/W4303579431",
+        "doi": "https://doi.org/10.1111/jfb.15240",
+        "title": "Contemporary perspectives on the ecological impacts of invasive freshwater fishes",
+        "type": "review",
+        "publication_year": 2022,
+        "publication_date": "2022-10-07"
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "0bf3fe53271020e975f01fb5b30c7fe665b8adc54f25f41e79dac51c1fd657d5"
+}

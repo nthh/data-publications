@@ -1,0 +1,49 @@
+schema_version: 1
+id: gadm_41
+title: GADM 4.1 global administrative areas
+intake:
+  kind: producer
+  reference_url: https://www.gadm.org/download_world.html
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'supplemental: Administrative areas for countries and subdivisions at multiple levels;
+    boundary coverage and subdivision schemas vary by jurisdiction. Supplemental producer discovery; no
+    citation count inferred.'
+  sources:
+  - provider: producer
+    entry_id: GADM 4.1 world download
+    url: https://www.gadm.org/download_world.html
+    relationship: exact_dataset
+  access:
+  - provider: producer
+    status: download_available
+    formats:
+    - Esri File Geodatabase
+    - GeoPackage
+    - Shapefile
+    summary: Producer offers a world database plus country-level files; current listed release is version
+      4.1. Supplemental producer discovery; no citation count inferred.
+    license_summary: Producer permits academic and other non-commercial use; redistribution/commercial
+      use requires prior permission.
+    proposed_outputs: []
+    rationale: Review exact source, existing native hosts and redistribution terms before selecting a
+      conversion.
+    evidence_urls:
+    - https://www.gadm.org/version2
+    - https://www.gadm.org/download_world.html
+    - https://www.gadm.org/about.html
+  citations: []
+  evidence:
+  - path: research/global-candidates-20261031/citations/supplemental-global.json
+    sha256: 8eecd1b6859f60c355df02ed5f4f4bea5bcdfe69f156abafa95e9c622b975202
+    key: gadm_41

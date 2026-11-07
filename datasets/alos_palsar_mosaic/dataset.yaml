@@ -1,0 +1,56 @@
+schema_version: 1
+id: alos_palsar_mosaic
+title: ALOS PALSAR annual SAR backscatter mosaics
+intake:
+  kind: official_catalog
+  reference_url: https://developers.google.com/earth-engine/datasets/catalog/JAXA_ALOS_PALSAR_YEARLY_SAR
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: global
+  spatial_coverage: 'citations: Global FNF/FNF4 classification differs from SAR/backscatter mosaic.'
+  sources:
+  - provider: gee_official
+    entry_id: JAXA/ALOS/PALSAR/YEARLY/SAR
+    url: https://developers.google.com/earth-engine/datasets/catalog/JAXA_ALOS_PALSAR_YEARLY_SAR
+    relationship: component
+  - provider: gee_official
+    entry_id: JAXA/ALOS/PALSAR/YEARLY/SAR_EPOCH
+    url: https://developers.google.com/earth-engine/datasets/catalog/JAXA_ALOS_PALSAR_YEARLY_SAR_EPOCH
+    relationship: component
+  access:
+  - provider: literature
+    status: unknown
+    formats: []
+    summary: GEE catalog entries are available through Earth Engine; frozen metadata does not establish
+      an independently downloadable native bulk copy or its format. FNF/FNF4 classification differs from
+      SAR/backscatter mosaic.
+    license_summary: Not inferred from citation records. Verify producer terms for the exact edition before
+      conversion or redistribution.
+    proposed_outputs: []
+    rationale: 'Candidate discovery only: global/near-global scope and associated-paper citation signal
+      justify source-format and licensing review. Citation rank does not establish conversion priority
+      or exact-release use.'
+    evidence_urls:
+    - https://developers.google.com/earth-engine/datasets/catalog/JAXA_ALOS_PALSAR_YEARLY_SAR
+    - https://developers.google.com/earth-engine/datasets/catalog/JAXA_ALOS_PALSAR_YEARLY_SAR_EPOCH
+    - https://doi.org/10.1016/j.rse.2014.04.014
+  citations:
+  - provider: OpenAlex
+    paper_doi: 10.1016/j.rse.2014.04.014
+    work_id: https://openalex.org/W2014187500
+    cited_by_count: 747
+    observed_on: '2026-10-30'
+    scope: base_dataset_family
+  evidence:
+  - path: research/global-candidates-20261031/citations/reviewed.json
+    sha256: 572140255cd3b41a1ec8ecca0139e64d38899cda7fdd55756f399a0dca57a467
+    key: alos_palsar_forest_nonforest

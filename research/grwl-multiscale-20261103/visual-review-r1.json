@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "status": "passed_sampled_visual_review",
+  "reviewer": "assistant_visual_inspection",
+  "scope": "Four screenshots inspected; this does not establish independent scientific accuracy or full geographic coverage. Separate complete tile and source checks provide conversion evidence.",
+  "viewer_build": {
+    "path": "/Users/nathan/projects/data-publications/.local/grwl-multiscale/viewer-r3/ui/build.json",
+    "size_bytes": 1625,
+    "sha256": "08759b7ed6674a131617eaff0166bd3e96733414b61aa8555e1932d6909c9250"
+  },
+  "screenshots": [
+    {
+      "path": "/Users/nathan/projects/data-publications/.local/grwl-multiscale/browser-multiscale-r2/global-z0.png",
+      "size_bytes": 190001,
+      "sha256": "618bd7d8aa426dfbfadab7b14b01a41229d1df43240197afa00f1240ce1f8d7e",
+      "finding": "The whole single world is visible at measured zoom0, with observation coverage and no width legend."
+    },
+    {
+      "path": "/Users/nathan/projects/data-publications/.local/grwl-multiscale/browser-multiscale-r2/overview-to-detail-z7.png",
+      "size_bytes": 126889,
+      "sha256": "6f371068860b49e95d796c5398d577fdf4a2c431c4bcc949b15e35ca8111aa69",
+      "finding": "Coverage follows the observed river locations at zoom7; the width legend is hidden."
+    },
+    {
+      "path": "/Users/nathan/projects/data-publications/.local/grwl-multiscale/browser-multiscale-r2/overview-to-detail-z8.png",
+      "size_bytes": 141519,
+      "sha256": "bd9e52d7fabc26d2f30cafe7078bd591f09c023881121a082f83e6b4748e2062",
+      "finding": "The zoom8 detail layer and observation-width legend replace coverage at the same frozen center."
+    },
+    {
+      "path": "/Users/nathan/projects/data-publications/.local/grwl-multiscale/browser-detail-r2/detail-known-summary-13164.png",
+      "size_bytes": 165178,
+      "sha256": "26757db3b9a91fe55d0c22ae4c0e8bb4b302e31b3fd9a6185e549776a42eb4bb",
+      "finding": "The known13164 view shows the raw river without the summary connector, with all source fields and the48m observation width in its feature panel."
+    }
+  ],
+  "body_capture_note": "The detail screenshot came from the retained r2 run whose separate response-body recording failed in two other cases. This review does not override that failed HTTP gate."
+}

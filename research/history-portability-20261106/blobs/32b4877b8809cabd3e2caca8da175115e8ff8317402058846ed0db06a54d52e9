@@ -1,0 +1,478 @@
+{
+  "assets": [
+    {
+      "asset_id": "lakeatlas-polygons",
+      "description": "Global lake polygon layer from the pinned LakeATLAS v1.0 File Geodatabase. Spatially ordered by deterministic WGS84 bbox-center Hilbert key with producer OBJECTID tie-breaker. Every source attribute, null, native identifier, and source-decoded WKB is preserved; per-row bbox metadata is derived from the unchanged WKB.",
+      "field_dictionary": "metadata/lakeatlas-polygons-field-dictionary.json",
+      "field_dictionary_sha256": "1a5c649b83d445247dad9a1b1c98c39c3f44bb8ff05f2b0e7501f1437d392c20",
+      "geo_metadata_version": "1.1.0",
+      "geometry_column": "geometry",
+      "geometry_types": [
+        "MultiPolygon"
+      ],
+      "href": "assets/lakeatlas-polygons.parquet",
+      "identifier_column": "OBJECTID",
+      "media_type": "application/vnd.apache.parquet",
+      "row_count": 1427688,
+      "sha256": "bbef606fd8522b230efc90e2952a67c1e4265e7bf733208fa4cc31395a7277b7",
+      "size_bytes": 1143992867,
+      "source_path": "lakeatlas-polygons-spatial.parquet",
+      "title": "LakeATLAS v1.0 polygons"
+    },
+    {
+      "asset_id": "lakeatlas-pour-points",
+      "description": "Separate producer pour-point layer for the LakeATLAS v1.0 lakes. Spatially ordered by deterministic WGS84 bbox-center Hilbert key with producer OBJECTID tie-breaker. Every source attribute, null, native identifier, and source-decoded WKB is preserved; per-row bbox metadata is derived from the unchanged WKB.",
+      "field_dictionary": "metadata/lakeatlas-pour-points-field-dictionary.json",
+      "field_dictionary_sha256": "2545573e5e1a8fd2faa0e21178a1174834c3813f3e99c9e617357cb4922b966d",
+      "geo_metadata_version": "1.1.0",
+      "geometry_column": "geometry",
+      "geometry_types": [
+        "Point"
+      ],
+      "href": "assets/lakeatlas-pour-points.parquet",
+      "identifier_column": "OBJECTID",
+      "media_type": "application/vnd.apache.parquet",
+      "row_count": 1427688,
+      "sha256": "ff621c1db763551cdb6ced8958eefcc9da76a73c16e7f7259c238bec3aae5720",
+      "size_bytes": 283780050,
+      "source_path": "lakeatlas-pour-points-spatial.parquet",
+      "title": "LakeATLAS v1.0 pour points"
+    }
+  ],
+  "clean_rebuild_report": {
+    "path": "evidence/clean-rebuild.json",
+    "sha256": "bd3c46ec6ee9f28c2b64d49d56610dd93213485630ba1c56b5b27c432ee9abf2"
+  },
+  "code_revision": "e0d34d47dfd8f00ee78626a84ea702b75450243e",
+  "copied_data_modes": {
+    "lakeatlas-polygons": "apfs_clone",
+    "lakeatlas-pour-points": "apfs_clone"
+  },
+  "created": "2026-10-31T00:00:00Z",
+  "data_license": {
+    "path": "licenses/data-license.json",
+    "sha256": "6614c33e3ed5fd5ad2fac35f29ba3ba8f6514a046b96a4f84eeb7b6eb064c82f"
+  },
+  "dataset_id": "lakeatlas",
+  "dataset_record": {
+    "path": "dataset.yaml",
+    "sha256": "b78f5aefbd8260e2417d6a52aee84769aba06869cd6eca240ebc0e54be333505"
+  },
+  "display_derivatives": [
+    {
+      "display_only": true,
+      "format": "PNG",
+      "path": "display/thumbnail.png",
+      "role": "thumbnail",
+      "sampled_features": 15816,
+      "sampled_vertices": 500009,
+      "sampling_limit": {
+        "max_features": 50000,
+        "max_vertices": 500000
+      },
+      "sha256": "1545b01af18207d60a182fdcc0e4117d83c73eea1db93f48a673138a1cebf15e",
+      "size_bytes": 4138
+    }
+  ],
+  "manifest_version": "1.0",
+  "publicly_published": false,
+  "release_id": "lakeatlas-v1.0-r2",
+  "release_version": "1.0.2",
+  "scope_note": "Local package only; not uploaded, publicly hosted, or submitted to a registry.",
+  "source_attribution": {
+    "path": "source/attribution.json",
+    "sha256": "d455de154e27a74961313a3467978c32dc5f881a51b8c1579ea7ba000e55eb96"
+  },
+  "source_fidelity_report": {
+    "path": "evidence/source-fidelity.json",
+    "sha256": "7fc9ae400a02de3d878dff3b541a920445e93aa49535699d7b54c47ecbd1b16f"
+  },
+  "source_license": {
+    "path": "licenses/source-license.json",
+    "sha256": "0682634d970203bcb3dbc00dc6dec792b7906717401c1e492d5bb2d0653edcb8"
+  },
+  "spatial_bbox": [
+    -179.9999999999999,
+    -55.86513888888899,
+    179.99999999999903,
+    83.57595062255876
+  ],
+  "status": "local-candidate",
+  "supporting_files": [
+    {
+      "copy_mode": "apfs_clone",
+      "description": "Producer documentation, including source-format and source-license notices.",
+      "media_type": "application/pdf",
+      "path": "source/HydroATLAS_TechDoc_v10_1.pdf",
+      "sha256": "0ad77c88140d8a0b569d79d5cceadf727b558a7e422a36b9c394cc593db2ccab",
+      "size_bytes": 3656999,
+      "source_basename": "HydroATLAS_TechDoc_v10_1.pdf",
+      "title": "HydroATLAS technical documentation v1.0"
+    },
+    {
+      "copy_mode": "apfs_clone",
+      "description": "Producer catalog mapping attribute columns to CC BY 4.0 or ODbL 1.0 notices.",
+      "media_type": "application/pdf",
+      "path": "source/LakeATLAS_Catalog_v10.pdf",
+      "sha256": "e736eedbbe32cdeb498348696b9d085b1caddd937a19c7c669501deaffe670e1",
+      "size_bytes": 54055742,
+      "source_basename": "LakeATLAS_Catalog_v10.pdf",
+      "title": "LakeATLAS v1.0 catalog and attribute license dictionary"
+    },
+    {
+      "copy_mode": "apfs_clone",
+      "description": null,
+      "media_type": "application/json",
+      "path": "provenance/source-inspection.json",
+      "sha256": "f32db5453f6705c6930a2e724d923033ec8115355c6d58a78bf2a021edc4b7cc",
+      "size_bytes": 122274,
+      "source_basename": "source-inspection.json",
+      "title": "Pinned source archive and layer inspection"
+    },
+    {
+      "copy_mode": "apfs_clone",
+      "description": null,
+      "media_type": "application/json",
+      "path": "provenance/rebuild-environment.json",
+      "sha256": "6ad0569632c1b99af25deeb380353b9bfe03a3986595dac4f55978f413017fc0",
+      "size_bytes": 1745,
+      "source_basename": "rebuild-environment.json",
+      "title": "Clean rebuild interpreter, locked environment and workflow revisions"
+    },
+    {
+      "copy_mode": "apfs_clone",
+      "description": null,
+      "media_type": "text/markdown",
+      "path": "source/ATTRIBUTION.md",
+      "sha256": "8be480a3f03b726f6d29f977cc034c5949d94f905539dbc9852a7c63fbd12348",
+      "size_bytes": 1350,
+      "source_basename": "ATTRIBUTION.md",
+      "title": "Source attribution and field-level licensing notice"
+    },
+    {
+      "copy_mode": "apfs_clone",
+      "description": null,
+      "media_type": "application/json",
+      "path": "provenance/evidence-provenance.json",
+      "sha256": "a3da97e6c186667b4802ee9338c4478a4d811e9aec8d7e2a84555342ffbd1652",
+      "size_bytes": 4977,
+      "source_basename": "evidence-provenance.json",
+      "title": "Original and path-redacted portable report hashes"
+    },
+    {
+      "copy_mode": "apfs_clone",
+      "description": null,
+      "media_type": "application/json",
+      "path": "provenance/source-fidelity.json",
+      "sha256": "7fc9ae400a02de3d878dff3b541a920445e93aa49535699d7b54c47ecbd1b16f",
+      "size_bytes": 6274,
+      "source_basename": "source-fidelity.json",
+      "title": "Bound source conversion fidelity report"
+    },
+    {
+      "copy_mode": "apfs_clone",
+      "description": null,
+      "media_type": "application/json",
+      "path": "provenance/clean-rebuild.json",
+      "sha256": "bd3c46ec6ee9f28c2b64d49d56610dd93213485630ba1c56b5b27c432ee9abf2",
+      "size_bytes": 6336,
+      "source_basename": "clean-rebuild.json",
+      "title": "Clean raw and final spatial rebuild report"
+    },
+    {
+      "copy_mode": "apfs_clone",
+      "description": null,
+      "media_type": "application/json",
+      "path": "provenance/spatial-order-polygons-primary.json",
+      "sha256": "fa01bb0a6ab0babde82d97f0b20c67bae4af49c7aa9e94e624b004fb6b318cac",
+      "size_bytes": 10271,
+      "source_basename": "spatial-order-polygons-primary.json",
+      "title": "Polygon spatial-order full source comparison"
+    },
+    {
+      "copy_mode": "apfs_clone",
+      "description": null,
+      "media_type": "application/json",
+      "path": "provenance/spatial-order-pour-points-primary.json",
+      "sha256": "44a4913a857644111cec1b3cad207b371c2f00e4d14bf63d59218c3f49bfb25d",
+      "size_bytes": 10226,
+      "source_basename": "spatial-order-pour-points-primary.json",
+      "title": "Pour-point spatial-order full source comparison"
+    },
+    {
+      "copy_mode": "apfs_clone",
+      "description": null,
+      "media_type": "application/json",
+      "path": "provenance/spatial-pruning-polygons-primary.json",
+      "sha256": "a6125b5ac65ecc5d218ff751655842e1ac96ffbda1d3c486341f76a07a2a96f2",
+      "size_bytes": 1304,
+      "source_basename": "spatial-pruning-polygons-primary.json",
+      "title": "Polygon fixed-window bbox pruning validation"
+    },
+    {
+      "copy_mode": "apfs_clone",
+      "description": null,
+      "media_type": "application/json",
+      "path": "provenance/spatial-pruning-pour-points-primary.json",
+      "sha256": "3e089deba3e2442548d57327354c60539f063c05462abbfeca6303333893aeee",
+      "size_bytes": 1305,
+      "source_basename": "spatial-pruning-pour-points-primary.json",
+      "title": "Pour-point fixed-window bbox pruning validation"
+    },
+    {
+      "copy_mode": "apfs_clone",
+      "description": null,
+      "media_type": "application/json",
+      "path": "provenance/spatial-order-polygons-clean.json",
+      "sha256": "dfae09fbe89658a1b9f87ec6984b1c091d2d01b830c14323ebc7eee1fd945483",
+      "size_bytes": 10267,
+      "source_basename": "spatial-order-polygons-clean.json",
+      "title": "Clean polygon spatial rebuild and full fidelity comparison"
+    },
+    {
+      "copy_mode": "apfs_clone",
+      "description": null,
+      "media_type": "application/json",
+      "path": "provenance/spatial-order-pour-points-clean.json",
+      "sha256": "578a1c6c91437df230aa6195c6c118b163b55dddf9ad342a8b0b8a63bcc2c44d",
+      "size_bytes": 10235,
+      "source_basename": "spatial-order-pour-points-clean.json",
+      "title": "Clean pour-point spatial rebuild and full fidelity comparison"
+    },
+    {
+      "copy_mode": "apfs_clone",
+      "description": null,
+      "media_type": "application/json",
+      "path": "provenance/spatial-pruning-polygons-clean.json",
+      "sha256": "a6125b5ac65ecc5d218ff751655842e1ac96ffbda1d3c486341f76a07a2a96f2",
+      "size_bytes": 1304,
+      "source_basename": "spatial-pruning-polygons-clean.json",
+      "title": "Clean polygon fixed-window bbox pruning validation"
+    },
+    {
+      "copy_mode": "apfs_clone",
+      "description": null,
+      "media_type": "application/json",
+      "path": "provenance/spatial-pruning-pour-points-clean.json",
+      "sha256": "3e089deba3e2442548d57327354c60539f063c05462abbfeca6303333893aeee",
+      "size_bytes": 1305,
+      "source_basename": "spatial-pruning-pour-points-clean.json",
+      "title": "Clean pour-point fixed-window bbox pruning validation"
+    }
+  ],
+  "temporal_interval": [
+    null,
+    null
+  ],
+  "title": "HydroATLAS LakeATLAS v1.0 — global hydro-environmental lake attributes",
+  "workflow_files": {
+    "datasets/lakeatlas/ATTRIBUTION.md": {
+      "bytes": 1350,
+      "git_revision": "4f8ec8854a88b30441a9d5ba13bbdeb4108df3dd",
+      "package_path": "verification/workflow/datasets/lakeatlas/ATTRIBUTION.md",
+      "sha256": "8be480a3f03b726f6d29f977cc034c5949d94f905539dbc9852a7c63fbd12348"
+    },
+    "datasets/lakeatlas/README.md": {
+      "bytes": 7779,
+      "package_path": "verification/workflow/datasets/lakeatlas/README.md",
+      "sha256": "348a5d879a81a7ea2f0d305b6c4e61d81c16b2e1b226bc9004b9d7a560e6c45a"
+    },
+    "datasets/lakeatlas/build.py": {
+      "bytes": 18182,
+      "git_revision": "691fc304a2df25d04c13652d6429ff0e32993be2",
+      "package_path": "verification/workflow/datasets/lakeatlas/build.py",
+      "sha256": "2902cdf3d8c241b2abc2b62571602e1cb1f4f3403f369e23f1bb8981922f97e6"
+    },
+    "datasets/lakeatlas/dataset.yaml": {
+      "bytes": 5000,
+      "git_revision": "691fc304a2df25d04c13652d6429ff0e32993be2",
+      "package_path": "verification/workflow/datasets/lakeatlas/dataset.yaml",
+      "sha256": "d7c5e3d64c8f2e614bd3ed40414418a0bf4dbcd97294613a1708e3316d848da4"
+    },
+    "datasets/lakeatlas/pyproject.toml": {
+      "bytes": 323,
+      "git_revision": "691fc304a2df25d04c13652d6429ff0e32993be2",
+      "package_path": "verification/workflow/datasets/lakeatlas/pyproject.toml",
+      "sha256": "2c72b1d68daa2efd10df98d213f5abc95b70efefebd4b57c880614a31d202621"
+    },
+    "datasets/lakeatlas/releases/lakeatlas-v1.0-r2/README.md": {
+      "bytes": 2016,
+      "package_path": "verification/workflow/datasets/lakeatlas/releases/lakeatlas-v1.0-r2/README.md",
+      "sha256": "e28cfd66b6ca20f33ae8963fc71f762257735f82f55e6d67254db4dd80fb05d7"
+    },
+    "datasets/lakeatlas/releases/lakeatlas-v1.0-r2/reproduction/README.md": {
+      "bytes": 3421,
+      "package_path": "verification/workflow/datasets/lakeatlas/releases/lakeatlas-v1.0-r2/reproduction/README.md",
+      "sha256": "30d7a7247fa23c86367f24be9bb5b97965803c739a56ba56a3ab8512f2e0cab4"
+    },
+    "datasets/lakeatlas/releases/lakeatlas-v1.0-r2/reproduction/fidelity-normalizer-template.json": {
+      "bytes": 2490,
+      "package_path": "verification/workflow/datasets/lakeatlas/releases/lakeatlas-v1.0-r2/reproduction/fidelity-normalizer-template.json",
+      "sha256": "c1c1dbfc48c5b91b70c381dba0d0889d76e37c8ded5d4f8a4e2b4a995f34ebd1"
+    },
+    "datasets/lakeatlas/releases/lakeatlas-v1.0-r2/reproduction/materialize_release_inputs.py": {
+      "bytes": 4254,
+      "package_path": "verification/workflow/datasets/lakeatlas/releases/lakeatlas-v1.0-r2/reproduction/materialize_release_inputs.py",
+      "sha256": "67b7d359c85b5cdc32ddc1074da8afb5b0853ba07d957e60c388e793f7af77e8"
+    },
+    "datasets/lakeatlas/releases/lakeatlas-v1.0-r2/reproduction/package-spec-template.json": {
+      "bytes": 13787,
+      "package_path": "verification/workflow/datasets/lakeatlas/releases/lakeatlas-v1.0-r2/reproduction/package-spec-template.json",
+      "sha256": "eb28fb401a4580e88a2f36a928d30883a945e3053db4632b20aad50cb2b6a416"
+    },
+    "datasets/lakeatlas/releases/lakeatlas-v1.0-r2/reproduction/prepare_portable_evidence.py": {
+      "bytes": 10842,
+      "package_path": "verification/workflow/datasets/lakeatlas/releases/lakeatlas-v1.0-r2/reproduction/prepare_portable_evidence.py",
+      "sha256": "27e7bd38a3c663bbc8d5b86aa55ede5a21f1746eb9b85e4963dbefca8cea951f"
+    },
+    "datasets/lakeatlas/releases/lakeatlas-v1.0-r2/reproduction/test_prepare_portable_evidence.py": {
+      "bytes": 1741,
+      "package_path": "verification/workflow/datasets/lakeatlas/releases/lakeatlas-v1.0-r2/reproduction/test_prepare_portable_evidence.py",
+      "sha256": "77888a09b664c71d1d4c553ee77b89910b51d04cfded15d5b68cedc6755abc5a"
+    },
+    "datasets/lakeatlas/source-inspection.json": {
+      "bytes": 122274,
+      "git_revision": "4f8ec8854a88b30441a9d5ba13bbdeb4108df3dd",
+      "package_path": "verification/workflow/datasets/lakeatlas/source-inspection.json",
+      "sha256": "f32db5453f6705c6930a2e724d923033ec8115355c6d58a78bf2a021edc4b7cc"
+    },
+    "datasets/lakeatlas/source.py": {
+      "bytes": 4777,
+      "git_revision": "691fc304a2df25d04c13652d6429ff0e32993be2",
+      "package_path": "verification/workflow/datasets/lakeatlas/source.py",
+      "sha256": "d8cb6d255c96e1f9039008c08f96b558a86baa6441a9a0c4e44ad0a2252327f6"
+    },
+    "datasets/lakeatlas/test_faults.py": {
+      "bytes": 4565,
+      "git_revision": "691fc304a2df25d04c13652d6429ff0e32993be2",
+      "package_path": "verification/workflow/datasets/lakeatlas/test_faults.py",
+      "sha256": "65c7f10bef45cd29d17bbe047be4b6b14ab807d88e3fe95b3e20269b14507bde"
+    },
+    "datasets/lakeatlas/uv.lock": {
+      "bytes": 92284,
+      "git_revision": "691fc304a2df25d04c13652d6429ff0e32993be2",
+      "package_path": "verification/workflow/datasets/lakeatlas/uv.lock",
+      "sha256": "e1624bf69dd0d01e563f24d0b7f1ddcd4cde273a2c8659f4061c029f45381e71"
+    },
+    "datasets/lakeatlas/validate.py": {
+      "bytes": 6510,
+      "git_revision": "691fc304a2df25d04c13652d6429ff0e32993be2",
+      "package_path": "verification/workflow/datasets/lakeatlas/validate.py",
+      "sha256": "00442cd21cfc9993d140bdf5ac337dcd754bb9c1041aa2ecb0132fe7979046d9"
+    },
+    "datasets/lakeatlas/validate_worker.py": {
+      "bytes": 14922,
+      "git_revision": "691fc304a2df25d04c13652d6429ff0e32993be2",
+      "package_path": "verification/workflow/datasets/lakeatlas/validate_worker.py",
+      "sha256": "175742b44e8c59cbd9452e2dee6d11f41cf6bf25bcd2ff779defabf4a232b43c"
+    },
+    "datasets/lakeatlas/validation-plan.md": {
+      "bytes": 8937,
+      "git_revision": "b6579442c8a0ba73e38b444f143bb6194ef056e5",
+      "package_path": "verification/workflow/datasets/lakeatlas/validation-plan.md",
+      "sha256": "e51bac6b8199fe4de2fccceb0c64531e00833af9576b2834b61dd54e69f77d91"
+    },
+    "research/hydro-releases-20261031/bind_fidelity.py": {
+      "bytes": 23208,
+      "git_revision": "7602b5e5252aec2f26167a7f560eaa7dd65a38a0",
+      "package_path": "verification/workflow/research/hydro-releases-20261031/bind_fidelity.py",
+      "sha256": "76a828925da815fe264cf3fa03dd929ddbe38cf14ccb444bad1863eb49920c13"
+    },
+    "research/hydro-releases-20261031/test_bind_fidelity.py": {
+      "bytes": 11460,
+      "git_revision": "7602b5e5252aec2f26167a7f560eaa7dd65a38a0",
+      "package_path": "verification/workflow/research/hydro-releases-20261031/test_bind_fidelity.py",
+      "sha256": "5ebe4a9abc251e04259eb0e203b1e596f350c2bd4b98ebf14e6a61e8885efb02"
+    },
+    "scripts/release_tools/AGENTS.md": {
+      "bytes": 857,
+      "git_revision": "c18b96e2f3d631089453459d158c91fc0fa31d87",
+      "package_path": "verification/workflow/scripts/release_tools/AGENTS.md",
+      "sha256": "4aa3ee027c7ad8f56209e5c948ab30ad126cd0dfd8e80408590df060db03dc3b"
+    },
+    "scripts/release_tools/README.md": {
+      "bytes": 14947,
+      "git_revision": "b6579442c8a0ba73e38b444f143bb6194ef056e5",
+      "package_path": "verification/workflow/scripts/release_tools/README.md",
+      "sha256": "7fe6de3a904e6b60021fcc6f440dce8a46823302dd68f00a3b2ea00329883d83"
+    },
+    "scripts/release_tools/add_spatial_bounds.py": {
+      "bytes": 20723,
+      "git_revision": "c18b96e2f3d631089453459d158c91fc0fa31d87",
+      "package_path": "verification/workflow/scripts/release_tools/add_spatial_bounds.py",
+      "sha256": "b305e14a177bcd3438739f659699bbe5f62af3fade6431eaf7a41450950b2bca"
+    },
+    "scripts/release_tools/check_spatial_pruning.py": {
+      "bytes": 4117,
+      "git_revision": "7602b5e5252aec2f26167a7f560eaa7dd65a38a0",
+      "package_path": "verification/workflow/scripts/release_tools/check_spatial_pruning.py",
+      "sha256": "04c87e2552272003f1f67bfb01b1dcb4b293ad2c094597ee24336235be719413"
+    },
+    "scripts/release_tools/package-lock.json": {
+      "bytes": 54306,
+      "git_revision": "c18b96e2f3d631089453459d158c91fc0fa31d87",
+      "package_path": "verification/workflow/scripts/release_tools/package-lock.json",
+      "sha256": "8f19898156a139859a49d15238a92a5204a7d61b909ee5ac54080e8110a2cc3c"
+    },
+    "scripts/release_tools/package.json": {
+      "bytes": 142,
+      "git_revision": "c18b96e2f3d631089453459d158c91fc0fa31d87",
+      "package_path": "verification/workflow/scripts/release_tools/package.json",
+      "sha256": "8eebc2fd826cf22f6008ee889293d7880952ea19ddac557ae905821489108470"
+    },
+    "scripts/release_tools/package_release.py": {
+      "bytes": 62862,
+      "git_revision": "7cc922857065883d1803a6892a5a160ce5a4f722",
+      "package_path": "verification/workflow/scripts/release_tools/package_release.py",
+      "sha256": "7985c0ae0b06e028f2f9466a88dde592bfbb6095cb2ab1a4e2892269629c676b"
+    },
+    "scripts/release_tools/pyproject.toml": {
+      "bytes": 259,
+      "git_revision": "9964eacc57bfe9b248ea160e39e8a63f904529bb",
+      "package_path": "verification/workflow/scripts/release_tools/pyproject.toml",
+      "sha256": "a6d5a4c17612a98645ce60b3b581caf316707f2b92265e5a3c1ca9a319f6da3c"
+    },
+    "scripts/release_tools/serve.py": {
+      "bytes": 2789,
+      "git_revision": "c18b96e2f3d631089453459d158c91fc0fa31d87",
+      "package_path": "verification/workflow/scripts/release_tools/serve.py",
+      "sha256": "dab2eef0199f839aac9a14d9802cb7b339e9732573bd659d5837867f1f5da175"
+    },
+    "scripts/release_tools/spatial_order.py": {
+      "bytes": 78021,
+      "git_revision": "b6579442c8a0ba73e38b444f143bb6194ef056e5",
+      "package_path": "verification/workflow/scripts/release_tools/spatial_order.py",
+      "sha256": "9c4acaf198dc46433c61200fb1f15c1c4c14075860e81434fd05c04883b59a63"
+    },
+    "scripts/release_tools/test_package_release.py": {
+      "bytes": 9275,
+      "git_revision": "7cc922857065883d1803a6892a5a160ce5a4f722",
+      "package_path": "verification/workflow/scripts/release_tools/test_package_release.py",
+      "sha256": "f1245988e4c45e26bce2b3e07766949d9054c9ba1774a0e84e457062571c89cb"
+    },
+    "scripts/release_tools/test_spatial_bounds.py": {
+      "bytes": 7028,
+      "git_revision": "c18b96e2f3d631089453459d158c91fc0fa31d87",
+      "package_path": "verification/workflow/scripts/release_tools/test_spatial_bounds.py",
+      "sha256": "006a5c84a8b46e78a4f4aecc2a303672e07e43971116994633f032771df446c7"
+    },
+    "scripts/release_tools/test_spatial_order.py": {
+      "bytes": 22358,
+      "git_revision": "b6579442c8a0ba73e38b444f143bb6194ef056e5",
+      "package_path": "verification/workflow/scripts/release_tools/test_spatial_order.py",
+      "sha256": "3d376e8db683f7f4e221c552a89d8b5678e5df6c11c429e7d35054203f4e739e"
+    },
+    "scripts/release_tools/test_spatial_pruning.py": {
+      "bytes": 1989,
+      "git_revision": "7602b5e5252aec2f26167a7f560eaa7dd65a38a0",
+      "package_path": "verification/workflow/scripts/release_tools/test_spatial_pruning.py",
+      "sha256": "0ba8f0ff758409fd007ea5b03b9bff3b23b3d51704fd22d36d87499d5da5bbb9"
+    },
+    "scripts/release_tools/uv.lock": {
+      "bytes": 134378,
+      "git_revision": "9964eacc57bfe9b248ea160e39e8a63f904529bb",
+      "package_path": "verification/workflow/scripts/release_tools/uv.lock",
+      "sha256": "fe1b9d58a17429f2649a24fbd8299b5d616ca4ab68806e768cd2caac31b8ec1b"
+    }
+  }
+}

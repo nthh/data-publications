@@ -1,0 +1,986 @@
+{
+  "request_url": "https://api.openalex.org/works?filter=doi%3A10.5067%2Fmodis%2Fmyd14a1.061%7C10.5067%2Fmodis%2Fmyd14a2.006%7C10.5067%2Fmodis%2Fmyd14a2.061%7C10.5067%2Fmodis%2Fmyd15a2h.006%7C10.5067%2Fmodis%2Fmyd15a2h.061%7C10.5067%2Fmodis%2Fmyd16a2.061%7C10.5067%2Fmodis%2Fmyd17a2h.006%7C10.5067%2Fmodis%2Fmyd17a2h.061%7C10.5067%2Fmodis%2Fmyd17a3h.006%7C10.5067%2Fmodis%2Fmyd17a3hgf.006%7C10.5067%2Fmodis%2Fmyd17a3hgf.061%7C10.5067%2Fmodis%2Fmyd21a1d.061%7C10.5067%2Fmodis%2Fmyd21a1n.061%7C10.5067%2Fmodis%2Fmyd21c1.061%7C10.5067%2Fmodis%2Fmyd21c2.061%7C10.5067%2Fmodis%2Fmyd21c3.061%7C10.5067%2Fmodis%2Fmydocga.006%7C10.5067%2Fnv34yuixlp9w%7C10.5067%2Fopdsw-pl3v1%7C10.5067%2Fopdsws1-l3v1%7C10.5067%2Forbview-2%2Fseawifs%2Fl3b%2Fchl%2F2018.0%7C10.5067%2Forbview-2%2Fseawifs%2Fl3b%2Fpoc%2F2018.0%7C10.5067%2Forbview-2%2Fseawifs%2Fl3b%2Frrs%2F2018.0%7C10.5067%2Fseabass%2Fcaml%2Fdata001%7C10.5067%2Fsnwg%2Fopera_l2_rtc-s1-static_v1%7C10.5067%2Fsnwg%2Fopera_l2_rtc-s1_v1%7C10.5067%2Fsnwg%2Fopera_l3_dist-ann-hls_v1.001%7C10.5067%2Ft5ruataqref8%7C10.5067%2Ftelnd-3aj64%7C10.5067%2Ftelnd-nc005%7C10.5067%2Ftemsc-3jc63%7C10.5067%2Ftemsc-3jc634%7C10.5067%2Ftemsc-3mj63%7C10.5067%2Ftemsc-3mj634%7C10.5067%2Ftemsc-ocl05%7C10.5067%2Fteocn-0n005%7C10.5067%2Fteocn-3ac64%7C10.5067%2Fterra%2Fmodis%2Fl3m%2Fchl%2F2018%7C10.5067%2Fterra%2Fmodis%2Fl3m%2Fflh%2F2018%7C10.5067%2Fterra%2Fmodis%2Fl3m%2Fpoc%2F2018&corpus=all&per_page=100&select=id%2Cdoi%2Ctitle%2Ctype%2Cpublication_year%2Cpublication_date%2Ccited_by_count%2Ccounts_by_year",
+  "retrieved_at": "2026-10-30T22:19:52.124181+00:00",
+  "response_path": "responses/f6b247c2d3289683659e682ab12cfc1ee03784cfcd4870b5130692141f75ef7a.json",
+  "status": 200,
+  "response_sha256": "9e9445927f12f313a1a8d7bc452eace795eab45212cf93caba544f51e0bf8f74",
+  "response": {
+    "meta": {
+      "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+      "count": 37,
+      "db_response_time_ms": 19,
+      "page": 1,
+      "per_page": 100,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works (all corpora) where DOI is (\n    10.5067/modis/myd14a1.061 or 10.5067/modis/myd14a2.006\n    or 10.5067/modis/myd14a2.061 or 10.5067/modis/myd15a2h.006\n    or 10.5067/modis/myd15a2h.061 or 10.5067/modis/myd16a2.061\n    or 10.5067/modis/myd17a2h.006 or 10.5067/modis/myd17a2h.061\n    or 10.5067/modis/myd17a3h.006 or 10.5067/modis/myd17a3hgf.006\n    or 10.5067/modis/myd17a3hgf.061 or 10.5067/modis/myd21a1d.061\n    or 10.5067/modis/myd21a1n.061 or 10.5067/modis/myd21c1.061\n    or 10.5067/modis/myd21c2.061 or 10.5067/modis/myd21c3.061\n    or 10.5067/modis/mydocga.006 or 10.5067/nv34yuixlp9w or 10.5067/opdsw-pl3v1\n    or 10.5067/opdsws1-l3v1 or 10.5067/orbview-2/seawifs/l3b/chl/2018.0\n    or 10.5067/orbview-2/seawifs/l3b/poc/2018.0\n    or 10.5067/orbview-2/seawifs/l3b/rrs/2018.0 or 10.5067/seabass/caml/data001\n    or 10.5067/snwg/opera_l2_rtc-s1-static_v1 or 10.5067/snwg/opera_l2_rtc-s1_v1\n    or 10.5067/snwg/opera_l3_dist-ann-hls_v1.001 or 10.5067/t5ruataqref8\n    or 10.5067/telnd-3aj64 or 10.5067/telnd-nc005 or 10.5067/temsc-3jc63\n    or 10.5067/temsc-3jc634 or 10.5067/temsc-3mj63 or 10.5067/temsc-3mj634\n    or 10.5067/temsc-ocl05 or 10.5067/teocn-0n005 or 10.5067/teocn-3ac64\n    or 10.5067/terra/modis/l3m/chl/2018 or 10.5067/terra/modis/l3m/flh/2018\n    or 10.5067/terra/modis/l3m/poc/2018\n  )",
+        "x_new_oql": "get works (all corpora) where DOI is (\n    10.5067/modis/myd14a1.061 or 10.5067/modis/myd14a2.006\n    or 10.5067/modis/myd14a2.061 or 10.5067/modis/myd15a2h.006\n    or 10.5067/modis/myd15a2h.061 or 10.5067/modis/myd16a2.061\n    or 10.5067/modis/myd17a2h.006 or 10.5067/modis/myd17a2h.061\n    or 10.5067/modis/myd17a3h.006 or 10.5067/modis/myd17a3hgf.006\n    or 10.5067/modis/myd17a3hgf.061 or 10.5067/modis/myd21a1d.061\n    or 10.5067/modis/myd21a1n.061 or 10.5067/modis/myd21c1.061\n    or 10.5067/modis/myd21c2.061 or 10.5067/modis/myd21c3.061\n    or 10.5067/modis/mydocga.006 or 10.5067/nv34yuixlp9w or 10.5067/opdsw-pl3v1\n    or 10.5067/opdsws1-l3v1 or 10.5067/orbview-2/seawifs/l3b/chl/2018.0\n    or 10.5067/orbview-2/seawifs/l3b/poc/2018.0\n    or 10.5067/orbview-2/seawifs/l3b/rrs/2018.0 or 10.5067/seabass/caml/data001\n    or 10.5067/snwg/opera_l2_rtc-s1-static_v1 or 10.5067/snwg/opera_l2_rtc-s1_v1\n    or 10.5067/snwg/opera_l3_dist-ann-hls_v1.001 or 10.5067/t5ruataqref8\n    or 10.5067/telnd-3aj64 or 10.5067/telnd-nc005 or 10.5067/temsc-3jc63\n    or 10.5067/temsc-3jc634 or 10.5067/temsc-3mj63 or 10.5067/temsc-3mj634\n    or 10.5067/temsc-ocl05 or 10.5067/teocn-0n005 or 10.5067/teocn-3ac64\n    or 10.5067/terra/modis/l3m/chl/2018 or 10.5067/terra/modis/l3m/flh/2018\n    or 10.5067/terra/modis/l3m/poc/2018\n  )",
+        "oqo": {
+          "get_rows": "works",
+          "corpus": "all",
+          "filter_rows": [
+            {
+              "join": "or",
+              "filters": [
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/myd14a1.061"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/myd14a2.006"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/myd14a2.061"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/myd15a2h.006"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/myd15a2h.061"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/myd16a2.061"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/myd17a2h.006"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/myd17a2h.061"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/myd17a3h.006"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/myd17a3hgf.006"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/myd17a3hgf.061"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/myd21a1d.061"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/myd21a1n.061"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/myd21c1.061"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/myd21c2.061"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/myd21c3.061"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/modis/mydocga.006"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/nv34yuixlp9w"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/opdsw-pl3v1"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/opdsws1-l3v1"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/orbview-2/seawifs/l3b/chl/2018.0"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/orbview-2/seawifs/l3b/poc/2018.0"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/orbview-2/seawifs/l3b/rrs/2018.0"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/seabass/caml/data001"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/snwg/opera_l2_rtc-s1-static_v1"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/snwg/opera_l2_rtc-s1_v1"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/snwg/opera_l3_dist-ann-hls_v1.001"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/t5ruataqref8"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/telnd-3aj64"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/telnd-nc005"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/temsc-3jc63"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/temsc-3jc634"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/temsc-3mj63"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/temsc-3mj634"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/temsc-ocl05"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/teocn-0n005"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/teocn-3ac64"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/terra/modis/l3m/chl/2018"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/terra/modis/l3m/flh/2018"
+                },
+                {
+                  "column_id": "doi",
+                  "value": "10.5067/terra/modis/l3m/poc/2018"
+                }
+              ]
+            }
+          ]
+        },
+        "url": "/works?filter=doi:10.5067%2Fmodis%2Fmyd14a1.061|10.5067%2Fmodis%2Fmyd14a2.006|10.5067%2Fmodis%2Fmyd14a2.061|10.5067%2Fmodis%2Fmyd15a2h.006|10.5067%2Fmodis%2Fmyd15a2h.061|10.5067%2Fmodis%2Fmyd16a2.061|10.5067%2Fmodis%2Fmyd17a2h.006|10.5067%2Fmodis%2Fmyd17a2h.061|10.5067%2Fmodis%2Fmyd17a3h.006|10.5067%2Fmodis%2Fmyd17a3hgf.006|10.5067%2Fmodis%2Fmyd17a3hgf.061|10.5067%2Fmodis%2Fmyd21a1d.061|10.5067%2Fmodis%2Fmyd21a1n.061|10.5067%2Fmodis%2Fmyd21c1.061|10.5067%2Fmodis%2Fmyd21c2.061|10.5067%2Fmodis%2Fmyd21c3.061|10.5067%2Fmodis%2Fmydocga.006|10.5067%2Fnv34yuixlp9w|10.5067%2Fopdsw-pl3v1|10.5067%2Fopdsws1-l3v1|10.5067%2Forbview-2%2Fseawifs%2Fl3b%2Fchl%2F2018.0|10.5067%2Forbview-2%2Fseawifs%2Fl3b%2Fpoc%2F2018.0|10.5067%2Forbview-2%2Fseawifs%2Fl3b%2Frrs%2F2018.0|10.5067%2Fseabass%2Fcaml%2Fdata001|10.5067%2Fsnwg%2Fopera_l2_rtc-s1-static_v1|10.5067%2Fsnwg%2Fopera_l2_rtc-s1_v1|10.5067%2Fsnwg%2Fopera_l3_dist-ann-hls_v1.001|10.5067%2Ft5ruataqref8|10.5067%2Ftelnd-3aj64|10.5067%2Ftelnd-nc005|10.5067%2Ftemsc-3jc63|10.5067%2Ftemsc-3jc634|10.5067%2Ftemsc-3mj63|10.5067%2Ftemsc-3mj634|10.5067%2Ftemsc-ocl05|10.5067%2Fteocn-0n005|10.5067%2Fteocn-3ac64|10.5067%2Fterra%2Fmodis%2Fl3m%2Fchl%2F2018|10.5067%2Fterra%2Fmodis%2Fl3m%2Fflh%2F2018|10.5067%2Fterra%2Fmodis%2Fl3m%2Fpoc%2F2018&corpus=all&per_page=100",
+        "order": "most cited (age-adjusted) first",
+        "order_default": true
+      },
+      "cost_usd": 0.0001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W6967629599",
+        "doi": "https://doi.org/10.5067/telnd-nc005",
+        "title": "GRACE MONTHLY LAND WATER MASS GRIDS NETCDF RELEASE 5.0",
+        "type": "dataset",
+        "publication_year": 2014,
+        "publication_date": "2014-10-15",
+        "cited_by_count": 85,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 17
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 19
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6929620315",
+        "doi": "https://doi.org/10.5067/modis/myd15a2h.006",
+        "title": "MYD15A2H MODIS/Aqua Leaf Area Index/FPAR 8-Day L4 Global 500m SIN Grid V006",
+        "type": "dataset",
+        "publication_year": 2015,
+        "publication_date": "2015-01-01",
+        "cited_by_count": 35,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6929576289",
+        "doi": "https://doi.org/10.5067/nv34yuixlp9w",
+        "title": "MEaSUREs Greenland Ice Mapping Project (GIMP) Digital Elevation Model, Version 1",
+        "type": "dataset",
+        "publication_year": 2015,
+        "publication_date": "2015-01-01",
+        "cited_by_count": 30,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6966925386",
+        "doi": "https://doi.org/10.5067/temsc-ocl05",
+        "title": "GRACE MASCON Ocean and Hydrology Equivalent Water Heights JPL RL05M.1",
+        "type": "dataset",
+        "publication_year": 2015,
+        "publication_date": "2015-09-16",
+        "cited_by_count": 25,
+        "counts_by_year": [
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 4
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6911078194",
+        "doi": "https://doi.org/10.5067/temsc-3jc63",
+        "title": "JPL GRACE and GRACE-FO Mascon Ocean, Ice, and Hydrology Equivalent Water Height Coastal Resolution Improvement (CRI) Filtered Release 06.1 Version 03",
+        "type": "dataset",
+        "publication_year": 2022,
+        "publication_date": "2022-12-10",
+        "cited_by_count": 18,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6929682634",
+        "doi": "https://doi.org/10.5067/t5ruataqref8",
+        "title": "SMAP L4 Global 3-hourly 9 km EASE-Grid Surface and Root Zone Soil Moisture Geophysical Data, Version 8",
+        "type": "dataset",
+        "publication_year": 2025,
+        "publication_date": "2025-01-01",
+        "cited_by_count": 8,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 8
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6948483024",
+        "doi": "https://doi.org/10.5067/modis/myd17a2h.006",
+        "title": "MYD17A2H MODIS/Aqua Gross Primary Productivity 8-Day L4 Global 500m SIN Grid V006",
+        "type": "dataset",
+        "publication_year": 2015,
+        "publication_date": "2015-01-01",
+        "cited_by_count": 8,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6910863113",
+        "doi": "https://doi.org/10.5067/telnd-3aj64",
+        "title": "JPL TELLUS GRACE Level-3 Monthly Land Water-Equivalent-Thickness Surface Mass Anomaly Release 6.0 version 04 in netCDF/ASCII/GeoTIFF Formats",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 7,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6892322999",
+        "doi": "https://doi.org/10.5067/terra/modis/l3m/chl/2018",
+        "title": "MODIS-TERRA Level 3 Mapped Chlorophyll Data Version R2018.0",
+        "type": "dataset",
+        "publication_year": 2018,
+        "publication_date": "2018-01-01",
+        "cited_by_count": 6,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6929596034",
+        "doi": "https://doi.org/10.5067/modis/myd21a1d.061",
+        "title": "MODIS/Aqua Land Surface Temperature/3-Band Emissivity Daily L3 Global 1km SIN Grid Day V061",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 6,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6892268540",
+        "doi": "https://doi.org/10.5067/teocn-0n005",
+        "title": "GRACE MONTHLY OCEAN MASS GRIDS NETCDF RELEASE 5.0",
+        "type": "dataset",
+        "publication_year": 2014,
+        "publication_date": "2014-10-15",
+        "cited_by_count": 5,
+        "counts_by_year": [
+          {
+            "year": 2019,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 3
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6892064088",
+        "doi": "https://doi.org/10.5067/modis/myd15a2h.061",
+        "title": "MODIS/Aqua Leaf Area Index/FPAR 8-Day L4 Global 500m SIN Grid V061",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 4,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6948697573",
+        "doi": "https://doi.org/10.5067/temsc-3jc634",
+        "title": "JPL GRACE and GRACE-FO Mascon Ocean, Ice, and Hydrology Equivalent Water Height CRI Filtered RL06.3Mv04",
+        "type": "dataset",
+        "publication_year": 2024,
+        "publication_date": "2024-01-01",
+        "cited_by_count": 4,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6892125854",
+        "doi": "https://doi.org/10.5067/terra/modis/l3m/poc/2018",
+        "title": "MODIS-TERRA Level 3 Mapped Particulate Organic Carbon Data Version R2018.0",
+        "type": "dataset",
+        "publication_year": 2018,
+        "publication_date": "2018-01-01",
+        "cited_by_count": 3,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6892182633",
+        "doi": "https://doi.org/10.5067/modis/myd14a2.006",
+        "title": "MYD14A2 MODIS/Aqua Thermal Anomalies/Fire 8-Day L3 Global 1km SIN Grid V006",
+        "type": "dataset",
+        "publication_year": 2015,
+        "publication_date": "2015-01-01",
+        "cited_by_count": 3,
+        "counts_by_year": [
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6929307385",
+        "doi": "https://doi.org/10.5067/opdsw-pl3v1",
+        "title": "OPERA Dynamic Surface Water Extent from Harmonized Landsat Sentinel-2 Version 1",
+        "type": "dataset",
+        "publication_year": 2023,
+        "publication_date": "2023-01-01",
+        "cited_by_count": 3,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6929587413",
+        "doi": "https://doi.org/10.5067/temsc-3mj634",
+        "title": "JPL GRACE and GRACE-FO Mascon Ocean, Ice, and Hydrology Equivalent Water Height JPL RL06.3Mv04",
+        "type": "dataset",
+        "publication_year": 2024,
+        "publication_date": "2024-01-01",
+        "cited_by_count": 3,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6948677602",
+        "doi": "https://doi.org/10.5067/modis/myd21a1n.061",
+        "title": "MODIS/Aqua Land Surface Temperature/3-Band Emissivity Daily L3 Global 1km SIN Grid Night V061",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 3,
+        "counts_by_year": [
+          {
+            "year": 2024,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6967410545",
+        "doi": "https://doi.org/10.5067/modis/myd17a3hgf.006",
+        "title": "MYD17A3HGF MODIS/Aqua Net Primary Production Gap-Filled Yearly L4 Global 500 m SIN Grid V006",
+        "type": "dataset",
+        "publication_year": 2019,
+        "publication_date": "2019-01-01",
+        "cited_by_count": 3,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6910901754",
+        "doi": "https://doi.org/10.5067/modis/myd17a3hgf.061",
+        "title": "MODIS/Aqua Net Primary Production Gap-Filled Yearly L4 Global 500m SIN Grid V061",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 2,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6911059034",
+        "doi": "https://doi.org/10.5067/modis/myd17a2h.061",
+        "title": "MODIS/Aqua Gross Primary Productivity 8-Day L4 Global 500m SIN Grid V061",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 2,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 2
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6929835887",
+        "doi": "https://doi.org/10.5067/modis/myd17a3h.006",
+        "title": "MYD17A3H MODIS/Aqua Net Primary Production Yearly L4 Global 500m SIN Grid V006",
+        "type": "dataset",
+        "publication_year": 2015,
+        "publication_date": "2015-01-01",
+        "cited_by_count": 2,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6929848394",
+        "doi": "https://doi.org/10.5067/temsc-3mj63",
+        "title": "JPL GRACE and GRACE-FO Mascon Ocean, Ice, and Hydrology Equivalent Water Height JPL Release 06.1 Version 03",
+        "type": "dataset",
+        "publication_year": 2022,
+        "publication_date": "2022-12-10",
+        "cited_by_count": 2,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6967480334",
+        "doi": "https://doi.org/10.5067/modis/myd21c3.061",
+        "title": "MODIS/Aqua Land Surface Temperature/3-Band Emissivity Monthly L3 Global 0.05Deg CMG V061",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 2,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6892331293",
+        "doi": "https://doi.org/10.5067/seabass/caml/data001",
+        "title": "CAML",
+        "type": "dataset",
+        "publication_year": 2013,
+        "publication_date": "2013-01-01",
+        "cited_by_count": 1,
+        "counts_by_year": [
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6929683472",
+        "doi": "https://doi.org/10.5067/modis/myd14a1.061",
+        "title": "MODIS/Aqua Thermal Anomalies/Fire Daily L3 Global 1km SIN Grid V061",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 1,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6929758720",
+        "doi": "https://doi.org/10.5067/modis/mydocga.006",
+        "title": "MYDOCGA MODIS/Aqua Ocean Reflectance Daily L2G-Lite Global 1km SIN Grid V006",
+        "type": "dataset",
+        "publication_year": 2015,
+        "publication_date": "2015-01-01",
+        "cited_by_count": 1,
+        "counts_by_year": [
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6967243329",
+        "doi": "https://doi.org/10.5067/modis/myd21c1.061",
+        "title": "MODIS/Aqua Land Surface Temperature/3-Band Emissivity Daily L3 Global 0.05Deg CMG V061",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 1,
+        "counts_by_year": [
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          }
+        ]
+      },
+      {
+        "id": "https://openalex.org/W6929643406",
+        "doi": "https://doi.org/10.5067/modis/myd14a2.061",
+        "title": "MODIS/Aqua Thermal Anomalies/Fire 8-Day L3 Global 1km SIN Grid V061",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W6929724944",
+        "doi": "https://doi.org/10.5067/opdsws1-l3v1",
+        "title": "OPERA Dynamic Surface Water Extent from Sentinel-1 Version 1",
+        "type": "dataset",
+        "publication_year": 2024,
+        "publication_date": "2024-01-01",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W6929832699",
+        "doi": "https://doi.org/10.5067/terra/modis/l3m/flh/2018",
+        "title": "MODIS-TERRA Level 3 Mapped Fluorescent Line Height Data Version R2018.0",
+        "type": "dataset",
+        "publication_year": 2018,
+        "publication_date": "2018-01-01",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W6948468827",
+        "doi": "https://doi.org/10.5067/snwg/opera_l3_dist-ann-hls_v1.001",
+        "title": "OPERA Land Surface Disturbance Annual from Harmonized Landsat Sentinel-2 product (Version 1)",
+        "type": "dataset",
+        "publication_year": 2024,
+        "publication_date": "2024-01-01",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W6948593643",
+        "doi": "https://doi.org/10.5067/modis/myd16a2.061",
+        "title": "MODIS/Aqua Net Evapotranspiration 8-Day L4 Global 500m SIN Grid V061",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W6966822932",
+        "doi": "https://doi.org/10.5067/teocn-3ac64",
+        "title": "CSR TELLUS GRACE Level-3 Monthly Ocean Bottom Pressure Anomaly Release 6.0 version 04 in netCDF/ASCII/GeoTIFF Formats",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W6967065960",
+        "doi": "https://doi.org/10.5067/snwg/opera_l2_rtc-s1_v1",
+        "title": "OPERA Radiometric Terrain Corrected SAR Backscatter from Sentinel-1 validated product (Version 1)",
+        "type": "dataset",
+        "publication_year": 2023,
+        "publication_date": "2023-01-01",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W6967169337",
+        "doi": "https://doi.org/10.5067/modis/myd21c2.061",
+        "title": "MODIS/Aqua Land Surface Temperature/3-Band Emissivity 8-Day L3 Global 0.05Deg CMG V061",
+        "type": "dataset",
+        "publication_year": 2021,
+        "publication_date": "2021-01-01",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      },
+      {
+        "id": "https://openalex.org/W6967472780",
+        "doi": "https://doi.org/10.5067/snwg/opera_l2_rtc-s1-static_v1",
+        "title": "OPERA Radiometric Terrain Corrected SAR Backscatter from Sentinel-1 Static Layers validated product (Version 1)",
+        "type": "dataset",
+        "publication_year": 2023,
+        "publication_date": "2023-01-01",
+        "cited_by_count": 0,
+        "counts_by_year": []
+      }
+    ],
+    "group_by": []
+  },
+  "response_normalized_sha256": "822f74d3325a06239506330197e2d8c4ca70d2eef2b8b4b0617e3a0f64a0d7a2"
+}

@@ -1,0 +1,52 @@
+schema_version: 1
+id: gpm_imerg_half_hourly
+title: GPM IMERG
+intake:
+  kind: official_catalog
+  reference_url: https://planetarycomputer.microsoft.com/api/stac/v1/collections/gpm-imerg-hhr
+  added_on: '2026-10-31'
+triage:
+  decision: pending
+  priority: normal
+  rationale: Global discovery candidate. Review exact product scope, existing native access, license and
+    publication value before selecting work.
+publication:
+  status: candidate
+discovery:
+  batch: global-candidates-20261031
+  reviewed_on: '2026-10-31'
+  geographic_scope: near_global
+  spatial_coverage: 'planetary: review_note: Global precipitation estimates; STAC bbox all-world and description
+    says majority of Earth, with known high-latitude limits.; stac_bbox: [-180, -90, 180, 90]; temporal_interval:
+    [["2000-06-01T00:00:00Z", "2021-05-31T23:30:00Z"]] Direct half-hourly IMERG source; existing gpm is
+    daily V06 derivative. Preserve version and latitude limits. Related canonical records, with distinct
+    scope: gpm.'
+  sources:
+  - provider: planetary_computer
+    entry_id: gpm-imerg-hhr
+    url: https://planetarycomputer.microsoft.com/api/stac/v1/collections/gpm-imerg-hhr
+    relationship: exact_dataset
+  access:
+  - provider: planetary_computer
+    status: native_available
+    formats:
+    - Zarr
+    summary: 'Collection metadata declares per-item data assets / provider storage roots in the listed
+      native format(s). Metadata only: no item, asset, ABFS, or HTTP object opened; paths and bytes remain
+      unvalidated. Direct half-hourly IMERG source; existing gpm is daily V06 derivative. Preserve version
+      and latitude limits.'
+    license_summary: 'note: Do not treat this metadata label as legal clearance.; review_status: provider
+      declaration captured; terms and redistribution permission not independently reviewed; stac_license:
+      other'
+    proposed_outputs:
+    - Zarr
+    rationale: Reuse declared Zarr collection root; retain half-hourly temporal resolution and note non-global
+      high-latitude footprint.
+    evidence_urls:
+    - https://planetarycomputer.microsoft.com/api/stac/v1/collections/gpm-imerg-hhr
+    - https://planetarycomputer.microsoft.com/dataset/gpm-imerg-hhr
+  citations: []
+  evidence:
+  - path: research/global-candidates-20261031/planetary/reviewed.json
+    sha256: 07da016851a07f3e3e0937e120ce46442785f4e9096e563d92c1a3c0ce9e616a
+    key: gpm_imerg_half_hourly
