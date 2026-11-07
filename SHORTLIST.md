@@ -4,14 +4,14 @@ Generated from canonical dataset records. Unknown size is not zero. Counts use d
 
 | Rank | Dataset | Current work | Scope | Source download | Prepared analytic | Prepared display | External services (matching) | GEE services (matching) | GEE assets |
 |---:|---|---|---|---:|---:|---:|---:|---:|---:|
-| 1 | **LakeATLAS v1.0** | hosted verified pending catalog deployment | Global lake polygons AND pour points with all producer attributes; selected FileGDB representation. | 1.53 GB | 1.43 GB | 0 MB | 1 (1) | 1 (1) | 2 |
-| 2 | **Free-Flowing Rivers 2019 v1** | hosted verified pending catalog deployment | Complete global reach-level connectivity and pressure assessment; original FileGDB ZIP. | 954.71 MB | 887.13 MB | 0 MB | 1 (1) | 1 (1) | 1 |
+| 1 | **LakeATLAS v1.0** | public catalog verified | Global lake polygons AND pour points with all producer attributes; selected FileGDB representation. | 1.53 GB | 1.43 GB | 0 MB | 1 (1) | 1 (1) | 2 |
+| 2 | **Free-Flowing Rivers 2019 v1** | public catalog verified | Complete global reach-level connectivity and pressure assessment; original FileGDB ZIP. | 954.71 MB | 887.13 MB | 0 MB | 1 (1) | 1 (1) | 1 |
 | 3 | **TerraClimate v1.1 baseline** | defer | Monthly historical baseline 1950–2025, 14 variables × 76 annual files; excludes climate-change scenarios and climatologies. | ~115.51 GB | Unknown | Unknown | 2 (1) | 1 (0) | 1 |
 | 4 | **CRU-TS v4.10** | pending | Ten monthly variables over global land excluding Antarctica, 1901–2025; one full-period NetCDF.gz per variable, excluding duplicate decades and ASCII files. | 3.65 GB | Unknown | Unknown | 3 (1) | 0 (0) | 0 |
 | 5 | **RiverATLAS v1.0** | pending | Complete global enriched river-reach layer, original FileGDB ZIP; excludes BasinATLAS and LakeATLAS. | 2.33 GB (producer label; exact bytes unverified) | Unknown | Unknown | 1 (1) | 1 (1) | 1 |
-| 6 | **HydroLAKES v1.0 polygons** | hosted verified pending catalog deployment | Complete global original lake polygon inventory only; excludes separate pour-point layer. | 820.3 MB | 949.6 MB | 0 MB | 1 (1) | 1 (1) | 1 |
+| 6 | **HydroLAKES v1.0 polygons** | public catalog verified | Complete global original lake polygon inventory only; excludes separate pour-point layer. | 820.3 MB | 949.6 MB | 0 MB | 1 (1) | 1 (1) | 1 |
 | 7 | **GRWL summary V01.02** | withheld source geometry errors | Complete simplified global summary polyline product; excludes raw vectors, masks, tile index and basin supplement. | 43.28 MB | 46.3 MB | 86.55 MB | 1 (1) | 1 (0) | 1 |
-| 8 | **Lebreton river-plastic inputs, Figshare v6** | hosted verified pending catalog deployment | 40,760 modeled river inputs, historical model baseline 2010; selected original shapefile ZIP. | 5.76 MB | 6.36 MB | 3.71 MB | 1 (1) | 1 (0) | 1 |
+| 8 | **Lebreton river-plastic inputs, Figshare v6** | public catalog verified | 40,760 modeled river inputs, historical model baseline 2010; selected original shapefile ZIP. | 5.76 MB | 6.36 MB | 3.71 MB | 1 (1) | 1 (0) | 1 |
 | 9 | **Global Dam Watch consensus v1.0** | blocked source access | Consensus v1.0 barrier points and reservoir polygons; excludes separate evolving intelligence products and the JRC v1_delta edition. | Unknown | Unknown | Unknown | 3 (1) | 1 (1) | 2 |
 | 10 | **SWOT Prior Lake Database v2.03** | metadata qualified sample blocked by disk | Complete scientific PLD v2.03; excludes Light/Geometries variants and previous v2.02 tiles. | 29.99 GB | Unknown | Unknown | 1 (1) | 0 (0) | 0 |
 

@@ -12,15 +12,17 @@ source checksums, licensing, build settings, triage and publication state.
 
 The original data and derivatives are **CC BY 4.0**, attributed to the producer.
 The conversion scripts use the repository's Apache-2.0 software license.
-Folia is the processor; hosting and Portolan registration remain pending.
+Folia is the processor; the verified release is hosted under `nthh` on Source Cooperative. Main Portolan registry submission requires a separate decision.
 
 ## Run from a clean checkout
 
-For byte-for-byte reproduction of the recorded `figshare-v6-r2`, use a separate
-clone checked out at conversion commit
-`4c54a01451967421bf17b1346cd749c0738efdde`. Running the current branch records
-its own commit and canonical record snapshot, so provenance metadata can differ
-even when data bytes are unchanged.
+Run the current conversion and validation workflow from a clean checkout. The
+recorded `figshare-v6-r2` conversion used commit
+`4c54a01451967421bf17b1346cd749c0738efdde`; this is a historical provenance
+identifier, not a checkout target in the fresh public history. The
+[provenance archive](provenance/README.md) preserves the exact retained source
+files by checksum. A new run records its current commit and canonical record
+snapshot, so package provenance metadata can differ even when data bytes match.
 
 Run commands from the repository root. Install Python via uv, Node >=22.12,
 **tippecanoe 2.79.0**, and the native `pmtiles` CLI. The Python and npm lockfiles

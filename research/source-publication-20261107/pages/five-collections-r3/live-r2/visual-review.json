@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-11-07T23:09:01.581246+00:00",
+  "status": "passed",
+  "report_sha256": "c4d22e065611c2d96c0b7f10a2d90b5f8298e77c009e6c1f278870507d7dd306",
+  "screenshots_reviewed": 6,
+  "screenshots": [
+    {
+      "dataset_id": "free-flowing-rivers",
+      "path": "free-flowing-rivers--display_style_free-flowing-rivers-1.png",
+      "sha256": "e526af0377ab0db9a5d17548245dc2c37be9dbaf43e779b04f24ad732c642d94",
+      "observation": "River reach networks visibly overlay South America, Africa and Asia; expected title, attribution and analytic asset are shown."
+    },
+    {
+      "dataset_id": "grwl-raw",
+      "path": "grwl-raw--display_style_grwl-raw-display.png",
+      "sha256": "e26008b90903b53e3feec04547f5ce46d16f914c858d64c62ea36c0072365237",
+      "observation": "Raw width observation overview visibly overlays major global drainage patterns with data-driven widths; expected raw V01.01 title and metadata are shown. This overview does not independently revalidate every zoom."
+    },
+    {
+      "dataset_id": "hydrolakes",
+      "path": "hydrolakes--display_style_hydrolakes-1.png",
+      "sha256": "28e40812c208e7711e00f695251354f20ee2423a489d6f821c35a47308562160",
+      "observation": "Lake polygons visibly overlay the basemap, including the African Great Lakes; the expected HydroLAKES title and analytic assets are shown."
+    },
+    {
+      "dataset_id": "lakeatlas",
+      "path": "lakeatlas--display_style_lakeatlas-1.png",
+      "sha256": "93cfaa31a31e631a4626c6af76347bf92cc2bec6a7072e622c8834ba50c0e9d6",
+      "observation": "Both saved styles show distinct output: lake polygons and pour-point circles. The selector labels, collection title and producer attribution are correct."
+    },
+    {
+      "dataset_id": "lakeatlas",
+      "path": "lakeatlas--display_style_lakeatlas-2.png",
+      "sha256": "d8cf5b9cbd338637f3beb25dbfdd3eb5c61a15167ad2e958049834ccb09c2c44",
+      "observation": "Both saved styles show distinct output: lake polygons and pour-point circles. The selector labels, collection title and producer attribution are correct."
+    },
+    {
+      "dataset_id": "river-plastic-inputs",
+      "path": "river-plastic-inputs--style-annual-input.png",
+      "sha256": "636a94b3e0c9f6b44edc4a89040748915b923061ca22f0021696ffbe2222191f",
+      "observation": "Small turquoise river-mouth symbols are visible at the Amazon outlet and Angola coast. The original screenshot is byte-identical to the prior renderer diagnostic PNG (636a94b3e0c9f6b44edc4a89040748915b923061ca22f0021696ffbe2222191f); its separately labeled nearest-neighbor crops were reviewed to locate these subtle symbols. No acceptance screenshot was altered."
+    }
+  ],
+  "scope": "Manual review of all six original full screenshots from the complete live official Browser run. Actual GitHub Pages metadata and Source objects were read with no metadata interception.",
+  "limitations": [
+    "River-plastic symbols are small and subtle at the default overview; the same previously inspected original screenshot bytes were observed.",
+    "The earlier live Source HTTP 503 is retained separately. The exact interval recovered and matched local bytes before this complete rerun; successful requests do not establish an uptime guarantee.",
+    "Historical navigation failures remain retained, including the unproven original LakeATLAS wrong-route cause.",
+    "Hosting and visualization checks do not establish strict GEE parity or independent scientific accuracy."
+  ]
+}

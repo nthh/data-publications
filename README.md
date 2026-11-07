@@ -21,9 +21,11 @@ uv run --locked --project datasets/river-plastic-inputs python datasets/river-pl
 
 The checks validate all canonical records, the generated index, candidate backlog and related-dataset README sections, the citation snapshot and the historical workflow bytes. The final commands install and show the river-plastic pilot's local build options. Dataset-specific setup and validation instructions belong in that dataset's README. See [publishing guidance](docs/publishing.md) before treating a local build as a release.
 
-## Local dataset viewer
+## Dataset viewers
 
-[Open the multiscale local viewer](http://127.0.0.1:8916/?dataset=grwl-raw&region=global). It reads five prepared datasets plus the retained GRWL summary comparison as seven map layers from a separate HTTP object origin, using PMTiles for display and GeoParquet byte ranges for complete attribute lookup. GRWL raw line thickness uses each original observation's width, with a metre-based legend and explicit display exaggeration. Dataset files stay in ignored local storage; GDW and SWOT remain visibly unavailable. GRWL uses original-width overview symbols at zooms 0–7 and detailed observations from zoom 8 in the same archive. Follow the [current GRWL width workflow](research/grwl-width-overview-20261106/README.md) and [common viewer setup](scripts/cloud_viewer/README.md) to restart it.
+[Browse the five published datasets in Portolan Browser](https://browser.portolan-sdi.org/#/external/nthh.github.io/data-publications/catalog.json). The [live catalog](https://nthh.github.io/data-publications/catalog.json) is served from GitHub Pages; analytical data and PMTiles are hosted on Source Cooperative.
+
+The optional [local multiscale viewer](scripts/cloud_viewer/README.md) reads configured datasets from a separate HTTP object origin, using PMTiles for display and GeoParquet byte ranges for complete attribute lookup. The recorded local build includes five prepared datasets and the retained GRWL summary comparison as seven map layers. GRWL raw line thickness uses each original observation's width, with a metre-based legend and explicit display exaggeration. Dataset files stay in ignored local storage; GDW and SWOT remain visibly unavailable. GRWL uses original-width overview symbols at zooms 0–7 and detailed observations from zoom 8 in the same archive. Follow the [current GRWL width workflow](research/grwl-width-overview-20261106/README.md) and [common viewer setup](scripts/cloud_viewer/README.md) to restart it.
 
 The [display build and validation pattern](docs/display-derivatives.md) documents
 the separate versioned PMTiles packages and repeatable checks.
@@ -60,7 +62,7 @@ The shared repository contains editable dataset projects and a generated publica
 | `research/` | Dataset discovery, citation snapshots, comparisons and audits |
 | `.local/` | Ignored source downloads, bulk data, environments and local checks |
 
-The [generated catalog](catalog/README.md) includes only releases with verified hosted URLs and checksum-bound evidence. Candidate and prepared records stay outside it. Historical metadata snapshots remain with their release evidence. GitHub Pages is the agreed metadata host; its deployment and the final live Portolan Browser checks remain separate from verifying each Source product.
+The [generated catalog](catalog/README.md) includes only releases with verified hosted URLs and checksum-bound evidence. Candidate and prepared records stay outside it. Historical metadata snapshots remain with their release evidence. GitHub Pages serves the [live catalog](https://nthh.github.io/data-publications/catalog.json). All five collections and six display layers passed the official Browser live check and manual screenshot review; the [publication record](research/source-publication-20261107/public-release-r1.json) binds deployment, hosting and viewer evidence.
 
 See [the catalog workflow](docs/catalog-workflow.md) for generation, validation and local preparation. Existing conversion scripts retain their paths and environment locks so historical rebuild evidence stays meaningful.
 
@@ -145,4 +147,4 @@ The river-plastic pilot's cached GEE comparison found exact agreement for numeri
 The [river-plastic workflow](datasets/river-plastic-inputs/README.md) has completed
 its [standalone release rehearsal](datasets/river-plastic-inputs/releases/figshare-v6-r2/README.md):
 14 generated assets reproduced identically, original data hashes were preserved,
-and 39 fault checks passed. Its immutable data are now hosted and verified on Source Cooperative; aggregate catalog deployment remains.
+and 39 fault checks passed. Its immutable data are hosted and verified on Source Cooperative and included in the verified live aggregate catalog.

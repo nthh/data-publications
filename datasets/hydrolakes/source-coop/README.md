@@ -5,9 +5,9 @@
 - Dataset: `hydrolakes` (HydroLAKES v1.0: Polygons)
 - Product ID: `hydrolakes`
 - Local publication status: `published`
-- Local readiness: `hosted_verified_pending_catalog_deployment`
+- Local readiness: `public_catalog_verified`
 - Owner: `nthh` (confirmed)
-- Canonical publication review stage: `hosted_verified_pending_catalog_deployment`
+- Canonical publication review stage: `public_catalog_verified`
 - Creation readiness: `true`
 - Hosted: `true`
 

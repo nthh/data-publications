@@ -121,9 +121,10 @@ The **Storage connection** control, or `?objects=https://YOUR-OBJECT-ORIGIN`,
 can replace the origin while retaining the planned object paths. A real host must
 serve the same bytes and support HTTPS, Range/HEAD, CORS and exposed response
 headers. `Timing-Allow-Origin` is needed for cross-origin byte accounting. This
-option has only been tested against the local origin; no public endpoint is
-claimed to exist. Hosting readiness and GEE scientific equivalence remain
-separate from successful visualization.
+generic option was originally tested against the local origin. The separate
+Source preview and official Portolan Browser now have retained public-host
+checks. Hosting and GEE scientific equivalence remain separate from successful
+visualization.
 
 ## Verification
 
@@ -151,3 +152,34 @@ the [existing GEE audit](../../research/cloud-viewer-20261101/README.md).
 The [GRWL source trace and correction](../../research/grwl-straight-segments-20261102/README.md)
 explain why feature 13164 retains an upstream straight segment and why the
 original embedded GRWL PMTiles are superseded for display.
+
+## Repeat the official Portolan Browser check
+
+The [public catalog](https://browser.portolan-sdi.org/#/external/nthh.github.io/data-publications/catalog.json)
+passed the complete live check for five collections and six PMTiles layers. The
+[release record](../../research/source-publication-20261107/public-release-r1.json)
+binds all deployment and visual evidence. With the locked Node dependencies
+installed as above, stage metadata into a new directory, then run:
+
+```sh
+uv run --locked python scripts/publication_catalog.py stage .local/portolan-live-review
+node scripts/cloud_viewer/portolan-browser-check.mjs \
+  --mode live \
+  --plan research/source-publication-20261107/pages/five-collections-r3/publish-plan.json \
+  --expected-pages-plan-sha256 b7ddbfde936b3359820defe11abc6ba08eb37bd7f144c184492a40f3e661cd22 \
+  --catalog-dir .local/portolan-live-review/catalog \
+  --metadata-policy research/source-publication-20261107/pages/five-collections-r3/footer-prefix-policy-r1.json \
+  --metadata-policy-sha256 01676ef3a58e04c8e37d4b72211d8a642c91cb9d7e3be85654f1beb80ab623bf \
+  --out .local/portolan-live-browser-review
+```
+
+This reads actual public Pages and Source URLs; no login or local bulk data is
+needed. It uses installed Google Chrome on macOS, or `--chrome PATH`, and refuses
+existing output directories. Browser code, metadata and Source object identities
+are pinned. The sole larger-range allowance is the exact checksum-verified GRWL
+Parquet footer prefix; ordinary range and cumulative limits remain enforced.
+
+A successful automated run ends at `rendered_pending_manual_review`. Review all
+six original screenshots and retain a separate checksum-bound visual review
+before claiming acceptance. Preserve failed attempts. A future Browser or dataset
+revision requires a new reviewed plan; do not silently replace these frozen pins.

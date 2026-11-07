@@ -5,9 +5,9 @@
 - Dataset: `free-flowing-rivers` (Mapping the world's free-flowing rivers — global river reach connectivity assessment)
 - Product ID: `free-flowing-rivers`
 - Local publication status: `published`
-- Local readiness: `hosted_verified_pending_catalog_deployment`
+- Local readiness: `public_catalog_verified`
 - Owner: `nthh` (confirmed)
-- Canonical publication review stage: `hosted_verified_pending_catalog_deployment`
+- Canonical publication review stage: `public_catalog_verified`
 - Creation readiness: `true`
 - Hosted: `true`
 

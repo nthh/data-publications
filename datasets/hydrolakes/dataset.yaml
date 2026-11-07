@@ -103,7 +103,7 @@ review:
     source_size_key: source_size
   publication_readiness:
     reviewed_on: '2026-11-07'
-    stage: hosted_verified_pending_catalog_deployment
+    stage: public_catalog_verified
     asset_integrity: passed_fresh_sha256_audit
     integrity_evidence:
       path: research/gdw-swot-preparation-20261101/prepared-packages.json
@@ -111,8 +111,10 @@ review:
     scientific_validation_rerun: false
     local_followup: []
     public_followup:
-    - Deploy and verify the aggregate catalog in Portolan Browser.
     - Submit to the main Portolan registry only after a separate decision.
+    catalog_evidence:
+      path: research/source-publication-20261107/public-release-r1.json
+      sha256: 43b6f8782457ec809788b05427f663abc3c695b2c7556e12f651da83dac3c3db
     published: true
     local_render:
       status: passed_bounded_local_browser_demonstration

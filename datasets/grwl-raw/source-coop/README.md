@@ -5,9 +5,9 @@
 - Dataset: `grwl-raw` (Global River Width from Landsat — raw vector observations V01.01)
 - Product ID: `grwl-raw`
 - Local publication status: `published`
-- Local readiness: `hosted_verified_pending_catalog_deployment`
+- Local readiness: `public_catalog_verified`
 - Owner: `nthh` (confirmed)
-- Canonical publication review stage: `hosted_verified_pending_catalog_deployment`
+- Canonical publication review stage: `public_catalog_verified`
 - Creation readiness: `true`
 - Hosted: `true`
 
