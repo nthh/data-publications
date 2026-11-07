@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "checked_at_utc": "2026-11-07T22:59:03.532416+00:00",
+  "source_commit": "28b5c4ab4fea618179971dc1ba73b367268ae8f7",
+  "fresh_git_archive": true,
+  "pythonpath_removed": true,
+  "workflow_sha256": "84a59037c2631facae499cdd3a93c0a43f907886626f1dbe32cc0ffc76d8a72f",
+  "original_local_report_sha256": "a43004e2b7bbb903d0d5a4807cf5c61e52d55f7fae2d09a6c3184b3dcede8e65",
+  "checks": [
+    {
+      "name": "previous_guard",
+      "exit_code": 1,
+      "expected_success": false
+    },
+    {
+      "name": "correct_configuration",
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "name": "reject_destination",
+      "exit_code": 1,
+      "expected_success": false
+    },
+    {
+      "name": "reject_public_base",
+      "exit_code": 1,
+      "expected_success": false
+    },
+    {
+      "name": "reject_region",
+      "exit_code": 1,
+      "expected_success": false
+    },
+    {
+      "name": "fresh_catalog",
+      "exit_code": 0,
+      "expected_success": true
+    }
+  ],
+  "observed_old_failure": "ModuleNotFoundError: No module named candidate_discovery",
+  "scope": "Exact workflow inline guard executed from a fresh Git archive with inherited PYTHONPATH removed. The prior guard fails, corrected guard passes and three bad hosting configurations are rejected. The fresh catalog check passes."
+}
