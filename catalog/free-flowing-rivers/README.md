@@ -15,7 +15,8 @@ Original agents notes: https://data.source.coop/nthh/free-flowing-rivers/release
 Canonical publication limits:
 
 - Immutable analytical and display releases are hosted and verified. Aggregate catalog
-  deployment and the registry decision remain pending.
+  hosting has separate verification evidence; registry submission requires a separate
+  decision.
 - The 2019 publication is a static assessment, not current river connectivity.
 - Source fidelity and same-machine reproducibility do not establish independent scientific
   accuracy.

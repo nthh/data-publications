@@ -1,0 +1,224 @@
+{
+  "status": "passed",
+  "toolchain_versions_match": true,
+  "schema_version": 1,
+  "created": "2026-11-07T22:58:29.986114Z",
+  "catalog_path": "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/pages-stage-five-verified-r3/catalog",
+  "scope": "schema_stac_extensions_metadata_only",
+  "network_access": "prohibited",
+  "versions": {
+    "rashid": {
+      "expected": "0.3.0",
+      "observed": "0.3.0",
+      "matches": true
+    },
+    "stac-check": {
+      "expected": "1.14.0",
+      "observed": "1.14.0",
+      "matches": true
+    }
+  },
+  "conformance": {
+    "status": "passed",
+    "tool": "rashid",
+    "expected_scope": {
+      "schema": true,
+      "stac_structure": true,
+      "stac_extensions": true,
+      "data": "off",
+      "live": "off"
+    },
+    "command": [
+      "/Users/nathan/.folia-fleets/source-publication-20261106/tree/tools/portolan/.venv/bin/python",
+      "/Users/nathan/.folia-fleets/source-publication-20261106/tree/tools/portolan/offline_cli.py",
+      "rashid",
+      "check",
+      "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/pages-stage-five-verified-r3/catalog",
+      "--schema",
+      "--no-live",
+      "--json",
+      "--no-data"
+    ],
+    "exit_code": 0,
+    "launch_error": null,
+    "report_parse_status": "parsed",
+    "report": {
+      "passed": true,
+      "files_checked": 6,
+      "error_count": 0,
+      "warning_count": 0,
+      "info_count": 5,
+      "summary": {
+        "by_severity": {
+          "error": 0,
+          "warning": 0,
+          "info": 5
+        },
+        "by_rule": [
+          {
+            "rule_id": "PTL-PRO-002",
+            "severity": "info",
+            "count": 5,
+            "file_count": 5,
+            "description": "a mirror should link the upstream STAC with rel:'canonical' when one exists"
+          }
+        ]
+      },
+      "findings": [
+        {
+          "rule_id": "PTL-PRO-002",
+          "severity": "info",
+          "message": "mirror collection has no rel:'canonical' link; add one if the upstream publishes its own STAC catalog",
+          "path": "free-flowing-rivers/collection.json",
+          "object_id": "free-flowing-rivers",
+          "json_pointer": "/links",
+          "fix_hint": "add {\"rel\": \"canonical\", \"href\": <the upstream collection.json>, \"type\": \"application/json\"} to links when the upstream publishes STAC"
+        },
+        {
+          "rule_id": "PTL-PRO-002",
+          "severity": "info",
+          "message": "mirror collection has no rel:'canonical' link; add one if the upstream publishes its own STAC catalog",
+          "path": "grwl-raw/collection.json",
+          "object_id": "grwl-raw",
+          "json_pointer": "/links",
+          "fix_hint": "add {\"rel\": \"canonical\", \"href\": <the upstream collection.json>, \"type\": \"application/json\"} to links when the upstream publishes STAC"
+        },
+        {
+          "rule_id": "PTL-PRO-002",
+          "severity": "info",
+          "message": "mirror collection has no rel:'canonical' link; add one if the upstream publishes its own STAC catalog",
+          "path": "hydrolakes/collection.json",
+          "object_id": "hydrolakes",
+          "json_pointer": "/links",
+          "fix_hint": "add {\"rel\": \"canonical\", \"href\": <the upstream collection.json>, \"type\": \"application/json\"} to links when the upstream publishes STAC"
+        },
+        {
+          "rule_id": "PTL-PRO-002",
+          "severity": "info",
+          "message": "mirror collection has no rel:'canonical' link; add one if the upstream publishes its own STAC catalog",
+          "path": "lakeatlas/collection.json",
+          "object_id": "lakeatlas",
+          "json_pointer": "/links",
+          "fix_hint": "add {\"rel\": \"canonical\", \"href\": <the upstream collection.json>, \"type\": \"application/json\"} to links when the upstream publishes STAC"
+        },
+        {
+          "rule_id": "PTL-PRO-002",
+          "severity": "info",
+          "message": "mirror collection has no rel:'canonical' link; add one if the upstream publishes its own STAC catalog",
+          "path": "river-plastic-inputs/collection.json",
+          "object_id": "river-plastic-inputs",
+          "json_pointer": "/links",
+          "fix_hint": "add {\"rel\": \"canonical\", \"href\": <the upstream collection.json>, \"type\": \"application/json\"} to links when the upstream publishes STAC"
+        }
+      ]
+    },
+    "stdout": "{\n  \"passed\": true,\n  \"files_checked\": 6,\n  \"error_count\": 0,\n  \"warning_count\": 0,\n  \"info_count\": 5,\n  \"summary\": {\n    \"by_severity\": {\n      \"error\": 0,\n      \"warning\": 0,\n      \"info\": 5\n    },\n    \"by_rule\": [\n      {\n        \"rule_id\": \"PTL-PRO-002\",\n        \"severity\": \"info\",\n        \"count\": 5,\n        \"file_count\": 5,\n        \"description\": \"a mirror should link the upstream STAC with rel:'canonical' when one exists\"\n      }\n    ]\n  },\n  \"findings\": [\n    {\n      \"rule_id\": \"PTL-PRO-002\",\n      \"severity\": \"info\",\n      \"message\": \"mirror collection has no rel:'canonical' link; add one if the upstream publishes its own STAC catalog\",\n      \"path\": \"free-flowing-rivers/collection.json\",\n      \"object_id\": \"free-flowing-rivers\",\n      \"json_pointer\": \"/links\",\n      \"fix_hint\": \"add {\\\"rel\\\": \\\"canonical\\\", \\\"href\\\": <the upstream collection.json>, \\\"type\\\": \\\"application/json\\\"} to links when the upstream publishes STAC\"\n    },\n    {\n      \"rule_id\": \"PTL-PRO-002\",\n      \"severity\": \"info\",\n      \"message\": \"mirror collection has no rel:'canonical' link; add one if the upstream publishes its own STAC catalog\",\n      \"path\": \"grwl-raw/collection.json\",\n      \"object_id\": \"grwl-raw\",\n      \"json_pointer\": \"/links\",\n      \"fix_hint\": \"add {\\\"rel\\\": \\\"canonical\\\", \\\"href\\\": <the upstream collection.json>, \\\"type\\\": \\\"application/json\\\"} to links when the upstream publishes STAC\"\n    },\n    {\n      \"rule_id\": \"PTL-PRO-002\",\n      \"severity\": \"info\",\n      \"message\": \"mirror collection has no rel:'canonical' link; add one if the upstream publishes its own STAC catalog\",\n      \"path\": \"hydrolakes/collection.json\",\n      \"object_id\": \"hydrolakes\",\n      \"json_pointer\": \"/links\",\n      \"fix_hint\": \"add {\\\"rel\\\": \\\"canonical\\\", \\\"href\\\": <the upstream collection.json>, \\\"type\\\": \\\"application/json\\\"} to links when the upstream publishes STAC\"\n    },\n    {\n      \"rule_id\": \"PTL-PRO-002\",\n      \"severity\": \"info\",\n      \"message\": \"mirror collection has no rel:'canonical' link; add one if the upstream publishes its own STAC catalog\",\n      \"path\": \"lakeatlas/collection.json\",\n      \"object_id\": \"lakeatlas\",\n      \"json_pointer\": \"/links\",\n      \"fix_hint\": \"add {\\\"rel\\\": \\\"canonical\\\", \\\"href\\\": <the upstream collection.json>, \\\"type\\\": \\\"application/json\\\"} to links when the upstream publishes STAC\"\n    },\n    {\n      \"rule_id\": \"PTL-PRO-002\",\n      \"severity\": \"info\",\n      \"message\": \"mirror collection has no rel:'canonical' link; add one if the upstream publishes its own STAC catalog\",\n      \"path\": \"river-plastic-inputs/collection.json\",\n      \"object_id\": \"river-plastic-inputs\",\n      \"json_pointer\": \"/links\",\n      \"fix_hint\": \"add {\\\"rel\\\": \\\"canonical\\\", \\\"href\\\": <the upstream collection.json>, \\\"type\\\": \\\"application/json\\\"} to links when the upstream publishes STAC\"\n    }\n  ]\n}\n",
+    "stderr": ""
+  },
+  "stac_check_advisory": {
+    "status": "incomplete",
+    "tool": "stac-check",
+    "network_access": "prohibited",
+    "enumeration_error": null,
+    "objects_checked": 6,
+    "results": [
+      {
+        "path": "catalog.json",
+        "status": "tool_error",
+        "command": [
+          "/Users/nathan/.folia-fleets/source-publication-20261106/tree/tools/portolan/.venv/bin/python",
+          "/Users/nathan/.folia-fleets/source-publication-20261106/tree/tools/portolan/offline_cli.py",
+          "stac-check",
+          "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/pages-stage-five-verified-r3/catalog/catalog.json",
+          "--no-assets-urls"
+        ],
+        "exit_code": 1,
+        "stdout": "\n________________________________________________________\n ____  ____  __    ___       ___  _  _  ____  ___  __ _ \n/ ___)(_  _)/ _\\  / __)___  / __)/ )( \\(  __)/ __)(  / )\n\\___ \\  )( /    \\( (__(___)( (__ ) __ ( ) _)( (__  )  ( \n(____/ (__)\\_/\\_/ \\___)     \\___)\\_)(_/(____)\\___)(__\\_)\n________________________________________________________\n    \nstac-check: STAC spec validation and linting tool\n\nThanks for using STAC version 1.1.0!\n\n Validator: stac-valid 4.2.2\n\n Validation method: JSONSchema\n\nCATALOG Passed: False\n\nSchemas checked: \n    https://schemas.stacspec.org/v1.1.0/catalog-spec/json-schema/catalog.json\n\nRecommendation: \n    For more accurate error information, rerun with --verbose.\n\n\n Validation Errors: \n\nValidation error type: \n    Exception\n\nValidation error message: \n    OFFLINE GUARD: validator attempted a network operation\n\n STAC Best Practices: \n\nLinks in catalogs and collections should always have a 'title' field\n\n\n Additional Information: \n\nThis object has 13 links\n\nDisclaimer: Schema-based STAC validation may be incomplete and should only be considered as a first indicator of validity.\nSee: https://github.com/radiantearth/stac-spec/discussions/1242\n\n",
+        "stderr": "OFFLINE GUARD: validator attempted a network operation\n",
+        "launch_error": null,
+        "advisory": true
+      },
+      {
+        "path": "free-flowing-rivers/collection.json",
+        "status": "tool_error",
+        "command": [
+          "/Users/nathan/.folia-fleets/source-publication-20261106/tree/tools/portolan/.venv/bin/python",
+          "/Users/nathan/.folia-fleets/source-publication-20261106/tree/tools/portolan/offline_cli.py",
+          "stac-check",
+          "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/pages-stage-five-verified-r3/catalog/free-flowing-rivers/collection.json",
+          "--no-assets-urls"
+        ],
+        "exit_code": 1,
+        "stdout": "\n________________________________________________________\n ____  ____  __    ___       ___  _  _  ____  ___  __ _ \n/ ___)(_  _)/ _\\  / __)___  / __)/ )( \\(  __)/ __)(  / )\n\\___ \\  )( /    \\( (__(___)( (__ ) __ ( ) _)( (__  )  ( \n(____/ (__)\\_/\\_/ \\___)     \\___)\\_)(_/(____)\\___)(__\\_)\n________________________________________________________\n    \nstac-check: STAC spec validation and linting tool\n\nThanks for using STAC version 1.1.0!\n\n Validator: stac-valid 4.2.2\n\n Validation method: JSONSchema\n\nCOLLECTION Passed: False\n\nSchemas checked: \n    https://schemas.stacspec.org/v1.1.0/collection-spec/json-schema/collection.json\n\nRecommendation: \n    For more accurate error information, rerun with --verbose.\n\n\n Validation Errors: \n\nValidation error type: \n    Exception\n\nValidation error message: \n    OFFLINE GUARD: validator attempted a network operation\n\n STAC Best Practices: \n\nA STAC collection should contain a summaries field\nIt is recommended to store information like eo:bands in summaries\n\nLinks in catalogs and collections should always have a 'title' field\n\n\n Additional Information: \n\nThis object has 14 links\n\nDisclaimer: Schema-based STAC validation may be incomplete and should only be considered as a first indicator of validity.\nSee: https://github.com/radiantearth/stac-spec/discussions/1242\n\n",
+        "stderr": "OFFLINE GUARD: validator attempted a network operation\n",
+        "launch_error": null,
+        "advisory": true
+      },
+      {
+        "path": "grwl-raw/collection.json",
+        "status": "tool_error",
+        "command": [
+          "/Users/nathan/.folia-fleets/source-publication-20261106/tree/tools/portolan/.venv/bin/python",
+          "/Users/nathan/.folia-fleets/source-publication-20261106/tree/tools/portolan/offline_cli.py",
+          "stac-check",
+          "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/pages-stage-five-verified-r3/catalog/grwl-raw/collection.json",
+          "--no-assets-urls"
+        ],
+        "exit_code": 1,
+        "stdout": "\n________________________________________________________\n ____  ____  __    ___       ___  _  _  ____  ___  __ _ \n/ ___)(_  _)/ _\\  / __)___  / __)/ )( \\(  __)/ __)(  / )\n\\___ \\  )( /    \\( (__(___)( (__ ) __ ( ) _)( (__  )  ( \n(____/ (__)\\_/\\_/ \\___)     \\___)\\_)(_/(____)\\___)(__\\_)\n________________________________________________________\n    \nstac-check: STAC spec validation and linting tool\n\nThanks for using STAC version 1.1.0!\n\n Validator: stac-valid 4.2.2\n\n Validation method: JSONSchema\n\nCOLLECTION Passed: False\n\nSchemas checked: \n    https://schemas.stacspec.org/v1.1.0/collection-spec/json-schema/collection.json\n\nRecommendation: \n    For more accurate error information, rerun with --verbose.\n\n\n Validation Errors: \n\nValidation error type: \n    Exception\n\nValidation error message: \n    OFFLINE GUARD: validator attempted a network operation\n\n STAC Best Practices: \n\nA STAC collection should contain a summaries field\nIt is recommended to store information like eo:bands in summaries\n\nLinks in catalogs and collections should always have a 'title' field\n\n\n Additional Information: \n\nThis object has 14 links\n\nDisclaimer: Schema-based STAC validation may be incomplete and should only be considered as a first indicator of validity.\nSee: https://github.com/radiantearth/stac-spec/discussions/1242\n\n",
+        "stderr": "OFFLINE GUARD: validator attempted a network operation\n",
+        "launch_error": null,
+        "advisory": true
+      },
+      {
+        "path": "hydrolakes/collection.json",
+        "status": "tool_error",
+        "command": [
+          "/Users/nathan/.folia-fleets/source-publication-20261106/tree/tools/portolan/.venv/bin/python",
+          "/Users/nathan/.folia-fleets/source-publication-20261106/tree/tools/portolan/offline_cli.py",
+          "stac-check",
+          "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/pages-stage-five-verified-r3/catalog/hydrolakes/collection.json",
+          "--no-assets-urls"
+        ],
+        "exit_code": 1,
+        "stdout": "\n________________________________________________________\n ____  ____  __    ___       ___  _  _  ____  ___  __ _ \n/ ___)(_  _)/ _\\  / __)___  / __)/ )( \\(  __)/ __)(  / )\n\\___ \\  )( /    \\( (__(___)( (__ ) __ ( ) _)( (__  )  ( \n(____/ (__)\\_/\\_/ \\___)     \\___)\\_)(_/(____)\\___)(__\\_)\n________________________________________________________\n    \nstac-check: STAC spec validation and linting tool\n\nThanks for using STAC version 1.1.0!\n\n Validator: stac-valid 4.2.2\n\n Validation method: JSONSchema\n\nCOLLECTION Passed: False\n\nSchemas checked: \n    https://schemas.stacspec.org/v1.1.0/collection-spec/json-schema/collection.json\n\nRecommendation: \n    For more accurate error information, rerun with --verbose.\n\n\n Validation Errors: \n\nValidation error type: \n    Exception\n\nValidation error message: \n    OFFLINE GUARD: validator attempted a network operation\n\n STAC Best Practices: \n\nA STAC collection should contain a summaries field\nIt is recommended to store information like eo:bands in summaries\n\nLinks in catalogs and collections should always have a 'title' field\n\n\n Additional Information: \n\nThis object has 14 links\n\nDisclaimer: Schema-based STAC validation may be incomplete and should only be considered as a first indicator of validity.\nSee: https://github.com/radiantearth/stac-spec/discussions/1242\n\n",
+        "stderr": "OFFLINE GUARD: validator attempted a network operation\n",
+        "launch_error": null,
+        "advisory": true
+      },
+      {
+        "path": "lakeatlas/collection.json",
+        "status": "tool_error",
+        "command": [
+          "/Users/nathan/.folia-fleets/source-publication-20261106/tree/tools/portolan/.venv/bin/python",
+          "/Users/nathan/.folia-fleets/source-publication-20261106/tree/tools/portolan/offline_cli.py",
+          "stac-check",
+          "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/pages-stage-five-verified-r3/catalog/lakeatlas/collection.json",
+          "--no-assets-urls"
+        ],
+        "exit_code": 1,
+        "stdout": "\n________________________________________________________\n ____  ____  __    ___       ___  _  _  ____  ___  __ _ \n/ ___)(_  _)/ _\\  / __)___  / __)/ )( \\(  __)/ __)(  / )\n\\___ \\  )( /    \\( (__(___)( (__ ) __ ( ) _)( (__  )  ( \n(____/ (__)\\_/\\_/ \\___)     \\___)\\_)(_/(____)\\___)(__\\_)\n________________________________________________________\n    \nstac-check: STAC spec validation and linting tool\n\nThanks for using STAC version 1.1.0!\n\n Validator: stac-valid 4.2.2\n\n Validation method: JSONSchema\n\nCOLLECTION Passed: False\n\nSchemas checked: \n    https://schemas.stacspec.org/v1.1.0/collection-spec/json-schema/collection.json\n\nRecommendation: \n    For more accurate error information, rerun with --verbose.\n\n\n Validation Errors: \n\nValidation error type: \n    Exception\n\nValidation error message: \n    OFFLINE GUARD: validator attempted a network operation\n\n STAC Best Practices: \n\nA STAC collection should contain a summaries field\nIt is recommended to store information like eo:bands in summaries\n\nLinks in catalogs and collections should always have a 'title' field\n\n\n Additional Information: \n\nThis object has 16 links\n\nDisclaimer: Schema-based STAC validation may be incomplete and should only be considered as a first indicator of validity.\nSee: https://github.com/radiantearth/stac-spec/discussions/1242\n\n",
+        "stderr": "OFFLINE GUARD: validator attempted a network operation\n",
+        "launch_error": null,
+        "advisory": true
+      },
+      {
+        "path": "river-plastic-inputs/collection.json",
+        "status": "tool_error",
+        "command": [
+          "/Users/nathan/.folia-fleets/source-publication-20261106/tree/tools/portolan/.venv/bin/python",
+          "/Users/nathan/.folia-fleets/source-publication-20261106/tree/tools/portolan/offline_cli.py",
+          "stac-check",
+          "/Users/nathan/.folia-fleets/source-publication-20261106/tree/.local/pages-stage-five-verified-r3/catalog/river-plastic-inputs/collection.json",
+          "--no-assets-urls"
+        ],
+        "exit_code": 1,
+        "stdout": "\n________________________________________________________\n ____  ____  __    ___       ___  _  _  ____  ___  __ _ \n/ ___)(_  _)/ _\\  / __)___  / __)/ )( \\(  __)/ __)(  / )\n\\___ \\  )( /    \\( (__(___)( (__ ) __ ( ) _)( (__  )  ( \n(____/ (__)\\_/\\_/ \\___)     \\___)\\_)(_/(____)\\___)(__\\_)\n________________________________________________________\n    \nstac-check: STAC spec validation and linting tool\n\nThanks for using STAC version 1.1.0!\n\n Validator: stac-valid 4.2.2\n\n Validation method: JSONSchema\n\nCOLLECTION Passed: False\n\nSchemas checked: \n    https://schemas.stacspec.org/v1.1.0/collection-spec/json-schema/collection.json\n\nRecommendation: \n    For more accurate error information, rerun with --verbose.\n\n\n Validation Errors: \n\nValidation error type: \n    Exception\n\nValidation error message: \n    OFFLINE GUARD: validator attempted a network operation\n\n STAC Best Practices: \n\nA STAC collection should contain a summaries field\nIt is recommended to store information like eo:bands in summaries\n\nLinks in catalogs and collections should always have a 'title' field\n\n\n Additional Information: \n\nThis object has 12 links\n\nDisclaimer: Schema-based STAC validation may be incomplete and should only be considered as a first indicator of validity.\nSee: https://github.com/radiantearth/stac-spec/discussions/1242\n\n",
+        "stderr": "OFFLINE GUARD: validator attempted a network operation\n",
+        "launch_error": null,
+        "advisory": true
+      }
+    ],
+    "note": "Advisory only; tool failures or crashes do not change the Rashid conformance result."
+  }
+}

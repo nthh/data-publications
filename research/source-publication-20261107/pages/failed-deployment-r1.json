@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-11-07T22:55:57.375457+00:00",
+  "status": "failed_retained",
+  "workflow_run_id": 42422754355,
+  "workflow_url": "https://github.com/nthh/data-publications/actions/runs/42422754355",
+  "head_sha": "a1701192f044f1e25e699e37b2419515e3340159",
+  "failed_step": "Require the exact GitHub Pages publication configuration",
+  "error": "ModuleNotFoundError: No module named candidate_discovery, imported by scripts/catalog.py while the inline guard imported scripts.publication_catalog.",
+  "deployment_started": false,
+  "artifact_uploaded": false,
+  "fix": "Add the repository scripts directory to sys.path before importing publication_catalog in the inline workflow guard, matching normal script execution. The exact destination, public base and region checks remain unchanged.",
+  "verification_before_retry": "Execute the exact YAML guard from a fresh Git archive without PYTHONPATH; reject altered destination, public_base and region in copies."
+}

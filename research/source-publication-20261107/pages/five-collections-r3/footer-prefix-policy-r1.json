@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "kind": "official_browser_grwl_footer_prefix",
+  "collection_id": "grwl-raw",
+  "max_requests_per_collection": 1,
+  "browser_criteria_sha256": "0e136a04d3e74e97df69b4b65e7f8214d3b5efd8ab8e17f4d19c7d756fa8d60b",
+  "source_plan_sha256": "754c02dde3cf258263619599f893558d3348c7fb51c07f8fa700efa1900ac610",
+  "pages_plan_sha256": "b7ddbfde936b3359820defe11abc6ba08eb37bd7f144c184492a40f3e661cd22",
+  "object_url": "https://data.source.coop/nthh/grwl-raw/releases/raw-v01.01-local-r1/assets/grwl-raw-observations.parquet",
+  "object_sha256": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+  "object_size_bytes": 5529859809,
+  "footer_metadata_bytes": 19783655,
+  "footer_metadata_start": 5510076146,
+  "range": "bytes=5510076146-5529335520",
+  "range_sha256": "8aa968e0e8ab862d016bd48032df0adce65572370361d1a9c65c1c30bde86f7f",
+  "footer_proof_sha256": "976d339c8484c913485b4d846c52fa60ddccb14620b9bfe2eab8ace038e757c3",
+  "recorded_at_utc": "2026-11-07T22:58:23.253596+00:00",
+  "reason": "Official Browser reads the last 512 KiB then the remaining Parquet footer prefix. The original guard blocks the prefix before network access. Rebound to the final Pages plan: only FFR/LakeATLAS README operational notes changed; all catalog JSON, styles, thumbnails and Source objects are byte-identical.",
+  "failed_report": "research/source-publication-20261107/pages/five-collections-r1/failed-preflight-r1/portolan-browser-report.json"
+}

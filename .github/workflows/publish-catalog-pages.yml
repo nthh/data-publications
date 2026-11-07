@@ -38,7 +38,9 @@ jobs:
         run: |
           uv run --locked python - <<'PY'
           from pathlib import Path
-          from scripts.publication_catalog import load_config, PAGES_DESTINATION, PAGES_PUBLIC_BASE
+          import sys
+          sys.path.insert(0, str(Path.cwd() / "scripts"))
+          from publication_catalog import load_config, PAGES_DESTINATION, PAGES_PUBLIC_BASE
           publish = load_config(Path.cwd())["publish"]
           if (publish.get("destination") != PAGES_DESTINATION
                   or publish.get("public_base") != PAGES_PUBLIC_BASE

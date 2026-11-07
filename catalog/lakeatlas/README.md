@@ -21,8 +21,9 @@ Canonical publication limits:
 - Source polygon WKB is decoded using GDAL OpenFileGDB ring organization; a source
   feature with more than 100 parts emits a warning. No later geometry repair or simplification
   is applied.
-- The aggregate catalog deployment and registry decision remain pending; hosted validation
-  is recorded separately from historical loopback checks.
+- Aggregate catalog hosting has separate verification evidence; registry submission
+  requires a separate decision. Dataset hosting checks are distinct from historical
+  loopback checks.
 - Live GEE counts and 522 sampled IDs per layer match. Both layers have numeric differences
   including integral GEE GDP values; the polygon layer also has three narrow source
   spikes absent spatially from GEE. Strict parity fails. No exhaustive GEE or independent
