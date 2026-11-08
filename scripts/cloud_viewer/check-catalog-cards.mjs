@@ -1,12 +1,12 @@
 #!/usr/bin/env node
-// Preview the real Portolan card UI with local staged metadata; never deploy it.
+// Check official Portolan cards against a staged plan, locally or live; never deploy.
 import {readFile, mkdir, writeFile} from 'node:fs/promises';
 import {resolve, join} from 'node:path';
 import {createHash} from 'node:crypto';
 import {chromium} from 'playwright-core';
 const sha = bytes => createHash('sha256').update(bytes).digest('hex');
 const option = name => {const i=process.argv.indexOf(name);if(i<0||!process.argv[i+1])throw new Error(`Missing ${name}`);return resolve(process.argv[i+1]);};
-const stage=option('--stage'), out=option('--out');
+const stage=option('--stage'), out=option('--out'), live=process.argv.includes('--live');
 const planBytes=await readFile(join(stage,'publish-plan.json')), plan=JSON.parse(planBytes);
 const files=new Map();
 for(const entry of plan.files){
@@ -25,16 +25,30 @@ for(const link of root.links.filter(link=>link.rel==='child')){
   expected.push({id:collection.id,title:collection.title,thumbnail:new URL(thumbnail.href,url).href,providers:collection.providers});
 }
 await mkdir(out,{recursive:false});
-const report={schema_version:1,status:'failed',scope:'Official Portolan card UI with local staged metadata intercepted. No deployment, public-host check, or analytical revalidation.',stage_plan_sha256:sha(planBytes),cards:[],served_metadata:[],errors:[]};
+const report={schema_version:1,status:'failed',mode:live?'live':'staged',scope:live?'Official Portolan cards using actual public metadata responses, checked against the stage plan. No analytical revalidation.':'Official Portolan card UI with local staged metadata intercepted. No deployment, public-host check, or analytical revalidation.',stage_plan_sha256:sha(planBytes),cards:[],served_metadata:[],errors:[]};
 let browser;
 try{
   browser=await chromium.launch({headless:true,executablePath:process.env.CHROME_PATH||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'});
   report.browser_version=browser.version();
   const page=await browser.newPage({viewport:{width:1600,height:1200},deviceScaleFactor:1,serviceWorkers:'block'});
   page.on('pageerror',error=>report.errors.push(error.message));
+  const pending=[], observed=new Set();
+  if(live)page.on('response',response=>{
+    const url=response.url(), file=files.get(url);
+    if(!file)return;
+    pending.push((async()=>{
+      try{
+        const bytes=await response.body(), headers=response.headers(), actual=sha(bytes);
+        report.served_metadata.push({url,status:response.status(),sha256:actual,size_bytes:bytes.length,cors:headers['access-control-allow-origin']});
+        if(response.status()!==200||bytes.length!==file.entry.size_bytes||actual!==file.entry.sha256||headers['access-control-allow-origin']!=='*')throw new Error('Live metadata differs from plan or lacks CORS: '+url);
+        observed.add(url);
+      }catch(error){report.errors.push(error.message);}
+    })());
+  });
   await page.route('**/*',async route=>{
     const url=route.request().url(), file=files.get(url);
     if(file){
+      if(live){await route.continue();return;}
       report.served_metadata.push({url,sha256:file.entry.sha256,size_bytes:file.bytes.length});
       await route.fulfill({status:200,body:file.bytes,headers:{'content-type':url.endsWith('.png')?'image/png':url.endsWith('.json')?'application/json':'text/plain','access-control-allow-origin':'*'}});
     }else if(url.startsWith(new URL('.',self).href)||url.startsWith('https://data.source.coop/')){
@@ -57,6 +71,11 @@ try{
   await page.evaluate(()=>scrollTo(0,0));
   await page.screenshot({path:join(out,'catalog-cards.png'),fullPage:true,animations:'disabled'});
   report.screenshot_sha256=sha(await readFile(join(out,'catalog-cards.png')));
+  await Promise.all(pending);
+  if(live){
+    const required=[self,...root.links.filter(link=>link.rel==='child').map(link=>new URL(link.href,self).href),...expected.map(card=>card.thumbnail)];
+    for(const url of required)if(!observed.has(url))report.errors.push('Missing verified live response: '+url);
+  }
   if(report.errors.length)throw new Error('Browser errors occurred');
   report.status='rendered_pending_visual_review';
 }catch(error){report.error=error.message;process.exitCode=1;}
