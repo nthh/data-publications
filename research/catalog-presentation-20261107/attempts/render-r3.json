@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "plan_sha256": "0595752fa7fe193367ad614bdd4e23e27c38b8bb0e5d07b337431e7ffa413aa2",
+  "inputs": {
+    "renderer_sha256": "4c42b1c515b5ea3deaaa57d78e69257bf017b4ae9b473c9f6c3e1b87f5a35a17",
+    "client_sha256": "21437bf3f48f46781f4032459190a05af19ef52aeb9d9a207b9aa7bb7e166501",
+    "package_lock_sha256": "2719495eaa1f7bcbdcf768957b823c444251a746c342ed2ea86789d27abb110d",
+    "land_sha256": "9e0729ee253ca7d7a5c4ae9395fb1902264c5377c52e224d13dd85010e2835d9",
+    "plan_sha256": "0595752fa7fe193367ad614bdd4e23e27c38b8bb0e5d07b337431e7ffa413aa2",
+    "hydrolakes_collection_sha256": "8d3e0d559f1f08f11cf0e4085b8476118b772baf7d694d4fbce05f46839c6034",
+    "hydrolakes_style_sha256": "1d58a96b3a0273c130936428fd1fca23b483031fb18c376218d665b635012611",
+    "lakeatlas_collection_sha256": "73d20a4d5dd49276006651a7d9fcefd7e635d0579c3277e70892de5c01c0403b",
+    "lakeatlas_style_sha256": "80e3db6f74703cbf0c8246f84f7b1f4a62ffdef69785389efb34618ceade6b0d",
+    "free-flowing-rivers_collection_sha256": "1ed7cd8eb275f34e9095d6a0b1fb54e1ea08bf86c0a51d30da17d71c0ac23a40",
+    "free-flowing-rivers_style_sha256": "22b9f0025153f847dadd94780ebcbf60eaf27552ac61489ce83e58ec0d0f8e53",
+    "grwl-raw_collection_sha256": "91bd84331592ca3186a091454987a66e5e1b4927d00062e5e20067cc3062b2c0",
+    "grwl-raw_style_sha256": "aeeba3167e6d4cc8d11f14181cee0360435bc6519d32a168eab7698877fe40a3",
+    "worker_sha256": "0bf06492bdb7ba3d4132b78e435621bfba60d5250967991c02b1a73affea8cd5",
+    "bundle_sha256": "549566789df2c4de358835207886b3bd7431007192e0743bb692dcce19abc091"
+  },
+  "browser_version": "156.0.8078.80",
+  "cases": [
+    {
+      "dataset_id": "hydrolakes",
+      "status": "failed",
+      "requests": [
+        {
+          "range": "bytes 0-16383",
+          "requested_bytes": 16384,
+          "status": 206,
+          "bytes": 16384,
+          "sha256": "d1996032b1b4c91067ab199206c972376df9b26b39f11527bf5f29ce5e9e0455"
+        }
+      ],
+      "total_bytes": 16384,
+      "error": "No rendered features in the actual dataset source"
+    },
+    {
+      "dataset_id": "lakeatlas",
+      "status": "failed",
+      "requests": [
+        {
+          "range": "bytes 0-16383",
+          "requested_bytes": 16384,
+          "status": 206,
+          "bytes": 16384,
+          "sha256": "acae7efe62826abb269ec8761710ff2c35f0c28de53a28d7ced3b7b49991a301"
+        }
+      ],
+      "total_bytes": 16384,
+      "error": "No rendered features in the actual dataset source"
+    },
+    {
+      "dataset_id": "free-flowing-rivers",
+      "status": "failed",
+      "requests": [
+        {
+          "range": "bytes 0-16383",
+          "requested_bytes": 16384,
+          "status": 206,
+          "bytes": 16384,
+          "sha256": "dd96677ceb35e0cdc73a052a2484c5687d07e99334132d3507c81a2ce3438207"
+        }
+      ],
+      "total_bytes": 16384,
+      "error": "No rendered features in the actual dataset source"
+    },
+    {
+      "dataset_id": "grwl-raw",
+      "status": "rendered_pending_visual_review",
+      "requests": [
+        {
+          "range": "bytes 0-16383",
+          "requested_bytes": 16384,
+          "status": 206,
+          "bytes": 16384,
+          "sha256": "ec8486fe850e9f7331113a2567d11959a9e890704e607333a6fe8df16ba7958c"
+        },
+        {
+          "range": "bytes 1903-12975",
+          "requested_bytes": 11073,
+          "status": 206,
+          "bytes": 11073,
+          "sha256": "99934d6499014bd18f614c7af1b31ccde32d757424901acfe7c194c83a02c125"
+        },
+        {
+          "range": "bytes 1412570-2023897",
+          "requested_bytes": 611328,
+          "status": 206,
+          "bytes": 611328,
+          "sha256": "65d9e161f75c7519f8fa038d9705d4099b41d3f0dd7c219da792971db9b4fa14"
+        }
+      ],
+      "total_bytes": 638785,
+      "camera": {
+        "center": [
+          0,
+          35.87932623321164
+        ],
+        "zoom": 0.7682442498629077,
+        "bounds": [
+          [
+            -247.69613327406088,
+            -62.38579492440016
+          ],
+          [
+            247.6961332740599,
+            82.66074672264858
+          ]
+        ]
+      },
+      "source_layer": "grwl_width_overview",
+      "rendered_features": 64787,
+      "png_sha256": "4c0b5f0dd2cca67d57e87ca613a2dc47e16fe6a55a5ad86988cb93b5b0b3a546",
+      "png_size_bytes": 312760
+    }
+  ],
+  "status": "failed"
+}

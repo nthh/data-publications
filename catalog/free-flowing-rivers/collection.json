@@ -50,16 +50,6 @@
       "title": "Producer field dictionary",
       "type": "application/json"
     },
-    "thumbnail": {
-      "file:checksum": "1220c2d265154f06ccb02dced33bfa1c2f9a1ed708dc39e0caef315a96472f23532f",
-      "file:size": 2842,
-      "href": "display/thumbnail.png",
-      "roles": [
-        "thumbnail"
-      ],
-      "title": "Sampled display-only overview; not an analytic asset",
-      "type": "image/png"
-    },
     "display_tiles_free-flowing-rivers-1": {
       "href": "https://data.source.coop/nthh/free-flowing-rivers/display/display-v1/assets/ffr-reaches.pmtiles",
       "type": "application/vnd.pmtiles",
@@ -80,6 +70,16 @@
       "title": "Ffr Reaches display style",
       "file:size": 474,
       "file:checksum": "122022b9f0025153f847dadd94780ebcbf60eaf27552ac61489ce83e58ec0d0f8e53"
+    },
+    "thumbnail": {
+      "href": "presentation/thumbnail.png",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ],
+      "title": "Global overview from published PMTiles; generalized display only",
+      "file:size": 133052,
+      "file:checksum": "1220dd5a439a35b12b2fe513687b0b4b24c537a37c4a68fb8d1d216128c4cc0c8ce9"
     }
   },
   "created": "2026-10-31T00:00:00Z",
@@ -107,11 +107,6 @@
   "id": "free-flowing-rivers",
   "license": "CC-BY-4.0",
   "links": [
-    {
-      "href": "display/thumbnail.png",
-      "rel": "thumbnail",
-      "type": "image/png"
-    },
     {
       "href": "https://figshare.com/articles/dataset/Mapping_the_world_s_free-flowing_rivers_data_set_and_technical_documentation/7688801",
       "rel": "via",
@@ -159,6 +154,12 @@
       "title": "Ffr Reaches display style"
     },
     {
+      "rel": "thumbnail",
+      "href": "presentation/thumbnail.png",
+      "type": "image/png",
+      "title": "Global overview from published PMTiles; generalized display only"
+    },
+    {
       "rel": "vcs",
       "href": "https://github.com/nthh/data-publications",
       "title": "Repository",
@@ -201,16 +202,10 @@
       "url": "https://orcid.org/0000-0003-3712-2581"
     },
     {
-      "description": "Local candidate package only; public hosting has not occurred.",
-      "name": "Folia",
-      "roles": [
-        "processor"
-      ],
-      "url": "https://folia.sh"
-    },
-    {
+      "description": "Independent data processing and hosting on Source Cooperative.",
       "name": "nthh",
       "roles": [
+        "processor",
         "host"
       ],
       "url": "https://source.coop/nthh/free-flowing-rivers"

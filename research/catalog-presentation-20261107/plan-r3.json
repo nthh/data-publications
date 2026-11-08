@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "viewport": {
+    "width": 1200,
+    "height": 720,
+    "device_scale_factor": 1
+  },
+  "bounds": [
+    [
+      -180,
+      -60
+    ],
+    [
+      180,
+      82
+    ]
+  ],
+  "land": {
+    "path": "scripts/cloud_viewer/src/land.geojson",
+    "sha256": "9e0729ee253ca7d7a5c4ae9395fb1902264c5377c52e224d13dd85010e2835d9"
+  },
+  "cases": [
+    {
+      "dataset_id": "hydrolakes",
+      "title": "HydroLAKES",
+      "subtitle": "Global lake polygons \u00b7 v1.0",
+      "attribution": "Lehner & Messager / HydroSHEDS \u00b7 CC BY 4.0",
+      "style_path": "catalog/hydrolakes/display/display-v1/styles/hydrolakes-polygons.json",
+      "style_sha256": "1d58a96b3a0273c130936428fd1fca23b483031fb18c376218d665b635012611",
+      "pmtiles": {
+        "url": "https://data.source.coop/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles",
+        "sha256": "2fc61a8257322bed3c71f86e3be92ed4835023bbb23f80bc9b2bb5167cb19d46",
+        "size_bytes": 1122881121
+      },
+      "source_tile_zoom": 3
+    },
+    {
+      "dataset_id": "lakeatlas",
+      "title": "LakeATLAS",
+      "subtitle": "Lake polygons with hydro-environmental attributes \u00b7 v1.0",
+      "attribution": "HydroSHEDS / HydroATLAS authors \u00b7 see dataset license",
+      "style_path": "catalog/lakeatlas/display/display-v1/styles/lakeatlas-polygons.json",
+      "style_sha256": "80e3db6f74703cbf0c8246f84f7b1f4a62ffdef69785389efb34618ceade6b0d",
+      "pmtiles": {
+        "url": "https://data.source.coop/nthh/lakeatlas/display/display-v1/assets/lakeatlas-polygons.pmtiles",
+        "sha256": "394594baa10516b5bdea3841cdbbd7f8603412475059f846f5704386a72f71be",
+        "size_bytes": 1190009288
+      },
+      "source_tile_zoom": 3
+    },
+    {
+      "dataset_id": "free-flowing-rivers",
+      "title": "Free-Flowing Rivers",
+      "subtitle": "Global river connectivity assessment \u00b7 2019",
+      "attribution": "Grill, Lehner and coauthors (2019) \u00b7 CC BY 4.0",
+      "style_path": "catalog/free-flowing-rivers/display/display-v1/styles/ffr-reaches.json",
+      "style_sha256": "22b9f0025153f847dadd94780ebcbf60eaf27552ac61489ce83e58ec0d0f8e53",
+      "pmtiles": {
+        "url": "https://data.source.coop/nthh/free-flowing-rivers/display/display-v1/assets/ffr-reaches.pmtiles",
+        "sha256": "6e248eba5ecdf58ee28705a8f567be9497836f0a1c6c078b50327a1599ecdce3",
+        "size_bytes": 3570445458
+      },
+      "source_tile_zoom": 3
+    },
+    {
+      "dataset_id": "grwl-raw",
+      "title": "GRWL river widths",
+      "subtitle": "Source widths \u00b7 exaggerated symbols, not riverbanks \u00b7 V01.01",
+      "attribution": "Allen & Pavelsky (2018) \u00b7 CC BY 4.0",
+      "style_path": "catalog/grwl-raw/display/raw-v01.01-display-r3/styles/width.json",
+      "style_sha256": "aeeba3167e6d4cc8d11f14181cee0360435bc6519d32a168eab7698877fe40a3",
+      "pmtiles": {
+        "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+        "sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+        "size_bytes": 3190539066
+      },
+      "source_tile_zoom": null
+    }
+  ]
+}

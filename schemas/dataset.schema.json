@@ -187,6 +187,55 @@
                   "type": "null"
                 }
               ]
+            },
+            "processor_correction": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "from",
+                "to",
+                "reason"
+              ],
+              "description": "Explicit correction of a converter label; never changes source producer/licensor roles or immutable release metadata.",
+              "properties": {
+                "from": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "to": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            "thumbnail": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "path",
+                "sha256",
+                "title"
+              ],
+              "description": "Reviewed catalog-only PNG; separately versioned from immutable analytical/display packages.",
+              "properties": {
+                "path": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\)[^\\s]+$"
+                },
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                },
+                "title": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
             }
           }
         },

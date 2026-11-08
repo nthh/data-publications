@@ -120,16 +120,6 @@
       "title": "Retained fixed-window bbox pruning report",
       "type": "application/json"
     },
-    "thumbnail": {
-      "file:checksum": "12201545b01af18207d60a182fdcc0e4117d83c73eea1db93f48a673138a1cebf15e",
-      "file:size": 4138,
-      "href": "display/thumbnail.png",
-      "roles": [
-        "thumbnail"
-      ],
-      "title": "Sampled display-only overview; not an analytic asset",
-      "type": "image/png"
-    },
     "display_tiles_hydrolakes-1": {
       "href": "https://data.source.coop/nthh/hydrolakes/display/display-v1/assets/hydrolakes-polygons.pmtiles",
       "type": "application/vnd.pmtiles",
@@ -150,6 +140,16 @@
       "title": "Hydrolakes Polygons display style",
       "file:size": 511,
       "file:checksum": "12201d58a96b3a0273c130936428fd1fca23b483031fb18c376218d665b635012611"
+    },
+    "thumbnail": {
+      "href": "presentation/thumbnail.png",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ],
+      "title": "Global overview from published PMTiles; generalized display only",
+      "file:size": 100858,
+      "file:checksum": "1220f553f9052d328a92fa8d2c594a782cd77acd164aa2a94ddad7cf8793210466ab"
     }
   },
   "created": "2026-10-31T00:00:00Z",
@@ -177,11 +177,6 @@
   "id": "hydrolakes",
   "license": "CC-BY-4.0",
   "links": [
-    {
-      "href": "display/thumbnail.png",
-      "rel": "thumbnail",
-      "type": "image/png"
-    },
     {
       "href": "https://data.hydrosheds.org/file/hydrolakes/HydroLAKES_polys_v10_shp.zip",
       "rel": "via",
@@ -229,6 +224,12 @@
       "title": "Hydrolakes Polygons display style"
     },
     {
+      "rel": "thumbnail",
+      "href": "presentation/thumbnail.png",
+      "type": "image/png",
+      "title": "Global overview from published PMTiles; generalized display only"
+    },
+    {
       "rel": "vcs",
       "href": "https://github.com/nthh/data-publications",
       "title": "Repository",
@@ -263,16 +264,10 @@
       "url": "https://www.hydrosheds.org/products/hydrolakes"
     },
     {
-      "description": "Local candidate package only; public hosting has not occurred.",
-      "name": "Folia",
-      "roles": [
-        "processor"
-      ],
-      "url": "https://folia.sh"
-    },
-    {
+      "description": "Independent data processing and hosting on Source Cooperative.",
       "name": "nthh",
       "roles": [
+        "processor",
         "host"
       ],
       "url": "https://source.coop/nthh/hydrolakes"

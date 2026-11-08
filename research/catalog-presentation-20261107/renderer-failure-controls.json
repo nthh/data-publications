@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "cases": [
+    {
+      "case": "changed_style_pin",
+      "exit_code": 1,
+      "expected_rejection": true,
+      "stderr": "",
+      "error": "hydrolakes style SHA-256 mismatch"
+    },
+    {
+      "case": "existing_output",
+      "exit_code": 1,
+      "expected_rejection": true,
+      "stderr": "file:///Users/nathan/.folia-fleets/readme-catalog-preview-20261107/tree/scripts/cloud_viewer/render-thumbnails.mjs:39\ntry { await stat(outDir); throw new Error(`Output directory already exists: ${outDir}`); }\n                                ^\n\nError: Output directory already exists: /Users/nathan/.folia-fleets/readme-catalog-preview-20261107/tree/.local/catalog-thumbnails-r5\n    at file:///Users/nathan/.folia-fleets/readme-catalog-preview-20261107/tree/scripts/cloud_viewer/render-thumbnails.mjs:39:33\n\nNode.js v24.21.0\n"
+    }
+  ]
+}

@@ -468,6 +468,21 @@ def _set_public_host(collection: dict, dataset_id: str, record: dict) -> None:
     providers = collection.setdefault("providers", [])
     if not isinstance(providers, list):
         raise ValueError(f"Malformed Collection providers: {dataset_id}")
+    correction = (publication.get("catalog") or {}).get("processor_correction")
+    if correction:
+        if correction["to"] != owner or correction["from"].casefold() == owner.casefold():
+            raise ValueError(f"Processor correction must name the confirmed maintainer: {dataset_id}")
+        if any(isinstance(provider, dict) and isinstance(provider.get("name"), str)
+               and provider["name"].casefold() == owner.casefold() for provider in providers):
+            raise ValueError(f"Processor correction conflicts with an existing maintainer provider: {dataset_id}")
+        matches = [provider for provider in providers
+                   if isinstance(provider, dict) and provider.get("name") == correction["from"]]
+        if (len(matches) != 1 or "processor" not in matches[0].get("roles", [])
+                or set(matches[0]["roles"]) - {"host", "processor"}):
+            raise ValueError(f"Processor correction must match exactly one converter-only provider: {dataset_id}")
+        # Copy, never mutate the immutable source provider or its producer/licensor credits.
+        providers = [dict(provider, name=owner) if provider is matches[0] else provider
+                     for provider in providers]
     updated = []
     owner_found = False
     for provider in providers:
@@ -491,6 +506,42 @@ def _set_public_host(collection: dict, dataset_id: str, record: dict) -> None:
     if not owner_found:
         updated.append({"name": owner, "roles": ["host"], "url": host_url})
     collection["providers"] = updated
+
+
+
+def _catalog_thumbnail(root: Path, dataset_id: str, record: dict) -> tuple[dict, bytes] | None:
+    spec = ((record.get("publication") or {}).get("catalog") or {}).get("thumbnail")
+    if spec is None:
+        return None
+    path = inside(root, spec["path"])
+    if path.suffix != ".png" or path.stat().st_size > MAX_METADATA_BYTES:
+        raise ValueError(f"Catalog thumbnail must be a PNG under 10 MB: {dataset_id}")
+    data = path.read_bytes()
+    metadata_bytes(spec["path"], data)
+    if sha256_bytes(data) != spec["sha256"]:
+        raise ValueError(f"Catalog thumbnail SHA-256 mismatch: {dataset_id}")
+    return spec, data
+
+
+def _set_catalog_thumbnail(collection: dict, thumbnail: tuple[dict, bytes], dataset_id: str, put) -> None:
+    spec, data = thumbnail
+    href = "presentation/thumbnail.png"
+    assets = collection.setdefault("assets", {})
+    if "thumbnail" in assets and "thumbnail" not in assets["thumbnail"].get("roles", []):
+        raise ValueError(f"Catalog thumbnail conflicts with a non-thumbnail asset: {dataset_id}")
+    collection["assets"] = {key: asset for key, asset in assets.items()
+                            if "thumbnail" not in asset.get("roles", [])}
+    collection["assets"]["thumbnail"] = {
+        "href": href, "type": "image/png", "roles": ["thumbnail"], "title": spec["title"],
+        "file:size": len(data), "file:checksum": "1220" + sha256_bytes(data),
+    }
+    collection["links"] = [link for link in collection["links"] if link.get("rel") != "thumbnail"]
+    collection["links"].append({"rel": "thumbnail", "href": href, "type": "image/png", "title": spec["title"]})
+    extensions = collection.setdefault("stac_extensions", [])
+    file_schema = "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+    if file_schema not in extensions:
+        extensions.append(file_schema)
+    put(f"{dataset_id}/{href}", data)
 
 
 def _add_display_publication(collection: dict, display: dict, display_base: str,
@@ -936,6 +987,7 @@ def _generated(root: Path, config: dict) -> dict[str, bytes]:
 
     for dataset_id, record, snapshot, snap_path in published:
         display = _display_package(root, dataset_id, record)
+        thumbnail = _catalog_thumbnail(root, dataset_id, record)
         display_base = _display_hosting_base(root, dataset_id, record)
         collection_path = snapshot["collection_path"]
         file_entries = {item["path"]: item for item in snapshot["files"]}
@@ -1009,6 +1061,15 @@ def _generated(root: Path, config: dict) -> dict[str, bytes]:
         snapshot_style_paths.update(package_path(asset["href"], collection_path) for asset in collection.get("assets", {}).values()
                                     if isinstance(asset, dict) and isinstance(asset.get("href"), str) and local_url(asset["href"])
                                     and "style" in asset.get("roles", []))
+        snapshot_thumbnail_paths = {
+            package_path(link["href"], collection_path) for link in collection.get("links", [])
+            if link.get("rel") == "thumbnail" and isinstance(link.get("href"), str) and local_url(link["href"])
+        }
+        snapshot_thumbnail_paths.update(
+            package_path(asset["href"], collection_path) for asset in collection.get("assets", {}).values()
+            if isinstance(asset, dict) and isinstance(asset.get("href"), str)
+            and local_url(asset["href"]) and "thumbnail" in asset.get("roles", [])
+        )
         style_paths = snapshot_style_paths if display is None else set()
         for old_rel in sorted(style_paths):
             staged_rel = local_mapping[old_rel]
@@ -1026,7 +1087,8 @@ def _generated(root: Path, config: dict) -> dict[str, bytes]:
             guidance = any(link.get("rel") in ("describedby", "agents") and isinstance(link.get("href"), str)
                            and local_url(link["href"]) and package_path(link["href"], collection_path) == rel
                            for link in collection.get("links", []))
-            if rel == collection_path or rel in snapshot_style_paths or guidance:
+            if (rel == collection_path or rel in snapshot_style_paths or guidance
+                    or (thumbnail is not None and rel in snapshot_thumbnail_paths)):
                 continue
             staged = local_mapping[rel]
             data = (snap_path.parent / "files" / Path(*PurePosixPath(rel).parts)).read_bytes()
@@ -1035,6 +1097,8 @@ def _generated(root: Path, config: dict) -> dict[str, bytes]:
             if display_base is None:
                 raise ValueError(f"Published dataset {dataset_id} has no verified display package URL")
             _add_display_publication(out_collection, display, display_base, dataset_id, put)
+        if thumbnail is not None:
+            _set_catalog_thumbnail(out_collection, thumbnail, dataset_id, put)
         _set_public_host(out_collection, dataset_id, record)
         _navigation_links(out_collection, config, f"{dataset_id}/collection.json")
         children.append({"rel": "child", "href": f"{dataset_id}/collection.json", "title": record["title"], "type": "application/json"})
@@ -1042,6 +1106,11 @@ def _generated(root: Path, config: dict) -> dict[str, bytes]:
         notes = [f"# {record['title']}", "", collection.get("description", ""), "",
                  f"License: {collection['license']}.", "",
                  f"Immutable package: {base}", ""]
+        correction = record["publication"]["catalog"].get("processor_correction")
+        if correction:
+            notes.extend(["Current processor attribution: " + correction["to"] + ". " + correction["reason"], ""])
+        if thumbnail is not None:
+            notes.extend(["Catalog preview: " + thumbnail[0]["title"] + ". Display only; use GeoParquet for analysis.", ""])
         producers = [provider.get("name", "") for provider in collection.get("providers", [])
                      if "producer" in provider.get("roles", [])]
         if producers:

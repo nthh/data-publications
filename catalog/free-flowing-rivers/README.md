@@ -6,6 +6,10 @@ License: CC-BY-4.0.
 
 Immutable package: https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/
 
+Current processor attribution: nthh. The earlier converter label was a packaging default. This is an independent nthh publication; Folia code notices and immutable historical evidence remain intact.
+
+Catalog preview: Global overview from published PMTiles; generalized display only. Display only; use GeoParquet for analysis.
+
 Source producers: Günther Grill; Bernhard Lehner
 
 Source provenance: https://figshare.com/articles/dataset/Mapping_the_world_s_free-flowing_rivers_data_set_and_technical_documentation/7688801

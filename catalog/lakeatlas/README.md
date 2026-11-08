@@ -6,6 +6,10 @@ License: other.
 
 Immutable package: https://data.source.coop/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/
 
+Current processor attribution: nthh. The earlier converter label was a packaging default. This is an independent nthh publication; Folia code notices and immutable historical evidence remain intact.
+
+Catalog preview: Global overview from published PMTiles; generalized display only. Display only; use GeoParquet for analysis.
+
 Source producers: HydroSHEDS / HydroATLAS authors; Lehner, Messager, Korver, and Linke
 
 Source provenance: https://doi.org/10.6084/m9.figshare.19312001.v1

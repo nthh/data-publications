@@ -20,16 +20,6 @@
       "title": "grwl-raw-observations field dictionary",
       "type": "application/json"
     },
-    "thumbnail": {
-      "file:checksum": "1220689a7c232287133509fe4005d73912c97f26828328c4ece3811b06e3e6eaec42",
-      "file:size": 2710,
-      "href": "display/thumbnail.png",
-      "roles": [
-        "thumbnail"
-      ],
-      "title": "Sampled display-only overview; not an analytic asset",
-      "type": "image/png"
-    },
     "display_tiles_grwl-raw-display": {
       "href": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
       "type": "application/vnd.pmtiles",
@@ -50,6 +40,16 @@
       "title": "GRWL raw width observations at every zoom display style",
       "file:size": 10377,
       "file:checksum": "1220aeeba3167e6d4cc8d11f14181cee0360435bc6519d32a168eab7698877fe40a3"
+    },
+    "thumbnail": {
+      "href": "presentation/thumbnail.png",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ],
+      "title": "Global width-symbol overview; exaggerated display symbols, not riverbanks",
+      "file:size": 312760,
+      "file:checksum": "12204c0b5f0dd2cca67d57e87ca613a2dc47e16fe6a55a5ad86988cb93b5b0b3a546"
     }
   },
   "created": "2026-11-03T02:18:50Z",
@@ -77,11 +77,6 @@
   "id": "grwl-raw",
   "license": "CC-BY-4.0",
   "links": [
-    {
-      "href": "display/thumbnail.png",
-      "rel": "thumbnail",
-      "type": "image/png"
-    },
     {
       "href": "https://zenodo.org/records/18624542",
       "rel": "via",
@@ -128,6 +123,12 @@
       "href": "display/raw-v01.01-display-r3/styles/width.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "GRWL raw width observations at every zoom display style"
+    },
+    {
+      "rel": "thumbnail",
+      "href": "presentation/thumbnail.png",
+      "type": "image/png",
+      "title": "Global width-symbol overview; exaggerated display symbols, not riverbanks"
     },
     {
       "rel": "vcs",

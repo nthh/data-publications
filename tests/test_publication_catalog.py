@@ -542,6 +542,106 @@ class PublicationCatalogTests(unittest.TestCase):
                 pc._rewrite_style({"sources": {"x": {"url": value}}}, "styles/map.json",
                                   "https://data.example.org/demo/r1/", "collection.json")
 
+    def test_explicit_processor_correction_preserves_producer_and_source(self):
+        collection = {"providers": [
+            {"name": "Original producer", "roles": ["producer", "licensor"], "url": "https://example.org"},
+            {"name": "Folia", "roles": ["host", "processor"], "description": "Local only"},
+        ]}
+        original = json.loads(json.dumps(collection))
+        record = {"publication": {
+            "source_coop": {"owner": "nthh", "owner_status": "confirmed", "product_id": "demo"},
+            "catalog": {"processor_correction": {"from": "Folia", "to": "nthh", "reason": "Packaging default."}},
+        }}
+        source_provider = collection["providers"][1]
+        pc._set_public_host(collection, "demo", record)
+        self.assertEqual(collection["providers"][0], original["providers"][0])
+        self.assertEqual(source_provider, original["providers"][1])
+        self.assertEqual(collection["providers"][1], {
+            "name": "nthh", "roles": ["processor", "host"], "url": "https://source.coop/nthh/demo",
+            "description": "Independent data processing and hosting on Source Cooperative.",
+        })
+
+    def test_processor_correction_rejects_producer_licensor_ambiguous_and_unknown(self):
+        record = {"publication": {
+            "source_coop": {"owner": "nthh", "owner_status": "confirmed", "product_id": "demo"},
+            "catalog": {"processor_correction": {"from": "Folia", "to": "nthh", "reason": "Packaging default."}},
+        }}
+        for providers in [
+            [{"name": "Folia", "roles": ["producer", "processor"]}],
+            [{"name": "Folia", "roles": ["licensor", "processor"]}],
+            [{"name": "Folia", "roles": ["host"]}],
+            [{"name": "Folia", "roles": ["processor"]}] * 2,
+            [{"name": "Different converter", "roles": ["processor"]}],
+        ]:
+            with self.subTest(providers=providers), self.assertRaisesRegex(ValueError, "converter-only"):
+                pc._set_public_host({"providers": providers}, "demo", record)
+        with self.assertRaisesRegex(ValueError, "existing maintainer provider"):
+            pc._set_public_host({"providers": [
+                {"name": "Folia", "roles": ["processor"]}, {"name": "nthh", "roles": ["host"]},
+            ]}, "demo", record)
+        record["publication"]["catalog"]["processor_correction"]["to"] = "unconfirmed"
+        with self.assertRaisesRegex(ValueError, "confirmed maintainer"):
+            pc._set_public_host({"providers": []}, "demo", record)
+
+    def catalog_preview(self):
+        package = self.make_package(nested=True)
+        self.export(package)
+        self.publish()
+        path = "datasets/demo/presentation/global-v1/thumbnail.png"
+        preview = self.root / path
+        preview.parent.mkdir(parents=True)
+        preview.write_bytes(PNG)
+        self.record["publication"]["catalog"]["thumbnail"] = {
+            "path": path, "sha256": sha(PNG), "title": "Global display overview",
+        }
+        self.write_record()
+        return preview
+
+    def test_catalog_preview_staging_preserves_immutable_snapshot_and_data(self):
+        self.catalog_preview()
+        original = {str(p.relative_to(self.root)): p.read_bytes() for p in self.root.rglob("*") if p.is_file()}
+        pc._write(Namespace(root=self.root))
+        for name, data in original.items():
+            self.assertEqual((self.root / name).read_bytes(), data, name)
+        collection = json.loads((self.root / "catalog/demo/collection.json").read_text())
+        asset = collection["assets"]["thumbnail"]
+        self.assertEqual(asset["href"], "presentation/thumbnail.png")
+        self.assertEqual(asset["file:checksum"], "1220" + sha(PNG))
+        self.assertEqual(asset["file:size"], len(PNG))
+        self.assertEqual(collection["assets"]["data"]["file:checksum"], "1220" + sha(b"abc"))
+        self.assertFalse((self.root / "catalog/demo/thumbnail.png").exists())
+        self.assertEqual([x["href"] for x in collection["links"] if x["rel"] == "thumbnail"], [asset["href"]])
+        pc._check(Namespace(root=self.root))
+        stage = self.root / "stage"
+        pc._stage(Namespace(root=self.root, output=stage))
+        staged = json.loads((stage / "catalog/demo/collection.json").read_text())
+        href = "https://catalog.example.org/root/demo/presentation/thumbnail.png"
+        self.assertEqual(staged["assets"]["thumbnail"]["href"], href)
+        self.assertEqual([x["href"] for x in staged["links"] if x["rel"] == "thumbnail"], [href])
+        self.assertEqual((stage / "catalog/demo/presentation/thumbnail.png").read_bytes(), PNG)
+
+    def test_catalog_preview_rejects_changed_bytes(self):
+        preview = self.catalog_preview()
+        preview.write_bytes(PNG + b"changed")
+        with self.assertRaisesRegex(ValueError, "thumbnail SHA-256 mismatch"):
+            pc._write(Namespace(root=self.root))
+
+    def test_catalog_preview_rejects_non_png_even_with_matching_hash(self):
+        preview = self.catalog_preview()
+        preview.write_bytes(b"not a PNG")
+        self.record["publication"]["catalog"]["thumbnail"]["sha256"] = sha(preview.read_bytes())
+        self.write_record()
+        with self.assertRaisesRegex(ValueError, "Invalid PNG"):
+            pc._write(Namespace(root=self.root))
+
+    def test_catalog_preview_rejects_symlink(self):
+        preview = self.catalog_preview()
+        target = preview.with_suffix(".original.png")
+        preview.rename(target)
+        preview.symlink_to(target)
+        with self.assertRaisesRegex(ValueError, "Symlink"):
+            pc._write(Namespace(root=self.root))
+
     def test_public_processor_description_replaces_local_host_note(self):
         collection = {"providers": [
             {"name": "Original producer", "roles": ["producer"], "description": "Original science."},
