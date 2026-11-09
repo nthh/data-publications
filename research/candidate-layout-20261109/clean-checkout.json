@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "checkout_commit": "1ec3270b6f5fa6ff334ae0eced654694b5736b2f",
+  "initial_git_status": "",
+  "inputs": "Committed files only; cached locked Python/wheels; no copied bulk data or runtime files.",
+  "status": "passed",
+  "commands": [
+    {
+      "argv": [
+        "python",
+        "scripts/catalog.py",
+        "--write"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"records_checked\": 453,\n  \"supplemental_records_checked\": 90,\n  \"family_keys_checked\": 363,\n  \"citations_checked\": 363,\n  \"decisions\": {\n    \"defer\": 3,\n    \"pending\": 443,\n    \"publish_conversion\": 6,\n    \"reuse_existing\": 1\n  }\n}\n"
+    },
+    {
+      "argv": [
+        "python",
+        "scripts/source_products.py",
+        "write"
+      ],
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "argv": [
+        "python",
+        "scripts/publication_catalog.py",
+        "write"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"published_collections\": 5,\n  \"generated_files\": 29\n}\n"
+    },
+    {
+      "argv": [
+        "python",
+        "scripts/catalog.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"records_checked\": 453,\n  \"supplemental_records_checked\": 90,\n  \"family_keys_checked\": 363,\n  \"citations_checked\": 363,\n  \"decisions\": {\n    \"defer\": 3,\n    \"pending\": 443,\n    \"publish_conversion\": 6,\n    \"reuse_existing\": 1\n  }\n}\n"
+    },
+    {
+      "argv": [
+        "python",
+        "scripts/source_products.py",
+        "check"
+      ],
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "argv": [
+        "python",
+        "scripts/publication_catalog.py",
+        "check"
+      ],
+      "exit_code": 0,
+      "output": "Catalog check passed; 5 published collections.\n"
+    },
+    {
+      "argv": [
+        "python",
+        "scripts/rank_citations.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"as_of\": \"2026-10-29\",\n  \"as_of_timezone\": \"America/Denver\",\n  \"provider\": \"OpenAlex\",\n  \"metric\": \"Maximum cited_by_count among associated dataset papers; never a sum.\",\n  \"families\": 363,\n  \"families_with_paper_count\": 237,\n  \"families_with_data_doi_count\": 81,\n  \"families_with_any_count\": 271,\n  \"families_without_any_count\": 92,\n  \"global_families\": 206,\n  \"global_families_with_paper_count\": 153,\n  \"scope_counts\": {\n    \"global\": 206,\n    \"regional\": 140,\n    \"mixed\": 12,\n    \"unclear\": 5\n  },\n  \"paper_match_status_counts\": {\n    \"matched\": 234,\n    \"partial\": 3,\n    \"unknown\": 126\n  },\n  \"doi_observations\": 455,\n  \"title_queries\": 44,\n  \"retrieval_started_utc\": \"2026-10-29T23:29:33.072459+00:00\",\n  \"retrieval_ended_utc\": \"2026-10-30T00:04:12.928405+00:00\",\n  \"limitations\": [\n    \"Paper citations proxy scholarly attention; they do not measure dataset users or exact-release citations.\",\n    \"Base-family citations are explicitly marked for derived variants such as daily MERRA-2 and TerraClimate futures.\",\n    \"A missing or unindexed reference remains unknown, never zero. Rankings cover resolved references only.\",\n    \"Multiple papers and data DOIs can share citing works; counts are reported separately and never summed.\",\n    \"Total citation counts favor older papers; recent counts and publication years are contextual fields.\",\n    \"Existing-host routing is a separate availability review; lack of a known host is not proof conversion is required.\"\n  ]\n}\nGlobal leaders:\nmerrav2 9044 https://doi.org/10.1175/jcli-d-16-0758.1 base_dataset_family\nplastic 4008 https://doi.org/10.1038/ncomms15611 associated_dataset_publication\nterraclim 3474 https://doi.org/10.1038/sdata.2017.191 base_dataset_family\nisric 2382 https://doi.org/10.5194/soil-7-217-2021 associated_dataset_publication\nglacier 1910 https://doi.org/10.1038/s41586-021-03436-z associated_dataset_publication\nhydrolakes 1775 https://doi.org/10.1038/ncomms13603 associated_dataset_publication\ngfch 1444 https://doi.org/10.1016/j.rse.2020.112165 associated_dataset_publication\nS2TSLULC 1346 https://doi.org/10.1109/igarss47720.2021.9553499 associated_dataset_publication\nesrilc2020 1346 https://doi.org/10.1109/igarss47720.2021.9553499 associated_dataset_publication\nai0 1299 https://doi.org/10.1038/s41597-022-01493-1 associated_dataset_publication\net0 1299 https://doi.org/10.1038/s41597-022-01493-1 associated_dataset_publication\nglc10 1289 https://doi.org/10.1016/j.scib.2019.03.002 associated_dataset_publication\ncflux 1191 https://doi.org/10.1038/s41558-020-00976-6 associated_dataset_publication\nhwsd 1067 https://doi.org/10.4060/cc3823en associated_dataset_publication\nnpp_viirs_ntl 935 https://doi.org/10.5194/essd-13-889-2021 associated_dataset_publication\n"
+    },
+    {
+      "argv": [
+        "python",
+        "scripts/check_provenance.py"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"status\": \"passed\",\n  \"historical_entries\": 186,\n  \"unique_blobs\": 104\n}\n"
+    },
+    {
+      "argv": [
+        "python",
+        "research/global-candidates-20261031/citations/check_review.py"
+      ],
+      "exit_code": 0,
+      "output": "OK: frozen 50 groups retained; 53 unique candidates; per-source family matches and frozen citations preserved\n"
+    },
+    {
+      "argv": [
+        "python",
+        "research/global-candidates-20261031/reuse/check.py"
+      ],
+      "exit_code": 0,
+      "output": "OK: 10 observations, 30 source file hashes, all current target IDs resolve\n"
+    },
+    {
+      "argv": [
+        "python",
+        "-m",
+        "unittest",
+        "tests.test_record_layout",
+        "tests.test_dataset_availability",
+        "-v"
+      ],
+      "exit_code": 0,
+      "output": "test_duplicate_id_across_locations_is_rejected_by_all_consumers (tests.test_record_layout.RecordLayoutTests.test_duplicate_id_across_locations_is_rejected_by_all_consumers) ... ok\ntest_generated_backlog_links_follow_actual_record_locations (tests.test_record_layout.RecordLayoutTests.test_generated_backlog_links_follow_actual_record_locations) ... ok\ntest_loads_records_from_both_locations (tests.test_record_layout.RecordLayoutTests.test_loads_records_from_both_locations) ... ok\ntest_promotion_moves_identity_without_creating_a_second_record (tests.test_record_layout.RecordLayoutTests.test_promotion_moves_identity_without_creating_a_second_record) ... ok\ntest_publication_checks_duplicate_yaml_keys_in_candidate_records (tests.test_record_layout.RecordLayoutTests.test_publication_checks_duplicate_yaml_keys_in_candidate_records) ... ok\ntest_published_record_requires_promotion_out_of_candidates (tests.test_record_layout.RecordLayoutTests.test_published_record_requires_promotion_out_of_candidates) ... ok\ntest_related_readme_links_cross_roots_and_stay_beside_the_record (tests.test_record_layout.RecordLayoutTests.test_related_readme_links_cross_roots_and_stay_beside_the_record) ... ok\ntest_source_product_preparation_requires_promotion (tests.test_record_layout.RecordLayoutTests.test_source_product_preparation_requires_promotion) ... ok\ntest_symlink_record_directory_is_rejected (tests.test_record_layout.RecordLayoutTests.test_symlink_record_directory_is_rejected) ... ok\ntest_counts_distinguish_current_from_older_and_count_gee_once (tests.test_dataset_availability.AvailabilityTests.test_counts_distinguish_current_from_older_and_count_gee_once) ... ok\ntest_duplicate_service_and_rank_rejected (tests.test_dataset_availability.AvailabilityTests.test_duplicate_service_and_rank_rejected) ... ok\ntest_evidence_key_and_hash_are_pinned (tests.test_dataset_availability.AvailabilityTests.test_evidence_key_and_hash_are_pinned) ... ok\ntest_evidence_rejects_malformed_json_and_missing_candidates (tests.test_dataset_availability.AvailabilityTests.test_evidence_rejects_malformed_json_and_missing_candidates) ... ok\ntest_legacy_manifest_counts_only_parquet_and_rejects_changed_hash (tests.test_dataset_availability.AvailabilityTests.test_legacy_manifest_counts_only_parquet_and_rejects_changed_hash) ... ok\ntest_location_urls_reject_non_https_and_embedded_credentials (tests.test_dataset_availability.AvailabilityTests.test_location_urls_reject_non_https_and_embedded_credentials) ... ok\ntest_manifest_without_parquet_rejected (tests.test_dataset_availability.AvailabilityTests.test_manifest_without_parquet_rejected) ... ok\ntest_markdown_has_all_table_rows_before_per_dataset_details (tests.test_dataset_availability.AvailabilityTests.test_markdown_has_all_table_rows_before_per_dataset_details) ... ok\ntest_modern_manifest_splits_analytic_display_and_ignores_docs_and_zip (tests.test_dataset_availability.AvailabilityTests.test_modern_manifest_splits_analytic_display_and_ignores_docs_and_zip) ... ok\ntest_oversized_manifest_rejected_before_parsing (tests.test_dataset_availability.AvailabilityTests.test_oversized_manifest_rejected_before_parsing) ... ok\ntest_prepared_upload_review_does_not_become_published_in_views (tests.test_dataset_availability.AvailabilityTests.test_prepared_upload_review_does_not_become_published_in_views) ... ok\ntest_schema_rejects_invalid_size_relationship_and_unexpected_fields (tests.test_dataset_availability.AvailabilityTests.test_schema_rejects_invalid_size_relationship_and_unexpected_fields) ... ok\ntest_source_size_key_mismatch_rejected (tests.test_dataset_availability.AvailabilityTests.test_source_size_key_mismatch_rejected) ... ok\ntest_unknown_size_stays_null_in_json_and_csv (tests.test_dataset_availability.AvailabilityTests.test_unknown_size_stays_null_in_json_and_csv) ... ok\ntest_zero_byte_parquet_rejected (tests.test_dataset_availability.AvailabilityTests.test_zero_byte_parquet_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 24 tests in 0.097s\n\nOK\n"
+    },
+    {
+      "argv": [
+        "python",
+        "scripts/publication_catalog.py",
+        "stage",
+        ".local/layout-rehearsal/stage"
+      ],
+      "exit_code": 0,
+      "output": "Catalog check passed; 5 published collections.\nPrepared metadata-only stage: <checkout>/.local/layout-rehearsal/stage (29 files). No upload was performed.\n"
+    },
+    {
+      "argv": [
+        "python",
+        "research/candidate-layout-20261109/verify.py",
+        "--stage",
+        ".local/layout-rehearsal/stage"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"status\": \"passed\",\n  \"base_commit\": \"28ed3ffc7f6c2703d7f337473100c75b996d3c46\",\n  \"unchanged_records\": 453,\n  \"moved_records\": 443,\n  \"retained_workspaces\": 10,\n  \"inventory_values_and_order\": \"unchanged_except_record_paths\",\n  \"published_ids\": [\n    \"free-flowing-rivers\",\n    \"grwl-raw\",\n    \"hydrolakes\",\n    \"lakeatlas\",\n    \"river-plastic-inputs\"\n  ],\n  \"unchanged_catalog_files\": 29,\n  \"staged_plan_sha256\": \"884581bec5d7fd9c678cbcbbf7ee5af36a335639a48aecf7da950169a21dda4d\",\n  \"source_release_and_research_evidence\": \"unchanged\"\n}\n"
+    }
+  ],
+  "final_git_status": "",
+  "staged_plan_sha256": "884581bec5d7fd9c678cbcbbf7ee5af36a335639a48aecf7da950169a21dda4d"
+}
