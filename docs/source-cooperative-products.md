@@ -4,7 +4,7 @@
 
 ## Canonical input and generated drafts
 
-The only editable product intent belongs in `publication.source_coop` in `datasets/<id>/dataset.yaml`:
+Promote a discovery record from `candidates/<id>/` to `datasets/<id>/` before preparing a Source product. The only editable product intent belongs in `publication.source_coop` in that canonical `datasets/<id>/dataset.yaml`. Generated drafts and local product review files live in its `datasets/<id>/source-coop/` workspace:
 
 ```yaml
 publication:

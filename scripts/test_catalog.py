@@ -150,7 +150,7 @@ class CatalogChecks(unittest.TestCase):
         self.assertEqual(row['decision'], record['triage']['decision'])
         self.assertEqual(row['publication_status'], 'candidate')
         self.assertEqual(row['related_datasets'], record['related_datasets'])
-        self.assertIn('../' + self.record_path.parent.name + '/dataset.yaml', catalog.render_related(record))
+        self.assertIn('../' + self.record_path.parent.name + '/dataset.yaml', catalog.render_related(record, self.root))
 
     def test_related_requires_dated_evidence_and_valid_relationship(self):
         from jsonschema import ValidationError
@@ -243,7 +243,7 @@ class CatalogChecks(unittest.TestCase):
     def test_related_prose_cannot_introduce_markdown_links_or_html(self):
         path, record = self._with_related()
         record['related_datasets'][0]['comparison'] = '[fake](https://wrong.example) <script>bad</script>'
-        rendered = catalog.render_related(record)
+        rendered = catalog.render_related(record, self.root)
         self.assertNotIn('[fake](https://wrong.example)', rendered)
         self.assertNotIn('<script>', rendered)
         self.assertIn('&lt;script&gt;', rendered)

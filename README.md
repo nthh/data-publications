@@ -43,7 +43,7 @@ Repository-authored software is licensed under Apache-2.0. That license does not
 
 ## For maintainers
 
-The dataset guides describe dataset-specific rebuilding and validation. For catalog metadata and generation, see the [catalog workflow](docs/catalog-workflow.md). The generated [candidate backlog](CANDIDATES.md) and [shortlist](SHORTLIST.md) are research leads, not available products or commitments to publish.
+The dataset guides describe dataset-specific rebuilding and validation. For catalog metadata and generation, see the [catalog workflow](docs/catalog-workflow.md). The generated [candidate backlog](CANDIDATES.md) and [shortlist](SHORTLIST.md) are research leads, not available products or commitments to publish. Discovery-only records live under `candidates/`; selected build and preparation workspaces live under `datasets/`. See the [candidate guide](candidates/README.md) and [dataset workspaces](datasets/README.md); promote a record with `git mv`.
 
 From the repository root, the core repository checks are:
 

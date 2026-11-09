@@ -1,6 +1,6 @@
 # Dataset record template
 
-Create `datasets/<id>/dataset.yaml` as the only canonical metadata record. The root `index.json` is generated from dataset records. This template retains the repository's GEE community audit fields; for another intake source, preserve equivalent source provenance and update the schema before using a different record shape.
+Create discovery-only records at `candidates/<id>/dataset.yaml`; selected records with build, preparation, or history workspaces live at `datasets/<id>/dataset.yaml`. Keep exactly one canonical record per ID. Promote a candidate with `git mv candidates/<id> datasets/<id>` before adding conversion or preparation files. Generated repository-wide views read both roots. This template retains the repository's GEE community audit fields; for another intake source, preserve equivalent source provenance and update the schema before using a different record shape.
 
 ```yaml
 schema_version: 1
@@ -161,7 +161,7 @@ Keep the original `audit` and citation snapshot intact. Add new provider observa
 
 ## Availability, sizes and source counts
 
-The optional `review.availability` block records one precisely scoped publication candidate. It includes the shortlist rank, observation date, selected original representation, source-download size and evidence quality, distinct data-distribution services, edition/scope relationships and GEE asset IDs. See the [LakeATLAS example](../datasets/lakeatlas/dataset.yaml) and [CRU-TS example](../datasets/cru_ts_v4/dataset.yaml).
+The optional `review.availability` block records one precisely scoped publication candidate. It includes the shortlist rank, observation date, selected original representation, source-download size and evidence quality, distinct data-distribution services, edition/scope relationships and GEE asset IDs. See the [LakeATLAS example](../datasets/lakeatlas/dataset.yaml) and [CRU-TS example](../candidates/cru_ts_v4/dataset.yaml).
 
 - `download.bytes` is an integer or null; `precision` distinguishes exact metadata/measured sizes, rounded estimates and unknowns. `basis` distinguishes downloaded validation from HTTP headers or a producer listing. Preserve a producer's unresolved unit label in `reported_size` rather than inventing exact bytes.
 - Each location has a stable `service_id`, `platform`, `relationship`, formats and evidence URLs. A producer homepage, DOI and CDN alias do not create three locations. Two GEE asset IDs remain one GEE service. Keep older/partial and edition-unverified locations distinct from `matching_scope`; that label is a metadata judgment, not byte-level equivalence.

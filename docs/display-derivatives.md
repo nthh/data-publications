@@ -5,10 +5,7 @@ analytical source, with unchanged geometry, attributes, units and source IDs.
 A display release can change independently from the analytical release, under
 the same Source Cooperative product.
 
-The editable inventory is `datasets/<id>/dataset.yaml`. Its optional
-`publication.display` points to a checksum-bound generated manifest under
-`datasets/<id>/display/<display-release>/`. Bulk archives stay in ignored local
-storage. Build reports, independent validation results and reviewed screenshots
+The canonical record is `candidates/<id>/dataset.yaml` while discovery-only, and `datasets/<id>/dataset.yaml` once selected for a build or preparation workspace. Display preparation belongs in a `datasets/<id>/` workspace: its optional `publication.display` points to a checksum-bound generated manifest under `datasets/<id>/display/<display-release>/`. Bulk archives stay in ignored local storage. Build reports, independent validation results and reviewed screenshots
 belong in Git; secrets, raw downloads and runtime paths do not.
 
 ## Build from verified sources

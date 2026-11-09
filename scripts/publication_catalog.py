@@ -20,9 +20,9 @@ import yaml
 from jsonschema import Draft202012Validator, FormatChecker
 
 try:
-    from catalog import load_records
+    from catalog import load_records, record_paths
 except ImportError:  # package-style import in tests
-    from scripts.catalog import load_records
+    from scripts.catalog import load_records, record_paths
 
 
 MAX_METADATA_BYTES = 10 * 1024 * 1024
@@ -183,7 +183,7 @@ def load_config(root: Path) -> dict:
 
 
 def validated_records(root: Path) -> dict:
-    for path in (root / "datasets").glob("*/dataset.yaml"):
+    for path in record_paths(root):
         unique_yaml(inside(root, path.relative_to(root).as_posix()))
     records = load_records(root)
     schema = read_json(inside(root, "schemas/dataset.schema.json"))

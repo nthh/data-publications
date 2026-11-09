@@ -12,6 +12,7 @@ import re
 from urllib.parse import urlsplit
 
 import dataset_availability
+from record_locations import record_path
 
 PROVIDER_LABELS = {
     "gee_official": "GEE official", "gee_community": "GEE community",
@@ -130,7 +131,7 @@ def rows(records: dict, root: Path | None = None) -> list[dict]:
         proposed = sorted({fmt for a in review.get("access", []) for fmt in a["proposed_outputs"]})
         counts = dataset_availability.summary(root, record)
         output.append({
-            "id": record_id, "title": record["title"], "record_path": f"datasets/{record_id}/dataset.yaml",
+            "id": record_id, "title": record["title"], "record_path": record_path(root, record_id).relative_to(root).as_posix(),
             "geographic_scope": scope,
             "spatial_coverage": review.get("spatial_coverage", "Global in the original citation review; coverage limits have not been re-reviewed in this expansion."),
             "decision": record["triage"]["decision"],
@@ -155,7 +156,7 @@ def render_views(records: dict, root: Path | None = None) -> dict[str, str]:
     global_rows = rows(records, root)
     expanded = [row for row in global_rows if row["discovery_batch"]]
     decisions = Counter(record["triage"]["decision"] for record in records.values())
-    lines = ["# Candidate backlog", "", "Generated from `datasets/<id>/dataset.yaml`; edit the canonical records and run `python scripts/catalog.py --write`.", "",
+    lines = ["# Candidate backlog", "", "Generated from `candidates/<id>/dataset.yaml` and `datasets/<id>/dataset.yaml`; edit the canonical records and run `python scripts/catalog.py --write`.", "",
              "Candidates are exploratory and carry no commitment to convert or publish. Prepared datasets remain distinct from verified public releases.", "",
              f"Inventory: {len(records)} records; {len(global_rows)} classified global or near-global; {len(expanded)} covered by expanded discovery.", "",
              "Decisions: " + "; ".join(f"{key}: {value}" for key, value in sorted(decisions.items())) + ".", "",

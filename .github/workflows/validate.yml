@@ -40,6 +40,7 @@ jobs:
       - name: Run focused record and catalog tests
         run: |
           uv run --locked python scripts/test_catalog.py
+          uv run --locked python -m unittest tests.test_record_layout tests.test_dataset_availability -v
           uv run --locked python -m unittest discover -s tests -p test_publication_catalog.py -v
           uv run --locked python -m unittest discover -s tests -p test_candidate_discovery.py -v
           uv run --locked python -m unittest tests.test_source_products tests.test_lakeatlas_semantics -v
@@ -56,9 +57,9 @@ jobs:
           python research/global-candidates-20261031/esri/capture.py --check
           python research/global-candidates-20261031/citations/extract_frozen.py --check
           python research/global-candidates-20261031/citations/enrich_coverage.py --check
-          python research/global-candidates-20261031/citations/check_review.py
+          uv run --locked python research/global-candidates-20261031/citations/check_review.py
           python research/global-candidates-20261031/literature/build_review.py --check
-          python research/global-candidates-20261031/reuse/check.py
+          uv run --locked python research/global-candidates-20261031/reuse/check.py
       - name: Verify generated catalog matches its inputs
         run: uv run --locked python scripts/publication_catalog.py check
       - name: Exercise the actual validator and failure controls

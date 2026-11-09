@@ -1,0 +1,129 @@
+test_duplicate_id_across_locations_is_rejected_by_all_consumers (test_record_layout.RecordLayoutTests.test_duplicate_id_across_locations_is_rejected_by_all_consumers) ...
+  test_duplicate_id_across_locations_is_rejected_by_all_consumers (test_record_layout.RecordLayoutTests.test_duplicate_id_across_locations_is_rejected_by_all_consumers) (loader='catalog') ... FAIL
+  test_duplicate_id_across_locations_is_rejected_by_all_consumers (test_record_layout.RecordLayoutTests.test_duplicate_id_across_locations_is_rejected_by_all_consumers) (loader='publication_catalog') ... ERROR
+  test_duplicate_id_across_locations_is_rejected_by_all_consumers (test_record_layout.RecordLayoutTests.test_duplicate_id_across_locations_is_rejected_by_all_consumers) (loader='source_products') ... FAIL
+test_generated_backlog_links_follow_actual_record_locations (test_record_layout.RecordLayoutTests.test_generated_backlog_links_follow_actual_record_locations) ... FAIL
+test_loads_records_from_both_locations (test_record_layout.RecordLayoutTests.test_loads_records_from_both_locations) ... FAIL
+test_promotion_moves_identity_without_creating_a_second_record (test_record_layout.RecordLayoutTests.test_promotion_moves_identity_without_creating_a_second_record) ... FAIL
+test_publication_checks_duplicate_yaml_keys_in_candidate_records (test_record_layout.RecordLayoutTests.test_publication_checks_duplicate_yaml_keys_in_candidate_records) ... ERROR
+test_published_record_requires_promotion_out_of_candidates (test_record_layout.RecordLayoutTests.test_published_record_requires_promotion_out_of_candidates) ... FAIL
+test_related_readme_links_cross_roots_and_stay_beside_the_record (test_record_layout.RecordLayoutTests.test_related_readme_links_cross_roots_and_stay_beside_the_record) ... FAIL
+test_symlink_record_directory_is_rejected (test_record_layout.RecordLayoutTests.test_symlink_record_directory_is_rejected) ... FAIL
+
+======================================================================
+ERROR: test_duplicate_id_across_locations_is_rejected_by_all_consumers (test_record_layout.RecordLayoutTests.test_duplicate_id_across_locations_is_rejected_by_all_consumers) (loader='publication_catalog')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/tests/test_record_layout.py", line 46, in test_duplicate_id_across_locations_is_rejected_by_all_consumers
+    loader(self.root)
+  File "<repo>/scripts/publication_catalog.py", line 189, in validated_records
+    schema = read_json(inside(root, "schemas/dataset.schema.json"))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/scripts/publication_catalog.py", line 75, in inside
+    resolved = target.resolve(strict=must_exist)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<python-install>/cpython-3.12.12-macos-aarch64-none/lib/python3.12/pathlib.py", line 1240, in resolve
+    s = self._flavour.realpath(self, strict=strict)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen posixpath>", line 427, in realpath
+  File "<frozen posixpath>", line 471, in _joinrealpath
+FileNotFoundError: [Errno 2] No such file or directory: '<temporary-fixture>/schemas'
+
+======================================================================
+ERROR: test_publication_checks_duplicate_yaml_keys_in_candidate_records (test_record_layout.RecordLayoutTests.test_publication_checks_duplicate_yaml_keys_in_candidate_records)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/tests/test_record_layout.py", line 73, in test_publication_checks_duplicate_yaml_keys_in_candidate_records
+    publication_catalog.validated_records(self.root)
+  File "<repo>/scripts/publication_catalog.py", line 189, in validated_records
+    schema = read_json(inside(root, "schemas/dataset.schema.json"))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/scripts/publication_catalog.py", line 75, in inside
+    resolved = target.resolve(strict=must_exist)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<python-install>/cpython-3.12.12-macos-aarch64-none/lib/python3.12/pathlib.py", line 1240, in resolve
+    s = self._flavour.realpath(self, strict=strict)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen posixpath>", line 427, in realpath
+  File "<frozen posixpath>", line 471, in _joinrealpath
+FileNotFoundError: [Errno 2] No such file or directory: '<temporary-fixture>/schemas'
+
+======================================================================
+FAIL: test_duplicate_id_across_locations_is_rejected_by_all_consumers (test_record_layout.RecordLayoutTests.test_duplicate_id_across_locations_is_rejected_by_all_consumers) (loader='catalog')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/tests/test_record_layout.py", line 45, in test_duplicate_id_across_locations_is_rejected_by_all_consumers
+    with self.subTest(loader=loader.__module__), self.assertRaisesRegex(ValueError, 'Duplicate'):
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_duplicate_id_across_locations_is_rejected_by_all_consumers (test_record_layout.RecordLayoutTests.test_duplicate_id_across_locations_is_rejected_by_all_consumers) (loader='source_products')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/tests/test_record_layout.py", line 45, in test_duplicate_id_across_locations_is_rejected_by_all_consumers
+    with self.subTest(loader=loader.__module__), self.assertRaisesRegex(ValueError, 'Duplicate'):
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_generated_backlog_links_follow_actual_record_locations (test_record_layout.RecordLayoutTests.test_generated_backlog_links_follow_actual_record_locations)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/tests/test_record_layout.py", line 79, in test_generated_backlog_links_follow_actual_record_locations
+    self.assertEqual(rows['future']['record_path'], 'candidates/future/dataset.yaml')
+AssertionError: 'datasets/future/dataset.yaml' != 'candidates/future/dataset.yaml'
+- datasets/future/dataset.yaml
+?    -- -
++ candidates/future/dataset.yaml
+? +++++
+
+
+======================================================================
+FAIL: test_loads_records_from_both_locations (test_record_layout.RecordLayoutTests.test_loads_records_from_both_locations)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/tests/test_record_layout.py", line 38, in test_loads_records_from_both_locations
+    self.assertEqual(set(catalog.record_paths(self.root)), {candidate, dataset})
+AssertionError: Items in the second set but not the first:
+PosixPath('<temporary-fixture>/candidates/future/dataset.yaml')
+
+======================================================================
+FAIL: test_promotion_moves_identity_without_creating_a_second_record (test_record_layout.RecordLayoutTests.test_promotion_moves_identity_without_creating_a_second_record)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/tests/test_record_layout.py", line 51, in test_promotion_moves_identity_without_creating_a_second_record
+    self.assertEqual(len(before), 1)
+AssertionError: 0 != 1
+
+======================================================================
+FAIL: test_published_record_requires_promotion_out_of_candidates (test_record_layout.RecordLayoutTests.test_published_record_requires_promotion_out_of_candidates)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/tests/test_record_layout.py", line 66, in test_published_record_requires_promotion_out_of_candidates
+    with self.assertRaisesRegex(ValueError, '[Pp]romot'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_related_readme_links_cross_roots_and_stay_beside_the_record (test_record_layout.RecordLayoutTests.test_related_readme_links_cross_roots_and_stay_beside_the_record)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/tests/test_record_layout.py", line 92, in test_related_readme_links_cross_roots_and_stay_beside_the_record
+    self.assertEqual(set(updates), {self.root/'candidates/future/README.md', self.root/'datasets/active/README.md'})
+AssertionError: Items in the second set but not the first:
+PosixPath('<temporary-fixture>/candidates/future/README.md')
+
+======================================================================
+FAIL: test_symlink_record_directory_is_rejected (test_record_layout.RecordLayoutTests.test_symlink_record_directory_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/tests/test_record_layout.py", line 100, in test_symlink_record_directory_is_rejected
+    with self.assertRaisesRegex(ValueError, '[Ss]ymlink'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.049s
+
+FAILED (failures=8, errors=2)

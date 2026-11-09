@@ -13,7 +13,7 @@ Use the official Source Cooperative CLI 0.3.0 for login and the S3 credential pr
 
 ## Prepare a release
 
-1. Keep the dataset inventory in `datasets/<id>/dataset.yaml`. Preserve immutable analytical packages and separate pinned display packages.
+1. Keep one canonical record per ID: discovery-only records may remain at `candidates/<id>/dataset.yaml`, but move a selected record with `git mv candidates/<id> datasets/<id>` before product preparation or publication. Published records must be under `datasets/<id>/dataset.yaml`. Preserve immutable analytical packages and separate pinned display packages.
 2. Generate product documentation with `scripts/source_products.py write` and verify it with `check`.
 3. Confirm the owner and create one Source product for each dataset. During the November 2026 publication, the deployed product-creation API returned HTTP 501, so creation used the signed-in web form. Retain sanitized creation receipts with exact owner, product ID, storage connection and initial visibility.
 4. Use `scripts/source_products.py stage` with explicit `--package ID=PATH` and `--display-package ID=PATH` mappings and a new output directory. Stage rehashes every local file. Review the exact object keys, byte counts, hashes and content types, then commit the plan and its SHA-256 before execution.

@@ -7,6 +7,8 @@ import tempfile
 import sys
 import unittest
 
+import yaml
+
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 import dataset_availability as availability
@@ -21,6 +23,12 @@ class AvailabilityTests(unittest.TestCase):
         self.evidence_path = self.root / 'research' / 'obs.json'
         self._write_evidence()
         self.records = {'sample': self.record()}
+        self.store_record(self.records['sample'])
+
+    def store_record(self, record):
+        path = self.root / "candidates" / record["id"] / "dataset.yaml"
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(yaml.safe_dump(record))
 
     def tearDown(self):
         self.temp.cleanup()
@@ -120,6 +128,7 @@ class AvailabilityTests(unittest.TestCase):
     def test_markdown_has_all_table_rows_before_per_dataset_details(self):
         second = self.record(rank=2)
         second['id'] = 'second'
+        self.store_record(second)
         records = {'sample': self.record(), 'second': second}
         markdown = availability.render_views(self.root, records)['SHORTLIST.md']
         table = markdown.split('### 1.', 1)[0]

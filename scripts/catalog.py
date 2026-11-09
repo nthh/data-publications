@@ -6,6 +6,7 @@ import csv
 import hashlib
 import html
 import json
+import os
 from collections import Counter
 from pathlib import Path
 import re
@@ -14,12 +15,12 @@ from urllib.parse import quote, urlsplit
 import yaml
 import candidate_discovery
 import dataset_availability
+from record_locations import record_path, record_paths as canonical_record_paths
 from jsonschema import Draft202012Validator, FormatChecker
 
 ROOT = Path(__file__).resolve().parents[1]
 INTAKE = ROOT / 'intake.json'
 SCHEMA = ROOT / 'schemas/dataset.schema.json'
-RECORDS = ROOT / 'datasets'
 AUDIT = ROOT / 'research/gee-community-audit-20261029'
 CITATIONS = ROOT / 'research/citations'
 PILOT_ID = 'river-plastic-inputs'
@@ -33,7 +34,7 @@ def canonical_id(value: str) -> bool:
 
 
 def record_paths(root: Path = ROOT) -> list[Path]:
-    return sorted((root / 'datasets').glob('*/dataset.yaml'))
+    return canonical_record_paths(root)
 
 
 def load_records(root: Path = ROOT) -> dict[str, dict]:
@@ -51,6 +52,8 @@ def load_records(root: Path = ROOT) -> dict[str, dict]:
             raise ValueError(f'Invalid ID/path mapping: {path.relative_to(root)}')
         if record_id in result:
             raise ValueError(f'Duplicate dataset ID: {record_id}')
+        if path.parent.parent.name == 'candidates' and (record.get('publication') or {}).get('status') == 'published':
+            raise ValueError(f'Promote published record to datasets/: {record_id}')
         result[record_id] = record
     return result
 
@@ -160,7 +163,7 @@ def render_index(root: Path = ROOT) -> str:
     rows = []
     for dataset_id, record in sorted(records.items()):
         publication = record.get('publication') or {}
-        row = {'id': dataset_id, 'record_path': f'datasets/{dataset_id}/dataset.yaml',
+        row = {'id': dataset_id, 'record_path': record_path(root, dataset_id).relative_to(root).as_posix(),
                'title': record['title'], 'community_url': record.get('community_url'),
                'family_key': record.get('audit', {}).get('family_key'), 'decision': record['triage']['decision'],
                'priority': record['triage']['priority'],
@@ -201,7 +204,7 @@ def markdown_link(title: str, url: str) -> str:
     return f'[{markdown_text(title)}](<{quote(url, safe=":/?#[]@!$&()*+,;=%~-._")}>)'
 
 
-def render_related(record: dict) -> str:
+def render_related(record: dict, root: Path = ROOT) -> str:
     related = record.get('related_datasets', [])
     if not related:
         return ''
@@ -216,7 +219,8 @@ def render_related(record: dict) -> str:
         lines.extend([f"### {markdown_link(item['title'], item['url'])}", '',
                       f"- **Relationship:** {labels[item['relationship']]}. {markdown_text(item['use_case'])}"])
         if item.get('record_id'):
-            lines.append(f"- **Local record:** [dataset.yaml](../{item['record_id']}/dataset.yaml)")
+            relative = Path(os.path.relpath(record_path(root, item["record_id"]), record_path(root, record["id"]).parent)).as_posix()
+            lines.append(f"- **Local record:** [dataset.yaml]({relative})")
         coverage = [item[key] for key in ('spatial_coverage', 'resolution', 'temporal_coverage') if item.get(key)]
         if coverage:
             lines.append(f"- **Coverage:** {markdown_text('; '.join(coverage))}")
@@ -234,12 +238,12 @@ def related_readme_updates(root: Path = ROOT) -> dict[Path, str]:
     """Plan generated blocks before writing, preserving all surrounding prose."""
     updates = {}
     for record_id, record in load_records(root).items():
-        path = root / 'datasets' / record_id / 'README.md'
+        path = record_path(root, record_id).with_name('README.md')
         current = path.read_text() if path.exists() else ''
         start_count, end_count = current.count(RELATED_START), current.count(RELATED_END)
         if (start_count, end_count) not in ((0, 0), (1, 1)):
             raise ValueError(f'Malformed related dataset markers: {path.relative_to(root)}')
-        block = render_related(record)
+        block = render_related(record, root)
         if start_count:
             start = current.index(RELATED_START)
             end = current.index(RELATED_END)

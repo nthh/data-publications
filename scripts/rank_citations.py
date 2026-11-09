@@ -10,6 +10,7 @@ import json
 from collections import Counter
 from pathlib import Path
 import yaml
+from record_locations import record_path
 
 ROOT = Path(__file__).resolve().parents[1]
 HERE = ROOT / 'research' / 'citations'
@@ -51,7 +52,7 @@ def main():
     for review in reviews:
         slug = review['slug']
         candidate = candidates[slug]
-        intake = yaml.safe_load((ROOT / 'datasets' / ('river-plastic-inputs' if slug == 'plastic' else slug) / 'dataset.yaml').read_text())
+        intake = yaml.safe_load(record_path(ROOT, 'river-plastic-inputs' if slug == 'plastic' else slug).read_text())
         correction = parent.get(slug, {})
         paper_dois = sorted(set(review['paper_dois'] + correction.get('add_paper_dois', [])) - set(correction.get('remove_paper_dois', [])))
         papers = [by_doi[d] for d in paper_dois if d in by_doi]

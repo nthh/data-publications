@@ -1,12 +1,12 @@
 # Git-backed publication catalog
 
-The repository keeps one canonical record per dataset and generates a separate publication tree. `datasets/` contains the editable project and its small evidence files; `catalog/` contains the metadata that will be served to consumers. Bulk data remain in ignored local storage until a separately authorized upload.
+The repository keeps one canonical record per dataset across `candidates/<id>/dataset.yaml` and `datasets/<id>/dataset.yaml`. Discovery-only records stay under `candidates/`; selected build, preparation, and history workspaces stay under `datasets/`. `catalog/` contains generated metadata served to consumers. Bulk data remain in ignored local storage until a separately authorized upload.
 
 This implements the shared-repository choice. It follows the [Portolan Git-backed catalog guidance](https://github.com/portolan-sdi/portolan-spec/blob/a2f3380fe238aec91e016eed9429463fe2791da3/specs/best-practices/git-backed-catalogs.md). The consulted [skills revision](https://github.com/portolan-sdi/portolan-skills/tree/1714d9ab672e6a1bbc56ca12458e41b14484d426/skills) and tool versions are pinned in [`tools/portolan/pins.json`](../tools/portolan/pins.json). The guidance is non-normative; our repository checks make the chosen workflow enforceable.
 
 ## Inputs and generated files
 
-`datasets/<id>/dataset.yaml` determines dataset identity, selected release, status and catalog inputs. `index.json` remains the generated inventory of all candidates, deferred records and prepared/published releases. It is distinct from the publication catalog.
+`candidates/<id>/dataset.yaml` or `datasets/<id>/dataset.yaml` is the sole canonical record for its ID and determines identity, selected release, status and catalog inputs. Repository-wide generated views discover both roots and reject duplicate IDs; `index.json` includes discovery candidates, deferred records and prepared/published releases. It is distinct from the publication catalog. Promote a discovery record before preparation with `git mv candidates/<id> datasets/<id>`; never maintain copies.
 
 A catalog-input snapshot copies small metadata from a validated immutable package. It includes the original collection, README, AGENTS, styles and thumbnails, with SHA-256 and size for each file. Original manifests and, for the shared packager, its receipt and package-binding evidence establish the source of those bytes. Snapshot files are generated inputs, not a second manually maintained dataset record. They contain no analytic data or PMTiles.
 

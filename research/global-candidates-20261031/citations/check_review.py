@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """Nonmutating crosswalk, frozen-selection, candidate, and citation preservation checks."""
-import collections,json,yaml
+import collections,json,sys,yaml
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[3]; C=Path(__file__).resolve().parent
+sys.path.insert(0, str(ROOT/'scripts'))
+from record_locations import record_paths
 frozen=json.loads((ROOT/'research/catalog-citations-20261030/groups-combined-active-global.json').read_text())[:50]
 selected=json.loads((C/'selected-groups.json').read_text()); review=json.loads((C/'reviewed.json').read_text())
 assert selected==frozen and len(selected)==50 and review['group_count']==50
@@ -11,7 +13,7 @@ expected=collections.Counter((rank,e['catalog'],e['catalog_id']) for rank,g in e
 observed=collections.Counter((c['source_group_rank'],'official' if s['provider']=='Google Earth Engine official catalog' else 'community',s['entry_id']) for c in review['candidates'] for s in c['sources'])
 assert expected==observed, f'candidate source entry mismatch: {expected-observed} / {observed-expected}'
 canon={}
-for p in (ROOT/'datasets').glob('*/dataset.yaml'):
+for p in record_paths(ROOT):
  d=yaml.safe_load(p.read_text()) or {}; a=d.get('audit') or {}
  if a.get('family_key'): canon[a['family_key']]=d['id']
 for rank,g in enumerate(frozen,1):

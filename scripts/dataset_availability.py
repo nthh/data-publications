@@ -9,6 +9,8 @@ from pathlib import Path, PurePosixPath
 import re
 from urllib.parse import quote, urlsplit
 
+from record_locations import record_path
+
 
 def _https(value: str) -> bool:
     try:
@@ -194,7 +196,7 @@ def render_views(root: Path, records: dict) -> dict[str, str]:
         if not block:
             continue
         assets, _, _ = _sizes(root, block)
-        row = {'id': record_id, 'record_path': f'datasets/{record_id}/dataset.yaml',
+        row = {'id': record_id, 'record_path': record_path(root, record_id).relative_to(root).as_posix(),
                'title': record.get('title', record_id),
                'decision': record.get('triage', {}).get('decision', 'pending'),
                'publication_status': record.get('publication', {}).get('status', 'candidate'),

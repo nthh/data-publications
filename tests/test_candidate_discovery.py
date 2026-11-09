@@ -47,11 +47,18 @@ class CandidateDiscoveryChecks(unittest.TestCase):
     def digest(self):
         return hashlib.sha256(self.path.read_bytes()).hexdigest()
 
+    def store_records(self, records):
+        for record_id, record in records.items():
+            path = self.root / "candidates" / record_id / "dataset.yaml"
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(yaml.safe_dump(record))
+        return records
+
     def test_schema_and_pinned_observation_pass_without_promoting_status(self):
         self.schema.validate(self.record)
         records = {"demo": self.record}
         cd.validate_discovery(self.root, records)
-        row = cd.rows(records)[0]
+        row = cd.rows(self.store_records(records), self.root)[0]
         self.assertEqual(row["decision"], "pending")
         self.assertEqual(row["publication_status"], "candidate")
         self.assertEqual(row["access_review"], "native format listed")
@@ -85,8 +92,8 @@ class CandidateDiscoveryChecks(unittest.TestCase):
         second["discovery"]["citations"] = [copy.deepcopy(citation)]
         records = {"demo": self.record, "different-product": second}
         cd.validate_discovery(self.root, records)
-        self.assertEqual(len(cd.rows(records)), 2)
-        self.assertEqual([r["paper_citations"] for r in cd.rows(records)], [25, 25])
+        self.assertEqual(len(cd.rows(self.store_records(records), self.root)), 2)
+        self.assertEqual([r["paper_citations"] for r in cd.rows(self.store_records(records), self.root)], [25, 25])
 
     def test_duplicate_source_and_conflicting_exact_identity_are_rejected(self):
         source = self.record["discovery"]["sources"][0]
@@ -121,7 +128,7 @@ class CandidateDiscoveryChecks(unittest.TestCase):
         regional = copy.deepcopy(self.record)
         regional["id"] = "regional"
         regional["discovery"]["geographic_scope"] = "regional"
-        rows = cd.rows({"demo": self.record, "zero": zero, "regional": regional})
+        rows = cd.rows(self.store_records({"demo": self.record, "zero": zero, "regional": regional}), self.root)
         self.assertEqual([row["id"] for row in rows], ["zero", "demo"])
         self.assertEqual([row["paper_citations"] for row in rows], [0, None])
 
@@ -166,8 +173,8 @@ class CandidateDiscoveryChecks(unittest.TestCase):
     def test_views_are_deterministic_and_drift_is_detected(self):
         records = {"demo": self.record}
         self.record["title"] = "Untrusted | [link](https://wrong.example) <script>"
-        expected = cd.render_views(records)
-        self.assertEqual(expected, cd.render_views(records))
+        expected = cd.render_views(self.store_records(records), self.root)
+        self.assertEqual(expected, cd.render_views(self.store_records(records), self.root))
         self.assertNotIn("<script>", expected["CANDIDATES.md"])
         self.assertNotIn("[link](https://wrong.example)", expected["CANDIDATES.md"])
         for name, contents in expected.items():

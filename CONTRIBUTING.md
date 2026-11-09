@@ -1,6 +1,6 @@
 # Contributing
 
-This repository manages datasets as reproducible, reviewable releases. Keep each dataset in `datasets/<id>/` and maintain one canonical `dataset.yaml`. The generated root `index.json` is derived from those records; edit its source records and regenerate it instead of hand-editing the index.
+This repository manages datasets as reproducible, reviewable releases. Keep one canonical record per ID: discovery-only records live at `candidates/<id>/dataset.yaml`, while selected build, preparation, and history workspaces live under `datasets/<id>/`. Promote with `git mv candidates/<id> datasets/<id>` before adding workflow files. Generated repository-wide views read both roots; edit source records and regenerate them instead of hand-editing indexes.
 
 ## Before evaluating a dataset
 

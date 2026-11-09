@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "checks": [
+    {
+      "name": "records",
+      "command": ".venv/bin/python scripts/catalog.py --check",
+      "exit_code": 0,
+      "output": "{\n  \"records_checked\": 453,\n  \"supplemental_records_checked\": 90,\n  \"family_keys_checked\": 363,\n  \"citations_checked\": 363,\n  \"decisions\": {\n    \"defer\": 3,\n    \"pending\": 443,\n    \"publish_conversion\": 6,\n    \"reuse_existing\": 1\n  }\n}\n"
+    },
+    {
+      "name": "publication",
+      "command": ".venv/bin/python scripts/publication_catalog.py check",
+      "exit_code": 0,
+      "output": "Catalog check passed; 5 published collections.\n"
+    },
+    {
+      "name": "products",
+      "command": ".venv/bin/python scripts/source_products.py check",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "citation-tables",
+      "command": ".venv/bin/python scripts/rank_citations.py --check",
+      "exit_code": 0,
+      "output": "{\n  \"as_of\": \"2026-10-29\",\n  \"as_of_timezone\": \"America/Denver\",\n  \"provider\": \"OpenAlex\",\n  \"metric\": \"Maximum cited_by_count among associated dataset papers; never a sum.\",\n  \"families\": 363,\n  \"families_with_paper_count\": 237,\n  \"families_with_data_doi_count\": 81,\n  \"families_with_any_count\": 271,\n  \"families_without_any_count\": 92,\n  \"global_families\": 206,\n  \"global_families_with_paper_count\": 153,\n  \"scope_counts\": {\n    \"global\": 206,\n    \"regional\": 140,\n    \"mixed\": 12,\n    \"unclear\": 5\n  },\n  \"paper_match_status_counts\": {\n    \"matched\": 234,\n    \"partial\": 3,\n    \"unknown\": 126\n  },\n  \"doi_observations\": 455,\n  \"title_queries\": 44,\n  \"retrieval_started_utc\": \"2026-10-29T23:29:33.072459+00:00\",\n  \"retrieval_ended_utc\": \"2026-10-30T00:04:12.928405+00:00\",\n  \"limitations\": [\n    \"Paper citations proxy scholarly attention; they do not measure dataset users or exact-release citations.\",\n    \"Base-family citations are explicitly marked for derived variants such as daily MERRA-2 and TerraClimate futures.\",\n    \"A missing or unindexed reference remains unknown, never zero. Rankings cover resolved references only.\",\n    \"Multiple papers and data DOIs can share citing works; counts are reported separately and never summed.\",\n    \"Total citation counts favor older papers; recent counts and publication years are contextual fields.\",\n    \"Existing-host routing is a separate availability review; lack of a known host is not proof conversion is required.\"\n  ]\n}\nGlobal leaders:\nmerrav2 9044 https://doi.org/10.1175/jcli-d-16-0758.1 base_dataset_family\nplastic 4008 https://doi.org/10.1038/ncomms15611 associated_dataset_publication\nterraclim 3474 https://doi.org/10.1038/sdata.2017.191 base_dataset_family\nisric 2382 https://doi.org/10.5194/soil-7-217-2021 associated_dataset_publication\nglacier 1910 https://doi.org/10.1038/s41586-021-03436-z associated_dataset_publication\nhydrolakes 1775 https://doi.org/10.1038/ncomms13603 associated_dataset_publication\ngfch 1444 https://doi.org/10.1016/j.rse.2020.112165 associated_dataset_publication\nS2TSLULC 1346 https://doi.org/10.1109/igarss47720.2021.9553499 associated_dataset_publication\nesrilc2020 1346 https://doi.org/10.1109/igarss47720.2021.9553499 associated_dataset_publication\nai0 1299 https://doi.org/10.1038/s41597-022-01493-1 associated_dataset_publication\net0 1299 https://doi.org/10.1038/s41597-022-01493-1 associated_dataset_publication\nglc10 1289 https://doi.org/10.1016/j.scib.2019.03.002 associated_dataset_publication\ncflux 1191 https://doi.org/10.1038/s41558-020-00976-6 associated_dataset_publication\nhwsd 1067 https://doi.org/10.4060/cc3823en associated_dataset_publication\nnpp_viirs_ntl 935 https://doi.org/10.5194/essd-13-889-2021 associated_dataset_publication\n"
+    },
+    {
+      "name": "provenance",
+      "command": ".venv/bin/python scripts/check_provenance.py",
+      "exit_code": 0,
+      "output": "{\n  \"status\": \"passed\",\n  \"historical_entries\": 186,\n  \"unique_blobs\": 104\n}\n"
+    },
+    {
+      "name": "citation-review",
+      "command": ".venv/bin/python research/global-candidates-20261031/citations/check_review.py",
+      "exit_code": 0,
+      "output": "OK: frozen 50 groups retained; 53 unique candidates; per-source family matches and frozen citations preserved\n"
+    },
+    {
+      "name": "reuse-review",
+      "command": ".venv/bin/python research/global-candidates-20261031/reuse/check.py",
+      "exit_code": 0,
+      "output": "OK: 10 observations, 30 source file hashes, all current target IDs resolve\n"
+    }
+  ],
+  "focused_tests": {
+    "count": 119,
+    "status": "passed",
+    "log": "focused-tests.txt"
+  },
+  "relative_markdown_links": {
+    "scope": "13 current guides and generated views",
+    "checked": 186,
+    "broken": 0
+  }
+}

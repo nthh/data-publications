@@ -20,6 +20,7 @@ from typing import Any
 from urllib.parse import quote
 
 import yaml
+from record_locations import record_paths
 
 CHUNK_BYTES = 8 * 1024 * 1024
 SHA256_RE = re.compile(r"^[0-9a-f]{64}$")
@@ -216,7 +217,7 @@ def verify_supplements(root: Path, config: dict[str, Any], dataset_id: str) -> N
 
 def load_records(root: Path) -> dict[str, dict[str, Any]]:
     records: dict[str, dict[str, Any]] = {}
-    for record_path in sorted((root / "datasets").glob("*/dataset.yaml")):
+    for record_path in record_paths(root):
         try:
             record = yaml.load(record_path.read_text(encoding="utf-8"), Loader=UniqueKeyLoader)
         except (OSError, yaml.YAMLError) as exc:
@@ -225,8 +226,10 @@ def load_records(root: Path) -> dict[str, dict[str, Any]]:
             raise ProductError(f"canonical record must be a YAML object: {record_path.parent.name}")
         dataset_id = record.get("id")
         if not isinstance(dataset_id, str) or dataset_id != record_path.parent.name:
-            raise ProductError(f"canonical id does not match datasets directory: {record_path.parent.name}")
+            raise ProductError(f"canonical id does not match record directory: {record_path.parent.name}")
         if record.get("publication", {}).get("source_coop") is not None:
+            if record_path.parent.parent.name == "candidates":
+                raise ProductError(f"Promote record to datasets/ before preparing a Source product: {dataset_id}")
             records[dataset_id] = record
     return records
 
