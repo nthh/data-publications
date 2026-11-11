@@ -16,6 +16,7 @@ Use GeoParquet for analysis and PMTiles for maps. Field dictionaries describe co
 | [hydrolakes-polygons-v1.0.style.json](https://data.source.coop/nthh/hydrolakes/hydrolakes-polygons-v1.0.style.json) | 0.5 kB |
 | [LICENSE.txt](https://data.source.coop/nthh/hydrolakes/LICENSE.txt) | 0.4 kB |
 | [manifest-20261111.json](https://data.source.coop/nthh/hydrolakes/manifest-20261111.json) | 1.9 kB |
+| [HydroLAKES_TechDoc_v10.pdf](https://data.source.coop/nthh/hydrolakes/HydroLAKES_TechDoc_v10.pdf) | 989.6 kB |
 
 ## Read with DuckDB
 
@@ -51,4 +52,4 @@ Independently maintained by [nthh](https://source.coop/nthh).
 
 [Conversion scripts and validation](https://github.com/nthh/data-publications/tree/main/datasets/hydrolakes) · [Portolan map](https://browser.portolan-sdi.org/#/external/nthh.github.io/data-publications/hydrolakes/collection.json)
 
-Existing versioned download URLs remain available. The root files provide the current consumer layout.
+Versioned filenames and checksum manifests identify the published data.

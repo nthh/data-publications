@@ -4,7 +4,7 @@ Detailed producer GRWL vector observations with each source record, part and coo
 
 License: CC-BY-4.0.
 
-Immutable package: https://data.source.coop/nthh/grwl-raw/releases/raw-v01.01-local-r1/
+Release provenance: https://github.com/nthh/data-publications/blob/main/datasets/grwl-raw/releases/raw-v01.01-local-r1/manifest.json
 
 Catalog preview: Global width-symbol overview; exaggerated display symbols, not riverbanks. Display only; use GeoParquet for analysis.
 

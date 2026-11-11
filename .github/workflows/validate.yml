@@ -43,7 +43,7 @@ jobs:
           uv run --locked python -m unittest tests.test_record_layout tests.test_dataset_availability -v
           uv run --locked python -m unittest discover -s tests -p test_publication_catalog.py -v
           uv run --locked python -m unittest discover -s tests -p test_candidate_discovery.py -v
-          uv run --locked python -m unittest tests.test_source_products tests.test_lakeatlas_semantics -v
+          uv run --locked python -m unittest tests.test_source_products tests.test_lakeatlas_semantics tests.test_flat_publication tests.test_support_publication tests.test_source_retirement -v
           uv run --locked python scripts/source_products.py check
       - name: Check publication execution refusal controls offline
         run: uv run --locked --project scripts/source_publish python -m pytest tests/test_source_upload.py tests/test_source_api.py tests/test_hosted_validation.py tests/test_browser_range_evidence.py tests/test_hosted_ndjson.py tests/test_hosted_catalog_scope.py tests/test_bounded_http.py tests/test_query_hints.py tests/test_hosted_viewer.py -q

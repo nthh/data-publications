@@ -783,6 +783,10 @@ def draft_for(root: Path, record: dict[str, Any]) -> tuple[dict[str, Any], str, 
         from flat_publication import load_flat_layout
         try:
             draft["flat_layout"] = load_flat_layout(root, record)
+            from support_publication import load_support_layout
+            support = load_support_layout(root, record)
+            if support is not None:
+                draft["support_layout"] = support
         except ValueError as exc:
             raise ProductError(str(exc)) from exc
     readme = render_readme(draft)
@@ -944,7 +948,12 @@ def render_flat_consumer_readme(draft: dict[str, Any]) -> str:
              draft["temporal_note"], "", "## Files", "",
              "Use GeoParquet for analysis and PMTiles for maps. Field dictionaries describe columns and units.", "",
              "| File | Size |", "| --- | ---: |"]
-    for item in flat["files"]:
+    files = list(flat["files"])
+    for item in (draft.get("support_layout") or {}).get("files", []):
+        target = item["retained"]
+        if target["kind"] == "flat_document":
+            files.append({"filename": target["object_key"].split("/")[1], "size_bytes": item["size_bytes"]})
+    for item in files:
         size = item["size_bytes"]
         label = f"{size / 1e9:.2f} GB" if size >= 1e9 else f"{size / 1e6:.2f} MB" if size >= 1e6 else f"{size / 1e3:.1f} kB"
         lines.append(f"| [{item['filename']}]({base}{item['filename']}) | {label} |")
@@ -963,7 +972,7 @@ def render_flat_consumer_readme(draft: dict[str, Any]) -> str:
         lines.extend(["", "## Related datasets", ""])
         lines.extend(f"- [{item['title']}]({item['url']})" for item in draft["related_dataset_links"])
     lines.extend(["", f"[Conversion scripts and validation](https://github.com/nthh/data-publications/tree/main/datasets/{draft['dataset_id']}) · [Portolan map](https://browser.portolan-sdi.org/#/external/nthh.github.io/data-publications/{draft['dataset_id']}/collection.json)", "",
-                  "Existing versioned download URLs remain available. The root files provide the current consumer layout.", ""])
+                  "Versioned filenames and checksum manifests identify the published data.", ""])
     return "\n".join(lines)
 
 
@@ -1688,12 +1697,45 @@ def stage(root: Path, packages: list[tuple[str, Path]], output: Path,
         return 1
 
 
+def published_readme_plan(root: Path) -> dict[str, Any]:
+    """Generate a README-only plan without requiring evicted bulk packages."""
+    products, files = [], []
+    for dataset_id, record in sorted(load_records(root).items()):
+        publication = record.get("publication") or {}
+        if publication.get("status") != "published":
+            continue
+        draft, _, consumer = draft_for(root, record)
+        if not draft.get("hosted"):
+            raise ProductError(f"{dataset_id}: README publication requires verified hosting")
+        source = publication["source_coop"]
+        _, _, relative = generated_paths(dataset_id)
+        data = consumer.encode("utf-8")
+        if safe_repo_file(root, relative.as_posix(), "generated consumer README").read_bytes() != data:
+            raise ProductError(f"{dataset_id}: stale consumer README; run source_products.py write")
+        key = source["product_id"] + "/README.md"
+        products.append({"dataset_id": dataset_id, "product_id": source["product_id"],
+                         "owner": source["owner"], "bucket": source["owner"],
+                         "endpoint": "https://data.source.coop", "release": publication["release"]})
+        files.append({"object_key": key, "size_bytes": len(data), "sha256": sha256_bytes(data),
+                      "content_type": "text/markdown", **route_details(source["owner"], key),
+                      "source": {"kind": "repository", "path": relative.as_posix()}, "mutable": True,
+                      "binding_status": "canonical_generated_consumer_copy"})
+    if not products:
+        raise ProductError("No published products")
+    return {"schema_version": 1, "plan_type": "source_coop_immutable_exact_file_plan",
+            "execution": "not_started", "scope": "Published product-root READMEs only.",
+            "products": products, "files": [], "file_count": 0, "total_bytes": 0,
+            "mutable_metadata": files, "mutable_metadata_count": len(files)}
+
+
 def run(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1], help="repository/worktree root")
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("write", help="write deterministic local product drafts")
     sub.add_parser("check", help="check local product drafts without writing")
+    readme_parser = sub.add_parser("readme-plan", help="prepare published README updates without bulk data")
+    readme_parser.add_argument("--output", required=True, type=Path)
     stage_parser = sub.add_parser("stage", help="verify packages and write an exact local upload plan")
     stage_parser.add_argument("--package", action="append", type=parse_package, required=True, metavar="ID=PATH")
     stage_parser.add_argument("--display-package", action="append", type=parse_package, default=[], metavar="ID=PATH",
@@ -1701,6 +1743,13 @@ def run(argv: list[str] | None = None) -> int:
     stage_parser.add_argument("--output", type=Path, required=True, help="new output directory; existing paths are refused")
     args = parser.parse_args(argv)
     root = args.root.expanduser().resolve()
+    if args.command == "readme-plan":
+        plan = published_readme_plan(root)
+        args.output.parent.mkdir(parents=True, exist_ok=True)
+        with args.output.open("xb") as stream:
+            stream.write(canonical_json(plan))
+        print(f"Prepared {len(plan['mutable_metadata'])} README updates; no upload performed.")
+        return 0
     if args.command in ("write", "check"):
         errors = generate(root, write=args.command == "write")
         if errors:

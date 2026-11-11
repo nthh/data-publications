@@ -7,6 +7,7 @@ from pathlib import Path
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 
 import yaml
 
@@ -29,6 +30,35 @@ class FlatReadmeTests(unittest.TestCase):
         self.assertNotIn("releases/", result)
         self.assertNotIn("display/", result)
         self.assertNotIn("Folia", result)
+
+
+class PublishedReadmePlanTests(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.tmp.cleanup)
+        self.root = Path(self.tmp.name)
+        self.relative = "datasets/demo/source-coop/product-README.md"
+        (self.root / self.relative).parent.mkdir(parents=True)
+        (self.root / self.relative).write_text("# Verified README\n")
+        self.record = {"publication": {"status": "published", "release": "r1", "source_coop": {
+            "owner": "nthh", "product_id": "demo"}}}
+
+    def test_generates_only_published_readmes_without_bulk_packages(self):
+        with patch.object(products, "load_records", return_value={"demo": self.record, "pending": {}}), patch.object(
+                products, "draft_for", return_value=({"hosted": True}, "", "# Verified README\n")):
+            plan = products.published_readme_plan(self.root)
+        self.assertEqual(plan["files"], [])
+        self.assertEqual(plan["mutable_metadata_count"], 1)
+        row = plan["mutable_metadata"][0]
+        self.assertEqual(row["object_key"], "demo/README.md")
+        self.assertEqual(row["sha256"], sha(b"# Verified README\n"))
+        self.assertEqual(row["source"]["path"], self.relative)
+
+    def test_refuses_stale_or_unhosted_readme(self):
+        for draft, consumer in [({"hosted": True}, "changed"), ({"hosted": False}, "# Verified README\n")]:
+            with patch.object(products, "load_records", return_value={"demo": self.record}), patch.object(
+                    products, "draft_for", return_value=(draft, "", consumer)), self.assertRaises(products.ProductError):
+                products.published_readme_plan(self.root)
 
 
 class SourceProductTests(unittest.TestCase):

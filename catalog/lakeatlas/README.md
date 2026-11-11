@@ -4,7 +4,7 @@ Two analytic GeoParquet assets from the pinned LakeATLAS v1.0 producer File Geod
 
 License: other.
 
-Immutable package: https://data.source.coop/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/
+Release provenance: https://github.com/nthh/data-publications/blob/main/datasets/lakeatlas/releases/lakeatlas-v1.0-r2/evidence/prepared-local/manifest.json
 
 Maintainer: nthh.
 

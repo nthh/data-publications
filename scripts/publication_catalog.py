@@ -1102,12 +1102,16 @@ def _generated(root: Path, config: dict) -> dict[str, bytes]:
         _set_public_host(out_collection, dataset_id, record)
         from flat_publication import apply_flat_layout
         flat_layout = apply_flat_layout(root, record, out_collection, tree)
+        from support_publication import apply_support_layout
+        apply_support_layout(root, record, out_collection)
         _navigation_links(out_collection, config, f"{dataset_id}/collection.json")
         children.append({"rel": "child", "href": f"{dataset_id}/collection.json", "title": record["title"], "type": "application/json"})
         put(f"{dataset_id}/collection.json", canonical_json(out_collection))
+        provenance_url = (config["navigation"]["repository_url"] + "/blob/main/" + record["publication"]["manifest_path"]) if flat_layout else base
+        provenance_label = "Release provenance" if flat_layout else "Immutable package"
         notes = [f"# {record['title']}", "", collection.get("description", ""), "",
                  f"License: {collection['license']}.", "",
-                 f"Immutable package: {base}", ""]
+                 f"{provenance_label}: {provenance_url}", ""]
         correction = record["publication"]["catalog"].get("processor_correction")
         if correction:
             notes.extend(["Maintainer: " + correction["to"] + ".", ""])
@@ -1134,7 +1138,7 @@ def _generated(root: Path, config: dict) -> dict[str, bytes]:
         put(f"{dataset_id}/AGENTS.md", (f"# Dataset guidance\n\nDataset: {dataset_id}. Release: {snapshot['release']}.\n"
                                         f"Use the analytic data assets for analysis; display derivatives are presentation only. "
                                         f"Preserve producer identity, units, nulls, uncertainty and record multiplicity. "
-                                        f"See README.md and the immutable package at {base}.\n").encode())
+                                        f"See README.md and {provenance_label.lower()} at {provenance_url}.\n").encode())
     catalog["links"].extend(children)
     if published:
         updates = [read_json_from_bytes(tree[f"{dataset_id}/collection.json"]).get("updated")
@@ -1154,6 +1158,13 @@ def _generated(root: Path, config: dict) -> dict[str, bytes]:
         summary.append(f"- [{record['title']}]({dataset_id}/collection.json)")
     put("README.md", ("\n".join(summary).rstrip() + "\n").encode())
     put("AGENTS.md", ROOT_AGENTS.encode())
+    from support_publication import assert_no_legacy_urls, legacy_prefixes
+    retired = [prefix for _, record, _, _ in published
+               if (record["publication"].get("source_coop") or {}).get("support_layout")
+               for prefix in legacy_prefixes(record)]
+    for name, data in tree.items():
+        if name.endswith((".json", ".md", ".css", ".svg")):
+            assert_no_legacy_urls(data.decode("utf-8"), retired)
     return tree
 
 

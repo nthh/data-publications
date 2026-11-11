@@ -4,7 +4,7 @@ A global model of plastic inputs from rivers into the ocean, published by Lebret
 
 License: CC-BY-4.0.
 
-Immutable package: https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/
+Release provenance: https://github.com/nthh/data-publications/blob/main/datasets/river-plastic-inputs/releases/figshare-v6-r2/manifest.json
 
 Maintainer: nthh.
 

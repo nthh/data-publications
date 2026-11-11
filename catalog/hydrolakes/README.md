@@ -4,7 +4,7 @@ Static global lake polygons derived from composite legacy shoreline sources. Thi
 
 License: CC-BY-4.0.
 
-Immutable package: https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/
+Release provenance: https://github.com/nthh/data-publications/blob/main/datasets/hydrolakes/releases/v1-local-r3/evidence/package-manifest.json
 
 Maintainer: nthh.
 

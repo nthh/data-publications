@@ -53,4 +53,4 @@ Independently maintained by [nthh](https://source.coop/nthh).
 
 [Conversion scripts and validation](https://github.com/nthh/data-publications/tree/main/datasets/free-flowing-rivers) · [Portolan map](https://browser.portolan-sdi.org/#/external/nthh.github.io/data-publications/free-flowing-rivers/collection.json)
 
-Existing versioned download URLs remain available. The root files provide the current consumer layout.
+Versioned filenames and checksum manifests identify the published data.

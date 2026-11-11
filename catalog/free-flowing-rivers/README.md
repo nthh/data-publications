@@ -4,7 +4,7 @@ Analytic GeoParquet conversion of the full global free-flowing river reach netwo
 
 License: CC-BY-4.0.
 
-Immutable package: https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/
+Release provenance: https://github.com/nthh/data-publications/blob/main/datasets/free-flowing-rivers/releases/figshare-v1-local-r2/manifest.json
 
 Maintainer: nthh.
 
