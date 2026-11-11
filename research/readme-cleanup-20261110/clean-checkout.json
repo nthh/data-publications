@@ -1,0 +1,66 @@
+{
+  "checkout_commit": "16849d4f9520ac2ca3316ee744027de54420d706",
+  "initial_status": "",
+  "commands": [
+    {
+      "args": [
+        "scripts/source_products.py",
+        "write"
+      ],
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "args": [
+        "scripts/catalog.py",
+        "--write"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"records_checked\": 453,\n  \"supplemental_records_checked\": 90,\n  \"family_keys_checked\": 363,\n  \"citations_checked\": 363,\n  \"decisions\": {\n    \"defer\": 3,\n    \"pending\": 443,\n    \"publish_conversion\": 6,\n    \"reuse_existing\": 1\n  }\n}\n"
+    },
+    {
+      "args": [
+        "scripts/publication_catalog.py",
+        "write"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"published_collections\": 5,\n  \"generated_files\": 29\n}\n"
+    },
+    {
+      "args": [
+        "scripts/source_products.py",
+        "check"
+      ],
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "args": [
+        "scripts/catalog.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"records_checked\": 453,\n  \"supplemental_records_checked\": 90,\n  \"family_keys_checked\": 363,\n  \"citations_checked\": 363,\n  \"decisions\": {\n    \"defer\": 3,\n    \"pending\": 443,\n    \"publish_conversion\": 6,\n    \"reuse_existing\": 1\n  }\n}\n"
+    },
+    {
+      "args": [
+        "scripts/publication_catalog.py",
+        "check"
+      ],
+      "exit_code": 0,
+      "output": "Catalog check passed; 5 published collections.\n"
+    },
+    {
+      "args": [
+        "research/readme-cleanup-20261110/prepare.py",
+        ".local/readme-replay/upload-plan.json"
+      ],
+      "exit_code": 0,
+      "output": "{\"status\": \"prepared\", \"readmes\": 5, \"bytes\": 24996, \"sha256\": \"4c8f4756ee789aa369dcb58c75e54bd4b0a186ca213761811de00e0aaab1819e\"}\n"
+    }
+  ],
+  "inputs": "Fresh checkout and locked cached dependencies; no data packages.",
+  "final_status": "",
+  "status": "passed",
+  "upload_plan": "identical"
+}
