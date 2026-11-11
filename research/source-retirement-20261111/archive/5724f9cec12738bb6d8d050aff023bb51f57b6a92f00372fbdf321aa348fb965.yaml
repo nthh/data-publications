@@ -1,0 +1,56 @@
+schema_version: 1
+id: free-flowing-rivers
+title: Mapping the world's free-flowing rivers — global river reach connectivity assessment
+intake:
+  kind: producer
+  reference_url: https://doi.org/10.6084/m9.figshare.7688801
+  added_on: '2026-10-31'
+triage:
+  decision: publish_conversion
+  priority: pilot_review
+source:
+  source_doi: 10.6084/m9.figshare.7688801
+  source_version: figshare-v1
+  source_url: https://ndownloader.figshare.com/files/15090536
+  source_name: Mapping the worlds free-flowing rivers_Data_Geodatabase.zip
+  file_id: 15090536
+  source_size_bytes: 954710486
+  source_sha256: e45aa83a60e91840ddf6cc0820a4c32f44edf7a0318c78b62980fa9e44d6e31a
+  source_md5: 2df6c603904f61f5dc482d3f9873900f
+  api_metadata_sha256: 125a2fc527145cb90cd1ae1d946df9c3a85a60dbfe5da041ececec3a1d0cc146
+  source_record_count: 8477883
+  source_layer: FFR_river_network_v1
+  source_crs: EPSG:4326
+  source_geometry_type: MultiLineString
+  source_bounds: [-179.99791666699997, -55.87708333299997, 179.99791666700003, 83.58958333300006]
+  source_fields: 38
+  source_fid_column: OBJECTID
+  inspection_evidence: datasets/free-flowing-rivers/source-inspection.json
+  api_metadata_evidence: datasets/free-flowing-rivers/source-metadata.json
+  license: CC-BY-4.0
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  citation: >-
+    Grill, G., Lehner, B., Thieme, M. et al. Mapping the world's free-flowing rivers.
+    Nature 569, 215–221 (2019). https://doi.org/10.1038/s41586-019-1111-9
+  temporal_scope: Static assessment based on source data assembled circa 2017; publication year 2019.
+  source_verification: Current API metadata, exact archive size/MD5/SHA-256, ZIP CRC, layer, feature count, CRS, geometry type, bounds, and field types inspected; report is checksum-bound to the source archive.
+build:
+  status: planned
+  format: GeoParquet
+  planned_outputs:
+  - geoparquet
+  conversion: Streaming pyogrio Arrow batches to a single GeoParquet file; no display derivative.
+  validation_plan_path: datasets/free-flowing-rivers/VALIDATION.md
+publication:
+  status: candidate
+  local_processing_order: null
+  release: figshare-v1-local-r1
+  source_cooperative:
+    status: proposed_not_created
+    url: null
+  portolan:
+    status: not_submitted
+    url: null
+review:
+  source_alternatives: pending bounded review
+  scientific_validation: not_assessed

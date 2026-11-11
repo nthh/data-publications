@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "scope": "Remove the exact inventoried legacy Source objects after generated catalog cutover; no analytical or geometry changes.",
+  "checks": [
+    "Every inventoried object has a checksum-bound flat replacement, exact Git copy, or exact compressed Git archive.",
+    "Three producer PDFs are copied unchanged to flat Source filenames and fully read back.",
+    "Generated collections, styles and consumer documentation have no active Source URLs under releases/ or display/.",
+    "Support mappings preserve STAC asset identity, bytes, media types, roles and titles; only locations change.",
+    "Focused rejection tests, generator checks, clean-checkout regeneration and pinned Rashid pass before publication.",
+    "Deploy the generated Pages catalog and verify every staged file by anonymous SHA-256 readback.",
+    "Verify all live support URLs and all PMTiles styles, including GRWL at overview and detail zooms.",
+    "Before deletion, recheck every inventoried source ETag/length and every flat destination ETag/length against full-readback receipts; require Git retention commit present on remote main.",
+    "Delete only exact plan keys with source guards, save per-object receipts, and require all ten old prefixes empty afterward."
+  ]
+}

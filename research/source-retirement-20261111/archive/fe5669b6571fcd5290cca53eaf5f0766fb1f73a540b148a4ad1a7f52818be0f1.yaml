@@ -1,0 +1,231 @@
+schema_version: 1
+id: grwl-raw
+title: Global River Width from Landsat — raw vector observations V01.01
+intake:
+  kind: producer
+  reference_url: https://zenodo.org/records/18624542
+  added_on: '2026-11-02'
+  related_family: grwl
+triage:
+  decision: publish_conversion
+  priority: pilot_review
+  rationale: The detailed producer source is now converted and independently checked across all 64,572,998
+    records in 829 tiles. The full clean rebuild is byte-identical. Global display validation and local
+    packaging remain in progress.
+source:
+  producer: Allen and Pavelsky / GRWL
+  product: Global River Width from Landsat raw vector component
+  version: V01.01
+  doi: 10.5281/zenodo.18624542
+  source_url: https://zenodo.org/api/records/18624542/files/GRWL_vector_V01.01.zip/content
+  source_name: GRWL_vector_V01.01.zip
+  source_size_bytes: 3104998836
+  source_md5: 40171f15c0fccd470db32446dda0480e
+  source_sha256: 78072f67991b0cf9eb3373c7a9c314c0da826857c698dd03d20421b2d0d3bbec
+  source_sha256_status: Complete archive received; exact size and provider MD5 passed, SHA-256 computed
+    locally.
+  license: CC-BY-4.0
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  expected_tiles: 829
+  expected_rows: 64572998
+  expected_rows_basis: Frozen SHX inventory expectation; now independently confirmed by the complete source-to-GeoParquet
+    comparison.
+  source_components_in_scope:
+  - 'GRWL_vector_V01.01 raw tiled shapefiles: SHP, SHX, DBF, and PRJ'
+  source_components_out_of_scope:
+  - GRWL_mask_V01.01 raster masks
+  - Optional tile index and RSSA basin supplement
+  - Simplified SummaryStats product and its segment-level aggregate statistics
+  source_fields:
+  - utm_east
+  - utm_north
+  - width_m
+  - nchannels
+  - segmentID
+  - segmentInd
+  - lakeFlag
+  - lon
+  - lat
+  - elev_m
+  numeric_preservation: Preserve all DBF numeric values as exact Decimal-derived or integer values, retaining
+    blanks and all-asterisk values as null. Do not coerce source numbers through binary floating point.
+  geometry_preservation: Preserve source record multiplicity, tile identity, original 1-based record ordinal,
+    part boundaries, part/vertex order, and every source XY float64 bit pattern. Convert each source PolyLine
+    record directly to WKB MultiLineString; never join records by segmentID or segmentInd.
+  width_semantics: Preserve width_m value 1 as the producer unknown-width sentinel. Add width_valid separately;
+    do not replace sentinel values with estimates or means.
+  citation: Allen, G.H. and Pavelsky, T.M. (2018), Global extent of rivers and streams. Science 361(6402),
+    585–588. https://doi.org/10.1126/science.aat0636
+  temporal_scope: Static producer release derived from Landsat observations; source observation dates
+    vary. This is not a current river-width observation or a time series.
+build:
+  status: global_analytical_validated_display_in_progress
+  complete_global_build: true
+  planned_outputs:
+  - lossless GeoParquet analytical vector
+  - detail-only PMTiles display derivative, zooms 8–12
+  workflow_files:
+    acquire: datasets/grwl-raw/acquire.py
+    global_conversion: datasets/grwl-raw/build_global.py
+    source_validation: datasets/grwl-raw/validate.py
+    display_conversion: datasets/grwl-raw/build_display.py
+    display_validation: datasets/grwl-raw/validate_display.py
+  validation_plan_path: research/grwl-raw-release-20261102/criteria.json
+  display_policy_path: research/grwl-raw-release-20261102/display-policy.json
+  display_policy_sha256: 084684c6b47701645b08b8ed42ba0818061c0b2d36959aebce8026b6401060f7
+  global_inventory_path: research/grwl-raw-audit-20261102/vector-inventory-r1.json
+  global_inventory_sha256: 54deb7b6a7119c052d55d6bad819cedd5c5b271ec3ea8cf5aa6baf8cc855434b
+  global_inventory_claim: All 829 tiles and 64,572,998 source records were independently compared; all
+    3,316 source member SHA-256 checks passed.
+  related_summary_quality_evidence_path: research/grwl-raw-audit-20261102/findings.json
+  related_summary_quality_evidence_sha256: e648862ff6eb1d314f86e262e34923e14463e2cd9ce424423cd17e5da8cabeec
+  pilot:
+    status: passed_source_display_and_browser_checks
+    tile_count: 9
+    tiles:
+    - NI15
+    - NI16
+    - NJ12
+    - NK12
+    - NL10
+    - NL11
+    - NL12
+    - NL13
+    - NM11
+    rows: 919832
+    geoparquet_bytes: 78903097
+    report_path: research/grwl-raw-release-20261102/pilot-v2-source-validation-r1.json
+    report_sha256: a51179e866338b92de7a1512415202c9b307abd53aef78f0b26ee79ca05f4eab
+    manifest_sha256: a817a649959dc38eca80bac9e6f7f50eb2676e8bd7ddeeca018ff4fe0660ae0b
+    scope_note: All records in these nine supplied source tiles passed the recorded comparison. Pilot
+      evidence does not establish global completion, full-archive checksum verification, global scientific
+      accuracy, or GEE parity.
+    pmtiles_bytes: 163886604
+    display_report_path: research/grwl-raw-release-20261102/pilot-v2-display-validation-r1.json
+    browser_report_path: research/grwl-raw-release-20261102/browser-pilot-v2-r1/report.json
+    historical_report_path: research/grwl-raw-release-20261102/pilot-source-validation-r2.json
+    historical_geoparquet_bytes: 73203604
+    browser_attribute_values_path: research/grwl-raw-release-20261102/browser-pilot-v2-r1/attribute-values-r2.json
+    source_member_sha256_checks: 36
+    schema: Four int64 DBF fields and six decimal128(38,18) DBF fields, including UTM east/north.
+  fidelity_contract:
+    feature_id: Deterministic JSON-safe numeric ID encoded from source tile and original 1-based row ordinal;
+      segmentID is not a globally unique feature key.
+    display_derivative: Dateline splitting is display-only. Analytical GeoParquet retains source XY bytes
+      and original part boundaries.
+    publication_state: Global analytical conversion and clean rebuild passed. The global detail PMTiles
+      is being built and remains unvalidated; no prepared global package or publication is claimed.
+  gates_pending:
+  - Complete global PMTiles and validate all maximum-zoom source IDs and selected attributes, enumerating
+    quantization collapses and rejecting unexpected missing IDs.
+  - Pass frozen source-derived browser controls across the five reported problem locations and six continental
+    windows.
+  - Complete local package, metadata and byte-range access checks; public hosting and registry submission
+    require separate evidence.
+  global_acquisition:
+    path: research/grwl-raw-release-20261102/global-source-acquisition.json
+    sha256: edbef674c64aac667fd67d4481da0d1c8e63a886b7030a697afac9324e196126
+    whole_archive_checksum_verified: true
+  numeric_schema_note: All 829 DBF headers were inspected. UTM east/north use a common decimal128(38,18)
+    type because NN29 declares decimal fields; width_m, segmentID, segmentInd and elev_m remain int64.
+    The historical first pilot uses integer UTM columns; pilot-v2 and the global release use the final
+    schema. No numeric rounding is permitted.
+  global_schema_inspection:
+    path: research/grwl-raw-release-20261102/global-dbf-schema-inspection.json
+    sha256: 9d7392ec68d2b789dfb9cfc4f230f69b76041ddaedd01d16662aaebd65cae205
+  global_preflight_failure:
+    path: research/grwl-raw-release-20261102/global-preflight-failure-r1.json
+    sha256: ba55f38a39f89c34445088e7160a3d859bb97dc54353d31feceb0dbdfbaa5ba8
+  global_analytical:
+    status: source_and_clean_rebuild_passed
+    rows: 64572998
+    tiles: 829
+    geoparquet_bytes: 5529859809
+    geoparquet_sha256: d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb
+    width_sentinel_1_count: 435987
+    source_comparison: All original numeric values/nulls, source identities, part boundaries, vertex order
+      and XY float64 bits; independent source parser.
+    clean_rebuild:
+      path: research/grwl-raw-release-20261102/global-clean-rebuild-r1.json
+      sha256: 5499f3fbfcb0342ba8e535c641b4147dfe82f018d96ac6795e33bbe58a320396
+    source_validation:
+      path: research/grwl-raw-release-20261102/global-source-validation-r1.json
+      sha256: eb225411b335fcd5c968bb70337738fcb8bcc2ed31d8f48c4e02e7948da2fd0a
+    conversion_manifest:
+      path: research/grwl-raw-release-20261102/global-conversion-manifest-r1.json
+      sha256: 160dfaf91ede202da57172ff16492601ca349d43e0b629819a7e4eb82222acda
+publication:
+  status: candidate
+  publicly_published: false
+  product_created: false
+  source_coop:
+    owner: nthh
+    owner_status: confirmed
+    product_id: grwl-raw
+    account_verification: null
+    tags:
+    - global
+    - hydrology
+    - landsat
+    - rivers
+    - river-width
+    - geoparquet
+    - pmtiles
+    limitations:
+    - All 64,572,998 source records passed exact source comparison and a byte-identical clean rebuild.
+      Global PMTiles and local package validation are in progress; the product is not yet prepared or
+      published.
+    - Raw observations are separate source records and short parts, not a connected river centerline network.
+      Records are never joined by segmentID or segmentInd.
+    - width_m value 1 is an unknown-width sentinel; width_valid indicates usable width without altering
+      width_m.
+    - The planned PMTiles is a zoom 8–12 display derivative with quantized geometry. The GeoParquet is
+      the analytical source of record.
+    - The release excludes masks, tile index, and RSSA basin supplement.
+    - No GEE parity, global independent scientific-accuracy assessment, current-condition claim, or producer-operation
+      reconstruction is made.
+    supplements: []
+    title: Global River Width from Landsat — raw vector observations V01.01
+    summary: 'Proposed product: source-record-preserving GeoParquet conversion of the producer GRWL V01.01
+      tiled vector observations, with a separately versioned zoom 8–12 detail PMTiles for display. Each
+      observation retains its source tile, ordinal, all ten original DBF values, multipart geometry structure,
+      and XY float64 coordinates. The raw product has a different scientific scope from the related simplified
+      summary record and does not include its segment-level aggregate statistics. The complete global
+      analytical source comparison and clean rebuild have passed. Display and package validation remain
+      in progress; this product has not been created.'
+    license_note: 'Producer license: CC BY 4.0. Preserve producer attribution and cite Allen and Pavelsky
+      (2018), DOI 10.1126/science.aat0636. No public product has been created or uploaded.'
+    attribution: Allen and Pavelsky (2018), Global extent of rivers and streams, Science 361(6402), 585–588,
+      DOI 10.1126/science.aat0636; source product GRWL_vector_V01.01.
+    temporal_note: Static producer release derived from Landsat observations with varying source dates;
+      not current river conditions or a time series.
+related_datasets:
+- id: grwl
+  record_id: grwl
+  title: Global River Width from Landsat — simplified global river network V01.02
+  relationship: derived_product
+  url: https://gee-community-catalog.org/projects/grwl/
+  use_case: The summary retains historical segment-level aggregate statistics. Its inspected geometry
+    contains erroneous connectors and is withheld from publication; use the raw record for detailed per-observation
+    geometry and original DBF fields.
+  comparison: The summary product has 42,077 generalized records and segment-level statistics, unlike
+    the raw component's many tiled source records and per-record widths. Nine-tile comparison confirmed
+    straight summary connectors absent from raw vectors at source rows 11839, 13164, 15394, 15397, and
+    15450. Those findings establish known sampled discrepancies, not a global accuracy result. The raw
+    conversion does not invent summary statistics such as width_mean.
+  spatial_coverage: 'Global: 829 raw tiles and 64,572,998 source records converted and independently compared.'
+  temporal_coverage: Static Landsat-derived producer release V01.01; underlying observation dates vary.
+  resolution: Individual source observations nominally represent approximately 30 m Landsat-derived river-width
+    segments; this description does not assert uniform positional accuracy.
+  formats:
+  - Shapefile ZIP source
+  - GeoParquet validated analytical output
+  - PMTiles detail display output in preparation
+  access: Producer raw vectors are available from the Zenodo record. The related summary product is a
+    separate canonical record and scope.
+  reviewed_on: '2026-11-02'
+  evidence:
+  - title: Producer GRWL V01.01 Zenodo record
+    url: https://zenodo.org/records/18624542
+  - title: Frozen raw-versus-summary discrepancy findings
+    url: https://gee-community-catalog.org/projects/grwl/
