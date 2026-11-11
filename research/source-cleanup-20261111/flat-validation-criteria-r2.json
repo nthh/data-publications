@@ -1,0 +1,26 @@
+{
+  "bulk_asset_count": 12,
+  "checks": {
+    "anonymous_access": "Fresh HTTP HEAD for every target; 200, expected Content-Length and Content-Type.",
+    "asset_checksums": "All 35 planned objects must match exact target SHA-256 and byte length; prior Source objects remain unchanged.",
+    "browser_render": "Seven MapLibre/PMTiles live-URL cases: six styles at z3 plus GRWL native widths at z9; nonempty rendered features, no map/network errors; exact object allowlist and 512 MiB aggregate transfer cap.",
+    "catalog_links": "All style URLs must target exact verified flat PMTiles; same rendering fields except attribution; source catalog asset checksums, types, IDs and source hrefs match before mapping.",
+    "cors": "Every HEAD and range response must allow anonymous cross-origin readers.",
+    "range_requests": "For every Parquet/PMTiles target, 127-byte prefix GET must return 206 with exact Content-Range.",
+    "subset_query": "Six analytical assets. Five river/lake assets: fixed Mississippi window (-91,-89 longitude,34,37 latitude), first five bbox minima ordered identically from original and flat URL. River plastic inputs: the README query for five greatest non-null i_mid values, ordered by i_mid DESC then source_row. Require five rows and exact original/flat equality for every asset."
+  },
+  "dataset_count": 5,
+  "file_count": 35,
+  "frozen_at": "2026-11-11T20:44:21.384484+00:00",
+  "frozen_before_hosting_validation": true,
+  "limits": [
+    "Metadata relocation and attribution correction only; no new scientific or GEE comparison.",
+    "The MapLibre browser check does not claim official Portolan Browser navigation."
+  ],
+  "revision_reason": "Before running any live subset queries, use the documented README top-five annual-input query for the river-mouth dataset. An inland Mississippi window is not a suitable positive control for global river mouths. Keep the fixed Mississippi query for the other five analytical assets.",
+  "schema_version": 1,
+  "supersedes": {
+    "path": "research/source-cleanup-20261111/flat-validation-criteria.json",
+    "sha256": "27372b68ed66ee8509521d10bcdd855d62f9919cedba98c67c36d63845bf00df"
+  }
+}

@@ -46,12 +46,13 @@ def query_checks(plan):
  sql='SELECT bbox.xmin, bbox.ymin FROM read_parquet(?) WHERE bbox.xmin BETWEEN -91 AND -89 AND bbox.ymin BETWEEN 34 AND 37 ORDER BY bbox.xmin, bbox.ymin LIMIT 5'
  for row in plan['files']:
   if not row['filename'].endswith('.parquet'):continue
-  old=database.execute(sql,[row['source_href']]).fetchall()
-  new=database.execute(sql,[row['url']]).fetchall()
+  selected_sql=('SELECT source_row, i_mid AS annual_input_tonnes FROM read_parquet(?) WHERE i_mid IS NOT NULL ORDER BY i_mid DESC, source_row LIMIT 5' if row['dataset_id']=='river-plastic-inputs' else sql)
+  old=database.execute(selected_sql,[row['source_href']]).fetchall()
+  new=database.execute(selected_sql,[row['url']]).fetchall()
   assert old==new and len(new)==5
-  queries.append({'dataset_id':row['dataset_id'],'filename':row['filename'],'status':'passed','original_url':row['source_href'],'flat_url':row['url'],'rows':new,'same_as_original':True})
+  queries.append({'dataset_id':row['dataset_id'],'filename':row['filename'],'status':'passed','original_url':row['source_href'],'flat_url':row['url'],'rows':new,'same_as_original':True,'sql':selected_sql})
   print(json.dumps({'filename':row['filename'],'subset_query':'passed'}),flush=True)
- return {'schema_version':1,'status':'passed','checked_at':current_time(),'duckdb_version':duckdb.__version__,'sql':sql,'files':queries}
+ return {'schema_version':1,'status':'passed','checked_at':current_time(),'duckdb_version':duckdb.__version__,'files':queries}
 
 def verified_copies(plan, receipt_paths):
  expected = {row['object_key']: row for row in plan['files']}
@@ -138,7 +139,7 @@ def reports(plan,args):
    observed.append({'filename':row['filename'],'sha256':row['sha256'],'size_bytes':row['size_bytes'],'status':'verified','checksum_method':proof['checksum_method']})
   report={'schema_version':1,'dataset_id':dataset_id,'layout_id':'flat-20261111','manifest_sha256':sha(manifest_path.read_bytes()),'status':'passed','checked_at':current_time(),
    'checks':{k:'passed' for k in ['anonymous_access','range_requests','cors','asset_checksums','subset_query','catalog_links','browser_render']},'files':observed,
-   'evidence':[{ 'path':p.relative_to(ROOT).as_posix(),'sha256':sha(p.read_bytes())} for p in [*sorted(copy_paths),http_path,query_path,browser_path,STUDY/'flat-validation-criteria.json']],
+   'evidence':[{ 'path':p.relative_to(ROOT).as_posix(),'sha256':sha(p.read_bytes())} for p in [*sorted(copy_paths),http_path,query_path,browser_path,STUDY/'flat-validation-criteria.json',STUDY/'flat-validation-criteria-r2.json']],
    'scope':'Flat Source URLs verified. Browser checks use live MapLibre/PMTiles; no new scientific or GEE validation. Original package links retained.'}
   write(report_dir/f'{dataset_id}.json',report)
  return {'status':'passed','reports':5}
