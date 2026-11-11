@@ -2,42 +2,45 @@
 
 Complete GRWL V01.01 raw vector observations in lossless GeoParquet, with one separately versioned zoom 0–12 PMTiles display. Zooms 0–7 show selected widest original width observations with source IDs; zooms 8–12 preserve detailed source geometry and widths. All 64,572,998 observations and ten original DBF fields remain in GeoParquet. Complete source comparison, analytical rebuild, full global overview validation, exact detailed-tile preservation, clean regional replay and all 20 browser cases passed.
 
-**Validated hosted release:** `raw-v01.01-local-r1`. The canonical record binds the public Source Cooperative package and its completed hosting checks.
+Static producer release derived from Landsat observations with varying source dates; not current river conditions or a time series.
 
-## Scope and formats
+## Files
 
-Detailed producer GRWL vector observations with each source record, part and coordinate retained. Records are kept separate; segmentID is tile-local. width_m=1 means unknown width, and width_valid marks usable measurements. Static producer release derived from Landsat observations; source observation dates vary. This is not a current river-width observation or a time series.
+Use GeoParquet for analysis and PMTiles for maps. Field dictionaries describe columns and units.
 
-Formats: `application/json`, `application/vnd.apache.parquet`, `application/vnd.pmtiles`, `image/png`.
+| File | Size |
+| --- | ---: |
+| [grwl-raw-v01.01.parquet](https://data.source.coop/nthh/grwl-raw/grwl-raw-v01.01.parquet) | 5.53 GB |
+| [grwl-raw-v01.01.fields.json](https://data.source.coop/nthh/grwl-raw/grwl-raw-v01.01.fields.json) | 1.3 kB |
+| [grwl-raw-v01.01.pmtiles](https://data.source.coop/nthh/grwl-raw/grwl-raw-v01.01.pmtiles) | 3.19 GB |
+| [grwl-raw-v01.01.style.json](https://data.source.coop/nthh/grwl-raw/grwl-raw-v01.01.style.json) | 10.4 kB |
+| [LICENSE.txt](https://data.source.coop/nthh/grwl-raw/LICENSE.txt) | 0.4 kB |
+| [manifest-20261111.json](https://data.source.coop/nthh/grwl-raw/manifest-20261111.json) | 2.0 kB |
 
-## Producer, source, and license
+## Read with DuckDB
 
-- Producer attribution: Allen and Pavelsky (2018), Global extent of rivers and streams, Science 361(6402), 585–588, DOI 10.1126/science.aat0636; source product GRWL_vector_V01.01.
-- License: Producer license: CC BY 4.0. Preserve producer attribution and cite Allen and Pavelsky (2018), DOI 10.1126/science.aat0636.
-- Temporal scope: Static producer release derived from Landsat observations with varying source dates; not current river conditions or a time series.
+Query the remote GeoParquet directly:
+
+```sql
+SELECT count(*) AS feature_count FROM read_parquet('https://data.source.coop/nthh/grwl-raw/grwl-raw-v01.01.parquet');
+SELECT * FROM read_parquet('https://data.source.coop/nthh/grwl-raw/grwl-raw-v01.01.parquet') LIMIT 5;
+```
+
+The matching `.style.json` file shows the PMTiles in a MapLibre viewer with the PMTiles protocol installed.
+
+## Attribution and license
+
+Allen and Pavelsky (2018), Global extent of rivers and streams, Science 361(6402), 585–588, DOI 10.1126/science.aat0636; source product GRWL_vector_V01.01.
+
+Producer license: CC BY 4.0. Preserve producer attribution and cite Allen and Pavelsky (2018), DOI 10.1126/science.aat0636.
+
+Independently maintained by [nthh](https://source.coop/nthh).
 
 - [License terms](https://creativecommons.org/licenses/by/4.0/)
 - [Dataset release](https://doi.org/10.5281/zenodo.18624542)
 - [Processor: nthh](https://source.coop/nthh/grwl-raw)
 - [Original download](https://zenodo.org/api/records/18624542/files/GRWL_vector_V01.01.zip/content)
 - [Dataset release](https://zenodo.org/records/18624542)
-
-## Release files
-
-- [grwl-raw-observations.parquet](releases/raw-v01.01-local-r1/assets/grwl-raw-observations.parquet) (asset)
-- [thumbnail.png](releases/raw-v01.01-local-r1/display/thumbnail.png) (display_derivatives)
-- [data-license.json](releases/raw-v01.01-local-r1/licenses/data-license.json) (data_license)
-- [source-license.json](releases/raw-v01.01-local-r1/licenses/source-license.json) (source_license)
-- [grwl-raw-observations-field-dictionary.json](releases/raw-v01.01-local-r1/metadata/grwl-raw-observations-field-dictionary.json) (field_dictionary)
-- [attribution.json](releases/raw-v01.01-local-r1/source/attribution.json) (source_attribution)
-
-## Display package
-
-Display release: `raw-v01.01-display-r3`. The manifest is pinned at SHA-256 `0910adf27da9265a9f02fb2c71f2d5b4a6e90f55330ae6d4a2d24c782d231915`.
-Display assets are separate immutable derivatives bound to this analytical release.
-- [Display manifest](display/raw-v01.01-display-r3/manifest.json)
-- [GRWL raw width observations at every zoom PMTiles](display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles) (3190539066 bytes; SHA-256 `8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60`)
-  - [Map style](display/raw-v01.01-display-r3/styles/width.json)
 
 ## Limitations
 
@@ -56,4 +59,6 @@ Display assets are separate immutable derivatives bound to this analytical relea
 - [Global River Width from Landsat — simplified global river network V01.02](https://gee-community-catalog.org/projects/grwl/)
 - [Producer source](https://zenodo.org/records/18624542)
 
-Public hosting checks are bound in the canonical report. Scientific validation retains its documented scope.
+[Conversion scripts and validation](https://github.com/nthh/data-publications/tree/main/datasets/grwl-raw) · [Portolan map](https://browser.portolan-sdi.org/#/external/nthh.github.io/data-publications/grwl-raw/collection.json)
+
+Existing versioned download URLs remain available. The root files provide the current consumer layout.

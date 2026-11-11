@@ -13,8 +13,9 @@ Catalog preview: Global overview from published PMTiles; generalized display onl
 Source producers: Lehner and Messager / HydroSHEDS
 
 Source provenance: https://data.hydrosheds.org/file/hydrolakes/HydroLAKES_polys_v10_shp.zip
-Original describedby notes: https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/README.md
-Original agents notes: https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/AGENTS.md
+
+Data, map layers and usage: https://source.coop/nthh/hydrolakes
+
 
 Canonical publication limits:
 

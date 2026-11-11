@@ -1,40 +1,7 @@
 {
-  "version": 8,
-  "name": "GRWL source widths at every zoom",
-  "metadata": {
-    "data-publications:width-field": "width_m",
-    "data-publications:width-unit": "m",
-    "data-publications:legend": [
-      {
-        "metres": 50,
-        "width": 1.6
-      },
-      {
-        "metres": 200,
-        "width": 2.7
-      },
-      {
-        "metres": 1000,
-        "width": 6.2
-      }
-    ],
-    "data-publications:notice": "At zooms 0–7, selected original observations retain the widest valid measured width per screen-scale cell. Detailed source segments appear from zoom 8. Symbols are exaggerated and capped at 1000 m; they are not riverbanks. A source value of 1 denotes unknown width."
-  },
-  "sources": {
-    "data": {
-      "type": "vector",
-      "url": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
-      "attribution": "Allen and Pavelsky (2018), GRWL V01.01, CC BY 4.0"
-    }
-  },
   "layers": [
     {
       "id": "release-width-samples",
-      "type": "circle",
-      "source": "data",
-      "source-layer": "grwl_width_overview",
-      "minzoom": 0,
-      "maxzoom": 8,
       "layout": {
         "circle-sort-key": [
           "case",
@@ -57,7 +24,35 @@
           -1
         ]
       },
+      "maxzoom": 8,
+      "minzoom": 0,
       "paint": {
+        "circle-color": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "width_valid"
+            ],
+            true
+          ],
+          "#216d85",
+          "#71858a"
+        ],
+        "circle-opacity": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "width_valid"
+            ],
+            true
+          ],
+          0.82,
+          0.58
+        ],
         "circle-radius": [
           "interpolate",
           [
@@ -240,40 +235,14 @@
             ],
             0.7
           ]
-        ],
-        "circle-color": [
-          "case",
-          [
-            "==",
-            [
-              "get",
-              "width_valid"
-            ],
-            true
-          ],
-          "#216d85",
-          "#71858a"
-        ],
-        "circle-opacity": [
-          "case",
-          [
-            "==",
-            [
-              "get",
-              "width_valid"
-            ],
-            true
-          ],
-          0.82,
-          0.58
         ]
-      }
+      },
+      "source": "data",
+      "source-layer": "grwl_width_overview",
+      "type": "circle"
     },
     {
       "id": "release-lines",
-      "type": "line",
-      "source": "data",
-      "source-layer": "grwl_raw",
       "minzoom": 8,
       "paint": {
         "line-color": "#216d85",
@@ -488,7 +457,38 @@
             1.4
           ]
         ]
-      }
+      },
+      "source": "data",
+      "source-layer": "grwl_raw",
+      "type": "line"
     }
-  ]
+  ],
+  "metadata": {
+    "data-publications:legend": [
+      {
+        "metres": 50,
+        "width": 1.6
+      },
+      {
+        "metres": 200,
+        "width": 2.7
+      },
+      {
+        "metres": 1000,
+        "width": 6.2
+      }
+    ],
+    "data-publications:notice": "At zooms 0–7, selected original observations retain the widest valid measured width per screen-scale cell. Detailed source segments appear from zoom 8. Symbols are exaggerated and capped at 1000 m; they are not riverbanks. A source value of 1 denotes unknown width.",
+    "data-publications:width-field": "width_m",
+    "data-publications:width-unit": "m"
+  },
+  "name": "GRWL source widths at every zoom",
+  "sources": {
+    "data": {
+      "attribution": "Allen and Pavelsky (2018), GRWL V01.01, CC BY 4.0",
+      "type": "vector",
+      "url": "pmtiles://https://data.source.coop/nthh/grwl-raw/grwl-raw-v01.01.pmtiles"
+    }
+  },
+  "version": 8
 }

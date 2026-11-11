@@ -1,0 +1,40 @@
+{
+  "checked_at": "2026-11-11T21:22:10.786715+00:00",
+  "decimal_encoding": "exact decimal strings; equality checked before JSON conversion",
+  "duckdb_version": "1.5.2",
+  "files": [
+    {
+      "dataset_id": "grwl-raw",
+      "filename": "grwl-raw-v01.01.parquet",
+      "flat_url": "https://data.source.coop/nthh/grwl-raw/grwl-raw-v01.01.parquet",
+      "original_url": "https://data.source.coop/nthh/grwl-raw/releases/raw-v01.01-local-r1/assets/grwl-raw-observations.parquet",
+      "rows": [
+        [
+          -90.99998828135612,
+          34.00965558579282
+        ],
+        [
+          -90.99979326806259,
+          36.18632875446367
+        ],
+        [
+          -90.99968495662775,
+          36.98266577501479
+        ],
+        [
+          -90.99965724122896,
+          34.00991542254583
+        ],
+        [
+          -90.99945982399711,
+          36.18632875446367
+        ]
+      ],
+      "same_as_original": true,
+      "sql": "SELECT bbox.xmin, bbox.ymin FROM read_parquet(?) WHERE bbox.xmin BETWEEN -91 AND -89 AND bbox.ymin BETWEEN 34 AND 37 ORDER BY bbox.xmin, bbox.ymin LIMIT 5",
+      "status": "passed"
+    }
+  ],
+  "schema_version": 1,
+  "status": "passed"
+}

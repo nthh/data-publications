@@ -11,5 +11,5 @@ Catalog preview: Global width-symbol overview; exaggerated display symbols, not 
 Source producers: Allen and Pavelsky / GRWL
 
 Source provenance: https://zenodo.org/records/18624542
-Original describedby notes: https://data.source.coop/nthh/grwl-raw/releases/raw-v01.01-local-r1/README.md
-Original agents notes: https://data.source.coop/nthh/grwl-raw/releases/raw-v01.01-local-r1/AGENTS.md
+
+Data, map layers and usage: https://source.coop/nthh/grwl-raw

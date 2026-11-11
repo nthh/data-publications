@@ -1,23 +1,23 @@
 {
-  "version": 8,
+  "layers": [
+    {
+      "id": "ffr-reaches",
+      "paint": {
+        "line-color": "#276d87",
+        "line-opacity": 0.86,
+        "line-width": 1.5
+      },
+      "source": "data",
+      "source-layer": "ffr-reaches",
+      "type": "line"
+    }
+  ],
   "name": "ffr-reaches",
   "sources": {
     "data": {
       "type": "vector",
-      "url": "https://data.source.coop/nthh/free-flowing-rivers/display/display-v1/assets/ffr-reaches.pmtiles"
+      "url": "pmtiles://https://data.source.coop/nthh/free-flowing-rivers/free-flowing-rivers-v1.pmtiles"
     }
   },
-  "layers": [
-    {
-      "id": "ffr-reaches",
-      "type": "line",
-      "source": "data",
-      "source-layer": "ffr-reaches",
-      "paint": {
-        "line-color": "#276d87",
-        "line-width": 1.5,
-        "line-opacity": 0.86
-      }
-    }
-  ]
+  "version": 8
 }

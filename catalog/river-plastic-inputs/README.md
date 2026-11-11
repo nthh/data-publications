@@ -11,8 +11,9 @@ Maintainer: nthh.
 Source producers: Lebreton et al.
 
 Source provenance: https://doi.org/10.6084/m9.figshare.4725541.v6
-Original describedby notes: https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/README.md
-Original agents notes: https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/AGENTS.md
+
+Data, map layers and usage: https://source.coop/nthh/river-plastic-inputs
+
 
 Canonical publication limits:
 

@@ -59,6 +59,107 @@
     "release": "raw-v01.01-display-r3"
   },
   "draft_type": "source_coop_product_draft",
+  "flat_layout": {
+    "dataset_id": "grwl-raw",
+    "files": [
+      {
+        "asset_id": "grwl-raw-observations",
+        "filename": "grwl-raw-v01.01.parquet",
+        "media_type": "application/vnd.apache.parquet",
+        "operation": "copy",
+        "roles": [
+          "data"
+        ],
+        "sha256": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+        "size_bytes": 5529859809,
+        "source_href": "https://data.source.coop/nthh/grwl-raw/releases/raw-v01.01-local-r1/assets/grwl-raw-observations.parquet",
+        "source_sha256": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb",
+        "source_size_bytes": 5529859809,
+        "title": "Global River Width from Landsat — raw vector observations V01.01"
+      },
+      {
+        "asset_id": "grwl-raw-observations_fields",
+        "filename": "grwl-raw-v01.01.fields.json",
+        "media_type": "application/json",
+        "operation": "copy",
+        "roles": [
+          "metadata"
+        ],
+        "sha256": "c63c946029f0dc306180eebd105cf063ac21a253d946f6a5bd42080817f8dffb",
+        "size_bytes": 1271,
+        "source_href": "https://data.source.coop/nthh/grwl-raw/releases/raw-v01.01-local-r1/metadata/grwl-raw-observations-field-dictionary.json",
+        "source_sha256": "c63c946029f0dc306180eebd105cf063ac21a253d946f6a5bd42080817f8dffb",
+        "source_size_bytes": 1271,
+        "title": "grwl-raw-observations field dictionary"
+      },
+      {
+        "asset_id": "display_tiles_grwl-raw-display",
+        "filename": "grwl-raw-v01.01.pmtiles",
+        "media_type": "application/vnd.pmtiles",
+        "operation": "copy",
+        "roles": [
+          "visual"
+        ],
+        "sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+        "size_bytes": 3190539066,
+        "source_href": "https://data.source.coop/nthh/grwl-raw/display/raw-v01.01-display-r3/assets/grwl-raw.pmtiles",
+        "source_sha256": "8b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60",
+        "source_size_bytes": 3190539066,
+        "title": "GRWL raw width observations at every zoom"
+      },
+      {
+        "asset_id": "display_style_grwl-raw-display",
+        "filename": "grwl-raw-v01.01.style.json",
+        "local_path": "datasets/grwl-raw/source-coop/flat-20261111/grwl-raw-v01.01.style.json",
+        "media_type": "application/vnd.mapbox.style+json",
+        "operation": "rewrite_style",
+        "roles": [
+          "style",
+          "default"
+        ],
+        "sha256": "34b586d0e98fb21c872fc3ec5dd25c71717ff0359ce96e08d2dd42ffff1ee6f8",
+        "size_bytes": 10357,
+        "source_href": "display/raw-v01.01-display-r3/styles/width.json",
+        "source_sha256": "aeeba3167e6d4cc8d11f14181cee0360435bc6519d32a168eab7698877fe40a3",
+        "source_size_bytes": 10377,
+        "title": "GRWL raw width observations at every zoom display style"
+      },
+      {
+        "asset_id": null,
+        "filename": "LICENSE.txt",
+        "local_path": "datasets/grwl-raw/source-coop/flat-20261111/LICENSE.txt",
+        "media_type": "text/plain",
+        "operation": "generated",
+        "roles": [
+          "license"
+        ],
+        "sha256": "56d430be741a25ad7846c7bad5d73315b6a73be136f948fd4b7691599e154f6d",
+        "size_bytes": 387,
+        "source_href": null,
+        "title": "Dataset license and producer attribution"
+      },
+      {
+        "asset_id": null,
+        "filename": "manifest-20261111.json",
+        "local_path": "datasets/grwl-raw/source-coop/flat-20261111/manifest-20261111.json",
+        "media_type": "application/json",
+        "operation": "generated",
+        "roles": [
+          "metadata"
+        ],
+        "sha256": "5b927d636f6c8daed6d29b780a1e6892a2c8b0c0bce8528ceb918ff4519ea4fc",
+        "size_bytes": 1977,
+        "source_href": null,
+        "title": "Checksums and source provenance"
+      }
+    ],
+    "layout_id": "flat-20261111",
+    "owner": "nthh",
+    "product_id": "grwl-raw",
+    "schema_version": 1,
+    "source_release": "raw-v01.01-local-r1",
+    "updated": "2026-11-11T07:23:02Z"
+  },
   "hosted": true,
   "independent_maintainer_proposal": {
     "owner": "nthh",

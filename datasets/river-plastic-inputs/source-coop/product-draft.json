@@ -87,6 +87,126 @@
   "dataset_title": "Global river plastic inputs — Lebreton et al. (2017)",
   "display_publication": null,
   "draft_type": "source_coop_product_draft",
+  "flat_layout": {
+    "dataset_id": "river-plastic-inputs",
+    "files": [
+      {
+        "asset_id": "data",
+        "filename": "river-plastic-inputs-figshare-v6.parquet",
+        "media_type": "application/vnd.apache.parquet",
+        "operation": "copy",
+        "roles": [
+          "data"
+        ],
+        "sha256": "de35bd69b144565af1fcd33f915e8521a1af502e3ac50235560990f6c441e8c9",
+        "size_bytes": 6360991,
+        "source_href": "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/river-plastic-inputs.parquet",
+        "source_sha256": "de35bd69b144565af1fcd33f915e8521a1af502e3ac50235560990f6c441e8c9",
+        "source_size_bytes": 6360991,
+        "title": "Complete analytic data, GeoParquet 1.1"
+      },
+      {
+        "asset_id": "tiles",
+        "filename": "river-plastic-inputs-figshare-v6.pmtiles",
+        "media_type": "application/vnd.pmtiles",
+        "operation": "pmtiles_attribution",
+        "roles": [
+          "visual"
+        ],
+        "sha256": "1dbd554769f09867a3ef9053ca0d254870fde236f0457c6ff8b28aea6f33cf77",
+        "size_bytes": 3705210,
+        "source_href": "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/river-plastic-inputs.pmtiles",
+        "source_sha256": "ca412601ea905a43bf55d5251f27e2c2d9b1403b2eb93adea1525c4fa7bc05fe",
+        "source_size_bytes": 3705340,
+        "title": "River input display tiles",
+        "transformation_proof": {
+          "path": "datasets/river-plastic-inputs/source-coop/flat-20261111/pmtiles-attribution-proof.json",
+          "sha256": "dcedc3a071e7ccb1b8ba7587f76a28400394e80cbdb8ea9926458d0144c4af92"
+        }
+      },
+      {
+        "asset_id": "style-annual-input",
+        "filename": "river-plastic-inputs-figshare-v6.style.json",
+        "local_path": "datasets/river-plastic-inputs/source-coop/flat-20261111/river-plastic-inputs-figshare-v6.style.json",
+        "media_type": "application/vnd.mapbox.style+json",
+        "operation": "rewrite_style",
+        "roles": [
+          "style",
+          "default"
+        ],
+        "sha256": "65cb192cf0cf6fe90a8321a0a7e7aafab1d834d7e73d7913c2fdc215da12d972",
+        "size_bytes": 2289,
+        "source_href": "styles/annual-input.json",
+        "source_sha256": "3ae177f85fd1954561882e44edbe129bac4224ee9be55b6606bf53c46d59a9a7",
+        "source_size_bytes": 2211,
+        "title": "Annual midpoint input style"
+      },
+      {
+        "asset_id": "schema",
+        "filename": "river-plastic-inputs-figshare-v6.fields.json",
+        "media_type": "application/json",
+        "operation": "copy",
+        "roles": [
+          "metadata"
+        ],
+        "sha256": "7858a6c3b596e9d9b322f5aa9896209e7cc2c0750de267293cef4f6befb1f828",
+        "size_bytes": 9542,
+        "source_href": "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/schema.json",
+        "source_sha256": "7858a6c3b596e9d9b322f5aa9896209e7cc2c0750de267293cef4f6befb1f828",
+        "source_size_bytes": 9542,
+        "title": "Field dictionary"
+      },
+      {
+        "asset_id": "quality",
+        "filename": "river-plastic-inputs-figshare-v6.quality.json",
+        "media_type": "application/json",
+        "operation": "copy",
+        "roles": [
+          "metadata"
+        ],
+        "sha256": "938199ee9cb0f9ef8522b2dbd1d6d32eb70c562ff816fc3d3849b11d74dcb643",
+        "size_bytes": 2420,
+        "source_href": "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/quality.json",
+        "source_sha256": "938199ee9cb0f9ef8522b2dbd1d6d32eb70c562ff816fc3d3849b11d74dcb643",
+        "source_size_bytes": 2420,
+        "title": "Original missing values and encoding"
+      },
+      {
+        "asset_id": null,
+        "filename": "LICENSE.txt",
+        "local_path": "datasets/river-plastic-inputs/source-coop/flat-20261111/LICENSE.txt",
+        "media_type": "text/plain",
+        "operation": "generated",
+        "roles": [
+          "license"
+        ],
+        "sha256": "db7092aedde12be247c2dbe4508a76d04693cc97828f38809f9bbdd9aba9bb2e",
+        "size_bytes": 261,
+        "source_href": null,
+        "title": "Dataset license and producer attribution"
+      },
+      {
+        "asset_id": null,
+        "filename": "manifest-20261111.json",
+        "local_path": "datasets/river-plastic-inputs/source-coop/flat-20261111/manifest-20261111.json",
+        "media_type": "application/json",
+        "operation": "generated",
+        "roles": [
+          "metadata"
+        ],
+        "sha256": "ef80155adb00a52043d0a41fb3eeb103898dcf01f1a21369c1c5dbd62b688a1c",
+        "size_bytes": 2355,
+        "source_href": null,
+        "title": "Checksums and source provenance"
+      }
+    ],
+    "layout_id": "flat-20261111",
+    "owner": "nthh",
+    "product_id": "river-plastic-inputs",
+    "schema_version": 1,
+    "source_release": "figshare-v6-r2",
+    "updated": "2026-11-11T07:23:02Z"
+  },
   "hosted": true,
   "independent_maintainer_proposal": {
     "owner": "nthh",

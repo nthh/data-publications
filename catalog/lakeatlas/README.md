@@ -13,8 +13,9 @@ Catalog preview: Global overview from published PMTiles; generalized display onl
 Source producers: HydroSHEDS / HydroATLAS authors; Lehner, Messager, Korver, and Linke
 
 Source provenance: https://doi.org/10.6084/m9.figshare.19312001.v1
-Original describedby notes: https://data.source.coop/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/README.md
-Original agents notes: https://data.source.coop/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/AGENTS.md
+
+Data, map layers and usage: https://source.coop/nthh/lakeatlas
+
 
 Canonical publication limits:
 

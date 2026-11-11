@@ -13,8 +13,9 @@ Catalog preview: Global overview from published PMTiles; generalized display onl
 Source producers: Günther Grill; Bernhard Lehner
 
 Source provenance: https://figshare.com/articles/dataset/Mapping_the_world_s_free-flowing_rivers_data_set_and_technical_documentation/7688801
-Original describedby notes: https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/README.md
-Original agents notes: https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/AGENTS.md
+
+Data, map layers and usage: https://source.coop/nthh/free-flowing-rivers
+
 
 Canonical publication limits:
 

@@ -1,23 +1,23 @@
 {
-  "version": 8,
-  "name": "lakeatlas-polygons",
-  "sources": {
-    "data": {
-      "type": "vector",
-      "url": "https://data.source.coop/nthh/lakeatlas/display/display-v1/assets/lakeatlas-polygons.pmtiles"
-    }
-  },
   "layers": [
     {
       "id": "lakeatlas-polygons",
-      "type": "fill",
-      "source": "data",
-      "source-layer": "lakeatlas-polygons",
       "paint": {
         "fill-color": "#4b98ad",
         "fill-opacity": 0.76,
         "fill-outline-color": "#276577"
-      }
+      },
+      "source": "data",
+      "source-layer": "lakeatlas-polygons",
+      "type": "fill"
     }
-  ]
+  ],
+  "name": "lakeatlas-polygons",
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://https://data.source.coop/nthh/lakeatlas/lakeatlas-polygons-v1.0.pmtiles"
+    }
+  },
+  "version": 8
 }

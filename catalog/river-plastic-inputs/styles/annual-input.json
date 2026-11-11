@@ -1,26 +1,14 @@
 {
-  "version": 8,
-  "name": "Annual river plastic input — midpoint estimate",
-  "sources": {
-    "data": {
-      "type": "vector",
-      "url": "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/river-plastic-inputs.pmtiles",
-      "attribution": "Lebreton et al. (2017), CC BY 4.0; conversion by Folia"
-    }
-  },
   "layers": [
     {
       "id": "background",
-      "type": "background",
       "paint": {
         "background-color": "#f1f5f7"
-      }
+      },
+      "type": "background"
     },
     {
       "id": "river-inputs",
-      "type": "circle",
-      "source": "data",
-      "source-layer": "river_inputs",
       "paint": {
         "circle-color": [
           "case",
@@ -67,6 +55,7 @@
             "#751e39"
           ]
         ],
+        "circle-opacity": 0.8,
         "circle-radius": [
           "case",
           [
@@ -103,9 +92,20 @@
             5,
             6.2
           ]
-        ],
-        "circle-opacity": 0.8
-      }
+        ]
+      },
+      "source": "data",
+      "source-layer": "river_inputs",
+      "type": "circle"
     }
-  ]
+  ],
+  "name": "Annual river plastic input — midpoint estimate",
+  "sources": {
+    "data": {
+      "attribution": "Lebreton et al. (2017), River plastic emissions to the world’s oceans. CC BY 4.0. Retain Lebreton et al. attribution and the Figshare v6 source citation.",
+      "type": "vector",
+      "url": "pmtiles://https://data.source.coop/nthh/river-plastic-inputs/river-plastic-inputs-figshare-v6.pmtiles"
+    }
+  },
+  "version": 8
 }

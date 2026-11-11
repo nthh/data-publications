@@ -1130,7 +1130,7 @@ def _generated(root: Path, config: dict) -> dict[str, bytes]:
         limits = (record.get("publication") or {}).get("limits") or (record.get("publication") or {}).get("limitations")
         if limits:
             notes.extend(["", "Canonical publication limits:", "", yaml.safe_dump(limits, sort_keys=True, allow_unicode=True).strip()])
-        put(f"{dataset_id}/README.md", ("\n".join(notes) + "\n").encode())
+        put(f"{dataset_id}/README.md", ("\n".join(notes).rstrip() + "\n").encode())
         put(f"{dataset_id}/AGENTS.md", (f"# Dataset guidance\n\nDataset: {dataset_id}. Release: {snapshot['release']}.\n"
                                         f"Use the analytic data assets for analysis; display derivatives are presentation only. "
                                         f"Preserve producer identity, units, nulls, uncertainty and record multiplicity. "
