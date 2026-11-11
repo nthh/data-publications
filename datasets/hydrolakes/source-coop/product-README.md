@@ -12,15 +12,15 @@ Formats: `application/json`, `application/pdf`, `application/vnd.apache.parquet`
 
 ## Producer, source, and license
 
-- Producer attribution: Lehner and Messager / HydroSHEDS. Cite Messager et al. (2016), DOI 10.1038/ncomms13603. Original conversion evidence retains Folia attribution.
+- Producer attribution: Lehner and Messager / HydroSHEDS. Cite Messager et al. (2016), DOI 10.1038/ncomms13603.
 - License: Producer license: CC BY 4.0. Retain attribution and technical-document notices, including the producer request concerning redistribution of the complete database in its original format. This product contains transformed GeoParquet.
 - Temporal scope: Static research release compiled from multiple shoreline sources; not a current inventory of lake conditions.
 
 - [License terms](https://creativecommons.org/licenses/by/4.0/)
 - [Original download](https://data.hydrosheds.org/file/hydrolakes/HydroLAKES_polys_v10_shp.zip)
 - [Research paper](https://doi.org/10.1038/ncomms13603)
-- [Folia converter/host](https://folia.sh)
 - [Producer source](https://gee-community-catalog.org/projects/hydrolakes)
+- [Processor: nthh](https://source.coop/nthh/hydrolakes)
 - [Producer: Lehner and Messager / HydroSHEDS](https://www.hydrosheds.org/products/hydrolakes)
 
 ## Release files

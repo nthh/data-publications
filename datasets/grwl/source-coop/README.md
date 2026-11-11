@@ -19,7 +19,7 @@ The proposed Source Cooperative maintainer is separate from the immutable releas
 
 ## Credits and license
 
-- Producer attribution: Allen and Pavelsky; Global River Width from Landsat. Original processing and conversion evidence retain Folia attribution.
+- Producer attribution: Allen and Pavelsky; Global River Width from Landsat.
 - License note: CC BY 4.0. Retain Allen and Pavelsky attribution and the source data and paper citations.
 - Temporal scope: Static Landsat-derived research product. The conversion date is not the observation date; no single observation interval is asserted.
 

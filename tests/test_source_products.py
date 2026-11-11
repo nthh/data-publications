@@ -467,6 +467,32 @@ class SourceProductTests(unittest.TestCase):
         self.assertIn("releases/r1/legacy/collection/data.parquet", consumer)
         self.assertNotIn("releases/r1/data.parquet", consumer)
 
+    def test_published_product_links_apply_current_maintainer_without_rewriting_snapshot(self):
+        collection = {"providers": [
+            {"name": "Original authors", "roles": ["producer", "licensor"], "url": "https://example.org/producer"},
+            {"name": "Legacy label", "roles": ["processor", "host"], "url": "https://example.org/legacy"},
+        ]}
+        original = json.dumps(collection, sort_keys=True)
+        record = {"id": "sample", "publication": {
+            "status": "published", "source_coop": {"owner": "nthh", "owner_status": "confirmed", "product_id": "sample"},
+            "catalog": {"processor_correction": {"from": "Legacy label", "to": "nthh"}},
+        }}
+        links, _ = products.product_links(record, collection)
+        by_url = {item["url"]: item["title"] for item in links}
+        self.assertEqual(by_url["https://example.org/producer"], "Producer: Original authors")
+        self.assertEqual(by_url["https://source.coop/nthh/sample"], "Processor: nthh")
+        self.assertNotIn("https://example.org/legacy", by_url)
+        self.assertEqual(json.dumps(collection, sort_keys=True), original)
+        record["publication"]["catalog"]["processor_correction"]["to"] = "someone-else"
+        with self.assertRaisesRegex(products.ProductError, "confirmed maintainer"):
+            products.product_links(record, collection)
+
+    def test_host_label_uses_the_actual_provider_name(self):
+        links = products.collection_links({"providers": [
+            {"name": "nthh", "roles": ["host"], "url": "https://github.com/nthh"},
+        ]})
+        self.assertEqual(links, [{"title": "Host: nthh", "url": "https://github.com/nthh"}])
+
     def test_external_links_have_readable_titles_and_dedupe_urls(self):
         source = products.source_field_links({
             "paper_doi": "10.1234/paper",
@@ -481,7 +507,7 @@ class SourceProductTests(unittest.TestCase):
                 {"rel": "via", "href": "https://doi.org/10.5678/dataset"},
                 {"rel": "license", "href": "https://example.org/license"},
             ],
-            "providers": [{"name": "Folia", "roles": ["processor", "host"], "url": "https://folia.sh"}],
+            "providers": [{"name": "Example publisher", "roles": ["processor", "host"], "url": "https://example.org/publisher"}],
         })
         links = products.dedupe_links(source + stac)
         by_url = {item["url"]: item["title"] for item in links}
@@ -491,7 +517,7 @@ class SourceProductTests(unittest.TestCase):
         self.assertEqual(by_url["https://example.org/docs"], "Producer technical documentation")
         self.assertEqual(by_url["https://example.org/catalog"], "Producer attribute catalogue")
         self.assertEqual(by_url["https://example.org/license"], "License terms")
-        self.assertEqual(by_url["https://folia.sh"], "Folia converter/host")
+        self.assertEqual(by_url["https://example.org/publisher"], "Processor: Example publisher")
 
     def test_all_versioned_supplements_appear_in_both_readmes(self):
         supplements = []

@@ -12,17 +12,17 @@ Formats: `application/json`, `application/pdf`, `application/vnd.apache.parquet`
 
 ## Producer, source, and license
 
-- Producer attribution: HydroSHEDS / HydroATLAS authors; Lehner, Messager, Korver and Linke (2022), DOI 10.1038/s41597-022-01425-z. Original conversion evidence retains Folia attribution.
+- Producer attribution: HydroSHEDS / HydroATLAS authors; Lehner, Messager, Korver and Linke (2022), DOI 10.1038/s41597-022-01425-z.
 - License: Mixed field-level terms: the producer catalog identifies CC BY 4.0 and ODbL 1.0 attributes. Retain the catalog, source attribution and original-source notices; do not describe the entire attribute table as uniformly CC BY 4.0.
 - Temporal scope: Observation and model-input dates vary by contributing attribute; use the producer catalog and field supplement for interpretation.
 
 - [License terms](https://creativecommons.org/licenses/by/4.0/)
 - [Research paper](https://doi.org/10.1038/s41597-022-01425-z)
 - [Dataset release](https://doi.org/10.6084/m9.figshare.19312001.v1)
-- [Folia converter/host](https://folia.sh)
 - [Producer technical documentation](https://ndownloader.figshare.com/files/35959532)
 - [Producer attribute catalogue](https://ndownloader.figshare.com/files/35959535)
 - [Original download](https://ndownloader.figshare.com/files/35959544)
+- [Processor: nthh](https://source.coop/nthh/lakeatlas)
 - [Producer: HydroSHEDS / HydroATLAS authors](https://www.hydrosheds.org/products/hydroatlas)
 
 ## Release files

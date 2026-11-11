@@ -587,8 +587,8 @@ def collection_links(collection: dict[str, Any] | None) -> list[dict[str, str]]:
             links.append({"title": title, "url": url})
     role_titles = {
         "producer": "Producer",
-        "processor": "Folia converter",
-        "host": "Folia host",
+        "processor": "Processor",
+        "host": "Host",
         "licensor": "Licensor",
     }
     for provider in collection.get("providers", []):
@@ -600,14 +600,10 @@ def collection_links(collection: dict[str, Any] | None) -> list[dict[str, str]]:
         if (not url or not isinstance(name, str) or not isinstance(roles, list)
                 or any(not isinstance(role, str) for role in roles)):
             continue
-        normalized_roles = set(roles)
-        if name.lower() == "folia" and {"processor", "host"}.issubset(normalized_roles):
-            links.append({"title": "Folia converter/host", "url": url})
-            continue
         for role in roles:
             title_prefix = role_titles.get(role)
             if title_prefix:
-                title = f"{title_prefix}: {name}" if role in ("producer", "licensor") else title_prefix
+                title = f"{title_prefix}: {name}"
                 links.append({"title": title, "url": url})
     return links
 
@@ -624,7 +620,17 @@ def dedupe_links(links: list[dict[str, str]]) -> list[dict[str, str]]:
 def product_links(record: dict[str, Any], collection: dict[str, Any] | None) -> tuple[list[dict[str, str]], list[dict[str, str]]]:
     review = record.get("review") or {}
     sources: list[dict[str, str]] = source_field_links(record.get("source"))
-    sources.extend(collection_links(collection))
+    current_collection = collection
+    if collection is not None and (record.get("publication") or {}).get("status") == "published":
+        # Use the same explicit maintainer correction as the public catalog.
+        # Keep the checksum-bound source snapshot untouched.
+        from publication_catalog import _set_public_host
+        current_collection = dict(collection)
+        try:
+            _set_public_host(current_collection, record["id"], record)
+        except (ValueError, KeyError, TypeError) as exc:
+            raise ProductError(f"Invalid current product providers: {record['id']}: {exc}") from exc
+    sources.extend(collection_links(current_collection))
     for label, value in (
         ("publication_assessment", review.get("publication_assessment")),
         ("availability", review.get("availability")),

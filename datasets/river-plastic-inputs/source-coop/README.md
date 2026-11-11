@@ -19,7 +19,7 @@ The proposed Source Cooperative maintainer is separate from the immutable releas
 
 ## Credits and license
 
-- Producer attribution: Lebreton et al. (2017), River plastic emissions to the world’s oceans. Original conversion evidence retains Folia attribution.
+- Producer attribution: Lebreton et al. (2017), River plastic emissions to the world’s oceans.
 - License note: CC BY 4.0. Retain Lebreton et al. attribution and the Figshare v6 source citation.
 - Temporal scope: Historical model baseline: 2010; paper published in 2017. These are modeled estimates, not current measurements.
 
@@ -28,9 +28,9 @@ The proposed Source Cooperative maintainer is separate from the immutable releas
 - [License terms](https://creativecommons.org/licenses/by/4.0/)
 - [Research paper](https://doi.org/10.1038/ncomms15611)
 - [Dataset release](https://doi.org/10.6084/m9.figshare.4725541.v6)
-- [Folia converter/host](https://folia.sh)
 - [Producer source](https://gee-community-catalog.org/projects/plastic)
 - [Original download](https://ndownloader.figshare.com/files/7714864)
+- [Processor: nthh](https://source.coop/nthh/river-plastic-inputs)
 
 ## Related datasets
 

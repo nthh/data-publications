@@ -18,7 +18,7 @@ Formats: `application/json`, `application/vnd.apache.parquet`, `application/vnd.
 
 - [License terms](https://creativecommons.org/licenses/by/4.0/)
 - [Dataset release](https://doi.org/10.5281/zenodo.18624542)
-- [Folia host](https://github.com/nthh)
+- [Processor: nthh](https://source.coop/nthh/grwl-raw)
 - [Original download](https://zenodo.org/api/records/18624542/files/GRWL_vector_V01.01.zip/content)
 - [Dataset release](https://zenodo.org/records/18624542)
 

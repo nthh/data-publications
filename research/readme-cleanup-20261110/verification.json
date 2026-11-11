@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "source_product_tests_and_publication_tests": {
+    "status": "passed",
+    "test_count": 66
+  },
+  "generated_source_products": "passed",
+  "catalog_records": 453,
+  "public_catalog": "unchanged",
+  "plan_sha256": "4c8f4756ee789aa369dcb58c75e54bd4b0a186ca213761811de00e0aaab1819e",
+  "mutable_readmes": 5,
+  "mutable_bytes": 24996,
+  "upload_status": "pending_login",
+  "source_login_check": {
+    "status": "failed",
+    "error_markers": [
+      "expired",
+      "login",
+      "refresh",
+      "credentials"
+    ]
+  },
+  "scope": "README generation and metadata only; no data-object writes, deletions, directory migration, or fresh scientific/GEE comparison.",
+  "portolan": {
+    "conformance": "passed",
+    "rashid_version": "0.3.0",
+    "stac_check_advisory": "incomplete: offline schema resolution remains blocked",
+    "scope": "metadata only; unchanged catalog bytes"
+  },
+  "consulted_skills": {
+    "repository": "https://github.com/portolan-sdi/portolan-skills",
+    "commit": "021fa95a1e23bb5b4e3e2c1f4dd4494e937efd19",
+    "skills": [
+      "git-backed-catalog",
+      "sourcecoop"
+    ],
+    "application": "Use current repository generators and the selected Source CLI uploader, preserving the existing publication mechanism."
+  }
+}
