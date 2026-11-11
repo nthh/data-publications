@@ -45,3 +45,5 @@ The prepared [inventory revision 2](remote-inventory-r2.json) and [retention rev
 The [automatic-review rejection](automatic-review-block.json) remains retained. No version of the execution plan has been run with deletion enabled. All 606 original objects remain pending explicit confirmation after the final live verification. The flat products contain 43 root objects (including their five READMEs); after approved retirement, no subdirectories should remain.
 
 The [final live preflight](live-preflight-r2.json) passed for execution revision 2, with all 606 old objects still present and zero deletions. The supplemental change passed [58 focused checks](supplement-focused-tests.txt).
+
+The [supplemental clean-checkout replay](supplement-clean-checkout.json) reproduced the updated README plan byte for byte, with no tracked changes. [GitHub validation](supplement-github-validation.json) also passed for commit `55723fa2ea78a9b9d4fb3fd084b77d8aa52dfd3d`. A direct confirmation for the exact 606-object deletion is pending; all published flat files remain available.
