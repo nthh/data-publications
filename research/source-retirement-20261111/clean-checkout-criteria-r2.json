@@ -1,0 +1,23 @@
+{
+  "scope": "Clean checkout with no downloaded analytical/PMTiles dataset files.",
+  "allowed_tracked_fixtures": [
+    {
+      "path": "research/grwl-raw-release-20261102/global-display-diagnostics-r1/native-threshold-controls.pmtiles",
+      "size_bytes": 977,
+      "sha256": "db6b0bad190dab4585ccab6fcd54ad9eb26e477d5a5e9d8c3e926af68860289a"
+    },
+    {
+      "path": "research/grwl-raw-release-20261102/global-display-diagnostics-r1/native-quantization-controls.pmtiles",
+      "size_bytes": 984,
+      "sha256": "f1b2ffbc133c4c0a60db3fb23648308d302cd8eef6eb732bb9d93a4108dbff85"
+    }
+  ],
+  "maximum_fixture_size_bytes": 4096,
+  "requirements": [
+    "All generator checks pass",
+    "README and catalog publish plans reproduce byte for byte",
+    "No tracked changes after regeneration",
+    "No data-format files outside the two exact pre-existing test fixtures"
+  ],
+  "supersedes_assertion": "No file with any .pmtiles suffix, including tracked test fixtures."
+}

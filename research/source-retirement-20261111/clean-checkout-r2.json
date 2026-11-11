@@ -1,0 +1,92 @@
+{
+  "catalog_file_count": 29,
+  "catalog_plan_byte_identical": true,
+  "commands": [
+    {
+      "command": [
+        "scripts/publication_catalog.py",
+        "write"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "{\n  \"published_collections\": 5,\n  \"generated_files\": 29\n}\n"
+    },
+    {
+      "command": [
+        "scripts/source_products.py",
+        "write"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "command": [
+        "scripts/catalog.py",
+        "--write"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "{\n  \"records_checked\": 453,\n  \"supplemental_records_checked\": 90,\n  \"family_keys_checked\": 363,\n  \"citations_checked\": 363,\n  \"decisions\": {\n    \"defer\": 3,\n    \"pending\": 443,\n    \"publish_conversion\": 6,\n    \"reuse_existing\": 1\n  }\n}\n"
+    },
+    {
+      "command": [
+        "scripts/publication_catalog.py",
+        "check"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "Catalog check passed; 5 published collections.\n"
+    },
+    {
+      "command": [
+        "scripts/source_products.py",
+        "check"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "command": [
+        "scripts/source_products.py",
+        "readme-plan",
+        "--output",
+        ".local/readme-plan-r2.json"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "Prepared 5 README updates; no upload performed.\n"
+    },
+    {
+      "command": [
+        "scripts/publication_catalog.py",
+        "stage",
+        ".local/publication-stage-r2"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "Catalog check passed; 5 published collections.\nPrepared metadata-only stage: /Users/nathan/.folia-fleets/source-flat-replay-20261111/tree/.local/publication-stage-r2 (29 files). No upload was performed.\n"
+    }
+  ],
+  "criteria_sha256": "dcfa6a1fedc14ec99a9e7578e0889676173369e0d76831f50d023aa8722377df",
+  "downloaded_dataset_file_count": 0,
+  "git_status": "",
+  "readme_plan_byte_identical": true,
+  "revision": "da7a8c0aad5f286299c45951fa9366fa8d95c8d2",
+  "schema_version": 1,
+  "status": "passed",
+  "tracked_test_fixtures": [
+    {
+      "path": "research/grwl-raw-release-20261102/global-display-diagnostics-r1/native-threshold-controls.pmtiles",
+      "sha256": "db6b0bad190dab4585ccab6fcd54ad9eb26e477d5a5e9d8c3e926af68860289a",
+      "size_bytes": 977
+    },
+    {
+      "path": "research/grwl-raw-release-20261102/global-display-diagnostics-r1/native-quantization-controls.pmtiles",
+      "sha256": "f1b2ffbc133c4c0a60db3fb23648308d302cd8eef6eb732bb9d93a4108dbff85",
+      "size_bytes": 984
+    }
+  ],
+  "worktree": "/Users/nathan/.folia-fleets/source-flat-replay-20261111/tree"
+}
