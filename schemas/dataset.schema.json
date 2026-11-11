@@ -375,6 +375,36 @@
             "temporal_note": {
               "type": "string",
               "minLength": 1
+            },
+            "flat_layout": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "manifest_path",
+                "manifest_sha256",
+                "hosting_report_path",
+                "hosting_report_sha256"
+              ],
+              "properties": {
+                "manifest_path": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\)[^\\s]+$"
+                },
+                "manifest_sha256": {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                },
+                "hosting_report_path": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\)[^\\s]+$"
+                },
+                "hosting_report_sha256": {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                }
+              }
             }
           },
           "description": "Canonical Source Cooperative product intent. Draft metadata and exact upload plans are generated; proposed routes never imply hosted data or account access."

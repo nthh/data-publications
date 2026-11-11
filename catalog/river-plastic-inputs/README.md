@@ -6,7 +6,7 @@ License: CC-BY-4.0.
 
 Immutable package: https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/
 
-Current processor attribution: nthh. The earlier converter label was a packaging default. This is an independent nthh publication; Folia code notices and immutable historical evidence remain intact.
+Maintainer: nthh.
 
 Source producers: Lebreton et al.
 

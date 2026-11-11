@@ -183,7 +183,7 @@ def main():
     tiles = collection / "river-plastic-inputs.pmtiles"
     command = ["tippecanoe", "--quiet", "--output", str(tiles.relative_to(args.output)), "--layer", "river_inputs", "--name", CONFIG["title"],
                "--description", "2010 modeled annual river plastic input; low zooms thin points. Use GeoParquet for totals.",
-               "--attribution", "Lebreton et al. (2017), CC BY 4.0; conversion by Folia",
+               "--attribution", "Lebreton et al. (2017), CC BY 4.0",
                "--maximum-zoom", str(CONFIG["pmtiles_maxzoom"]), "--minimum-zoom", "0", "--drop-densest-as-needed",
                "--extend-zooms-if-still-dropping", "--use-attribute-for-id", "source_row", geojson.name]
     subprocess.run(command, cwd=args.output, env={**os.environ, "TIPPECANOE_MAX_THREADS": "2"}, check=True)

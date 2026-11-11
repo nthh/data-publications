@@ -38,7 +38,7 @@ def build_catalog(root, table, schema, bbox, revision):
         colors.extend([value, color])
     style = {"version": 8, "name": "Annual river plastic input — midpoint estimate",
              "sources": {"data": {"type": "vector", "url": "../river-plastic-inputs.pmtiles",
-                                  "attribution": "Lebreton et al. (2017), CC BY 4.0; conversion by Folia"}},
+                                  "attribution": "Lebreton et al. (2017), CC BY 4.0"}},
              "layers": [{"id": "background", "type": "background", "paint": {"background-color": "#f1f5f7"}},
                         {"id": "river-inputs", "type": "circle", "source": "data", "source-layer": "river_inputs",
                          "paint": {"circle-color": ["case", ["==", ["get", "i_mid"], None], "#7d8994", colors], "circle-radius": ["case", ["==", ["get", "i_mid"], None], 3, ["interpolate", ["linear"], metric, 0, 1.2, 5, 6.2]],
@@ -70,7 +70,7 @@ def build_catalog(root, table, schema, bbox, revision):
     bar.set_ticks([0, 1, 2, 3, 4, 5], labels=["0", "9", "99", "999", "9,999", "≥99,999"])
     bar.set_label("Modeled annual input — midpoint estimate (tonnes/year)")
     fig.text(0.13, 0.025, "2010 model baseline · 40,760 river input locations · Lebreton et al. (2017) · CC BY 4.0", fontsize=9, color="#425466")
-    fig.savefig(folder / "thumbnail.png", dpi=150, bbox_inches="tight", metadata={"Software": "Folia river-plastic-inputs build"})
+    fig.savefig(folder / "thumbnail.png", dpi=150, bbox_inches="tight", metadata={"Software": "data-publications river-plastic-inputs build"})
     plt.close(fig)
 
     intro = """A global model of plastic inputs from rivers into the ocean, published by Lebreton et al. in 2017. This static release preserves the 40,760 river input locations and all 53 numeric attributes in the original Figshare v6 shapefile. Estimates represent the 2010 model baseline; they are not current measurements. This is distinct from the later Meijer et al. 2021 model."""
@@ -78,7 +78,7 @@ def build_catalog(root, table, schema, bbox, revision):
 
 {CITATION}
 
-Folia converted the source to spatially ordered GeoParquet and a PMTiles display derivative. Conversion source commit: `{revision}`. `manifest.json` at the catalog root records checksums, tool versions and the exact build inputs. `dataset.yaml` at the catalog root preserves the canonical record exactly as it existed at build time; publication status can evolve later in Git without rewriting this snapshot. This bundle is prepared locally; publication and registry submission remain pending.
+This independent conversion provides spatially ordered GeoParquet and a PMTiles display derivative. Conversion source commit: `{revision}`. `manifest.json` at the catalog root records checksums, tool versions and the exact build inputs. `dataset.yaml` at the catalog root preserves the canonical record exactly as it existed at build time; publication status can evolve later in Git without rewriting this snapshot. This bundle is prepared locally; publication and registry submission remain pending.
 """
     root_readme = f"""# {CONFIG['title']}
 
@@ -172,7 +172,7 @@ This is a locally prepared release. Check the release validation report and late
                   "license": CONFIG["license"], "version": CONFIG["release"], "created": CONFIG["metadata_timestamp"], "updated": CONFIG["metadata_timestamp"],
                   "extent": {"spatial": {"bbox": [bbox]}, "temporal": {"interval": [["2010-01-01T00:00:00Z", "2010-12-31T23:59:59Z"]]}},
                   "providers": [{"name": "Lebreton et al.", "roles": ["producer", "licensor"], "url": "https://doi.org/" + CONFIG["paper_doi"]},
-                                {"name": "Folia", "roles": ["processor", "host"], "url": "https://folia.sh", "description": "Processor and designated publisher for this prepared catalog. Public hosting remains pending."}],
+                                {"name": "nthh", "roles": ["processor", "host"], "url": "https://source.coop/nthh", "description": "Processor and designated publisher for this prepared catalog. Public hosting remains pending."}],
                   "sci:doi": CONFIG["source_doi"], "sci:citation": CITATION,
                   "keywords": ["river", "plastic", "ocean", "pollution", "global", "2010", "Lebreton"],
                   "table:columns": [{k: f[k] for k in ("name", "type", "description")} for f in schema],
@@ -180,7 +180,7 @@ This is a locally prepared release. Check the release validation report and late
                             link("pmtiles", "river-plastic-inputs.pmtiles", "application/vnd.pmtiles", **{"pmtiles:layers": ["river_inputs"]})],
                   "assets": collection_assets}
     catalog = {"type": "Catalog", "stac_version": "1.1.0", "stac_extensions": [CONFIG["portolan_schema"]],
-               "id": "folia-river-plastic-inputs", "title": CONFIG["title"], "description": intro,
+               "id": "river-plastic-inputs", "title": CONFIG["title"], "description": intro,
                "created": CONFIG["metadata_timestamp"], "updated": CONFIG["metadata_timestamp"],
                "links": [link("root", "catalog.json"), *shared_links,
                          link("child", CONFIG["id"] + "/collection.json", title=CONFIG["title"])]}

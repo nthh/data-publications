@@ -6,7 +6,7 @@ License: CC-BY-4.0.
 
 Immutable package: https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/
 
-Current processor attribution: nthh. The earlier converter label was a packaging default. This is an independent nthh publication; Folia code notices and immutable historical evidence remain intact.
+Maintainer: nthh.
 
 Catalog preview: Global overview from published PMTiles; generalized display only. Display only; use GeoParquet for analysis.
 

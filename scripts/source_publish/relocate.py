@@ -2,6 +2,7 @@
 """Add checksum-bound flat Source objects without deleting or overwriting keys."""
 from __future__ import annotations
 import argparse
+from concurrent.futures import ThreadPoolExecutor
 import base64
 from datetime import datetime, timezone
 import hashlib
@@ -70,6 +71,21 @@ def full_checksum(head):
   return decoded.hex() if len(decoded)==32 else None
  except ValueError: return None
 
+def ordered_range_hash(fetch,size,chunk_bytes=16*1024*1024,workers=4):
+ value=hashlib.sha256()
+ starts=list(range(0,size,chunk_bytes))
+ with ThreadPoolExecutor(max_workers=workers) as pool:
+  pending={i:pool.submit(fetch,start,min(start+chunk_bytes,size)-1) for i,start in enumerate(starts[:workers])}
+  for i,start in enumerate(starts):
+   data=pending.pop(i).result()
+   if len(data)!=min(chunk_bytes,size-start): raise ValueError('Remote range truncated')
+   value.update(data)
+   next_index=i+workers
+   if next_index<len(starts):
+    next_start=starts[next_index]
+    pending[next_index]=pool.submit(fetch,next_start,min(next_start+chunk_bytes,size)-1)
+ return value.hexdigest()
+
 def verify(session,row):
  client=session.client()
  head=client.head_object(Bucket=BUCKET,Key=row['object_key'],ChecksumMode='ENABLED')
@@ -79,14 +95,22 @@ def verify(session,row):
  method='server_full_object_sha256'
  if sha is None:
   method='full_anonymous_readback_sha256'
-  value=hashlib.sha256(); size=0
-  with urllib.request.urlopen(row['url'],timeout=60) as stream:
-   while chunk:=stream.read(8*1024*1024):
-    size+=len(chunk)
-    if size>row['size_bytes']: raise ValueError('Remote object too large')
-    value.update(chunk)
-  if size!=row['size_bytes']: raise ValueError('Remote object truncated')
-  sha=value.hexdigest()
+  if row['size_bytes']>=64*1024*1024:
+   def fetch(start,end):
+    request=urllib.request.Request(row['url'],headers={'Range':f'bytes={start}-{end}','If-Match':head['ETag']})
+    for attempt in range(3):
+     try:
+      with urllib.request.urlopen(request,timeout=60) as response:
+       if response.status!=206 or response.headers.get('Content-Range')!=f"bytes {start}-{end}/{row['size_bytes']}":
+        raise ValueError('Range response differs')
+       return response.read(end-start+2)
+     except (TimeoutError,OSError):
+      if attempt==2: raise
+   sha=ordered_range_hash(fetch,row['size_bytes'])
+  else:
+   with urllib.request.urlopen(row['url'],timeout=60) as response: data=response.read(row['size_bytes']+1)
+   if len(data)!=row['size_bytes']: raise ValueError('Remote object size differs')
+   sha=digest(data)
  if sha!=row['sha256']: raise ValueError('Destination SHA-256 differs')
  return {'sha256':sha,'size_bytes':head['ContentLength'],'etag':head.get('ETag'),'checksum_method':method}
 
@@ -128,11 +152,22 @@ def main():
  parser.add_argument('--repo-root',required=True,type=Path)
  parser.add_argument('--output',required=True,type=Path)
  parser.add_argument('--only',help='An exact object key for a small initial operation')
+ parser.add_argument('--exclude-dataset',action='append',default=[],choices=sorted(ALLOWED_PRODUCTS))
+ parser.add_argument('--exclude-object',action='append',default=[])
  parser.add_argument('--credential-helper',type=Path)
  parser.add_argument('--execute',action='store_true')
+ parser.add_argument('--resume-from',type=Path)
+ parser.add_argument('--expected-resume-sha256')
  args=parser.parse_args(); root=args.repo_root.resolve(strict=True)
  plan=load_plan(args.plan,args.expected_plan_sha256,root)
- rows=[r for r in plan['files'] if args.only is None or r['object_key']==args.only]
+ prior={}
+ if args.resume_from:
+  previous=args.resume_from.read_bytes()
+  if digest(previous)!=args.expected_resume_sha256: raise ValueError('Resume receipt checksum differs')
+  previous=json.loads(previous)
+  if previous['plan_sha256']!=args.expected_plan_sha256: raise ValueError('Resume plan differs')
+  prior={r['object_key']:r for r in previous['objects'] if r['status']=='verified'}
+ rows=[r for r in plan['files'] if (args.only is None or r['object_key']==args.only) and r['dataset_id'] not in args.exclude_dataset and r['object_key'] not in args.exclude_object]
  if not rows: raise ValueError('No selected objects')
  if args.output.exists(): raise ValueError('Receipt output exists')
  args.output.mkdir(parents=True)
@@ -148,13 +183,21 @@ def main():
   started=time.monotonic()
   try:
    existing=_head(session.client(),row['object_key'])
+   proof=prior.get(row['object_key'])
+   if (existing is not None and proof is not None and proof['sha256']==row['sha256']
+       and proof['size_bytes']==existing['ContentLength']==row['size_bytes']
+       and proof['etag']==existing.get('ETag') and existing.get('ContentType')==row['media_type']):
+    record.update(status='verified',etag=proof['etag'],checksum_method='prior_full_readback_unchanged_object',prior_receipt_sha256=args.expected_resume_sha256)
+    save(); continue
    if existing is None:
     if row['operation']=='copy': copy_object(session,row,save,record)
     else:
      body=safe_file(root,row['local_path']).read_bytes()
+     if len(body)!=row['size_bytes'] or digest(body)!=row['sha256']: raise ValueError('Local bytes changed after preflight')
      session.client().put_object(Bucket=BUCKET,Key=row['object_key'],Body=body,ContentType=row['media_type'],IfNoneMatch='*',
           ChecksumSHA256=base64.b64encode(hashlib.sha256(body).digest()).decode())
    else: record['existing_object']=True
+   save()
    record.update(verify(session,row)); record['status']='verified'; record['elapsed_seconds']=round(time.monotonic()-started,3); save()
    print(json.dumps({'key':row['object_key'],'status':'verified','method':record['checksum_method']}),flush=True)
   except Exception as exc:

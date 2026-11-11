@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "frozen_before_hosting_validation": true,
+  "dataset_count": 5,
+  "file_count": 35,
+  "bulk_asset_count": 12,
+  "checks": {
+    "asset_checksums": "All 35 planned objects must match exact target SHA-256 and byte length; prior Source objects remain unchanged.",
+    "anonymous_access": "Fresh HTTP HEAD for every target; 200, expected Content-Length and Content-Type.",
+    "range_requests": "For every Parquet/PMTiles target, 127-byte prefix GET must return 206 with exact Content-Range.",
+    "cors": "Every HEAD and range response must allow anonymous cross-origin readers.",
+    "subset_query": "DuckDB fixed Mississippi window (-91,-89 longitude,34,37 latitude), first five bbox minima ordered identically from original and flat URL; six analytical assets.",
+    "browser_render": "Seven MapLibre/PMTiles live-URL cases: six styles at z3 plus GRWL native widths at z9; nonempty rendered features, no map/network errors; exact object allowlist and 512 MiB aggregate transfer cap.",
+    "catalog_links": "All style URLs must target exact verified flat PMTiles; same rendering fields except attribution; source catalog asset checksums, types, IDs and source hrefs match before mapping."
+  },
+  "limits": [
+    "Metadata relocation and attribution correction only; no new scientific or GEE comparison.",
+    "The MapLibre browser check does not claim official Portolan Browser navigation."
+  ]
+}

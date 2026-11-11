@@ -18,6 +18,19 @@ def sha(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
 
+class FlatReadmeTests(unittest.TestCase):
+    def test_consumer_links_are_flat_and_include_a_remote_query(self):
+        draft = {"title": "Example", "summary": "Example data", "temporal_note": "Version 1", "owner": "nthh", "product_id": "example", "dataset_id": "example", "attribution": "Original producer", "license_note": "CC BY 4.0", "limitations": ["Display tiles are generalized."], "source_links": [], "related_dataset_links": [], "flat_layout": {"files": [{"filename": "example-v1.parquet", "size_bytes": 1000}, {"filename": "example-v1.pmtiles", "size_bytes": 2000}]}}
+        result = products.render_consumer_readme(draft)
+        self.assertIn("[example-v1.parquet](example-v1.parquet)", result)
+        self.assertIn("[example-v1.pmtiles](example-v1.pmtiles)", result)
+        self.assertIn("read_parquet('https://data.source.coop/nthh/example/example-v1.parquet')", result)
+        self.assertIn("Original producer", result)
+        self.assertNotIn("releases/", result)
+        self.assertNotIn("display/", result)
+        self.assertNotIn("Folia", result)
+
+
 class SourceProductTests(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()

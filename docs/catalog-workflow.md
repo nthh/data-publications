@@ -96,3 +96,10 @@ The public deployment passed. Its exact artifact and all 29 anonymous live file 
 The focused acceptance criteria are in [catalog-acceptance.md](catalog-acceptance.md). Existing release source-fidelity, clean-rebuild and scientific-validation claims retain their original scope; these metadata checks do not rerun or enlarge them.
 
 The [implementation verification report](../reports/catalog-workflow-20261031/summary.json) records 35 passing focused tests, identical metadata re-exports, clean-checkout regeneration and the actual validator reports. It also records the incomplete stac-check advisory and the remaining public-hosting work.
+
+
+## Flat Source product assets
+
+Small Source products can publish versioned Parquet/PMTiles filenames together at the product root. Their original immutable packages remain the provenance inputs. The optional canonical `publication.source_coop.flat_layout` pins a flat manifest and its completed hosting report by repository path and SHA-256. `scripts/flat_publication.py` applies that mapping only after the original package and Collection pass their existing checks. It requires complete data, display, style and field-dictionary mappings; unchanged-byte copies preserve checksums, and a PMTiles attribution correction requires separately pinned payload-identity evidence. Generated styles keep the verified rendering expressions and point at the new PMTiles URLs.
+
+A flat manifest is not a hosting declaration. Its report must bind the exact file set, lengths and hashes, plus passing anonymous access, range, CORS, subset-query, catalog-link and browser checks. The README generator uses the flat file table and a remote DuckDB example only after those pins validate. The scientific source release stays unchanged. Old public URLs remain available, while detailed build reports stay in Git. See the [layout rationale](source-product-layout.md) and [execution evidence](../research/source-cleanup-20261111/README.md).

@@ -1,5 +1,7 @@
 # README cleanup — 2026-11-10
 
+Follow-up execution, including approved local deletion and live README uploads, is recorded in the [2026-11-11 cleanup report](../source-cleanup-20261111/README.md). The observations below describe the original preparation stage.
+
 The five published product READMEs had incorrect attribution from an old packaging default and hard-coded provider labels. Canonical producer attribution now names only the original data authors. The Source generator uses actual provider names and applies the same explicit current maintainer correction as the Portolan catalog, without editing the bound source snapshots. The withheld GRWL summary draft receives the same prose cleanup. The current river-plastic workspace README and publishing guide also separate dataset attribution from applicable software notices. Publisher names in a source snapshot remain historical evidence rather than a current attribution instruction.
 
 [before.json](before.json) records anonymous HTTP 200 reads, sizes, hashes and counts of incorrect attribution lines for 14 product/release/display READMEs. All five product-root READMEs matched the prior committed copies exactly. Downloaded bodies are kept in ignored local storage. The original river-plastic release README also contains an incorrect converter sentence; it is a checksum-bound package artifact. It is not selected by this five-product-root update and must be superseded through a metadata/release revision rather than silently invalidating its manifest.

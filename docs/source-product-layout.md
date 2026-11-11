@@ -23,6 +23,6 @@ These are examples, not a census or a single Source-wide convention. Their forma
 
 ## Migrating the existing products
 
-A flat layout is the preferred next layout, not an executed move. Prepare an exact old-to-new asset mapping, copy and verify the same bytes, rewrite relative style URLs, update the generated READMEs and STAC asset URLs, and test range access and the viewer before switching the catalog. Keep existing public URLs working during the transition. Do not delete the old prefixes as part of a README edit.
+The user approved this additive migration on 2026-11-11. Execution and per-product status are recorded in the [cleanup and migration report](../research/source-cleanup-20261111/README.md). Prepare an exact old-to-new asset mapping, copy and verify the same bytes, rewrite relative style URLs, update the generated READMEs and STAC asset URLs, and test range access and the viewer before switching the catalog. Keep existing public URLs working during the transition. Do not delete the old prefixes as part of a README edit.
 
 Keep detailed source inventories, conversion scripts, failed attempts and validation reports in Git. Publish the data and the small amount of documentation needed to use it. Local copies of hosted releases can be evicted after matching them to the verified remote objects; raw inputs, unhosted builds, viewer dependencies and alternate revisions need separate accounting. Filesystem allocation measurements on APFS do not prove exclusive reclaimable bytes because cloned extents can be shared.

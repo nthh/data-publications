@@ -779,6 +779,12 @@ def draft_for(root: Path, record: dict[str, Any]) -> tuple[dict[str, Any], str, 
         "hosted": hosted,
         "blockers": sorted(set(blockers)),
     }
+    if config.get("flat_layout") is not None:
+        from flat_publication import load_flat_layout
+        try:
+            draft["flat_layout"] = load_flat_layout(root, record)
+        except ValueError as exc:
+            raise ProductError(str(exc)) from exc
     readme = render_readme(draft)
     consumer_readme = render_consumer_readme(draft)
     return draft, readme, consumer_readme
@@ -930,7 +936,40 @@ def render_readme(draft: dict[str, Any]) -> str:
     return "\n".join(lines)
 
 
+def render_flat_consumer_readme(draft: dict[str, Any]) -> str:
+    """Render the small consumer inventory after flat object hosting is verified."""
+    flat = draft["flat_layout"]
+    base = f"https://data.source.coop/{draft['owner']}/{draft['product_id']}/"
+    lines = [f"# {draft['title']}", "", draft["summary"], "",
+             draft["temporal_note"], "", "## Files", "",
+             "Use GeoParquet for analysis and PMTiles for maps. Field dictionaries describe columns and units.", "",
+             "| File | Size |", "| --- | ---: |"]
+    for item in flat["files"]:
+        size = item["size_bytes"]
+        label = f"{size / 1e9:.2f} GB" if size >= 1e9 else f"{size / 1e6:.2f} MB" if size >= 1e6 else f"{size / 1e3:.1f} kB"
+        lines.append(f"| [{item['filename']}]({item['filename']}) | {label} |")
+    parquet = next(item["filename"] for item in flat["files"] if item["filename"].endswith(".parquet"))
+    lines.extend(["", "## Read with DuckDB", "", "Query the remote GeoParquet directly:", "", "```sql",
+                  f"SELECT count(*) AS feature_count FROM read_parquet('{base}{parquet}');",
+                  f"SELECT * FROM read_parquet('{base}{parquet}') LIMIT 5;", "```", "",
+                  "The matching `.style.json` file shows the PMTiles in a MapLibre viewer with the PMTiles protocol installed.", "",
+                  "## Attribution and license", "", draft["attribution"], "", draft["license_note"], "",
+                  f"Independently maintained by [{draft['owner']}](https://source.coop/{draft['owner']}).", ""])
+    for link in draft.get("source_links", []):
+        lines.append(f"- [{link['title']}]({link['url']})")
+    lines.extend(["", "## Limitations", ""])
+    lines.extend(f"- {value}" for value in draft.get("limitations", []))
+    if draft.get("related_dataset_links"):
+        lines.extend(["", "## Related datasets", ""])
+        lines.extend(f"- [{item['title']}]({item['url']})" for item in draft["related_dataset_links"])
+    lines.extend(["", f"[Conversion scripts and validation](https://github.com/nthh/data-publications/tree/main/datasets/{draft['dataset_id']}) · [Portolan map](https://browser.portolan-sdi.org/#/external/nthh.github.io/data-publications/{draft['dataset_id']}/collection.json)", "",
+                  "Existing versioned download URLs remain available. The root files provide the current consumer layout.", ""])
+    return "\n".join(lines)
+
+
 def render_consumer_readme(draft: dict[str, Any]) -> str:
+    if draft.get("flat_layout") is not None:
+        return render_flat_consumer_readme(draft)
     lines = [f"# {draft['title']}", "", draft["summary"], ""]
     if draft.get("publication_status") not in ("prepared", "published") or not draft.get("release"):
         lines.extend([

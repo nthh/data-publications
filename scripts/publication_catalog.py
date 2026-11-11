@@ -1100,6 +1100,8 @@ def _generated(root: Path, config: dict) -> dict[str, bytes]:
         if thumbnail is not None:
             _set_catalog_thumbnail(out_collection, thumbnail, dataset_id, put)
         _set_public_host(out_collection, dataset_id, record)
+        from flat_publication import apply_flat_layout
+        flat_layout = apply_flat_layout(root, record, out_collection, tree)
         _navigation_links(out_collection, config, f"{dataset_id}/collection.json")
         children.append({"rel": "child", "href": f"{dataset_id}/collection.json", "title": record["title"], "type": "application/json"})
         put(f"{dataset_id}/collection.json", canonical_json(out_collection))
@@ -1108,7 +1110,7 @@ def _generated(root: Path, config: dict) -> dict[str, bytes]:
                  f"Immutable package: {base}", ""]
         correction = record["publication"]["catalog"].get("processor_correction")
         if correction:
-            notes.extend(["Current processor attribution: " + correction["to"] + ". " + correction["reason"], ""])
+            notes.extend(["Maintainer: " + correction["to"] + ".", ""])
         if thumbnail is not None:
             notes.extend(["Catalog preview: " + thumbnail[0]["title"] + ". Display only; use GeoParquet for analysis.", ""])
         producers = [provider.get("name", "") for provider in collection.get("providers", [])
@@ -1120,7 +1122,11 @@ def _generated(root: Path, config: dict) -> dict[str, bytes]:
                 notes.append("Source provenance: " + str(source_link.get("href", "")))
         for link in collection.get("links", []):
             if link.get("rel") in ("describedby", "agents") and isinstance(link.get("href"), str) and local_url(link["href"]):
-                notes.append(f"Original {link['rel']} notes: {urljoin(base, quote(package_path(link['href'], collection_path), safe='/-._~'))}")
+                if flat_layout is None:
+                    notes.append(f"Original {link['rel']} notes: {urljoin(base, quote(package_path(link['href'], collection_path), safe='/-._~'))}")
+        if flat_layout is not None:
+            config_source = record["publication"]["source_coop"]
+            notes.extend(["", f"Data, map layers and usage: https://source.coop/{config_source['owner']}/{config_source['product_id']}", ""])
         limits = (record.get("publication") or {}).get("limits") or (record.get("publication") or {}).get("limitations")
         if limits:
             notes.extend(["", "Canonical publication limits:", "", yaml.safe_dump(limits, sort_keys=True, allow_unicode=True).strip()])
