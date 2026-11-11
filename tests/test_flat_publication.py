@@ -134,8 +134,9 @@ class FlatPublicationTests(unittest.TestCase):
         self.assertEqual(collection["links"][1]["href"], before["links"][1]["href"])
         self.assertEqual(collection["links"][2], before["links"][2])
         self.assertEqual(tree["demo/display/d1/styles/demo.json"], (self.root / "catalog/demo/display/d1/styles/demo.json").read_bytes())
-        self.assertIn("pmtiles://https://data.source.coop/nthh/demo-product/demo.pmtiles", tree["demo/demo-style.json"].decode())
-        self.assertEqual(tree["demo/README.md"], b"# compact README\n")
+        self.assertIn("pmtiles://https://data.source.coop/nthh/demo-product/demo.pmtiles", tree["demo/display/d1/styles/demo.json"].decode())
+        self.assertNotIn("demo/demo-style.json", tree)
+        self.assertNotIn("demo/README.md", tree)
         self.assertEqual(record["publication"]["release"], "r1")
 
     def test_unpinned_record_has_no_flat_layout(self):

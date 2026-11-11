@@ -401,7 +401,6 @@ def apply_flat_layout(root: Path, record: dict[str, Any], collection: dict[str, 
         if item["operation"] == "rewrite_style":
             style_bytes = _rewrite_style_bytes(root, record, item, source_to_target, tree)
             tree[f"{dataset_id}/{item['source_href']}"] = style_bytes
-            tree[f"{dataset_id}/{item['filename']}"] = style_bytes
 
     for asset_id, item in by_asset.items():
         operation = item["operation"]
@@ -435,16 +434,7 @@ def apply_flat_layout(root: Path, record: dict[str, Any], collection: dict[str, 
             link["href"] = target
     collection["updated"] = manifest["updated"]
 
-    # Generated consumer files are copied into the small flat-output namespace;
-    # bulk asset bytes stay external and are only represented by verified links.
-    for item in files:
-        if item["operation"] == "generated":
-            local_file = _repo_file(root, item["local_path"], "generated flat file")
-            data = local_file.read_bytes()
-            if len(data) != item["size_bytes"] or _sha256(data) != item["sha256"]:
-                _fail(f"{dataset_id}: generated flat file changed: {item['filename']}")
-            key = f"{dataset_id}/{item['filename']}"
-            if key in tree:
-                _fail(f"{dataset_id}: generated flat file collides with catalog output: {item['filename']}")
-            tree[key] = data
+    # Source licenses and compact manifests remain in their verified Source
+    # product and tracked publication inputs. The catalog only needs its existing
+    # style paths, avoiding duplicate unreferenced metadata files here.
     return manifest
