@@ -71,7 +71,7 @@ def full_checksum(head):
   return decoded.hex() if len(decoded)==32 else None
  except ValueError: return None
 
-def ordered_range_hash(fetch,size,chunk_bytes=16*1024*1024,workers=4):
+def ordered_range_hash(fetch,size,chunk_bytes=16*1024*1024,workers=4,progress=None):
  value=hashlib.sha256()
  starts=list(range(0,size,chunk_bytes))
  with ThreadPoolExecutor(max_workers=workers) as pool:
@@ -80,18 +80,19 @@ def ordered_range_hash(fetch,size,chunk_bytes=16*1024*1024,workers=4):
    data=pending.pop(i).result()
    if len(data)!=min(chunk_bytes,size-start): raise ValueError('Remote range truncated')
    value.update(data)
+   if progress is not None: progress(i+1,start+len(data),size)
    next_index=i+workers
    if next_index<len(starts):
     next_start=starts[next_index]
     pending[next_index]=pool.submit(fetch,next_start,min(next_start+chunk_bytes,size)-1)
  return value.hexdigest()
 
-def verify(session,row):
+def verify(session,row,*,workers=4,progress=None,force_readback=False):
  client=session.client()
  head=client.head_object(Bucket=BUCKET,Key=row['object_key'],ChecksumMode='ENABLED')
  if head['ContentLength']!=row['size_bytes'] or head.get('ContentType')!=row['media_type']:
   raise ValueError('Destination size or media type differs')
- sha=full_checksum(head)
+ sha=None if force_readback else full_checksum(head)
  method='server_full_object_sha256'
  if sha is None:
   method='full_anonymous_readback_sha256'
@@ -103,10 +104,12 @@ def verify(session,row):
       with urllib.request.urlopen(request,timeout=60) as response:
        if response.status!=206 or response.headers.get('Content-Range')!=f"bytes {start}-{end}/{row['size_bytes']}":
         raise ValueError('Range response differs')
-       return response.read(end-start+2)
-     except (TimeoutError,OSError):
+       data=response.read(end-start+2)
+       if len(data)!=end-start+1: raise ValueError('Remote range truncated')
+       return data
+     except (TimeoutError,OSError,ValueError):
       if attempt==2: raise
-   sha=ordered_range_hash(fetch,row['size_bytes'])
+   sha=ordered_range_hash(fetch,row['size_bytes'],workers=workers,progress=progress)
   else:
    with urllib.request.urlopen(row['url'],timeout=60) as response: data=response.read(row['size_bytes']+1)
    if len(data)!=row['size_bytes']: raise ValueError('Remote object size differs')

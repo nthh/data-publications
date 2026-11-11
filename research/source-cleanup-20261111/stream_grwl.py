@@ -9,6 +9,7 @@ import json
 from pathlib import Path
 import sys
 import time
+import traceback
 import urllib.request
 ROOT=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(ROOT/'scripts/source_publish'))
@@ -22,7 +23,7 @@ WORKERS=8
 
 def sha(data):return hashlib.sha256(data).hexdigest()
 def main():
- parser=argparse.ArgumentParser();parser.add_argument('--resume-from',type=Path);parser.add_argument('--resume-sha256');parser.add_argument('--output-name',default='grwl-stream-r1');args=parser.parse_args()
+ parser=argparse.ArgumentParser();parser.add_argument('--resume-from',type=Path);parser.add_argument('--resume-sha256');parser.add_argument('--output-name',default='grwl-stream-r1');parser.add_argument('--final-readback',action='store_true',help='Reuse saved parts without re-reading their source ranges; require a complete destination readback afterward');args=parser.parse_args()
  if not args.output_name.startswith('grwl-stream-') or '/' in args.output_name:raise ValueError('Invalid output name')
  plan=relocate.load_plan(STUDY/'flat-plan.json',PLAN_SHA,ROOT)
  row=next(r for r in plan['files'] if r['object_key']=='grwl-raw/grwl-raw-v01.01.parquet')
@@ -56,21 +57,29 @@ def main():
   old=json.loads(old)
   assert old['upload_id']==upload_id and old['plan_sha256']==PLAN_SHA and old['source_etag']==source_etag and old['part_bytes']==PART
   resumed={p['PartNumber']:p for p in old['parts']}
+  assert list(resumed)==list(range(1,len(resumed)+1)) and len(resumed)==len(old['parts'])
+  for number,proof in resumed.items():
+   assert proof['start']==(number-1)*PART and proof['end']==min(number*PART,row['size_bytes'])-1
+   assert proof['size_bytes']==proof['end']-proof['start']+1 and proof['ETag']
+   assert proof['ChecksumSHA256']==base64.b64encode(bytes.fromhex(proof['sha256'])).decode() and len(bytes.fromhex(proof['sha256']))==32
  output=STUDY/args.output_name;output.mkdir()
- report={'schema_version':1,'status':'running','plan_sha256':PLAN_SHA,'prior_receipt_sha256':PRIOR_SHA,'object_key':row['object_key'],'upload_id':upload_id,'started_at':datetime.now(timezone.utc).isoformat(),'part_bytes':PART,'workers':WORKERS,'source_etag':source_etag,'parts':[],'resumed_receipt_sha256':args.resume_sha256,'script_sha256':sha(Path(__file__).read_bytes())}
+ report={'schema_version':1,'status':'running','plan_sha256':PLAN_SHA,'prior_receipt_sha256':PRIOR_SHA,'object_key':row['object_key'],'upload_id':upload_id,'started_at':datetime.now(timezone.utc).isoformat(),'part_bytes':PART,'workers':WORKERS,'source_etag':source_etag,'final_readback_required':args.final_readback,'parts':[],'resumed_receipt_sha256':args.resume_sha256,'script_sha256':sha(Path(__file__).read_bytes())}
  def save():(output/'receipt.json').write_bytes(relocate.json_bytes(report))
  save()
  def part(number,start,end):
+  if args.final_readback and number in resumed:
+   return None,{**resumed[number],'reused_verified_part':True}
   request=urllib.request.Request(row['source_href'],headers={'Range':f'bytes={start}-{end}','If-Match':source_etag})
   for attempt in range(3):
    try:
     with urllib.request.urlopen(request,timeout=60) as response:
-     assert response.status==206 and response.headers['Content-Range']==f"bytes {start}-{end}/{row['size_bytes']}"
+     assert response.status==206 and response.headers.get('Content-Range')==f"bytes {start}-{end}/{row['size_bytes']}", f"Source response mismatch at part {number}: status={response.status}, range={response.headers.get('Content-Range')}"
      data=response.read(end-start+2)
-    assert len(data)==end-start+1
+    assert len(data)==end-start+1, f"Truncated source range at part {number}: expected {end-start+1}, received {len(data)}"
     break
-   except (OSError,TimeoutError):
+   except (OSError,TimeoutError,AssertionError):
     if attempt==2:raise
+    time.sleep(2)
   checksum=base64.b64encode(hashlib.sha256(data).digest()).decode()
   if number in resumed:
    proof=resumed[number]
@@ -79,24 +88,28 @@ def main():
   for attempt in range(3):
    try:
     result=client().upload_part(Bucket='nthh',Key=row['object_key'],UploadId=upload_id,PartNumber=number,Body=data,ChecksumSHA256=checksum)
-    assert result.get('ChecksumSHA256')==checksum
+    assert result.get('ChecksumSHA256')==checksum, f"Upload checksum response mismatch at part {number}: expected {checksum}, observed {result.get('ChecksumSHA256')}"
     return data,{'PartNumber':number,'ETag':result['ETag'],'ChecksumSHA256':checksum,'start':start,'end':end,'size_bytes':len(data),'sha256':sha(data)}
    except Exception as exc:
     code=getattr(exc,'response',{}).get('Error',{}).get('Code')
-    if code not in ('ExpiredToken','InvalidToken','SlowDown','ServiceUnavailable') or attempt==2:raise
+    if (not isinstance(exc,AssertionError) and code not in ('ExpiredToken','InvalidToken','SlowDown','ServiceUnavailable')) or attempt==2:raise
     time.sleep(5)
  total=hashlib.sha256(); starts=list(range(0,row['size_bytes'],PART))
  try:
   with ThreadPoolExecutor(max_workers=WORKERS) as pool:
    pending={i:pool.submit(part,i+1,start,min(start+PART,row['size_bytes'])-1) for i,start in enumerate(starts[:WORKERS])}
    for i,start in enumerate(starts):
-    data,proof=pending.pop(i).result();total.update(data);report['parts'].append(proof);save()
+    data,proof=pending.pop(i).result()
+    if data is not None:total.update(data)
+    report['parts'].append(proof);save()
     if (i+1)%16==0:print(json.dumps({'parts':i+1,'total_parts':len(starts),'bytes_uploaded_through':proof['end']+1}),flush=True)
     next_index=i+WORKERS
     if next_index<len(starts):
      offset=starts[next_index];pending[next_index]=pool.submit(part,next_index+1,offset,min(offset+PART,row['size_bytes'])-1)
-  assert total.hexdigest()==row['sha256']
-  report['source_full_sha256']=total.hexdigest();report['status']='parts_verified';save()
+  if not (args.final_readback and resumed):
+   assert total.hexdigest()==row['sha256'], 'Complete source SHA-256 differs'
+   report['source_full_sha256']=total.hexdigest()
+  report['status']='parts_verified';save()
   parts=[{k:p[k] for k in ['PartNumber','ETag','ChecksumSHA256']} for p in report['parts']]
   completed=client().complete_multipart_upload(Bucket='nthh',Key=row['object_key'],UploadId=upload_id,MultipartUpload={'Parts':parts},IfNoneMatch='*')
   report['multipart_state']='completed';report['completed_etag']=completed.get('ETag');save()
@@ -105,15 +118,20 @@ def main():
   report['expected_composite_sha256']=expected_composite;report['returned_composite_sha256']=actual_composite
   head=client().head_object(Bucket='nthh',Key=row['object_key'],ChecksumMode='ENABLED')
   assert head['ContentLength']==row['size_bytes'] and head.get('ContentType')==row['media_type'] and head['ETag']==completed['ETag']
-  if actual_composite==expected_composite:
+  if actual_composite==expected_composite and not args.final_readback:
    verification={'sha256':total.hexdigest(),'size_bytes':row['size_bytes'],'etag':head['ETag'],'checksum_method':'full_source_sha256_and_server_verified_ordered_multipart_sha256_chain'}
   else:
-   verification=relocate.verify(session,row)
+   report['status']='verifying_readback';save()
+   def progress(count,hashed,size):
+    if count%16==0 or hashed==size:
+     report['readback_bytes_hashed']=hashed;save()
+     print(json.dumps({'status':'verifying_readback','bytes_hashed':hashed,'total_bytes':size}),flush=True)
+   verification=relocate.verify(session,row,workers=8,progress=progress,force_readback=args.final_readback)
   report.update(verification);report['status']='verified';report['completed_at']=datetime.now(timezone.utc).isoformat();save()
   print(json.dumps({'status':'verified','object_key':row['object_key'],'sha256':report['sha256'],'checksum_method':report['checksum_method']}),flush=True)
  except Exception as exc:
   error=getattr(exc,'response',{})
-  report['status']='failed';report['error_type']=type(exc).__name__;report['error_code']=error.get('Error',{}).get('Code');report['http_status']=error.get('ResponseMetadata',{}).get('HTTPStatusCode');save()
+  report['status']='failed';report['error_type']=type(exc).__name__;report['error_code']=error.get('Error',{}).get('Code');report['http_status']=error.get('ResponseMetadata',{}).get('HTTPStatusCode');report['error_message']=str(exc) if isinstance(exc,AssertionError) else None;report['trace_locations']=[{'file':Path(f.filename).name,'line':f.lineno,'function':f.name} for f in traceback.extract_tb(exc.__traceback__)];save()
   print(json.dumps({'status':'failed','parts':len(report['parts']),'error_type':report['error_type'],'error_code':report['error_code']}),flush=True);return 1
  return 0
 if __name__=='__main__':raise SystemExit(main())

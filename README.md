@@ -10,7 +10,7 @@ Browse five published global datasets in the [Portolan Browser](https://browser.
 | LakeATLAS | [Open product](https://source.coop/nthh/lakeatlas) | Global v1.0 lake polygons and pour points with hydro-environmental attributes. [Dataset guide](datasets/lakeatlas/README.md) |
 | GRWL raw vectors | [Open product](https://source.coop/nthh/grwl-raw) | 64.6 million detailed river observations from GRWL V01.01. The raw observations are published; the simplified GRWL summary is withheld after an upstream geometry review. [Dataset guide](datasets/grwl-raw/README.md) |
 
-The product pages link to the hosted assets and release details. For exact source identity, edition, field definitions, null handling, and license conditions, use each guide's canonical `dataset.yaml` and release documentation. The catalog links distinguish these analytical files from the separately hosted map-display packages.
+Each Source product pairs versioned GeoParquet and PMTiles files at its root, with field dictionaries, map styles, license information, and checksums. For exact source identity, edition, field definitions, null handling, and license conditions, use each guide's canonical `dataset.yaml` and release documentation.
 
 ## Query the river-plastic GeoParquet
 
@@ -25,7 +25,7 @@ con.execute("INSTALL httpfs")
 con.execute("LOAD httpfs")
 con.sql("""
     SELECT source_row, i_mid AS annual_input_tonnes
-    FROM read_parquet('https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/river-plastic-inputs.parquet')
+    FROM read_parquet('https://data.source.coop/nthh/river-plastic-inputs/river-plastic-inputs-figshare-v6.parquet')
     WHERE i_mid IS NOT NULL
     ORDER BY i_mid DESC, source_row
     LIMIT 5

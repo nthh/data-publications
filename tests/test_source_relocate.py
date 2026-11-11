@@ -74,7 +74,10 @@ class RelocationTests(unittest.TestCase):
   def fetch(start,end):
    if start==0:time.sleep(0.02)
    return data[start:end+1]
-  self.assertEqual(relocate.ordered_range_hash(fetch,len(data),chunk_bytes=128,workers=4),hashlib.sha256(data).hexdigest())
+  progress=[]
+  self.assertEqual(relocate.ordered_range_hash(fetch,len(data),chunk_bytes=128,workers=4,progress=lambda *args:progress.append(args)),hashlib.sha256(data).hexdigest())
+  self.assertEqual(progress[-1],(14,len(data),len(data)))
+  self.assertEqual([p[0] for p in progress],list(range(1,15)))
   with self.assertRaisesRegex(ValueError,'truncated'):
    relocate.ordered_range_hash(lambda a,b:data[a:b],len(data),chunk_bytes=128,workers=2)
 
