@@ -947,7 +947,7 @@ def render_flat_consumer_readme(draft: dict[str, Any]) -> str:
     for item in flat["files"]:
         size = item["size_bytes"]
         label = f"{size / 1e9:.2f} GB" if size >= 1e9 else f"{size / 1e6:.2f} MB" if size >= 1e6 else f"{size / 1e3:.1f} kB"
-        lines.append(f"| [{item['filename']}]({item['filename']}) | {label} |")
+        lines.append(f"| [{item['filename']}]({base}{item['filename']}) | {label} |")
     parquet = next(item["filename"] for item in flat["files"] if item["filename"].endswith(".parquet"))
     lines.extend(["", "## Read with DuckDB", "", "Query the remote GeoParquet directly:", "", "```sql",
                   f"SELECT count(*) AS feature_count FROM read_parquet('{base}{parquet}');",

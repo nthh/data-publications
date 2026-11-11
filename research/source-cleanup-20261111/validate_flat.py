@@ -2,6 +2,7 @@
 import argparse
 import base64
 from datetime import datetime,timezone
+from decimal import Decimal
 import hashlib
 import json
 from pathlib import Path
@@ -11,8 +12,12 @@ ROOT=Path(__file__).resolve().parents[2]
 STUDY=ROOT/'research/source-cleanup-20261111'
 
 def sha(data):return hashlib.sha256(data).hexdigest()
+def json_default(value):
+ if isinstance(value,Decimal):return str(value)
+ raise TypeError(f'Unsupported JSON value: {type(value).__name__}')
 def write(path,value):
- with path.open('x') as stream:stream.write(json.dumps(value,sort_keys=True,indent=2)+'\n')
+ serialized=json.dumps(value,sort_keys=True,indent=2,default=json_default,allow_nan=False)+'\n'
+ with path.open('x') as stream:stream.write(serialized)
 def read(path):return json.loads(path.read_text())
 def current_time():return datetime.now(timezone.utc).isoformat()
 
@@ -52,7 +57,7 @@ def query_checks(plan):
   assert old==new and len(new)==5
   queries.append({'dataset_id':row['dataset_id'],'filename':row['filename'],'status':'passed','original_url':row['source_href'],'flat_url':row['url'],'rows':new,'same_as_original':True,'sql':selected_sql})
   print(json.dumps({'filename':row['filename'],'subset_query':'passed'}),flush=True)
- return {'schema_version':1,'status':'passed','checked_at':current_time(),'duckdb_version':duckdb.__version__,'files':queries}
+ return {'schema_version':1,'status':'passed','checked_at':current_time(),'duckdb_version':duckdb.__version__,'decimal_encoding':'exact decimal strings; equality checked before JSON conversion','files':queries}
 
 def verified_copies(plan, receipt_paths):
  expected = {row['object_key']: row for row in plan['files']}
@@ -117,6 +122,18 @@ def reports(plan,args):
   observed = observed_http[(row['dataset_id'], row['filename'])]
   assert observed['status'] == 'passed' and observed['etag'] == copied[row['object_key']]['etag']
   assert observed['url'] == row['url'] and observed['size_bytes'] == row['size_bytes']
+ observed_query = {(r['dataset_id'], r['filename']): r for r in query['files']}
+ parquet_rows = [r for r in plan['files'] if r['filename'].endswith('.parquet')]
+ assert len(observed_query) == len(query['files']) == len(parquet_rows)
+ for row in parquet_rows:
+  observed = observed_query[(row['dataset_id'], row['filename'])]
+  assert observed['status'] == 'passed' and observed['same_as_original'] is True
+  assert observed['original_url'] == row['source_href'] and observed['flat_url'] == row['url']
+  assert len(observed['rows']) == 5
+ expected_cases = {(r['dataset_id'], r['filename'], zoom) for r in plan['files'] if r['operation'] == 'rewrite_style' for zoom in ([3, 9] if r['dataset_id'] == 'grwl-raw' else [3])}
+ actual_cases = {(r['dataset_id'], r['style'], r['zoom']) for r in browser['cases']}
+ assert actual_cases == expected_cases and len(actual_cases) == len(browser['cases'])
+ assert all(r['status'] == 'passed' and r['features'] > 0 and not r['errors'] for r in browser['cases'])
  report_dir=STUDY/'flat-hosting';report_dir.mkdir(exist_ok=True)
  for dataset_id in sorted({r['dataset_id'] for r in plan['files']}):
   manifest_path=ROOT/f'datasets/{dataset_id}/source-coop/flat-20261111/manifest.json';manifest=read(manifest_path)

@@ -1,0 +1,165 @@
+{
+  "checked_at": "2026-11-11T20:59:09.484837+00:00",
+  "decimal_encoding": "exact decimal strings; equality checked before JSON conversion",
+  "duckdb_version": "1.5.2",
+  "files": [
+    {
+      "dataset_id": "free-flowing-rivers",
+      "filename": "free-flowing-rivers-v1.parquet",
+      "flat_url": "https://data.source.coop/nthh/free-flowing-rivers/free-flowing-rivers-v1.parquet",
+      "original_url": "https://data.source.coop/nthh/free-flowing-rivers/releases/figshare-v1-local-r2/assets/ffr-reach-network-v1.parquet",
+      "rows": [
+        [
+          -90.99999999999994,
+          34.50208333300003
+        ],
+        [
+          -90.99791666699997,
+          34.714583333000064
+        ],
+        [
+          -90.99791666699997,
+          34.75625000000008
+        ],
+        [
+          -90.99791666699997,
+          34.764583333000076
+        ],
+        [
+          -90.99791666699997,
+          36.67916666700006
+        ]
+      ],
+      "same_as_original": true,
+      "sql": "SELECT bbox.xmin, bbox.ymin FROM read_parquet(?) WHERE bbox.xmin BETWEEN -91 AND -89 AND bbox.ymin BETWEEN 34 AND 37 ORDER BY bbox.xmin, bbox.ymin LIMIT 5",
+      "status": "passed"
+    },
+    {
+      "dataset_id": "hydrolakes",
+      "filename": "hydrolakes-polygons-v1.0.parquet",
+      "flat_url": "https://data.source.coop/nthh/hydrolakes/hydrolakes-polygons-v1.0.parquet",
+      "original_url": "https://data.source.coop/nthh/hydrolakes/releases/v1-local-r3/assets/hydrolakes-polygons.parquet",
+      "rows": [
+        [
+          -90.99263617621489,
+          35.6172999869454
+        ],
+        [
+          -90.9920730251732,
+          35.060355542500815
+        ],
+        [
+          -90.98833089192664,
+          35.54868887583416
+        ],
+        [
+          -90.98622260199613,
+          35.120633320278614
+        ],
+        [
+          -90.98356309678778,
+          35.576055412292476
+        ]
+      ],
+      "same_as_original": true,
+      "sql": "SELECT bbox.xmin, bbox.ymin FROM read_parquet(?) WHERE bbox.xmin BETWEEN -91 AND -89 AND bbox.ymin BETWEEN 34 AND 37 ORDER BY bbox.xmin, bbox.ymin LIMIT 5",
+      "status": "passed"
+    },
+    {
+      "dataset_id": "lakeatlas",
+      "filename": "lakeatlas-polygons-v1.0.parquet",
+      "flat_url": "https://data.source.coop/nthh/lakeatlas/lakeatlas-polygons-v1.0.parquet",
+      "original_url": "https://data.source.coop/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-polygons.parquet",
+      "rows": [
+        [
+          -90.99263617621489,
+          35.6172999869454
+        ],
+        [
+          -90.9920730251732,
+          35.060355542500815
+        ],
+        [
+          -90.98833089192664,
+          35.54868887583416
+        ],
+        [
+          -90.98622260199613,
+          35.120633320278614
+        ],
+        [
+          -90.98356309678778,
+          35.576055412292476
+        ]
+      ],
+      "same_as_original": true,
+      "sql": "SELECT bbox.xmin, bbox.ymin FROM read_parquet(?) WHERE bbox.xmin BETWEEN -91 AND -89 AND bbox.ymin BETWEEN 34 AND 37 ORDER BY bbox.xmin, bbox.ymin LIMIT 5",
+      "status": "passed"
+    },
+    {
+      "dataset_id": "lakeatlas",
+      "filename": "lakeatlas-pour-points-v1.0.parquet",
+      "flat_url": "https://data.source.coop/nthh/lakeatlas/lakeatlas-pour-points-v1.0.parquet",
+      "original_url": "https://data.source.coop/nthh/lakeatlas/releases/lakeatlas-v1.0-r2/assets/lakeatlas-pour-points.parquet",
+      "rows": [
+        [
+          -90.99853499999995,
+          35.60136700000004
+        ],
+        [
+          -90.99791699999997,
+          36.51055100000008
+        ],
+        [
+          -90.98956299999998,
+          35.61927500000007
+        ],
+        [
+          -90.98854199999994,
+          35.06337700000006
+        ],
+        [
+          -90.98556999999994,
+          35.560448000000065
+        ]
+      ],
+      "same_as_original": true,
+      "sql": "SELECT bbox.xmin, bbox.ymin FROM read_parquet(?) WHERE bbox.xmin BETWEEN -91 AND -89 AND bbox.ymin BETWEEN 34 AND 37 ORDER BY bbox.xmin, bbox.ymin LIMIT 5",
+      "status": "passed"
+    },
+    {
+      "dataset_id": "river-plastic-inputs",
+      "filename": "river-plastic-inputs-figshare-v6.parquet",
+      "flat_url": "https://data.source.coop/nthh/river-plastic-inputs/river-plastic-inputs-figshare-v6.parquet",
+      "original_url": "https://data.source.coop/nthh/river-plastic-inputs/releases/figshare-v6-r2/river-plastic-inputs/river-plastic-inputs.parquet",
+      "rows": [
+        [
+          7311,
+          "332836.814470"
+        ],
+        [
+          7805,
+          "115462.078684"
+        ],
+        [
+          8002,
+          "73888.156969"
+        ],
+        [
+          7383,
+          "40754.989861"
+        ],
+        [
+          2052,
+          "40273.877071"
+        ]
+      ],
+      "same_as_original": true,
+      "sql": "SELECT source_row, i_mid AS annual_input_tonnes FROM read_parquet(?) WHERE i_mid IS NOT NULL ORDER BY i_mid DESC, source_row LIMIT 5",
+      "status": "passed"
+    }
+  ],
+  "schema_version": 1,
+  "scope": "Five non-GRWL analytical assets; GRWL will be checked when its transfer is complete.",
+  "status": "passed"
+}

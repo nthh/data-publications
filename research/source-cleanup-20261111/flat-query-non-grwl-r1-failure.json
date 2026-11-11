@@ -1,0 +1,14 @@
+{
+  "checked_at": "2026-11-11T20:55:09.210833+00:00",
+  "command_exit_code": 1,
+  "comparison_log": "All five original-versus-flat queries printed subset_query=passed before serialization. No row payload was successfully saved, so this attempt is not used as final query evidence.",
+  "empty_output": {
+    "path": "research/source-cleanup-20261111/flat-query-non-grwl-r1.json",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "error": "TypeError: Object of type Decimal is not JSON serializable",
+  "followup": "Retain the empty output and rerun with exact decimal strings in JSON. Raw DuckDB equality comparisons stay unchanged.",
+  "schema_version": 1,
+  "status": "failed_reporting"
+}
