@@ -1,6 +1,6 @@
 # Flat Source layout: final catalog cutover
 
-The generated local catalog no longer references Source's `releases/` or `display/` prefixes. All five Source READMEs are updated, and three producer PDFs have been copied unchanged to the product roots. **GitHub push, Pages deployment and live catalog verification are complete.** Remote deletion is blocked pending the explicit confirmation requested by automatic approval review. No old Source object has been deleted.
+**The Source layout cleanup is complete.** All five products now have flat directories: 43 root files and no subdirectories. The [completed execution receipt](retirement-execution-r2.json) records deletion of 606 obsolete objects totaling 18,501,609,265 logical bytes (18.50 GB). Their verified replacements and retained Git provenance remain available. GitHub push, Pages deployment, generated README updates and post-deletion live checks are complete.
 
 ## Generated inputs and retained evidence
 
@@ -30,9 +30,9 @@ The initial metadata-download attempt encountered a transient DNS failure; its [
 
 The [catalog publish plan](catalog-publish-plan.json) freezes the exact Pages artifact. The original [execution plan](execution-plan.json), superseded by revision 2 below, has SHA-256 `53dd12e73d01fee1f966ae1330548e104774396b38f597164108eb6c6db3cb82`, pins that artifact, retention inventory, README plan, seven-case browser report and destination verification receipts.
 
-Push the verified local main and dispatch `publish-catalog-pages.yml`. After deployment, `scripts/source_publish/retire.py --live` requires exact anonymous readback of every staged catalog file, every live Git support asset and all five Source READMEs. It confirms the retention commit is on remote main, all verified destination objects have unchanged ETags and lengths, and the complete old inventory is unchanged. Only then can `--execute` delete the exact inventoried keys with ETag guards. It records every deletion, supports an explicit resume, and requires all ten old prefixes empty at completion. A changed, unplanned or missing object stops the operation.
+The verified main was pushed and `publish-catalog-pages.yml` deployed the catalog. After deployment, `scripts/source_publish/retire.py --live` requires exact anonymous readback of every staged catalog file, every live Git support asset and all five Source READMEs. It confirms the retention commit is on remote main, all verified destination objects have unchanged ETags and lengths, and the complete old inventory is unchanged. Only then can `--execute` delete the exact inventoried keys with ETag guards. It records every deletion, supports an explicit resume, and requires all ten old prefixes empty at completion. A changed, unplanned or missing object stops the operation.
 
-Generation, publication and deletion remain separate commands. The user approved publication, and the updated catalog is deployed. Automatic approval review subsequently required an explicit confirmation to perform destructive deletion after the live checks; the rejected command did not run. The deployed catalog no longer depends on the old Source prefixes.
+Generation, publication and deletion remain separate commands. The user approved publication, and the updated catalog is deployed. Automatic approval review subsequently required direct confirmation to perform deletion after the live checks; that rejected command did not run. The user then explicitly approved the final 606-object scope, and the guarded execution completed. The deployed catalog no longer depends on the retired Source prefixes.
 
 ## Live cutover and supplemental metadata
 
@@ -42,8 +42,27 @@ The complete [product-root listing](product-roots-before.json) exposed three add
 
 The prepared [inventory revision 2](remote-inventory-r2.json) and [retention revision 2](retention-plan-r2.json) cover **606 objects / 18,501,609,265 bytes**. [Execution plan revision 2](execution-plan-r2.json), SHA-256 `8df2a5db615027a97226673a61ef1572b1737a6159c3ddef10461435b3bd1396`, adds only those three exact canonical supplement keys and the updated generated README plan. The deletion guard accepts metadata keys only when they match the canonical supplement path and SHA-256; an unknown metadata object fails validation. No broader metadata-prefix permission is inferred.
 
-The [automatic-review rejection](automatic-review-block.json) remains retained. No version of the execution plan has been run with deletion enabled. All 606 original objects remain pending explicit confirmation after the final live verification. The flat products contain 43 root objects (including their five READMEs); after approved retirement, no subdirectories should remain.
+The [automatic-review rejection](automatic-review-block.json) remains retained as historical evidence. The subsequent direct user confirmation authorized execution revision 2. Its [receipt](retirement-execution-r2.json) records all 606 deletions and successful final empty-prefix checks.
 
 The [final live preflight](live-preflight-r2.json) passed for execution revision 2, with all 606 old objects still present and zero deletions. The supplemental change passed [58 focused checks](supplement-focused-tests.txt).
 
-The [supplemental clean-checkout replay](supplement-clean-checkout.json) reproduced the updated README plan byte for byte, with no tracked changes. [GitHub validation](supplement-github-validation.json) also passed for commit `55723fa2ea78a9b9d4fb3fd084b77d8aa52dfd3d`. A direct confirmation for the exact 606-object deletion is pending; all published flat files remain available.
+The [supplemental clean-checkout replay](supplement-clean-checkout.json) reproduced the updated README plan byte for byte, with no tracked changes. [GitHub validation](supplement-github-validation.json) also passed for commit `55723fa2ea78a9b9d4fb3fd084b77d8aa52dfd3d`.
+
+## Completed retirement and live checks
+
+After the final user confirmation, execution revision 2 rechecked the exact deployed catalog, Git support files, READMEs, retained bytes and source/destination ETags before deleting the inventoried keys. The [execution receipt](retirement-execution-r2.json) records completion at 2026-11-11T23:46:02Z. This is a logical remote-object byte total, not a measurement of billing or local disk savings.
+
+The [post-retirement verification](post-retirement-verification.json), produced by [the read-only verifier](verify_retirement.py), lists each complete product inventory and confirms exactly these remaining root files:
+
+| Source product | Files | Subdirectories |
+| --- | ---: | ---: |
+| Free-Flowing Rivers | 7 | 0 |
+| GRWL raw | 7 | 0 |
+| HydroLAKES | 8 | 0 |
+| LakeATLAS | 13 | 0 |
+| River plastic inputs | 8 | 0 |
+| **Total** | **43** | **0** |
+
+All 43 files passed anonymous HEAD and CORS checks. All 12 Parquet/PMTiles assets passed bounded range requests, and all five READMEs passed full SHA-256 readback with no incorrect organization credit. Every deployed catalog file and Git support asset still matches its pinned bytes. The replacement data objects retain the ETags and lengths bound to their earlier full checksum readbacks.
+
+[All seven map cases](browser-after-retirement.json) passed again against live Source files, including GRWL overview and detail widths. The [official Portolan card check](portolan-cards-after-retirement/report.json) loaded all five collections and thumbnails without errors; its separate [visual review](portolan-cards-after-retirement/visual-review.json) passed. These are publication and rendering checks, not new scientific or GEE validation. The earlier incomplete stac-check advisory remains incomplete.
