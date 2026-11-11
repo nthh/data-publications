@@ -30,6 +30,13 @@ class FlatReadmeTests(unittest.TestCase):
         self.assertNotIn("releases/", result)
         self.assertNotIn("display/", result)
         self.assertNotIn("Folia", result)
+        draft["support_layout"] = {"git_revision": "a" * 40}
+        draft["supplements"] = [{"path": "datasets/example/metadata/v1/field-semantics.json"},
+                                {"path": "datasets/example/metadata/v1/README.md"}]
+        result = products.render_consumer_readme(draft)
+        self.assertIn("https://raw.githubusercontent.com/nthh/data-publications/" + "a" * 40 + "/datasets/example/metadata/v1/field-semantics.json", result)
+        self.assertIn("https://github.com/nthh/data-publications/blob/" + "a" * 40 + "/datasets/example/metadata/v1/README.md", result)
+        self.assertNotIn("https://data.source.coop/nthh/example/metadata/", result)
 
 
 class PublishedReadmePlanTests(unittest.TestCase):

@@ -23,6 +23,11 @@ Use GeoParquet for analysis and PMTiles for maps. Field dictionaries describe co
 | [HydroATLAS_TechDoc_v10_1.pdf](https://data.source.coop/nthh/lakeatlas/HydroATLAS_TechDoc_v10_1.pdf) | 3.66 MB |
 | [LakeATLAS_Catalog_v10.pdf](https://data.source.coop/nthh/lakeatlas/LakeATLAS_Catalog_v10.pdf) | 54.06 MB |
 
+## Supporting documentation
+
+- [field-semantics.json](https://raw.githubusercontent.com/nthh/data-publications/c0ad1cc5c18d69d3915f01bda478cb300d13b12f/datasets/lakeatlas/metadata-enhancements/v1/field-semantics.json)
+- [README.md](https://github.com/nthh/data-publications/blob/c0ad1cc5c18d69d3915f01bda478cb300d13b12f/datasets/lakeatlas/metadata-enhancements/v1/README.md)
+
 ## Read with DuckDB
 
 Query the remote GeoParquet directly:

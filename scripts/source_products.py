@@ -957,6 +957,18 @@ def render_flat_consumer_readme(draft: dict[str, Any]) -> str:
         size = item["size_bytes"]
         label = f"{size / 1e9:.2f} GB" if size >= 1e9 else f"{size / 1e6:.2f} MB" if size >= 1e6 else f"{size / 1e3:.1f} kB"
         lines.append(f"| [{item['filename']}]({base}{item['filename']}) | {label} |")
+    support = draft.get("support_layout")
+    supplements = draft.get("supplements") or []
+    if support and supplements:
+        lines.extend(["", "## Supporting documentation", ""])
+        for item in supplements:
+            suffix = PurePosixPath(item["path"]).suffix
+            if suffix not in (".json", ".md", ".pdf"):
+                continue
+            repository = "https://github.com/nthh/data-publications/blob" if suffix == ".md" else "https://raw.githubusercontent.com/nthh/data-publications"
+            url = repository + "/" + support["git_revision"] + "/" + quote(item["path"], safe="/")
+            label = PurePosixPath(item["path"]).name
+            lines.append(f"- [{label}]({url})")
     parquet = next(item["filename"] for item in flat["files"] if item["filename"].endswith(".parquet"))
     lines.extend(["", "## Read with DuckDB", "", "Query the remote GeoParquet directly:", "", "```sql",
                   f"SELECT count(*) AS feature_count FROM read_parquet('{base}{parquet}');",

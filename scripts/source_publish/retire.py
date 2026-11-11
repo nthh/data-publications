@@ -19,7 +19,7 @@ from urllib.parse import urlsplit
 import urllib.request
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from flat_publication import _repo_file
-from source_retirement import checked_key
+from source_retirement import checked_key, canonical_metadata
 from support_publication import assert_no_legacy_urls
 from upload import ALLOWED_PRODUCTS, S3Session
 
@@ -54,9 +54,15 @@ def validate_retention(root, retention, revision):
     if not rows or len(rows) != len({o['key'] for o in rows}):
         raise ValueError('Empty or duplicate retirement objects')
     checked = set()
+    metadata = canonical_metadata(root, ALLOWED_PRODUCTS)
     for obj in rows:
-        checked_key(obj['key'], ALLOWED_PRODUCTS)
+        checked_key(obj['key'], ALLOWED_PRODUCTS, metadata)
         target = obj['retained']
+        if obj['key'] in metadata:
+            declared = metadata[obj['key']]
+            if (target['kind'] != 'git' or target['path'] != declared['path']
+                    or obj['sha256'] != declared['sha256']):
+                raise ValueError('Supplement retirement differs from canonical metadata')
         if target['kind'] == 'git':
             path = _repo_file(root, target['path'], 'retained bytes')
             stored = path.read_bytes()
@@ -88,9 +94,9 @@ def validate_retention(root, retention, revision):
 def check_inventory(client, rows, deleted):
     remaining = {o['key']: o for o in rows if o['key'] not in deleted}
     seen = {}
-    prefixes = sorted({o['key'].split('/')[0] + '/' + o['key'].split('/')[1] + '/' for o in rows})
+    extra_prefixes = {o['key'].split('/')[0] + '/metadata/' for o in rows if o['key'].split('/')[1] == 'metadata'}
     # Include empty display prefixes as well, so all ten product prefixes are checked.
-    prefixes = sorted({p + '/' + folder + '/' for p in {o['key'].split('/')[0] for o in rows} for folder in ('releases', 'display')})
+    prefixes = sorted({p + '/' + folder + '/' for p in {o['key'].split('/')[0] for o in rows} for folder in ('releases', 'display')} | extra_prefixes)
     for prefix in prefixes:
         for page in client.get_paginator('list_objects_v2').paginate(Bucket='nthh', Prefix=prefix):
             for obj in page.get('Contents', []):
@@ -191,6 +197,7 @@ def main():
         remote_main = subprocess.check_output(['git', 'ls-remote', 'origin', 'refs/heads/main'], cwd=root, text=True).split()[0]
         subprocess.run(['git', 'merge-base', '--is-ancestor', execution['git_revision'], remote_main], cwd=root, check=True)
         prefixes = [BASE + p + '/' + f + '/' for p in ALLOWED_PRODUCTS for f in ('releases', 'display')]
+        prefixes += [BASE + p + '/metadata/' for p in {o['key'].split('/')[0] for o in rows if o['key'].split('/')[1] == 'metadata'}]
         check_live_catalog(catalog_plan, prefixes)
         for row in readme_plan['mutable_metadata']:
             raw = get(row['raw_url_proposed'], row['size_bytes'])

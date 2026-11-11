@@ -32,9 +32,24 @@ def dump(path, value):
     path.write_bytes(data)
     return sha(data)
 
-def checked_key(key, products):
+def canonical_metadata(root, products):
+    """Exact declared supplement keys; no arbitrary metadata prefix is allowed."""
+    result = {}
+    for product in products:
+        path = root / 'datasets' / product / 'dataset.yaml'
+        if not path.is_file():
+            continue
+        source = (yaml.safe_load(path.read_text()).get('publication') or {}).get('source_coop') or {}
+        if source.get('owner') != 'nthh' or source.get('product_id') != product:
+            continue
+        for item in source.get('supplements', []):
+            if item['destination'].startswith('metadata/'):
+                result[product + '/' + item['destination']] = item
+    return result
+
+def checked_key(key, products, metadata_keys=()):
     parts = key.split('/')
-    if (len(parts) < 4 or parts[0] not in products or parts[1] not in ('releases', 'display')
+    if (len(parts) < 4 or parts[0] not in products or (parts[1] not in ('releases', 'display') and key not in metadata_keys)
             or any(p in ('', '.', '..') for p in parts) or '\\' in key):
         raise ValueError(f'Out-of-scope old key: {key}')
     return key

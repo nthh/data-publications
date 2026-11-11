@@ -3,7 +3,10 @@
 import {readFile, mkdir, writeFile} from 'node:fs/promises';
 import {resolve, join} from 'node:path';
 import {createHash} from 'node:crypto';
-import {chromium} from 'playwright-core';
+import {pathToFileURL} from 'node:url';
+const {chromium} = await import(process.env.PORTOLAN_VIEWER_MODULES
+  ? pathToFileURL(join(process.env.PORTOLAN_VIEWER_MODULES, 'playwright-core/index.mjs')).href
+  : 'playwright-core');
 const sha = bytes => createHash('sha256').update(bytes).digest('hex');
 const option = name => {const i=process.argv.indexOf(name);if(i<0||!process.argv[i+1])throw new Error(`Missing ${name}`);return resolve(process.argv[i+1]);};
 const stage=option('--stage'), out=option('--out'), live=process.argv.includes('--live');

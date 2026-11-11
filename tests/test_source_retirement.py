@@ -4,6 +4,7 @@ import sys
 import unittest
 sys.path[:0] = [str(Path(__file__).resolve().parents[1] / 'scripts/source_publish'), str(Path(__file__).resolve().parents[1] / 'scripts')]
 from retire import check_inventory, validate_retention, check_live_catalog
+from source_retirement import checked_key
 
 class Client:
     def __init__(self, rows):
@@ -53,6 +54,19 @@ class RetirementGuards(unittest.TestCase):
         check_inventory(Client([]), [self.obj], {self.obj['key']})
         with self.assertRaises(ValueError):
             check_inventory(Client([self.remote]), [self.obj], {self.obj['key']})
+
+    def test_metadata_retirement_requires_exact_declared_keys(self):
+        key = 'lakeatlas/metadata/field-semantics-v1/field-semantics.json'
+        with self.assertRaises(ValueError):
+            checked_key(key, {'lakeatlas'})
+        self.assertEqual(checked_key(key, {'lakeatlas'}, {key}), key)
+        with self.assertRaises(ValueError):
+            checked_key('lakeatlas/metadata/another.json', {'lakeatlas'}, {key})
+        remote = {'Key': key, 'ETag': 'old', 'Size': 5}
+        obj = {'key': key, 'etag': 'old', 'size_bytes': 5}
+        check_inventory(Client([remote]), [obj], set())
+        with self.assertRaises(ValueError):
+            check_inventory(Client([remote, {**remote, 'Key': 'lakeatlas/metadata/unplanned.json'}]), [obj], set())
 
     def test_cannot_substitute_another_public_catalog(self):
         with self.assertRaisesRegex(ValueError, 'catalog destination'):
