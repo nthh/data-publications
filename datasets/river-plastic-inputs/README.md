@@ -12,7 +12,7 @@ source checksums, licensing, build settings, triage and publication state.
 
 The original data and derivatives are **CC BY 4.0**, attributed to the producer.
 The conversion scripts use the repository's Apache-2.0 software license.
-Folia is the processor; the verified release is hosted under `nthh` on Source Cooperative. Main Portolan registry submission requires a separate decision.
+This independently maintained conversion is published by `nthh` on Source Cooperative. Main Portolan registry submission requires a separate decision.
 
 ## Run from a clean checkout
 
