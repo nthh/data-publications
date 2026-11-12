@@ -18,7 +18,7 @@ The registry's pinned submission validator passed against the live catalog, incl
 
 [CI run](https://github.com/nthh/data-publications/actions/runs/43313650354)
 
-The catalog-grader review is **D**, with the findings disclosed in the [review report](https://github.com/nthh/data-publications/blob/docs/portolan-register-20261112/research/registry-submission-20261112/ci-r1/grader/report.md). The broader live Rashid check reports two GitHub Pages CORS errors. Catalog documents lack runnable examples, agent guidance is generic, and several styles are flat. All 92 collected links answered and all five thumbnails loaded. This PR does not claim those quality gaps are fixed.
+The catalog-grader review is **D**, with the findings disclosed in the [review report](https://github.com/nthh/data-publications/blob/main/research/registry-submission-20261112/ci-r1/grader/report.md). The broader live Rashid check reports two GitHub Pages CORS errors. Catalog documents lack runnable examples, agent guidance is generic, and several styles are flat. All 92 collected links answered and all five thumbnails loaded. This PR does not claim those quality gaps are fixed.
 
 - [ ] I have read and complied with the [contributing guide](https://github.com/portolan-sdi/portolan-ops/blob/main/policies/CONTRIBUTING.md) and [AI policy](https://github.com/portolan-sdi/portolan-ops/blob/main/policies/AI_POLICY.md).
 - [x] This change does not alter behavior (docs, chore, or CI only).
