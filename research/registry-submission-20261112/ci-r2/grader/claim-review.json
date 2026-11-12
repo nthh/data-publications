@@ -1,0 +1,351 @@
+{
+  "scope": "Read all collected documents and compared them with generated outputs, collector queries/footers, producer definitions and retained provenance. Reused prior license/source reviews where inputs are unchanged. No raw rebuild, GEE rerun, or independent scientific-accuracy claim.",
+  "claims": [
+    {
+      "node": ".",
+      "file": "docs/root/README.md",
+      "line": 5,
+      "quote": "Published collections: 5.",
+      "status": "supported",
+      "evidence": "facts.json /summary/collections and root child links."
+    },
+    {
+      "node": ".",
+      "file": "docs/root/README.md",
+      "line": 9,
+      "quote": "Each collection declares its separate data license.",
+      "status": "supported",
+      "evidence": "Collected collection licenses; LakeATLAS retains mixed field terms."
+    },
+    {
+      "node": "free-flowing-rivers",
+      "file": "docs/free-flowing-rivers/README.md",
+      "line": 9,
+      "quote": "Use GeoParquet for analysis and PMTiles for maps.",
+      "status": "supported",
+      "evidence": "facts.json /nodes/1/assets and retained release manifests distinguish analytic data from visual derivatives."
+    },
+    {
+      "node": "free-flowing-rivers",
+      "file": "docs/free-flowing-rivers/README.md",
+      "line": 11,
+      "quote": "| File | Size |",
+      "status": "supported",
+      "evidence": "Generated from checksum-bound flat and presentation manifests for free-flowing-rivers; source_products.py check and clean-checkout-fixes.json pass. No manually entered sizes."
+    },
+    {
+      "node": "free-flowing-rivers",
+      "file": "docs/free-flowing-rivers/README.md",
+      "line": 28,
+      "quote": "Query the remote GeoParquet directly:",
+      "status": "supported",
+      "evidence": "facts.json /queries contains successful absolute-URL SQL blocks for free-flowing-rivers."
+    },
+    {
+      "node": "free-flowing-rivers",
+      "file": "docs/free-flowing-rivers/README.md",
+      "line": 43,
+      "quote": "Independently maintained by [nthh]",
+      "status": "supported",
+      "evidence": "facts.json /nodes/1/providers contains nthh as host/processor; producer identities remain separate."
+    },
+    {
+      "node": "free-flowing-rivers",
+      "file": "docs/free-flowing-rivers/README.md",
+      "line": 58,
+      "quote": "Strict",
+      "status": "supported",
+      "evidence": "research/gee-release-validation-20261106/summary.json records failed strict geometry parity and the stated limits; no GEE rerun in this presentation review."
+    },
+    {
+      "node": "grwl-raw",
+      "file": "docs/grwl-raw/README.md",
+      "line": 9,
+      "quote": "Use GeoParquet for analysis and PMTiles for maps.",
+      "status": "supported",
+      "evidence": "facts.json /nodes/2/assets and retained release manifests distinguish analytic data from visual derivatives."
+    },
+    {
+      "node": "grwl-raw",
+      "file": "docs/grwl-raw/README.md",
+      "line": 11,
+      "quote": "| File | Size |",
+      "status": "supported",
+      "evidence": "Generated from checksum-bound flat and presentation manifests for grwl-raw; source_products.py check and clean-checkout-fixes.json pass. No manually entered sizes."
+    },
+    {
+      "node": "grwl-raw",
+      "file": "docs/grwl-raw/README.md",
+      "line": 28,
+      "quote": "Query the remote GeoParquet directly:",
+      "status": "supported",
+      "evidence": "facts.json /queries contains successful absolute-URL SQL blocks for grwl-raw."
+    },
+    {
+      "node": "grwl-raw",
+      "file": "docs/grwl-raw/README.md",
+      "line": 43,
+      "quote": "Independently maintained by [nthh]",
+      "status": "supported",
+      "evidence": "facts.json /nodes/2/providers contains nthh as host/processor; producer identities remain separate."
+    },
+    {
+      "node": "grwl-raw",
+      "file": "docs/grwl-raw/README.md",
+      "line": 60,
+      "quote": "strict",
+      "status": "supported",
+      "evidence": "research/gee-release-validation-20261106/summary.json records failed strict geometry parity and the stated limits; no GEE rerun in this presentation review."
+    },
+    {
+      "node": "hydrolakes",
+      "file": "docs/hydrolakes/README.md",
+      "line": 9,
+      "quote": "Use GeoParquet for analysis and PMTiles for maps.",
+      "status": "supported",
+      "evidence": "facts.json /nodes/3/assets and retained release manifests distinguish analytic data from visual derivatives."
+    },
+    {
+      "node": "hydrolakes",
+      "file": "docs/hydrolakes/README.md",
+      "line": 11,
+      "quote": "| File | Size |",
+      "status": "supported",
+      "evidence": "Generated from checksum-bound flat and presentation manifests for hydrolakes; source_products.py check and clean-checkout-fixes.json pass. No manually entered sizes."
+    },
+    {
+      "node": "hydrolakes",
+      "file": "docs/hydrolakes/README.md",
+      "line": 29,
+      "quote": "Query the remote GeoParquet directly:",
+      "status": "supported",
+      "evidence": "facts.json /queries contains successful absolute-URL SQL blocks for hydrolakes."
+    },
+    {
+      "node": "hydrolakes",
+      "file": "docs/hydrolakes/README.md",
+      "line": 44,
+      "quote": "Independently maintained by [nthh]",
+      "status": "supported",
+      "evidence": "facts.json /nodes/3/providers contains nthh as host/processor; producer identities remain separate."
+    },
+    {
+      "node": "hydrolakes",
+      "file": "docs/hydrolakes/README.md",
+      "line": 57,
+      "quote": "strict",
+      "status": "supported",
+      "evidence": "research/gee-release-validation-20261106/summary.json records failed strict geometry parity and the stated limits; no GEE rerun in this presentation review."
+    },
+    {
+      "node": "lakeatlas",
+      "file": "docs/lakeatlas/README.md",
+      "line": 9,
+      "quote": "Use GeoParquet for analysis and PMTiles for maps.",
+      "status": "supported",
+      "evidence": "facts.json /nodes/4/assets and retained release manifests distinguish analytic data from visual derivatives."
+    },
+    {
+      "node": "lakeatlas",
+      "file": "docs/lakeatlas/README.md",
+      "line": 11,
+      "quote": "| File | Size |",
+      "status": "supported",
+      "evidence": "Generated from checksum-bound flat and presentation manifests for lakeatlas; source_products.py check and clean-checkout-fixes.json pass. No manually entered sizes."
+    },
+    {
+      "node": "lakeatlas",
+      "file": "docs/lakeatlas/README.md",
+      "line": 39,
+      "quote": "Query the remote GeoParquet directly:",
+      "status": "supported",
+      "evidence": "facts.json /queries contains successful absolute-URL SQL blocks for lakeatlas."
+    },
+    {
+      "node": "lakeatlas",
+      "file": "docs/lakeatlas/README.md",
+      "line": 54,
+      "quote": "Independently maintained by [nthh]",
+      "status": "supported",
+      "evidence": "facts.json /nodes/4/providers contains nthh as host/processor; producer identities remain separate."
+    },
+    {
+      "node": "lakeatlas",
+      "file": "docs/lakeatlas/README.md",
+      "line": 70,
+      "quote": "Strict",
+      "status": "supported",
+      "evidence": "research/gee-release-validation-20261106/summary.json records failed strict geometry parity and the stated limits; no GEE rerun in this presentation review."
+    },
+    {
+      "node": "river-plastic-inputs",
+      "file": "docs/river-plastic-inputs/README.md",
+      "line": 9,
+      "quote": "Use GeoParquet for analysis and PMTiles for maps.",
+      "status": "supported",
+      "evidence": "facts.json /nodes/5/assets and retained release manifests distinguish analytic data from visual derivatives."
+    },
+    {
+      "node": "river-plastic-inputs",
+      "file": "docs/river-plastic-inputs/README.md",
+      "line": 11,
+      "quote": "| File | Size |",
+      "status": "supported",
+      "evidence": "Generated from checksum-bound flat and presentation manifests for river-plastic-inputs; source_products.py check and clean-checkout-fixes.json pass. No manually entered sizes."
+    },
+    {
+      "node": "river-plastic-inputs",
+      "file": "docs/river-plastic-inputs/README.md",
+      "line": 29,
+      "quote": "Query the remote GeoParquet directly:",
+      "status": "supported",
+      "evidence": "facts.json /queries contains successful absolute-URL SQL blocks for river-plastic-inputs."
+    },
+    {
+      "node": "river-plastic-inputs",
+      "file": "docs/river-plastic-inputs/README.md",
+      "line": 44,
+      "quote": "Independently maintained by [nthh]",
+      "status": "supported",
+      "evidence": "facts.json /nodes/5/providers contains nthh as host/processor; producer identities remain separate."
+    },
+    {
+      "node": "river-plastic-inputs",
+      "file": "docs/river-plastic-inputs/README.md",
+      "line": 57,
+      "quote": "Strict",
+      "status": "supported",
+      "evidence": "research/gee-release-validation-20261106/summary.json records failed strict geometry parity and the stated limits; no GEE rerun in this presentation review."
+    },
+    {
+      "node": "free-flowing-rivers",
+      "file": "docs/free-flowing-rivers/README.md",
+      "line": 58,
+      "quote": "all 521 sampled IDs match",
+      "status": "supported",
+      "evidence": "Retained GEE summary: 521 matched IDs, count pass; numeric/null/geometry differences remain disclosed."
+    },
+    {
+      "node": "free-flowing-rivers",
+      "file": "docs/free-flowing-rivers/README.md",
+      "line": 58,
+      "quote": "up to 2.877 m",
+      "status": "supported",
+      "evidence": "Retained GEE summary: maximum_observed_diagnostic_m=2.876463833607293 and over_one_meter=5."
+    },
+    {
+      "node": "grwl-raw",
+      "file": "docs/grwl-raw/README.md",
+      "line": 3,
+      "quote": "All 64,572,998 observations and ten original DBF fields remain in GeoParquet.",
+      "status": "supported",
+      "evidence": "facts.json /nodes/2/parquet_row_count=64572998; ten producer columns plus six conversion columns in the bound field dictionary; global-source-validation-r1.json passed."
+    },
+    {
+      "node": "grwl-raw",
+      "file": "docs/grwl-raw/README.md",
+      "line": 55,
+      "quote": "width_m value 1 is an unknown-width sentinel",
+      "status": "supported",
+      "evidence": "Producer https://zenodo.org/records/18624542 raw-vector documentation, consulted for this revision; conversion preserves the value and adds width_valid."
+    },
+    {
+      "node": "grwl-raw",
+      "file": "docs/grwl-raw/README.md",
+      "line": 58,
+      "quote": "all 26,060,623 encoded point placements in 4,439 overview tiles passed",
+      "status": "supported",
+      "evidence": "research/grwl-width-overview-20261106/global-r2/oracle.json passed with source_records=64572998 and point_occurrences=26060623; completion-review.json confirms 4439 tiles."
+    },
+    {
+      "node": "grwl-raw",
+      "file": "docs/grwl-raw/README.md",
+      "line": 58,
+      "quote": "All 588,355 detailed compressed tiles exactly match r2.",
+      "status": "supported",
+      "evidence": "Retained combine-report.json /verification/detail=588355; completion-review.json passed_local_release_prepared records unchanged_detailed_tiles=588355."
+    },
+    {
+      "node": "grwl-raw",
+      "file": "docs/grwl-raw/README.md",
+      "line": 58,
+      "quote": "The same 304 enumerated 0.0013–2.93 m source fragments collapse at z12",
+      "status": "supported",
+      "evidence": "research/grwl-raw-release-20261102/global-display-validation-r2/run-review.json and global-display-diagnostics-r1/targeted-followup-r1.json enumerate the quantization exception; detail preservation retains the same bytes."
+    },
+    {
+      "node": "grwl-raw",
+      "file": "docs/grwl-raw/README.md",
+      "line": 59,
+      "quote": "Twenty fixed browser cases",
+      "status": "supported",
+      "evidence": "research/grwl-width-overview-20261106/browser-global-r1/report.json status=passed and cases length=20; historical fixed views, not a new scientific test."
+    },
+    {
+      "node": "grwl-raw",
+      "file": "docs/grwl-raw/README.md",
+      "line": 60,
+      "quote": "all 5,120 source attribute cells are exact",
+      "status": "supported",
+      "evidence": "Retained GEE summary: matched_sample_count=512, exact=5120, maximum_observed_diagnostic_m=0.339047743712597; strict geometry status failed."
+    },
+    {
+      "node": "grwl-raw",
+      "file": "docs/grwl-raw/README.md",
+      "line": 61,
+      "quote": "The Parquet metadata footer is 19,783,655 bytes.",
+      "status": "supported",
+      "evidence": "Retained browser-global-r1/report.json /cases/7/requests/17/body_bytes=19783655 and /cases/7/transferred_bytes=20941975. The prose explicitly limits the cost claim to one fixed view."
+    },
+    {
+      "node": "hydrolakes",
+      "file": "docs/hydrolakes/README.md",
+      "line": 57,
+      "quote": "all 522 sampled IDs match",
+      "status": "supported",
+      "evidence": "Retained GEE summary for hydrolakes: count.pass=true, matched_sample_count=522, Lake_name differences=508; geometry exceptions remain explicit."
+    },
+    {
+      "node": "lakeatlas",
+      "file": "docs/lakeatlas/README.md",
+      "line": 52,
+      "quote": "Mixed field-level terms",
+      "status": "supported",
+      "evidence": "Bound metadata-enhancements/v1/field-semantics.json and producer PDF catalog retain CC BY 4.0 and ODbL 1.0 field notices; collection license remains other."
+    },
+    {
+      "node": "lakeatlas",
+      "file": "docs/lakeatlas/README.md",
+      "line": 70,
+      "quote": "522 sampled IDs per layer match",
+      "status": "supported",
+      "evidence": "Retained GEE summary contains both lakeatlas-polygons and lakeatlas-points, count.pass=true and matched_sample_count=522 for each."
+    },
+    {
+      "node": "river-plastic-inputs",
+      "file": "docs/river-plastic-inputs/README.md",
+      "line": 57,
+      "quote": "all 53 attributes and nulls across 40,760 rows",
+      "status": "supported",
+      "evidence": "facts.json /nodes/5/parquet_row_count=40760; retained GEE summary scientific_fields=53, with 204 null matches and no attribute mismatches."
+    },
+    {
+      "node": "river-plastic-inputs",
+      "file": "docs/river-plastic-inputs/README.md",
+      "line": 57,
+      "quote": "maximum point displacement is 0.3495 m.",
+      "status": "supported",
+      "evidence": "Retained GEE summary historical maximum=0.34945638926427325 m; the prose does not claim fresh exhaustive capture."
+    },
+    {
+      "node": "river-plastic-inputs",
+      "file": "docs/river-plastic-inputs/README.md",
+      "line": 5,
+      "quote": "Historical model baseline: 2010; paper published in 2017.",
+      "status": "supported",
+      "evidence": "Immutable release manifest source.model_year=2010 and retained paper/source metadata; model baseline is distinguished from publication year."
+    }
+  ],
+  "column_definitions": "All 634 added descriptions match their SHA-bound GRWL/LakeATLAS semantics dictionaries; GRWL raw field meanings were checked against the producer Zenodo record and converter. Existing definitions remain unchanged.",
+  "unchanged_prior_review": "../../ci-r1/grader/claim-review.json"
+}

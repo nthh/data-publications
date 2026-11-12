@@ -1,0 +1,242 @@
+{
+  "schema": "catalog-grader-report/1",
+  "catalog": "https://nthh.github.io/data-publications/catalog.json",
+  "repo": "/home/runner/work/data-publications/data-publications",
+  "grade": "B",
+  "complete": true,
+  "incomplete_reasons": [],
+  "ceiling": {
+    "grade": "none",
+    "reason": "The unmodified collector ran Rashid 0.3.0 with zero errors; its two scope warnings remain reported."
+  },
+  "invented_claims": 0,
+  "areas": {
+    "machine-contract": {
+      "grade": "B",
+      "summary": "The registry gate passes and Rashid has zero errors; two remote-scope warnings remain. Every column now has a description."
+    },
+    "honesty": {
+      "grade": "B",
+      "summary": "Checked claims agree with retained evidence and current footer/query results; historical counts and validation figures are still written in canonical prose."
+    },
+    "documentation": {
+      "grade": "B",
+      "summary": "All levels have accurate docs and linked agent guidance; collection guidance still lacks complete CRS explanations and join recipes."
+    },
+    "access": {
+      "grade": "B",
+      "summary": "All six documented SQL blocks run against published URLs; they demonstrate basic counts and row samples, without advanced joins."
+    },
+    "visuals": {
+      "grade": "B",
+      "summary": "All five previews load and are distinct, and every collection has data-driven styling; descriptions and small-card legends could improve."
+    },
+    "organization": {
+      "grade": "A",
+      "summary": "Five clearly named collections each contain one dataset; LakeATLAS keeps its polygon and pour-point representations together."
+    },
+    "maintenance": {
+      "grade": "A",
+      "summary": "Metadata is generated, current updated values and provenance/contact links are present, and all 132 checked links answer."
+    },
+    "concision": {
+      "grade": "B",
+      "summary": "Collection AGENTS no longer trigger the similarity threshold; shared sections and some README/AGENTS limitations still repeat."
+    }
+  },
+  "a_requirements": {
+    "met": false,
+    "requirements": {
+      "git": {
+        "met": true,
+        "evidence": "/repo/vcs_link_matches_remote=true; clean-checkout generation and public metadata match both pass."
+      },
+      "ci": {
+        "met": false,
+        "evidence": "/repo/ci_validates_on_pull_request=true; /repo/ci_checks_docs_on_schedule=false."
+      },
+      "logo": {
+        "met": false,
+        "evidence": "/icon=null."
+      },
+      "registry": {
+        "met": true,
+        "evidence": "Waived for submission review: /registry/submission=true; this does not mean the catalog is registered."
+      }
+    }
+  },
+  "a_plus": {
+    "awarded": false,
+    "requirements": {
+      "rashid-clean": {
+        "met": false,
+        "evidence": "/rashid/warning_count=2."
+      },
+      "candid": {
+        "met": false,
+        "evidence": "Known limitations and source definitions are present; complete source-grounded applications, biases and scientific uncertainty coverage are not established."
+      },
+      "narrative": {
+        "met": false,
+        "evidence": "Collection introductions describe the datasets, but conversion/validation details still dominate several documents."
+      },
+      "experience": {
+        "met": false,
+        "evidence": "/queries contains basic examples only; richer styles and some legend/description improvements remain."
+      }
+    }
+  },
+  "computation": [
+    "1. Rashid ran with 0 errors, so there is no ceiling.",
+    "2. Six areas receive B; organization and maintenance receive A.",
+    "3. Lowest area B, with only two other A areas: overall B.",
+    "4. Zero invented claims: no honesty cap.",
+    "5. No ceiling changes B.",
+    "6. Git and registry-submission requirements are met; scheduled checks and logo are absent, so an A would be capped at B.",
+    "7. Overall B is not eligible for A+; final grade B."
+  ],
+  "findings": [
+    {
+      "id": "F1",
+      "area": "machine-contract",
+      "severity": "minor",
+      "kind": "other",
+      "where": {
+        "node": ".",
+        "file": "facts.json",
+        "line": null
+      },
+      "quote": null,
+      "fact": "/rashid/findings",
+      "evidence": "PTL-GEN-002 cannot inspect unlinked remote files; PTL-LIV-000 skips cross-host Source assets. Separate local-tree Rashid and anonymous Source hash/range/CORS checks pass; the collector findings are not overridden.",
+      "fix": "Continue retaining local-tree and explicit cross-host hosting checks beside the unmodified remote collector."
+    },
+    {
+      "id": "F2",
+      "area": "honesty",
+      "severity": "minor",
+      "kind": "drift-prone",
+      "where": {
+        "node": "grwl-raw",
+        "file": "docs/grwl-raw/README.md",
+        "line": 3
+      },
+      "quote": "All 64,572,998 observations and ten original DBF fields remain in GeoParquet.",
+      "fact": "/nodes/2/parquet_row_count",
+      "evidence": "The count and schema are correct for this pinned release, but the sentence and other historical validation figures are maintained as canonical prose rather than derived numeric fields.",
+      "fix": "Generate release counts and validation summaries from their bound evidence when introducing a new data version."
+    },
+    {
+      "id": "F3",
+      "area": "documentation",
+      "severity": "minor",
+      "kind": "missing",
+      "where": {
+        "node": "lakeatlas",
+        "file": "docs/lakeatlas/AGENTS.md",
+        "line": null
+      },
+      "quote": null,
+      "fact": "/nodes/4/AGENTS.md",
+      "evidence": "The guide explains layer distinctions, source codes and GEE limitations but does not give a Hylak_id join recipe or explicit CRS implications.",
+      "fix": "Add concise collection-specific CRS and join recipes using the bound field dictionaries."
+    },
+    {
+      "id": "F4",
+      "area": "access",
+      "severity": "minor",
+      "kind": "weak",
+      "where": {
+        "node": ".",
+        "file": "facts.json",
+        "line": null
+      },
+      "quote": null,
+      "fact": "/queries",
+      "evidence": "Six blocks pass, covering all six Parquet assets; all are count and LIMIT examples.",
+      "fix": "Add a tested Hylak_id join or bounded spatial-filter example when expanding consumer recipes."
+    },
+    {
+      "id": "F5",
+      "area": "visuals",
+      "severity": "minor",
+      "kind": "missing",
+      "where": {
+        "node": ".",
+        "file": "facts.json",
+        "line": null
+      },
+      "quote": null,
+      "fact": "/nodes/4/styles",
+      "evidence": "All six style entries have has_description=false even though titles and expressions identify the attributes; legends also become small at card size.",
+      "fix": "Add concise style descriptions and improve legend readability in a future presentation revision."
+    },
+    {
+      "id": "F6",
+      "area": "concision",
+      "severity": "minor",
+      "kind": "duplicated",
+      "where": {
+        "node": ".",
+        "file": "facts.json",
+        "line": null
+      },
+      "quote": null,
+      "fact": "/readme_similarity",
+      "evidence": "Highest flagged README similarity is 0.709, below the 0.9 major-defect threshold; some common prose and the README limitations repeat in AGENTS.",
+      "fix": "Keep shared prose at the root and narrow AGENTS to actionable dataset-specific recipes."
+    },
+    {
+      "id": "F7",
+      "area": "documentation",
+      "severity": "minor",
+      "kind": "missing",
+      "where": {
+        "node": ".",
+        "file": "facts.json",
+        "line": null
+      },
+      "quote": null,
+      "fact": "/icon",
+      "evidence": "No root icon is declared, so the optional A-grade logo requirement is unmet.",
+      "fix": "Add a small recognizable catalog icon if pursuing an A-grade presentation."
+    },
+    {
+      "id": "F8",
+      "area": "maintenance",
+      "severity": "minor",
+      "kind": "missing",
+      "where": {
+        "node": ".",
+        "file": "facts.json",
+        "line": null
+      },
+      "quote": null,
+      "fact": "/repo/ci_checks_docs_on_schedule",
+      "evidence": "Manual live checks and pull-request validation exist, but no recurring documented-query schedule is configured.",
+      "fix": "Add scheduled live query checks only if the maintainer authorizes recurring work."
+    }
+  ],
+  "checked": {
+    "collections_read": [
+      ".",
+      "free-flowing-rivers",
+      "grwl-raw",
+      "hydrolakes",
+      "lakeatlas",
+      "river-plastic-inputs"
+    ],
+    "claims_checked": 43,
+    "unverified": [
+      {
+        "quote": "Complete GRWL V01.01 raw vector observations in lossless GeoParquet",
+        "where": {
+          "node": "grwl-raw",
+          "file": "docs/grwl-raw/README.md",
+          "line": 3
+        },
+        "reason": "Supported by retained complete-source and rebuild evidence and unchanged asset identities; the producer archive was not freshly downloaded or independently re-read for this presentation review."
+      }
+    ]
+  }
+}

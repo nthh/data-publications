@@ -1,6 +1,6 @@
 # Catalog readiness fixes
 
-The baseline D review in `ci-r1/` remains unchanged. This revision corrects its live-hosting errors and major documentation and presentation findings. Final public-catalog revalidation is the next gate; no upstream registry PR has been submitted.
+The baseline D review in `ci-r1/` remains unchanged. This revision corrects its live-hosting errors and major documentation and presentation findings. Final public-catalog revalidation passed in CI run 43321696725, and the catalog review is now B; no upstream registry PR has been submitted.
 
 - Source hosts all six style and five thumbnail assets. Nine new versioned objects total 1,398,034 bytes; two existing styles are reused unchanged. `presentation-hosting-r1.json` records full anonymous checksums, byte ranges, and the required CORS headers/methods for all eleven objects.
 - The five Source READMEs are published and generated from the same metadata as the catalog READMEs. They contain absolute-URL DuckDB queries, file/schema links, source citations, license terms and limitations. LakeATLAS includes queries for both representations.
