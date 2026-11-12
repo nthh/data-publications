@@ -789,6 +789,10 @@ def draft_for(root: Path, record: dict[str, Any]) -> tuple[dict[str, Any], str, 
                 draft["support_layout"] = support
         except ValueError as exc:
             raise ProductError(str(exc)) from exc
+    from catalog_presentation import load_presentation
+    presentation = load_presentation(root, record)
+    if presentation is not None:
+        draft['presentation'] = presentation
     readme = render_readme(draft)
     consumer_readme = render_consumer_readme(draft)
     return draft, readme, consumer_readme
@@ -948,7 +952,10 @@ def render_flat_consumer_readme(draft: dict[str, Any]) -> str:
              draft["temporal_note"], "", "## Files", "",
              "Use GeoParquet for analysis and PMTiles for maps. Field dictionaries describe columns and units.", "",
              "| File | Size |", "| --- | ---: |"]
-    files = list(flat["files"])
+    presentation = draft.get('presentation')
+    replacements = {item['asset_id']: item for item in (presentation or {}).get('assets', [])}
+    files = [item for item in flat['files'] if item.get('asset_id') not in replacements]
+    files.extend(replacements.values())
     for item in (draft.get("support_layout") or {}).get("files", []):
         target = item["retained"]
         if target["kind"] == "flat_document":
@@ -969,11 +976,13 @@ def render_flat_consumer_readme(draft: dict[str, Any]) -> str:
             url = repository + "/" + support["git_revision"] + "/" + quote(item["path"], safe="/")
             label = PurePosixPath(item["path"]).name
             lines.append(f"- [{label}]({url})")
+    lines.extend(['', '## Schema', '',
+                  f"[Column definitions in the catalog](https://nthh.github.io/data-publications/{draft['dataset_id']}/collection.json) include names, storage types and descriptions. Use the field dictionaries and producer documentation above for units, coded values and limitations.", ''])
     parquet = next(item["filename"] for item in flat["files"] if item["filename"].endswith(".parquet"))
     lines.extend(["", "## Read with DuckDB", "", "Query the remote GeoParquet directly:", "", "```sql",
                   f"SELECT count(*) AS feature_count FROM read_parquet('{base}{parquet}');",
                   f"SELECT * FROM read_parquet('{base}{parquet}') LIMIT 5;", "```", "",
-                  "The matching `.style.json` file shows the PMTiles in a MapLibre viewer with the PMTiles protocol installed.", "",
+                  "The `.style.json` files show the PMTiles in a MapLibre viewer with the PMTiles protocol installed. Preview images are generalized displays; they are not analytical geometry.", "",
                   "## Attribution and license", "", draft["attribution"], "", draft["license_note"], "",
                   f"Independently maintained by [{draft['owner']}](https://source.coop/{draft['owner']}).", ""])
     for link in draft.get("source_links", []):
@@ -985,6 +994,10 @@ def render_flat_consumer_readme(draft: dict[str, Any]) -> str:
         lines.extend(f"- [{item['title']}]({item['url']})" for item in draft["related_dataset_links"])
     lines.extend(["", f"[Conversion scripts and validation](https://github.com/nthh/data-publications/tree/main/datasets/{draft['dataset_id']}) · [Portolan map](https://browser.portolan-sdi.org/#/external/nthh.github.io/data-publications/{draft['dataset_id']}/collection.json)", "",
                   "Versioned filenames and checksum manifests identify the published data.", ""])
+    for extra in [item['filename'] for item in flat['files'] if item['filename'].endswith('.parquet') and item['filename'] != parquet]:
+        lines.extend(['', f"## Query {extra}", '', '```sql',
+                      f"SELECT count(*) AS feature_count FROM read_parquet('{base}{extra}');",
+                      f"SELECT * FROM read_parquet('{base}{extra}') LIMIT 5;", '```', ''])
     return "\n".join(lines)
 
 

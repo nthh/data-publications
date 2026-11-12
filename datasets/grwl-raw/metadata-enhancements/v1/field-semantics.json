@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "bound_assets": {
+    "grwl-raw-observations": {
+      "sha256": "d37d0ba791e682f279b88829897441189685af96e9106cf851aef3be861d4cbb"
+    }
+  },
+  "source_documents": {
+    "producer": "https://zenodo.org/records/18624542",
+    "producer_section": "3) GRWL Vector Product V01.01",
+    "converter": "datasets/grwl-raw/convert.py",
+    "converter_sha256": "85086f9a8510e9c94ff98c3faa2968f0fd43c98ef750846742aa6b1d9a37c743"
+  },
+  "assets": {
+    "grwl-raw-observations": {
+      "fields": {
+        "utm_east": {
+          "definition": "Easting in metres in the UTM zone identified by the producer tile filename.",
+          "origin": "producer"
+        },
+        "utm_north": {
+          "definition": "Northing in metres in the UTM zone identified by the producer tile filename.",
+          "origin": "producer"
+        },
+        "width_m": {
+          "definition": "Observed wetted river width, in metres. The value 1 is the producer missing-width code; use width_valid when filtering.",
+          "origin": "producer"
+        },
+        "nchannels": {
+          "definition": "Producer braiding index; dimensionless.",
+          "origin": "producer"
+        },
+        "segmentID": {
+          "definition": "Producer segment identifier, unique within its source tile only.",
+          "origin": "producer"
+        },
+        "segmentInd": {
+          "definition": "Observation index within a segment; it does not specify upstream-to-downstream ordering.",
+          "origin": "producer"
+        },
+        "lakeFlag": {
+          "definition": "Producer class: 0 river, 1 lake or reservoir, 2 tidal river, 3 canal.",
+          "origin": "producer"
+        },
+        "lon": {
+          "definition": "Observation longitude in decimal degrees.",
+          "origin": "producer"
+        },
+        "lat": {
+          "definition": "Observation latitude in decimal degrees.",
+          "origin": "producer"
+        },
+        "elev_m": {
+          "definition": "Elevation in metres sampled by the producer from Hydro1k.",
+          "origin": "producer"
+        },
+        "source_tile": {
+          "definition": "Original producer shapefile tile stem, retained by the converter.",
+          "origin": "conversion"
+        },
+        "source_row": {
+          "definition": "Original 1-based shapefile record ordinal within source_tile; retained by the converter.",
+          "origin": "conversion"
+        },
+        "feature_id": {
+          "definition": "Converter identifier combining tile identity in the high 32 bits with source_row in the low 32 bits; globally unique in this release.",
+          "origin": "conversion"
+        },
+        "width_valid": {
+          "definition": "Converter flag: width_m is non-null, positive and different from the producer missing-width sentinel 1.",
+          "origin": "conversion"
+        },
+        "bbox": {
+          "definition": "Converter bounding box in WGS84 longitude/latitude degrees: xmin, ymin, xmax, ymax. It supports spatial filtering without changing source geometry.",
+          "origin": "conversion"
+        },
+        "geometry": {
+          "definition": "WKB MultiLineString in WGS84 longitude/latitude (OGC:CRS84); source record parts, vertex order and XY values are preserved.",
+          "origin": "conversion"
+        }
+      }
+    }
+  }
+}

@@ -15,3 +15,5 @@ Provenance: generated from canonical dataset.yaml records and checksum-bound met
 - [HydroLAKES v1.0: Polygons](hydrolakes/collection.json)
 - [HydroATLAS LakeATLAS v1.0 — global hydro-environmental lake attributes](lakeatlas/collection.json)
 - [Global river plastic inputs — Lebreton et al. (2017)](river-plastic-inputs/collection.json)
+
+[Catalog query conventions](AGENTS.md).

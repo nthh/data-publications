@@ -32,7 +32,7 @@ const planPath = underRoot(arg('--plan'));
 const outDir = underRoot(arg('--out'));
 const planBytes = await readFile(planPath);
 const plan = JSON.parse(planBytes);
-if (plan.schema_version !== 1 || !Array.isArray(plan.cases) || plan.cases.length !== 4) throw new Error('Expected schema_version 1 and exactly four cases');
+if (plan.schema_version !== 1 || !Array.isArray(plan.cases) || plan.cases.length < 1 || plan.cases.length > 5) throw new Error('Expected schema_version 1 and one to five cases');
 if (plan.viewport?.width !== 1200 || plan.viewport?.height !== 720 || plan.viewport?.device_scale_factor !== 1) throw new Error('Expected 1200x720 viewport at device scale 1');
 if (!Array.isArray(plan.bounds) || plan.bounds.length !== 2) throw new Error('Plan bounds are required');
 await mkdir(resolve(outDir, '..'), {recursive: true});
@@ -66,7 +66,7 @@ try {
   for (const item of plan.cases) {
     if (!/^[a-z0-9-]+$/.test(item.dataset_id) || cases.some(value => value.dataset_id === item.dataset_id) || !item.title || !item.subtitle || !item.attribution || !item.pmtiles?.url || !Number.isSafeInteger(item.pmtiles.size_bytes)) throw new Error('Malformed case entry');
     if (new URL(item.pmtiles.url).origin !== 'https://data.source.coop' || !/^[a-f0-9]{64}$/.test(item.pmtiles.sha256)) throw new Error('Expected a pinned public Source object');
-    if (item.source_tile_zoom != null && item.source_tile_zoom !== 3) throw new Error('Explicit preview source tiles must use zoom 3');
+    if (item.source_tile_zoom != null && (!Number.isInteger(item.source_tile_zoom) || item.source_tile_zoom < 3 || item.source_tile_zoom > 8)) throw new Error('Explicit preview source tiles must use zooms 3–8 within a bounded window');
     const collectionBytes = await readFile(underRoot(`catalog/${item.dataset_id}/collection.json`));
     const collection = JSON.parse(collectionBytes);
     const object = Object.values(collection.assets).find(asset => asset.href === item.pmtiles.url);
@@ -76,7 +76,7 @@ try {
     const styleBytes = await readFile(stylePath);
     checkHash(sha(styleBytes), item.style_sha256, `${item.dataset_id} style`);
     const style = JSON.parse(styleBytes);
-    const styleURL = style.sources?.data?.url;
+    const styleURL = style.sources?.data?.url?.replace(/^pmtiles:\/\//, '');
     if (!styleURL || styleURL !== item.pmtiles.url) throw new Error(`${item.dataset_id} style URL differs from the pinned PMTiles URL`);
     if (!Array.isArray(style.layers) || !style.layers.some(layer => layer.source === 'data' && layer['source-layer'])) throw new Error(`${item.dataset_id} style has no data layer`);
     cases.push({...item, style});
@@ -94,7 +94,7 @@ try {
   report.inputs.worker_sha256 = await fileHash(join(buildDir, 'worker.mjs'));
   report.inputs.bundle_sha256 = await fileHash(join(buildDir, 'app.js'));
   const index = `<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="/app.css"><style>
-*{box-sizing:border-box}html,body{margin:0;width:1200px;height:720px;overflow:hidden;background:#fff;color:#21343a;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.card{height:100%;display:grid;grid-template-rows:100px 1fr 44px}.heading{padding:24px 34px 10px;border-bottom:1px solid #e1e8e6;display:flex;align-items:flex-start;justify-content:space-between}.titles h1{font-size:27px;line-height:1.1;margin:0 0 7px;font-weight:650;letter-spacing:-.025em}.titles p{font-size:14px;margin:0;color:#63757a}.tag{margin-top:3px;border:1px solid #dce6e4;border-radius:4px;padding:7px 10px;color:#617278;font-size:11px;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}#map{width:100%;height:100%}.footer{padding:0 34px;display:flex;align-items:center;justify-content:space-between;background:#fbfcfa;border-top:1px solid #e1e8e6;color:#63757a;font-size:11px}.credit{max-width:74%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.brand{font-weight:600;color:#64747a;letter-spacing:.05em}</style></head><body><main class="card"><header class="heading"><div class="titles"><h1 id="title"></h1><p id="subtitle"></p></div><div class="tag">Display overview · generalized</div></header><div id="map"></div><footer class="footer"><span id="attribution" class="credit"></span><span class="brand">NTHH · DATA PUBLICATIONS</span></footer></main><script type="module" src="/app.js"></script></body></html>`;
+*{box-sizing:border-box}html,body{margin:0;width:1200px;height:720px;overflow:hidden;background:#fff;color:#21343a;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.card{height:100%;display:grid;grid-template-rows:100px 1fr 44px;position:relative}.heading{padding:24px 34px 10px;border-bottom:1px solid #e1e8e6;display:flex;align-items:flex-start;justify-content:space-between}.titles h1{font-size:27px;line-height:1.1;margin:0 0 7px;font-weight:650;letter-spacing:-.025em}.titles p{font-size:14px;margin:0;color:#63757a}.tag{margin-top:3px;border:1px solid #dce6e4;border-radius:4px;padding:7px 10px;color:#617278;font-size:11px;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}#map{width:100%;height:100%}.footer{padding:0 34px;display:flex;align-items:center;justify-content:space-between;background:#fbfcfa;border-top:1px solid #e1e8e6;color:#63757a;font-size:11px}#legend{position:absolute;left:34px;bottom:64px;background:#ffffffec;border:1px solid #d4dddb;border-radius:4px;padding:12px 16px;font-size:15px;color:#24363b}.legend-stops{display:flex;gap:12px;margin-top:8px}.legend-stop{display:flex;align-items:center;gap:5px}.legend-stop i{display:inline-block;width:20px;height:10px}.credit{max-width:74%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.brand{font-weight:600;color:#64747a;letter-spacing:.05em}</style></head><body><main class="card"><header class="heading"><div class="titles"><h1 id="title"></h1><p id="subtitle"></p></div><div class="tag">Display overview · generalized</div></header><div id="map"></div><aside id="legend" hidden></aside><footer class="footer"><span id="attribution" class="credit"></span><span class="brand">NTHH · DATA PUBLICATIONS</span></footer></main><script type="module" src="/app.js"></script></body></html>`;
   await writeFile(join(buildDir, 'index.html'), index);
 
   const mime = {'.html': 'text/html', '.js': 'text/javascript', '.mjs': 'text/javascript', '.css': 'text/css', '.geojson': 'application/geo+json'};
@@ -177,6 +177,13 @@ try {
       entry.rendered_features = result.feature_count;
       entry.decoded_tile_count = result.decoded_tile_count;
       entry.decoded_features = result.decoded_features;
+      await page.evaluate(() => {
+        for (const layer of window.map.getStyle().layers) {
+          if (layer.source === 'data') window.map.setLayoutProperty(layer.id, 'visibility', 'none');
+        }
+        return new Promise(resolve => window.map.once('idle', resolve));
+      });
+      await page.screenshot({path: join(outDir, `${item.dataset_id}-blank.png`)});
       const png = await readFile(join(outDir, `${item.dataset_id}.png`));
       entry.png_sha256 = sha(png); entry.png_size_bytes = png.length;
       entry.status = 'rendered_pending_visual_review';

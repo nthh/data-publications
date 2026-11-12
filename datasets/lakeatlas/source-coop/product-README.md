@@ -15,11 +15,12 @@ Use GeoParquet for analysis and PMTiles for maps. Field dictionaries describe co
 | [lakeatlas-pour-points-v1.0.parquet](https://data.source.coop/nthh/lakeatlas/lakeatlas-pour-points-v1.0.parquet) | 283.78 MB |
 | [lakeatlas-pour-points-v1.0.fields.json](https://data.source.coop/nthh/lakeatlas/lakeatlas-pour-points-v1.0.fields.json) | 19.5 kB |
 | [lakeatlas-polygons-v1.0.pmtiles](https://data.source.coop/nthh/lakeatlas/lakeatlas-polygons-v1.0.pmtiles) | 1.19 GB |
-| [lakeatlas-polygons-v1.0.style.json](https://data.source.coop/nthh/lakeatlas/lakeatlas-polygons-v1.0.style.json) | 0.5 kB |
 | [lakeatlas-pour-points-v1.0.pmtiles](https://data.source.coop/nthh/lakeatlas/lakeatlas-pour-points-v1.0.pmtiles) | 409.21 MB |
-| [lakeatlas-pour-points-v1.0.style.json](https://data.source.coop/nthh/lakeatlas/lakeatlas-pour-points-v1.0.style.json) | 0.5 kB |
 | [LICENSE.txt](https://data.source.coop/nthh/lakeatlas/LICENSE.txt) | 0.4 kB |
 | [manifest-20261111.json](https://data.source.coop/nthh/lakeatlas/manifest-20261111.json) | 3.3 kB |
+| [lakeatlas-polygons-v1.0-presentation-v2.style.json](https://data.source.coop/nthh/lakeatlas/lakeatlas-polygons-v1.0-presentation-v2.style.json) | 2.0 kB |
+| [lakeatlas-pour-points-v1.0-presentation-v2.style.json](https://data.source.coop/nthh/lakeatlas/lakeatlas-pour-points-v1.0-presentation-v2.style.json) | 2.8 kB |
+| [lakeatlas-preview-v2.png](https://data.source.coop/nthh/lakeatlas/lakeatlas-preview-v2.png) | 118.7 kB |
 | [HydroATLAS_TechDoc_v10_1.pdf](https://data.source.coop/nthh/lakeatlas/HydroATLAS_TechDoc_v10_1.pdf) | 3.66 MB |
 | [LakeATLAS_Catalog_v10.pdf](https://data.source.coop/nthh/lakeatlas/LakeATLAS_Catalog_v10.pdf) | 54.06 MB |
 
@@ -27,6 +28,11 @@ Use GeoParquet for analysis and PMTiles for maps. Field dictionaries describe co
 
 - [field-semantics.json](https://raw.githubusercontent.com/nthh/data-publications/c0ad1cc5c18d69d3915f01bda478cb300d13b12f/datasets/lakeatlas/metadata-enhancements/v1/field-semantics.json)
 - [README.md](https://github.com/nthh/data-publications/blob/c0ad1cc5c18d69d3915f01bda478cb300d13b12f/datasets/lakeatlas/metadata-enhancements/v1/README.md)
+
+## Schema
+
+[Column definitions in the catalog](https://nthh.github.io/data-publications/lakeatlas/collection.json) include names, storage types and descriptions. Use the field dictionaries and producer documentation above for units, coded values and limitations.
+
 
 ## Read with DuckDB
 
@@ -37,7 +43,7 @@ SELECT count(*) AS feature_count FROM read_parquet('https://data.source.coop/nth
 SELECT * FROM read_parquet('https://data.source.coop/nthh/lakeatlas/lakeatlas-polygons-v1.0.parquet') LIMIT 5;
 ```
 
-The matching `.style.json` file shows the PMTiles in a MapLibre viewer with the PMTiles protocol installed.
+The `.style.json` files show the PMTiles in a MapLibre viewer with the PMTiles protocol installed. Preview images are generalized displays; they are not analytical geometry.
 
 ## Attribution and license
 
@@ -66,3 +72,11 @@ Independently maintained by [nthh](https://source.coop/nthh).
 [Conversion scripts and validation](https://github.com/nthh/data-publications/tree/main/datasets/lakeatlas) · [Portolan map](https://browser.portolan-sdi.org/#/external/nthh.github.io/data-publications/lakeatlas/collection.json)
 
 Versioned filenames and checksum manifests identify the published data.
+
+
+## Query lakeatlas-pour-points-v1.0.parquet
+
+```sql
+SELECT count(*) AS feature_count FROM read_parquet('https://data.source.coop/nthh/lakeatlas/lakeatlas-pour-points-v1.0.parquet');
+SELECT * FROM read_parquet('https://data.source.coop/nthh/lakeatlas/lakeatlas-pour-points-v1.0.parquet') LIMIT 5;
+```

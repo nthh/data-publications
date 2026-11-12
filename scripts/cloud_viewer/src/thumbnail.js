@@ -9,15 +9,40 @@ window.thumbnailReady = (async () => {
   const params = new URLSearchParams(location.search);
   const card = JSON.parse(params.get('card'));
   const plan = JSON.parse(params.get('map'));
+  if (card.bounds) plan.bounds = card.bounds;
   document.querySelector('#title').textContent = card.title;
   document.querySelector('#subtitle').textContent = card.subtitle;
   document.querySelector('#attribution').textContent = card.attribution;
+  if (card.legend) {
+    const legend = document.querySelector('#legend');
+    legend.hidden = false;
+    legend.textContent = card.legend.label;
+    const stops = document.createElement('div'); stops.className = 'legend-stops';
+    for (const [label, color] of card.legend.stops) {
+      const stop = document.createElement('span'); stop.className = 'legend-stop';
+      const swatch = document.createElement('i'); swatch.style.background = color;
+      stop.append(swatch, document.createTextNode(label)); stops.append(stop);
+    }
+    legend.append(stops);
+  }
   const sourceLayer = card.style.layers.find(layer => layer.source === 'data' && layer['source-layer'])?.['source-layer'];
   if (!sourceLayer) throw new Error('Catalog style has no data source layer');
   const archive = new PMTiles(card.pmtiles.url);
   const protocol = new Protocol();
   protocol.add(archive);
   maplibregl.addProtocol('pmtiles', protocol.tile);
+  const tileMetadata = await archive.getMetadata();
+  const getFields = expression => {
+    if (!Array.isArray(expression)) return [];
+    return expression[0] === 'get' ? [expression[1]] : expression.flatMap(getFields);
+  };
+  for (const layer of card.style.layers.filter(layer => layer.source === 'data')) {
+    const fields = tileMetadata.vector_layers?.find(item => item.id === layer['source-layer'])?.fields;
+    if (!fields) throw new Error('Style layer absent from PMTiles metadata');
+    for (const property of Object.values(layer.paint || {}).flatMap(getFields)) {
+      if (!(property in fields)) throw new Error(`Style field absent from PMTiles: ${property}`);
+    }
+  }
   const style = structuredClone(card.style);
   let decodedTileCount = 0, decodedFeatures = 0;
   if (card.source_tile_zoom != null) {
@@ -25,9 +50,23 @@ window.thumbnailReady = (async () => {
     // display tiles to a transient GeoJSON layer so the world camera stays fixed.
     // These are clipped/generalized display fragments, not analytical records.
     const z = card.source_tile_zoom, n = 2 ** z, features = [];
-    for (let y = 0; y < n; y++) {
-      for (let x = 0; x < n; x += 4) {
-        const batches = await Promise.all(Array.from({length: Math.min(4, n - x)}, async (_, offset) => {
+    const [[west, south], [east, north]] = plan.bounds;
+    const tileX = lon => Math.max(0, Math.min(n - 1, Math.floor((lon + 180) / 360 * n)));
+    const tileY = lat => Math.max(0, Math.min(n - 1, Math.floor((1 - Math.asinh(Math.tan(lat * Math.PI / 180)) / Math.PI) / 2 * n)));
+    // fitBounds expands the requested window to the viewport aspect. Fetch the
+    // full expanded camera, including padding, so preview tile edges never masquerade as coverage edges.
+    const mercY = lat => (1 - Math.asinh(Math.tan(lat * Math.PI / 180)) / Math.PI) / 2;
+    const cx = (west + east + 360) / 720, cy = (mercY(north) + mercY(south)) / 2;
+    const spanX = (east - west) / 360, spanY = mercY(south) - mercY(north);
+    const aspect = 1200 / 576;
+    const dx = Math.max(spanX, spanY * aspect) * 1.12 / 2;
+    const dy = Math.max(spanY, spanX / aspect) * 1.12 / 2;
+    const clamp = value => Math.max(0, Math.min(n - 1, Math.floor(value * n)));
+    const x0 = clamp(cx - dx), x1 = clamp(cx + dx), y0 = clamp(cy - dy), y1 = clamp(cy + dy);
+    if ((x1 - x0 + 1) * (y1 - y0 + 1) > 256) throw new Error('Preview exceeds 256 source tiles');
+    for (let y = y0; y <= y1; y++) {
+      for (let x = x0; x <= x1; x += 4) {
+        const batches = await Promise.all(Array.from({length: Math.min(4, x1 - x + 1)}, async (_, offset) => {
           const tile = await archive.getZxy(z, x + offset, y);
           if (!tile) return [];
           decodedTileCount++;

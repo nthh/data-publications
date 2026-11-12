@@ -25,7 +25,17 @@ for(const link of root.links.filter(link=>link.rel==='child')){
   const url=new URL(link.href,self).href, file=files.get(url);
   if(!file)throw new Error('Missing staged collection');
   const collection=JSON.parse(file.bytes), thumbnail=Object.values(collection.assets).find(asset=>asset.roles?.includes('thumbnail'));
-  expected.push({id:collection.id,title:collection.title,thumbnail:new URL(thumbnail.href,url).href,providers:collection.providers});
+  const thumbnailURL=new URL(thumbnail.href,url).href;
+  if(!files.has(thumbnailURL)){
+    const checksum=thumbnail['file:checksum'], size=thumbnail['file:size'];
+    if(new URL(thumbnailURL).origin!=='https://data.source.coop'||!/^1220[a-f0-9]{64}$/.test(checksum)||!Number.isInteger(size)||size<1||size>10000000)throw new Error('Unbound external thumbnail');
+    const response=await fetch(thumbnailURL,{redirect:'error',signal:AbortSignal.timeout(30000)});
+    if(response.status!==200||Number(response.headers.get('content-length'))!==size)throw new Error('External thumbnail response differs');
+    const bytes=Buffer.from(await response.arrayBuffer());
+    if(bytes.length!==size||sha(bytes)!==checksum.slice(4))throw new Error('External thumbnail checksum differs');
+    files.set(thumbnailURL,{bytes,entry:{target_url:thumbnailURL,size_bytes:size,sha256:checksum.slice(4)}});
+  }
+  expected.push({id:collection.id,title:collection.title,thumbnail:thumbnailURL,providers:collection.providers});
 }
 await mkdir(out,{recursive:false});
 const report={schema_version:1,status:'failed',mode:live?'live':'staged',scope:live?'Official Portolan cards using actual public metadata responses, checked against the stage plan. No analytical revalidation.':'Official Portolan card UI with local staged metadata intercepted. No deployment, public-host check, or analytical revalidation.',stage_plan_sha256:sha(planBytes),cards:[],served_metadata:[],errors:[]};
@@ -60,10 +70,14 @@ try{
   });
   const parsed=new URL(self);
   await page.goto(`https://browser.portolan-sdi.org/#/external/${parsed.host}${parsed.pathname}`,{waitUntil:'domcontentloaded',timeout:60000});
+  await page.waitForFunction(count => document.querySelectorAll('.catalog-card').length === count, expected.length, {timeout:60000});
   for(const expectedCard of expected){
     const card=page.locator('.catalog-card').filter({has:page.locator('a',{hasText:expectedCard.title})});
     await card.waitFor({state:'visible',timeout:60000});
-    await card.scrollIntoViewIfNeeded();
+    for(let attempt=0;;attempt++){
+      try{await card.scrollIntoViewIfNeeded();break;}
+      catch(error){if(attempt>=2||!error.message.includes('not attached'))throw error;await card.waitFor({state:'visible',timeout:15000});}
+    }
     const image=card.locator('img.thumbnail');
     await page.waitForFunction(src=>[...document.querySelectorAll('.catalog-card img.thumbnail')]
       .some(img=>img.currentSrc===src&&img.complete&&img.naturalWidth>0),expectedCard.thumbnail,{timeout:15000});

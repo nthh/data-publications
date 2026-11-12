@@ -46,6 +46,7 @@ jobs:
           node-version: "22"
       - name: Install locked validators and collector environment
         run: |
+          uv sync --locked --no-build
           uv sync --locked --no-dev --project .local/registry --group validators --no-build
           uv sync --locked --project datasets/river-plastic-inputs --no-build
           npm ci --prefix .local/registry/scripts/stac-node-validator --ignore-scripts --no-audit --no-fund
@@ -67,7 +68,9 @@ jobs:
           for filename in ('changed.txt','added.txt'):
               (Path('.local/registry')/filename).write_text('catalogs/'+name+'\n')
           out=Path('.local/registry-review');out.mkdir()
-          (out/'inputs.json').write_text(json.dumps({'criteria':criteria,'review_commit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()},indent=2)+'\n')
+          fixes=p/'fix-criteria-r1.json'
+          fix_criteria=json.loads(fixes.read_text()) if fixes.exists() else None
+          (out/'inputs.json').write_text(json.dumps({'criteria':criteria,'fix_criteria':fix_criteria,'review_commit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()},indent=2)+'\n')
           PYCODE
       - name: Run the registry's deterministic submission gate
         working-directory: .local/registry
@@ -78,6 +81,25 @@ jobs:
             --export exports/catalogs.json \
             --report ../registry-review/registry-validation.json \
             2>&1 | tee ../registry-review/registry-validation.log
+      - name: Require the public metadata to match this checkout
+        run: |
+          uv run --locked python scripts/publication_catalog.py stage .local/review-stage
+          python - <<'PYCODE'
+          from concurrent.futures import ThreadPoolExecutor
+          from pathlib import Path
+          import hashlib,json,urllib.request
+          plan=json.loads(Path('.local/review-stage/publish-plan.json').read_text())
+          def check(item):
+              with urllib.request.urlopen(item['target_url'],timeout=30) as response:
+                  data=response.read(item['size_bytes']+1)
+              return {'url':item['target_url'],'sha256':hashlib.sha256(data).hexdigest(),'matches':len(data)==item['size_bytes'] and hashlib.sha256(data).hexdigest()==item['sha256']}
+          with ThreadPoolExecutor(max_workers=4) as pool:
+              objects=list(pool.map(check,plan['files']))
+          passed=all(item['matches'] for item in objects)
+          report={'status':'passed' if passed else 'failed','objects':objects}
+          Path('.local/registry-review/publication-match.json').write_text(json.dumps(report,indent=2)+'\n')
+          assert passed, 'Published metadata does not match the reviewed checkout'
+          PYCODE
       - name: Collect live catalog facts and execute documented examples
         if: ${{ !cancelled() }}
         run: |

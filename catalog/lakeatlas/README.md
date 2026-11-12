@@ -1,35 +1,84 @@
-# HydroATLAS LakeATLAS v1.0 — global hydro-environmental lake attributes
+# LakeATLAS v1.0 — global lake attributes and pour points
 
-Two analytic GeoParquet assets from the pinned LakeATLAS v1.0 producer File Geodatabase: the complete polygon layer and separate pour-point layer. The deterministic spatially ordered representations preserve producer OBJECTID, Hylak_id and all decoded source fields, nulls, and WKB; WGS84 bbox fields support spatial filtering. No geometries are repaired or simplified. Attribute years vary by source and do not represent a 2026 observation.
+LakeATLAS lake polygons and pour points with hydro-environmental attributes in separate spatially ordered GeoParquet files, with a versioned field-semantics supplement. Separately versioned PMTiles provide map display for both layers and source-ID attribute lookup.
 
-License: other.
+Observation and model-input dates vary by contributing attribute; use the producer catalog and field supplement for interpretation.
 
-Release provenance: https://github.com/nthh/data-publications/blob/main/datasets/lakeatlas/releases/lakeatlas-v1.0-r2/evidence/prepared-local/manifest.json
+## Files
 
-Maintainer: nthh.
+Use GeoParquet for analysis and PMTiles for maps. Field dictionaries describe columns and units.
 
-Catalog preview: Global overview from published PMTiles; generalized display only. Display only; use GeoParquet for analysis.
+| File | Size |
+| --- | ---: |
+| [lakeatlas-polygons-v1.0.parquet](https://data.source.coop/nthh/lakeatlas/lakeatlas-polygons-v1.0.parquet) | 1.14 GB |
+| [lakeatlas-polygons-v1.0.fields.json](https://data.source.coop/nthh/lakeatlas/lakeatlas-polygons-v1.0.fields.json) | 19.7 kB |
+| [lakeatlas-pour-points-v1.0.parquet](https://data.source.coop/nthh/lakeatlas/lakeatlas-pour-points-v1.0.parquet) | 283.78 MB |
+| [lakeatlas-pour-points-v1.0.fields.json](https://data.source.coop/nthh/lakeatlas/lakeatlas-pour-points-v1.0.fields.json) | 19.5 kB |
+| [lakeatlas-polygons-v1.0.pmtiles](https://data.source.coop/nthh/lakeatlas/lakeatlas-polygons-v1.0.pmtiles) | 1.19 GB |
+| [lakeatlas-pour-points-v1.0.pmtiles](https://data.source.coop/nthh/lakeatlas/lakeatlas-pour-points-v1.0.pmtiles) | 409.21 MB |
+| [LICENSE.txt](https://data.source.coop/nthh/lakeatlas/LICENSE.txt) | 0.4 kB |
+| [manifest-20261111.json](https://data.source.coop/nthh/lakeatlas/manifest-20261111.json) | 3.3 kB |
+| [lakeatlas-polygons-v1.0-presentation-v2.style.json](https://data.source.coop/nthh/lakeatlas/lakeatlas-polygons-v1.0-presentation-v2.style.json) | 2.0 kB |
+| [lakeatlas-pour-points-v1.0-presentation-v2.style.json](https://data.source.coop/nthh/lakeatlas/lakeatlas-pour-points-v1.0-presentation-v2.style.json) | 2.8 kB |
+| [lakeatlas-preview-v2.png](https://data.source.coop/nthh/lakeatlas/lakeatlas-preview-v2.png) | 118.7 kB |
+| [HydroATLAS_TechDoc_v10_1.pdf](https://data.source.coop/nthh/lakeatlas/HydroATLAS_TechDoc_v10_1.pdf) | 3.66 MB |
+| [LakeATLAS_Catalog_v10.pdf](https://data.source.coop/nthh/lakeatlas/LakeATLAS_Catalog_v10.pdf) | 54.06 MB |
 
-Source producers: HydroSHEDS / HydroATLAS authors; Lehner, Messager, Korver, and Linke
+## Supporting documentation
 
-Source provenance: https://doi.org/10.6084/m9.figshare.19312001.v1
+- [field-semantics.json](https://raw.githubusercontent.com/nthh/data-publications/c0ad1cc5c18d69d3915f01bda478cb300d13b12f/datasets/lakeatlas/metadata-enhancements/v1/field-semantics.json)
+- [README.md](https://github.com/nthh/data-publications/blob/c0ad1cc5c18d69d3915f01bda478cb300d13b12f/datasets/lakeatlas/metadata-enhancements/v1/README.md)
 
-Data, map layers and usage: https://source.coop/nthh/lakeatlas
+## Schema
+
+[Column definitions in the catalog](https://nthh.github.io/data-publications/lakeatlas/collection.json) include names, storage types and descriptions. Use the field dictionaries and producer documentation above for units, coded values and limitations.
 
 
-Canonical publication limits:
+## Read with DuckDB
 
-- Source fidelity does not establish scientific accuracy of the contributing attributes.
-- Attribute observation vintage varies; this release is not a single-year observation.
-- PMTiles display-v1 is published separately for polygons and pour points; use GeoParquet
-  for analysis.
-- Source polygon WKB is decoded using GDAL OpenFileGDB ring organization; a source
-  feature with more than 100 parts emits a warning. No later geometry repair or simplification
-  is applied.
-- Aggregate catalog hosting has separate verification evidence; registry submission
-  requires a separate decision. Dataset hosting checks are distinct from historical
-  loopback checks.
-- Live GEE counts and 522 sampled IDs per layer match. Both layers have numeric differences
-  including integral GEE GDP values; the polygon layer also has three narrow source
-  spikes absent spatially from GEE. Strict parity fails. No exhaustive GEE or independent
-  scientific-accuracy claim.
+Query the remote GeoParquet directly:
+
+```sql
+SELECT count(*) AS feature_count FROM read_parquet('https://data.source.coop/nthh/lakeatlas/lakeatlas-polygons-v1.0.parquet');
+SELECT * FROM read_parquet('https://data.source.coop/nthh/lakeatlas/lakeatlas-polygons-v1.0.parquet') LIMIT 5;
+```
+
+The `.style.json` files show the PMTiles in a MapLibre viewer with the PMTiles protocol installed. Preview images are generalized displays; they are not analytical geometry.
+
+## Attribution and license
+
+HydroSHEDS / HydroATLAS authors; Lehner, Messager, Korver and Linke (2022), DOI 10.1038/s41597-022-01425-z.
+
+Mixed field-level terms: the producer catalog identifies CC BY 4.0 and ODbL 1.0 attributes. Retain the catalog, source attribution and original-source notices; do not describe the entire attribute table as uniformly CC BY 4.0.
+
+Independently maintained by [nthh](https://source.coop/nthh).
+
+- [License terms](https://creativecommons.org/licenses/by/4.0/)
+- [Research paper](https://doi.org/10.1038/s41597-022-01425-z)
+- [Dataset release](https://doi.org/10.6084/m9.figshare.19312001.v1)
+- [Producer technical documentation](https://ndownloader.figshare.com/files/35959532)
+- [Producer attribute catalogue](https://ndownloader.figshare.com/files/35959535)
+- [Original download](https://ndownloader.figshare.com/files/35959544)
+- [Processor: nthh](https://source.coop/nthh/lakeatlas)
+- [Producer: HydroSHEDS / HydroATLAS authors](https://www.hydrosheds.org/products/hydroatlas)
+
+## Limitations
+
+- Polygons and pour points are distinct producer layers, each retained separately.
+- Attribute codes, scaling, spatial extent and aggregation rules must be interpreted using the versioned field-semantics supplement and producer documentation.
+- The metadata supplement is separate from the unchanged immutable r2 analytical package.
+- Live GEE counts and 522 sampled IDs per layer match. Both layers have numeric differences including integral GEE GDP values; the polygon layer also has three narrow source spikes absent spatially from GEE. Strict parity fails. No exhaustive GEE or independent scientific-accuracy claim.
+
+[Conversion scripts and validation](https://github.com/nthh/data-publications/tree/main/datasets/lakeatlas) · [Portolan map](https://browser.portolan-sdi.org/#/external/nthh.github.io/data-publications/lakeatlas/collection.json)
+
+Versioned filenames and checksum manifests identify the published data.
+
+
+## Query lakeatlas-pour-points-v1.0.parquet
+
+```sql
+SELECT count(*) AS feature_count FROM read_parquet('https://data.source.coop/nthh/lakeatlas/lakeatlas-pour-points-v1.0.parquet');
+SELECT * FROM read_parquet('https://data.source.coop/nthh/lakeatlas/lakeatlas-pour-points-v1.0.parquet') LIMIT 5;
+```
+
+[Dataset query guidance](AGENTS.md).

@@ -31,7 +31,7 @@
       "file:checksum": "12208b7c1061bd42845a4747d53e2149ad4c0682b3066478c7d367bbab046843dd60"
     },
     "display_style_grwl-raw-display": {
-      "href": "display/raw-v01.01-display-r3/styles/width.json",
+      "href": "https://data.source.coop/nthh/grwl-raw/grwl-raw-v01.01.style.json",
       "type": "application/vnd.mapbox.style+json",
       "roles": [
         "style",
@@ -42,7 +42,7 @@
       "file:checksum": "122034b586d0e98fb21c872fc3ec5dd25c71717ff0359ce96e08d2dd42ffff1ee6f8"
     },
     "thumbnail": {
-      "href": "presentation/thumbnail.png",
+      "href": "https://data.source.coop/nthh/grwl-raw/grwl-raw-preview-v2.png",
       "type": "image/png",
       "roles": [
         "thumbnail"
@@ -120,13 +120,13 @@
     },
     {
       "rel": "style",
-      "href": "display/raw-v01.01-display-r3/styles/width.json",
+      "href": "https://data.source.coop/nthh/grwl-raw/grwl-raw-v01.01.style.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "GRWL raw width observations at every zoom display style"
     },
     {
       "rel": "thumbnail",
-      "href": "presentation/thumbnail.png",
+      "href": "https://data.source.coop/nthh/grwl-raw/grwl-raw-preview-v2.png",
       "type": "image/png",
       "title": "Global width-symbol overview; exaggerated display symbols, not riverbanks"
     },
@@ -188,86 +188,102 @@
     {
       "asset": "grwl-raw-observations",
       "name": "utm_east",
-      "type": "decimal128(38, 18)"
+      "type": "decimal128(38, 18)",
+      "description": "Easting in metres in the UTM zone identified by the producer tile filename."
     },
     {
       "asset": "grwl-raw-observations",
       "name": "utm_north",
-      "type": "decimal128(38, 18)"
+      "type": "decimal128(38, 18)",
+      "description": "Northing in metres in the UTM zone identified by the producer tile filename."
     },
     {
       "asset": "grwl-raw-observations",
       "name": "width_m",
-      "type": "int64"
+      "type": "int64",
+      "description": "Observed wetted river width, in metres. The value 1 is the producer missing-width code; use width_valid when filtering."
     },
     {
       "asset": "grwl-raw-observations",
       "name": "nchannels",
-      "type": "decimal128(38, 18)"
+      "type": "decimal128(38, 18)",
+      "description": "Producer braiding index; dimensionless."
     },
     {
       "asset": "grwl-raw-observations",
       "name": "segmentID",
-      "type": "int64"
+      "type": "int64",
+      "description": "Producer segment identifier, unique within its source tile only."
     },
     {
       "asset": "grwl-raw-observations",
       "name": "segmentInd",
-      "type": "int64"
+      "type": "int64",
+      "description": "Observation index within a segment; it does not specify upstream-to-downstream ordering."
     },
     {
       "asset": "grwl-raw-observations",
       "name": "lakeFlag",
-      "type": "decimal128(38, 18)"
+      "type": "decimal128(38, 18)",
+      "description": "Producer class: 0 river, 1 lake or reservoir, 2 tidal river, 3 canal."
     },
     {
       "asset": "grwl-raw-observations",
       "name": "lon",
-      "type": "decimal128(38, 18)"
+      "type": "decimal128(38, 18)",
+      "description": "Observation longitude in decimal degrees."
     },
     {
       "asset": "grwl-raw-observations",
       "name": "lat",
-      "type": "decimal128(38, 18)"
+      "type": "decimal128(38, 18)",
+      "description": "Observation latitude in decimal degrees."
     },
     {
       "asset": "grwl-raw-observations",
       "name": "elev_m",
-      "type": "int64"
+      "type": "int64",
+      "description": "Elevation in metres sampled by the producer from Hydro1k."
     },
     {
       "asset": "grwl-raw-observations",
       "name": "source_tile",
-      "type": "string"
+      "type": "string",
+      "description": "Original producer shapefile tile stem, retained by the converter."
     },
     {
       "asset": "grwl-raw-observations",
       "name": "source_row",
-      "type": "uint32"
+      "type": "uint32",
+      "description": "Original 1-based shapefile record ordinal within source_tile; retained by the converter."
     },
     {
       "asset": "grwl-raw-observations",
       "name": "feature_id",
-      "type": "uint64"
+      "type": "uint64",
+      "description": "Converter identifier combining tile identity in the high 32 bits with source_row in the low 32 bits; globally unique in this release."
     },
     {
       "asset": "grwl-raw-observations",
       "name": "width_valid",
-      "type": "bool"
+      "type": "bool",
+      "description": "Converter flag: width_m is non-null, positive and different from the producer missing-width sentinel 1."
     },
     {
       "asset": "grwl-raw-observations",
       "name": "bbox",
-      "type": "struct<xmin: double not null, ymin: double not null, xmax: double not null, ymax: double not null>"
+      "type": "struct<xmin: double not null, ymin: double not null, xmax: double not null, ymax: double not null>",
+      "description": "Converter bounding box in WGS84 longitude/latitude degrees: xmin, ymin, xmax, ymax. It supports spatial filtering without changing source geometry."
     },
     {
       "asset": "grwl-raw-observations",
       "name": "geometry",
-      "type": "binary"
+      "type": "binary",
+      "description": "WKB MultiLineString in WGS84 longitude/latitude (OGC:CRS84); source record parts, vertex order and XY values are preserved."
     }
   ],
   "title": "Global River Width from Landsat — raw vector observations V01.01",
   "type": "Collection",
-  "updated": "2026-11-11T07:23:02Z",
+  "updated": "2026-11-12T22:20:00Z",
   "version": "1.0.0"
 }

@@ -1,4 +1,12 @@
-# Dataset guidance
+# HydroLAKES v1.0: Polygons: query guidance
 
-Dataset: hydrolakes. Release: v1-local-r3.
-Use the analytic data assets for analysis; display derivatives are presentation only. Preserve producer identity, units, nulls, uncertainty and record multiplicity. See README.md and release provenance at https://github.com/nthh/data-publications/blob/main/datasets/hydrolakes/releases/v1-local-r3/evidence/package-manifest.json.
+Static research release compiled from multiple shoreline sources; not a current inventory of lake conditions.
+
+Use the following dataset-specific constraints when choosing records, interpreting values, or making comparisons:
+
+- This release contains polygons; it does not include the separate HydroLAKES pour-point source layer.
+- Spatial ordering and added bounding boxes preserve original attributes and WKB; local display queries do not establish public-host performance.
+- Live GEE count and all 522 sampled IDs match. There are 508 null/empty lake-name differences, strict geometry failures and three narrow source spikes absent spatially from GEE. Source geometry is retained; no exhaustive GEE or independent scientific-accuracy claim.
+
+[Field dictionaries, runnable queries and source citations](README.md).
+[Shared catalog conventions](../AGENTS.md).

@@ -1,0 +1,50 @@
+{
+  "attempts": {
+    "1": "Rejected: low zoom thinned the features too much.",
+    "2": "Rejected: visible crop boundaries from decoding only requested bounds.",
+    "3": "Accepted: fetch covers the aspect-expanded camera; regional views are explicitly labeled."
+  },
+  "cases": [
+    {
+      "changed_pixels_from_blank": 117795,
+      "dataset_id": "free-flowing-rivers",
+      "limitations": "Display tiles remain generalized and selectively retain features; previews do not assert exhaustive spatial coverage.",
+      "sha256": "824fa43cf51407638b316c1f5e6e1dba839d9cdf4377fc5fe81410316674702c",
+      "source_tile_zoom": 6,
+      "view": "Labeled regional window; visible thematic features, distinct palette, no artificial coverage edges.",
+      "visual_review": "pass"
+    },
+    {
+      "dataset_id": "grwl-raw",
+      "prior_review": "ci-r1/grader/visual-review.json",
+      "sha256": "4c0b5f0dd2cca67d57e87ca613a2dc47e16fe6a55a5ad86988cb93b5b0b3a546",
+      "visual_review": "unchanged previously reviewed PNG"
+    },
+    {
+      "changed_pixels_from_blank": 64593,
+      "dataset_id": "hydrolakes",
+      "limitations": "Display tiles remain generalized and selectively retain features; previews do not assert exhaustive spatial coverage.",
+      "sha256": "6240f86fc20f11db303d91c3b02ff7f8102f0d38c7b4f8f3079f2b3728cf2db1",
+      "source_tile_zoom": 6,
+      "view": "Labeled regional window; visible thematic features, distinct palette, no artificial coverage edges.",
+      "visual_review": "pass"
+    },
+    {
+      "changed_pixels_from_blank": 10372,
+      "dataset_id": "lakeatlas",
+      "limitations": "Display tiles remain generalized and selectively retain features; previews do not assert exhaustive spatial coverage.",
+      "sha256": "ca662b98c43a1a5923c69debfef0435ed72d934b78cd1ba30c691d2eeb8906ec",
+      "source_tile_zoom": 6,
+      "view": "Labeled regional window; visible thematic features, distinct palette, no artificial coverage edges.",
+      "visual_review": "pass"
+    },
+    {
+      "dataset_id": "river-plastic-inputs",
+      "prior_review": "ci-r1/grader/visual-review.json",
+      "sha256": "ff0e30b5c3768605f41b75c0bce515d82eeffa9d2422a4d408b8efbad46034c1",
+      "visual_review": "unchanged previously reviewed PNG"
+    }
+  ],
+  "scope": "Presentation review only, not scientific validation",
+  "status": "passed"
+}

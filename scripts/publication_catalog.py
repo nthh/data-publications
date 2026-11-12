@@ -1104,6 +1104,9 @@ def _generated(root: Path, config: dict) -> dict[str, bytes]:
         flat_layout = apply_flat_layout(root, record, out_collection, tree)
         from support_publication import apply_support_layout
         apply_support_layout(root, record, out_collection)
+        from catalog_presentation import apply_presentation, apply_field_semantics
+        apply_presentation(root, record, out_collection, tree)
+        apply_field_semantics(root, record, out_collection)
         _navigation_links(out_collection, config, f"{dataset_id}/collection.json")
         children.append({"rel": "child", "href": f"{dataset_id}/collection.json", "title": record["title"], "type": "application/json"})
         put(f"{dataset_id}/collection.json", canonical_json(out_collection))
@@ -1134,11 +1137,18 @@ def _generated(root: Path, config: dict) -> dict[str, bytes]:
         limits = (record.get("publication") or {}).get("limits") or (record.get("publication") or {}).get("limitations")
         if limits:
             notes.extend(["", "Canonical publication limits:", "", yaml.safe_dump(limits, sort_keys=True, allow_unicode=True).strip()])
+        if flat_layout is not None:
+            from source_products import draft_for
+            from catalog_presentation import render_agents
+            draft, _, consumer_readme = draft_for(root, record)
+            notes = [consumer_readme.rstrip(), "", "[Dataset query guidance](AGENTS.md).", ""]
+            agents = render_agents(record, draft)
+        else:
+            agents = (f"# Dataset guidance\n\nDataset: {dataset_id}. Release: {snapshot['release']}.\n"
+                      f"Use analytic assets for analysis; display derivatives are presentation only. "
+                      f"See [README](README.md) and {provenance_label.lower()} at {provenance_url}.\n")
         put(f"{dataset_id}/README.md", ("\n".join(notes).rstrip() + "\n").encode())
-        put(f"{dataset_id}/AGENTS.md", (f"# Dataset guidance\n\nDataset: {dataset_id}. Release: {snapshot['release']}.\n"
-                                        f"Use the analytic data assets for analysis; display derivatives are presentation only. "
-                                        f"Preserve producer identity, units, nulls, uncertainty and record multiplicity. "
-                                        f"See README.md and {provenance_label.lower()} at {provenance_url}.\n").encode())
+        put(f"{dataset_id}/AGENTS.md", agents.encode())
     catalog["links"].extend(children)
     if published:
         updates = [read_json_from_bytes(tree[f"{dataset_id}/collection.json"]).get("updated")
@@ -1156,6 +1166,7 @@ def _generated(root: Path, config: dict) -> dict[str, bytes]:
                "exported from verified immutable packages. Each collection links its original source and release notes.", ""]
     for dataset_id, record, _, _ in published:
         summary.append(f"- [{record['title']}]({dataset_id}/collection.json)")
+    summary.extend(["", "[Catalog query conventions](AGENTS.md).", ""])
     put("README.md", ("\n".join(summary).rstrip() + "\n").encode())
     put("AGENTS.md", ROOT_AGENTS.encode())
     from support_publication import assert_no_legacy_urls, legacy_prefixes

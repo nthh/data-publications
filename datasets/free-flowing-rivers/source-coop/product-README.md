@@ -13,9 +13,15 @@ Use GeoParquet for analysis and PMTiles for maps. Field dictionaries describe co
 | [free-flowing-rivers-v1.parquet](https://data.source.coop/nthh/free-flowing-rivers/free-flowing-rivers-v1.parquet) | 887.13 MB |
 | [free-flowing-rivers-v1.fields.json](https://data.source.coop/nthh/free-flowing-rivers/free-flowing-rivers-v1.fields.json) | 12.3 kB |
 | [free-flowing-rivers-v1.pmtiles](https://data.source.coop/nthh/free-flowing-rivers/free-flowing-rivers-v1.pmtiles) | 3.57 GB |
-| [free-flowing-rivers-v1.style.json](https://data.source.coop/nthh/free-flowing-rivers/free-flowing-rivers-v1.style.json) | 0.5 kB |
 | [LICENSE.txt](https://data.source.coop/nthh/free-flowing-rivers/LICENSE.txt) | 0.3 kB |
 | [manifest-20261111.json](https://data.source.coop/nthh/free-flowing-rivers/manifest-20261111.json) | 2.0 kB |
+| [free-flowing-rivers-v1-presentation-v2.style.json](https://data.source.coop/nthh/free-flowing-rivers/free-flowing-rivers-v1-presentation-v2.style.json) | 1.9 kB |
+| [free-flowing-rivers-preview-v2.png](https://data.source.coop/nthh/free-flowing-rivers/free-flowing-rivers-preview-v2.png) | 509.3 kB |
+
+## Schema
+
+[Column definitions in the catalog](https://nthh.github.io/data-publications/free-flowing-rivers/collection.json) include names, storage types and descriptions. Use the field dictionaries and producer documentation above for units, coded values and limitations.
+
 
 ## Read with DuckDB
 
@@ -26,7 +32,7 @@ SELECT count(*) AS feature_count FROM read_parquet('https://data.source.coop/nth
 SELECT * FROM read_parquet('https://data.source.coop/nthh/free-flowing-rivers/free-flowing-rivers-v1.parquet') LIMIT 5;
 ```
 
-The matching `.style.json` file shows the PMTiles in a MapLibre viewer with the PMTiles protocol installed.
+The `.style.json` files show the PMTiles in a MapLibre viewer with the PMTiles protocol installed. Preview images are generalized displays; they are not analytical geometry.
 
 ## Attribution and license
 

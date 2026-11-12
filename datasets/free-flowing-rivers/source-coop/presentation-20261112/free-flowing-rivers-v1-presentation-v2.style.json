@@ -1,0 +1,95 @@
+{
+  "layers": [
+    {
+      "id": "ffr-reaches",
+      "paint": {
+        "line-color": [
+          "case",
+          [
+            "all",
+            [
+              "has",
+              "CSI"
+            ],
+            [
+              "!=",
+              [
+                "get",
+                "CSI"
+              ],
+              null
+            ],
+            [
+              ">=",
+              [
+                "to-number",
+                [
+                  "get",
+                  "CSI"
+                ],
+                -1
+              ],
+              0
+            ]
+          ],
+          [
+            "interpolate",
+            [
+              "linear"
+            ],
+            [
+              "get",
+              "CSI"
+            ],
+            0,
+            "#b64819",
+            50,
+            "#edb15d",
+            95,
+            "#48a787",
+            100,
+            "#006a59"
+          ],
+          "#8a9295"
+        ],
+        "line-opacity": 0.9,
+        "line-width": 1.5
+      },
+      "source": "data",
+      "source-layer": "ffr-reaches",
+      "type": "line"
+    }
+  ],
+  "metadata": {
+    "data-publications:legend": {
+      "label": "Connectivity status index (%)",
+      "stops": [
+        [
+          "0",
+          "#b64819"
+        ],
+        [
+          "50",
+          "#edb15d"
+        ],
+        [
+          "95",
+          "#48a787"
+        ],
+        [
+          "100",
+          "#006a59"
+        ]
+      ]
+    },
+    "data-publications:notice": "Generalized display geometry. Use the GeoParquet and producer field definitions for analysis. Grey indicates unavailable values."
+  },
+  "name": "River connectivity (CSI, 0\u2013100%)",
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://https://data.source.coop/nthh/free-flowing-rivers/free-flowing-rivers-v1.pmtiles"
+    }
+  },
+  "version": 8
+}

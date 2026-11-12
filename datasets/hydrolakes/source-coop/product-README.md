@@ -13,10 +13,16 @@ Use GeoParquet for analysis and PMTiles for maps. Field dictionaries describe co
 | [hydrolakes-polygons-v1.0.parquet](https://data.source.coop/nthh/hydrolakes/hydrolakes-polygons-v1.0.parquet) | 949.60 MB |
 | [hydrolakes-polygons-v1.0.fields.json](https://data.source.coop/nthh/hydrolakes/hydrolakes-polygons-v1.0.fields.json) | 4.1 kB |
 | [hydrolakes-polygons-v1.0.pmtiles](https://data.source.coop/nthh/hydrolakes/hydrolakes-polygons-v1.0.pmtiles) | 1.12 GB |
-| [hydrolakes-polygons-v1.0.style.json](https://data.source.coop/nthh/hydrolakes/hydrolakes-polygons-v1.0.style.json) | 0.5 kB |
 | [LICENSE.txt](https://data.source.coop/nthh/hydrolakes/LICENSE.txt) | 0.4 kB |
 | [manifest-20261111.json](https://data.source.coop/nthh/hydrolakes/manifest-20261111.json) | 1.9 kB |
+| [hydrolakes-polygons-v1.0-presentation-v2.style.json](https://data.source.coop/nthh/hydrolakes/hydrolakes-polygons-v1.0-presentation-v2.style.json) | 2.0 kB |
+| [hydrolakes-preview-v2.png](https://data.source.coop/nthh/hydrolakes/hydrolakes-preview-v2.png) | 249.8 kB |
 | [HydroLAKES_TechDoc_v10.pdf](https://data.source.coop/nthh/hydrolakes/HydroLAKES_TechDoc_v10.pdf) | 989.6 kB |
+
+## Schema
+
+[Column definitions in the catalog](https://nthh.github.io/data-publications/hydrolakes/collection.json) include names, storage types and descriptions. Use the field dictionaries and producer documentation above for units, coded values and limitations.
+
 
 ## Read with DuckDB
 
@@ -27,7 +33,7 @@ SELECT count(*) AS feature_count FROM read_parquet('https://data.source.coop/nth
 SELECT * FROM read_parquet('https://data.source.coop/nthh/hydrolakes/hydrolakes-polygons-v1.0.parquet') LIMIT 5;
 ```
 
-The matching `.style.json` file shows the PMTiles in a MapLibre viewer with the PMTiles protocol installed.
+The `.style.json` files show the PMTiles in a MapLibre viewer with the PMTiles protocol installed. Preview images are generalized displays; they are not analytical geometry.
 
 ## Attribution and license
 

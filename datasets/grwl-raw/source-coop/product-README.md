@@ -13,9 +13,15 @@ Use GeoParquet for analysis and PMTiles for maps. Field dictionaries describe co
 | [grwl-raw-v01.01.parquet](https://data.source.coop/nthh/grwl-raw/grwl-raw-v01.01.parquet) | 5.53 GB |
 | [grwl-raw-v01.01.fields.json](https://data.source.coop/nthh/grwl-raw/grwl-raw-v01.01.fields.json) | 1.3 kB |
 | [grwl-raw-v01.01.pmtiles](https://data.source.coop/nthh/grwl-raw/grwl-raw-v01.01.pmtiles) | 3.19 GB |
-| [grwl-raw-v01.01.style.json](https://data.source.coop/nthh/grwl-raw/grwl-raw-v01.01.style.json) | 10.4 kB |
 | [LICENSE.txt](https://data.source.coop/nthh/grwl-raw/LICENSE.txt) | 0.4 kB |
 | [manifest-20261111.json](https://data.source.coop/nthh/grwl-raw/manifest-20261111.json) | 2.0 kB |
+| [grwl-raw-v01.01.style.json](https://data.source.coop/nthh/grwl-raw/grwl-raw-v01.01.style.json) | 10.4 kB |
+| [grwl-raw-preview-v2.png](https://data.source.coop/nthh/grwl-raw/grwl-raw-preview-v2.png) | 312.8 kB |
+
+## Schema
+
+[Column definitions in the catalog](https://nthh.github.io/data-publications/grwl-raw/collection.json) include names, storage types and descriptions. Use the field dictionaries and producer documentation above for units, coded values and limitations.
+
 
 ## Read with DuckDB
 
@@ -26,7 +32,7 @@ SELECT count(*) AS feature_count FROM read_parquet('https://data.source.coop/nth
 SELECT * FROM read_parquet('https://data.source.coop/nthh/grwl-raw/grwl-raw-v01.01.parquet') LIMIT 5;
 ```
 
-The matching `.style.json` file shows the PMTiles in a MapLibre viewer with the PMTiles protocol installed.
+The `.style.json` files show the PMTiles in a MapLibre viewer with the PMTiles protocol installed. Preview images are generalized displays; they are not analytical geometry.
 
 ## Attribution and license
 

@@ -1,0 +1,97 @@
+{
+  "layers": [
+    {
+      "id": "lakeatlas-polygons",
+      "paint": {
+        "fill-color": [
+          "case",
+          [
+            "all",
+            [
+              "has",
+              "Lake_area"
+            ],
+            [
+              "!=",
+              [
+                "get",
+                "Lake_area"
+              ],
+              null
+            ],
+            [
+              ">=",
+              [
+                "to-number",
+                [
+                  "get",
+                  "Lake_area"
+                ],
+                -1
+              ],
+              0
+            ]
+          ],
+          [
+            "interpolate",
+            [
+              "linear"
+            ],
+            [
+              "get",
+              "Lake_area"
+            ],
+            0,
+            "#d2a46a",
+            10,
+            "#ac6b3c",
+            100,
+            "#824129",
+            1000,
+            "#571c2b",
+            10000,
+            "#2c0a25"
+          ],
+          "#8a9295"
+        ],
+        "fill-opacity": 0.9,
+        "fill-outline-color": "#814b41"
+      },
+      "source": "data",
+      "source-layer": "lakeatlas-polygons",
+      "type": "fill"
+    }
+  ],
+  "metadata": {
+    "data-publications:legend": {
+      "label": "Lake surface area (km\u00b2)",
+      "stops": [
+        [
+          "<10",
+          "#d2a46a"
+        ],
+        [
+          "100",
+          "#824129"
+        ],
+        [
+          "1,000",
+          "#571c2b"
+        ],
+        [
+          "\u226510,000",
+          "#2c0a25"
+        ]
+      ]
+    },
+    "data-publications:notice": "Generalized display geometry. Use the GeoParquet and producer field definitions for analysis. Grey indicates unavailable values."
+  },
+  "name": "Lake polygons by lake surface area (km\u00b2)",
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://https://data.source.coop/nthh/lakeatlas/lakeatlas-polygons-v1.0.pmtiles"
+    }
+  },
+  "version": 8
+}

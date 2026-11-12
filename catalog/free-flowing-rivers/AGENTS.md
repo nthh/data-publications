@@ -1,4 +1,12 @@
-# Dataset guidance
+# Mapping the world's free-flowing rivers — global river reach connectivity assessment: query guidance
 
-Dataset: free-flowing-rivers. Release: figshare-v1-local-r2.
-Use the analytic data assets for analysis; display derivatives are presentation only. Preserve producer identity, units, nulls, uncertainty and record multiplicity. See README.md and release provenance at https://github.com/nthh/data-publications/blob/main/datasets/free-flowing-rivers/releases/figshare-v1-local-r2/manifest.json.
+Static assessment using source information assembled circa 2017; paper published in 2019.
+
+Use the following dataset-specific constraints when choosing records, interpreting values, or making comparisons:
+
+- Reach connectivity indicators are model-derived research attributes, not a current observation of every barrier or river condition.
+- Retained validation establishes conversion fidelity and reproducibility; it does not independently revalidate the scientific model.
+- Live GEE count and all 521 sampled IDs match. A documented erosion-field alias, numeric precision and null/empty differences remain; five selected geometry diagnostics exceed 1 m, up to 2.877 m. Strict parity fails; original source values and geometry are retained.
+
+[Field dictionaries, runnable queries and source citations](README.md).
+[Shared catalog conventions](../AGENTS.md).
