@@ -1,0 +1,34 @@
+{
+  "status": "passed",
+  "commit": "b90d74e7e48e1a04bb8cdf0be2bef51bbf67ca4e",
+  "method": "git archive into a fresh checkout with no working-copy files or data environments",
+  "checks": [
+    {
+      "command": [
+        "scripts/catalog.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"records_checked\": 453,\n  \"supplemental_records_checked\": 90,\n  \"family_keys_checked\": 363,\n  \"citations_checked\": 363,\n  \"decisions\": {\n    \"defer\": 3,\n    \"pending\": 443,\n    \"publish_conversion\": 6,\n    \"reuse_existing\": 1\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "scripts/source_products.py",
+        "check"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "scripts/publication_catalog.py",
+        "check"
+      ],
+      "exit_code": 0,
+      "stdout": "Catalog check passed; 5 published collections.\n",
+      "stderr": ""
+    }
+  ]
+}
