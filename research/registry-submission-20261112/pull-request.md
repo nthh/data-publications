@@ -22,7 +22,7 @@ Rashid reports zero errors and two scope warnings: remote crawling cannot see un
 
 The data retain their documented source/GEE differences and scientific limitations; this registration is not a claim of strict GEE parity or independent scientific validation.
 
-- [ ] I have read and complied with the [contributing guide](https://github.com/portolan-sdi/portolan-ops/blob/main/policies/CONTRIBUTING.md) and [AI policy](https://github.com/portolan-sdi/portolan-ops/blob/main/policies/AI_POLICY.md).
+- [x] I have read and complied with the [contributing guide](https://github.com/portolan-sdi/portolan-ops/blob/main/policies/CONTRIBUTING.md) and [AI policy](https://github.com/portolan-sdi/portolan-ops/blob/main/policies/AI_POLICY.md).
 - [x] This change does not alter behavior (docs, chore, or CI only).
 
 ## Implementation notes

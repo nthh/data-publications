@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-11-12T23:00:05.399222+00:00",
+  "human_approval": {
+    "approved_in_session": true,
+    "approved_scope": [
+      "catalog entry",
+      "PR description",
+      "contribution and AI policy acknowledgment",
+      "upstream PR submission"
+    ],
+    "reviewed_data_publications_commit": "fd156a7fcf15295e2c699f4e2412ea65836a7bd9",
+    "only_post_review_body_change": "Marked the approved contribution and AI policy acknowledgment checkbox."
+  },
+  "pull_request": {
+    "baseRefName": "main",
+    "baseRefOid": "8c062c332d4bc8adf9a8e637e58e4c404faa40af",
+    "createdAt": "2026-11-12T22:57:51Z",
+    "files": [
+      {
+        "path": "catalogs/nthh-data-publications.yaml",
+        "additions": 2,
+        "deletions": 0
+      }
+    ],
+    "headRefName": "add-nthh-data-publications",
+    "headRefOid": "5a4b4ea46dd5f3b7c2f98d241b5f089de849d90c",
+    "mergeStateStatus": "BLOCKED",
+    "mergedAt": null,
+    "number": 306,
+    "state": "OPEN",
+    "statusCheckRollup": [
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-12T22:57:55Z",
+        "conclusion": "SKIPPED",
+        "detailsUrl": "https://github.com/portolan-sdi/portolan-registry/actions/runs/43324671827/job/131554023674",
+        "name": "dependabot / dependabot",
+        "startedAt": "2026-11-12T22:57:56Z",
+        "status": "COMPLETED",
+        "workflowName": "Dependabot auto-merge"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-12T22:58:07Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/portolan-sdi/portolan-registry/actions/runs/43324671646/job/131554020184",
+        "name": "board / board",
+        "startedAt": "2026-11-12T22:57:58Z",
+        "status": "COMPLETED",
+        "workflowName": "Pull request board"
+      }
+    ],
+    "title": "chore(catalogs): register nthh data publications",
+    "url": "https://github.com/portolan-sdi/portolan-registry/pull/306"
+  },
+  "verification": {
+    "remote_body_matches_approved_text_except_trailing_newline": true,
+    "remote_body_sha256": "857986fd8a926969e3a525f2c62c874807a8d43e6786e7955d36d07894362860",
+    "prepared_body_sha256": "857986fd8a926969e3a525f2c62c874807a8d43e6786e7955d36d07894362860",
+    "entry_sha256": "dcefda3d10442314d104b04ab640488ca17b8dfab32bb959259c40c842a6ec6f",
+    "only_one_two_line_entry_added": true
+  },
+  "upstream_workflows": [
+    {
+      "conclusion": "action_required",
+      "databaseId": 43324671747,
+      "event": "pull_request",
+      "headSha": "5a4b4ea46dd5f3b7c2f98d241b5f089de849d90c",
+      "name": "Links",
+      "status": "completed",
+      "url": "https://github.com/portolan-sdi/portolan-registry/actions/runs/43324671747"
+    },
+    {
+      "conclusion": "action_required",
+      "databaseId": 43324671874,
+      "event": "pull_request",
+      "headSha": "5a4b4ea46dd5f3b7c2f98d241b5f089de849d90c",
+      "name": "CI",
+      "status": "completed",
+      "url": "https://github.com/portolan-sdi/portolan-registry/actions/runs/43324671874"
+    },
+    {
+      "conclusion": "action_required",
+      "databaseId": 43324671569,
+      "event": "pull_request",
+      "headSha": "5a4b4ea46dd5f3b7c2f98d241b5f089de849d90c",
+      "name": "Validate Catalogs",
+      "status": "completed",
+      "url": "https://github.com/portolan-sdi/portolan-registry/actions/runs/43324671569"
+    },
+    {
+      "conclusion": "action_required",
+      "databaseId": 43324671832,
+      "event": "pull_request",
+      "headSha": "5a4b4ea46dd5f3b7c2f98d241b5f089de849d90c",
+      "name": "Repo checks",
+      "status": "completed",
+      "url": "https://github.com/portolan-sdi/portolan-registry/actions/runs/43324671832"
+    },
+    {
+      "conclusion": "skipped",
+      "databaseId": 43324671827,
+      "event": "pull_request_target",
+      "headSha": "5a4b4ea46dd5f3b7c2f98d241b5f089de849d90c",
+      "name": "Dependabot auto-merge",
+      "status": "completed",
+      "url": "https://github.com/portolan-sdi/portolan-registry/actions/runs/43324671827"
+    },
+    {
+      "conclusion": "action_required",
+      "databaseId": 43324671766,
+      "event": "pull_request",
+      "headSha": "5a4b4ea46dd5f3b7c2f98d241b5f089de849d90c",
+      "name": "Vale",
+      "status": "completed",
+      "url": "https://github.com/portolan-sdi/portolan-registry/actions/runs/43324671766"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 43324671646,
+      "event": "pull_request_target",
+      "headSha": "5a4b4ea46dd5f3b7c2f98d241b5f089de849d90c",
+      "name": "Pull request board",
+      "status": "completed",
+      "url": "https://github.com/portolan-sdi/portolan-registry/actions/runs/43324671646"
+    }
+  ],
+  "upstream_validation": {
+    "status": "awaiting_maintainer_workflow_approval",
+    "run_url": "https://github.com/portolan-sdi/portolan-registry/actions/runs/43324671569",
+    "public_page_message": "This workflow is awaiting approval from a maintainer in #306",
+    "validation_pass_claimed": false
+  }
+}

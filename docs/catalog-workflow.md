@@ -81,7 +81,7 @@ uv run --locked --project tools/portolan python scripts/check_portolan.py --cata
 
 Staging refuses an existing output directory or an unready catalog. The new directory contains `catalog/` and `publish-plan.json`. Structural links remain relative; the staged root gets its absolute `self` URL, and staged asset links resolve against their correct public locations. The explicit plan lists metadata paths, sizes, checksums and destination URLs/keys. For GitHub Pages, `target_uri` uses the exact `github-pages://nthh/data-publications/` prefix and `region` is null. The served file list excludes bulk files, input proofs and the plan itself.
 
-The five analytical products are hosted on Source Cooperative. The aggregate metadata catalog is served separately from GitHub Pages, with no sixth Source product. The deployed catalog and public links have been verified. Submission to the main Portolan registry has not occurred and requires a separate decision.
+The five analytical products are hosted on Source Cooperative. The aggregate metadata catalog is served separately from GitHub Pages, with no sixth Source product. The deployed catalog and public links have been verified. The approved catalog entry was submitted in [Portolan registry PR #306](https://github.com/portolan-sdi/portolan-registry/pull/306). Upstream workflows await maintainer approval; registry publication is pending. The [submission record](../research/registry-submission-20261112/README.md) contains the approved text and verification evidence.
 
 ## CI and verification scope
 
