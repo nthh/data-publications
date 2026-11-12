@@ -1,0 +1,100 @@
+name: Review published catalog for Portolan registry
+
+"on":
+  workflow_dispatch:
+  push:
+    branches: ["docs/portolan-register-*"]
+    paths:
+      - .github/workflows/review-portolan-registry.yml
+      - research/registry-submission-20261112/criteria.json
+      - research/registry-submission-20261112/nthh-data-publications.yaml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: registry-review-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  review:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: portolan-sdi/portolan-registry
+          ref: 8c062c332d4bc8adf9a8e637e58e4c404faa40af
+          path: .local/registry
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: portolan-sdi/portolan-skills
+          ref: 1714d9ab672e6a1bbc56ca12458e41b14484d426
+          path: .local/skills
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          version: "0.9.27"
+          python-version: "3.12.12"
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "22"
+      - name: Install locked validators and collector environment
+        run: |
+          uv sync --locked --no-dev --project .local/registry --group validators --no-build
+          uv sync --locked --project datasets/river-plastic-inputs --no-build
+          npm ci --prefix .local/registry/scripts/stac-node-validator --ignore-scripts --no-audit --no-fund
+      - name: Prepare the exact proposed registry entry
+        run: |
+          python - <<'PYCODE'
+          from pathlib import Path
+          import hashlib,json,subprocess
+          p=Path('research/registry-submission-20261112')
+          criteria=json.loads((p/'criteria.json').read_text())
+          name=criteria['registry_id']+'.yaml'
+          entry=(p/name).read_bytes()
+          assert hashlib.sha256(entry).hexdigest()==criteria['entry_sha256']
+          for key in ('registry','skills'):
+              revision=subprocess.check_output(['git','-C','.local/'+key,'rev-parse','HEAD'],text=True).strip()
+              assert revision==criteria['upstreams'][key]['commit']
+          target=Path('.local/registry/catalogs')/name
+          with target.open('xb') as stream:stream.write(entry)
+          for filename in ('changed.txt','added.txt'):
+              (Path('.local/registry')/filename).write_text('catalogs/'+name+'\n')
+          out=Path('.local/registry-review');out.mkdir()
+          (out/'inputs.json').write_text(json.dumps({'criteria':criteria,'review_commit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()},indent=2)+'\n')
+          PYCODE
+      - name: Run the registry's deterministic submission gate
+        working-directory: .local/registry
+        run: |
+          uv run --frozen --no-dev --group validators scripts/validate_entries.py \
+            --changed-file changed.txt --added-file added.txt \
+            --base-ref 8c062c332d4bc8adf9a8e637e58e4c404faa40af \
+            --export exports/catalogs.json \
+            --report ../registry-review/registry-validation.json \
+            2>&1 | tee ../registry-review/registry-validation.log
+      - name: Collect live catalog facts and execute documented examples
+        if: ${{ !cancelled() }}
+        run: |
+          uv run --locked --project datasets/river-plastic-inputs python \
+            .local/skills/skills/catalog-grader/scripts/collect_facts.py \
+            https://nthh.github.io/data-publications/catalog.json \
+            --repo "$GITHUB_WORKSPACE" \
+            --out "$GITHUB_WORKSPACE/.local/registry-review/grader" \
+            --rashid "$GITHUB_WORKSPACE/.local/registry/.venv/bin/rashid" \
+            --registry-submission \
+            2>&1 | tee .local/registry-review/collector.log
+      - name: Retain review evidence, including failures
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: portolan-registry-review
+          path: .local/registry-review/
+          include-hidden-files: true
+          if-no-files-found: warn
+          retention-days: 14
