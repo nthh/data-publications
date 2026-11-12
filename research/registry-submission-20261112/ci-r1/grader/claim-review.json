@@ -1,0 +1,189 @@
+{
+  "scope": "Claims checked against collected metadata, pinned repository evidence and reachable producer documentation; no new GEE or raw-source rebuild was performed.",
+  "claims": [
+    {
+      "node": ".",
+      "file": "docs/root/README.md",
+      "line": 5,
+      "quote": "Published collections: 5.",
+      "status": "supported",
+      "evidence": "facts.json /summary/collections = 5; the root has five child collection links."
+    },
+    {
+      "node": ".",
+      "file": "docs/root/README.md",
+      "line": 9,
+      "quote": "License: repository-authored catalog metadata and software are Apache-2.0.",
+      "status": "supported",
+      "evidence": "Repository LICENSE is Apache-2.0; collection licenses are separately declared in the captured collection JSON."
+    },
+    {
+      "node": "free-flowing-rivers",
+      "file": "docs/free-flowing-rivers/README.md",
+      "line": 5,
+      "quote": "License: CC-BY-4.0.",
+      "status": "supported",
+      "evidence": "facts.json /nodes/1/license agrees with this generated text; producer terms are checked against the canonical record and retained license evidence."
+    },
+    {
+      "node": "free-flowing-rivers",
+      "file": "docs/free-flowing-rivers/README.md",
+      "line": 13,
+      "quote": "Source producers: G\u00fcnther Grill; Bernhard Lehner",
+      "status": "supported",
+      "evidence": "facts.json /nodes/1/providers contains these exact producer names."
+    },
+    {
+      "node": "grwl-raw",
+      "file": "docs/grwl-raw/README.md",
+      "line": 5,
+      "quote": "License: CC-BY-4.0.",
+      "status": "supported",
+      "evidence": "facts.json /nodes/2/license agrees with this generated text; producer terms are checked against the canonical record and retained license evidence."
+    },
+    {
+      "node": "grwl-raw",
+      "file": "docs/grwl-raw/README.md",
+      "line": 11,
+      "quote": "Source producers: Allen and Pavelsky / GRWL",
+      "status": "supported",
+      "evidence": "facts.json /nodes/2/providers contains these exact producer names."
+    },
+    {
+      "node": "hydrolakes",
+      "file": "docs/hydrolakes/README.md",
+      "line": 5,
+      "quote": "License: CC-BY-4.0.",
+      "status": "supported",
+      "evidence": "facts.json /nodes/3/license agrees with this generated text; producer terms are checked against the canonical record and retained license evidence."
+    },
+    {
+      "node": "hydrolakes",
+      "file": "docs/hydrolakes/README.md",
+      "line": 13,
+      "quote": "Source producers: Lehner and Messager / HydroSHEDS",
+      "status": "supported",
+      "evidence": "facts.json /nodes/3/providers contains these exact producer names."
+    },
+    {
+      "node": "lakeatlas",
+      "file": "docs/lakeatlas/README.md",
+      "line": 5,
+      "quote": "License: other.",
+      "status": "supported",
+      "evidence": "facts.json /nodes/4/license agrees with this generated text; producer terms are checked against the canonical record and retained license evidence."
+    },
+    {
+      "node": "lakeatlas",
+      "file": "docs/lakeatlas/README.md",
+      "line": 13,
+      "quote": "Source producers: HydroSHEDS / HydroATLAS authors; Lehner, Messager, Korver, and Linke",
+      "status": "supported",
+      "evidence": "facts.json /nodes/4/providers contains these exact producer names."
+    },
+    {
+      "node": "river-plastic-inputs",
+      "file": "docs/river-plastic-inputs/README.md",
+      "line": 5,
+      "quote": "License: CC-BY-4.0.",
+      "status": "supported",
+      "evidence": "facts.json /nodes/5/license agrees with this generated text; producer terms are checked against the canonical record and retained license evidence."
+    },
+    {
+      "node": "river-plastic-inputs",
+      "file": "docs/river-plastic-inputs/README.md",
+      "line": 11,
+      "quote": "Source producers: Lebreton et al.",
+      "status": "supported",
+      "evidence": "facts.json /nodes/5/providers contains these exact producer names."
+    },
+    {
+      "node": "free-flowing-rivers",
+      "file": "docs/free-flowing-rivers/README.md",
+      "line": 30,
+      "quote": "Live GEE count and all 521 sampled IDs match.",
+      "status": "supported",
+      "evidence": "research/gee-release-validation-20261106/summary.json: free-flowing-rivers count.pass=true, identity.matched_sample_count=521."
+    },
+    {
+      "node": "free-flowing-rivers",
+      "file": "docs/free-flowing-rivers/README.md",
+      "line": 31,
+      "quote": "five selected geometry diagnostics\n  exceed 1 m, up to 2.877 m.",
+      "status": "supported",
+      "evidence": "The same retained report records over_one_meter=5 and maximum_observed_diagnostic_m=2.876463833607293, below the stated rounded-up 2.877 m bound."
+    },
+    {
+      "node": "grwl-raw",
+      "file": "docs/grwl-raw/README.md",
+      "line": 3,
+      "quote": "segmentID is tile-local.",
+      "status": "supported",
+      "evidence": "Producer record https://zenodo.org/records/18624542, raw vector documentation: segmentID identifies a segment within each tile."
+    },
+    {
+      "node": "grwl-raw",
+      "file": "docs/grwl-raw/README.md",
+      "line": 3,
+      "quote": "width_m=1 means unknown width",
+      "status": "supported",
+      "evidence": "The same producer record defines width_m == 1 as unavailable width, consistent with the retained conversion and display rules."
+    },
+    {
+      "node": "hydrolakes",
+      "file": "docs/hydrolakes/README.md",
+      "line": 26,
+      "quote": "Live GEE count and all 522 sampled IDs match.",
+      "status": "supported",
+      "evidence": "research/gee-release-validation-20261106/summary.json: hydrolakes count.pass=true, identity.matched_sample_count=522."
+    },
+    {
+      "node": "hydrolakes",
+      "file": "docs/hydrolakes/README.md",
+      "line": 26,
+      "quote": "There are 508 null/empty lake-name\n  differences",
+      "status": "supported",
+      "evidence": "The same retained report records 508 Lake_name mismatches; the pinned attribute diagnostics classify their null/empty representation."
+    },
+    {
+      "node": "lakeatlas",
+      "file": "docs/lakeatlas/README.md",
+      "line": 3,
+      "quote": "Two analytic GeoParquet assets",
+      "status": "supported",
+      "evidence": "facts.json /nodes/4/assets declares separate polygon and pour-point Parquet data assets, and the retained producer release has both representations."
+    },
+    {
+      "node": "lakeatlas",
+      "file": "docs/lakeatlas/README.md",
+      "line": 32,
+      "quote": "Live GEE counts and 522 sampled IDs per layer match.",
+      "status": "supported",
+      "evidence": "research/gee-release-validation-20261106/summary.json records count.pass=true and matched_sample_count=522 for both lakeatlas-polygons and lakeatlas-points."
+    },
+    {
+      "node": "river-plastic-inputs",
+      "file": "docs/river-plastic-inputs/README.md",
+      "line": 3,
+      "quote": "40,760 river input locations and all 53 numeric attributes",
+      "status": "supported",
+      "evidence": "facts.json /nodes/5/parquet_row_count=40760; the pinned release manifest and retained GEE summary each record 53 original scientific fields."
+    },
+    {
+      "node": "river-plastic-inputs",
+      "file": "docs/river-plastic-inputs/README.md",
+      "line": 3,
+      "quote": "Estimates represent the 2010 model baseline",
+      "status": "supported",
+      "evidence": "datasets/river-plastic-inputs/releases/figshare-v6-r2/manifest.json /source/model_year=2010 and the retained producer source metadata agree; the original article body could not be freshly fetched in this review."
+    },
+    {
+      "node": "river-plastic-inputs",
+      "file": "docs/river-plastic-inputs/README.md",
+      "line": 26,
+      "quote": "maximum point displacement\n  is 0.3495 m.",
+      "status": "supported",
+      "evidence": "research/gee-release-validation-20261106/summary.json records 0.34945638926427325 m for the historical comparison, consistent with four-decimal rounding."
+    }
+  ]
+}

@@ -1,0 +1,3107 @@
+{
+  "schema": "catalog-grader-facts/1",
+  "catalog": "https://nthh.github.io/data-publications/catalog.json",
+  "local": false,
+  "collected_at": "2026-11-12T21:47:57Z",
+  "crawl_errors": [],
+  "icon": null,
+  "root_links": {
+    "self": "https://nthh.github.io/data-publications/catalog.json",
+    "vcs": "https://github.com/nthh/data-publications",
+    "issues": "https://github.com/nthh/data-publications/issues",
+    "license": null,
+    "via": null,
+    "canonical": null
+  },
+  "rashid": {
+    "command": "/home/runner/work/data-publications/data-publications/.local/registry/.venv/bin/rashid check --json --all --no-data https://nthh.github.io/data-publications/catalog.json",
+    "version": "rashid, version 0.3.0",
+    "passed": false,
+    "files_checked": 6,
+    "error_count": 2,
+    "warning_count": 1,
+    "info_count": 5,
+    "by_rule": [
+      {
+        "rule_id": "PTL-LIV-004",
+        "severity": "error",
+        "count": 1,
+        "file_count": 1,
+        "description": "the server exposes the headers a browser client reads"
+      },
+      {
+        "rule_id": "PTL-LIV-005",
+        "severity": "error",
+        "count": 1,
+        "file_count": 1,
+        "description": "CORS preflight accepts GET and HEAD with Range"
+      },
+      {
+        "rule_id": "PTL-GEN-002",
+        "severity": "warning",
+        "count": 1,
+        "file_count": 1,
+        "description": "the whole tree was read, so every check could see every file"
+      },
+      {
+        "rule_id": "PTL-PRO-002",
+        "severity": "info",
+        "count": 5,
+        "file_count": 5,
+        "description": "a mirror should link the upstream STAC with rel:'canonical' when one exists"
+      }
+    ],
+    "findings": [
+      {
+        "rule_id": "PTL-GEN-002",
+        "severity": "warning",
+        "message": "catalog read by following links from https://nthh.github.io/data-publications/catalog.json: 6 document(s); a file no link names is invisible, so PTL-LNK-002 cannot report an unlinked object and PTL-COL-005 cannot see undeclared scene files",
+        "path": ".",
+        "fix_hint": "sync the tree to disk and run rashid check on the directory for the full view"
+      },
+      {
+        "rule_id": "PTL-LIV-004",
+        "severity": "error",
+        "message": "host 'nthh.github.io': Access-Control-Expose-Headers omits Content-Type, Content-Length, Content-Range, Accept-Ranges, ETag",
+        "path": "free-flowing-rivers/collection.json",
+        "object_id": "free-flowing-rivers",
+        "json_pointer": "/assets/display_style_free-flowing-rivers-1/href",
+        "fix_hint": "expose Content-Type, Content-Length, Content-Range, Accept-Ranges, ETag to browsers"
+      },
+      {
+        "rule_id": "PTL-LIV-005",
+        "severity": "error",
+        "message": "host 'nthh.github.io': CORS preflight failed: preflight returned 405; allowed methods omit GET, HEAD; allowed request headers omit Range, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since",
+        "path": "free-flowing-rivers/collection.json",
+        "object_id": "free-flowing-rivers",
+        "json_pointer": "/assets/display_style_free-flowing-rivers-1/href",
+        "fix_hint": "allow the GET and HEAD methods and the Range, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since request headers in the CORS policy"
+      },
+      {
+        "rule_id": "PTL-PRO-002",
+        "severity": "info",
+        "message": "mirror collection has no rel:'canonical' link; add one if the upstream publishes its own STAC catalog",
+        "path": "free-flowing-rivers/collection.json",
+        "object_id": "free-flowing-rivers",
+        "json_pointer": "/links",
+        "fix_hint": "add {\"rel\": \"canonical\", \"href\": <the upstream collection.json>, \"type\": \"application/json\"} to links when the upstream publishes STAC"
+      },
+      {
+        "rule_id": "PTL-PRO-002",
+        "severity": "info",
+        "message": "mirror collection has no rel:'canonical' link; add one if the upstream publishes its own STAC catalog",
+        "path": "grwl-raw/collection.json",
+        "object_id": "grwl-raw",
+        "json_pointer": "/links",
+        "fix_hint": "add {\"rel\": \"canonical\", \"href\": <the upstream collection.json>, \"type\": \"application/json\"} to links when the upstream publishes STAC"
+      },
+      {
+        "rule_id": "PTL-PRO-002",
+        "severity": "info",
+        "message": "mirror collection has no rel:'canonical' link; add one if the upstream publishes its own STAC catalog",
+        "path": "hydrolakes/collection.json",
+        "object_id": "hydrolakes",
+        "json_pointer": "/links",
+        "fix_hint": "add {\"rel\": \"canonical\", \"href\": <the upstream collection.json>, \"type\": \"application/json\"} to links when the upstream publishes STAC"
+      },
+      {
+        "rule_id": "PTL-PRO-002",
+        "severity": "info",
+        "message": "mirror collection has no rel:'canonical' link; add one if the upstream publishes its own STAC catalog",
+        "path": "lakeatlas/collection.json",
+        "object_id": "lakeatlas",
+        "json_pointer": "/links",
+        "fix_hint": "add {\"rel\": \"canonical\", \"href\": <the upstream collection.json>, \"type\": \"application/json\"} to links when the upstream publishes STAC"
+      },
+      {
+        "rule_id": "PTL-PRO-002",
+        "severity": "info",
+        "message": "mirror collection has no rel:'canonical' link; add one if the upstream publishes its own STAC catalog",
+        "path": "river-plastic-inputs/collection.json",
+        "object_id": "river-plastic-inputs",
+        "json_pointer": "/links",
+        "fix_hint": "add {\"rel\": \"canonical\", \"href\": <the upstream collection.json>, \"type\": \"application/json\"} to links when the upstream publishes STAC"
+      }
+    ]
+  },
+  "links": {
+    "total": 92,
+    "checked": 92,
+    "ok_count": 92,
+    "broken": [],
+    "refused": [],
+    "unreachable": [],
+    "network_suspect": false,
+    "not_checked": []
+  },
+  "queries": [],
+  "claim_checks": [],
+  "code_blocks_not_run": [],
+  "agents_similarity": [
+    {
+      "a": "free-flowing-rivers",
+      "b": "river-plastic-inputs",
+      "ratio": 0.979
+    },
+    {
+      "a": "free-flowing-rivers",
+      "b": "grwl-raw",
+      "ratio": 0.961
+    },
+    {
+      "a": "grwl-raw",
+      "b": "hydrolakes",
+      "ratio": 0.952
+    },
+    {
+      "a": "free-flowing-rivers",
+      "b": "hydrolakes",
+      "ratio": 0.949
+    },
+    {
+      "a": "grwl-raw",
+      "b": "river-plastic-inputs",
+      "ratio": 0.939
+    },
+    {
+      "a": "hydrolakes",
+      "b": "lakeatlas",
+      "ratio": 0.937
+    },
+    {
+      "a": "grwl-raw",
+      "b": "lakeatlas",
+      "ratio": 0.931
+    },
+    {
+      "a": "hydrolakes",
+      "b": "river-plastic-inputs",
+      "ratio": 0.927
+    },
+    {
+      "a": "free-flowing-rivers",
+      "b": "lakeatlas",
+      "ratio": 0.923
+    },
+    {
+      "a": "lakeatlas",
+      "b": "river-plastic-inputs",
+      "ratio": 0.922
+    }
+  ],
+  "readme_similarity": [],
+  "registry": {
+    "submission": true
+  },
+  "repo": {
+    "path": "/home/runner/work/data-publications/data-publications",
+    "exists": true,
+    "is_git": true,
+    "head": "0c3fce847148a5c1fb66ad8404daf65c38c32535",
+    "last_commit_date": "2026-11-12T14:47:07-07:00",
+    "commit_count": 1,
+    "remotes": [
+      "https://github.com/nthh/data-publications"
+    ],
+    "vcs_link_matches_remote": true,
+    "tracked_file_count": 3906,
+    "tracked_data_files": [
+      "research/grwl-raw-release-20261102/global-display-diagnostics-r1/native-quantization-controls.pmtiles",
+      "research/grwl-raw-release-20261102/global-display-diagnostics-r1/native-threshold-controls.pmtiles"
+    ],
+    "tracked_data_file_count": 2,
+    "top_level": [
+      ".github/",
+      ".gitignore",
+      ".python-version",
+      "AGENTS.md",
+      "CANDIDATES.md",
+      "CONTRIBUTING.md",
+      "LICENSE",
+      "NOTICE",
+      "README.md",
+      "SHORTLIST.md",
+      "candidates.csv",
+      "candidates/",
+      "catalog.publish.yaml",
+      "catalog/",
+      "datasets/",
+      "docs/",
+      "index.json",
+      "intake.json",
+      "pyproject.toml",
+      "reports/",
+      "research/",
+      "schemas/",
+      "scripts/",
+      "shortlist.csv",
+      "shortlist.json",
+      "tests/",
+      "tools/",
+      "uv.lock"
+    ],
+    "workflows": [
+      {
+        "file": ".github/workflows/prepare-publication.yml",
+        "triggers": [
+          "workflow_dispatch"
+        ],
+        "runs_rashid": false,
+        "runs_portolan_check": false,
+        "runs_stac_check": false,
+        "calls_test_runner": false,
+        "scheduled": false
+      },
+      {
+        "file": ".github/workflows/publish-catalog-pages.yml",
+        "triggers": [
+          "workflow_dispatch"
+        ],
+        "runs_rashid": false,
+        "runs_portolan_check": false,
+        "runs_stac_check": false,
+        "calls_test_runner": false,
+        "scheduled": false
+      },
+      {
+        "file": ".github/workflows/review-portolan-registry.yml",
+        "triggers": [
+          "push",
+          "workflow_dispatch"
+        ],
+        "runs_rashid": true,
+        "runs_portolan_check": false,
+        "runs_stac_check": true,
+        "calls_test_runner": false,
+        "scheduled": false
+      },
+      {
+        "file": ".github/workflows/validate.yml",
+        "triggers": [
+          "pull_request",
+          "push",
+          "workflow_dispatch"
+        ],
+        "runs_rashid": false,
+        "runs_portolan_check": false,
+        "runs_stac_check": false,
+        "calls_test_runner": true,
+        "scheduled": false
+      }
+    ],
+    "other_ci": [],
+    "tests": [
+      "tests/test_audit_prepared.py",
+      "tests/test_bounded_http.py",
+      "tests/test_browser_range_evidence.py",
+      "tests/test_candidate_discovery.py",
+      "tests/test_catalog_citations.py",
+      "tests/test_cloud_viewer_prepare.py",
+      "tests/test_cloud_viewer_run.py",
+      "tests/test_cloud_viewer_server.py",
+      "tests/test_dataset_availability.py",
+      "tests/test_display_tools.py",
+      "tests/test_ffr_statistics_contract.py",
+      "tests/test_finalize_display.py",
+      "tests/test_flat_publication.py",
+      "tests/test_gee_attribute_diagnostics.py",
+      "tests/test_gee_geometry_diagnostic.py",
+      "tests/test_gee_provenance.py",
+      "tests/test_gee_release_comparison.py",
+      "tests/test_gee_request_contract.py",
+      "tests/test_global_browser_controls.py",
+      "tests/test_grwl_detail_fast.py",
+      "tests/test_grwl_display_finalize.py",
+      "tests/test_grwl_display_wrap.py",
+      "tests/test_grwl_multiscale_finalize.py",
+      "tests/test_grwl_overview.py",
+      "tests/test_grwl_overview_oracle.py",
+      "tests/test_grwl_raw_acquisition.py",
+      "tests/test_grwl_raw_conversion.py",
+      "tests/test_grwl_raw_display.py",
+      "tests/test_grwl_raw_finalization.py",
+      "tests/test_grwl_raw_global.py",
+      "tests/test_grwl_raw_periodic.py",
+      "tests/test_grwl_raw_quantization.py",
+      "tests/test_grwl_raw_serialization.py",
+      "tests/test_grwl_raw_validation.py",
+      "tests/test_grwl_release_preparation.py",
+      "tests/test_grwl_repack.py",
+      "tests/test_grwl_width_combine.py",
+      "tests/test_grwl_width_finalize.py",
+      "tests/test_grwl_width_overview.py",
+      "tests/test_grwl_width_overview_oracle.py",
+      "tests/test_hosted_catalog_scope.py",
+      "tests/test_hosted_ndjson.py",
+      "tests/test_hosted_validation.py",
+      "tests/test_hosted_viewer.py",
+      "tests/test_hydrolakes_source_binding.py",
+      "tests/test_lakeatlas_semantics.py",
+      "tests/test_plastic_validation_contract.py",
+      "tests/test_portolan_gate.py",
+      "tests/test_provenance_archive.py",
+      "tests/test_publication_catalog.py"
+    ],
+    "tests_mention_rashid": true,
+    "tests_run_doc_queries": [
+      "tests/test_hosted_validation.py"
+    ],
+    "ci_checks_docs_on_schedule": false,
+    "ci_validates_on_pull_request": true,
+    "publish_config": [
+      "catalog.publish.yaml"
+    ]
+  },
+  "nodes": [
+    {
+      "path": "",
+      "href": "https://nthh.github.io/data-publications/catalog.json",
+      "type": "Catalog",
+      "id": "data-publications",
+      "title": "Data Publications",
+      "description": "Reproducible geospatial datasets with pinned sources, documented transformations and verified release evidence.",
+      "description_words": 12,
+      "description_bare_urls": [],
+      "license": null,
+      "updated": "2026-11-11T07:23:02Z",
+      "stac_extensions": [
+        "https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json"
+      ],
+      "keywords": [],
+      "providers": [],
+      "links": [
+        {
+          "rel": "root",
+          "href": "catalog.json",
+          "type": "application/json"
+        },
+        {
+          "rel": "describedby",
+          "href": "./README.md",
+          "type": "text/markdown"
+        },
+        {
+          "rel": "agents",
+          "href": "./AGENTS.md",
+          "type": "text/markdown"
+        },
+        {
+          "rel": "vcs",
+          "href": "https://github.com/nthh/data-publications",
+          "type": "text/html",
+          "title": "Repository"
+        },
+        {
+          "rel": "issues",
+          "href": "https://github.com/nthh/data-publications/issues",
+          "type": "text/html",
+          "title": "Issues"
+        },
+        {
+          "rel": "about",
+          "href": "https://source.coop/nthh",
+          "type": "text/html",
+          "title": "Hosting"
+        },
+        {
+          "rel": "alternate",
+          "href": "https://browser.portolan-sdi.org/#/external/nthh.github.io/data-publications/catalog.json",
+          "type": "text/html",
+          "title": "Browser view"
+        },
+        {
+          "rel": "self",
+          "href": "https://nthh.github.io/data-publications/catalog.json",
+          "type": "application/json"
+        }
+      ],
+      "child_count": 5,
+      "item_link_count": 0,
+      "README.md": {
+        "href": "https://nthh.github.io/data-publications/README.md",
+        "fetched": true,
+        "status": 200,
+        "saved": "docs/root/README.md",
+        "sha256": "e22fbb7737ad38f567c0199be452d48e8e56967e0b280da3885d5b3c01349dcc",
+        "words": 116,
+        "headings": [
+          "# Data Publications"
+        ],
+        "bare_urls": [],
+        "numeric_claims": [],
+        "code_blocks": [],
+        "links": [
+          {
+            "text": "Mapping the world's free-flowing rivers — global river reach connectivity assess",
+            "href": "free-flowing-rivers/collection.json",
+            "target": "https://nthh.github.io/data-publications/free-flowing-rivers/collection.json"
+          },
+          {
+            "text": "Global River Width from Landsat — raw vector observations V01.01",
+            "href": "grwl-raw/collection.json",
+            "target": "https://nthh.github.io/data-publications/grwl-raw/collection.json"
+          },
+          {
+            "text": "HydroLAKES v1.0: Polygons",
+            "href": "hydrolakes/collection.json",
+            "target": "https://nthh.github.io/data-publications/hydrolakes/collection.json"
+          },
+          {
+            "text": "HydroATLAS LakeATLAS v1.0 — global hydro-environmental lake attributes",
+            "href": "lakeatlas/collection.json",
+            "target": "https://nthh.github.io/data-publications/lakeatlas/collection.json"
+          },
+          {
+            "text": "Global river plastic inputs — Lebreton et al. (2017)",
+            "href": "river-plastic-inputs/collection.json",
+            "target": "https://nthh.github.io/data-publications/river-plastic-inputs/collection.json"
+          }
+        ],
+        "claim_check_count": 0
+      },
+      "AGENTS.md": {
+        "href": "https://nthh.github.io/data-publications/AGENTS.md",
+        "fetched": true,
+        "status": 200,
+        "saved": "docs/root/AGENTS.md",
+        "sha256": "74d1140d4c1e6c907778d3f4663c94bccbda1943beca8886862a8a736c6dca31",
+        "words": 60,
+        "headings": [
+          "# Catalog guidance"
+        ],
+        "bare_urls": [],
+        "numeric_claims": [],
+        "code_blocks": [],
+        "links": [],
+        "claim_check_count": 0
+      }
+    },
+    {
+      "path": "free-flowing-rivers",
+      "href": "https://nthh.github.io/data-publications/free-flowing-rivers/collection.json",
+      "type": "Collection",
+      "id": "free-flowing-rivers",
+      "title": "Mapping the world's free-flowing rivers — global river reach connectivity assessment",
+      "description": "Analytic GeoParquet conversion of the full global free-flowing river reach network from the pinned 2019 figshare v1 source. Original source fields and WKB geometries, nulls, row order, and record multiplicity are preserved. Added columns expose the producer-stream row ordinal and per-feature EPSG:4326 bounds. This release does not assess scientific validity or update the source assessment.",
+      "description_words": 59,
+      "description_bare_urls": [],
+      "license": "CC-BY-4.0",
+      "updated": "2026-11-11T07:23:02Z",
+      "stac_extensions": [
+        "https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json",
+        "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+        "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+        "https://stac-extensions.github.io/scientific/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/version/v1.2.0/schema.json",
+        "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
+      ],
+      "keywords": [],
+      "providers": [
+        {
+          "name": "Günther Grill",
+          "roles": [
+            "producer",
+            "licensor"
+          ],
+          "url": "https://orcid.org/0000-0003-4860-3575",
+          "email": null
+        },
+        {
+          "name": "Bernhard Lehner",
+          "roles": [
+            "producer",
+            "licensor"
+          ],
+          "url": "https://orcid.org/0000-0003-3712-2581",
+          "email": null
+        },
+        {
+          "name": "nthh",
+          "roles": [
+            "processor",
+            "host"
+          ],
+          "url": "https://source.coop/nthh/free-flowing-rivers",
+          "email": null
+        }
+      ],
+      "links": [
+        {
+          "rel": "via",
+          "href": "https://figshare.com/articles/dataset/Mapping_the_world_s_free-flowing_rivers_data_set_and_technical_documentation/7688801",
+          "type": "text/html",
+          "title": "Mapping the world's free-flowing rivers: data set and technical documentation (figshare v1)"
+        },
+        {
+          "rel": "license",
+          "href": "https://creativecommons.org/licenses/by/4.0/",
+          "type": "text/html"
+        },
+        {
+          "rel": "root",
+          "href": "../catalog.json",
+          "type": "application/json"
+        },
+        {
+          "rel": "parent",
+          "href": "../catalog.json",
+          "type": "application/json"
+        },
+        {
+          "rel": "describedby",
+          "href": "./README.md",
+          "type": "text/markdown"
+        },
+        {
+          "rel": "agents",
+          "href": "./AGENTS.md",
+          "type": "text/markdown"
+        },
+        {
+          "rel": "pmtiles",
+          "href": "https://data.source.coop/nthh/free-flowing-rivers/free-flowing-rivers-v1.pmtiles",
+          "type": "application/vnd.pmtiles",
+          "title": "Ffr Reaches"
+        },
+        {
+          "rel": "style",
+          "href": "https://nthh.github.io/data-publications/free-flowing-rivers/display/display-v1/styles/ffr-reaches.json",
+          "type": "application/vnd.mapbox.style+json",
+          "title": "Ffr Reaches display style"
+        },
+        {
+          "rel": "thumbnail",
+          "href": "https://nthh.github.io/data-publications/free-flowing-rivers/presentation/thumbnail.png",
+          "type": "image/png",
+          "title": "Global overview from published PMTiles; generalized display only"
+        },
+        {
+          "rel": "vcs",
+          "href": "https://github.com/nthh/data-publications",
+          "type": "text/html",
+          "title": "Repository"
+        },
+        {
+          "rel": "issues",
+          "href": "https://github.com/nthh/data-publications/issues",
+          "type": "text/html",
+          "title": "Issues"
+        },
+        {
+          "rel": "about",
+          "href": "https://source.coop/nthh",
+          "type": "text/html",
+          "title": "Hosting"
+        },
+        {
+          "rel": "alternate",
+          "href": "https://browser.portolan-sdi.org/#/external/nthh.github.io/data-publications/free-flowing-rivers/collection.json",
+          "type": "text/html",
+          "title": "Browser view"
+        },
+        {
+          "rel": "self",
+          "href": "https://nthh.github.io/data-publications/free-flowing-rivers/collection.json",
+          "type": "application/json"
+        }
+      ],
+      "child_count": 0,
+      "item_link_count": 0,
+      "README.md": {
+        "href": "https://nthh.github.io/data-publications/free-flowing-rivers/README.md",
+        "fetched": true,
+        "status": 200,
+        "saved": "docs/free-flowing-rivers/README.md",
+        "sha256": "7b18eca17b7cb70814d1fe156307c4fb2c95d2e5ed396e61586777e968434c8a",
+        "words": 247,
+        "headings": [
+          "# Mapping the world's free-flowing rivers — global river reach connectivity assessment"
+        ],
+        "bare_urls": [
+          "https://github.com/nthh/data-publications/blob/main/datasets/free-flowing-rivers/releases/figshare-v1-local-r2/manifest.json",
+          "https://figshare.com/articles/dataset/Mapping_the_world_s_free-flowing_rivers_data_set_and_technical_documentation/7688801",
+          "https://source.coop/nthh/free-flowing-rivers"
+        ],
+        "numeric_claims": [
+          {
+            "line": 3,
+            "value": "4326",
+            "unit": "bounds",
+            "text": "Analytic GeoParquet conversion of the full global free-flowing river reach network from the pinned 2019 figshare v1 source. Original source fields and WKB geometries, nulls, row order, and record multiplicity are preserved. Added columns expose the producer-stream row ordinal and per-feature EPSG:43"
+          },
+          {
+            "line": 30,
+            "value": "521",
+            "unit": "sampled",
+            "text": "- Live GEE count and all 521 sampled IDs match. A documented erosion-field alias,"
+          },
+          {
+            "line": 32,
+            "value": "1",
+            "unit": "m",
+            "text": "exceed 1 m, up to 2.877 m. Strict parity fails; original source values and geometry"
+          },
+          {
+            "line": 32,
+            "value": "2.877",
+            "unit": "m",
+            "text": "exceed 1 m, up to 2.877 m. Strict parity fails; original source values and geometry"
+          }
+        ],
+        "code_blocks": [],
+        "links": [],
+        "claim_check_count": 0
+      },
+      "AGENTS.md": {
+        "href": "https://nthh.github.io/data-publications/free-flowing-rivers/AGENTS.md",
+        "fetched": true,
+        "status": 200,
+        "saved": "docs/free-flowing-rivers/AGENTS.md",
+        "sha256": "6ff946ef102d27e77d0fde194ef92a3e14a8a924d749fdeaa748cf218de618b8",
+        "words": 58,
+        "headings": [
+          "# Dataset guidance"
+        ],
+        "bare_urls": [
+          "https://github.com/nthh/data-publications/blob/main/datasets/free-flowing-rivers/releases/figshare-v1-local-r2/manifest.json."
+        ],
+        "numeric_claims": [],
+        "code_blocks": [],
+        "links": [],
+        "claim_check_count": 0
+      },
+      "assets": [
+        {
+          "key": "ffr-reach-network-v1",
+          "roles": [
+            "data"
+          ],
+          "type": "application/vnd.apache.parquet",
+          "href": "https://data.source.coop/nthh/free-flowing-rivers/free-flowing-rivers-v1.parquet",
+          "title": "Free flowing river reaches, figshare v1",
+          "file:size": 887132886
+        },
+        {
+          "key": "ffr-reach-network-v1_fields",
+          "roles": [
+            "metadata"
+          ],
+          "type": "application/json",
+          "href": "https://data.source.coop/nthh/free-flowing-rivers/free-flowing-rivers-v1.fields.json",
+          "title": "ffr-reach-network-v1 field dictionary",
+          "file:size": 12273
+        },
+        {
+          "key": "support-1",
+          "roles": [
+            "metadata"
+          ],
+          "type": "application/json",
+          "href": "https://raw.githubusercontent.com/nthh/data-publications/c0ad1cc5c18d69d3915f01bda478cb300d13b12f/datasets/free-flowing-rivers/source-metadata.json",
+          "title": "Pinned figshare article metadata",
+          "file:size": 5162
+        },
+        {
+          "key": "support-2",
+          "roles": [
+            "metadata"
+          ],
+          "type": "application/json",
+          "href": "https://raw.githubusercontent.com/nthh/data-publications/c0ad1cc5c18d69d3915f01bda478cb300d13b12f/datasets/free-flowing-rivers/source-inspection.json",
+          "title": "Source archive and layer inspection",
+          "file:size": 16323
+        },
+        {
+          "key": "support-3",
+          "roles": [
+            "metadata"
+          ],
+          "type": "application/json",
+          "href": "https://raw.githubusercontent.com/nthh/data-publications/c0ad1cc5c18d69d3915f01bda478cb300d13b12f/datasets/free-flowing-rivers/releases/figshare-v1-local-r1/evidence/source-field-dictionary.json",
+          "title": "Producer field dictionary",
+          "file:size": 11616
+        },
+        {
+          "key": "display_tiles_free-flowing-rivers-1",
+          "roles": [
+            "visual"
+          ],
+          "type": "application/vnd.pmtiles",
+          "href": "https://data.source.coop/nthh/free-flowing-rivers/free-flowing-rivers-v1.pmtiles",
+          "title": "Ffr Reaches",
+          "file:size": 3570445458
+        },
+        {
+          "key": "display_style_free-flowing-rivers-1",
+          "roles": [
+            "style",
+            "default"
+          ],
+          "type": "application/vnd.mapbox.style+json",
+          "href": "https://nthh.github.io/data-publications/free-flowing-rivers/display/display-v1/styles/ffr-reaches.json",
+          "title": "Ffr Reaches display style",
+          "file:size": 469
+        },
+        {
+          "key": "thumbnail",
+          "roles": [
+            "thumbnail"
+          ],
+          "type": "image/png",
+          "href": "https://nthh.github.io/data-publications/free-flowing-rivers/presentation/thumbnail.png",
+          "title": "Global overview from published PMTiles; generalized display only",
+          "file:size": 133052
+        }
+      ],
+      "table_columns": {
+        "count": 42,
+        "described": 42,
+        "undescribed": []
+      },
+      "table_row_count": null,
+      "partition_glob": null,
+      "thumbnail": {
+        "key": "thumbnail",
+        "href": "https://nthh.github.io/data-publications/free-flowing-rivers/presentation/thumbnail.png",
+        "fetched": true,
+        "status": 200,
+        "saved": "thumbnails/free-flowing-rivers.png",
+        "decodes": true,
+        "format": "PNG",
+        "width": 1200,
+        "height": 720,
+        "aspect": 1.667,
+        "bytes": 133052,
+        "unique_colors_64px": 392,
+        "dominant_color_share": 0.3,
+        "luminance_stddev": 10.6,
+        "transparent_share": 0.0,
+        "likely_blank": false
+      },
+      "styles": [
+        {
+          "key": "display_style_free-flowing-rivers-1",
+          "title": "Ffr Reaches display style",
+          "default": true,
+          "href": "https://nthh.github.io/data-publications/free-flowing-rivers/display/display-v1/styles/ffr-reaches.json",
+          "name": "ffr-reaches",
+          "has_description": false,
+          "layer_count": 1,
+          "layer_types": [
+            "line"
+          ],
+          "data_driven": [],
+          "match_labels": {},
+          "literal_colors": [
+            "#276d87"
+          ]
+        }
+      ],
+      "pmtiles": {
+        "href": "https://data.source.coop/nthh/free-flowing-rivers/free-flowing-rivers-v1.pmtiles",
+        "fetched": true,
+        "error": null,
+        "header": {
+          "tile_type": "mvt",
+          "min_zoom": 0,
+          "max_zoom": 12,
+          "bounds": [
+            -179.997917,
+            -55.877083,
+            179.997917,
+            83.589583
+          ],
+          "center_zoom": 12,
+          "addressed_tiles": 3879243
+        },
+        "full_extent_zoom": 1,
+        "starts_above_full_extent": false
+      },
+      "data_source": "https://data.source.coop/nthh/free-flowing-rivers/free-flowing-rivers-v1.parquet",
+      "parquet_row_count": 8477883,
+      "legend_checks": []
+    },
+    {
+      "path": "grwl-raw",
+      "href": "https://nthh.github.io/data-publications/grwl-raw/collection.json",
+      "type": "Collection",
+      "id": "grwl-raw",
+      "title": "Global River Width from Landsat — raw vector observations V01.01",
+      "description": "Detailed producer GRWL vector observations with each source record, part and coordinate retained. Records are kept separate; segmentID is tile-local. width_m=1 means unknown width, and width_valid marks usable measurements. Static producer release derived from Landsat observations; source observation dates vary. This is not a current river-width observation or a time series.",
+      "description_words": 54,
+      "description_bare_urls": [],
+      "license": "CC-BY-4.0",
+      "updated": "2026-11-11T07:23:02Z",
+      "stac_extensions": [
+        "https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json",
+        "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+        "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+        "https://stac-extensions.github.io/scientific/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/version/v1.2.0/schema.json",
+        "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
+      ],
+      "keywords": [],
+      "providers": [
+        {
+          "name": "Allen and Pavelsky / GRWL",
+          "roles": [
+            "producer",
+            "licensor"
+          ],
+          "url": "https://zenodo.org/records/18624542",
+          "email": null
+        },
+        {
+          "name": "nthh",
+          "roles": [
+            "processor",
+            "host"
+          ],
+          "url": "https://source.coop/nthh/grwl-raw",
+          "email": null
+        }
+      ],
+      "links": [
+        {
+          "rel": "via",
+          "href": "https://zenodo.org/records/18624542",
+          "type": "text/html",
+          "title": "Global River Width from Landsat raw vector component V01.01"
+        },
+        {
+          "rel": "license",
+          "href": "https://creativecommons.org/licenses/by/4.0/",
+          "type": "text/html"
+        },
+        {
+          "rel": "root",
+          "href": "../catalog.json",
+          "type": "application/json"
+        },
+        {
+          "rel": "parent",
+          "href": "../catalog.json",
+          "type": "application/json"
+        },
+        {
+          "rel": "describedby",
+          "href": "./README.md",
+          "type": "text/markdown"
+        },
+        {
+          "rel": "agents",
+          "href": "./AGENTS.md",
+          "type": "text/markdown"
+        },
+        {
+          "rel": "pmtiles",
+          "href": "https://data.source.coop/nthh/grwl-raw/grwl-raw-v01.01.pmtiles",
+          "type": "application/vnd.pmtiles",
+          "title": "GRWL raw width observations at every zoom"
+        },
+        {
+          "rel": "style",
+          "href": "https://nthh.github.io/data-publications/grwl-raw/display/raw-v01.01-display-r3/styles/width.json",
+          "type": "application/vnd.mapbox.style+json",
+          "title": "GRWL raw width observations at every zoom display style"
+        },
+        {
+          "rel": "thumbnail",
+          "href": "https://nthh.github.io/data-publications/grwl-raw/presentation/thumbnail.png",
+          "type": "image/png",
+          "title": "Global width-symbol overview; exaggerated display symbols, not riverbanks"
+        },
+        {
+          "rel": "vcs",
+          "href": "https://github.com/nthh/data-publications",
+          "type": "text/html",
+          "title": "Repository"
+        },
+        {
+          "rel": "issues",
+          "href": "https://github.com/nthh/data-publications/issues",
+          "type": "text/html",
+          "title": "Issues"
+        },
+        {
+          "rel": "about",
+          "href": "https://source.coop/nthh",
+          "type": "text/html",
+          "title": "Hosting"
+        },
+        {
+          "rel": "alternate",
+          "href": "https://browser.portolan-sdi.org/#/external/nthh.github.io/data-publications/grwl-raw/collection.json",
+          "type": "text/html",
+          "title": "Browser view"
+        },
+        {
+          "rel": "self",
+          "href": "https://nthh.github.io/data-publications/grwl-raw/collection.json",
+          "type": "application/json"
+        }
+      ],
+      "child_count": 0,
+      "item_link_count": 0,
+      "README.md": {
+        "href": "https://nthh.github.io/data-publications/grwl-raw/README.md",
+        "fetched": true,
+        "status": 200,
+        "saved": "docs/grwl-raw/README.md",
+        "sha256": "959566674a36ee16c4469466134089b0a073036d23da7c295b1efb4cb5ff33e5",
+        "words": 131,
+        "headings": [
+          "# Global River Width from Landsat — raw vector observations V01.01"
+        ],
+        "bare_urls": [
+          "https://github.com/nthh/data-publications/blob/main/datasets/grwl-raw/releases/raw-v01.01-local-r1/manifest.json",
+          "https://zenodo.org/records/18624542",
+          "https://source.coop/nthh/grwl-raw"
+        ],
+        "numeric_claims": [
+          {
+            "line": 3,
+            "value": "1",
+            "unit": "means",
+            "text": "Detailed producer GRWL vector observations with each source record, part and coordinate retained. Records are kept separate; segmentID is tile-local. width_m=1 means unknown width, and width_valid marks usable measurements. Static producer release derived from Landsat observations; source observatio"
+          }
+        ],
+        "code_blocks": [],
+        "links": [],
+        "claim_check_count": 0
+      },
+      "AGENTS.md": {
+        "href": "https://nthh.github.io/data-publications/grwl-raw/AGENTS.md",
+        "fetched": true,
+        "status": 200,
+        "saved": "docs/grwl-raw/AGENTS.md",
+        "sha256": "e73c13e58b6c26f1ffee655d9221e11f5da931f431a95d7d0c4e5bef8e0f2969",
+        "words": 58,
+        "headings": [
+          "# Dataset guidance"
+        ],
+        "bare_urls": [
+          "https://github.com/nthh/data-publications/blob/main/datasets/grwl-raw/releases/raw-v01.01-local-r1/manifest.json."
+        ],
+        "numeric_claims": [],
+        "code_blocks": [],
+        "links": [],
+        "claim_check_count": 0
+      },
+      "assets": [
+        {
+          "key": "grwl-raw-observations",
+          "roles": [
+            "data"
+          ],
+          "type": "application/vnd.apache.parquet",
+          "href": "https://data.source.coop/nthh/grwl-raw/grwl-raw-v01.01.parquet",
+          "title": "Global River Width from Landsat — raw vector observations V01.01",
+          "file:size": 5529859809
+        },
+        {
+          "key": "grwl-raw-observations_fields",
+          "roles": [
+            "metadata"
+          ],
+          "type": "application/json",
+          "href": "https://data.source.coop/nthh/grwl-raw/grwl-raw-v01.01.fields.json",
+          "title": "grwl-raw-observations field dictionary",
+          "file:size": 1271
+        },
+        {
+          "key": "display_tiles_grwl-raw-display",
+          "roles": [
+            "visual"
+          ],
+          "type": "application/vnd.pmtiles",
+          "href": "https://data.source.coop/nthh/grwl-raw/grwl-raw-v01.01.pmtiles",
+          "title": "GRWL raw width observations at every zoom",
+          "file:size": 3190539066
+        },
+        {
+          "key": "display_style_grwl-raw-display",
+          "roles": [
+            "style",
+            "default"
+          ],
+          "type": "application/vnd.mapbox.style+json",
+          "href": "https://nthh.github.io/data-publications/grwl-raw/display/raw-v01.01-display-r3/styles/width.json",
+          "title": "GRWL raw width observations at every zoom display style",
+          "file:size": 10357
+        },
+        {
+          "key": "thumbnail",
+          "roles": [
+            "thumbnail"
+          ],
+          "type": "image/png",
+          "href": "https://nthh.github.io/data-publications/grwl-raw/presentation/thumbnail.png",
+          "title": "Global width-symbol overview; exaggerated display symbols, not riverbanks",
+          "file:size": 312760
+        }
+      ],
+      "table_columns": {
+        "count": 16,
+        "described": 0,
+        "undescribed": [
+          "utm_east",
+          "utm_north",
+          "width_m",
+          "nchannels",
+          "segmentID",
+          "segmentInd",
+          "lakeFlag",
+          "lon",
+          "lat",
+          "elev_m",
+          "source_tile",
+          "source_row",
+          "feature_id",
+          "width_valid",
+          "bbox",
+          "geometry"
+        ]
+      },
+      "table_row_count": null,
+      "partition_glob": null,
+      "thumbnail": {
+        "key": "thumbnail",
+        "href": "https://nthh.github.io/data-publications/grwl-raw/presentation/thumbnail.png",
+        "fetched": true,
+        "status": 200,
+        "saved": "thumbnails/grwl-raw.png",
+        "decodes": true,
+        "format": "PNG",
+        "width": 1200,
+        "height": 720,
+        "aspect": 1.667,
+        "bytes": 312760,
+        "unique_colors_64px": 816,
+        "dominant_color_share": 0.284,
+        "luminance_stddev": 28.72,
+        "transparent_share": 0.0,
+        "likely_blank": false
+      },
+      "styles": [
+        {
+          "key": "display_style_grwl-raw-display",
+          "title": "GRWL raw width observations at every zoom display style",
+          "default": true,
+          "href": "https://nthh.github.io/data-publications/grwl-raw/display/raw-v01.01-display-r3/styles/width.json",
+          "name": "GRWL source widths at every zoom",
+          "has_description": false,
+          "layer_count": 2,
+          "layer_types": [
+            "circle",
+            "line"
+          ],
+          "data_driven": [
+            {
+              "op": "case",
+              "column": "width_valid"
+            },
+            {
+              "op": "case",
+              "column": "width_valid"
+            },
+            {
+              "op": "case",
+              "column": "width_valid"
+            },
+            {
+              "op": "interpolate",
+              "column": "width_m"
+            },
+            {
+              "op": "case",
+              "column": "width_m"
+            },
+            {
+              "op": "interpolate",
+              "column": "width_m"
+            },
+            {
+              "op": "case",
+              "column": "width_m"
+            },
+            {
+              "op": "interpolate",
+              "column": "width_m"
+            },
+            {
+              "op": "case",
+              "column": "width_m"
+            },
+            {
+              "op": "interpolate",
+              "column": "width_m"
+            },
+            {
+              "op": "case",
+              "column": "width_m"
+            },
+            {
+              "op": "interpolate",
+              "column": "width_m"
+            },
+            {
+              "op": "case",
+              "column": "width_m"
+            },
+            {
+              "op": "interpolate",
+              "column": "width_m"
+            },
+            {
+              "op": "case",
+              "column": "width_m"
+            },
+            {
+              "op": "interpolate",
+              "column": "width_m"
+            },
+            {
+              "op": "case",
+              "column": "width_m"
+            },
+            {
+              "op": "interpolate",
+              "column": "width_m"
+            }
+          ],
+          "match_labels": {},
+          "literal_colors": [
+            "#216d85"
+          ]
+        }
+      ],
+      "pmtiles": {
+        "href": "https://data.source.coop/nthh/grwl-raw/grwl-raw-v01.01.pmtiles",
+        "fetched": true,
+        "error": null,
+        "header": {
+          "tile_type": "mvt",
+          "min_zoom": 0,
+          "max_zoom": 12,
+          "bounds": [
+            -180.0,
+            -85.0511288,
+            180.0,
+            85.0511288
+          ],
+          "center_zoom": 3,
+          "addressed_tiles": 592794
+        },
+        "full_extent_zoom": 1,
+        "starts_above_full_extent": false
+      },
+      "data_source": "https://data.source.coop/nthh/grwl-raw/grwl-raw-v01.01.parquet",
+      "parquet_row_count": 64572998,
+      "legend_checks": []
+    },
+    {
+      "path": "hydrolakes",
+      "href": "https://nthh.github.io/data-publications/hydrolakes/collection.json",
+      "type": "Collection",
+      "id": "hydrolakes",
+      "title": "HydroLAKES v1.0: Polygons",
+      "description": "Static global lake polygons derived from composite legacy shoreline sources. This is not a 2026 shoreline observation; no GEE parity or independent scientific-accuracy claim is made. The packaged GeoParquet is spatially ordered and preserves source attributes and raw WKB.",
+      "description_words": 40,
+      "description_bare_urls": [],
+      "license": "CC-BY-4.0",
+      "updated": "2026-11-11T07:23:02Z",
+      "stac_extensions": [
+        "https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json",
+        "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+        "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+        "https://stac-extensions.github.io/scientific/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/version/v1.2.0/schema.json",
+        "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
+      ],
+      "keywords": [],
+      "providers": [
+        {
+          "name": "Lehner and Messager / HydroSHEDS",
+          "roles": [
+            "producer",
+            "licensor"
+          ],
+          "url": "https://www.hydrosheds.org/products/hydrolakes",
+          "email": null
+        },
+        {
+          "name": "nthh",
+          "roles": [
+            "processor",
+            "host"
+          ],
+          "url": "https://source.coop/nthh/hydrolakes",
+          "email": null
+        }
+      ],
+      "links": [
+        {
+          "rel": "via",
+          "href": "https://data.hydrosheds.org/file/hydrolakes/HydroLAKES_polys_v10_shp.zip",
+          "type": "text/html",
+          "title": "HydroLAKES v1 polygon dataset"
+        },
+        {
+          "rel": "license",
+          "href": "https://creativecommons.org/licenses/by/4.0/",
+          "type": "text/html"
+        },
+        {
+          "rel": "root",
+          "href": "../catalog.json",
+          "type": "application/json"
+        },
+        {
+          "rel": "parent",
+          "href": "../catalog.json",
+          "type": "application/json"
+        },
+        {
+          "rel": "describedby",
+          "href": "./README.md",
+          "type": "text/markdown"
+        },
+        {
+          "rel": "agents",
+          "href": "./AGENTS.md",
+          "type": "text/markdown"
+        },
+        {
+          "rel": "pmtiles",
+          "href": "https://data.source.coop/nthh/hydrolakes/hydrolakes-polygons-v1.0.pmtiles",
+          "type": "application/vnd.pmtiles",
+          "title": "Hydrolakes Polygons"
+        },
+        {
+          "rel": "style",
+          "href": "https://nthh.github.io/data-publications/hydrolakes/display/display-v1/styles/hydrolakes-polygons.json",
+          "type": "application/vnd.mapbox.style+json",
+          "title": "Hydrolakes Polygons display style"
+        },
+        {
+          "rel": "thumbnail",
+          "href": "https://nthh.github.io/data-publications/hydrolakes/presentation/thumbnail.png",
+          "type": "image/png",
+          "title": "Global overview from published PMTiles; generalized display only"
+        },
+        {
+          "rel": "vcs",
+          "href": "https://github.com/nthh/data-publications",
+          "type": "text/html",
+          "title": "Repository"
+        },
+        {
+          "rel": "issues",
+          "href": "https://github.com/nthh/data-publications/issues",
+          "type": "text/html",
+          "title": "Issues"
+        },
+        {
+          "rel": "about",
+          "href": "https://source.coop/nthh",
+          "type": "text/html",
+          "title": "Hosting"
+        },
+        {
+          "rel": "alternate",
+          "href": "https://browser.portolan-sdi.org/#/external/nthh.github.io/data-publications/hydrolakes/collection.json",
+          "type": "text/html",
+          "title": "Browser view"
+        },
+        {
+          "rel": "self",
+          "href": "https://nthh.github.io/data-publications/hydrolakes/collection.json",
+          "type": "application/json"
+        }
+      ],
+      "child_count": 0,
+      "item_link_count": 0,
+      "README.md": {
+        "href": "https://nthh.github.io/data-publications/hydrolakes/README.md",
+        "fetched": true,
+        "status": 200,
+        "saved": "docs/hydrolakes/README.md",
+        "sha256": "aff3226d6160befaa95d67844923331df28dbd430e2de61056073cef6d36baa8",
+        "words": 191,
+        "headings": [
+          "# HydroLAKES v1.0: Polygons"
+        ],
+        "bare_urls": [
+          "https://github.com/nthh/data-publications/blob/main/datasets/hydrolakes/releases/v1-local-r3/evidence/package-manifest.json",
+          "https://data.hydrosheds.org/file/hydrolakes/HydroLAKES_polys_v10_shp.zip",
+          "https://source.coop/nthh/hydrolakes"
+        ],
+        "numeric_claims": [
+          {
+            "line": 26,
+            "value": "522",
+            "unit": "sampled",
+            "text": "- Live GEE count and all 522 sampled IDs match. There are 508 null/empty lake-name"
+          },
+          {
+            "line": 26,
+            "value": "508",
+            "unit": "null",
+            "text": "- Live GEE count and all 522 sampled IDs match. There are 508 null/empty lake-name"
+          }
+        ],
+        "code_blocks": [],
+        "links": [],
+        "claim_check_count": 0
+      },
+      "AGENTS.md": {
+        "href": "https://nthh.github.io/data-publications/hydrolakes/AGENTS.md",
+        "fetched": true,
+        "status": 200,
+        "saved": "docs/hydrolakes/AGENTS.md",
+        "sha256": "a7db3e3cddb8aacace06b0bf6caa75cf470066dfcde4c1dd8485f1167043ffcb",
+        "words": 54,
+        "headings": [
+          "# Dataset guidance"
+        ],
+        "bare_urls": [
+          "https://github.com/nthh/data-publications/blob/main/datasets/hydrolakes/releases/v1-local-r3/evidence/package-manifest.json."
+        ],
+        "numeric_claims": [],
+        "code_blocks": [],
+        "links": [],
+        "claim_check_count": 0
+      },
+      "assets": [
+        {
+          "key": "hydrolakes-polygons",
+          "roles": [
+            "data"
+          ],
+          "type": "application/vnd.apache.parquet",
+          "href": "https://data.source.coop/nthh/hydrolakes/hydrolakes-polygons-v1.0.parquet",
+          "title": "HydroLAKES v1.0 polygons",
+          "file:size": 949598607
+        },
+        {
+          "key": "hydrolakes-polygons_fields",
+          "roles": [
+            "metadata"
+          ],
+          "type": "application/json",
+          "href": "https://data.source.coop/nthh/hydrolakes/hydrolakes-polygons-v1.0.fields.json",
+          "title": "hydrolakes-polygons field dictionary",
+          "file:size": 4056
+        },
+        {
+          "key": "support-1",
+          "roles": [
+            "metadata"
+          ],
+          "type": "application/pdf",
+          "href": "https://data.source.coop/nthh/hydrolakes/HydroLAKES_TechDoc_v10.pdf",
+          "title": "HydroLAKES Technical Documentation v1.0",
+          "file:size": 989557
+        },
+        {
+          "key": "support-10",
+          "roles": [
+            "metadata"
+          ],
+          "type": "application/json",
+          "href": "https://raw.githubusercontent.com/nthh/data-publications/c0ad1cc5c18d69d3915f01bda478cb300d13b12f/datasets/hydrolakes/releases/v1-local-r3/provenance/spatial-pruning-clean-rebuild.json",
+          "title": "Clean rebuild fixed-window bbox pruning report",
+          "file:size": 1287
+        },
+        {
+          "key": "support-2",
+          "roles": [
+            "metadata"
+          ],
+          "type": "application/json",
+          "href": "https://raw.githubusercontent.com/nthh/data-publications/c0ad1cc5c18d69d3915f01bda478cb300d13b12f/datasets/hydrolakes/releases/v1-local-r1/evidence/source-document.json",
+          "title": "Producer technical document identity",
+          "file:size": 402
+        },
+        {
+          "key": "support-3",
+          "roles": [
+            "metadata"
+          ],
+          "type": "application/json",
+          "href": "https://raw.githubusercontent.com/nthh/data-publications/c0ad1cc5c18d69d3915f01bda478cb300d13b12f/datasets/hydrolakes/releases/v1-local-r1/evidence/source-validation.json",
+          "title": "Complete independent source fidelity report",
+          "file:size": 969
+        },
+        {
+          "key": "support-4",
+          "roles": [
+            "metadata"
+          ],
+          "type": "application/json",
+          "href": "https://raw.githubusercontent.com/nthh/data-publications/c0ad1cc5c18d69d3915f01bda478cb300d13b12f/datasets/hydrolakes/releases/v1-local-r1/evidence/clean-rebuild-raw.json",
+          "title": "Clean raw conversion rebuild report",
+          "file:size": 632
+        },
+        {
+          "key": "support-5",
+          "roles": [
+            "metadata"
+          ],
+          "type": "application/json",
+          "href": "https://raw.githubusercontent.com/nthh/data-publications/c0ad1cc5c18d69d3915f01bda478cb300d13b12f/datasets/hydrolakes/releases/v1-local-r1/evidence/source-cache-eviction.json",
+          "title": "Source archive cache eviction receipt",
+          "file:size": 604
+        },
+        {
+          "key": "support-6",
+          "roles": [
+            "metadata"
+          ],
+          "type": "application/json",
+          "href": "https://raw.githubusercontent.com/nthh/data-publications/c0ad1cc5c18d69d3915f01bda478cb300d13b12f/datasets/hydrolakes/releases/v1-local-r1/evidence/evidence-provenance.json",
+          "title": "Evidence original hashes and portable copy hashes",
+          "file:size": 2038
+        },
+        {
+          "key": "support-7",
+          "roles": [
+            "metadata"
+          ],
+          "type": "application/json",
+          "href": "https://raw.githubusercontent.com/nthh/data-publications/c0ad1cc5c18d69d3915f01bda478cb300d13b12f/research/source-retirement-20261111/archive/a6c9ac34403f2762b695863725537c31d4348855ff8091638d099f0645ff7f20.json",
+          "title": "Retained spatial-order full fidelity report",
+          "file:size": 4279
+        },
+        {
+          "key": "support-8",
+          "roles": [
+            "metadata"
+          ],
+          "type": "application/json",
+          "href": "https://raw.githubusercontent.com/nthh/data-publications/c0ad1cc5c18d69d3915f01bda478cb300d13b12f/research/source-retirement-20261111/archive/ea96f00907c5b9c91c9c1d8ee365adcb835c0d068d248f329f3555f2efc8fe22.json",
+          "title": "Clean rebuild spatial-order full fidelity report",
+          "file:size": 4298
+        },
+        {
+          "key": "support-9",
+          "roles": [
+            "metadata"
+          ],
+          "type": "application/json",
+          "href": "https://raw.githubusercontent.com/nthh/data-publications/c0ad1cc5c18d69d3915f01bda478cb300d13b12f/datasets/hydrolakes/releases/v1-local-r3/provenance/spatial-pruning-retained.json",
+          "title": "Retained fixed-window bbox pruning report",
+          "file:size": 1287
+        },
+        {
+          "key": "display_tiles_hydrolakes-1",
+          "roles": [
+            "visual"
+          ],
+          "type": "application/vnd.pmtiles",
+          "href": "https://data.source.coop/nthh/hydrolakes/hydrolakes-polygons-v1.0.pmtiles",
+          "title": "Hydrolakes Polygons",
+          "file:size": 1122881121
+        },
+        {
+          "key": "display_style_hydrolakes-1",
+          "roles": [
+            "style",
+            "default"
+          ],
+          "type": "application/vnd.mapbox.style+json",
+          "href": "https://nthh.github.io/data-publications/hydrolakes/display/display-v1/styles/hydrolakes-polygons.json",
+          "title": "Hydrolakes Polygons display style",
+          "file:size": 500
+        },
+        {
+          "key": "thumbnail",
+          "roles": [
+            "thumbnail"
+          ],
+          "type": "image/png",
+          "href": "https://nthh.github.io/data-publications/hydrolakes/presentation/thumbnail.png",
+          "title": "Global overview from published PMTiles; generalized display only",
+          "file:size": 100858
+        }
+      ],
+      "table_columns": {
+        "count": 23,
+        "described": 23,
+        "undescribed": []
+      },
+      "table_row_count": null,
+      "partition_glob": null,
+      "thumbnail": {
+        "key": "thumbnail",
+        "href": "https://nthh.github.io/data-publications/hydrolakes/presentation/thumbnail.png",
+        "fetched": true,
+        "status": 200,
+        "saved": "thumbnails/hydrolakes.png",
+        "decodes": true,
+        "format": "PNG",
+        "width": 1200,
+        "height": 720,
+        "aspect": 1.667,
+        "bytes": 100858,
+        "unique_colors_64px": 323,
+        "dominant_color_share": 0.3,
+        "luminance_stddev": 9.31,
+        "transparent_share": 0.0,
+        "likely_blank": false
+      },
+      "styles": [
+        {
+          "key": "display_style_hydrolakes-1",
+          "title": "Hydrolakes Polygons display style",
+          "default": true,
+          "href": "https://nthh.github.io/data-publications/hydrolakes/display/display-v1/styles/hydrolakes-polygons.json",
+          "name": "hydrolakes-polygons",
+          "has_description": false,
+          "layer_count": 1,
+          "layer_types": [
+            "fill"
+          ],
+          "data_driven": [],
+          "match_labels": {},
+          "literal_colors": [
+            "#276577",
+            "#4b98ad"
+          ]
+        }
+      ],
+      "pmtiles": {
+        "href": "https://data.source.coop/nthh/hydrolakes/hydrolakes-polygons-v1.0.pmtiles",
+        "fetched": true,
+        "error": null,
+        "header": {
+          "tile_type": "mvt",
+          "min_zoom": 0,
+          "max_zoom": 12,
+          "bounds": [
+            -180.0,
+            -55.865139,
+            180.0,
+            83.575951
+          ],
+          "center_zoom": 12,
+          "addressed_tiles": 1194680
+        },
+        "full_extent_zoom": 1,
+        "starts_above_full_extent": false
+      },
+      "data_source": "https://data.source.coop/nthh/hydrolakes/hydrolakes-polygons-v1.0.parquet",
+      "parquet_row_count": 1427688,
+      "legend_checks": []
+    },
+    {
+      "path": "lakeatlas",
+      "href": "https://nthh.github.io/data-publications/lakeatlas/collection.json",
+      "type": "Collection",
+      "id": "lakeatlas",
+      "title": "HydroATLAS LakeATLAS v1.0 — global hydro-environmental lake attributes",
+      "description": "Two analytic GeoParquet assets from the pinned LakeATLAS v1.0 producer File Geodatabase: the complete polygon layer and separate pour-point layer. The deterministic spatially ordered representations preserve producer OBJECTID, Hylak_id and all decoded source fields, nulls, and WKB; WGS84 bbox fields support spatial filtering. No geometries are repaired or simplified. Attribute years vary by source and do not represent a 2026 observation.",
+      "description_words": 63,
+      "description_bare_urls": [],
+      "license": "other",
+      "updated": "2026-11-11T07:23:02Z",
+      "stac_extensions": [
+        "https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json",
+        "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+        "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+        "https://stac-extensions.github.io/scientific/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/version/v1.2.0/schema.json",
+        "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
+      ],
+      "keywords": [],
+      "providers": [
+        {
+          "name": "HydroSHEDS / HydroATLAS authors",
+          "roles": [
+            "producer",
+            "licensor"
+          ],
+          "url": "https://www.hydrosheds.org/products/hydroatlas",
+          "email": null
+        },
+        {
+          "name": "Lehner, Messager, Korver, and Linke",
+          "roles": [
+            "producer"
+          ],
+          "url": "https://doi.org/10.1038/s41597-022-01425-z",
+          "email": null
+        },
+        {
+          "name": "nthh",
+          "roles": [
+            "processor",
+            "host"
+          ],
+          "url": "https://source.coop/nthh/lakeatlas",
+          "email": null
+        }
+      ],
+      "links": [
+        {
+          "rel": "via",
+          "href": "https://doi.org/10.6084/m9.figshare.19312001.v1",
+          "type": "text/html",
+          "title": "LakeATLAS v1.0 producer data and documentation"
+        },
+        {
+          "rel": "license",
+          "href": "https://creativecommons.org/licenses/by/4.0/",
+          "type": "text/html"
+        },
+        {
+          "rel": "root",
+          "href": "../catalog.json",
+          "type": "application/json"
+        },
+        {
+          "rel": "parent",
+          "href": "../catalog.json",
+          "type": "application/json"
+        },
+        {
+          "rel": "describedby",
+          "href": "./README.md",
+          "type": "text/markdown"
+        },
+        {
+          "rel": "agents",
+          "href": "./AGENTS.md",
+          "type": "text/markdown"
+        },
+        {
+          "rel": "pmtiles",
+          "href": "https://data.source.coop/nthh/lakeatlas/lakeatlas-polygons-v1.0.pmtiles",
+          "type": "application/vnd.pmtiles",
+          "title": "Lakeatlas Polygons"
+        },
+        {
+          "rel": "style",
+          "href": "https://nthh.github.io/data-publications/lakeatlas/display/display-v1/styles/lakeatlas-polygons.json",
+          "type": "application/vnd.mapbox.style+json",
+          "title": "Lakeatlas Polygons display style"
+        },
+        {
+          "rel": "pmtiles",
+          "href": "https://data.source.coop/nthh/lakeatlas/lakeatlas-pour-points-v1.0.pmtiles",
+          "type": "application/vnd.pmtiles",
+          "title": "Lakeatlas Pour Points"
+        },
+        {
+          "rel": "style",
+          "href": "https://nthh.github.io/data-publications/lakeatlas/display/display-v1/styles/lakeatlas-pour-points.json",
+          "type": "application/vnd.mapbox.style+json",
+          "title": "Lakeatlas Pour Points display style"
+        },
+        {
+          "rel": "thumbnail",
+          "href": "https://nthh.github.io/data-publications/lakeatlas/presentation/thumbnail.png",
+          "type": "image/png",
+          "title": "Global overview from published PMTiles; generalized display only"
+        },
+        {
+          "rel": "vcs",
+          "href": "https://github.com/nthh/data-publications",
+          "type": "text/html",
+          "title": "Repository"
+        },
+        {
+          "rel": "issues",
+          "href": "https://github.com/nthh/data-publications/issues",
+          "type": "text/html",
+          "title": "Issues"
+        },
+        {
+          "rel": "about",
+          "href": "https://source.coop/nthh",
+          "type": "text/html",
+          "title": "Hosting"
+        },
+        {
+          "rel": "alternate",
+          "href": "https://browser.portolan-sdi.org/#/external/nthh.github.io/data-publications/lakeatlas/collection.json",
+          "type": "text/html",
+          "title": "Browser view"
+        },
+        {
+          "rel": "self",
+          "href": "https://nthh.github.io/data-publications/lakeatlas/collection.json",
+          "type": "application/json"
+        }
+      ],
+      "child_count": 0,
+      "item_link_count": 0,
+      "README.md": {
+        "href": "https://nthh.github.io/data-publications/lakeatlas/README.md",
+        "fetched": true,
+        "status": 200,
+        "saved": "docs/lakeatlas/README.md",
+        "sha256": "cc3ef63bbbed81fff6bf19f7d4a7327a3c8a1ea5c100eafa363f87b1c3fb1631",
+        "words": 281,
+        "headings": [
+          "# HydroATLAS LakeATLAS v1.0 — global hydro-environmental lake attributes"
+        ],
+        "bare_urls": [
+          "https://github.com/nthh/data-publications/blob/main/datasets/lakeatlas/releases/lakeatlas-v1.0-r2/evidence/prepared-local/manifest.json",
+          "https://doi.org/10.6084/m9.figshare.19312001.v1",
+          "https://source.coop/nthh/lakeatlas"
+        ],
+        "numeric_claims": [
+          {
+            "line": 27,
+            "value": "100",
+            "unit": "parts",
+            "text": "feature with more than 100 parts emits a warning. No later geometry repair or simplification"
+          },
+          {
+            "line": 32,
+            "value": "522",
+            "unit": "sampled",
+            "text": "- Live GEE counts and 522 sampled IDs per layer match. Both layers have numeric differences"
+          }
+        ],
+        "code_blocks": [],
+        "links": [],
+        "claim_check_count": 0
+      },
+      "AGENTS.md": {
+        "href": "https://nthh.github.io/data-publications/lakeatlas/AGENTS.md",
+        "fetched": true,
+        "status": 200,
+        "saved": "docs/lakeatlas/AGENTS.md",
+        "sha256": "be1c6cebb08601186ca8eeb74a3f050cea6249e1f649a3e96bbceebf646f3735",
+        "words": 57,
+        "headings": [
+          "# Dataset guidance"
+        ],
+        "bare_urls": [
+          "https://github.com/nthh/data-publications/blob/main/datasets/lakeatlas/releases/lakeatlas-v1.0-r2/evidence/prepared-local/manifest.json."
+        ],
+        "numeric_claims": [],
+        "code_blocks": [],
+        "links": [],
+        "claim_check_count": 0
+      },
+      "assets": [
+        {
+          "key": "lakeatlas-polygons",
+          "roles": [
+            "data"
+          ],
+          "type": "application/vnd.apache.parquet",
+          "href": "https://data.source.coop/nthh/lakeatlas/lakeatlas-polygons-v1.0.parquet",
+          "title": "LakeATLAS v1.0 polygons",
+          "file:size": 1143992867
+        },
+        {
+          "key": "lakeatlas-polygons_fields",
+          "roles": [
+            "metadata"
+          ],
+          "type": "application/json",
+          "href": "https://data.source.coop/nthh/lakeatlas/lakeatlas-polygons-v1.0.fields.json",
+          "title": "lakeatlas-polygons field dictionary",
+          "file:size": 19670
+        },
+        {
+          "key": "lakeatlas-pour-points",
+          "roles": [
+            "data"
+          ],
+          "type": "application/vnd.apache.parquet",
+          "href": "https://data.source.coop/nthh/lakeatlas/lakeatlas-pour-points-v1.0.parquet",
+          "title": "LakeATLAS v1.0 pour points",
+          "file:size": 283780050
+        },
+        {
+          "key": "lakeatlas-pour-points_fields",
+          "roles": [
+            "metadata"
+          ],
+          "type": "application/json",
+          "href": "https://data.source.coop/nthh/lakeatlas/lakeatlas-pour-points-v1.0.fields.json",
+          "title": "lakeatlas-pour-points field dictionary",
+          "file:size": 19543
+        },
+        {
+          "key": "support-1",
+          "roles": [
+            "metadata"
+          ],
+          "type": "application/pdf",
+          "href": "https://data.source.coop/nthh/lakeatlas/HydroATLAS_TechDoc_v10_1.pdf",
+          "title": "HydroATLAS technical documentation v1.0",
+          "file:size": 3656999
+        },
+        {
+          "key": "support-10",
+          "roles": [
+            "metadata"
+          ],
+          "type": "application/json",
+          "href": "https://raw.githubusercontent.com/nthh/data-publications/c0ad1cc5c18d69d3915f01bda478cb300d13b12f/datasets/lakeatlas/releases/lakeatlas-v1.0-r2/evidence/prepared-local/provenance/spatial-order-pour-points-primary.json",
+          "title": "Pour-point spatial-order full source comparison",
+          "file:size": 10226
+        },
+        {
+          "key": "support-11",
+          "roles": [
+            "metadata"
+          ],
+          "type": "application/json",
+          "href": "https://raw.githubusercontent.com/nthh/data-publications/c0ad1cc5c18d69d3915f01bda478cb300d13b12f/datasets/lakeatlas/releases/lakeatlas-v1.0-r2/evidence/prepared-local/provenance/spatial-pruning-polygons-primary.json",
+          "title": "Polygon fixed-window bbox pruning validation",
+          "file:size": 1304
+        },
+        {
+          "key": "support-12",
+          "roles": [
+            "metadata"
+          ],
+          "type": "application/json",
+          "href": "https://raw.githubusercontent.com/nthh/data-publications/c0ad1cc5c18d69d3915f01bda478cb300d13b12f/datasets/lakeatlas/releases/lakeatlas-v1.0-r2/evidence/prepared-local/provenance/spatial-pruning-pour-points-primary.json",
+          "title": "Pour-point fixed-window bbox pruning validation",
+          "file:size": 1305
+        },
+        {
+          "key": "support-13",
+          "roles": [
+            "metadata"
+          ],
+          "type": "application/json",
+          "href": "https://raw.githubusercontent.com/nthh/data-publications/c0ad1cc5c18d69d3915f01bda478cb300d13b12f/datasets/lakeatlas/releases/lakeatlas-v1.0-r2/evidence/prepared-local/provenance/spatial-order-polygons-clean.json",
+          "title": "Clean polygon spatial rebuild and full fidelity comparison",
+          "file:size": 10267
+        },
+        {
+          "key": "support-14",
+          "roles": [
+            "metadata"
+          ],
+          "type": "application/json",
+          "href": "https://raw.githubusercontent.com/nthh/data-publications/c0ad1cc5c18d69d3915f01bda478cb300d13b12f/datasets/lakeatlas/releases/lakeatlas-v1.0-r2/evidence/prepared-local/provenance/spatial-order-pour-points-clean.json",
+          "title": "Clean pour-point spatial rebuild and full fidelity comparison",
+          "file:size": 10235
+        },
+        {
+          "key": "support-15",
+          "roles": [
+            "metadata"
+          ],
+          "type": "application/json",
+          "href": "https://raw.githubusercontent.com/nthh/data-publications/c0ad1cc5c18d69d3915f01bda478cb300d13b12f/datasets/lakeatlas/releases/lakeatlas-v1.0-r2/evidence/prepared-local/provenance/spatial-pruning-polygons-clean.json",
+          "title": "Clean polygon fixed-window bbox pruning validation",
+          "file:size": 1304
+        },
+        {
+          "key": "support-16",
+          "roles": [
+            "metadata"
+          ],
+          "type": "application/json",
+          "href": "https://raw.githubusercontent.com/nthh/data-publications/c0ad1cc5c18d69d3915f01bda478cb300d13b12f/datasets/lakeatlas/releases/lakeatlas-v1.0-r2/evidence/prepared-local/provenance/spatial-pruning-pour-points-clean.json",
+          "title": "Clean pour-point fixed-window bbox pruning validation",
+          "file:size": 1305
+        },
+        {
+          "key": "support-2",
+          "roles": [
+            "metadata"
+          ],
+          "type": "application/pdf",
+          "href": "https://data.source.coop/nthh/lakeatlas/LakeATLAS_Catalog_v10.pdf",
+          "title": "LakeATLAS v1.0 catalog and attribute license dictionary",
+          "file:size": 54055742
+        },
+        {
+          "key": "support-3",
+          "roles": [
+            "metadata"
+          ],
+          "type": "application/json",
+          "href": "https://raw.githubusercontent.com/nthh/data-publications/c0ad1cc5c18d69d3915f01bda478cb300d13b12f/datasets/lakeatlas/source-inspection.json",
+          "title": "Pinned source archive and layer inspection",
+          "file:size": 122274
+        },
+        {
+          "key": "support-4",
+          "roles": [
+            "metadata"
+          ],
+          "type": "application/json",
+          "href": "https://raw.githubusercontent.com/nthh/data-publications/c0ad1cc5c18d69d3915f01bda478cb300d13b12f/datasets/lakeatlas/releases/lakeatlas-v1.0-r2/evidence/prepared-local/provenance/rebuild-environment.json",
+          "title": "Clean rebuild interpreter, locked environment and workflow revisions",
+          "file:size": 1745
+        },
+        {
+          "key": "support-5",
+          "roles": [
+            "metadata"
+          ],
+          "type": "text/markdown",
+          "href": "https://raw.githubusercontent.com/nthh/data-publications/c0ad1cc5c18d69d3915f01bda478cb300d13b12f/datasets/lakeatlas/ATTRIBUTION.md",
+          "title": "Source attribution and field-level licensing notice",
+          "file:size": 1350
+        },
+        {
+          "key": "support-6",
+          "roles": [
+            "metadata"
+          ],
+          "type": "application/json",
+          "href": "https://raw.githubusercontent.com/nthh/data-publications/c0ad1cc5c18d69d3915f01bda478cb300d13b12f/datasets/lakeatlas/releases/lakeatlas-v1.0-r2/evidence/prepared-local/provenance/evidence-provenance.json",
+          "title": "Original and path-redacted portable report hashes",
+          "file:size": 4977
+        },
+        {
+          "key": "support-7",
+          "roles": [
+            "metadata"
+          ],
+          "type": "application/json",
+          "href": "https://raw.githubusercontent.com/nthh/data-publications/c0ad1cc5c18d69d3915f01bda478cb300d13b12f/datasets/lakeatlas/releases/lakeatlas-v1.0-r2/evidence/prepared-local/evidence/source-fidelity.json",
+          "title": "Bound source conversion fidelity report",
+          "file:size": 6274
+        },
+        {
+          "key": "support-8",
+          "roles": [
+            "metadata"
+          ],
+          "type": "application/json",
+          "href": "https://raw.githubusercontent.com/nthh/data-publications/c0ad1cc5c18d69d3915f01bda478cb300d13b12f/datasets/lakeatlas/releases/lakeatlas-v1.0-r2/evidence/prepared-local/evidence/clean-rebuild.json",
+          "title": "Clean raw and final spatial rebuild report",
+          "file:size": 6336
+        },
+        {
+          "key": "support-9",
+          "roles": [
+            "metadata"
+          ],
+          "type": "application/json",
+          "href": "https://raw.githubusercontent.com/nthh/data-publications/c0ad1cc5c18d69d3915f01bda478cb300d13b12f/datasets/lakeatlas/releases/lakeatlas-v1.0-r2/evidence/prepared-local/provenance/spatial-order-polygons-primary.json",
+          "title": "Polygon spatial-order full source comparison",
+          "file:size": 10271
+        },
+        {
+          "key": "display_tiles_lakeatlas-1",
+          "roles": [
+            "visual"
+          ],
+          "type": "application/vnd.pmtiles",
+          "href": "https://data.source.coop/nthh/lakeatlas/lakeatlas-polygons-v1.0.pmtiles",
+          "title": "Lakeatlas Polygons",
+          "file:size": 1190009288
+        },
+        {
+          "key": "display_style_lakeatlas-1",
+          "roles": [
+            "style",
+            "default"
+          ],
+          "type": "application/vnd.mapbox.style+json",
+          "href": "https://nthh.github.io/data-publications/lakeatlas/display/display-v1/styles/lakeatlas-polygons.json",
+          "title": "Lakeatlas Polygons display style",
+          "file:size": 495
+        },
+        {
+          "key": "display_tiles_lakeatlas-2",
+          "roles": [
+            "visual"
+          ],
+          "type": "application/vnd.pmtiles",
+          "href": "https://data.source.coop/nthh/lakeatlas/lakeatlas-pour-points-v1.0.pmtiles",
+          "title": "Lakeatlas Pour Points",
+          "file:size": 409205238
+        },
+        {
+          "key": "display_style_lakeatlas-2",
+          "roles": [
+            "style"
+          ],
+          "type": "application/vnd.mapbox.style+json",
+          "href": "https://nthh.github.io/data-publications/lakeatlas/display/display-v1/styles/lakeatlas-pour-points.json",
+          "title": "Lakeatlas Pour Points display style",
+          "file:size": 546
+        },
+        {
+          "key": "thumbnail",
+          "roles": [
+            "thumbnail"
+          ],
+          "type": "image/png",
+          "href": "https://nthh.github.io/data-publications/lakeatlas/presentation/thumbnail.png",
+          "title": "Global overview from published PMTiles; generalized display only",
+          "file:size": 102739
+        }
+      ],
+      "table_columns": {
+        "count": 618,
+        "described": 0,
+        "undescribed": [
+          "OBJECTID",
+          "Hylak_id",
+          "Lake_name",
+          "Country",
+          "Continent",
+          "Poly_src",
+          "Lake_type",
+          "Grand_id",
+          "Lake_area",
+          "Shore_len",
+          "Shore_dev",
+          "Vol_total",
+          "Vol_res",
+          "Vol_src",
+          "Depth_avg",
+          "Dis_avg",
+          "Res_time",
+          "Elevation",
+          "Slope_100",
+          "Wshd_area",
+          "Pour_long",
+          "Pour_lat",
+          "HYBAS_L12",
+          "HYRIV_RCH",
+          "HYRIV_CAT",
+          "dis_m3_pyr",
+          "dis_m3_pmn",
+          "dis_m3_pmx",
+          "run_mm_vyr",
+          "inu_pc_vmn",
+          "inu_pc_umn",
+          "inu_pc_vmx",
+          "inu_pc_umx",
+          "inu_pc_vlt",
+          "inu_pc_ult",
+          "lka_pc_vse",
+          "lka_pc_use",
+          "lkv_mc_usu",
+          "rev_mc_usu",
+          "dor_pc_pva",
+          "ria_ha_vsu",
+          "ria_ha_usu",
+          "riv_tc_vsu",
+          "riv_tc_usu",
+          "gwt_cm_vav",
+          "ele_mt_lav",
+          "ele_mt_uav",
+          "ele_mt_lmn",
+          "ele_mt_vmx",
+          "slp_dg_vav",
+          "slp_dg_uav",
+          "sgr_dk_vav",
+          "clz_cl_lmj",
+          "cls_cl_lmj",
+          "tmp_dc_lyr",
+          "tmp_dc_uyr",
+          "tmp_dc_lmn",
+          "tmp_dc_lmx",
+          "tmp_dc_l01",
+          "tmp_dc_l02",
+          "tmp_dc_l03",
+          "tmp_dc_l04",
+          "tmp_dc_l05",
+          "tmp_dc_l06",
+          "tmp_dc_l07",
+          "tmp_dc_l08",
+          "tmp_dc_l09",
+          "tmp_dc_l10",
+          "tmp_dc_l11",
+          "tmp_dc_l12",
+          "pre_mm_lyr",
+          "pre_mm_uyr",
+          "pre_mm_l01",
+          "pre_mm_l02",
+          "pre_mm_l03",
+          "pre_mm_l04",
+          "pre_mm_l05",
+          "pre_mm_l06",
+          "pre_mm_l07",
+          "pre_mm_l08",
+          "pre_mm_l09",
+          "pre_mm_l10",
+          "pre_mm_l11",
+          "pre_mm_l12",
+          "pet_mm_lyr",
+          "pet_mm_uyr",
+          "pet_mm_l01",
+          "pet_mm_l02",
+          "pet_mm_l03",
+          "pet_mm_l04",
+          "pet_mm_l05",
+          "pet_mm_l06",
+          "pet_mm_l07",
+          "pet_mm_l08",
+          "pet_mm_l09",
+          "pet_mm_l10",
+          "pet_mm_l11",
+          "pet_mm_l12",
+          "aet_mm_vyr",
+          "aet_mm_uyr",
+          "aet_mm_v01",
+          "aet_mm_v02",
+          "aet_mm_v03",
+          "aet_mm_v04",
+          "aet_mm_v05",
+          "aet_mm_v06",
+          "aet_mm_v07",
+          "aet_mm_v08",
+          "aet_mm_v09",
+          "aet_mm_v10",
+          "aet_mm_v11",
+          "aet_mm_v12",
+          "ari_ix_lav",
+          "ari_ix_uav",
+          "cmi_ix_lyr",
+          "cmi_ix_uyr",
+          "cmi_ix_l01",
+          "cmi_ix_l02",
+          "cmi_ix_l03",
+          "cmi_ix_l04",
+          "cmi_ix_l05",
+          "cmi_ix_l06",
+          "cmi_ix_l07",
+          "cmi_ix_l08",
+          "cmi_ix_l09",
+          "cmi_ix_l10",
+          "cmi_ix_l11",
+          "cmi_ix_l12",
+          "snw_pc_vyr",
+          "snw_pc_uyr",
+          "snw_pc_vmx",
+          "snw_pc_v01",
+          "snw_pc_v02",
+          "snw_pc_v03",
+          "snw_pc_v04",
+          "snw_pc_v05",
+          "snw_pc_v06",
+          "snw_pc_v07",
+          "snw_pc_v08",
+          "snw_pc_v09",
+          "snw_pc_v10",
+          "snw_pc_v11",
+          "snw_pc_v12",
+          "glc_cl_vmj",
+          "glc_pc_v01",
+          "glc_pc_v02",
+          "glc_pc_v03",
+          "glc_pc_v04",
+          "glc_pc_v05",
+          "glc_pc_v06",
+          "glc_pc_v07",
+          "glc_pc_v08",
+          "glc_pc_v09",
+          "glc_pc_v10",
+          "glc_pc_v11",
+          "glc_pc_v12",
+          "glc_pc_v13",
+          "glc_pc_v14",
+          "glc_pc_v15",
+          "glc_pc_v16",
+          "glc_pc_v17",
+          "glc_pc_v18",
+          "glc_pc_v19",
+          "glc_pc_v20",
+          "glc_pc_v21",
+          "glc_pc_v22",
+          "glc_pc_u01",
+          "glc_pc_u02",
+          "glc_pc_u03",
+          "glc_pc_u04",
+          "glc_pc_u05",
+          "glc_pc_u06",
+          "glc_pc_u07",
+          "glc_pc_u08",
+          "glc_pc_u09",
+          "glc_pc_u10",
+          "glc_pc_u11",
+          "glc_pc_u12",
+          "glc_pc_u13",
+          "glc_pc_u14",
+          "glc_pc_u15",
+          "glc_pc_u16",
+          "glc_pc_u17",
+          "glc_pc_u18",
+          "glc_pc_u19",
+          "glc_pc_u20",
+          "glc_pc_u21",
+          "glc_pc_u22",
+          "pnv_cl_vmj",
+          "pnv_pc_v01",
+          "pnv_pc_v02",
+          "pnv_pc_v03",
+          "pnv_pc_v04",
+          "pnv_pc_v05",
+          "pnv_pc_v06",
+          "pnv_pc_v07",
+          "pnv_pc_v08",
+          "pnv_pc_v09",
+          "pnv_pc_v10",
+          "pnv_pc_v11",
+          "pnv_pc_v12",
+          "pnv_pc_v13",
+          "pnv_pc_v14",
+          "pnv_pc_v15",
+          "pnv_pc_u01",
+          "pnv_pc_u02",
+          "pnv_pc_u03",
+          "pnv_pc_u04",
+          "pnv_pc_u05",
+          "pnv_pc_u06",
+          "pnv_pc_u07",
+          "pnv_pc_u08",
+          "pnv_pc_u09",
+          "pnv_pc_u10",
+          "pnv_pc_u11",
+          "pnv_pc_u12",
+          "pnv_pc_u13",
+          "pnv_pc_u14",
+          "pnv_pc_u15",
+          "wet_cl_vmj",
+          "wet_pc_vg1",
+          "wet_pc_ug1",
+          "wet_pc_vg2",
+          "wet_pc_ug2",
+          "wet_pc_v01",
+          "wet_pc_v02",
+          "wet_pc_v03",
+          "wet_pc_v04",
+          "wet_pc_v05",
+          "wet_pc_v06",
+          "wet_pc_v07",
+          "wet_pc_v08",
+          "wet_pc_v09",
+          "wet_pc_u01",
+          "wet_pc_u02",
+          "wet_pc_u03",
+          "wet_pc_u04",
+          "wet_pc_u05",
+          "wet_pc_u06",
+          "wet_pc_u07",
+          "wet_pc_u08",
+          "wet_pc_u09",
+          "for_pc_vse",
+          "for_pc_use",
+          "crp_pc_vse",
+          "crp_pc_use",
+          "pst_pc_vse",
+          "pst_pc_use",
+          "ire_pc_vse",
+          "ire_pc_use",
+          "gla_pc_vse",
+          "gla_pc_use",
+          "prm_pc_vse",
+          "prm_pc_use",
+          "pac_pc_lse",
+          "pac_pc_use",
+          "tbi_cl_lmj",
+          "tec_cl_lmj",
+          "fmh_cl_lmj",
+          "fec_cl_lmj",
+          "cly_pc_vav",
+          "cly_pc_uav",
+          "slt_pc_vav",
+          "slt_pc_uav",
+          "snd_pc_vav",
+          "snd_pc_uav",
+          "soc_th_vav",
+          "soc_th_uav",
+          "swc_pc_vyr",
+          "swc_pc_uyr",
+          "swc_pc_v01",
+          "swc_pc_v02",
+          "swc_pc_v03",
+          "swc_pc_v04",
+          "swc_pc_v05",
+          "swc_pc_v06",
+          "swc_pc_v07",
+          "swc_pc_v08",
+          "swc_pc_v09",
+          "swc_pc_v10",
+          "swc_pc_v11",
+          "swc_pc_v12",
+          "lit_cl_vmj",
+          "kar_pc_vse",
+          "kar_pc_use",
+          "ero_kh_vav",
+          "ero_kh_uav",
+          "pop_ct_vsu",
+          "pop_ct_usu",
+          "ppd_pk_vav",
+          "ppd_pk_uav",
+          "urb_pc_vse",
+          "urb_pc_use",
+          "nli_ix_vav",
+          "nli_ix_uav",
+          "rdd_mk_vav",
+          "rdd_mk_uav",
+          "hft_ix_v93",
+          "hft_ix_u93",
+          "hft_ix_v09",
+          "hft_ix_u09",
+          "gad_id_lmj",
+          "gdp_ud_vav",
+          "gdp_ud_vsu",
+          "gdp_ud_usu",
+          "hdi_ix_vav",
+          "Shape_Length",
+          "Shape_Area",
+          "geometry",
+          "bbox",
+          "OBJECTID",
+          "Hylak_id",
+          "Lake_name",
+          "Country",
+          "Continent",
+          "Poly_src",
+          "Lake_type",
+          "Grand_id",
+          "Lake_area",
+          "Shore_len",
+          "Shore_dev",
+          "Vol_total",
+          "Vol_res",
+          "Vol_src",
+          "Depth_avg",
+          "Dis_avg",
+          "Res_time",
+          "Elevation",
+          "Slope_100",
+          "Wshd_area",
+          "Pour_long",
+          "Pour_lat",
+          "HYBAS_L12",
+          "HYRIV_RCH",
+          "HYRIV_CAT",
+          "dis_m3_pyr",
+          "dis_m3_pmn",
+          "dis_m3_pmx",
+          "run_mm_vyr",
+          "inu_pc_vmn",
+          "inu_pc_umn",
+          "inu_pc_vmx",
+          "inu_pc_umx",
+          "inu_pc_vlt",
+          "inu_pc_ult",
+          "lka_pc_vse",
+          "lka_pc_use",
+          "lkv_mc_usu",
+          "rev_mc_usu",
+          "dor_pc_pva",
+          "ria_ha_vsu",
+          "ria_ha_usu",
+          "riv_tc_vsu",
+          "riv_tc_usu",
+          "gwt_cm_vav",
+          "ele_mt_lav",
+          "ele_mt_uav",
+          "ele_mt_lmn",
+          "ele_mt_vmx",
+          "slp_dg_vav",
+          "slp_dg_uav",
+          "sgr_dk_vav",
+          "clz_cl_lmj",
+          "cls_cl_lmj",
+          "tmp_dc_lyr",
+          "tmp_dc_uyr",
+          "tmp_dc_lmn",
+          "tmp_dc_lmx",
+          "tmp_dc_l01",
+          "tmp_dc_l02",
+          "tmp_dc_l03",
+          "tmp_dc_l04",
+          "tmp_dc_l05",
+          "tmp_dc_l06",
+          "tmp_dc_l07",
+          "tmp_dc_l08",
+          "tmp_dc_l09",
+          "tmp_dc_l10",
+          "tmp_dc_l11",
+          "tmp_dc_l12",
+          "pre_mm_lyr",
+          "pre_mm_uyr",
+          "pre_mm_l01",
+          "pre_mm_l02",
+          "pre_mm_l03",
+          "pre_mm_l04",
+          "pre_mm_l05",
+          "pre_mm_l06",
+          "pre_mm_l07",
+          "pre_mm_l08",
+          "pre_mm_l09",
+          "pre_mm_l10",
+          "pre_mm_l11",
+          "pre_mm_l12",
+          "pet_mm_lyr",
+          "pet_mm_uyr",
+          "pet_mm_l01",
+          "pet_mm_l02",
+          "pet_mm_l03",
+          "pet_mm_l04",
+          "pet_mm_l05",
+          "pet_mm_l06",
+          "pet_mm_l07",
+          "pet_mm_l08",
+          "pet_mm_l09",
+          "pet_mm_l10",
+          "pet_mm_l11",
+          "pet_mm_l12",
+          "aet_mm_vyr",
+          "aet_mm_uyr",
+          "aet_mm_v01",
+          "aet_mm_v02",
+          "aet_mm_v03",
+          "aet_mm_v04",
+          "aet_mm_v05",
+          "aet_mm_v06",
+          "aet_mm_v07",
+          "aet_mm_v08",
+          "aet_mm_v09",
+          "aet_mm_v10",
+          "aet_mm_v11",
+          "aet_mm_v12",
+          "ari_ix_lav",
+          "ari_ix_uav",
+          "cmi_ix_lyr",
+          "cmi_ix_uyr",
+          "cmi_ix_l01",
+          "cmi_ix_l02",
+          "cmi_ix_l03",
+          "cmi_ix_l04",
+          "cmi_ix_l05",
+          "cmi_ix_l06",
+          "cmi_ix_l07",
+          "cmi_ix_l08",
+          "cmi_ix_l09",
+          "cmi_ix_l10",
+          "cmi_ix_l11",
+          "cmi_ix_l12",
+          "snw_pc_vyr",
+          "snw_pc_uyr",
+          "snw_pc_vmx",
+          "snw_pc_v01",
+          "snw_pc_v02",
+          "snw_pc_v03",
+          "snw_pc_v04",
+          "snw_pc_v05",
+          "snw_pc_v06",
+          "snw_pc_v07",
+          "snw_pc_v08",
+          "snw_pc_v09",
+          "snw_pc_v10",
+          "snw_pc_v11",
+          "snw_pc_v12",
+          "glc_cl_vmj",
+          "glc_pc_v01",
+          "glc_pc_v02",
+          "glc_pc_v03",
+          "glc_pc_v04",
+          "glc_pc_v05",
+          "glc_pc_v06",
+          "glc_pc_v07",
+          "glc_pc_v08",
+          "glc_pc_v09",
+          "glc_pc_v10",
+          "glc_pc_v11",
+          "glc_pc_v12",
+          "glc_pc_v13",
+          "glc_pc_v14",
+          "glc_pc_v15",
+          "glc_pc_v16",
+          "glc_pc_v17",
+          "glc_pc_v18",
+          "glc_pc_v19",
+          "glc_pc_v20",
+          "glc_pc_v21",
+          "glc_pc_v22",
+          "glc_pc_u01",
+          "glc_pc_u02",
+          "glc_pc_u03",
+          "glc_pc_u04",
+          "glc_pc_u05",
+          "glc_pc_u06",
+          "glc_pc_u07",
+          "glc_pc_u08",
+          "glc_pc_u09",
+          "glc_pc_u10",
+          "glc_pc_u11",
+          "glc_pc_u12",
+          "glc_pc_u13",
+          "glc_pc_u14",
+          "glc_pc_u15",
+          "glc_pc_u16",
+          "glc_pc_u17",
+          "glc_pc_u18",
+          "glc_pc_u19",
+          "glc_pc_u20",
+          "glc_pc_u21",
+          "glc_pc_u22",
+          "pnv_cl_vmj",
+          "pnv_pc_v01",
+          "pnv_pc_v02",
+          "pnv_pc_v03",
+          "pnv_pc_v04",
+          "pnv_pc_v05",
+          "pnv_pc_v06",
+          "pnv_pc_v07",
+          "pnv_pc_v08",
+          "pnv_pc_v09",
+          "pnv_pc_v10",
+          "pnv_pc_v11",
+          "pnv_pc_v12",
+          "pnv_pc_v13",
+          "pnv_pc_v14",
+          "pnv_pc_v15",
+          "pnv_pc_u01",
+          "pnv_pc_u02",
+          "pnv_pc_u03",
+          "pnv_pc_u04",
+          "pnv_pc_u05",
+          "pnv_pc_u06",
+          "pnv_pc_u07",
+          "pnv_pc_u08",
+          "pnv_pc_u09",
+          "pnv_pc_u10",
+          "pnv_pc_u11",
+          "pnv_pc_u12",
+          "pnv_pc_u13",
+          "pnv_pc_u14",
+          "pnv_pc_u15",
+          "wet_cl_vmj",
+          "wet_pc_vg1",
+          "wet_pc_ug1",
+          "wet_pc_vg2",
+          "wet_pc_ug2",
+          "wet_pc_v01",
+          "wet_pc_v02",
+          "wet_pc_v03",
+          "wet_pc_v04",
+          "wet_pc_v05",
+          "wet_pc_v06",
+          "wet_pc_v07",
+          "wet_pc_v08",
+          "wet_pc_v09",
+          "wet_pc_u01",
+          "wet_pc_u02",
+          "wet_pc_u03",
+          "wet_pc_u04",
+          "wet_pc_u05",
+          "wet_pc_u06",
+          "wet_pc_u07",
+          "wet_pc_u08",
+          "wet_pc_u09",
+          "for_pc_vse",
+          "for_pc_use",
+          "crp_pc_vse",
+          "crp_pc_use",
+          "pst_pc_vse",
+          "pst_pc_use",
+          "ire_pc_vse",
+          "ire_pc_use",
+          "gla_pc_vse",
+          "gla_pc_use",
+          "prm_pc_vse",
+          "prm_pc_use",
+          "pac_pc_lse",
+          "pac_pc_use",
+          "tbi_cl_lmj",
+          "tec_cl_lmj",
+          "fmh_cl_lmj",
+          "fec_cl_lmj",
+          "cly_pc_vav",
+          "cly_pc_uav",
+          "slt_pc_vav",
+          "slt_pc_uav",
+          "snd_pc_vav",
+          "snd_pc_uav",
+          "soc_th_vav",
+          "soc_th_uav",
+          "swc_pc_vyr",
+          "swc_pc_uyr",
+          "swc_pc_v01",
+          "swc_pc_v02",
+          "swc_pc_v03",
+          "swc_pc_v04",
+          "swc_pc_v05",
+          "swc_pc_v06",
+          "swc_pc_v07",
+          "swc_pc_v08",
+          "swc_pc_v09",
+          "swc_pc_v10",
+          "swc_pc_v11",
+          "swc_pc_v12",
+          "lit_cl_vmj",
+          "kar_pc_vse",
+          "kar_pc_use",
+          "ero_kh_vav",
+          "ero_kh_uav",
+          "pop_ct_vsu",
+          "pop_ct_usu",
+          "ppd_pk_vav",
+          "ppd_pk_uav",
+          "urb_pc_vse",
+          "urb_pc_use",
+          "nli_ix_vav",
+          "nli_ix_uav",
+          "rdd_mk_vav",
+          "rdd_mk_uav",
+          "hft_ix_v93",
+          "hft_ix_u93",
+          "hft_ix_v09",
+          "hft_ix_u09",
+          "gad_id_lmj",
+          "gdp_ud_vav",
+          "gdp_ud_vsu",
+          "gdp_ud_usu",
+          "hdi_ix_vav",
+          "geometry",
+          "bbox"
+        ]
+      },
+      "table_row_count": null,
+      "partition_glob": null,
+      "thumbnail": {
+        "key": "thumbnail",
+        "href": "https://nthh.github.io/data-publications/lakeatlas/presentation/thumbnail.png",
+        "fetched": true,
+        "status": 200,
+        "saved": "thumbnails/lakeatlas.png",
+        "decodes": true,
+        "format": "PNG",
+        "width": 1200,
+        "height": 720,
+        "aspect": 1.667,
+        "bytes": 102739,
+        "unique_colors_64px": 323,
+        "dominant_color_share": 0.3,
+        "luminance_stddev": 9.15,
+        "transparent_share": 0.0,
+        "likely_blank": false
+      },
+      "styles": [
+        {
+          "key": "display_style_lakeatlas-1",
+          "title": "Lakeatlas Polygons display style",
+          "default": true,
+          "href": "https://nthh.github.io/data-publications/lakeatlas/display/display-v1/styles/lakeatlas-polygons.json",
+          "name": "lakeatlas-polygons",
+          "has_description": false,
+          "layer_count": 1,
+          "layer_types": [
+            "fill"
+          ],
+          "data_driven": [],
+          "match_labels": {},
+          "literal_colors": [
+            "#276577",
+            "#4b98ad"
+          ]
+        },
+        {
+          "key": "display_style_lakeatlas-2",
+          "title": "Lakeatlas Pour Points display style",
+          "default": false,
+          "href": "https://nthh.github.io/data-publications/lakeatlas/display/display-v1/styles/lakeatlas-pour-points.json",
+          "name": "lakeatlas-pour-points",
+          "has_description": false,
+          "layer_count": 1,
+          "layer_types": [
+            "circle"
+          ],
+          "data_driven": [],
+          "match_labels": {},
+          "literal_colors": [
+            "#276d87",
+            "#f5f0e6"
+          ]
+        }
+      ],
+      "pmtiles": {
+        "href": "https://data.source.coop/nthh/lakeatlas/lakeatlas-polygons-v1.0.pmtiles",
+        "fetched": true,
+        "error": null,
+        "header": {
+          "tile_type": "mvt",
+          "min_zoom": 0,
+          "max_zoom": 12,
+          "bounds": [
+            -180.0,
+            -55.865139,
+            180.0,
+            83.575951
+          ],
+          "center_zoom": 12,
+          "addressed_tiles": 1194680
+        },
+        "full_extent_zoom": 1,
+        "starts_above_full_extent": false
+      },
+      "data_source": "https://data.source.coop/nthh/lakeatlas/lakeatlas-polygons-v1.0.parquet",
+      "parquet_row_count": 1427688,
+      "legend_checks": []
+    },
+    {
+      "path": "river-plastic-inputs",
+      "href": "https://nthh.github.io/data-publications/river-plastic-inputs/collection.json",
+      "type": "Collection",
+      "id": "river-plastic-inputs",
+      "title": "Global river plastic inputs — Lebreton et al. (2017)",
+      "description": "A global model of plastic inputs from rivers into the ocean, published by Lebreton et al. in 2017. This static release preserves the 40,760 river input locations and all 53 numeric attributes in the original Figshare v6 shapefile. Estimates represent the 2010 model baseline; they are not current measurements. This is distinct from the later Meijer et al. 2021 model.",
+      "description_words": 61,
+      "description_bare_urls": [],
+      "license": "CC-BY-4.0",
+      "updated": "2026-11-11T07:23:02Z",
+      "stac_extensions": [
+        "https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json",
+        "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+        "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+        "https://stac-extensions.github.io/scientific/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/version/v1.2.0/schema.json",
+        "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
+      ],
+      "keywords": [
+        "river",
+        "plastic",
+        "ocean",
+        "pollution",
+        "global",
+        "2010",
+        "Lebreton"
+      ],
+      "providers": [
+        {
+          "name": "Lebreton et al.",
+          "roles": [
+            "producer",
+            "licensor"
+          ],
+          "url": "https://doi.org/10.1038/ncomms15611",
+          "email": null
+        },
+        {
+          "name": "nthh",
+          "roles": [
+            "processor",
+            "host"
+          ],
+          "url": "https://source.coop/nthh/river-plastic-inputs",
+          "email": null
+        }
+      ],
+      "links": [
+        {
+          "rel": "via",
+          "href": "https://doi.org/10.6084/m9.figshare.4725541.v6",
+          "type": "text/html"
+        },
+        {
+          "rel": "license",
+          "href": "https://creativecommons.org/licenses/by/4.0/",
+          "type": "text/html"
+        },
+        {
+          "rel": "pmtiles",
+          "href": "https://data.source.coop/nthh/river-plastic-inputs/river-plastic-inputs-figshare-v6.pmtiles",
+          "type": "application/vnd.pmtiles"
+        },
+        {
+          "rel": "root",
+          "href": "../catalog.json",
+          "type": "application/json"
+        },
+        {
+          "rel": "parent",
+          "href": "../catalog.json",
+          "type": "application/json"
+        },
+        {
+          "rel": "describedby",
+          "href": "./README.md",
+          "type": "text/markdown"
+        },
+        {
+          "rel": "agents",
+          "href": "./AGENTS.md",
+          "type": "text/markdown"
+        },
+        {
+          "rel": "vcs",
+          "href": "https://github.com/nthh/data-publications",
+          "type": "text/html",
+          "title": "Repository"
+        },
+        {
+          "rel": "issues",
+          "href": "https://github.com/nthh/data-publications/issues",
+          "type": "text/html",
+          "title": "Issues"
+        },
+        {
+          "rel": "about",
+          "href": "https://source.coop/nthh",
+          "type": "text/html",
+          "title": "Hosting"
+        },
+        {
+          "rel": "alternate",
+          "href": "https://browser.portolan-sdi.org/#/external/nthh.github.io/data-publications/river-plastic-inputs/collection.json",
+          "type": "text/html",
+          "title": "Browser view"
+        },
+        {
+          "rel": "self",
+          "href": "https://nthh.github.io/data-publications/river-plastic-inputs/collection.json",
+          "type": "application/json"
+        }
+      ],
+      "child_count": 0,
+      "item_link_count": 0,
+      "README.md": {
+        "href": "https://nthh.github.io/data-publications/river-plastic-inputs/README.md",
+        "fetched": true,
+        "status": 200,
+        "saved": "docs/river-plastic-inputs/README.md",
+        "sha256": "414d11b2270cbd1b2ca98b62576e7e1b298410049925c3b133cb694c2b01c478",
+        "words": 217,
+        "headings": [
+          "# Global river plastic inputs — Lebreton et al. (2017)"
+        ],
+        "bare_urls": [
+          "https://github.com/nthh/data-publications/blob/main/datasets/river-plastic-inputs/releases/figshare-v6-r2/manifest.json",
+          "https://doi.org/10.6084/m9.figshare.4725541.v6",
+          "https://source.coop/nthh/river-plastic-inputs"
+        ],
+        "numeric_claims": [
+          {
+            "line": 3,
+            "value": "40,760",
+            "unit": "river",
+            "text": "A global model of plastic inputs from rivers into the ocean, published by Lebreton et al. in 2017. This static release preserves the 40,760 river input locations and all 53 numeric attributes in the original Figshare v6 shapefile. Estimates represent the 2010 model baseline; they are not current mea"
+          },
+          {
+            "line": 3,
+            "value": "53",
+            "unit": "numeric",
+            "text": "A global model of plastic inputs from rivers into the ocean, published by Lebreton et al. in 2017. This static release preserves the 40,760 river input locations and all 53 numeric attributes in the original Figshare v6 shapefile. Estimates represent the 2010 model baseline; they are not current mea"
+          },
+          {
+            "line": 25,
+            "value": "53",
+            "unit": "attributes",
+            "text": "- The historical full GEE capture replay matches all 53 attributes and nulls across"
+          },
+          {
+            "line": 26,
+            "value": "40,760",
+            "unit": "rows",
+            "text": "40,760 rows with the documented coincident-group contract; maximum point displacement"
+          },
+          {
+            "line": 27,
+            "value": "0.3495",
+            "unit": "m",
+            "text": "is 0.3495 m. Fresh metadata/count match, but no fresh exhaustive feature capture"
+          }
+        ],
+        "code_blocks": [],
+        "links": [],
+        "claim_check_count": 0
+      },
+      "AGENTS.md": {
+        "href": "https://nthh.github.io/data-publications/river-plastic-inputs/AGENTS.md",
+        "fetched": true,
+        "status": 200,
+        "saved": "docs/river-plastic-inputs/AGENTS.md",
+        "sha256": "e132a35a6783e711e9a0c3b34483d4aeab56ff34a9499a65b345c644b3d43594",
+        "words": 56,
+        "headings": [
+          "# Dataset guidance"
+        ],
+        "bare_urls": [
+          "https://github.com/nthh/data-publications/blob/main/datasets/river-plastic-inputs/releases/figshare-v6-r2/manifest.json."
+        ],
+        "numeric_claims": [],
+        "code_blocks": [],
+        "links": [],
+        "claim_check_count": 0
+      },
+      "assets": [
+        {
+          "key": "data",
+          "roles": [
+            "data"
+          ],
+          "type": "application/vnd.apache.parquet",
+          "href": "https://data.source.coop/nthh/river-plastic-inputs/river-plastic-inputs-figshare-v6.parquet",
+          "title": "Complete analytic data, GeoParquet 1.1",
+          "file:size": 6360991
+        },
+        {
+          "key": "tiles",
+          "roles": [
+            "visual"
+          ],
+          "type": "application/vnd.pmtiles",
+          "href": "https://data.source.coop/nthh/river-plastic-inputs/river-plastic-inputs-figshare-v6.pmtiles",
+          "title": "River input display tiles",
+          "file:size": 3705210
+        },
+        {
+          "key": "style-annual-input",
+          "roles": [
+            "style",
+            "default"
+          ],
+          "type": "application/vnd.mapbox.style+json",
+          "href": "https://nthh.github.io/data-publications/river-plastic-inputs/styles/annual-input.json",
+          "title": "Annual midpoint input style",
+          "file:size": 2289
+        },
+        {
+          "key": "thumbnail",
+          "roles": [
+            "thumbnail"
+          ],
+          "type": "image/png",
+          "href": "https://nthh.github.io/data-publications/river-plastic-inputs/thumbnail.png",
+          "title": "Annual midpoint input map",
+          "file:size": 198924
+        },
+        {
+          "key": "schema",
+          "roles": [
+            "metadata"
+          ],
+          "type": "application/json",
+          "href": "https://data.source.coop/nthh/river-plastic-inputs/river-plastic-inputs-figshare-v6.fields.json",
+          "title": "Field dictionary",
+          "file:size": 9542
+        },
+        {
+          "key": "quality",
+          "roles": [
+            "metadata"
+          ],
+          "type": "application/json",
+          "href": "https://data.source.coop/nthh/river-plastic-inputs/river-plastic-inputs-figshare-v6.quality.json",
+          "title": "Original missing values and encoding",
+          "file:size": 2420
+        },
+        {
+          "key": "original",
+          "roles": [
+            "source"
+          ],
+          "type": "application/zip",
+          "href": "https://ndownloader.figshare.com/files/7714864",
+          "title": "Original Figshare v6 shapefile archive",
+          "file:size": 5764810
+        }
+      ],
+      "table_columns": {
+        "count": 56,
+        "described": 56,
+        "undescribed": []
+      },
+      "table_row_count": null,
+      "partition_glob": null,
+      "thumbnail": {
+        "key": "thumbnail",
+        "href": "https://nthh.github.io/data-publications/river-plastic-inputs/thumbnail.png",
+        "fetched": true,
+        "status": 200,
+        "saved": "thumbnails/river-plastic-inputs.png",
+        "decodes": true,
+        "format": "PNG",
+        "width": 1416,
+        "height": 1033,
+        "aspect": 1.371,
+        "bytes": 198924,
+        "unique_colors_64px": 816,
+        "dominant_color_share": 0.502,
+        "luminance_stddev": 20.81,
+        "transparent_share": 0.0,
+        "likely_blank": false
+      },
+      "styles": [
+        {
+          "key": "style-annual-input",
+          "title": "Annual midpoint input style",
+          "default": true,
+          "href": "https://nthh.github.io/data-publications/river-plastic-inputs/styles/annual-input.json",
+          "name": "Annual river plastic input — midpoint estimate",
+          "has_description": false,
+          "layer_count": 2,
+          "layer_types": [
+            "background",
+            "circle"
+          ],
+          "data_driven": [
+            {
+              "op": "case",
+              "column": "i_mid"
+            },
+            {
+              "op": "interpolate",
+              "column": "i_mid"
+            },
+            {
+              "op": "case",
+              "column": "i_mid"
+            },
+            {
+              "op": "interpolate",
+              "column": "i_mid"
+            }
+          ],
+          "match_labels": {},
+          "literal_colors": [
+            "#f1f5f7"
+          ]
+        }
+      ],
+      "pmtiles": {
+        "href": "https://data.source.coop/nthh/river-plastic-inputs/river-plastic-inputs-figshare-v6.pmtiles",
+        "fetched": true,
+        "error": null,
+        "header": {
+          "tile_type": "mvt",
+          "min_zoom": 0,
+          "max_zoom": 8,
+          "bounds": [
+            -137.9375,
+            -55.620833,
+            179.879167,
+            60.4125
+          ],
+          "center_zoom": 8,
+          "addressed_tiles": 4067
+        },
+        "full_extent_zoom": 1,
+        "starts_above_full_extent": false
+      },
+      "data_source": "https://data.source.coop/nthh/river-plastic-inputs/river-plastic-inputs-figshare-v6.parquet",
+      "parquet_row_count": 40760,
+      "legend_checks": []
+    }
+  ],
+  "summary": {
+    "catalogs": 1,
+    "collections": 5,
+    "code_blocks_run": 0,
+    "code_blocks_failed": 0,
+    "code_blocks_environment_errors": 0,
+    "claim_checks_failed": 0,
+    "links_broken": 0,
+    "links_unverified": 0,
+    "thumbnails_likely_blank": [],
+    "seconds": 22.2
+  }
+}

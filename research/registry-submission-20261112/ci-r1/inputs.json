@@ -1,0 +1,36 @@
+{
+  "criteria": {
+    "schema_version": 1,
+    "catalog_url": "https://nthh.github.io/data-publications/catalog.json",
+    "registry_id": "nthh-data-publications",
+    "submitter_email": "data-publications@folia.sh",
+    "catalog_commit": "df4531a381a5b88ff817838196cedf23582e9b87",
+    "upstreams": {
+      "skills": {
+        "repository": "https://github.com/portolan-sdi/portolan-skills",
+        "commit": "1714d9ab672e6a1bbc56ca12458e41b14484d426"
+      },
+      "registry": {
+        "repository": "https://github.com/portolan-sdi/portolan-registry",
+        "commit": "8c062c332d4bc8adf9a8e637e58e4c404faa40af"
+      }
+    },
+    "criteria": [
+      "The registry ID and root URL are not already registered or reserved by a prior registry entry.",
+      "The exact two-field entry passes the pinned registry entry validator, including metadata mirror, Rashid 0.3.0 and stac-node-validator 2.0.0.",
+      "Run the unmodified pinned catalog-grader collector in a disposable GitHub runner with the source repository and --registry-submission; retain its facts and collected documents/images.",
+      "Review every collected root and collection README and AGENTS document, all five thumbnails, and the published source citations for data claims.",
+      "Apply the complete upstream rubric without a minimum grade added after seeing results; the grade is advisory, deterministic errors block submission.",
+      "Record unavailable sources, environment errors, unsupported and contradicted claims separately; do not turn incomplete checks into passing results.",
+      "Preserve failed runs and pin all final evidence to the reviewed Git commit and upstream revisions.",
+      "Before requesting upstream review, obtain the human review of the exact entry and PR text required by the registry contribution policy."
+    ],
+    "entry_sha256": "dcefda3d10442314d104b04ab640488ca17b8dfab32bb959259c40c842a6ec6f",
+    "collection_count_expected": 5,
+    "exclusions": [
+      "No asset rebuilds, source uploads, GEE exports or new whole-dataset downloads.",
+      "No registry merge or main-branch history rewrite."
+    ]
+  },
+  "review_commit": "0c3fce847148a5c1fb66ad8404daf65c38c32535"
+}

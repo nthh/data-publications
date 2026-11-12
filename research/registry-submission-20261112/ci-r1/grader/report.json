@@ -1,0 +1,281 @@
+{
+  "schema": "catalog-grader-report/1",
+  "catalog": "https://nthh.github.io/data-publications/catalog.json",
+  "repo": "/home/runner/work/data-publications/data-publications",
+  "grade": "D",
+  "complete": true,
+  "incomplete_reasons": [],
+  "ceiling": {
+    "grade": "D",
+    "reason": "The collector ran Rashid 0.3.0 and reported two live-hosting errors (PTL-LIV-004 and PTL-LIV-005). The registry metadata-mirror gate passed separately."
+  },
+  "invented_claims": 0,
+  "areas": {
+    "machine-contract": {
+      "grade": "C",
+      "summary": "The registry metadata gate passes, but live Pages hosting has two CORS errors; GRWL and LakeATLAS table columns lack descriptions."
+    },
+    "honesty": {
+      "grade": "A",
+      "summary": "Reviewed generated counts, producer/license statements and retained GEE diagnostics agree with their evidence; scientific and temporal limits are stated."
+    },
+    "documentation": {
+      "grade": "D",
+      "summary": "Collection READMEs lack in-place quickstarts and schema guidance; AGENTS files are generic stubs despite richer documentation elsewhere."
+    },
+    "access": {
+      "grade": "D",
+      "summary": "The reviewed catalog documents have no runnable examples; separate Source product examples are outside this collector result."
+    },
+    "visuals": {
+      "grade": "D",
+      "summary": "All images load and PMTiles start at zoom 0, but three collections use flat default styles and the lake previews are visually similar."
+    },
+    "organization": {
+      "grade": "A",
+      "summary": "Five clearly named dataset collections form a suitable small catalog; LakeATLAS polygon and pour-point assets are two representations of one dataset."
+    },
+    "maintenance": {
+      "grade": "B",
+      "summary": "Provenance and contact links are present, metadata is generated, and all 92 links answered; scheduled query/claim checks are absent."
+    },
+    "concision": {
+      "grade": "D",
+      "summary": "Collection AGENTS files repeat generic content with pairwise similarity above 0.9."
+    }
+  },
+  "a_requirements": {
+    "met": false,
+    "requirements": {
+      "git": {
+        "met": true,
+        "evidence": "facts.json /repo/vcs_link_matches_remote and /repo/is_git are true; local publication_catalog.py check passed for this review commit."
+      },
+      "ci": {
+        "met": false,
+        "evidence": "facts.json /repo/ci_validates_on_pull_request=true, but /repo/ci_checks_docs_on_schedule=false."
+      },
+      "logo": {
+        "met": false,
+        "evidence": "facts.json /icon=null."
+      },
+      "registry": {
+        "met": true,
+        "evidence": "Requirement waived for this review: facts.json /registry/submission=true."
+      }
+    }
+  },
+  "a_plus": {
+    "awarded": false,
+    "requirements": {
+      "rashid-clean": {
+        "met": false,
+        "evidence": "facts.json /rashid/error_count=2 and /rashid/warning_count=1."
+      },
+      "candid": {
+        "met": false,
+        "evidence": "The docs state important limitations, but do not supply the complete source-grounded usage and uncertainty guidance required for A+."
+      },
+      "narrative": {
+        "met": false,
+        "evidence": "Most collection docs focus on the conversion and validation scope rather than explaining the represented phenomena and use."
+      },
+      "experience": {
+        "met": false,
+        "evidence": "facts.json /queries is empty; flat styles and similar lake previews remain."
+      }
+    }
+  },
+  "computation": [
+    "1. Rashid live errors set ceiling D; the root and all five collections are readable, so F does not apply.",
+    "2. Area grades: machine-contract C, honesty A, documentation D, access D, visuals D, organization A, maintenance B, concision D.",
+    "3. Lowest area grade D; only two other areas are A, so no one-step lift applies: D.",
+    "4. Zero invented findings; honesty does not impose another cap: D.",
+    "5. Apply ceiling D: D.",
+    "6. A is not reached; CI and logo requirements are also unmet: D.",
+    "7. A+ is not reached: final grade D."
+  ],
+  "findings": [
+    {
+      "id": "F1",
+      "area": "machine-contract",
+      "severity": "major",
+      "kind": "broken",
+      "where": {
+        "node": "free-flowing-rivers",
+        "file": "facts.json",
+        "line": null
+      },
+      "quote": null,
+      "fact": "/rashid/findings/1",
+      "evidence": "The grader live pass reports PTL-LIV-004: nthh.github.io does not expose Content-Type, Content-Length, Content-Range, Accept-Ranges and ETag for browser clients; its representative asset is the collection style JSON.",
+      "fix": "Serve catalog assets from a host with the required exposed response headers and verify the live pass again."
+    },
+    {
+      "id": "F2",
+      "area": "machine-contract",
+      "severity": "major",
+      "kind": "broken",
+      "where": {
+        "node": "free-flowing-rivers",
+        "file": "facts.json",
+        "line": null
+      },
+      "quote": null,
+      "fact": "/rashid/findings/2",
+      "evidence": "The grader live pass reports PTL-LIV-005: nthh.github.io answers the conditional range CORS preflight with HTTP 405 and lacks the required allowed methods and request headers.",
+      "fix": "Use a host that accepts the specified GET/HEAD and conditional Range preflight requests for catalog assets."
+    },
+    {
+      "id": "F3",
+      "area": "machine-contract",
+      "severity": "minor",
+      "kind": "missing",
+      "where": {
+        "node": "lakeatlas",
+        "file": "facts.json",
+        "line": null
+      },
+      "quote": null,
+      "fact": "/nodes/4/table_columns",
+      "evidence": "The captured table:columns has no descriptions for 618 LakeATLAS entries; GRWL also has 16 undescribed entries at /nodes/2/table_columns, despite separately available producer dictionaries.",
+      "fix": "Generate table:columns descriptions from the existing pinned field dictionaries and producer semantics."
+    },
+    {
+      "id": "F4",
+      "area": "documentation",
+      "severity": "major",
+      "kind": "stub",
+      "where": {
+        "node": "grwl-raw",
+        "file": "docs/grwl-raw/AGENTS.md",
+        "line": 4
+      },
+      "quote": "Use the analytic data assets for analysis; display derivatives are presentation only.",
+      "fact": "/nodes/2/AGENTS.md",
+      "evidence": "All five collection AGENTS files use the same generic guidance and omit dataset-specific query recipes, join-key rules, CRS implications and important coded-field semantics.",
+      "fix": "Generate dataset-specific agent guidance from the canonical records and existing schema/provenance evidence."
+    },
+    {
+      "id": "F5",
+      "area": "access",
+      "severity": "major",
+      "kind": "missing",
+      "where": {
+        "node": ".",
+        "file": "facts.json",
+        "line": null
+      },
+      "quote": null,
+      "fact": "/queries",
+      "evidence": "The collected root and collection documents contain no runnable code blocks; /summary/code_blocks_run is zero, so the review did not execute the examples hosted on the separate Source product pages.",
+      "fix": "Include the existing published-URL quickstarts in the generated catalog READMEs and verify those exact blocks."
+    },
+    {
+      "id": "F6",
+      "area": "visuals",
+      "severity": "major",
+      "kind": "weak",
+      "where": {
+        "node": "free-flowing-rivers",
+        "file": "facts.json",
+        "line": null
+      },
+      "quote": null,
+      "fact": "/nodes/1/styles/0/data_driven",
+      "evidence": "Free-Flowing Rivers, HydroLAKES and LakeATLAS use constant-color default styles; GRWL width and river-plastic estimates are data-driven, but the rubric explicitly treats flat attribute-independent styles as a major defect.",
+      "fix": "Add documented thematic styles for appropriate existing attributes while preserving analytical bytes."
+    },
+    {
+      "id": "F7",
+      "area": "visuals",
+      "severity": "minor",
+      "kind": "weak",
+      "where": {
+        "node": "lakeatlas",
+        "file": "thumbnails/lakeatlas.png",
+        "line": null
+      },
+      "quote": null,
+      "fact": "/nodes/4/thumbnail",
+      "evidence": "Visual inspection of every saved image finds visible data, but HydroLAKES and LakeATLAS have almost identical map views and subdued fills at card size; see visual-review.json.",
+      "fix": "Choose a contrasting attribute or view for LakeATLAS and increase the legibility of both lake thumbnails."
+    },
+    {
+      "id": "F8",
+      "area": "concision",
+      "severity": "major",
+      "kind": "duplicated",
+      "where": {
+        "node": ".",
+        "file": "facts.json",
+        "line": null
+      },
+      "quote": null,
+      "fact": "/agents_similarity",
+      "evidence": "Every pair of collection AGENTS files exceeds 0.9 similarity (0.922–0.979); the files repeat generic packaging instructions instead of dataset-specific guidance.",
+      "fix": "Keep common instructions at the root and generate concise collection-specific guidance."
+    },
+    {
+      "id": "F9",
+      "area": "documentation",
+      "severity": "minor",
+      "kind": "missing",
+      "where": {
+        "node": ".",
+        "file": "facts.json",
+        "line": null
+      },
+      "quote": null,
+      "fact": "/icon",
+      "evidence": "The root has no icon link; the A-grade logo requirement is unmet.",
+      "fix": "Add a small recognizable catalog icon and a verified root icon link."
+    },
+    {
+      "id": "F10",
+      "area": "maintenance",
+      "severity": "minor",
+      "kind": "missing",
+      "where": {
+        "node": ".",
+        "file": "facts.json",
+        "line": null
+      },
+      "quote": null,
+      "fact": "/repo/ci_checks_docs_on_schedule",
+      "evidence": "The repository validates on pull requests but has no scheduled check of documented queries and claims; the new review is an explicit submission run.",
+      "fix": "Add a scheduled check of published examples and claims if recurring live checks are authorized."
+    }
+  ],
+  "checked": {
+    "collections_read": [
+      ".",
+      "free-flowing-rivers",
+      "grwl-raw",
+      "hydrolakes",
+      "lakeatlas",
+      "river-plastic-inputs"
+    ],
+    "claims_checked": 23,
+    "unverified": [
+      {
+        "quote": "Analytic GeoParquet conversion of the full global free-flowing river reach network from the pinned 2019 figshare v1 source.",
+        "where": {
+          "node": "free-flowing-rivers",
+          "file": "docs/free-flowing-rivers/README.md",
+          "line": 3
+        },
+        "reason": "The producer landing page returned HTTP 403 to this review client. The pinned release and retained fidelity evidence were available, but the original source geometry was not independently re-read."
+      },
+      {
+        "quote": "Estimates represent the 2010 model baseline; they are not current measurements.",
+        "where": {
+          "node": "river-plastic-inputs",
+          "file": "docs/river-plastic-inputs/README.md",
+          "line": 3
+        },
+        "reason": "The retained source manifest supports model_year=2010. Fresh retrieval of the producer DOI/article body failed, so its full source text was not independently re-read."
+      }
+    ]
+  }
+}
