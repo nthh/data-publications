@@ -565,6 +565,26 @@ def _apply_title_correction(snapshot_collection: dict, collection: dict, dataset
         collection["description"] = collection["description"].replace(old, new)
 
 
+def _set_primary_geometry(collection: dict, dataset_id: str, record: dict) -> None:
+    """Name the geometry column of GeoParquet assets whose column is not called `geometry`.
+
+    publication.catalog.primary_geometry {<asset key>: <column>} sets the table extension's
+    `table:primary_geometry` on that asset. The column must be listed for that asset in the
+    Collection's `table:columns`, and the asset must be a GeoParquet data asset.
+    """
+    names = ((record.get("publication") or {}).get("catalog") or {}).get("primary_geometry")
+    if not names:
+        return
+    assets = collection.get("assets") or {}
+    for key, column in names.items():
+        asset = assets.get(key)
+        if asset is None or asset.get("type") != "application/vnd.apache.parquet" or "data" not in asset.get("roles", []):
+            raise ValueError(f"primary_geometry names no GeoParquet data asset: {dataset_id} {key}")
+        if not any(c.get("name") == column and c.get("asset") == key for c in collection.get("table:columns", [])):
+            raise ValueError(f"primary_geometry column is not listed for its asset: {dataset_id} {key} {column}")
+        asset["table:primary_geometry"] = column
+
+
 COG_TYPE = "image/tiff; application=geotiff; profile=cloud-optimized"
 FILE_SCHEMA = "https://stac-extensions.github.io/file/v2.1.0/schema.json"
 PROJECTION_SCHEMA = "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
@@ -1167,6 +1187,7 @@ def _generated(root: Path, config: dict) -> dict[str, bytes]:
         flat_layout = apply_flat_layout(root, record, out_collection, tree)
         from support_publication import apply_support_layout
         apply_support_layout(root, record, out_collection)
+        _set_primary_geometry(out_collection, dataset_id, record)
         # After the flat layout, which accepts only package assets, add hosted map layers.
         _add_map_assets(root, dataset_id, record, out_collection)
         from catalog_presentation import apply_presentation, apply_field_semantics

@@ -188,6 +188,12 @@
                 }
               ]
             },
+            "primary_geometry": {
+              "type": "object",
+              "minProperties": 1,
+              "description": "GeoParquet asset key to its geometry column name, written as table:primary_geometry on that asset; for geometry columns not named geometry.",
+              "additionalProperties": {"type": "string", "minLength": 1}
+            },
             "title_correction": {
               "type": "object",
               "additionalProperties": false,
